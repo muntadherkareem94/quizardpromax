@@ -1,0 +1,525 @@
+{
+  "title": "Diabetes mellitus - Chapter 20",
+  "questions": [
+    {
+      "question": "A 110-kg 57 year old man presents with 1-month history of lethargy, urinary frequency and increased thirst. He has been dieting for years but only recently has managed to lose 10 kg with little effort. What would be the simplest test that could make the diagnosis?",
+      "options": [
+        "A. Autoantibodies to glutamic acid decarboxylase (GAD), protein tyrosine phosphatase islet antigen-2 (IA-2) and zinc transporter 8 (ZnT8)",
+        "B. Capillary blood glucose",
+        "C. Fasting venous blood glucose",
+        "D. Oral glucose tolerance test (OGTT)",
+        "E. Random venous blood glucose"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient has osmotic symptoms in keeping with hyperglycaemia. Given that he is symptomatic, a random venous blood glucose of ≥11.1 mmol/L (≥200 mg/dL) is sufficient to give the diagnosis of diabetes. This test will be the least burdensome to the patient and most cost-effective.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 49 year old black woman with a body mass index (BMI) of 42 kg/m² presents with a 6-month history of fatigue and lethargy. Over the past few days she has become increasingly thirsty, is getting up at night to pass urine and has experienced some dysuria. On admission, blood glucose was measured at 40 mmol/L (720 mg/dL) with ketones of 4 mmol/L and bicarbonate 12 mmol/L. She is treated for diabetic ketoacidosis (DKA), but what is the most likely underlying diagnosis?",
+      "options": [
+        "A. Impaired glucose tolerance",
+        "B. Latent autoimmune diabetes of adulthood (LADA)",
+        "C. Metabolic syndrome",
+        "D. Type 1 diabetes mellitus",
+        "E. Type 2 diabetes mellitus"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient is correctly treated for DKA as she has elevated blood glucose in keeping with diabetes, elevated ketones and a metabolic acidosis. Given her ethnicity, BMI and prodromal illness, a diagnosis of 'ketosis-prone' diabetes (which is more common in patients of African origin) is likely with an underlying diagnosis of type 2 diabetes. This is important as initially patients require insulin treatment but as glucose levels are controlled and ẞ cells recover, patients may be able to transfer off insulin to oral hypoglycaemic agents.",
+      "questionNumber": 2
+    },
+    {
+      "question": "The most common monogenic forms of diabetes are caused by defects in insulin secretion. Maturity-onset diabetes of the young (MODY) commonly develops under the age of 25 and is dominantly inherited. One form of MODY is due to mutation in glucokinase. How should these patients be managed?",
+      "options": [
+        "A. Basal insulin",
+        "B. Biguanide (metformin) alone",
+        "C. Diet alone",
+        "D. No treatment required",
+        "E. Sulphonylurea with meals"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "MODY is defined as non-insulin-dependent diabetes that develops under the age of 25 in one family member. Glucokinase is a pancreatic glucose sensor and patients with glucokinase mutations have an altered set-point for glucose. This results in a slightly high fasting blood glucose but a normal post-prandial response. Therefore, patients with glucokinase MODY generally have stable, mild hyperglycaemia, do not require treatment or monitoring and are at very low risk of developing any diabetes complications.",
+      "questionNumber": 3
+    },
+    {
+      "question": "The diabetes team were asked to review a hyperglycaemic 37 year old man on the surgical ward who presented with abdominal pain, general lethargy, weight loss and pale loose bowel motions. He has been in hospital a number of times with upper abdominal pain with a normal abdominal ultrasound scan. He has a family history of type 2 diabetes mellitus. He recently lost his job as a taxi driver as there was concern after he came to work smelling strongly of alcohol and was found to be above the legal limit to drive. Mean corpuscular volume (MCV) was raised on blood tests from 3 years ago. On admission he had a blood glucose of 20 mmol/L (360 mg/dL) with ketones of 3 mmol/L and bicarbonate 20 mmol/L. What is the most likely diagnosis?",
+      "options": [
+        "A. Impaired glucose tolerance",
+        "B. LADA",
+        "C. Monogenic diabetes",
+        "D. Pancreatic insufficiency",
+        "E. Type 2 diabetes mellitus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has symptoms and signs in keeping with pancreatic insufficiency, both endocrine and exocrine. The history of alcohol excess is helpful to aid diagnosis. Alcohol excess can cause recurrent bouts of acute pancreatitis, which can lead to progressive destruction of the pancreas. Diabetes due to pancreatic insufficiency can sometimes be managed with oral therapy but often requires treatment with insulin.",
+      "questionNumber": 4
+    },
+    {
+      "question": "DKA is a medical emergency in people with type 1 diabetes. What is the most common mechanism of death in DKA in children and adolescents?",
+      "options": [
+        "A. Acute respiratory distress syndrome",
+        "B. Cerebral oedema",
+        "C. Hypokalaemia",
+        "D. Pneumonia",
+        "E. Septic shock"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The average fluid loss in an adult with moderately severe DKA is 6 L. Patients are therefore aggressively fluid replaced in the first few hours. Caution is required in fluid replacement in children and young adults due to the risk of cerebral oedema (a paediatric-specific DKA protocol should be used). The osmolar gradient caused by the high blood glucose results in water shift from the intracellular fluid to extracellular fluid and contraction of cell volume. Correction of the blood glucose with insulin and fluids can result in a rapid reduction in the osmolarity, which in turn reverses the fluid shift and development of cerebral oedema. It is thought that the cerebral oedema is related to cerebral vasoconstriction, brain ischaemia and hypoxia. As children's brains have higher oxygen requirements than adults, this may explain their unique susceptibility. Hypokalaemia-related cardiac events used to be a major cause of death but potassium monitoring and replacement is now much improved.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 57 year old woman with a 5-year history of diet-controlled diabetes is struggling to make any further changes to her lifestyle. Her HbA1c is above target. What would be the best first-line pharmacological therapy?",
+      "options": [
+        "A. Biguanide (e.g. metformin)",
+        "B. Dipeptidyl peptidase-4 (DPP-4) inhibitor (e.g. sitagliptin)",
+        "C. Insulin",
+        "D. Sodium and glucose co-transporter 2 (SGLT2) inhibitor (e.g. empagliflozin)",
+        "E. Sulphonylurea (e.g. gliclazide)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Metformin is a potent blood glucose-lowering treatment that is weight-neutral or can lead to weight loss. It is low cost and does not cause hypoglycaemia. It is used as first line for type 2 diabetes in all patients who can tolerate it. The long-term benefits were shown in the UK Prospective Diabetes Study. It is usually maintained when other medications are added.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 47 year old man with type 2 diabetes has been treated with a biguanide (metformin) and a sulphonylurea (gliclazide) for a number of years. Unfortunately his glycaemic control has deteriorated and his doctor is considering adding in a thiazolidinedione (pioglitazone). What is its mechanism of action?",
+      "options": [
+        "A. Activation of peroxisome proliferator-activated receptor γ (PPARγ) in adipocytes",
+        "B. Delays carbohydrate absorption",
+        "C. Prevents breakdown of incretin hormones",
+        "D. Promotion of B-cell insulin secretion",
+        "E. Sensitises tissues to insulin"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Thiazolidinediones predominantly work in adipose tissue. They bind and activate PPARγ. This nuclear receptor regulates the expressions of many genes involved in metabolism. Thiazolidinediones enhance the action of endogenous insulin in the adipose cells but also alter the release of adipokines, which adjust insulin sensitivity in the liver.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 58 year old obese woman with an 8-year history of type 2 diabetes and an HbA1c 80 mmol/mol (9.5%) attends the diabetes clinic. She is recommended to start a glucagon-like peptide-1 (GLP-1) agonist. What are the possible side effects?",
+      "options": [
+        "A. Bladder cancer",
+        "B. Genital fungal infections",
+        "C. Hypoglycaemia",
+        "D. Pancreatitis",
+        "E. Weight gain"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "All incretin-acting drugs have been reported to be associated with an increased risk of pancreatitis. Unlike sulphonylureas they do not cause hypoglycaemia as they only promote insulin secretion when there is a glucose trigger. Sulphonylureas can lead to weight gain, as can pioglitazone and insulin, but GLP-1 agonists usually cause weight loss. Pioglitazone is associated with an increased risk of bladder cancer. SGLT2 inhibitors cause increased glycosuria, resulting in genital fungal infections and increased risk of urine tract infections.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 24 year woman with type 1 diabetes is attending the antenatal clinic. She is 16 weeks pregnant and is concerned that her baby is big for gestation. What is the most likely mechanism for this?",
+      "options": [
+        "A. Fetal hypoinsulinaemia",
+        "B. Genetic factors",
+        "C. Hypertension",
+        "D. Maternal hyperglycaemia",
+        "E. Pregnancy-induced hyperphagia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Maternal hyperglycaemia causes fetal hyperglycaemia due to transmission of glucose across the placenta. Fetal insulin levels will consequently rise. Insulin is a major fetal growth factor, and high levels of fetal insulin therefore drive fetal growth, resulting in an increased birth weight.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 38 year old man with poorly controlled type 1 diabetes suddenly develops double vision. On examination he is unable to abduct his left eye. He undergoes an urgent CT scan of his brain, which is normal. What is the most likely diagnosis?",
+      "options": [
+        "A. Brain tumour",
+        "B. Diabetic mononeuropathy",
+        "C. Giant cell arteritis",
+        "D. Graves' eye disease",
+        "E. Stroke"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Diabetic mononeuropathy is loss of a sensory or motor function within a single peripheral or cranial nerve, in this case the 6th cranial nerve resulting in sudden-onset diplopia. Given that the CT brain is normal and there are no other symptoms or signs, it is unlikely to be in keeping with brain tumour or stroke. He would be unlikely to present with Graves' eye disease with no features in keeping with thyrotoxicosis. Giant cell arteritis commonly presents with temporal tenderness and amaurosis fugax not diplopia.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 21 year old student attends her family physician feeling generally unwell with a 3-day history of vomiting. She has been trying to lose weight and has been on a low-fat diet and started to exercise daily. She felt unwell with diarrhoea and vomiting for 3 days following a seafood meal. The family physician checked a blood glucose level, which was 5.2 mmol/L (94 mg/dL) and urine dipstick showed glucose trace and ketones 3+. What is the most likely cause of ketonuria?",
+      "options": [
+        "A. Diabetic ketoacidosis",
+        "B. Fasting",
+        "C. High-carbohydrate diet",
+        "D. Repeated vomiting",
+        "E. Strenuous exercise"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ketone bodies are organic acids that are formed during fat metabolism. When the body has insufficient insulin or depletes its own carbohydrate stores it will metabolise fat for energy. Ketonuria may be found in normal people who have been fasting or exercising strenuously for long periods, who have been vomiting repeatedly or who have been eating a diet high in fat and low in carbohydrate (all of these circumstances can cause glycogenic depletion). The history and glucose level in this case are not in keeping with diabetic ketosis. The history here suggests vomiting to be the most likely cause of ketonuria.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 52 year old English lorry driver with type 1 diabetes returns to clinic for his annual review. HbA1c is stable at 62 mmol/mol (7.8%) and he reports no hypoglycaemic episodes. He is well aware of the need to check his glucose prior to driving and does so; however, he does not keep a record of them. Which of the following is legally required in the UK for people prescribed insulin to enable them to drive a heavy goods vehicle?",
+      "options": [
+        "A. Annual driving test",
+        "B. Annual review with 3 months' glucose meter readings",
+        "C. Biannual diabetes review",
+        "D. Continuous glucose monitoring",
+        "E. Retinal screening"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In the UK, according to the Driver and Vehicle Licensing Agency (DVLA) it is a legal requirement for people on insulin who drive larger vehicles such as buses or heavy goods vehicles to have an annual examination by a diabetes specialist along with a review of 3 months of glucose meter readings. This patient should keep a record of his blood glucose readings and the team should consider advocating a blood glucose meter, which can be electronically downloaded to provide this data at his annual review.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 56 year old woman has type 2 diabetes. She also has non-alcoholic fatty liver disease (NAFLD), arthritis, coeliac disease, mild visual impairment and chronic obstructive pulmonary disease (COPD). She smokes up to 20 cigarettes a day. Which of the following conditions has a pathophysiological link and is more common in individuals with type 2 diabetes?",
+      "options": [
+        "A. Coeliac disease",
+        "B. COPD",
+        "C. NAFLD",
+        "D. Optic atrophy",
+        "E. Rheumatoid arthritis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hypertension, NAFLD and hypercholesterolaemia are associated with type 2 diabetes due to insulin resistance. This cluster of conditions has been termed the 'insulin resistance syndrome' or 'metabolic syndrome' and is much more common in obese individuals. Coeliac disease - gluten intolerance is an autoimmune condition affecting primarily the small bowel, caused by a reaction to gliadin, a gluten protein. Optic atrophy and rheumatoid arthritis may also have underlying autoimmune aetiologies. Autoimmune diseases are more commonly associated with type 1 diabetes than type 2 diabetes.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 67 year old female has had type 1 diabetes for 50 years. She has an HbA1c of 42 mmol/mol (6%) and is very strict about her diet. She was admitted for an elective total hip replacement. On the day of surgery, she was found by the junior doctor to be very drowsy with a capillary blood glucose of 2.2 mmol/L (40 mg/dL). What should ideally happen next?",
+      "options": [
+        "A. Cancel theatre",
+        "B. Intravenous (IV) access and 100 mL of 20% dextrose and repeat blood glucose in 15 minutes",
+        "C. IV access and 100 mL of 50% dextrose",
+        "D. IV access and 200 mL of 20% dextrose",
+        "E. Withhold insulin for rest of day"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Treatment of hypoglycaemia depends on the severity and whether the patient is able to swallow. Conscious patients should be treated with oral carbohydrate. If assistance is required to treat hypoglycaemia this is called 'severe hypoglycaemia'. Patients should receive 100-200 mL 20% dextrose or intramuscular glucagon. If the patient is conscious and able to swallow, GlucoGel or refined sugar drink can be used. Blood glucose should be re-checked after 15 minutes and re-treated if needed. Once conscious, an oral complex-carbohydrate snack should be given. Insulin should not be omitted. If a dosing error was made, then adjustment may be required. Fifty per cent glucose is generally discouraged due to risk of infusion vein irritation.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A woman at 20 weeks' gestation undergoes a 75-g oral glucose tolerance test with the following results: 0 minutes = 5.6 mmol/L (101 mg/dL) 120 minutes = 9.2 mmol/L (166 mg/dL). According to the National Institute for Clinical Excellence (NICE) guidelines, what should be the immediate management?",
+      "options": [
+        "A. Dietary modification",
+        "B. GLP-1 receptor agonist",
+        "C. Insulin",
+        "D. Metformin",
+        "E. Sulphonylurea, e.g. glibenclamide"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The aim of managing gestational diabetes is to normalise the maternal blood glucose and therefore reduce excessive fetal growth. The first step is dietary modification, namely reducing the amount of fast-acting refined carbohydrate. Regular blood glucose monitoring is required. If diet alone does not achieve targets, then metformin should be started. If not tolerated or additional treatment is required, insulin should be commenced. Glibenclamide can be used if metformin and insulin are not tolerated, because it does not cross the placenta. In some countries, glibenclamide and metformin are not licensed for use in pregnancy. There is no evidence for safety of any other hypoglycaemic agents in pregnancy.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A frail 93 year old man with type 1 diabetes for 46 years attends for review. His HbA1c is 69 mmol/mol (8.5%). Blood pressure is 152/82 mmHg for which he is taking an angiotensin-converting enzyme (ACE) inhibitor (ramipril) and a calcium channel blocker (amlodipine). He has mild background diabetic retinopathy. Which of these treatment targets is most appropriate in this scenario?",
+      "options": [
+        "A. Avoidance of hypoglycaemia",
+        "B. HbA1c of 48 mmol/mol (6.5%) or less",
+        "C. HbA1c of 58 mmol/mol (7.5%) or less",
+        "D. Microvascular disease prevention",
+        "E. No need to monitor blood glucose in view of his age"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The aims of treatment and target HbA1c depends on the individual patient. Early in diabetes a target HbA1c of 48 mmol/mol (6.5%) or less may be appropriate to try to prevent microvascular disease. An HbA1c of 58 mmol/mol (7.5%) or less may be more appropriate in some older patients with cardiovascular disease, or those treated with insulin, given risks of hypoglycaemia. The benefits of a lower target HbA1c need to be weighed up against the risk of hypoglycaemia in insulin-treated patients. Longer diabetes duration and frequency of hypoglycaemic episodes are risk factors for impairment of symptomatic response to hypoglycaemia. Advanced age itself is a risk factor for hypoglycaemia. Multiple comorbidities, reduced appetite and renal function can predispose to hypoglycaemia in older age. Given this patient's age and duration of disease, the main aim of treatment should be towards safety and symptom control: i.e. to avoid hypoglycaemia.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 32 year old woman attends the antenatal clinic for her booking scan. She is 12 weeks pregnant with twins and has been struggling with 'morning sickness'. She has a BMI of 36 kg/m² and undergoes an OGTT, the results of which are: fasting plasma glucose 4.8 mmol/L (86 mg/dL) 2-hour plasma glucose 7.0 mmol/L (126 mg/dL). As part of her routine checks the midwife dips her urine and she has 2+ ketones. What is the most likely diagnosis?",
+      "options": [
+        "A. Diabetic ketoacidosis",
+        "B. Gestational diabetes",
+        "C. Hyperemesis gravidarum",
+        "D. Normal physiological response in pregnancy",
+        "E. Undiagnosed type 2 diabetes"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most likely diagnosis is hyperemesis gravidarum, a complication of pregnancy characterised by severe nausea, vomiting and dehydration. The diagnosis is usually clinical but has been defined as three of more episodes of vomiting in a day such that weight loss of 5% has occurred and there is evidence of ketones in the urine. Risk factors include first pregnancy, multiple pregnancy, obesity and a family history. When vomiting is severe it can lead to dehydration and ketosis. A diagnosis of gestational diabetes is based upon maternal blood glucose measures that are associated with increased fetal growth. Women at high risk of developing gestational diabetes include: BMI >30 kg/m²; previous macrosomic baby; previous gestational diabetes; a first-degree relative with gestational diabetes; and high-risk ethnicity. These women should all undergo screening. This woman has a BMI of 36 kg/m², so warrants screening; however, her results did not reach the NICE criteria for gestational or any other type of diabetes.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 51 year old man with type 1 diabetes returns to the foot clinic. He attends for regular review as he has an ulcer on his left heel. He has been on a walking holiday to the Amalfi coast for 2 weeks. The podiatrist asks for a medical review as he is concerned that the left foot is now warm and swollen. The ulceration looks much improved and the patient feels well. X-ray does not reveal any obvious bony abnormality. What is the most likely diagnosis?",
+      "options": [
+        "A. Acute Charcot arthropathy",
+        "B. Deep vein thrombosis (DVT)",
+        "C. Dry gangrene",
+        "D. Gout",
+        "E. Osteomyelitis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Acute Charcot arthropathy almost always presents with signs of inflammation a hot, red, swollen foot. Initial X-ray may show bony destruction but can be normal. There is often a history of peripheral neuropathy or previous foot ulceration. As Charcot can be difficult to differentiate from osteomyelitis, MRI of the foot can be helpful. The pathophysiology is not well understood but may involve unperceived trauma with underlying neuropathy leading to progressive destruction. In this case, minor trauma may have occurred on his walking holiday and repeated 'trauma' may have led to bony destruction. In view of the recent ulcer, osteomyelitis should be excluded (MRI should be considered), but there is some reassurance that the area of ulceration has improved and the patient is systemically well. Although he has been on a flight, he has otherwise been active and has a swollen foot not calf - making DVT less likely. The history is not in keeping with gout or gangrene.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 47 year old woman with type 1 diabetes attends for annual review. She denies any significant hypoglycaemia. Her results are as follows: HbA1c 46 mmol/mol (6.4%); blood pressure (BP) 152/98 mmHg (average of 3); weight 61 kg (BMI 24 kg/m²); urinalysis: + glucose, trace nitrites, albumin: creatinine ratio (ACR) 5 mg/mmol (previously early morning sample 6.2 mg/mmol); total cholesterol 3.8 mmol/L (147 mg/dL). Current medication: basal analogue insulin (glargine), bolus/rapid-acting analogue insulin (NovoRapid), ACE inhibitor (lisinopril), statin (simvastatin). Which result is it most important to act upon?",
+      "options": [
+        "A. Blood pressure",
+        "B. Cholesterol",
+        "C. HbA1c",
+        "D. Urinalysis",
+        "E. Weight"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Microalbuminuria is the presence of small amounts of albumin in the urine at a concentration not detected on standard urinalysis. Early morning urine is measured for albumin: creatinine ratio. Microalbuminuria is present if ACR is 2.5-30 mg/mmol creatinine in men and 3.5-30 mg/mmol creatinine in women. False positives should be excluded and 2 out of 3 samples should be positive to confirm the diagnosis (ideally an early morning sample on repeat). Microalbuminuria is a good predictor of progression to nephropathy in type 1 diabetes. The presence of established microalbuminuria should prompt action to reduce the risk of progression of nephropathy and of cardiovascular disease. This should be done by aggressive reduction of blood pressure, optimising glycaemic control and cardiovascular risk reduction. This patient has good glycaemic control and has a healthy BMI with normal level of cholesterol. Blood pressure may need further validation in the first instance, but presuming it is persistently elevated, then it is diagnostic for hypertension and needs lowering for vascular and renal protection.",
+      "questionNumber": 19
+    },
+    {
+      "question": "James is a 19 year old man from Ireland; he has a family history of diabetes. His mother developed diabetes later in life; he is unsure if she required insulin but she often attended the hospital. She died suddenly when he was young. James is an active man but has recently been hindered by general malaise, lethargy and pain in his knees. He has had a steroid injection into his left knee with little improvement. The following tests have been carried out: Haemoglobin 145 g/L (14.5 g/dL) White blood cell count 6.2x10^9/L Urea 5.2 mmol/L (31 mg/dL) Creatinine 62 µmol/L (0.70 mg/dL) Glucose 11.4 mmol/L (205 mg/dL) HbA1c 51 mmol/mol (6.8%) Anti-GAD antibody: negative Anti-IA-2 antibody: negative Antineutrophil cytoplasmic antibody (ANCA): negative Ferritin 1137 µg/L What is the most likely diagnosis?",
+      "options": [
+        "A. Hereditary haemochromatosis",
+        "B. MODY",
+        "C. Steroid-induced diabetes",
+        "D. Type 1 diabetes",
+        "E. Type 2 diabetes"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The raised ferritin in this case points to a diagnosis of hereditary haemochromatosis, a disease characterised by excessive intestinal absorption of dietary iron, resulting in a pathological increase in total body iron stores. Excess iron accumulates in tissues and organs, disrupting their normal function. The most susceptible organs include liver, adrenal glands, heart, skin, gonads, joints and pancreas. Patients can present with cirrhosis, polyarthropathy, adrenal failure, heart failure or diabetes. The hereditary form is most common in those of Northern European and Celtic descent. The disease is inherited in an autosomal recessive pattern.",
+      "questionNumber": 20
+    },
+    {
+      "question": "Insulin is the main regulator of glucose metabolism and storage. It is secreted from pancreatic ẞ cells. These cells regulate blood glucose concentrations by coupling glucose with insulin secretion. Glucose enters the pancreatic cells by facilitated diffusion down its concentration gradient through cell membrane glucose transporters (GLUTs). Through which GLUT does glucose enter pancreatic ẞ cells?",
+      "options": [
+        "A. GLUT1",
+        "B. GLUT2",
+        "C. GLUT3",
+        "D. GLUT4",
+        "E. GLUT5"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "GLUT2 is present in renal tubular cells, liver cells and pancreatic ẞ cells. It is a bidirectional transporter, allowing glucose to flow in two directions. This is required in pancreatic cells so that the intracellular environment can accurately measure the serum glucose levels. GLUT1 is expressed in erythrocytes and in the endothelial cells of the blood-brain barrier. It is responsible for the low level of basal glucose uptake needed to maintain respiration in all cells. GLUT3 is mostly expressed in neurons and in the placenta. GLUT4 is found in adipose tissue and striated muscle; it is regulated by insulin and is responsible for insulin-regulated glucose storage. GLUT5 is a fructose transporter expressed in enterocytes in the small intestine.",
+      "questionNumber": 21
+    },
+    {
+      "question": "Blood glucose is tightly regulated in order to provide a constant supply of glucose to the central nervous system. Following ingestion of a meal containing carbohydrate, which of the following is most likely to occur in the normal physiological state?",
+      "options": [
+        "A. Inhibition of GLP-1 release",
+        "B. Inhibition of insulin release",
+        "C. Stimulation of glucagon release",
+        "D. Stimulation of hepatic gluconeogenesis",
+        "E. Stimulation of hepatic glucose uptake"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In the post-prandial period, there are rises in portal vein glucose and insulin and a fall in glucagon. The production of glucose in the liver is suppressed and the uptake of glucose in the liver and peripheral tissues is increased. The incretin hormones - GLP-1 and gastric inhibitory polypeptide (GIP) - augment insulin secretion following oral glucose delivery.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 59 year old man with a BMI of 29 kg/m² is admitted to hospital with pleuritic chest pain and a productive cough and is found to have pneumonia. He has no history of diabetes and takes no regular medication. As part of his admission investigations, a plasma glucose is found to be 10.0 mmol/L (180 mg/dL). Which of the following is the most appropriate management?",
+      "options": [
+        "A. Blood glucose monitoring with fasting plasma glucose after recovery from infection",
+        "B. Commence treatment with liraglutide",
+        "C. Commence treatment with metformin",
+        "D. No further assessment of glycaemic control",
+        "E. Variable-rate intravenous insulin infusion"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient most likely has 'stress hyperglycaemia' provoked by acute illness, in this case infection. Underlying impaired glycaemic control or diabetes, however, could also be present. A diagnosis of diabetes in the asymptomatic individual requires follow-up testing of plasma glucose. In this case, the patient's capillary blood glucose levels should be monitored and he ought to have a repeat assessment of his plasma glucose when recovered from the acute illness.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 70 year old woman attends her family physician complaining of excessive thirst and fatigue. A random venous glucose is 13.2 mmol/L (238 mg/dL), confirming a diagnosis of diabetes. She takes a number of medications for hypertension, ischaemic heart disease and polymyalgia rheumatica. Which of the following medications can precipitate hyperglycaemia?",
+      "options": [
+        "A. ACE inhibitor (e.g. ramipril)",
+        "B. Aspirin",
+        "C. Calcium channel blocker (e.g. amlodipine)",
+        "D. Nitrate (e.g. isosorbide mononitrate)",
+        "E. Steroid (e.g. prednisolone)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The only medication listed that may result in hyperglycaemia and the development of drug-induced diabetes is prednisolone, a glucocorticoid. There is an increased risk of developing diabetes while taking B-adrenoceptor antagonists (B-blockers) and thiazide diuretics for blood pressure control, but not with other antihypertensive agents. Other groups of patients at risk of developing diabetes are those taking atypical antipsychotic medications and transplant recipients taking calcineurin inhibitors.",
+      "questionNumber": 24
+    },
+    {
+      "question": "An 18 year old female with type 1 diabetes is admitted with suspected pyelonephritis. She has not taken any insulin for 24 hours during her acute illness. Her initial blood tests include: plasma glucose 24 mmol/L (432 mg/dL), bicarbonate 12 mmol/L and ketones 5.5 mmol/L. Which electrolyte will most likely require regular monitoring and aggressive intravenous supplementation?",
+      "options": [
+        "A. Bicarbonate",
+        "B. Calcium",
+        "C. Magnesium",
+        "D. Phosphate",
+        "E. Potassium"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "There is marked whole-body depletion of potassium in DKA and serum levels do not correlate with the total body deficit. Both hypokalaemia and hyperkalaemia can occur in DKA and be fatal. Hypokalaemia can be exacerbated by intravenous insulin, which moves potassium into the intracellular compartment. Therefore, in DKA management, serum potassium levels must be carefully monitored. Phosphate levels typically fall in DKA but there is no need to routinely replace in the absence of muscle weakness. Bicarbonate levels normalise with fluid resuscitation; bicarbonate infusion is not recommended and may in fact be harmful.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 75 year old male with no prior diagnosis of diabetes is admitted to hospital because he has become progressively more drowsy and unwell since being started on oral amoxicillin by his family physician for a suspected chest infection 2 weeks ago. He appears clinically dehydrated. His initial blood tests include: plasma glucose 55 mmol/L (991 mg/dL), ketones 0.1 mmol/L, sodium 149 mmol/L and serum osmolality 368 mmol/kg. Which of the following statements is correct with regard to the management of this patient?",
+      "options": [
+        "A. A solution of 10% dextrose is the initial intravenous fluid of choice",
+        "B. Close monitoring of fluid balance is unnecessary",
+        "C. Intravenous insulin is not required initially in the absence of significant ketonaemia",
+        "D. Serum osmolality should normalise within 4 hours of treatment",
+        "E. Thromboprophylaxis is contraindicated"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hyperosmolar hyperglycaemic state (HHS) is a potentially fatal complication of type 2 diabetes, which sometimes occurs in patients with no prior history of diabetes. Patients are extremely dehydrated and require fluid resuscitation, initially with a solution of 0.9% sodium chloride, with careful monitoring of fluid balance. There is a high risk of venous thromboembolism; hence low-molecular-weight heparin is indicated. IV insulin infusion is necessary only in the presence of significant (> 1.0 mmol/L) ketonaemia or metabolic acidosis (i.e. DKA/HHS overlap). Infection is a common precipitant of HHS but antibiotics are not used prophylactically in the absence of infection. It typically takes 72 hours or longer for the biochemical disturbances to correct with treatment of HHS.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 28 year old female has recently been found to have hepatocyte nuclear factor 1α (HNF1α) MODY. It is decided to treat her diabetes with gliclazide. Gliclazide, a sulphonylurea drug, exerts its hypoglycaemic effect by enhancing endogenous insulin secretion. By which mechanism is this achieved?",
+      "options": [
+        "A. Activation of PPARγ",
+        "B. Activation of the GLP-1 receptor",
+        "C. Closure of the transmembrane B-cell KATP channel",
+        "D. Inhibition of DPP-4",
+        "E. Inhibition of SGLT2"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hypoglycaemic drugs have varied mechanisms of action. Sulphonylureas exert their effect on pancreatic β cells by closing the KATP channel, which results in downstream effects culminating in insulin exocytosis. Gliptins inhibit DPP-4, thereby potentiating the action of endogenous incretins such as GLP-1 and GIP. Thiazolidinediones activate PPARγ in adipose tissue. GLP-1 analogues activate the GLP-1 receptor. SGLT2 inhibitors have their action in the kidney where they inhibit SGLT2, thereby reducing re-uptake of glucose from the urine.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 21 year old female with type 1 diabetes since childhood attends the diabetes clinic for review. She has been symptomatic of hypoglycaemia several times since her last appointment 6 months ago. Which of the following is classed as a neuroglycopenic symptom of hypoglycaemia?",
+      "options": [
+        "A. Anxiety",
+        "B. Confusion",
+        "C. Headache",
+        "D. Hunger",
+        "E. Sweating"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Non-specific symptoms include nausea, headache and tiredness. Autonomic symptoms result from activation of the autonomic nervous system and include sweating, hunger, trembling, anxiety and palpitation. Neuroglycopenic symptoms result from the brain being deprived of glucose and include delirium, drowsiness, speech disturbance, inability to concentrate, incoordination, irritability, visual disturbance and focal neurological deficit. Autonomic symptoms usually occur first to allow patients to recognise the hypoglycaemia and treat it, but may be absent in individuals with impaired hypoglycaemia awareness.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 24 year old male with type 1 diabetes of 12 years' duration presents with frequent episodes of hypoglycaemia. He goes running for up to 60 minutes 4 times per week and the hypoglycaemic episodes occur after exercise. He has good awareness of hypoglycaemia and is able to take corrective action on each occasion. He is on a basal-bolus insulin regimen and his latest HbA1c is 62 mmol/mol (7.8%). Which of the following interventions is the most appropriate management?",
+      "options": [
+        "A. Advise him to avoid exercise",
+        "B. Always omit the short-acting insulin dose after exercise",
+        "C. Reduce his total daily insulin dose to relax his glycaemic control",
+        "D. Refer for structured diabetes education programme",
+        "E. Refer to a tertiary centre for consideration of pancreatic islet transplantation"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patient education is fundamental to the prevention and management of hypoglycaemia. Structured education can provide assistance with carbohydrate intake and insulin management around the time of exercise. He already has a suboptimal HbA1c and relaxing this will put him at increased risk of microvascular complications as well as offering no genuine protection against hypoglycaemia. Exercise should not be discouraged as a means of avoiding hypoglycaemia. Reduction of insulin dose pre-exercise may be a useful strategy to avoid hypoglycaemia during exercise but structured education will equip him with a broader range of strategies for the future. Pancreatic islet transplantation is only considered in individuals who experience recurrent severe hypoglycaemia despite optimisation of glycaemic control after structured education.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 58 year old man with type 2 diabetes of 10 years' duration and a BMI of 33 kg/m² attends clinic for review of his diabetes management. He has a suboptimal HbA1c of 69 mmol/mol (8.5%) on metformin monotherapy 1 g twice daily and would like to discuss the addition of a second-line agent. Which of the following options are the most appropriate if he wishes a strategy that promotes weight loss?",
+      "options": [
+        "A. DPP-4 inhibitor (e.g. sitagliptin)",
+        "B. GLP-1 agonist (e.g. liraglutide)",
+        "C. Insulin",
+        "D. PPARγ agonist/thiazolidinedione (e.g. pioglitazone)",
+        "E. Sulphonylurea (e.g. glipizide)"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Liraglutide, a GLP-1 agonist, may lead to weight loss as well as improved glycaemic control. SGLT2 inhibitors are also associated with weight loss. The other options are either weight-neutral (sitagliptin, a DPP-4 inhibitor) or promote weight gain (glipizide, a sulphonylurea; pioglitazone, a thiazolidinedione; insulin).",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 50 year old woman with type 2 diabetes presents to her family physician complaining of genital thrush, which has not settled with topical antifungal treatment. She had been started on a new oral hypoglycaemic drug 4 months earlier. Which of the following drugs is most likely to be responsible for her presentation?",
+      "options": [
+        "A. DPP-4 inhibitor (e.g. sitagliptin)",
+        "B. Glucosidase inhibitor (e.g. acarbose)",
+        "C. PPARγ agonist/thiazolidinedione (e.g. pioglitazone)",
+        "D. SGLT2 inhibitor (e.g. empagliflozin)",
+        "E. Sulphonylurea (e.g. glimepiride)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Empagliflozin, an inhibitor of the sodium and glucose co-transporter 2 (SGLT2) in the kidney, exerts its glycaemic effect by increasing the amount of glucose in the urine. This can result in fungal infection in approximately 5% of patients taking the drug. Only if the problem becomes recurrent or unacceptable to the patient is the drug withdrawn. The other drugs do not cause genital tract infection but have their own class-specific side-effects.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 35 year old woman with type 1 diabetes of 20 years' duration presents with chronic nausea, early satiety and intermittent vomiting after meals. She has a history of poor glycaemic control, retinopathy and peripheral neuropathy. Which of the following investigations will be most helpful in establishing a diagnosis?",
+      "options": [
+        "A. Abdominal ultrasonography",
+        "B. Anti-tissue transglutaminase (anti-tTG) antibody",
+        "C. Barium swallow",
+        "D. Gastric emptying study",
+        "E. Plain chest radiograph"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The most likely diagnosis is gastroparesis as a manifestation of autonomic dysfunction in diabetes. An upper gastrointestinal (GI) tract endoscopy is commonly performed as part of the diagnostic workup, but definitive diagnosis is achieved by demonstrating delayed gastric emptying by 99mtechnetium scintigraphy following a solid-phase meal with imaging over 4 hours. The other investigations will not provide a definitive diagnosis.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 21 year old women with type 1 diabetes of 8 years' duration with good glycaemic control - HbA1c 48 mmol/mol (6.5%) on basal-bolus insulin presents to her young adult specialist clinic for routine review. She has been experiencing intermittent abdominal bloating, diarrhoea and weight loss over the last 3 months. Recent urea and electrolytes, liver function tests and thyroid function tests were all within normal limits. Which of the following is the best next investigation to perform?",
+      "options": [
+        "A. Abdominal ultrasonography",
+        "B. Anti-tTG antibody",
+        "C. Flexible sigmoidoscopy",
+        "D. Gastric emptying study",
+        "E. Upper GI endoscopy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The most likely diagnosis is coeliac disease, which is strongly associated with type 1 diabetes. Up to 1 in 20 people with type 1 diabetes go on to develop coeliac disease. The best screening test for this condition is anti-tTG antibody, which is typically present in high titre in this condition, with the exception of concurrent immunoglobulin A deficiency. An upper GI endoscopy with D2 (second part of duodenum) biopsy is required to confirm the diagnosis but only after initial anti-tTG testing. Coeliac disease should be considered in those who present with weight loss, gastrointestinal symptoms, iron/folate deficiency anaemia, infertility, osteoporosis/low bone mineral density and malabsorption.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 19 year old male with type 1 diabetes is admitted to hospital complaining of generalised abdominal pain and vomiting. He is apyrexial, tachycardic and clinically dehydrated. There is no peritonism in the abdomen. He has the following blood results: blood glucose 22 mmol/L (396 mg/dL), ketones 4.3 mmol/L, bicarbonate 11 mmol/L, alkaline phosphatase 250 U/L, white cell count 19x10^9/L and haemoglobin 182 g/L. Which of the following statements regarding interpretation of these results is correct?",
+      "options": [
+        "A. He can safely be discharged home",
+        "B. Measurement of venous pH will be normal",
+        "C. The elevated alkaline phosphatase enzyme invariably indicates vitamin D deficiency",
+        "D. The elevated haemoglobin concentration will likely normalise after intravenous fluid administration",
+        "E. The elevated white cell count invariably indicates underlying infection"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient's clinical status and biochemical findings are consistent with DKA. He requires urgent treatment in hospital. His pH on venous or arterial blood gas would be < 7.30 (H+ > 50.1 nmol/L) consistent with metabolic acidosis. The white cell count and alkaline phosphatase levels are often elevated in DKA and subside with treatment. Due to significant volume depletion in this condition, haemoglobin concentrations are often elevated and will reduce with expansion of the intravascular compartment following administration of intravenous fluid.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 48 year old man with type 1 diabetes of 30 years' duration attends clinic for routine review. He is on a basal-bolus insulin regimen and has an HbA1c of 70 mmol/mol (8.6%). He is on no other medication. Blood pressure is 155/92 mmHg (repeated 3 times with similar results) and he has microalbuminuria with an ACR of 7.3 mg/mmol. Estimated glomerular filtration (eGFR) rate is 54 mL/min/1.73 m². Which of the following drugs would be most beneficial?",
+      "options": [
+        "A. ACE inhibitor (e.g. lisinopril)",
+        "B. B-blocker (e.g. atenolol)",
+        "C. Calcium channel blocker (e.g. amlodipine)",
+        "D. Centrally acting antihypertensive (e.g. moxonidine)",
+        "E. Thiazide diuretic (e.g. bendroflumethiazide)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "ACE inhibitors such as lisinopril or angiotensin receptor blockers would be the most appropriate antihypertensive agents in this case. These drugs confer additional benefit beyond simply lower blood pressure - they are associated with significantly reduced progression of nephropathy. Patients with microalbuminuria benefit from aggressive lowering of BP (often with multiple agents), control of cardiovascular risk factors and optimisation of glycaemic control.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 65 year old man with type 2 diabetes of 20 years' duration is referred to the specialist diabetes foot clinic by his family physician with an ulcer of the plantar surface of the right foot. The ulcer has been present for approximately 6 weeks and there is a history of peripheral diabetic neuropathy. On examination, there is a 2-cm diameter ulcer in proximity to the first metatarsal head. It has an offensive odour and discharge. The area around the ulcer is hot and erythematous. Which of the following features, if present, would most strongly indicate the presence of osteomyelitis (bone infection)?",
+      "options": [
+        "A. A normal plain foot radiograph",
+        "B. Elevated blood white cell count",
+        "C. Increased skin temperature compared to the contralateral foot",
+        "D. Peripheral oedema",
+        "E. The ulcer probing to the depth of bone"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Features that potentially indicate osteomyelitis in the diabetic foot include: dactylitis (marked swelling of the entire digit), an ulcer that probes to the depth of bone and evidence of bony destruction on a plain radiograph (X-ray). X-ray, however, may be normal in 50% of cases. MRI is far more sensitive for osteomyelitis than a plain X-ray. The presence of oedema, increased heat and elevated inflammatory markers may occur in soft tissue infection alone and are not specific for osteomyelitis. If there is clinical or radiological evidence of osteomyelitis, the patient is typically treated with antibiotics for at least 6 weeks.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 72 year old man is admitted to hospital by his family physician for urgent investigation of weight loss. He has a progressive 3-month history of back pain, jaundice, dark urine and anorexia. He has lost approximately 15 kg in weight. In the last 4 weeks he has developed increased thirst and is drinking excessively. A random venous glucose is 16.0 mmol/L (288 mg/dL). Which investigation is most likely to reveal the cause of his diabetes?",
+      "options": [
+        "A. Anti-GAD and anti-IA-2 antibodies",
+        "B. CT scan of the pancreas",
+        "C. Dexamethasone suppression test",
+        "D. Faecal elastase",
+        "E. Serum C-peptide"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The clinical scenario presented is that of pancreatic carcinoma, which may present with diabetes as a feature. Pancreatic insufficiency may also present with weight loss typically in a patient with a history of alcohol excess, but this condition is not associated with obstructive jaundice. This patient is likely to require insulin therapy to control the osmotic symptoms of his diabetes.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 29 year old woman with type 1 diabetes for 18 years attends clinic for routine review. She has poor glycaemic control with an HbA1c of 90 mmol/mol (10.4%). She is keen to embark on stricter glycaemic management in advance of planning pregnancy. Which of the following complications of diabetes would be the most likely to deteriorate significantly should her glycaemic control improve suddenly?",
+      "options": [
+        "A. Foot ulceration",
+        "B. Gastroparesis",
+        "C. Microalbuminuria",
+        "D. Peripheral vascular disease",
+        "E. Retinopathy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "It is well recognised that when glycaemic control improves rapidly, there can be a transient deterioration in the degree of retinopathy. This is thought to be due to loss of hyperglycaemia-induced hyperperfusion in the retinal circulation. The effect typically wears off within 18 months. Therefore, in patients with established retinopathy, it is recommended that improvement in glycaemic management should be effected gradually. Transient worsening of peripheral neuropathy symptoms can similarly be seen in this situation.",
+      "questionNumber": 38
+    },
+    {
+      "question": "An 18 year old woman with type 1 diabetes attends her diabetes clinic to discuss the possibility of continuous subcutaneous insulin therapy (insulin pump therapy). She has a suboptimal HbA1c of 68 mmol/mol (8.4%) and takes multiple daily injections of insulin. Which of the following statements is correct with regard to insulin pump therapy?",
+      "options": [
+        "A. A continuous glucose monitoring system (CGMS) is mandatory for all patients",
+        "B. DKA does not occur as insulin administration is constant",
+        "C. Patients have to inject long-acting insulin in addition to the pump-delivered insulin",
+        "D. The rate of insulin delivery can be adjusted depending on the time of day",
+        "E. There is an increased risk of microvascular disease compared to multiple daily injections"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Insulin pump therapy is becoming more widely used for glycaemic control in type 1 diabetes. The pump delivers a constant infusion of short-acting insulin; there is no need for additional long-acting insulin. CGMS is not mandatory, although it is a useful adjunct for monitoring glucose levels while on pump therapy. As the technology becomes more sophisticated, there will be more 'closed loop' systems, whereby the glucose monitor and pump communicate with one another to optimise insulin delivery. DKA is still a possibility, for example in the case of pump failure. One of the attractions of pump therapy is the ability to alter the basal rate of insulin depending on the time of day or level of physical activity (i.e. lower basal rate at night or during exercise to reduce the risk of hypoglycaemia). The risk of microvascular complications of diabetes depends on the HbA1c and glucose variability rather than the mode of insulin delivery.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 45 year old man with diabetes presents with a 4-week history of weight loss, polyuria and polydipsia. His blood results include: random plasma glucose 20 mmol/L (360 mg/dL), ketones 2 mmol/L and HbA1c 110 mmol/mol (12.2%). He was diagnosed with diabetes 6 months ago at which point his BMI was 23 kg/m² and HbA1c 65 mmol/mol (8.1%). There is no family history of diabetes. Since diagnosis he has been treated with metformin and a sulphonylurea. B-cell antibodies are checked and he is found to have a very high titre of anti-GAD antibodies. Which of the following diagnoses best fits with this scenario?",
+      "options": [
+        "A. LADA",
+        "B. Mitochondrial diabetes",
+        "C. MODY",
+        "D. Pancreatic disease",
+        "E. Type 2 diabetes"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "It is estimated that 50% of cases of type 1 diabetes present in adulthood. The patient is best described as having LADA, an insidious form of type 1 diabetes that develops in adulthood. This condition initially presents like type 2 diabetes but is characterised by a relatively rapid progression to insulin treatment and the presence of β-cell antibodies. MODY and mitochondrial diabetes typically occur where there is a strong family history of diabetes, sometimes with other clinical manifestations such as sensorineural deafness in the case of mitochondrial disease. Pancreatic exocrine disease typically occurs in those with a history of conditions that affect pancreatic function such as pancreatitis, haemochromatosis, pancreatectomy and pancreatic cancer.",
+      "questionNumber": 40
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main-styles.css">
+</head>
+<style> 
+    .dropdown-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem; /* 12px */
+    border-radius: 0.5rem; /* 8px */
+    color: #374151; /* text-gray-700 */
+    transition: background-color 0.2s;
+}
+.dropdown-item:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+.dropdown-item svg {
+    margin-right: 0.75rem; /* 12px */
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+    color: #4b5563; /* text-gray-600 */
+}
+</style>
+<body>
+
+    <!-- Header -->
+<div class="container mx-auto max-w-4xl mt-8 px-4">
+    <header class="bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
+        <div class="flex-1">
+            <a href="dashboard.html" class="text-gray-600 hover:text-gray-800 transition" title="Back to Dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+            </a>
+        </div>
+        <div class="flex-shrink-0">
+            <a href="dashboard.html"><img src="images/logo.png" alt="Quizard Logo" class="h-16"></a>
+        </div>
+        <div class="flex-1 flex justify-end items-center space-x-3">
+            <button id="notificationButton" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition" title="Notifications">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+            </button>
+            <div class="relative">
+                <button id="profileDropdownButton" class="w-10 h-10 rounded-full bg-gray-200 flex justify-center items-center overflow-hidden" title="Account"></button>
+                <div class="absolute bottom-0 right-0 w-4 h-4 bg-gray-200 rounded-full flex items-center justify-center border-2 border-white pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </div>
+                <div id="profileDropdownMenu" class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl p-2 hidden z-50">
+                     <a href="user_profile.html" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+                        <div id="dropdownProfileImage" class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4 flex-shrink-0"></div>
+                        <div>
+                            <p id="dropdownUsername" class="font-semibold text-gray-800 break-all">Loading...</p>
+                            <p class="text-sm text-gray-500">View your profile</p>
+                        </div>
+                    </a>
+                    <hr class="my-2">
+                    <a href="dashboard.html" class="dropdown-item">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="performance_analytics.html" class="dropdown-item">
+                        <img src="images/performance-analysis.png" alt="Performance Analytics" class="h-6 w-6 mr-3">
+                        <span>Performance Analytics</span>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg xmlns="http://www.w.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <span>Settings</span>
+                    </a>
+                    <a href="store.html" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        <span>Store</span>
+                    </a>
+                    <hr class="my-2">
+                    <button id="logoutButton" class="dropdown-item w-full text-left">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                        <span>Log Out</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+    <!-- Main Content -->
+    <main class="container mx-auto max-w-4xl px-4 py-8">
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <div id="profileTitleContainer" class="flex items-center justify-center gap-x-3 mb-8">
+    <h1 class="text-3xl font-bold text-gray-800">My Profile</h1>
+    </div>
+
+            <!-- Profile Picture Upload Section -->
+            <div class="flex flex-col items-center mb-10">
+                <div id="profileImageContainer" class="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden mb-4">
+                    <!-- Image or Icon will be loaded here -->
+                </div>
+                <input type="file" id="photoUpload" class="hidden" accept="image/*">
+                <button id="changePhotoButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg text-sm">
+                    Change Photo
+                </button>
+                <p id="uploadStatus" class="text-sm text-gray-500 mt-2"></p>
+            </div>
+
+            <!-- Profile Details Section -->
+            <div class="space-y-4 mb-10">
+                <div class="flex items-center">
+                    <span class="font-semibold text-gray-600 w-32">Email:</span>
+                    <span id="userEmail" class="text-gray-800">loading...</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="font-semibold text-gray-600 w-32">Specialty:</span>
+                    <span id="userSpecialty" class="text-gray-800">loading...</span>
+                </div>
+                 <div class="flex items-center">
+                    <span class="font-semibold text-gray-600 w-32">Member Since:</span>
+                    <span id="memberSince" class="text-gray-800">loading...</span>
+                </div>
+            </div>
+
+            <!-- Overall Stats Section -->
+            <div class="border-t pt-8">
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Overall Statistics</h2>
+                <div id="statsContainer" class="hidden grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                    <!-- Stats will be loaded here by JavaScript -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm font-semibold text-gray-500 uppercase">Quizzes Completed</p>
+                        <p id="quizzesCompleted" class="text-3xl font-bold text-purple-600">0</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm font-semibold text-gray-500 uppercase">Total Questions</p>
+                        <p id="totalQuestionsAnswered" class="text-3xl font-bold text-purple-600">0</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm font-semibold text-gray-500 uppercase">Average Score</p>
+                        <p id="averageScore" class="text-3xl font-bold text-purple-600">0%</p>
+                    </div>
+                </div>
+                 <div id="loadingStats" class="text-center text-gray-500 py-8">Loading stats...</div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+      import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+let currentUser = null; // <-- ADD THIS LINE HERE
+
+// Add these new variables
+const profileDropdownButton = document.getElementById('profileDropdownButton');
+const profileDropdownMenu = document.getElementById('profileDropdownMenu');
+const dropdownProfileImage = document.getElementById('dropdownProfileImage');
+const dropdownUsername = document.getElementById('dropdownUsername');
+
+// Add this logic to control the dropdown
+profileDropdownButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    profileDropdownMenu.classList.toggle('hidden');
+});
+document.addEventListener('click', () => {
+    if (!profileDropdownMenu.classList.contains('hidden')) {
+        profileDropdownMenu.classList.add('hidden');
+    }
+});
+
+        // --- INACTIVITY TIMER LOGIC ---
+        const INACTIVITY_TIMEOUT = 30*60 * 1000; // 5 minutes for testing
+        let inactivityTimer;
+
+        function resetInactivityTimer() {
+            if (inactivityTimer) clearTimeout(inactivityTimer);
+            
+            inactivityTimer = setTimeout(() => {
+                // This page doesn't have a dedicated message box, so we can create one or use a simple alert.
+                // For consistency, we'll just log out directly.
+                handleLogout();
+            }, INACTIVITY_TIMEOUT);
+        }
+
+        function setupActivityListeners() {
+            // Reset the timer on any of these user activities
+            ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+                document.addEventListener(event, resetInactivityTimer, true);
+            });
+            // Initial start of the timer
+            resetInactivityTimer();
+        }
+
+        // --- DOM Elements ---
+        const dom = {
+            profileImageContainer: document.getElementById('profileImageContainer'),
+            photoUpload: document.getElementById('photoUpload'),
+            changePhotoButton: document.getElementById('changePhotoButton'),
+            uploadStatus: document.getElementById('uploadStatus'),
+            userEmail: document.getElementById('userEmail'),
+            userSpecialty: document.getElementById('userSpecialty'),
+            memberSince: document.getElementById('memberSince'),
+            statsContainer: document.getElementById('statsContainer'),
+            loadingStats: document.getElementById('loadingStats'),
+            quizzesCompleted: document.getElementById('quizzesCompleted'),
+            totalQuestionsAnswered: document.getElementById('totalQuestionsAnswered'),
+            averageScore: document.getElementById('averageScore'),
+            logoutButton: document.getElementById('logoutButton'),
+        };
+        
+        // --- Helper Functions ---
+
+        /**
+         * Updates the profile icon in the shared header component.
+         * @param {string|null} photoURL - The URL of the user's profile photo.
+         */
+function updateUserProfileIcon(user, userData) {
+    const photoURL = user.user_metadata.photoURL;
+    const username = user.user_metadata.username || user.email;
+
+    const profileHTML = photoURL
+        ? `<img src="${photoURL}" alt="My Profile" class="w-full h-full object-cover">`
+        : `<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-gray-500 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>`;
+
+    profileDropdownButton.innerHTML = profileHTML;
+    dropdownProfileImage.innerHTML = profileHTML;
+
+    // Conditionally add the premium badge to the dropdown
+    let usernameHTML = `<p id="dropdownUsername" class="font-semibold text-gray-800 break-all">${username}</p>`;
+    if (userData && userData.account_type === 'premium') {
+        usernameHTML = `
+            <div class="flex items-center gap-x-2">
+                <p id="dropdownUsername" class="font-semibold text-gray-800 break-all">${username}</p>
+                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+                  <img src="./images/general/crown.png" alt="Premium" class="w-3 h-3 object-contain">
+                    Premium
+                </span>
+            </div>`;
+    }
+    
+    // Replace the existing username element's container with the new HTML
+    const usernameContainer = document.getElementById('dropdownUsername').parentNode;
+    usernameContainer.innerHTML = usernameHTML + '<p class="text-sm text-gray-500">View your profile</p>';
+}
+
+        /**
+         * Handles the complete logout process including session cleanup and redirection.
+         */
+      // ADD THIS NEW SUPABASE FUNCTION
+async function handleLogout() {
+    try {
+        // Use the globally available 'currentUser' object
+        if (currentUser) {
+            // Delete the session from our custom 'active_sessions' table
+            await supabase.from('active_sessions').delete().eq('user_id', currentUser.id);
+        }
+        // Sign out from Supabase's main auth system
+        await supabase.auth.signOut();
+    } catch (error) {
+        console.error("Error during logout:", error);
+    } finally {
+        // Clear all storage and redirect to the login page
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href = 'index.html';
+    }
+}
+
+        /**
+         * Validates the user's session against the Firestore record. Forces logout if invalid.
+         * @param {object} user - The Firebase auth user object.
+         * @returns {boolean} - True if the session is valid, false otherwise.
+         */
+     // --- In dashboard.html's <script type="module"> block ---
+
+async function validateAndEnforceSession(user) {
+    // Get the specific session ID the browser is using
+    const sessionId = localStorage.getItem('sessionId');
+
+    if (!sessionId) {
+        await handleLogout();
+        return false;
+    }
+
+    // Query for that ONE specific session record
+    const { data: sessionData, error } = await supabase
+        .from('active_sessions')
+        .select('expires_at')
+        .eq('user_id', user.id)
+        .eq('session_id', sessionId)
+        .single(); // Expect exactly one result
+
+    if (error || !sessionData) {
+        // If no session was found matching the ID, log out
+        await handleLogout();
+        return false;
+    }
+
+    // Check if the session is expired
+    const now = new Date();
+    const expiryDate = new Date(sessionData.expires_at);
+
+    if (now > expiryDate) {
+        await handleLogout();
+        return false;
+    }
+
+    // If we reach here, the session is valid
+    return true;
+}
+
+        /**
+         * Displays the user's profile photo or a default icon.
+         * @param {string|null} photoURL - The URL of the user's profile photo.
+         */
+        function displayProfilePhoto(photoURL) {
+             if (photoURL) {
+                dom.profileImageContainer.innerHTML = `<img src="${photoURL}" alt="Profile Photo" class="w-full h-full object-cover">`;
+            } else {
+                dom.profileImageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>`;
+            }
+        }
+
+        /**
+         * Uploads a new profile photo to Firebase Storage and updates the user's profile.
+         * @param {File} file - The image file to upload.
+         * @param {object} user - The Firebase auth user object.
+         */
+      async function uploadProfilePhoto(file, user) {
+    if (!file || !user) return;
+    dom.uploadStatus.textContent = 'Uploading...';
+    
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${user.id}.${fileExt}`;
+    const filePath = `public/${fileName}`;
+
+    try {
+        // Upload the file to Supabase Storage
+        const { error: uploadError } = await supabase.storage
+            .from('profile_pictures') // This should be the name of your bucket
+            .upload(filePath, file, { upsert: true }); // upsert:true overwrites existing file
+        
+        if (uploadError) throw uploadError;
+
+        // Get the public URL of the uploaded file
+        const { data: urlData } = supabase.storage
+            .from('profile_pictures')
+            .getPublicUrl(filePath);
+        
+        const publicURL = urlData.publicUrl;
+
+        // Update the user's metadata in Supabase Auth to store the new photo URL
+        const { error: updateUserError } = await supabase.auth.updateUser({
+            data: { photoURL: publicURL }
+        });
+
+        if (updateUserError) throw updateUserError;
+        
+        displayProfilePhoto(publicURL);
+        updateUserProfileIcon(publicURL);
+        dom.uploadStatus.textContent = 'Photo updated successfully!';
+
+    } catch (error) {
+        console.error("Error uploading photo:", error);
+        dom.uploadStatus.textContent = 'Upload failed. Please try again.';
+    }
+}
+
+        /**
+         * Loads and displays the user's profile information and quiz statistics.
+         * @param {object} user - The Firebase auth user object.
+         */
+      async function loadUserProfile(user) {
+    displayProfilePhoto(user.user_metadata.photoURL); // Get photo from user metadata
+    try {
+        const { data: userData, error: userError } = await supabase
+            .from('users')
+            .select('speciality, account_type') // <-- Fetch account_type
+            .eq('id', user.id)
+            .single();
+        if (userError) throw userError;
+
+        // Conditionally add the premium badge to the main title
+        if (userData.account_type === 'premium') {
+            const profileTitleContainer = document.getElementById('profileTitleContainer');
+            const premiumBadge = document.createElement('span');
+            premiumBadge.className = 'bg-yellow-100 text-yellow-800 text-sm font-semibold px-2.5 py-1 rounded-full flex items-center gap-1';
+           premiumBadge.innerHTML = `<img src="./images/general/crown.png" alt="Premium" class="w-4 h-4 object-contain"> Premium`;
+            profileTitleContainer.appendChild(premiumBadge);
+        }
+
+        dom.userEmail.textContent = user.email;
+        dom.userSpecialty.textContent = userData.speciality || 'Not specified';
+        const creationTime = new Date(user.created_at);
+        dom.memberSince.textContent = creationTime.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+     // Call the new RPC function to get the stats directly from the database
+        const { data: stats, error: statsError } = await supabase.rpc('get_user_stats');
+
+        if (statsError) throw statsError;
+
+        // This improved line checks if data was returned and provides a default object if not.
+        // This prevents errors if a new user has no stats yet.
+        const userStats = (stats && stats.length > 0)
+            ? stats[0]
+            : { quizzes_completed: 0, total_questions_answered: 0, average_score: 0 };
+
+        // Directly update the UI with the pre-calculated values
+        dom.quizzesCompleted.textContent = userStats.quizzes_completed ?? 0;
+        dom.totalQuestionsAnswered.textContent = userStats.total_questions_answered ?? 0;
+        dom.averageScore.textContent = `${Number(userStats.average_score ?? 0).toFixed(0)}%`;
+
+        dom.loadingStats.classList.add('hidden');
+        dom.statsContainer.classList.remove('hidden');
+
+    } catch (error) {
+        console.error("Error loading user profile:", error);
+        dom.loadingStats.textContent = "Could not load profile data.";
+    }
+}
+// --- In dashboard.html, replace your existing DOMContentLoaded listener ---
+
+// --- In user_profile.html, replace the old listener with this ---
+// In user_profile.html
+document.addEventListener('DOMContentLoaded', async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (session) {
+        const isSessionValid = await validateAndEnforceSession(session.user);
+
+        if (isSessionValid) {
+            currentUser = session.user;
+
+            // Fetch user data from 'users' table to check account_type
+            const { data: userData } = await supabase.from('users').select('account_type').eq('id', session.user.id).single();
+            
+            // Pass both the auth user and the user data to the functions
+            updateUserProfileIcon(session.user, userData);
+            await loadUserProfile(session.user);
+            
+            setupActivityListeners();
+        }
+        
+    } else {
+        // No user is signed in, redirect to login.
+        window.location.href = 'index.html';
+    }
+});
+
+        // --- Event Listeners ---
+        dom.logoutButton.addEventListener('click', handleLogout);
+        // --- START: ADD THIS ENTIRE BLOCK ---
+
+        // This makes the "Change Photo" button open the file window.
+        dom.changePhotoButton.addEventListener('click', () => {
+            dom.photoUpload.click(); // This triggers the hidden file input.
+        });
+
+        // This listens for when you've selected a file.
+        dom.photoUpload.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            // If a file was chosen, call the function to upload it.
+            if (file && currentUser) {
+                uploadProfilePhoto(file, currentUser);
+            }
+        });
+
+        // --- END: ADD THIS ENTIRE BLOCK ---
+    </script>
+</body>
+</html>

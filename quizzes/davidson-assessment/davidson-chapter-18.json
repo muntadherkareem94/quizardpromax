@@ -1,0 +1,765 @@
+{
+  "title": "Endocrinology - Chapter 18",
+  "questions": [
+    {
+      "question": "A 22 year old woman presents with a few weeks history of malaise and weight loss. On clinical examination she has palmar hyperpigmentation. With which investigation should she be followed up?",
+      "options": [
+        "A. Dexamethasone suppression test",
+        "B. Magnetic resonance imaging (MRI) abdomen",
+        "C. MRI pituitary",
+        "D. Synacthen test",
+        "E. Thyroid function tests"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Primary hypoadrenalism results in increased synthesis and secretion of adrenocorticotrophic hormone (ACTH) from the pituitary gland. Due to the co-secretion of melanocyte-stimulating hormone as part of the larger prohormone (pro-opiomelanocortin; POMC), hyperpigmentation occurs, classically of the palmar creases. Primary adrenal failure (Addison's disease) is usually autoimmune in aetiology and this can be confirmed with the detection of anti-adrenal autoantibodies. If diagnosed, potential coexisting autoimmune conditions should be looked for. Alternative causes of Addison's disease include tuberculous adrenalitis, which should be strongly considered in endemic areas and when autoantibodies are negative. Abdominal imaging in such cases may reveal calcification of the adrenal glands. Secondary hypoadrenalism due to pituitary pathology, with resultant low ACTH levels, is associated with skin pallor. The dexamethasone suppression test forms part of the workup for suspected Cushing's syndrome. Imaging should not be done until the biochemical diagnosis is made.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 52 year old South Asian man is found to have thickened pigmented skin at the back of his neck and in the axillae. His body mass index (BMI) is elevated at 38kg/m2. Acanthosis nigricans in this setting is due to which of the following pathology?",
+      "options": [
+        "A. Axillary perspiration and friction",
+        "B. Hyperinsulinaemia",
+        "C. Increased fibroblast growth factor activation",
+        "D. Increased growth hormone (GH)",
+        "E. Increased transforming growth factor-alpha (TGF-α)"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "High concentrations of insulin (hyperinsulinaemia) exert proliferative effects through the insulin-like growth factor-1 (IGF-1) receptors, stimulating epidermal keratinocyte and dermal fibroblast proliferation in the axillae.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 28 year old woman presents with secondary amenorrhoea and galactorrhoea. An MRI scan of her brain is likely to show a lesion in which area?",
+      "options": [
+        "A. Anterior pituitary",
+        "B. Hypothalamus",
+        "C. Lactiferous ducts",
+        "D. Pars intermedia",
+        "E. Posterior pituitary"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Hyperprolactinaemia (often due to a microprolactinoma) is a common cause of secondary amenorrhoea in this age group. Prolactin is synthesised by lactotrophs in the anterior pituitary gland. Synthesis and release of prolactin is under the tonic inhibition of dopamine, which is released from the hypothalamus and passes down capillaries surrounding the pituitary stalk to the anterior pituitary.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 38 year old man is referred with a history of polydipsia and polyuria passing over 3 L of urine in 24 hours. He undergoes a water deprivation test, which shows the following results:\n\nTime/result\nPlasma sodium (mmol/L)\nPlasma osmolality (mOsm/kg)\nGlucose (mmol/L)\nGlucose (mg/dL)\nUrine osmolality (mOsm/kg)\nUrine volume (L)\n0 hours\n144\n303\n5.1\n92\n223\n0.04\n2 hours\n144\n301\n5.2\n94\n346\n0.08\nDesmopressin (DDAVP) 2 µg intramuscular\n1 hour post-DDAVP\n138\n292\n4.8\n86\n528\n0.02\n\nWhat is the underlying cause?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch18/q/18.4.png",
+      "options": [
+        "A. Cranial diabetes insipidus",
+        "B. Diabetes mellitus",
+        "C. Nephrogenic diabetes insipidus",
+        "D. Normal response to water deprivation",
+        "E. Psychogenic polydipsia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Following overnight water deprivation, you would expect urine to be more concentrated, with an osmolality of >600~mosm/ko, particularly given that the plasma sodium level is at the upper end of the normal range and plasma osmolality is >300~mOsm/kg. This therefore confirms diabetes insipidus. The concentrating ability of the kidney is improved following the administration of desmopressin (DDAVP), providing evidence of a central cranial cause. In nephrogenic diabetes insipidus, urine osmolality would show little improvement following administration of DDAVP.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Where does arginine vasopressin (AVP) exert its maximum effect in the kidney?",
+      "options": [
+        "A. Collecting ducts",
+        "B. Distal convoluted tubule",
+        "C. Glomerulus",
+        "D. Loop of Henle",
+        "E. Proximal tubule"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Arginine vasopressin acts via V2 receptors in the renal collecting ducts to cause the insertion of aquaporin-2 that allows increased water permeability across the collecting ducts with subsequent reabsorption of water, leading to the production of more concentrated urine.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 21 year old student is found to have hyperthyroidism. She is counselled on treatment options including radioactive iodine and antithyroid medications. Carbimazole acts on which part of the thyroid hormone synthesis pathway?",
+      "options": [
+        "A. Cleavage of thyroglobulin by proteolysis",
+        "B. Coupling of monoiodotyrosine (MIT) and diiodotyrosine (DIT) forming triiodothyronine (T3) and thyroxine (T4)",
+        "C. Dehalogenation of iodinated tyrosine to recycle iodide",
+        "D. Organification of iodide by thyroid peroxidase incorporating tyrosine forming MIT and DIT",
+        "E. Thyroglobulin synthesis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Iodide is actively transported into follicular cells by a sodium/iodide transporter (Fig. 18.6). Pendrin is found at the apical membrane, where it transports iodide into colloid. A defect in this transporter underlies Pendred's syndrome (congenital hypothyroidism and deafness). Thyroid peroxidase catalyses the conversion of iodide ions into organic iodine and couples it with tyrosine to form MIT and DIT. This later step is inhibited by thionamides such as carbimazole. DIT and MIT combine forming T4 and T3. The organification of iodide and coupling of iodinated tyrosine molecules occurs on the surface of thyroglobulin. This is subsequently cleaved, releasing thyroid hormone. Uncoupled iodinated tyrosine can be dehalogenated, allowing recycling of the iodine. The majority of T4 circulates bound to thyroxine-binding globulin (TBG).",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch18/a/18.6.png",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 56 year old woman is reviewed in clinic. She was diagnosed with hypothyroidism 15 years previously and has been on levothyroxine 100 µg once daily ever since. Recent thyroid function tests have shown thyrotrophin (thyroid-stimulating hormone; TSH)8.2~mlU/L and free thyroxine (free T4) of 15.6 pmol/L (1.21~ng/dL). TSH secretion by the hypothalamus is increased by which of the following?",
+      "options": [
+        "A. A decrease in thyroxine-binding globulin levels",
+        "B. A large increase in free T4 beyond the normal reference range",
+        "C. During early hours of the morning",
+        "D. A fall in free T4 of 5 pmol/L ((0.39~ng/dL)",
+        "E. An increase in circulating free T3"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Through a classical negative feedback loop, TSH secretion will increase with a reduction in circulating free T4 or T3. TSH synthesis follows a circadian rhythm with a peak at 0100 hrs and nadir at 1100 hrs. Free T4 circulates at concentrations around three times that of free T3 although T3 is a more potent activator of thyroid hormone receptors. Both play a role in feeding back to the hypothalamus. Small changes in an individual's free T4 will result in altered TSH secretion.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 23 year old asymptomatic woman attends her family physician for thyroid function testing as her mother has recently been commenced on levothyroxine. Thyroid function tests (TFTs) show TSH~6~mIU/L, and free T4 of 12.4~pmol/L ((0.96~ng/dL). Her serum thyroid peroxidase antibodies are strongly positive. What is the most appropriate management plan?",
+      "options": [
+        "A. Arrange a scintigraphy scan",
+        "B. Check thyroglobulin antibodies",
+        "C. Reassure and discharge",
+        "D. Repeat TFTs in 4-6 months",
+        "E. Start levothyroxine and recheck TFTs in 6 weeks"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This woman has subclinical hypothyroidism. There is no benefit in checking thyroglobulin antibodies as it does not change her diagnosis or management. With positive thyroid peroxidase antibodies she has a higher risk of progression to overt thyroid failure. A trial of thyroxine replacement would be advocated if her TSH was >10 mIU/L or she developed symptoms suggestive of progression to clinical disease. Reviewing her biochemistry and symptomatology is therefore necessary.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 26 year old woman presents 12 weeks post-partum with symptoms of weight loss, palpitations and troublesome tremor. Her thyroid function is checked, revealing free T4 24.2~pmol/L ((1.88~ng/dL) free T3 7.1~pmol/L ((0.46~ng/dL) and TSH<0.01~mlU/L. TSH receptor antibody (TRAb) levels are not elevated. What is the most appropriate management?",
+      "options": [
+        "A. Commence propranolol",
+        "B. Consent for radioactive iodine",
+        "C. Perform ultrasound scan",
+        "D. Screen the infant for hyperthyroidism",
+        "E. Treat with selenium"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This picture is in keeping with post-partum thyroiditis. This typically presents 4-8 months post-partum. Thyroid scintigraphy will show negligible uptake and can be helpful in differentiating against Graves' disease. Antithyroid drugs are ineffective. Symptomatic management with a non-selective β-adrenoceptor antagonist (β-blocker) is the most appropriate treatment at this stage. She is likely to develop hypothyroidism, and close monitoring of her thyroid function to allow identification and early treatment is advocated. Oral selenium is used for the treatment of mild to moderate dysthyroid eye disease and is not appropriate here.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 40 year old male smoker presents with weight loss and blood tests suggesting biochemical primary hyperthyroidism. Which of the following features would suggest that the hyperthyroidism is due to Graves' disease?",
+      "options": [
+        "A. Eyelid retraction",
+        "B. Gynaecomastia",
+        "C. Lack of orbitopathy",
+        "D. Male gender",
+        "E. Palpable smooth goitre with bruit"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Exophthalmos but not lid retraction is specific to Graves' disease. Lid retraction is a consequence of adrenergic stimulation of the levator palpebrae muscles and may be seen in any form of thyrotoxicosis. Thyrotoxicosis can result in an increase in sex hormone-binding globulin (SHBG), altering the ratio of free testosterone to oestradiol and, as such, result in gynaecomastia. Females have a greater susceptibility to autoimmune disease in general, including Graves' disease. Smoking is a significant risk factor for the development of eye disease. The presence of a goitre in the setting of clinical and biochemical hyperthydroidism is common with Graves' disease but not universal or diagnostic. The presence of TRAbs or a classical picture of diffuse increased uptake on a scintigraphy scan are diagnostic.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 74 year old woman is admitted to hospital with a 3-month history of lethargy, weight gain and increasing shortness of breath. Hypothyroidism can result in which of the following cardiovascular effects?",
+      "options": [
+        "A. Diastolic hypertension",
+        "B. High cardiac output",
+        "C. Low cholesterol",
+        "D. Reduced peripheral vascular resistance",
+        "E. Systolic hypertension"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Hypothyroidism can result in impaired left ventricular contractility reducing cardiac output. Reduced circulating thyroid hormone levels can additionally cause reduced ventricular diastolic relaxation, increasing diastolic pressure with subsequent increase in vascular smooth muscle contractility and peripheral vascular resistance. Through alteration in cholesterol synthesis and metabolism, hypothyroidism results in hypercholesterolaemia.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 34 year old woman presents to her family physician with weight loss, palpitations and amenorrhoea. Thyroid function tests confirm thyrotoxicosis with free T430.2~pmol/L (2.35~ng/dL) and TSH<0.01~mlU/L TRAb levels are not elevated. A thyroid scintigraphy scan is performed revealing the following pattern of uptake. What is the most likely diagnosis?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch18/q/18.12.png",
+      "options": [
+        "A. Exogenous thyroxine intake",
+        "B. Graves' disease",
+        "C. Iodine deficiency",
+        "D. Toxic multinodular goitre",
+        "E. Transient thyroiditis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Exogenous thyroxine and transient thyroiditis will result in low uptake of 99mtechnetium on scanning. Iodine deficiency can cause goitre and raised TSH, but thyrotoxicosis would only potentially occur following iodine supplementation. Although present in 80-95% of Graves' disease, TRAbs are not universal in all cases, necessitating additional investigation to confirm the diagnosis. A thyroid scintigraphy scan reveals uniform increased uptake in the setting of Graves' disease.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 28 year old man presents to his family physician with a 6-month history of neck swelling. On examination he has a 2*3 cm palpable lump on the left side of his neck, which moves with swallowing. He has no associated clinical symptoms. He undergoes a scintigraphy scan that reveals the following image. What is the most likely underlying diagnosis?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch18/q/18.13.png",
+      "options": [
+        "A. Hashimoto's thyroiditis",
+        "B. Thyroglossal duct cyst",
+        "C. Thyroid carcinoma",
+        "D. Toxic adenoma",
+        "E. Toxic multinodular goitre"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is the classic image of a toxic adenoma with increased uptake in the adenoma and suppressed uptake in the remaining gland. The presence of multiple nodules with high uptake of 99mtechnetium would be consistent with toxic multinodular goitre. ‘Cold nodules' on scintigraphy have a much greater likelihood of malignancy. Thyroglossal duct cysts are typically located in the midline and are cold, whilst thyroiditis displays widespread reduced uptake of tracer.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 28 year old man is referred to the endocrinology clinic with a relapse of Graves' disease. Thyroid function tests reveal free T4 28.4 pmol/L (2.21 ng/dL), TSH <0.01~mlU/L and TRAb 7.6iU/L He is considering radioactive iodine (^{131}l) treatment. Which of the following statements is TRUE about this treatment?",
+      "options": [
+        "A. {}^{131} is given as an intravenous infusion",
+        "B. He has a 10% risk of developing hypothyroidism in the first 12 months",
+        "C. He is likely to lose weight following 131",
+        "D. He is safe to father a child within 6 months of treatment",
+        "E. It may cause deterioration of active Graves' ophthalmopathy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Radioactive iodine is administered orally as a capsule or liquid. The doses used for the treatment of Graves' disease are much smaller than for the follow-up management of thyroid cancer at 400-600MBq (approximately 10-15 mCi). There is a significant risk of hypothyroidism when using 131I for the treatment of Graves' disease; this is approximately 40% after 1 year and 80% after 15 years. Failure to adjust energy consumption to the reduced metabolic rate associated with correction of hyperthyroidism may precipitate weight gain. With a potential adverse effect on developing sperm, male individuals are advised to refrain from conceiving for a minimum of 6 months post-treatment. Radioactive iodine can exacerbate active Graves' ophthalmopathy and so it is best avoided in this situation if alternative treatment options carry less risk. High-dose glucocorticoids can be used to reduce the risk of potentiating eye disease.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 23 year old white woman presents with a 6-month history of increasing neck swelling and discomfort on swallowing. On examination she has a smooth diffuse symmetrical goitre. Thyroid function tests are normal and thyroid antibody levels are undetectable. Ultrasound shows a diffuse and symmetrical echogenic pattern, with no significant nodularity. Which of the follow statements is correct in this scenario?",
+      "options": [
+        "A. Associated lymphadenopathy is normal",
+        "B. Radioactive iodine treatment should be used to shrink the gland",
+        "C. She is likely to experience symptoms of lethargy and weight gain",
+        "D. The goitre may enlarge during pregnancy",
+        "E. There is a high risk of malignancy"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Simple diffuse goitre is a benign condition with hypertrophy of thyroid tissue. Thyroid function is normal and it will therefore not shrink significantly with radioactive iodine treatment. Surgery is a better option if there is concern about cosmetic appearance. It may enlarge in response to alterations in circulating oestrogens such as during pregnancy. The goitre usually regresses over time but may develop into a multinodular goitre with autonomous function. In areas of endemic iodine deficiency, iodine supplementation may cause some regression of the goitre.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 53 year old woman whose thyroid function tests have been stable and within the normal range on 200 µg of levothyroxine for the last 6 months is found to have a TSH <0.01~mlU/L You ask her about her current medications including those bought over the counter. Which of the following is associated with increased bioavailability of levothyroxine?",
+      "options": [
+        "A. Calcium",
+        "B. Colestyramine",
+        "C. Iron",
+        "D. Phenytoin",
+        "E. Vitamin C"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Intestinal absorption of levothyroxine is impaired by co-ingestion of iron, colestyramine and calcium supplements, but enhanced by vitamin C. Increased clearance occurs with a variety of medications, including antiepileptic medications and rifampicin. Clearance is reduced with increasing age, potentially necessitating smaller doses for replacement.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 25 year old woman was commenced on levothyroxine 3 weeks ago for primary hypothyroidism. She is concerned about ongoing symptoms of dry skin and dry hair. She has been otherwise well with nil else to report on systemic enquiry. What is the most appropriate management plan?",
+      "options": [
+        "A. Add in liothyronine",
+        "B. Check her anti-tissue transglutaminase antibody levels",
+        "C. Check her TRAbs",
+        "D. Increase levothyroxine dose now",
+        "E. Reassure and organise for repeat thyroid function test in a further 3 weeks"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "After commencement of levothyroxine for hypothyroidism, symptoms of dry skin and hair can take 3-6 months to improve. Reduction in periorbital oedema occurs more rapidly. The dose of levothyroxine should be adjusted to keep TSH within the reference range, with serum T4 in the upper reference range. Treatment with T3 is controversial, but may be considered in selected cases. The half-life of levothyroxine is around 7 days and it therefore takes around 6 weeks following commencement of levothyroxine to see resolution of thyroid function tests. There is no indication to check the patient's TRAbs. Malabsorption can result in under-treatment of hypothyroidism, although there is nothing in this clinical scenario to suggest coeliac disease.",
+      "questionNumber": 17
+    },
+    {
+      "question": "Thyroid function tests are performed on a patient who has been on levothyroxine replacement for several years. The following results are observed. TSH 8.2~mlU/L, free T4 21.6~pmol/L (1.68~ng/dL) and free T3 4.2~pmol/L (0.27~ng/dL. What is the most likely underlying diagnosis?",
+      "options": [
+        "A. Non-thyroidal illness",
+        "B. Non-functioning pituitary tumour",
+        "C. Thyroiditis",
+        "D. Treatment with amiodarone",
+        "E. Variable treatment adherence"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Central hypothyroidism results in both low TSH and T4. Amiodarone treatment usually causes a mild elevation in free T4, with free T3 and TSH both at the lower end of the reference range. Thyroiditis typically causes an initial thyrotoxic phase followed on by a period of hypothyroidism, which may resolve or persist. Non-thyroidal illness results in reduced peripheral conversion of T4 to T3 with reduced secretion of TSH. The differential diagnosis for this pattern would include a TSH-secreting pituitary tumour or thyroid hormone resistance, but in this scenario it is most likely that the patient has not been reliably taking levothyroxine for several weeks (causing the TSH to rise) and then in the few days prior to the blood test has taken an increased dose of levothyroxine (resulting in the borderline elevated free T4).",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 32 year old woman attends her family physician with symptoms of tremor and vague anterior neck discomfort. Initial blood tests reveal a free T414~pmol/L (1.09~ng/dL) and TSH 0.12~mIU/L. Subsequent TFTs 4 weeks later show TSH 89.8~mlU/L and free T4<5~pmol/L(0.39~ng/dL). Scintigraphy scan shows the following: What is the most likely underlying cause?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch18/q/18.19.png",
+      "options": [
+        "A. Graves' disease",
+        "B. Primary hypothyroidism",
+        "C. Subacute thyroiditis",
+        "D. Toxic adenoma",
+        "E. Toxic multinodular goitre"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In subacute thyroiditis, inflammation results in the release of colloid and stored thyroid hormone, resulting in thyrotoxicosis. Damage to follicular cells impairs retention of iodine, resulting in subsequent hypothyroidism and produces the classic picture of a ‘cold' image on scintigraphy. Acute thyroiditis usually results from bacterial infection such as Staphylococcus aureus and Streptococcus haemolyticus, whilst subacute thyroiditis often follows a viral illness. Management of hypothyroidism resulting from thyroiditis may involve at least temporary replacement with levothyroxine and close monitoring of thyroid function tests. After 4 months of TSH being within the reference range, reduction in levothyroxine dose to 50 µg may be tried with further TSH monitoring after 6 weeks. If TSH remains within the normal range, a trial of levothyroxine can be attempted, with repeat thyroid function testing after a further 6 weeks.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 75 year old man with a past medical history of ischaemic heart disease is admitted to hospital following a fall at home. He becomes increasingly delirious on the ward. As part of his work-up, thyroid function is checked showing TSH 0.2~mlU/L free T4 26.2~pmol/L (2.04~ng/dL) and free T3 3.3~pmol/L (0.21~ng/dL) What is the most appropriate management plan?",
+      "options": [
+        "A. Check for TRAbs",
+        "B. Commence carbimazole treatment",
+        "C. Consent for radioactive iodine treatment",
+        "D. Discontinue cardiac medications",
+        "E. Repeat thyroid function tests when the patient has fully recovered"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "These results are in keeping with non-thyroidal illness or ‘sick euthyroidism'. This occurs due to decreased peripheral conversion of T4 to T3 as well as altered circulating levels and binding of thyroid hormone to thyroxine-binding globulin, with resultant altered feedback on the hypothalamic-pituitary-thyroid axis. During recovery from the systemic illness, the TSH may increase to levels associated with hypothyroidism. Over time these will, however, normalise; hence, unless there is clinical evidence of concomitant thyroidal disease, repeated measurements and monitoring is advised.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 72 year old man was commenced on amiodarone for atrial fibrillation 6 months previously. He is referred with a history of weight loss, tremor and sweating. Blood tests reveal TSH<0.01~mlU/L, free T 26.1 pmol/L (2.03~ng/dL) and free T3 4.1~pmol/L (0.27 ng/dL). What is a scintigraphy scan likely to show?",
+      "options": [
+        "A. Diffuse increased uptake",
+        "B. Diffuse low uptake",
+        "C. Multinodular goitre",
+        "D. Normal uptake",
+        "E. Solidary toxic nodule"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Given the history and pattern of thyroid function tests, this is likely to be amiodarone-induced thyrotoxicosis. Amiodarone has a structure analogous to that of thyroxine. Standard daily dosing of 200 mg daily contains around 600 times the recommended daily requirement of iodine. Amiodarone additionally has a direct cytotoxic effect, inhibiting the conversion of thyroxine (T4) to thyronine (T3). For these reasons, thyroxine production from the thyroid gland is suppressed, resulting in globally reduced uptake on a scintigraphy scan.",
+      "questionNumber": 21
+    },
+    {
+      "question": "What is the correct treatment for type II thyrotoxicosis secondary to amiodarone?",
+      "options": [
+        "A. Carbimazole",
+        "B. Discontinue amiodarone only and allow resolution of thyroid function",
+        "C. Glucocorticoids",
+        "D. Levothyroxine",
+        "E. Radioactive iodine"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "It can be difficult to distinguish between type I and type II amiodarone-induced thyrotoxicosis. In type I, excess iodine induces increased thyroid hormone synthesis and is usually responsive to antithyroid medication. In type II, the picture is more of a thyroiditis due to cytotoxic effect of amiodarone and is usually responsive to glucocorticoid treatment. The excess iodine provided by amiodarone renders it unresponsive to treatment with radioactive iodine. Amiodarone has a long half-life of 50-60 days and interim treatment is therefore needed, even if amiodarone is withdrawn, as effects may persist for 6-9 months.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 62 year old woman is referred with a 3-month history of diffuse swelling in her neck and weight loss. On palpation she has a large, firm nodular goitre and non-tender cervical lymphadenopathy. She complains of hoarseness of her voice. What is her likely diagnosis?",
+      "options": [
+        "A. Anaplastic carcinoma",
+        "B. Follicular cell carcinoma",
+        "C. Medullary carcinoma",
+        "D. Papillary cell carcinoma",
+        "E. Toxic adenoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Anaplastic thyroid carcinoma is rapidly progressive with a median survival of only 7 months and usually presents in those over 60 years of age. It may cause hoarseness due to recurrent laryngeal nerve compression and stridor due to tracheal compression. There is no effective treatment, although surgery and radiotherapy may be considered in some individuals. Follicular and papillary carcinoma are much more indolent, with a 10-year survival of around 95% and the majority are cured with surgery, with or without radio-iodine therapy. These usually present as a single focus with or without nodal involvement. Distant metastases, greater age at presentation, male sex and certain histological subtypes have a worse prognosis. The differential diagnosis in this case is lymphoma.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 34 year old woman is reviewed in the thyroid cancer clinic following total thyroidectomy and neck dissection with lymph node clearance for a confirmed (pT4, N1, MO) papillary thyroid cancer. Follow-up management post-surgery should include which of the following?",
+      "options": [
+        "A. Levothyroxine replacement aiming to keep TSH within the normal range",
+        "B. Radioactive iodine treatment when TSH is fully suppressed",
+        "C. Regular computed tomography (CT) scans of the neck",
+        "D. Screening of family members for thyroid cancer",
+        "E. Thyroglobulin measurement at regular intervals"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "With more extensive disease, levothyroxine replacement is provided with an aim of suppressing TSH, preventing stimulation of any potential residual tissue. Studies have shown equivalent efficacy for treatment with 1100MBq and 3700MBq (approximately 30 and 100 mCi, respectively) radioactive iodine post-thyroidectomy for relatively low-risk thyroid carcinomas, but with extensive disease the higher dose should be used. Radioactive iodine should not be given unless TSH is elevated to >20mIU/L. This can either be achieved through discontinuation of levothyroxine or through administration of recombinant TSH. Thyroglobulin can be used as a tumour marker following completion thyroidectomy and provides a sensitive marker of recurrence. Ultrasound is a more sensitive imaging modality for local recurrence than CT scanning. Medullary thyroid cancer can be associated with multiple endocrine neoplasia (MEN) 2 (also known as MEN 2a) but there is no known genetic predisposition to date for the development of well-differentiated thyroid cancer.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 32 year old woman attends her family physician with a 12-month history of inability to conceive. She has been having regular periods every 28 days. Ovulation can be confirmed by which of the following tests?",
+      "options": [
+        "A. Day 10 rise in follicle-stimulating hormone (FSH)",
+        "B. Day 13 surge in oestradiol",
+        "C. Day 14 surge in progesterone",
+        "D. Day 14 surge in luteinising hormone (LH)",
+        "E. Regular menses"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Regular menses imply, but do not confirm, ovulation. During a 28-day cycle, ovulation can be predicted by a surge in LH on day 14 and by measuring the responding increase in progesterone on day 21 (Fig. 18.25). Timings have to be adjusted depending on the length of the woman's menstrual cycle. Alternatively, ultrasound scanning can be used to track the growth and development of follicles, thus predicting ovulation.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch18/a/18.25.png",
+      "questionNumber": 25
+    },
+    {
+      "question": "You review a 21 year old woman in the reproductive endocrinology clinic. She has a history of secondary amenorrhoea and anorexia since she was 18 years old. She is keen to know why she has stopped having periods. Functional hypothalamic amenorrhoea is underpinned by which process?",
+      "options": [
+        "A. A high LH-to-FSH ratio",
+        "B. Gonadotrophin-releasing hormone (GnRH) resistance",
+        "C. High circulating leptin",
+        "D. Hyperprolactinaemia",
+        "E. Reduced pulsatility and secretion of GnRH"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Functional hypothalamic amenorrhoea is characterised by abnormal hypothalamic GnRH secretion with resultant reduction in pulsation of gonadotrophins. FSH levels are often within the normal range and can result in a high FSH-to-LH ratio. Functional hypothalamic amenorrhoea can be caused by eating disorders, mental or physical stress or over-exercising. Circulating levels of the ‘satiety' hormone leptin have been shown to be reduced in hypothalamic amenorrhoea, which may impact on the production of LH. Gonadotrophin-releasing hormone insensitivity is a rare autosomal recessive condition that would present in a similar manner but would be detected on genetic testing. Hyperprolactinaemia accounts for around 1.9% of hypogonadotrophic hypogonadism, but again would be detected through plasma measurements.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 16 year old girl presents to her family physician having never had a period. She is noted to be of short stature. Blood tests reveal FSH 26.2 IU/L ((5.9 mcg/L), LH 18.5 IU/L (2.0~ mcg/L) and oestradiol <50~pmol/L (13.6~pg/mL) What is the next most appropriate investigation?",
+      "options": [
+        "A. CT scan ovary and adrenal glands",
+        "B. Karyotype",
+        "C. MRI pituitary",
+        "D. Synacthen test",
+        "E. Ultrasound scan ovaries"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "High gonadotrophins in the context of low oestradiol and secondary amenorrhoea implicate premature ovarian failure. The most likely causes are acquired injury to the ovaries (e.g. previous chemotherapy), autoimmune or genetic disorders such as Turner's syndrome. Karyotype and genetic screening is therefore necessary. MRI pituitary would be the investigation of choice for hypogonadotrophic hypogonadism.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 12 year old boy attends his family physician as it has been noticed that he is falling behind in school and is considerably shorter than his classmates. Which of the following is consistent with the diagnosis of constitutional delay?",
+      "options": [
+        "A. Bone age consistent with chronological age",
+        "B. More common in females",
+        "C. Occurs as young as 3-6 months of age",
+        "D. Smaller adult height than predicted",
+        "E. Upper-to-lower body ratio <1"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Constitutional delay is observed more frequently in boys. Reduced growth velocity is observed as early as 3-6 months. Due to delay in age of pubertal growth spurt, height can drift further from the growth chart at this time but catches up once puberty is achieved. Bone age is consistent with age appropriate for height rather than chronological age. In childhood when long bones are still developing, the ratio of upper-to-lower body is >1, which is then reversed by adulthood. Constitutional delay has no effect on final height and can therefore be predicted based on mid-parental heights.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 56 year old man is referred to the endocrinology clinic with a history of poor libido and erectile dysfunction. Blood tests reveal total testosterone 5.6~nmol/L (162~ng/dL), SHBG 42.1~nmol/L (4.00~ mcg/mL), FSH 2.1 IU/L (0.5~ mcg/L) and LH 1.76~IU/L (0.2~ mcg/L). He has no other past medical history of note and has not fathered any children. On examination visual fields are normal, testes are 5 mL volume and soft on palpation. He has little in the way of pubic or axillary hair. He has not noticed any problem with his sense of smell. Which of the following is the most likely underlying diagnosis?",
+      "options": [
+        "A. Kallmann's syndrome",
+        "B. Klinefelter's syndrome",
+        "C. Previous trauma to the testes",
+        "D. Reduced testosterone secondary to obesity",
+        "E. Reduced testosterone with age"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Hypogonadotrophic hypogonadism in the context of small testes suggests absent, incomplete or partial pubertal development due to Kallmann's syndrome or idiopathic hypogonadotrophic hypogonadism. Individuals with Kallmann's syndrome may have either anosmia or hyposmia. This may, however, not be obvious to the individual until more formally tested. A similar biochemical pattern is seen in men in the context of central obesity, but testicular volumes are not reduced to the extent seen here. Testicular trauma would be associated with hypergonadotrophic hypogonadism. Klinefelter's syndrome due to XXY karyotype results in small under-developed testes with resultant elevation in gonadotrophins.",
+      "questionNumber": 29
+    },
+    {
+      "question": "An 18 year old woman with a BMI of 31~kg/m^{2} attends her family physician with troublesome hirsutism, acne and irregular periods. Hyperandrogenism as a sequela of polycystic ovary syndrome (PCOS) may result from which of the following?",
+      "options": [
+        "A. Genetic mutation in 3ẞ-hydroxysteroid dehydrogenase",
+        "B. Higher FSH compared with LH synthesis by the pituitary gland",
+        "C. Increased pulsatility of GnRH",
+        "D. Reduced aromatisation of androgens by theca cells",
+        "E. Reduction in circulating SHBG"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A variety of theories exist as to the aetiology of hyperandrogenism associated with PCOS. Disordered gonadotrophin secretion has been observed with a higher ratio of LH to FSH. Androgens are synthesised by theca cells in the ovary under the influence of LH, whilst FSH stimulates aromatisation of androgens by granulosa cells. Challenging the pituitary gland with GnRH has shown a preponderance for the production of LH but no evidence exists for disruption in hypothalamic function of GnRH. Hyperinsulinaemia leads to a reduction in SHBG and resultant increase in metabolically active free androgens. Mutations in 3β-hydroxysteroid dehydrogenase cause a virilising form of congenital adrenal hyperplasia.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 23 year old student with known karyotype 45X attends the clinic seeking advice as she is wanting to achieve pregnancy. Which of the following should she be counselled about?",
+      "options": [
+        "A. Child is more likely to have low IQ",
+        "B. Increased risk of ovarian cancer",
+        "C. She will require anti-androgen therapy",
+        "D. She will require screening for aortic dissection",
+        "E. There is a high chance of her becoming pregnant spontaneously"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The karyotype in this scenario is consistent with Turner's syndrome and usually presents with short stature and amenorrhoea. There is no increased risk of ovarian cancer. Excess androgen is not usually a feature. Cardiovascular malformations (especially aortic root dilatation) may go undiagnosed until later in life and present a high risk of morbidity and mortality, especially during pregnancy with increased circulatory volume. Only up to 5% of individuals with Turner's syndrome become pregnant spontaneously, with the majority requiring intervention such as egg donation. Turner's syndrome is not associated with mental retardation but is associated with degrees of learning disability later in life. As it is not heritable, Turner's syndrome cannot be passed on to future generations with unassisted pregnancies.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 17 year old boy is referred with delayed puberty. He has noticed that he is taller than his classmates. On clinical examination he is found to have sparse facial and body hair as well as small pre-pubertal-sized testes and penis. Blood tests reveal testosterone 7.5~nmol/L (216~ng/dL), FSH 12 IU/L (2.8~ mcg/L), LH 11 IU/L (1.2~ mcg/L). What is the most appropriate next test?",
+      "options": [
+        "A. Chromosomal analysis",
+        "B. GH measurement",
+        "C. Karyotype",
+        "D. Prolactin level",
+        "E. Thyroid function test"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Delayed puberty in the context of hypergonadotrophic hypogonadism in males is usually due to Klinefelter's syndrome with karyotype 47XXY, and testing for this should therefore be part of the next-line investigation. The differential diagnosis is acquired gonadal damage due to chemotherapy/radiotherapy, trauma or surgery, which should be apparent on taking a full history. Autoimmune gonadal failure or post-infection orchitis due to mumps or tuberculosis are differential diagnoses. Alternative developmental or congenital gonadal disorders include enzyme deficiency in the biosynthesis of sex steroids or anorchidism/cryptorchidism.",
+      "questionNumber": 32
+    },
+    {
+      "question": "What is the principal pathological abnormality in Klinefelter's syndrome?",
+      "options": [
+        "A. Defect in transforming growth factor-B (TGF-B) signalling pathway",
+        "B. Disordered migration of GnRH-producing neurons",
+        "C. Dysgenesis of the seminiferous tubules",
+        "D. Dysregulated testosterone synthesis",
+        "E. LH resistance"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Klinefelter's syndrome results from genotype XXY. This leads to hyalinisation and fibrosis of the seminiferous tubules. LH resistance can occur rarely due to abnormalities in LH receptor. Disordered migration of GnRH-producing neurons occurs in Kallmann's syndrome, whilst defect in the steroidogenesis pathway underlies congenital adrenal hyperplasia. TGF-β has both a stimulatory and inhibitory effect on Leydig cell steroidogenesis.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 62 year old man has noticed that his breasts have been swollen and tender to touch. He is on a long list of medications. Which of the following medications can cause gynaecomastia?",
+      "options": [
+        "A. Bendroflumethiazide",
+        "B. Dihydrotestosterone",
+        "C. Finasteride",
+        "D. Metolazone",
+        "E. Tamoxifen"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Finasteride is used for the treatment of benign prostatic hypertrophy and inhibits the conversion of testosterone to its metabolically active form, dihydrotestosterone. This results in a reduced testosterone-to-oestrogen ratio, resulting in gynaecomastia. Tamoxifen and clomifene can be used in the treatment of gynaecomastia by reducing oestradiol synthesis and function, respectively, restoring a higher testosterone-to-oestrogen ratio. Potassium-sparing, but not thiazide, diuretics can cause gynaecomastia. Through aromatisation, androgen replacement can lead to gynaecomastia but this should not occur with the metabolically active form, dihydrotestosterone.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 72 year old man with a history of chronic kidney disease stage 4 is admitted with perioral paraesthesia and cramping in his hands. Blood tests reveal calcium 1.7~mmol/L (6.81~mg/dL) and parathyroid hormone (PTH) level 8.7 pmol/L (82~pg/mL) PTH has which of the following effects?",
+      "options": [
+        "A. Absorption of calcium from the gut",
+        "B. Absorption of phosphate from the gut",
+        "C. Conversion of 25-hydroxyvitamin D to 1,25-dihydroxyvitamin D",
+        "D. Excretion of magnesium from the distal convoluted tubule",
+        "E. Increases phosphate reabsorption from proximal tubule"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This case describes secondary hyperparathryoidism secondary to chronic renal failure. A similar biochemical picture is seen with vitamin D deficiency. Parathyroid hormone aims to maintain calcium homeostasis by reabsorbing calcium from bone through altered activity of osteoblasts and osteoclasts. In the kidney, PTH activates the enzyme 1α-hydroxylase in the proximal tubules, which in turn activates 25-hydroxyvitamin D to 1,25-dihydroxyvitamin D. It is the latter that enhances absorption of calcium and phosphate from the gut. A complex relationship exists between feedback of magnesium on PTH secretion, but PTH results in reabsorption of magnesium from the distal convoluted tubule.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 32 year old man is admitted to hospital with gastroenteritis. Blood tests reveal total calcium 2.72~mmol/L (10.9~mg/dL), potassium 3.7~mmol/L magnesium 1.2~mmol/L (2.92~mg/ dL), urea 4.7~mmol/L (28.2~mg/dL), creatinine 76~ umol/L (0.86~mg/dL) and PTH 6.0~pmol/L (57~pg/mL). He states that his mother is currently being investigated for hypercalcaemia, which was picked up on a routine blood test. What is the most likely underlying cause of his blood results?",
+      "options": [
+        "A. Dehydration secondary to gastroenteritis",
+        "B. Malignancy",
+        "C. Mutation in calcium-sensing receptor gene",
+        "D. Mutation in the MENIN gene (MEN 1)",
+        "E. RET oncogene mutation (MEN 2/3, also known as MEN 2a/2b)"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "With mild hypercalcaemia and hypermagnesaemia along with a family history of the same, the most likely underlying cause is familial hypocalciuric hypercalcaemia (FHH). This may go undiagnosed until detected incidentally when blood tests are taken for an alternative reason. Diagnosis would be confirmed by a urine calcium-to-creatinine ratio of <0.01 and urine calcium <5 mmol/24 hrs (<200 mg/24 hrs). The condition is caused by an inactivating mutation in the calcium-sensing receptor gene. MEN syndromes are associated with hyperparathyroidism, which is also inherited in an autosomal dominant manner. However, hypermagnesaemia would not be expected in this situation or in hyperparathyroidism secondary to a parathyroid adenoma. Dehydration can cause elevated serum calcium, but this man's urea is not elevated, so he does not appear dehydrated from a biochemical perspective.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 36 year old woman is admitted to hospital with abdominal pain. Blood tests reveal calcium 3.01~mmol/L (12.1~mg/dL), phosphate 0.5~mmol/L (1.55~mg/dL), magnesium 0.8 mmol/L (1.94~mg/dL), urinary calcium 12.8 mmol/24 hrs (512~mg/24 hrs; 32.0~mmol/L) (elevated), PTH 12.3~pmol/L (116~pg/mL) What is the most appropriate follow-up management plan?",
+      "options": [
+        "A. Commence loop diuretic",
+        "B. Commence thiazide diuretic",
+        "C. Monitor calcium levels",
+        "D. Refer for parathyroid surgery",
+        "E. Vitamin D replacement"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This woman has all the biochemical features of primary hyperparathyroidism. The indications for consideration of surgery include: 0.25 mmol/L (1 mg/dL) or above the normal reference range for serum calcium, urine calcium excretion >10 mmol/24 hrs (>400 mg/24 hrs), a 30% reduction in creatinine clearance, bone mineral density T-score below -2.5 at any site and age younger than 50 years. Prior to surgery she should have imaging (by ultrasound and/or sestamibi scanning) to try to localise a parathyroid adenoma. Given her young age, consideration should be given to screening for genetic causes of hyperparathyroidism. There is nothing to suggest vitamin D deficiency (i.e. hypocalcaemia) and thiazide diuretics may increase serum calcium concentrations. Loop diuretics may occasionally be used in the management of severe hypercalcaemia, but only under specialist supervision.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 52 year old woman is referred to the clinic with a 4-month history of lethargy, generalised weakness and pains in her hands and feet. Blood tests reveal TSH 1.3~mlU/L (normal), total free T4 18.4 pmol/L (1.43~ng/dL), calcium 2.2~mmol/L (8.81~mg/dL), phosphate 0.6~mmol/L ((1.86~mg/dL), PTH 6.4~pmol/L (60~pg/mL), alkaline phosphatase 158 IU/L, creatinine 73~umol/L (0.83~mg/dL. What is the likely underlying diagnosis?",
+      "options": [
+        "A. Autoimmune polyendocrine syndrome",
+        "B. Haemochromatosis",
+        "C. Magnesium deficiency",
+        "D. Parathyroid adenoma",
+        "E. Vitamin D deficiency"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "These results are consistent with secondary hyperparathyroidism as a result of vitamin D deficiency. With normal renal function and given her symptoms, the underlying diagnosis is osteomalacia. Parathyroid adenoma is associated with primary hyperparathyroidism and thus hypercalcaemia. All of the other answers cause hypoparathyroidism and result in hypocalcaemia.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 33 year old man is found to have a significant postural hypotension with a drop in systolic blood pressure from 130/75 to 100/60 mmHg. Further investigations reveal elevated renin levels but low aldosterone levels on sitting. Where in the adrenal gland is the enzyme aldosterone synthase located?",
+      "options": [
+        "A. Chromaffin cells",
+        "B. Medulla",
+        "C. Zona fasciculata",
+        "D. Zona glomerulosa",
+        "E. Zona reticularis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The outermost layer of the adrenal cortex, zona glomerulsoa, is the site of aldosterone synthesis, whilst glucocorticoids are produced in the middle zona fasciculata and androgens in the innermost zona reticularis. Chromaffin cells in the adrenal medulla are the source of catecholamines. This clinical picture could result from disruption of the renin-angiotension system from medications such as angiotensin-converting enzyme inhibitors or angiotensin receptor blockers or, more rarely, due to defective synthesis of angiotensin due to genetic mutations in the CYP11B2 gene.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A mother seeks advice for her 7 year old daughter who has started developing pubic hair and body odour, and her voice has become deeper. A diagnosis of congenital adrenal hyperplasia (CAH) is being considered. What is the commonest enzyme deficiency in CAH?",
+      "options": [
+        "A. 11B-hydroxysteroid dehydrogenase",
+        "B. 17a-hydroxylase",
+        "C. 17ẞ-hydroxysteroid dehydrogenase",
+        "D. 18-hydroxylase",
+        "E. 21-hydroxylase"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Females with milder forms of CAH develop precocious puberty, cliteromegaly, accelerated growth or can present with oligomenorrhoea, hirsutism and infertility later in life. Up to 95% of cases are due to 21-hydroxylase deficiency. This results in reduced cortisol synthesis with resultant increase in intermediate compounds including 17-hydroxyprogesterone and an increase in androgen synthesis. Severe forms can be detected from birth due to ambiguous genitalia and can result in failure to thrive and vomiting due to salt wasting.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 63 year old man presents to his family physician with a 1-month history of weight gain and difficulty climbing stairs. On clinical examination he is found to have a blood pressure of 182/85 mmHg, abdominal striae and bruising on his arms. An overnight dexamethasone test reveals a morning serum cortisol level of 153~nmol/L ((5.55~ ug/dL). Which of the following would be an appropriate next investigation?",
+      "options": [
+        "A. 24-hour urine free cortisol",
+        "B. Adrenal vein sampling",
+        "C. Bilateral inferior petrosal sinus sampling",
+        "D. CT adrenals",
+        "E. High-dose dexamethasone suppression test"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The results of the overnight dexamethasone suppression test suggest a possible diagnosis of Cushing's syndrome. However, it is necessary to perform a second test to confirm a diagnosis of Cushing's - either a 24-hour urine collection for urine free cortisol or a late-night salivary cortisol. Once Cushing's syndrome is confirmed, further investigations are required to determine the underlying cause.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 56 year old man with recently diagnosed lung cancer has noticed weight gain, easy bruising of his skin, increased thirst and difficulty climbing stairs. Which type of lung cancer is associated with this endocrinological picture?",
+      "options": [
+        "A. Adenocarcinoma",
+        "B. Carcinoid tumour",
+        "C. Large cell carcinoma",
+        "D. Mesothelioma",
+        "E. Squamous cell carcinoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This case describes classic symptoms of Cushing's syndrome, which can be associated with excess ACTH from a variety of cancers, including small cell and carcinoid tumours of the lung. Other examples include islet cell tumours of the pancreas, medullary carcinoma of the thyroid and tumours of the thymus gland.",
+      "questionNumber": 42
+    },
+    {
+      "question": "Hypokalaemia associated with Cushing's syndrome is due to which underlying mechanism?",
+      "options": [
+        "A. Activation of mineralocorticoid receptors",
+        "B. Adipocyte proliferation",
+        "C. Increased glycogen synthesis",
+        "D. Increased protein breakdown",
+        "E. Insulin resistance"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Hypercortisolaemia results in hypokalaemia as a result of increased mineralocorticoid receptor activation. Cortisol is a potent mineralocorticoid, but is usually prevented from activating mineralocorticoid receptors because it is metabolised to inactive cortisone by the enzyme 11β-hydroxysteroid dehydrogenase type 2 (11β-HSD2). In Cushing's syndrome, the presence of high levels of cortisol overwhelms the 11β-HSD2 system.",
+      "questionNumber": 43
+    },
+    {
+      "question": "An incidental finding of an adrenal mass is discovered when a 72 year woman has a CT scan. Which of the following parameters is associated with an increased likelihood of malignancy?",
+      "options": [
+        "A. Bilateral lesions",
+        "B. Hounsfield units <10HU",
+        "C. Retention of contrast",
+        "D. Size <4 cm",
+        "E. Smooth surface"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Greatest risk of malignancy is seen in unilateral lesions with an irregular surface, of size >4 cm, with a lipid-poor consistency (Hounsfield units >10HU) and retention of contrast on scanning.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 24 year old man is admitted to the emergency department having collapsed at the gym. He describes symptoms of headache, feeling flushed with associated palpitations and sweating. He was observed by his friends to become pale before he collapsed. He is persistently hypertensive and a 24-hour urine collection shows elevated metadrenalines (metanephrines). First-line treatment for this condition should be with which of the following?",
+      "options": [
+        "A. Bisoprolol",
+        "B. Dexamethasone",
+        "C. Fludrocortisone",
+        "D. Ketoconazole",
+        "E. Phenoxybenzamine"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This presentation is in keeping with a phaeochromocytoma. At such a young age genetic screening should be performed to detect any underlying inherited disorders. Treatment is initially with an α-adrenoceptor antagonist (α-blocker) such as phenoxybenzamine. Initial prescription of β-blocker therapy may cause a hypertensive crisis. Ketoconazole may used in the treatment of Cushing's syndrome. Dexamethasone and fludrocortisone are synthetic glucocorticoids and mineralocorticoids, respectively, and have no role here.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 28 year old man is referred having been found, on home blood pressure monitoring, to have hypertension. His serum potassium at diagnosis was 2.9~mmol/L. He has been commenced on antihypertensive therapy and is referred in for investigation of mineralocorticoid excess. Which of the following antihypertensive therapies may interfere with these investigations by increasing plasma renin concentrations?",
+      "options": [
+        "A. Amlodipine",
+        "B. Bendroflumethiazide",
+        "C. Bisoprolol",
+        "D. Diltiazem",
+        "E. Doxazosin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Initially considered a rarity, primary hyperaldosteronism is thought to underlie hypertension in 5-15% of cases. Diagnosis is suggested by finding an elevated aldosterone:renin ratio. Thiazide and loop diuretics increase renin levels, whilst β-blockers inhibit renin secretion. Discontinuation of these agents for at least 2 weeks is therefore necessary before measuring plasma levels. Substitution can be made with calcium channel antagonists and α-blockers to control blood pressure in the interim.",
+      "questionNumber": 46
+    },
+    {
+      "question": "Glucose-stimulated insulin secretion by the pancreas is augmented by which of the following?",
+      "options": [
+        "A. Dipeptidyl peptidase-4",
+        "B. Glucagon-like peptide-1",
+        "C. Insulin-like growth factor-1",
+        "D. Leptin",
+        "E. Somatostatin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Glucagon-like peptide-1 (GLP-1) and gastric inhibitory polypeptide are the two major incretin hormones secreted from the gastrointestinal tract which act on β cells within the pancreas, increasing insulin secretion. Dipeptidyl peptidase-4 is involved in the degradation of incretins, thereby reducing insulin secretion. Leptin and somatostatin additionally have an inhibitory role on insulin secretion.",
+      "questionNumber": 47
+    },
+    {
+      "question": "An 18 year old woman with no past medical history and on no regular medications is admitted to hospital following a collapse at home. She describes prodromal symptoms of palpitations, weakness and diplopia. Plasma glucose concentration is measured at 2.3~mmol/L (41~mg/dL). Plasma samples are taken on admission, showing C-peptide <0.66~nmol/L (<2~ng/mL) and insulin 104 pmol/L (15 ulU/mL). What is the most likely diagnosis?",
+      "options": [
+        "A. Alcohol",
+        "B. Critical illness",
+        "C. Exogenous insulin",
+        "D. Insulinoma",
+        "E. Sulphonylurea ingestion"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "With high insulin concentrations and suppressed C-peptide, the likely diagnosis is exogenous insulin use. An insulinoma would result in elevated insulin and C-peptide concentrations, as would sulphonylurea ingestion. Alcohol and critical illness both result in a picture of suppressed insulin and C-peptide concentrations.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 56 year old man presents with a 5-year history of chronic right-sided lower abdominal pain and altered bowel habit. More recently he has developed symptoms of increased shortness of breath, diarrhoea and intermittent flushing. A CT scan shows a calcified mass in the mesentery with a surrounding desmoplastic response and multiple hepatic metastases. Which of the following would be the next initial investigation?",
+      "options": [
+        "A. 5-hydroxyindoleacetic acid (5-HIAA) concentration in urine",
+        "B. Capsule endoscopy",
+        "C. Colonoscopy",
+        "D. Plasma insulin concentrations",
+        "E. Plasma somatostatin concentrations"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The history and clinical presentation are in keeping with a neuroendocrine tumour and subsequent metastases to the liver resulting in the classical features of carcinoid syndrome. Measurement of 5-HIAA, the main breakdown product of 5-hydroxytryptamine (5-HT, serotonin), in urine allows confirmation that this is a carcinoid tumour and allows quantification of its secretory activity. Care must be taken to ensure the avoidance of certain foods and medications that can result in false-positive results when performing 24-hour urine collections for 5-HIAA. Although these tumours may be detected using imaging modalities such as CT, MRI or direct visualisation using colonoscopy or small bowel capsule endoscopy, this provides no assessment of type or hormonal activity of the tumour. There is nothing in the history to suggest excess secretion of insulin or somatostatin to necessitate their quantification.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 72 year old man with known pituitary adenoma is admitted as an emergency with sudden-onset headache, and visual disturbance. He is found to have bilateral ptosis. MRI imaging shows expansion of the tumour size secondary to haemorrhage, with invasion of the cavernous sinus. Which of the following sets of cranial nerves (CNs) are found in the cavernous sinus?",
+      "options": [
+        "A. CN II and III",
+        "B. CN III and IV",
+        "C. CN III, IV, V and VI",
+        "D. CN IX, X, and XI",
+        "E. CN X, XI and XII"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "From superior to inferior, the cavernous sinus contains cranial nerves III (oculomotor), IV (trochlear), VI (abducens) as well as V1 (ophthalmic branch of trigeminal) and V2 (maxillary branch of trigeminal).",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 17 year old who was diagnosed with craniopharyngioma at the age of 2 years is reviewed in clinic. His parents are concerned about a recent dramatic increase in his weight as well as polydypsia and polyuria. He is sent for an MRI pituitary to assess any interval change in tumour size. Craniopharyngiomas arise from remnants of Rathke's pouch. In embryological development of the pituitary gland, which structure does Rathke's pouch develop into?",
+      "options": [
+        "A. Adenohypophysis",
+        "B. Diaphragma sellae",
+        "C. Infundibulum",
+        "D. Neurohypophysis",
+        "E. Sella turcica"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Rathke's pouch separates and develops into the adenohypophysis (anterior pituitary). In contrast, the neurohypophysis (posterior pituitary) develops from the infundibulum. The pituitary gland sits within the saddle-shaped sella turcica and the superior aspect is covered by the diaphragma sellae. Craniopharyngiomas are benign tumours and may be located in the sella turcica or suprasellar space. They are often cystic with solid components. They commonly present as the result of pressure on adjacent structures causing hypopituitarism and/or cranial diabetes insipidus. Hyperphagia, temperature dysregulation and loss of thirst sensation can be the result of hypothalamic involvement.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 62 year old man attends the diabetes clinic and is noted to have large hands and prognathism. He complains of headaches of increasing frequency and severity over the preceding 6 months since his last visit to the clinic. Which endocrine investigation should be performed to investigate the cause of his symptoms?",
+      "options": [
+        "A. 24-hour urinary steroid profile",
+        "B. Dexamethasone suppression test",
+        "C. Insulin tolerance test",
+        "D. Oral glucose tolerance test",
+        "E. Saline suppression test"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In endocrinology, hormones are usually secreted in a pulsatile fashion. For the majority of hormones, samples taken at random times can be hard to interpret. As a result, if there is a suspicion of over-production of a hormone, then tests should be performed to suppress secretion, and if there is thought to be deficiency of a hormone, then tests should aim to enhance secretion. Growth hormone is secreted in a pulsatile manner with alterations in response to sleep, stress, exercise and circulating glucose concentrations. Elevated circulating glucose concentrations, as induced through the use of an oral glucose tolerance test, should normally result in suppression of growth hormone secretion. In the situation of a pituitary tumour with autonomous growth hormone secretion, an oral glucose tolerance test will result in minimal or no suppression. Dexamethasone suppression test and 24-hour urinary steroid profile are used in the diagnosis of Cushing's syndrome. A saline suppression test is used to diagnose hyperaldosteronism and an insulin tolerance test is used for the diagnosis of hypoadrenalism.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 42 year old woman is referred with galactorrhoea. Her periods have become irregular. She has two children who are 16 and 21 years old and has been more stressed at work than previously. She is not on any regular medication. Blood tests reveal a prolactin level of 12124mlU/L (570~ng/mL) with no evidence of macroprolactin. What is the most appropriate treatment?",
+      "options": [
+        "A. Monitor prolactin levels every year",
+        "B. Reassure and discharge",
+        "C. Refer for pituitary surgery",
+        "D. Start on cabergoline 0.25 mg twice weekly",
+        "E. Start on carbimazole 40 mg once daily"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Prolactin levels over 5000mIU/L are usually indicative of a macroadenoma, which secretes prolactin (a macroprolactinoma). This should be confirmed with MRI imaging. Macroprolactin is a physiologically inactive form of prolactin that is complexed with immunoglobulin G (IgG) antibody and, unless accounted for on laboratory measurement, gives a false impression of clinically relevant hyperprolactinaemia. Given her symptoms and the likelihood of this being a macroadenoma, she should be commenced on dopamine agonist therapy, as described in option D. Given the risk of growth and compression on surrounding structures, monitoring without treatment is not advised. Carbimazole is an antithyroid medication used for the treatment of Graves' disease. Prolactin levels are significantly higher than would be expected simply as a result of stress. Surgical decompression is usually only necessary if a macroprolactinoma fails to respond sufficiently to dopamine agonist therapy.",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 53 year old man who is currently under investigation for bitemporal quandrantanopia presents to the emergency department with sudden acute severe headache. What is the most likely cause of his headache?",
+      "options": [
+        "A. Cerebrospinal fluid leak",
+        "B. Meningitis",
+        "C. Migraine",
+        "D. Pituitary apoplexy",
+        "E. Subarachnoid haemorrhage"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Bitemporal quadrantanopia implies the presence of a mass lesion compressing part of the optic chiasm, most commonly a pituitary macroadenoma. Pituitary apoplexy is a rare endocrine emergency characterised by a sudden-onset headache due to acute haemorrhage or infarct of a pituitary gland, resulting in headache, visual disturbance and hormonal dysfunction. Treatment involves urgent replacement of fluid, electrolytes and pituitary hormones, particularly glucocorticoids.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 33 year old man undergoes a CT scan for recurrent headaches, which reveals a 21\times15 mm pituitary adenoma. On further questioning he has been feeling more tired over recent months and feeling low in his mood. He is tested for pituitary dysfunction and visual field disturbance. The secretion of which hormone is often the first to be affected due to mass effect by a pituitary macroadenoma?",
+      "options": [
+        "A. ACTH",
+        "B. FSH",
+        "C. GH",
+        "D. LH",
+        "E. TSH"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Growth hormone (GH) secretion is usually the first affected, classically followed by LH, FSH, TSH, ACTH and prolactin, in that order. However, in practice any pattern of hormone deficiency can occur.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 55 year old woman is found to have a significant pituitary mass on MRI scanning. High circulating levels of which hormone would direct treatment for a pituitary macroadenoma down a primarily medical, rather than surgical, route?",
+      "options": [
+        "A. ACTH",
+        "B. GH",
+        "C. LH",
+        "D. Prolactin",
+        "E. TSH"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "As prolactinomas are responsive to dopamine agonist therapy, prolactin levels should always be measured prior to undertaking surgical resection of a pituitary macroadenoma. This may avoid the need for unnecessary pituitary surgery, as prolactinomas will often shrink in size following commencement of a dopamine agonist.",
+      "questionNumber": 56
+    },
+    {
+      "question": "52 year old woman is referred to the clinic with a 3-month history of polyuria. She additionally complains of increased thirst, drinking up to 5 L per day. Fasting plasma glucose is normal at 4.2~mmol/L (76~mg/dL). She attends for a water deprivation test. Which of the following confirms a diagnosis of diabetes insipidus?",
+      "options": [
+        "A. 24-hour urine volume of 3 L",
+        "B. Plasma osmolality <280~mOsm/kg at the start of the test",
+        "C. Plasma osmolality >300~mOsm/kg and urine osmolality <600~mOsm/kg",
+        "D. Plasma sodium concentration 145~mmol/L",
+        "E. Reduction in body weight of 1% over the test period"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Low plasma osmolality at the start of the test may suggest primary polydipsia as the cause of her symptoms. A plasma sodium concentration above the normal range and 24-hour urine volume greater than 3 L can be an indicator of diabetes insipidus but are not diagnostic. A water deprivation test should be discontinued if body weight falls by 3% or more and if plasma osmolality rises to >300 mOsm/kg with continued dilute urine (osmolality <300 mOsm/kg). DDAVP (2 µg intramuscularly) should subsequently be administered to assess response and determine if the underlying diagnosis is cranial or nephrogenic diabetes insipidus.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 32 year old man is referred having been found to have hypercalcaemia and a high PTH level. He has recently been investigated for episodes of sweating, lightheadedness and confusion, which were helped by eating sugary foods. Which of the following is associated with MEN 1?",
+      "options": [
+        "A. Acromegaly",
+        "B. Cerebellar haemangioblastoma",
+        "C. Marfinoid habitus",
+        "D. Medullary thyroid carcinoma",
+        "E. Phaeochromocytoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "MEN 1 is characterised by tumours involving the parathyroid glands (95% of cases), pancreas (neuroendocrine tumours, which may be non-functional or functioning; gastrinoma; insulinoma; glucogonoma; VIPoma; somatostatinoma) (30-80% cases), lung (neuroendocrine carcinoid) (5%), gastrointestinal tract (neuroendocrine carcinoid) (2%) and anterior pituitary tumours (commonly prolactinomas) (30%). The underlying genetic defect is the MEN1 gene, which is on chromosome 11. MEN 2 is characterised by tumours of the parathyroid and adrenal glands along with medullary thyroid carcinoma. MEN 3 can additionally be associated with mucocutaneous neuromas and Marfanoid habitus. Hemangioblastomas are a feature of von Hippel-Lindau syndrome.",
+      "questionNumber": 58
+    }
+  ]
+}

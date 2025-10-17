@@ -1,0 +1,205 @@
+{
+  "title": "Medical ophthalmology - Chapter 27",
+  "questions": [
+    {
+      "question": "A 23 year old male presents to the emergency department following an alleged assault. He is intoxicated, his nose is bleeding and he has a large left periorbital haematoma that prevents spontaneous eyelid opening. Alongside assessment for traumatic brain injury, which of the following ocular conditions is it most important to exclude?",
+      "options": [
+        "A. Hyphaema",
+        "B. Medial orbital wall fracture",
+        "C. Orbital floor fracture",
+        "D. Retinal detachment",
+        "E. Retrobulbar haemorrhage"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "All of the above conditions may have occurred following the inciting injury. Retrobulbar haemorrhage is a sight-threatening emergency. Bleeding behind the globe, in the absence of any decompressing fracture, raises intraorbital pressure, which irreversibly damages the optic nerve. Typical clinical features include: severe pain, progressive proptosis, reducing visual acuity, ophthalmoplegia, diplopia and an unreactive pupil. Emergency decompression surgery is required to preserve optic nerve function.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 36 year old male primary school teacher presents with a 3-day history of bilateral red, watery, painful eyes. His vision is 6/7.5 in both eyes. He is usually fit and well with no past ocular history. He mentions one of the children in his class had a similar condition a week ago. What is the most likely diagnosis?",
+      "options": [
+        "A. Allergic conjunctivitis",
+        "B. Bacterial conjunctivitis",
+        "C. Episcleritis",
+        "D. Microbial keratitis",
+        "E. Viral conjunctivitis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Viral conjunctivitis is most commonly caused by adenovirus, a non-enveloped double-stranded DNA virus. The clinical presentation varies from subclinical to severe inflammation. The condition is highly contagious. Classic features include prominent conjunctival hyperaemia and follicles, petechial haemorrhage and pseudomembranes. Corneal involvement is characterised by epithelial microcysts, punctate epithelial keratitis and focal subepithelial infiltrates.",
+      "questionNumber": 2
+    },
+    {
+      "question": "An 18 year old female presents with a 24-hour history of a severely photophobic, watery and injected right eye. Her visual acuity is reduced to 6/18 in the affected eye. Which feature of the clinical history will most affect immediate management?",
+      "options": [
+        "A. Contact lens wear",
+        "B. Foreign travel",
+        "C. Other unwell contacts",
+        "D. Previous cold sores around the nose or mouth",
+        "E. Previous ocular history"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A presentation of red eye in a known contact lens wearer should prompt a same-day referral for ophthalmological assessment including slit-lamp biomicroscopy. The cornea must be examined in detail for any features of microbial keratitis.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 53 year old man attends his family physician for ongoing neck pain, which has occurred since he was involved in a road traffic accident 6 months ago. During the consultation his wife mentions his left eyelid is drooping. On examination, the pupil on this side is 1-2 mm smaller. Which is the most appropriate investigation?",
+      "options": [
+        "A. Chest X-ray",
+        "B. Computed tomography (CT) angiogram of the aortic arch, carotid arteries and intracranial vessels",
+        "C. CT head",
+        "D. Doppler ultrasound of the carotid artery",
+        "E. Magnetic resonance imaging (MRI) head"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has Horner's syndrome. Horner's syndrome is a triad of ptosis, miosis and anhydrosis of the affected side of the face and neck. It can be caused by interruption of the sympathetic fibres at any point along their protracted course from their origin in the posterior hypothalamus through to their synapse in the superior cervical ganglion and then to the eye. This patient has a history of significant trauma; therefore a dissection of the internal carotid artery must be excluded by CT or MR angiography in the first instance.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 34 year old female is admitted with a life-threatening attack of asthma. After stabilisation she is transferred to the intensive care unit where she remains intubated and ventilated. The admitting doctor notices the left pupil is dilated and minimally responsive to light. There is no other neurological abnormality. What is the most likely cause?",
+      "options": [
+        "A. An Adie's pupil",
+        "B. Argyll Robertson syndrome",
+        "C. Horner's syndrome",
+        "D. Pharmacological mydriasis",
+        "E. Physiological anisocoria"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Nebulised salbutamol and ipratropium are involved in the management of a life-threatening asthma attack. Ipratropium is an antimuscarinic agent. This may therefore cause dilation of the pupil if vaporised drug leaks from the mask. The effect may last up to 24 hours. The diagnosis of a pharmacological mydriasis can be confirmed if there is little or no pupillary constriction following instillation of 1% pilocarpine. The other answers would be less likely given the timing and clinical scenario.",
+      "questionNumber": 5
+    },
+    {
+      "question": "An 18 year old female has been referred following a routine visit to her optician, who noted anisocoria. Pupil measurements are as follows:\nLight: Right pupil diameter (mm) 3, Left pupil diameter (mm) 7\nDark: Right pupil diameter (mm) 7, Left pupil diameter (mm) 8\nThe direct and consensual reflex in the left pupil is sluggish and the pupil constricts slowly in response to accommodation. There is no abnormality noted on examination of extraocular movements and no evidence of ptosis. Slit-lamp examination reveals vermiform movements at the pupillary border in the left eye. What diagnosis is this consistent with?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch27/q/27.6.png",
+      "options": [
+        "A. Adie's pupil",
+        "B. Episodic mydriasis",
+        "C. Horner's syndrome",
+        "D. Pharmacological mydriasis",
+        "E. Physiological anisocoria"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "An Adie's tonic pupil is caused by loss of the parasympathetic innervation to the sphincter pupillae muscle in the iris and ciliary body. The direct and consensual pupillary light reflex are sluggish. The pupil slowly constricts to near focus. The syndrome typically occurs in young females after a viral illness. Application of dilute pilocarpine 0.125% (a muscarinic agonist agent) to both eyes has no effect in the normal eye but causes constriction of the Adie's pupil due to denervation hypersensitivity.",
+      "questionNumber": 6
+    },
+    {
+      "question": "An anxious 53 year old with high myopia has a 1-day history of new-onset large central floater in her right eye and temporal photopsia, most noticeable in low light conditions. Her visual acuity is 6/9 in the affected eye and visual fields are full to confrontation. What is the most likely diagnosis?",
+      "options": [
+        "A. Asteroid hyalosis",
+        "B. Posterior vitreous detachment",
+        "C. Visual snow",
+        "D. Vitreous haemorrhage",
+        "E. Vitritis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "With age, the vitreous progressively liquefies, a process known as syneresis. When a break in the posterior hyaloid face occurs, escaping fluid separates the vitreous from the retina, causing a posterior vitreous detachment (PVD). An impression where the posterior hyaloid face was once attached to the optic nerve becomes visible to the patient as a large central floater and to the clinician on examination as a circular opacity or Weiss ring. PVD occurs earlier in myopia, collagen and connective tissue disorders, and may be triggered by trauma or inflammation. PVD is a risk factor for a retinal tear and subsequent detachment. A thorough examination of the retina is required.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 73 year old male attends his family physician having had cataract surgery performed on his left eye 4 days ago. He was very pleased with the vision initially, but it seems to be worsening over the past 48 hours and he has noticed some new floaters. The eye is becoming more painful. His visual acuity is 6/60 and on his last clinic letter from ophthalmology it was 6/12. A same-day ophthalmological referral is needed to exclude which of the following conditions?",
+      "options": [
+        "A. Corneal oedema",
+        "B. Endophthalmitis",
+        "C. Post-operative acute anterior uveitis",
+        "D. Raised intraocular pressure",
+        "E. Retinal detachment"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although all of these complications are possible after cataract surgery, this is a presentation of endophthalmitis until proven otherwise and requires specialist review. The worrying features are the initial subjectively good vision, followed by rapid deterioration, new floaters, which may suggest infection in the vitreous, and increasing pain.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 34 year old woman presents with a 1-week history of progressive blurring of central vision in the right eye, flashing lights and an aching pain behind the eye exacerbated by eye movement. Her visual acuity is 6/24 in the right eye and 6/6 in the left. Examination of the right eye reveals reduction in colour vision, a relative afferent pupillary defect (RAPD) and the optic nerve appears normal. Visual fields show a central scotoma. What is this is a typical case of?",
+      "options": [
+        "A. Demyelinating optic neuritis",
+        "B. Infectious optic neuritis",
+        "C. Leber's hereditary optic neuropathy",
+        "D. Neuroretinitis",
+        "E. Non-arteritic anterior ischaemic optic neuropathy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Optic neuritis is an acute inflammatory process affecting the optic nerve. It usually presents with sudden monocular visual loss over hours to days and eye pain in young adults, more commonly in women. The Optic Neuritis Treatment Trial (ONTT) elucidated the typical features of a demyelinating optic neuritis as follows:\n• Age 20-50 years\n• Unilateral\n• Worsens over hours/days\n• Recovery starts within 2 weeks\n• Retrobulbar pain\n• Reduced colour vision\n• Relative afferent pupillary defect\nIn two-thirds of cases, the optic disc itself appears normal because the area of inflammation is deeper within the nerve - this is described as a retrobulbar optic neuritis.\nLeber's hereditary optic neuropathy is a rare progressive hereditary optic neuropathy: those affected are usually male and present with painless severe unilateral loss of central vision; the second eye may become affected within weeks to months of the first.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 78 year old woman visits her family physician with a 3-week history of a severe right-sided headache. The area over her right forehead and scalp is so tender she cannot bear to brush her hair and is unable to sleep on that side. She reports numerous episodes where the vision in her right eye has become very blurred and then spontaneously recovered. Which investigation is considered the definitive diagnostic test for this condition?",
+      "options": [
+        "A. C-reactive protein",
+        "B. Erythrocyte sedimentation rate",
+        "C. Plasma viscosity",
+        "D. Temporal artery biopsy",
+        "E. Temporal artery Doppler ultrasound"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The history is convincing of giant cell arteritis. Whilst inflammatory markers are usually raised, these are non-specific. A patient with suspicion of giant cell arteritis with raised inflammatory markers should be commenced on high-dose glucocorticoid without delay. This is due to the serious nature of the condition and risk of ocular involvement. Temporal artery biopsy remains the gold standard investigation. Histopathological features include inflammation of the arterial wall with fragmentation and disruption of the internal elastic lamina. The vessel may be affected in a 'patchy' manner; therefore, obtaining a specimen of at least 1 cm in length is recommended whenever possible.",
+      "questionNumber": 10
+    },
+    {
+      "question": "An 18 year old is referred from her optician querying papilloedema. She has a 3-month history of headaches. All of the following are causes of papilloedema except one. Which one is NOT a cause of papilloedema?",
+      "options": [
+        "A. A space-occupying lesion",
+        "B. Accelerated hypertension",
+        "C. Idiopathic intracranial hypertension",
+        "D. Obstructive hydrocephalus",
+        "E. Venous sinus thrombosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Papilloedema describes bilateral optic disc swelling secondary to raised intracranial pressure. Severity is described by Frisen's scale where:\nstage 1: the optic disc is raised superiorly, nasally and inferiorly, creating a C-shape\nstage 2: the temporal disc head becomes involved, creating a 360° circumferential swelling\nstage 3: vessel obscuration occurs at the disc margin\nstage 4: vessel obscuration occurs at the disc head\nIn established papilloedema, circumferential retinal folds or Paton lines may form. Haemorrhage and cotton wool spots represent ischaemic damage. In this setting, optic nerve function will be reduced on examination and may not recover. Severe hypertension causes bilateral optic disc swelling in the absence of raised intracranial pressure.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 78 year old man attends for consideration of cataract surgery. describing gradual visual deterioration over the past few years. Past medical history includes hypertension and diabetes. He is also a smoker. Dilated fundal examination is shown below. Which of the following would have the greatest impact in managing his condition?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch27/q/27.12.png",
+      "options": [
+        "A. Control of hypertension",
+        "B. Intravitreal anti-vascular endothelial growth factor (anti-VEGF) therapy",
+        "C. Smoking cessation",
+        "D. Tighter glycaemic control",
+        "E. Vitamin supplementation with high-dose antioxidants and zinc"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The fundus image shows the early changes of dry age-related macular degeneration (AMD). Smoking is associated with a 2- to 3-fold increased risk of developing age-related macular degeneration. Use of the AREDS (Age-Related Eye Disease Study) vitamin formulation was found to reduce the progression to severe AMD by 25% in those with advanced AMD in the fellow eye. There is currently no evidence to suggest that modification of hypertension or glycaemic control has an effect on progression of AMD. Intravitreal anti-VEGF therapy is currently reserved for patients with neovascular AMD.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 69 year old male presents with a 2-day history of sudden-onset, painless blurred vision in his left eye. His visual acuity is 6/18 in the affected eye. His past medical history includes hypercholesterolaemia, chronic obstructive pulmonary disease (COPD), osteoarthritis and gastro-oesophageal reflux disease (GORD). He has no past ocular history of note. The fundal image is shown below. What is the most common aetiology of this condition?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch27/q/27.13.png",
+      "options": [
+        "A. Arteriosclerosis",
+        "B. Glaucoma",
+        "C. Hyperviscosity",
+        "D. Inflammation",
+        "E. Thrombophilia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The image shows retinal vein occlusion. Unlike vasculature elsewhere in the body, retinal arteries and veins share their adventitial sheath. This means that arteriosclerotic changes in the artery can directly compromise the lumen of the vein. This is the most common mechanism where hypertension, hypercholesterolaemia, diabetes, smoking and obesity contribute the majority of risk. In younger patients, inflammatory conditions that result in inflammation of the vessel wall must be considered. Less common associations with retinal vein occlusion include hyperviscosity, inherited or acquired thrombophilias. The most common predisposing ocular condition is glaucoma.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 62 year old female was diagnosed with type 2 diabetes mellitus 5 years ago. Her current medications include metformin and sitagliptin. She attends the diabetic retinal screening programme for annual retinal photographs. The latest image is show below. What is the earliest feature of diabetic retinopathy visible on fundus fluorescein angiography (FFA)?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch27/q/27.14.png",
+      "options": [
+        "A. Capillary occlusion",
+        "B. Intraretinal microvascular anomalies",
+        "C. Microaneurysms",
+        "D. Venous beading",
+        "E. Venous reduplication"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The earliest feature of diabetic retinopathy on retinal angiography is ischaemia characterised by capillary dropout. Microaneurysms can appear in background diabetic retinopathy, whereas intraretinal microvascular anomalies, venous changes and lipid exudate characterise more advanced disease.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 31 year old patient with poorly controlled type 1 diabetes attends the eye casualty department complaining of blurred vision and floaters in the left eye. She manages her diabetes on a basal-bolus injection regime with insulin Lantus and NovoRapid, but admits her blood sugar levels have been high recently. Her left fundus is shown in the image below. Adequate treatment with which of the following will induce a permanent regression of this condition?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch27/q/27.15.png",
+      "options": [
+        "A. Diffuse macular laser",
+        "B. Focal macular laser",
+        "C. Intravitreal anti-VEGF therapy",
+        "D. Pan-retinal laser therapy (photocoagulation)",
+        "E. Photodynamic therapy (PDT) with verteporfin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Pan-retinal photocoagulation ablates the peripheral ischaemic retina and permanently reduces production of pro-angiogenic factors.\nIntravitreal anti-VEGF injection can cause temporary regression of neovascularisation. Focal and diffuse macular laser are treatments for diabetic macular oedema, although this is being rapidly succeeded by intravitreal anti-VEGF therapy. Photodynamic therapy with verteporfin is a treatment for other macular disorders, predominantly central serous chorioretinopathy.",
+      "questionNumber": 15
+    }
+  ]
+}

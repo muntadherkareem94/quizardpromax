@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "std/": "https://deno.land/std@0.192.0/",
+    "shared": "./_shared/cors.ts"
+  }
+}

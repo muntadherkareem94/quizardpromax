@@ -1,0 +1,309 @@
+{
+  "title": "HIV infection and AIDS - Chapter 12",
+  "questions": [
+    {
+      "question": "What is human immunodeficiency virus (HIV) protease enzyme responsible for?",
+      "options": [
+        "A. Budding of HIV from the cell",
+        "B. Cleavage of post-translational regulatory proteins",
+        "C. Fusion of HIV with the host cell surface",
+        "D. Integration of viral deoxyribonucleic acid (DNA) into the host genome",
+        "E. Reverse transcription of viral ribonucleic acid (RNA) to DNA"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is the main function of protease (Fig. 12.1). Fusion is mediated after binding to CD4 and the chemokine receptor, reverse transcriptase mediates reverse transcription, and integrase mediates integration of viral DNA. Budding occurs after cleavage of proteins by protease.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch12/a/12.1.png",
+      "questionNumber": 1
+    },
+    {
+      "question": "What is the risk of acquiring HIV during a single act of unprotected vaginal sexual intercourse when the male partner is HIV infected and not on antiretroviral therapy, and the female partner is HIV uninfected?",
+      "options": [
+        "A. 0.001%",
+        "B. 0.01%",
+        "C. 0.1%",
+        "D. 1%",
+        "E. 10%"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Several factors increase this risk: sexually transmitted infection (especially genital ulcers), cervical ectopy, uncircumcised male partner and menstruation.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following is a correct statement regarding the features of primary HIV infection?",
+      "options": [
+        "A. A maculopapular rash is a common feature",
+        "B. Atypical lymphocytosis occurs more frequently than in Epstein-Barr virus (EBV) infection",
+        "C. Primary infection is asymptomatic in most people",
+        "D. The incubation period is 5-7 days",
+        "E. Transient CD4 lymphocytosis is usual"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Primary HIV is a glandular fever-type illness with an incubation period of 2-4 weeks. It differs from EBV infection with less prominent atypical lymphocytosis and a rash is common (with EBV, rashes usually only occur when aminopenicillins are given). Typically CD4 lymphocytes are transiently decreased (Fig. 12.3).",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch12/a/12.3.png",
+      "questionNumber": 3
+    },
+    {
+      "question": "What is the most sensitive blood test for diagnosing HIV during primary infection?",
+      "options": [
+        "A. HIV antibodies detected by enzyme-linked immunosorbent assay",
+        "B. HIV antibodies detected by western blot",
+        "C. p24 antigen detection",
+        "D. Polymerase chain reaction (PCR) to detect HIV RNA",
+        "E. Rapid point-of-care antibody test"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Nucleic acid amplification tests are the most sensitive, followed by p24 antigenaemia. Antibodies typically are detectable 2-6 weeks later.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 35 year old HIV-positive man presents with diarrhoea of 4 weeks' duration accompanied by tenesmus. Blood and mucus is present in the stool. He is not on antiretroviral therapy. His CD4 count is 17 cells/mm. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Cryptosporidiosis",
+        "B. Cystoisosporiasis",
+        "C. Cytomegalovirus (CMV) colitis",
+        "D. Giardiasis",
+        "E. Microsporidiosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The other diseases all present with small-bowel diarrhoea. The presence of blood and mucus in the stool together with tenesmus is typical of large-bowel diarrhoea. CMV involvement of the gastrointestinal tract typically causes ulceration and occurs mainly in the oesophagus and colon, but any part of the gastrointestinal tract can be involved.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which one of the following non-acquired immunodeficiency syndrome (non-AIDS) cancers has been shown to have an increased incidence in HIV-infected patients?",
+      "options": [
+        "A. Anal cancer",
+        "B. Breast cancer",
+        "C. Melanoma",
+        "D. Ovarian cancer",
+        "E. Prostate cancer"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HIV increases the incidence of virus-related cancers. Anal cancer is linked to human papilloma virus infection; the other cancers listed are not caused by viruses.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 45 year old man with a CD4 count of 23 cells/mm3 presents with gradually progressive spastic paraplegia and urinary incontinence. There is impaired short-term memory. Plain X-ray of the spine is normal. What is the most likely cause of the paraplegia?",
+      "options": [
+        "A. Cytomegalovirus polyradiculopathy",
+        "B. Human T-cell lymphotropic virus type 1 (HTLV-1) myelopathy",
+        "C. Multiple sclerosis",
+        "D. Tuberculosis of the spine",
+        "E. Vacuolar myelopathy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This is a typical presentation of this HIV disorder, which is usually accompanied by features of AIDS dementia. Tuberculosis would usually cause abnormalities on spine X-rays. CMV polyradiculopathy causes lower motor neuron signs and pain. Myelopathy from HTLV-1 and multiple sclerosis are not HIV associated and do not cause memory loss.",
+      "questionNumber": 7
+    },
+    {
+      "question": "An HIV-infected woman with a CD4 count of 36 cells/mm3 presents with symptomatic anaemia. She is not on antiretroviral therapy. Full blood count shows: haemoglobin 26 g/L normochromic and normocytic, with a low reticulocyte index; white cell count and platelets are normal. Bone marrow biopsy shows pure red cell aplasia. Which one of the following viral infections is likely to be responsible?",
+      "options": [
+        "A. Cytomegalovirus",
+        "B. Epstein-Barr virus",
+        "C. Herpes simplex virus",
+        "D. JC virus (John Cunningham virus)",
+        "E. Parvovirus B19"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This is the commonest infectious cause of red cell aplasia in HIV infection. The antiretroviral drug lamivudine is another rare cause. CMV and some other viruses may occasionally cause pancytopenia, but not pure red cell aplasia.",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which of the following is a clinical indication for starting prophylactic co-trimoxazole in HIV-infected adults in middle- to high-income settings?",
+      "options": [
+        "A. Enlarged parotid glands",
+        "B. Fungal nail infections",
+        "C. Generalised lymphadenopathy",
+        "D. Herpes zoster infection",
+        "E. Oral hairy leucoplakia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This is a World Health Organization (WHO) stage 3/Centers for Disease Control and Prevention (CDC) B manifestation. The others are all WHO stage 2, which is not an indication to start co-trimoxazole. Note that in low-income countries co-trimoxazole is given to all, irrespective of CD4 count or clinical stage, as it is of benefit in high infectious diseases burden settings (including areas with malaria risk).",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 24 year old HIV-infected man presents with a 5-day history of fever, cough and right pleuritic chest pain. There are crackles and signs of consolidation in the right lung posteriorly and chest radiograph shows dense consolidation of the right lower zone. What is the most likely pathogen?",
+      "options": [
+        "A. Mycobacterium tuberculosis",
+        "B. Pneumocystis jirovecii",
+        "C. Pseudomonas aeruginosa",
+        "D. Streptococcus pneumoniae",
+        "E. The 'atypical bacteria' (e.g. Mycoplasma pneumoniae, Chlamydophila pneumoniae, and Legionella species)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Pneumococcal pneumonia incidence is markedly increased in HIV. Atypical bacteria can present in this way, but are less common causes. Pseudomonas pneumonia is rare. Tuberculosis can present acutely, but is usually a more subacute illness and the chest radiograph is seldom that of dense lobar consolidation with no other features.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 34 year old man with a CD4 count of 116 cells/mm3 presents with a 4-week history of dry cough and progressively worsening dyspnoea. On examination he has a fever of 38 degrees C, respiratory rate of 26 breaths/min, and no focal chest signs. Chest radiograph shows a bilateral interstitial infiltrate (Fig. 12.11). Oxygen saturation is 90% on room air. White blood cell count and haemoglobin are normal. What is the most likely diagnosis?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch12/q/12.11.png",
+      "options": [
+        "A. Bacterial pneumonia",
+        "B. Lymphoid interstitial pneumonitis",
+        "C. Pneumocystis jirovecii pneumonia",
+        "D. Pulmonary Kaposi's sarcoma",
+        "E. Pulmonary tuberculosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The duration of symptoms is too long for bacterial pneumonia. The prominent dyspnoea and chest radiograph appearance is typical of Pneumocystis jirovecii pneumonia. Lymphoid interstitial pneumonitis can have a similar radiographic appearance but is a more chronic illness and fever is uncommon. Pulmonary tuberculosis with adult respiratory distress syndrome is possible, but this is a rare complication in tuberculosis.",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which of the following statements is true about the diffuse inflammatory lymphocytosis syndrome (DILS)?",
+      "options": [
+        "A. DILS is a recognised complication of co-infection with human herpesvirus 8",
+        "B. DILS is a risk factor for parotid gland lymphoma",
+        "C. DILS is associated with polymyositis",
+        "D. DILS is characterised by infiltration of the parotids with B lymphocytes",
+        "E. DILS is usually associated with a marked CD4 lymphocytosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "DILS is a benign polyclonal CD8 infiltration of tissues, especially the parotids, and is associated with human leucocyte antigen (HLA)-DRB1. A number of autoimmune disorders are seen in DILS, including polymyositis.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A nurse administers an intramuscular injection to an HIV-infected woman who is not yet on antiretroviral therapy. After the injection she pricks her finger on the needle. What is the approximate risk of acquiring HIV following this occupational exposure?",
+      "options": [
+        "A. 0.003%",
+        "B. 0.03%",
+        "C. 0.3%",
+        "D. 3%",
+        "E. 30%"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Several factors increase this risk: high viral load in source patient, hollow-bore needle that was in source patient's vessel, visible blood on the needle.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 37 year old man with a CD4 count of 24 cells/mm3 presents with painless, progressive visual loss. On fundoscopy the vitreous is clear, and haemorrhages and exudates are seen on the retina. What is the most likely diagnosis?",
+      "options": [
+        "A. Cytomegalovirus retinitis",
+        "B. HIV retinopathy",
+        "C. Ocular syphilis",
+        "D. Ocular toxoplasmosis",
+        "E. Progressive outer retinal necrosis due to varicella zoster virus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "CMV retinitis is the commonest cause of visual loss in AIDS. Toxoplasmosis often causes a concomitant vitritis and HIV retinopathy does not cause visual loss.",
+      "questionNumber": 14
+    },
+    {
+      "question": "What is the mechanism of action of the antiretroviral drugs raltegravir, dolutegravir and elvitegravir?",
+      "options": [
+        "A. Chemokine receptor CCR5 antagonist",
+        "B. Fusion inhibitor",
+        "C. Integrase inhibitor",
+        "D. Protease inhibitor",
+        "E. Reverse transcriptase inhibitor"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The standard combination antiretroviral regimens are two nucleoside reverse transcriptase inhibitors (NRTIs) together with a non-nucleoside reverse transcriptase inhibitor (NNRTI), protease inhibitor (PI) or integrase inhibitor (Box 12.15). Dual NRTI combinations are usually emtricitabine or lamivudine (they have the same mechanism of action and so are never combined) together with one of abacavir, tenofovir or zidovudine. See Fig. 12.1, above, for mechanisms of action of the different antiretroviral drugs.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch12/a/12.15.png",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 44 year old woman with a CD4 count of 73 cells/mm3 presents with a progressive left hemiplegia and headache over a week. Her magnetic resonance imaging scan shows multiple ring-enhancing mass lesions with surrounding cerebral oedema. What is the most likely diagnosis?",
+      "options": [
+        "A. Brain abscess",
+        "B. Cerebral toxoplasmosis",
+        "C. Cryptococcoma",
+        "D. Primary central nervous system (CNS) lymphoma",
+        "E. Tuberculoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is the commonest cause of space-occupying lesions in patients with HIV infection - CD4 counts are usually <100 cells/mm3 and multiple lesions are typical (Fig. 12.16).",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch12/a/12.16.png",
+      "questionNumber": 16
+    },
+    {
+      "question": "What is the correct statement regarding the immune reconstitution inflammatory syndrome (IRIS)?",
+      "options": [
+        "A. Antiretroviral therapy (ART) should be stopped if IRIS is suspected",
+        "B. It is more common in patients responding poorly to ART",
+        "C. It is more common when ART is initiated with higher baseline CD4 counts (>200 cells/mm3)",
+        "D. It usually presents within the first 3 months of initiating ART",
+        "E. The mortality is high (approximately 25%)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "IRIS is an exaggerated inflammatory response seen in the first 3 months after starting ART. It is most common in patients starting ART with low CD4 counts. It is usual to continue ART and provide symptomatic relief for IRIS manifestations; steroids may be useful with life-threatening manifestations.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 26 year old woman with newly diagnosed HIV infection and a CD4+ lymphocyte count of 34 cells/mm3 presents with dysphagia. There is no oral candidiasis. You prescribe a course of fluconazole for possible Candida oesophagitis. Two weeks later she returns with no improvement. What is the most likely cause of her dysphagia?",
+      "options": [
+        "A. Cytomegalovirus oesophageal ulceration",
+        "B. Herpes simplex virus oesophageal ulceration",
+        "C. Kaposi's sarcoma of the oesophagus",
+        "D. Major aphthous ulceration of the oesophagus",
+        "E. Oesophagitis to azole-resistant Candida species (e.g. C. krusei)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Candida oesophagitis is the commonest cause, but failure to respond in this case virtually rules this out (azole-resistant Candida species are usually only seen in patients with prolonged azole use). The next commonest cause is major aphthous ulceration, which responds well to steroids and ART.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 39 year old man presents with asymmetric cervical lymphadenitis for 2 months. His CD4 count is 234 cells/mm3. The largest node is 4x3 cm and is fluctuant. Several nodes are matted together. What is the most likely diagnosis?",
+      "options": [
+        "A. HIV lymphadenopathy",
+        "B. Kaposi's sarcoma",
+        "C. Non-Hodgkin lymphoma",
+        "D. Pyogenic lymphadenitis",
+        "E. Tuberculosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Tuberculosis nodes are often matted and may fluctuate. Malignant nodes rarely fluctuate, unless there is central necrosis. Persistent generalised lymphadenopathy of HIV is typically symmetrical and does not fluctuate.",
+      "questionNumber": 19
+    },
+    {
+      "question": "Which of the following statements is correct about AIDS-associated Kaposi's sarcoma?",
+      "options": [
+        "A. It is a spindle-cell tumour of lymphoendothelial origin",
+        "B. It is associated with infection by human herpesvirus 6",
+        "C. Multiple skin lesions indicate a poor prognosis",
+        "D. The commonest site of visceral spread is the brain",
+        "E. Women are more likely than men to develop Kaposi's sarcoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Kaposi's sarcoma (KS) is a spindle-cell tumour of lymphoendothelial origin. All forms of KS are due to sexually transmitted human herpesvirus 8, also known as KS-associated herpesvirus. In Africa, the male: female ratio of AIDS-associated KS is much lower than is seen with endemic KS, but men are still more affected than women, despite the fact that the seroprevalence of human herpesvirus 8 is the same in both sexes. AIDS-associated KS is always a multicentric disease. Early mucocutaneous lesions are macular and may be difficult to diagnose. As the disease progresses, the skin lesions become more numerous and larger. Lymphoedema is common, as lymphatic vessels are infiltrated. KS also commonly spreads to lymph nodes and viscerally, especially to the lungs and gastrointestinal tract.",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following statements on viral load in HIV infection is correct?",
+      "options": [
+        "A. A viral load change of 15848 to 10000 copies/mL (difference of 0.2 log10) is regarded as a significant reduction 4 weeks after starting antiretroviral therapy",
+        "B. The viral load should be suppressed after 6 months of effective antiretroviral therapy",
+        "C. Vaccination transiently decreases the viral load",
+        "D. Viral load measures intracellular viruses",
+        "E. Viral load reaches a relatively stable plateau 2 weeks after seroconversion"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The level of viraemia is measured by quantitative PCR of HIV RNA, known as the viral load. Determining the viral load is crucial for monitoring responses to antiretroviral therapy. People with high viral loads (e.g. >100000 copies/mL) experience more rapid declines in CD4 count, while those with low viral loads (<1000 copies/mL) usually have slow or even no decline in CD4 counts. Viraemia peaks during primary infection and then drops as the immune response develops, to reach a plateau about 3 months later (see Fig. 12.3, above). Transient increases in viral load occur with intercurrent infections and immunisations, so the test should be done at least 2 weeks afterwards. Viral loads are variable; only changes in viral load of more than 0.5 log10 copies/mL are considered clinically significant.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 42 year old man presents with severe headache and vomiting of 3 weeks' duration. His CD4 count is 62 cells/mm3 Computed tomography (CT) scan of the brain is normal. Lumbar puncture shows mild pleocytosis with positive cryptococcal antigen test and elevated opening pressure of 34 cmH2O You commence therapy with intravenous amphotericin B and flucytosine for the cryptococcal meningitis. What is the most appropriate management for the raised intracranial pressure?",
+      "options": [
+        "A. Acetazolamide",
+        "B. Dexamethasone",
+        "C. Insert a ventriculo-peritoneal shunt",
+        "D. Mannitol",
+        "E. Therapeutic lumbar puncture, removing enough cerebrospinal fluid to reduce pressure to <20 cmH2O"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The raised intracranial pressure is best managed by therapeutic lumbar puncture as this is a communicating hydrocephalus. Steroids and acetazolamide have been shown to be harmful. Shunting is seldom necessary. Mannitol is irrational, as the primary problem is not cerebral oedema.",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which of the following features is characteristic of HIV-associated nephropathy (HIVAN)?",
+      "options": [
+        "A. Heavy proteinuria (>1.5 g/24 hrs) is a usual finding",
+        "B. People of European descent are more likely to develop HIVAN",
+        "C. Severe hypertension is a characteristic feature",
+        "D. Small kidneys on ultrasound are typically seen when the creatinine clearance decreases to 30 mL/min or less",
+        "E. The course of the disease is relatively benign with few progressing to end-stage renal failure"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HIVAN typically presents with nephrotic syndrome and/or chronic kidney disease (CKD). Progression to CKD is rapid with preserved kidney size. People of African descent are more likely to develop HIVAN.",
+      "questionNumber": 23
+    }
+  ]
+}

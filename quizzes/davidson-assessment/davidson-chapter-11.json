@@ -1,0 +1,1049 @@
+{
+  "title": "Infectious disease - Chapter 11",
+  "questions": [
+    {
+      "question": "A 29 year old woman returns from a trip to Vietnam. She ignored pre-travel advice and vaccinations. She ate local foods, including several freshwater fish dishes. One month after her return she starts to note migratory nodules over her abdomen, which are itchy. Her eosinophil count is mildly elevated. What is the most likely cause of this clinical picture?",
+      "options": [
+        "A. Ascaris lumbricoides",
+        "B. Clonorchis sinensis",
+        "C. Fasciola hepatica",
+        "D. Gnathostoma spinigerum",
+        "E. Wuchereria bancrofti"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The presentation suggests exposure to a zoonotic parasite. The clinical scenario with itchy migratory nodules emerging after eating local freshwater fish dishes suggests gnathostomiasis. Ascariasis and filariasis, the latter caused by Wuchereria bancrofti, are not caused by zoonotic parasites while both fascioliasis and Clonorchis sinensis infections primarily involve the hepatobiliary system.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 34 year old man who works as an army reservist presents with bilateral facial nerve palsy coming on over a period of a few days. Otherwise, neurological examination of cranial nerves is normal. He has been on regular army exercises in rural Wales. He does not remember any tick bites or a typical rash for Lyme disease. What is the likeliest diagnosis?",
+      "options": [
+        "A. Botulism",
+        "B. Cerebovascular infarction",
+        "C. Complex migraine",
+        "D. Neuroborreliosis",
+        "E. Tetanus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Neurological Lyme disease can present as facial nerve palsy and not all patients remember a bite. Treatment is usually with at least 1 month of intravenous ceftriaxone. Botulism is usually a descending paralysis and tetanus causes trismus with spasm.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 42 year old businessman presents with fever and back pain. He had visited family in Pakistan 8 months previously. He has a temperature of 38.6 degrees C. Urine dipstick is negative as is his chest X-ray. Blood tests show a mild hepatitis and mild thrombocytopenia. What test will be most likely to establish the diagnosis?",
+      "options": [
+        "A. Blood film",
+        "B. Dengue serology",
+        "C. Hepatitis A serology",
+        "D. Hepatitis B serology",
+        "E. Leptospirosis serology"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The blood film is essential in returning travellers. Falciparum malaria usually present up to a month after travel, but when patients have travelled to areas where vivax malaria is found, they may have delayed symptoms. This patient's blood film showed typical trophozoites of Plasmodium vivax. The incubation period here would exclude the other infections.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 12 month old child presents to casualty with his father. He has been eating poorly and running a fever for the last 36 hours, after which he developed a widespread maculopapular rash on the trunk. There are no localising findings on physical examination. The father tells you that his son has had all his vaccinations, including measles, mumps and rubella (MMR). What is the potential cause of this infection?",
+      "options": [
+        "A. Coxsackie virus",
+        "B. Enterovirus 71",
+        "C. Human herpesvirus 6",
+        "D. Parvovirus B19",
+        "E. Rubella"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The history of rash after fever resolution and the age of the child make roseala infantum the likely exanthem in this case. This is caused by human herpesvirus 6 or 7. Parvovirus B19 also causes an exanthem, but typically with alternative features like a ‘slapped cheek' rash. Rubella is not likely as the efficacy of live rubella vaccine is very high. Coxsackie and enterovirus infections can cause rashes, although enterovirus 71 has been primarily associated with neurological syndromes.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 26 year old pregnant woman, in the seventh month of pregnancy, presents concerned that she was visited 5 days ago by her niece who the next day developed an itchy vesicular rash. The niece stayed in her house for 3 days. The niece saw her family physician on her return home and has been diagnosed with chickenpox. The woman is concerned because she does not remember ever having chickenpox as a child, a fact confirmed by her mother. You arrange to check a varicella zoster serology, which is negative. Which of the following should you offer to prescribe?",
+      "options": [
+        "A. Aciclovir orally for 7 days",
+        "B. Intravenous immunoglobulin",
+        "C. Vaccination against varicella zoster virus",
+        "D. Valaciclovir orally",
+        "E. Varicella zoster immunoglobulin"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient is non-immune to varicella zoster virus (VZV) and has had a significant exposure during pregnancy within the last 7 days so should receive passive immunisation with varicella zoster immunoglobulin. Immunoglobulin would not have as high levels of antibodies. Vaccination would take too long to generate immunity. Treatment with aciclovir or valaciclovir is not indicated (Box 11.5).",
+      "explanationImageUrls": [
+        "images/books-images/Davidson-assessment/ch11/a/11.5a.png",
+        "images/books-images/Davidson-assessment/ch11/a/11.5b.png"
+      ],
+      "questionNumber": 5
+    },
+    {
+      "question": "A 54 year old man receives a cadaveric renal transplant. Before transplantation he is found to be cytomegalovirus (CMV) immunoglobulin G (IgG) negative and he receives a transplant from a person who is CMV IgG positive. Administration of which drug lessens his chance of developing CMV and its associated complications post-transplantation?",
+      "options": [
+        "A. Brincidofovir",
+        "B. Cidofovir",
+        "C. Foscarnet",
+        "D. Valganciclovir",
+        "E. Zanamivir"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Valganciclovir is indicated because he is high risk for CMV due to his lack of pre-existing immunity and receipt of an organ from a CMV-seropositive donor. Foscarnet and cidofovir are used to treat CMV but only when resistance arises to ganciclovir or valganciclovir; their side-effect profile makes them less suitable for use in prophylaxis. Brincidofovir is being developed as an alternative agent to cidofovir while zanamivir is used to treat influenza A virus.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 28 year old man returns from a holiday to Brazil. After a short febrile illness he is diagnosed with Zika virus. What practical advice should he be given?",
+      "options": [
+        "A. Avoid alcohol for 2 months",
+        "B. Avoid sharing towels for 1 week",
+        "C. Avoid strenuous exercise for 2 weeks",
+        "D. Condom usage for 6 months",
+        "E. Sexual abstinence for 2 weeks"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Zika virus may be transmitted in semen for prolonged periods after recovery. Condom use is advised for those infected for at least 6 months and for those who have returned from an endemic area for at least 2 months if they do not develop signs of infection. Alcohol and dietary interventions have not been found to alter Zika virus infection to date. Strenuous exercise is not contraindicated, although in the early recovery period of any serious virus infection it is prudent to discontinue it. Infection is not spread by body contact, so avoiding sharing towels is not necessary.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A survivor from the West African Ebola virus disease outbreak presents for routine medical check-up. Which of the following is a late complication, frequently described in survivors, which it may be appropriate to assess for?",
+      "options": [
+        "A. Anterior uveitis",
+        "B. Diabetes mellitus",
+        "C. Hypothyroidism",
+        "D. Immune thrombocytopenic purpura",
+        "E. Ulcerative colitis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Late complications of Ebola virus disease include uveitis, sensineural deafness and arthritis. The other conditions listed have not been reported as common late sequelae.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 23 year old nurse, previously fit and well, presents with fever, persistent sore throat and stridor. He is unable to eat or drink. On examination he has tonsillar enlargement and anterior and posterior cervical lymphadenopathy. A spleen tip is palpable in the abdomen. Blood tests reveal a lymphocytosis and borderline elevation of the transaminases. A blood film shows frequent atypical lymphocytes. Which of the following should be used to treat his condition?",
+      "options": [
+        "A. Aciclovir",
+        "B. Cytotoxic T lymphocytes",
+        "C. Prednisolone",
+        "D. Rituximab",
+        "E. Valaciclovir"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Glucocorticoids are sometimes used to treat complications of Epstein-Barr virus (EBV) infection. Potential indications include massive tonsillar enlargement causing airway compromise, haemolytic anaemia or thrombocytopenia, and sometimes neurological complications. Antivirals such as aciclovir and valaciclovir have no role. Patients who are immunosuppressed may develop lymphoproliferative disorders with EBV infection, which may be treated with rituximab (anti-CD20 monoclonal antibody) or cytotoxic T lymphocytes, but these do not have a role in treatment for immunocompetent individuals.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 61 year old woman presents with 3 weeks' unexplained fever. She has been referred to an outpatient clinic and initial history and physical examination have revealed no obvious abnormalities. The travel history is unremarkable and she has never lived in countries with risk of tropical infections or tuberculosis. Routine bloods show normal full blood count but C-reactive protein (CRP) and erythrocyte sedimentation rate (ESR) that are elevated. Liver function tests show minor abnormalities and the urinalysis shows some protein and red blood cells. Human immunodeficiency virus (HIV) serology is negative. Routine blood cultures are negative and a chest X-ray, computed tomography (CT) abdomen and echocardiogram are all reported as normal. What would be an appropriate next step in investigation?",
+      "options": [
+        "A. Bone marrow aspirate for culture",
+        "B. Cerebrospinal fluid examination",
+        "C. Liver biopsy",
+        "D. Mammogram",
+        "E. Positron emission tomography (PET) scan"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient has features of pyrexia of unknown origin and evidence of raised inflammatory markers with some abnormalities in the liver tests and urinalysis. Potential concerns, in addition to infection, include connective tissue disorders and malignancy. A PET scan may aid identification of sites of inflammation and selection of potential sites for biopsy to establish a diagnosis. Investigation for malignancy may be undertaken, but its yield is low if there are no clues to a potential source. Bone marrow aspirate for culture, lumbar puncture and liver biopsy may be part of the work-up but the diagnostic yield is low if there are no signs localising to these sites, as in this case.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 29 year old man is referred to clinic because of 4 weeks' symptoms of fevers, arthralgia and sore throat. On examination he has enlarged cervical lymph nodes but the pharynx shows no erythema or purulence. There is hepatosplenomegaly and you note a pale pink macular rash over the abdomen. Initial blood tests show an increase in polymorphonuclear leucocytes and a markedly elevated ferritin. Routine cultures and autoantibodies are negative and an HIV test is pending. What would be an initial empiric treatment?",
+      "options": [
+        "A. Antiretroviral therapy",
+        "B. Erythromycin",
+        "C. Non-steroidal anti-inflammatory drugs",
+        "D. Penicillin",
+        "E. Prednisolone"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient has presented with features of pyrexia of unknown origin (PUO). Although there is a history of sore throat there is no sign of pharyngitis and cultures are negative. The rash and markedly elevated ferritin, along with the other clinical features, make adult-onset Still's disease a consideration, which is a clinical diagnosis that requires treatment with prednisolone or alternative anti-inflammatory therapy. There is no indication that this is streptococcal pharyngitis, so antibiotics are not indicated. HIV-induced acute retroviral syndrome should always be considered with presentation with PUO and rash but should only be treated after diagnostic confirmation.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 50 year old man is being treated for acute myelogenous leukaemia with chemotherapy. He develops neutropenic fever. Physical examination is unremarkable and the central venous catheter (CVC) tunnel site demonstrates no erythema or pus. Which of the following would be most helpful in establishing a diagnosis of a CVC line infection?",
+      "options": [
+        "A. Differential time to positivity of CVC versus peripheral blood culture",
+        "B. Negative peripheral blood cultures",
+        "C. Positive peripheral blood cultures after <12 hours of culture",
+        "D. Urine cultures demonstrating Pseudomonas aeruginosa",
+        "E. Vegetations on the aortic valve on echocardiogram"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Central venous catheter infections are suggested by detecting positive cultures in the sample from the CVC at least 2 hours prior to the peripheral blood sample, detecting 5- to 10-fold greater colony counts in the CVC sample versus the peripheral blood sample or detecting at least 15 colony-forming units in culture of the CVC tip. Peripheral blood cultures are frequently positive with CVC line infections and a short time to culture positivity would be suggestive of endovascular infection but not specifically CVC line infection. Although right-sided endocarditis may complicate CVC line infection, there is usually no reason for left-sided endocarditis as evidenced by vegetations on the aortic valve. A positive urine culture for P. aeruginosa would be more suggestive of a urinary catheter-related infection.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 25 year old man presents with fever, pharyngitis, oral ulceration and a severe headache. History reveals he spent the last 3 weeks working in South-east Asia and returned 3 days ago. Physical examination reveals signs of meningism. He is noted to have a solitary ulcer at his anus. Blood tests reveal lymphopenia, thrombocytopenia and abnormal liver function tests. A malaria film and rapid diagnostic test, dengue antigen and polymerase chain reaction (PCR), and monospot are all negative. Which of the following is most likely to establish a definitive diagnosis?",
+      "options": [
+        "A. Cytomegalovirus serology",
+        "B. HIV-1 combined antigen and antibody test",
+        "C. Lumbar puncture and bacterial culture for syphilis",
+        "D. Pathergy test for Behçet's disease",
+        "E. Rectal biopsy and PCR for lymphogranuloma venereum"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Any traveller with an unexplained illness should have HIV infection excluded. In this case the presence of an anal lesion suggests the possibility of unprotected anal intercourse. In addition to performing a genitourinary medicine screen to establish the source of the lesion, an HIV test should be performed. In this case, since recent acquisition is a consideration, the test should combine detection of antigen with antibody since the patient may not yet have developed an antibody to HIV. Although there are several considerations in the diagnosis, the clinical features and laboratory features are compatible with acute retroviral syndrome (primary infection) from recently acquired HIV infection. All of the other diagnoses mentioned may be considered, but Behçet's is a comparatively rare cause of oral and genital ulceration, syphilis is not diagnosed by bacterial culture on cerebrospinal fluid but rather by serology, and detection of a sexually transmitted infection such as lymphogranuloma venereum would not explain all the features in this case but would indicate the need for further tests to exclude sexually acquired HIV infection.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 45 year old woman returns from a 2-week vacation in Mexico. She has developed diarrhoea with abdominal bloating and nausea. She has had 6-8 bowel motions a day without blood or mucus, which have persisted now for 16 days. Blood tests show normal full blood count, CRP and blood biochemistry. Which of the following tests is most likely to establish the diagnosis?",
+      "options": [
+        "A. Anti-transglutaminase antibodies",
+        "B. Cyclospora cayetanensis PCR",
+        "C. Entamoeba histolytica serology",
+        "D. Shigella flexneri cultures from the stool",
+        "E. Yersinia entercolitica serology"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "There are multiple potential causes of diarrhoea in travellers. In this case there is a relatively long history but an absence of acute inflammatory markers or evidence of dysentery. This would fit best with a parasitic cause such as cyclosporiasis, cryptosporidiosis or with giardiasis. Shigella spp. and Entamoeba histolytica cause a dysenteric illness and Yersinia enterocolitica often presents with abdominal pain mimicking an acute abdomen. In chronic diarrhoea - usually defined as diarrhoea lasting at least 2-4 weeks - when infective causes have been excluded, other causes such as coeliac disease, inflammatory bowel disease and malignancy should always be considered.",
+      "questionNumber": 14
+    },
+    {
+      "question": "You are working as part of a medical aid organisation's team providing care in a refugee camp in sub-Saharan Africa. A 5 year old child is bought by her mother for a medical check-up. She appears small for her age and you examine a stool sample by microscopy. which shows multiple ova consistent with a diagnosis of hookworm. If a full blood count was analysed on this child, which of the following abnormalities might be apparent with a heavy burden of this parasite?",
+      "options": [
+        "A. Atypical lymphocytes",
+        "B. Low haemoglobin with increased reticulocytes",
+        "C. Low haemoglobin with low mean corpuscular volume",
+        "D. Monocytopenia",
+        "E. Thrombocytopenia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hookworm infection can cause iron deficiency anaemia, which would be indicated by a low mean corpuscular volume. Haemolysis, indicated by raised reticulocytes, and thrombocytopenia are associated with other parasitic infections, notably malaria. Atypical lymphocytes are typically associated with viral infections but occasionally are seen with malaria and trypanosomiasis.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 13 year old Peruvian boy is evaluated by a neurologist for new-onset seizures. As part of the work-up a magnetic resonance imaging (MRI) scan of the head is performed, which shows multiple small lesions, several of which appear calcified. After establishing a diagnosis, what would appropriate therapy for this condition include?",
+      "options": [
+        "A. Albendazole",
+        "B. Atovaquone",
+        "C. Mebendazole",
+        "D. Nifurtimox",
+        "E. Piperazine"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The scenario is suggestive of neurocysticercosis for which albendazole is most often prescribed. Praziquantel is the preferred alternative and the other anti-parasitic agents are not recommended treatment options for this infection.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 6 year old child is bought into hospital by his father with fever and a petechial rash. You perform a physical examination and some initial blood tests that show evidence of leucopenia and thrombocytopenia but no evidence of malaria. A dengue PCR is positive. Which of the following signs on medical examination suggests the need for hospitalisation and intensive monitoring for complications?",
+      "options": [
+        "A. Ankle swelling",
+        "B. Lymphadenopathy",
+        "C. Petechial rash",
+        "D. Shifting dullness on abdominal examination",
+        "E. Temperature elevation for more than 48 hours"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The World Health Organization has issued criteria for the identification of dengue with warning signs. These mandate intensive medical management and monitoring. The development of ascites, suggested by shifting dullness or other signs of fluid accumulation, are one of these warning signs. The other signs listed here are not regarded as warning signs.",
+      "questionNumber": 17
+    },
+    {
+      "question": "An 18 year old student with known beta-thalassemia major that is stable with regular transfusions presents with increased fatigue and lethargy. Full blood count, blood film and a bone marrow aspirate are suggestive of aplastic crisis. He lives with his family and has five siblings, ranging in age from 3 to 16 years. During follow-up the aplasia gradually resolves without further medical intervention. Which of the following infections is the most likely cause of the aplasia?",
+      "options": [
+        "A. Cytomegalovirus",
+        "B. Dengue",
+        "C. Human T-cell lymphotrophic virus type 1 (HTLV-1)",
+        "D. Mumps",
+        "E. Parvovirus B19"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Parvovirus B19 is associated with transient aplastic crisis in patients with haemoglobinopathy or haemolytic anaemia. Dengue and CMV cause anaemia but typically not aplastic crisis, while HTLV-1 tends to cause acute T-cell leukaemia/lymphoma.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 7 year old child presents with a short history of fever, tender cervical lymphadenopathy and pus on the tonsils. He is treated with penicillin and his symptoms recover. One week later his mother presents with a similar history and is also treated with penicillin. Six weeks later the child is bought back by his mother with acute pharyngitis and a throat swab confirms group A streptococcal infection. His medical history is otherwise unremarkable. In addition to prescribing penicillin what additional steps would be appropriate?",
+      "options": [
+        "A. Aspirin prescription for 6 months",
+        "B. Blood tests for immunodeficiency",
+        "C. Clindamycin",
+        "D. Erythromycin treatment",
+        "E. Throat swabs on all the family and treatment of all carriers of group A streptococci"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Streptococcal infections are usually sensitive to penicillin, which is the treatment of choice in pharyngitis. Although clindamycin and erythromycin are alternatives and may be used in penicillin allergy, some strains show resistance. A work-up for immunodeficiency is not indicated since there have been no prior features of infection; however, since several family members appear to have developed pharyngitis, it would be appropriate to screen all family members at the same time, since streptococci can be nasopharyngeal commensals and can be passed from one family member to another. Aspirin may be used for rheumatic fever but there is no indication there are signs of rheumatic fever.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 32 year old teacher presents with severe pain in her left leg, specifically excruciating pain in the calf. On examination there is an area of purplish discoloration but otherwise little to see. Temperature is 39.5 degrees C, pulse rate 122 beats/min and blood pressure (BP) 90/60 mmHg. Which of the following is the most appropriate initial investigation to promptly establish a diagnosis?",
+      "options": [
+        "A. CT scan leg",
+        "B. Doppler leg",
+        "C. Inspection of muscles in theatre by a surgeon",
+        "D. MRI leg",
+        "E. Ultrasound leg"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The scenario is suggestive of necrotising fasciitis, which is a medical emergency. In this case there are signs suggestive of shock, and urgent surgical intervention and debridement of involved muscles is essential. Imaging modalities will only delay definitive treatment and surgical inspection will provide the most prompt diagnosis and management.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 25 year old man from Somalia presents to the hepatologist because of derangements in his liver function tests. Blood tests reveal an elevated alkaline phosphatase and bilirubin as well as a blood eosinophilia. Abdominal ultrasound shows a mass in the left lobe of the liver and some lymph node enlargement around the porta hepatis. He has been previously well and takes no regular medications and drinks no alcohol but does chew khat leaves. Serology for which parasite may be positive in this case?",
+      "options": [
+        "A. Enterobius vermicularis",
+        "B. Fasciola hepatica",
+        "C. Gnathostoma spinigerum",
+        "D. Necator americanus",
+        "E. Strongyloides stercoralis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although there are several causes of deranged liver function tests with eosinophilia, including drug-related causes, the scenario in this case and the obstructive features make infection with a fluke that can infect the bile duct a consideration. Of the causes listed, only Fasciola hepatica is a fluke that infects the bile duct and it is associated with eating plants that may have been contaminated with the parasite, such as watercress and also the khat plant, which is commonly chewed by people who live in regions around the Horn of Africa or Arabian Peninsula.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 40 year old man from Turkey presents with a history of chronic back pain and fever. On examination an MRI scan shows sacroiliitis. He has a long history of consuming unpasteurised milk and the initial work-up includes testing with a serum agglutination test, which comes back positive at high titre. What would be an appropriate initial antimicrobial regimen?",
+      "options": [
+        "A. Doxycycline, rifampicin and gentamicin",
+        "B. Flucloxacillin with rifampicin",
+        "C. Fluconazole with flucytosine",
+        "D. Imipenem followed by doxycycline and co-trimoxazole",
+        "E. Streptomycin with chloramphenicol"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The history of living in an endemic area and of consuming unpasteurised milk makes brucellosis a potential cause; it is an agent whose diagnosis involves confirmation by a serological test such as a serum agglutination test. The regime in option A would be appropriate for this infection; the regimens in options B, C and D might be considered for bone infection due to Staphylococcus aureus, Candida spp. or in melioidosis, respectively; streptomycin is usually used in infections like plague and tularaemia where bone infection is less likely.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 40 year old with HIV presents with a 3-week history of headache. He is an intravenous drug user and has not engaged with care or antiretroviral therapy. His last recorded CD4 T-cell count was 48 cells/mm3 18 months ago. His neurological examination and a CT scan of his head are all normal. A lumbar puncture is performed. Which essential diagnostic test would help establish the diagnosis?",
+      "options": [
+        "A. B-D-glucan assay in serum",
+        "B. Cryptococcal antibody measurement in serum",
+        "C. Cryptococcal antigen test on cerebrospinal fluid (CSF)",
+        "D. Cryptococcal PCR on CSF",
+        "E. Galactomannan enzyme-linked immunosorbent assay (ELISA) on CSF"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The individual has a low CD4 T-cell count and is at risk of meningitis caused by an opportunistic infection. Cryptococcal meningitis is a leading consideration and should be excluded. The test of choice is a cryptococcal antigen test on the CSF, which is highly sensitive and specific. PCR is not routinely performed and detection of blood antibody against cryptococci is not used in the diagnosis of cryptococcal meningitis. β-D-glucan and galactomannan assays are used in the diagnosis of Aspergillus spp. and in the case of β-D-glucan some other fungi. Although cryptococcal infection can be detected at low levels with the β-D-glucan, this test is not routinely used to diagnose cryptococcal infection.",
+      "questionNumber": 23
+    },
+    {
+      "question": "An 84 year old nursing home resident is re-admitted with Clostridium difficile infection. She has been on a prolonged course of antimicrobials to treat an intra-abdominal infection that arose as a complication of a ruptured diverticular abscess but these have now stopped. Her first bout of C. difficile infection was severe and treated with vancomycin. She then relapsed and was treated in a clinical trial with fidaxomicin. This is her second relapse over a 3-month period. Prior to her diverticular abscess she had been well and was only on treatment for hypertension. What is a potential therapeutic option to manage her relapsing infection?",
+      "options": [
+        "A. Ciprofloxacin",
+        "B. Glucocorticoids",
+        "C. Faecal transplantation",
+        "D. Life-long fidaxomicin",
+        "E. Life-long metronidazole"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Faecal transplantation has emerged as a potential therapy for relapsing C. difficile infection in those without other contraindications. Although fidaxomicin decreases the risk of relapse compared to vancomycin, it is not used long term. Metronidazole is used in short courses and vancomycin is usually used in prolonged tapering courses to prevent relapse, although, if there is no other option, it might be considered for an indefinite period. Glucocorticoids may be used in severe disease but are not used to manage relapse and ciprofloxacin has been implicated in the development rather than the prevention of C. difficile infection.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 17 year old student presents with a short history of severe headache and photophobia. A physical examination notes neck stiffness but nothing else. A lumbar puncture is performed and shows an elevation of protein and an increase in white cells all lymphocytes. Initial PCR for enterovirus and herpes simplex virus (HSV) are negative and blood HIV antigen and antibody are also negative. He has not lived in an area that puts him at risk of any geographically restricted or arthropod-transmitted central nervous system infections. As a child the patient moved about constantly with his parents who were musicians and does not remember having very many immunisations. He has no known risks for tuberculosis (TB), does not take any medicines or recreational drugs and has no other medical problems. Which important additional diagnostic cause of meningitis should be considered in this case?",
+      "options": [
+        "A. Adenovirus",
+        "B. Chickenpox",
+        "C. Measles",
+        "D. Mumps",
+        "E. Rubella"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "An incomplete vaccination history or waning immunity can put young adults at risk of mumps, which can cause an aseptic or lymphocytic meningitis. Although multiple other viruses can cause aseptic meningitis, mumps is a potential consideration, especially when common causes such as enteroviruses, HSV, HIV and geographically restricted mosquito-mediated viral infections are not present and when there is no history of TB exposure, chronic medication use or medical comorbidity.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 7 year old male heart transplant recipient is referred to your clinic for advice. He receives a annual influenza ('flu') vaccine but this 'flu' season there have been a large number of 'flu' cases in individuals despite immunisation, suggesting the circulation of a strain not covered by this year's vaccine. 'Flu' cases have started to increase in your community and several children in the boy's school have started to develop 'flu'. What additional agent could be used as prophylaxis to decrease the chance of influenza infection in this boy at high risk of influenza morbidity?",
+      "options": [
+        "A. Amantidine",
+        "B. Oseltamivir",
+        "C. Ribavirin",
+        "D. Rimantadine",
+        "E. Tenofovir"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "When vaccination has not been performed or may have been unsuccessful due to drift in the circulating strain from the vaccine strain, prophylaxis is indicated for high-risk patients such as heart and lung transplant recipients. Prophylaxis uses the neuraminidase inhibitors oseltamivir or zanamivir rather than the M2 proton channel inhibitors amantadine and rimantidine, which were used in the past. Ribavirin and tenofovir are not used in the prophylaxis of influenza.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 26 year old female botanist attends the travel clinic for advice prior to deciding whether to undertake a 6-week trip to the Amazon rainforest to study the local flora. On review, which chronic medical condition and its treatment would most likely prevent her from having the yellow fever vaccine, and might prompt her to reconsider whether she should undertake this trip?",
+      "options": [
+        "A. Depression, stable on a selective serotonin re-uptake inhibitor (SSRI)",
+        "B. Diabetes mellitus, on insulin",
+        "C. Epilepsy, controlled on chronic seizure medication",
+        "D. HIV on antiretroviral therapy with a high CD4 T-cell count in the normal range",
+        "E. Liver transplantation 18 months previously, receiving tacrolimus and mycophenolate immunosuppression"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The yellow fever vaccine is a live vaccine that can cause viscerotropic disease in those with immunosuppression. The decision to give the vaccine is based on assessing the relative balance of risks and benefits. In this case, although both HIV and organ transplantation are associated with immunosuppression, the relative risk is much greater in the scenario with liver transplantation only 18 months previously, due to its associated more significant degree of immunosuppression due to tacrolimus (a calcineurin inhibitor) and mycophenolate. In contrast, controlled HIV with a normal CD4 count is not an absolute contraindication and the vaccine may be considered if it is essential. The other conditions are not associated with significantly increased risk of side-effects from this vaccine, although they may influence other medical considerations. For example mefloquine malaria prophylaxis would not be used with a seizure history and the antimicrobial linezolid should be avoided for those on an SSRI.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 27 year old female engineer is admitted with fever, BP 80/40 mmHg and pulse rate of 120 beats/min There is a widespread faint erythematous rash over her body and a history of a sore throat 5 days ago. Initial blood tests show a marked elevation of the neutrophil count, evidence of disseminated intravascular coagulopathy and acute kidney injury. Your region has a very low level of community-acquired meticillin-resistant Staphylococcus aureus (CA-MRSA). In addition to intravenous fluids, high-dose penicillin and flucloxacillin, which other antimicrobial is most often added to the initial regimen?",
+      "options": [
+        "A. Chloramphenicol",
+        "B. Ciprofloxacin",
+        "C. Clindamycin",
+        "D. Doxycycline",
+        "E. Vancomycin"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The scenario is suggestive of streptococcal or staphylococcal toxic shock syndrome. In addition to β-lactam antibiotics, clindamycin is usually added to decrease toxin production. There is a low likelihood of CA-MRSA, so this probably does not need to be added initially, but the decision on this would be governed by the risk of MRSA. The other antimicrobials would be added in other settings, although doxycycline is an alternative agent that may also decrease protein synthesis.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 25 year old maize farmer from Tanzania develops high fever and lymph node enlargement in the groin. He is bought into your medical facility and noted to have tachycardia and hypotension. You perform an aspirate of the collection in the groin and then a Gram stain on this material. What are you most likely to see when you look at the slide down the microscope?",
+      "options": [
+        "A. Bipolar staining Gram-negative coccobacilli",
+        "B. Chinese letter appearance of Gram-positive rods",
+        "C. Clusters of Gram-positive cocci",
+        "D. Drumstick appearance of Gram-positive rods",
+        "E. Filamentous pseudomycelium"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The epidemiological setting and the appearance of a severe illness with a groin swelling suggestive of a bubo make plague a likely diagnosis. The causative agent Yersinia pestis gives the appearance of safety pins or bipolar staining with Gram stain. Staph. aureus appears as a cluster on Gram stain and would be in the differential of any abscess. Other characteristic appearances on Gram staining include Corynebacterium diphtheriae, which appear as rods at acute angles suggestive of Chinese letters. A drumstick appearance due to the presence of a terminal spore is seen with Clostridium tetani. Candida albicans can appear as a filamentous form suggestive of a mould, but this, in fact, is a pseudomycelium formed by the yeast.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 40 year old man presents to his local clinic in India with widespread cutaneous lesions and a diagnosis of leprosy (Hansen's disease) is established by slit skin smears. The presence of which of the following clinical findings suggests that he may have a high bacterial index?",
+      "options": [
+        "A. Clearly demarcated skin lesions",
+        "B. 'Glove and stocking' sensory disturbance",
+        "C. Hypopigmented skin lesions",
+        "D. Loss of sensation over lesions",
+        "E. Loss of sweating over lesions"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A high bacterial index is associated with lepromatous leprosy. The presence of widespread lesions and a ‘glove and stocking' distribution sensory disturbance both suggest lepromatous leprosy. The other findings of clearly demarcated hypopigmented lesions with early loss of sensation and sweating are all more in keeping with tuberculoid leprosy, where a lower bacterial index would be expected.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 35 year old doctor returns to visit his family in rural India. Two weeks later he develops a fever, which progresses over a number of days to high-grade fever, in association with profound malaise. He develops a dry cough and subsequently diarrhoea. On examination a spleen tip is palpable. Blood cultures identify a Gram-negative rod, which is still being identified to the species level. While antimicrobial sensitivities are being determined, which one of the following antimicrobial agents should form initial empirical treatment?",
+      "options": [
+        "A. Ceftriaxone",
+        "B. Chloramphenicol",
+        "C. Ciprofloxacin",
+        "D. Co-amoxiclav",
+        "E. Co-trimoxazole"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The likely diagnosis is typhoid fever. Antimicrobial resistance is increasing, meaning many agents formerly used are no longer active such as chloramphenicol, amoxicillin and co-trimoxazole. Ciprofloxacin resistance has also emerged as major problem, particularly in Asia, so ceftriaxone is the most reasonable initial choice.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 43 year old Egyptian engineer attends for routine medical examination. He is noted to have haematuria and repeated urinalysis confirms this observation. He is referred for a cystoscopy and found to have squamous carcinoma of the bladder. What infection is most likely to be associated with this finding?",
+      "options": [
+        "A. Bacille Calmette-Guérin (BCG)",
+        "B. Escherichia coli (enterohaemorrhagic)",
+        "C. Salmonella Typhi",
+        "D. Schistosoma haematobium",
+        "E. Treponema pallidum"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Schistosoma haematobium is associated with squamous cell bladder carcinoma, which is a less common histological type of bladder carcinoma in the developed world. BCG is sometimes used in the treatment of bladder carcinoma and Salmonella Typhi carriage is associated with Schistosoma mansoni infection in particular but not bladder carcinoma. Enterohaemorrhagic E. coli is associated with haemolytic uraemic syndrome but not bladder carcinoma, and syphilis, caused by Treponema pallidum, is not associated with bladder carcinoma.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 50 year old former aid worker returns after working in several South Pacific islands over the last 15 years. She gave up trying to prevent mosquito bites and did not sleep under mosquito nets. She subsequently experienced several episodes a year of pain and linear streaks of erythema on her legs, and also noted the swelling of glands in her groin. She has now started to notice swelling in both legs. A full blood count reveals eosinophilia. Which of the following will be most helpful to support the diagnosis?",
+      "options": [
+        "A. Blood film",
+        "B. Elevated IgE",
+        "C. Protrusion of a large worm from a skin nodule",
+        "D. Skin snips",
+        "E. Slit-lamp eye examination"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The story is most suggestive of lymphatic filariasis, which would best be diagnosed by looking for microfilaria on a blood film or by serology. An elevation of IgE is often seen in lymphatic filariasis but is not of itself diagnostic. A slit-lamp examination or skin snip is used to diagnose onchocerciasis, while a protruding worm would be more suggestive of dracunculiasis.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 33 year old Spanish female veterinarian presents with fever, headache and dry cough of 5 days' duration. She has been working long hours helping local farmers deliver lambs and calves. On examination she has crackles and decreased breath sounds in the left lower lobe. Blood tests are relatively unremarkable other than some elevation of the transaminases. Blood cultures are negative but a serological test is positive. What is the likely causative organism based on the occupational setting?",
+      "options": [
+        "A. Bacillus anthracis",
+        "B. Chlamydophila psittaci",
+        "C. Coxiella burnetii",
+        "D. Legionella pneumophila",
+        "E. Yersinia pestis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The occupation as a veterinarian and, in particular, the recent contact with animals that have been giving birth, puts this veterinarian at risk of Coxiella burnetii infection. Although the other microorganisms listed can all cause pneumonic illness they have distinct epidemiological settings. Chlamydophila psittaci is associated with exposure to sick birds such as parrots and Legionella pneumophila with contaminated water-cooling towers and other water systems. Bacillus anthracis has been associated with bioterrorism and Yersinia pestis, the causative agent of plague, with hunters and others exposed to endemic plaque in rural settings.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 60 year old businessman from Mumbai went on vacation to South Africa. While there he went on safari and remembers noting a tick bite. He used insect repellent and took malaria prophylaxis. On returning home he develops fever and a severe retro-orbital headache. On examination he has no signs of meningism but appears flushed. You also note several black eschars on both lower extremities but no rash. Initial blood work shows lymphopenia, but is otherwise unremarkable. Blood cultures are negative, three malaria films show no parasites and HIV tests are negative. Infection with which of the following pathogens best explains the constellation of findings and likely cause of this man's syndrome?",
+      "options": [
+        "A. Borrelia duttonii",
+        "B. Coxiella burnetii",
+        "C. Plasmodium knowlesi",
+        "D. Rickettsia africae",
+        "E. Salmonella Paratyphi"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Despite the precautions this patient took, tick bites can be hard to avoid. The appearance of eschars with no findings on blood film are suggestive of African tick bite fever, and the features of multiple eschars without rash are more suggestive of Rickettsia africae than of Rickettsia conorii. Borrelia duttonii is also transmitted by ticks but results in relapsing fever. The other infections are less likely in this scenario as they do not link to the history of tick bites, explain the eschars and would be expected to provide other laboratory findings.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 41 year old man from a rural community in the Democratic Republic of Congo presents to his local clinic complaining of irregular bouts of fever and painless enlargement of lymph nodes, particularly in the neck. He has developed a headache and his daughter says villagers have noted a personality change. Physical examination also detects a spleen tip but no other abnormalities. The full blood count identifies a relative lymphocytosis and mild elevation of transaminases. HIV tests and malaria films are negative. What would be the best test, if available, to establish a diagnosis?",
+      "options": [
+        "A. Blood film",
+        "B. Bone marrow aspirate",
+        "C. Liver biopsy",
+        "D. Lymph node aspirate",
+        "E. Splenic aspirate"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient is likely to have Trypanosoma brucei gambiense infection. Although blood films may be positive, they are less likely to be positive than in T. brucei rhodesiense infection, except early on in the infection. Since this infection has likely been present for some time, aspiration of the lymph nodes is more likely to make a diagnosis. In addition, nothing has been noted on blood films sent for malaria testing, which should also reveal trypanosomes. Serologic responses against T. brucei and a lumbar puncture should also be performed. A bone marrow aspirate and splenic aspiration are tests employed in the diagnosis of leishmaniasis and a liver biopsy would not be helpful in this case to determine the cause of the liver function test abnormalities. In addition, these tests need specialist facilities, particularly splenic aspiration.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 26 year old woman receiving total parenteral nutrition for management of short bowel syndrome, caused as a complication of Crohn's disease, is admitted because of fever and fatigue. Blood cultures grow Candida tropicalis both from her peripheral blood cultures and from the lumen of her tunnelled central venous catheter, with the line cultures turning positive 4 hours before the peripheral cultures. The central venous catheter is removed, temporary venous access is established and treatment with anidulafungin is commenced. In addition, which of the following should be performed?",
+      "options": [
+        "A. CT abdomen",
+        "B. Lumbar puncture",
+        "C. MRI head",
+        "D. Oesophagogastroduodenoscopy",
+        "E. Ophthalmological review"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Candidaemia has a propensity to lead to intraocular infection. This has resulted in the recommendation that all patients with candidaemia should be assessed by an ophthalmologist with dilated fundoscopy. Oesophagogastroduodenoscopy is used to assess Candida oesophagitis and the other investigations are indicated if signs or symptoms suggest infection at these sites.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 47 year old man with acute myelogenous leukaemia is admitted with neutropenic fever. There are no localising signs or symptoms. Cultures through the central venous catheter and the peripheral cultures are negative. A CT chest scan is negative, as is a galactomannan assay. Despite treatment with piperacillin-tazobactam, and subsequent addition of caspofungin and teicoplanin, he remains febrile but there are still no localising signs. His other medications include allopurinol, omeprazole and alendronic acid. Increasing lymphadenopathy is noted and there are abnormal liver function tests but no other abnormalities. Which of the following is a likely cause of this syndrome?",
+      "options": [
+        "A. Allopurinol hypersensitivity reaction",
+        "B. Cytomegalovirus infection",
+        "C. Epstein-Barr virus infection",
+        "D. Invasive fungal infection",
+        "E. Penicillin allergy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Drug fever is an important consideration in patients with pyrexia of unknown origin, particularly in those who are on multiple medications. Allopurinol is a potential cause of drug-related hypersensitivity and is associated with abnormal liver function tests and lymphadenopathy. Penicillins and other antimicrobials can cause fever but in this case the fever predated use of piperacillin-tazobactam. The failure to respond to broad-spectrum antimicrobial therapy and the absence of any localising features or positive microbiological tests mean that a microbiological cause remains unproven and other possibilities need to be excluded. Herpes virus aetiologies are important, particularly in solid organ transplant recipients or those who have received a haematopoietic stem cell transplant, but these are not found in this case and a patient with acute leukaemia on chemotherapy is not at particular risk of these infections. Invasive fungal infection remains a diagnostic consideration, particularly for patients with acute myelogenous leukaemia, but the fever has remained despite addition of caspofungin, and the galactomannan and chest CT scan has been negative.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 25 year old man from South-east Asia presents with severe headache, photophobia and meningism. He recently returned back to his home in a rural area of Vietnam for a 3-week visit. A lumbar puncture is performed, which shows a marked increase in white cells and protein, and he commences treatment with ceftriaxone. Later that evening the laboratory contact you to say they have reviewed the white blood cells and performed some additional stains, which confirm there are significant numbers of eosinophils, in this case reported as 20% of the total white blood cells. Which of the following is a potential cause of this man's eosinophilic meningitis?",
+      "options": [
+        "A. Angiostrongylus cantonensis",
+        "B. Japanese encephalitis virus",
+        "C. Non-prescription analgesics",
+        "D. Schistosoma japonicum",
+        "E. Taenia solium"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Eosinophilic meningitis is seen with Angiostrongylus spp. infections and also with gnathostomiasis or coccidioidomycosis. The other infections listed may be found in South-east Asia but cause alternative clinical neurological syndromes.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 32 year old female anthropologist was living in remote regions of the Brazilian rainforest, studying the indigenous population. While there, she lived in local dwellings. Approximately 3 months from the end of her trip she developed an illness with an indistinct rash and noted some enlarged lymph nodes. Before returning home she went to a large clinic in Brazil where she was noted to have lymphadenopathy and splenomegaly. They performed some additional tests, including xenodiagnostics with a triatomine bug, which resulted in a diagnosis. She was advised she needed treatment but she preferred to defer treatment until she was back home. Which medication is most likely to treat this condition?",
+      "options": [
+        "A. Nelfinavir",
+        "B. Niclosamide",
+        "C. Nifurtimox",
+        "D. Nitazoxanide",
+        "E. Nystatin"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The epidemiological setting, clinical scenario and use of xenodiagnoses are consistent with a diagnosis of Chagas' disease (American trypanosomiasis), which is treated with nifurtimox. Niclosamide and nitazoxanide are used to treat other parasites.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 23 year old woman attends her family physician having noticed a 'bull's eye' rash on her thigh and developing flu-like symptoms. She walks her dog regularly through local woodland in southern England. What action should be taken?",
+      "options": [
+        "A. Ensure tetanus vaccination is up to date",
+        "B. No action required",
+        "C. Prescribe intravenous ceftriaxone for 2 weeks",
+        "D. Prescribe oral doxycycline for 2 weeks",
+        "E. Test for antinuclear antibodies"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The likeliest diagnosis is acute Lyme borreliosis. This is increasing in frequency in the UK. The commonest organism responsible in Europe is Borrelia burgdorferi. The recommendation is for family physicians to treat with oral doxycycline or amoxicillin for uncomplicated acute disease.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 55 year old man returns from Medina in the Kingdom of Saudi Arabia. He developed a coryzal illness, which progressed rapidly to severe dyspnoea 4 days ago and he was hospitalised for 3 days in Medina before he took his own discharge and flew home. On reaching home his family were concerned he was increasingly short of breath and took him to hospital. He is known to have diabetes mellitus and chronic lymphocytic leukaemia. On examination he is febrile; his pulse rate is 106 beats/min, respiratory rate is 20 breaths/min and oxygen saturation is 90% on air. His BP is 116/78 mmHg. The examination shows bilateral crackles through both lung fields and the chest X-ray shows bilateral infiltrates. Which of the following illnesses should first be excluded in this case?",
+      "options": [
+        "A. Acute respiratory distress syndrome (ARDS) complicating pneumonia",
+        "B. Avian influenza",
+        "C. Meningococcal sepsis",
+        "D. Middle East respiratory syndrome coronavirus (MERS-CoV)",
+        "E. Severe acute respiratory syndrome (SARS)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Any patient who has a history of recent travel to the Middle East along with fever and severe respiratory symptoms should have infection with MERS-CoV excluded before infection control measures can be relaxed. SARS is another coronavirus infection that leads to severe respiratory symptoms but circulated in 2003. There are no risk factors for avian influenza, which would require a history of contact with chickens. ARDS complicating pneumonia would be in the differential but does not have the same influence on infection control policy and therefore is not the first diagnosis to be excluded. Meningococcal sepsis has been reported after pilgrimages to the Middle East and sepsis can present with respiratory symptoms but would be expected to present with additional signs of sepsis.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 44 year old intravenous drug user is admitted with fever, tachycardia and low blood pressure. Chest X-ray shows multiple nodules in the lungs. After initial blood cultures are performed, which intravenous antimicrobial should be included in initial empirical therapy? (Local antimicrobial-resistance patterns suggest good activity can be expected.)",
+      "options": [
+        "A. Flucloxacillin",
+        "B. Meropenem",
+        "C. Moxifloxacin",
+        "D. Piperacillin-tazobactam",
+        "E. Tigecycline"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The empiric therapy of fever in an intravenous drug user should include coverage of Staph. aureus. The specific agents will be influenced by local antimicrobial resistance patterns and rates of meticillin-resistant Staph. aureus (MRSA). In this scenario the chest X-ray raises the possibility of haematogenous spread of septic emboli from infected thrombophlebitis or right-sided endocarditis. In an area with low rates of MRSA, flucloxacillin is a good choice for empiric coverage of a potential endovascular Staph. aureus infection. Meropenem and piperacillin-tazobactam might be considered in cases of sepsis but would not be first choice where Staph. aureus needs to be treated. Tigecycline might be used against MRSA in certain settings, such as skin and soft tissue infection, but would not be first choice when potential bloodstream infection needs to be treated. Moxifloxacin is not usually used in Staph. aureus infection.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 42 year old woman presents with fever. She returned from a holiday in India 2 months previously having spent 8 months travelling in rural areas. She has a temperature of 38.2 degrees C. Urine dipstick is negative. Blood tests show a mild hepatitis and thrombocytopenia. A diagnosis of vivax malaria is made on blood film. What test will help with further treatment?",
+      "options": [
+        "A. Antiplatelet antibodies",
+        "B. Haemoglobin electrophoresis",
+        "C. Hepatitis B serology",
+        "D. Test for glucose-6-phosphate dehydrogenase (G6PD) deficiency",
+        "E. Ultrasound of spleen"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Radical cure of vivax malaria requires the use of the 8-aminoquinoline drug primaquine. This causes oxidative stress, which can result in massive haemolysis in patients who have low G6PD activity due to various inherited traits. The other tests will not impact on the treatment.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 42 year old businessman presents with a history of seizures over the last 3 weeks. He has been previously fit and well. He lives in a large house with domestic servants. A CT scan of his head shows a number of small cystic space-occupying lesions with a characteristic appearance, some of which demonstrate an opacified area protruding into the cyst. What is the likely organism causing this presentation?",
+      "options": [
+        "A. Angiostrongyloides cantonensis",
+        "B. Taenia solium",
+        "C. Gnathostoma spinigerum",
+        "D. Toxocara spp.",
+        "E. Trichinella spiralis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cysticercosis is caused by the pork tapeworm Taenia solium and results when humans ingest tapeworm ova, often from an infected household contact. The disease leads to cysts that can involve the subcutaneous tissue, muscle and brain. The lesions are visible on CT or MRI scan of the head and can have a characteristic appearance. They can result in a variety of neurological features, including new-onset seizures. Treatment is most often with albendazole.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 34 year old native Australian man is admitted to a hospital in Darwin, Australia, with a widespread itchy rash with crusting lesions all over his body. Some have secondary infection and he has a heart murmur. What is the likeliest diagnosis?",
+      "options": [
+        "A. Impetigo",
+        "B. Melioidosis",
+        "C. Pustular psoriasis",
+        "D. Scabies",
+        "E. Varicella zoster"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Scabies with increasing drug resistance is a huge problem in indigenous populations in Australia. This is associated with post-streptococcal rheumatic fever with rheumatic heart disease as a sequela. Ivermectin is used for large infestations. The other answers would not explain both the skin lesions and the heart murmur.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 68 year old man is admitted to hospital complaining of abdominal pain radiating to his back, following a bout of food poisoning. Blood cultures are recurrently positive with two out of two bottles growing Salmonella Enteritidis. What is the investigation most likely to reveal the diagnosis?",
+      "options": [
+        "A. CT scan abdomen",
+        "B. HIV serology",
+        "C. Serum electrophoresis",
+        "D. Transoesophageal echocardiogram",
+        "E. Transthoracic echocardiogram"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Salmonellosis can invade and colonise aortic arteriosclerotic plaques and result in a mycotic aortic aneurysm in older patients. Endocarditis is uncommon with salmonellae. Persistently positive blood cultures raise the possibility of endovascular infection and while this is most often associated with a central venous catheter infection or endocarditis, certain organisms are associated with other foci and require specific investigations, as in this case.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 24 year old female student returned from a trekking holiday in Nepal 25 days ago with fever and diffuse abdominal pain. She has not had diarrhoea. On examination, pulse is 56 beats/min BP 97/54 mmHg and temperature 39.4 degrees C. She has a tender right iliac fossa and small faint spots on her abdomen but no other skin lesions. What is the likeliest diagnosis?",
+      "options": [
+        "A. Appendicitis",
+        "B. Cyclosporiasis",
+        "C. Dengue",
+        "D. Scrub typhus",
+        "E. Typhoid"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This is a typical presentation of enteric fever caused by Salmonella Typhi. Nepal is a high-risk country for typhoid, which is contracted from contaminated water. She has signs of sepsis, which would make cyclosporiasis less likely, and the rash would not be typical for appendicitis. The incubation period is too long for dengue. Although scrub typhus causes a rash, the history with prominent abdominal symptoms and absence of an eschar and regional lymphadenopathy is less typical.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 21 year old man presents to an emergency department in the UK with a 3-day history of bloody diarrhoea and right iliac fossa abdominal pain. He had eaten takeaway food 2 days previously but other members of his family had also eaten the meal and were well. He has a family history of ulcerative colitis. What is the likeliest diagnosis?",
+      "options": [
+        "A. Amoebiasis",
+        "B. Bacillus cereus toxin food poisoning",
+        "C. Campylobacter infection",
+        "D. Crohn's disease",
+        "E. Ulcerative colitis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Campylobacter is the commonest cause of infective colitis in the UK. Although inflammatory bowel disease should be considered, it is less common than Campylobacter.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 21 year old student returns from a trip to Belize in Central America with a non-healing ulcer on his face. A biopsy and PCR confirm a clinical diagnosis of leishmaniasis. The organism is identified a L. braziliensis. What is the most appropriate treatment?",
+      "options": [
+        "A. Cryotherapy",
+        "B. Intralesional stibogluconate",
+        "C. Liposomal amphotericin",
+        "D. No treatment indicated",
+        "E. Paromomycin"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Mucocutaneous leishmaniasis due to L. braziliensis should always be treated aggressively with systemic therapy due to the risk of dissemination. The other treatments would not prevent dissemination.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 34 year old man is admitted to intensive care with a diagnosis of Pneumocystis pneumonia. He is noted to have widespread violaceous papules on his skin and hard palate. On biopsy these are Warthin-Starry silver stain positive. What is the likeliest diagnosis?",
+      "options": [
+        "A. Bacillary angiomatosis",
+        "B. Kaposi's sarcoma",
+        "C. Malignant melanoma",
+        "D. Sporotrichosis",
+        "E. Stevens-Johnson syndrome"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Bacillary angiomatosis is caused by infection with Bartonella species, a slow-growing Gram-negative bacillus that causes problems in immunocompromised hosts. These include endocarditis, trench fever and bacillary peliosis (widespread blood-filled cavities in major organs). Treatment is with doxycycline. Kaposi's sarcoma also can cause violaceous papules but histology should show characteristic spindle cell formations and would not be positive with Warthin-Starry silver stain, which detects the Bartonella species. Similarly, the histology does not show features of melanoma and this also would not have a positive Warthin-Starry stain; nor would the other conditions listed, which also would have alternative dermatological appearances.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 47 year old man is admitted to intensive care with a diagnosis of Pneumocystis pneumonia and HIV. He is noted to have widespread purple papules on his skin and hard palate. On biopsy these are human herpesvirus 8 (HHV-8) DNA positive. What is the likeliest diagnosis?",
+      "options": [
+        "A. Bacillary angiomatosis",
+        "B. Kaposi's sarcoma",
+        "C. Malignant melanoma",
+        "D. Sporotrichosis",
+        "E. Stevens-Johnson syndrome"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Kaposi's sarcoma is an angioproliferative tumour related to HHV-8 infection in immunocompromised hosts. The finding of lesions on the palate usually indicates that there is deep-organ involvement, such as gut and lung, which may lead to life-threatening bleeding. Treatment is with doxorubicin and immune reconstitution.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 19 year old man develops a sore throat and fever; 2 days after the onset, he develops left-sided chest pain and haemoptysis with pain and tenderness on the left side of his neck. On examination he is fevered and shocked with low oxygen saturations on room air. Chest X-ray shows a blood-borne pneumonia and ultrasound shows left internal jugular vein thrombosis. What is the diagnosis?",
+      "options": [
+        "A. Adult Still's disease",
+        "B. Haemophagocytic lymphohistiocytosis (HLH)",
+        "C. Kikuchi's disease",
+        "D. Lemierre's syndrome",
+        "E. Streptococcal toxic shock syndrome"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Lemierre's syndrome is due to suppurative jugular vein thrombophlebitis with bacteraemia usually secondary to a bacterial sore throat. Treatment is usually supportive with penicillin. It is often complicated by disseminated intravascular coagulopathy.",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 44 year old truck driver was involved in a road traffic collision; this resulted in a traumatic injury to his pelvis, which was contaminated with soil from a ditch. He develops a brain abscess, which is drained, and on microscopy shows long, filamentous, branching Gram-positive rods that are weakly acid-fast. What is the likeliest organism involved?",
+      "options": [
+        "A. Actinomyces israelii",
+        "B. Clostridium perfringens",
+        "C. Mycobacterium chelonae",
+        "D. Nocardia asteroides",
+        "E. Sporothrix schenckii"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Nocardia are filamentous Gram-positive branching rods that stain positive with a modified acid-fast stain. They are found in the soil and may lead to brain abscesses. Actinomyces israelii and Clostridium perfringens are also Gram-positive, but C. perfringens would not appear as branching rods and although A. israelii would have a similar microbiological appearance, Nocardia would be more likely to cause a brain abscess in this scenario. Mycobacterium chelonae would stain with an acid-fast stain and Sporothrix is a dimorphic fungus and would appear as a yeast form.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 35 year old anthropology researcher returned from a trip to Sarawak studying primate behaviour 7 days previously. He had no history of monkey bites but had been working close to primates. He complains of fever, headache and diarrhoea. Examination reveals hepatosplenomegaly and his full blood count shows mild anaemia, a mildly elevated white cell count and a platelet count of 76x10^9/L. Malaria rapid diagnostic test is negative. What is the likeliest diagnosis?",
+      "options": [
+        "A. Chesson variant Plasmodium vivax infection",
+        "B. Herpes B infection",
+        "C. Monkeypox",
+        "D. Plasmodium knowlesi infection",
+        "E. Rabies"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Plasmodium knowlesi is the sixth human malaria now that Plasmodium ovale has been classified as two subspecies on the basis of genetic homology. P. knowlesi is associated with close contact with non-human primates and is usually a mild infection, which does not relapse. Its life cycle is 24 hours (as opposed to 48 hours for falciparum), giving rapid changes in fever. Chesson strain vivax is relatively resistant to primaquine and is found in Indonesia.",
+      "questionNumber": 55
+    },
+    {
+      "question": "An 18 year old female presents unwell with sudden onset of bloody diarrhoea with fever and abdominal pain. Temperature is 38.9 degrees C, pulse 110 beats/min and BP 93/56 mmHg. She looks jaundiced and pale with diffuse abdominal pain. Blood tests show a haemoglobin of 67 g/L white cell count 18.6x10^9/L, platelets 110x10^9/L bilirubin 98 µmol/L (5.73 mg/dL), aspartate aminotransferase (AST) 21 U/L, creatinine 345 µmol/L (3.90 mg/dL). What is the likeliest diagnosis?",
+      "options": [
+        "A. Haemolytic uraemic syndrome",
+        "B. Hantavirus infection",
+        "C. Leptospirosis",
+        "D. Toxic shock syndrome",
+        "E. Typhoid fever"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Haemolytic uraemic syndrome is usually associated with infection with E. coli O157. Treatment is supportive. The other options would not give this combination of anaemia, jaundice and renal failure.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 24 year old woman is investigated for chronic bloody diarrhoea with left iliac pain by colonoscopy. Biopsy shows granulomas in the terminal ileum and CT scan shows mesenteric lymphadenopathy. A presumptive diagnosis of Crohn's disease is made; however, stool culture grows a Gram-negative organism at low temperatures. What is this likely to be identified as?",
+      "options": [
+        "A. Campylobacter jejuni",
+        "B. Mycobacterium pseudotuberculosis",
+        "C. Necator americanus",
+        "D. Salmonella Enteritidis",
+        "E. Yersinia enterocolitica"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Yersinia enterocolitica is commonly found in pork, causes mild to moderate gastroenteritis and can produce significant mesenteric adenitis after an incubation period of 3-7 days. It resolves slowly. The other options would not give this clinical picture.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 44 year old farmer presents with fever and increasing shortness of breath after clearing out one of his barns. His symptoms progressed over the 48 hours following exposure, despite avoiding the barn. He has not had any similar symptoms previously. He is found to have widespread respiratory fine crackles and his chest X-ray reveals pulmonary oedema. Blood tests show evidence of acute kidney injury. What is the likeliest diagnosis?",
+      "options": [
+        "A. Acute allergic bronchiolitis",
+        "B. Allergic bronchopulmonary aspergillosis",
+        "C. Goodpasture's syndrome",
+        "D. Granulomatous polyangiitis",
+        "E. Hantavirus infection"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Hantavirus is a ribonucleic acid (RNA) virus associated with pulmonary and renal failure mimicking pulmonary syndrome in leptospirosis, and is associated with a history of contact with mice within a wide geographical area. Some strains of hantaviruses cause the potentially fatal diseases - hantavirus haemorrhagic fever with renal syndrome and hantavirus pulmonary syndrome - while others have not been associated with known human disease. Treatment is supportive. The other syndromes are non-infectious and while all enter the differential, the scenario means one should consider hantavirus.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 27 year old zoology student is on a field trip examining bats. She receives a bite. Vaccination against which of the following should be recommended?",
+      "options": [
+        "A. Diphtheria",
+        "B. Hepatitis A",
+        "C. Mumps",
+        "D. Rabies",
+        "E. Smallpox"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Bat bites have been associated with transmission of rabies and individuals who are bitten or likely to be exposed to bats should have a rabies vaccine. The other infections are not associated with bats.",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 19 year old pet shop owner presents with a pustular rash on her hands and arms. She had recently received a shipment of pet Gambian pouch rats. What is the likeliest diagnosis?",
+      "options": [
+        "A. Contact dermatitis",
+        "B. Listeriosis",
+        "C. Monkeypox",
+        "D. Palmoplantar pustulosis",
+        "E. Smallpox"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Monkeypox is a relatively harmless infection with a poxvirus. Although similar in appearance to smallpox, it is a mild infection. The most recent outbreak in the USA was related to importation of pet rats from The Gambia in Africa.",
+      "questionNumber": 60
+    },
+    {
+      "question": "A 54 year old woman presents with sudden onset of severe left-sided abdominal pain; she scores this at 10 out of 10. There is no history of wounds or trauma. The pain is constant in nature and not associated with food. On examination she has a temperature of 38.6 degrees C and BP of 92/54 mmHg. Her left hypogastrium is extremely tender with a small bruise on the skin but she has no peritonism. Venous blood gas analysis shows an H ion concentration of 76 nmol/L (pH 7.12) and a lactate of 4.3 mmol/L (38.7 mg/dL). What is the likeliest diagnosis?",
+      "options": [
+        "A. Gas gangrene",
+        "B. Lemierre's syndrome",
+        "C. Necrotising fasciitis",
+        "D. Perforated descending colon",
+        "E. Splenic rupture"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The cardinal feature of necrotising fasciitis is pain out of keeping with clinical signs. The diagnosis is by surgical exploration with necrotic deep tissue being seen. It is usually due to a polymicrobial infection and treatment is with broad-spectrum antibiotics including a macrolide to reduce toxin production plus surgical debridement. Gas gangrene is associated with wounds, and crepitus may be detected in the skin. Splenic rupture would be associated with trauma and there is no history of this. Lemierre's syndrome presents as a pain in the neck, which results from a thrombophlebitis, typically of the internal jugular vein, complicating a sore throat. A colonic perforation would be considered with the location of the abdomen pain but would not be expected to cause the skin lesion visible over the hip, which is a key feature that raises the possibility of necrotising fasciitis.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A 23 year old intravenous drug user presents to the emergency department. He had recently been injecting heroin into his skin. He complains of double vision and has progressive difficulty in swallowing. On examination he has ptosis and divergent eye movements. What is the likellest diagnosis?",
+      "options": [
+        "A. Guillain-Barré syndrome",
+        "B. Myasthenia gravis",
+        "C. Staphylococcal brain abscess",
+        "D. Tetanus",
+        "E. Wound botulism"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Wound botulism results from the contamination of a wound with the bacterial species Clostridium botulinum, which then secretes botulinum toxin into the bloodstream. It has become increasingly common in people who take drugs intradermally or subcutaneously (skin popping). Botulism is typically described as a ‘triad of bulbar palsy and descending paralysis, lack of fever, and clear senses'. Staphylococcal brain abscesses and tetanus are also associated with drug injection but the patient's neurological symptoms with prominent bulbar signs and ocular involvement make these less likely. Staphylococcal brain abscess would be more associated with injection into the vein than skin popping. The other conditions may cause ocular signs but are not particularly associated with drug use.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 17 year old intravenous drug user presents with abdominal pain, vomiting and fever. On examination there is a painless black eschar on her left arm. What is the likeliest diagnosis?",
+      "options": [
+        "A. Cutaneous anthrax",
+        "B. Gas gangrene",
+        "C. Lyme disease",
+        "D. Necrotising fasciitis",
+        "E. Staphylococcal bacteraemia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Anthrax amongst drug users is related to heroin contaminated with anthrax spores. Urgent surgical debridement (to remove dead or devitalised tissue and drain any abscess/collection) is most important. This should be performed alongside empiric antibiotic treatment to cover Bacillus anthracis as well as other more common causes of soft tissue infection. Antibiotic treatment may involve ciprofloxacin and clindamycin intravenously in combination with penicillin, flucloxacillin and metronidazole (i.e. a five-drug combination). Gas gangrene is not particularly associated with an eschar and is more associated with dusky skin discoloration and crepitus. Neither Lyme disease not staphylococcal bacteraemia are associated with an eschar, and necrotising fasciitis would typically be associated with more pain at the site and other skin features.",
+      "questionNumber": 63
+    },
+    {
+      "question": "A 45 year old laboratory technician originally from India presents with a fever and unilateral swelling in his neck. He also complains of mild testicular pain. He is otherwise well and blood tests are normal. What is the likeliest diagnosis?",
+      "options": [
+        "A. Cervical tuberculosis",
+        "B. Kikuchi's disease",
+        "C. Lymphoma",
+        "D. Mumps",
+        "E. Teratoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Some adults may not have been immunised with MMR. The combination of neck swelling due to parotitis and orchitis is highly suggestive of mumps. The other causes listed might explain cervical swelling or the combination of cervical and testicular problems but are less consistent from the relatively healthy nature of this patient and the short history of symptoms.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 34 year old intravenous drug user presents with painful swelling of his left arm. On examination his arm is swollen, oedematous and dusky, with apparent crepitus. A diagnosis of gas gangrene is made. What is the causative organism?",
+      "options": [
+        "A. Clostridium difficile",
+        "B. Clostridium perfringens",
+        "C. Clostridium septicum",
+        "D. Clostridium sordellii",
+        "E. Clostridium tetani"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Gas gangrene is due to infection with C. perfringens. Treatment involves surgical debridement and penicillin with clindamycin.",
+      "questionNumber": 65
+    },
+    {
+      "question": "A 24 year old waitress complains of flushing and tingling around her mouth after eating some left-over canned sardines for lunch and has no known occupational or recreational exposures to toxins. The symptoms resolve over an hour. What is the likeliest diagnosis?",
+      "options": [
+        "A. Ciguatera poisoning",
+        "B. Monosodium glutamate poisoning",
+        "C. Paralytic shellfish poisoning",
+        "D. Scombroid poisoning",
+        "E. Thallium poisoning"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Scombroid fish can produce histamines, which increase when bacteria metabolise histidine. This rapidly causes symptoms. Uncooked tuna steaks are a common cause. Ciguatera poisoning presents with prominent abdominal symptoms and a range of neurological symptoms, and the neurological symptoms may be prolonged. The dietary history, exposure history and lack of paralysis make the various other options unlikely.",
+      "questionNumber": 66
+    },
+    {
+      "question": "An 84 year old man, previously fit and well, presents with a pustular painful rash in the left ophthalmic nerve distribution. He was started on intravenous aciclovir but deteriorated with headache, fever and delirium followed by sudden onset of a right hemiparesis. What is the likeliest diagnosis?",
+      "options": [
+        "A. Acute diffuse encephalomyelitis",
+        "B. Aciclovir-induced encephalopathy",
+        "C. Cavernous sinus thrombosis",
+        "D. Granulomatous cerebral angiitis",
+        "E. Sagittal sinus thrombosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Granulomatous cerebral angiitis is a rare complication of shingles, especially when in the ophthalmic branch of the trigeminal nerve. It is often fatal and only diagnosed post-mortem. Aciclovir-induced encephalopathy is unusual with modern formulations and in the absence of renal impairment. The combination of confusion with more focal neurology makes the other possibilities unlikely.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A 54 year old Jamaican man presents with fatigue and a widespread rash. On examination he has widespread lymphadenopathy. A blood count shows a significant increase in lymphocytes and on flow cytometry these are found to be T cells. He is also found to have an elevated blood calcium. Which of the following is a potential viral cause of this syndrome?",
+      "options": [
+        "A. Adenovirus",
+        "B. Human herpesvirus 7",
+        "C. HIV-2",
+        "D. Human T-cell lymphotropic virus type 1 (HTLV-1)",
+        "E. West Nile virus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "HTLV-1 is found in Japan, the Caribbean and Central and South America and can cause T-cell lymphoproliferation. It may be smouldering or aggressive but should be suspected in patients with T-cell lymphoproliferation, particularly when from an area where the virus is found. It is also associated with hypercalcaemia. The other viruses are not specifically associated with T-cell lymphoproliferative disorders, although HIV should always be excluded in the presence of lymphoproliferation. HIV-2, however, is not associated with the Caribbean and is mainly found in West Africa.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A 44 year old Chinese businessman returns from a trip to Hong Kong with a cough, fever and myalgia. He is diagnosed as having a lower respiratory tract infection. He is worried about ‘bird flu' since he visited his relatives who are farmers and keep poultry in a rural area. Which of the following viruses might be responsible for his syndrome if there is an epidemiological link to visiting the farm?",
+      "options": [
+        "A. Bocavirus",
+        "B. H1N1 pmd2009 influenza A",
+        "C. H5N1 influenza A",
+        "D. Parainfluenza",
+        "E. SARS coronavirus"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "There are a variety of influenza strains associated with avian influenza but of those listed only H5N1 is an avian strain and has caused outbreaks in the region around Hong Kong, while H7N9 has been implicated in cases around Shanghai. H1N1 is a human strain and the other viruses are not influenza A viruses.",
+      "questionNumber": 69
+    },
+    {
+      "question": "A 14 year old refugee recently arrived from South Sudan is found to have ulcerated, pustular nodules on his elbow. He also has underlying deformity of the humerus. His blood tests show him to be HIV negative but the venereal disease research laboratory (VDRL) test positive. What is the likeliest diagnosis?",
+      "options": [
+        "A. Bejel",
+        "B. Congenital syphilis",
+        "C. Pinta",
+        "D. Podoconiosis",
+        "E. Yaws"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Non-venereal treponemal infections are endemic in many tropical countries. Yaws presents with ulcerated skin lesions followed by bone and joint deformity caused by Treponema pallidum pertenue. Treponemal serology cross-reacts and so is unreliable. Pinta is found mainly in South America and bejel is mainly in the Middle East and West Africa.",
+      "questionNumber": 70
+    },
+    {
+      "question": "A 34 year old woman who takes prednisolone and azathioprine for control of her Crohn's disease presents with a 10-day history of headache and double vision. On examination she has meningism and a 3rd nerve palsy. CSF shows a white cell count of 500 cells/mm3, which are predominately lymphocytes, an elevated protein and low glucose. Special stains and antigen tests are negative. What is the likeliest infecting organism?",
+      "options": [
+        "A. Cryptococcus neoformans",
+        "B. Listeria monocytogenes",
+        "C. Mycobacterium tuberculosis",
+        "D. Neisseria meningitidis",
+        "E. Streptococcus pneumoniae"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Listeria should be considered in immunocompromised hosts as well as in pregnancy and in people over 55 years of age. CSF is usually lymphocytic. Treatment is with ampicillin as it is inherently resistant to cephalosporins. TB is also a consideration, especially if the patient has had anti-tumour necrosis factor (TNF) therapy, but the short history is against this. Cryptococcal disease is often associated with lower cell numbers and would be associated with detection of cryptococcal antigen or identification of yeast on Indian ink testing. The other causes are also possible but less likely in this scenario and would more usually produce neutrophils in the CSF.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 34 year old man presents with painful ulceration on his hand after catching and skinning wild rabbits on his farm. On examination he has a area of ulceration on his right hand with axillary lymphadenopathy. What is the likeliest infecting organism?",
+      "options": [
+        "A. Bartonella henselae",
+        "B. Francisella tularensis",
+        "C. Mycobacterium marinum",
+        "D. Orientia tsutsugamushi",
+        "E. Sporothrix schenckii"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Francisella tularensis is a zoonotic infection associated with contact with wild rodents, including rabbits. It is spread by ticks in the wild and treatment is with aminoglycosides or ciprofloxacin or doxycycline. The other options are not associated with wild rodent contact leading to skin ulceration.",
+      "questionNumber": 72
+    },
+    {
+      "question": "A 73 year old man with a history of benign prostatic hypertrophy, mitral regurgitation, prior cholecystectomy and an indwelling catheter presents with a 10-day history of fever and malaise. On examination he is febrile, tachycardic and has a mitral regurgitant murmur. Blood cultures are repeatedly and rapidly positive for a Gram-positive coccus, identified as Enterococcus faecalis. Which of the following is most likely to establish the source of this man's enterococcal infection?",
+      "options": [
+        "A. Catheter urine sample",
+        "B. CT abdomen",
+        "C. Echocardiogram",
+        "D. MRI cholangiogram",
+        "E. Ultrasound of biliary tree"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Enterococcal infection may occur in the urinary tract and in the biliary tract, which is particularly relevant in someone with a history suggestive of gallstone disease. Thus imaging these sites would be reasonable as part of the investigation. However, the presence of multiple positive blood cultures and the rapid time to positivity suggests an endovascular focus; echocardiography is essential in this case and the test most likely to establish the source as infective endocarditis. This man has a prior history of a regurgitant murmur, which may or may not be related to the current presentation but this also increases his risk of having enterococcal endocarditis.",
+      "questionNumber": 73
+    },
+    {
+      "question": "A 44 year old truck driver was involved in a road traffic collision; this resulted in a traumatic injury to his pelvis, which was contaminated with soil from a ditch. He develops a brain abscess, which is drained, and on microscopy shows long, filamentous, branching Gram-positive rods that are weakly acid-fast. Which of the following is the most appropriate treatment?",
+      "options": [
+        "A. Co-trimoxazole plus imipenem",
+        "B. Doxycycline plus gentamicin",
+        "C. Rifabutin and clarithromycin",
+        "D. Rifampicin, isoniazid, ethambutol and pyrazinamide",
+        "E. Vancomycin plus rifampicin"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Co-trimoxazole plus imipenem would work well for the treatment of Nocardia infection, but the other options would be more appropriate for other infections: for example, options C and D list agents used in atypical mycobacterial infection and in tuberculosis, respectively. Several options contain agents with limited brain penetration such as vancomycin or gentamicin, which make them less ideal or necessitate intrathecal dosing.",
+      "questionNumber": 74
+    },
+    {
+      "question": "You are working in a hospital in Darwin, Northern Australia, and are asked to see a surgical emergency admission of a 13 year old refugee from New Guinea who has severe abdominal pain and on CT scan has necrotising colitis. He is obviously malnourished and very unwell. What is the likeliest causative primary organism leading to this syndrome?",
+      "options": [
+        "A. Ascaris lumbricoides",
+        "B. Clostridium difficile",
+        "C. Clostridium perfringens",
+        "D. Necator americanus",
+        "E. Taenia solium"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Clostridial necrotising enteritis or pigbel is an often-fatal type of food poisoning caused by a β-toxin of C. perfringens, type C. The toxin is normally inactivated by certain proteases or by normal cooking. Pigbel is more likely in protein malnutrition or in the presence of trypsin inhibitors, either in foods such as sweet potatoes or during infection with Ascaris sp. roundworms.",
+      "questionNumber": 75
+    },
+    {
+      "question": "A 16 year old presents unwell with sudden onset of bloody diarrhoea with fever and abdominal pain. Her temperature is 38.4 degrees C, pulse 112 beats/min and BP 89/54 mmHg. She appears jaundiced and pale with diffuse abdominal pain. Blood tests show a haemoglobin of 57 g/L, white cell count 19.3x10^9/L, platelets 106x10^9/L, bilirubin 95 µmol/L (5.55 mg/dL), AST 25 U/L, creatinine 467 µmol/L (5.28 mg/dL). Which of the following is the most appropriate treatment?",
+      "options": [
+        "A. Azithromycin",
+        "B. Ciprofloxacin",
+        "C. Co-trimoxazole",
+        "D. No antimicrobial indicated",
+        "E. Vancomycin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "No antimicrobial indicated; there is some evidence that antibiotics may prolong illness with E. coli O157. Treatment is supportive.",
+      "questionNumber": 76
+    },
+    {
+      "question": "A 24 year old student has returned from a holiday in the Canary Islands. She had noticed a black scar where she had been bitten by a tick. Since then she has felt increasingly unwell with fatigue and shortness of breath on exertion. Her blood tests show a haemolytic anaemia. What is the most likely causative organism?",
+      "options": [
+        "A. Babesia microti",
+        "B. Mycoplasma pneumoniae",
+        "C. Plasmodium falciparum",
+        "D. Plasmodium vivax",
+        "E. Rickettsia prowazekii"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Babesiosis is caused by a tick-borne intra-erythrocytic protozoon parasite and is found throughout the world. It can lead to these clinical signs and, in the context of the tick bite, is more likely than the alternatives. Treatment is with quinine and clindamycin.",
+      "questionNumber": 77
+    },
+    {
+      "question": "A 47 year old man originally from Zambia presents with lymphadenopathy and lethargy. His CSF reveals trypanosomiasis. Which of the following is the most appropriate treatment?",
+      "options": [
+        "A. Benznidazole",
+        "B. Melarsoprol",
+        "C. Miltefosine",
+        "D. Nifurtimox",
+        "E. Sodium stibogluconate"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Benznidazole and nifurtimox are for American trypanosomiasis while stibogluconate and miltefosine are for leishmaniasis. Melarsoprol is the treatment of choice.",
+      "questionNumber": 78
+    },
+    {
+      "question": "A 31 year old man presents with a 3-day history of bloody diarrhoea and cramping abdominal pain. He had eaten a takeaway meal 2 days previously but other members of his family had also eaten the meal and were well. Which of the following is the most appropriate treatment?",
+      "options": [
+        "A. Azithromycin",
+        "B. Ciprofloxacin",
+        "C. Co-amoxiclav",
+        "D. Erythromycin",
+        "E. No antibiotics"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Azithromycin is the treatment of choice for Campylobacter (which is the most likely organism) due to increasing quinolone resistance. It is preferred to erythromycin due to fewer side-effects.",
+      "questionNumber": 79
+    },
+    {
+      "question": "A 21 year old woman presents having been bitten by a rhesus macaque monkey while working in a research laboratory. She is concerned about herpes B virus infection. What is the correct treatment for this infection?",
+      "options": [
+        "A. Aciclovir",
+        "B. Foscarnet",
+        "C. Ganciclovir",
+        "D. Human normal immunoglobulin",
+        "E. No treatment available"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Herpes B is an endemic DNA virus of macaque monkeys, which can rarely cause encephalitis in humans exposed through bites. Treatment with aciclovir is recommended as soon as possible and may be life-saving.",
+      "questionNumber": 80
+    }
+  ]
+}

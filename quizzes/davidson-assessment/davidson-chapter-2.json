@@ -1,0 +1,317 @@
+{
+  "title": "Clinical therapeutics and good prescribing - Chapter 2",
+  "questions": [
+    {
+      "question": "Which of the following drugs exerts its action directly at an enzyme target?",
+      "options": [
+        "A. Aspirin",
+        "B. Hydrocortisone",
+        "C. Insulin",
+        "D. Lidocaine",
+        "E. Morphine"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Aspirin acts on the enzyme cyclo-oxygenase and is a non-selective and irreversible inhibitor. Hydrocortisone is a corticosteroid and acts on a DNA-linked receptor. Insulin acts on a kinase-linked receptor. Lidocaine blocks a voltage-sensitive Na+ channel. Morphine acts on a G-protein-coupled receptor.",
+      "questionNumber": 1
+    },
+    {
+      "question": "Which of the following statements best describes the term 'potency'?",
+      "options": [
+        "A. A less potent drug will always have a lower efficacy than a more potent drug",
+        "B. More potent drugs have a lower ED50",
+        "C. The potency of a drug has no bearing on recommended dose ranges",
+        "D. The potency of a drug is the extent to which the drug can produce a response when all of the available receptors are occupied",
+        "E. The potency of a drug is unrelated to its affinity for a receptor"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The potency of a drug is related to its affinity for a receptor. Less potent drugs are given in higher doses. The lower potency of a drug can be overcome by increasing the dose. Option D refers to the 'efficacy' of a drug.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following statements best describes how a non-competitive antagonist drug affects the pharmacodynamic actions of an agonist?",
+      "options": [
+        "A. Binding irreversibly with the receptor to remove receptors as potential binding sites for the agonist",
+        "B. Binding to a different population of receptors that produce a response antagonistic to that of the agonist",
+        "C. Causing cell death so that it cannot function",
+        "D. Increasing the total number of receptors for the agonist, thereby reducing the proportion that it can occupy",
+        "E. Reacting chemically with the agonist to reduce the agonist concentration available to bind to receptors"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The term 'non-competitive antagonist' is used to describe two distinct situations where an antagonist binds to a receptor, or its associated signal transduction mechanism, to prevent the agonist activating the receptor. The common feature is that increasing the concentration of agonist cannot outcompete the antagonist. The receptor is rendered inactive and so the maximal response of which the cell or tissue is capable is reduced. This can occur in three ways: (i) the antagonist binds to an allosteric site of the receptor, (ii) the antagonist binds to the same active site as the agonist but does so irreversibly, or (iii) the antagonist interferes with the signal transduction mechanism preventing receptor-agonist binding resulting in a pharmacological effect.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following drugs induce the hepatic cytochrome P450 enzymes that are responsible for drug metabolism?",
+      "options": [
+        "A. Cimetidine",
+        "B. Ciprofloxacin",
+        "C. Erythromycin",
+        "D. Rifampicin",
+        "E. Valproate"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Rifampicin is a very potent enzyme inducer. All of the other options are well recognised as enzyme inhibitors.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following drugs may exhibit zero-order drug kinetics at therapeutic drug concentrations?",
+      "options": [
+        "A. Carbamazepine",
+        "B. Ciprofloxacin",
+        "C. Lamotrigine",
+        "D. Phenytoin",
+        "E. Vancomycin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The clearance rate of most drugs increases progressively as their plasma concentration increases ('first-order metabolism'). For a small number of common medicines, their metabolism is 'saturable', meaning that the rate of clearance cannot increase further ('zero-order kinetics'). For those drugs, further dose increases can cause disproportionate increases in exposure and the likelihood of toxicity.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following statements about the estimated volume of distribution  of a drug is true?",
+      "options": [
+        "A. Drugs that are highly bound to albumin have a lower Volume of distribution",
+        "B. Drugs with a large Volume of distribution are eliminated more rapidly after discontinuation",
+        "C. Larger Volume of Distribution is associated with a shorter half-life",
+        "D. Volume of Distribution cannot be greater than the volume of the body",
+        "E. Volume of Distribution of lipid-soluble drugs is larger in males than females (of equivalent mass)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The apparent volume of distribution (Vd) is the volume into which a drug appears to have distributed following intravenous injection. It is calculated from the equation Vd=D/C0 where D is the amount of drug given and C0 is the initial plasma concentration. Drugs that are highly bound to plasma proteins may have a Vd below 10 L (e.g. warfarin, aspirin), while those that diffuse into the interstitial fluid but do not enter cells because they have low lipid solubility may have a Vd between 10 and 30 L (e.g. gentamicin, amoxicillin). It is an 'apparent' volume because those drugs that are lipid soluble and highly tissue-bound may have a Vd of greater than 100 L (e.g. digoxin, amitriptyline). Drugs with a larger Vd have longer half-lives, take longer to reach steady state on repeated administration and are eliminated more slowly from the body following discontinuation. Females have a greater proportionate content of fat in their bodies and so the volume of distribution of lipid-soluble drugs is increased.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following factors might be expected to favour increased bioavailability of a drug that is given by mouth?",
+      "options": [
+        "A. Enterohepatic circulation of the active drug",
+        "B. Gastroenteritis",
+        "C. Hypoalbuminaemia",
+        "D. Impaired renal function",
+        "E. Solid rather than liquid formulations"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Drugs that enter the enterohepatic circulation are reabsorbed into the body after excretion in the bile. This occurs because intestinal flora split the water-soluble conjugated drug, allowing the free drug to be reabsorbed into the body and thus increasing its bioavailability. Gastroenteritis favours more rapid transit through the small intestinal absorptive region of the bowel and reduces oral bioavailability. Hypoalbuminaemia may alter the proportion of the drug retained in plasma after absorption but does not alter the overall bioavailability in the body. Impaired renal function may influence clearance of a drug but does not influence bioavailability. Aqueous solutions, syrups, elixirs, and emulsions do not present a dissolution problem and generally result in fast and often complete absorption as compared to solid dosage forms. Due to their generally good systemic availability, solutions are frequently used as bioavailability standards against which other dosage forms are compared.",
+      "questionNumber": 7
+    },
+    {
+      "question": "For which of the following drugs do pharmacogenetic differences commonly influence the clinical effect in Western populations?",
+      "options": [
+        "A. Amlodipine",
+        "B. Codeine",
+        "C. Gliclazide",
+        "D. Omeprazole",
+        "E. Simvastatin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Codeine is an opioid analgesic drug that is licensed for the treatment of mild to moderately severe pain, and it belongs to the drug class of opioid analgesics. Codeine is metabolised by the hepatic cytochrome P450 2D6 (CYP2D6) enzyme, which also metabolises many other prescribed drugs. CYP2D6 converts codeine to its active metabolite, morphine, which is responsible for the analgesic effect. The analgesic effect of codeine is attenuated in individuals who carry two inactive copies of CYP2D6 ('poor metabolisers'), and are less able to deliver sufficient morphine levels. Some individuals carry more than two functional copies of the CYP2D6 gene ('ultra-rapid metabolisers') and are able to metabolise codeine to morphine more rapidly and completely. They may develop symptoms of morphine toxicity (e.g. drowsiness, delirium and shallow breathing) even at low doses.",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which of the following features is most characteristic of hypersensitivity adverse drug reactions?",
+      "options": [
+        "A. They are associated with human leucocyte antigen (HLA) class haplotypes",
+        "B. They are discovered early in the drug development process",
+        "C. They are dose related",
+        "D. They manifest several months after initial exposure",
+        "E. They occur at the higher part of the therapeutic dose range"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Drug hypersensitivity is typically immune mediated. Some drugs (especially large molecules) may themselves stimulate immune reaction but many others (or their metabolites) act as 'haptens' that bind covalently to serum or cell-bound proteins, including peptides embedded in major histocompatibility complex (MHC) molecules. This makes the protein immunogenic, stimulating antibody production targeted at the drug or T-cell responses against the drug. The reaction can produce a variety of reactions ranging from mild rashes through to life-threatening anaphylaxis. These reactions are often rare and discovered later in the drug development process. The susceptibility to hypersensitivity reactions is, in many cases, strongly related to genetics. Those who are susceptible will often react immediately to minimal exposure to the drug, making it very difficult to identify a dose-response relationship.",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following is an advantage of the spontaneous voluntary reporting methods of pharmacovigilance?",
+      "options": [
+        "A. It captures the majority of adverse drug reactions",
+        "B. It is able to quantify the risk of an adverse drug reaction (ADR) after exposure to a drug",
+        "C. It is specific for events that really are caused by the drug",
+        "D. It provides early signal generation after marketing of a new drug",
+        "E. Its information is generated by highly qualified professionals"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Voluntary reporting is a continuously operating and effective early warning system for previously unrecognised rare ADRs. It is better suited than most other methods to early detection of previously unknown reactions, especially for medicines that are prescribed in high volume. Although doctors were initially the main source of reporting, most other healthcare professional groups, and patients, are now able to report in the UK. Their reports have been shown to be of equivalent value to those produced by the medical reporters. Its weaknesses include low reporting rates (only 3% of all ADRs and 10% of serious ADRs are ever reported), an inability to quantify risk (because the ratio of ADRs to prescriptions is unknown) and the influence of prescriber awareness on likelihood of reporting (reporting rates rise rapidly following publicity about potential ADRs).",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 23 year old woman is taking a combined oral contraceptive preparation. She has developed an infection sensitive to a number of common antibiotics. Which of the following antibiotic choices is most likely to interact with the contraceptive preparation to cause contraceptive failure?",
+      "options": [
+        "A. Amoxicillin",
+        "B. Ciprofloxacin",
+        "C. Doxycycline",
+        "D. Erythromycin",
+        "E. Rifampicin"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although there have been past suggestions that broad-spectrum penicillins might interfere with gut flora to alter the enterohepatic recycling of oestrogens (reducing their bioavailability in the body), it is now thought that the only types of antibiotic that interact with hormonal contraception and make it less effective are rifampicin-like antibiotics. The metabolism of oestrogens is accelerated by rifamycins, leading to a reduced contraceptive effect with combined oral contraceptives, contraceptive patches and vaginal rings. Erythromycin is a well-recognised inhibitor of the hepatic metabolism of many drugs (including oestrogens) but this will not result in contraceptive failure.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 71 year old woman with ischaemic heart disease recently started taking amiodarone 200 mg orally daily for control of her atrial fibrillation. She has now been admitted to hospital 3 months later with episodes of dizziness and bradycardia (heart rate 48 beats/min). The electrocardiogram shows a prolonged QT interval (530 ms). Which of her current regular medicines below is most likely to interact with amiodarone to cause the QT prolongation?",
+      "options": [
+        "A. Clopidogrel",
+        "B. Moxifloxacin",
+        "C. Nicorandil",
+        "D. Simvastatin",
+        "E. Thyroxine"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Moxifloxacin is a quinolone antibiotic that can be used to treat sinusitis, community-acquired pneumonia, exacerbations of chronic bronchitis, mild to moderate pelvic inflammatory disease, or complicated skin and soft tissue infections. Along with other quinolones, it may block cardiac potassium channels and delay the repolarisation phase of the action potential to prolong QT interval. This may potentiate the similar actions of amiodarone. Patients with a prolonged QT interval are at risk of suffering episodes of torsades de pointes, which may progress to cause cardiac arrest.",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which of the following is the commonest cause of prescribing errors in hospital practice?",
+      "options": [
+        "A. Calculation errors",
+        "B. Duplicated prescribing",
+        "C. Failed medicines reconciliation",
+        "D. Prescribing without indication",
+        "E. Unintentional prescribing"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Medication reconciliation is the process of creating the most appropriate list of medications for the patient including drug name, dosage, frequency and route - at a transition of care from one provider to another. Failure to take an adequate medication history from the patient (or relative), obtain information from another professional or another source increases the chance that important medicines will be inadvertently omitted. Medicines reconciliation is also about considering that information in the light of the clinical circumstances and altering or discontinuing prescriptions as necessary. The medicines reconciliation process is particularly important at the admission, transfer and/or discharge from hospital. Omission of medicines on admission or discharge from hospital may account for a third of all recorded errors in some studies.",
+      "questionNumber": 13
+    },
+    {
+      "question": "Which of the following is NOT information required as part of the regulatory process leading to the granting of a marketing authorisation ('license')?",
+      "options": [
+        "A. Cost-effectiveness compared to standard treatment",
+        "B. Efficacy in the licensed indication",
+        "C. Product information literature",
+        "D. Quality of the manufacturing process",
+        "E. Toxicology studies"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "New drugs are given a 'market authorisation' based on the evidence of quality, safety and efficacy presented by the manufacturer. The regulator will not only approve the drug but will also take great care to ensure that the accompanying information reflects the evidence that has been presented. The summary of product characteristics (SPC), or 'label', provides detailed information about indications, dosage, adverse effects, warnings, monitoring, etc.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A trial of 5000 hypertensive patients randomised them to treatment with a new oral anticoagulant or a matched placebo. After a follow-up period of 5 years, 150 patients in the active treatment arm and 250 patients in the placebo arm had suffered a stroke.\nWhat is the number of patients that need to be treated (NNT) with the new treatment over 5 years to prevent one stroke?",
+      "options": [
+        "A. 10",
+        "B. 15",
+        "C. 20",
+        "D. 25",
+        "E. 30"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The calculation of NNT can be undertaken in two ways. First, the number of patients prevented from suffering a stroke in the active treatment compared to control arm was 100 out of a total number at risk of 2500. Therefore, the numbers treated for each one who benefitted was 2500/100=25. An alternative approach that works easily in less rounded numbers is to consider the difference in the percentage of patients in each group who had a stroke, i.e. active treatment 150/2500x100 = 6% and placebo 250/2500x100=10%. The difference is 4%, meaning that if a single at-risk group of just 100 patients were considered, then 4 would benefit and so the NNT is 100/4=25.",
+      "questionNumber": 15
+    },
+    {
+      "question": "An 82 year old man has a routine medication review with his family physician. He has a history of a transient ischaemic attack, hypertension and attacks of gout.\nWhich of the following prescriptions should probably be discontinued?",
+      "options": [
+        "A. Allopurinol 100 mg orally daily",
+        "B. Amlodipine 5 mg orally daily",
+        "C. Aspirin 75 mg orally daily",
+        "D. Diclofenac 25 mg orally 3 times daily",
+        "E. Ramipril 5 mg orally daily"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Diclofenac sodium is a non-steroidal anti-inflammatory drug (NSAID) that is indicated for the treatment of inflammatory arthritis and other musculoskeletal conditions. NSAIDs are contraindicated in elderly patients because of their increased risk of adverse effects, notably on the gastrointestinal mucosa and renal function. The likelihood of each of these outcomes is increased by co-prescription of aspirin and ramipril, respectively. All of the other medicines appear to have a clear indication for use. Best practice will be to discuss the medications involved with the patient himself.",
+      "questionNumber": 16
+    },
+    {
+      "question": "Which of the following drugs would pose the greatest risk of teratogenic effects if prescribed during the first trimester of pregnancy?",
+      "options": [
+        "A. Amoxicillin",
+        "B. Mebeverine hydrochloride",
+        "C. Rifampicin",
+        "D. Sodium valproate",
+        "E. Sulfasalazine"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Sodium valproate is associated with a risk of major and minor congenital malformations (in particular neural tube defects) as well as long-term neurodevelopmental effects. It should be avoided during pregnancy unless there is no safer alternative and only after a carefully discussing the risks with the patient.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 63 year old woman has progressively deteriorating renal function presumed to be due to the effects of renal scarring secondary to chronic reflux nephropathy in childhood. Her most recent estimated glomerular filtration rate (eGFR) is $26~mL/min/1.73~m^{2}.$\nWhich of the patient's prescriptions below would need to be amended?",
+      "options": [
+        "A. Clopidogrel 75 mg orally daily",
+        "B. Doxazosin 8 mg orally daily",
+        "C. Metformin hydrochloride 1 g orally twice daily",
+        "D. Pregabalin 50 mg orally twice daily",
+        "E. Tamoxifen 20 mg orally daily"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The UK National Institute for Health and Care Excellence (NICE) recommends that the dose of metformin should be reviewed if the eGFR is less than $45~mL/min/1.73~m^{2}$ and that it should be avoided if the eGFR is less than $30~mL/min/1.73~m^{2}$ (Type 2 diabetes in adults: management. NICE guideline [NG28]. Published December 2015.)",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 44 year old man with alcoholic cirrhosis of the liver is admitted to hospital with delirium, irritability and painful distension of the abdomen as a result of ascites. His investigations show that he is anaemic (haemoglobin 32 g/L), jaundiced (bilirubin 65 $\\mu$mol/L (3.8 mg/dL)), hypoalbuminaemic (albumin 20 g/L) and has a mild coagulopathy (international normalised ratio (INR) 1.6).\nHis initial prescription chart contains the five prescriptions below. Which of the prescriptions should be discontinued?",
+      "options": [
+        "A. Codeine phosphate 60 mg orally 4 times daily",
+        "B. Lactulose 20 g 3 times daily",
+        "C. Pabrinex (vitamins B and C) intravenous high-potency solution for injection 2 pairs of 5 mL ampoules 3 times daily",
+        "D. Spironolactone 100 mg orally daily",
+        "E. Terlipressin acetate 1.5 mg intravenously 4 times daily"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient has severe liver disease demonstrated by the failure to synthesise clotting factors and albumin, and is showing features of hepatic encephalopathy. In severe liver disease many drugs can further impair cerebral function and may precipitate hepatic encephalopathy. These include all sedative drugs, opioid analgesics (e.g. codeine phosphate), those diuretics that produce hypokalaemia and drugs that cause constipation (e.g. codeine phosphate). Patients with hepatic encephalopathy must avoid constipation, and lactulose is a preferred laxative. Spironolactone is indicated in the management of ascites. B vitamins are important in avoiding Wernicke's encephalopathy in chronically malnourished patients. Terlipressin acetate is a vasoconstrictor that helps to reduce bleeding from oesophageal varices.",
+      "questionNumber": 19
+    },
+    {
+      "question": "The following dose expressions have been found on a hospital inpatient chart.\nWhich dose expression violates acceptable prescribing practice?",
+      "options": [
+        "A. 1 sachet",
+        "B. 1.4 g",
+        "C. 20 mL",
+        "D. 26 units",
+        "E. 100 $\\mu$g"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The only acceptable abbreviations of mass to be used on a written prescription chart are 'mg' and 'g'. 'Micrograms' should be written out in full to avoid the risk that the Greek symbol mu (µ) is mistaken for an 'm'. This would run the risk of a serious dosing error.",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following drugs should be prescribed by its proprietary (brand) name in preference to the generic international non-proprietary name (INN)?",
+      "options": [
+        "A. Atorvastatin",
+        "B. Ciclosporin",
+        "C. Ciprofloxacin",
+        "D. Irbesartan",
+        "E. Methyldopa"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Where non-proprietary ('generic') titles are given, they should be used by prescribers. This allows a pharmacist to dispense any suitable product, which avoids delay to the patient and sometimes expense to the health service. The only exception to this preference for generic prescribing is where there is a demonstrable difference in clinical effect between each manufacturer's version of the formulation, making it important that the patient should always receive the same brand. Ciclosporin is available in the UK as Neoral, Capimune, Deximune and ciclosporin. Other examples of such medicines include diltiazem, lithium, theophylline, phenytoin and insulin. Non-proprietary names are also preferred in the case of many compound and modified-release preparations.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 76 year old woman has been treated successfully with digoxin 187.5 $\\mu$g orally daily over a number of months to control the ventricular response rate to her atrial fibrillation. She has recently complained of some nausea and so the plasma digoxin concentration has been measured to investigate the possibility of digoxin toxicity as an explanation. On examination, the radial pulse rate is irregularly irregular and 64 beats/min. The plasma digoxin concentration is 1.8 $\\mu$g/L (target 0.8-2.0 $\\mu$g/L)",
+      "options": [
+        "A. Change digoxin dosage to 187.5 $\\mu$g orally on alternate days",
+        "B. Maintain the digoxin dosage at 187.5 $\\mu$g orally daily",
+        "C. Reduce the digoxin dosage to 62.5 $\\mu$g orally daily",
+        "D. Reduce the digoxin dosage to 125 $\\mu$g orally daily",
+        "E. Stop digoxin and start bisoprolol 2.5 mg orally daily"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient has excellent control of her ventricular rate and so digoxin appears to be very effective. However, she is complaining of nausea, which is a very common toxic effect of digoxin although there could be numerous other explanations. The plasma digoxin concentration is at the top end of the normal 'target' range. Although within that range it is perfectly possible (and likely) that, because of natural inter-patient variation, this patient's nausea is indeed caused by digoxin. Given that the rate control is so good, the optimal course of action is to keep this patient on digoxin but reduce the dosage in the hope of relieving the symptoms but maintaining the therapeutic effect. In other words, be guided by the beneficial and adverse effects of the medicine for your specific patient rather than the published reference ranges alone.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 56 year old man is being treated with intravenous gentamicin for Gram-negative septicaemia that is presumed to be of urinary tract origin. He is well hydrated and his renal function is normal. He has had two previous doses of gentamicin 360 mg as a 30-minute intravenous infusion at 1000 hrs on Wednesday and Thursday. Both previous plasma gentamicin concentrations have been checked by the senior doctor in charge of the ward and the third dose of gentamicin has been prescribed and is now due (Friday morning at 1000 hrs).\nWhen should the next plasma gentamicin concentration be taken?",
+      "options": [
+        "A. 0400 hrs (Saturday)",
+        "B. 1400 hrs (Friday)",
+        "C. 1800 hrs (Friday)",
+        "D. Immediately after the infusion is completed",
+        "E. Immediately before the third dose"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Gentamicin can cause significant toxic effects if it accumulates in the body (especially nephrotoxicity and ototoxicity). It is almost exclusively cleared by the kidney so the risk of accumulation is increased in patients with impaired renal function. Whatever the baseline renal function, all patients should have the serum gentamicin concentration monitored after each dose as a guide to the next dose and the dose interval. This patient has had two doses administered already and each has been followed by a serum concentration that has indicated it is appropriate to maintain the same dose and dose interval. The issue now is when to take the next serum concentration. The normal recommended window is between 6 and 14 hours post-dose: measurements taken before or after this interval are less likely to reflect the gentamicin exposure produced by the previous dosage. Most hospitals have a nomogram (based on the original Hartford nomogram) that helps clinicians to respond appropriately to the serum concentration.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 78 year old woman is reviewed in the emergency department of a hospital with bruising. She is taking warfarin 3 mg and 4 mg orally on alternate days as prophylaxis against recurrent pulmonary emboli. Her last 3-monthly INR measurement was 2.7. She has been otherwise well with no other new symptoms and she has not been put on any new medicines. Her investigations reveal a normal full blood count but an INR of 6.7.\nWhat is the appropriate course of action?",
+      "options": [
+        "A. Stop warfarin and give phytomenadione (vitamin K1) 1-3 mg by slow intravenous injection",
+        "B. Stop warfarin and give phytomenadione (vitamin K1) 1-5 mg by mouth",
+        "C. Stop warfarin and start apixaban",
+        "D. Stop warfarin and start low-molecular-weight heparin injections",
+        "E. Stop warfarin for 2 days only"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient is taking warfarin as prophylaxis against future recurrent pulmonary emboli. The target INR should be 2.5. She now presents with the INR out of control and this can be caused by several different factors (e.g. erratic tablet taking, altered liver function, dietary change, interacting drug). The loss of control puts her at increased risk of bleeding although there are no symptoms suggestive of a serious bleeding episode. The appropriate course of action at this point is to withhold the warfarin for 2 days and then resume (at a lower dose) before re-measuring the INR. In the absence of bleeding or an INR greater than 8.0, there is no indication to give vitamin K, which will largely reverse the action of warfarin and put the patient at risk of thromboembolic events until it can be restarted or replaced with an alternative anticoagulant.",
+      "questionNumber": 24
+    }
+  ]
+}

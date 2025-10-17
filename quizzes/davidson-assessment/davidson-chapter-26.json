@@ -1,0 +1,202 @@
+{
+  "title": "Stroke medicine - Chapter 26",
+  "questions": [
+    {
+      "question": "A patient is referred by his doctor to the hospital stroke service. Which of the following transient symptoms would allow you to make a clinical diagnosis of transient ischaemic attack (TIA)?",
+      "options": [
+        "A. Dizziness",
+        "B. Expressive dysphasia",
+        "C. Loss of consciousness",
+        "D. Slurred speech (dysarthria)",
+        "E. Transient confusion"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The definition of a TIA is the rapid onset of a focal neurological deficit, of presumed vascular origin, that resolves within 24 hours. It also includes transient monocular blindness due to vascular occlusion in the retina (amaurosis fugax). Dysphasia is caused by a deficit in the dominant cerebral hemisphere. Delirium, dizziness, lone dysarthria and loss of consciousness are not focal deficits when present on their own. Loss of consciousness can very rarely be caused by basilar ischaemia but is rarely transient. As a general rule, the diagnosis of TIA should not be made in patients who present with episodes of syncope, dizziness or delirium, as these do not reflect focal cerebral dysfunction.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 70 year old man is admitted overnight with a 24-hour history of left hemiparesis. Which one of these drug therapies would mandate urgent computed tomography (CT) head scanning?",
+      "options": [
+        "A. Aspirin",
+        "B. Clopidogrel",
+        "C. Ramipril",
+        "D. Simvastatin",
+        "E. Warfarin"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Early CT scanning is the ideal for all patients with suspected stroke to help plan acute therapies and plan secondary prevention. This man is beyond the time window for acute therapies. Patients who are anticoagulated with warfarin or who have a non-iatrogenic coagulopathy require urgent imaging of the brain to rule out the possibility of an intracerebral haemorrhage.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 43 year old woman attends the hospital accident and emergency department with a 1-hour history of sudden-onset severe occipital headache. On examination she is photophobic with neck stiffness. What is the most appropriate first-line investigation?",
+      "options": [
+        "A. Carotid Doppler ultrasound (duplex) scan",
+        "B. CT cerebral angiography",
+        "C. CT head scan",
+        "D. Lumbar puncture",
+        "E. Skull X-ray"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The clinical signs and symptoms in this patient are suggestive of a subarachnoid haemorrhage. An emergency head CT scan is essential. About 5-10% of patients with a subarachnoid haemorrhage will have a normal CT scan; in these cases, a lumbar puncture should be performed 12 hours following the onset of headache to look for xanthochromia (breakdown products of red blood cells).",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following ischaemic stroke patients who have undergone carotid duplex scanning would be most likely to benefit from left carotid endarterectomy?",
+      "options": [
+        "A. Left cerebellar hemisphere infarct with good functional recovery, 80% left carotid artery stenosis",
+        "B. Left middle cerebral artery territory infarct with good functional recovery, 60% left carotid artery stenosis",
+        "C. Left middle cerebral artery territory infarct with good functional recovery, 80% left carotid artery stenosis",
+        "D. Left middle cerebral artery territory infarct with persistent dense right hemiparesis and profound dysphasia, 90% left carotid artery stenosis",
+        "E. Right middle cerebral artery territory infarct with good functional recovery, 75% left carotid artery stenosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Carotid endarterectomy reduces the risk of stroke in patients with severe stenosis of the internal carotid artery but carries a significant risk of perioperative mortality and stroke. Decisions on whether to operate must, therefore, be based on a careful benefit/risk analysis. The absolute reduction in risk of future stroke is greatest for symptomatic patients with 70-99% stenosis and, in general, outweighs the risk of surgical complications. Importantly, symptomatic patients are defined as patients with a TIA or non-disabling stroke in the territory of the carotid artery on the same side as the stenosis in the preceding 6 months. The evidence to support surgery in symptomatic patients with moderate (50-69%) stenosis and asymptomatic patients with severe stenosis is less conclusive, as these patients have a smaller benefit/risk ratio than patients with severe symptomatic stenosis. Patients with stenosis of less than 50% do not benefit from carotid endarterectomy, irrespective of symptoms. Finally, a patient with severe residual disability would gain little benefit from preventing a further stroke within the same territory and may have a greater risk of surgical complications.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 73 year old man presents with a right hemiparesis and expressive dysphasia secondary to an infarct in the territory of the left middle cerebral artery. Blood pressure is 153/82 mmHg, serum cholesterol is 4.4 mmol/L (170 mg/dL) and the electrocardiogram (ECG) shows sinus rhythm with no abnormalities. Which of the following secondary prevention medications is usually avoided in such a patient?",
+      "options": [
+        "A. Amlodipine",
+        "B. Aspirin",
+        "C. Ramipril",
+        "D. Simvastatin",
+        "E. Warfarin"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In addition to lifestyle modifications, antiplatelet, lipid-lowering and antihypertensive therapy form the cornerstone of secondary prevention for most patients with an ischaemic stroke (Fig. 26.5). Recent large-scale randomised trials have demonstrated the benefit of statins and antihypertensive medication in these patients, even with blood pressure and cholesterol levels within the 'normal' range. Patients in atrial fibrillation benefit from anticoagulation with warfarin following ischaemic stroke, but there is no such benefit in those who are in sinus rhythm.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch26/a/26.5.png",
+      "questionNumber": 5
+    },
+    {
+      "question": "The ROSIER (Rule Out Stroke In the Emergency Room) clinical stroke tool can be used to triage patients with clinical suspicion of stroke. Which of the following features are given a negative score on the ROSIER scale (i.e. are not thought to be consistent with a clinical diagnosis of stroke)?",
+      "options": [
+        "A. Leg weakness",
+        "B. Loss of speech",
+        "C. Seizure",
+        "D. Unilateral arm weakness",
+        "E. Visual field defect"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Although seizure does occur in <5% of acute stroke patients, seizure (with post-seizure paresis) is more commonly recognised as a mimic of stroke. For that reason, it scores -1 on the ROSIER clinical stroke tool (Box 26.6), as does loss of consciousness, whereas all the other options score +1.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch26/a/26.6.png",
+      "questionNumber": 6
+    },
+    {
+      "question": "A patient is admitted with a clinical picture of acute stroke. You request a plain CT scan as initial emergency brain imaging. What information can you get from plain (non-contrast) CT brain scanning in acute stroke patients?",
+      "options": [
+        "A. Distinguishes acute stroke from TIA",
+        "B. Reliably detects intracerebral blood",
+        "C. Reliably detects subtle acute ischaemic changes",
+        "D. Shows brain function (functional imaging)",
+        "E. Shows blood flow in vessels"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The main advantages of plain CT scanning are its speed and tolerability and it can rapidly detect intracranial bleeding plus some stroke mimics. Magnetic resonance imaging (MRI) is often needed to show more subtle ischaemia, while MR angiography or CT angiography are usually required to show vessel occlusion.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 65 year old woman with a previous history of diabetes and breast carcinoma is found collapsed at home with drowsiness and a left hemiparesis. Which of the following should be carried out first?",
+      "options": [
+        "A. Check blood glucose level",
+        "B. Check temperature",
+        "C. Clarify breast carcinoma history",
+        "D. Examine for peripheral neuropathy",
+        "E. Examine for symmetrical plantar responses"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Hypoglycaemia can mimic stroke, is a medical emergency and is easily corrected. Although we do not know what drugs this patient takes, hypoglycaemia must be excluded. While important, the other actions do not take priority over checking the blood glucose.",
+      "questionNumber": 8
+    },
+    {
+      "question": "An 83 year old woman is brought to the emergency department after becoming unwell at home. Which of the following is true of total anterior circulation stroke?",
+      "options": [
+        "A. It is caused by occlusion of small perforating arteries",
+        "B. It includes higher cerebral dysfunction and motor loss",
+        "C. It involves isolated homonymous hemianopia",
+        "D. It is not caused by cerebral embolism",
+        "E. It is a pure motor stroke"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Classification of a stroke is helpful for both clinical and research purposes. A total anterior circulation stroke results in a mix of motor deficit, higher cerebral dysfunction and homonymous hemianopia caused by occlusion of a major cerebral artery. An embolic cause is often found.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A patient with an acute stroke is admitted to the specialist stroke unit. Which of the following currently apply to mechanical clot retrieval (thrombectomy)?",
+      "options": [
+        "A. It can be offered to most stroke patients",
+        "B. It is effective in intracerebral haemorrhage",
+        "C. It is effective in large-vessel occlusion",
+        "D. It requires less technological support than intravenous thrombolysis",
+        "E. It is a treatment that is widely available"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Mechanical clot retrieval (thrombectomy) appears to be particularly effective in cerebral ischaemia caused by large-vessel occlusion. However, it requires careful patient selection and considerable support from imaging investigations and catheter laboratories.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 38 year old man is brought to the emergency department with a suspected intracerebral haemorrhage. Which of the following are recognised risk factors for intracerebral haemorrhage?",
+      "options": [
+        "A. Antiphospholipid abnormality",
+        "B. Cardiac embolism",
+        "C. Carotid artery stenosis",
+        "D. Cocaine use",
+        "E. Raised cholesterol"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The main recognised risk factors for intracerebral haemorrhage include high blood pressure, smoking, excess alcohol intake, structural abnormalities, coagulopathies and drugs such as cocaine and amphetamines. Raised cholesterol, antiphospholipid abnormality, cardiac embolism and carotid artery stenosis are recognised risk factors for ischaemic stroke.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 70 year old man with recent minor stroke is found to be in atrial fibrillation. When advising him on anticoagulant therapy, which of the following features would make you favour warfarin over a direct oral anticoagulant (DOAC)?",
+      "options": [
+        "A. Fewer drug interactions",
+        "B. Lower drug costs",
+        "C. Lower risk of intracerebral haemorrhage",
+        "D. More effective at preventing embolism",
+        "E. Simpler dosing regimes"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Warfarin is a less expensive drug option but does require regular monitoring. Also, at present we cannot easily monitor and reverse anticoagulation levels with DOACs (although new agents are being developed). DOACs have simpler dosing regimes with fewer drug interactions and appear to have a better balance of effectiveness and safety than warfarin.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 45 year old woman is admitted to hospital with symptoms of raised intracranial pressure, seizures and focal neurological symptoms. Which of the following is correct about the suspected diagnosis of cerebral vein thrombosis?",
+      "options": [
+        "A. CT brain scanning is the definitive imaging",
+        "B. It can include an associated haemorrhage",
+        "C. It is never caused by infection",
+        "D. It is rarely treated with anticoagulation",
+        "E. It usually presents like arterial stroke"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cerebral venous sinus thrombosis usually presents with symptoms of raised intracranial pressure, seizures and focal neurological symptoms. It often includes associated haemorrhage. MR venography demonstrates a filling defect in the affected vessel. About 10% of cerebral venous sinus thrombosis is associated with infection requiring antibiotic treatment. Otherwise, the treatment of choice is usually anticoagulation.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 62 year old man with a stroke is being considered for thrombolysis therapy. Which of the following is true of intravenous thrombolysis with recombinant tissue plasminogen activator (rt-PA)?",
+      "options": [
+        "A. It can be given up to 12 hours after symptom onset",
+        "B. It can be offered to most stroke patients",
+        "C. It improves the chance of recovery of independence",
+        "D. It reduces the risk of early death",
+        "E. It reduces the risk of early intracerebral haemorrhage"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Intravenous thrombolysis with rt-PA increases the risk of early haemorrhagic transformation of the cerebral infarct with potentially fatal results. However, if it is given within 4.5 hours of symptom onset to carefully selected patients (about 20% of ischaemic stroke patients), the haemorrhagic risk is more than offset by an improvement in overall outcome The earlier the treatment is given, the greater the benefit.",
+      "questionNumber": 14
+    },
+    {
+      "question": "An 81 year old woman with diabetes, hypertension and a minor left hemisphere. ischaemic stroke 1 week ago is found to have a right carotid artery stenosis of 70%. Which of the following features would cause you to advise best medical therapy rather than carotid endarterectomy?",
+      "options": [
+        "A. Her age - she is too old to benefit",
+        "B. She has a history of diabetes",
+        "C. The carotid stenosis is on the asymptomatic side",
+        "D. The stroke impact is only minor",
+        "E. There has been too long a delay since her stroke onset"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "To benefit from carotid artery surgery, the patient needs to have an expectation of several years of reasonable quality of life to offset the risks of surgery. The stroke impact being minor and her age and other risk factors would not influence this decision. The key contraindication is that the carotid artery stenosis is on the opposite side from the patient's symptoms and so this is a lower-risk asymptomatic carotid stenosis.",
+      "questionNumber": 15
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "bookId": "davidson-assessment",
+  "title": "Davidson Assessment",
+  "chapters": [
+    {
+      "id": "davidson-chapter-1",
+      "name": "Chapter 1: Clinical decision-making",
+      "description": "Understanding the process of clinical decision-making.",
+      "quizFile": "quizzes/davidson-assessment/chapter-1.json"
+    },
+    {
+      "id": "davidson-chapter-2",
+      "name": "Chapter 2: Clinical therapeutics and good prescribing",
+      "description": "Principles of effective therapeutic interventions and prescribing practices.",
+      "quizFile": "quizzes/davidson-assessment/chapter-2.json"
+    },
+    {
+      "id": "davidson-chapter-3",
+      "name": "Chapter 3: Clinical genetics",
+      "description": "Exploring the role of genetics in clinical practice.",
+      "quizFile": "quizzes/davidson-assessment/chapter-3.json"
+    },
+    {
+      "id": "davidson-chapter-4",
+      "name": "Chapter 4: Clinical Immunology",
+      "description": "Insights into the immune system and immunological disorders.",
+      "quizFile": "quizzes/davidson-assessment/chapter-4.json"
+    },
+    {
+      "id": "davidson-chapter-5",
+      "name": "Chapter 5: Population health and epidemiology",
+      "description": "Understanding health trends and disease patterns in populations.",
+      "quizFile": "quizzes/davidson-assessment/chapter-5.json"
+    },
+    {
+      "id": "davidson-chapter-6",
+      "name": "Chapter 6: Principles of Infectious disease",
+      "description": "Fundamental concepts of infectious diseases.",
+      "quizFile": "quizzes/davidson-assessment/chapter-6.json"
+    },
+    {
+      "id": "davidson-chapter-7",
+      "name": "Chapter 7: Poisoning",
+      "description": "Management and treatment of various types of poisoning.",
+      "quizFile": "quizzes/davidson-assessment/chapter-7.json"
+    },
+    {
+      "id": "davidson-chapter-8",
+      "name": "Chapter 8: Envenomation",
+      "description": "Dealing with bites and stings from venomous creatures.",
+      "quizFile": "quizzes/davidson-assessment/chapter-8.json"
+    },
+    {
+      "id": "davidson-chapter-9",
+      "name": "Chapter 9: Environmental medicine",
+      "description": "Health effects of environmental factors.",
+      "quizFile": "quizzes/davidson-assessment/chapter-9.json"
+    },
+    {
+      "id": "davidson-chapter-10",
+      "name": "Chapter 10: Acute medicine and critical illness",
+      "description": "Emergency medical care and management of critically ill patients.",
+      "quizFile": "quizzes/davidson-assessment/chapter-10.json"
+    },
+    {
+      "id": "davidson-chapter-11",
+      "name": "Chapter 11: Infectious disease",
+      "description": "Detailed study of infectious diseases and their treatment.",
+      "quizFile": "quizzes/davidson-assessment/chapter-11.json"
+    },
+    {
+      "id": "davidson-chapter-12",
+      "name": "Chapter 12: HIV Infection and AIDS",
+      "description": "Understanding HIV/AIDS, its progression, and management.",
+      "quizFile": "quizzes/davidson-assessment/chapter-12.json"
+    },
+    {
+      "id": "davidson-chapter-13",
+      "name": "Chapter 13: Sexually transmitted Infections",
+      "description": "Overview of common STIs, diagnosis, and prevention.",
+      "quizFile": "quizzes/davidson-assessment/chapter-13.json"
+    },
+    {
+      "id": "davidson-chapter-14",
+      "name": "Chapter 14: Clinical biochemistry and metabolic medicine",
+      "description": "Biochemical processes and metabolic disorders.",
+      "quizFile": "quizzes/davidson-assessment/chapter-14.json"
+    },
+    {
+      "id": "davidson-chapter-15",
+      "name": "Chapter 15: Nephrology and urology",
+      "description": "Kidney diseases, urinary tract disorders, and their treatment.",
+      "quizFile": "quizzes/davidson-assessment/chapter-15.json"
+    },
+    {
+      "id": "davidson-chapter-16",
+      "name": "Chapter 16: ",
+      "description": "Focus on heart conditions and vascular diseases.",
+      "quizFile": "quizzes/davidson-assessment/chapter-16.json"
+    },
+    {
+      "id": "davidson-chapter-17",
+      "name": "Chapter 17: Respiratory medicine",
+      "description": "Exploring lung diseases and breathing mechanisms.",
+      "quizFile": "quizzes/davidson-assessment/chapter-17.json"
+    },
+    {
+      "id": "davidson-chapter-18",
+      "name": "Chapter 18: Endocrinology",
+      "description": "Hormonal imbalances and endocrine glands.",
+      "quizFile": "quizzes/davidson-assessment/chapter-18.json"
+    },
+    {
+      "id": "davidson-chapter-19",
+      "name": "Chapter 19: Nutritional factors in disease",
+      "description": "The impact of nutrition on health and disease states.",
+      "quizFile": "quizzes/davidson-assessment/chapter-19.json"
+    },
+    {
+      "id": "davidson-chapter-20",
+      "name": "Chapter 20: Diabetes mellitus",
+      "description": "Comprehensive study of diabetes types, management, and complications.",
+      "quizFile": "quizzes/davidson-assessment/chapter-20.json"
+    },
+    {
+      "id": "davidson-chapter-21",
+      "name": "Chapter 21: Gastroenterology",
+      "description": "Covers digestive disorders and organ functions.",
+      "quizFile": "quizzes/davidson-assessment/chapter-21.json"
+    },
+    {
+      "id": "davidson-chapter-22",
+      "name": "Chapter 22: Hepatology",
+      "description": "Study of liver diseases and their treatment.",
+      "quizFile": "quizzes/davidson-assessment/chapter-22.json"
+    },
+    {
+      "id": "davidson-chapter-23",
+      "name": "Chapter 23: Haematology and transfusion medicine",
+      "description": "Blood disorders, blood transfusions, and related medical practices.",
+      "quizFile": "quizzes/davidson-assessment/chapter-23.json"
+    },
+    {
+      "id": "davidson-chapter-24",
+      "name": "Chapter 24: Rheumatology and bone disease",
+      "description": "Conditions affecting joints, muscles, and bones.",
+      "quizFile": "quizzes/davidson-assessment/chapter-24.json"
+    },
+    {
+      "id": "davidson-chapter-25",
+      "name": "Chapter 25: Neurology",
+      "description": "Brain, spinal cord, and nerve disorders.",
+      "quizFile": "quizzes/davidson-assessment/chapter-25.json"
+    },
+    {
+      "id": "davidson-chapter-26",
+      "name": "Chapter 26: Stroke medicine",
+      "description": "Prevention, diagnosis, and treatment of stroke.",
+      "quizFile": "quizzes/davidson-assessment/chapter-26.json"
+    },
+    {
+      "id": "davidson-chapter-27",
+      "name": "Chapter 27: Medical ophthalmology",
+      "description": "Medical conditions affecting the eyes.",
+      "quizFile": "quizzes/davidson-assessment/chapter-27.json"
+    },
+    {
+      "id": "davidson-chapter-28",
+      "name": "Chapter 28: Medical psychiatry",
+      "description": "Psychiatric disorders and their medical management.",
+      "quizFile": "quizzes/davidson-assessment/chapter-28.json"
+    },
+    {
+      "id": "davidson-chapter-29",
+      "name": "Chapter 29: Dermatology",
+      "description": "Skin conditions and integumentary system.",
+      "quizFile": "quizzes/davidson-assessment/chapter-29.json"
+    },
+    {
+      "id": "davidson-chapter-30",
+      "name": "Chapter 30: Maternal medicine",
+      "description": "Medical care during pregnancy and childbirth.",
+      "quizFile": "quizzes/davidson-assessment/chapter-30.json"
+    },
+    {
+      "id": "davidson-chapter-31",
+      "name": "Chapter 31: Adolescent and transition medicine",
+      "description": "Healthcare for adolescents and young adults transitioning to adult care.",
+      "quizFile": "quizzes/davidson-assessment/chapter-31.json"
+    },
+    {
+      "id": "davidson-chapter-32",
+      "name": "Chapter 32: Ageing and disease",
+      "description": "Physiological changes with aging and common geriatric diseases.",
+      "quizFile": "quizzes/davidson-assessment/chapter-32.json"
+    },
+    {
+      "id": "davidson-chapter-33",
+      "name": "Chapter 33: Oncology",
+      "description": "Study of cancer, its diagnosis, and treatment.",
+      "quizFile": "quizzes/davidson-assessment/chapter-33.json"
+    },
+    {
+      "id": "davidson-chapter-34",
+      "name": "Chapter 34: Pain and palliative care",
+      "description": "Management of pain and providing palliative care for severe illnesses.",
+      "quizFile": "quizzes/davidson-assessment/chapter-34.json"
+    }
+  ]
+}

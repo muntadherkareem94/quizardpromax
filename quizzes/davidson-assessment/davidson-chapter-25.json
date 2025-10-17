@@ -1,0 +1,1020 @@
+{
+  "title": "Neurology - Chapter 25",
+  "questions": [
+    {
+      "question": "A 44 year old woman is admitted with abrupt onset of neurological deficit. The referring physician suspects a brainstem stroke. Which of the following combinations of signs and symptoms would be most likely to originate from a brainstem lesion?",
+      "options": [
+        "A. Bilateral optic neuropathy",
+        "B. Cranial nerve signs with sensory and upper motor neuron signs in all four limbs",
+        "C. Horner's syndrome with ipsilateral arm pain",
+        "D. Lower motor signs in both arms only",
+        "E. Upper motor neuron signs in both legs only"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The brainstem is a packed centre from where most cranial nerve nuclei originate (III-XII) and all long tracts pass through. Combination of all these signs will either signify widespread neurological disease or a lesion restricted to the brainstem. Horner's syndrome and arm pain would suggest a brachial plexus lesion, while cervical spine changes will cause lower motor neuron signs in the arms (perhaps with upper motor neuron deficit in the legs). The optic nerves only interact with the brainstem to serve the pupillary light reflex.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 34 year old man is admitted with worsening weakness in both legs. Over the course of 3 days he has found it increasingly difficult to walk upstairs. In the last 12 hours he complains of feeling mildly breathless. The referring physician finds weakness in all four limbs and cannot elicit reflexes. He can find no sensory problems. Which diagnosis is most likely?",
+      "options": [
+        "A. Guillain-Barré syndrome (GBS)",
+        "B. Inflammatory myopathy",
+        "C. Myasthenia gravis",
+        "D. Peripheral neuropathy",
+        "E. Spinal stroke"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Gradual onset of weakness without sensory signs and loss of reflexes is most in keeping with GBS. Strokes usually present abruptly and would not cause lower motor neuron signs. Breathlessness would be unusual in a peripheral neuropathy, even if onset is rapid. A myopathy should not reduce reflexes. Myasthenia gravis can cause weakness but onset is usually slower with some degree of fatigability.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 38 year old man presents with sensory changes in both legs, which he finds difficult to characterise. The referring physician asks you to review him 'to assess him for a dissociated sensory loss'. Which of the following statements is true about dissociated sensory loss?",
+      "options": [
+        "A. Dissociated sensory loss is a sign of peripheral nerve disease",
+        "B. Dissociated sensory loss is always associated with reflex changes",
+        "C. Dissociated sensory loss is usually a sign of brainstem pathology",
+        "D. Dissociated sensory loss means loss of sensation over one-half of the body",
+        "E. Dissociated sensory loss requires testing of pin-prick, light touch, proprioception and vibration in all four limbs"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Dissociation of sensory loss arises because of the different decussation of dorsal columnar pathways (vibration and proprioception) and spinothalamic pathways (temperature/pin-prick). Lesions can affect one pathway more than the other. It can occur in brainstem lesions, but is usually a sign of spinal disease. Effects on sensory pathways can be isolated and have no effects on reflexes.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 25 year old woman presents to the emergency department with a rapidly evolving severe headache. She has a family history of cerebral neoplasm and is worried that this is the cause of her headaches. Which of these accompanying features would suggest a diagnosis other than migraine?",
+      "options": [
+        "A. Asymmetrical reflexes",
+        "B. Exacerbation by exercise",
+        "C. Photophobia",
+        "D. Unilateral site",
+        "E. Vomiting"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Migraine is a recurrent condition that leads to episodic headaches with or without warning. The phase of severe headaches is usually associated with heightened sensitivity to stimuli (photophobia, phonophobia, osmophobia). Avoidance of any stimuli is commonly described by migraineurs (lying still in a dark, quiet room). Loss of function (dysarthria, transient weakness, visual scotomata) can occur but may merit investigation at the first occurrence, or if they emerge as an isolated symptom. Abnormality of the reflexes (either tendon reflexes of plantars) would not be expected in migraine.",
+      "questionNumber": 4
+    },
+    {
+      "question": "An 18 year old male presents with numbness in both legs evolving over a few weeks. He reports some variable sensory alteration and is worried that this might represent multiple sclerosis. Gait is slower than usual but there is no reported weakness. Which of the following would suggest a lesion outside the spinal cord?",
+      "options": [
+        "A. Band of hyperaesthesia across the trunk",
+        "B. Loss of reflexes",
+        "C. Preserved vibration but loss of pin-prick sensation over both legs",
+        "D. Sphincter disturbance",
+        "E. Wasting of both quadriceps"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Spinal cord lesions can cause upper motor neuron findings, usually with some degree of sensory change and sphincter dysfunction. While reflexes can be lost in the immediate aftermath of a spinal cord lesion (so-called ‘spinal shock'), lower motor neuron changes (wasting, areflexia) would not occur in isolation with spinal cord pathology.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 23 year old man complains of some excessive daytime sleepiness. Which clinical features may suggest an underlying diagnosis of narcolepsy.",
+      "options": [
+        "A. Hypnic jerks",
+        "B. Myoclonus on awakening",
+        "C. Periodic limbs movements in sleep",
+        "D. Restless legs",
+        "E. Sleep paralysis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The narcolepsy tetrad is excessive daytime sleepiness, cataplexy, sleep paralysis and hypnagogic hallucinations. Hypnic jerks are a normal phenomenon, while awakening myoclonus is a feature of the generalised epilepsy syndromes. Restless legs can accompany a range of medical conditions (parkinsonism, iron deficiency, neuropathy) and, like periodic limb movements in sleep, are not associated with narcolepsy/cataplexy.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 58 year old man presents having had three unprovoked generalised tonic-clonic seizures in the last 3 weeks. He has a history of severe head injury with frontal contusions some years before. His wife reports some blank episodes lasting a few minutes with some manual automatisms and lip smacking for 1-2 minutes. He has no history of any other medical problems. Which antiepileptic drug would be recommended as first line?",
+      "options": [
+        "A. Clobazam",
+        "B. Lamotrigine",
+        "C. Levetiracetam",
+        "D. Pregabalin",
+        "E. Sodium valproate"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The scenario is highly suggestive of a focal-onset epilepsy (previous head injury, focal-onset seizures with altered awareness and automatisms). One of the first-line treatments is likely to be effective, and lamotrigine is recognised as having an excellent safety profile. Levetiracetam and sodium valproate can be used in focal epilepsies but would not usually be first line. Clobazam and pregabalin are considered adjunctive treatments (used alongside other antiepileptic drugs).",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 19 year old woman presents having had three unprovoked generalised tonic-clonic seizures on awakening in the last 3 weeks. She has a history of some brief twitching movements occurring in the mornings after some sleep deprivation but no other episodes of altered awareness. She has no history of any other medical problems. Which antiepileptic drug would be recommended as first line?",
+      "options": [
+        "A. Carbamazepine",
+        "B. Levetiracetam",
+        "C. Phenytoin",
+        "D. Sodium valproate",
+        "E. Topiramate"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The story is highly suggestive of a genetic generalised epilepsy, and treatment choice is dictated by two issues. Firstly, genetic generalised epilepsies (GGE) can be made worse (particularly eliciting myoclonus) by the sodium channel blocking drugs, and carbamazepine and phenytoin should be avoided in such cases. Lamotrigine's efficacy in Genetic Generalised Epilepsy is less than with Valproate and this may deter first-line usage here. Broad-spectrum antiepileptic drugs should be used in these circumstances. Secondly, the possibility of future pregnancy (any drug will usually be required long term) should prompt avoidance of sodium valproate and any drugs with an uncertain safety profile in pregnancy. While topiramate can be useful in GGE, the safety in pregnancy is uncertain and it is therefore best avoided in the first instance.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 44 year old woman presents with a history of neck pain and some tingling in the upper limbs. Which of the following features would make you keen to carry out magnetic resonance imaging (MRI)?",
+      "options": [
+        "A. Awakening with tingling in one or both hands",
+        "B. History of her hearing 'clunking' on neck movements",
+        "C. Long duration of symptoms (more than 2 years)",
+        "D. Loss of biceps reflex on the symptomatic left side",
+        "E. Restriction of lateral neck flexion"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The main reason to carry out cervical spine imaging is to provide information on any lesion that might be operable. It is in such cases that a good history and neurological examination are most important. Where clinical features of motor radiculopathy are found (as here) and are persistent, then imaging may be considered. Signs or symptoms of spinal cord compression (upper motor neuron signs in the legs, or sphincter dysfunction) would make imaging more important. ‘Clunking' sensations in the neck are common and unrelated to specific pathologies. Nocturnal hand symptoms are more likely with carpal tunnel syndrome, while prolonged duration of symptoms is common with benign non-progressive spinal disease.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 78 year old male presents with a year-long history of lower back pain occasionally radiating down one or both legs. What feature would suggest that MRI of the lumbosacral spine is indicated?",
+      "options": [
+        "A. A band of altered sensation across the costal margin",
+        "B. Impaired vibration sense in both legs",
+        "C. Localised tenderness over the lower back",
+        "D. Loss of both ankle jerks",
+        "E. Recent onset of urinary incontinence"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Assessment of lower back pain is another occasion when a good history and neurological examination are required. New onset of urinary symptoms or focal radiculopathy may suggest a structural cause. Localised tenderness is common in muscular back pain, while costal hyperaesthesia would suggest a thoracic localisation. Neurological examination in old age is likely to elicit some ‘deficits' such as distal reflex loss and sensory disturbance, even in asymptomatic patients.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 64 year old woman presents to hospital with a 3-day history of worsening 'confusion' and disorientation. She has no past medical history other than hypertension. She has had no recent foreign travel. Examination shows her to be drowsy, but even when awakened she is unable to answer questions, although she can follow direction and complies with the examination. Her temperature is 38.5°C. She has some neck stiffness but no rash. Cranial nerve examination is normal. She has bilaterally upgoing plantar reflexes but no apparent other neurological signs. What is the likely causative organism?",
+      "options": [
+        "A. Borrelia burgdorferi",
+        "B. Herpes simplex",
+        "C. Herpes zoster",
+        "D. Neisseria meningitides",
+        "E. Streptococcus pneumoniae"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The pyrexia and evolving neurological deficit makes it likely that there is an encephalitic process rather than just a meningitis. It should be noted that the patient is not ‘confused'; she is dysphasic. Herpes simplex is the most common cause of a viral encephalitis. Bacterial meningitis can cause some isolated cranial nerve deficits, but the cortical nature of her expressive dysphasia would not be expected in a pure meningitis.",
+      "questionNumber": 11
+    },
+    {
+      "question": "An 18 year old male student has been home from university for 3 days, during which time he has become increasingly drowsy. He is able to be roused but is disorientated. He has a temperature of 39°C, has marked neck stiffness and a positive Kernig's sign. He has developed a spotting, non-blanching rash over his anterior chest wall. He has no focal neurological deficit. What is the most appropriate next course of action?",
+      "options": [
+        "A. Administer intravenous (IV) benzylpenicillin",
+        "B. Arrange for a computed tomography (CT) brain scan",
+        "C. Carry out a lumbar puncture",
+        "D. Puncture one of the purpuric lesions for microscopic analysis",
+        "E. Take blood for viral polymerase chain reaction (PCR) test"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is a classic scenario with rapidly evolving clinical disease where it is important to treat first and think later! The rapid development of meningococcal sepsis is a severe threat to life and limb and requires immediate treatment. Investigation with imaging, bloods and, if necessary, a lumbar puncture can be carried out in due course, but only once the serious underlying sepsis has been addressed.",
+      "questionNumber": 12
+    },
+    {
+      "question": "With regard to the patient in Question 25.12, IV benzylpenicillin has now been administered and his cerebral imaging has been shown to be normal. A lumbar puncture has been carried out. What is the most likely pattern of abnormality to emerge in cerebrospinal fluid (CSF)?",
+      "options": [
+        "A. Normal white cells, normal protein, low glucose",
+        "B. Normal white cells, raised protein, normal glucose",
+        "C. Raised white cells (90% lymphocytes), raised protein, low glucose",
+        "D. Raised white cells (90% neutrophils), normal protein, normal glucose",
+        "E. Raised white cells (90% neutrophils), raised protein, low glucose"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Acute bacterial meningitis (unless already treated with antibiotics) will cause a rise in neutrophils in CSF. Bacterial infection will usually raise protein and lower glucose. Viral encephalitis will cause a rise in CSF lymphocytes and often have little effect on protein and glucose. A raised CSF protein and no effect on white cells is characteristic of inflammatory processes such as Guillain-Barré syndrome.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 38 year old man presents to his family physician with a 3-month history of a change in sensation in both arms. His wife has been trying to get him to seek help for worsening hand weakness and progressive gait difficulties. Examination shows him to have no cranial nerve signs. He has marked wasting of intrinsic muscles of both hands and brisk leg reflexes with upgoing plantar responses. Sensory examination shows him to have lost pin-prick sensation over both arms and the upper half of his trunk. Vibration and proprioception are normal. What is the likely pathology?",
+      "options": [
+        "A. Metastatic lesion in the upper spinal cord",
+        "B. Motor neuron disease",
+        "C. Peripheral neuropathy",
+        "D. Spinal cord stroke",
+        "E. Syringomyelia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Syringomyelia is a slowly progressive problem with expansion of the central canal causing destruction of the cells and tracts in the anterior spinal cord. The occurrence of selective spinothalamic loss and anterior horn cell loss localises this process to the anterior spinal cord. The lack of leg symptoms makes this a process in the cervical and thoracic cord. The slow evolution would not be in keeping with a vascular origin. The sensory findings (as well as the limitation to the arms) makes motor neuron disease much less likely.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 64 year old man is referred to the emergency department by his family physician. He has been undergoing radiotherapy for a small cell carcinoma of lung for the last 2 months. He sought help this morning for some back pain and gait difficulty evolving over the last day. He has no symptoms in the arms. He reports some recent difficulty in initiating urination. Examination shows motor signs in the legs only with increased reflexes and upgoing plantars. All modalities of sensation are reduced below the costal margin. What is the likely underlying process?",
+      "options": [
+        "A. Cerebral metastasis",
+        "B. Metastatic spinal cord compression",
+        "C. Paraneoplastic encephalopathy",
+        "D. Paraneoplastic Guillain-Barré syndrome",
+        "E. Paraneoplastic neuropathy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The concurrence of leg symptoms and sphincter dysfunction with or without pain in such a patient is highly suggestive of a malignant spinal cord compression. Urgent imaging is needed to allow intervention to prevent progression to destruction of the spinal cord. Note that this should include the thoracic and spinal cord as there may be a ‘dropped' spinal level.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 33 year old female has had a severe pain over her left shoulder, which increased gradually over the initial 24 hours, coming on 2 weeks after an influenza vaccination. It is a dull unremitting ache for which she was given opiate analgesia for several weeks. Since the pain subsided she has had some weakness of hand movements - most particularly in holding and turning a door key. She has reduced reflexes in the left arm, with some subjective decrease in pin-prick sensation over all dermatomes in the left arm. What is the most likely diagnosis?",
+      "options": [
+        "A. Brachial neuralgia",
+        "B. Cervical radiculopathy",
+        "C. Guillain-Barré syndrome",
+        "D. Herpes zoster-related neuralgia",
+        "E. Transverse myelitis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The scenario of severe pain followed by some minor neurological deficit is typical of brachial neuralgia (neuralgic amyotrophy). Cervical radiculopathies can cause pain, but any neurological deficit will coincide with this rather than follow its remission. There is no rash to suggest a herpes zoster infection (which would usually also cause a persisting rather than an early-then-remitting neuralgic pain). Transverse myelitis may cause back and neck pain but would usually have more marked sensory deficit, perhaps with long tract signs in the lower limbs.",
+      "questionNumber": 16
+    },
+    {
+      "question": "An 18 year old female is referred by her optician after an abnormal visual field test. She had her vision checked after complaining of headaches and formal perimetry has shown enlargement of both blind spots. Further clarification of her symptoms has revealed a 6-month history of worsening daily headaches, increased on bending and coughing, sometimes accompanied by transient flashing lights lasting seconds at a time. Neurological examination confirms the enlargement of blind spots with some accompanying papilloedema. No other focal deficit was found. What is the likely diagnosis?",
+      "options": [
+        "A. Cerebral venous sinus thrombosis",
+        "B. Idiopathic intracranial hypertension (IIH)",
+        "C. Intracranial neoplasm",
+        "D. Migraine with aura",
+        "E. Optic neuritis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The gradual onset of headache with features of high pressure (papilloedema, worsening with moves that increase intracranial pressure), and no focal neurological deficit make IIH the most likely diagnosis. This is more likely when patients are obese and where there has been exposure to steroids, oral contraceptives or tetracyclines. While serious conditions like intracranial tumour and cerebral venous sinus thrombosis should be excluded, the lack of other features in someone of this age and gender make IIH most likely. There is no episodicity to her headaches and no clear features to suggest migraine with aura. Optic neuritis can cause optic disc changes and some ocular pain, but the pressure features will mitigate against this.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 21 year old man was involved in a clash of heads while playing football. He was unconscious for about a minute but recovered and was able to play on for the remaining half hour. He did not report any concussive symptoms and was able to go out for a meal with a few friends where he consumed two pints of beer. The next morning his friends cannot rouse him from sleep. An ambulance is called and takes him immediately to hospital. On admission he is apyrexial and has a Glasgow Coma Scale (GCS) score of E2 V3 M2. His pupils are symmetrical and reacting to light. Plantar response is upgoing on the right. What is the likely diagnosis?",
+      "options": [
+        "A. Alcoholic coma",
+        "B. Extradural haematoma",
+        "C. Post-traumatic tonic-clonic seizure",
+        "D. Subdural haematoma",
+        "E. Viral encephalitis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The story of waking from unconsciousness followed by deterioration, after a head injury, is classically that of an arterial bleed into the extradural space following head injury. This requires urgent imaging and probably acute drainage/decompression. There is nothing to suggest any extra alcohol intake and the presence of focal signs would be against this. There is no suggestion of an infective process and there are no markers to suggest a seizure - this would be a diagnosis of exclusion in a case like this.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 75 year old woman had a diagnosis of Alzheimer's disease made 3 years ago. Recently her mobility has begun to deteriorate and she has had a number of falls, twice having her skull X-rayed in the emergency department as a result of her injuries. She has a history of hypertension and transient ischaemic attacks and is on aspirin and ramipril. Her daughter says that her memory and concentration are much worse over the last 2 weeks and she can go for long spells where she is difficult to rouse. On examination she is apyrexial and drowsy, and she is disorientated in time and place. Her GCS score is E5 V4 M5. There are no cranial nerve abnormalities, but she is weaker on the left, with generally brisk reflexes and upgoing plantar reflexes. She has some frontal release signs (pout and grasp reflexes) bilaterally. What is the most likely explanation for her decline?",
+      "options": [
+        "A. Alzheimer's disease",
+        "B. Extradural haematoma",
+        "C. Ischaemic stroke",
+        "D. Metabolic encephalopathy",
+        "E. Subdural haematoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The effect of minor head injury, especially in the presence of cerebral atrophy and aspirin treatment, is a risk factor for chronic development of a subdural haematoma, which is impairing consciousness. Alzheimer's disease itself would not usually cause such a rapid decline, and it is unusual for ischaemic strokes to impair consciousness. The presence of focal neurological signs would go against her drowsiness having an encephalopathic cause.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 34 year old woman has a long history of migraine with aura happening three or four times per year. After a recent episode where she had visual aura, typical severe headache, recurrent vomiting with photophobia and an intolerance of noise, she is left with a different character of headache over the subsequent 10 days. This is a severe pounding headache precipitated by rising from a lying position, building up over 4-5 minutes each time and necessitating that she lie back down. She is distressed and cannot sit up for any length of time. Examination shows no change in cranial nerves. Her reflexes are generally brisk but plantar responses are downgoing, and there is no other deficit in the limbs. She has normal blood tests and a normal CT of brain but no other investigation. What is the likely cause of her headache?",
+      "options": [
+        "A. Cerebral venous sinus thrombosis",
+        "B. Cluster migraine",
+        "C. Intracranial tumour",
+        "D. Spontaneous intracranial hypotension",
+        "E. Subarachnoid haemorrhage"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The history is key here - providing evidence that the headache is related to low intracranial pressure. A dural tear is likely to have happened while vomiting, caused by the original migraine, and the clear postural association of the subsequent headache makes this the prime diagnostic consideration. Cerebral venous sinus thrombosis can cause severe postural headache but, like other causes of headache in the list, will usually cause headache precipitated by manoeuvres that raise intracranial pressure.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 44 year old man has been in hospital for 3 weeks for management of decompensated alcoholic liver disease. He awakens with an inability to dorsiflex the right ankle. Examination shows normal movements otherwise bilaterally. There is no wasting and reflexes are intact. Sensory examination shows reduced pin-prick sensation of the right lateral shin. He has slight tenderness over the lower back bilaterally but no other findings. What is the likely cause of his weakness?",
+      "options": [
+        "A. Alcoholic neuropathy",
+        "B. Cerebral infarct",
+        "C. Common peroneal nerve lesion",
+        "D. Sciatic nerve lesion",
+        "E. Tibial nerve lesion"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The singular loss of ankle dorsiflexion makes sciatic nerve or radicular involvement unlikely. If ankle inversion is intact (usually tibialis posterior - supplied by L5 and tibial nerve), then the likely cause is common peroneal weakness selectively affecting tibialis anterior. Alcohol excess may make nerves more susceptible to localised damage, but the focal nature of the deficit would make a generalised process an unlikely cause. It would be unlikely that a cortical lesion would cause such a focal combined lower motor neuron and sensory deficit.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 23 year old woman presents having had three generalised tonic-clonic seizures in the previous 3 weeks. Which of the following would suggest a focal origin to her epilepsy?",
+      "options": [
+        "A. History of 'blank spells' in childhood",
+        "B. History of morning myoclonus",
+        "C. Prolonged post-ictal dysphasia",
+        "D. Prolonged seizure (lasting 2-3 hours)",
+        "E. Seizures on awakening"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Prolonged post-ictal dysphasia would suggest a focus of onset in the dominant hemisphere (either Broca's or Wernicke's areas). Generalised epilepsies are thought to be genetic in origin, and will often be accompanied by other seizure types such as myoclonus or absences. Very prolonged episodes lasting hours or more are rare with epilepsy and (especially where awareness is retained) may result from non-epileptic attack disorder.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 56 year old right-handed man is admitted with an abrupt onset of loss of speech. Comprehension appears to be preserved and he can follow direction with no difficulties. He cannot repeat words or phrases. Where is the abnormality most likely to be situated on imaging?",
+      "options": [
+        "A. Left and right frontal lobes",
+        "B. Left frontal lobe",
+        "C. Left temporal lobe",
+        "D. Right frontal lobe",
+        "E. Right temporal lobe"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In right-handed patients, the dominant hemisphere for both limb movement and speech is usually the left. Speech comprehension is usually sited in Heschl's gyrus in superior temporal lobe, while Broca's area in the frontal lobe is devoted to formation of speech. Damage to the former will result in so-called receptive or fluent dysphasia (inability to understand auditory input from speech) and the latter with expressive dysphasia.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 78 year old man presents with speech difficulty. His response to speech is intact, but the words are poorly formed and at times difficult to understand. The clinical diagnosis of a dysarthria is made. Which of the following would suggest a cerebellar cause of his dysarthria?",
+      "options": [
+        "A. Associated pseudobulbar features",
+        "B. Fatiguability (worsening as the day goes on)",
+        "C. Nasal regurgitation when swallowing fluids",
+        "D. Scanning speech (lack of variation in cadence)",
+        "E. Stammering rapid speech"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Dysarthria can be caused by many things (Box 25.24) but cerebellar deficits will cause consistently poor articulation with impaired cadence (scanning) as this worsens. Poor coordination of limb movement would also usually be noted at these times. Fatiguability of speech is characteristic of myasthenia gravis, while pseudobulbar features would be most commonly accompanying multi-infarct states. Stammering rapid speech is a feature of parkinsonian syndromes, while nasal regurgitation is a sign of palatal weakness of whatever cause.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch25/a/25.24.png",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 38 year old man has come to see you because of some progressive gait difficulties. He has had several falls at home. On calling him through to your consulting room you notice that his walk is abnormal. (Note: it is always good practice to watch your patients as they make their way in.) Which of these features would be most likely to suggest a peripheral nerve problem as the cause of his walking difficulties?",
+      "options": [
+        "A. Broad-based shuffling gait",
+        "B. Circumduction of one foot",
+        "C. Inability to turn quickly",
+        "D. Rapid small steps with no festination",
+        "E. Slapping one foot"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Slapping one foot while walking (often after lifting the affected leg higher than the other) is a sign of a foot drop, which is most commonly related to common peroneal nerve damage. Circumduction is a compensatory movement to avoid tripping over a plantar-flexed foot (most usually related to upper motor neuron effects), while inability or difficulty in turning is most likely with parkinsonian disorders. Rapid small steps (marche à petits pas) is a sign of generalised cortical problems (most usually vascular), while a broad base is a compensation for the impaired coordination of cerebellar disease.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 38 year old woman presents to her optician with a history of blurred vision over several months. Computerised visual field testing shows that she has bilaterally enlarged blind spots. Where will the pathological process occur that will cause this selective change?",
+      "options": [
+        "A. Macula",
+        "B. Optic chiasm",
+        "C. Optic discs",
+        "D. Optic nerves",
+        "E. Peripheral retina"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The physiological blind spot corresponds to the area of the retina where the optic nerve passes through and spreads fibres radially (the optic disc). Any process that swells the optic disc will cause papilloedema and an increased blind spot. Macular lesions will cause a reduction in visual acuity (as noted on the Snellen chart) while optic chiasm lesions (most usually a pituitary problem) will cause a bitemporal hemianopia. Optic nerve lesions can cause blindness when severe but may show only reduction in colour vision on the affected side(s). Peripheral retinal problems will cause scotomata in the corresponding area of the visual field.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 42 year old man presents with a history of two nocturnal and one daytime generalised tonic-clonic seizures over the previous 3 months. He is reluctant to start treatment because of the risk of side-effects and his uncertainty of efficacy. What are his chances of being rendered seizure-free by a single antiepileptic drug?",
+      "options": [
+        "A. 1%",
+        "B. 10%",
+        "C. 40%",
+        "D. 60%",
+        "E. 80%"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Most patients will be rendered completely seizure-free by the first or second drug they are prescribed. Some will have a brief relapse (perhaps related to reduced adherence) while others will require long-term treatment with two or more antiepileptic drugs in combination. Where there is incomplete or inadequate response, steps should be taken to ensure the diagnosis and classification are correct, that the patient is taking the treatment, and that there are no other confounding factors (e.g. evolving lesion, use of alcohol or epileptogenic drugs). In cases where there is an established single focus, surgical workup may be indicated.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 30 year old woman presents having had a single generalised tonic-clonic seizure on awakening a week ago. She exhibits no neurological deficit and initial investigation with CT brain and electrocardiogram (ECG) have been normal. She volunteers some other symptoms. Which of these would be considered physiological rather than epileptiform?",
+      "options": [
+        "A. Bitten tongue on awakening",
+        "B. Episodes of lost time with automatic behaviour",
+        "C. Episodes of lost time with no automatisms",
+        "D. Jerking of whole body on falling asleep",
+        "E. Jerks of both arms on awakening"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A crucial part of the assessment of patients after a single seizure is to clinically assess whether there has been any other seizure activity experienced by the patient. Nocturnal seizures may only be signalled by some tongue biting or enuresis (often associated with some myalgia or headache). Daytime seizures of absence epilepsy or focal onset with altered consciousness will usually have the patient sitting still or fidgeting, respectively. Morning myoclonus is characteristic of genetic generalised epilepsy (particularly juvenile myoclonic epilepsy), while hypnic jerks are, of course, an entirely normal phenomenon and not indicative of any pathology (other than fatigue).",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 22 year old man presents with a history of fatigue and muscle cramps. He now feels unable to take part in 10 km runs with his friends. Which of these symptoms or signs is most likely to suggest an underlying muscular problem?",
+      "options": [
+        "A. Dark urine after prolonged exertion",
+        "B. History of 'dropping things'",
+        "C. Intermittent focal fasciculations over 5 years",
+        "D. Nocturnal leg cramps",
+        "E. Strong family history of diabetes mellitus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A metabolic muscular problem means that prolonged exercise is liable to cause muscle damage resulting in myoglobinuria: presence of myoglobin causing the black urine. Diabetes mellitus can occur in mitochondrial conditions, but it is common and unlikely to be directly relevant unless there are other clues (accompanying systemic disease, maternal transmission and deafness). Nocturnal leg cramps are common and history of dropping things is non-specific for muscular problems.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 28 year old woman complains of excessive daytime sleepiness. She often finds herself falling asleep in lectures during the day. She is worried that she might have a diagnosis of narcolepsy/cataplexy. Which of the following features is a normal phenomenon and would help you to reassure her?",
+      "options": [
+        "A. Family history of excessive daytime sleepiness",
+        "B. Hallucinations - experiencing visions of intimidating people on awakening",
+        "C. Sleep paralysis - awakening unable to move for 45 seconds",
+        "D. Sudden collapses related to fright",
+        "E. Sudden whole-body jerking on falling asleep"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The occurrence of daytime sleepiness in narcolepsy is usually accompanied by some of the other three components of the narcolepsy tetrad: namely, cataplexy (collapses with fright or laughter), hypnagogic hallucinations (visual hallucinations often with an emotional content) and sleep paralysis (loss of voluntary movement on awakening). The genetic basis for this condition means that a family history of excessive sleepiness may help diagnosis. Of the tetrad components, sleep paralysis is the one that is most likely to be physiological, and isolated sleep paralysis should not in itself trigger invasive or prolonged testing. Hypnic jerks on falling asleep are a normal phenomenon. The important treatable cause of daytime sleepiness is lack of night-time sleep - exclusion of obstructive sleep apnoea may be required.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 35 year old female presents with a 6-day history of delirium and disorientation. She is pyrexial but aside from being unable to answer questions or follow direction, exhibits no neurological deficit. After normal imaging has been carried out, a lumbar puncture is done, which shows the following results: white cell count 35x10^9/L blood film 90% lymphocytes; CSF protein 0.65 g/L; CSF glucose 4.2 mmol/L (76 mg/dL) serum glucose 6.0 mmol/L (108 mg/dL) (normal CSF glucose is >60% of contemporary serum glucose). Which process would be a likely cause of this picture?",
+      "options": [
+        "A. Brainstem encephalitis",
+        "B. Meningococcal meningitis",
+        "C. Subarachnoid haemorrhage",
+        "D. Tuberculous meningitis",
+        "E. Viral encephalitis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A raised neutrophil count in CSF is strongly associated with a bacterial infection, although the very earliest stages of a viral encephalitis may cause neutrophils to rise. Infections by mycobacteria, viruses, or partially treated bacterial meningitis may be associated with lymphocytic CSF. Where there has been a large subarachnoid haemorrhage, the irritant effect of blood on the meninges may cause a lymphocytic CSF, but would more likely have an abrupt onset and mild (or no) pyrexia.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 76 year old man presents with a left-sided facial weakness of rapid onset. He has no past medical history of note. Which feature would suggest that the deficit is caused by an upper motor neuron lesion?",
+      "options": [
+        "A. Deviation of the tongue to the left on protrusion",
+        "B. Hyperacusis on the left",
+        "C. Loss of taste in the anterior two-thirds of the tongue on the left",
+        "D. Preservation of eyebrow elevation on the affected side",
+        "E. Weakness of eyebrow elevation on the opposite side"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Supply of the upper face is bilateral (from both cerebral cortices), so a unilateral facial weakness caused by an upper motor lesion will be modified by the residual supply from the ipsilateral cortex. Hyperacusis and dysguesia (altered taste) originate from lesion of the facial nerve and would not be prominent with an upper motor neuron facial weakness. Bilateral facial weakness should raise the suspicion of either myasthenia or Guillain-Barré syndrome, while ipsilateral protrusion of the tongue occurs often with a facial palsy and without other signs would not imply involvement of any other cranial nerves.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 64 year old woman presents with a left foot drop of gradual onset. Which of the following would suggest that the responsible lesion is in the common peroneal nerve rather than a more proximal lesion?",
+      "options": [
+        "A. Reduced left ankle jerk",
+        "B. Reduced pin-prick in lateral shin",
+        "C. Reduced pin-prick sensation in the medial shin",
+        "D. Tinel's sign over the fibular neck",
+        "E. Weakness of ankle inversion"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The common peroneal nerve supplies tibialis anterior, the toe extensors and sensation to the lateral aspect of the shin. The nerve runs round the fibular neck and irritation at that point can produce a Tinel's sign (localised tenderness of dysaesthesia over a site of nerve damage) in a nerve that is affected early. The common peroneal nerve is mostly derived from L5 roots, so clinical differentiation can be difficult. An L5 lesion will cause a foot drop alongside reduced pin-prick in the lateral shin, as well as weakness of ankle inversion (as it supplies tibialis posterior). The ankle jerk depends on contraction of soleus and gastrocnemius, which are supplied by tibial nerve and S1 root.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 57 year old man is referred to the clinic because of some difficulty with unsteadiness on walking. Which feature would suggest a lesion within the spinal cord as the cause of his problems?",
+      "options": [
+        "A. Bilateral lower limb hypertonicity, hyper-reflexia, and upgoing plantar reflexes",
+        "B. Circumduction of the left foot",
+        "C. Difficulty with heel-toe waking",
+        "D. High-stepping gait",
+        "E. Slapping of the feet against the ground"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A lesion of the spinal cord is likely to affect both legs equally in provoking upper motor neuron signs, leading to a spastic paraparesis with increased tone, increased reflexes and extensor plantar reflexes. Selective or particular difficulty with heel-toe walking results from cerebellar dysfunction, while a high-stepping gait and slapping gait will, respectively, compensate for or result from impaired ankle dorsiflexion (i.e. a foot drop), which results most usually from a common peroneal or radicular lesion. Unilateral circumduction is a sign of a unilateral upper motor neuron lesion, where the leg has to drift sideways while walking to compensate for the partial plantar flexion caused by increased tone in soleus and gastrocnemius.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 35 year old patient presents with weeks of progressively worsening left-sided facial pain. Which of the following would suggest that the cause is outside the superior orbital fissure?",
+      "options": [
+        "A. Diplopia on gaze to the left",
+        "B. Diplopia on gaze to the right",
+        "C. Left proptosis",
+        "D. Reduced visual acuity in the left eye",
+        "E. Sensory alteration over the left eye"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The superior orbital fissure is formed by the cleft between the lesser and greater wings of the sphenoid bone. Lesions in this will affect the structures that pass through, including cranial nerves III, IV and VI, which, if affected, will cause diplopia on gaze to either side or on downgaze. Compression of the orbital vein would lead to proptosis, and any effect on the fifth nerve will cause sensory alteration over the upper face. Pathology of the optic nerve will cause a reduction in acuity in one eye, but this does not pass through the superior orbital fissure. Any effect on acuity alongside some disturbance of ocular motility would suggest pathology in the cavernous sinus.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 43 year old woman presents with a history of vertigo and vomiting. Which of the following features would be most in keeping with a diagnosis of acute labyrinthitis?",
+      "options": [
+        "A. Evolving symptoms over weeks",
+        "B. Improvement in symptoms following an Epley manoeuvre",
+        "C. Ipsilateral sensorineural hearing loss",
+        "D. Nystagmus worsened by change in position",
+        "E. Precipitation by minor head injury"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Labyrinthitis (also known as acute vestibular failure) presents with abrupt onset of vertigo that tends to be most severe for a few days, severe enough to cause the patient to be bed-bound. Ménière's disease is an idiopathic chronically recurring disorder involving episodic vertigo with tinnitus and a progressive deafness. Benign paroxysmal positional vertigo can be precipitated by minor head injury and results in vertigo that is typically precipitated by specific head positions (as in the Hallpike Test). This responds well in most cases to the Epley manoeuvre or more chronic rehabilitation.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 28 year old right-handed man complains of visual disturbance after sustaining a significant head injury in a road traffic accident. CT scan shows a fracture in the left parietal region with an underlying cerebral contusion and extradural haematoma. What visual symptoms would you expect to result from this injury?",
+      "options": [
+        "A. Diplopia on looking to the right",
+        "B. Left-sided neglect",
+        "C. Left superior quadrantanopia",
+        "D. Reduced visual acuity on the left",
+        "E. Right inferior quadrantanopia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A lesion in the parietal region will cause a quadrantanopia - due to its effect on the superior fibres, the quadrantanopia will be in the contralateral inferior visual field. Neglect will result from a parietal lesion but this is contralateral to the lesion. Reduced acuity results from a reduction in macular function and may be a manifestation of an optic neuropathy. Diplopia results from a disturbance of ocular motility - this is unlikely to be caused by a cortical abnormality.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 54 year old female presents with a 6-month history of recurrent headaches. They affect the right periorbital region, with a throbbing quality, and make her feel sick. Sometimes the right eyelid appears droopy with the pain, and she prefers to go to bed and sleep it off. It usually lasts a few hours. When younger, she recalled headaches with her periods for which she would take analgesia, but these were different from the current symptoms. In between attacks, she is well and on no medication. What is the most likely diagnosis?",
+      "options": [
+        "A. Carotid artery dissection",
+        "B. Cluster headache",
+        "C. Migraine",
+        "D. Temporal arteritis",
+        "E. Tension-type headache"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a typical scenario for migraine without aura. The additional non-headache symptoms would not occur in tension-type headache, and neither temporal arteritis nor dissection behave in such a paroxysmal manner. (She is also too young for temporal arteritis.) Although she gets occasional ptosis, the other autonomic features of cluster are absent and the headache lasts too long; patients are usually very agitated with cluster and usually male.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 66 year old man presented with 6 weeks of intermittent diplopia, improved by closing one eye. His family physician has checked a variety of blood tests - all were normal except antibodies to the acetylcholine receptor (AChR), which returned strongly positive with a high titre of antibodies. What is the next most relevant test?",
+      "options": [
+        "A. Antibodies to muscle-specific kinase (MuSK)",
+        "B. CT chest",
+        "C. Electromyography (EMG)",
+        "D. MRI head",
+        "E. Tensilon test"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The story of variable binocular diplopia is suggestive of myasthenia gravis, and the positive AChR antibody confirms this (false-positive tests are very rare - the antibody is very specific). Imaging his head will add nothing, as this is an autoimmune disease of the neuromuscular junction. Antibodies to MuSK are much less commonly found in myasthenia gravis, and never when the AChR antibody is positive. Whilst he may have an abnormal single-fibre EMG, the diagnosis is already made with the antibody result, so the EMG will add little or nothing; similarly, a Tensilon test may well be positive, but adds nothing to what we already know. Myasthenia gravis is, however, associated with thymic abnormalities and in older men thymomas are not uncommon; hence, he requires imaging of his chest for this reason (either CT or MRI).",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 70 year old female presents with variable weakness of her legs; she has lost a significant amount of weight recently, complains of a dry mouth and, more recently, a cough, occasionally with blood. There is little to find on examination, and there is uncertainty about whether her leg reflexes are present. There are no other signs, although she looks unwell and thin. Antibodies to which of the following are most likely to be present?",
+      "options": [
+        "A. Acetylcholine receptor (AChR)",
+        "B. Muscle-specific kinase (MuSK)",
+        "C. N-methyl-D-aspartate (NMDA) receptor",
+        "D. Thyroid peroxidase",
+        "E. Voltage-gated calcium channel (VGCC)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Whilst the differential on this limited history is wide, there are clues to suggest Lambert-Eaton myasthenic syndrome (LEMS). The weakness is variable, in keeping with a mysathenic syndrome, there are no sensory features, and the dry mouth suggests autonomic involvement, which is common in LEMS. LEMS may be paraneoplastic, and there are alarm bells for cancer, with weight loss, unwellness and haemoptysis (lung cancer is the commonest malignancy seen with LEMS). The reflex uncertainty reflects the classic reflex potentiation seen in LEMS, whereby reflexes appear absent, but may return (potentiate) with exercise. The diagnosis is supported by the presence of VGCC antibodies.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 28 year old woman presents in the sixth month of her first pregnancy with unpleasant tingling affecting the ring and little fingers, mainly on the left hand and to a lesser extent the right, which keeps her awake at night. She has developed gestational diabetes, but is otherwise well, with no previous problems. She is on no medication. What is the most likely diagnosis?",
+      "options": [
+        "A. Carpal tunnel syndrome (CTS)",
+        "B. Cervical spondylosis",
+        "C. Functional sensory symptoms",
+        "D. Multiple sclerosis",
+        "E. Ulnar entrapment neuropathy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The symptoms conform to the distribution of the ulnar nerve and, although carpal tunnel syndrome (median nerve) is common in pregnancy, in this case the distribution suggests ulnar not median. The most likely site of entrapment is at the elbow (as opposed to the wrist in CTS).",
+      "questionNumber": 41
+    },
+    {
+      "question": "An 18 year old male presents to a remote hospital 3 hours after being felled by a single punch. He was briefly knocked out, seemed to recover, before becoming increasingly drowsy, then losing consciousness. On arrival in the emergency department, his neurological examination shows: no eye opening, incomprehensible sounds, flexing to pain on the right, extending on the left. His pulse is 50 beats/min, regular; blood pressure is 210/115 mmHg. His right pupil is fixed and dilated. His airway is compromised and he is intubated and ventilated. The nearest hospital with a neurosurgeon and scanner is 6 hours away by ambulance. What is the best course of action?",
+      "options": [
+        "A. Burr hole on the left side of the head",
+        "B. Burr hole on the right side of the head",
+        "C. Palliative care",
+        "D. Transfer him to the nearest hospital as soon as possible",
+        "E. Treat him with mannitol and intensive care"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is very suggestive of an extradural haematoma, localising to the right side of his head. He is coning, and will not survive 6 hours in ambulance. The immediate life-saving procedure is a burr hole to evacuate the clot.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 74 year old woman presents with a 12-month history of tremor affecting her right arm only. Which feature is the most supportive of a diagnosis of Parkinson's disease?",
+      "options": [
+        "A. Family history of learning disabilities",
+        "B. Her father had a tremor",
+        "C. Her husband reports that for the last few years she has occasionally lashed out or grabbed him while asleep",
+        "D. Tremor improves with small amounts of alcohol",
+        "E. Tremor is most apparent when using the arm"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The sleep disturbance is very suggestive of an REM sleep behavioural disturbance, now a well-recognised pre-motor symptom of Parkinson's disease (PD), often preceding the motor features by years. A tremor that responds to alcohol and is mainly with action suggests essential tremor (ET; usual bilateral), and whilst PD can be familial, the family history of a tremor would also fit ET better. Family history of learning disabilities suggests possible fragile X tremor ataxia syndromes, which can manifest sometimes in women.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 65 year old man has been diagnosed with Parkinson's disease. He is reluctant to start treatment, as he has heard that such treatment only lasts a short time before he will become immune to it. Which statement is most correct?",
+      "options": [
+        "A. He should avoid treatment as long as he can, as there is a short therapeutic window once he has started it",
+        "B. He should delay treatment until his symptoms are interfering with everyday life",
+        "C. He should pursue deep brain stimulation (DBS) surgery rather than medication, as this is far more likely to be successful",
+        "D. He should start a non-dopaminergic therapy such as trihexyphenidyl",
+        "E. He should start treatment now, as dopaminergic therapies are disease modifying"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "There remains some controversy about when best to start treatment in PD, although there is consensus that presently we have no proven disease-modifying therapies. Anticholinergics are no longer favoured due to their adverse effect profile and poor efficacy. Whilst the response to dopaminergic therapies becomes both attenuated and complicated as PD progresses, people do not become ‘immune' to it. Whilst DBS is a very effective treatment for tremor (where drugs often fail), few would advocate this approach prior to a trial of medication. Most would recommend dopaminergic therapy sooner or later, and in the UK we would be inclined to wait until his symptoms trouble him, although there is greater enthusiasm for earlier treatment elsewhere.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 72 year old male presents with a 12-month history of a right arm tremor at rest, micrographia and generalised slowness. He is finding it increasingly difficult to turn over in bed. He is on no medication, and the examination reveals mainly right-sided parkinsonism. His grandmother was said to have had Parkinson's disease, and died aged 82. What is the most appropriate next investigation?",
+      "options": [
+        "A. CT head",
+        "B. Genetic testing for the known mutations associated with parkinsonism",
+        "C. None",
+        "D. Serum caeruloplasmin",
+        "E. Single-photon emission computed tomography (SPECT) imaging (DaTscan)"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Parkinson's disease is a clinical diagnosis, and tests are rarely helpful. This is unlikely to be Wilson's disease (caeruloplasmin) with this age at presentation, and the scenario is not suggestive of a genetic cause (in any case, one would need to undertake genetic counselling first before any genetic testing). Structural imaging is rarely indicated in a typical story such as this, and, similarly, functional imaging with either SPECT or positron emission tomography (PET) is unnecessary when the diagnosis is clear clinically.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 69 year old woman has developed odd involuntary chewing and 'gurning' movements of her mouth and jaw over the last few months, which cause embarrassment. Three years previously, she suffered a minor stroke, but made a good recovery. She has had intermittent vertigo for many years. She takes simvastatin, clopidogrel, lisinopril, bendroflumethiazide and metoclopramide. What is the most likely cause?",
+      "options": [
+        "A. Drug-induced dyskinesia",
+        "B. Functional (psychogenic) movement disorder",
+        "C. Huntington's disease",
+        "D. Parkinson's disease",
+        "E. Post-stroke chorea"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is likely to be secondary to long-term metoclopramide use, even though many doctors and patients think of it as an innocuous drug. Chorea can occur with stroke, but is usually unilateral and acute. Such dyskinesias may complicate Parkinson's disease when treated with levodopa, but are not a presenting feature in patients not on treatment. Huntington's disease can present this late, although usually there is a family history, which may be suppressed.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 52 year old male describes a 10-year history of tremor affecting both arms, and more recently his head. His father has a similar but more mild tremor, as does his older brother. Although his brother claims that alcohol helps his tremor, this patient has never noted such an effect. It embarrasses him as he is a waiter, and people notice him shaking as he tries to serve; he has, on occasion, split things. He is otherwise well, and his only medication is thyroxine. What is the likely diagnosis?",
+      "options": [
+        "A. Dystonic tremor",
+        "B. Enhanced physiological tremor",
+        "C. Essential tremor",
+        "D. Hyperthyroid-associated tremor",
+        "E. Parkinson's disease"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a very typical Essential tremor (ET) history - both arms involved, postural and kinetic components, autosomal dominant pattern of inheritance and an alcohol response in some members (only about 50% note such a response). Parkinson's tremor is more typically asymmetrical, and at rest. It can be difficult to distinguish an enhanced physiological tremor from a mild ET, as they look similar, although the other features help (family history, alcohol responsiveness). Whilst sensible to check his thyroid status, it is unlikely to explain a 10-year history.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 66 year old female is brought to the emergency department by her worried husband in the late afternoon. She had been well when they got up that morning; he had left to do some shopping at 1000 hrs, returning an hour later, expecting her to be ready for a planned visit to see old friends. However, she was still in her dressing gown and seemed to have forgotten they were due to go out. Although he explained the proposed visit to her several times, she kept asking him why he wanted her to get dressed. Shortly thereafter, their neighbour knocked on the door to borrow a ladder - his wife did not recognise him, and when told it was their neighbour, she was adamant it was not, as she remembered their neighbour as someone quite different. Her husband realised she was referring to the previous neighbour who had moved out 2 years before. She got dressed unaided, they visited their friends, whom she recognised, but she seemed to have forgotten a number of recent events, and kept asking the same questions repeatedly. By the time she reached hospital, she seemed to have recovered back to normal, although could not recall the previous few hours. The examination was normal. What is the likely diagnosis?",
+      "options": [
+        "A. Early Alzheimer's disease",
+        "B. Functional (psychogenic) amnesia",
+        "C. Post-ictal state following an unwitnessed seizure",
+        "D. Transient global amnesia (TGA)",
+        "E. Transient ischaemic attack (TIA)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is a typical story for TGA, with a profound anterograde amnesia lasting several hours leading to repetitive (and irritating) questions, and retrograde amnesia stretching back at least 2 years, but not so long that she had forgotten her friends or husband. Psychogenic amnesia often involves loss of self-identity (functional fugue state); the post-ictal state is usually confusion, rather than this very specific isolated amnestic syndrome. Isolated amnesia is almost never due to a TIA, and Alzheimer's presents in a much more insidious way.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 45 year old man presents to his family physician very worried about his memory. He describes difficulty remembering words, making silly errors whilst typing and occasionally forgetting names, albeit transiently. His grandfather died in a nursing home having gone 'senile' at the age of 87. He is otherwise well. He is able to work, although worried about his job as there have been recent redundancies, and he has two young children and his wife does not work. The doctor speaks to his wife (with his permission), who is surprised that her husband was at the surgery, as she was unaware of any problems. She feels that he is stressed, no more than usual, and confirms that he is sleeping well. He is on no medication, does not smoke and drinks only occasionally. He dropped 2 points on the Montreal Cognitive Assessment, both on immediate recall. What is the likely explanation?",
+      "options": [
+        "A. Depression",
+        "B. Early Alzheimer's disease",
+        "C. Functional memory disturbance",
+        "D. Minimal cognitive impairment",
+        "E. Sleep apnoea"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In general, people who worry about their memory, which no one else has noticed, rarely have an underlying disease; clinicians should worry much more about the family who bring a patient who seems blithely unaware of any problem. Minimal cognitive impairment (MCI) is a controversial entity, although some will progress to dementia. Depression can present with a pseudo-dementia, but there are no specific features of depression here. Sleep apnoea can disturb memory but is usually associated with excessive daytime sleepiness, and a sleep history of snoring and apnoeic spells.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 79 year old male arrives in the emergency department having developed an acute movement disorder affecting his left arm and leg that day. He is fully conscious but distressed. He has recurrent and apparently uncontrollable movements mainly of his left arm, which suddenly shoots out at odd angles, and flails, before being still for a few seconds, then repeats the wild movements. There is a similar but less dramatic pattern in his leg. He does not appear weak, and has no other symptoms or signs. He underwent triple coronary artery bypass grafting 10 years previously, and is on treatment for hypertension. He is normally independent and generally very well. He is seen by the stroke team who do not think this is the result of a stroke, and a neurology consult is requested. Where is the likely lesion?",
+      "options": [
+        "A. Brainstem",
+        "B. Left motor strip",
+        "C. Left parietal lobe (angular gyrus)",
+        "D. Right motor strip",
+        "E. Right subthalamic nucleus"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "He has developed acute hemiballism, which usually localises to the contralateral subthalamic nucleus in the basal ganglia. In this case, it is almost certainly due to a stroke, but is often not recognised as such as the symptoms are unusual and may be missed by inexperienced clinicians. Lesions in the motor strip would cause weakness, and lesions affecting the angular gyrus in the dominant parietal lobe are associated with Gerstmann's syndrome (agraphia, acalculia, finger agnosia and inability to differentiate left from right).",
+      "questionNumber": 50
+    },
+    {
+      "question": "An 82 year old female was seen in the neurology clinic with a progressive history of speech and swallowing problems over the previous 9 months. Initially she had some slurring of speech, and was seen in an ear, nose and throat (ENT) clinic; no vocal cord pathology was found. Her speech deteriorated, and is now difficult to understand, with a rather squeaky characteristic. Her swallowing has also deteriorated with frequent choking, and she has lost weight. Her family have been alarmed by her sudden bouts of laughing or crying, often with little provocation, and this is apparent in clinic. She was previously well. Examination is normal except for a small shrivelled tongue, which moves slowly, barely intelligible speech and a brisk jaw jerk. What is the likely diagnosis?",
+      "options": [
+        "A. Brainstem stroke",
+        "B. Motor neuron disease",
+        "C. Myasthenia gravis",
+        "D. Olfactory groove meningioma",
+        "E. Polymyositis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The symptoms and signs suggest a pseudobulbar palsy, but the progression over several months excludes a stroke; a structural lesion could potentially cause this, but not in the frontal region. Polymyositis may affect swallowing but not speech, and would not cause these signs or emotional incontinence. Whilst myasthenia gravis can present with bulbar symptoms, the upper motor neuron signs and emotionalism do not fit. Unfortunately, this sounds very likely to be a pseudobulbar presentation of motor neuron disease.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 59 year male has noted complete loss of smell and taste in the last few months. He is sure this has only been present since he slipped on ice outside a fishmongers and banged the back of his head; he thinks he may have briefly lost consciousness. He had a headache for a few weeks after this and, although he recovered well, he is pursuing legal action against the fishmonger who he maintains was negligent. He is a heavy smoker, but otherwise well. What is the most likely cause of his anosmia and ageusia?",
+      "options": [
+        "A. Idiopathic",
+        "B. Malingering",
+        "C. Parkinson's disease",
+        "D. Post-head injury",
+        "E. Smoking"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Disturbance of sense of smell (and taste, which is crucially dependent upon smell) is common after minor head injury, most typically to the occipital region, as the shearing forces cause disruption to the olfactory fibres as they pass through the cribriform plate in the anterior cranial fossa. (Patients are often mystified as to why a bang to the back of their head might affect their nose.) It would be an unusual malingering symptom, and malingering is a forensic rather than medical diagnosis. Parkinson's disease is often preceded by hyposmia, although patients rarely, if ever, present at this stage. Whilst smokers often have less acute senses of smell and taste, they rarely notice this. For most patients presenting with reduced sense of smell and no apparent triggers, the causes are either ENT related or idiopathic.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 32 year old woman with multiple sclerosis (MS) has developed urinary problems. She frequently feels she needs to pass urine, although often passes only small amounts. She is intermittently incontinent, and has had several proven urinary tract infections in the last 12 months. A post-micturition ultrasound scan reveals a residual volume of 182 mL of urine. What is the most appropriate treatment?",
+      "options": [
+        "A. Bladder-stabilising (anticholinergic) drug",
+        "B. In-dwelling catheter",
+        "C. Intermittent self-catheterisation",
+        "D. Long-term antibiotic prophylaxis",
+        "E. Pelvic floor exercises"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The scan confirms that she is retaining urine, with incomplete bladder emptying. Thus the optimal treatment would be regular intermittent self-catheterisation, providing that her arm/hand function is not compromised by her MS. Antibiotics would not affect her bladder function, and anticholinergic drugs would exacerbate the problem. A long-term catheter would ideally be avoided.",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 36 year old male presents with a 3-week history of headaches, typically awakening him in the early hours. They are severe, affecting the right periorbital region, last about an hour and are very distressing; he is unable to find a comfortable position. He has noticed that his right eye waters and goes red with the pain. Occasionally he gets an attack during the day. He thinks he had something similar about 2 years ago but it disappeared after a week or so. He is otherwise well, but terrified that he has a brain tumour such is the severity of the pain. What is the likely diagnosis?",
+      "options": [
+        "A. Cluster headache",
+        "B. Hypnic headache",
+        "C. Migraine",
+        "D. Paroxysmal hemicrania",
+        "E. Temporal arteritis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is a typical scenario for cluster headache, one of the trigeminal autonomic cephalalgias (TACs). The pain is always severe, lasting between 30 and 180 minutes, associated with autonomic activation and agitation. Cluster headaches typically awaken people from sleep, clusters last weeks, with months to years of remission in between. They are more common in male smokers. Migraine can awaken people from sleep, but usually patients want to lie quietly in a dark room, the opposite of cluster patients, and autonomic activation is rare. Hypnic headache also awakens people from sleep, but usually affects older women, and is not associated with agitation or autonomic activation. Temporal arteritis does not occur under the age of 50 years and does not produce such a paroxysmal history. Paroxysmal hemicrania is another form of TAC, but the symptoms are much shorter and affect women more commonly.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 50 year old male describes a 3-week history of dizziness, often occurring in bed. Shortly before the dizziness started, he had walked into a glass door, 'seen stars' but not lost consciousness. On closer questioning, he has noted that getting into or out of bed and rolling over to the left can trigger his symptoms, which is brief vertigo lasting a few seconds. He has fallen on two occasions as he got out of bed as a result. He occasionally gets it during the day, usually when getting into his sports car, but otherwise he is generally well. He is on no medication, but drinks about 60 units of alcohol per week. What is the appropriate management?",
+      "options": [
+        "A. Alcohol abstention",
+        "B. Betahistine",
+        "C. Low-salt diet",
+        "D. Short course of glucocorticoids",
+        "E. Vestibular repositioning (e.g. Epley manoeuvre)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This is a typical story for benign paroxysmal positional vertigo (BPPV), the clues being the short-lasting vertigo induced by changes in posture, typically in bed. About half of cases are triggered by minor head trauma (there is no indication for brain imaging). Treatment with an Epley manoeuvre or similar is easy (there are plenty of examples on You Tube!) and highly likely to be successful, unlike drug treatment. Although he should be advised to reduce his alcohol intake, which might perhaps have explained the initial accident, this is not directly an alcohol-related problem.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 36 year old female presents with progressive difficulty walking over the previous week, and now has difficulty passing urine. One year previously she had an episode of monocular visual loss which lasted about 2 weeks. She was abroad at the time, and by the time she returned, her vision was recovering so she did not seek attention. On examination she has an upper motor neuron pattern weakness in both legs, with brisk reflexes and upgoing plantar responses, and a palpable bladder; her right optic disc is pale. Her non-contrast MRI head is normal, but there is a long lesion seen in the thoracic spine, stretching over several spinal segments, thought to be inflammatory. Which investigation is most likely to make confirm a diagnosis?",
+      "options": [
+        "A. Aquaporin-4 antibody",
+        "B. Lumbar puncture for oligoclonal bands",
+        "C. Paraneoplastic antibodies",
+        "D. Repeat imaging with contrast",
+        "E. Visual evoked potentials"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The story of an episode of optic neuritis, followed by a spinal cord syndrome, with an extensive longitudinal inflammatory lesion in the spinal cord is very suggestive of neuromyelitis optica (NMO), which is commonly associated with the aquaporin-4 antibody. This does not sound like a paraneoplastic syndrome, and whilst the other tests may add further information, they are unlikely to be diagnostic. NMO is different from MS, and requires a different approach to treatment. Indeed some MS treatments can make NMO worse, so distinction is important.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 21 year old female was diagnosed with MS 2 years ago after presenting with ataxia, from which she recovered fully; she declined further treatment at the time as she was considering starting a family. She has now developed numbness of her left arm, which has alarmed her but is not compromising her function. She has no other symptoms. What is the most appropriate immediate management?",
+      "options": [
+        "A. Broad-spectrum antibiotic",
+        "B. Conservative",
+        "C. High-dose oral glucocorticoids",
+        "D. Physiotherapy",
+        "E. Start a disease-modifying drug of high efficacy such as natalizumab"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is a non-disabling relapse, and thus there is no immediate indication for treatment, although it should trigger reconsideration of disease-modifying drugs. Although infection can trigger relapses, you should only treat a proven, symptomatic infection. Physiotherapy will not help sensory symptoms.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 30 year old female presents to her family physician. Her identical twin sister was diagnosed with MS last year, and she has read that her own risk of MS is therefore increased, and she is enquiring about this. Approximately what is her risk of developing MS?",
+      "options": [
+        "A. 5%",
+        "B. 20%",
+        "C. 35%",
+        "D. 50%",
+        "E. 85%"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The risk of developing MS is increased by 10- to 25-fold in first-degree relatives of people with MS, but varies depending upon the kinship. The highest risk is in female monozygotic (MZ) twins (in male MZ twins it is about a 6% risk of occurring).",
+      "questionNumber": 58
+    },
+    {
+      "question": "Which of the following scenarios would represent a reasonable case for requesting an electroencephalogram (EEG)?",
+      "options": [
+        "A. A 15 year old female with a single unwitnessed blackout thought to be syncope but with associated urinary incontinence",
+        "B. A 24 year old male in a psychiatric unit on multiple antipsychotics and consistently drowsy in the mornings",
+        "C. A 64 year old female having had a single generalised tonic-clonic seizure",
+        "D. A 68 year old female with two witnessed generalised tonic-clonic seizures",
+        "E. A 68 year old male with a previous left hemisphere stroke and recent episodes of unwitnessed collapse"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Of course in an adult with new onset seizures imaging is the important investigation, but EEG can have a role in some cases. In someone with a single seizure, a timely EEG (within 4 weeks) can help inform the risk of recurrence, and so will be worthwhile after a single generalised tonic-clonic seizure at any age. In patients under the age of about 30 years with new-onset epilepsy (either multiple seizures or single seizure with high risk of recurrence), the EEG can help with classification of epilepsy and so will carry therapeutic implications. In elderly patients with multiple seizures, epilepsy is almost certainly going to have a focal origin and the EEG is unlikely to be useful. In anyone of any age with unwitnessed or indeterminate transient loss of consciousness, the inter-ictal EEG may not only fail to show abnormalities but also any resultant ‘abnormalities' may be red herrings; this applies especially to patients with focal injury or to younger females who have a higher chance of displaying epileptiform features on EEG such as photosensitivity.",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 28 year old man describes evolving weakness of all four limbs over 8 weeks, and most recently some dyspnoea. Blood tests are normal and lumbar puncture shows a raised CSF protein but no cells. A diagnosis is made of chronic inflammatory demyelinating polyneuropathy (CIDP). Which of the following patterns of abnormality on nerve conduction studies and EMG is likely to be present at the time of diagnosis?",
+      "options": [
+        "A. Delayed conduction in motor and sensory nerves with denervation on EMG",
+        "B. Delayed conduction in sensory and motor nerves with normal EMG",
+        "C. Normal nerve conduction and EMG studies",
+        "D. Normal nerve conduction studies but denervation changes on EMG",
+        "E. Small sensory nerve and compound motor action potentials but normal EMG"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "CIDP is a condition that causes loss of myelin in peripheral nerves. Nerve conduction studies can demonstrate demyelination of peripheral nerves (via slowed conduction) or axonal damage to sensory or motor nerves (with reduced numbers of functioning axons leading to reduced amplitude of response). EMG shows spontaneous activity in muscle (fasciculation or positive sharp waves) when nerve supply to muscle is lost due to axonal damage, but not as a consequence of demyelination. The peripheral demyelination therefore would be expected to cause only abnormal nerve conduction velocities and not EMG changes.",
+      "questionNumber": 60
+    },
+    {
+      "question": "A 68 year old woman presents to her family physician with a 3-day history of ‘dizziness', by which she means extreme vertigo, with a sensation of the room spinning to the right, made worse with any movement. She has vomited on occasions and has been bed-bound but reports no focal neurological deficit. Things have improved slightly in the last 24 hours and she can now make her way round the house with some assistance. What is the likely explanation for her symptoms?",
+      "options": [
+        "A. Acute labyrinthitis",
+        "B. Benign paroxysmal positional vertigo",
+        "C. Brainstem stroke",
+        "D. Ménière's disease",
+        "E. Migraine"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "An acute onset of vertigo that begins to resolve over days is likely to be related to an acute vestibular syndrome. BPPV is a chronic condition precipitated usually by a specific movement in each individual, and would merit treatment with the Epley manoeuvre. A brainstem stroke would usually cause more widespread neurological changes, while Ménière's disease is a chronic condition causing vertigo with associated deafness and tinnitus. Vertigo associated with migraine is a recurring condition of relatively short-lived vertigo most usually associated with headache and/or other migrainous symptoms.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A 26 year old woman saw her optician because of recent headaches. These are present on stooping or coughing and often associated with visual symptoms (small flashing dots or brief loss of vision). She has no history of vomiting or other neurological symptoms. She has no cognitive or depressive symptoms. Examination shows her body mass index to be 40 kg/m2. She has bilateral papilloedema and no venous pulsation on fundoscopy. Blind spots are enlarged in both eyes. Neurological examination is otherwise normal. What is the likely cause of her fundal abnormalities?",
+      "options": [
+        "A. Bilateral optic neuropathy",
+        "B. Diabetic retinopathy",
+        "C. Idiopathic intracranial hypertension",
+        "D. Intracranial space occupying lesion",
+        "E. Neuromyelitis optica"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The coexistence of headache and papilloedema will always merit imaging to exclude an intracranial lesion, but the patient's age and morphology, intermittent nature of the symptoms and lack of other findings would make IIH most likely. Transient loss of vision on bending (or other manoeuvres that transiently raise intracranial pressure; ICP) are characteristic, and called visual obscurations. Optic neuropathy would cause disc pallor and reduced colour vision, while retinopathy would cause field defects or, if affecting the maculae, reduced visual acuity. Neuromyelitis optica is an inflammatory condition causing neurological deficit but not headache.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 32 year old man has a 3-month history of slowly worsening headaches after sustaining a minor head injury while playing football. These headaches were worse if he exercises or coughs and are sometimes associated with vomiting and nausea. He has no other systemic symptoms. Neurological examination shows him to have bilateral papilloedema but no focal neurological deficit. MRI is reported as showing dilated lateral and third ventricles but no increase in size of the fourth ventricle. What is the likely diagnosis?",
+      "options": [
+        "A. Cerebral venous sinus thrombosis",
+        "B. Idiopathic intracranial hypertension",
+        "C. Intracranial space-occupying lesion",
+        "D. Normal pressure hydrocephalus",
+        "E. Stenosis of the aqueduct of Sylvius"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The aqueduct of Sylvius is the small channel that allows CSF to travel from the third to the fourth ventricle. Stenosis can become apparent in adult life and lead to symptoms of raised ICP. Imaging will show that the ventricles ‘upstream' (lateral and third ventricles) will be dilated, but the fourth will be small or of normal size. IIH is associated with normal or small ventricular size, while space-occupying lesions will be apparent on imaging, and if severe enough to cause raised intracranial pressure will often cause other neurological deficits. Venous sinus thrombosis will usually be apparent on imaging (often resulting in haemorrhage). Normal pressure hydrocephalus usually occurs in older patients, and will have no features of acutely raised ICP, but rather a triad of reduced cognition, urinary incontinence and gait abnormalities, resulting in dilation of all ventricles apparent on imaging.",
+      "questionNumber": 63
+    },
+    {
+      "question": "A 44 year old woman is referred to see you because of worsening headaches. These have been present for around 4 years and have increased in frequency and severity such that she is now self-medicating with doses of paracetamol and codeine tablets 3-4 times daily. Her headaches fall into two types: a constant underlying ‘throbbing, aching' pain present every moment of every day, and episodes of severe pulsating headache with photophobia, phonophobia and nausea. She has been off work for the last 3 months and has now become withdrawn, depressed and weepy. Neurological examination is normal. What is the likely diagnosis?",
+      "options": [
+        "A. Chronic Daily Headache",
+        "B. Chronic migraine",
+        "C. Functional headache disorder",
+        "D. Intracranial space occupying lesion",
+        "E. Subarachnoid haemorrhage"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Chronic Daily Headache (sometimes known as medication overuse headache) is an increasingly common condition, made worse by ease of access to paracetamol and compound analgesics. The unrelenting nature of the slowly progressive pain with no neurological or systemic features and associated high intake of analgesia will give good clues to the diagnosis. While migraine headache syndromes can transform with time, many of this patient's painful episodes have no other migrainous features. It would be an unusual person who was not rendered weepy or low by such severe headaches, and the concurrence of a mood disorder should not allow the physician to make a hasty attribution of symptoms to psychological causes, particularly in the presence of other diagnostic features. Subarachnoid haemorrhage would cause an abrupt-onset acute headache rather than a relentless one.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 28 year old man presents with episodes of unsteadiness lasting days to hours at a time on around 3-4 occasions per year. These are not be worsened by changes in position, and he is not aware of any precipitants. There is no accompanying pain or visual symptoms and in between these bouts he reports no symptoms. His father had similar symptoms in later life, and his younger brother has started to display similarly intermittent symptoms. Neurological examination is normal. What is the likely diagnosis?",
+      "options": [
+        "A. Benign paroxysmal positional vertigo",
+        "B. Diabetic neuropathy",
+        "C. Episodic ataxia",
+        "D. Migraine",
+        "E. Spinocerebellar ataxia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The episodic ataxias are inherited channelopathies that result in prolonged paroxysms of ataxia in affected individuals, usually with normal intervening neurological examination (although some patients can develop a slowly progressive ataxia). The family history is key in this case, suggesting an autosomal dominant disorder. Peripheral neuropathies are unlikely to be paroxysmal and would not cause an ataxia, while migraine can cause episodic vertigo, but usually alongside other migrainous phenomena. BPPV would usually have direct positional precipitants.",
+      "questionNumber": 65
+    },
+    {
+      "question": "A 62 year old man has a 3-month history of worsening unsteadiness, causing him to fall on several occasions. He has not sustained any serious injury but now requires more help to cook and look after himself in his home. He has multiple medical conditions and requires a range of regular medications, which he supervises himself. Neurological examination reveals nystagmus on lateral gaze with jerky pursuit movements and diplopia on lateral gaze (both directions). His speech is slurred but he has no other neurological deficit. Power and reflexes are normal in all four limbs. He has an intention tremor, past-pointing in both arms and cannot heel-toe walk because he is so unsteady. Which of his medications is most likely to be contributing to his unsteadiness?",
+      "options": [
+        "A. Diazepam",
+        "B. Digoxin",
+        "C. Phenytoin",
+        "D. Prochlorperazine",
+        "E. Salbutamol"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Cerebellar function can be acutely affected by a number of medications including the older antiepileptic drugs (phenytoin, carbamazepine and valproate), lithium and amiodarone. Digoxin and diazepam at higher doses can be associated with sedation and drowsiness but not cerebellar ataxia. Antiemetics and antipsychotics can be associated with movement disorders such as chorea and athetosis but not usually ataxia; β2-agonists will cause tremor in acute stage.",
+      "questionNumber": 66
+    },
+    {
+      "question": "A 68 year old female presents with a witnessed sleep-onset convulsion, with typical post-event confusion, lateral tongue biting and subsequent myalgia. She reports a single collapse at the age of 16, and remembers having a ‘brain wave' test, which was normal, apparently. She is desperate not to lose her driving licence, and believes this was related to dehydration caused by the hot weather that day. In the emergency department on the day of presentation, her ECG and routine blood tests are all normal except for a neutrophilia (total white cell count 19.8x10^9/L) and sodium of 133 mmol/L. What is the next most appropriate investigation?",
+      "options": [
+        "A. Brain imaging",
+        "B. Further investigation of neutrophilia and hyponatraemia",
+        "C. No further investigations necessary",
+        "D. Sleep-deprived EEG",
+        "E. Standard EEG"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "At this age, the key investigation is brain imaging (ideally MRI) to exclude a structural cause for her seizure. The event at the age of 16 is removed enough to have little relevance, while the borderline hyponatraemia is not severe enough to cause seizures. A neutrophilia is common after a seizure. While an EEG may provide some prognostic information, the most important role of investigation is to exclude a primary intracerebral lesion.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A 29 year old male presents 8 weeks after being hit on the head by a golf ball. He fell to the ground but it was unclear whether he lost consciousness or not (if he did, it must have been very brief). He went to hospital that day, and had a minor laceration to his scalp glued. He has since been troubled by gradually worsening headache, poor concentration, irritability and poor sleep, and now he is very miserable and low. He is off work, and spending much of his time asleep on the couch during the day. He has returned to the emergency department on several occasions due to his symptoms, and had a CT head 2 weeks ago which was normal. Yesterday he saw an acupuncturist who recommended he seek an MRI head scan. What is the appropriate management?",
+      "options": [
+        "A. Explanation of the ‘post-concussion syndrome'",
+        "B. MRI head",
+        "C. Neurosurgical referral",
+        "D. Psychiatric referral",
+        "E. Tramadol for his headache"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "People may develop a constellation of symptoms after head injury, including headache, fatigue, dizziness, poor concentration/memory, emotionalism and numerous other symptoms. These are not specific to head injury. They are often persistent and may get worse, especially if the diagnosis is not explained. The management requires a careful explanation of the diagnosis, as well as reassurance that they have not suffered any irreversible brain damage (http://www .headinjurysymptoms.org/). Unfortunately, in such scenarios, many (well-meaning) health�care workers and other professionals may exacerbate the situation by recommending more intervention, as in this case. Neither a psychiatric nor neurosurgical consult will be of any value, and tramadol is a poor choice in this situation.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A 24 year old woman had first seen her family physician a year ago with a history of anxiety and panic attacks. In the subsequent 6 months she and her family had begun to notice some cognitive difficulties and short-term memory problems (losing the ability to carry out complex tasks at work, not recognising family members). When you see her in the clinic, she is orientated in time and person but is hesitant in her answers, being also disorientated in place. She exhibits difficulties in all domains of cognitive testing, especially in tasks requiring working memory and concentration. On examination she has frequent twitching movements involving all four limbs (her family have noticed these over the last 2 weeks). Concentration difficulties limit the usefulness of visual examination, but otherwise she has generally brisk reflexes and upgoing plantars. What is the most likely cause of her cognitive problems?",
+      "options": [
+        "A. Alzheimer's disease",
+        "B. Anxiety disorder",
+        "C. Hyperthyroidism",
+        "D. Sporadic Creutzfeldt-Jakob disease (CJD)",
+        "E. Variant CJD"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The history is of a progressive degenerative disorder and, in this age, with evolution of choreiform movements, variant CJD would be most likely. Myoclonus tends to be more prominent in sporadic CJD, but this involves an older population, as does Alzheimer's disease (which has a slower course and only shows neurological signs at a late stage). The presence of significant cognitive decline and upgoing plantars would not be in keeping with a psychological cause. While age and gender would be in keeping with hyperthyroidism, the presence of neurological signs and severity of the cognitive dysfunction would make this less likely.",
+      "questionNumber": 69
+    },
+    {
+      "question": "A 40 year old right-handed man presents after a single generalised tonic-clonic seizure. He has no risk factors for development of epilepsy but on closer questioning has had spontaneous bursts of altered sensation (‘like a burning') in the left arm lasting seconds at a time. Examination is normal except for an asymptomatic homonymous left lower temporal quadrantanopia. He has had a CT head which shows a non-enhancing abnormality in the substance of the brain. What is the likely nature of the lesion?",
+      "options": [
+        "A. Basal skull meningioma",
+        "B. Glioblastoma multiforme in right parietal lobe",
+        "C. Low-grade glioma in right parietal lobe",
+        "D. Medulloblastoma in the right parietal lobe",
+        "E. Optic nerve glioma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The only localising features here are the symptoms of left sensory change and the quadrantanopia, which would both suggest a right parietal lesion. Seizures are more likely with low-grade gliomas, while highly malignant lesions such as glioblastomas will often have a rapid onset of neurological symptoms with, for reasons that are not entirely clear, a lower risk of seizures than low-grade lesions. Meningiomata, by definition, are situated outside the brain, while medulloblastomas are tumours more common in childhood, most likely to be situated in the posterior fossa (cerebellum). Visual changes related to optic nerve problems will be monocular rather than homonymous.",
+      "questionNumber": 70
+    },
+    {
+      "question": "A 26 year old woman presents to the emergency department with a rapid onset of headache. There had been a slowly evolving scotoma in the right side of her vision, which had spread over around 35 minutes with some associated flickering in the vision. The headache afterwards had been severe, and she retired to bed where she vomited on several occasions. Her family had noted that her speech had been slurred during the headache phase and she felt that she had some associated altered sensation in the right hand. You see her 24 hours later, at which point she feels drained but otherwise back to normal. Neurological examination is normal. What is the most likely cause of her symptoms?",
+      "options": [
+        "A. Cerebral venous sinus thrombosis",
+        "B. Focal seizure arising in the occipital region",
+        "C. Migraine with aura",
+        "D. Subarachnoid haemorrhage",
+        "E. Transient ischaemic attack"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Migraine is a common disorder, and preceding visual symptoms that disappear with onset of headache are characteristic of migraine with aura. Somatic sensations and dysarthria are common with migraine, but on a first occurrence would justify imaging to exclude a primary structural cause. Subarachnoid haemorrhage will not usually have focal signs but may need excluding in abrupt-onset headache as a first or worst occurrence. TIAs are not usually associated with headache, while the prominent headache and widespread other symptoms would not be in keeping with focal seizure. Cerebral venous sinus thrombosis would not usually recover completely so quickly, and any focal signs or symptoms would tend to evolve with the headache rather than precede it.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 21 year old male has been working on a farm for the summer. He has been on treatment with flucloxacillin for jaw stiffness that had been diagnosed as an early dental abscess. Over 5 days, he has become more unwell, with some agitation and anxiety, with a marked startle response to sound or touch. He is apyrexial and shows no signs of localised infection. Blood pressure is 165/110 mmHg but cardiovascular examination is otherwise normal. Neurological examination is difficult but shows generalised stiffness when he is moved or but no other focal neurological deficit. What is the likely cause of his symptoms?",
+      "options": [
+        "A. Botulism",
+        "B. Dental abscess with extension into the basal skull",
+        "C. Functional illness",
+        "D. Juvenile myoclonic epilepsy",
+        "E. Tetanus"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The occurrence of jaw stiffness in advance of generalised stiffness and spasms would be characteristic of tetanus, in this case most likely as the result of an infected wound. Diagnosis and adequate treatment is paramount as this disease can still be fatal even if treated. Dental abscesses are usually very painful, and would be vanishingly unlikely to extend intracranially. While the anxiety may make doctors think of a functional illness, the characteristic pattern of intermittent jaw symptoms followed by generalised symptoms would be unlikely in functional disorders. Botulism is also caused by a bacterial toxin (from Clostridium botulinum) but more usually causes ocular and bulbar weakness rather than spasms.",
+      "questionNumber": 72
+    },
+    {
+      "question": "A 44 year old woman returned from a holiday with her German cousins 1 week ago. In the last 5 days she has begun to notice worsening diplopia in all directions of gaze. She has had some difficulty in swallowing (fluid sometimes coming up through the nose) over the last 3 days and has had worsening weakness in legs and arms over the last 24 hours. She has noticed that she is becoming breathless, even at rest. The cousin with whom she was staying has begun to notice the same symptoms in the last 3 days. Examination shows her to be apyrexial with normal pulse and blood pressure. Forced vital capacity and forced expiratory volume in 1 second (FEV1) are reduced. She exhibits bilateral ptosis with reduced eye movements in all directions. Pupils are equal and reactive, and palatal movement is reduced. There is weakness with preserved reflexes in all limbs. What is the likely cause of her symptoms?",
+      "options": [
+        "A. Botulism",
+        "B. Brainstem stroke",
+        "C. Miller Fisher syndrome",
+        "D. Multiple sclerosis",
+        "E. Myasthenia gravis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The rapidly progressive generalised weakness preceded by ocular and bulbar paralysis is characteristic of weakness caused by botulinum toxin from Clostridium botulinum. (Her cousin had obviously eaten the same poorly prepared food!) Brainstem stroke would not arrive in such a progressive manner, and Miller Fisher syndrome would cause ataxia and areflexia along with any ophthalmoplegia (nor is it contagious). Myasthenia gravis would have an onset with some fatigability. Multiple sclerosis would be unlikely to cause isolated weakness in such a progressive manner (although this can be increased in family members, the simultaneous onset is a clue to a recent infection as the cause).",
+      "questionNumber": 73
+    },
+    {
+      "question": "A 34 year old woman was involved in a minor road traffic accident 24 hours previously. Her car had been hit from behind but she had not lost consciousness and had not suffered a direct blow to the head. On awakening the next day she was aware of a right-sided headache with associated neck pain. She had no diplopia or visual symptoms and no other focal neurological symptoms. Examination shows her to have a small right pupil with mild degree of right ptosis. Eye movements are full and fundal examination is normal. Cranial nerve examination is otherwise normal. What is the most likely cause of her symptoms?",
+      "options": [
+        "A. Extradural haematoma",
+        "B. Subarachnoid haemorrhage",
+        "C. Subdural haematoma",
+        "D. Traumatic brachial plexopathy",
+        "E. Traumatic dissection of the extracranial carotid artery"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Carotid dissection can be precipitated by a surprisingly minor trauma. Association of unilateral pain with Horner's syndrome is characteristic of this disorder. Signs are too focal and would be expected to be more severe with subarachnoid haemorrhage. Subdural and extradural haematomas would be unlikely to cause an isolated Horner's syndrome. A brachial plexopathy would also be expected to cause symptoms and signs in the ipsilateral arm.",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 44 year old woman has a 5-year history of progressive left-sided deafness. She has been travelling round Asia with her work as an aid worker and has not sought medical help. She has finally presented to her family physician after noticing some mild left-sided clumsiness in her hand and severe headaches, worse on exercising and stooping. She had no family history of neurological disease. Examination confirms the presence of blurred disc margins bilaterally, a left-sided sensorineural deafness and cerebellar signs in the left arm and leg. What is the likely cause of her progressive symptoms?",
+      "options": [
+        "A. Acoustic neuroma",
+        "B. Brainstem stroke",
+        "C. Ménière's disease",
+        "D. Migraine without aura",
+        "E. Multiple sclerosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Acoustic neuromas may be discovered incidentally on imaging or on investigation of sensorineural deafness. If uncovered late, there may be compression of the brainstem, sometimes with compression of the fourth ventricle causing hydrocephalus and raised ICP. Brainstem stroke would have a much more abrupt onset, and deafness is a very rare feature of multiple sclerosis. Migraine would have a more episodic course, with no neurological deficit (and normal fundi). Most acoustic neuromas are spontaneous and not related to neurofibromatosis.",
+      "questionNumber": 75
+    },
+    {
+      "question": "A 68 year old man presents with progressive numbness over 6 months initially affecting his feet, and spreading up his legs. Over the last 3 months, his hands have become affected with both numbness and weakness. He admits to drinking around 12 units of alcohol per week. He has no cranial nerve symptoms and sphincter function is normal. Examination shows him to have reduced power symmetrically in both legs distally and in finger abduction and adduction. Reflexes are reduced in all four limbs with downgoing plantars. Sensory testing shows symmetrically reduced pin-prick sensation below both knees, with loss of vibration sensation to the knees and reduced proprioception in toes and ankles. Initial investigation shows: random glucose 6.8 mmol/L (123 mg/dL); full blood count normal; erythrocyte sedimentation rate (ESR) 78 mm/hr. What is the likely cause of his symptoms?",
+      "options": [
+        "A. Alcoholic neuropathy",
+        "B. Diabetic neuropathy",
+        "C. Motor neuron disease",
+        "D. Myelopathy secondary to lymphomatous deposits",
+        "E. Neuropathy secondary to myeloma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The symptoms of a rapidly progressive distal sensorimotor loss would be most in keeping with a neuropathy. The levels of alcohol intake and random glucose are too modest to account for an alcoholic or diabetic neuropathy, respectively. A raised ESR would highlight an immune-related cause and, with no rash or arthropathy, such a raised level would be most in keeping with myeloma.",
+      "questionNumber": 76
+    },
+    {
+      "question": "A 54 year old man presents after a second bout of left-sided facial palsy in 4 years. He is a gamekeeper in the Highlands of Scotland but has been off work with increasing fatigue for the last 4 months. He has had some increasing hyperacusis for the 3 days of his recent facial weakness. His only other past history is of some assessment at a rheumatology clinic for generalised aches and pains with worsening fatigue. Examination shows him to be apyrexial with a weakness involving the whole of the left face, with normal fundi and normal eye movements. Cranial nerve examination is otherwise normal and he has symmetrically normal reflexes and sensory examination. What is the likely cause of his symptoms?",
+      "options": [
+        "A. Bell's palsy",
+        "B. Lyme disease",
+        "C. Multiple sclerosis",
+        "D. Stroke",
+        "E. Syphilis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The symptoms and signs suggest a lower motor neuron facial palsy on the affected side. Recurrent facial palsy in someone at high risk of Borrelia burgdorferi infection makes Lyme disease the likely cause here. The onset and relapse would be unusual for a vascular cause, and multiple sclerosis causes upper motor neuron problems, being unlikely to cause an isolated facial palsy. Syphilis can cause some vasculitic central nervous system problems, but the typical pattern would involve a myelopathy and some brainstem signs. Even with the recent rise in incidence, it remains rarer than that other spirochete, Borrelia.",
+      "questionNumber": 77
+    },
+    {
+      "question": "A 48 year old man complains of worsening gait difficulty over the last 3 months. Which of the following symptoms or signs would suggest that the cause is sited in the spinal cord?",
+      "options": [
+        "A. Evolution of symptoms over seconds",
+        "B. Progressively worsening urinary incontinence",
+        "C. Sensory loss distally in upper and lower limbs",
+        "D. Widespread upper and lower motor neuron signs",
+        "E. Worsening diplopia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Spinal cord problems will often cause motor, sensory and sphincter problems. Any sensory problems caused by spinal cord lesions may relate to dissociated sensory loss, which may be asymmetrical if only half of the cord is affected. Motor deficit caused by spinal cord problems are upper motor neuron lesion in character below the lesion and may be lower motor neuron character at the level of the lesion, rather than a widespread mixture of upper motor neuron and lower motor neuron signs. Distal sensory loss is usually caused by a peripheral neuropathy, and cranial nerve deficits (e.g. diplopia) will require involvement superior to the spinal cord. Timing of the evolution of the symptoms tends to give information on the nature rather than the site of the lesion. There are no features to suggest a myelopathy (no upper motor neuron symptoms or sphincter deficit) and the presence of sensory symptoms and signs would not be suggestive of motor neuron disease.",
+      "questionNumber": 78
+    }
+  ]
+}

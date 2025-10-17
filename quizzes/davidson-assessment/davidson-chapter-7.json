@@ -1,0 +1,257 @@
+{
+  "title": "Poisoning - Chapter 7",
+  "questions": [
+    {
+      "question": "Which one of the following is most likely to produce significant toxicity if ingested accidentally by a child?",
+      "options": [
+        "A. A 1 cm length of pencil lead",
+        "B. One combined oral contraceptive tablet",
+        "C. One liquid laundry detergent capsule",
+        "D. One mouthful of emulsion paint",
+        "E. One prednisolone 5 mg tablet"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "These are all substances of low toxicity (Box 7.1) with the exception of liquid laundry detergent capsules, which can cause CNS depression in children and are also corrosive, sometimes causing stridor, pulmonary aspiration and airway burns, as well as ocular damage if the liquid gets into the eyes.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch7/a/7.1.png",
+      "questionNumber": 1
+    },
+    {
+      "question": "A patient develops prolonged and recurrent episodes of torsades de pointes associated with no palpable cardiac output after an overdose of sotalol. All of these interventions may be useful except one. Which one is NOT likely to be helpful in the management of this situation?",
+      "options": [
+        "A. Cardiac pacing",
+        "B. Correction of hypokalaemia",
+        "C. Intravenous bolus dose of magnesium sulphate",
+        "D. Intravenous infusion of isoproterenol",
+        "E. Intravenous bolus dose of procainamide"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "These are all useful interventions for torsades de pointes except procainamide. Magnesium sulphate reduces the risk of torsades without affecting the QT interval and is first-line treatment (Box 7.2). Isoproterenol and pacing increase the underlying ventricular rate and reduce the risk of recurrence, as torsades is a bradycardia-dependent arrhythmia, although they are infrequently needed. Hypokalaemia worsens the risk of torsades, so correction is beneficial. Procainamide is a class Ia anti-dysrhythmic drug that further prolongs ventricular repolarisation and would worsen the risk of torsades.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch7/a/7.2.png",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 33 year old male attends the emergency department with breathlessness and chest pain after using a recreational substance/street drug. On examination he looks cyanosed and has a tachycardia (120 beats/min). On supplemental oxygen, his arterial blood gases show H+ 52.5 nmol/L (pH 7.28), PaCO2 2.7 kPa (20.3 mmHg), PaO2 17.3 kPa (129.8 mmHg) and 35% methaemoglobinaemia. Which of the following is the most likely causative agent?",
+      "options": [
+        "A. Cocaine",
+        "B. Gamma hydroxybutyrate",
+        "C. Isopropyl nitrite",
+        "D. Isosorbide mononitrate",
+        "E. Paracetamol"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Methaemoglobinaemia is commonly caused by organic nitrites, such as isopropyl nitrite, which oxidise haemoglobin. Other causes are shown in Fig. 7.3. The other substances listed in the question do not have this effect directly. Note, however, that occasionally cocaine is contaminated with oxidising adulterants such as benzocaine or phenacetin, which may occasionally produce unexpected methaemoglobinaemia.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch7/a/7.3.png",
+      "questionNumber": 3
+    },
+    {
+      "question": "A family of four people living in Jamaica develop vomiting, diarrhoea and abdominal pain a few hours after eating a well-cooked meal of snapper fish in a seafood restaurant. This subsequently progresses to unsteadiness of gait, blurred vision and tingling in the hands and feet. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Aconite poisoning",
+        "B. Ciguatera poisoning",
+        "C. Paralytic shellfish poisoning",
+        "D. Salmonella poisoning",
+        "E. Scombrotoxic fish poisoning"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The clinical features could be consistent with options B or C but the association with eating predator fish suggests ciguatera, which is prevalent in the Caribbean. These neurological features are not found with Salmonella poisoning. Scombrotoxic fish poisoning causes symptoms associated with histamine release, which may include gastrointestinal disturbance, but neurological features are not characteristic. Aconite can also cause gastrointestinal disturbances and paraesthesia but a plant is less likely to be involved in this episode.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following is the most likely explanation for the following clinical features in an adult patient after drug overdose: tachycardia, delirium, hallucinations, fever, diarrhoea, shivering, inducible prolonged clonus, seizures, raised creatine kinase?",
+      "options": [
+        "A. Anticholinergic toxidrome",
+        "B. Intercurrent infection",
+        "C. Recent use of gamma hydroxybutyrate",
+        "D. Serotonin syndrome",
+        "E. Stimulant toxidrome"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "These are all characteristic features of serotonin syndrome (Box 7.5A). Inducible clonus and shivering are not characteristic of the anticholinergic or stimulant toxidromes or gamma hydroxybutyrate (GHB) toxicity (although myoclonus may be seen after GHB; Box 7.5B). Clonus would not suggest intercurrent infection.",
+      "explanationImageUrls": [
+        "images/books-images/Davidson-assessment/ch7/a/7.5a.png",
+        "images/books-images/Davidson-assessment/ch7/a/7.5b.png"
+      ],
+      "questionNumber": 5
+    },
+    {
+      "question": "A 54 year old man presents unconscious. His pulse is 88 and blood pressure 142/78. Initial investigations reveal normal urea and electrolytes, creatinine of 101 μmol/L (1.14 mg/dL) and glucose 7.3 mmol/L (131.4 mg/dL). Arterial blood gases results include H+ 81.3 nmol/L (pH 7.09), PaCO2 1.8 kPa (13.5 mmHg), base excess of -13 mmol/L, carboxyhaemoglobin of 2% and lactate of 17.3 mmol/L (155.9 mg/dL). Paracetamol and salicylate are not detected. A computed tomography (CT) scan of the head is normal. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Carbon monoxide poisoning",
+        "B. Cyanide poisoning",
+        "C. Diabetic ketoacidosis",
+        "D. Ethylene glycol poisoning",
+        "E. Salicylate poisoning"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has marked metabolic acidosis with greatly elevated lactic acid. While all of these diagnoses may cause metabolic acidosis, only cyanide and carbon monoxide are associated with elevated lactic acid in the absence of cardiovascular shock. Carbon monoxide poisoning has probably been excluded by the normal carboxyhaemoglobin result, unless exposure was many hours earlier. Diabetic ketoacidosis and salicylate poisoning are also excluded by the normal blood glucose and salicylate concentration, respectively.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 34 year old painter/decorator presents with fatigue and anaemia after spending several weeks thermally stripping lead-based paint without using adequate personal protective equipment. His blood lead concentration is substantially elevated. Which of the following chelating agents is the most appropriate antidote for treatment of chronic lead poisoning?",
+      "options": [
+        "A. Desferrioxamine",
+        "B. Dicobalt edetate",
+        "C. Dimercaprol",
+        "D. Dimercaptosuccinic acid (DMSA)",
+        "E. Hydroxocobalamin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Lead poisoning can be treated with oral DMSA (also called succimer) or parenteral sodium calcium edetate (Box 7.7). Indications for the other listed chelating agents include poisoning with cyanide (hydroxocobalamin, dicobalt edetate) or iron (desferrioxamine). Dimercaprol has been used for heavy metal poisoning, including mercury, but has now been largely superseded by other chelating agents, because these are better tolerated.",
+      "explanationImageUrls": [
+        "images/books-images/Davidson-assessment/ch7/a/7.5a.png",
+        "images/books-images/Davidson-assessment/ch7/a/7.5b.png"
+      ],
+      "questionNumber": 7
+    },
+    {
+      "question": "Which of the following results indicates the largest anion gap (all results are in mmol/L)?",
+      "options": [
+        "A. Sodium 119, potassium 2.6, chloride 90, bicarbonate 27",
+        "B. Sodium 131, potassium 4.3, chloride 96, bicarbonate 18",
+        "C. Sodium 135, potassium 5.6, chloride 101, bicarbonate 24",
+        "D. Sodium 136, potassium 4.1, chloride 102, bicarbonate 25",
+        "E. Sodium 149, potassium 3.9, chloride 94, bicarbonate 21"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The anion gap measures the difference between measured cations (sodium and potassium) and anions (chloride and bicarbonate) and is usually calculated as $[Na^{+}+K^{+}]-[Cl^{-}+HCO_{3}^{-}]$. The 'gap' reflects the concentrations of unmeasured anions such as albumin and phosphate and the normal range is 12-16 mmol/L. Anion gap is increased by the presence of toxic anions such as the metabolites of ethylene glycol or methanol. In these examples, the calculated values are: (A) 4.6; (B) 21.3; (C) 15.6; (D) 13.1; and (E) 37.9 mmol/L. For more information see Box 7.8. N.B. for simplicity some recommend ignoring potassium in the calculation of anion gap (anion gap=$Na^{+}-[Cl^{-}+HCO_{3}^{-}])$, as potassium makes a limited contribution. Using this calculation, the normal range is 8-12 mmol/L. Use of this method gives the same answer for this question.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 24 year old man presents to hospital after smoking a herbal mixture. Which of the following features are characteristic of exposure to synthetic cannabinoid receptor agonists (SCRAS) but are not usually associated with use of herbal cannabis?",
+      "options": [
+        "A. Ataxia",
+        "B. Conjunctival irritation",
+        "C. Psychosis",
+        "D. Seizures",
+        "E. Tachycardia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Tachycardia, ataxia, conjunctival irritation and psychosis can all be characteristic of exposure to both cannabis and synthetic cannabinoid receptor agonists. Seizures, however, are often reported after use of SCRAs but rarely after use of cannabis. Unlike cannabis, SCRAs have also been reported to cause hypokalaemia, acute kidney injury and coma with respiratory acidosis.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch7/a/7.7.png",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 23 year old female develops muscle cramps and numbness about 3 weeks after an intentional ingestion of an insecticide product used on the farm where she lives. Her features progress to flaccid paralysis of lower and upper limbs with reduced tendon reflexes. A diagnosis of organophosphate-induced delayed polyneuropathy (OPIDN) is made. Which of the following is the most likely causative agent?",
+      "options": [
+        "A. Bendiocarb",
+        "B. Dichlorvos",
+        "C. Methomyl",
+        "D. Sarin",
+        "E. Tabun"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Dichlorvos is an organophosphate insecticide that can sometimes cause OPIDN, but this complication is rare with nerve agents (e.g. sarin, tabun) and non-organophosphate carbamate insecticides (e.g. methomyl, bendiocarb). Nerve agents would not be found on farms.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch7/a/7.8.png",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 21 year old man presents to hospital after snorting a white powder purchased as a 'research chemical' via the internet. He develops tachycardia and hypertension. Which of the following compounds is most likely to have been in the powder used?",
+      "options": [
+        "A. Cannabis",
+        "B. Gamma hydroxybutyrate",
+        "C. Heroin",
+        "D. Isobutyl nitrite",
+        "E. Mephedrone"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Mephedrone is a white powder commonly taken by nasal insufflation ('snorting'), and tachycardia and hypertension would be typical stimulant effects. Cannabis is not a white powder. While pure heroin (diamorphine) is white, street heroin is usually discoloured brown and smoked or injected rather than snorted. GHB and isobutyl nitrite are liquids. None of these others are likely to cause tachycardia and hypertension.",
+      "questionNumber": 11
+    },
+    {
+      "question": "Two adult males present to hospital after they both used the same unidentified recreational substance. Both have a Glasgow Coma Scale score <9 and bradycardia. Pupils are mid-sized. One has been incontinent for urine and both display myoclonus. Blood gases show a mixed respiratory and metabolic acidosis in both. What substance is most likely to be responsible?",
+      "options": [
+        "A. Diazepam",
+        "B. Ethanol",
+        "C. Gamma hydroxybutyrate",
+        "D. Heroin",
+        "E. Ketamine"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "These features (especially myoclonus and incontinence) are characteristic of poisoning with GHB and the related substances gamma butyrolactone (GBL) and 1,4 butanediol. The other four substances can all cause coma but bradycardia and incontinence are not typical. Small pupils would be seen with heroin toxicity.",
+      "questionNumber": 12
+    },
+    {
+      "question": "In relation to ingestion of a toxic substance, which of the following characteristics make a substance less appropriate for removal by haemodialysis?",
+      "options": [
+        "A. Large volume of distribution",
+        "B. Long half-life",
+        "C. Low molecular weight",
+        "D. Non-polar molecule",
+        "E. Not bound to activated charcoal"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Characteristics associated with efficacy for haemodialysis as a treatment for poisoning include small volume of distribution (high proportion of body load in the blood/plasma), low molecular weight, lipid soluble/non-polar at physiological pH (can cross dialysis membrane) and a long half-life after overdose. Binding to activated charcoal is not relevant for haemodialysis (only haemoperfusion).",
+      "questionNumber": 13
+    },
+    {
+      "question": "An 18 year old male presented to hospital after a deliberate overdose involving unknown substances. At presentation there was a high concentration of paracetamol in the blood. Over the subsequent 3 days he developed worsening abnormalities of liver function (elevated bilirubin and alanine transaminase), clotting (raised international normalised ratio) and renal function (elevated creatinine) and episodes of hypoglycaemia. All the features below are consistent with paracetamol overdose, except one. Which feature is most likely to be caused by another substance?",
+      "options": [
+        "A. Acute kidney injury",
+        "B. Early unconsciousness",
+        "C. Elevated international normalised ratio",
+        "D. Hypoglycaemia",
+        "E. Liver failure"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Paracetamol toxicity is characteristically associated with liver failure (including hypoglycaemia and abnormal clotting) and renal failure. Paracetamol does not generally cause unconsciousness, although this can be a feature of late-stage liver failure. It may also be caused by co-ingestants.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 23 year old man develops toxicity after deliberately ingesting a carbamate insecticide. Clinical features include headache, vomiting, diarrhoea, hypersalivation, abdominal pain, tachycardia, muscle weakness, fasciculation and reduced ventilation due to respiratory muscle involvement. Which one of the following is an example of a cholinergic (muscarinic) effect?",
+      "options": [
+        "A. Fasciculation",
+        "B. Mydriasis",
+        "C. Respiratory muscle paralysis",
+        "D. Salivation",
+        "E. Tachycardia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "These could all be cholinergic effects, but tachycardia, reduced ventilation, mydriasis and fasciculation are all cholinergic nicotinic (rather than muscarinic) effects (Box 7.15).",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 2 year old child develops tachycardia, delirium, fever associated with a flushed face, mydriasis and seizures after eating part of a plant. Which of the following is most likely to be responsible?",
+      "options": [
+        "A. Autumn crocus (Colchicum autumnale)",
+        "B. Deadly nightshade (Atropa belladonna)",
+        "C. Jequirity bean (Abrus precatorius)",
+        "D. Laburnum (Laburnum anagyroides)",
+        "E. Wolf's bane (Aconitum napellus)"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The child has features consistent with an anticholinergic toxidrome (Box 7.16A). Plants with this effect include Atropa belladonna (deadly nightshade), Datura stramonium (jimson weed, thorn apple) and Brugmansia spp. (angel's trumpet). While ingestion of jequirity beans, wolf's bane and laburnum could potentially also cause convulsions, anticholinergic effects would not be expected. Autumn crocus causes gastrointestinal effects, hypotension and cardiogenic shock (Box 7.16B).",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch7/a/7.15.png",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 17 year old female patient presents unconscious having had a witnessed seizure after an intentional drug overdose. Following the seizure she is drowsy but vital signs are otherwise satisfactory. Which of the following is most likely to be responsible?",
+      "options": [
+        "A. Amlodipine",
+        "B. Diazepam",
+        "C. Digoxin",
+        "D. Mefenamic acid",
+        "E. Paracetamol"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Mefenamic acid is a non-steroidal anti-inflammatory drug (NSAID) with a very high propensity to cause seizures. Other common causes of seizures in the context of drug overdose include tricyclic antidepressants, antipsychotic drugs, antiepileptic drugs, other NSAIDs (although much less commonly than with mefenamic acid), anticonvulsants and theophylline (Box 7.17). Paracetamol, diazepam and digoxin do not cause seizures. Seizures have been reported with severe amlodipine poisoning but are uncommon and likely to be associated with severe cardiovascular effects.",
+      "explanationImageUrls": [
+        "images/books-images/Davidson-assessment/ch7/a/7.16a.png",
+        "images/books-images/Davidson-assessment/ch7/a/7.16b.png"
+      ],
+      "questionNumber": 17
+    },
+    {
+      "question": "Deliberate release of a chemical warfare agent is suspected when 12 people develop similar symptoms after an explosion on an underground train. Initially these include anxiety, breathlessness, vomiting and headache, but five cases have also developed convulsions. Three patients have become unconscious and two have died. Survivors have dilated pupils and no respiratory tract or skin abnormalities are found. Investigations show raised plasma lactate but plasma acetylcholinesterase activity is normal. This clinical picture is most characteristic of exposure to which of the following?",
+      "options": [
+        "A. Cyanide",
+        "B. Lewisite",
+        "C. Phosgene",
+        "D. Sarin",
+        "E. Sulphur mustard"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "These are typical features of cyanide poisoning. Sarin can also cause vomiting, breathlessness (associated with bronchospasm and bronchorrhoea) and convulsions, but small pupils, abnormalities on respiratory examination and reduced plasma or red cell acetylcholinesterase activity would be expected. Sulphur mustard, lewisite and phosgene can cause respiratory effects but convulsions and coma would not be expected.",
+      "questionNumber": 18
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "title": "Clinical biochemistry and metabolic medicine - Chapter 14",
+  "questions": [
+    {
+      "question": "What is a particular advantage of obtaining a test analysis and result using a point-of-care test (POCT) system rather than using a traditional central laboratory?",
+      "options": [
+        "A. POCT analysers often have a wider menu of available tests than central laboratories",
+        "B. POCTs avoid the need to use the laboratory or the medical records",
+        "C. POCTs provide test results at the time of seeing the patient",
+        "D. POCTs are generally cheaper than traditional testing",
+        "E. POCTs use newer technology and are generally more accurate and precise"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The key advantage of POCT testing over central laboratory testing is that rapid availability of the result enables immediate medical decisions and actions. POCTs are generally more expensive than the equivalent test performed in a central laboratory. While POCT instruments often use new technology, the requirement for portability or miniaturisation may involve design or engineering compromises that result in less accuracy or precision than the equivalent standard laboratory test. Most POCT instruments are designed for a specific environment or group of tests, and so their menu is usually more restrictive than standard laboratory analysers. All laboratory and pathology results, including POCT, should always be recorded in the medical records.",
+      "questionNumber": 1
+    },
+    {
+      "question": "Which of the following is an autosomal recessive inherited disorder, often diagnosed through newborn screening programmes and treated with dietary modification, which can present with wide-ranging clinical manifestations, including vascular disorders, skin hypopigmentation, ectopia lentis, and disorders of the central nervous or skeletal systems?",
+      "options": [
+        "A. Cystathionuria",
+        "B. Cystinosis",
+        "C. Cystinuria",
+        "D. Homocystinosis",
+        "E. Homocystinuria"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Homocystinuria is inherited in an autosomal recessive manner. It is most commonly caused by loss of function of the cystathionine B-synthase (CBS) gene. This affects the metabolism of the amino acid methionine and causes accumulation of the related amino acids homocysteine and methionine. It is often diagnosed through newborn screening programs. Dietary treatment is available, designed to correct the imbalance in the amino acids caused by the missing enzyme function. There is no condition called homocystinosis. This should not be confused with homocystinuria (see option E). Cystinuria is an aminoaciduria, inherited in an autosomal recessive pattern. It is characterised by high concentrations of cysteine in the urine, leading to cysteine stone formation in the urinary tract. Cystinosis is a lysosomal storage disease and is also inherited in an autosomal recessive manner. There is accumulation of cystine within tissues. It is one of the causes of Fanconi's syndrome, in which there is abnormal renal tubular function. Cystathionuria (also called cystathionase deficiency) is also an autosomal recessive disorder, in which there is abnormal accumulation of plasma cystathionine, leading to increased urinary excretion. It is often considered to be a benign biochemical anomaly.",
+      "questionNumber": 2
+    },
+    {
+      "question": "There have been many different lysosomal storage diseases (LSDs) discovered, and some of these have been included in successful population-wide community genetic screening programmes. What is the most common form of inheritance of these LSDs?",
+      "options": [
+        "A. Autosomal dominant",
+        "B. Autosomal recessive",
+        "C. Multifactorial",
+        "D. X-linked dominant",
+        "E. X-linked recessive"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Most lysosomal storage diseases exhibit an autosomal recessive pattern of inheritance, although a few can be X-linked recessive (e.g. Fabry's disease).",
+      "questionNumber": 3
+    },
+    {
+      "question": "In the investigation of glycogen storage diseases (glycogenoses), which of the following is a commonly used non-invasive test or finding that may be useful in diagnosing this condition?",
+      "options": [
+        "A. Cataract in the lens of the eye",
+        "B. 'Cherry-red spot' in the fundus of the eye",
+        "C. Dislocated lens (ectopia lentis) in the eye",
+        "D. Exercise-induced fatigue or pain in muscles",
+        "E. Hypopigmentation of the skin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Exercise-induced fatigue or pain in muscles is associated with several of the glycogenoses. An ischaemic lactate forearm test can be used as a clinical diagnostic test for some forms of glycogen storage disease. The cherry-red spot in the fundus is typically associated with Tay-Sachs disease, one of the inherited GM2 gangliosidoses. Hypopigmentation, ectopia lentis and cataracts can be associated with many conditions, some of which are inherited, but the glycogenoses are not typically part of this group.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 59 year old man presents for cardiovascular risk assessment, but he has not fasted for the blood collection that was to be performed during his appointment. Which of the following plasma lipid or lipoprotein levels is most likely to be affected by his recent consumption of food?",
+      "options": [
+        "A. Calculated low-density lipoprotein (LDL) cholesterol",
+        "B. High-density lipoprotein (HDL) cholesterol",
+        "C. Lipoprotein (a)",
+        "D. Non-HDL cholesterol",
+        "E. Total cholesterol"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Calculated LDL cholesterol is correct because the calculation includes the triglyceride level, which increases following food consumption. The effect of food consumption on the other measurements is small by comparison, especially in relative terms.",
+      "questionNumber": 5
+    },
+    {
+      "question": "The same 59 year old man returns with a set of fasting results that include: total cholesterol 6.7 mmol/L (259 mg/dL), fasting triglyceride 2.3 mmol/L, HDL cholesterol 0.9 mmol/L (35 mg/dL), calculated LDL cholesterol 4.3 mmol/L (166 mg/dL), non-HDL cholesterol 5.8 mmol/L (224 mg/dL) and fasting serum glucose 6.9 mmol/L (124 mg/dL). What is the best indicator of the metabolic component of his cardiovascular risk?",
+      "options": [
+        "A. Calculated LDL cholesterol",
+        "B. Fasting plasma glucose",
+        "C. HDL cholesterol",
+        "D. Non-HDL cholesterol",
+        "E. Total cholesterol"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Non-HDL cholesterol is correct because it allows for the presence of small dense LDL and other atherogenic lipoproteins. This is particularly relevant in hypertriglyceridaemia, with or without accompanying elevation of fasting plasma glucose. It is more strongly associated with cardiovascular disease (CVD) in studies where comparison has been made with the other alternatives.",
+      "questionNumber": 6
+    },
+    {
+      "question": "The same 59 year old man fails to improve his lipid profile following diet and exercise advice, and pharmacological treatment is deemed necessary. Which of the following medications may have a detrimental effect on the triglyceride component of his lipid profile?",
+      "options": [
+        "A. An anti-PCSK9 monoclonal antibody",
+        "B. Cholestyramine",
+        "C. Ezetimibe",
+        "D. Niacin",
+        "E. Rosuvastatin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cholestyramine reduces recirculation of bile acids, down-regulates the farnesoid X receptor (FXR) and stimulates the replacement of the bile acids by conversion of cholesterol via 7 alpha-hydroxylase. The response to the down-regulation of FXR includes increased synthesis and secretion of triglyceride and very low-density lipoproteins (VLDLs). The other agents have neutral or favourable effects on triglyceride levels.",
+      "questionNumber": 7
+    },
+    {
+      "question": "The same 59 year old man commences atorvastatin 20 mg every evening. His follow-up lipid profile and glucose reveals: total cholesterol 3.7 mmol/L (143 mg/dL), fasting triglyceride 1.1 mmol/L (97 mg/dL), HDL cholesterol 1.1 mmol/L (42 mg/dL), calculated LDL cholesterol 2.1 mmol/L (81 mg/dL), non-HDL cholesterol 2.6 mmol/L (100 mg/dL) and fasting serum glucose 8.9 mmol/L (160 mg/dL). A subsequent glucose tolerance test is diagnostic of new-onset type 2 diabetes. What best describes the relationship between the onset of diabetes and the use of statins?",
+      "options": [
+        "A. Diabetes development is more likely in those with pre-existing impaired fasting glucose",
+        "B. The development of diabetes is inconsistent with the fact that fasting triglyceride has improved",
+        "C. The development of diabetes is unrelated to the dose or potency of the statin",
+        "D. The development of diabetes means that statins are now contraindicated in that individual",
+        "E. The onset of diabetes and the use of statins are completely unrelated"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Type 2 diabetes following statin therapy is likely in those with pre-existing impaired fasting glucose. It is proportional to the dose and potency of the statin, but the CVD benefit of the response clearly outweighs the CVD risk of the diabetes. Statins modestly improve triglyceride, even in the presence of diabetes.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 57 year old man is having a blood test and the resident doctor finds it difficult to take blood. When she receives the results she is worried that the test is inaccurate due to haemolysis of the cells whilst performing venepuncture. What is the dominant intracellular cation that may be inaccurately reported in this situation?",
+      "options": [
+        "A. Bicarbonate",
+        "B. Calcium",
+        "C. Magnesium",
+        "D. Potassium",
+        "E. Sodium"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The dominant intracellular cation is potassium. If cells haemolyse during venepuncture, increased potassium will be released from the cells and a patient may be erroneously diagnosed with hyperkalaemia.",
+      "questionNumber": 9
+    },
+    {
+      "question": "One litre of normal saline is given to a patient in the emergency department. How is this fluid likely to be distributed between the fluid compartments?",
+      "options": [
+        "A. Intracellular fluid 0mL, extracellular fluid 1000 mL, plasma volume 1000 mL",
+        "B. Intracellular fluid 0mL, extracellular fluid 1000 mL, plasma volume 200mL",
+        "C. Intracellular fluid 1000 mL, extracellular fluid 0mL, plasma volume 0mL",
+        "D. Intracellular fluid 500 mL, extracellular fluid 500mL, plasma volume 500 mL",
+        "E. Intracellular fluid 666 mL, extracellular fluid 334 mL, plasma volume 68 mL"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Total body water is about one-third extracellular fluid (ECF) and two-thirds intracellular fluid. ECF is about one-fifth plasma and four-fifths interstitial fluid. Fluids that contain neither sodium nor protein (such as 5% dextrose) will distribute in all the body fluid compartments in proportion to the normal distribution of total body water, as in option E. Fluids that are rich in proteins (such as concentrated albumin) will remain in the plasma volume, as in option A. Normal saline distributes within only the extracellular compartment as in option B.",
+      "questionNumber": 10
+    },
+    {
+      "question": "In comparison to the ultrafiltrate found in Bowman's capsule, which of these terms best describes the filtrate that leaves the proximal tubule?",
+      "options": [
+        "A. Hyperosmolar",
+        "B. Hypertonic",
+        "C. Hypo-osmolar",
+        "D. Hypotonic",
+        "E. Isotonic"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In the proximal tubule, water reabsorption closely matches sodium reabsorption, meaning that the fluid that enters the loop of Henle is isotonic with the fluid that leaves the Bowman's capsule.",
+      "questionNumber": 11
+    },
+    {
+      "question": "Amino acids are almost entirely reabsorbed from the glomerular filtrate via active transport in which section of the nephron?",
+      "options": [
+        "A. Collecting duct",
+        "B. Early distal tubule",
+        "C. Late distal tubule",
+        "D. Loop of Henle",
+        "E. Proximal tubule"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The proximal tubule reabsorbs filtered sodium by coupling re-entry of sodium into the proximal tubular cell with amino acids as well as glucose, phosphate and other organic molecules.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 35 year old man has been hiking in hot weather. He collapses and is brought into the emergency department. He is found to have a blood pressure of 95/62 mmHg with a postural drop of 15mmHg. His pulse rate is 112 beats/min, his jugular venous pressure is not visible and he has a dry tongue. Which statement describes an element of his physiological response to this clinical scenario?",
+      "options": [
+        "A. Increased atrial natiuretic peptide release",
+        "B. Increased catecholamine release",
+        "C. Increased glomerular filtration rate",
+        "D. Reduced renin release",
+        "E. Vasoconstriction of renal efferent arterioles"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This man has hypovolaemia and sodium depletion as evidenced by his symptoms and signs on presentation. The kidneys respond to this scenario by activating mechanisms that will increase sodium reabsorption, thereby restoring sodium and fluid balance. Mechanisms that will increase sodium reabsorption include increased catecholamine release and increased renin release. In order to restrict fluid loses the kidneys will reduce glomerular filtration rate in part by vasoconstriction of renal afferent arterioles.",
+      "questionNumber": 13
+    },
+    {
+      "question": "Which statement best explains why loop diuretics are the most effective at promoting salt and water excretion?",
+      "options": [
+        "A. Vasopressin (antidiuretic hormone, ADH) acts on the ascending limb of the loop of Henle to increase water permeability",
+        "B. Loop diuretics block the triple co-transporter that prevent the reabsorption of potassium",
+        "C. The ascending limb of the loop of Henle is permeable to both water and sodium",
+        "D. The ascending limb of the loop of Henle is the last segment to reabsorb sodium",
+        "E. The sodium reabsorptive capacity of the segments distal to the ascending limb of the loop of Henle is limited"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Loop diuretics inhibit the Na, K,2Cl triple co-transporter in the ascending limb of the loop of Henle and are the most effective diuretics as this transporter reabsorbs about 25% of the sodium load. More distal reabsorption by the sodium-chloride transporter in the distal tubule only accounts for about 5% of sodium reabsorption and increased delivery to this segment when using a loop diuretic overwhelms the reabsorptive capacity of that transporter. Option C is incorrect as the ascending limb is permeable only to sodium; the triple co-transporter does transport potassium as in option B, but this is not relevant to the diuretic effect; in option D, the ascending limb of the loop of Henle is not the last segment to reabsorb sodium, as outlined above; and in option A, vasopressin acts on the collecting ducts to increase water permeability.",
+      "questionNumber": 14
+    },
+    {
+      "question": "An 83 year old woman presents to the emergency department delirious and disorientated. She has a history of hypertension, treated with a thiazide diuretic. Her blood tests reveal the following: serum sodium 116 mmol/L; serum osmolality 239 mmol/kg; urinary osmolality 385 mmol/kg. Which of the following abnormalities is responsible for her inability to maximally dilute her urine?",
+      "options": [
+        "A. Abnormal function of the early distal tubule",
+        "B. Inadequate vasopressin in the circulation",
+        "C. Inadequate response of the collecting duct to vasopressin",
+        "D. Inadequate solute delivery to the early distal tubule",
+        "E. Inadequate solute delivery to the loop of Henle"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In order to maximally dilute urine, there needs to be normal function of both the loop of Henle and the early distal tubule. Thiazide diuretics inhibit the normal function of the early distal tubule by blocking the sodium-chloride co-transporter. An inability to maximally dilute urine can also result from options D and E but this is not the mechanism of thiazide diuretics. Absence of vasopressin is required for maximal dilution of the urine.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 67 year old man with hypertension and diabetes has chronic kidney disease with a stable serum creatinine of 267 µmol/L (3.02 mg/dL). Amongst other symptoms, he complains of nocturia. Which of the following abnormalities is responsible for his inability to maximally concentrate his urine?",
+      "options": [
+        "A. Abnormal function of the early distal tubule",
+        "B. Excess vasopressin release into the circulation",
+        "C. Excess aldosterone release into the circulation",
+        "D. Inadequate solute delivery to the early distal tubule",
+        "E. Inadequate solute delivery to the loop of Henle"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Chronic kidney disease results in poor solute delivery to the loop of Henle causing a failure to generate the medullary concentration gradient. Adequate solute delivery to and function of the early distal tubule is required for maximal dilution of urine but not concentration. Failure of vasopressin effect, either through inadequate release or blunted action at the level of the collecting duct (rather than excess vasopressin), contributes to poor urinary concentration.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 17 year old male presents to the emergency department with poorly controlled type 1 diabetes. He is found to be hyponatraemic with the following results: sodium 123 mmol/L and plasma glucose 35 mmol/L (630 mg/dL). Which one of the following is the most likely cause of the abnormal sodium reading?",
+      "options": [
+        "A. Autoimmune hypothyroid disease",
+        "B. Hyperosmotic hyponatraemia secondary to hyperglycaemia",
+        "C. Hypoglycaemic agent-induced hyponatraemia",
+        "D. Loss of water in excess of sodium",
+        "E. Osmotic diuresis-induced hypovolaemic hyponatraemia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hyperglycaemia causes osmotic shifts of water from the intracellular to the extracellular space, causing a relative dilutional hyponatraemia. The serum sodium corrects to 131 mmol/L when using the correction factor of 1.6 mmol/L for every 5.5 mmol/L increase in serum glucose. The other causes of hyponatraemia are possible but would result in a genuine reduction in sodium concentration and option D would cause hypernatraemia.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 32 year old man who has been diagnosed with chronic schizophrenia lives with his mother and has been managing well in the community on stable medications for some time. An ambulance was called to the house when he started having seizures and his bloods on presentation to the emergency department are as follows: sodium 116 mmol/L; potassium 4.0 mmol/L; chloride 88 mmol/L; bicarbonate 20 mmol/L; urea 9mmol/L (54 mg/dL); creatinine 66 µmol/L (0.75 mg/dL). His mother cannot recall any changes to his medications or in his behaviour but does comment that he has been drinking up to 8L of water per day. Which of the following results are most likely to be found on further investigation?",
+      "options": [
+        "A. Serum osmolality 235 mmol/kg; urine osmolality 74 mmol/kg; urine sodium 24 mmol/L",
+        "B. Serum osmolality 262 mmol/kg; urine osmolality 112 mmol/kg; urine sodium 5 mmol/L",
+        "C. Serum osmolality 270 mmol/kg; urine osmolality 135 mmol/kg; urine sodium 42 mmol/L",
+        "D. Serum osmolality 290 mmol/kg; urine osmolality 84 mmol/kg; urine sodium 34 mmol/L",
+        "E. Serum osmolality 280mmol/kg; urine osmolality 64mmol/kg; urine sodium 44 mmol/L"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "These results are consistent with primary polydipsia which is the likely diagnosis here. The serum osmolality is low, confirming hypotonic hyponatraemia and the urinary osmolality is also low suggesting relative excess water intake. Option B, which demonstrates low urinary sodium, is seen in patients with low effective arterial volume due to either extrarenal losses or hypervolaemic states. The high urinary sodium and osmolality seen in option C is consistent with SIADH or renal sodium loss. Option D is consistent with hyperosmotic hyponatraemia, as seen in hyperglycaemia, and option E suggests isosmotic hyponatraemia such as with hyperlipidaemia.",
+      "questionNumber": 18
+    },
+    {
+      "question": "In which one of the following clinical scenarios is urine sodium excretion likely to be less than 20 mmol/24 hrs?",
+      "options": [
+        "A. Acute diarrhoea",
+        "B. Adrenal insufficiency",
+        "C. Hypothyroidism",
+        "D. Renal disease",
+        "E. Syndrome of inappropriate antidiuretic hormone (vasopressin) secretion (SIADH)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Acute diarrhoea would result in extrarenal sodium and water loss and the normal renal response of sodium conservation. In the other scenarios urine sodium would be high or normal due to effects of limited sodium reabsorption in the nephron secondary to vasopressin, or lack of cortisol/thyroxine response.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 57 year old man with hypertension is found to have a tumour arising in the zona glomerulosa of the adrenal gland that leads to uncontrolled secretion of a hormone that is responsible for his hypertension. Which of the following would you expect to decrease in this scenario?",
+      "options": [
+        "A. Extracellular fluid volume",
+        "B. Plasma concentration of bicarbonate",
+        "C. Plasma concentration of potassium",
+        "D. Thyroid-stimulating hormone",
+        "E. Tubular reabsorption of sodium"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Aldosterone is produced in the zona glomerulosa of the adrenal gland and acts on the mineralocorticoid receptors in the distal tubules and collecting ducts of the nephron. It acts to reabsorb sodium and excrete potassium. In excessive quantities, such as in Conn's syndrome as described here, it causes hypertension and hypokalaemia.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 12 year old boy is being investigated for fatigue. A physical examination, including blood pressure, is normal. Blood results show: sodium 135 mmol/L potassium 3.1 mmol/L bicarbonate 35 mmol/L; 24-hour urine results: potassium 245 mmol/24hrs, calcium 12 mmol/24 24hrs (N<7.5). What is the most likely diagnosis?",
+      "options": [
+        "A. Bartter's syndrome",
+        "B. Gitelman's syndrome",
+        "C. Laxative abuse",
+        "D. Primary hyperaldosteronism",
+        "E. Type 1 renal tubular acidosis (RTA)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Metabolic alkalosis associated with hypokalaemia and urinary potassium wasting is typical of diuretic use, or in this case Bartter's syndrome, which mimics loop diuretic use. Gitelman's or thiazide diuretics would also present like this, but are associated with low, not high, urinary calcium. Laxative abuse would be associated with renal conservation of potassium and therefore low urinary potassium level. Primary hyperaldosteronism is associated with hypertension and RTA with acidosis.",
+      "questionNumber": 21
+    },
+    {
+      "question": "Metabolic acidosis is seen in conjunction with which cause of hypokalaemia?",
+      "options": [
+        "A. Diarrhoea",
+        "B. Gitelman's syndrome",
+        "C. Loop diuretics",
+        "D. Primary hyperaldosteronism",
+        "E. Vomiting"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Loop and thiazide diuretics, Bartter's syndrome and Gitelman's syndrome, and primary hyperaldosteronism are all associated with metabolic alkalosis. As outlined in Fig. 14.22, vomiting is also associated with metabolic alkalosis while diarrhoea causes loss of bicarbonate thereby resulting in a normal anion gap acidosis.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch14/a/14.22.png",
+      "questionNumber": 22
+    },
+    {
+      "question": "Hypokalaemia may be seen in association with normal blood pressure in which of the following conditions?",
+      "options": [
+        "A. Bartter's syndrome",
+        "B. Cushing's syndrome",
+        "C. Gordon's syndrome",
+        "D. Liddle's syndrome",
+        "E. Primary hyperaldosteronism"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Answers B-E are associated with hypertension while Bartter's syndrome is associated with low or normal blood pressure readings.",
+      "questionNumber": 23
+    },
+    {
+      "question": "The amount of potassium excreted by the kidneys will decrease in which of the following situations?",
+      "options": [
+        "A. When dietary intake of potassium increases",
+        "B. When distal tubule sodium delivery increases",
+        "C. When plasma aldosterone concentration increases",
+        "D. When the patient has acute metabolic acidosis",
+        "E. When the patient has respiratory alkalosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A number of factors alter potassium secretion in the distal nephron segments. Increased distal sodium delivery and increased plasma aldosterone concentration will result in greater luminal sodium entry through epithelial sodium channels, thereby increasing potassium secretion. Acid-base disturbances have complex effects on renal potassium excretion. Alkalosis is generally associated with increased potassium secretion while acute metabolic acidosis is associated with reduced renal potassium excretion. However, over time, acidosis will cause an increase in distal sodium delivery and an increase in aldosterone production that will result in an increase in potassium secretion.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 42 year old patient has the following bloods. Arterial blood gases: H+ 57.5 nmol/L (pH 7.24); PaO2 11.1 kPa (83 mmHg); PaCO2 4.3 kPa (32 mmHg); bicarbonate 15 mmol/L Serum biochemistry: sodium 134 mmol/L; potassium 2.4 mmol/L; chloride 109 mmol/L Urine pH 5.2; following administration of intravenous sodium bicarbonate, urine pH is 5.8. What is the likely underlying cause of these abnormalities?",
+      "options": [
+        "A. Loop diuretic abuse",
+        "B. Thiazide diuretic abuse",
+        "C. Type 1 (distal) renal tubular acidosis",
+        "D. Type 2 (proximal) renal tubular acidosis",
+        "E. Type 4 renal tubular acidosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient has a metabolic acidosis with a low pH, low bicarbonate and compensatory low PaCO2. Acidosis with a low potassium, makes type 1 or 2 renal tubular acidosis (RTA) the only possible answers. Type 4 renal tubular acidosis would be associated with hyperkalaemia and diuretic abuse is associated with metabolic alkalosis. The urine pH is initially normal, but becomes alkalotic when bicarbonate is administered. This is consistent with poor bicarbonate reabsorption, which makes type 2 (proximal) RTA the most likely diagnosis.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 38 year old man presents with a 1-week history of arthralgia, rash, haematuria and mild peripheral oedema. Blood tests taken in the emergency department show that his serum creatinine is 620 µmol/L (7.01 mg/dL). What pattern of acid-base disorder is most likely to occur in this clinical scenario?",
+      "options": [
+        "A. Metabolic acidosis with no respiratory compensation",
+        "B. Metabolic acidosis with respiratory compensation",
+        "C. Metabolic alkalosis with respiratory compensation",
+        "D. Respiratory acidosis with metabolic compensation",
+        "E. Respiratory alkalosis with metabolic compensation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Acute kidney injury as seen in this patient with nephritic syndrome is associated with metabolic acidosis with respiratory compensation.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 42-year-old homeless man is brought into the emergency department. He is known to have a history of alcohol abuse and presents on this occasion with delirium, shortness of breath and blurred vision. Initial investigations show the following. Arterial blood gases (ABG): H+ 58.9 nmol/L (pH 7.23); PaCO2 3.6 kPa (27 mmHg) bicarbonate 12 mmol/L. Blood results: sodium 130 mmol/L potassium 4.3 mmol/L urea 7.2 mmol/L (43 mg/dL); creatinine 113 µmol/L (1.28 mg/dL) chloride 97 mmol/L glucose 4.2 mmol/L (76 mg/dL). What is the most likely diagnosis?",
+      "options": [
+        "A. Acute kidney injury",
+        "B. Diabetic ketoacidosis",
+        "C. Ethylene glycol ingestion",
+        "D. Methanol ingestion",
+        "E. Severe ethanol intoxication"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Looking first at the ABG, there is a low pH suggesting an acidosis. Bicarbonate and carbon dioxide are both low, consistent with a metabolic acidosis with respiratory compensation. The anion gap =(Na++K+)-(Cl--HCO3) is 23, which is high. This indicates the presence of unmeasured anions. A high anion gap acidosis is commonly caused by an endogenous acid load as seen in diabetic ketoacidosis or kidney injury, but in this patient the absence of hyperglycaemia or significant renal impairment make these diagnoses unlikely. Other causes of an increased anion gap acidosis are related to exogenous acid loads from poisoning. Methanol poisoning typically presents with visual impairment and in severe cases results in permanent blindness.",
+      "questionNumber": 27
+    },
+    {
+      "question": "Which of the following is the most important buffer in the blood?",
+      "options": [
+        "A. Ammonia",
+        "B. Bicarbonate",
+        "C. Haemoglobin",
+        "D. Hydrogen phosphate",
+        "E. Proteins"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "As outlined in the above questions, the most important buffer system in blood and tissues involves the reaction of hydrogen ions (H ) with bicarbonate (HCO3-) to form carbonic acid (H2CO3) and ultimately CO2 and H2O. Hydrogen phosphate (HPO4) and ammonia are important urinary buffers that associate with H+ ions secreted into the luminal space, thereby reducing luminal H+ concentration and allowing for continued acid secretion.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A high school student is nervous about an upcoming exam and breathes rapidly with anxiety before fainting. If you were to take an ABG at this point, what would you most likely find?",
+      "options": [
+        "A. High pH; high HCO3, high PCO2",
+        "B. High pH; normal HCO3-, low PCO2",
+        "C. High pH; low HCO3-, low PCO2",
+        "D. Low pH; high HCO3-, high PCO2",
+        "E. Low pH; low HCO3-, high PCO2"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The student would have a respiratory alkalosis, best represented by option C. Given the acute nature of the respiratory alkalosis, a small change in bicarbonate concentration occurs, but if respiratory alkalosis persists over days to weeks, the kidneys would have time to make adjustments to acid secretion and produce further compensation and reduction in HCO3- concentration.",
+      "questionNumber": 29
+    }
+  ]
+}

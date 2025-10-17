@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizard - Video Course</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main-styles.css">
+</head>
+<body class="flex flex-col min-h-screen" style="background-color: #3da0be;">
+
+    <header class="container mx-auto max-w-6xl mt-8 px-4">
+        <div class="bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
+            <div class="flex-1">
+                <a href="dashboard.html" class="text-gray-600 hover:text-gray-800 transition" title="Back to Dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex-shrink-0">
+                <a href="dashboard.html"><img src="images/logo.png" alt="Quizard Logo" class="h-16"></a>
+            </div>
+            <div class="flex-1 flex justify-end">
+                </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto max-w-6xl px-4 py-8">
+        <div id="loadingState" class="text-center text-white text-xl">Loading course...</div>
+        
+        <div id="courseContainer" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+           <div class="lg:col-span-2">
+    <div id="videoContainer" class="relative rounded-xl shadow-lg overflow-hidden group">
+    <div class="aspect-w-16 aspect-h-9">
+        <video id="mainVideoPlayer" class="w-full h-full bg-black"></video>
+    </div>
+
+   <div id="customControls" class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent flex items-center justify-between gap-x-4 transition-opacity opacity-0">
+        <div class="w-1/3"></div>
+
+        <div class="w-1/3 flex items-center justify-center gap-x-6">
+            <button id="prevLessonBtn" class="text-white rounded-full hover:bg-white/20 disabled:opacity-30" title="Previous Lesson">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M8.445 14.832A1 1 0 0010 14.002V5.998a1 1 0 00-1.555-.832L3.62 9.166a1 1 0 000 1.664l4.825 4.002zM12.445 14.832A1 1 0 0014 14.002V5.998a1 1 0 00-1.555-.832L7.62 9.166a1 1 0 000 1.664l4.825 4.002z"></path></svg>
+            </button>
+            <button id="playPauseBtn" class="text-white rounded-full hover:bg-white/20" title="Play/Pause"></button>
+            <button id="nextLessonBtn" class="text-white rounded-full hover:bg-white/20 disabled:opacity-30" title="Next Lesson">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M11.555 5.166A1 1 0 0010 5.998v8.004a1 1 0 001.555.832l4.825-4.002a1 1 0 000-1.664l-4.825-4.002zM7.555 5.166A1 1 0 006 5.998v8.004a1 1 0 001.555.832l4.825-4.002a1 1 0 000-1.664L7.555 5.166z"></path></svg>
+            </button>
+        </div>
+
+        <div class="w-1/3 flex items-center justify-end gap-x-4">
+            <div class="flex items-center group/volume">
+                <button id="volumeBtn" class="text-white"></button>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" class="w-0 group-hover/volume:w-24 transition-all duration-300 ml-2">
+            </div>
+            <button id="fullscreenBtn" class="text-white" title="Fullscreen">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 1v4m0 0h-4m4 0l-5-5"></path></svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+    <div class="bg-white rounded-xl shadow-lg p-6 mt-[-1rem] pt-8 z-[-1]">
+         <h1 id="courseTitle" class="text-3xl font-bold text-gray-800"></h1>
+         <p id="currentLessonTitle" class="text-lg text-gray-600 mt-1"></p>
+         <p id="courseDescription" class="text-gray-700 mt-4"></p>
+    </div>
+</div>
+
+            <div class="lg:col-span-1 bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Lessons</h2>
+                <ul id="lessonsList" class="space-y-2 h-96 overflow-y-auto">
+                    </ul>
+            </div>
+        </div>
+    </main>
+
+<script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+    const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const dom = {
+        mainVideoPlayer: document.getElementById('mainVideoPlayer'),
+        videoContainer: document.getElementById('videoContainer'),
+        customControls: document.getElementById('customControls'),
+        playPauseBtn: document.getElementById('playPauseBtn'),
+        prevLessonBtn: document.getElementById('prevLessonBtn'),
+        nextLessonBtn: document.getElementById('nextLessonBtn'),
+        volumeBtn: document.getElementById('volumeBtn'),
+        volumeSlider: document.getElementById('volumeSlider'),
+        fullscreenBtn: document.getElementById('fullscreenBtn'),
+        loadingState: document.getElementById('loadingState'),
+        courseContainer: document.getElementById('courseContainer'),
+        courseTitle: document.getElementById('courseTitle'),
+        courseDescription: document.getElementById('courseDescription'),
+        currentLessonTitle: document.getElementById('currentLessonTitle'),
+        lessonsList: document.getElementById('lessonsList'),
+    };
+
+    let currentLessonIndex = 0;
+    let allLessons = [];
+    let controlsTimeout;
+
+    const playIcon = `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20"><path d="M5.555 3.168A1 1 0 004 4.118v11.764a1 1 0 001.555.832l9.197-5.882a1 1 0 000-1.664L5.555 3.168z"></path></svg>`;
+    const pauseIcon = `<svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20"><path d="M5 6a1 1 0 011-1h1a1 1 0 011 1v8a1 1 0 01-1 1H6a1 1 0 01-1-1V6zm7 0a1 1 0 011-1h1a1 1 0 011 1v8a1 1 0 01-1 1h-1a1 1 0 01-1-1V6z"></path></svg>`;
+    const volumeHighIcon = `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>`;
+    const volumeMuteIcon = `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd"></path><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2 2m2-2l2 2"></path></svg>`;
+
+    function loadLesson(index) {
+        if (index < 0 || index >= allLessons.length) return;
+        currentLessonIndex = index;
+        const lesson = allLessons[index];
+        dom.mainVideoPlayer.src = lesson.video_url;
+        dom.currentLessonTitle.textContent = lesson.title;
+        dom.mainVideoPlayer.play();
+        updatePlaylistStyle();
+        updateNavButtons();
+    }
+    
+    function updatePlaylistStyle() {
+        document.querySelectorAll('#lessonsList li').forEach((li, i) => {
+            li.classList.toggle('bg-purple-100', i === currentLessonIndex);
+            li.classList.toggle('font-bold', i === currentLessonIndex);
+        });
+    }
+
+    function updateNavButtons() {
+        dom.prevLessonBtn.disabled = (currentLessonIndex === 0);
+        dom.nextLessonBtn.disabled = (currentLessonIndex === allLessons.length - 1);
+    }
+
+    function togglePlayPause() {
+        dom.mainVideoPlayer.paused ? dom.mainVideoPlayer.play() : dom.mainVideoPlayer.pause();
+    }
+    
+    function updateVolumeIcon() {
+        dom.volumeBtn.innerHTML = (dom.mainVideoPlayer.muted || dom.mainVideoPlayer.volume === 0) ? volumeMuteIcon : volumeHighIcon;
+    }
+    
+    function toggleMute() {
+        dom.mainVideoPlayer.muted = !dom.mainVideoPlayer.muted;
+    }
+
+    function toggleFullscreen() {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            dom.videoContainer.requestFullscreen().catch(err => {
+                alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+            });
+        }
+    }
+    
+    // --- START: New logic for showing/hiding the control bar ---
+    function showControls() {
+        dom.customControls.classList.remove('opacity-0');
+        clearTimeout(controlsTimeout);
+    }
+
+    function hideControls() {
+        if (!dom.mainVideoPlayer.paused) {
+            dom.customControls.classList.add('opacity-0');
+        }
+    }
+
+    function startControlsTimer() {
+        clearTimeout(controlsTimeout);
+        controlsTimeout = setTimeout(hideControls, 3000); // Hide after 3 seconds
+    }
+    // --- END: New logic for showing/hiding the control bar ---
+
+
+    // --- Main script execution ---
+    document.addEventListener('DOMContentLoaded', async () => {
+        // ... (The entire try/catch block for loading data remains exactly the same) ...
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('id');
+            if (!courseId) { dom.loadingState.textContent = 'Error: Course ID not found.'; return; }
+
+            const { data: accessData, error: accessError } = await supabase.rpc('check_video_course_access', { p_course_id: courseId });
+            if (accessError || !accessData) {
+                 document.querySelector('main').innerHTML = `<div class="text-center p-10 bg-white rounded-xl shadow-lg"><h1 class="text-3xl font-bold text-red-600 mb-4">🔒 Access Denied</h1><p class="text-gray-700 mb-6">This is premium content.</p><a href="dashboard.html" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-6 rounded-lg">Back to Dashboard</a></div>`;
+                return;
+            }
+            
+            const [courseRes, lessonsRes] = await Promise.all([
+                supabase.from('video_courses').select('*').eq('id', courseId).single(),
+                supabase.from('video_lessons').select('*').eq('course_id', courseId).order('lesson_number', { ascending: true })
+            ]);
+
+            if (courseRes.error || lessonsRes.error) throw (courseRes.error || lessonsRes.error);
+
+            const course = courseRes.data;
+            allLessons = lessonsRes.data;
+
+            dom.courseTitle.textContent = course.title;
+            dom.courseDescription.textContent = course.description;
+
+            if (allLessons.length > 0) {
+                dom.lessonsList.innerHTML = allLessons.map((lesson, index) => `<li data-index="${index}" class="p-3 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"><span class="font-semibold text-purple-700">${lesson.lesson_number}.</span> ${lesson.title}</li>`).join('');
+                loadLesson(0);
+            } else {
+                dom.lessonsList.innerHTML = '<p class="text-gray-500">No lessons available for this course.</p>';
+                dom.customControls.style.display = 'none';
+            }
+
+            dom.loadingState.classList.add('hidden');
+            dom.courseContainer.classList.remove('hidden');
+        } catch (error) {
+            console.error('Error loading course:', error);
+            dom.loadingState.textContent = 'Failed to load course details.';
+        }
+    });
+
+    // --- Event Listeners for Custom Controls ---
+    dom.playPauseBtn.addEventListener('click', (e) => { e.stopPropagation(); togglePlayPause(); });
+    dom.mainVideoPlayer.addEventListener('click', (e) => { e.stopPropagation(); togglePlayPause(); });
+    dom.mainVideoPlayer.addEventListener('play', () => { dom.playPauseBtn.innerHTML = pauseIcon; startControlsTimer(); });
+    dom.mainVideoPlayer.addEventListener('pause', () => { dom.playPauseBtn.innerHTML = playIcon; showControls(); });
+    dom.mainVideoPlayer.addEventListener('ended', () => { showControls(); });
+    
+    dom.lessonsList.addEventListener('click', (e) => {
+        const li = e.target.closest('li');
+        if (li) loadLesson(parseInt(li.dataset.index, 10));
+    });
+
+    dom.prevLessonBtn.addEventListener('click', (e) => { e.stopPropagation(); loadLesson(currentLessonIndex - 1); });
+    dom.nextLessonBtn.addEventListener('click', (e) => { e.stopPropagation(); loadLesson(currentLessonIndex + 1); });
+    
+    dom.volumeBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleMute(); });
+    dom.volumeSlider.addEventListener('input', (e) => {
+        e.stopPropagation();
+        dom.mainVideoPlayer.volume = e.target.value;
+        dom.mainVideoPlayer.muted = e.target.value === '0';
+    });
+    dom.mainVideoPlayer.addEventListener('volumechange', () => {
+        dom.volumeSlider.value = dom.mainVideoPlayer.muted ? 0 : dom.mainVideoPlayer.volume;
+        updateVolumeIcon();
+    });
+    
+    dom.fullscreenBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleFullscreen(); });
+
+    dom.videoContainer.addEventListener('mousemove', () => {
+        showControls();
+        startControlsTimer();
+    });
+    
+    dom.videoContainer.addEventListener('mouseleave', hideControls);
+    
+    updateVolumeIcon();
+</script>
+</body>
+</html>

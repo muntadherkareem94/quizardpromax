@@ -1,0 +1,174 @@
+{
+  "title": "Envenomation - Chapter 8",
+  "questions": [
+    {
+      "question": "A patient presenting with suspected envenoming requires a rapid but careful and targeted assessment to determine if envenoming is present and what urgent responses are required. Which is the most important first response in ensuring a good outcome?",
+      "options": [
+        "A. Check for breathing and circulatory problems and institute cardiopulmonary resuscitation (CPR) if indicated",
+        "B. Give antivenom",
+        "C. If the animal that caused the bite/sting is available, try and identify it, so that likely risks can be determined and targeted treatment provided",
+        "D. Insert an intravenous (IV) line and consider an early IV fluid load",
+        "E. Urgently examine for signs of developing neurotoxic flaccid paralysis and bleeding tendency secondary to coagulopathy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Options C, D and E are all necessary urgent requirements in managing a patient with suspected envenoming, but ensuring there is no problem with the classic 'ABC' of airway, breathing and circulation, and treating any problems found, is the most urgent action. Snakebite patients, particularly in Asia, still die unnecessarily because bystanders and health professionals forget about the ABC and fail to provide airway protection and external respiratory support, when required, following envenoming by neurotoxic snakes such as kraits and some cobras. Option B might seem like an obvious answer, but not every patient bitten/stung by a venomous animal will develop medically significant envenoming, therefore not every patient needs antivenom. The other issue is choosing which antivenom to use, and what dose to administer, particularly in countries with several different antivenoms. In countries such as India, where only a polyvalent antivenom is available, there is no requirement to delay while choosing the right antivenom, but that does not imply every patient should be given antivenom, so CPR, if indicated, takes precedence.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 32 year old man presents to your hospital with a history of working in a rice paddy and being bitten by something, not seen. He appears unwell and has swelling around the bite on his foot, with two bite marks that are bleeding. What is a key test that might help you determine the type of snake and need for antivenom?",
+      "options": [
+        "A. 20-Minute whole-blood clotting test (20WBCT)",
+        "B. Arterial blood gas",
+        "C. Blood pressure",
+        "D. Extended coagulation studies",
+        "E. Serum electrolytes"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A number of snakes may cause rapid envenoming with development of a coagulopathy that can present as prolonged bleeding from the bite site, any other recent wound, or the gums. The 20WBCT is a rapid and simple test that can provide a useful guide to the presence of snakebite coagulopathy. That, in turn, can help in determining what type of snake may be involved and, if there are several different antivenoms available, which one to consider using. Blood pressure is certainly an important test, but an abnormal result is not a specific marker for envenoming. Serum electrolytes may be useful, but not critical to initial assessment, and may be hard to obtain in a rural hospital setting, as may extended coagulation studies. The latter will take far more time to provide an answer than will the 20WBCT. Arterial blood gas is not a critical test in initial assessment of snakebite and if there is a coagulopathy, insertion of the needle or a line may pose significant risks for the patient.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Considering the patient in Question 8.2, above, if we knew he came from somewhere in India or Sri Lanka, given the particular circumstances of this bite, and that testing showed a coagulopathy, which of the following venomous animals would be most likely as a cause for his bite?",
+      "options": [
+        "A. Cobra",
+        "B. Indian red scorpion",
+        "C. Krait",
+        "D. Russell's viper",
+        "E. Saw-scaled viper"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The history tells us he was bitten in a paddy field, so likely a wetlands agricultural area, a classic setting for a Russell's viper (Daboia russelii and Daboia siamensis) and this snake causes coagulopathy, plus other effects. In some areas, such as Myanmar, Russell's vipers also commonly cause acute renal failure. Saw-scaled vipers (Echis spp.) also cause coagulopathy, but tend to inhabit dry areas rather than paddy fields. However, there are sometimes exceptions, so knowing precisely where the bite occurred and matching that to the known local venomous fauna might assist in deciding if a saw-scaled viper might be the cause. Cobras (Naja spp.) do not cause coagulopathy, neither do kraits (Bungarus spp.) nor Indian red scorpions (Hottentotta tamulus).",
+      "questionNumber": 3
+    },
+    {
+      "question": "Our patient in Questions 8.2 and 8.3 is clearly envenomed and needs antivenom urgently. In giving him antivenom, which is the most important drug to have available?",
+      "options": [
+        "A. Adrenaline (epinephrine)",
+        "B. Antihistamine",
+        "C. Dopamine",
+        "D. Hydrocortisone",
+        "E. Prazosin"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The greatest risk when giving antivenom is an anaphylactic reaction, which, if not correctly managed, may prove fatal. Managing anaphylaxis requires a multifaceted approach, but the key drug is adrenaline (epinephrine), in most instances administered intramuscularly. Adrenaline should always be immediately available, in an appropriate dose, prior to giving any antivenom. Adrenaline, as a dilute subcutaneous injection, has also been suggested as a pre-medication prior to giving antivenom, in certain situations and countries, a practice now supported by clinical trials in Sri Lanka, where its use was associated with a reduced incidence of anaphylactic reactions to antivenom. Hydrocortisone and antihistamines have also been suggested as pre-medication prior to giving antivenom, but clinical trial evidence does not support their use. Prazosin has, in the past, been the recommended treatment for envenoming by the Indian red scorpion, but more recent clinical trial evidence indicates that specific antivenom is more effective. Dopamine might be required in managing intractable hypotension, but is not an alternative to adrenaline as the drug of first choice in treating anaphylaxis.",
+      "questionNumber": 4
+    },
+    {
+      "question": "The patient in Questions 8.2 to 8.4 has now developed a low urine output, despite adequate IV fluids. In this small rural hospital setting, what test might best help in deciding that acute kidney injury and renal failure is occurring?",
+      "options": [
+        "A. Dipstick test for proteinuria",
+        "B. Measure serum creatinine level",
+        "C. None of the above",
+        "D. Renal biopsy",
+        "E. Renal ultrasound"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In this setting it is likely that a simple urine dipstick test will be available and if this shows proteinuria, in this clinical scenario, it is very likely the patient is developing renal failure. A serum creatinine level may certainly help, but even if available, may take time to gain an answer. Renal ultrasound is unlikely to be available and may not assist in diagnosis. Renal biopsy is inappropriate given the active coagulopathy.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A patient presents at a small rural hospital you are working in, with a history of snakebite and on investigation she has local bruising and swelling around the bite site with oozing of blood, a coagulopathy, renal failure and developing flaccid neurotoxic paralysis. In which country is this hospital likely to be?",
+      "options": [
+        "A. Bangladesh",
+        "B. Burma",
+        "C. India",
+        "D. South Africa",
+        "E. Sri Lanka"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The combination of coagulopathy, renal failure and neurotoxic flaccid paralysis is classic for Sri Lankan Russell's viper envenoming. It is rarely seen elsewhere within the range of this snake, although there are a few reports from part of southern India. If the hospital was in south eastern Australia (not an option listed), then a tiger snake (Notechis scutatus) bite should be considered.",
+      "questionNumber": 6
+    },
+    {
+      "question": "You are working in a hospital in Brazil and you are asked to assess a young man with a history of snakebite, occurring at around dusk. He did not see the snake properly, so cannot provide a description. The bite site is not showing much swelling or local pain, but there are obvious fang marks and he has bilateral ptosis and a positive 20WBCT. Which snake is the most likely cause?",
+      "options": [
+        "A. Coral snake (Micrurus frontalis)",
+        "B. Green racer (Philodryas olfersii)",
+        "C. Jararaca (Bothrops jararaca)",
+        "D. Neotropical rattlesnake or cascabel (Crotalus durissus terrificus)",
+        "E. Tiger snake (Notechis scutatus)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Because of the likely snake fauna in Brazil, early development of paralysis (as evidenced by ptosis) plus coagulopathy is typical of a significant South American rattlesnake bite, quite different to rattlesnake bites in North America. The jararaca and related Bothrops spp. are the most common cause of significant snakebites in Brazil and often cause coagulopathy plus significant local bite site injury, but not paralysis. Coral snakes mostly cause only minor local bite effects and classically cause paralysis, but not coagulopathy. The green racer may, in some cases, cause coagulopathy, but not paralysis, though like most non-front-fanged colubrid (NFFC) snakes, the clinical picture is not well defined.",
+      "questionNumber": 7
+    },
+    {
+      "question": "You are working in a hospital in rural Nigeria. A patient presents with a snakebite and already has local swelling and bruising around the bite site. A 20WBCT is positive (blood not clotted at 20 minutes). Which of the following snakes is most likely involved?",
+      "options": [
+        "A. Black-necked spitting cobra (Naja nigricollis)",
+        "B. Forest cobra (Naja melanoleuca)",
+        "C. Green mamba (Dendroaspis jamesoni)",
+        "D. Puff adder (Bitis arietans)",
+        "E. Saw-scaled (carpet) viper (Echis ocellatus)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The saw-scaled vipers routinely cause both significant tissue damage around the bite site and a severe coagulopathy. Forest cobras cause only minor local bite site effects, major flaccid paralysis and do not cause coagulopathy. Black-necked spitting cobras can cause severe local tissue injury, but not coagulopathy. Puff adders cause severe local tissue injury, but not a clear coagulopathy, although there may be bruising and oozing of blood around the bite site. Green mambas cause local and paralytic effects, not coagulopathy.",
+      "questionNumber": 8
+    },
+    {
+      "question": "For a forest cobra bite (Naja melanoleuca), which of the following is likely to be the most useful and effective first aid, if applied correctly?",
+      "options": [
+        "A. Electric shock",
+        "B. Pressure bandage and immobilisation (PBI)",
+        "C. None of these listed",
+        "D. Scarification of the bite site",
+        "E. Tourniquet"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The forest cobra causes principally flaccid neurotoxic paralysis, without major local tissue damage around the bite site. Therefore, the most important consideration is slowing venom movement from the bite site to the rest of the body, a process that initially occurs particularly via the lymphatic system. The Australian-developed PBI first aid is the most effective safe way of achieving this. Because the pressure is applied to the bite area and bitten limb, it has the potential, for bites by snakes causing extensive bite site tissue injury, to worsen that injury. Therefore, the PBI method is not recommended for bites by snakes likely to cause such local tissue injury; for these snakes, simple immobilisation of the bitten limb is recommended instead. Tourniquets, while effective in the short term in preventing venom movement, are painful and have a well-established reputation for causing major ischaemic limb injury, often necessitating amputation; therefore, tourniquets are not recommended first aid for any snakebite. Electric shock treatment for snakebite has been proven to cause injury and provides no benefit; it should never be used as first aid for any envenoming. Scarification of the bite site, although commonly used as first aid for snakebite, has no benefit, causes significant harm and should never be used for snakebite.",
+      "questionNumber": 9
+    },
+    {
+      "question": "Snakebite is variously claimed to be either an important or quite unimportant medical problem. Which of the following epidemiological data is considered, by experts, to be a reliable figure indicating the impact of snakebite?",
+      "options": [
+        "A. Snakebite causes about 3000 deaths per year in India",
+        "B. Snakebite causes about 45000 deaths per year in India",
+        "C. Snakebite causes more than 200000 deaths per year worldwide",
+        "D. Snakebite causes only about 20000 deaths per year worldwide",
+        "E. Snakebite is less important than land mines in causing injuries requiring an amputation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The 'Million Death Study' in India provided the best available data on the impact of snakebite in that country and estimated at least 45000 Indians die from snakebite every year, far higher than official Indian Government data, which uses only hospital data. The precise number of snakebite deaths each year worldwide is unknown, with estimates varying from a low of about 25000 (almost certainly far too low), to > 100000, with some experts speculating that up to 200000 deaths may occur, although this latter figure is not yet supported by definitive data. Snakebite causes nearly 100 times more limb injuries requiring amputation, each year, than land mines. Fortunately most of those injuries caused by snakebites require only amputation of digits or parts of a limb - less commonly whole-limb amputation.",
+      "questionNumber": 10
+    },
+    {
+      "question": "You are working in a hospital in northern England, near areas of national parks, when a 10 year old boy is presented with a history of stepping on and being bitten by a snake while playing in his garden, near natural parkland. The boy's father, who was not present when the bite occurred, describes the snake as grey in colour, with indistinct darker markings along the sides of the body and a pale narrow band, like a collar, behind the head. What type of snake might this be?",
+      "options": [
+        "A. A European adder (Vipera berus)",
+        "B. A form of legless lizard ('slow worm', Anguis fragilis)",
+        "C. A grass snake (Natrix natrix)",
+        "D. A smooth snake (Coronella austriaca)",
+        "E. An escaped exotic snake, most likely a small mamba"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The grass snake is a non-dangerous snake, arguably the most common native snake in the UK. The pale band or collar behind the head is a useful diagnostic feature present in many specimens, although not all. There are legless lizards ('slow worms') in the UK, but they generally do not have this pattern of coloration. The European northern adder (Vipera berus) is the only venomous snake native to the UK. It is often grey in colour, with darker blotchy markings on the body. Mambas are tree-dwelling snakes and do not accord with the description given. Consider the possibility of an escaped exotic venomous snake (depending on the setting) if the patient develops envenoming inconsistent with a European adder bite.",
+      "questionNumber": 11
+    },
+    {
+      "question": "With regard to the patient in Question 8.11, this boy has now developed significant local swelling and bruising around the bite site, which is painful and swelling extends to much of the bitten limb. He appears shocked, has poor urine output and the preliminary report from the laboratory indicates he may have a coagulation abnormality. Questioning also reveals that the father's description of the snake may not be accurate. What do you now think is most likely to have bitten this boy?",
+      "options": [
+        "A. A European adder (Vipera berus)",
+        "B. A form of legless lizard ('slow worm', Anguis fragilis)",
+        "C. A grass snake (Natrix natrix)",
+        "D. A smooth snake (Coronella austriaca)",
+        "E. An escaped exotic snake, most likely a small mamba"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The European northern adder does cause snakebites in the UK, maybe as many as 70-100 cases per year and, particularly in children, it can cause severe, even life-threatening envenoming, characterised by local pain, swelling, bruising and sometimes shock and a coagulopathy. Kidney injury can occur, although is rare. Legless lizards are harmless, non-venomous, as are grass snakes. Mambas (Dendroaspis spp.) cause a quite different clinical picture of envenoming.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A young man presents to the emergency department of the London hospital you are working in, claiming he has been bitten by a large spider that he was keeping as a pet. The bite occurred 6 hours ago, has been very painful locally and his attempts to control the pain with oral analgesia have failed. He was given the spider by a friend who worked for an importer of fruit such as bananas. He does not know what type of spider it is. What sort of spider would you be concerned about?",
+      "options": [
+        "A. Australian funnel web spider",
+        "B. Black widow spider",
+        "C. Brazilian wandering spider",
+        "D. Brown recluse spider",
+        "E. Mexican orange-kneed tarantula"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The severe local pain following a bite from a large spider could be caused by a number of exotic species, but is a particular feature of bites by the Brazilian wandering spider (Phoneutria nigriventer), otherwise known as the banana spider because it is sometimes accidentally imported in containers of fruit, notably bananas. The Australian funnel web spiders (there are a number of genera and species; the best known is the Sydney funnel web spider, Atrax robustus) can cause local severe pain, but the major risk is systemic envenoming causing a catecholamine-storm-like clinical picture and this develops quickly within minutes to an hour or so after the bite. Your patient does not have this clinical picture, so even if it was a funnel web spider, he is out of the danger period. Black widow spiders (Latrodectus spp.) are not large and, while they can cause local pain, it progresses to more regional, then generalised pain, plus features of neuroexcitation, so your patient does not really fit this picture. Brown recluse spiders (Loxosceles spp.) generally cause little or no pain initially and it is only many hours to days after people are bitten that local necrosis and sometimes a significant systemic envenoming can develop; they are not large spiders, so do not fit the picture presented by your patient. The Mexican orange-kneed tarantula (Brachypelma smithi) may cause locally painful bites, but more commonly causes skin or eye irritation from shed abdominal hairs.",
+      "questionNumber": 13
+    }
+  ]
+}

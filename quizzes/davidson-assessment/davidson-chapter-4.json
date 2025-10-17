@@ -1,0 +1,317 @@
+{
+  "title": "Clinical immunology - Chapter 4",
+  "questions": [
+    {
+      "question": "Which of the following statements best describes a key feature of innate immunity?",
+      "options": [
+        "A. It improves with repeated exposure to a given antigen",
+        "B. It includes interaction between pattern recognition receptors on phagocytes and pathogen-associated molecular patterns",
+        "C. It is not associated with primary immune deficiency",
+        "D. It requires antigen processing for activation",
+        "E. Memory and specificity are characteristic features"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pathogen-associated molecular patterns, found on invading pathogens, are recognised by pattern recognition receptors on phagocytic cells, allowing phagocytosis and subsequent pathogen destruction. Memory, specificity and the need for antigen processing are features of adaptive immunity. Primary immune deficiencies affecting innate immunity are well recognised.",
+      "questionNumber": 1
+    },
+    {
+      "question": "Which of the following statements best describes a key feature of phagocytes?",
+      "options": [
+        "A. They are derived from thymic progenitors",
+        "B. They are involved in intra- and extracellular killing of microorganisms",
+        "C. They do not damage host tissue",
+        "D. They have a long half-life",
+        "E. They include monocytes, macrophages, neutrophils and natural killer (NK) cells"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Phagocytic cells are derived from bone marrow precursors. They include monocytes, macrophages and neutrophils, and are involved in intra- and extracellular killing of microorganisms. They may cause damage to host tissue and have a short half-life.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following statements describes a key function of cytokines?",
+      "options": [
+        "A. They are routinely measured in clinical practice",
+        "B. They are small molecules that act as intercellular messengers",
+        "C. They do not require receptor interaction",
+        "D. They have distinct and non-overlapping biological functions",
+        "E. They have not been shown to have a role in disease pathogenesis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cytokines are small molecules that act as intercellular messengers via interaction with specific cytokine receptors. They have overlapping biological functions. Many cytokines have a role in disease pathogenesis. They are not currently routinely measured in clinical practice.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following statements is correct with regard to adaptive immunity?",
+      "options": [
+        "A. Each component is able to function independently",
+        "B. It is ready to act immediately on pathogen exposure",
+        "C. Primary lymphoid tissues include the spleen and mucosa-associated lymphoid tissue",
+        "D. T- and B-cell receptors are antigen specific",
+        "E. Vaccination efficacy does not require functional adaptive immunity"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "T and B lymphocytes carry unique antigen-specific receptors, conferring specificity of the adaptive immune response. Antigen processing is required by T cells, such that the adaptive response requires time to develop. Components of the adaptive immune response work in concert rather than functioning independently. Primary lymphoid tissues are the bone marrow and thymus.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following statements is correct regarding primary immune deficiency?",
+      "options": [
+        "A. A number of X-linked conditions are recognised",
+        "B. Bone marrow transplantation is required for B-cell immune deficiency",
+        "C. Gene therapy has not yet been applied to primary immune deficiencies",
+        "D. Primary immune deficiency is invariably fatal without treatment",
+        "E. Primary immune deficiency only presents in childhood"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Primary immune deficiency often presents in childhood but can present later. A number of X-linked conditions are recognised. Immunoglobulin replacement therapy is standard treatment for primary B-cell immune deficiency. Gene therapy has been applied to a number of specific primary immune deficiencies. There is a spectrum of immune deficiency disorders; not all are invariably fatal without treatment.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following statements is correct in relation to immunoglobulins?",
+      "options": [
+        "A. They are constructed of two identical heavy chains and two identical light chains",
+        "B. They are derived from thymic precursors",
+        "C. They are limited to the intravascular compartment",
+        "D. They include six isotypes",
+        "E. They protect predominantly against intracellular infection"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Immunoglobulins (Ig) are constructed of two identical heavy chains and two identical light chains. IgG, IgA, IgM, IgE and IgD isotypes are recognised. IgM is the isotype limited to the intravascular compartment. They are produced by B cells and predominantly protect against extracellular infection.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following statements is most consistent with immunoglobulin deficiency?",
+      "options": [
+        "A. It commonly presents with opportunistic infection",
+        "B. It has no association with autoimmune disease",
+        "C. It is not associated with end-organ damage",
+        "D. It is unlikely in myeloma",
+        "E. It may require immunoglobulin replacement therapy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Symptomatic immunoglobulin deficiency may require immunoglobulin replacement therapy. Secondary immunoglobulin deficiency can occur with myeloma. Opportunistic infection is not commonly seen without additional T-cell deficiency. End-organ damage such as bronchiectasis can occur, as can autoimmune disease.",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which of the following statements most accurately describes the complement system?",
+      "options": [
+        "A. Complement proteins are reduced as part of the acute phase response",
+        "B. It can be activated by one of two pathways: the classical or alternative pathway",
+        "C. It does not contribute to local inflammation",
+        "D. It ends with a final common pathway leading to bacterial lysis",
+        "E. It refers to a series of immune proteins produced by the primary lymphoid tissues"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Complement proteins are produced by the liver as part of the acute phase response and can be activated by three pathways, the classical, alternate and lectin pathways. All three pathways end in the membrane attack complex, leading to bacterial lysis. Local inflammation is induced by complement breakdown products.",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which of the following statements best describes complement deficiency?",
+      "options": [
+        "A. C1 inhibitor deficiency leads to a low C3, even between attacks of angioedema",
+        "B. It can be routinely treated with complement replacement therapy",
+        "C. It is associated with connective tissue disease",
+        "D. It is not associated with recurrent infection",
+        "E. It is not influenced by complement control proteins"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Complement deficiency is associated with connective tissue disease and recurrent infection, late complement protein deficiency being particularly associated with recurrent neisserial infection. Complement deficiency is not routinely treated with complement replacement therapy. C1 inhibitor deficiency can, however, be treated with C1 inhibitor concentrate. Patients with this condition have a low C4, even between attacks of angioedema. Complement control proteins have an important role in controlling complement activity.",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following statements best describes secondary immune deficiency?",
+      "options": [
+        "A. It can be drug induced",
+        "B. It is generally not associated with opportunistic infection",
+        "C. It is less common than primary immune deficiency",
+        "D. It is rarely life-threatening",
+        "E. It is reversible with management of the underlying cause"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Secondary immune deficiency can be drug induced, for example with immunosuppressive agents. It is much more common than primary immune deficiency, can be associated with opportunistic infection and can be life-threatening. Secondary immune deficiency may not be reversible with management of the underlying condition.",
+      "questionNumber": 10
+    },
+    {
+      "question": "Which of the following statements is correct regarding hypersensitivity reactions?",
+      "options": [
+        "A. The predominant cell type involved in type IV hypersensitivity is the basophil",
+        "B. Type I hypersensitivity is IgG mediated",
+        "C. Type II hypersensitivity results in circulating immune complexes",
+        "D. Type III hypersensitivity results in complement activation",
+        "E. Type IV hypersensitivity is typically immediate in onset"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Type III hypersensitivity results in circulating immune complexes, immune complex deposition and subsequent complement activation. The basophil is not the predominant cell type in type IV hypersensitivity. Type I hypersensitivity is IgE mediated.",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which of the following clinic features would be UNUSUAL in acute systemic type I hypersensitivity?",
+      "options": [
+        "A. Bronchospasm",
+        "B. Eczematous rash",
+        "C. Hypotension",
+        "D. Urticarial rash",
+        "E. Vomiting"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Bronchospasm, urticarial rash, vomiting and hypotension are well-recognised features of type I hypersensitivity. Eczematous rash is more consistent with type IV hypersensitivity.",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which of the following statements is correct regarding mast cell tryptase measurement?",
+      "options": [
+        "A. It has a half-life of 24 hours",
+        "B. It is a less reliable marker of mast cell activation than plasma histamine",
+        "C. It is elevated in all cases of anaphylaxis",
+        "D. Mast cell tryptase is unstable in serum",
+        "E. Serial measurement following appropriate acute patient management can be helpful in confirming a mast cell-activating event"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Mast cell tryptase is stable in serum at room temperature and is a more reliable marker of mast cell activation than plasma histamine. It has a half-life of 2.5 hours. Serial measurement can be helpful in confirming a mast cell-activating event but a negative result does not exclude anaphylaxis.",
+      "questionNumber": 13
+    },
+    {
+      "question": "Which of these statements most accurately describes anaphylaxis?",
+      "options": [
+        "A. Desensitisation therapy is recommended for nut-induced anaphylaxis",
+        "B. It is rarely fatal",
+        "C. It leads to increased vascular permeability",
+        "D. It results from cross-linking of pre-formed, allergen-specific IgG on the surface of mast cells with subsequent mast cell activation",
+        "E. Onset from allergen exposure is typically delayed by 24 hours"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Anaphylaxis leads to increased vascular permeability, is typically rapid in onset following allergen exposure and can be fatal. It results from cross-linking of allergen-specific IgE on mast cells. Desensitisation therapy is currently not routinely recommended for food allergy.",
+      "questionNumber": 14
+    },
+    {
+      "question": "Which of these statements most accurately describes autoimmune disease?",
+      "options": [
+        "A. It can affect multiple organ systems",
+        "B. It is not influenced by environmental factors",
+        "C. It is typically life-threatening",
+        "D. It is typically monogenic",
+        "E. It requires immunosuppressive therapy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Autoimmune disease is generally not monogenic and is influenced by environmental factors. Many autoimmune conditions are not life-threatening, e.g. vitiligo or hypothyroidism. Not all conditions require immunosuppression: e.g. coeliac disease, where gluten withdrawal is required. It can affect multiple organs.",
+      "questionNumber": 15
+    },
+    {
+      "question": "Which one of the following statements is true regarding disease-modifying therapy in autoimmune disease?",
+      "options": [
+        "A. Anti-tumour necrosis factor (TNF) therapy has been shown to alter the course of disease progression in rheumatoid arthritis",
+        "B. Biological agents are generally now considered first-line therapy for inflammatory bowel disease",
+        "C. Inhibition of integrins has no proven efficacy",
+        "D. Mononcional antibodies used in autoimmune disease have not been associated with serious side-effects",
+        "E. Small-molecule inhibitors targeting intracellular signalling pathways have yet to be developed"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Anti-TNF therapy has been shown to alter the course of disease progression in rheumatoid arthritis. Small-molecule inhibitors targeting intracellular signalling pathways are in development. Natalizumab, an integrin inhibitor, has proven efficacy in multiple sclerosis. Monoclonal therapy is not without potentially serious side-effects (e.g. natalizumab and progressive multifocal leucoencephalopathy). Biological agents are generally second line.",
+      "questionNumber": 16
+    },
+    {
+      "question": "Which of the following statements is true regarding organ transplantation?",
+      "options": [
+        "A. Acute rejection typically occurs within the first week post-transplant",
+        "B. Chronic rejection is immune mediated",
+        "C. Co-stimulatory blockade has not been shown to improve outcomes",
+        "D. Hyperacute rejection occurs as a result of recipient pre-formed antibody",
+        "E. Post-transplant immunosuppression is only required for the first 6 months"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hyperacute rejection occurs as a result of recipient pre-formed antibody. Acute rejection typically occurs at 5-30 days post-transplant. Chronic rejection is multifactorial. Co-stimulatory blockade has been shown to improve outcome. Post-transplant immunosuppression is required for more than 6 months.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 57 year old woman with a 20-year history of rheumatoid arthritis presents to the emergency department with a right basal pneumonia. She has received a number of disease-modifying drugs for the arthritis, including methotrexate, and has most recently been on rituximab, an anti-CD20 monoclonal antibody targeting B cells. Which of the following statements is correct?",
+      "options": [
+        "A. Immunoglobulin measurement is unlikely to be informative",
+        "B. Immunoglobulin measurement should include paraprotein assessment for appropriate interpretation",
+        "C. Methotrexate is not a risk factor for secondary immune deficiency",
+        "D. Opportunistic infection does not need to be considered",
+        "E. The patient is at low risk of secondary immune deficiency"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In this case, secondary immune deficiency has to be considered. Rituximab can lead to B-cell depletion, usually transient, and can be associated with antibody deficiency. Paraprotein assessment should be undertaken for appropriate interpretation of immunoglobulin results.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 5 year old boy presents to the paediatric team with right upper quadrant pain and fever. He has a temperature of 38.5 degrees C, tenderness over a mildly enlarged liver and is noted to have gingivitis. At the age of 3 years he developed a cutaneous abscess following minor trauma. His younger brother died at 2 years of age of sepsis; further details are not known. On imaging he is found to have a 5x6 cm hepatic abscess, aspiration confirming Staphylococcus aureus infection. On the post-take ward round you are asked to consider the differential diagnosis and diagnostic tests. Which of the following statements best fits the clinical scenario?",
+      "options": [
+        "A. A defect in T-cell immunity is most likely",
+        "B. A periodic fever syndrome is most likely",
+        "C. An X-linked immune deficiency is most likely",
+        "D. Primary immune deficiency is ruled out by the patient's age",
+        "E. The diagnostic test would be lymphocyte immunophenotyping"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "An immune deficiency is likely; the patient's age does not rule this out. With the family history, an X-linked condition should be considered. With the organisms identified, X-linked chronic granulomatous disease, a disorder of phagocytes, rather than a T-cell defect, is most likely, in which case neutrophil function testing would be diagnostic.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 70 year old man presents to his family physician with recurrent lower respiratory tract infection. Sputum culture has confirmed Streptococcus pneumoniae and Moraxella catarrhalis on multiple occasions. Which of the following tests would have the lowest yield (i.e. would be LEAST helpful) in this context?",
+      "options": [
+        "A. Full blood count with white cell differential",
+        "B. Lymphocyte immunophenotyping",
+        "C. Neutrophil function tests",
+        "D. Serum immunoglobulins and electrophoresis",
+        "E. Thoracic computed tomography (CT) imaging"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The clinical history is most consistent with symptomatic antibody deficiency. This may be primary or secondary, for example with chronic lymphocytic leukaemia, and may be associated with end-organ damage. Neutrophil function testing is indicated in the investigation of chronic granulamotous disease rather than antibody deficiency. Chronic granulomatous disease presents at a much younger age usually, with staphylococcal and fungal infection, abscess formation and granulomas; the clinical history does not suggest this.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 35 year old woman presents to the allergy clinic for investigation of venom hypersensitivity. She reports rapid onset of localised swelling at the site of a wasp sting on her forearm, with subsequent dyspnoea and altered vision prior to collapsing. She was treated at the scene by the paramedics prior to transfer to her local hospital. She lives in a rural area, is a keen cyclist and often cycles in remote areas. Which of the following statements is correct?",
+      "options": [
+        "A. Component-resolved diagnostics should be the first-line test",
+        "B. From the clinical history given, an adrenaline (epinephrine) auto-injector is not indicated",
+        "C. The clinical history is not suggestive of anaphylaxis",
+        "D. The patient's regular drug history is not relevant",
+        "E. Venom immunotherapy should be considered for this patient"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical history is suggestive of anaphylaxis, in which case venom immunotherapy should be considered. Component-resolved diagnostics is not the first-line test. The patient may be on medication that could influence future anaphylaxis management, e.g. angiotensin-converting enzyme inhibitor or B-blocker.",
+      "questionNumber": 21
+    },
+    {
+      "question": "Which of the following clinical scenarios is correctly paired with the underlying immune deficiency?",
+      "options": [
+        "A. A 26 year old man presenting with oesophageal candidiasis = primary antibody deficiency",
+        "B. A 40 year old woman presenting with increasing delirium; cerebral imaging and biopsy confirm central nervous system (CNS) lymphoma = human immunodeficiency virus (HIV)",
+        "C. A 54 year old man presenting with cerebral toxoplasmosis = complement deficiency",
+        "D. A 6 year old boy presenting with osteomyelitis and fungal pneumonia = severe combined immune deficiency",
+        "E. A previously well 9 year old boy presenting with Haemophilus influenzae otitis media = secondary immune deficiency"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "CNS lymphoma, driven by Epstein-Barr virus infection, is seen in immune deficiency, typically late-stage HIV infection or following systemic immunosuppressive therapy. A previously well 9 year old is unlikely to have a secondary immune deficiency. Candida oesophagitis is more consistent with T-cell immune deficiency, as is toxoplasmosis. Severe combined immune deficiency is likely to have presented before the age of 6 years and the clinical findings described are more consistent with a primary phagocyte deficiency.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 54 year old man with chronic hepatitis C presents with lower limb palpable purpura, arthralgia and neuropathy. His alanine aminotransferase (ALT) is 80 U/L (10-60 U/L), albumin 32 g/L (35-50 g/L), C-reactive protein 18 mg/L (<6 mg/L), platelets $90\\times10^{9}/L$ (150-400$\\times10^{9}/L$), complement C4 0.08 g/L (0.15-0.5 g/L); urinalysis confirms proteinuria and microscopic haematuria. Which one of the following statements is true?",
+      "options": [
+        "A. Diagnostic serum analysis can be reliably undertaken on routine blood sampling",
+        "B. Systemic lupus erythematosus (SLE) is most likely",
+        "C. Type I cryoglobulinaemia is most likely",
+        "D. Type II cryoglobulinaemia is most likely",
+        "E. With a normal C3, genetic C4 deficiency is most likely"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A type II cryoglobulinaemia in the context of hepatitis C is most likely, from the clinical history, raised ALT, elevated inflammatory markers and low C4. SLE is on the differential diagnosis but crypglobulinaemia typically presents with rash, arthralgia and neuropathy. Warm separated serum is required for appropriate investigation. Genetic deficiency of C4 is less likely in this context.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 35 year old woman presents with cough 3 months after a live related donor renal transplantation for end-stage renal disease secondary to IgA nephropathy. She is prescribed prednisolone, tacrolimus and mycophenolate immunosuppression. She also received additional immunosuppression as an early post-transplant biopsy confirmed acute rejection. Her chest X-ray confirms bilateral airspace shadowing, predominantly in the mid-zones. Which of the following statements is correct?",
+      "options": [
+        "A. At such an early stage, post-transplant opportunistic infection is unlikely",
+        "B. Early bronchoscopy with bronchoalveolar lavage needs to be considered",
+        "C. Immunosuppression needs to be immediately withdrawn",
+        "D. Tuberculosis is the most likely diagnosis",
+        "E. The white cell differential is unlikely to be helpful"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Early bronchoscopy should be considered. Opportunistic infection could occur at 3 months. The white cell differential will help to determine the risk of opportunistic infection. Immunosuppression needs to be carefully considered rather than immediately withdrawn; withdrawal would compromise the transplanted organ. Pneumocystis pneumonia is the most likely diagnosis.",
+      "questionNumber": 24
+    }
+  ]
+}

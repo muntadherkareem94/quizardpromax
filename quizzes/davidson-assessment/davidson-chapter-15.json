@@ -1,0 +1,760 @@
+{
+  "title": "Nephrology and urology - Chapter 15",
+  "questions": [
+    {
+      "question": "A 45 year old man presents with a 6-week history of bilateral ankle swelling. On examination his pulse was 72 beats/min, blood pressure (BP) 126/68 mmHg, jugular venous pressure (JVP) was not elevated and auscultation of heart and lungs was unremarkable. He had no stigmata of chronic liver disease. Which of the following is the most appropriate initial investigation?",
+      "options": [
+        "A. Abdominal ultrasound scan",
+        "B. D-dimer",
+        "C. Echocardiogram",
+        "D. Urinalysis",
+        "E. Urinary sodium"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "He has no clinical evidence of heart failure (JVP not elevated, no basal crepitations, no third heart sound) or chronic liver disease and there is no history of obstructive urinary symptoms; therefore there is no indication to perform echocardiogram/abdominal ultrasound at this point. Bilateral leg swelling is unlikely to be due to a deep vein thrombosis (DVT), unless it affects the inferior vena cava. This raises the possibility of either renal failure or nephrotic syndrome and urinalysis may be helpful in either circumstance.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 72 year old man is found to have acute kidney injury (AKI). Urine microscopy reveals the presence of red cell casts. What is the most likely aetiology of his renal failure?",
+      "options": [
+        "A. Acute tubular necrosis",
+        "B. Haemolytic uraemic syndrome",
+        "C. Microscopic polyangiitis",
+        "D. Sclerodermic renal crisis",
+        "E. Tubulointerstitial nephritis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Red cell casts indicate the presence of a glomerulonephritis and are not observed in tubulo-interstitial disease or haemolytic uraemic syndrome/sclerodermic renal crisis.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following is maintained in the circulation when transiting through the kidney and not freely filtered across the normal glomerular filtration barrier?",
+      "options": [
+        "A. Free light chains",
+        "B. Glucose",
+        "C. Glutamine",
+        "D. Immunoglobulin A (IgA)",
+        "E. Lithium"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Small molecules such as glucose, amino acids (glutamine) and lithium are freely filtered. Most free light chains are also filtered and may be taken up by tubules, causing tubular damage. Immunoglobulins are too big to cross the normal glomerular barrier, but may do so in nephrotic syndrome, leading to increased risk of infection.",
+      "questionNumber": 3
+    },
+    {
+      "question": "The following subjects all have a Modification of Diet in Renal Disease (MDRD) formula-derived estimated glomerular filtration rate (eGFR) of 40 mL/min/1.73 m2. Which person below is likely to have the lowest measured (true) glomerular filtration rate (i.e. the eGFR is falsely reassuring)?",
+      "options": [
+        "A. A 25 year old male body builder",
+        "B. A 40 year old African American man with hypertension",
+        "C. A 45 year old woman currently taking trimethoprim for a urinary tract infection",
+        "D. A 56 year old man with type 2 diabetes and an above-knee amputation",
+        "E. An 85 year old woman with hypertension and type 2 diabetes"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The MDRD equation estimates GFR based on the serum creatinine level, and hence it will be inaccurate in patients whose muscle bulk is atypical for someone of that sex and age. The body builder and African American male will have greater muscle bulk and hence higher creatinine for a given level of renal function compared to what would be expected for a sedentary Caucasian male; hence the MDRD eGFR will underestimate the true GFR (for this reason a correction factor of 1.21 should be applied to the eGFR in those of African American descent). Trimethoprim competes with creatinine for excretion in the distal tubule and hence will increase serum creatinine; thus the MDRD eGFR will underestimate true GFR. Loss of muscle bulk following amputation will lead to a lower creatinine and hence the MDRD equation will overestimate the true GFR. The MDRD eGFR should approximate to true eGFR in the elderly woman with chronic kidney disease (CKD).",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 46 year old man with a 10-year history of type 2 diabetes presents with a 6-week history of bilateral leg swelling. He reports that he had been taking non-steroidal anti-inflammatory drugs (NSAIDs) for osteoarthritis regularly for the past 3 months. Investigations reveal: eGFR >= 60 mL/min 1.73 m2 urinalysis: protein 4+, blood negative; protein: creatinine ratio 1680 mg/mmol; and a serum albumin of 14 g/L Serum albumin and urinary albumin: creatinine ratios 4 months previously were 36 g/L and 25 mg/mmol, respectively. What is the most likely diagnosis?",
+      "options": [
+        "A. Amyloidosis",
+        "B. Diabetic nephropathy",
+        "C. IgA nephropathy",
+        "D. Minimal change disease",
+        "E. Tubulointerstitial nephritis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Minimal change disease classically presents with sudden onset of nephrotic syndrome and is associated with consumption of NSAIDs. Although NSAIDs may also cause tubulo-interstitial nephritis, the heavy proteinuria implies a glomerular rather than a tubulo-interstitial disease process and the absence of haematuria renders a glomerulonephritis such as IgA nephropathy unlikely. The rapid rise in proteinuria is too sudden to be accounted for by diabetic nephropathy alone. Amyloid is less likely, as it is associated with rheumatoid arthritis and not osteoarthritis, and the rapid onset of nephrosis in a relatively young man would be atypical for amyloid.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 25 year old man presents with visible haematuria. He reports that he had a very sore throat 2 weeks previously, but is otherwise well. His blood pressure and renal function are both normal. Protein: creatinine ratio was elevated (100 mg/mmol) What is the most likely diagnosis?",
+      "options": [
+        "A. Bladder cancer",
+        "B. IgA nephropathy",
+        "C. Polycystic kidney disease (PKD)",
+        "D. Post-infectious glomerulonephritis",
+        "E. Renal calculus"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The proteinuria renders bladder cancer, polycystic kidney disease and renal calculi less likely. Furthermore, bladder cancer would be rare in this age group. Post-infectious glomerulonephritis typically presents with non-visible haematuria after the infection is resolved. In addition, hypertension and renal failure are common. Visible haematuria is a common presentation of IgA nephropathy, typically during an upper respiratory tract infection. The haematuria settles spontaneously and the renal prognosis is typically good.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 69 year old man is diagnosed with streptococcal endocarditis and commenced on benzylpenicillin and gentamicin. His renal function is normal on admission, but 1 week later it has deteriorated (eGFR 28 mL/ min/1.73 m2). Investigations reveal: urinalysis: blood 3+, protein 3+; ultrasound scan: normal-sized kidneys with no hydronephrosis; serum complement level (C3 and C4) is low. What is the most likely diagnosis?",
+      "options": [
+        "A. Acute interstitial nephritis",
+        "B. Acute tubular necrosis",
+        "C. Infection-related glomerulonephritis",
+        "D. Microscopic polyangiitis",
+        "E. Pre-renal failure"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Acute tubular necrosis due to gentamicin and interstitial nephritis due to amoxicillin and pre-renal failure related to sepsis are all common in this scenario; however, the 3+ blood and 3+ protein on urinalysis would point towards a glomerulonephritis. Microscopic polyangiitis is a possibility, but this is not associated with low complement levels, which are observed in infection-related glomerulonephritis.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 76 year old woman attends her family physician complaining of bilateral leg swelling and vague aches and pains. Initial investigations reveal: urinalysis: protein 4+, trace blood; haemoglobin 79 g/L white cell count 1.9x10^9/L; platelet count 46x10^9/L sodium 131 mmol/L; potassium 4.6 mmol/L; urea 15 mmol/L (90.1 mg/dL, BUN 42.0 mg/dL); creatinine 176 µmol/L (1.99 mg/dL); albumin 23 g/L. What is the most likely finding on renal biopsy?",
+      "options": [
+        "A. Amyloidosis",
+        "B. Cast nephropathy",
+        "C. Interstitial nephritis",
+        "D. Minimal change disease",
+        "E. Thrombotic thrombocytopenic purpura (TTP)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is a presentation of nephrotic syndrome, which is consistent with amyloid or minimal change disease. The pancytopenia could not be explained by minimal change disease, but raises suspicion of a bone marrow disorder such as myeloma. While myeloma could cause cast nephropathy, this would present with AKI rather than nephrotic syndrome. While haemolytic uraemic syndrome (HUS)/TTP may cause low platelets, they do not cause pancytopenia and do not present with nephrotic syndrome.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 49 year old male presents with deafness, shortness of breath, haemoptysis, reduced urinary output and ankle swelling. On examination: BP is 170/100 mmHg; JVP is 4 cm above the sternal angle, there are bibasal crepitations in the lungs and he has bilateral leg swelling to the mid-calves. Initial investigations reveal: haemoglobin 92 g/L, white cell count 9x10^9/L platelet count 460x10^9/L sodium 142 mmol/L; potassium 6.8 mmol/L; urea 45 mmol/L (270 mg/dL); creatinine 1260 µmol/L (14.25 mg/dL) albumin 32 g/L. Chest X-ray: bi-basal air space shadowing; ultrasound: normal-sized kidneys, no evidence of hydronephrosis. No urine is available for urinalysis. What is the most appropriate initial investigation from the list below?",
+      "options": [
+        "A. Anti-glomerular basement membrane (GBM)/antineutrophil cytoplasmic antibody (ANCA)/antinuclear antibody (ANA) serology",
+        "B. Computed tomography (CT) pulmonary angiography",
+        "C. Genetic testing for Alport's disease",
+        "D. Plasma protein electrophoresis",
+        "E. Renal biopsy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The presence of haemoptysis and kidney injury indicates a pulmonary renal syndrome, most commonly due to granulomatosis with polyangiitis (previously known as Wegener's granulomatosis), anti-glomerular basement membrane disease or lupus. Pulmonary embolus may cause haemoptysis, but it would not explain the renal failure in the context of hypertension. While Alport's disease can cause deafness, it does not account for the haemoptysis, nor the acute nature of the process. Renal biopsy is likely to be required, but the risk of bleeding is very high at this point due to hypertension and uraemia. Serological testing should be performed urgently given the high risk of one of the above causes of pulmonary renal syndrome (most likely granulomatosis with polyangiitis given the deafness).",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 32 year old man is referred to the nephrology clinic for investigation of persistent non-visible haematuria initially detected at an insurance medical examination. He is otherwise well, with no personal or family history of renal disease. His BP is 126/68 mmHg. Preliminary investigations reveal: urinalysis: blood 3+, protein negative; creatinine 100 µmol/L (1.13 mg/dL) eGFR>60 mL/min/1.73 n. What is the most likely diagnosis?",
+      "options": [
+        "A. Alport's disease",
+        "B. Bladder tumour",
+        "C. IgA nephropathy",
+        "D. Membranous nephropathy",
+        "E. Vesico-ureteric reflux"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Asymptomatic non-visible haematuria is a common presentation of IgA nephropathy. Alport's disease is a possibility, although the absence of deafness and a family history of renal disease renders this less likely. Membranous nephropathy presents with nephrotic syndrome and vesico-ureteric reflux would rarely cause isolated haematuria with no evidence of proteinuria or CKD. Ultrasound scan and cystoscopy to exclude uroepithelial tumour would need to be considered if he were over 40 years old.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 75 year old woman has peripheral vascular disease and stage 3 CKD with proteinuria due to IgA nephropathy. Her BP is 136/80 mmHg on lisinopril 40 mg, amlodipine 10 mg and bendroflumethiazide 2.5 mg (all once daily). Her renal function has been relatively stable over the past 2 years with current eGFR 39 mL/min/1.73 m2. Ultrasound scan revealed that her left kidney length at 9 cm was smaller than the right kidney at 11.5 cm. Magnetic resonance angiography confirmed a 90% stenosis at the ostium of the left renal artery. What is the most appropriate management from the list below?",
+      "options": [
+        "A. Check plasma renin activity",
+        "B. Commence a statin",
+        "C. Discontinue lisinopril",
+        "D. Perform angiography and stenting to her left renal artery",
+        "E. Start warfarin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The Study of Heart and Renal Protection (SHARP) provides evidence for reduced cardiovascular events with statins in patients with CKD with or without renal artery disease. The patient's renal function is stable and blood pressure is well controlled and she has proteinuria, and therefore her lisinopril should be continued; however, she should be informed to discontinue lisinopril transiently should she develop vomiting, diarrhoea or fever. The Angioplasty and Stenting for Renal Artery Lesions (ASTRAL) and Cardiovascular Outcomes in Renal Atherosclerotic Lesions (CORAL) trials have not found any benefit from renal artery revascularisation in this context and similarly there is no evidence for the use of warfarin. Plasma renin activity does not help discriminate those who might benefit from angioplasty and will be difficult to interpret in the context of angiotensin-converting enzyme (ACE) inhibition.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 62 year old man presents with a large myocardial infarction and undergoes primary coronary angiography and stenting. Two days later he develops a low-grade fever and dusky discolouration of the toes on both feet, although peripheral pulses are palpable. eGFR was 52 mL/min/1.73 m2 pre-procedure and falls to 25 mL/min/1.73 m2 2 days later. Other investigations reveal: urinalysis: blood 1+, protein 1+; haemoglobin 12 g/L; white cell count 10.6x10^9/L with eosinophilia; platelet count 70x10^9/L Creatine kinase is elevated at 640 U/L. What is the most likely cause of his acute kidney injury?",
+      "options": [
+        "A. Cholesterol embolisation",
+        "B. Contrast nephropathy",
+        "C. Haemolytic uraemic syndrome",
+        "D. Renal artery thrombosis",
+        "E. Rhabdomyolysis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The dusky toes (sometimes called trash foot) raise clinical suspicion of cholesterol emboli in the microvasculature (especially if peripheral pulses are intact) and this diagnosis is supported by the low-grade fever and eosinophilia. Contrast nephropathy is the other main differential diagnosis; however, it would not account for the trash foot or eosinophilia, nor would renal artery thrombosis. Although the creatine kinase is elevated, either due to myocardial ischaemia or mild leg muscle damage, at this level there is likely to be insufficient myoglobinuria to cause AKI. While low platelets and AKI are consistent with haemolytic uraemic syndrome, the haemoglobin is only mildly reduced and this does not fit the clinical picture.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 17 year old male returns from an Outward Bound centre holiday and falls ill with vomiting and bloody diarrhoea. His acute illness subsides, but 3 days later he notices that his urinary output has declined and his ankles begin to swell. He attends his family physician where his temperature is 38.2 degrees C BP is 164/92 mmHg and he has bilateral ankle oedema, but no other clinical signs. The following investigation results are obtained: urea 36 mmol/L (216 mg/dL) creatinine 640 µmol/L (7.24 mg/dL); sodium 129 mmol/L; potassium 6.4 mmol/L; haemoglobin 64 g/L white cell count 9.6x10^9/L platelet count 36x10^9/L blood film shows schistocytes; urinalysis: blood 1+, protein negative; stool cultures negative for Escherichia coli 0157. What is the most likely diagnosis?",
+      "options": [
+        "A. Haemolytic uraemic syndrome",
+        "B. Lupus nephritis",
+        "C. Malignant hypertension",
+        "D. Pre-renal failure",
+        "E. Thrombotic thrombocytopenic purpura"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The combination of low haemoglobin, low platelets and schistocytes on blood film suggest microangiopathic haemolytic anaemia, which may be due to a number of conditions, including haemolytic uraemic syndrome or thrombotic thrombocytopenic purpura. The antecedent bloody diarrhoea and predominant renal versus neurological complications are consistent with HUS rather than TTP. The negative E. coli O157 stool cultures do not rule out HUS as they have been taken after the diarrhoeal phase of the illness. Malignant hypertension may also cause microangiopathic haemolytic anaemia; however, the blood pressure is typically much higher than observed here. Scleroderma renal crisis, but not lupus, may cause microangiopathic haemolytic anaemia and AKI. While vomiting and diarrhoea predispose to pre-renal failure, his high blood pressure and leg swelling would indicate that he is hypervolaemic, not hypovolaemic.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 60 year old man with long-standing stage 4 chronic kidney disease presents with vague bony pain. Blood tests reveal eGFR 17 mL/min/1.73 m2 calcium 2.92 mmol/L (11.70 mg/dL); phosphate 1.82 mmol/L (5.64 mg/dL), parathyroid hormone (PTH) is elevated at 156 pmol/L (1471 pg/mL), alkaline phosphatase 470 U/L. What is this picture consistent with?",
+      "options": [
+        "A. Excess vitamin D consumption",
+        "B. Milk alkali syndrome",
+        "C. Primary hyperparathyroidism",
+        "D. Secondary hyperparathyroidism",
+        "E. Tertiary hyperparathyroidism"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "High serum calcium due to excess calcium or vitamin D consumption should suppress the PTH level. The PTH level here is inappropriately elevated, indicating hyperparathyroidism. Serum phosphate should be low in primary hyperparathyroidism. In patients with CKD, calcium is initially maintained in the normal range by elevated PTH (secondary hyperparathyroidism); however, as here, eventually the gland may become autonomous and the PTH level will be very high, resulting in an elevated serum calcium concentration (tertiary hyperparathyroidism).",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 62 year old man with stage 3 CKD (eGFR 39 mL/min/1.73 m2 is noted to have haemoglobin of 79 g/L, white cell count 8.9x10^9/L; platelet count 146x10^9/L; mean corpuscular volume (MCV) 76 fL. What is the most appropriate investigation?",
+      "options": [
+        "A. Bone marrow biopsy",
+        "B. Serum erythropoeitin level",
+        "C. Serum folate studies",
+        "D. Serum iron studies",
+        "E. Ultrasound scan of abdomen"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "While erythropoietin (EPO) deficiency is common in patients with chronic kidney disease, the haemoglobin level here is disproportionately low for this level of renal failure. Haemoglobin <10 g/L is not usually observed until stage 4 CKD. Serum EPO levels may be difficult to interpret in this context, although if they are low or indeed normal, this is inappropriate in the context of anaemia and makes renal EPO insufficiency more likely. The MCV is low, indicating potential iron rather than folate deficiency, and white cell and platelet counts are normal, rendering a bone marrow problem or hypersplenism less likely.",
+      "questionNumber": 15
+    },
+    {
+      "question": "The Reciprocal creatinine plot shown of a 48 year old man would be consistent with the natural history of progression of which of the following causes of kidney failure?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch15/q/15.16.png",
+      "options": [
+        "A. Adult polycystic kidney disease",
+        "B. Microscopic polyangiitis",
+        "C. Multiple myeloma",
+        "D. Post-infectious glomerulonephritis",
+        "E. Renovascular disease"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The slow and very consistent rate of decline in renal function illustrated here is consistent with polycystic kidney disease. Post-infectious glomerulonephritis is rapidly progressive, and microscopic polyangiitis is also typically more rapidly progressive than here and may be associated with remissions and relapses. Progression of renovascular disease typically occurs in a step-wise manner. Myeloma typically affects an older age group and does not explain slow progression over 20 years.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 42 year old woman with IgA nephropathy and stage 3 CKD (eGFR 45 mL/ min/1.73 m2) is developing proteinuria (protein: creatinine ratio is 120 mg/mmol). BP is 158/86 mmHg and she is commenced on an ACE inhibitor (lisinopril 10 mg daily). Two weeks later her eGFR has fallen to 37 mL/min/1.73 m2 and her potassium has risen from 5.2 to 5.9 mmol/L, although BP and protein: creatinine ratio have fallen to 146/82 mmHg and 30 mg/ mmol, respectively. She is already on a low-potassium diet. What is the most appropriate management?",
+      "options": [
+        "A. Add a thiazide diuretic",
+        "B. Add a B-adrenoceptor antagonist (B-blocker)",
+        "C. Commence calcium resonium",
+        "D. Increase the lisinopril dose",
+        "E. Stop the lisinopril"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "There is good evidence that ACE inhibitors are the drug of choice to treat hypertension and reduce proteinuria in patients with CKD and protein:creatinine ratio >100 mg/mmol, and initiation of lisinopril has been partially effective in this patient. The fall in eGFR of <20% is acceptable and all alternative measures should be taken to reduce potassium before stopping the ACE inhibitor. Calcium resonium is only suitable for short-term management of hyperkalaemia due to risk of bowel perforation. While BP is suboptimal, increasing the lisinopril or adding a β-blocker are not recommended at this level of potassium. A thiazide would be more appropriate as this will have the combined benefit of reducing BP and lowering potassium.",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which of the following is true regarding peritoneal dialysis?",
+      "options": [
+        "A. Fluid removal is achieved by increasing the concentration of sodium in the dialysate",
+        "B. Hyperkalaemia is less common than for haemodialysis",
+        "C. It is associated with improved patient survival compared with haemodialysis",
+        "D. It is unsuitable for elderly patients",
+        "E. Peritonitis is usually caused by gut bacteria traversing the bowel wall"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hyperkalaemia is less common than for haemodialysis where potassium oscillates from high values pre-dialysis to low values post-dialysis. Fluid removal is achieved by altering the glucose concentration in the dialysate. Peritoneal dialysis may be the most appropriate modality for renal replacement therapy for elderly patients who may not tolerate the fluid and electrolyte shifts associated with haemodialysis. There is no evidence of a survival benefit when haemodialysis and peritoneal dialysis have been compared, although transplantation does confer improved survival. Peritonitis is typically caused by skin contaminants translocating through the lumen or along the tract of the peritoneal catheter.",
+      "questionNumber": 18
+    },
+    {
+      "question": "Which of the following is typical of the development of pre-eclampsia?",
+      "options": [
+        "A. Low serum urate level",
+        "B. Maternal history of cigarette smoking",
+        "C. Occurrence in the mother's first pregnancy",
+        "D. Onset of hypertension in the second trimester",
+        "E. Prolonged prothrombin time"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Pre-eclampsia is more common in first pregnancies or first pregnancy with a new partner. Serum urate level may be elevated, which may be helpful in diagnosis. Pre-eclampsia typically presents in the third trimester, and onset of hypertension prior to this raises the possibility of pre-existing renal disease. Maternal history of smoking may actually reduce the risk of pre-eclampsia. Prolonged prothrombin time suggests the development of disseminated intravascular coagulation.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 14 year old boy with end-stage renal disease due to reflux nephropathy received a renal transplant from his mother. Aged 17 he transferred to the adult renal service and he left home to go to university the following year. Six months later he attends the transplant clinic. He is asymptomatic, but his graft function has deteriorated (creatinine 297 µmol/L (3.36 mg/dL), increased from 126 µmol/L (1.43 mg/dL) 3 months previously). Urinalysis: blood 1+ protein 2+, no leucocytes; ultrasound scan of graft revealed no hydronephrosis. What is the most likely explanation for the deterioration in renal function?",
+      "options": [
+        "A. Acute pyelonephritis",
+        "B. Acute rejection due to non-adherence with immunosuppression",
+        "C. Anti-glomerular basement membrane disease",
+        "D. Chronic allograft injury",
+        "E. Thrombosis in the artery to the graft"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Unfortunately, the age group with the lowest graft survival includes adolescence. The transition from paediatric to adult care and to more independent living away from the parental home is a high-risk period for non-adherence. The rate of decline in renal function here is too rapid to be explained by chronic allograft nephropathy. The absence of symptoms or leucocytes in the urine makes acute pyelonephritis in the graft unlikely. Graft thrombosis is rare outside of the early transplant phase or during very severe dehydration. Anti-GBM disease may occur in patients with Alport's disease who receive a kidney with a normal collagen IV isoform.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A previously fit 17 year old male presents with a 2- to 3-week history of arthralgia and more recently has developed a skin rash on the lower legs. Just prior to admission to hospital he developed abdominal discomfort with blood-stained stool. On examination, he has a widespread non-blanching rash over his limbs. Initial investigations reveal: urinalysis: blood 3+; protein 3+; eGFR 46 mL/min/1,73 m2; protein: creatinine ratio 220 mg/mmol; haemoglobin 120 g/L, white cell count 12.9x10^9/L; platelet count 259x10^9/L C-reactive protein 62 mg/L What is the most likely diagnosis?",
+      "options": [
+        "A. Anti-glomerular basement membrane disease",
+        "B. Haemolytic uraemic syndrome",
+        "C. Henoch-Schönlein purpura",
+        "D. Post-streptococcal glomerulonephritis",
+        "E. Systemic lupus erythematosus"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A purpuric rash with renal impairment, abdominal and joint pain is typical of Henoch-Schönlein purpura. Haemoglobin and platelets are normal; therefore haemolytic uraemic syndrome is unlikely. Anti-glomerular basement membrane disease, post-streptococcal glomerulonephritis and systemic lupus erythematosus could account for the renal failure and urinary findings, but not the purpura.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 62 year old man presents with sudden anuria on a background history of several weeks of 'not passing much urine'. He denies dysuria or haematuria but admits to having a poor stream for many years. He is normotensive and otherwise looks well and has no systemic symptoms. What is the best initial diagnostic investigation?",
+      "options": [
+        "A. Blood test for electrolytes and renal function",
+        "B. CT of kidneys and urinary tract with contrast",
+        "C. Renal biopsy",
+        "D. Renal ultrasound scan",
+        "E. Urinalysis for red cell casts"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Anuria in this setting is probably caused by bladder outflow obstruction: hence an ultrasound is the correct answer. A CT scan would likely diagnose this too, but ultrasound is the best, quickest and cheapest test. A catastrophic vascular event is a less common cause in which a contrast CT may be helpful. Red cell casts could indicate a rapidly progressive glomerulonephritis, although this is much less common. Bloods for urea and electrolytes will not be helpful in diagnosis, although they should obviously be performed, and a biopsy should not be needed if the cause is obstruction.",
+      "questionNumber": 22
+    },
+    {
+      "question": "An 18 year old male presents with haematuria and proteinuria. He undergoes renal biopsy which shows a mesangiocapillary glomerulonephritis pattern of injury. Immunofluorescence shows complement C3 staining with no immunoglobulin deposition. Electron microscopy demonstrates electron-dense deposits in a ribbon-like pattern in the glomerular basement membrane (so called 'dense deposits'). What is the most likely underlying cause of his mesangiocapillary glomerulonephritis?",
+      "options": [
+        "A. Autoimmune disease",
+        "B. Genetic defect of alternative complement pathway",
+        "C. Hepatitis B infection",
+        "D. Hepatitis C infection",
+        "E. Monoclonal gammopathy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A mesangiocapillary glomerulonephritis pattern of injury has two broad causes based on the immunofluorescence findings: complement deposition, which is caused by inherited alternative pathway complement gene mutations with unregulated complement activation; and immunoglobulin deposition, which may be caused by chronic infections (frequently viral hepatitis), autoimmune diseases and monoclonal gammopathy. ‘Dense deposit disease', with a mesangiocapillary pattern of injury, is due to inherited complement mutations.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 49 year old woman presents with acute kidney injury after an acute illness manifested by myalgia, diarrhoea and vomiting. Her BP is 84/50 mmHg and she has dry mucous membranes. She was taking ibuprofen, paracetamol and domperidone during the illness. Her renal function improves rapidly with intravenous (IV) fluids. Which one of the following findings are likely to be present?",
+      "options": [
+        "A. Dense granular ('muddy brown') casts on urinalysis",
+        "B. Hypercalcaemia",
+        "C. Hyponatraemia",
+        "D. Low (<1%) fractional excretion of sodium",
+        "E. Low urine specific gravity"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is pre-renal injury, without evidence of acute tubular necrosis (ATN), as renal function improved fully with fluids. Therefore she would likely manifest low urine sodium, low urine fractional excretion of sodium and concentrated urine (high specific gravity). Dense granular casts would probably be present in ATN. There is no particular reason she should be hyponatraemic or hypercalcaemic.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 68 year woman develops malaise and a low-grade fever. She has no rash and appears euvolaemic. She takes atorvastatin, omeprazole, amlodipine and digoxin regularly and takes ibuprofen intermittently. Urinalysis shows some leucocytes but no casts, haematuria or proteinuria. She has a creatinine of 320 µmol/L (3.62 mg/dL), which has been 68 µmol/L (0.77 mg/dL) 1 year previously. What is the likely cause of renal injury?",
+      "options": [
+        "A. Acute interstitial nephritis",
+        "B. ATN due to rhabdomyolysis",
+        "C. Glomerulonephritis",
+        "D. Pre-renal injury due to NSAIDS",
+        "E. Urinary obstruction"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient likely has allergic acute interstitial nephritis due to her proton pump inhibitor (omeprazole) as she has a mild fever and her urine has some white cells but nothing else to suggest glomerulonephritis. Pre-renal injury/ATN is a possibility but, given euvolaemia and lack of an apparent insult, it is unlikely.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 55 year old man with significant cardiovascular disease and diabetes has acute kidney injury in the context of a viral illness. He was at a social gathering where he consumed alcohol and woke the next morning unwell. He had fever, aches and pains, headache and felt thirsty. He takes atorvastatin, lansoprazole, amlodipine, bisoprolol, warfarin, digoxin regularly. He passed a small amount of dark urine. His creatinine is 190 µmol/L (2.15 mg/dL), potassium 6.8 mmol/L, corrected calcium 1.97 mmol/L (7.90 mg/dL), international normalised ratio (INR) 2.0. Urine dipstick shows haematuria but no proteinuria. Direct urinalysis revealed no cells or casts. What is the likely cause of his kidney injury?",
+      "options": [
+        "A. Acute interstitial nephritis",
+        "B. ATN due to viral infection",
+        "C. Haemorrhage into the kidneys",
+        "D. Pre-renal injury due to dehydration from alcohol",
+        "E. Rhabdomyolysis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Rhabdomyolysis is the most likely diagnosis given the dark urine and risk factors, including a statin, viral illness and alcohol use. Many cases will have several risk factors and rhabdomyolysis may occur after being on a statin for some time. The dipstick ‘haematuria' without red cells being visible is due to urine myoglobin. Intracellular ions (potassium, phosphate) tend to be particularly high with rhabdomyolysis and calcium may be low (precipitates with phosphate).",
+      "questionNumber": 26
+    },
+    {
+      "question": "A patient with acute kidney injury has been anuric for 12 hours despite fluid challenges. Potassium is 5.2 mmol/L, urea is very high and a pericardial rub is audible. The patient appears euvolaemic. A decision is made to commence haemodialysis due to concerns regarding uraemia and specifically uraemic pericarditis. What will the first dialysis session involve?",
+      "options": [
+        "A. A large surface area dialyser",
+        "B. A short 2-hour session initially",
+        "C. Heparin anticoagulation",
+        "D. High blood flow rate of 400 mL/min",
+        "E. Ultrafiltration of 2 L (fluid removal)"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The first dialysis is designed to be a short, incomplete treatment due to the risks of dialysis disequilibrium syndrome if the uraemia is corrected too quickly. Therefore a short session is performed, using a small surface area dialyser with low blood and dialysate flows. Anticoagulation is generally not used for the first session, as a dialysis catheter will recently have been placed, and in this case also due to concerns regarding uraemic pericarditis, which may be haemorrhagic precipitating tamponade.",
+      "questionNumber": 27
+    },
+    {
+      "question": "In a patient presenting with renal impairment, which of the following is most helpful in discriminating between AKI and a late presentation of CKD?",
+      "options": [
+        "A. Anaemia",
+        "B. Hyperphosphataemia",
+        "C. Hyponatraemia",
+        "D. Renal biopsy showing interstitial fibrosis and tubular atrophy",
+        "E. Small echogenic kidneys on ultrasound"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Hyperphosphataemia and anaemia are frequently considered signs of likely CKD but they may occur early in the course of AKI (and are common in certain causes of AKI such as haemolytic uraemic syndrome) so are not very helpful discriminators. Hyponatraemia has no value in this setting. Small kidneys are a non-invasive, helpful indication of chronic renal injury. It is rarely necessary to perform a renal biopsy for the presence of interstitial fibrosis and tubular atrophy, which will be a universal finding in small atrophic kidneys.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 32 year old man with IgA nephropathy since the age of 18 received a well human leucocyte antigen (HLA)-matched kidney transplant from his older brother. He had no pre-formed anti-HLA antibodies and the kidney functioned immediately. One week later his urine output is noted to be lower than the previous days and his creatinine is increased, having previously dropped to normal in the first few days post-transplant. His BP is 180/90 mmHg, he has dipstick-positive blood on urinalysis and he looks euvolaemic. What is the likely diagnosis?",
+      "options": [
+        "A. Acute cellular rejection",
+        "B. BK polyomavirus nephropathy",
+        "C. Hyperacute rejection",
+        "D. Recurrent IgA nephropathy",
+        "E. Renal artery stenosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Acute cellular rejection is commonest from day 6-7 to week 12 post-transplant. Hyperacute rejection is rare with modern cross-matching techniques and occurs immediately post-transplant and this patient had no preformed anti-HLA antibodies. Renal artery stenosis manifests after several months with hypertension and slowly deteriorating transplant function. BK polyomavirus nephropathy may occur as early as 1-2 months post-transplant but not this early. Recurrent IgA nephropathy happens often but is often not clinically significant and would perhaps be a late cause of transplant dysfunction. Causes not listed that would need to be ruled out include a urine leak causing obstruction and a vascular thrombosis (transplant artery or vein).",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 56 year old woman with polycystic kidney disease received her second kidney transplant. She had pre-formed anti-HLA antibodies (from the first transplant) but the cross-match was negative so she proceeded to transplant using induction therapy (anti-thymocyte globulin; ATG). She had immediate function of the transplant but suffered an acute rejection after 2 months, which was successfully treated with IV glucocorticoids. She developed a urinary tract infection (UTI) in the week after the steroids were administered, which cleared with oral antibiotics. Her renal function has deteriorated again at 4 months and her serum shows BK polyomavirus on polymerase chain reaction testing. A biopsy reveals BK polyomavirus nephropathy. Risk factors for BK polyomavirus include which of the following?",
+      "options": [
+        "A. Augmented immunosuppression (ATG and high-dose steroids)",
+        "B. Polycystic kidney disease",
+        "C. Presence of anti-HLA antibodies",
+        "D. Previous UTI",
+        "E. Second transplant"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "BK polyomavirus causes an interstitial nephritis in renal transplant patients. It appears to be much less common in non-renal solid organ recipients. It appeared as an entity in the era of modern immunosuppression with tacrolimus and mycophenolate. Risk factors are augmented immunosuppression such as ATG or high-dose glucocorticoids given for acute rejection.",
+      "questionNumber": 30
+    },
+    {
+      "question": "What is the pathogenesis of 'myeloma kidney' (cast nephropathy)?",
+      "options": [
+        "A. Glomerular light chain deposition due to light chains, and rarely heavy chains, often giving a nodular pattern of injury",
+        "B. Light chain misfolding, creating glomerular deposits that are Congo red positive",
+        "C. Light chains precipitating with Tamm-Horsfall protein in the tubular lumen",
+        "D. Proximal tubular injury and dysfunction due to light chain deposition in tubular epithelial cells",
+        "E. Tubular damage due to hypercalcaemia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Cast nephropathy is a tubular injury as described in option C and presenting with renal impairment. Option A refers to monoclonal immunoglobulin deposition disease (usually light chain deposition disease). Option B refers to amyloidosis, which may occur with multiple myeloma and presents with proteinuria or nephritic syndrome. Option D refers to Fanconi's syndrome, a proximal tubulopathy.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A patient with known sarcoidosis has developed renal impairment over the past 2 months. Corrected serum calcium is slightly high (2.7 mmol/L 10.82 mg/dL). A renal biopsy is performed and glucocorticoids are commenced. Renal function gradually normalised over a period of several weeks. What would the likely initial renal biopsy findings show?",
+      "options": [
+        "A. A granulomatous interstitial nephritis",
+        "B. Calcium deposition in the tubules",
+        "C. Focal segmental glomerulosclerosis (FSGS)",
+        "D. Necrotising cresentic glomerulonephritis",
+        "E. Widespread interstitial fibrosis and tubular atrophy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Sarcoidosis typically causes a granulomatous interstitial nephritis. It is not associated with the FSGS lesion. Option D refers to a rapidly progressive glomerulonephritis such as ANCA vasculitis or anti-GBM disease. A chronic interstitial nephritis may manifest as widespread ‘scarring' (interstitial fibrosis and tubular atrophy) but the process described above is relatively acute and resolved with treatment. While sarcoidosis frequently causes hypercalcaemia, calcium does not deposit in tubules, but larger-scale nephrocalcinosis may be seen on an ultrasound scan.",
+      "questionNumber": 32
+    },
+    {
+      "question": "Patients with advanced liver disease are at risk of developing AKI, termed hepatorenal syndrome. Which of the following is true of this syndrome?",
+      "options": [
+        "A. Aggressive dialysis may prevent hepatic encephalopathy",
+        "B. IgA deposition is a common cause",
+        "C. Kidney biopsy should be performed for an accurate diagnosis",
+        "D. Outcomes are good with haemodialysis",
+        "E. The aetiology is haemodynamically mediated, so urine sodium will be reduced"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Hepatorenal syndrome should be considered a pure form of pre-renal injury, mediated by reduced renal perfusion, due to splanchnic vasodilatation and up-regulation of the renin-angiotensin system among others. Therefore urine sodium is classically low. It is a diagnosis of exclusion and renal biopsy is generally not performed, and may be dangerous in a coagulopathic liver patient. Hepatorenal syndrome portends a dismal prognosis and dialysis is only performed if the liver disorder is remediable or a liver transplant is likely. If dialysis is performed, slow continuous treatments are better tolerated with a reduced risk of precipitating encephalopathy. IgA nephropathy is associated with chronic liver disease but is not the cause of hepatorenal syndrome.",
+      "questionNumber": 33
+    },
+    {
+      "question": "Which of the following is true in diabetic nephropathy?",
+      "options": [
+        "A. ACE inhibitors generally cause resolution of proteinuria and stabilisation of renal function",
+        "B. Biopsy is generally needed to confirm the diagnosis",
+        "C. It is an uncommon cause of end-stage renal disease (ESRD) outside of North America",
+        "D. Sodium-glucose co-transporter-2 (SGLT2) inhibitors, such as empagliflozin, may be associated with improved cardiovascular and renal outcomes and work by improving insulin sensitivity",
+        "E. The natural history is of slow development of microalbuminuria over years, with overt proteinuria and renal impairment at a late stage"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "SGLT2 inhibitors work by inducing glycosuria via impaired glucose reabsorption at the proximal tubule. Diabetic nephropathy is the commonest cause of ESRD in the developed world and likely worldwide. Biopsy is generally not performed when the diagnosis is clear from the patient history and the patient has overt proteinuria, but may be performed if atypical features present (e.g. short history of well-controlled diabetes, haematuria). ACE inhibitors generally decrease proteinuria and slow, but do not halt, progression of the disease.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 23 year woman presents with a facial rash and arthralgia soon after getting married. She is found to have an eGFR of 106 mL/ min/1.73 m2, red cell casts in her urine and 5.5 g/24 hrs of proteinuria. Renal biopsy confirms lupus nephritis. Which of the following is true in this patient?",
+      "options": [
+        "A. Best treatment for this patient is with cyclophosphamide and glucocorticoids",
+        "B. Mycophenolate mofetil would be the induction agent of choice, along with glucocorticoids",
+        "C. She probably has mild lupus nephritis that can be managed with an ACE inhibitor alone",
+        "D. She should be referred immediately to the transplant team",
+        "E. She would be at high risk for recurrence after a renal transplant causing allograft loss"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The presence of red cell casts and heavy proteinuria indicates severe glomerular injury and a likely proliferative lupus nephritis that needs immunosuppression. Mycophenolate mofetil and glucocorticoids have been shown to be as effective as the traditional treatment of cyclophosphamide and steroids for both induction and maintenance treatment. As this woman likely wants to preserve her fertility, mycophenolate mofetil is a better choice for her. Most patients who develop ESRD go into remission. If transplanted, recurrence may occur post-transplant, but usually does not cause significant nephritis, possibly due to post-transplant immunosuppression.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 42 year old woman from China presents with slowly progressive renal failure in the context of taking herbal remedies for years containing aristolochic acid. Which of the following clinical characteristics is likely in this patient?",
+      "options": [
+        "A. Biopsy demonstrating focal segmental glomerulosclerosis",
+        "B. Bland urine sediment with interstitial fibrosis on biopsy",
+        "C. Heavy proteinuria in the nephrotic range",
+        "D. High anion gap metabolic acidosis",
+        "E. Large kidneys on ultrasound scanning"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has chronic interstitial nephritis, which manifests as progressive renal failure, small kidneys and urine showing no blood and minimal to no proteinuria. Biopsy will often have no glomerular changes but will demonstrate interstitial fibrosis and tubular atrophy. Patients with chronic interstitial nephritis may have a renal tubular acidosis, which is a hyperchloraemic (i.e. non-anion gap) acidosis.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 22 year old man develops diabetes and is found to have renal impairment with small kidneys on scanning, in addition to noted pancreatic atrophy. He has a history of gout for 2 years and his father developed ESRD aged 38. His father also had 'renal failure' due to cystic disease and has diabetes. A mutation in which gene is likely?",
+      "options": [
+        "A. COL4A5",
+        "B. HNF1-beta",
+        "C. PKD1",
+        "D. PKD2",
+        "E. UMOD"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "HNF1-beta mutations may cause several renal phenotypes, which may differ within the same family (including interstitial nephritis, cystic kidneys, vesico-ureteric reflux), maturity-onset diabetes of the young, pancreatic atrophy, gout, hypomagnesaemia and abnormal liver function tests. COL4A5 mutations cause X-linked Alport's syndrome, which would not fit here (male-to-male transmission, cystic disease, other features). He likely has an autosomal dominant condition but he does not have polycystic kidney disease as no cysts are evident on scanning. UMOD mutations may cause a chronic interstitial nephritis and gout, but would not explain the other features (diabetes, pancreatic atrophy).",
+      "questionNumber": 37
+    },
+    {
+      "question": "In patients with Alport's syndrome (hereditary nephritis), which of the following statements is true?",
+      "options": [
+        "A. After kidney transplant, patients may develop anti-GBM disease",
+        "B. All patients harbouring pathogenic COL4A mutations develop progressive chronic kidney disease",
+        "C. Deafness may occur due to otosclerosis",
+        "D. Female carriers of X-linked disease (COL4A5 mutations) do not manifest disease",
+        "E. It is always an X-linked condition"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Anti-GBM antibodies may develop due to normal type IV collagen subunits expressed on the donor kidney. Female carriers of X-linked disease may be symptomatic, although milder than males, due to random inactivation of the X chromosome. Deafness may occur due to the presence of abnormal cochlear type IV collagen. Some patients with type IV collagen mutations develop subtle abnormalities manifested clinically by haematuria only (thin basement membrane disease). Alport's syndrome is usually X-linked (COL4A5 mutations) but autosomal recessive and dominant disease may occur (COL4A3 and COL4A4 mutations).",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 20 year old woman has a history of autosomal dominant polycystic kidney disease (APKD) on her father's side. Her paternal grandmother and her father's brother both died suddenly in their 50s. What was the likely cause of death?",
+      "options": [
+        "A. Mitral valve prolapse",
+        "B. Myocardial infarction",
+        "C. Pulmonary embolism",
+        "D. Ruptured berry aneurysm",
+        "E. Ruptured hepatic cyst"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patients with APKD are at risk of liver cysts, cerebral berry aneurysms and mitral valve prolapse. A ruptured liver cyst would not cause sudden death but a berry aneurysm certainly would. Mitral valve prolapse is usually asymptomatic but may lead to mitral regurgitation; however, it would be a rare cause of sudden death.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 65 year man presents with flank discomfort and haematuria. He is found to have bilateral polycystic kidneys and some liver cysts on ultrasound scan. His renal function is normal, with an eGFR of 90 mL/min/1.73 m2. He gives a family history on his mother's side of 'cysts in the kidney' but no family member ever needed dialysis or a transplant. Which of the following is true about his disease?",
+      "options": [
+        "A. Any offspring have a 50% chance of developing the condition",
+        "B. He is a good candidate for tolvaptan to slow cyst growth",
+        "C. He is at high risk of liver failure due to a polycystic liver",
+        "D. He probably has a mutation in PKD1",
+        "E. He will probably develop end-stage renal disease within 5 years"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient has APKD. It is an autosomal dominant condition, so offspring have a 50% chance of inheriting it. Given his preserved renal function and good prognosis in affected family members, the mutation is likely located in the PKD2 gene. While liver cysts are common, liver failure is very rare in APKD, particularly in men. Tolvaptan is indicated for patients deemed to be high risk for progression, which this man is not, given his preserved renal function well into his 60s and good prognosis in affected family members.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 75 year old man with hypertension, heart failure, peptic ulcer disease and osteoarthritis presents with acute kidney injury after being prescribed ibuprofen. His usual medicines are lisinopril, furosemide, omeprazole and atorvastatin. He has 1+ proteinuria and no haematuria on dipstick. What is the mechanism underlying his renal failure?",
+      "options": [
+        "A. Afferent arteriolar vasoconstriction with ibuprofen (in context of efferent vasodilatation with lisinopril)",
+        "B. Afferent arteriolar vasoconstriction with lisinopril (in context of efferent vasodilatation with ibuprofen)",
+        "C. Afferent arteriolar vasodilatation with ibuprofen (in context of efferent vasoconstriction with lisinopril)",
+        "D. Afferent arteriolar vasodilatation with lisinopril (in context of efferent vasoconstriction with ibuprofen)",
+        "E. Rhabdomyolysis from the statin"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "NSAIDs cause prostaglandin-induced afferent arteriolar vasoconstriction, which drops glomerular perfusion. ACE inhibitors cause efferent arteriolar vasodilatation, further dropping intra-glomerular pressure and hence GFR. The diuretic may cause volume depletion, adding to the insult. Rhabdomyolysis is not the cause, as the atorvastatin is not a recent medicine, and urine myoglobin causes a false-positive dipstick for blood.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 64 year old man has osteoarthritis in his knees and is prescribed ibuprofen regularly for 3 months. He notices some swelling in his ankles and his family physician finds his urine dipstick reveals 4+ protein with no blood or white cells. His creatinine is normal and his serum albumin is 190 g/L A renal biopsy is performed. What is the light microscopy likely to reveal?",
+      "options": [
+        "A. Fibrin microthrombi in glomerular capillary loops",
+        "B. Intense interstitial inflammation, with infiltration of the tubules by neutrophils, lymphocytes and some eosinophils",
+        "C. Necrotising cresentic glomerulonephritis",
+        "D. Normal glomeruli",
+        "E. Tubular dilatation, breaks in the tubular basement membrane, interstitial oedema and sloughing of necrotic tubular cells into the tubular lumen"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has developed the nephrotic syndrome after taking NSAIDs so the possibilities are minimal change disease, characterised by normal light microscopy, or membranous nephropathy. Option D refers to minimal change disease and none of the answers describe membranous nephropathy. Option A refers to thrombotic microangiopathy, which NSAIDs do not cause. Options B and E refer to acute interstitial nephritis and acute tubular necrosis. Both may be caused by NSAIDs, but do not cause the nephrotic syndrome. Option C refers to rapidly progressive glomerulonephritis such as ANCA vasculitis.",
+      "questionNumber": 42
+    },
+    {
+      "question": "Regarding micturition, which of these statements is correct?",
+      "options": [
+        "A. A low-compliance bladder is required for voiding to be initiated",
+        "B. Contraction of the pelvic floor commences micturition",
+        "C. Micturition is initiated when the compliance limit of the bladder is reached",
+        "D. Voiding is controlled by the cerebellum",
+        "E. Voiding is coordinated by the pontine micturition centre"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The micturition cycle has a storage (filling) phase and a voiding (micturition) phase. During the filling phase, the high compliance of the detrusor muscle allows the bladder to fill steadily without a rise in intravesical pressure. As bladder volume increases, stretch receptors in its wall cause reflex bladder relaxation and increased sphincter tone. At approximately 75% bladder capacity, there is a desire to void. Voluntary control is now exerted over the desire to void, which disappears temporarily. Compliance of the detrusor allows further increase in capacity until the next desire to void. Just how often this desire needs to be inhibited depends on many factors, not the least of which is finding a suitable place in which to void. The act of micturition is initiated first by voluntary and then by reflex relaxation of the pelvic floor and distal sphincter mechanism, followed by reflex detrusor contraction. These actions are coordinated by the pontine micturition centre.",
+      "questionNumber": 43
+    },
+    {
+      "question": "What is the optimal imaging to rule out bone metastases in a man with prostate cancer?",
+      "options": [
+        "A. Contrast-enhanced CT urogram",
+        "B. Dimercaptosuccinic acid (DMSA) static radionuclide scan",
+        "C. Non-contrast CT of kidneys, ureters and bladder (CTKUB)",
+        "D. Pelvic magnetic resonance imaging (MRI) scan",
+        "E. Technetium-labelled methylene diphosphonate (99mTc-MDP) radionuclide scan"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although MRI and CT scanning may identify some large bone metastases in the area scanned, they will not identify smaller deposits (which may be multiple). The injection of Tc-labelled methylene diphosphonate (99mTc-MDP) to undertake a whole-body bone scan is needed to definitively identify bone metastases.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 25 year old woman from Uganda who has recently delivered a baby presents with new continuous incontinence. What is she likely to be suffering with?",
+      "options": [
+        "A. Duplex kidney with insertion of upper pole moiety into the vagina",
+        "B. Overflow incontinence",
+        "C. Stress urinary incontinence",
+        "D. Urge incontinence",
+        "E. Vesicovaginal fistula"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This description is pathognomonic of a vesicovaginal fistula secondary to a prolonged obstructed labour. Similar symptoms may occur in an infant with congenital ectopic ureter inserting into the vagina but this would not present for the first time in a woman in her 20s.",
+      "questionNumber": 45
+    },
+    {
+      "question": "What is the most likely cause of painless, visible haematuria in a 60 year old man?",
+      "options": [
+        "A. Ureteric stone",
+        "B. Bladder cancer",
+        "C. IgA nephropathy",
+        "D. Systemic lupus erythematosus",
+        "E. Upper urinary tract urothelial cancer"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The commonest causes of visible haematuria are: urinary tract infection, bladder cancer and urinary tract stones. Ureteric stones are usually painful rather than painless; nephrological causes of visible haematuria are less common than urological causes. Upper urinary tract urothelial cell cancer is rare relative to bladder cancer. Of these choices, bladder cancer is the most likely pathology.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 27 year old woman presents as an emergency with rigors, flank pain and fever. Non-contrast CTKUB reveals an 8-mm stone in the left mid-ureter. Which is the optimal management option?",
+      "options": [
+        "A. Extracorporeal shockwave lithotripsy (ESWL)",
+        "B. Percutaneous nephrolithotomy (PCNL)",
+        "C. Ureteric stent insertion",
+        "D. Ureterolysis",
+        "E. Ureteroscopy and laser fragmentation of stone"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient has an infected, obstructed left kidney secondary to an obstructing ureteric stone. The critical step here is to unobstruct the kidney and allow recovery of the sepsis with antibiotics and resuscitation. The key urological interventions to unobstruct the kidney are a ureteric stent or percutaneous nephrostomy tube insertion. Definitive treatment options (ESWL, PCNL or ureteroscopy) are not appropriate at this time and should be deferred to a later date when the patient has recovered from sepsis.",
+      "questionNumber": 47
+    },
+    {
+      "question": "In which of the following situations would you consider treating an asymptomatic patient identified to have >10^5 E. coli/mL urine?",
+      "options": [
+        "A. Healthy 14 year old girl",
+        "B. 24 year old woman, normal ultrasound and flexible cystoscopy in the past",
+        "C. 32 year old pregnant woman",
+        "D. 67 year old man with a urethral catheter in situ",
+        "E. 78 year old woman with a ureteric stent in place for retroperitoneal fibrosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Asymptomatic bacteriuria is defined as >105 organisms/mL urine in healthy, asymptomatic patients. It is commonly identified in patients with indwelling catheters and stents. This condition should be treated with antibiotics in infants, pregnant women and those with urinary tract abnormalities.",
+      "questionNumber": 48
+    },
+    {
+      "question": "Following a trial of treatment with a-adrenoceptor antagonist (a-blocker) medication, a 65 year old man is referred by his family physician to urology with poor flow, terminal dribbling and hesitancy. Which of the following is the most relevant investigation?",
+      "options": [
+        "A. Cystoscopy",
+        "B. MRI pelvis",
+        "C. Prostate biopsy",
+        "D. Ultrasound prostate",
+        "E. Urinary flow test"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This man has lower urinary tract symptoms, most likely secondary to bladder outlet obstruction. His family physician has correctly trialled him on treatment with an α-blocker. On attending the urology department he should initially be assessed by digital rectal examination (DRE), International Prostate Symptom Score (IPSS) questionnaire and flow test with residual volume of urine assessment by ultrasound. Prostate biopsy would be undertaken if prostate cancer was suspected by DRE and/or raised prostate-specific antigen (PSA). MRI pelvis is mainly used to assess the prostate for presence of cancer, not assessment of lower urinary tract symptoms (LUTS). Cystoscopy is not an initial investigation for voiding LUTS. Prostate ultrasound is useful to assess the exact size, presence of calcification or abscess of the prostate, but is not routinely used to assess LUTS.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 49 year old woman presents with visible haematuria. A cystoscopy is normal, but a contract-enhanced CT scan of chest, abdomen, pelvis reveals a 17-cm left renal mass, consistent with a renal cell cancer. What is the best treatment option for this woman?",
+      "options": [
+        "A. Cryotherapy",
+        "B. External beam radiotherapy",
+        "C. Open radical nephrectomy",
+        "D. Robotic partial nephrectomy",
+        "E. Tyrosine kinase inhibitor (TKI)"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This woman may be cured by a total nephrectomy. In a tumour of this size, an open approach is likely to be undertaken by most surgeons. The lesion is too large for a partial nephrectomy or ablative approach such as cryotherapy. Radiotherapy is not a treatment option for renal cancer. TKIs are used in metastatic disease.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 72 year old fit ex-smoking man is identified on flexible cystoscopy to have a 4-cm bladder tumour. Cystoscopy and transurethral resection of bladder tumour provides tissue that on pathological examination shows a G3pT2 urothelial cell cancer. What is the optimal management for this muscle-invasive cancer?",
+      "options": [
+        "A. Brachytherapy",
+        "B. Chemotherapy (gemcitabine and cisplatin)",
+        "C. Observation with regular flexible cystoscopy",
+        "D. Partial cystectomy",
+        "E. Radical cystectomy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This fit patient is best managed with radical cystectomy to try and cure the high-grade (G3) muscle-invasive (T2) bladder cancer. The other options are not appropriate in this setting.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A healthy 81 year old man presents with back pain to his family physician. A PSA is undertaken, which measures 2350 ng/mL The patient is referred to a urologist who identifies a craggy, hard prostate gland and undertakes a bone scan, which shows multiple bone metastases. What is the best treatment option for this man?",
+      "options": [
+        "A. Active surveillance",
+        "B. External beam radiotherapy to pelvis",
+        "C. Gonadotrophin-releasing hormone (GnRH) agonist therapy",
+        "D. High-frequency focused ultrasound",
+        "E. Radical prostatectomy"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This man's grossly elevated PSA, DRE findings and bone scan result indicate he has metastatic prostate cancer. This is incurable but controllable with GnRH agonist injections (androgen flare covered by initial androgen receptor blocker treatment for 3-4 weeks). The other therapies are not appropriate for metastatic disease, nor is observation in a man with symptoms of metastatic disease.",
+      "questionNumber": 52
+    },
+    {
+      "question": "What is the most appropriate set of investigations for a 71 year old male smoker who presents with dysuria and the family physician identifies persistent non-visible haematuria?",
+      "options": [
+        "A. DMSA static scan, mid-stream urine (MSU) for microbiology culture, renal tract ultrasound",
+        "B. MRI pelvis and MSU",
+        "C. MSU, flexible cystoscopy, renal tract ultrasound",
+        "D. Nil, only investigate when visible haematuria",
+        "E. Non-contrast CTKUB, transrectal ultrasound scan and biopsy"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Persistent non-visible haematuria is 2 of 3 urine dipstick tests positive for at least 1+ blood. Investigations should be undertaken in patients who have associated symptoms (such as dysuria) that would indicate a possible intravesical lesion. Additionally, this man is a smoker, putting him at higher risk for bladder cancer. The most appropriate initial investigations are MSU to rule out infection, cystoscopy and upper tract imaging to visualise the urinary tract.",
+      "questionNumber": 53
+    },
+    {
+      "question": "An 18 year old male presents with long-standing mild left testicular pain, with a hard 1-cm lump in the testicle. What is the most appropriate course of action?",
+      "options": [
+        "A. Analgesia and observation",
+        "B. CT scan",
+        "C. Intravenous antibiotics and observation",
+        "D. Nuclear medicine scan",
+        "E. Scrotal ultrasound"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This man has a testicular cancer until proven otherwise. He should be seen urgently and, following examination, undergo an urgent ultrasound, which is the gold standard investigation to rule out a testicular cancer. Testicular cancer is almost always treated with an initial inguinal orchidectomy.",
+      "questionNumber": 54
+    },
+    {
+      "question": "In a 67 year old man with benign prostatic hypertrophy (BPH) who has a large prostate (70 cc) and is already treated with an a-blocker but with ongoing bothersome symptoms of hesitancy and poor flow, which of the following options is most appropriate?",
+      "options": [
+        "A. 5a-reductase inhibitor such as finasteride",
+        "B. High-intensity focused ultrasound therapy",
+        "C. Open prostatectomy",
+        "D. Robot-assisted laparoscopic radical prostatectomy",
+        "E. Transurethral resection of the prostate"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This man should initially be escalated to combination medical therapy for BPH with a 5α-reductase inhibitor. Further suitable treatments for symptoms that are refractory to medical therapy include: transurethral resection of the prostate, laser prostatectomy or open prostatectomy (Millen's procedure). High-intensity focused ultrasound therapy or robot-assisted laparoscopic radical prostatectomy are treatments used for prostate cancer.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 81 year old man attends as an emergency having passed nothing more than 50 mL of urine for 2 days. He has nocturnal enuresis, a palpable bladder and a creatinine of 378 µmol/L (4.28 mg/dL). What is the most appropriate initial management?",
+      "options": [
+        "A. Bilateral ureteric stent insertion",
+        "B. Haemodialysis",
+        "C. Start an a-blocker, i.e. tamsulosin",
+        "D. Transurethral resection of the prostate",
+        "E. Urethral catheterisation"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "These symptoms indicate high-pressure chronic urinary retention for which the initial management is insertion of a urinary catheter; this will result in improvement in renal function. Bilateral ureteric stent insertion will not relieve the more distal prostatic obstruction of the urinary tract. The patient may be managed thereafter with bladder outlet surgery such as a transurethral resection of the prostate, long-term urethral catheterisation or intermittent self-catheterisation. Haemodialysis is not a curative treatment option in the setting of high-pressure urinary retention. Medical management, such as an α-blocker, is contraindicated.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 54 year old female has stress incontinence proven by urodynamics. What is the most appropriate initial management?",
+      "options": [
+        "A. Anticholinergic medication",
+        "B. Botulinum neurotoxin type A",
+        "C. Pelvic floor exercises",
+        "D. Sacral nerve stimulation",
+        "E. Tension-free vaginal tape"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The first-line treatment of stress incontinence is pelvic floor exercises taught by a urophysiotherapist. If unsuccessful, further management options include tension-free vaginal tape. Anticholinergic medication, botulinum toxin injection and sacral nerve stimulation are all treatment options for urge incontinence.",
+      "questionNumber": 57
+    },
+    {
+      "question": "Which of the following statements is true regarding erectile dysfunction (ED)?",
+      "options": [
+        "A. Intracavernosal alprostadil should be considered as a first-line treatment option",
+        "B. Perineal trauma is the most common cause",
+        "C. PSA should be checked in all men",
+        "D. Pudendal artery angiography is useful in early assessment",
+        "E. Risk factors for cardiac disease should be assessed"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In men presenting with new-onset erectile dysfunction it is vital to ensure that they do not have previously undiagnosed coronary artery disease that has manifest as ED. Risk factors for vascular disease such as hypertension and hyperlipidaemia should be evaluated. Perineal trauma is a rare cause of ED. Pudendal artery angiography is rarely performed. Phosphodiesterase type 5 inhibitors are the first-line treatment options for ED, not intracavernosal alprostadil. Depending on the characteristics of the patient, the consultation for a man with ED may be a good opportunity to discuss lower urinary tract symptoms and a PSA test; however, this is not essential to the assessment of the ED component.",
+      "questionNumber": 58
+    }
+  ]
+}

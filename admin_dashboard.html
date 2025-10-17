@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizard - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.css" rel="stylesheet">
+   
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .modal { transition: opacity 0.25s ease; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 flex justify-between items-center z-10 sticky top-0">
+        <div class="flex items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Quizard Admin Panel</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="dashboard.html" class="text-gray-600 hover:text-purple-600 font-medium">Back to Dashboard</a>
+           <button id="logoutButton" class="transition-transform hover:scale-110" title="Logout">
+    <img src="images/logout.png" alt="Logout" class="h-8 w-8">
+</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12 space-y-12">
+
+        <div id="deleteBookModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-lg w-full">
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Confirm Deletion</h3>
+            <p class="text-gray-600 mb-4">This is a destructive action. It will permanently delete the book, along with all of its chapters and questions. This cannot be undone.</p>
+            <p class="text-gray-600 mb-4">To confirm, please type the full name of the book: <strong id="bookNameToDelete" class="text-red-600"></strong></p>
+            <input type="text" id="deleteConfirmationInput" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" placeholder="Type book name here...">
+            <div class="flex justify-end pt-6">
+                <button type="button" id="cancelDeleteBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+                <button type="button" id="confirmDeleteBtn" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed" disabled>Delete Book</button>
+            </div>
+        </div>
+    </div>
+        
+        <!-- Discipline Management Section -->
+        <div>
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-extrabold text-gray-800">Discipline Management</h2>
+                <button id="addDisciplineButton" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow">Add New Discipline</button>
+            </div>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Discipline Name</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="disciplineList" class="bg-white divide-y divide-gray-200">
+                            <!-- Rows will be added by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Management Section (RESTORED) -->
+        <div>
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-8">User Management</h2>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+    <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Username</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Account Type</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+    </tr>
+</thead>
+                        <tbody id="userList" class="bg-white divide-y divide-gray-200">
+                           <!-- Rows will be added by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book Management Section -->
+        <div>
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-extrabold text-gray-800">Book Management</h2>
+                <button id="addBookButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow">Add New Book</button>
+            </div>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookList" class="bg-white divide-y divide-gray-200">
+                            <!-- Rows will be added by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+    <div class="flex justify-between items-center mb-8">
+        <h2 class="text-3xl font-extrabold text-gray-800">Video Course Management</h2>
+        <button id="addVideoCourseButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow">Add New Video Course</button>
+    </div>
+    <div class="bg-white rounded-lg shadow overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Access Level</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="videoCourseList" class="bg-white divide-y divide-gray-200">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="managePurchaseModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-4xl w-full flex flex-col" style="height: 90vh; max-height: 800px;">
+        <h3 id="manageModalTitle" class="text-2xl font-bold text-gray-800 mb-6 flex-shrink-0">Manage Purchases</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 flex-grow overflow-y-auto pr-4">
+            <div class="flex flex-col">
+                <div class="mb-4">
+                    <h4 class="font-semibold text-gray-700 mb-2">Owned Books</h4>
+                    <div id="ownedBookList" class="space-y-2 border rounded-lg p-2 bg-gray-50 min-h-[100px] max-h-48 overflow-y-auto"></div>
+                </div>
+                <div class="border-t pt-4">
+                    <h4 class="font-semibold text-gray-700 mb-4">Grant New Book Access</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="grantableBookSelect" class="block text-sm font-medium text-gray-700">Select a book</label>
+                            <select id="grantableBookSelect" class="mt-1 block w-full p-2 border border-gray-300 rounded-md"></select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Set Access Duration</label>
+                            <div id="bookDurationOptions" class="mt-2 flex flex-wrap gap-4 items-center">
+                                <label><input type="radio" name="book_duration" value="3m" class="mr-1" checked> 3m</label>
+                                <label><input type="radio" name="book_duration" value="6m" class="mr-1"> 6m</label>
+                                <label><input type="radio" name="book_duration" value="1y" class="mr-1"> 1y</label>
+                                <label><input type="radio" name="book_duration" value="custom" class="mr-1"> Custom:</label>
+                                <input type="datetime-local" id="customBookExpiryDate" class="p-2 border border-gray-300 rounded-md hidden">
+                            </div>
+                        </div>
+                        <button type="button" id="confirmBookGrantBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg">Grant Book Access</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col mt-8 md:mt-0">
+                <div class="mb-4">
+                    <h4 class="font-semibold text-gray-700 mb-2">Owned Video Courses</h4>
+                    <div id="ownedCourseList" class="space-y-2 border rounded-lg p-2 bg-gray-50 min-h-[100px] max-h-48 overflow-y-auto"></div>
+                </div>
+                <div class="border-t pt-4">
+                    <h4 class="font-semibold text-gray-700 mb-4">Grant New Video Course Access</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="grantableCourseSelect" class="block text-sm font-medium text-gray-700">Select a course</label>
+                            <select id="grantableCourseSelect" class="mt-1 block w-full p-2 border border-gray-300 rounded-md"></select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Set Access Duration</label>
+                            <div id="courseDurationOptions" class="mt-2 flex flex-wrap gap-4 items-center">
+                                <label><input type="radio" name="course_duration" value="3m" class="mr-1" checked> 3m</label>
+                                <label><input type="radio" name="course_duration" value="6m" class="mr-1"> 6m</label>
+                                <label><input type="radio" name="course_duration" value="1y" class="mr-1"> 1y</label>
+                                <label><input type="radio" name="course_duration" value="custom" class="mr-1"> Custom:</label>
+                                <input type="datetime-local" id="customCourseExpiryDate" class="p-2 border border-gray-300 rounded-md hidden">
+                            </div>
+                        </div>
+                        <button type="button" id="confirmCourseGrantBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">Grant Course Access</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-end pt-6 border-t flex-shrink-0">
+            <button type="button" class="cancel-manage-btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg">Close</button>
+        </div>
+    </div>
+</div>
+        <div id="messageBox" class="hidden fixed bottom-5 right-5 mt-6 px-4 py-3 rounded-lg shadow-lg" role="alert"></div>
+    </main>
+
+    <!-- Modals -->
+    <div id="disciplineModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-lg w-full">
+            <h3 id="disciplineModalTitle" class="text-2xl font-bold text-gray-800 mb-6">Add New Discipline</h3>
+            <form id="disciplineForm" class="space-y-4">
+                <input type="hidden" id="disciplineId">
+                <div>
+                    <label for="disciplineName" class="block text-sm font-medium text-gray-700">Discipline Name</label>
+                    <input type="text" id="disciplineName" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <div>
+                    <label for="disciplineSpecialty" class="block text-sm font-medium text-gray-700">Specialty</label>
+                    <select id="disciplineSpecialty" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm"></select>
+                </div>
+                <div>
+                    <label for="disciplineImageUrl" class="block text-sm font-medium text-gray-700">Image Path</label>
+                    <input type="text" id="disciplineImageUrl" placeholder="e.g., images/disciplines/cardiology.svg" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <div class="flex justify-end pt-4">
+                    <button type="button" class="cancel-btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg">Save Discipline</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="addBookModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-lg w-full">
+            <h3 id="bookModalTitle" class="text-2xl font-bold text-gray-800">Add a New Book</h3>
+            <form id="addBookForm" class="space-y-4">
+                <input type="hidden" id="bookId">
+                <div>
+                    <label for="bookTitle" class="block text-sm font-medium text-gray-700">Book Title</label>
+                    <input type="text" id="bookTitle" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+                </div>
+                <div>
+                    <label for="bookDescription" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea id="bookDescription" rows="3" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"></textarea>
+                </div>
+                <div>
+                    <label for="bookSpecialty" class="block text-sm font-medium text-gray-700">Specialty</label>
+                    <select id="bookSpecialty" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm"></select>
+                </div>
+              <div>
+    <label for="bookImage" class="block text-sm font-medium text-gray-700">Image Path</label>
+    <input type="text" id="bookImage" placeholder="e.g., images/covers/davidson.jpg" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+</div>
+
+<div>
+    <label for="bookAccessLevel" class="block text-sm font-medium text-gray-700">Access Level</label>
+    <select id="bookAccessLevel" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm">
+        <option value="free">Free</option>
+        <option value="purchasable">Purchasable</option>
+        <option value="premium">Premium</option>
+    </select>
+</div>
+<div>
+    <label for="bookLinkedSpecialties" class="block text-sm font-medium text-gray-700">Link to Other Specialties (Optional)</label>
+    <select id="bookLinkedSpecialties" multiple class="mt-1 block w-full"></select>
+    <p class="text-xs text-gray-500 mt-1">This book will also appear as premium content for users in these selected specialties.</p>
+</div>
+                <div class="flex justify-end pt-4">
+                    <button type="button" class="cancel-btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+                    <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg">Save Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="videoCourseModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-lg w-full">
+        <h3 id="videoCourseModalTitle" class="text-2xl font-bold text-gray-800">Add a New Video Course</h3>
+        <form id="videoCourseForm" class="space-y-4">
+            <input type="hidden" id="videoCourseId">
+            <div>
+                <label for="videoCourseTitle" class="block text-sm font-medium text-gray-700">Course Title</label>
+                <input type="text" id="videoCourseTitle" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+            </div>
+            <div>
+                <label for="videoCourseDescription" class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea id="videoCourseDescription" rows="3" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"></textarea>
+            </div>
+            <div>
+                <label for="videoCourseSpecialty" class="block text-sm font-medium text-gray-700">Specialty</label>
+                <select id="videoCourseSpecialty" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm"></select>
+            </div>
+            <div>
+                <label for="videoCourseThumbnailUrl" class="block text-sm font-medium text-gray-700">Thumbnail URL</label>
+                <input type="text" id="videoCourseThumbnailUrl" placeholder="e.g., images/thumbnails/course.jpg" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+            </div>
+             <div>
+                <label for="videoCourseVideoUrl" class="block text-sm font-medium text-gray-700">Video URL</label>
+                <input type="text" id="videoCourseVideoUrl" placeholder="e.g., https://youtube.com/watch?v=..." required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+            </div>
+            <div>
+                <label for="videoCourseAccessLevel" class="block text-sm font-medium text-gray-700">Access Level</label>
+                <select id="videoCourseAccessLevel" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm">
+                    <option value="free">Free</option>
+                    <option value="purchasable">Purchasable</option>
+                    <option value="premium">Premium</option>
+                </select>
+            </div>
+            <div class="flex justify-end pt-4">
+                <button type="button" class="cancel-btn bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">Save Video Course</button>
+            </div>
+        </form>
+    </div>
+</div>
+    
+    <script type="module">
+       // --- Supabase SDK Import ---
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+// --- Supabase Configuration ---
+const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
+
+// --- Initialize Supabase ---
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+let currentUser = null; // <-- ADD THIS LINE
+
+      // --- INACTIVITY TIMER LOGIC ---
+        const INACTIVITY_TIMEOUT = 30 * 60 * 1000; // 5 minutes for testing
+        let inactivityTimer;
+
+        function resetInactivityTimer() {
+            if (inactivityTimer) clearTimeout(inactivityTimer);
+            
+            inactivityTimer = setTimeout(() => {
+                // Use the custom alert modal for a better user experience
+                dom.customAlertMessage.textContent = "You have been logged out due to inactivity.";
+                dom.customAlertModal.classList.remove('hidden');
+                
+                // Wait a moment before logging out so the user can see the message
+                setTimeout(handleLogout, 2000);
+            }, INACTIVITY_TIMEOUT);
+        }
+
+        function setupActivityListeners() {
+            // Reset the timer on any of these user activities
+            ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+                document.addEventListener(event, resetInactivityTimer, true);
+            });
+            // Initial start of the timer
+            resetInactivityTimer();
+        }
+
+
+// --- NEW: Modal for Premium Subscription Duration ---
+const premiumModal = document.createElement('div');
+premiumModal.id = 'premiumModal';
+premiumModal.className = 'modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0';
+premiumModal.innerHTML = `
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-lg w-full">
+        <h3 id="premiumModalTitle" class="text-2xl font-bold text-gray-800 mb-6">Set Premium Subscription</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Set Access Duration</label>
+                <div id="premiumDurationOptions" class="mt-2 flex flex-wrap gap-4 items-center">
+                    <label><input type="radio" name="premiumDuration" value="3m" class="mr-1" checked> 3 Months</label>
+                    <label><input type="radio" name="premiumDuration" value="6m" class="mr-1"> 6 Months</label>
+                    <label><input type="radio" name="premiumDuration" value="1y" class="mr-1"> 1 Year</label>
+                    <label><input type="radio" name="premiumDuration" value="custom" class="mr-1"> Custom Date:</label>
+                    <input type="datetime-local" id="customPremiumExpiryDate" class="p-2 border border-gray-300 rounded-md hidden">
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-end pt-6">
+            <button type="button" id="cancelPremiumBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+            <button type="button" id="confirmPremiumBtn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg">Confirm Promotion</button>
+        </div>
+    </div>
+`;
+document.body.appendChild(premiumModal);
+
+// --- Event Listeners for the new Premium Modal ---
+document.getElementById('premiumDurationOptions').addEventListener('change', (e) => {
+    if (e.target.name === 'premiumDuration') {
+        document.getElementById('customPremiumExpiryDate').classList.toggle('hidden', e.target.value !== 'custom');
+    }
+});
+
+document.getElementById('cancelPremiumBtn').addEventListener('click', () => closeModal(premiumModal));
+
+// This new version prevents double-clicking
+document.getElementById('confirmPremiumBtn').addEventListener('click', async () => {
+    const confirmBtn = document.getElementById('confirmPremiumBtn');
+    const userId = premiumModal.dataset.userId;
+    const duration = document.querySelector('input[name="premiumDuration"]:checked').value;
+
+    // --- FIX START: Disable button immediately ---
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = 'Promoting...';
+    // --- FIX END ---
+
+    let expires_at = null;
+    const now = new Date();
+    if (duration === '3m') expires_at = new Date(now.setMonth(now.getMonth() + 3));
+    else if (duration === '6m') expires_at = new Date(now.setMonth(now.getMonth() + 6));
+    else if (duration === '1y') expires_at = new Date(now.setFullYear(now.getFullYear() + 1));
+    else if (duration === 'custom') {
+        const customDate = document.getElementById('customPremiumExpiryDate').value;
+        if (!customDate) {
+            alert('Please select a custom expiration date.');
+            // --- FIX: Re-enable button on early exit ---
+            confirmBtn.disabled = false;
+            confirmBtn.textContent = 'Confirm Promotion';
+            return;
+        }
+        expires_at = new Date(customDate);
+    }
+
+    try {
+        // Step 1: Update the user to premium
+        const { error: updateError } = await supabase
+            .from('users')
+            .update({ account_type: 'premium', premium_expires_at: expires_at.toISOString() })
+            .eq('id', userId);
+
+        if (updateError) throw updateError;
+
+        // Step 2: Call the SQL function to create the notification
+        const { error: rpcError } = await supabase.rpc('create_premium_notification', {
+            target_user_id: userId,
+            expires_at: expires_at.toISOString()
+        });
+
+        if (rpcError) throw rpcError;
+
+        alert('User promoted to premium successfully and notification sent!');
+    
+    } catch (error) {
+        console.error("Error during promotion:", error);
+        alert(`An error occurred: ${error.message}`);
+    } finally {
+        // --- FIX START: Re-enable button when finished ---
+        confirmBtn.disabled = false;
+        confirmBtn.textContent = 'Confirm Promotion';
+        // --- FIX END ---
+        closeModal(premiumModal);
+        loadUsers();
+    }
+});
+
+
+// --- MODIFIED: The main event listener for the user list ---
+document.getElementById('userList').addEventListener('click', async (e) => {
+    if (!e.target.classList.contains('toggle-premium-btn')) {
+        return; // Exit if the click wasn't on the promote/demote button
+    }
+
+    const row = e.target.closest('tr');
+    const userId = row.dataset.id;
+    const currentType = row.dataset.currentType;
+    const username = row.cells[0].textContent;
+
+    if (currentType === 'free') {
+        // --- Logic to Promote a User ---
+        premiumModal.dataset.userId = userId;
+        document.getElementById('premiumModalTitle').textContent = `Promote ${username} to Premium`;
+        // Reset the form
+        document.querySelector('input[name="premiumDuration"][value="3m"]').checked = true;
+        document.getElementById('customPremiumExpiryDate').classList.add('hidden');
+        openModal(premiumModal);
+} else {
+    // --- Logic to Demote a User ---
+    if (confirm(`Are you sure you want to demote this user back to 'free'? They will be notified.`)) {
+        const { error } = await supabase.rpc('admin_demote_user_to_free', {
+            p_user_id: userId
+        });
+
+        if (error) {
+            alert('Failed to update user status. Error: ' + error.message);
+        } else {
+            alert('User demoted successfully and notification sent!');
+            loadUsers(); // Refresh the list
+        }
+    }
+}
+});
+     // --- In admin_dashboard.html, replace the old function with this ---
+async function handleLogout() {
+    try {
+        if (currentUser) {
+            await supabase.from('active_sessions').delete().eq('user_id', currentUser.id);
+        }
+        await supabase.auth.signOut();
+    } catch (error) {
+        console.error("Error during logout:", error);
+    } finally {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href = 'index.html';
+    }
+}
+
+      // --- In dashboard.html's <script type="module"> block ---
+
+// This new function checks your custom table for a valid, non-expired session.
+async function validateAndEnforceSession(user) {
+    const { data: sessionData, error } = await supabase
+        .from('active_sessions')
+        .select('*')
+        .eq('user_id', user.id);
+
+    if (error || !sessionData || sessionData.length === 0) {
+        // If there's an error or no session found in our table, log the user out.
+        await handleLogout(user);
+        return false;
+    }
+
+    // Check if the session we found is expired.
+    const now = new Date();
+    const expiryDate = new Date(sessionData[0].expires_at);
+
+    if (now > expiryDate) {
+        // If the session is expired, log the user out.
+        await handleLogout(user);
+        return false;
+    }
+
+    // If we reach here, the session is valid.
+    return true;
+}
+
+        const medicalSpecialties = {
+            "Internal Medicine": ["Internal Medicine - General", "Cardiology", "Endocrinology", "Gastroenterology", "Hematology", "Infectious Disease", "Nephrology", "Oncology", "Pulmonology", "Rheumatology"],
+            "Surgery": ["General Surgery", "Cardiothoracic Surgery", "Neurosurgery", "Orthopedic Surgery", "Otolaryngology (ENT)", "Pediatric Surgery", "Plastic Surgery", "Urology", "Vascular Surgery"],
+            "Pediatrics": ["Pediatrics - General", "Neonatology", "Pediatric Cardiology", "Pediatric Endocrinology", "Pediatric Gastroenterology"],
+            "Obstetrics & Gynecology": ["Obstetrics & Gynecology - General", "Gynecologic Oncology", "Maternal-Fetal Medicine", "Reproductive Endocrinology and Infertility"],
+            "Other Major Specialties": ["Anesthesiology", "Dermatology", "Emergency Medicine", "Family Medicine", "Neurology", "Ophthalmology", "Pathology", "Psychiatry", "Radiology"]
+        };
+
+        function populateSpecialtyDropdown(selectElement) {
+            selectElement.innerHTML = '<option value="" disabled selected>Select a specialty...</option>';
+            for (const group in medicalSpecialties) {
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = group;
+                medicalSpecialties[group].forEach(specialty => {
+                    const option = document.createElement('option');
+                    option.value = specialty;
+                    option.textContent = specialty;
+                    optgroup.appendChild(option);
+                });
+                selectElement.appendChild(optgroup);
+            }
+        }
+
+        populateSpecialtyDropdown(document.getElementById('disciplineSpecialty'));
+        populateSpecialtyDropdown(document.getElementById('bookSpecialty'));
+        populateSpecialtyDropdown(document.getElementById('videoCourseSpecialty')); // <-- Add this line
+        // --- NEW: References for the Delete Modal ---
+const deleteBookModal = document.getElementById('deleteBookModal');
+const bookNameToDelete = document.getElementById('bookNameToDelete');
+const deleteConfirmationInput = document.getElementById('deleteConfirmationInput');
+const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+// START: Add these lines for the new multi-select
+const bookLinkedSpecialtiesEl = document.getElementById('bookLinkedSpecialties');
+let linkedSpecialtiesSelector; // To hold the SlimSelect instance
+// END: Add these lines
+        
+      async function loadDisciplines() {
+    const disciplineList = document.getElementById('disciplineList');
+    try {
+        const { data: disciplines, error } = await supabase
+            .from('disciplines')
+            .select('*')
+            .order('name', { ascending: true });
+
+        if (error) throw error;
+
+        disciplineList.innerHTML = ''; // Clear the list before rendering
+        if (disciplines.length === 0) {
+            disciplineList.innerHTML = `<tr><td colspan="3" class="px-6 py-12 text-center text-gray-500">No disciplines found.</td></tr>`;
+            return;
+        }
+        
+        disciplines.forEach((data) => {
+            const row = `
+                <tr data-id="${data.id}">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${data.name}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.speciality || 'N/A'}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-900 edit-btn" data-type="discipline">Edit</a>
+                        <a href="#" class="text-red-600 hover:text-red-900 ml-4 delete-btn" data-type="discipline">Delete</a>
+                    </td>
+                </tr>`;
+            disciplineList.innerHTML += row;
+        });
+    } catch (error) {
+        console.error("Error loading disciplines:", error);
+        disciplineList.innerHTML = `<tr><td colspan="3" class="px-6 py-12 text-center text-red-500">Error loading disciplines.</td></tr>`;
+    }
+}
+
+
+        
+    async function loadBooks() {
+    const bookList = document.getElementById('bookList');
+    try {
+        const { data: allBooks, error } = await supabase
+            .from('books')
+            .select('*')
+            .order('title', { ascending: true }); // Sort alphabetically
+
+        if (error) throw error;
+
+        bookList.innerHTML = ''; // Clear the list
+        if (allBooks.length === 0) {
+            bookList.innerHTML = `<tr><td colspan="4" class="px-6 py-12 text-center text-gray-500">No books found.</td></tr>`;
+            return;
+        }
+        
+        // Your original code for rendering the table rows can stay mostly the same here
+        // Just make sure it uses the 'allBooks' array we fetched from Supabase.
+        allBooks.forEach((bookData) => {
+            const bookRow = `
+                <tr data-id="${bookData.id}">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${bookData.title}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${bookData.speciality}</td>
+                    <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate">${bookData.description}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <a href="manage_chapters.html?bookId=${bookData.id}" class="text-green-600 hover:text-green-900 mr-4">Manage Chapters</a>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-900 edit-btn" data-type="book">Edit</a>
+                        <a href="#" class="text-red-600 hover:text-red-900 ml-4 delete-btn" data-type="book">Delete</a>
+                    </td>
+                </tr>`;
+            bookList.innerHTML += bookRow;
+        });
+
+    } catch (error) {
+        console.error("Error loading books:", error);
+    }
+}
+
+// START: Add This New Function
+async function loadVideoCourses() {
+    const videoCourseList = document.getElementById('videoCourseList');
+    try {
+        const { data: courses, error } = await supabase
+            .from('video_courses')
+            .select('*')
+            .order('title', { ascending: true });
+
+        if (error) throw error;
+
+        videoCourseList.innerHTML = ''; // Clear the list
+        if (courses.length === 0) {
+            videoCourseList.innerHTML = `<tr><td colspan="4" class="px-6 py-12 text-center text-gray-500">No video courses found.</td></tr>`;
+            return;
+        }
+
+        courses.forEach((course) => {
+         const courseRow = `
+    <tr data-id="${course.id}">
+        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${course.title}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${course.speciality}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${course.access_level}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+            <a href="manage_lessons.html?course_id=${course.id}" class="text-green-600 hover:text-green-900 mr-4">Manage Lessons</a>
+            <a href="#" class="text-indigo-600 hover:text-indigo-900 edit-btn" data-type="videoCourse">Edit</a>
+            <a href="#" class="text-red-600 hover:text-red-900 ml-4 delete-btn" data-type="videoCourse">Delete</a>
+        </td>
+    </tr>`;
+            videoCourseList.innerHTML += courseRow;
+        });
+
+    } catch (error) {
+        console.error("Error loading video courses:", error);
+        videoCourseList.innerHTML = `<tr><td colspan="4" class="px-6 py-12 text-center text-red-500">Error loading video courses.</td></tr>`;
+    }
+}
+// END: Add This New Function
+
+
+// In admin_dashboard.html, replace the entire "Manage Purchases Logic" block
+
+// --- Manage Purchases Logic (New & Enhanced) ---
+const managePurchaseModal = document.getElementById('managePurchaseModal');
+const manageModalTitle = document.getElementById('manageModalTitle');
+
+// Book-related elements
+const ownedBookList = document.getElementById('ownedBookList');
+const grantableBookSelect = document.getElementById('grantableBookSelect');
+const bookDurationOptions = document.getElementById('bookDurationOptions');
+const customBookExpiryDate = document.getElementById('customBookExpiryDate');
+const confirmBookGrantBtn = document.getElementById('confirmBookGrantBtn');
+
+// Video Course-related elements
+const ownedCourseList = document.getElementById('ownedCourseList');
+const grantableCourseSelect = document.getElementById('grantableCourseSelect');
+const courseDurationOptions = document.getElementById('courseDurationOptions');
+const customCourseExpiryDate = document.getElementById('customCourseExpiryDate');
+const confirmCourseGrantBtn = document.getElementById('confirmCourseGrantBtn');
+
+const userListEl = document.getElementById('userList');
+
+// In admin_dashboard.html
+
+async function openManagePurchaseModal(userId, username) {
+    managePurchaseModal.dataset.userId = userId;
+    manageModalTitle.textContent = `Manage Purchases for ${username}`;
+
+    try {
+        // FIX: Fetch all data using parallel queries, including the new RPC function for purchases
+        const [
+            allGrantableBooksRes,
+            allGrantableCoursesRes,
+            userPurchasesRes // This will now come from our secure function
+        ] = await Promise.all([
+            supabase.from('books').select('id, title').in('access_level', ['premium', 'purchasable']).order('title'),
+            supabase.from('video_courses').select('id, title').in('access_level', ['premium', 'purchasable']).order('title'),
+            supabase.rpc('get_user_purchases_for_admin', { p_user_id: userId }) // Call the new RPC function
+        ]);
+
+        if (allGrantableBooksRes.error) throw allGrantableBooksRes.error;
+        if (allGrantableCoursesRes.error) throw allGrantableCoursesRes.error;
+        if (userPurchasesRes.error) throw userPurchasesRes.error;
+
+        // Extract the purchase data from the RPC response
+        const userOwnedBooks = userPurchasesRes.data.books;
+        const userOwnedCourses = userPurchasesRes.data.courses;
+
+        // --- Process and Render Book Data ---
+        const allGrantableBooks = allGrantableBooksRes.data;
+        const ownedBookIds = new Set(userOwnedBooks.map(p => p.book_id));
+        ownedBookList.innerHTML = '';
+        if (userOwnedBooks.length > 0) {
+            userOwnedBooks.forEach(purchase => {
+                const expiry = purchase.expires_at ? new Date(purchase.expires_at).toLocaleString() : 'Never';
+                const bookTitle = allGrantableBooks.find(b => b.id === purchase.book_id)?.title || `Unknown Book`;
+                ownedBookList.innerHTML += `<div class="flex justify-between items-center p-2 bg-white rounded"><span>${bookTitle} (Expires: ${expiry})</span><button class="revoke-btn text-red-500 hover:text-red-700 text-sm font-semibold" data-type="book" data-purchase-id="${purchase.id}">Revoke</button></div>`;
+            });
+        } else {
+            ownedBookList.innerHTML = `<p class="text-gray-500 text-sm p-2">This user has no purchased books.</p>`;
+        }
+        const grantableBooks = allGrantableBooks.filter(book => !ownedBookIds.has(book.id));
+        grantableBookSelect.innerHTML = grantableBooks.map(book => `<option value="${book.id}">${book.title}</option>`).join('');
+        confirmBookGrantBtn.disabled = grantableBooks.length === 0;
+
+        // --- Process and Render Video Course Data ---
+        const allGrantableCourses = allGrantableCoursesRes.data;
+        const ownedCourseIds = new Set(userOwnedCourses.map(p => p.course_id));
+        ownedCourseList.innerHTML = '';
+        if (userOwnedCourses.length > 0) {
+            userOwnedCourses.forEach(purchase => {
+                const expiry = purchase.expires_at ? new Date(purchase.expires_at).toLocaleString() : 'Never';
+                const courseTitle = allGrantableCourses.find(c => c.id === purchase.course_id)?.title || 'Unknown Course';
+                ownedCourseList.innerHTML += `<div class="flex justify-between items-center p-2 bg-white rounded"><span>${courseTitle} (Expires: ${expiry})</span><button class="revoke-btn text-red-500 hover:text-red-700 text-sm font-semibold" data-type="video" data-purchase-id="${purchase.id}">Revoke</button></div>`;
+            });
+        } else {
+            ownedCourseList.innerHTML = `<p class="text-gray-500 text-sm p-2">This user has no purchased courses.</p>`;
+        }
+        const grantableCourses = allGrantableCourses.filter(course => !ownedCourseIds.has(course.id));
+        grantableCourseSelect.innerHTML = grantableCourses.map(course => `<option value="${course.id}">${course.title}</option>`).join('');
+        confirmCourseGrantBtn.disabled = grantableCourses.length === 0;
+
+        openModal(managePurchaseModal);
+    } catch (err) {
+        alert('Could not load purchase data. ' + err.message);
+    }
+}
+
+// Show/hide custom date inputs
+bookDurationOptions.addEventListener('change', (e) => {
+    if (e.target.name === 'book_duration') customBookExpiryDate.classList.toggle('hidden', e.target.value !== 'custom');
+});
+courseDurationOptions.addEventListener('change', (e) => {
+    if (e.target.name === 'course_duration') customCourseExpiryDate.classList.toggle('hidden', e.target.value !== 'custom');
+});
+
+// Listener for "Manage Purchases" button
+userListEl.addEventListener('click', (e) => {
+    if (e.target.classList.contains('grant-purchase-btn')) {
+        openManagePurchaseModal(e.target.dataset.userId, e.target.dataset.username);
+    }
+});
+
+// Listener for Revoke buttons
+managePurchaseModal.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('revoke-btn')) {
+        const { type, purchaseId } = e.target.dataset;
+        const rpcFunction = type === 'book' ? 'admin_revoke_purchase' : 'admin_revoke_video_purchase';
+        
+        if (confirm(`Are you sure you want to revoke access to this ${type === 'book' ? 'book' : 'course'}? They will be notified.`)) {
+            const { error } = await supabase.rpc(rpcFunction, { p_purchase_id: purchaseId });
+            if (error) {
+                alert('Failed to revoke access: ' + error.message);
+            } else {
+                alert('Access revoked and user notified successfully.');
+                openManagePurchaseModal(managePurchaseModal.dataset.userId, manageModalTitle.textContent.replace('Manage Purchases for ', ''));
+            }
+        }
+    }
+});
+
+// Listener for the "Grant Book Access" button
+confirmBookGrantBtn.addEventListener('click', async () => {
+    const userId = managePurchaseModal.dataset.userId;
+    const bookId = grantableBookSelect.value;
+    const duration = bookDurationOptions.querySelector('input[name="book_duration"]:checked').value;
+    let expires_at = null;
+    const now = new Date();
+    if (duration === '3m') expires_at = new Date(now.setMonth(now.getMonth() + 3));
+    else if (duration === '6m') expires_at = new Date(now.setMonth(now.getMonth() + 6));
+    else if (duration === '1y') expires_at = new Date(now.setFullYear(now.getFullYear() + 1));
+    else if (duration === 'custom') expires_at = new Date(customBookExpiryDate.value);
+    
+    const { error } = await supabase.rpc('admin_grant_purchase', { p_user_id: userId, p_book_id: bookId, p_expires_at: expires_at?.toISOString() });
+    if (error) {
+        alert(`Failed to grant book purchase: ${error.message}`);
+    } else {
+        alert(`Successfully granted book access.`);
+        openManagePurchaseModal(userId, manageModalTitle.textContent.replace('Manage Purchases for ', ''));
+    }
+});
+
+// Listener for the "Grant Course Access" button
+confirmCourseGrantBtn.addEventListener('click', async () => {
+    const userId = managePurchaseModal.dataset.userId;
+    const courseId = grantableCourseSelect.value;
+    const duration = courseDurationOptions.querySelector('input[name="course_duration"]:checked').value;
+    let expires_at = null;
+    const now = new Date();
+    if (duration === '3m') expires_at = new Date(now.setMonth(now.getMonth() + 3));
+    else if (duration === '6m') expires_at = new Date(now.setMonth(now.getMonth() + 6));
+    else if (duration === '1y') expires_at = new Date(now.setFullYear(now.getFullYear() + 1));
+    else if (duration === 'custom') expires_at = new Date(customCourseExpiryDate.value);
+
+    const { error } = await supabase.rpc('admin_grant_video_purchase', { p_user_id: userId, p_course_id: courseId, p_expires_at: expires_at?.toISOString() });
+    if (error) {
+        alert(`Failed to grant course purchase: ${error.message}`);
+    } else {
+        alert(`Successfully granted course access.`);
+        openManagePurchaseModal(userId, manageModalTitle.textContent.replace('Manage Purchases for ', ''));
+    }
+});
+
+// Listener for the close button
+managePurchaseModal.querySelector('.cancel-manage-btn').addEventListener('click', () => closeModal(managePurchaseModal));
+
+
+// This is the new, efficient function
+async function loadUsers() {
+    const userList = document.getElementById('userList');
+    try {
+        // Call our single, efficient RPC function
+        const { data: users, error } = await supabase.rpc('get_all_users_with_details');
+        if (error) throw error;
+
+        userList.innerHTML = '';
+        if (users.length === 0) {
+            userList.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-gray-500">No users found.</td></tr>`;
+            return;
+        }
+
+        users.forEach((userData) => {
+            const isPremium = userData.account_type === 'premium';
+
+            const userRow = `
+                <tr data-id="${userData.id}" data-current-type="${userData.account_type}">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${userData.username}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${userData.email || 'N/A'}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${userData.speciality}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${userData.role === 'admin' ? 'bg-purple-100 text-purple-800' : 'bg-green-100 text-green-800'}">
+                            ${userData.role}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold ${isPremium ? 'text-yellow-600' : 'text-gray-500'}">
+                        ${userData.account_type}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button class="toggle-premium-btn text-indigo-600 hover:text-indigo-900">
+                            ${isPremium ? 'Demote to Free' : 'Promote to Premium'}
+                        </button>
+                        <button class="grant-purchase-btn text-green-600 hover:text-green-900 ml-4" data-user-id="${userData.id}" data-username="${userData.username}">
+                            Manage Purchases
+                        </button>
+                    </td>
+                </tr>`;
+            userList.innerHTML += userRow;
+        });
+    } catch (error) {
+        console.error("Error loading users:", error);
+        userList.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-red-500">Error loading users.</td></tr>`;
+    }
+}
+
+        function openModal(modal) {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal(modal) {
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+        
+        document.getElementById('addDisciplineButton').addEventListener('click', () => {
+            document.getElementById('disciplineForm').reset();
+            document.getElementById('disciplineId').value = '';
+            document.getElementById('disciplineModalTitle').textContent = "Add New Discipline";
+            openModal(document.getElementById('disciplineModal'));
+        });
+        
+       document.getElementById('addBookButton').addEventListener('click', () => {
+            document.getElementById('addBookForm').reset();
+            document.getElementById('bookId').value = '';
+            document.getElementById('bookModalTitle').textContent = "Add New Book";
+
+            // START: This is the new logic to initialize the dropdown for a new book
+            // First, destroy any old instance of the dropdown to prevent errors
+            if (linkedSpecialtiesSelector) {
+                linkedSpecialtiesSelector.destroy();
+            }
+            // The 'populateSpecialtyDropdown' function fills the select with all specialty options
+            populateSpecialtyDropdown(bookLinkedSpecialtiesEl);
+          linkedSpecialtiesSelector = new SlimSelect({
+    select: '#bookLinkedSpecialties',
+    settings: {
+        placeholderText: 'Select Specialties',
+        searchPlaceholder: 'Search specialties...',
+    }
+});
+
+            openModal(document.getElementById('addBookModal'));
+        });
+
+        // START: Add This New Event Listener
+document.getElementById('videoCourseForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('videoCourseId').value;
+    const data = {
+        title: document.getElementById('videoCourseTitle').value,
+        description: document.getElementById('videoCourseDescription').value,
+        speciality: document.getElementById('videoCourseSpecialty').value,
+        thumbnail_url: document.getElementById('videoCourseThumbnailUrl').value,
+        video_url: document.getElementById('videoCourseVideoUrl').value,
+        access_level: document.getElementById('videoCourseAccessLevel').value
+    };
+
+    try {
+        let error;
+        if (id) {
+            // Update
+            ({ error } = await supabase.from('video_courses').update(data).eq('id', id));
+        } else {
+            // Insert
+            ({ error } = await supabase.from('video_courses').insert([data]));
+        }
+        if (error) throw error;
+
+        closeModal(document.getElementById('videoCourseModal'));
+        loadVideoCourses(); // Refresh the list
+    } catch (err) {
+        console.error("Error saving video course:", err);
+        alert("Failed to save video course.");
+    }
+});
+// END: Add This New Event Listener
+
+        // START: Add This New Event Listener
+document.getElementById('addVideoCourseButton').addEventListener('click', () => {
+    document.getElementById('videoCourseForm').reset();
+    document.getElementById('videoCourseId').value = '';
+    document.getElementById('videoCourseModalTitle').textContent = "Add New Video Course";
+    openModal(document.getElementById('videoCourseModal'));
+});
+// END: Add This New Event Listener
+
+        document.querySelectorAll('.cancel-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => closeModal(e.target.closest('.modal')));
+        });
+
+       document.getElementById('disciplineForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('disciplineId').value;
+    const data = {
+        name: document.getElementById('disciplineName').value,
+        speciality: document.getElementById('disciplineSpecialty').value,
+        imageUrl: document.getElementById('disciplineImageUrl').value,
+    };
+    
+    try {
+        let error;
+        if (id) {
+            // Update an existing discipline
+            ({ error } = await supabase.from('disciplines').update(data).eq('id', id));
+        } else {
+            // Insert a new discipline
+            ({ error } = await supabase.from('disciplines').insert([data]));
+        }
+        if (error) throw error;
+        
+        closeModal(document.getElementById('disciplineModal'));
+        sessionStorage.removeItem('masterDisciplineList'); // Good to keep this for caching
+        loadDisciplines(); // Refresh the list
+    } catch (err) {
+        console.error("Error saving discipline:", err);
+        alert("Failed to save discipline.");
+    }
+});
+
+document.getElementById('addBookForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('bookId').value;
+    const data = {
+        title: document.getElementById('bookTitle').value,
+        description: document.getElementById('bookDescription').value,
+        speciality: document.getElementById('bookSpecialty').value,
+        image: document.getElementById('bookImage').value,
+        access_level: document.getElementById('bookAccessLevel').value,
+        // START: Get the values from the multi-select and add them to the data object
+        linked_specialties: linkedSpecialtiesSelector.getSelected()
+        // END: Get the values
+    };
+
+    try {
+        let error;
+        if (id) {
+            // Update an existing book
+            ({ error } = await supabase.from('books').update(data).eq('id', id));
+        } else {
+            // Insert a new book
+            ({ error } = await supabase.from('books').insert([data]));
+        }
+        if (error) throw error;
+
+        closeModal(document.getElementById('addBookModal'));
+        sessionStorage.removeItem('masterBookList'); // Good to keep this for caching
+        loadBooks(); // Refresh the list
+    } catch (err) {
+        console.error("Error saving book:", err);
+        alert("Failed to save book.");
+    }
+});
+
+     document.querySelector('main').addEventListener('click', async (e) => {
+    const target = e.target;
+    const type = target.dataset.type;
+    const row = target.closest('tr');
+    if (!row) return;
+    
+    const id = row.dataset.id;
+
+    // Handle EDIT clicks
+    if (target.classList.contains('edit-btn')) {
+        e.preventDefault();
+        if (type === 'discipline') {
+            const { data: disciplineData, error } = await supabase.from('disciplines').select('*').eq('id', id).single();
+            if (error) return alert('Could not fetch discipline details.');
+            document.getElementById('disciplineId').value = disciplineData.id;
+            document.getElementById('disciplineName').value = disciplineData.name;
+            document.getElementById('disciplineSpecialty').value = disciplineData.speciality;
+            document.getElementById('disciplineImageUrl').value = disciplineData.imageUrl;
+            document.getElementById('disciplineModalTitle').textContent = "Edit Discipline";
+            openModal(document.getElementById('disciplineModal'));
+      } else if (type === 'book') {
+        const { data: bookData, error } = await supabase.from('books').select('*').eq('id', id).single();
+        if (error) return alert('Could not fetch book details.');
+        document.getElementById('bookId').value = bookData.id;
+        document.getElementById('bookTitle').value = bookData.title;
+        document.getElementById('bookSpecialty').value = bookData.speciality;
+        document.getElementById('bookDescription').value = bookData.description;
+        document.getElementById('bookImage').value = bookData.image;
+        document.getElementById('bookAccessLevel').value = bookData.access_level || 'free';
+        document.getElementById('bookModalTitle').textContent = "Edit Book";
+
+        // START: Logic to populate the multi-select
+        // Ensure the dropdown is initialized and set its selected values
+        if (linkedSpecialtiesSelector) linkedSpecialtiesSelector.destroy();
+        populateSpecialtyDropdown(bookLinkedSpecialtiesEl); // Re-populate with all options
+     linkedSpecialtiesSelector = new SlimSelect({
+    select: '#bookLinkedSpecialties',
+    settings: {
+        placeholderText: 'Select Specialties',
+        searchPlaceholder: 'Search specialties...',
+    }
+});
+        linkedSpecialtiesSelector.setSelected(bookData.linked_specialties || []);
+        // END: Logic to populate the multi-select
+
+        openModal(document.getElementById('addBookModal'));
+    }
+        
+        
+         else if (type === 'videoCourse') {
+            const { data: courseData, error } = await supabase.from('video_courses').select('*').eq('id', id).single();
+            if (error) return alert('Could not fetch video course details.');
+            document.getElementById('videoCourseId').value = courseData.id;
+            document.getElementById('videoCourseTitle').value = courseData.title;
+            document.getElementById('videoCourseSpecialty').value = courseData.speciality;
+            document.getElementById('videoCourseDescription').value = courseData.description;
+            document.getElementById('videoCourseThumbnailUrl').value = courseData.thumbnail_url;
+            document.getElementById('videoCourseVideoUrl').value = courseData.video_url;
+            document.getElementById('videoCourseAccessLevel').value = courseData.access_level || 'free';
+            document.getElementById('videoCourseModalTitle').textContent = "Edit Video Course";
+            openModal(document.getElementById('videoCourseModal'));
+        }
+    }
+
+    // Handle DELETE clicks
+    if (target.classList.contains('delete-btn')) {
+        e.preventDefault();
+        const title = row.cells[0].textContent;
+        if (type === 'discipline') {
+            if (confirm(`Are you sure you want to delete the discipline "${title}"?`)) {
+                const { error } = await supabase.from('disciplines').delete().eq('id', id);
+                if (error) alert("Error deleting discipline.");
+                else loadDisciplines();
+            }
+        } else if (type === 'book') {
+            bookNameToDelete.textContent = title;
+            deleteBookModal.dataset.bookId = id;
+            deleteBookModal.dataset.bookName = title;
+            deleteConfirmationInput.value = '';
+            confirmDeleteBtn.disabled = true;
+            openModal(deleteBookModal);
+        } else if (type === 'videoCourse') {
+            if (confirm(`Are you sure you want to delete the video course "${title}"?`)) {
+                // Note: This only deletes the course entry, not the lessons or the videos in storage.
+                // A more robust delete would be a backend function.
+                const { error } = await supabase.from('video_courses').delete().eq('id', id);
+                if (error) alert("Error deleting video course.");
+                else loadVideoCourses();
+            }
+        }
+    }
+});
+
+
+        // --- NEW: Logic for the Delete Confirmation Modal ---
+
+        // Enable the delete button only when the typed name matches
+        deleteConfirmationInput.addEventListener('input', (e) => {
+            const expectedName = deleteBookModal.dataset.bookName;
+            if (e.target.value === expectedName) {
+                confirmDeleteBtn.disabled = false;
+            } else {
+                confirmDeleteBtn.disabled = true;
+            }
+        });
+
+        // Close the modal when "Cancel" is clicked
+        cancelDeleteBtn.addEventListener('click', () => {
+            closeModal(deleteBookModal);
+        });
+
+        // Handle the final deletion when the button is clicked
+       confirmDeleteBtn.addEventListener('click', async () => {
+    const bookId = deleteBookModal.dataset.bookId;
+    if (!bookId) return;
+
+    confirmDeleteBtn.disabled = true;
+    confirmDeleteBtn.textContent = 'Deleting...';
+    
+    try {
+        // In Supabase, we perform the deletes sequentially.
+
+        // 1. Delete all questions belonging to this book
+        // This assumes your 'questions' table has a 'book_id' column.
+        const { error: questionsError } = await supabase.from('questions').delete().eq('book_id', bookId);
+        if (questionsError) throw questionsError;
+
+        // 2. Delete all chapters belonging to this book
+        // This assumes your 'chapters' table has a 'book_id' column.
+        const { error: chaptersError } = await supabase.from('chapters').delete().eq('book_id', bookId);
+        if (chaptersError) throw chaptersError;
+
+        // 3. Find and delete any virtual books that link to this real book
+        const { error: virtualBooksError } = await supabase.from('books').delete().eq('originalBookId', bookId);
+        if (virtualBooksError) throw virtualBooksError;
+
+        // 4. Finally, delete the real book document itself
+        const { error: bookError } = await supabase.from('books').delete().eq('id', bookId);
+        if (bookError) throw bookError;
+
+        alert("Book and all its contents deleted successfully.");
+        sessionStorage.removeItem('masterBookList');
+        loadBooks();
+
+    } catch (error) {
+        console.error("Error deleting book:", error);
+        alert("An error occurred while deleting the book.");
+    } finally {
+        closeModal(deleteBookModal);
+        // Reset button text in case it's used again
+        confirmDeleteBtn.textContent = 'Delete Book'; 
+    }
+});
+
+// --- In dashboard.html, replace your existing DOMContentLoaded listener ---
+document.addEventListener('DOMContentLoaded', async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (session) {
+        // First, validate the session is active in our custom table
+        const isSessionValid = await validateAndEnforceSession(session.user);
+
+        if (isSessionValid) {
+            // THE FIX: Call our new backend function to check for admin role
+            const { data: isAdmin, error } = await supabase.rpc('is_admin');
+
+            if (error || !isAdmin) {
+                // If not an admin, deny access and redirect them
+                alert("Access Denied. You do not have permission to view this page.");
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
+            // If they are a valid admin, load the page content
+            currentUser = session.user;
+            
+            await Promise.all([
+                loadDisciplines(),
+                loadUsers(),
+                loadBooks(),
+                loadVideoCourses() // <-- Add this line
+            ]);
+        }
+    } else {
+        // If no session, send them to the login page
+        window.location.href = 'index.html';
+    }
+});
+
+        // Ensure the logout button calls the correct new function
+        document.getElementById('logoutButton').addEventListener('click', handleLogout);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+{
+  "title": "Clinical decision-making - Chapter 1",
+  "questions": [
+    {
+      "question": "(question 1) In the specialty of internal medicine, diagnostic error occurs in approximately what percentage of cases?",
+      "imageUrl": "",
+      "options": [
+        "A. 0-5%",
+        "B. 6-10%",
+        "C. 11-15%",
+        "D. 16-20%",
+        "E. 21-25%"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "It is estimated that diagnosis is wrong 11-15% of the time in the undifferentiated specialties of internal medicine, emergency medicine and general practice. Diagnostic error is associated with greater morbidity than other types of medical error, and the majority of diagnostic errors are considered to be preventable.",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "(question 2) A doctor is considering whether a patient presenting with headache, fever and nuchal rigidity may have meningitis. Regarding likelihood ratios (LRs) for each clinical finding, which of the following statements is true?",
+      "imageUrl": "",
+      "options": [
+        "A. An LR greater than 1 decreases the probability of disease",
+        "B. An LR greater than 1 increases the probability of disease",
+        "C. An LR is the probability of the finding in patients with the disease",
+        "D. An LR of 0 means the diagnosis is unlikely",
+        "E. An LR of 1 means the diagnosis is certain"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Likelihood ratios (LRs) are clinical diagnostic weights. LR = (probability of finding in patients with disease) / (probability of finding in patients without disease). An LR greater than 1 increases the probability of disease (the greater the value, the greater the probability). An LR less than 1 decreases the probability of disease. LRs are developed against a diagnostic standard (in the case of meningitis, lumbar puncture results) so do not exist for all clinical findings. LRs illustrate how a probability changes - but do not determine the prior probability of disease. If the starting probability is high to begin with, an LR of around 1 does not affect this.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch1/a/1.2.png",
+      "questionNumber": 2
+    },
+    {
+      "question": "(question 3) A test is performed to detect the presence of a disease. The results of the test can be summarised in the table below.\n\n\"Disease\", \"No disease\"\n\"Positive test\", \"A\", \"B\"\n\"Negative test\", \"C\", \"D\"\n\nWhich of the following describes the sensitivity of the test?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch1/q/1.3.png",
+      "options": [
+        "A. A/(A+B) x 100",
+        "B. A/(A+C) x 100",
+        "C. A/(A+D) x 100",
+        "D. D/(D+B) x 100",
+        "E. D/(D+C) x 100"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Sensitivity = A/(A+C) x 100. Sensitivity is the ability to detect true positives; specificity is the ability to detect true negatives. There is no test that can 100% of the time detect people with a disease and exclude those without it. Even a very good test, with 95% sensitivity, will miss 1 in 20 people with the disease. Every test therefore has 'false positives' and 'false negatives'. A very sensitive test will detect most disease but may generate abnormal findings in healthy people. A negative result will therefore reliably exclude the disease, but a positive test is likely to require further evaluation. On the other hand, a very specific test may miss significant pathology but is likely to establish the diagnosis beyond doubt when the result is positive.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch1/a/1.3.png",
+      "questionNumber": 3
+    },
+    {
+      "question": "(question 4) A test is performed to detect the presence of a disease in a specific population. The results of the test can be summarised in the table below.\n\n\"Disease\", \"No disease\"\n\"Positive test\", \"A\", \"B\"\n\"Negative test\", \"C\", \"D\"\n\nWhich of the following describes the positive predictive value of the test?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch1/q/1.4.png",
+      "options": [
+        "A. A/(A+B) x 100",
+        "B. A/(A+C) x 100",
+        "C. A/(A+D) x 100",
+        "D. D/(D+B) x 100",
+        "E. D/(D+C) x 100"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Positive predictive value = A/(A+B) x 100. Predictive values combine sensitivity, specificity and prevalence. Sensitivity and specificity are characteristics of the test; the population does not change this. However, as doctors, we are interested in the question, 'What is the probability that a person with a positive test actually has the disease?' The positive predictive value is the proportion of patients with a test result who have the disease and is calculated from a table of results in a specific population. It is not possible to transfer this value to a different population.",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "(question 5) An elderly woman fell and hurt her left hip. On examination the left hip was extremely painful to move and she was unable to stand. The pre-test probability of a hip fracture was deemed to be high. Plain X-rays of the pelvis and left hip were requested.\n\nWhich of the following statements best describes 'post-test probability'?",
+      "imageUrl": "",
+      "options": [
+        "A. The adjustment of probability after taking individual patient factors into account",
+        "B. The chance that a test will detect true positives",
+        "C. The prevalence of disease in the population to which the patient belongs",
+        "D. The probability of a disease after taking new information from a test result into account",
+        "E. The proportion of patients with a test result who have the disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Post-test probability is the probability of a disease after taking new information from a test result into account. The pre-test probability of disease is decided by the doctor - it is an opinion based on gathered evidence prior to ordering the test. Bayes' Theorem can be used to calculate post-test probability for a patient in any population. It is a mathematical way to describe the post-test probability of a disease by incorporating pre-test probability, sensitivity and specificity.",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "(question 6) A doctor is considering whether to treat a patient with antibiotics for a urinary tract infection. The term 'treatment threshold' describes a situation in which various factors are evenly weighted. What is the best description of the factors involved?",
+      "imageUrl": "",
+      "options": [
+        "A. The cost of the treatment, and whether the treatment is likely to succeed",
+        "B. The quality of life of the patient, and risks and benefits of treatment",
+        "C. The risk and benefits of treatment",
+        "D. The risks of the test, and risk and benefits of treatment",
+        "E. The wishes of the patient, and whether the treatment is likely to succeed"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The treatment threshold combines factors such as the risks of the test, and the risks versus benefits of treatment. The point at which the factors are all evenly weighted is the threshold. If a test or treatment for a disease is effective and low risk, then one would have a lower threshold for going ahead. On the other hand, if a test or treatment is less effective or high risk, one requires greater confidence in the clinical diagnosis and potential benefits of treatment first. In principle, if a diagnostic test will not change the management of the patient, then it should not be requested, unless there are other compelling reasons to do so.",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "(question 7) Dual process theory describes two distinct processes of human decision-making. What is the accepted estimate of the proportion of time we spend engaged in type 2 (analytical) thinking?",
+      "imageUrl": "",
+      "options": [
+        "A. 5%",
+        "B. 25%",
+        "C. 50%",
+        "D. 75%",
+        "E. 95%"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Psychologists believe we spend 95% of our daily lives engaged in type 1 thinking - the intuitive, fast, subconscious mode of decision-making. In everyday life we spend little time (5%) engaged in type 2 thinking. Imagine driving a car; it would be impossible to function efficiently if every decision and movement was as deliberate, conscious, slow and effortful as in our first driving lesson. With experience, complex procedures become automatic, fast and effortless. The same applies to medical practice.",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "(question 8) In terms of human thinking and decision-making, what tendency does confirmation bias describe?",
+      "imageUrl": "",
+      "options": [
+        "A. To look for supporting evidence to confirm a theory and ignore evidence that contradicts it",
+        "B. To rely too much on the first piece of information offered",
+        "C. To stop searching because we have found something that fits",
+        "D. To subconsciously see what we expect to see",
+        "E. To want to confirm our diagnoses with others before making a decision"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Cognitive biases are subconscious errors that lead to inaccurate judgement and illogical interpretation of information. In evolutionary terms, it is thought that cognitive biases developed because speed was often more important than accuracy. This property of human thinking is highly relevant to clinical decision-making. Confirmation bias is the tendency to look for confirming evidence to support a theory rather than looking for contradictory evidence to refute it, even if the latter is clearly present. Confirmation bias is common when a patient has been seen first by another doctor.",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "(question 9) Which of these factors is most likely to lead to an increased incidence of errors in clinical decision-making?",
+      "imageUrl": "",
+      "options": [
+        "A. Age",
+        "B. Fatigue",
+        "C. Gender",
+        "D. Use of checklists",
+        "E. Working alone"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cognition is affected by things like fatigue, illness, emotions, interruptions, cognitive overload and time pressure. Poor team communication and poorly designed equipment or clinical processes also increase the likelihood of error. Age, gender and working alone are not factors that affect cognition. Use of checklists has been shown to improve decision-making in clinical settings.",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "(question 10) In a case of suspected pulmonary embolism in an ambulatory care setting, which of the following individual signs on physical examination carries the most diagnostic weight in either a positive or negative direction?",
+      "imageUrl": "",
+      "options": [
+        "A. Blood pressure greater than 120/80 mmHg",
+        "B. Heart rate less than 90 beats/min",
+        "C. Oxygen saturations greater than 94% on air",
+        "D. Respiratory rate less than 20 breaths/min",
+        "E. Temperature less than 37.5°C"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Suspected pulmonary embolism is a common problem referred to UK ambulatory emergency care centres. Unexplained pleuritic chest pain and/or a history of breathlessness are the most common symptoms. Vital signs at rest and the physical examination may be normal. The only feature presented with a negative likelihood ratio in the diagnosis of pulmonary embolism is a heart rate of less than 90 beats/min. In other words, the other normal physical examination findings (including normal oxygen saturations) carry little diagnostic weight.",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "(question 11) Which of the following statements best describes 'patient-centred evidence-based medicine'?",
+      "imageUrl": "",
+      "options": [
+        "A. The application of best available evidence taking individual patient factors into account",
+        "B. The application of best available evidence to patient care",
+        "C. The application of clinical decision aids in decision-making",
+        "D. The implementation of a management plan based on patient wishes",
+        "E. The use of evidence-based care bundles"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "'Patient-centred evidence-based medicine' refers to the application of best available research evidence while taking individual patient factors into account these include clinical factors (e.g. bleeding risk when considering anticoagulation) and non-clinical factors (e.g. the patient's inability to attend for regular blood tests if started on warfarin).",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "(question 12) According to research, under what circumstances are patients more likely to comply with recommended treatment and less likely to re-attend?",
+      "imageUrl": "",
+      "options": [
+        "A. If relative risk instead of absolute risk is used in explanations",
+        "B. If the consultation is longer",
+        "C. If the patient is male",
+        "D. If they feel that they have been listened to and understand the treatment plan",
+        "E. If visual aids have been used instead of text to explain the treatment plan"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Many studies demonstrate a correlation between effective clinician-patient communication and improved health outcomes. If patients feel they have been listened to and understand the problem and proposed treatment plan, they are more likely to adhere to their medication and less likely to re-attend. Whenever possible, doctors should quote numerical information using consistent denominators (e.g. '90 out of 100 patients who have this operation feel much better, 1 will die during the operation and 2 will suffer a stroke'). Visual aids can be used to present complex statistical information. Relative risk exaggerates small effects that distort people's understanding of true probability. Longer consultations and the use of visual aids are tools to facilitate good communication but in themselves do not guarantee this is the case. Gender by itself is not a factor.",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "(question 13) Which of the following statements best describes what is meant by the term 'human factors'?",
+      "imageUrl": "",
+      "options": [
+        "A. An understanding of diagnostic error",
+        "B. How equipment is designed to take human behaviour into account",
+        "C. How fatigue affects human thinking and decision-making",
+        "D. How healthcare professionals communicate in a team",
+        "E. The science of the limitations of human performance"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Human factors is the science of the limitations of human performance and how technology, our work environment and team communication can adapt for this to reduce diagnostic and other types of error. Analysis of serious adverse events in health care show that human factors and poor team communication play a significant role when things go wrong. Human factors training is being introduced into undergraduate and postgraduate medical curricula and multi-professional team training in many countries.",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "(question 14) In terms of human thinking and decision-making, anchoring describes what tendency?",
+      "imageUrl": "",
+      "options": [
+        "A. To look for supporting evidence to confirm a theory and ignore evidence that contradicts it",
+        "B. To rely too much on the first piece of information offered",
+        "C. To stop searching because we have found something that fits",
+        "D. To subconsciously see what we expect to see",
+        "E. To want to confirm our diagnoses with others before making a decision"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cognitive biases are subconscious errors that lead to inaccurate judgement and illogical interpretation of information. In evolutionary terms, it is thought that cognitive biases developed because speed was often more important than accuracy. This property of human thinking is highly relevant to clinical decision-making. Anchoring describes the common human tendency to rely too heavily on the first piece of information offered (the 'anchor') when making decisions.",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "(question 15) The D-dimer test has a sensitivity of at least 95% in detecting acute venous thromboembolism (VTE). However, it has a low specificity of around 40%. Which of the following statements is true regarding the interpretation of a D-dimer result?",
+      "imageUrl": "",
+      "options": [
+        "A. A negative D-dimer result in a high clinical probability patient excludes acute VTE",
+        "B. A positive D-dimer result means that acute VTE is present",
+        "C. D-dimer is a useful screening test in patients presenting with breathlessness",
+        "D. D-dimer testing in suspected acute VTE results in lots of false negatives",
+        "E. D-dimer testing in suspected acute VTE results in lots of false positives"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A very sensitive test will detect most disease but generate abnormal findings in healthy people. A negative result therefore means the disease is unlikely, but a positive result is likely to require further evaluation. As with all diagnostic tests, a low pre-test probability plus a negative D-dimer virtually excludes acute VTE. However, if the pre-test probability is very high, a negative D-dimer still leaves a small but significant chance that acute VTE is present. D-dimer is commonly raised in conditions that have nothing to do with acute VTE: for example, old age, pregnancy, heart failure, sepsis and cancer. This is the reason for its low specificity. It should be used only when the history and physical examination are consistent with acute VTE.",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    }
+  ]
+}

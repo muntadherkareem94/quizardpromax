@@ -1,0 +1,174 @@
+{
+  "title": "Population health and epidemiology - Chapter 5",
+  "questions": [
+    {
+      "question": "Which of the following diseases was among the top 15 ranked causes of global premature mortality (measured by years of life lost) in 2013 as part of the Global Burden of Disease (GBD) Exercise?",
+      "options": [
+        "A. Alzheimer's disease",
+        "B. Asthma",
+        "C. Colorectal cancer",
+        "D. Congenital anomalies",
+        "E. Protein energy malnutrition"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Congenital anomalies were ranked 10 in 2013 in the GBD Exercise initiated by the World Bank. Asthma is a major cause of burden of disease but not of premature deaths. Protein energy malnutrition has been declining as an important cause of death due to economic development globally. Alzheimer's disease and colorectal cancer are both important causes of premature death but are both outside the top 20 (rank 29 and 27, respectively).",
+      "questionNumber": 1
+    },
+    {
+      "question": "Global premature mortality is measured by years of life lost, with higher ranking meaning higher number of premature deaths. Between 1990 and 2013, which of the following rose in the rankings of conditions causing global premature mortality?",
+      "options": [
+        "A. Human immunodeficiency virus (HIV)/ acquired immune deficiency syndrome (AIDS)",
+        "B. Iron deficiency anaemia",
+        "C. Maternal disorders",
+        "D. Measles",
+        "E. Meningitis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HIV/AIDS rose from rank 27 in 1990 to rank 6 in 2013 due to the global epidemic. Most other infections, including meningitis, measles and maternal infections, fell due to increased implementation of successful control measures. Iron deficiency anaemia ranking fell from 35 to 45.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which one of the following diseases is among the top 15 ranked causes of global disability (measured by years of life lived with disability; YLD) in 2013?",
+      "options": [
+        "A. Alcohol use disorders",
+        "B. Epilepsy",
+        "C. Lens cataract",
+        "D. Neural tube defects",
+        "E. Schizophrenia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Schizophrenia was ranked 11 as a cause of YLD in 2013. Epilepsy is an important cause of YLD but outside the top 20 (rank 23). Cataract, neural tube defects and alcohol use disorders are causes of disability but are all well below the top 15 ranked causes.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following diseases is among the top 10 ranked risk factors underlying GBD in 2013 (ranked in terms of the proportion of GBD that they cause)?",
+      "options": [
+        "A. Alcohol use",
+        "B. Low-fibre diet",
+        "C. Low physical activity",
+        "D. Suboptimal breastfeeding",
+        "E. Vitamin A deficiency"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Alcohol use was ranked 6 as a cause of GBD in 2013. Suboptimal breastfeeding is ranked 19 in 2013, down from rank 11 in 1990, and vitamin A deficiency is ranked 23, down from rank 36. Low-fibre diet (25) and low physical activity (17) are also of lower rank.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Patients who respond positively to an invitation for screening tend to be less socioeconomically deprived than those who do not. In view of this, what needs to be considered when evaluating such a programme?",
+      "options": [
+        "A. Incomplete follow-up",
+        "B. Lead-time bias",
+        "C. Length bias",
+        "D. Recall bias",
+        "E. Self-selection bias"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Self-selection bias, lead-time bias and length bias are all classic sources of bias in evaluation of screening trials. Incomplete follow-up is also an important problem in all trials. Screening evaluations normally are based on recorded events for their primary evaluations and do not depend on recall of past events, so recall bias is not one of the most important problems.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following is one of Wilson and Jungner's criteria for the evaluation of a national screening programme?",
+      "options": [
+        "A. The case-finding should be a once-and-for-all project",
+        "B. The condition sought should be an important health problem",
+        "C. The condition sought should be self-limiting",
+        "D. The condition sought should have a low mortality",
+        "E. The condition sought should only be treatable if detected at screening"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The important question is how common is the condition in the specific population in whom the screening will be implemented. It is possible for a disease to be important globally, e.g. malaria or primary liver cancer, but not important in a specific country. The test should be whether it is an important public health problem in the specific country or region.",
+      "questionNumber": 6
+    },
+    {
+      "question": "In a clinical trial where participants are randomly allocated to a treatment or control group, which one of the following statements is true?",
+      "options": [
+        "A. In randomisation, the doctor generally knows which treatment the patient will be allocated to before they are enrolled in the trial",
+        "B. In randomisation, the patient generally knows which treatment they will be allocated to before they are enrolled in the trial",
+        "C. Randomisation is performed so that the number of patients in the treatment and control groups are the same",
+        "D. Randomisation is primarily used to reduce bias",
+        "E. Randomisation is primarily used to reduce confounding"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Randomisation is performed primarily to ensure that, on average, different treatment (or intervention) groups are similar, apart from the intervention being studied. It is only true to say that the groups are the same on average, however, as differences can arise by chance. Randomisation only works if the treatment allocation is masked until after the decision is taken to enrol a participant. In some trials, the treatment allocation continues to be concealed after enrolment, but this is done for a separate reason, to reduce bias.",
+      "questionNumber": 7
+    },
+    {
+      "question": "In a case-control study examining the effect of coffee consumption on lung cancer, which one of the following might lead to confounding?",
+      "options": [
+        "A. People with lung cancer are more likely to over-report smoking",
+        "B. People with lung cancer are more likely to under-report coffee consumption",
+        "C. Smokers with lung cancer drink more coffee than smokers without lung cancer",
+        "D. Smoking is commoner in coffee drinkers",
+        "E. There is a lot of variation in the amount of caffeine in different coffees"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Confounding is where a cause of the disease (or a marker of such a cause) is commoner in the exposure group of interest, and is not itself a consequence of that exposure. If coffee per se, caused smoking, it would not be confounding but a causal chain.",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which of the following is a true description of a cohort study, as used in epidemiological research?",
+      "options": [
+        "A. Cohort studies generally enrol people without disease",
+        "B. Odds ratios cannot be calculated",
+        "C. Participants are randomly assigned to different exposures",
+        "D. People with the disease of interest are selected along with similar people without the disease of interest",
+        "E. Risk ratios cannot be calculated"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Cohort studies are observational studies where participants are selected to reflect some population, characterised according to their baseline characteristics and followed up over time to observe occurrences of one or more diseases of interest. The relationship between an exposure and outcome of interest can then be studied. Risk ratios, odds ratios and rate ratios can all be calculated in cohort studies. Studies that enrol people with disease and then follow up these people over time are better called case series with follow-up.",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following is true of the number needed to treat (NNT), calculated from a randomised controlled trial?",
+      "options": [
+        "A. The more effective a treatment, the larger the NNT",
+        "B. The NNT is one minus the absolute risk reduction",
+        "C. The NNT is the number of patients who will benefit from a treatment if 100 typical patients are treated",
+        "D. The NNT is the reciprocal (inverse) of the difference in risk between different treatment groups",
+        "E. The NNT is the reciprocal (inverse) of the risk ratio"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Developed by David Sackett, the number needed to treat (NNT) aims to provide doctors and patients with a more intuitive statistic for quantifying treatment effects than the standard ratios and differences. It is calculated as the inverse of the absolute risk reduction (or risk difference) between treatment groups. Like absolute risk reductions, NNTs are only comparable if the risks being reported are the same, including the time over which the risk applied, e.g. 1-year absolute risk reductions and 5-year absolute risk reductions are not comparable.",
+      "questionNumber": 10
+    },
+    {
+      "question": "In a clinical trial, 2000 patients were randomly allocated on a 1-to-1 basis to either a placebo or 'Novotreat', a new drug. After 1-year of follow-up, 130 patients in the placebo group and 100 in the treatment group had died. What was the absolute risk reduction?",
+      "options": [
+        "A. 3%",
+        "B. 23%",
+        "C. 0.77",
+        "D. 1.30",
+        "E. 33.33"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Absolute Risk Reduction = (Event rate in control group) - (Event rate in treatment group)\\nEvent rate in placebo group = 130 / 1000 = 0.13 (assuming 1000 patients in each arm)\\nEvent rate in treatment group = 100 / 1000 = 0.10\\nAbsolute Risk Reduction = 0.13 - 0.10 = 0.03 = 3%",
+      "questionNumber": 11
+    },
+    {
+      "question": "A city has a population of 100000. Each year 10000 people are diagnosed with heart disease for the first time after presenting to their doctor and 5000 people die of heart disease. Of the latter, 1000 are not found to have heart disease until after they died. Assuming that there are no other ways that new cases are identified, which of the following is true of heart disease in this city?",
+      "options": [
+        "A. The case fatality is 20%",
+        "B. The incidence is 10 per 100 person-years",
+        "C. The incidence is 11 per 100 person-years",
+        "D. The incidence is 5 per 100 person-years",
+        "E. The prevalence is 10%"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The incidence rate is the number of new events per unit of person-time. As 1000 of the people who died with heart disease were not previously diagnosed, these also represent new events. You do not have sufficient information to estimate the case-fatality as you do not know the proportion of the people with heart disease who die from any cause. Additional assumptions would also be needed to estimate the prevalence of heart disease.",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which of the following is true of national health information systems?",
+      "options": [
+        "A. Definitions of non-psychiatric illnesses are agreed nationally",
+        "B. Few countries produce national mortality statistics",
+        "C. Incidence rates can generally be easily compared across countries",
+        "D. Most countries record attendances at primary care facilities by cause",
+        "E. Most countries use an international standard classification system for recording cause of death"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Globally, the vast majority of countries use the World Health Organization International Classification of Diseases (ICD) system. For psychiatric illnesses, the disease is also defined. In most countries (the most notable exception being the USA where the Diagnostic and Statistical Manual of Mental Disorders is used), ICD criteria are also used to define psychiatric illnesses. For non-psychiatric illnesses, definitions are not included as part of the ICD system, although there are some separate definitions of certain conditions such as diabetes which have been adopted widely (http://www.who.int/diabetes/publications/diagnosis_diabetes2006/en/).",
+      "questionNumber": 13
+    }
+  ]
+}

@@ -1,0 +1,945 @@
+{
+  "title": "Rheumatology and bone disease - Chapter 24",
+  "questions": [
+    {
+      "question": "Which cell in the bone microenvironment is primarily responsible for coordinating the regulation of bone remodelling?",
+      "options": [
+        "A. Bone lining cells",
+        "B. Bone marrow stromal cells",
+        "C. Osteoblasts",
+        "D. Osteoclasts",
+        "E. Osteocytes"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Osteoclasts are responsible for resorbing bone and osteoblasts for bone formation but osteocytes are responsible for coordinating osteoblast and osteoclast activity.",
+      "questionNumber": 1
+    },
+    {
+      "question": "Within the bone microenvironment, which of the following receptors are responsible for activation of bone resorption and bone formation, respectively?",
+      "options": [
+        "A. Osteoprotegerin and Wnt",
+        "B. Osteoprotegerin and sclerostin",
+        "C. Receptor activator of nuclear factor kappa B ligand (RANKL) and osteoprotegerin",
+        "D. Receptor activator of nuclear factor kappa B (RANK) and lipoprotein receptor-related protein 5 (LRP5)",
+        "E. RANKL and sclerostin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "RANK and LRP5 are key receptors involved in the activation of osteoclastic bone resorption and bone formation, respectively. Osteoprotegerin inhibits bone resorption. Wnt stimulates bone formation but is a ligand, not a receptor. RANKL is a ligand that stimulates bone resorption.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 75 year old man presents with pain of moderate severity affecting the base of both thumbs. Hand X-rays shows evidence of osteoarthritis at both first carpometacarpal (CMC) joints. Local application of gel containing diclofenac has not helped his symptoms. What would be the next most appropriate drug treatment for his pain?",
+      "options": [
+        "A. Co-codamol",
+        "B. Diclofenac",
+        "C. Gabapentin",
+        "D. Paracetamol",
+        "E. Tramadol"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Paracetamol is the first-line systemic analgesic for mild to moderate pain. Non-steroidal anti-inflammatory drugs (NSAIDs) such as diclofenac should be used with great caution in the elderly and there would be a higher risk of adverse effects with co-codamol, gabapentin and tramadol.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 65 year old woman with osteoarthritis attends her family physician because of knee pain worse on going up and downstairs. She is a non-smoker, does not drink alcohol, but is taking simvastatin 20 mg daily for high cholesterol and lisinopril 10 mg daily for hypertension. On examination her height is 154 cm and weight is 95 kg. What would be the most appropriate treatment for her knee pain?",
+      "options": [
+        "A. Arthroplasty",
+        "B. Cognitive behavioural therapy (CBT)",
+        "C. Regular weight-bearing exercise",
+        "D. Surgical synovectomy",
+        "E. Weight loss"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Obesity aggravates joint pain in osteoarthritis and weight loss is one of the most effective therapies for osteoarthritis (OA) of the lower limbs. Weight-bearing exercise is unlikely to help and may worsen symptoms. Surgical synovectomy is not indicated in OA and arthroplasty would only be indicated for advanced OA resistant to medical therapy. Cognitive behavioural therapy would be unlikely to help.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following disease-modifying antirheumatic drugs (DMARDs) does NOT require any monitoring of full blood count or liver function tests?",
+      "options": [
+        "A. Azathioprine",
+        "B. Hydroxychloroquine",
+        "C. Leflunomide",
+        "D. Methotrexate",
+        "E. Myocrisin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Blood monitoring is not required for hydroxychloroquine but is required for all the other drugs to screen for blood dyscrasias and abnormal liver function tests.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A previously healthy 45 year old man is woken up at 0400 hrs with acute pain, swelling and redness of the right ankle with no obvious trigger factor. Height is 168 cm, weight 104 kg. He has a history hypertension treated with bendroflumethazide 2.5 mg daily. He drinks 2-3 pints of beer each night and consumes 26 units of alcohol per week. What is the most likely diagnosis?",
+      "options": [
+        "A. Gout",
+        "B. Osteoarthritis",
+        "C. Psoriatic arthritis",
+        "D. Rheumatoid arthritis",
+        "E. Septic arthritis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The clinical presentation is typical of gout, given the acute onset, involvement of a single joint and risk factors of obesity, thiazide therapy and excessive alcohol intake. The pattern of involvement and acute onset is not consistent with rheumatoid arthritis, psoriatic arthritis or OA. Septic arthritis is possible but unlikely in the absence of a previous history of joint disease or site of infection.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 77 year old woman with a history of generalised osteoarthritis (OA) is admitted to hospital with a delirious episode associated with dehydration and a urinary tract infection. During the admission, she develops pain, swelling and redness of the left wrist gradually worsening over a period of 4-6 hours. Blood tests reveal a neutrophilia (white cell count 12.5x10^9/L), a raised erythrocyte sedimentation rate (ESR; 65 mm/hr) and a raised C-reactive protein (CRP; 154 mg/L). What would be the most likely diagnosis?",
+      "options": [
+        "A. Calcium pyrophosphate deposition disease",
+        "B. Gout",
+        "C. Reactive arthritis",
+        "D. Septic arthritis",
+        "E. Vasculitis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Calcium pyrophosphate deposition disease is strongly associated with OA and typically affects those aged >65 years, affecting women more commonly than men. The onset is sudden with join pain and swelling developing over a period of 4-6 hours. Dehydration is a common precipitating factor, and investigations typically reveal a neutrophilia and a raised ESR and CRP. Gout and reactive arthritis can present in a similar manner but would be less likely in a woman of this age. Septic arthritis is possible but usually has a subacute onset and tends to develop more slowly, over a period of 24-48 hours.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 63 year old woman with a 10-year history of rheumatoid arthritis presents with gradually worsening pain and swelling of the left knee joint over a period of 2-3 days. Her arthritis has generally been under good control with methotrexate 20 mg weekly and the tumour necrosis factor alpha (TNF-α) inhibitor etanercept 50 mg weekly. On examination the knee is warm and swollen, with signs of an effusion. What would be the most appropriate course of action?",
+      "options": [
+        "A. Aspirate the knee and inject with 80 mg methylprednisolone?",
+        "B. Aspirate the knee and send the synovial fluid for culture and microscopy",
+        "C. Commence treatment with a broad-spectrum antibiotic",
+        "D. Commence treatment with diclofenac 75 mg twice daily",
+        "E. Increase the dose of methotrexate to 25 mg weekly"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The history is suggesting of septic arthritis given the history of rheumatoid arthritis (RA) and immunosuppressive therapy with methotrexate and a TNF-α inhibitor. Options A, D and E would not be appropriate until infection had been excluded, nor would option C.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 66 year old woman presents with pain and stiffness affecting the wrists, proximal interphalangeal (PIP) and metacarpophalangeal (MCP) joints of the hands, gradually worsening over a period of 6-8 weeks. On examination, there is symmetrical swelling and tenderness of both wrists and the MCP and PIP joints of the hands. Investigations show that anti-citrullinated peptide antibodies (ACPAs) and rheumatoid factor are negative, but that she has an elevated ESR (25 mm/hr) and a raised CRP (65 mg/L). X-rays of the hands are normal. Which of the following statements is correct?",
+      "options": [
+        "A. Magnetic resonance Imaging (MRI) of the hands should be done to clarify the diagnosis",
+        "B. Rheumatoid arthritis is excluded by the negative ACPA test and normal radiographs",
+        "C. The joint pain and swelling is most likely due to generalised osteoarthritis",
+        "D. The presentation is consistent with polymyalgia rheumatica (PMR)",
+        "E. The presentation is typical of seronegative rheumatoid arthritis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The negative ACPA and normal radiograph does not exclude RA since ACPA and rheumatoid factor are negative in about one-third of patients and radiographs are normal in early RA. The presentation would not be consistent with PMR and the distribution of involvement (wrists, metacarpophalangeal joint; MCPJ) excludes OA. MRI would not be necessary since the patient has typical signs of synovitis.",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following is a common complication of seronegative (ACPA and rheumatoid factor negative) rheumatoid arthritis?",
+      "options": [
+        "A. Felty's syndrome",
+        "B. Osteoporosis",
+        "C. Rheumatoid nodules",
+        "D. Uveitis",
+        "E. Vasculitis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Osteoporosis is a common complication of RA whether seropositive or seronegative. Felty's syndrome, vasculitis and nodules can occur in RA but they are rare complications and occur in seropositive RA. Uveitis is a feature of axial spondyloarthritis (axSpA), not RA.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 36 year old woman presents with 3-month history of joint pain and swelling affecting the wrists, MCPJs and proximal interphalangeal joints (PIPJs) of the hands, both shoulders, both knees and the MCPJs of both feet. Laboratory investigations reveal an ACPA level of 145, an ESR of 68 mm/hr and a CRP of 84 mg/L. On examination she has 22 tender and 16 swollen joints and rates the activity of her arthritis as 65/100, giving a Disease Activity Score 28 (DAS28) of 7.54. What would be the most appropriate initial treatment?",
+      "options": [
+        "A. Adalimumab 40 mg every 2 weeks and prednisolone 5 mg daily",
+        "B. Hydroxychloroquine 200 mg twice daily and ibuprofen 400 mg 3 times daily",
+        "C. Methotrexate 15 mg weekly, folic acid 5 mg weekly and prednisolone 30 mg daily",
+        "D. Prednisolone 30 mg daily, ibuprofen 400 mg 3 times daily and omeprazole 30 mg daily",
+        "E. Rituximab 1000 mg on two occasions a fortnight apart combined with prednisolone 5 mg daily"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Methotrexate is the core disease-modifying antirheumatic drug (DMARD) in the management of RA and it is often combined with prednisolone therapy at first presentation to gain disease control. Option B would be inappropriate in view of the very active disease given that hydroxychloroquine has relatively weak immunosuppressive effects. Options A and E would not be indicated as first-line treatments. Option D would not give adequate disease control.",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which one of the following statements is true with respect to post-menopausal osteoporosis?",
+      "options": [
+        "A. Bone pain is the most common presenting feature",
+        "B. Calcium and vitamin D supplements can prevent its development",
+        "C. It is a rare complication of polymyalgia rheumatica",
+        "D. Obesity is an important risk factor",
+        "E. Patients are usually asymptomatic until a fracture occurs"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Obesity is protective against osteoporosis and osteoporosis does not cause bone pain unless a fracture has occurred. Calcium and vitamin D supplements are used in the treatment of osteoporosis, mainly as an adjunct to other treatments, but alone they are ineffective in the prevention of osteoporosis. Osteoporosis is a common complication of PMR, not a rare complication.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 73 year old woman presents to her family physician with sudden onset of pain in the lower back region that developed after removing weeds in her garden. She has a history of breast cancer treated 10 years previously with surgery and radiotherapy followed by tamoxifen for 5 years. She has a history of hypertension controlled with bendroflumethazide 2.5 mg daily. Her height is 154 cm, weight 53 kg and physical examination is unremarkable. A spine radiograph is shown below. What is the most likely cause of the back pain?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch24/q/24.13.png",
+      "options": [
+        "A. Diffuse interstitial skeletal hyperostosis",
+        "B. Metastatic bone disease",
+        "C. Osteoarthritis of the spine",
+        "D. Osteoporotic vertebral fractures",
+        "E. Spondylolisthesis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The radiograph shows typical features of osteoporotic vertebral fractures with biconcave deformities of L4, L3 and L2, and a wedge deformity of L1.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 60 year old woman suffers a low trauma fracture of the right wrist after a fall. She is a non-smoker and drinks 8 units of alcohol per week. Her menopause occurred at aged 52. She is on no current medication and has no significant medical history but reports that her mother, aged 79, has recently suffered a hip fracture. What would be the most appropriate course of action?",
+      "options": [
+        "A. Advise her to stop drinking alcohol completely",
+        "B. Commence treatment with alendronic acid",
+        "C. Commence treatment with calcium and vitamin D supplements",
+        "D. Request a dual X-ray absorptiometry (DXA) scan",
+        "E. Request a spine radiograph"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient is at increased risk of osteoporosis because of the low trauma fracture and family history of hip fracture. If DXA shows osteoporosis, treatment would be indicated. There is no indication at present to start treatment with either alendronate or calcium and vitamin D supplements, nor is there a reason to advise her to stop alcohol since she has a moderate intake.",
+      "questionNumber": 14
+    },
+    {
+      "question": "Which one of the following is a common adverse effect of oral bisphosphonate therapy in patients with osteoporosis?",
+      "options": [
+        "A. Atypical subtrochanteric fractures",
+        "B. Iritis",
+        "C. Leucopenia",
+        "D. Osteonecrosis of the jaw",
+        "E. Upper gastrointestinal upset"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Options A, B and D are rare adverse effects. Leucopenia is not a recognised adverse effect of oral bisphosphonates.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 48 year old woman with seropositive rheumatoid arthritis (RA) has persistent pain and swelling of the wrists, elbows, shoulders and MCP joints of both hands despite 12 months' therapy with methotrexate 25 mg weekly, folic acid 5 mg weekly, sulfasalazine 3 g daily and hydroxychloroquine 400 mg daily. Examination reveals tenderness and swelling of 10 affected joints, and a raised ESR (45 mm/hr). She rates the activity of her arthritis as 80/100 on a visual analogue scale yielding a DAS28 of 6.45. What would be the most appropriate next course of action?",
+      "options": [
+        "A. Commence treatment with apremilast 30 mg twice daily",
+        "B. Commence treatment with the interleukin (IL)-17 blocker secukinumab 150 mg monthly",
+        "C. Commence treatment with the TNFa inhibitor etanercept 50 mg weekly",
+        "D. Increase the frequency of methotrexate to 3 times weekly",
+        "E. Stop sulfasalazine and substitute leflunomide 10 mg daily"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient has failed to respond adequately to triple therapy and progression to biologic treatment would be indicated. Neither secukinumab nor apremilast is effective in RA and would not be appropriate choices. Substitution of sulfasalazine with leflunomide is unlikely to be effective. Increasing the frequency of methotrexate would not be indicated since the patient is already on the maximum recommended dose.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 56 year old man presents with acute pain, redness and swelling of the first metatarsophalangeal (MTP) joint of the right foot. Investigations show an elevated ESR (35 mm/hr), CRP of 56 mg/L, a mild neutrophilia (12.1x10^9/L), serum creatinine 75 µmol/L (0.85 mg/dL), estimated glomerular filtration rate (eGFR) >60 mL/min/1.73 m2 and a serum uric acid level of 450 µmol/L (7.6 mg/dL). Radiographs reveal evidence of erosions in the affected joint. What would be the most appropriate treatment?",
+      "options": [
+        "A. Allopurinol 100 mg daily initially gradually increasing in dose until uric acid falls below 360 µmol/L (6.1 mg/dL)",
+        "B. Colchicine 500 mg 3 times daily until symptoms settle followed by colchicine 500 mg daily on a long-term basis",
+        "C. Colchicine 500 mg 3 times daily until symptoms settle followed by long-term diclofenac 75 mg twice daily",
+        "D. Diclofenac 75 mg twice daily followed by long-term low-dose aspirin 75 mg/day",
+        "E. Etoricoxib 60 mg daily followed by allopurinol starting at 100 mg daily, gradually increasing in dose until uric acid falls below 360 µmol/L (6.1 mg/dL)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Acute gout can be managed with either NSAID therapy or colchicine, but urate-lowering therapy with allopurinol is indicated to control hyperuricaemia in the long term, to reduce the risk of recurrence and prevent long-term joint damage. Allopurinol alone would not be appropriate since it may cause a further flare in acute gout due to the change in uric acid levels.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 35 year old woman with well-controlled RA states that she wishes to become pregnant. Her medication consists of methotrexate 20 mg weekly, folic acid 5 mg weekly and ibuprofen 400 mg 3 times daily. What advice would you give with regard to her plans to conceive and her medication?",
+      "options": [
+        "A. She can go ahead and try to conceive so long as she reduces the dose of methotrexate to 10 mg weekly and ibuprofen to 200 mg 3 times daily",
+        "B. She should stop the ibuprofen for at least 3 months before trying to conceive but can continue the methotrexate",
+        "C. She should stop the methotrexate and the ibuprofen and then go ahead and try to conceive",
+        "D. She should stop the methotrexate for at least 12 months before trying to conceive but can continue the ibuprofen",
+        "E. She should stop the methotrexate for at least 3 months before trying to conceive but can continue the ibuprofen"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Methotrexate is teratogenic and must be stopped completely at least 3 months before attempting to become pregnant. It is not necessary to stop ibuprofen before becoming pregnant but NSAIDs are contraindicated after 20 weeks.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 75 year old woman is referred to the rheumatology clinic complaining of pain and swelling affecting the proximal interphalangeal joints (PIPJs) and distal interphalangeal joints (DIPJs) of both hands. Investigations show a haemoglobin of 118 g/L, white cell count 6.3x10^9/L, platelets 355x10^9/L and ESR 20 mm/hr. An X-ray of the hands and wrists is performed. Which radiological features are typical of osteoarthritis?",
+      "options": [
+        "A. Irregularity and fusion of the sacroiliac joints",
+        "B. Joint space narrowing and subchondral sclerosis of the PIPJ and DIPJ of the hands",
+        "C. Marginal erosions affecting the MCPJ of the hands",
+        "D. Periarticular osteoporosis affecting the PIPJS and DIPJs in the hands",
+        "E. Punched-out erosions of the first MTP joint of the feet"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Osteoarthritis is characterised by joint space narrowing due to cartilage erosion and subchondral sclerosis. Erosions at all MCPJs and periarticular osteoporosis are more typical of RA (though inflammatory OA typically causes inflammation at index and middle finger MCPJs) whereas punched-out erosions of the first MTP joint of the feet suggest gout. Irregularity and fusion of the sacroiliac joint (SIJ) suggests axial spondyloarthritis (axSpA) or psoriatic arthritis (PsA).",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 65 year old man presents to his family physician complaining of pain in the left knee, worse on ascending and descending stairs. He smokes 15 cigarettes a day, and drinks about 4 units of alcohol daily (28 units per week). He is a former amateur soccer player who suffered a cruciate ligament tear in his 30s. He has lived alone since his wife died 5 years previously. He has been avoiding dairy products since he thinks they cause gastrointestinal upset. Which of the following risk factors predispose to the development of osteoarthritis?",
+      "options": [
+        "A. Alcohol intake >21 units per week",
+        "B. Cigarette smoking",
+        "C. Immobilisation",
+        "D. Low dietary calcium intake",
+        "E. Previous anterior cruciate ligament tear"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Previous joint injury is a strong risk factor for osteoarthritis due to destabilisation of the joint. None of the other factors significantly influences the development of osteoarthritis.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 66 year old woman is referred to the rheumatology clinic with pain in the right hip of gradual onset over the past 2 years, worse on weight-bearing. Examination reveals limitation and pain on internal rotation of the right hip. Her height is 154 cm and weight is 82 kg (body mass index (BMI) 34.6 kg/m2). A pelvic X-ray shows joint space narrowing and osteophytes of the right hip joint, consistent with osteoarthritis. Which one of the following statements is true with regard to the treatment of osteoarthritis of the hip?",
+      "options": [
+        "A. A cyclo-oxygenase 2 (COX-2) selective NSAID is more likely to be effective than a non-selective NSAID in the treatment of pain",
+        "B. Joint replacement surgery is indicated if the response to paracetamol is inadequate",
+        "C. Long-term prophylactic NSAID therapy has a disease-modifying effect",
+        "D. Oral glucosamine is an effective treatment",
+        "E. Oral NSAIDs are more effective than paracetamol in controlling symptoms"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Systemic NSAIDs are more effective that paracetamol in controlling pain in OA. There is no evidence that COX-2 selective and non-selective NSAIDs differ in efficacy. There is some evidence that glucosamine has a weak beneficial effect in knee OA but it has not been studied in hip OA. Joint replacement surgery is a recognised treatment for OA, but would only be indicated when optimal medical therapy was ineffective.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 67 year old woman attends her family physician complaining of generalised aches and pains and feeling tired all the time. She has been under a lot of stress at work and has also been concerned that her son is unemployed and unable to get a job. Physical examination is unremarkable. Routine biochemistry and haematology tests are completely normal with the exception of the serum 25-hydroxyvitamin D (25(OH)D) value, which is 30 nmol/L (12 ng/mL). This is reported by the biochemistry laboratory as showing evidence of vitamin D insufficiency. Which of the following statements is true?",
+      "options": [
+        "A. Circulating serum 25(OH)D levels are highest in the spring and lowest in the autumn",
+        "B. Circulating serum 25(OH)D levels remain constant in most people throughout the year",
+        "C. Circulating vitamin D is mainly derived from dietary intake of fish and meat",
+        "D. Circulating vitamin D is mainly derived from synthesis from 7-dehydrocholesterol in the skin by the action of ultraviolet (UV) light",
+        "E. It is likely that her symptoms will respond well to supplementation with vitamin D, so long as the circulating levels are restored to above 50 nmol/l (20 ng/mL)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although diet accounts for a proportion of circulating vitamin D, sunlight exposure is the most important source in most people. Synthesis of 25(OH)D in the skin under the influence of UV light accounts for the fact that circulating levels are highest in the summer and lowest in the winter. It is very unlikely that this patient's symptoms are related to the level of vitamin D.",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which of the following statements is correct with regard to metabolism of vitamin D?",
+      "options": [
+        "A. The biologically active form 25(OH) vitamin D is hydroxylated in the kidney by the enzyme CYP27B1 to generate the inactive metabolite 1,25(OH),D",
+        "B. The biologically active form 25(OH) vitamin D is inactivated by the enzyme CYP24A1 in the kidney",
+        "C. The biologically inactive form 25(OH) vitamin D is hydroxylated in the kidney by the enzyme CYP24A1 to give the active metabolite 1,25(OH)2D",
+        "D. The biologically inactive form 25(OH) vitamin D is hydroxylated in the kidney by the enzyme CYP27B1 to give the active metabolite 1,25(OH)2D",
+        "E. The vitamin D metabolite 24,25(OH)2D is biologically inactive and stimulates intestinal calcium absorption and bone resorption"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The inactive metabolite 25(OH) vitamin D (25(OH)D) is hydroxylated in the kidney at the 1α position by the enzyme CYP27B1 to give the active metabolite 1,25(OH)2D. Although 25(OH)D is hydroxylated at the 1 and 24 positions, the 24,25(OH)2D metabolite is not biologically active.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 66 year old Muslim woman of Middle Eastern origin presents with a 2-month history of gradually worsening pain, weakness and stiffness affecting the muscles of the shoulder and pelvic girdle. She has a past medical history of type 2 diabetes controlled with diet and metformin 500 mg twice daily. She is also taking atorvastatin 40 mg daily and has been recently prescribed trimethoprim for a urinary tract infection. Investigations show a normal full blood count, ESR 13 mm/hr, normal urea and electrolytes, serum creatine kinase 100 U/L, serum adjusted calcium 2.25 mmol/L (9.0 mg/dL), serum 25(OH)D <20 nmol/L (8 ng/mL), phosphate 0.70 mmol/L; bilirubin 10 µmol/L (0.58 mg/dL), aspartate aminotransferase (AST) 20 U/L, alkaline phosphatase (ALP) 275 U/L, parathyroid hormone (PTH) 35 pmol/L (330 pg/mL). What is the most likely diagnosis?",
+      "options": [
+        "A. Osteomalacia",
+        "B. Osteoporosis",
+        "C. Polymyalgia rheumatica",
+        "D. Statin-induced myopathy",
+        "E. Vitamin D insufficiency"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Osteomalacia is suggested by the symptoms, the patient's ethnic background, the low 25(OH)D, high PTH, low phosphate and high ALP. Vitamin D insufficiency is a biochemical diagnosis in patients with serum 25(OH)D levels of 25-50 nmol/L (10-20 ng/mL). Polymyalgia is unlikely in view of the normal ESR, and statin-induced myopathy is unlikely in view of the normal creatine kinase. The symptoms and biochemical abnormalities are not consistent with osteoporosis.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 56 year old woman presents with generalised musculoskeletal pain associated with multiple focal tender spots on local pressure of the muscle on the trunk and upper arms and is diagnosed as having probable fibromyalgia. Investigations reveal normal urea and electrolytes, normal full blood count, ESR 10 mm/hr and normal bilirubin, AST and ALP. Serum 25(OH)D level is 25 nmol/L (10 ng/mL), serum calcium is 2.41 mmol/L (9.7 mg/dL), phosphate 1.2 mmol/L (3.72 mg/dL) and PTH is 5.2 pmol/L (49 pg/mL). Which of the following statements is true?",
+      "options": [
+        "A. Fibromyalgia is associated with vitamin D deficiency",
+        "B. High-dose vitamin D supplements (25000 units per week) are likely to be an effective treatment for the musculoskeletal pain",
+        "C. Low-dose vitamin D supplements (800 units daily) are likely to be an effective treatment for the musculoskeletal pain",
+        "D. The low vitamin D levels are likely to be secondary to the fibromyalgia",
+        "E. The muscle pain and tenderness are likely to be due to osteomalacia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "It is likely that the low 25(OH)D levels are secondary to fibromyalgia since vitamin D deficiency is common as a secondary feature of many diseases due to lack of sunlight exposure and a poor diet. There is no evidence that vitamin D supplements help in fibromyalgia or that fibromyalgia is a complication of vitamin D deficiency.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 25 year old man is referred to the clinic because of focal bone pain affecting the mid-shaft of the left femur. On examination he has short stature and bilateral bowing deformities of the lower limbs. He was diagnosed as having childhood rickets and treated with vitamin D metabolites but stopped treatment aged 16 years and was lost to follow-up. There is a family history of rickets affecting his mother and brother. Investigations reveal a serum calcium of 2.25 mmol/L (9.0 mg/dL), phosphate 0.60 mmol/L (1.86 mg/dL), PTH 12.5 pmol/L (118 pg/mL), ALP 160 U/L and serum 25(OH)D 54 nmol/L (22 ng/mL). What is the most likely diagnosis?",
+      "options": [
+        "A. Tumour-induced osteomalacia",
+        "B. Vitamin D-deficient rickets",
+        "C. Vitamin D-resistant rickets type I",
+        "D. Vitamin D-resistant rickets type II",
+        "E. X-linked hypophosphataemic rickets"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Option A is unlikely in view of the positive family history. Vitamin D-deficiency rickets is unlikely in view of the positive family history and the normal 25(OH)D level. Options C and D are recessive disorders, which would be inconsistent with the family history of an affected mother and brother.",
+      "questionNumber": 26
+    },
+    {
+      "question": "Which of the following statements is true with regard to Paget's disease of bone?",
+      "options": [
+        "A. Dietary calcium deficiency and smoking are recognised risk factors",
+        "B. It can be inherited in families in association with mutations in the SQSTM1 gene",
+        "C. It is a focal skeletal disorder characterised by inhibition of bone formation and an increased risk of fracture",
+        "D. It is a systemic skeletal disorder characterised by a generalised increase in bone turnover",
+        "E. There is a strong genetic component mediated by variants at the human leucocyte antigen (HLA) locus on chromosome 6"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In about 10-15% of cases the disease is inherited in families due to mutations in the SQSTM1 gene. There is no proven association with the HLA locus. Paget's is a focal skeletal disorder characterised by increased bone resorption and formation (not reduced bone formation). Although environmental factors play a role in Paget's disease of bone, the triggers are unclear and there is no evidence that alcohol intake or smoking predispose to the disease.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 68 year old man presents with gradually worsening pain in the right hip region, which is present at rest and worsens slightly on weight-bearing. Investigations reveal a creatinine of 140 µmol/L (1.58 mg/dL) and an eGFR of 35 mL/min/1.73 m2 but otherwise normal urea and electrolytes, normal serum calcium and phosphate, but an ALP of 350 U/L. The full blood count is normal. A pelvic radiograph is performed and is shown below. What is the most likely cause of the pain?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch24/q/24.28.png",
+      "options": [
+        "A. Osteoarthritis",
+        "B. Osteomalacia",
+        "C. Osteoporosis",
+        "D. Paget's disease",
+        "E. Renal osteodystrophy"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The radiograph shows changes typical of Paget's disease with alternating areas of osteosclerosis and osteolysis and expansion of the femur. There is also a pseudofracture on the lateral femoral cortex. The site of Paget's corresponds with the location of the pain, and the elevated ALP level indicates increased metabolic activity, suggesting that the pain may be caused by Paget's disease of bone. There is no evidence of OA, which makes this unlikely as the cause of the pain. The biochemistry does not support a diagnosis of osteomalacia and renal osteodystrophy would not be expected in a patient with mild renal impairment.",
+      "questionNumber": 28
+    },
+    {
+      "question": "Which of the following clinical or radiographic features is consistent with a diagnosis of Scheuermann's disease?",
+      "options": [
+        "A. At least two wedge deformities in the thoracic spine with a T-score of <-2.5 at either spine or hip on DXA examination",
+        "B. Crush deformity affecting at least three vertebrae in the lumbar spine",
+        "C. Disc space narrowing in the lumbar spine with marked osteophyte formation",
+        "D. Two vertebral crush deformities in the thoracic spine and one in the lumbar spine with evidence of osteopenia on radiographs",
+        "E. Wedge deformity affecting several adjacent vertebrae in the thoracic spine with disc space narrowing"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Scheuermann's is characteristically accompanied by wedge deformities of several adjacent thoracic vertebrae with disc space narrowing. It typically results in contiguous vertebral paramarginal syndesmophytes. Options B, D and E would be consistent with osteoporosis. Option C would be consistent with osteoarthritis.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 32 year old man is referred to the rheumatology clinic having sustained a fracture of the right femur after falling when he tripped over an uneven pavement. Examination is unremarkable apart from the fact that he has blue sclerae. He is known to have osteogenesis imperfecta (OI) and has a history of low trauma fractures dating back to childhood. Which of the following statements is true with regard to this condition?",
+      "options": [
+        "A. Bisphosphonates are highly effective at preventing fractures in adults with Ol",
+        "B. Fractures of the vertebrae are an uncommon complication",
+        "C. The diagnosis can be excluded if the sclerae are of normal colour",
+        "D. The incidence of fractures increases progressively with age",
+        "E. The incidence of fractures is highest in childhood"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Fractures occur most commonly in childhood, decrease during adolescence and adulthood but increase again with ageing. Option A is incorrect: it is unknown whether bisphosphonates reduce fracture risk in adults with OI. Option B is incorrect: vertebral fractures occur commonly. Option C is incorrect: blue sclerae are typical of type I OI but normal sclerae do not exclude other subtypes.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 23 year old woman presents with pain, swelling and deformity affecting the distal tibia of the right leg. On examination she has areas of café-au-lait pigmentation on her right shoulder and left forearm. The past medical history is unremarkable and she is on no medication apart from the oral contraceptive pill. Radiographs reveal expansion of the left tibia with alternating areas of osteolysis and osteosclerosis. What is the most likely diagnosis?",
+      "options": [
+        "A. Camurati-Engelmann disease",
+        "B. Fibrous dysplasia",
+        "C. Osteomyelitis",
+        "D. Osteopetrosis",
+        "E. Paget's disease of the tibia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The presentation is typical of fibrous dysplasia, which is caused by a somatic mutation in GNAS1, which activates signalling through the PTH receptor causing a focal increase in bone turnover and osteolytic lesions. It is also associated with café-au-lait pigmentation due to activation of signalling through the melanocyte-stimulating hormone receptor and endocrine abnormalities. Paget's disease can also present with focal bone deformity but would be extremely unusual in a patient of this age. Osteomyelitis is unlikely in the absence of a previous history of infection. Camurati-Engelmann disease can present similarly but is bilateral rather than unilateral. The diagnosis is not consistent with osteopetrosis, which is a systemic rather than local disorder characterised by high bone mass.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 58 year old man with haemochromatosis is referred to the rheumatology clinic with a 3-year history of pain mainly affecting the small joints of the hands and wrists. Four weeks previously he had developed acute pain, swelling and redness of the right wrist, which had responded to treatment with naproxen 500 mg 3 times daily. He has a history of type 2 diabetes treated with diet and metformin and has been treated with regular venesection for the previous 3 years. Clinical examination of his hands is unremarkable with no evidence of synovitis. Laboratory investigations are as follows: haemoglobin 115 g/L, white cell count 8.2x10^9/L, platelets 345x10^9/L, ESR 20 mm/hr, serum iron 100 µmol/L (558 µg/dL), AST 35 U/L, bilirubin 15 µmol/L (0.88 mg/dL) and ALP 150 U/L. Radiographs of the hands and wrists show joint space narrowing and subchondral cysts affecting the MCP and the radiocarpal joints with no osteophyte formation. Which of the following statements is true?",
+      "options": [
+        "A. The arthritis is an incidental finding unrelated to the diagnosis of haemochromatosis",
+        "B. The clinical picture is consistent with rheumatoid arthritis",
+        "C. The most likely cause for his joint symptoms is diabetic cheiroarthropathy",
+        "D. The most likely explanation for the acute flare in his joint symptoms is calcium pyrophosphate deposition disease",
+        "E. The risk of further flares in symptoms can be reduced by continued venesection and restoration of serum iron levels to normal"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Calcium pyrophosphate deposition disease (CPPD) is a common feature of the arthropathy associated with haemochromatosis and the presentation with acute pain and swelling that settles with NSAID treatment is consistent with CPPD-associated arthropathy (pseudogout). Diabetes can cause an arthropathy but has different features and RA is unlikely as symptoms have settled and there is no synovitis. Although venesection should be continued as treatment for the haemochromatosis, there is no evidence that this will improve the arthritis. Option A is incorrect since an arthropathy is associated with haemochromatosis in up to 50% of cases.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 64 year old woman with a 10-year history of rheumatoid arthritis affecting the hands and wrists, which is controlled with sulfasalazine 3 g daily and hydroxychloroquine 200 mg twice daily, presents with a disturbance of sensation and tingling affecting the thumb and anterior aspects of the index and second fingers of the right hand. On examination there is no evidence of active synovitis but there is altered perception of fine touch on examination of the affected digits in the right hand. Investigations are as follows: haemoglobin 120 g/L, white cell count 6.5x10^9/L, platelets 456x10^9/L, ESR 20 mm/hr, CRP 6 mg/L. What is the most likely cause of the symptoms?",
+      "options": [
+        "A. Bone erosions secondary to the long-standing RA",
+        "B. Median nerve compression",
+        "C. Mononeuritis associated with rheumatoid vasculitis",
+        "D. Osteoarthritis of the first CMC joint",
+        "E. Ulnar nerve compression"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The symptoms are typical of median nerve compression syndrome, which is a recognised complication of RA. Mononeuritis can occur secondary to vasculitis in RA but this is unlikely since the disease is under good control. Osteoarthritis of the CMC joint presents with local pain rather than neurological symptoms. Bone erosions are a cause of pain in RA but not neurological symptoms.",
+      "questionNumber": 33
+    },
+    {
+      "question": "Which one of the following statements is true with regard to joint hypermobility?",
+      "options": [
+        "A. Affected patients may experience episodes of postural hypotension accompanied by tachycardia",
+        "B. It is a rare complication of osteogenesis imperfecta",
+        "C. Mutations in the FBN1 gene are the most common cause",
+        "D. The diagnosis can be confirmed by a Beighton score of more than 4 in patents who have dislocated at least one joint",
+        "E. Treatment with NSAIDs is highly effective in controlling ligament and joint pain in affected patients"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Postural orthostatic hypotension syndrome (POTS) is a recognised complication of hypermobility. Option C is incorrect. Although FBN1 mutations cause hypermobility as part of Marfan's syndrome, this is a rare cause of hypermobility - the most common cause is Ehlers-Danlos syndrome type III, which is a polygenic disorder. Option B is incorrect since hypermobility is common in osteogenesis imperfecta. Option D is incorrect. Hypermobility is diagnosed with a Beighton score of 4 or above in the presence of arthralgia. Joint dislocations are not a prerequisite to make the diagnosis.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 67 year old woman with a 15-year history of type 2 diabetes treated with diet, metformin and sitagliptin presents with gradual onset of pain and deformity affecting the right ankle and foot. On general examination, blood pressure is 145/85 mmHg, pulse 85 beats/min, height 153 cm and weight 89 kg. Neurological examination reveals absent ankle jerks and impairment of fine touch and proprioception in both feet. Peripheral pulses are absent below the femoral arteries. Examination of the ankle joint reveals swelling and deformity of the ankle joint and a severe valgus deformity. Investigations show moderate renal dysfunction with a serum creatinine of 165 µmol/L (1.87 mg/dL) and eGFR of 25 mL/min/1.73 m2. Serum AST is 20 U/L, ALT 85 U/L, bilirubin 12 µmol/L (0.70 mg/dL) and serum uric acid 400 µmol/L (6.7 mg/dL). Full blood count shows mild anaemia with a haemoglobin of 110 g/L and an ESR of 25 mm/hr. Radiographs show severe destruction of the ankle and the mid-foot joints with bony fragments within the joint. What is the most likely cause of the ankle pain?",
+      "options": [
+        "A. Calcium pyrophosphate deposition disease",
+        "B. Charcot joint",
+        "C. Diabetic cheiroarthropathy",
+        "D. Gout",
+        "E. Osteoarthritis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The presentation is typical of a Charcot joint secondary to peripheral neuropathy associated with the diabetes. Although the patient has hyperuricaemia, the history does not suggest gout. The history is also inconsistent with calcium pyrophosphate deposition disease. Diabetic cheiroarthropathy affects the hands, not the ankle. The clinical picture is not consistent with OA, which in the lower limbs typically affects the hips and knees.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 17 year old male presents with pain and swelling of the middle of the right tibia that has been gradually increasing in severity over a period of 6-8 weeks. An X-ray shows expansion of the bone and a soft tissue mass containing islands of calcification. What is the most likely diagnosis?",
+      "options": [
+        "A. Fibrous dysplasia",
+        "B. Hypertrophic pulmonary osteoarthropathy",
+        "C. Metastatic bone disease",
+        "D. Osteosarcoma",
+        "E. Paget's disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Osteosarcoma is a rare tumour that predominantly affects people under 30 years of age, presenting with pain and a soft tissue mass, often with islands of calcification within the lesion. Fibrous dysplasia can cause an expansile bone lesion but is not associated with a soft tissue mass, The patient is too young for Paget's disease. Metastatic bone disease presents differently. Although hypertrophic pulmonary osteoarthropathy can present with pain and a periosteal reaction in the limbs, it does not cause a soft tissue mass.",
+      "questionNumber": 36
+    },
+    {
+      "question": "Which physiological process is primarily responsible for the development of osteoporosis in patients on long-term glucocorticoid therapy?",
+      "options": [
+        "A. Increased degradation of 25(OH)D",
+        "B. Increased osteoclastic bone resorption",
+        "C. Inhibition of 25(OH)D production",
+        "D. Inhibition of bone formation",
+        "E. Secondary hyperparathyroidism"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The main mechanism is inhibition of bone formation due to osteoblast and osteocyte apoptosis. Osteoclastic bone resorption can be increased due to secondary hyperparathyroidism but this is not the main mechanism of bone loss. Options A, C and E are all incorrect; glucocorticoids do not affect vitamin D metabolism or cause hypoparathyroidism.",
+      "questionNumber": 37
+    },
+    {
+      "question": "Which of the following environmental exposures has been associated with susceptibility to, and severity of, rheumatoid arthritis?",
+      "options": [
+        "A. Cigarette smoking",
+        "B. Excessive alcohol intake (>21 units per week)",
+        "C. Human immunodeficiency virus (HIV) infection",
+        "D. Obesity (BMI >30)",
+        "E. Vitamin D insufficiency"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Smoking has been associated with severity and susceptibility to RA as well as response to treatment. There is no evidence that alcohol, body weight or HIV infection predispose to RA. Although vitamin D insufficiency is common in RA, there is no evidence that it plays a causal role or influences disease activity.",
+      "questionNumber": 38
+    },
+    {
+      "question": "In investigating the cause of an acute monoarthritis in a 50 year old man in a non-tuberculosis (TB) endemic region, synovial fluid from the swollen joint is sent for Gram stain, culture and polarised microscopy. The laboratory staff call with the results: they say 'Gram stain negative; culture results are not available for another 48 hours. There are many neutrophils and there are negatively birefringent crystals in the fluid.' What is the correct management?",
+      "options": [
+        "A. Antibiotics and steroids should be used together",
+        "B. Intra-articular steroids can be given straight away because the diagnosis is reactive arthritis",
+        "C. The patient can be treated for gout because infection has been excluded",
+        "D. The joint should be drained and analgesia given but steroids should be withheld until the culture result is available",
+        "E. The results favour a diagnosis of pseudogout"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The available results are consistent with acute gout (urate crystals are negatively birefringent) but do not exclude the possibility that infection may also be present. In sepsis, often bacterial identification is not possible until culture is available. A negative Gram stain suggests there might not be infection but does not rule it out. The cause of pseudogout is calcium-containing crystals (usually pyrophosphate) and these crystals are positively birefringent. Reactive arthritis is certainly possible but intervention should be delayed until it is clear it is not septic arthritis.",
+      "questionNumber": 39
+    },
+    {
+      "question": "Psoriatic arthopathy contains a number of the radiographic signs in the answers below. Which one of the following radiographic signs is NOT typically recognised in psoriatic arthritis (PsA)?",
+      "options": [
+        "A. Bone sclerosis",
+        "B. Calcification of peri-odontoid ligaments",
+        "C. Juxta-articular new bone formation",
+        "D. Sacroiliac erosions",
+        "E. Syndesmophytes"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Calcification of peri-odontoid ligaments is a feature of crowned dens syndrome, which is a lesion seen in CPPD. Syndesmophytes are the hallmark radiographic sign in advanced ankylosing spondylitis. Bone sclerosis is a recognised feature of PsA; juxta-articular new bone formation is very common in PsA and is included in the diagnostic (CASPAR) classification. Sacroiliac disease is a common feature in all spondyloarthritides (SpA).",
+      "questionNumber": 40
+    },
+    {
+      "question": "A young man has a history of chronic low back pain and stiffness, which disturbs his sleep and takes time to wear off in the morning after waking. In making a diagnosis, which is the most appropriate combination of tests to do after clinical assessment?",
+      "options": [
+        "A. HLA-B27 and ESR",
+        "B. MRI lumbar spine and sacroiliac joints and bone scintigraphy",
+        "C. MRI SIJs and ESR",
+        "D. Pelvis radiograph and HLA-B27",
+        "E. Pelvis radiograph, whole-spine and SIJs MRI, and HLA-B27"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The history suggests inflammatory back pain and hence either axSpA or ankylosing spondylitis (AS) is possible. AS and axSpA can be associated with normal ESR. Diagnosis of AS requires an abnormality of SIJs on x-ray to be present but a diagnosis of axSpA can be made before SIJ X-ray changes are present using axial skeletal MRI. Although HLA-B27 does not diagnose either disease, its presence increases the likelihood of either axSpA or AS in the appropriate clinical context.",
+      "questionNumber": 41
+    },
+    {
+      "question": "Which one of the following is a recognised use of ultrasound in rheumatology practice?",
+      "options": [
+        "A. Adding information to the diagnostic workup of patients with polymyalgia rheumatica",
+        "B. Detection of the vascularity of synovitis in MCP joints",
+        "C. Diagnosing sacroiliac inflammation",
+        "D. Discrimination of hip adductor tendonitis from symphysitis",
+        "E. Guiding needle placement to a lumbar spine facet joint in treating facet joint arthritis with injectable steroid"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Ultrasound has poor ability to detect soft tissue abnormalities if there is extensive bone (which appears as an interface linear high signal with a reflectance void beyond it, i.e. black!). There are no characteristic features of PMR-related lesions on ultrasound. With Doppler, ultrasound is useful for gauging the vascularity of joint and tendon synovitis.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A woman, aged 51 years, has never had a fracture but has been on intermittent steroids (5 x 4-week courses) for her Crohn's disease over the last 2 years. Her DXA scan results are: lumbar spine bone mineral density (BMD) T-score -2.0; femoral neck BMD T-score-1.5; and total hip BMD T-score -2.2. Which is the correct statement?",
+      "options": [
+        "A. Calcium and vitamin D should be the only therapy considered",
+        "B. FRAX assessment will be useful in this case",
+        "C. Lateral spinal X-rays should NOT be obtained",
+        "D. Nothing should be done as T-scores are >-2.5, except DXA to be arranged in 5 years time",
+        "E. Steroids should NOT be used to treat her Crohn's disease"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Her osteoporosis risk may be quite high given her age (likely peri-menopausal), steroids and systemic inflammatory disease, and despite just an osteopenia-level BMD. Mild but definite spinal fractures can be relatively clinically silent - causing few symptoms - so often need pro-action ‘ruling out' with imaging. If present, a fragility spine fracture will elevate her further fracture risk considerably. FRAX (www.shef.ac.uk/FRAX) allows an overall quantification of fracture risk using the main BMD-independent risk factors for fracture. It is well established that the level of BMD at which fragility fractures are likely is higher than would otherwise be expected if steroids were not being taken. Patients with Crohn's disease, and patients on steroids, can be calcium and/or vitamin D deficient and supplements should be considered but antiresorptive therapies should also be considered if overall risk warrants. Whilst steroids should be minimised, there may be no other option for treatment of her acute Crohn's flare-ups.",
+      "questionNumber": 43
+    },
+    {
+      "question": "Blood is taken from a pre-menopausal woman with joint pains, xerostomia and fatigue. Antinuclear antibody (ANA) is positive; anti-DNA antibody titre 1 U/L, anti-Ro(SSA) positive, anti-La(SSB) positive, complement C3 and C4 normal, rheumatoid factor positive, ACPA negative. Based on the following immunology results, which is the most likely diagnosis?",
+      "options": [
+        "A. Primary Sjögren's syndrome (PSS)",
+        "B. RA",
+        "C. RA and systemic lupus erythematosus (SLE) together",
+        "D. SLE",
+        "E. Systemic sclerosis (SSCI)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Autoimmune serology results interpreted alone out of clinical context are rarely, if ever, diagnostic. The serology is typical of PSS. Positive anti-DNA antibodies are typically associated with SLE. Anti-Ro can be present in both SLE and PSS but if both Ro and La are positive, PSS is more likely. Although patients with SScl can be ANA positive, antibodies more specific for SScl are anti-centromere or anti-topoisomerase (Scl-70). Rheumatoid factor is not specific for RA and in the context of these other serology results and negative ACPA, the rheumatoid factor is far more likely to represent PSS.",
+      "questionNumber": 44
+    },
+    {
+      "question": "In discriminating causes of inflammatory polyarthritis, which statement is most likely to be true?",
+      "options": [
+        "A. An absence of joint synovitis on examination rules out RA",
+        "B. Enthesitis occurring in PsA always causes pain or local tenderness",
+        "C. Polyarticular joint involvement may be a typical presentation of gout in an older woman",
+        "D. Pseudogout/calcium pyrophosphate deposition disease affects only peripheral joints",
+        "E. Synovitis in PIP and some MCP joints rules out OA"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The presentation of gout in men and women is typically different; particularly in post-menopausal women, the first presentation may be polyarticular. Synovitis in RA can be subtle and is not always clinically obvious - MRI and ultrasound (US) are useful in confirming early synovial disease. Axial skeletal forms of CPPD include crowned dens syndrome, intervertebral disc inflammation and ligament flavum inflammation/thickening. Studies using US have shown subclinical inflammation at entheses in PsA. Generalised OA can present as an inflammatory ‘storm' of symptoms in small joints with synovial inflammation. Involvement of PIPJs and DIPJs is more common than MCPJs, but often the index and sometimes third finger MCPJs are involved (RA often picks out the fifth MCPJ early on in the course of the disease).",
+      "questionNumber": 45
+    },
+    {
+      "question": "A woman aged 34 years presents with a 24-month fluctuating history of fatigue, widespread pains, poor appetite, non-specific bowel symptoms, non-specific skin rashes, mild weight loss and some altered cognitive function. Which one of the following diagnoses is least likely?",
+      "options": [
+        "A. Autoimmune connective tissue disease",
+        "B. Fibromyalgia",
+        "C. Inflammatory bowel disease",
+        "D. Malignancy",
+        "E. Sarcoidosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The features are not unusual for a rheumatology referral! The differential diagnosis can be wide and includes inflammatory and autoimmune disease. Also, significant somatic and functional effects from psychosocial triggers in a vulnerable person can provide such a symptom complex. Rheumatology assessment requires a broad approach and judicious use of investigations based on a stratified differential diagnosis based on clinical assessment. A 2-year history of an illness due to malignancy would be expected to cause progressive clinical deterioration.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 65 year old man presents with low thoracic back pain for the first time. It has been present for about 3 months, starting initially over the course of a week and now at a constant level (no worsening, but no improvement). His sleep is disturbed. There are no systemic symptoms and no leg pains. Of the following, which is the most likely diagnosis?",
+      "options": [
+        "A. Axial spondyloarthritis",
+        "B. Intervertebral disc prolapse",
+        "C. Osteoporotic fracture",
+        "D. Septic discitis",
+        "E. Spondylolisthesis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Men do get osteoporosis and the commonest vertebral fracture sites are low thoracic spine or L1 or L2. Fracture pain can be mild to severe but often starts acutely or subacutely, and persists. It would be rare for axSpA to present at this age for the first time. Disc prolapse lesions occur mainly in younger people and are rare in the thoracic spine - the commonest levels being L5/S1, L4/L5, L3/L4. The absence of systemic features is chiefly against this being sepsis - patients with this diagnosis are often generally quite unwell. Like prolapsed discs, the main sites of spondylolistheses are lumbar spine and sometimes in the neck, but very rarely in the thoracic spine. Malignancy is not on the list but should be considered in anyone this age presenting with non-trivial/self-limiting back pain for the first time.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 13 year old girl presents with limp and examination evidence of left knee swelling. There are no systemic symptoms, sore throat or rash. Blood tests show normal full blood count, CRP of 10 mg/L, ESR of 10 mm/h, negative rheumatoid factor, ACPA and ANA autoantibodies. Which is most likely to be correct?",
+      "options": [
+        "A. As there is no psoriasis, the condition is unlikely to be PsA",
+        "B. Methotrexate should be started immediately",
+        "C. Screening for uveitis is not necessary",
+        "D. The condition is best classified as oligoarticular juvenile idiopathic arthritis (JIA)",
+        "E. The girl has juvenile RA"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Oligoarthritis is the most common form of JIA, accounting for 60% of cases. Monoarthritis is an unusual presentation of RA, especially if both rheumatoid factor and ACPA antibodies are negative. Ophthalmological screening is recommended in all cases of JIA, regardless of whether ANA is positive or negative. As in adults, PsA may be the cause of monoarthritis/oligoarthritis, whether or not psoriasis is present, i.e. PsA has to be considered possible. Initial management should be with an NSAID and consider intra-articular steroid injection (under light general anaesthetic).",
+      "questionNumber": 48
+    },
+    {
+      "question": "Which of the following statements about JIA is most likely to be correct?",
+      "options": [
+        "A. Oligoarthritis in the presence of high acute phase response measures is not a presenting feature of leukaemia or inflammatory bowel disease (IBD)",
+        "B. Only ANA-positive JIA patients need an ophthalmological examination",
+        "C. Systemic JIA is associated with haemophagocytic syndrome",
+        "D. Systemic JIA is usually associated with a positive ANA",
+        "E. The prevalence of JIA is about 1 in 10000"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "All JIA patients should be referred for ophthalmological examination to rule out uveitis. Both IBD and leukaemia can present with oligoarthritis. Systemic JIA is regarded as an antibody-negative condition and is analogous to adult-onset Still's disease. The prevalence of JIA (1:1000) is similar to the prevalence of diabetes in children and adolescents (1:700).",
+      "questionNumber": 49
+    },
+    {
+      "question": "Which of the following treatments has NOT shown efficacy in either ankylosing spondylitis or psoriatic arthritis?",
+      "options": [
+        "A. Anti-IL-17A monoclonal (secukinumab)",
+        "B. Anti-IL-23/12 monoclonal (ustekinumab)",
+        "C. Anti-TNF-α",
+        "D. Apremilast (phosphodiesterase-4 inhibitor)",
+        "E. Rituximab (anti-CD20/anti-B-cell therapy)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Rituximab is ‘B-cell depletion' therapy. B-cell proliferation and B-cell antigen presentation are not a major part of the pathophysiology of either AS or PsA. Other therapies mentioned have alternatively been shown to have some clinical effectiveness in one or both conditions.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 35 year old man develops low back, posterior heel pain and a swollen knee and has a pustular skin rash on the soles of his feet. There are no preceding illnesses, no previous psoriasis or family history of it. What is the most likely diagnosis?",
+      "options": [
+        "A. Ankylosing spondylitis",
+        "B. Gout",
+        "C. Post-streptococcal arthritis",
+        "D. Psoriatic arthritis",
+        "E. Sexually acquired reactive arthritis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A pustular plantar foot rash occurring simultaneously with inflammatory back pain, enthesitis and synovitis does suggest reactive arthritis. A sexual history may not be volunteered but should be sought - with direct questions about new recent sexual encounters, penile discharge, dysuria and other genital symptoms, if necessary.",
+      "questionNumber": 51
+    },
+    {
+      "question": "Most of the genes below are implicated in influencing either susceptibility for, or severity of, ankylosing spondylitis. However, which of these genes below has NOT been implicated?",
+      "options": [
+        "A. ERAP-1",
+        "B. HLA-B27",
+        "C. ANK-H",
+        "D. IL-23 receptor",
+        "E. STAT-3"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Ankylosing spondylitis (AS) and all spondyloarthropathies are generally autoinflammatory conditions characterised by abnormalities in antigen processing (HLA-B27, ERAP-1), antigen presentation (ERAP-1, HLA-B27) and the stimulation and activity of type 17 T cells (IL-23r, STAT-3). ANK-H is associated with calcium pyrophosphate deposition disease (CPPD). ANK-H codes for a transmembrane protein important in transporting inorganic pyrophosphate.",
+      "questionNumber": 52
+    },
+    {
+      "question": "Which combination of features below is most likely to be relevant to a diagnosis of axSpA?",
+      "options": [
+        "A. Achilles tendon enthesitis, anterior uveitis and pubic symphysitis",
+        "B. An aunt who has psoriasis, rheumatoid factor and fatigue",
+        "C. Back pain, joint swelling and stiffness, scleritis, fatigue and positive ACPA",
+        "D. High ESR, anterior uveitis, ankle swelling, raised serum angiotensin-converting enzyme (ACE)",
+        "E. Low back pain, rosacea, prostatism and diarrhoea"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Scleritis and ACPAs are features of RA. Uveitis, ankle swelling and raised ACE are typical of sarcoid. Fatigue is a feature of all autoinflammatory and autoimmune conditions. A small minority of PsA patients may have a positive rheumatoid factor. Achilles insertional tendonitis (enthesitis) and symphysitis are recognised axSpA lesions.",
+      "questionNumber": 53
+    },
+    {
+      "question": "Enthesitis is the hallmark musculoskeletal lesion of all spondyloarthritides (SpAs). Which one of the following is characteristic of enthesitis in the context of an SpA condition?",
+      "options": [
+        "A. Enthesitis can occur in PsA without causing any symptoms",
+        "B. Enthesitis cannot be detected by US",
+        "C. Enthesitis does not improve with secukinumab (anti-IL-17 DMARD)",
+        "D. Enthesitis only occurs in SpA patients who are HLA-B27",
+        "E. Enthesitis only occurs in lower limbs"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Direct evidence from randomised controlled trial data suggest TNF-α inhibitors ustekinumab (anti-IL-12/23 monoclonal) and secukinumab (anti-IL-17) treat enthesitis successfully, although evidence that non-biologic immunotherapies do is scant. Ultrasound studies have shown subclinical inflammation at entheses in PsA. MRI and US can detect enthesitis. Enthesitis can occur at any site of entheseal tissue - which includes any soft tissue structure attachment to bone and at the nail bed-distal interphalangeal joint tissue complex. Enthesitis occurs in both HLA-B27 positive and negative individuals with spondyloarthritis.",
+      "questionNumber": 54
+    },
+    {
+      "question": "Apremilast - a treatment developed for psoriatic arthritis is a small molecule that directly inhibits which of the following?",
+      "options": [
+        "A. Mitogen-activated protein (MAP) kinases",
+        "B. Phosphodiesterase 4 (PDE4)",
+        "C. RANK ligand",
+        "D. Signal transducer and activator of transcription 3 (STAT3)",
+        "E. T-cell CD80/86 binding"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Apremilast inhibits PDE4, which then secondarily reduces pro-inflammatory cytokine production including IL-17 and TNF-α but also increases production of the anti-inflammatory cytokine IL-10. Inhibition of RANK ligand is achieved by denosumab monoclonal antibody, used in treating osteoporosis. CD80/86 binding (T-cell co-stimulatory signalling) by abatacept (CTLA-Ig), blocks T-cell function, and is licensed for use in treating RA. STAT3 is a potential therapy target in a number of autoinflammatory and autoimmune diseases given its role in promoting differentiation of Th17 cells.",
+      "questionNumber": 55
+    },
+    {
+      "question": "Which of the following interventions lack evidence of efficacy in the treatment of any components of fibromyalgia (pain, fatigue, physical functioning)?",
+      "options": [
+        "A. Cannabis",
+        "B. Cognitive behavioural therapy (CBT)",
+        "C. Gabapentin",
+        "D. Supervised aerobic exercise training",
+        "E. The serotonin and noradrenaline reuptake inhibitor (SNRI) duloxetine"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "There is no evidence that cannabinoids improve any aspect of fibromyalgia. The quality of evidence (see http://www.cochranelibrary.com/topic/Rheumatology/Fibromyalgia/) for all treatments in fibromyalgia is generally poor, perhaps with the exception of supervised aerobic exercise. However, some evidence exists showing responses in a minority of studied patient populations for a wide range of interventions.",
+      "questionNumber": 56
+    },
+    {
+      "question": "Which of the following is thought to be a consequence of, or associated with, constitutive substantial connective tissue laxity (hypermobility syndrome (HMS)/ hypermobile-type Ehlers-Danlos)?",
+      "options": [
+        "A. Enthesitis",
+        "B. Fibromyalgia",
+        "C. Hypertension",
+        "D. Plantar fasciitis",
+        "E. Uterine fibroids"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Tenderness at entheses can occur, as there will be tenderness elsewhere, if there is pain sensitisation (as seen in fibromyalgia, which is associated); however, inflammation at entheses is not a recognised feature of HMS. Lax internal supportive connective tissue can result in uterine, vaginal or rectal prolapse. Hypertension does not occur but postural hypotension may be part of a syndrome of autonomic dysfunction (postural orthostatic tachycardia syndrome; POTS) associated with HMS.",
+      "questionNumber": 57
+    },
+    {
+      "question": "The autoantibody profile: ANA positive, DNA/Sm/Ro(SSA)/La(SSB) negative, ribonucleoprotein (RNP) positive, is most likely to be associated with which autoimmune connective tissue disease?",
+      "options": [
+        "A. Mixed connective tissue disease (MCTD)",
+        "B. Polymyositis",
+        "C. Primary Sjögren's syndrome (PSS)",
+        "D. Systemic lupus erythematosus (SLE)",
+        "E. Systemic sclerosis (SSCI)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Antibodies to RNP antigens (e.g. U1RNP) are suggestive - in the appropriate clinical context - of MCTD. Patients with MCTD have some features of SScl, SLE and myositis but the sclerodactyly differs in appearance to the sclerodactyly of SScl. Antibodies to DNA and Sm (‘Smith') are characteristic of SLE and positivity to Ro(SSA) and La(SSB) together suggests PSS.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 34 year old woman (currently mid-menstrual cycle) presents with small joint pain and stiffness, a UV-sensitive erythematous skin rash on exposed skin surfaces, fatigue, mouth ulcers, some ankle swelling and a normal examination otherwise, apart from 3+ protein on urine dipstick and blood pressure of 145/90 mmHg. Which is the most appropriate immediate course of action?",
+      "options": [
+        "A. Check routine lab tests including autoimmune serology and complement and arrange routine review in a few weeks",
+        "B. Check routine lab tests including autoimmune serology and complement and start steroids immediately",
+        "C. Check routine lab tests including autoimmune serology and complement, start hydroxychloroquine and review progress in 3 months",
+        "D. Check routine lab tests including autoimmune serology and complement, arrange Gram stain and culture of urine, quantify urinary protein and arrange renal ultrasound",
+        "E. Discharge her from your care with reassurance and no follow-up"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient may well have SLE and an associated glomerulonephritis needs to be promptly identified/ruled out. Steroids may be indicated but more initial information is needed - and that may include kidney biopsy to grade glomerulonephritis and guide therapy choices. Any delay in obtaining information in a potential case of lupus nephritis can be dangerous.",
+      "questionNumber": 59
+    },
+    {
+      "question": "In addition to obtaining routine haematology, renal and liver laboratory tests with autoimmune serology (including myositis-specific antibodies) and muscle creatine kinase, which is the most appropriate combination of tests when investigating for polymyositis?",
+      "options": [
+        "A. Muscle and cardiac MRI, open muscle biopsy, barium swallow",
+        "B. Muscle electromyogram (EMG), needle muscle biopsy, whole-body CT",
+        "C. Muscle MRI and EMG, chest X-ray, open muscle biopsy",
+        "D. Muscle MRI and EMG, needle muscle biopsy, whole-body CT scan, cardiac transthoracic echocardiogram, barium swallow",
+        "E. Muscle MRI and EMG, open muscle biopsy, whole-body CT scan, cardiac transthoracic echocardiogram, barium swallow"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Investigation of patients with polymyositis necessarily needs to be comprehensive. Skeletal muscle (MRI and then open biopsy at MRI-identified abnormal muscle site), cardiac muscle (echocardiogram but not cardiac MRI initially) and gastrointestinal tract muscle (barium swallow) need investigating for disease involvement. Insufficient skeletal muscle may be obtained for all required analyses from needle biopsy. In a minority of cases, polymyositis is associated with malignancy, so whole-body CT may screen for deep-organ malignancy and lymph gland enlargement. DXA scan is required to guide steroid-induced osteoporosis risk management - most cases of adult polymyositis require high-dose and persistent steroid therapy.",
+      "questionNumber": 60
+    },
+    {
+      "question": "Of the following, what proactive investigational monitoring of internal organ function, despite the absence of symptoms, is essential in managing autoimmune connective tissue disease?",
+      "options": [
+        "A. Respiratory function tests (RFTs) and chest X-ray in dermatomyositis",
+        "B. RFTs in SLE",
+        "C. Slit lamp ocular examination in SLE",
+        "D. Transthoracic echocardiogram and RFTs in SScl",
+        "E. Yearly whole-body CT in polymyositis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Echocardiography and RFTs in SScl screen for features of pulmonary hypertension (PHT), which in SScl may not present with dyspnoea until the lesion is quite advanced. Proactive screening identifies early right heart effects and pre-symptomatic reduced lung gas transfer. PHT is life-threatening but can be treated with a prostacyclin analogue (e.g. iloprost), sildenafil (inhibits cGMP-specific phosphodiesterase type 5) or bosentan (endothelin-1 mediated vasoconstriction blocking). Respiratory lesions should be investigated in SLE and dermatomyositis if there are any relevant symptoms and on the basis of examination signs (i.e. of interstitial lung disease). Uveitis is not a common feature of lupus in adults. The presentation of polymyositis is associated with malignancy so initially CT screening is helpful; however, the merit of regular yearly CT monitoring in the absence of detecting malignancy thereafter has not been substantiated.",
+      "questionNumber": 61
+    },
+    {
+      "question": "Which of the following is most likely to be true in relation to primary Sjögren's syndrome?",
+      "options": [
+        "A. Overall anti-TNF-α therapy has been shown to be useful",
+        "B. PSS is not associated with malignancy",
+        "C. Severe oral dryness results from immunological destruction of the salivary glands",
+        "D. The environment does NOT play a role in influencing a patient's symptoms",
+        "E. Topical steroids should never be used for xerophthalmia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Even in severe disease, structurally normal parts of salivary glands can be seen. Their sub-function may be a consequence of cytokine inhibition of neurotransmitter function. Humidity, blink rate (and therefore tasks being undertaken) and air conditioning all affect the degree to which surface moisture from eyes and mucous membranes evaporates, and therefore affects symptoms. Patients who have previously failed to benefit from eye lubricants managed to do so after a trial of topical eye drop steroids. PSS is significantly associated with the development of lymphoma.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 52 year old non-smoking man presents with a 6-week history of arthralgia and a palpable purpuric rash appearing on his limbs. He has a year-long history of recurrent fevers, sinusitis, cough and sore throats treated with repeated courses of antibiotics and steroids. What is the most likely diagnosis?",
+      "options": [
+        "A. Adult-onset Still's disease",
+        "B. Malignancy",
+        "C. Post-streptococcal reactive arthritis",
+        "D. Microscopic polyangiitis (MPA)",
+        "E. Rheumatic fever"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In theory, all the features can conceivably occur in all the conditions but the likelihood of a subacute, relapsing/remitting condition involving different tissues arising at different times supports the diagnosis of granulomatosis with polyangiitis (GPA; formerly Wegener's) here. Fever and rash are generally temporally related in post-streptococcal reactive arthritis, adult-onset Still's disease and rheumatic fever. Lung malignancy would not be common in a non-smoker and features of it unlikely to remit over time.",
+      "questionNumber": 63
+    },
+    {
+      "question": "Which one of the following diseases is NOT typically associated with autoantibody production?",
+      "options": [
+        "A. Antiphospholipid syndrome",
+        "B. Giant cell arteritis (GCA)",
+        "C. Granulomatosis with polyangiitis (GPA; formerly known as Wegener's granulomatosis)",
+        "D. Microscopic polyangiitis (MPA)",
+        "E. Polymyositis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The diagnostic terminology for GPA and MPA have been subsumed under the new diagnostic classification ‘ANCA-associated vasculitis (AAV)', partly owing to their association with autoantibodies to neutrophil antigens (antineutrophil cytoplasmic antibody (ANCA) vs. intracellular antigens proteinase-3 (PR3) and myeloperoxidase (MPO) for GPA and MPA, respectively). A substantial number of patients with polymyositis have antinuclear antibodies (ANAs) and myositis-specific antibodies. GCA is not associated with autoantibodies.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 40 year old Armenian woman presents with recurrent bouts of fatigue, arthralgia (oligoarticular: elbow, wrists and a knee), headaches and crops of painful mouth ulcers, occasional bluish-red raised tender blotchy skin lesions and a single sore erythematous eye. She does not have diarrhoea. ESR is 25 mm/hr but CRP is normal; full blood count shows slight lymphopenia, normal neutrophil and platelet counts. Serum adjusted calcium and PTH are in the reference range. Which is the most likely diagnosis?",
+      "options": [
+        "A. Behçet's disease",
+        "B. Crohn's disease",
+        "C. Sarcoidosis",
+        "D. Tuberculosis",
+        "E. Viral infection"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The features are suggestive of Behçet's disease (BD). A history of genital lesions may not be volunteered. Various inflammatory eye lesions can occur in BD and cerebral venous sinus thrombosis as a cause of non-specific headache and other cranial symptoms is not uncommon in the disease. Sarcoid is possible - as the rash may be erythema nodosum, which is common to sarcoid and BD - but there is no hypercalcaemia or ankle joint involvement here, which would be more typical in sarcoid. Sinus thrombosis in BD can be detected by either head CT or MRI but sarcoid in the brain often affects meninges at the base of the brain and ideally requires gadolinium-enhanced sequences on MRI to disclose lesions adequately.",
+      "questionNumber": 65
+    },
+    {
+      "question": "Which of the following has NOT been implicated in contributing to the pathogenesis of vasculitis?",
+      "options": [
+        "A. Cannabis use",
+        "B. Hepatitis C",
+        "C. HIV infection",
+        "D. HLA-B51",
+        "E. IgA"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Cannabis use has been linked to causing an occlusive vasculopathy similar to thromboarteritis obliterans. Hepatitis C is associated most commonly with cryoglobulinaemic vasculitis. HIV and indeed many different viruses are considered potential triggers of vasculitis. HLA-B51 is associated with Behçet's disease - the main manifestation of which is a vasculitis. IgA production and deposition in vasculitis lesions is a characteristic of Henoch-Schönlein purpura vasculitis.",
+      "questionNumber": 66
+    },
+    {
+      "question": "Which association between a microorganism and an autoinflammatory or autoimmune condition is speculative and LEAST well proven?",
+      "options": [
+        "A. Chlamydia trachomatis and sexually acquired reactive arthritis",
+        "B. Group A streptococci and rheumatic fever",
+        "C. Hepatitis C and cryoglobulinaemic vasculitis",
+        "D. Propionibacterium acnes and SAPHO (synovitis-acne-pustulosis-hyperostosis-osteitis) syndrome",
+        "E. Staphylococcus and septic arthritis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Case examples and rationale exist to support an association of Propionibacterium acnes and SAPHO syndrome but the level of proof that the organism is responsible for, or associated with, a substantial number of cases of SAPHO is not high. SAPHO is thought to represent a spectrum of pathophysiological features possibly contiguous with features seen in childhood chronic relapsing multifocal osteomyelitis (CRMO). Associations between the other microorganisms and their autoinflammatory or autoimmune condition are more robust, based on good epidemiological, clinical and immunological data or pathogenetic principles.",
+      "questionNumber": 67
+    },
+    {
+      "question": "Which of the following conditions is most likely to lead to development of an associated malignancy?",
+      "options": [
+        "A. Diffuse idiopathic skeletal hyperostosis (DISH)",
+        "B. Giant cell arteritis",
+        "C. Primary Sjögren's syndrome",
+        "D. Relapsing polychondritis",
+        "E. Rheumatoid arthritis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "PSS is associated with about a 15% risk of lymphoma (PSS with mucosa-associated lymphoid tissue lymphoma; ‘MALToma'). RA is associated with malignancy with a standardised incidence ratio (SIR) of 1.1. The risk is greatest for Hodgkin lymphoma (SIR 3.21) and lung cancer (SIR 1.64). Relapsing polychondritis can be associated with coincident hematological malignancy (particularly myelodysplasia) in a small minority of cases. DISH is associated with diabetes and possibly with CPPD disease, but not with malignancy. Giant cell arteritis occurs in the elderly, a population in which malignancy is not unusual but there is no known association.",
+      "questionNumber": 68
+    },
+    {
+      "question": "The abnormality on the wrist radiograph below (arrowed) suggests which condition?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch24/q/24.69.png",
+      "options": [
+        "A. Calcium pyrophosphate disorder disease/arthritis",
+        "B. Gout",
+        "C. Osteoarthritis",
+        "D. Psoriatic arthritis",
+        "E. Rheumatoid arthritis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "There is new bone formation at ligament attachments at the distal ulna (this is a non-articular part of the carpus) typical of PsA. The feature of juxta-articular (‘fluffy') new bone adjacent to joints is highlighted in the CASPAR classification criteria for PsA (Box 24.69). The radiocarpal joint space is reduced here from PsA also. There is an absence of subchondral cysts or sclerosis and osteophytes (thus unlikely to be primary OA or CPPD), and no RA or gout erosions present, nor periarticular osteopenia, as seen in active RA. (CASPAR = ClASsification for Psoriatic ARthritis) i 24.69 The CASPAR criteria for psoriatic arthritis Inflammatory articular disease (joint, spine or enthesis) with ≥ 3 points from the following (1 point each unless stated): Current psoriasis (scores 2 points) History of psoriasis in first- or second-degree relative Psoriatic nail dystrophy Negative IgM rheumatoid factor* Current dactylitis History of dactylitis Juxta-articular new bone† *Established by any method except latex. † Ill-defined ossification near joint margins (excluding osteophytes) on X-rays of hands or feet.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch24/a/24.69.png",
+      "questionNumber": 69
+    },
+    {
+      "question": "A 75 year old woman with established osteoporosis, with previous forearm fracture, known stable chronic kidney disease (CKD) stage 3 (eGFR approx. 48 mL/min/1.73 m2) and no history of TB (she was immunised against TB as a child and has had no recent TB contacts), presents with an acutely swollen very painful knee. She feels generally unwell, had dysuria a month previously treated with antibiotics but has had no rash or diarrhoea. Investigations show haemoglobin 122 g/L, white cell count/neutrophils slightly raised, platelet count 450x10^9/L and normal lymphocytes with ESR 45 mm/hr. Liver and thyroid function tests are normal. Which of the following statements is correct?",
+      "options": [
+        "A. Background renal impairment has no relevance to the current presentation",
+        "B. Blood cultures are likely to give the diagnosis",
+        "C. Septic arthritis is unlikely",
+        "D. The dysuria has no relevance to the current presentation",
+        "E. Uric acid should be tested"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical features are fairly non-specific and gout, septic arthritis and pseudogout are possible diagnoses. Indeed, severe gout or pseudogout can cause systemic symptoms identical to those caused by infection. The diagnosis is made on knee fluid aspiration and then Gram stain and culture of the fluid, but also polarised light microscopy of joint fluid examining for crystals (urate-causing gout or calcium-containing causing pseudogout). CKD stage 3b-5 is associated with urate and calcium-containing crystal-induced musculoskeletal disease. Secondary joint infection following incompletely treated urine infection is possible but also previous infection can trigger subsequent bouts of crystal arthritis.",
+      "questionNumber": 70
+    },
+    {
+      "question": "Conditions and their therapies have been matched, below; all are correct except one. Which therapy is NOT appropriate for its listed condition?",
+      "options": [
+        "A. Barbotage for cutaneous calcinosis in dermatomyositis",
+        "B. Local glucocorticoid injection for chronic plantar fasciitis",
+        "C. Oral pilocarpine for primary Sjögren's syndrome",
+        "D. Rituximab (anti-CD20 monoclonal) for ANCA-associated vasculitis",
+        "E. Thalidomide for Behçet's disease"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Barbotage is a procedure usually done under ultrasound guidance whereby needle disruption of calcific deposits in tendons is undertaken (e.g. calcific supraspinatus tendonitis). The technique usually involves repeated high-pressure fluid injection and aspiration. It has not been shown beneficial for calcinosis cutis. Thalidomide is an extremely effective treatment for the severe mucosal ulcers in Behçet's disease. Local glucocorticoid injection is useful for treating a number of non-inflammatory enthesopathic lesions (such as plantar fasciitis and elbow epicondylitis). Rituximab has now been shown useful in some patients with AAV, inducing as well as maintaining remission. Oral pilocarpine can improve salivary and other glandular secretion in all but late PSS. A trial of therapy 5-10 mg 3 times daily can be attempted over a month.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 22 year old man presents with a 6-week history of persistent back pain and stiffness occurring with and after immobility, and heel pains. In interpreting investigations, which of the following is most likely to be true?",
+      "options": [
+        "A. A negative HLA-B27 rules out axSpA",
+        "B. A normal CRP rules out ankylosing spondylitis",
+        "C. A previous diagnosis of sterile urethritis is irrelevant information to making a diagnosis",
+        "D. He may have sexually acquired reactive arthritis",
+        "E. SIJ radiographs will reveal the diagnosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Reactive arthritis can present like axSpA or AS with low back axial symptoms. Radiographs are frequently normal in early SpA conditions. HLA-B27 is positive in 95% of people with an old (modified New York criteria) definition of AS but is less prevalent in cohorts of patients diagnosed with axSpA. In axSpA (and AS) and all SpA conditions, the acute phase response may be normal and associated clinical problems (current or previous) include anterior uveitis, psoriasis, inflammatory bowel disease, enthesitis and sterile urethritis.",
+      "questionNumber": 72
+    }
+  ]
+}

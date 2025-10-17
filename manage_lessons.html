@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizard - Manage Lessons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 flex justify-between items-center">
+        <div class="flex items-center">
+            <a href="admin_dashboard.html" class="text-gray-600 hover:text-purple-600 mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            </a>
+            <h1 class="text-2xl font-bold text-gray-800">Manage Lessons</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <h2 id="courseTitle" class="text-3xl font-extrabold text-gray-800 mb-8">Loading Course...</h2>
+
+
+
+        <div class="flex justify-end mb-4">
+    <button id="bulkImportButton" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-lg shadow">
+        Bulk Import Lessons
+    </button>
+</div>
+
+<div id="bulkImportModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Bulk Import Video Lessons</h3>
+       
+        <form id="bulkImportForm">
+            <div>
+                <label for="videoFilesInput" class="block text-sm font-medium text-gray-700">Select Video Files</label>
+                <input type="file" id="videoFilesInput" multiple accept="video/mp4,video/webm" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100">
+            </div>
+            <div class="flex justify-end pt-6">
+                <button type="button" id="cancelImportBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+                <button type="submit" id="startImportBtn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-lg">Start Import</button>
+            </div>
+        </form>
+        <div id="importStatusContainer" class="mt-4 max-h-48 overflow-y-auto"></div>
+    </div>
+</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-1">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Add New Lesson</h3>
+                    <form id="uploadLessonForm" class="space-y-4">
+                        <div>
+                            <label for="lessonNumber" class="block text-sm font-medium text-gray-700">Lesson Number</label>
+                            <input type="number" id="lessonNumber" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+                        </div>
+                        <div>
+                            <label for="lessonTitle" class="block text-sm font-medium text-gray-700">Lesson Title</label>
+                            <input type="text" id="lessonTitle" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+                        </div>
+                        <div>
+                            <label for="videoFile" class="block text-sm font-medium text-gray-700">Video File</label>
+                            <input type="file" id="videoFile" required accept="video/mp4,video/webm" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100">
+                        </div>
+                        <button type="submit" id="uploadButton" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow disabled:opacity-50">Upload Lesson</button>
+                        <p id="uploadStatus" class="text-sm text-center text-gray-500 mt-2"></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                 <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Existing Lessons</h3>
+                    <div id="lessonsList" class="space-y-3">
+                        <p id="loadingLessons">Loading lessons...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+        const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
+        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseId = urlParams.get('course_id');
+
+        const dom = {
+            courseTitle: document.getElementById('courseTitle'),
+            uploadForm: document.getElementById('uploadLessonForm'),
+            uploadButton: document.getElementById('uploadButton'),
+            uploadStatus: document.getElementById('uploadStatus'),
+            lessonsList: document.getElementById('lessonsList'),
+            loadingLessons: document.getElementById('loadingLessons'),
+        };
+
+
+
+        // START: Add This New Logic
+const bulkImportButton = document.getElementById('bulkImportButton');
+const bulkImportModal = document.getElementById('bulkImportModal');
+const bulkImportForm = document.getElementById('bulkImportForm');
+const cancelImportBtn = document.getElementById('cancelImportBtn');
+const importStatusContainer = document.getElementById('importStatusContainer');
+
+function openModal(modal) {
+    modal.classList.remove('hidden');
+    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+}
+
+function closeModal(modal) {
+    modal.classList.add('opacity-0');
+    setTimeout(() => modal.classList.add('hidden'), 300);
+}
+
+bulkImportButton.addEventListener('click', () => openModal(bulkImportModal));
+cancelImportBtn.addEventListener('click', () => closeModal(bulkImportModal));
+
+bulkImportForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const files = document.getElementById('videoFilesInput').files;
+    if (files.length === 0) {
+        alert('Please select files to import.');
+        return;
+    }
+
+    importStatusContainer.innerHTML = '';
+    const startImportBtn = document.getElementById('startImportBtn');
+    startImportBtn.disabled = true;
+    startImportBtn.textContent = 'Importing...';
+
+    // Get the current number of lessons to start numbering from
+    const { count: currentLessonCount, error: countError } = await supabase
+        .from('video_lessons')
+        .select('*', { count: 'exact', head: true })
+        .eq('course_id', courseId);
+    
+    if (countError) {
+        alert('Could not count existing lessons. Aborting.');
+        return;
+    }
+
+    let lessonNumber = currentLessonCount + 1;
+
+    for (const file of files) {
+        const statusEl = document.createElement('p');
+        statusEl.className = 'text-sm p-2 rounded';
+        statusEl.textContent = `Processing: ${file.name}...`;
+        importStatusContainer.appendChild(statusEl);
+
+        // Use the filename (without extension) as the title
+        const lessonTitle = file.name.replace(/\.(mp4|webm)$/i, '');
+
+        try {
+            statusEl.textContent = `Uploading: ${file.name}...`;
+            const filePath = `public/${courseId}/${lessonNumber}-${file.name}`;
+            const { error: uploadError } = await supabase.storage
+                .from('course_videos')
+                .upload(filePath, file, { upsert: true });
+            
+            if (uploadError) throw uploadError;
+
+            const { data: urlData } = supabase.storage
+                .from('course_videos')
+                .getPublicUrl(filePath);
+
+            const { error: insertError } = await supabase
+                .from('video_lessons')
+                .insert({
+                    course_id: courseId,
+                    title: lessonTitle,
+                    lesson_number: lessonNumber,
+                    video_url: urlData.publicUrl
+                });
+
+            if (insertError) throw insertError;
+
+            statusEl.textContent = `Success: ${file.name}`;
+            statusEl.classList.add('bg-green-100', 'text-green-800');
+            lessonNumber++; // Increment for the next file
+
+        } catch (error) {
+            console.error(`Failed to import ${file.name}:`, error);
+            statusEl.textContent = `Failed: ${file.name} - ${error.message}`;
+            statusEl.classList.add('bg-red-100', 'text-red-800');
+        }
+    }
+    
+    startImportBtn.disabled = false;
+    startImportBtn.textContent = 'Start Import';
+    loadLessons();
+});
+// END: Add This New Logic
+async function loadLessons() {
+    dom.lessonsList.innerHTML = '<p id="loadingLessons">Loading lessons...</p>';
+    
+    // Step 1: Fetch the latest lesson data from the database
+    const { data: lessons, error } = await supabase
+        .from('video_lessons')
+        .select('*')
+        .eq('course_id', courseId)
+        .order('lesson_number', { ascending: true });
+    
+    if (error) {
+        dom.lessonsList.innerHTML = `<p class="text-red-500">Error loading lessons.</p>`;
+        return;
+    }
+
+    if (lessons.length === 0) {
+        dom.lessonsList.innerHTML = `<p class="text-gray-500">No lessons have been uploaded for this course yet.</p>`;
+        return;
+    }
+
+    // Step 2: Render the list elements
+    dom.lessonsList.innerHTML = lessons.map(lesson => `
+        <div data-lesson-id="${lesson.id}" class="p-3 border rounded-md flex justify-between items-center bg-gray-50 cursor-grab">
+            <div class="flex items-center">
+                <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <span class="font-bold mr-2 lesson-number">${lesson.lesson_number}.</span>
+                <span class="lesson-title">${lesson.title}</span>
+            </div>
+            <button data-lesson-id="${lesson.id}" class="delete-lesson-btn text-red-500 hover:text-red-700 text-sm font-semibold">Delete</button>
+        </div>
+    `).join('');
+
+    // Step 3: Initialize drag-and-drop
+    new Sortable(dom.lessonsList, {
+        animation: 150,
+        handle: '.cursor-grab',
+        onEnd: async function (evt) {
+            try {
+                const lessonElements = dom.lessonsList.querySelectorAll('div[data-lesson-id]');
+
+                // Create a map of the original lesson data (id -> full lesson object)
+                const originalLessonsMap = new Map(lessons.map(l => [l.id, l]));
+
+                // Create the final, complete update payload
+                const updates = Array.from(lessonElements).map((el, index) => {
+                    const originalLesson = originalLessonsMap.get(el.dataset.lessonId);
+                    return {
+                        id: originalLesson.id,
+                        course_id: originalLesson.course_id,
+                        title: originalLesson.title,
+                        video_url: originalLesson.video_url, // Include the video_url
+                        lesson_number: index + 1 // Set the new lesson_number
+                    };
+                });
+
+                const { error: upsertError } = await supabase.from('video_lessons').upsert(updates);
+                if (upsertError) throw upsertError;
+                
+                // Visually update the numbers on the screen
+                lessonElements.forEach((el, index) => {
+                    el.querySelector('.lesson-number').textContent = `${index + 1}.`;
+                });
+
+            } catch (err) {
+                alert('Failed to save new order. The list will be refreshed.');
+                console.error('Reorder error:', err);
+                loadLessons(); // Refresh the list from the database on failure
+            }
+        }
+    });
+}
+        dom.uploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            dom.uploadButton.disabled = true;
+            dom.uploadStatus.textContent = 'Uploading... Please wait.';
+
+            const videoFile = document.getElementById('videoFile').files[0];
+            const lessonTitle = document.getElementById('lessonTitle').value;
+            const lessonNumber = document.getElementById('lessonNumber').value;
+
+            if (!videoFile) {
+                alert("Please select a video file.");
+                dom.uploadButton.disabled = false;
+                dom.uploadStatus.textContent = '';
+                return;
+            }
+
+            try {
+                const filePath = `public/${courseId}/${lessonNumber}-${videoFile.name}`;
+                const { error: uploadError } = await supabase.storage
+                    .from('course_videos')
+                    .upload(filePath, videoFile, { upsert: true });
+
+                if (uploadError) throw uploadError;
+
+                const { data: urlData } = supabase.storage
+                    .from('course_videos')
+                    .getPublicUrl(filePath);
+
+                const { error: insertError } = await supabase
+                    .from('video_lessons')
+                    .insert({
+                        course_id: courseId,
+                        title: lessonTitle,
+                        lesson_number: lessonNumber,
+                        video_url: urlData.publicUrl
+                    });
+
+                if (insertError) throw insertError;
+                
+                dom.uploadStatus.textContent = 'Upload successful!';
+                dom.uploadForm.reset();
+                loadLessons(); // Refresh the list
+
+            } catch (error) {
+                console.error("Upload failed:", error);
+                dom.uploadStatus.textContent = `Upload failed: ${error.message}`;
+            } finally {
+                dom.uploadButton.disabled = false;
+            }
+        });
+
+        dom.lessonsList.addEventListener('click', async (e) => {
+            if (e.target.classList.contains('delete-lesson-btn')) {
+                const lessonId = e.target.dataset.lessonId;
+                if (confirm('Are you sure you want to delete this lesson? This cannot be undone.')) {
+                    const { error } = await supabase.from('video_lessons').delete().eq('id', lessonId);
+                    if (error) {
+                        alert('Failed to delete lesson: ' + error.message);
+                    } else {
+                        // Note: Deleting the database record doesn't delete the file from Storage yet.
+                        // For a full solution, you'd also call supabase.storage.from('course_videos').remove([...])
+                        alert('Lesson deleted.');
+                        loadLessons();
+                    }
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!courseId) {
+                document.body.innerHTML = '<h1>Error: No course ID provided.</h1>';
+                return;
+            }
+            const { data: courseData, error } = await supabase
+                .from('video_courses')
+                .select('title')
+                .eq('id', courseId)
+                .single();
+            
+            if (courseData) {
+                dom.courseTitle.textContent = `Lessons for: ${courseData.title}`;
+            }
+            
+            loadLessons();
+        });
+    </script>
+</body>
+</html>

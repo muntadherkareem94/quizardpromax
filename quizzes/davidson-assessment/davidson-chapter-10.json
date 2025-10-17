@@ -1,0 +1,752 @@
+{
+  "title": "Acute medicine and critical illness - Chapter 10",
+  "questions": [
+    {
+      "question": "A 76 year old man develops an acute kidney injury 2 days after an elective knee replacement. His past medical history includes mild chronic obstructive pulmonary disease and hypertension (controlled with an angiotensin-converting enzyme (ACE) inhibitor). He is hypotensive (80/50 mmHg), oliguric and has urea of 18 mmol/L (50.4 mg/dL), creatinine of 165 µmol/L (1.87 mg/dL), potassium of 5.1 mmol/L and a normal bicarbonate level. He has received 30 mL/kg of intravenous fluids over the past 2 hours. Which will be the most efficacious measure to improve his renal outcome?",
+      "options": [
+        "A. Commence renal replacement therapy",
+        "B. Further fluid challenge",
+        "C. Intravenous dopamine infusion",
+        "D. Intravenous furosemide infusion",
+        "E. Intravenous noradrenaline (norepinephrine) infusion"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This man has developed multi-organ dysfunction following arthroplasty. The pathology is not well understood but may involve an inflammatory response to the cement. As the glomerular filtration rate (GFR) falls, there may also be an accumulation of antihypertensive drugs, causing a cycle of organ dysfunction. If normal physiology is not restored with 30 mL/kg of fluid in a short period of time, it is unlikely that ongoing intravenous fluid will be beneficial. Furosemide and dopamine may improve the urine output, but have no effect on the GFR in this context. Renal replacement therapy is not required at this stage and will not improve the renal outcome. A noradrenaline (norepinephrine) infusion is the best option as it will improve the mean arterial pressure (MAP) and may improve the GFR by vasoconstriction of the efferent arteriole (which is dilated by ACE inhibition).",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 68 year old man presents with worsening exertional dyspnoea. He is known to have non-alcoholic fatty liver disease (NAFLD), with cirrhosis on a recent ultrasound scan, mild jaundice but with no ascites or encephalopathy. On examination he has normal breath sounds throughout both lung fields with no added sounds and his jugular venous pressure is not elevated. He has an oxygen saturation of 87% on air whilst standing (although this improves to 94% in the supine position). Multiple spider naevi are noted over his thorax and abdomen. Which of the following processes are most likely to account for his hypoxaemia?",
+      "options": [
+        "A. Low inspired oxygen concentration",
+        "B. Shunt",
+        "C. Ventilation-perfusion (V/Q) mismatch: alveolar hypoventilation",
+        "D. V/Q mismatch: perfusion defect",
+        "E. V/Q mismatch: central hypoventilation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This man has orthodeoxia (arterial saturations reduce on standing). In the context of chronic liver disease and a normal chest examination, it is likely that hepato-pulmonary syndrome is the cause. The pathology involves inappropriate dilation of the pulmonary capillaries so blood flows through the lungs without becoming oxygenated. This is an example of shunt. The only treatment known to be effective is liver transplantation.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 69 year old woman is admitted to the intensive care unit (ICU) following a road traffic accident. She is known to have disseminated pancreatic cancer with metastases in the brain, liver and lung. She was intubated at the scene by the paramedics. She has sustained multiple long bone fractures, a head injury and is requiring a high inspired oxygen concentration to maintain her oxygen saturations. Which of the following statements is MOST accurate?",
+      "options": [
+        "A. All sedatives and analgesics must be stopped to allow an accurate assessment of conscious level",
+        "B. An advance directive stating that the patient would not want to survive with severe disability should be taken into consideration",
+        "C. If a withdrawal decision has been made, it is unethical to extubate the patient as she may die from airway obstruction",
+        "D. It is unjustifiable to withdraw active treatment while there is still a chance of recovery",
+        "E. The family will need to be contacted to make a decision about ongoing treatment"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is a very difficult situation and the right course of action will depend upon the legal framework of the country and the ethical values of the patient, usually expressed through the family. This woman has severe underlying disease and a poor prognosis from the trauma, so although there is a theoretical chance of surviving the injuries, it may be ethically justifiable to withdraw active treatment (although a consensus must be reached with the family). The decision regarding withdrawal of treatment should not be made by the family in isolation - the clinical team must guide the process. An advance directive provides useful information about the values of the patient. Once a decision has been made to withdraw treatment, it is an ethical obligation to provide palliative care (sedatives and analgesia) and extubation is a reasonable course of action. If the other injuries are deemed unsurvivable, it is not strictly necessary to stop all sedation/analgesia as this may cause a great deal of pain and suffering.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 22 year old man is admitted to the ICU with an acute exacerbation of asthma. On high-flow oxygen he has a PaO2 of 31 kPa (233 mmHg) and a PaCO2 of 16 kPa (120 mmHg). There is respiratory effort but no audible air entry on auscultation. He is unconscious and preparations are being made to intubate and ventilate him. Other than severe asthma, he has no other past medical history. Which of the following statements is CORRECT?",
+      "options": [
+        "A. Large cannulae should be inserted bilaterally into the second intercostal space at the mid-clavicular line",
+        "B. Once intubated, a high respiratory rate and large tidal volumes should be used initially to clear the carbon dioxide",
+        "C. Once intubated, a respiratory rate of 12 breaths/min, a tidal volume of 6 mL/kg and a prolonged expiratory time should be used initially",
+        "D. The blood gas is likely to be erroneous as his PaO2 is too high",
+        "E. The CO2 will return to normal if the oxygen mask is removed"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This man has life-threatening asthma with type II respiratory failure. The PaO2 is high as the patient is receiving a high inspired oxygen concentration, and the pathology is air trapping and alveolar hypoventilation. Even with very small amounts of ventilation, the PaO2 can be maintained if there is normal gas transfer across the alveoli, but the PaCO2 rises. Intubation and ventilation is indicated as he has become unconscious. Initial ventilator settings should prioritise adequate minute volume while allowing sufficient expiratory time. High tidal volumes and respiratory rates will lead to air trapping and a very high intrathoracic pressure: this can cause cardiovascular collapse. Whilst pneumothorax is a consideration, inserting cannulae without evidence of pneumothorax is likely to be harmful.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following statements best describes good practice when using sedation and analgesia in intensive care?",
+      "options": [
+        "A. A Richmond Agitation and Sedation Score (RASS) score of 0 suggests sedation is optimal",
+        "B. Etomidate is the most cardio-stable sedative and should be used as an infusion in patients who are very unstable",
+        "C. Muscle relaxants can be used to reduce the need for sedation",
+        "D. Patients should be deeply sedated to reduce the risk of delirium",
+        "E. Sedation should not be stopped abruptly as there is an unacceptable risk of self-extubation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Patients should ideally be calm, able to follow commands and tolerate endotracheal intubation (a RASS score of 0). This is not always possible as the tracheal tube is very stimulating and patients may need sedation to synchronise their breathing with the ventilator. Deep sedation does not reduce the incidence of delirium or post-traumatic stress disorder following intensive care discharge: it probably increases the risk of both complications. Daily sedation breaks are used safely in many intensive care units. There are many sedative agents that are used safely; however, etomidate is not used by infusion as it causes adrenocortical suppression.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 45 year old man is being ventilated for acute respiratory distress syndrome (ARDS) following a lobar pneumonia. The bedside nurse has a number of questions regarding the strategy for ventilating this man as his lung function improves. Which of the following points is correct?",
+      "options": [
+        "A. During weaning, patients should not be allowed to go for long periods with no mechanical ventilator support if they are showing signs of respiratory distress",
+        "B. If the patient is febrile, minute volumes will be lower and it is a good opportunity to wean the ventilatory support",
+        "C. Positive end-expiratory pressure (PEEP) should be weaned to zero before extubation is considered",
+        "D. The fraction of inspired oxygen (FiO2) should be weaned to achieve a PaO2 of 15 kPa (113 mmHg) and above",
+        "E. Tracheostomy should be immediately performed if the patient fails a spontaneous breathing trial"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Weaning should occur when the primary pathology has resolved. During a febrile episode, CO2 production is increased and a higher minute volume is required to maintain normocapnia: not a good time to wean. During the weaning process, the PEEP is usually maintained to keep the lung bases open, while the pressure support and FiO2 are weaned (although a PaO2 of >10 kPa (75 mmHg) would be a more usual target). A spontaneous breathing trial with minimal or no ventilator support is frequently used to assess if a patient is ready for extubation - if it is unsuccessful, the support should be reinstituted before any lung injury is incurred and further options considered to optimise respiratory function. A tracheostomy is usually only considered when there is repeated failure to wean.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following findings suggests that ongoing intensive care treatment still has a realistic chance of a good neurological outcome following cardiac arrest?",
+      "options": [
+        "A. A computed tomography (CT) brain showing preserved grey-white differentiation",
+        "B. Absent corneal reflexes at 72 hours after return of spontaneous circulation (ROSC)",
+        "C. Absent motor response to painful stimulus 72 hours after ROSC",
+        "D. Bilaterally absent N20 spike on somatosensory evoked potentials",
+        "E. Myoclonic jerking within the first 24 hours after ROSC"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The loss of grey-white differentiation on a CT scan is suggestive of a diffuse ischaemic injury to the brain. All the other signs are strongly predictive of a poor neurological outcome.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 37 year old previously healthy man is brought into the emergency department by ambulance having stopped the car he was driving. When the paramedics arrived he was conscious but appeared confused. This progressed over the following 30 minutes to aphasia and the development of bilateral upper and lower limb weakness with bilateral cranial nerve palsies. CT head scan on arrival is reported as normal. Which investigation is most likely to reveal the underlying pathology?",
+      "options": [
+        "A. CT angiogram of the circle of Willis",
+        "B. CT scan of the cervical spine",
+        "C. Electrocardiogram (ECG)",
+        "D. Erythrocyte sedimentation rate (ESR)",
+        "E. Lumbar puncture"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The differential diagnosis here is a cerebral vascular event, a rapidly progressive encephalomyelitis or a form of seizure disorder. Given the speed of onset and the bilateral neurological deficits, it is likely that there has been a vascular event. A vertebrobasilar infarction or bilateral cerebral infarcts are the most likely causes. A CT angiogram of the circle of Willis has the highest diagnostic yield in the acute setting. It is possible that this man has locked-in syndrome.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 63 year old man is weaning from mechanical ventilation. He has been ventilated in the ICU for 3 months with Guillain-Barré syndrome and profound weakness. A percutaneous tracheostomy was placed 2 months ago. He has suddenly developed respiratory distress after a bout of coughing. He is now extremely tachypnoiec, sweating and in respiratory distress. He has no previous history of any laryngeal or tracheal problems. All of the actions below would be appropriate, except for one. Which of the following actions would NOT be considered best practice in this situation?",
+      "options": [
+        "A. Applying a facial high-flow oxygen mask",
+        "B. Applying a self-inflating bag to the tracheostomy and giving the patient several large breaths",
+        "C. Calling for help",
+        "D. Passing a suction catheter through the tracheostomy to check patency",
+        "E. Removing the inner tube of the tracheostomy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This scenario is likely to be an obstructed or displaced tracheostomy tube. The most likely problem is that the inner tube has become blocked with secretions; this is easily remedied by removing the inner tube and exchanging it for a fresh one. A tracheostomy can become displaced whereby it passes into a false tract alongside the trachea. Initial management should focus on supplementing oxygen via the upper airway and establishing if the tracheostomy is patent (by attempting to pass a suction catheter). If it is not possible to pass a suction catheter, then the tracheostomy should be removed and the patient re-intubated via the oral route. It is dangerous to apply positive pressure to a potentially dislodged tracheostomy. It can cause a large amount of surgical emphysema, which can prevent oral intubation.",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which one of the following ventilated patients has ARDS according to the Berlin definition?",
+      "options": [
+        "A. A man with a severe influenza pneumonia. He has bilateral infiltrates on chest X-ray and a PaO2 of 10 kPa (75 mmHg) on an FiO2 of 0.4",
+        "B. A man with left lower lobe pneumonia, a normal echocardiogram and a PaO2 of 10 kPa (75 mmHg) on an FiO2 of 0.6",
+        "C. A man with long-standing, progressive idiopathic pulmonary fibrosis. He has bilateral chest X-ray infiltrates, a normal echocardiogram and a PaO2 of 10 kPa (75 mmHg) on an FiO2 of 0.5",
+        "D. A woman with acute pancreatitis. She has bilateral chest infiltrates, pleural effusions, a normal echocardiogram and a PaO2 of 14 kPa (105 mmHg) on an FiO2 of 0.3",
+        "E. A woman with endocarditis and severe mitral regurgitation from a leaflet perforation. She has bilateral chest X-ray infiltrates and a PaO2 of 10 kPa (75 mmHg) on an FiO2 of 0.6"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "ARDS is a syndrome characterised by infiltration of the lungs by an inflammatory exudate. This causes the features of hypoxaemia and reduced lung compliance. The Berlin definition of ARDS stipulates that the following must be present: • The time of onset must be within 1 week of a known clinical insult, or new or worsening respiratory symptoms, i.e. not long-standing pulmonary disease • Bilateral opacities present on chest X-ray, not fully explained by effusions, lobar/lung collapse or nodules, i.e. not lobar pneumonia in isolation • Respiratory failure not fully explained by cardiac failure or fluid overload. Objective assessment (e.g. by echocardiography) must exclude hydrostatic oedema if no risk factors are present. (Therefore mitral regurgitation causing pulmonary oedema is this scenario would not classify) • Impaired oxygenation: PaO2/FiO2 ratio of <40 kPa (300 mmHg) In this question ARDS in association with influenza pneumonia is the only case that meets these criteria",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 60 year old man becomes acutely unwell on the medical ward. He was admitted 4 days prior with non-specific symptoms (malaise, fever, coryza). On admission, his ECG showed sinus rhythm with no acute ST changes, but his serum troponin level taken 24 hours post-admission was markedly raised. A viral throat swab was positive for adenovirus. He is tachycardic (180 beats/min), hypotensive (65/30 mmHg), pale and clammy. On examination his chest is clear but he looks very unwell and a blood gas shows a lactate of 10 mmol/L (90 mg/dL) with a haemoglobin of 120 g/L. His ECG now shows left bundle branch block and a bedside echocardiogram confirms global left ventricular dysfunction. Which management plan is most likely to be successful?",
+      "options": [
+        "A. Commencement of an adrenaline infusion",
+        "B. Immediate percutaneous coronary intervention (PCI)",
+        "C. Insertion of an intra-aortic balloon pump",
+        "D. Intubation and ventilation with high levels of PEEP",
+        "E. Venous-arterial extracorporeal membrane oxygenation (ECMO)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The history and investigations are all suggestive of viral myocarditis. This can cause hyperacute cardiogenic shock. In this case, the use of inotropes is unlikely to modify the outcome as the myocardium is profoundly damaged. An intra-aortic balloon pump is unlikely to provide adequate organ perfusion. The global myocardial dysfunction and the presentation more generally is not suggestive of coronary disease, and ventilation with high PEEP will not improve cardiac output. Venous-arterial ECMO has been used successfully in a number of severe myocarditis cases. Despite the severity of the cardiogenic shock, many patients with this condition will recover if they are adequately supported.",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which of the following statements is TRUE regarding gas carriage in the blood?",
+      "options": [
+        "A. For a given PaCO2, more carbon dioxide can be carried by blood with haemoglobin that is 80% saturated with oxygen in comparison to 100% saturated",
+        "B. In capillaries with a high carbon dioxide content, e.g. exercising muscle, oxygen is bound more tightly to haemoglobin, i.e. the haemoglobin-oxygen dissociation curve is shifted to the left",
+        "C. The majority of carbon dioxide is transported in the blood bound to haemoglobin",
+        "D. There is a greater oxygen than carbon dioxide content in arterial blood",
+        "E. When core temperature drops, for a given blood content of carbon dioxide, the PaCO2 will increase"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "There is a larger volume of carbon dioxide per 100 mL of arterial blood than oxygen (approximately 50 mL vs. 20 mL). The majority of blood carbon dioxide is carried as bicarbonate ions, but significant quantities are bound to haemoglobin (carbamino compounds) and dissolved in the plasma. This is significant, as desaturated haemoglobin has a higher affinity for carbon dioxide than fully saturated haemoglobin; hence the PaCO2 will be lower for a given carbon dioxide content if the oxygen saturations are low (the Haldane effect). This partially explains why patients with type II respiratory failure become more acidotic when high levels of oxygen are administered. When temperature drops, carbon dioxide solubility increases, so for a given content of carbon dioxide, the partial pressure will be lower at lower temperatures. High capillary carbon dioxide shifts the haemoglobin-oxygen dissociation curve to the right, improving oxygen offloading at the tissues (Bohr effect).",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 45 year old man is admitted to the ICU following coronary artery bypass surgery. He is tachycardic, hypotensive and has a high lactate. Clinical examination is unremarkable and there is no bleeding apparent. An ECG shows a sinus tachycardia with no other abnormalities. His haemodynamic data (from his pulmonary artery catheter) are as follows (reference ranges are also given): Patient data: Cardiac output 5.42 L/min/m2 Cardiac index 10.2 L/min. Pulmonary artery pressures 15/9 mmHg. Pulmonary artery capillary wedge pressure 7 mmHg. Central venous pressure 6 mmHg. Reference range: 4-8 L/min, 2.5-4 L/min/m2, 15-30/5-15 mmHg, 2-10 mmHg, 6-12 mmHg in ventilated patients. Which of the following statements is true?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch10/q/10.13.png",
+      "options": [
+        "A. An infusion of an inotrope such as dobutamine is indicated",
+        "B. An intra-aortic balloon pump should be inserted immediately",
+        "C. It is likely that one of the coronary grafts has become occluded",
+        "D. The data suggest he has a cardiac tamponade",
+        "E. The data suggest that he is vasodilated"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The data shows a high cardiac output with low pulmonary arterial, left atrial (wedge pressure) and central venous pressures. This pattern suggests vasodilatation, which is common following cardiopulmonary bypass. Cardiac tamponade typically causes a low cardiac output and increased intracardiac pressures. Graft occlusion is likely to reduce the cardiac output, and the pulmonary artery wedge pressure is likely to increase. Inotropes and intra-aortic balloon pumps may increase the cardiac output, but have little or no role in this scenario.",
+      "questionNumber": 13
+    },
+    {
+      "question": "Which one of the following statements regarding daily management in intensive care is MOST accurate?",
+      "options": [
+        "A. Blood glucose levels should be maintained in the range of 4-6 mmol/L (72-108 mg/dL)",
+        "B. Proton pump inhibitors and histamine-2 antagonists reduce the incidence of gastrointestinal bleeding",
+        "C. The haemoglobin should be kept above 10 g/L in general intensive care patients",
+        "D. Unfractionated heparin (given twice daily by subcutaneous injection) is more effective than low-molecular-weight heparin at preventing pulmonary embolus in general intensive care patients",
+        "E. When pressure is being monitored, central venous and arterial lines should be attached to a pressurised bag of 5% glucose"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Controlling blood glucose levels at 6-10 mmol/L (108-180 mg/dL) is recommended. Low-molecular-weight heparin is more efficacious as thromboembolic prophylaxis than unfractionated heparin. Five-percent glucose should not be used as the ‘flush' bag as it can lead to erroneous glucose measurements and a risk of inappropriate insulin use. Several large studies have suggested a transfusion threshold of 70 g/L is as safe as 100 g/L and has a lower requirement for transfusion. Proton pump inhibitors or histamine-2 antagonists reduce the incidence of gastrointestinal bleeding, but may be associated with increased nosocomial infection.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 75 year old man who had been previously fit and well was admitted to hospital with shortness of breath. His chest X-ray showed a left lower lobe pneumonia and he was commenced on intravenous antibiotics. His admission ECG showed a sinus tachycardia with left ventricular hypertrophy (by voltage criteria). Approximately 12 hours after admission he acutely deteriorated with tachypnoea, tachycardia, hypotension (70/40 mmHg) and reduced oxygen saturations. On examination he is agitated, managing only incomprehensible sounds, with increased work of breathing and bilateral coarse crepitations. His ECG confirms atrial fibrillation with a ventricular rate of 120 beats/min. Which one of the following statements is most accurate?",
+      "options": [
+        "A. Antibiotics should be switched to a carbopenem",
+        "B. DC cardioversion is likely to resolve the clinical situation",
+        "C. Intubation and ventilation is contraindicated due to advanced age",
+        "D. It is likely that this man is too unstable for anaesthetic agents to be used: if intubation is considered appropriate it should be performed awake",
+        "E. Peripheral noradrenaline (norepinephrine) can be used in this situation while intubation and central venous access is established"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical picture here may be due to pulmonary oedema or secretion retention with exhaustion and septic shock. It is unlikely that DC cardioversion will correct the underlying pathology. Critical care is not contraindicated on the basis of age; frailty is a more important predictor of outcome. Intubation and ventilation can be performed with low doses of hypnotic agents, and awake intubation would be challenging in an agitated patient. Escalation of antibiotics is not required unless there are specific risk factors for resistant organisms. Peripheral noradrenaline (norepinephrine) via a well-sited cannula may provide enough stability to facilitate intubation and ventilation (Box 10.15).",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch10/a/10.15.png",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 46 year old, previously healthy man is in intensive care following an influenza pneumonia with ARDS. He was on venous-venous ECMO for 10 days and is now receiving ventilatory support via a tracheostomy. It is noted today that he has bilateral weakness of his arms and legs. This has become apparent since his sedation has been lightened. On examination he has marked proximal muscle weakness. Tone and sensation appear to be normal, deep tendon reflexes are present but reduced, and plantars are downgoing. Cranial nerves are intact and the patient is alert, orientated and obeys commands. Which of the following diagnoses is most likely?",
+      "options": [
+        "A. A lesion of the brainstem",
+        "B. Critical illness myopathy",
+        "C. Guillain-Barré syndrome",
+        "D. Rhabdomyolysis",
+        "E. Spinal cord lesion"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The most likely diagnosis accounting for these symptoms is critical illness myopathy (CIM). There are no features of a central nervous system lesion. Normal sensation and present reflexes make a peripheral neuropathy unlikely. Rhabdomyolysis (and myositis) are a consideration and measuring a creatine kinase (CK) level is good practice, although this is far less common than CIM in this population. The prognosis of CIM is generally good provided the patient recovers from the primary pathology.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 65 year old woman is brought to intensive care after an acute deterioration on the stroke ward. She had been recovering after a left partial anterior circulation infarct when she was noted to be acutely agitated and then became drowsy. This progressed quickly to unconsciousness and she was intubated to facilitate a CT scan. The CT head scan confirmed a large haemorrhagic transformation of the infarcted area with 10 mm of midline shift, effacement of the ventricles and downward herniation of the cerebellar tonsils. Twelve hours after arrival in intensive care she is unresponsive (Glasgow Coma Scale (GCS) score 3 despite no sedation for 4 hours), normothermic, and her pupils are fixed and dilated. Which of the following statements is true?",
+      "options": [
+        "A. As she is not waking up, a neurosurgeon should be asked to drain the haematoma",
+        "B. Brain-death testing should be undertaken",
+        "C. She has a good prognosis, provided she can survive the acute bleed",
+        "D. She requires an electroencephalogram (EEG) and magnetic resonance imaging brain scan to confirm brain death (under UK law)",
+        "E. She should be cooled to 28 degrees C to reduce intracranial pressure"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "It is likely that this patient is brain dead (given the imaging and the dilated pupils). It is appropriate to undertake formal brain-death testing, which requires a strict set of clinical criteria. If these are met, under UK law there is no requirement to undertake other investigations to demonstrate an absence of perfusion to the brain. The evidence for cooling (to 32-33 degrees C) and neurosurgery for haemorrhagic transformation is uncertain: these treatments are not currently recommended.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 45 year old man arrives in the medical receiving unit complaining of headache, blurred vision, nausea and vomiting. His blood pressure (BP) is 256/138 mmHg. A CT head scan is normal. Which of the following is true?",
+      "options": [
+        "A. Chest pain in this context is likely to be anxiety related",
+        "B. In this context, nausea and vomiting is unlikely to represent raised intracranial pressure",
+        "C. Shortness of breath in this context may be the result of pulmonary oedema",
+        "D. The blood pressure should be reduced rapidly, aiming for a 50% reduction in the mean arterial pressure in the first hour",
+        "E. The use of cannabis is a recognised precipitant"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hypertensive emergencies can develop in people with or without pre-existing hypertension. Precipitants may include drugs that produce a hyperadrenergic state, such as cocaine, amphetamines or monoamine oxidase inhibitors. Nausea and vomiting may be a sign of raised intracranial pressure, whilst dyspnoea may indicate pulmonary oedema. Chest discomfort may represent either myocardial ischaemia or aortic dissection. It is generally unwise to lower the blood pressure too quickly, as ischaemic damage may occur in the vascular beds that have become accustomed to a higher perfusion pressure. A rule of thumb is that, in the absence of aortic dissection or acute stroke, the mean arterial pressure should be reduced gradually by about 10 to 20% in the first hour. The mean arterial pressure at the end of the first 24 hours of treatment should be no more than 25% lower than the initial mean arterial pressure.",
+      "questionNumber": 18
+    },
+    {
+      "question": "An 87 year old woman presents to hospital with her daughter who found her in the morning confused, incoherent and wearing yesterday's clothes. Initial examination reveals normal observations. Which of the following history and examination findings most likely suggest an alternative diagnosis other than delirium?",
+      "options": [
+        "A. A history of progressive deterioration over several months",
+        "B. A urine dipstick positive for leucocytes and nitrites",
+        "C. Fluctuant course, with more florid confusion at night",
+        "D. Periods of severe agitation requiring pharmacological management",
+        "E. The inability to direct attention and sustain conversation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Delirium is generally characterised by several key features: disturbance of attention and awareness that fluctuates over the course of a day, additional disturbance in cognition that is not explained by another pre-existing or evolving neurocognitive disorder, and identification of a plausible cause such as a medical condition, substance intoxication or withdrawal, or medication side-effect. Hyperactive delirium is also characterised by restlessness, agitation (which may be severe) and impairment in sleep duration and architecture. A longer disease trajectory is more suggestive of cognitive decline. A positive urine dipstick is not uncommon in older patients and is not diagnostic of a urinary tract infection but may suggest a precipitant of delirium.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch10/a/10.19.png",
+      "questionNumber": 19
+    },
+    {
+      "question": "A woman is brought in the emergency department by the ambulance after being found unconscious at home. Her pupils are equal and reactive. She does not open her eyes to a painful stimulus. She is making groaning noises but no comprehensible words. She has no motor response to supra-orbital pressure but she does withdraw her arms briskly to nail-bed pressure. How would you score her GCS?",
+      "options": [
+        "A. 5/14",
+        "B. 6/15",
+        "C. 7/15",
+        "D. 8/15",
+        "E. 11/15"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The GCS is the composite score of the best eyes (out of 4), verbal score (out of 5) and motor (out of 6). This woman will score 1 point for eyes, 2 points for verbal (incomprehensible sounds) and 4 points for flexion/withdrawal, totalling 7/15.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 25 year old man presents to the emergency department with a 4-day history of chest pain and mild shortness of breath. He feels that the pain is worse on lying flat, coughing and deep breathing; it is relieved by sitting forwards and has improved with ibuprofen. He has no significant past medical history but was recently unwell with a non-specific viral infection. An ECG shows widespread saddle ST elevation. What is the most likely cause of the chest pain?",
+      "options": [
+        "A. Aortic dissection",
+        "B. Musculoskeletal chest pain",
+        "C. Pericarditis",
+        "D. Pulmonary embolism",
+        "E. Type 1 myocardial infarction (MI)"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The pain associated with myocarditis or pericarditis is often also described as ‘sharp' and may ‘catch' during inspiration, coughing or lying flat. It typically varies in intensity with movement and the phase of respiration. Patients with myocarditis or pericarditis may describe a prodromal viral illness. The pain associated with aortic dissection is typically described as ‘tearing' and may radiate to the intrascapular region. Pulmonary embolism may demonstrate different ECG features, most commonly a sinus tachycardia, and rarely the typically described ‘S1Q3T3' pattern. A type 1 myocardial infarction would be unlikely in a 25 year old and musculoskeletal chest pain would not produce ECG changes.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 39 year old man is brought in by ambulance to the emergency department. He has a 3-day history of sore throat and feeling generally unwell. He is struggling to speak and swallow saliva and has marked stridor. He is distressed and does not want to lie down. Observations show: heart rate of 115 beats/min, respiratory rate of 25 breaths/min, BP 120/74 mmHg, SpO2 94% on 15 L oxygen, temperature 39.4 degrees C, blood glucose of 4.7 mmol/L (84.6 mg/dL), GCS score 15. The patient is normally fit and well. Which potential diagnosis requires most urgent recognition and management?",
+      "options": [
+        "A. Croup",
+        "B. Epiglottitis",
+        "C. Lower respiratory tract infection",
+        "D. Nasal polyps",
+        "E. Tonsillitis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Epiglottitis is the diagnosis most likely to lead to airway obstruction and death. It requires prompt recognition and specialist airway management. Traditionally considered a paediatric disease, the incidence is increasing in adults, whilst falling in the paediatric population after the introduction of the Haemophilus B influenza vaccine.",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which one of these features is associated with delirium but not dementia?",
+      "options": [
+        "A. Anxiety",
+        "B. Cognitive impairment",
+        "C. Disorientation",
+        "D. Reversibility",
+        "E. Visual hallucinations"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Delirium manifests as a disturbance of arousal with global impairment of mental function causing drowsiness with disorientation, perceptual errors and muddled thinking. Unlike dementia, it is reversible when the underlying illness resolves. Cognitive impairment, visual hallucination, anxiety and disorientation may occur in both delirium and dementia - it is reversibility that is the hallmark of delirium.",
+      "questionNumber": 23
+    },
+    {
+      "question": "An 88 year old woman is referred to the acute medical admissions ward by her family physician, who was asked to review her at home by a concerned carer. The patient has a medical history of frequent falls and mild cognitive impairment, but has become increasingly confused since suffering a fall in her garden 5 weeks ago. At that time, the patient sustained a few grazes and bruises to the right side of her body, including her head. The carer reports that the patient has also become increasingly unsteady on her feet and has been complaining of having a headache and blurred vision. She has been more sleepy than usual, but only intermittently. The patient's cardiorespiratory observations are unremarkable. From the options below, what is the most likely cause of her current symptoms?",
+      "options": [
+        "A. Chronic subdural haematoma",
+        "B. Dementia",
+        "C. Encephalopathy",
+        "D. Intracerebral haemorrhage",
+        "E. Subarachnoid haemorrhage"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Chronic subdural bleeds are common in the elderly, and develop over a period of days to weeks, often after minor head trauma. The bleeding from a chronic bleed is slow, from bridging vessels in the dura. Symptoms are manifold, but include headache, increasing confusion, fluctuating consciousness and ataxia.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 24 year old woman with a body mass index (BMI) of 38 kg/m2 presents to the emergency department with a swollen and tender right calf (3.5 cm larger than the left). She has recently returned from a European holiday resort and has sunburn, but is otherwise well. She suffers from well-controlled asthma, for which uses inhalers, and is also taking the combined oral contraceptive pill. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Calf muscle tear",
+        "B. Cellulitis secondary to an insect bite",
+        "C. Deep vein thrombosis",
+        "D. Dependent oedema",
+        "E. First-degree burn (sunburn)"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Deep vein thrombosis (DVT) is the formation of a blood clot within a deep vein, predominantly in the legs. Signs include pain, swelling, redness, warmness, and engorged superficial veins. Risk factors for developing DVT include cancer, trauma, surgery, immobilisation, combined oral contraceptives, pregnancy and genetic factors affecting coagulation processes.",
+      "questionNumber": 25
+    },
+    {
+      "question": "Which of the following causes a leftward shift of the haemoglobin-oxygen dissociation curve?",
+      "options": [
+        "A. Acidosis",
+        "B. Decreased temperature",
+        "C. Increased 2,3-diphosphoglycerate (2,3-DPG)",
+        "D. Increased PCO2",
+        "E. Increased temperature"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The haemoglobin-oxygen dissociation curve delineates the relationship between the percentage saturation of haemoglobin with oxygen (SO2) and the partial pressure (PO2) of oxygen in the blood. A shift in the curve will influence the uptake and release of oxygen by the haemoglobin molecule. The curve moves to the right, increasing the offloading of oxygen in the tissues, in response to increases in temperature, 2,3-DPG, PCO2 and acidosis. The curve moves to the left secondary to decreases in temperature, 2,3-DPG, PCO2 and alkalosis (Fig. 10.26; upper line). Clinically, if arterial PO2 is critically low, oxygen uptake in the lungs may be impaired by a right shift, resulting in severe tissue hypoxia and end-organ failure.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch10/a/10.26.png",
+      "questionNumber": 26
+    },
+    {
+      "question": "Paramedics arrive in the emergency department resuscitation room with a 70 year old man who has multiple comorbidities, including pulmonary fibrosis and chronic obstructive pulmonary disease (COPD; on home oxygen, with oxygen saturations normally of 88-92% on air). He suddenly developed right-sided sharp chest pain and dypsnoea. The paramedics report that the patient initially had a respiratory rate of 34 breaths/min and SpO2 of 88% on 2 L/min oxygen, which fell to 64% when he was being moved into the ambulance, and symptoms improved slightly after administration of oxygen and morphine. Clinical examination reveals respiratory rate of 28 breaths/min, SpO2 90% on 8 L oxygen and reduced chest expansion on the right side, temperature 37.2 degrees C, troponin and an ECG are unremarkable. A venous blood gas shows H+ is 51 nmol/L (pH 7.29), PCO2 7.0 kPa (52.5 mmHg), PO2 3.1 kPa (23.3 mmHg), HCO3- 25.5 mmol/L, base excess -2.0 mmol/L and pulmonary vascular markings are absent on the right on the chest X-ray. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Acute myocardial infarction",
+        "B. Musculoskeletal chest pain",
+        "C. Pneumonia",
+        "D. Primary spontaneous pneumothorax",
+        "E. Secondary spontaneous pneumothorax"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A pneumothorax is an abnormal collection of air in the pleural space. A secondary pneumothorax occurs as a complication of underlying lung disease, whereas a primary spontaneous pneumothorax occurs spontaneously and in the absence of clinical lung disease. Clinical signs may be non-specific. Chest X-ray signs include absence of pulmonary vascular markings peripherally and a rim of air between lung and chest wall may be visible.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 20 year old man is brought to the emergency department after self-extricating from a burning block of flats. He was trapped inside the building for 15 minutes, in a flat on the floor above the source of the fire. He has sustained no obvious injuries, but has a persistent cough and feels 'dizzy'. Paramedics have applied oxygen via a face mask, and the patient's SpO2 is 99% on 2 L oxygen. An arterial blood gas sample is taken from the patient. What additional test, not routinely requested on an arterial blood gas sample, should be done?",
+      "options": [
+        "A. Carboxyhaemoglobin",
+        "B. Fetal haemoglobin",
+        "C. Haemoglobin A",
+        "D. Nitrous oxide",
+        "E. Superoxide"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Carbon monoxide is a colourless, odourless, tasteless, poisonous gas produced by incomplete burning of carbon-based fuels. Carboxyhaemoglobin is a stable complex that forms between haemoglobin and carbon monoxide molecules. This hinders the ability of oxygen to bind to haemoglobin molecules, which will preferentially bind to carbon monoxide, resulting in tissue hypoxia even though the SpO2 reading may be normal. The half-life of carboxyhaemoglobin can be reduced by administration of 100% oxygen or with hyperbaric chamber therapy.",
+      "questionNumber": 28
+    },
+    {
+      "question": "Which of the following is a 'red flag' symptom in a person presenting with a headache?",
+      "options": [
+        "A. Associated with taking codeine tablets for a week",
+        "B. Gradual onset (over an hour or more)",
+        "C. Improved by lying down",
+        "D. Right arm weakness",
+        "E. Visual aura"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Focal neurological symptoms, other than those associated with migraine, may be indicative of an intracranial mass lesion. Other headache ‘red flags' include: sudden onset, constitutional symptoms (such as rash), signs of raised intracranial pressure (headache worse on lying down), new onset in a person aged >60 years.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 60 year old woman with a previous head injury is admitted with collapse. Taken from the history alone, which one feature may point to a diagnosis of syncope rather than seizure?",
+      "options": [
+        "A. Amnesia",
+        "B. Cyanosis",
+        "C. Olfactory aura",
+        "D. Rapid recovery back to baseline state",
+        "E. Tongue-biting"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Premonitory symptoms associated with syncope include nausea and lightheadedness, whereas a seizure may present initially with signs of confusion or symptoms of aura. The unconscious period of a seizure is also more obviously symptomatic, including motor seizure activity, tongue-biting or urinary incontinence (but these are not discriminatory), and is likely to entail a more prolonged recovery (post-ictal) phase.",
+      "questionNumber": 30
+    },
+    {
+      "question": "Which one of the following does not score points on routinely used early warning systems in the context of medical observation monitoring?",
+      "options": [
+        "A. Capillary blood glucose",
+        "B. Glasgow Coma Scale score",
+        "C. Heart rate",
+        "D. SpO2",
+        "E. Temperature"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Abnormalities in respiratory rate, SpO2, temperature, blood pressure, heart rate, neurological response and urine output form core components in common early warning systems. Each abnormality may be allocated a score from 0 to 3, with the composite score giving an indication of the severity of physiological derangement. Capillary blood glucose may be used as part of such a scoring system in specialist departments (e.g. endocrine or metabolic units) but is not included in routine early warning systems.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 38 year old man is admitted for observation after falling over the handlebars of his pushbike. He was wearing a helmet and had no loss of consciousness, although he feels nauseated and 'faint' when standing up. You are asked to see him, as his heart rate has increased from 95 to 150 beats/min over the first hour of his admission. He is complaining of upper abdominal pain and mild shortness of breath. Non-invasive BP is 100/60 mmHg and he feels cool peripherally. His chest is clear, with no clinical evidence of pneumothorax or rib fracture. His respiratory rate is 25 breaths/min, SpO2 99% on 4 L/min oxygen. His GCS score is 15 with normal limb movements. You have taken an arterial blood gas, full blood count, urea and electrolytes and a coagulation screen and are awaiting the results. What is the next most useful investigation to elucidate the cause of this man's deterioration?",
+      "options": [
+        "A. CT abdomen",
+        "B. CT head",
+        "C. ECG",
+        "D. Renal ultrasound",
+        "E. V/Q scan"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This man most likely has concealed bleeding from an abdominal injury, given his mechanism of injury. His observations suggest hypovolaemia and a liver or splenic injury is likely. This man requires fluid resuscitation, a surgical opinion and appropriate imaging of his abdomen. A chest X-ray to rule out thoracic pathology and free air under the diaphragm would also be reasonable but would be highly unlikely to provide a definitive diagnosis.",
+      "questionNumber": 32
+    },
+    {
+      "question": "In the general medical setting, what is the earliest and most sensitive sign of clinical deterioration?",
+      "options": [
+        "A. Blood pressure",
+        "B. Core temperature",
+        "C. Heart rate",
+        "D. Respiratory rate",
+        "E. Urine output"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A raised respiratory rate (tachypnoea) is the earliest and most sensitive sign of clinical deterioration. Tachypnoea may be primary (i.e. a problem within the respiratory system) or secondary to pathology elsewhere in the body. All other parameters may also be affected but tend to occur later as end-organ damage occurs.",
+      "questionNumber": 33
+    },
+    {
+      "question": "In the context of cardiac physiology, which of the following is stroke volume most dependent on?",
+      "options": [
+        "A. Cardiac filling (preload) and contractility",
+        "B. Cardiac index",
+        "C. Haemoglobin and oxygen saturation",
+        "D. Heart rate and diastolic blood pressure",
+        "E. Jugular venous pressure alone"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Stroke volume is dependent on cardiac filling (preload) and contractility. Stroke volume is the volume of blood ejected from the left ventricle per beat. An increased preload (i.e. increased venous return) and an increase in contractility (as a result of increased sympathetic stimulation, adrenaline infusion, increased serum calcium, or glucagon infusion) will together increase stroke volume. Conversely, an increase in afterload (as a result of increased peripheral vascular resistance) will decrease stroke volume as the heart has to work harder against higher resistance. Heart rate has some effect on stroke volume as the time for ventricular filling is decreased at fast rates, decreasing the stroke volume; however, it is not the main factor. Cardiac index is a measure that relates cardiac output (stroke volume * heart rate) to body surface area; the unit of measurement is L/min/m2. Haemoglobin and oxygen saturation do not directly affect stroke volume, except in very extreme situations (e.g. extreme anaemia or cellular hypoxia).",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 52 year old office worker is brought in by ambulance to the emergency department. She was found collapsed in the toilets at work, having earlier complained of a 4-day history of mild headache. She has a past medical history of well-controlled hypertension, diet-controlled type 2 diabetes mellitus and she smokes 40 cigarettes a day. Her partner reports that she drinks three glasses of wine a week and has never previously been admitted to hospital. The paramedics have been supporting her ventilation using an oropharyngeal airway and bag-valve-mask. Examination reveals heart rate of 60 beats/min, respiratory rate of 6 breaths/min (without support), BP 190/105 mmHg, SpO2 90% on 15 L oxygen, temperature 37.1 degrees C, blood glucose 4.8 mmol/L (86.4 mg/dL), GCS score 6 (E1, V2, M3) with no lateralising signs. There is no visible rash or external evidence of injury. Which one of the following conditions is the most likely cause of this patient's presentation?",
+      "options": [
+        "A. Alcohol withdrawal",
+        "B. Bacterial meningitis",
+        "C. First presentation of epilepsy",
+        "D. Hypoglycaemia",
+        "E. Subarachnoid haemorrhage"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The combination of hypertension, heavy smoking, sudden collapse and recent headache (possibly suggesting a herald bleed) make the diagnosis of subarachnoid haemorrhage most likely. She is not prescribed any drug for diabetes that would induce hypoglycaemia.",
+      "questionNumber": 35
+    },
+    {
+      "question": "An 84 year old man is brought to hospital after a fall. He was found by his daughter and had been lying on the floor for the previous 24 hours. He has a variety of soft tissue injuries but no serious head or orthopaedic injuries. On catheterisation, his urine is dark brown. Which one of these tests is most suggestive of rhabdomyolysis?",
+      "options": [
+        "A. 1+ blood on urine dipstick",
+        "B. Creatine kinase",
+        "C. Haemoglobin",
+        "D. Renal ultrasound",
+        "E. Urea"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A creatine kinase level of greater than 1000 U/L is highly suggestive, although it can rise to tens of thousands in severe cases. The other tests would not help in the specific diagnosis.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 20 year old man is brought in by ambulance to the emergency department, complaining of moderate central chest pain and feeling lightheaded. These symptoms came on acutely whilst he was playing football. Observations show: heart rate of 180 beats/min, respiratory rate of 18 breaths/min, BP 75/4 mmHg, SpO2 94% on 15 L oxygen, temperature 36.9 degrees C, blood glucose 4.6 mmol/L (82.8 mg/dL), GCS score 15. ECG reveals a regular narrow complex tachycardia. Which one of these treatments would be most appropriate as initial management?",
+      "options": [
+        "A. Adenosine 6 mg intravenous (IV) bolus",
+        "B. Amiodarone 300 mg IV bolus",
+        "C. Digoxin 500 µg orally",
+        "D. Electrolyte replacement",
+        "E. Synchronised DC cardioversion"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient has adverse signs relating to his tachyarrhythmia (chest pain and hypotension). Therefore DC cardioversion, rather than medical management, is appropriate as per Adult Life Support guidelines.",
+      "questionNumber": 37
+    },
+    {
+      "question": "The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3) gives a clear definition of sepsis as patients with suspected infection who have two or more of three particular features. Which of these features form part of that definition?",
+      "options": [
+        "A. GCS score <15",
+        "B. Increase of one point on the Sequential Organ Failure Assessment (SOFA) score",
+        "C. Respiratory rate >20 breaths/min",
+        "D. Serum lactate > 1.5 mmol/L (>13.5 mg/dL)",
+        "E. Systolic blood pressure of <110 mmHg"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "To be diagnosed with sepsis, the patient must have suspected infection and two or more of: • Hypotension - systolic blood pressure <100 mmHg • Altered mental status - GCS score ≤14 • Tachypnoea - respiratory rate ≥22 breaths/min Sepsis can also be diagnosed by suspected infection and an increase of two or more points on the SOFA score (Box 10.38).",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch10/a/10.38.png",
+      "questionNumber": 38
+    },
+    {
+      "question": "According to the Berlin definition of ARDS, which set of variables would denote severe ARDS?",
+      "options": [
+        "A. PaO2 of 9 kPa (67.5 mmHg) and FiO2 0.8=11.25",
+        "B. PaO2 of 10 kPa (75.0 mmHg) and FiO2 0.5=20",
+        "C. PaO2 of 12 kPa (90.0 mmHg) and FiO2 0.4=30",
+        "D. PaO2 of 13 kPa (97.5 mmHg) and FiO2 0.21=61",
+        "E. PaO2 of 16 kPa (120.0 mmHg) and FiO2 0.5=32"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Severity of hypoxaemia is calculated using a Pa/FiO2 ratio. This is a number calculated by the PaO2 from an arterial blood gas divided by the fraction of inspired oxygen (FiO2, expressed as a fraction). For example, a patient with a PaO2 of 10 kPa (75 mmHg) on 50% oxygen, i.e. FiO2 of 0.5, would have a Pa/FiO2 ratio of 20 kPa (150 mmHg). This would be defined as moderately severe ARDS, if the other Berlin criteria are met (Box 10.39). All measurements should be taken on a minimum of 5 cmH2O of PEEP or continuous positive airway pressure (CPAP): • Mild ARDS: 40-26.6 kPa (300-200 mmHg) • Moderate ARDS: 26.6-13.3 kPa (200-100 mmHg) • Severe ARDS: ≤13.3 kPa (≤100 mmHg)",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch10/a/10.39.png",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 75 year old sustains a cardiac arrest secondary to myocardial ischaemia. Return of spontaneous circulation is achieved after 15 minutes of cardiopulmonary resuscitation (CPR) and 2x DC shocks. Which one of these is a physiological target after return of circulation post-cardiac arrest?",
+      "options": [
+        "A. A MAP of no greater than 45 mmHg",
+        "B. Core temperature of 36 degrees C and avoidance of pyrexia",
+        "C. Glucose 11-16 mmol/L (198-288 mg/dL)",
+        "D. PaCO2 <3.5 kPa (26.3 mmHg)",
+        "E. Urine output of 0.1 mL/kg/hr"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Temperature management, i.e. maintaining a temperature of 36 degrees C and avoidance of pyrexia, should be facilitated by the use of a cooling blanket. This should be continued for 72 hours. Muscle relaxants may be required to prevent shivering. Other physiological targets include: MAP of >70 mmHg and systolic BP >120 mmHg, blood glucose of 6-10 mmol/L (108-180 mg/dL) and oxygen saturations of 94-98% (avoiding both hypoxaemia and hyperoxia). With respect to PaCO2 in the ventilated patient, the aim should be for normocapnia (4.5-6 kPa; 33-45 mmHg).",
+      "questionNumber": 40
+    },
+    {
+      "question": "Hyperlactaemia is very rarely seen in which of the following situations?",
+      "options": [
+        "A. Cardiogenic shock",
+        "B. Chronic renal failure",
+        "C. Major haemorrhage",
+        "D. Metformin overdose",
+        "E. Sepsis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All other options other than chronic renal failure are likely to result in tissue hypoperfusion or poor oxygen utilisation and thus anaerobic metabolism. This leads to a rise in lactate and is frequently used both to diagnose hypoperfusion or poor oxygen utilisation and to measure response to treatment.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 49 year old woman is admitted to the acute medical ward with a severe leg cellulitis. She has type 2 diabetes with a BMI of 41 kg/m2. Observations show: heart rate of 119 beats/min, respiratory rate of 20 breaths/min, BP 70/35 mmHg, SpO2 97% on air, temperature 38.5 degrees C, GCS score 15. Which one of the following treatments would you initiate first?",
+      "options": [
+        "A. Crystalloid IV bolus of up to 30 mL/kg",
+        "B. Hydrocortisone 100 mg IV",
+        "C. Peripheral IV adrenaline (epinephrine) 80-240 µg/hr",
+        "D. Peripheral IV noradrenaline (norepinephrine) 480 µg/hr",
+        "E. Vasopressin (antidiuretic hormone, ADH) 0.04 IU/min"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This woman has sepsis, the initial treatment of which includes early antibiotics and IV fluid. The other options may all be used to manage sepsis; however, they are not first line and should only be used with critical care oversight.",
+      "questionNumber": 42
+    },
+    {
+      "question": "For which of these conditions is non-invasive ventilation (bi-level positive airway pressure; BiPAP) the first-line respiratory treatment?",
+      "options": [
+        "A. Epiglottitis",
+        "B. H1N1 influenza",
+        "C. Mild congestive cardiac failure",
+        "D. Severe pneumonia",
+        "E. Type II respiratory failure with respiratory acidosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Non-invasive ventilation is the first-line therapy in patients with type II respiratory failure usually secondary to an acute exacerbation of COPD, because it reduces the work of breathing and offloads the diaphragm, allowing it to recover strength.",
+      "questionNumber": 43
+    },
+    {
+      "question": "The following are all terms that are used in relation to complications of invasive ventilation for patients in an intensive care setting, except for one. Which is the one that is not a real term used in this context?",
+      "options": [
+        "A. Atelectotrauma",
+        "B. Barotrauma",
+        "C. Biotrauma",
+        "D. Pulmotrauma",
+        "E. Volutrauma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Volutrauma is the result of distending forces from the tidal volume; barotrauma results from excessive pressures required to inflate the lung; atelectotrauma results from alveolar collapse and re-opening throughout the respiratory cycle; the release of inflammatory cytokines in response to cyclical distension is termed biotrauma. Pulmotrauma is not used in invasive ventilation nomenclature currently.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A patient with a known peanut allergy presents to the emergency department with wheeze, tongue swelling and difficulty talking. He does not routinely carry an EpiPen. On examination he has an SpO2 of 98% on 15 L/min oxygen via non-rebreathe mask, respiratory rate of 25 breaths/min, heart rate of 120 beats/min, BP 130/80 mmHg. He finds talking difficult. He is otherwise fit and well. He does not yet have IV access. Which of the following is your first treatment priority?",
+      "options": [
+        "A. IV access and crystalloid bolus",
+        "B. 10 µg adrenaline (epinephrine) IV",
+        "C. 50 µg adrenaline intramuscularly (IM)",
+        "D. 0.5 mL 1:1000 adrenaline IM",
+        "E. 5 mL 1:10000 adrenaline sublingually"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A dose of 0.5 mL 1:1000 adrenaline (epinephrine) IM forms part of the current Adult Life Support guidelines for anaphylaxis. IV adrenaline may be given by an experienced operator in anaesthesia or critical care but is not a first-line management technique.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 75 year old man presents to the hospital with a 4-day history of diarrhoea and vomiting. He has a history of moderate left ventricular failure, prostate cancer and chronic kidney disease stage 4. His regular medication includes aspirin 75 mg once daily, bisoprolol 5 mg once daily and ramipril 5 mg once daily. On admission his observations are as follows: heart rate of 60 beats/min, BP 90/45 mmHg, respiratory rate of 16 breaths/min SpO2 94% on air. He is lethargic and slow to respond to questions. He is oliguric after catheterisation. ECG demonstrates peaked T waves. Blood results include haemoglobin 101 g/L white cell count 16x10^9/L, platelets 190x10^9/L, urea 20.2 mmol/L (121 mg/dL), creatinine 367 µmol/L (4.15 mg/dL), sodium 134 mmol/L, potassium 8.3 mmol/L. He receives two boluses of calcium gluconate and two infusions of insulin/dextrose to manage his potassium. After this, a venous blood gas demonstrates H+ 84 nmol/L (pH 7.08) and potassium 8.2 mmol/L. What would be your next step in managing this man?",
+      "options": [
+        "A. 40 mg IV furosemide bolus",
+        "B. Critical care referral for monitoring and consideration of renal replacement therapy",
+        "C. Further bolus calcium gluconate",
+        "D. Further fluid resuscitation",
+        "E. Further insulin/dextrose infusion"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has hyperkalaemia refractory to medical management and therefore the next step is renal replacement therapy. In view of his ECG changes, and potential for significant deterioration, this should take place in a critical care area.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 63 year old man has been admitted to the coronary care unit after percutaneous coronary intervention for ST elevation myocardial infarction (MI). Four hours after admission he develops acute respiratory distress. Observations are as follows: heart rate of 120 beats/min, BP 100/75 mmHg, respiratory rate of 28 breaths/min, SpO2 96% on 15 L/min oxygen. His jugular venous pressure (JVP) is elevated. He is pale and clammy, but alert and has no chest pain. ECG demonstrates a sinus tachycardia with low-voltage QRS complexes. Which of the following is the most likely underlying diagnosis?",
+      "options": [
+        "A. Cardiac tamponade",
+        "B. Cardiogenic pulmonary oedema",
+        "C. Extension of the original infarction",
+        "D. Neurogenic pulmonary oedema",
+        "E. Pulmonary embolism"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Whilst most cases of cardiogenic shock following MI are due to left ventricular dysfunction, the clinical features of a raised JVP and narrow pulse pressure, alongside low-voltage QRS complexes, suggest tamponade secondary to infarction and free wall rupture post-MI. An urgent echocardiogram should be performed, followed by pericardiocentesis.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 67 year old woman is admitted to the ICU after cardiac arrest. She received immediate bystander CPR, and was found to be in ventricular fibrillation when the ambulance crew arrived. She received 3x DC shocks before return of spontaneous circulation, and had a total 'downtime' of 32 minutes. She was intubated and ventilated on arrival in the emergency department. Her best GCS prior to that was E1, V1, M2. Which of the following would suggest the potential for a good neurological outcome?",
+      "options": [
+        "A. A neuron-specific enolase >33 µg/L",
+        "B. Burst suppression on EEG",
+        "C. CT head with poor grey-white matter differentiation",
+        "D. Extensor motor response",
+        "E. Immediate bystander CPR"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Early bystander CPR and early defibrillation are the two interventions most likely to improve survival after cardiac arrest. All other answers are markers suggestive of poor prognosis.",
+      "questionNumber": 48
+    },
+    {
+      "question": "Using checklists for interventions in the ICU is a key component of good patient care. Which of the following forms part of the 'FAST HUG' checklist?",
+      "options": [
+        "A. Foot care",
+        "B. Gowning and gloving",
+        "C. Spinal problems",
+        "D. Teeth",
+        "E. Ulcer prophylaxis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The FAST HUG checklist for daily ward rounds includes: feeding, analgesia, sedation, thromboprophylaxis, head of bed elevation (to reduce the incidence of passive aspiration), ulcer prophylaxis and glucose control.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 56 year old man sustains a significant lower limb injury after becoming trapped between a wall and a car. He is admitted to an orthopaedic ward for observation and operative planning. You are asked to see him 12 hours later with a swollen, painful calf and suspected compartment syndrome. Which of the following is true regarding this condition?",
+      "options": [
+        "A. A serum D-dimer is both sensitive and specific for compartment syndrome",
+        "B. Absent peripheral pulses are an early sign suggestive of developing compartment syndrome",
+        "C. His leg should be reviewed by a consultant surgeon on the morning ward round the next day",
+        "D. Pain is worse with passive stretching",
+        "E. Sensation in the leg is likely to be normal"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Compartment syndrome classically occurs following extrinsic compression of a limb due to trauma or reduced conscious level (especially when caused by drugs or alcohol). It usually presents with a tense, firm and exquisitely painful limb. The pain is characteristically exacerbated by passive muscle stretching or squeezing the compartment and altered sensation is common. Absent peripheral pulses are a late sign, and their presence does not exclude the diagnosis. Clinical suspicion of compartment syndrome should prompt CK measurement and urgent surgical review - this cannot wait until the next day. D-dimer measurement is not indicated in suspected compartment syndrome.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 62 year old man is sedated and ventilated in the ICU after a severe subarachnoid haemorrhage. He has an intracranial pressure (ICP) monitor in situ, which has been reading 15 mmHg consistently. He is being sedated and analgesed with propofol and alfentanil infusions. On a sedation break his ICP increases to 45 mmHg and his pupils increase in size bilaterally. His mean arterial pressure is 90 mmHg. Which would be your first action to manage his ICP?",
+      "options": [
+        "A. Administer mannitol bolus",
+        "B. Administer neuromuscular blockade",
+        "C. Increase propofol and alfentanil infusion rates",
+        "D. Refer to neurosurgery for decompressive craniectomy",
+        "E. Remove the intracranial pressure monitor"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Initial strategies to manage raised ICP include ensuring adequate sedation, sitting the patient up to ensure adequate venous drainage from the head, and ventilating to low-normal end-tidal CO2. If this fails, further strategies include instituting neuromuscular blockade, and administering mannitol or hypertonic saline. A neurosurgical opinion may be appropriate if the above strategies are unsuccessful.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 45 year old man is admitted to the ICU after banding of oesophageal varices and significant upper gastrointestinal (GI) haemorrhage. He has alcoholic liver disease and continues to drink 1 L of vodka per day. He is haemodynamically stable with good gas exchange and is extubated 12 hours post-procedure. He is moved to a medical ward for ongoing management. Seventy-two hours later he becomes confused and agitated, with evidence of tremor and paranoid ideation. What is the best treatment for his current condition?",
+      "options": [
+        "A. Benzodiazepines",
+        "B. IV haloperidol 2.5 mg",
+        "C. Oramorph",
+        "D. Quetiapine",
+        "E. Thiamine"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Given the timescale and his past medical history, this man is most likely experiencing acute alcohol withdrawal. He is at risk of both delirium and hepatic encephalopathy (especially in view of his recent GI bleed), and these need to be considered in the differential diagnosis. Whilst benzodiazepines are still considered the most appropriate treatment for management of alcohol withdrawal, careful dosing must be used in the context of advanced liver disease.",
+      "questionNumber": 52
+    },
+    {
+      "question": "Which of these statements is true regarding the use of intra-aortic balloon pump (IABP)?",
+      "options": [
+        "A. Carbon dioxide is used to inflate the balloon",
+        "B. It is associated with improved survival in cardiogenic shock",
+        "C. It is commonly inserted via the brachial artery",
+        "D. It is designed to improve diastolic pressure proximal to the balloon",
+        "E. There is no risk of mesenteric ischaemia when inserted correctly"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "An IABP is commonly inserted via the femoral artery. Despite its effectiveness in achieving predetermined physiological goals, there is no convincing evidence for increased survival in cardiogenic shock. The balloon is inflated with helium and, even when inserted correctly under radiological screening, mesenteric ischaemia remains a risk. The balloon is inflated in diastole, augmenting the forward flow of blood to the abdominal organs and improving diastolic pressure proximal to the balloon, thus optimising coronary perfusion.",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 68 year old woman, who has previously been fit and well, required intubation and ventilation in the ICU with severe pneumonia. After 10 days, tracheostomy to aid ventilatory weaning proves difficult, secondary to respiratory muscle weakness, and she requires a further 19 days of ventilation before being weaned off her tracheostomy. On neurological examination she has global proximal muscle weakness with no lateralising signs. Sensory examination is normal. Reflexes are generally decreased. Nerve conduction studies demonstrate reduced amplitude of transmitted voltage action potential with preserved velocity. Muscle biopsy is normal and creatine kinase is unremarkable. What condition is most likely responsible for this woman's difficulty in weaning from ventilation?",
+      "options": [
+        "A. Brainstem stroke",
+        "B. Critical illness myopathy",
+        "C. Critical illness polyneuropathy",
+        "D. Guillain-Barré syndrome",
+        "E. Multiple sclerosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Critical illness polyneuropathy is due to peripheral nerve axonal loss and presents as proximal muscle weakness with preserved sensation. Nerve conduction study results are as described for this patient. The clinical history is not in keeping with multiple sclerosis or brainstem stroke and, by definition, muscle biopsy must be abnormal in critical illness myopathy.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 24 year old man is admitted to the ICU after sustaining a severe head injury after a fall from a height at work. CT head on admission demonstrates massive intracranial haemorrhage with midline shift, and the clinical opinion is that of brain death. His family say that he previously expressed a wish to donate his organs if this situation ever arose. Which of the following would prevent testing for brain death?",
+      "options": [
+        "A. Administration of 10 mg morphine IV 2 hours previously",
+        "B. Administration of a bolus of atracurium 72 hours previously",
+        "C. Core temperature of 36 degrees C",
+        "D. Normal thyroid function tests",
+        "E. Serum sodium of 133 mmol/L"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Preconditions for testing for brain death include: the patient is deeply comatose, is not hypothermic, has no profound electrolyte or metabolic disturbance and that the patient is maintained on a ventilator because spontaneous respiration is inadequate or has ceased. Whilst atracurium is a muscle relaxant that would lead to cessation of respiration, it is short acting and would not cause effects 72 hours later. The administration of a large dose of IV morphine 2 hours previously raises the possibility that the coma is secondary to a narcotic drug and, therefore, brain-death testing cannot be carried out reliably.",
+      "questionNumber": 55
+    },
+    {
+      "question": "Which of these is an early complication of percutaneous tracheostomy carried out in the ICU?",
+      "options": [
+        "A. Haemorrhage",
+        "B. Laryngeal stenosis",
+        "C. Tracheal stenosis",
+        "D. Tracheomalacia",
+        "E. Wound site infection"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Wound site infection, tracheal stenosis and tracheomalacia are late complications of percutaneous tracheostomy. Performed correctly, laryngeal damage should not be a complication of percutaneous tracheostomy. In those patients where percutaneous tracheostomy is anticipated to be difficult, ear, nose, and throat (ENT) referral should be made for consideration of surgical tracheostomy.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 67 year old man presents to the emergency department with a 3-day history of haematemesis and melaena. He has a past medical history of alcoholic liver disease and mild asthma (well controlled). His observations are: heart rate of 100 beats/min, respiratory rate of 16 breaths/min, BP 85/40 mmHg (70/35 mmHg on standing), SaO2 95% on 6 L oxygen, temperature 36.5 degrees C, blood glucose 4.2 mmol/L (75.7 mg/dL), GCS score 15. On examination, he is pale, cool peripherally, talking in full sentences, and his chest is clear. His abdomen is soft and non-tender but fresh melaena is found on rectal examination. He is not actively vomiting currently. Initial laboratory results show haemoglobin 42 g/L, white cell count 5.7x10^9/L, platelets 41x10^9/L, sodium 132 mmol/L, potassium 5.6 mmol/L, urea 16 mmol/L (96 mg/dL), creatinine 75 µmol/L (0.85 mg/dL), lactate 4.5 mmol/L (40.5 mg/dL). Which of the following would be your immediate next step in managing this man?",
+      "options": [
+        "A. Arrange urgent upper GI endoscopy",
+        "B. Critical care referral for monitoring",
+        "C. Insertion of a Sengstaken-Blakemore tube",
+        "D. Large-bore IV access and red cell transfusion",
+        "E. Terlipressin 2 mg IV"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Whilst all of the options may be applicable to a patient with upper GI haemorrhage, the first priority must be resuscitation and maintenance of adequate haemoglobin and thus oxygen-carrying capacity.",
+      "questionNumber": 57
+    }
+  ]
+}

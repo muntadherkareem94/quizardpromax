@@ -1,0 +1,109 @@
+{
+  "title": "Environmental medicine - Chapter 9",
+  "questions": [
+    {
+      "question": "Research on individuals exposed to radiation from the atomic bombs in Hiroshima and Nagasaki has shown an increased relative risk of developing malignancy (leukaemia, oral cavity, oesophagus, stomach, colon, lung, breast, ovary, urinary bladder, thyroid, liver, non-melanoma skin and nervous system) as a result of radiation exposure. Which of these statements best describes this observation?",
+      "options": [
+        "A. The Japanese have higher rates of cancer than the world average",
+        "B. This is a deterministic effect of radiation",
+        "C. This is a stochastic (random) effect of radiation",
+        "D. This is an observational effect unrelated to the atomic bomb",
+        "E. This is because of background radiation in Japan"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Stochastic (chance) effects occur with increasing probability as the dose of radiation increases. Carcinogenesis represents a stochastic effect, with not all exposed individuals being affected. With acute exposures, leukaemias may arise after an interval of around 2-5 years and solid tumours after an interval of about 10-20 years.",
+      "questionNumber": 1
+    },
+    {
+      "question": "Radiation can be divided into ionising and non-ionising forms. Ionising radiation carries enough energy to free electrons from atoms or molecules, thereby ionising them, and this can damage tissues and cells. Which of these forms of therapy is most likely to cause long-term radiation injury through high levels of ionising radiation exposure to patients?",
+      "options": [
+        "A. Chest X-ray to diagnose a spontaneous pneumothorax",
+        "B. Radiofrequency ablation for cardiac arrhythmias",
+        "C. Serial whole-body computed tomography (CT) for cancer screening",
+        "D. Transurethral microwave therapy for prostatic hypertrophy",
+        "E. Ultraviolet therapy for psoriasis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "CT scans result in relatively high-radiation exposure and whole-body CT screening has not been demonstrated to meet generally accepted criteria for screening. The risks associated are outweighed by the benefits of diagnostic CT and there is a small increase in lifetime risk of developing cancer. Options B, D and E are non-ionising radiations and the radiation dose from one chest X-ray is negligible.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 67 year old patient is brought to the emergency department having been found unwell in an unheated apartment during the winter in Northern Europe. Severe reversible hypothermia is best characterised by which of the following?",
+      "options": [
+        "A. A core temperature below 32 degrees C",
+        "B. Bradycardia, a J wave on the electrocardiogram and loss of consciousness",
+        "C. Chest and abdomen rigidity with a core temperature below 13 degrees C and serum potassium >12 mmol/L",
+        "D. Shivering, white peripheries and irritability",
+        "E. Tachycardia, tachypnoea and slight delirium"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hypothermia occurs when the core temperature drops below 35 degrees C. Severe hypothermia is characterised by a temperature below 28 degrees C, bradycardia, bradypnoea, arrhythmias and loss of consciousness. A rigid chest and abdomen with a core temperature below 13 degrees C and serum potassium >12 mmol/L is probably incompatible with life. Body temperature is controlled in the hypothalamus, which is directly sensitive to changes in core temperature and indirectly responds to temperature-sensitive neurons in the skin. The normal 'set-point' of core temperature is tightly regulated within 37 +/- 0.5 degrees C.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A family consult their family physician for advice regarding a forthcoming holiday in the tropics. Heat illness is a spectrum of disease affecting both the young and old. Which of these statements is most correct?",
+      "options": [
+        "A. Complications of heat stroke include hypovolaemic shock, lactic acidosis, rhabdomyolysis, hepatic failure and pulmonary oedema",
+        "B. Exertional heat illness is more common in the elderly than in younger people",
+        "C. Heat acclimatisation is characterised by decreased sweat volume, reduced sweat sodium content and secondary hyperaldosteronism to maintain body sodium balance",
+        "D. Heat stroke commonly occurs above 39 degrees C",
+        "E. Heat syncope is another term for heat stroke"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Exertional heat illness is more common in athletes and sweat volumes increase with acclimatisation. Heat stroke is rare below 40 degrees C and heat syncope is a distinct condition and far less serious than heat stroke.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Acclimatisation is the process of the body adjusting to the decreased availability of oxygen at high altitudes. This becomes noticeable above 2500m. Which of these changes occurs in healthy individuals?",
+      "options": [
+        "A. A shift in the oxygen dissociation curve to the left after 2-3 days",
+        "B. Deep prolonged sleep with vivid dreams",
+        "C. Deep, slow breathing to maximise oxygen uptake",
+        "D. Erythropoiesis and haemoconcentration mediated through the endocrine system",
+        "E. Fluid retention to counteract the raised haematocrit due to hypoxia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hyperventilation is caused by hypoxia sensed through the carotid bodies and a diuresis occurs secondary to haemoconcentration. After 2-3 days the oxygen dissociation curve moves to the right, making it easier for haemoglobin to release oxygen to the tissues. Sleep and nocturnal breathing patterns are frequently disturbed at altitude.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 36 year old mountaineer ascends to 3800 m. He complains of feeling tired and unwell. His companions notice that he is staggering and delirious. Which of the following statements is true regarding illness at altitude?",
+      "options": [
+        "A. Acetazolamide is the treatment of choice for high-altitude cerebral oedema (HACE)",
+        "B. Altitude sickness usually occurs between 1500m and 2500m, is characterised by vomiting and resolves spontaneously after a few days",
+        "C. High-altitude pulmonary oedema (HAPE) is a life-threatening condition that initially presents with symptoms of dry cough, exertional dyspnoea and extreme fatigue",
+        "D. Monge's disease (chronic mountain sickness) is characterised by polycythemia and hypoxia that does not improve if the patient moves to lower altitudes to live",
+        "E. The cardinal signs of HACE are headache, unilateral pupillary dilatation and dizziness"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Above 2500m, high-altitude illnesses may occur in previously healthy people, and above 3500 m these become common. Acute mountain sickness (AMS) symptoms develop a few hours after ascent and include dizziness, fatigue and headache. The cardinal signs of HACE are ataxia and altered consciousness. It is rare, life-threatening and usually preceded by AMS. In addition to features of AMS, the patient suffers confusion, disorientation, visual disturbance, lethargy and ultimately loss of consciousness. Monge's disease improves if the patient moves to lower altitudes to live.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 5 year old boy is brought to the emergency department following a drowning incident. Which of the following statements is true with regard to a drowned patient?",
+      "options": [
+        "A. Fresh water is hypotonic and impairs surfactant function, causing alveolar collapse and left-to-right shunting of unoxygenated blood",
+        "B. In about 10% of cases, no water enters the lungs and death follows intense laryngospasm ('dry' drowning)",
+        "C. Long-term outcome depends on the severity of the cerebral hypoxic injury and is predicted by the duration of immersion and delay in resuscitation, but is independent of the presence of cardiac arrest",
+        "D. Salt water is hypertonic and inhalation provokes alveolar oedema, producing a distinct clinical picture from freshwater drowning",
+        "E. Those rescued alive (near-drowning) are often unconscious and not breathing. Hypoxaemia and metabolic alkalosis are common features during resuscitation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Drowning remains a common cause of accidental death throughout the world and is relatively common in young children. Fresh water causes alveolar collapse and right-to-left shunting of unoxygenated blood. Saltwater and freshwater drowning produce a similar clinical picture. In near-drowning, metabolic acidosis is almost universal and cardiac arrest is a poor prognostic indicator in recovery from drowning. It is true that in about 10% of cases, no water enters the lungs and death follows intense laryngospasm ('dry' drowning).",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 48 year old woman is planning to do some diving on her forthcoming holiday to the Caribbean. She is reading about the possible risks involved. Which of the following statements is true?",
+      "options": [
+        "A. Ambient pressure under water increases by 101 kPa (1 atmosphere, 1 ata) for every 10m of seawater depth, with the nitrogen in air causing narcosis below 30m of seawater and oxygen becoming toxic at inspired pressures above 40 kPa (0.4 ata)",
+        "B. As divers descend, the partial pressures of the gases they are breathing decrease and the blood and tissue concentrations of dissolved gases change accordingly",
+        "C. She can be confident that she will be able to undertake a final dive on the morning of her return flight home provided she has taken enough time on her final ascent",
+        "D. She should hold her breath on ascent to avoid arterial embolisation through a patent foramen ovale",
+        "E. The bends are caused by bubbles of carbon dioxide being released into the body tissues whilst a diver ascends; this can be treated with recompression therapy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The underwater environment is extremely hostile. Other than drowning, most diving illness is related to changes in barometric pressure and its effect on gas behaviour. Partial pressures of gases increase with descent and the bends are caused by the nitrogen bubbles on ascending again. Arterial embolisation may occur if the gas load in the venous system exceeds the lungs' abilities to excrete nitrogen, or when bubbles pass through a patent foramen ovale. A patent foramen ovale occurs in 25-30% of asymptomatic individuals. A diver must ascend slowly and breathe regularly during ascent to avoid barotrauma. Recompression is the definitive therapy for decompression illness. Recompression reduces the volume of gas within tissues (Boyle's law), forces gas back into solution and is followed by slow decompression that allows the gas load to be excreted. Decompression illness can be provoked by flying. Diving tables should be consulted to leave a safe gap between a final dive and a subsequent plane journey.",
+      "questionNumber": 8
+    }
+  ]
+}

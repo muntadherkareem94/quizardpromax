@@ -1,0 +1,276 @@
+{
+  "title": "Nutritional factors in disease - Chapter 19",
+  "questions": [
+    {
+      "question": "A 27 year old woman presents to clinic for the first time. She has no known medical history and takes no medications, but complains of lethargy and fatigue. She weighs 97 kg and has a body mass index (BMI) of 32 kg/m². She states that her weight has been climbing over the past few years, more rapidly over the past few months. On examination, her temperature is 36.8°C, pulse is 70 beats/min, and blood pressure is 128/78 mmHg. She has no conjunctival pallor, sclera are anicteric, examination of her neck is normal, there is no lymphadenopathy, and no cardiac murmurs are heard. Her abdomen is obese without ascites and there is no peripheral oedema. Which of the following is the best next step in management?",
+      "options": [
+        "A. Check serum thyroid-stimulating hormone (TSH)",
+        "B. Measure triceps skinfold thickness",
+        "C. Prescribe orlistat",
+        "D. Recommend a very-low-calorie diet",
+        "E. Refer for a bone densitometry (dual X-ray absorptiometry; DXA) scan"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is an obese patient being evaluated for the first time with a history of weight gain that has accelerated recently, along with fatigue. This history suggests an underlying disorder such as hypothyroidism or Cushing's syndrome may be related to the weight gain. All obese patients should have thyroid function tests performed. Very-low-calorie diets require the supervision of an experienced physician and dietician and can be considered if short-term rapid weight loss is required.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch19/a/19.1.png",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 43 year old man with a history of hypertension, hyperlipidaemia and gout presents to his family physician for routine follow-up. The man does not smoke or drink alcohol and lives with his wife. He denies chest pain and dyspnoea on exertion. He has a BMI of 34 kg/m² and android distribution of body fat. Serum cholesterol is 6.3 mmol/L (244 mg/dL). The family physician recommends decreasing his consumption of high-fat foods. Which of the following is true regarding fat metabolism?",
+      "options": [
+        "A. Consumption of fats should represent 15-30% of total daily energy intake",
+        "B. Energy provided per gram of fat is less than the energy provided per gram of protein",
+        "C. Fats are the main source of short-chain fatty acid production by colonic bacteria",
+        "D. Increasing consumption of saturated fats should lower circulating low-density lipoprotein (LDL) concentrations",
+        "E. Trans fatty acids consumption promotes anti-inflammatory effects via prostaglandin production"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Fats have the highest energy density of the macronutrients and should represent 15-30% of daily energy intake compared to 55-75% for carbohydrates and 10-15% for proteins. High saturated fat consumption is associated with higher levels of LDL cholesterol. Whereas omega-3 fatty acids promote prostaglandin production and anti-inflammatory cascade, trans fatty acids are associated with cardiovascular disease.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch19/a/19.2.png",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 19 year old woman presents to her family physician complaining of pain in her foot when she runs. She is a competitive runner and currently trains 60 miles per week. Her menstrual periods are typically irregular, and she has not had her menstrual period in 6 months. On examination, her pulse is 50 beats/min, blood pressure is 89/68 mmHg and her BMI is 15.7 kg/m². Beta-human chorionic gonadotrophin (hCG) testing is negative. The following features may all be due to her nutritional state, except one. Which one is NOT likely to be a consequence of her nutritional status?",
+      "options": [
+        "A. Amenorrhoea",
+        "B. Decreased basal metabolic rate",
+        "C. Foot pain",
+        "D. High insulin state for maximal nutrient delivery to cells",
+        "E. Increased lethargy for energy conservation"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This female runner's presentation is concerning for under-nutrition and the female athlete triad of disordered eating, amenorrhoea and decreased bone mineral density. Her foot pain may be related to osteopenia and a stress fracture. In a state of under-nutrition, her basal metabolic rate will be decreased to minimise further weight loss. In addition, she will have a low-insulin state in order to promote liberation of energy stores from tissues such as the liver, muscle, and adipose tissue for systemic utilisation.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch19/a/19.3.png",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 63 year old man with a history of chronic alcohol use is admitted after being found unresponsive in a park. He required several stitches in for repair of a forehead laceration and later developed alcohol withdrawal seizures requiring diazepam for several days on the ward. After a prolonged period of delirium and inattention, the decision is made to place a nasogastric tube for enteral feeding. Three days after initiating feeding, he becomes more alert, but complains of nausea, weakness and palpitations. In addition to obtaining an electrocardiogram (ECG), which of the following is the most appropriate next step in management?",
+      "options": [
+        "A. Check serum electrolytes",
+        "B. Obtain a computed tomography (CT) scan of his head",
+        "C. Obtain an echocardiogram",
+        "D. Reassure him that he is getting adequate nutrition via the nasogastric tube",
+        "E. Treat with calcium gluconate, insulin and dextrose"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient with a history of chronic alcoholism is at risk for malnutrition and refeeding syndrome due to restoration of carbohydrate metabolism, insulin secretion and electrolyte shifts into cells. Refeeding syndrome may present with nausea, vomiting, weakness, seizures, respiratory depression, and cardiac arrhythmias or arrest. Initiation of nutrition should be done slowly with careful monitoring of electrolytes, especially potassium, phosphate and magnesium, with repletion as appropriate.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch19/a/19.4.png",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 34 year old woman with obstructive sleep apnoea and diabetes is referred to general surgery for a Roux-en-Y gastric bypass procedure. Her BMI is 41 kg/m² and she has been unsuccessful in achieving weight loss with multiple attempts at lifestyle modification and pharmacological therapy. Which of the following statements would be most appropriate in counselling this patient?",
+      "options": [
+        "A. It will likely take years to see improvement in diabetes control",
+        "B. She is at low risk for post-surgical complications such as wound infection",
+        "C. She should wait at least 2 years before considering pregnancy",
+        "D. She will likely experience amenorrhoea post-operatively",
+        "E. Although effective for weight loss, bariatric surgery is not associated with reduced mortality"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Bariatric surgery is the only anti-obesity intervention that has been shown to reduce mortality. While diabetes control usually improves rapidly, especially with gastric bypass procedures, micronutrient deficiencies (e.g. iron, folate, vitamin B12) may complicate the post-procedure period. As a result, pre-menopausal women should wait at least 2 years for nutritional status to stabilise before becoming pregnant.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 72 year old man with a history of hypertension and hyperlipidaemia presents to his family physician complaining of fatigue and constipation. On further questioning, he admits to recently chewing ice on occasions. Physical examination reveals conjunctival pallor and koilonychia. Initial blood tests show white cell count (WCC) 6.2x10^9/L, haemoglobin 96 g/L, mean cell volume (MCV) 72 fL, platelets 263x10^9/L, international normalised ratio (INR) 1.0. Further evaluation with flexible sigmoidoscopy demonstrates a large tumour in the descending colon. Which of the following is true regarding the most likely micronutrient deficiency associated with his anaemia?",
+      "options": [
+        "A. This deficiency causes impaired wound healing through defective collagen fibrils",
+        "B. Duodenal hepcidin production is suppressed in states of this deficiency",
+        "C. Absorption of this micronutrient is enhanced by dietary calcium",
+        "D. Absorption of this micronutrient is impaired by vitamin C",
+        "E. Long-term deficiency can lead to cirrhosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient is presenting with anaemia in the setting of chronic blood loss, koilonychias, and pica, consistent with iron deficiency anaemia. In a state of iron deficiency, hepcidin production decreases in order to promote the transport of iron from the enterocyte basolateral surface into circulation. Absorption of iron is facilitated by vitamin C and impaired by dietary calcium.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 34 year old overweight woman with a history of mild chronic asthma presents to a gastroenterologist complaining of bloating and diarrhoea. Over the past year she has been attempting to lose weight through lifestyle modification with some success. She recently adjusted her diet to replace added sugar with sugar-free foods and artificial sweeteners. Which of the following is the most likely reason for her gastrointestinal complaints?",
+      "options": [
+        "A. Consumption of non-starch polysaccharides has increased",
+        "B. She is no longer producing lactase",
+        "C. Short-chain fatty acid production has increased",
+        "D. Sugar alcohols are not absorbed by the gut",
+        "E. Sugar alcohols have a high glycaemic index"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Artificial sweeteners use sugar alcohols (e.g. sorbitol, xylitol) to provide sweet taste without caloric contribution. Sugar alcohols are not absorbed by the gut and in high quantities can act as an osmotic agent to move water intraluminally and cause diarrhoea. Since sugar alcohols are not absorbed, they do not increase the blood glucose concentration and have a very low glycaemic index.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 23 year old woman from northern Scotland presents to her family physician complaining of chronic tiredness. She has a history of right fibula fracture in childhood, but is otherwise well and takes no medications or supplements. She is up to date with routine vaccinations and is currently working as a librarian. Examination is normal. A B-hCG test is negative. Which of the following nutritional recommendations is most appropriate at this time?",
+      "options": [
+        "A. Advise her to begin vitamin E supplementation for cardioprotection",
+        "B. Begin daily vitamin B12 supplementation to reduce the incidence of neural tube defects",
+        "C. Initiate supplementation with cholecalciferol (vitamin D), at least during winter months",
+        "D. Initiate supplementation with retinol now in the event that she becomes pregnant",
+        "E. Recommend treatment with ascorbic acid for the prevention of kidney stones"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Supplementation with vitamin D, or cholecalciferol, is recommended for this woman from northern Scotland. The combination of low dietary vitamin D intake and limited sunlight exposure in the UK has led to the UK recommendation of 10 µg of vitamin D daily. Vitamin D supplementation should be considered for everyone during winter months (October to April) and all year for certain groups: e.g. those who may not be outside much, those who tend to cover up their skin, those with darker skins. In countries where vitamin A deficiency is endemic, pregnant women may be advised to consume foods high in vitamin A. In contrast, in countries where vitamin A deficiency is not endemic, vitamin A supplementation is avoided, as moderate doses of retinol are teratogenic. Increased vitamin E intake has been shown to be associated with lower rates of coronary artery disease; however, randomised controlled trials have not demonstrated significant benefits. Vitamin C excess is associated with the formation of renal oxalate stones. Folate supplementation is used to reduce the incidence of neural tube defects in pregnancy. In this case, the woman is of child-bearing age but clearly not pregnant at the time (B-hCG test is negative).",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 58 year old woman from Angola is seen in clinic after recently emigrating to the UK. Her husband states that she has been confused and at times disorientated. On further questioning, the patient states that she has nausea and diarrhoea, with seven bowel movements daily. On examination, she is afebrile, anicteric, without conjunctival pallor or lymphadenopathy. Her tongue appears enlarged; no cardiac murmurs are heard; and her abdomen is soft, mildly tender and non-distended. A dry cracking rash is seen on the skin of her neck and upper extremities bilaterally. Which of the following treatments is most likely to improve her symptoms?",
+      "options": [
+        "A. Ascorbic acid 250 mg orally 3 times daily",
+        "B. Folate 500 µg orally once daily",
+        "C. Nicotinamide 100 mg orally 3 times daily",
+        "D. Pyridoxine hydrochloride 50 mg orally 3 times daily",
+        "E. Riboflavin 10 mg orally once daily"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient from Angola presents with dementia, diarrhoea and dermatitis consistent with pellagra, or niacin deficiency. The enlarged tongue is due to non-infective inflammation of the gastrointestinal tract leading to glossitis. Pellagra can develop in certain parts of Africa and South America where corn-based diets predominate. Treatment is with oral or parenteral nicotinamide and usually results in rapid improvement of symptoms.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 45 year old man with a history of alcoholic cirrhosis presents to the emergency department after being found unresponsive at home. On examination he is minimally responsive, disorientated, anicteric, cachectic and has restricted horizontal eye movement bilaterally. His lab results are notable for mildly elevated transaminases and low albumin. Treatment is initiated with parenteral multivitamin therapy. Which of the following is true regarding his most clinically significant vitamin deficiency?",
+      "options": [
+        "A. Adults have limited stores of thiamine in the liver and may manifest deficiency after a short period",
+        "B. Thiamine deficiency commonly leads to coagulopathy",
+        "C. Hepatocytes are most vulnerable to damage as a result of thiamine deficiency",
+        "D. Thiamine acts as a co-factor in folate co-enzyme recycling",
+        "E. Thiamine is fat soluble"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This malnourished alcoholic patient presents with clinical features suggestive of Wernicke's encephalopathy (delirium and ophthalmoplegia), which is a manifestation of thiamin (vitamin B1) deficiency. Thiamin is a water-soluble vitamin that acts as a co-factor in aerobic metabolism of glucose. Neuronal cells are most vulnerable to damage from thiamin deficiency as they exclusively utilise glucose for energy requirements. The liver has very limited stores of thiamin, so deficiency can manifest after only 1 month of a thiamin-free diet.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 41 year old previously healthy woman is brought to the hospital by her husband who states she has been febrile to 39°C for the past 2 days and jaundiced for the past 7 days. On examination she is delirious and jaundiced. Her chest is clear to auscultation, her abdomen is soft but mildly tender to palpation in the right upper quadrant and she has no oedema. Blood tests show WCC 23x10^9/L, platelets 340x10^9/L, INR 1.5, alanine aminotransferase (ALT) 32 U/L, albumin 34 g/L. Extrahepatic biliary dilatation is seen on abdominal ultrasound. Which of the following is the most likely factor leading to her mild coagulopathy?",
+      "options": [
+        "A. Hepatic synthetic dysfunction",
+        "B. Intracerebral haemorrhage",
+        "C. Medication effect",
+        "D. Obstruction of the biliary tree",
+        "E. Previously undiagnosed coeliac disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient is presenting with four features of Reynolds' pentad of ascending cholangitis (fever, right upper quadrant pain, jaundice, altered mental status), probably caused by obstruction of the biliary tree. In obstructive jaundice, bile is unable to enter the gut lumen for fat digestion. As a result, the fat-soluble vitamins, including vitamin K, are poorly absorbed. Vitamin K is required in the synthesis of coagulation factors II, VII, IX and X. Deficiency can lead to coagulopathy. While cirrhosis, malabsorption and medications (e.g. warfarin) can also lead to coagulopathy, this patient is previously healthy prior to this acute episode.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch19/a/19.11.png",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 68 year old man is being discharged from the hospital after experiencing palpitations. An ECG has revealed new-onset atrial fibrillation and he is started on warfarin for anticoagulation and stroke prophylaxis. His cardiologist explains that warfarin works by antagonising vitamin K and that the patient should not vary his vitamin K intake while on warfarin. Which of the following foods is highest in vitamin K and should be consumed with the least amount of variation?",
+      "options": [
+        "A. Egg yolk",
+        "B. Kale",
+        "C. Liver",
+        "D. Pork",
+        "E. Sunflower oil"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Vitamin K is a fat-soluble vitamin produced by intestinal bacteria. Green leafy vegetables are rich sources of vitamin K, along with soya oil. Egg yolks represent a source of biotin and vitamin D. Liver is rich in vitamin A and sunflower oil is rich in vitamin E.",
+      "explanationImageUrls": [
+        "images/books-images/Davidson-assessment/ch19/a/19.12a.png",
+        "images/books-images/Davidson-assessment/ch19/a/19.12b.png"
+      ],
+      "questionNumber": 12
+    },
+    {
+      "question": "A 32 year old woman gives birth to a baby boy weighing 4.2 kg. She defaulted from antenatal care and takes no medications or supplements. On examination of the child after 10 minutes, his pulse is 136 beats/min and he is crying vigorously with arms and legs held in flexion. The skin appears pink with a protuberant mass on his back in the midline at the level of L4. Treatment with a water-soluble vitamin may have prevented this birth defect through which of the following mechanisms?",
+      "options": [
+        "A. Accepting and donating hydrogen in nicotinamide adenine dinucleotide (NAD)",
+        "B. Decarboxylation of pyruvate to acetyl-co-enzyme A to initiate the Krebs cycle",
+        "C. Donating a methyl group in DNA and and protein synthesis",
+        "D. Facilitating absorption of calcium in the small intestine",
+        "E. Hydroxylation of proline and lysine in the formation of mature collagen"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The child was born with a neural tube defect, but is otherwise healthy. Folate deficiency in pregnancy is associated with spina bifida, anencephaly and encephalocele due to increased requirements during embryonic development. Pregnant women are advised to take folate supplements during the first trimester. Mechanistically, folate acts as a methyl donor in the synthesis of DNA, RNA and protein, with increased requirements during cellular division.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 78 year old man presents to hospital with an acute abdomen. At laparotomy he is found to have extensive infarction of the superior mesenteric artery territory. It is noted at the time of surgery that he has 90 cm of healthy jejunum remaining, anastomosed to an intact colon. He may need additional treatments in the future as a result of this. Which of the following treatments is he LEAST likely to need?",
+      "options": [
+        "A. Daily oral administration of a glucose/electrolyte solution as a substitute for free fluids",
+        "B. Oral loperamide",
+        "C. Parenteral (intravenous or subcutaneous) fluid",
+        "D. Parenteral nutrition",
+        "E. Restriction of oral free fluid intake"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The residual length of jejunum following massive small bowel resection or bypass is a powerful predictor of the need for parenteral fluid or nutritional support. Those left with an intact colon that can be anastomosed at the time of initial surgery or at some time subsequently tend to fare better than those where the colon is lost (due to the further capacity of the colon to absorb water and electrolytes). However, most patients with <200 cm of jejunum remaining will require oral fluid restriction and the use of a glucose/electrolyte solution (with sodium concentration of 90-120 mmol/L) to minimise diarrhoea and maximise absorption of fluid and electrolytes. In addition, those with <100 cm of jejunum remaining will require a variable volume of parenterally administered sodium chloride to maintain an adequate balance between what they can absorb orally and their overall fluid requirements. Those with <75 cm of jejunum will also be unable to maintain their overall energy requirements by oral means and will require a variable amount of calories administered parenterally (parenteral nutrition) in addition to the other treatments above.",
+      "questionNumber": 14
+    },
+    {
+      "question": "An 85 year old woman suffers a total anterior circulation stroke that leaves her unable to swallow safely. After a few days on intravenous fluids, her family request that she is fed intravenously. The attending multidisciplinary team explain their preference is for nasogastric feeding in the first instance. Which of the following statements is true of the enteral route of nutrition versus the parenteral route?",
+      "options": [
+        "A. It improves quality of life",
+        "B. It is associated with fewer costs financially",
+        "C. It leads to greater preservation of hepatic and pulmonary immune function",
+        "D. It leads to reduced levels of systemic inflammatory response",
+        "E. It reduces the pathogenicity of intestinal microorganisms"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Where the intestine is largely intact, functionally normally and accessible to an enteral tube, the proven benefits of enteral over parenteral nutrition are that the overall health-care costs are less, that it is associated with fewer episodes of infection, more rapid restoration of normal intestinal function and a reduced length of hospital stay.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 49 year old woman with a 10-year history of terminal ileal Crohn's disease treated with mesalazine is admitted with a complex fistulating mass involving small bowel, bladder and sigmoid colon. It is not possible to fashion a primary anastomosis and a proximal small bowel stoma (jejunostomy) is brought out to skin. Post-operatively, the fluid losses from this stoma are >2000 mL/day, leading rapidly to dehydration. Which of the following measures is likely to lead to a worsening of fluid losses from the high-output stoma?",
+      "options": [
+        "A. Administration of oral omeprazole 20 mg once daily",
+        "B. Advice to take oral fluids ad libitum to replace stomal losses",
+        "C. Oral administration of a glucose/electrolyte solution in place of oral fluids",
+        "D. Oral administration of loperamide 2 mg 4 times daily",
+        "E. Restriction of oral fluid intake"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although it may appear initially counterintuitive, it is absolutely vital in this situation that further intestinal losses are not incurred by inappropriate advice to simply drink more fluid. The jejunum is inherently 'leaky', allowing rapid fluxes of sodium (and water) across the epithelial barrier. Taking fluids with a sodium concentration of <90 mmol/L results in a net efflux of sodium and water into the intestinal lumen (and therefore greater stomal fluid losses). Drinking a larger volume of such 'dilute' fluids leads to even more stomal losses. Oral fluid intake should be restricted in such patients to 500 mL per day. A further 1000 mL of a glucose/electrolyte solution with a sodium concentration of at least 90 mmol/L should be given (e.g. St Mark's solution or Glucodrate, Nestlé) but no oral fluids over and above this limit. Any subsequent deficit between intake and output should be made up by parenteral fluid administration.",
+      "questionNumber": 16
+    },
+    {
+      "question": "An 89 year old woman who lives independently in her own second-storey flat presents to her family physician with a complaint of easy bruising on her forearms and hands. On examination it is noted she has extensive ecchymoses on the upper and lower limbs as well as a petechial rash. A full blood count and tests of clotting parameters are all normal and the rash and bruising disappears rapidly with oral administration of vitamin C (ascorbic acid) 250 mg 3 times daily for 7 days. Which of the following clinical features is associated with vitamin C deficiency (scurvy)?",
+      "options": [
+        "A. Gingival swelling and bleeding",
+        "B. Impaired cognitive function",
+        "C. Lanugo hairs",
+        "D. Nail clubbing",
+        "E. Spider naevi"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Deficiency of the water-soluble vitamin C (ascorbic acid) has been shown to be prevalent in those aged >65 years living independently in the UK. Its clinical presentation may be precipitated by events such as trauma, surgery, burns or infections and it tends to be more prevalent in those who smoke or use drugs such as glucocorticoids or non-steroidal anti-inflammatory drugs. Ascorbic acid is very heat labile and many traditional cooking methods lead to its degradation. Patients may notice poor healing of wounds. It may present with petechial or perifollicular bleeding or larger ecchymoses. Gingival swelling or haemorrhage may occur and, less commonly, haemarthrosis or gastrointestinal bleeding. Anaemia is recognised.",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which of the following is an essential amino acid?",
+      "options": [
+        "A. Alanine",
+        "B. Asparagine",
+        "C. Glutamine",
+        "D. Glycine",
+        "E. Tryptophan"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "There are nine essential amino acids that cannot be synthesised by the body (e.g. through transamination) and must therefore be obtained in the diet. They are required in order to synthesise other proteins, which have a variety of important functions. Five other amino acids can only be synthesised if there is an adequate dietary supply of their precursors. These are known as 'conditionally essential' amino acids.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch19/a/19.18.png",
+      "questionNumber": 18
+    },
+    {
+      "question": "An 83 year old man with a long history of Alzheimer's disease and progressive cognitive and functional impairment is noted to have lost interest in food and is losing weight. Thorough investigation by CT scanning and gastroscopy has failed to demonstrate another underlying physical explanation for this. Nasogastric tube feeding is suggested. In this situation, which statement below best describes the outcomes with routine use of tube feeding, as based on strong evidence?",
+      "options": [
+        "A. Improved cognitive function",
+        "B. Improved muscle strength",
+        "C. Improved quality of life",
+        "D. Prolonged survival",
+        "E. There is little evidence for improved survival or cognitive outcomes with routine tube feeding"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The evidence that tube feeding in advanced dementia improves any of these parameters is very weak and inconsistent. Patients and their families are often caught up in a vicious cycle of dementia and malnourishment. It is important to screen patients with dementia for malnutrition, to monitor body weight, encourage an adequate intake of food and provide a pleasant home-like environment for meals. Oral nutritional supplements have been shown to be of benefit. Cases should be assessed individually. However, unless there is some acute, reversible event (e.g. further stroke, treatable infection), which may be bridged by a short period of tube feeding, there is little benefit to artificial nutritional support in advanced cases of dementia.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch19/a/19.19.png",
+      "questionNumber": 19
+    },
+    {
+      "question": "The long-term carers of a 40 year old man with cerebral palsy report that he is finding it increasingly difficult to chew and swallow food. The act of feeding is very tiring for him and is taking up much of the day. Increasingly, there are days when he may not eat or drink at all and there are concerns that he is losing weight and becoming dehydrated. After multidisciplinary assessment it is felt he should be fed by gastrostomy to allow adequate food and fluid to be given on a daily basis. Which of the following is NOT a recognised risk of gastrostomy insertion or gastrostomy feeding?",
+      "options": [
+        "A. Aspiration pneumonia",
+        "B. Colonic perforation",
+        "C. Insertion site infection",
+        "D. Laceration of the liver",
+        "E. Pulmonary embolus"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Gastrostomy is known to be associated with risks of insertion (pain, bleeding, aspiration pneumonia, infection of the insertion site, inadvertent damage to an intra-abdominal organ or viscus, tube displacement) and longer-term risks (infection at insertion site, tube displacement, aspiration of feed). It does not offer any advantage over nasogastric feeding in terms of aspiration risk. The decision to go ahead should be taken when patients or their carers are fully aware of the risks and benefits involved.",
+      "questionNumber": 20
+    }
+  ]
+}

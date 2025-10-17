@@ -1,0 +1,663 @@
+{
+  "questions": [
+    {
+      "question": "Which segment of the kidney reabsorbs the highest percentage of filtered sodium chloride?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.1.png",
+      "options": [
+        "A.  Collecting duct",
+        "B.  Distal convoluted tubule",
+        "C.  Loop of Henle",
+        "D.  Proximal convoluted tubule"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The proximal tubule is responsible for reabsorbing ~60% of filtered sodium chloride (NaCl) and water, as well as ~90% of filtered bicarbonate and most critical nutrients such as glucose and amino acids. The proximal tubule uses both cellular and paracellular transport mechanisms. The apical membrane of proximal tubular cells has an expanded surface area available for reabsorptive work created by a dense array of microvilli called the brush border, and leaky tight junctions enable high-capacity fluid reabsorption. Approximately 15–25% of filtered NaCl is reabsorbed in the loop of Henle, mainly by the thick ascending limb. The distal convoluted tubule reabsorbs ~5% of the filtered NaCl. This segment is composed of a tight epithelium with little water permeability. The collecting duct modulates the final composition of urine. The two major divisions, the cortical collecting duct and inner medullary collecting duct, contribute to reabsorbing ~4–5% of filtered Na+ and are important for hormonal regulation of salt and water balance.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.1.png",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 33-year-old woman with recently treated acute myelogenous leukemia now in remission is admitted to the hospital with lethargy, fever, and tachycardia. Blood cultures grow Pseudomonas that is resistant to cefepime. She is started on IV gentamicin. Five days after starting gentamicin, her serum creatinine rises from her baseline of 1.0 mg/dL to 2.4 mg/dL. No red or white cell casts are seen on her urinalysis. Her magnesium level is decreased at 1.5 mg/dL. Renal ultrasound is unremarkable with no hydronephrosis. Which of the following is the most likely mechanism of her acute kidney injury?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.2.png",
+      "options": [
+        "A.  Acute interstitial nephritis",
+        "B.  Acute tubular necrosis",
+        "C.  Glomerulonephritis",
+        "D.  Ischemic injury",
+        "E.  Obstruction"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Several antimicrobial agents are commonly associated with acute kidney injury (AKI). Aminoglycosides (e.g., gentamicin) and amphotericin B both cause tubular necrosis. Nonoliguric AKI (i.e., with a urine volume >400 mL/day) accompanies 10–30% of courses of aminoglycoside antibiotics, even when plasma levels are in the therapeutic range. Aminoglycosides are freely filtered across the glomerulus and then accumulate within the renal cortex, where concentrations can greatly exceed those of the plasma. AKI typically manifests after 5–7 days of therapy and can present even after the drug has been discontinued. Hypomagnesemia is a common finding. AKI secondary to acute interstitial nephritis can occur as a consequence of exposure to many antibiotics, including penicillins, cephalosporins, quinolones, sulfonamides, and rifampin. There is no reason for obstructive nephropathy or ischemic injury by history. Renal ultrasound shows no evidence of obstruction. There are no red or white cell casts or anything in the history to suggest glomerulonephritis.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.2.png",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following laboratory abnormalities typically can be seen accompanying acute kidney injury?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.3.png",
+      "options": [
+        "A.  Hypercalcemia",
+        "B.  Hypokalemia",
+        "C.  Hyponatremia",
+        "D.  Hypophosphatemia",
+        "E.  Metabolic alkalosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A variety of electrolyte abnormalities can be seen in acute kidney injury (AKI) including hyponatremia, hyperkalemia, metabolic acidosis, hyperphosphatemia, and hypocalcemia. Abnormalities in plasma electrolyte composition can be mild or life-threatening. The dysfunctional kidney has limited ability to regulate electrolyte balance. Administration of excessive hypotonic crystalloid or isotonic dextrose solutions can result in hyposmolality and hyponatremia, which, if severe, can cause neurologic abnormalities, including seizures. Marked hyperkalemia is particularly common 464  in rhabdomyolysis, hemolysis, and tumor lysis syndrome due to release of intracellular potassium from damaged cells. Muscle weakness may be a symptom of hyperkalemia. Metabolic acidosis, usually accompanied by an elevation in the anion gap, is common in AKI, and can further complicate acid-base and potassium balance in individuals with other causes of acidosis, including sepsis, diabetic ketoacidosis, or respiratory acidosis. AKI-associated hypocalcemia may also arise from derangements in the vitamin D–parathyroid hormone–fibroblast growth factor-23 axis. Hypocalcemia is often asymptomatic but can lead to perioral paresthesias, muscle cramps, seizures, carpopedal spasms, and prolongation of the QT interval on electrocardiography.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.3.png",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following procedures has the highest risk for postoperative acute kidney injury?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.4.png",
+      "options": [
+        "A.  Anterior cruciate ligament repair",
+        "B.  Cataract removal",
+        "C.  Coronary artery bypass",
+        "D.  Thyroidectomy",
+        "E.  Total hip arthroplasty"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Ischemia-associated acute kidney injury (AKI) is a serious complication in the postoperative period, especially after major operations involving significant blood loss and intraoperative hypotension. The procedures most commonly associated with AKI are cardiac surgery with cardiopulmonary bypass (particularly for combined valve and bypass procedures), vascular procedures with aortic crossclamping, and intraperitoneal procedures. Severe AKI requiring dialysis occurs in ~1% of cardiac and vascular surgery procedures. The risk of severe AKI has been less well studied for major intraperitoneal procedures but appears to be of comparable magnitude. Common risk factors for postoperative AKI include underlying chronic kidney disease, older age, diabetes mellitus, congestive heart failure, and emergency procedures. The pathophysiology of AKI following cardiac surgery is multifactorial. Major AKI risk factors are common in the population undergoing cardiac surgery. The use of nephrotoxic agents, including iodinated contrast for cardiac imaging prior to surgery, may increase the risk of AKI. Cardiopulmonary bypass is a unique hemodynamic state characterized by nonpulsatile flow and exposure of the circulation to extracorporeal circuits. Longer duration of cardiopulmonary bypass is a risk factor for AKI. In addition to ischemic injury from sustained hypoperfusion, cardiopulmonary bypass may cause AKI through a number of mechanisms including extracorporeal circuit activation of leukocytes and inflammatory processes, hemolysis with resultant pigment nephropathy, and aortic injury with resultant atheroemboli. AKI from atheroembolic disease, which can also occur following percutaneous catheterization of the aorta, or spontaneously, is due to cholesterol crystal embolization resulting in partial or total occlusion of multiple small arteries within the kidney. Over time, a foreign body reaction can result in intimal proliferation, giant cell formation, and further narrowing of the vascular lumen, accounting for the generally subacute (over a period of weeks rather than days) decline in renal function.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.4.png",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following is a potential etiology for ischemic acute renal failure?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.5.png",
+      "options": [
+        "A.  Apoptosis and necrosis of tubular cells",
+        "B.  Decreased glomerular vasodilation in response to nitric oxide",
+        "C.  Increased glomerular vasoconstriction in response to elevated endothelin levels",
+        "D.  Increased leukocyte adhesion within the glomerulus",
+        "E.  All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Ischemic acute renal failure has many potential etiologies (Figure VI-5). Microvascular disorders include increased vasoconstriction from endothelin and other mediators, decreased nitric oxide, prostaglandinor bradykininmediated vasodilation, increased endothelial and vascular smooth muscle cell damage, and increased leukocyte adhesion. Tubular factors include cytoskeletal breakdown, loss of polarity, apoptosis and necrosis, desquamation of viable and necrotic cells, tubular obstruction, and back leak. Inflammatory and vasoactive mediators may affect both tubular and microvascular pathophysiologic mechanisms.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.5.png",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 57-year-old man with a history of diabetes mellitus and chronic kidney disease with a baseline creatinine of 1.8 mg/dL underwent cardiac catheterization for acute myocardial infarction. He is subsequently diagnosed with acute kidney injury related to iodinated contrast. All of the following statements are true regarding his acute kidney injury EXCEPT:",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.6.png",
+      "options": [
+        "A.  Fractional excretion of sodium will be low.",
+        "B.  His creatinine is likely to peak within 3–5 days.",
+        "C.  His diabetes mellitus predisposed him to develop contrast nephropathy.",
+        "D.  Transient tubule obstruction with precipitated iodinated contrast contributed to development of his acute kidney injury.",
+        "E.  White blood cell casts are likely on microscopic examination of urinary sediment.  "
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Iodinated contrast agents that are commonly used in cardiovascular and CT imaging are a major cause of acute kidney injury (AKI). Underlying mechanisms leading to kidney injury include transient tubular obstruction by contrast material, hypoxia in the other renal medulla due to alterations in renal microcirculation and occlusion of small vessels, and cytotoxic damage to the tubules directly or through the generation of free radicals by contrast material. Risk factors for contrast-associated nephropathy include diabetes mellitus, congestive heart failure, pre-existing chronic kidney disease, and multiple myeloma–associated renal failure. Serum creatinine begins to rise at 24–48 hours and will peak at 3–5 days, usually with resolution within a week. Urinary sediment is bland, without casts. The fractional excretion of sodium is low in many cases, particularly early before tubular injury is extensive because of the microvascular source of injury. Other diagnostic agents implicated as a cause of AKI are high-dose gadolinium used for MRI and oral sodium phosphate solutions used as bowel purgatives. ",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.6.png",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following acute kidney injury patients is most likely to have evidence of bilateral hydronephrosis on ultrasound evaluation of the kidneys?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.7.png",
+      "options": [
+        "A.  A 19-year-old man with purpura fulminans associated with gonococcal sepsis",
+        "B.  A 37-year-old woman undergoing chemotherapy and radiation for advanced cervical cancer",
+        "C.  A 48-year-old man with chronic renal insufficiency due to hypertension that received iodinated contrast for an abdominal angiogram",
+        "D.  A 53-year-old man with Escherichia coli 0157:H7– associated thrombotic thrombocytopenic purpura",
+        "E.  An 85-year-old woman who resides in a nursing home with pyelonephritis and sepsis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Postrenal obstruction is an important and potentially reversible cause of AKI. Ultrasound evaluation of the kidneys classically demonstrates bilateral hydronephrosis, because unilateral obstruction is unlikely to cause kidney injury unless a single functioning kidney is present, chronic kidney disease pre-exists, or, rarely, reflex vasospasm of the unobstructed kidney is present. Advanced cervical cancer with invasion into the urinary system or retroperitoneum is a common cause of obstructive uropathy. Thrombotic thrombocytopenia purpura, disseminated gonococcus with sepsis, and pyelonephritis are intrinsic causes of acute kidney failure and will not cause bilateral hydronephrosis. Neither chronic hypertensive nephropathy nor contrast-induced nephropathy will cause bilateral hydronephrosis.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.7.png",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 54-year-old man is admitted to the medical intensive care unit with sepsis associated with pneumococcal pneumonia. He requires mechanical ventilation as well as norepinephrine to maintain a mean arterial pressure >60 mmHg. Invasive hemodynamics show adequate left heart filling pressures, and he is not known to have left ventricular dysfunction. On the third hospital day, his urine output drops and creatinine increases to 3.4 mg/dL. Acute tubular injury is diagnosed. Which of the following agents has been shown to improve outcomes associated with his acute tubular injury?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.8.png",
+      "options": [
+        "A.  Furosemide",
+        "B.  Bosentan",
+        "C.  Low-dose dopamine",
+        "D.  Insulin-like growth factor",
+        "E.  None of the above"
+      ],
+      "correctAnswerIndex": 4,
+"explanation": "Acute kidney injury (AKI) is a poor prognostic indicator in patients in the intensive care unit, as has been shown in multiple types of intensive care units for multiple medical conditions. Unfortunately, care of critically ill patients with AKI is supportive, because no specific therapy has been shown to improve outcomes. Agents that have specifically been shown to have no benefit in the treatment of acute tubular injury include atrial natriuretic peptide, low-dose dopamine, endothelin antagonists, loop diuretics, calcium channel blockers, α-adrenergic receptor blockers, prostaglandin analogs, antioxidants, insulin-like growth factor, and antibodies against leukocyte adhesionmolecules. Volume repletion is critical to ensure adequate perfusion, and diuretics areonly indicated in patients with replete fluid status and low urinary flow rates.", 
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.8.png",
+      "questionNumber": 8
+    },
+    {
+      "question": "It is hospital day 5 for a 65-year-old patient with prerenal azotemia secondary to dehydration. His creatinine was initially 3.6 mg/dL on admission, but it has improved today to 2.1 mg/dL. He complains of mild lower back pain, and you prescribe naproxen to be taken intermittently. By what mechanism might this drug further impair his renal function?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.9.png",
+      "options": [
+        "A.  Afferent arteriolar vasoconstriction",
+        "B.  Afferent arteriolar vasodilatation",
+        "C.  Efferent arteriolar vasoconstriction",
+        "D.  Proximal tubular toxicity",
+        "E.  Ureteral obstruction"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Nonsteroidal anti-inflammatory drugs (NSAIDs) do not alter glomerular filtration rate in normal individuals. However, in states of mild to moderate hypoperfusion (as in prerenal azotemia) or in the presence of chronic kidney disease, glomerular perfusion and filtration fraction are preserved through several compensatory mechanisms. In response to a reduction in perfusion pressures, stretch receptors in afferent arterioles trigger a cascade of events that lead to afferent arteriolar dilatation and efferent arteriolar vasoconstriction, preserving glomerular filtration fraction. These mechanisms are partly mediated by the vasodilators prostaglandin E2 and prostacyclin. NSAIDs can impair the kidney’s ability to compensate for a low perfusion pressure by interfering with local prostaglandin synthesis and inhibiting these protective responses. Ureteral obstruction is not the mechanism by which the NSAID impairs renal function in this scenario. NSAIDs are not known to be proximal tubule toxins.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.9.png",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following is the leading cause of chronic kidney disease in North America?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.10.png",
+      "options": [
+        "A.  Autosomal dominant polycystic kidney disease",
+        "B.  Contrast nephropathy",
+        "C.  Diabetic nephropathy",
+        "D.  Focal segmental glomerulosclerosis",
+        "E.  Recurrent renal calculi"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "It has been estimated from population data that at least 6% of the adult population in the United States has chronic kidney disease (CKD) at stages 1 and 2. An additional 4.5% of the U.S. population is estimated to have stages 3 and 4 CKD. Table VI-10 lists the five most frequent categories of causes of CKD, cumulatively accounting for >90% of the CKD disease burden worldwide. The relative contribution of each category varies among different geographic regions. The most frequent cause of CKD in North America and Europe is diabetic nephropathy, most often secondary to type 2 diabetes mellitus. Patients with newly diagnosed CKD often have hypertension. When no overt evidence for a primary glomerular or tubulointerstitial kidney disease process is present, CKD is frequently attributed to hypertension. However, it is now appreciated that such individuals can be considered in two categories. The first includes patients with a subclinical primary glomerulopathy, such as focal segmental or global glomerulosclerosis. The second includes patients in whom progressive nephrosclerosis and hypertension is the renal correlate of a systemic vascular disease, often also involving largeand smallvessel cardiac and cerebral pathology.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.10.png",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 65-year-old man with a history of hypertension, diabetes, and chronic low back pain presents to the clinic for follow-up. His physical examination is unremarkable with no edema or jugular venous distension. Recent laboratory testing shows a decreased glomerular filtration rate of 55 mL/min/1.73 m2. His hemoglobin A1c is 5.4%. He is currently on metformin, naproxen, and hydrochlorothiazide. What medication change could help slow his progression of chronic kidney disease?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.11.png",
+      "options": [
+        "A.  Add furosemide",
+        "B.  Discontinue metformin",
+        "C.  Discontinue naproxen",
+        "D.  Substitute lisinopril for hydrochlorothiazide",
+        "E.  C and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "It is important to limit exposure to nephrotoxic agents to prevent progression of chronic kidney disease. These include nonsteroidal anti-inflammatory drugs like naproxen and radiographic dye. Avoiding volume depletion is also helpful. This patient had no indication for a diuretic so adding furosemide is not indicated and may lead to volume depletion. Several controlled studies have shown that angiotensinconverting enzyme inhibitors and angiotensin-receptor blockers are effective in slowing the progression of renal failure in patients with advanced stages of both diabetic and nondiabetic chronic kidney disease, in large part through effects on efferent vasodilatation and the subsequent decline in glomerular hypertension. Controlling diabetes is important in managing diabetic nephropathy. His diabetes is well managed with metformin currently, so it should not be discontinued. TABLE VI-10 Leading Categories of Etiologies of Chronic Kidney Diseasea • Diabetic nephropathy • Glomerulonephritis • Hypertension-associated chronic kidney disease (includes vascular and ischemic kidney disease and primary glomerular disease with associated hypertension) • Autosomal dominant polycystic kidney disease • Other cystic and tubulointerstitial nephropathy aRelative contribution of each category varies with geographic region and race. ",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.11.png",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which of the following patients has the greatest risk of progression to chronic kidney disease?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.12.png",
+      "options": [
+        "A.  A 30-year-old man with an estimated glomerular filtration rate (GFR) of 50 mL/min/1.73 m2 and 350 mg/g of persistent albuminuria",
+        "B.  A 45-year-old man with an estimated GFR of 90 mL/ min/1.73 m2 and <30 mg/g of persistent albuminuria",
+        "C.  A 55-year-old man with an estimated GFR of 70 mL/ min/1.73 m2 and 100 mg/g of persistent albuminuria",
+        "D.  A 65-year-old woman with an estimated GFR of 65 mL/ min/1.73 m2 and <30 mg/g of persistent albuminuria",
+        "E.  A 75-year-old man with an estimated GFR of 35 mL/ min/1.73 m2 and <30 mg/g of persistent albuminuria"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Chronic kidney disease (CKD) encompasses a spectrum of different pathophysiologic processes associated with abnormal kidney function and a progressive decline in glomerular filtration rate (GFR). Stages of CKD are stratified by both estimated GFR and the degree of albuminuria to predict risk of progression of CKD. Previously, CKD had been staged solely by the GFR. However, the risk of worsening of kidney function is closely linked to the amount of albuminuria, so it has been incorporated into the classification (Figure VI-13). Note that although age impacts GFR, it is not an independent criterion for risk of progression to CKD. CKD is still staged by GFR. GFR is ≥90 mL/min/1.73 m2 in stage I, 60–89 mL/ min/1.73 m2 in stage II, 30–59 mL/min/1.73 m2 in stage III, 15–29 mL/min/1.73 m2 in stage IV, and <15 mL/min/1.73 m2 in stage V",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.12.png",
+      "questionNumber": 12
+    },
+    {
+      "question": "In stage V chronic kidney disease, glomerular filtration rate is below which of the following levels?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.13.png",
+      "options": [
+        "A.  90 mL/min/1.73 m2",
+        "B.  60 mL/min/1.73 m2",
+        "C.  25 mL/min/1.73 m2",
+        "D.  15 mL/min/1.73 m2",
+        "E.  0 mL/min/1.73 m2 (anuria)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Chronic kidney disease (CKD) encompasses a spectrum of different pathophysiologic processes associated with abnormal kidney function and a progressive decline in glomerular filtration rate (GFR). Stages of CKD are stratified by both estimated GFR and the degree of albuminuria to predict risk of progression of CKD. Previously, CKD had been staged solely by the GFR. However, the risk of worsening of kidney function is closely linked to the amount of albuminuria, so it has been incorporated into the classification (Figure VI-13). Note that although age impacts GFR, it is not an independent criterion for risk of progression to CKD. CKD is still staged by GFR. GFR is ≥90 mL/min/1.73 m2 in stage I, 60–89 mL/ min/1.73 m2 in stage II, 30–59 mL/min/1.73 m2 in stage III, 15–29 mL/min/1.73 m2 in stage IV, and <15 mL/min/1.73 m2 in stage V",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.13.png",
+      "questionNumber": 13
+    },
+    {
+      "question": "All of the following statements regarding the use of exogenous erythropoietin in patients with chronic kidney disease are true EXCEPT:",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.14.png",
+      "options": [
+        "A.  Exogenous erythropoietin should be administered with a target hemoglobin concentration of 100–115 g/L.",
+        "B.  Use of exogenous erythropoietin is associated with improved cardiovascular outcomes.",
+        "C.  Use of exogenous erythropoietin is associated with increased risk of stroke in patients with concomitant type 2 diabetes mellitus.",
+        "D.  Use of exogenous erythropoietin may be associated with faster progression to the need for dialysis.",
+        "E.  Use of exogenous erythropoietin is associated with increased incidence of thromboembolic events."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Anemia is a common consequence of chronic kidney disease (CKD) and may be multifactorial, with etiologies including relative erythropoietin deficiency, iron deficiency, chronic inflammation, diminished red cell survival, and bleeding diathesis. Several trials of erythropoietin supplementation in patients with CKD have failed to show improved cardiovascular outcomes with this therapy. Indeed, these trials have shown a higher incidence of thromboembolic events and stroke in type 2 diabetics and potentially faster progression to need for dialysis. Because of these concerning findings, erythropoietin use has been altered from prior recommendations, and current practice is to target a hemoglobin concentration of 100–115 g/L.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.14.png",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 63-year-old woman with chronic kidney disease is maintained on daily peritoneal dialysis. Her past medical history is notable for hypertension and atrial fibrillation. Her medications include losartan and warfarin. Two days ago, she noticed a small painful nodule on her abdomen that has progressed to involve skin necrosis and ulceration of the abdominal wall (Figure VI-15). All of the following statements regarding her condition are true EXCEPT:  ",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.15.png",
+      "options": [
+        "A.  Oral calcium supplement may be a risk factor.",
+        "B.  Pathologically, there is vascular occlusion.",
+        "C. Pseudomonas co-infection is typical.",
+        "D.  Severe hyperparathyroidism may not be present.",
+        "E.  Warfarin is a risk factor for development of the lesion."
+      ],
+      "correctAnswerIndex": 2,
+"explanation": "This patient has calciphylaxis. Calciphylaxis (calcific uremic arteriolopathy) is a devastating condition seen almost exclusively in patients with advanced chronic kidney disease. It is heralded by livedo reticularis and advances to patches of ischemic necrosis, especially on the legs, thighs, abdomen, and breasts. Pathologically, there is evidence of vascular occlusion in association with extensive vascular and soft tissue calcification. It appears that this condition is increasing in incidence. Originally, it was ascribed to severe abnormalities in calcium and phosphorus control in dialysis patients, usually associated with advanced hyperparathyroidism. However, morerecently, calciphylaxis has been seen with increasing frequency in the absence of severehyperparathyroidism. Other etiologies have been suggested, including the increaseduse of oral calcium as a phosphate binder. Warfarin is commonly used in hemodialysispatients, and one of the effects of warfarin therapy is to decrease the vitamin K–dependentregeneration of matrix GLA protein. The GLA protein is important in preventing vascularcalcification. Thus, warfarin treatment is considered a risk factor for calciphylaxis, and ifa patient develops this syndrome, this medication should be discontinued and replacedwith alternative forms of anticoagulation. Pseudomonas bacteremia may cause ecthymagangrenosum, which may have a necrotic plaque, typically in neutropenic patients. Thispatient was treated with hyperbaric oxygen, IV thiosulfate, and discontinuation of warfarin with slow resolution of the ulceration.",
+      "questionNumber": 15
+    },
+    {
+      "question": "Which of the following is the most common acute complication of hemodialysis?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.16.png",
+      "options": [
+        "A.  Anaphylactoid reactions to dialyzer",
+        "B.  Bleeding from access site",
+        "C.  Hypertension",
+        "D.  Hypotension",
+        "E.  Muscle cramps"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hypotension is the most common acute complication of hemodialysis, particularly among patients with diabetes mellitus. Numerous factors appear to increase the risk of hypotension, including excessive ultrafiltration with inadequate compensatory vascular filling, impaired vasoactive or autonomic responses, osmolar shifts, overzealous use of antihypertensive agents, and reduced cardiac reserve. Hypotension during dialysis can frequently be prevented by careful evaluation of the dry weight and by ultrafiltration modeling, such that more fluid is removed at the beginning rather than the end of the dialysis procedure. Excessively rapid fluid removal (>13 mL/ kg per hour) should be avoided, as rapid fluid removal has been associated with adverse outcomes, including cardiovascular deaths. Additional maneuvers to prevent intradialytic hypotension include the performance of sequential ultrafiltration followed by dialysis, cooling of the dialysate during dialysis treatment, and avoiding heavy meals during dialysis. Muscle cramps during dialysis are also a common complication. The etiology of dialysis-associated cramps remains obscure. Changes in muscle perfusion because of excessively rapid volume removal or targeted removal below the patient’s estimated dry weight often precipitate dialysis-associated cramps. Strategies that may be used to prevent cramps include reducing volume removal during dialysis, ultrafiltration profiling, and the use of sodium modeling. Anaphylactoid reactions to the dialyzer, particularly on its first use, have been reported most frequently with the bioincompatible cellulosic-containing membranes. Dialyzer reactions can be divided into two types, A and B. Type A reactions are attributed to an IgE-mediated intermediate hypersensitivity reaction to ethylene oxide used in the sterilization of new dialyzers. This reaction typically occurs soon after the initiation of a treatment (within the first few minutes) and can progress to full-blown anaphylaxis if the therapy is not promptly discontinued. The type B reaction consists of a symptom complex of nonspecific chest and back pain, which appears to result from complement activation and cytokine release. These symptoms typically occur several minutes into the dialysis run and typically resolve over time with continued dialysis.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.16.png",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 60-year-old woman with hypertension and type 2 diabetes has recently started peritoneal dialysis due to chronic kidney disease from diabetic nephropathy. Which complications of peritoneal dialysis are of concern for this patient?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.17.png",
+      "options": [
+        "A.  Hyperkalemia",
+        "B.  Hyperglycemia",
+        "C.  Hyperphosphatemia",
+        "D.  Hypertriglyceridemia",
+        "E.  B and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Peritoneal dialysis is associated with a variety of metabolic complications. Albumin and other proteins can be lost across the peritoneal membrane in concert with the loss of metabolic wastes. Hypoproteinemia obligates a higher dietary protein intake to maintain nitrogen balance. Hyperglycemia and weight gain are also common complications of peritoneal dialysis. Several hundred calories in the form of dextrose are absorbed each day, depending on the concentration of dextrose employed. Patients receiving peritoneal dialysis, particularly those with diabetes mellitus, are prone to other complications of insulin resistance, including hypertriglyceridemia. On the positive side, the continuous nature of peritoneal dialysis usually allows for a more liberal diet, due to continuous removal of potassium and phosphorus—two major dietary components whose accumulation can be hazardous in end-stage renal disease.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.17.png",
+      "questionNumber": 17
+    },
+    {
+      "question": "A patient is followed closely by her nephrologist for stage IV chronic kidney disease associated with focal segmental glomerulosclerosis. Which of the following is an indication for initiation of maintenance hemodialysis?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.18.png",
+      "options": [
+        "A.  Acidosis  controlled  with  daily  bicarbonate administration",
+        "B.  Bleeding diathesis",
+        "C.  Blood urea nitrogen >110 mg/dL without symptoms",
+        "D.  Creatinine >5 mg/dL without symptoms",
+        "E.  Hyperkalemia controlled with sodium polystyrene"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The commonly accepted criteria for initiating patients on maintenance dialysis include the presence of uremic symptoms, the presence of hyperkalemia unresponsive to conservative management, persistent extracellular volume expansion despite diuretics, acidosis refractory to medical therapy, bleeding diathesis, or a creatinine clearance or estimated glomerular filtration rate below 10 mL/min/1.73 m2. Single blood urea nitrogen or creatinine values alone are inadequate to initiate maintenance dialysis. ",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.18.png",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 35-year-old woman with hypertensive kidney disease progresses to end-stage renal disease. She was initiated on peritoneal dialysis 1 year ago and has done well with relief of her uremic symptoms. She is brought to the emergency department with fever, altered mental status, diffuse abdominal pain, and cloudy dialysate. Her peritoneal fluid is withdrawn through her catheter and sent to the laboratory for analysis. The fluid white blood cell count is 125/μL with 85% polymorphonuclear neutrophils. Which organism is most likely to be found in the culture of the peritoneal fluid?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.19.png",
+      "options": [
+        "A. Candida albicans",
+        "B. Escherichia coli",
+        "C. Mycobacterium tuberculosis",
+        "D. Pseudomonas aeruginosa",
+        "E. Staphylococcus epidermidis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The major complication of peritoneal dialysis therapy is peritonitis, although other complications include catheter-associated nonperitonitis infections, weight gain, metabolic derangements, and residual uremia. Peritonitis is usually a result of a failure of sterile technique during the exchange procedure. Transvisceral infection from the bowel is much less common. Because of the high dextrose used in dialysate, there is a conducive environment for the development of bacterial infection. This can be diagnosed by the presence of >100/μL leukocytes with >50% polymorphonuclear cells on microscopy. Cloudy dialysate and abdominal pain are the most common symptoms. The most commonly isolated bacteria are skin flora such as Staphylococcus. Gram-negative organisms, fungi, and mycobacteria have also been described. A Cochrane review (Wiggins KJ et al: Cochrane Database Syst Rev 1:CD005284, 2008) concluded that intraperitoneal administration of antibiotics was more effective than IV administration and that adjunctive treatment with urokinase or peritoneal lavage offers no advantage. Intraperitoneal vancomycin is common initial empiric therapy. In cases where peritonitis is due to hydrophilic gram-negative rods (e.g., Pseudomonas spp.) or yeast, antimicrobial therapy is usually not sufficient, and catheter removal is required to ensure complete eradication of infection.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.19.png",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 45-year-old woman begins hemodialysis for endstage renal disease associated with diabetes mellitus. Which of the following is her most likely eventual cause of death?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.20.png",
+      "options": [
+        "A.  Dementia",
+        "B.  Major bleeding episode",
+        "C.  Myocardial infarction",
+        "D.  Progressive uremia",
+        "E.  Sepsis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most common cause of mortality in patients with endstage renal disease is cardiovascular disease (stroke and myocardial infarction). Although the underlying mechanisms driving this association are under active investigation, the shared risk factors of diabetes, hypertension, and dyslipidemia, in addition to specific risks such as increased inflammation, hyperhomocysteinemia, anemia, and altered vascular function, are thought to play an important role. Inefficient or inadequate dialysis is a risk for patients with difficult vascular access or poor adherence to therapy. Patients receiving hemodialysis are at risk and often develop neurologic, hematologic, and infectious complications. Nevertheless, the biggest risk to survival in these patients is also the most common cause of death in the general population.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.20.png",
+      "questionNumber": 20
+    },
+    {
+      "question": "Your patient with end-stage renal disease on hemodialysis has persistent hyperkalemia. He has a history of total bilateral renal artery stenosis, which is why he is on hemodialysis. He only has electrocardiogram changes when his potassium rises above 6.0 mEq/L, which occurs a few times per week. You admit him to the hospital for further evaluation. Your laboratory evaluation, nutrition counseling, and medication adjustments have not impacted his serum potassium. What is the next reasonable step to undertake for this patient?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.21.png",
+      "options": [
+        "A.  Adjust the dialysate",
+        "B.  Administer a daily dose of furosemide",
+        "C.  Perform “sodium modeling”",
+        "D.  Implant an automatic defibrillator",
+        "E.  Perform bilateral nephrectomy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The potassium concentration of dialysate is usually 2.5 mEq/L but may be varied depending on the predialysis serum potassium. This patient may need a lower dialysate potassium concentration. Sodium modeling is an adjustment of the dialysate sodium that may lessen the incidence of hypotension at the end of a dialysis session. Aldosterone defects, if present, are not likely to play a role in this patient since his kidneys are not being perfused. Therefore, nephrectomy is not likely to control his potassium. Similarly, since the patient is likely anuric, there is no efficacy in using loop diuretics to effect kaliuresis. This patient has no approved indications for implantation of a defibrillator.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.21.png",
+      "questionNumber": 21
+    },
+    {
+      "question": "Which of the following medications used for immunosuppression after kidney transplant works by inhibiting purine synthesis and can cause diarrhea as a common side effect?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.22.png",
+      "options": [
+        "A.  Belatacept",
+        "B.  Cyclosporine",
+        "C.  Mycophenolate mofetil",
+        "D.  Sirolimus",
+        "E.  Tacrolimus "
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Mycophenolate mofetil or mycophenolate sodium, both of which are metabolized to mycophenolic acid, is now used for maintenance immunosuppression after renal transplant in place of azathioprine in most centers (Table IV-22). It inhibits purine synthesis via inosine monophosphate dehydrogenase. It has a similar mode of action as azathioprine and a mild degree of gastrointestinal toxicity but produces less bone marrow suppression. Its advantage is its increased potency in preventing or reversing rejection. Belatacept is a fusion protein that binds costimulatory ligands (CD80 and CD86) present on antigen presenting cells, interrupting their binding to CD28 on T cells. This inhibition leads to T-cell anergy and apoptosis. Cyclosporine is a fungal peptide with potent immunosuppressive activity. It acts on the calcineurin pathway to block transcription of mRNA for interleukin (IL)-2 and other proinflammatory cytokines, inhibiting T-cell proliferation. Among its toxic effects (nephrotoxicity, hepatotoxicity, hirsutism, tremor, gingival hyperplasia, and diabetes), only nephrotoxicity presents a serious management problem and is further discussed below. Tacrolimus (previously called FK506) is a fungal macrolide that has the same mode of action as cyclosporine as well as a similar side effect profile; it does not, however, produce hirsutism or gingival hyperplasia. Sirolimus (previously called rapamycin) is another fungal macrolide but has a different mode of action; i.e., it inhibits T-cell growth factor signaling pathways, preventing the response to IL-2 and other cytokines. 470 ",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.22.png",
+      "questionNumber": 22
+    },
+    {
+      "question": "All of the following are considered expanded donor criteria for renal transplantation EXCEPT:",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.23.png",
+      "options": [
+        "A.  Deceased donor >60 years",
+        "B.  Deceased donor >50 years, hypertension, and creatinine >1.5 mg/dL",
+        "C.  Deceased donor >50 years, hypertension, and death caused by cerebrovascular accident (CVA)",
+        "D.  Deceased donor >50 years, death caused by CVA, and creatinine >1.5 mg/dL",
+        "E.  Presence of antibodies against the donor kidney in the recipient at the time of the anticipated transplantation"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The number of patients with end-stage renal disease has been increasing every year, and it is always greater than the number of available donors. As the number of patients with end-stage kidney disease increases, the demand for kidney transplantations continues to increase. In 2011, there were 55,371 active adult candidates on the waiting list, and less than 18,000 patients were transplanted. This imbalance is set to worsen over the coming years with the predicted increased rates of obesity and diabetes worldwide. In an attempt to increase utilization of deceased-donor kidneys and reduce discard rates of organs, criteria for the use of so-called expanded criteria donor (ECD) kidneys and kidneys from donors after cardiac death have been developed. ECD kidneys are usually used for older patients who are expected to fare less well on dialysis. At the 1-year mark, graft survival is higher for living-donor recipients, most likely because those grafts are not subject to as much ischemic injury (Table VI-23). At 5 and 10 years, however, there is a steeper decline in survival of those with deceased-donor kidneys. Among the few absolute immunologic contraindications to transplantation is the presence of antibodies against the donor kidney at the time of the anticipated transplantation that can cause hyperacute rejection. Those harmful antibodies include natural antibodies against the ABO blood group antigens and antibodies against human leukocyte antigen class I (A, B, C) or class II (DR) antigens. These antibodies are routinely excluded by proper screening of the candidate’s ABO compatibility and direct cytotoxic cross-matching of candidate serum with lymphocytes of the donor.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.23.png",
+      "questionNumber": 23
+    },
+    {
+      "question": "Which of the following clinical features is characteristic of patients with nephropathy due to type 1 diabetes?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.24.png",
+      "options": [
+        "A.  Kidney size is reduced",
+        "B.  Most patients also have diabetic retinopathy",
+        "C.  Proteinuria is uncommon",
+        "D.  Renal failure occurs within 1–2 years after the onset of proteinuria",
+        "E.  Urinalysis shows red blood cell casts"
+      ],
+      "correctAnswerIndex": 1,
+"explanation": "Proteinuria in frank diabetic nephropathy can be variable, ranging from 500 mg to 25 g per 24 hours, and it is often associated with nephrotic syndrome. The proteinuria is not typically associated with red blood cell casts. More than90% of patients with type 1 diabetes and nephropathy have diabetic retinopathy, so the absence of retinopathy in type 1 patients with proteinuria should prompt consideration of a diagnosis other than diabetic nephropathy; only 60% of patients with type 2 diabetes with nephropathy have diabetic retinopathy. Also, characteristically, patients with advanced diabetic nephropathy have normal to enlarged kidneys, in contrast to many other glomerular diseases where kidney size is usually decreased. After the onset of proteinuria, renal function inexorably declines, with 50% of patients reaching renal failure over another 5–10 years; thus, from the earliest stages of microalbuminuria, it usually takes 10–20 years to reach end-stage renal disease", 
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.24.png",
+      "questionNumber": 24
+    },
+    {
+      "question": "All of the following are typical causes of secondary membranous glomerulonephritis EXCEPT?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.25.png",
+      "options": [
+        "A.  Hepatitis C",
+        "B.  Malignancy",
+        "C.  Nonsteroidal anti-inflammatory drug use",
+        "D.  Systemic lupus erythematosus",
+        "E.  Tuberculosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Membranous glomerulonephritis (MGN), or idiopathic membranous nephropathy (IMN) as it is sometimes called, accounts for ~20% of cases of nephrotic syndrome in adults, with a peak incidence between the ages of 30 and 50 years and a male to female ratio of 2:1. IMN is rare in childhood and the most common cause of nephrotic syndrome in the elderly. In 20–30% of cases, MGN is secondary and is associated with a malignancy (solid tumors of the breast, lung, colon); infection (hepatitis B, syphilis, malaria, schistosomiasis); and rheumatologic disorders like lupus, rheumatoid arthritis, IgG4 diseases, or drug exposure (Table VI-25). Drugs causing MGN include gold, mercury, penicillamine, nonsteroidal anti-inflammatory drugs, and probenecid.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.25.png",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 33-year-old previously healthy woman presents to the emergency department with malaise, confusion, and fever of 37.8°C (100.1°F). She had no preceding diarrheal illness. CT of the head is unremarkable. She is found to have platelets of 13,000/cu, hemoglobin of 9.0 g/dL, and creatinine of 2.3 mg/dL. Urinalysis shows pH 5.0, protein 1+, and 11 red blood cells/high-powered field. Which of the following laboratory findings would be expected with her diagnosis?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.26.png",
+      "options": [
+        "A.  ADAMSTS13 <10%",
+        "B.  Anti-glomerular basement membrane antibodies",
+        "C.  Decreased lactate dehydrogenase",
+        "D.  Positive direct Coombs test",
+        "E.  Spherocytes on peripheral blood smear"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Thrombotic thrombocytopenic purpura (TTP) and hemolyticuremic syndrome (HUS) represent a spectrum of thrombotic microangiopathies. TTP and HUS share the general features of idiopathic thrombocytopenic purpura, microangiopathic hemolytic anemia, fever, renal failure, and neurologic disturbances. Schistocytes, not spherocytes, are typical on peripheral smear. When patients, particularly children, have more evidence of renal injury, their condition tends to be called HUS. In adults with neurologic disease, it is considered to be TTP. In adults there is often a mixture of both, which is why they are often referred to as having TTP/HUS. In familial cases of adult TTP/HUS, there is a genetic deficiency of the ADAMTS13 metalloprotease that cleaves large multimers of von Willebrand factor. When ADAMTS13 is absent, these large multimers cause platelet clumping and intravascular hemolysis. In the setting of intravascular hemolysis an elevated lactate hydrogenase is usually seen as well as schistocytes on peripheral blood smear. An antibody to ADAMTS13 is found in many sporadic cases of adult TTP/HUS, but not all; many patients also have antibodies to the thrombospondin receptor on selected endothelial cells in small vessels or increased levels of plasminogen-activator inhibitor 1. Patients can be tested for ADAMTS13 activity and, if low, the presence of antibodies to ADAMTS13 distinguishes the deficiency from the immune-mediated disease. Antibodies to red blood cells (positive direct coombs test) are not typically seen in TTP. Anti-glomerular basement membrane antibodies are seen in Goodpasture syndrome, which presents with acute glomerulonephritis and alveolar hemorrhage.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.26.png",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 21-year-old man is diagnosed with poststreptococcal glomerulonephritis. Which of the following is likely to be found in his urine?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.27.png",
+      "options": [
+        "A.  >3 g per 24-hour proteinuria without hematuria",
+        "B.  Macroscopic hematuria and 24-hour urinary albumin of 227 mg",
+        "C.  Microscopic hematuria with leukocytes and 24-hour urinary albumin of 227 mg",
+        "D.  Positive urine culture for Streptococcus",
+        "E.  Sterile pyuria without proteinuria"
+      ],
+      "correctAnswerIndex": 2,
+"explanation": "The hallmark of glomerular renal disease is microscopic hematuria and proteinuria (Table VI-27). IgA nephropathy and sickle cell disease are the exception to this, when gross hematuria may be present. Proteinuria may be heavy (>3 g per 24 hours) or lighter with microalbuminuria (30–300 mg per 24 hours) depending on the underlying disease or site of the immune lesion. Patients with poststreptococcal glomerulonephritis often have pyuria, but cultures are not expected to be positive because the infection is usually a skin or mucosal infection, and it is the immune reaction that drives the renal lesion.", 
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.27.png",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 50-year-old obese female with a 5-year history of mild hypertension controlled by a thiazide diuretic is being evaluated because proteinuria was noted on a urine dipstick during her routine yearly medical visit. Physical examination discloses a height of 167.6 cm (66 inches), weight of 91 kg (202 lb), blood pressure of 130/80, elevated jugular venous pressure, a fourth heart sound, and trace pedal edema. Laboratory values are as follows: serum creatinine 106 μmol/L (1.2 mg/dL), blood urea nitrogen 6.4 mmol/L (18 mg/dL), and creatinine clearance 87 mL/min. Urinalysis shows pH 5.0, specific gravity 1.018, protein 3+, no glucose, and occasional coarse granular cast. Urine protein excretion is 5.9 g/dL. A renal biopsy demonstrates that 60% of the glomeruli, mostly in the corticomedullary junction, have segmental scarring by light microscopy, with the remainder of the glomeruli appearing unremarkable (Figure VI-28). Which of the following is the most likely diagnosis?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.28.png",
+      "options": [
+        "A.  Focal segmental sclerosis",
+        "B.  Hypertensive nephrosclerosis",
+        "C.  Minimal change (nil) disease",
+        "D.  Membranous glomerulopathy",
+        "E.  Crescentic glomerulonephritis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Focal segmental glomerulosclerosis (FSGS) refers to a pattern of renal injury characterized by segmental glomerular scars that involve some but not all glomeruli; the clinical findings of FSGS largely manifest as proteinuria. When the secondary causes of FSGS are eliminated, the remaining patients are considered to have primary FSGS. Secondary causes of FSGS include viral infection (HIV, hepatitis B, parvovirus), hypertensive nephropathy, reflux nephropathy, cholesterol emboli, drugs (heroin, analgesics, pamidronate), oligomeganephronia, renal dysgenesis, Alport syndrome, sickle cell disease, lymphoma, radiation nephritis, and a number of familial podocytopathies. The incidence of FSGS is increasing, and it now represents up to one-third of cases of nephrotic syndrome in adults and one-half of cases of nephrotic syndrome in African Americans, in whom it is seen more commonly. FSGS can present with hematuria, hypertension, any level of proteinuria, or renal insufficiency. Nephrotic-range proteinuria, African American race, and renal insufficiency are associated with a poor outcome, with 50% of patients reaching renal failure in 6–8 years. FSGS rarely remits spontaneously, but treatment-induced remission of proteinuria significantly improves prognosis. Treatment of patients with primary FSGS should include inhibitors of the renin-angiotensin system. The treatment of secondary FSGS typically involves treating the underlying cause and controlling proteinuria. There is no role for steroids or other immunosuppressive agents in secondary FSGS. Hypertensive nephrosclerosis exhibits more prominent vascular changes and patchy, ischemic, totally sclerosed glomeruli. In addition, nephrosclerosis seldom is associated with nephrotic-range proteinuria. Minimal change disease usually is associated with symptomatic edema and normal-appearing glomeruli as demonstrated on light microscopy. This patient’s presentation is consistent with that of membranous nephropathy, but the biopsy is not. With membranous glomerulonephritis, all glomeruli are uniformly involved with subepithelial dense deposits. There are no features of crescentic glomerulonephritis present. The characteristic pattern of focal (not all glomeruli) and segmental (not the entire glomerulus) glomerular scarring is shown in the figure. The history and laboratory features are also consistent with this lesion: some associated hypertension, diminution in creatinine clearance, and a relatively inactive urine sediment. The “nephropathy of obesity” may be associated with this lesion secondary to hyperfiltration; this condition may be more likely to occur in obese patients with hypoxemia, obstructive sleep apnea, and right-sided heart failure.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.28.png",
+      "questionNumber": 28
+    },
+    {
+      "question": "Which of the following is a genetic disease that can lead to bilateral renal cysts and carries an increased risk of renal cell carcinoma?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.29.png",
+      "options": [
+        "A.  Medullary sponge kidney",
+        "B.  Neurofibromatosis type 1",
+        "C.  Tuberous sclerosis",
+        "D.  Von Hippel-Lindau disease",
+        "E.  C and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Tuberous sclerosis (TS) is a rare autosomal dominant syndrome caused by mutations in one of two genes, TSC1, encoding hamartin, or, TSC2,   encoding tuberin. Published estimates of prevalence vary widely, but it certainly occurs in <1:5000 births. Kidney cysts are a frequent feature of this condition, as are two other abnormalities of kidney growth, renal cell carcinoma, and renal angiomyolipomas. TS is a syndrome affecting multiple organ systems. Other features of TS include benign growths in the nervous system, eyes, heart, lung, liver, and the skin. Von Hippel-Lindau disease (VHL) is an inherited cancer syndrome with renal manifestations. VHL is an autosomal dominant condition caused by mutations in the VHL tumor-suppressor gene. VHL is localized to the primary cilia and is necessary for the formation of primary cilia. Like many autosomal dominant cancer syndromes, VHL is recessive at the cellular level: a somatic mutation in the second VHL allele leads to loss of VHL in the cell and abnormal growth. Kidney manifestations of VHL include multiple bilateral kidney cysts and renal cell carcinomas. Medullary sponge kidney (MSK) is often grouped together with inherited disorders of the kidney affecting tubule growth and development, although it is usually a sporadic finding rather than an inherited phenotype. MSK is caused by developmental malformation and cystic dilatation of the renal collecting ducts. The medullary cysts seen in this entity can be quite variable in size. MSK is usually a benign entity. Neurofibromatosis type 1 is a genetic disease that is characterized by café au lait macules and cutaneous neurofibromas. Patients with neurofibromatosis type 1 may also develop optic gliomas, iris hamartomas, destructive bony lesions, or sarcomas.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.29.png",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 28-year-old woman was recently diagnosed with autosomal dominant polycystic kidney disease after an episode of hematuria. She is concerned about intracranial aneurysm risk. Which of the following statements is true regarding this risk? ",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.30.png",
+      "options": [
+        "A.  Family history of ruptured intracranial aneurysms does not increase risk of rupture.",
+        "B.  Prior intracranial hemorrhage does not increase risk of subsequent hemorrhage.",
+        "C.  The size of the aneurysm does not correlate with its risk of spontaneous rupture.",
+        "D.  There is no increased risk of intracranial aneurysm in this condition.",
+        "E.  Uncontrolled hypertension augments the risk of spontaneous rupture."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Patients with autosomal dominant polycystic kidney disease have a twoto fourfold increased risk of subarachnoid or cerebral hemorrhage compared with the general population. Hemorrhage tends to occur before age 50 in patients with a family history of intracranial hemorrhage, with a personal history of intracranial hemorrhage, with aneurysms >10 mm, or with uncontrolled hypertension.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.30.png",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 21-year-old male college student is evaluated for profound fatigue that has been present for several years but has recently become debilitating. He also reports several foot spasms and cramps and occasionally sustained muscle contractions that are uncontrollable. He is otherwise healthy, takes no medications, and denies tobacco or alcohol use. On examination, he is well developed with normal vital signs including blood pressure. The remainder of the examination is normal. Laboratory evaluation shows a sodium of 138 mEq/L, potassium of 2.8 mEq/L, chloride of 90 mEq/L, and bicarbonate of 30 mmol/L. Magnesium level is normal. Urine screen for diuretics is negative, and urine chloride is elevated. Which of the following is the most likely diagnosis?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.31.png",
+      "options": [
+        "A.  Bulimia nervosa",
+        "B.  Diuretic abuse",
+        "C.  Gitelman syndrome",
+        "D.  Liddle syndrome",
+        "E.  Type 1 pseudohypoaldosteronism"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient presents with hypokalemia and hypochloremic metabolic alkalosis in the absence of hypertension. This is most commonly due to surreptitious vomiting or diuretic abuse, but in this case, the urine diuretic screen was negative. In patients with surreptitious vomiting, urine chloride levels are low to preserve intravascular volume, and this was not present in this patient. Bartter syndrome and Gitelman syndrome have hypokalemia and hypochloremic metabolic alkalosis with inappropriately elevated urine chloride levels. Gitelman syndrome is less severe and presents later in life than Bartter syndrome, which is commonly found in childhood due to failure to thrive. Additionally, Gitelman syndrome has more prominent fatigue and muscle cramping. Most forms of Bartter syndrome also have associated hypomagnesemia and hypocalciuria. Patients with type 1 pseudohypoaldosteronism have severe renal salt wasting and hyperkalemia. Liddle syndrome presents with apparent aldosterone excess with severe hypertension, hypokalemia, and metabolic alkalosis.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.31.png",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 24-year-old Caucasian man presents to the clinic after being found to have a creatinine of 1.6 mg/dL on routine laboratory studies. The rest of his metabolic panel and blood counts are normal. He has been mostly healthy, with the exception of several urinary tract infections in his childhood. He takes no medications. Urinalysis shows 1+ proteinuria and no red or white blood cells. Renal ultrasound shows decreased size of both kidneys with thinned cortices and regions of compensatory hypertrophy. What is the likely cause of his renal disease?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.32.png",
+      "options": [
+        "A.  Allergic interstitial nephritis",
+        "B.  IgG4 disease",
+        "C.  Reflux nephropathy",
+        "D.  Sickle cell nephropathy",
+        "E.  Sjögren syndrome"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Reflux nephropathy is the consequence of vesicoureteral reflux (VUR) or other urologic anomalies in early childhood. VUR stems from abnormal retrograde urine flow from the bladder into one or both ureters and kidneys because of mislocated and incompetent ureterovesical valves. Although high-pressure sterile reflux may impair normal growth of the kidneys, when coupled with recurrent urinary tract infections (UTIs) in early childhood, the result is patchy interstitial scarring and tubular atrophy. Loss of functioning nephrons leads to hypertrophy of the remnant glomeruli and eventual secondary focal segmental glomerulosclerosis. Reflux nephropathy often goes unnoticed until early adulthood when chronic kidney disease is detected during routine evaluation or during pregnancy. Affected adults are frequently asymptomatic, but may give a history of prolonged bed-wetting or recurrent UTIs during childhood, and exhibit variable renal insufficiency, hypertension, mild to moderate proteinuria, and unremarkable urine sediment. When both kidneys are affected, the disease often progresses inexorably over several years to ESRD, despite the absence of ongoing urinary infections or reflux. A single affected kidney may go undetected, except for the presence of hypertension. Renal ultrasound in adults characteristically shows asymmetric small kidneys with irregular outlines, thinned cortices, and regions of compensatory hypertrophy. The patient has not been exposed to any medications that typically cause allergic interstitial nephritis. There are no indications of Sjögren syndrome or sickle cell by history or laboratory findings. IgG4 disease is typically present in older men and can cause interstitial nephritis. ",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.32.png",
+      "questionNumber": 32
+    },
+    {
+      "question": "All of the following medications can cause acute interstitial nephritis EXCEPT:",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.33.png",
+      "options": [
+        "A.  Celecoxib",
+        "B.  Hydromorphone",
+        "C.  Pantoprazole",
+        "D.  Penicillin",
+        "E.  Valproate"
+      ],
+      "correctAnswerIndex": 1,
+"explanation": "Although biopsy-proven acute interstitial nephritis (AIN) accounts for no more than ~15% of cases of unexplained acute renal failure, this is likely a substantial underestimate of the true incidence (Table VI-33). This is because potentially offending medications are more often identified and empirically discontinued in a patient noted to have a rising serum creatinine, without the benefit of a renal biopsy to establish the diagnosis of AIN. The classic presentation of AIN, namely, fever, rash, peripheral eosinophilia, and oliguric renal failure occurring after 7–10 days of treatment with methicillin or another β-lactam antibiotic, is the exception rather than the rule. More often, patients are found incidentally to have a rising serum creatinine or present with symptoms attributable to acute renal failure. All of the listed drugs except hydromorphone havebeen associated with AIN. Opiates are not known to cause AIN", 
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.33.png",
+      "questionNumber": 33
+    },
+    {
+      "question": "A patient with a history of Sjögren syndrome has the following laboratory findings: plasma sodium 139 mEq/L, chloride 112 mEq/L, bicarbonate 15 mEq/L, and potassium 3.0 mEq/L. Urine studies show a pH of 6.0, sodium of 15 mEq/L, potassium of 10 mEq/L, and chloride of 12 mEq/L. What is the most likely diagnosis?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.34.png",
+      "options": [
+        "A.  Chronic diarrhea",
+        "B.  Type I renal tubular acidosis (RTA)",
+        "C.  Type II RTA",
+        "D.  Type III RTA",
+        "E.  Type IV RTA"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has a normal anion gap metabolic acidosis (anion gap, 12). The calculated urine anion gap (Na+ + K+ – Cl–) is +3; thus, the acidosis is unlikely to be due to gastrointestinal bicarbonate loss. In this patient, the diagnosis is type I renal tubular acidosis (RTA), or distal RTA. This is a disorder in which the distal nephron does not lower pH normally. It is associated with a urine pH >5.5, hypokalemia, and lack of bicarbonaturia. Sjögren syndrome is one of the autoimmune diseases (along with systemic lupus erythematosus, granulomatous interstitial nephritis, IgG4-related systemic disease, and idiopathic autoimmune interstitial nephritis) that may be associated with acute interstitial nephritis and tubular dysfunction. Sjögren-associated type I RTA may be associated with calcium phosphate stones and nephrocalcinosis. Type II RTA, or proximal RTA, includes a pH <5.5, hypokalemia, a positive urine anion gap, bicarbonaturia, hypophosphatemia, and hypercalciuria. This condition results from defective resorption of bicarbonate. Type III RTA is rare and most commonly is seen in children. Type IV RTA is also referred to as hyperkalemic distal RTA. Hyporeninemic hypoaldosteronism is the most common cause of type IV RTA and is usually associated with diabetic nephropathy.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.34.png",
+      "questionNumber": 34
+    },
+    {
+      "question": "In which of the following cases would treatment with corticosteroids for biopsy-proven interstitial nephritis be most likely to impact long-term renal recovery?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.35.png",
+      "options": [
+        "A.  A 37-year-old woman with sarcoidosis",
+        "B.  A 48-year-old man with slowly progressing interstitial nephritis over 2 months with fibrosis found on biopsy",
+        "C.  A 54-year-old man with diabetes mellitus and recent Salmonella infection",
+        "D.  A 63-year-old man with allergic interstitial nephritis after cephalosporin antibiotic use",
+        "E.  None of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Acute interstitial nephritis is a common cause of both acute and chronic kidney dysfunction. Many causes of interstitial nephritis are successfully treated with glucocorticoids with improved rates of long-term renal recovery, including Sjögren syndrome, sarcoidosis, systemic lupus erythematosus, adult tubulointerstitial nephritis with uveitis, and idiopathic or other granulomatous interstitial nephritis (Table VI-35). In patients with gradually progressive disease or fibrosis on biopsy, the benefit is less clear. Additionally, allergic interstitial nephritis recovery may be accelerated with glucocorticoid therapy, but long-term renal recovery is not proven to be improved. Postinfectious interstitial nephritis has been associated with many bacterial and viral pathogens but generally resolves with treatment of the underlying condition.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.35.png",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 58-year-old woman undergoes a hysterectomy and postoperatively develops acute respiratory distress syndrome. She is treated with mechanical ventilation and broad-spectrum antibiotics. Aside from hypothyroidism, she has no underlying medical conditions. On day 5 of her hospitalization, her urine output is noted to fall, and her serum creatinine rises from 1.2 to 2.5 mg/dL. Allergic interstitial nephritis from cephalosporin antibiotics is suspected. Which of the following findings will confirm this diagnosis?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.36.png",
+      "options": [
+        "A.  Hematuria",
+        "B.  Peripheral blood eosinophilia",
+        "C.  Urinary eosinophils on urine microscopy",
+        "D.  White blood cell casts on urine microscopy",
+        "E.  None of the above"
+      ],
+      "correctAnswerIndex": 4,
+"explanation": "Allergic interstitial nephritis is a common cause of unexplainedacute renal failure. This is generally a clinical diagnosis with acute renal failure in the contextof exposure to a potential offending agent (often nonsteroidal anti-inflammatory drugs, antibiotics, anticonvulsants, and proton pump inhibitors) and improvement in renal function with withdrawal of the agent. Peripheral blood eosinophilia supports the diagnosis but is rarely found. Urine microscopy often shows white blood cell casts and hematuria, but these are not specific findings. Urine eosinophils are neither sensitive nor specific for allergic interstitial nephritis. A renal biopsy is generally not required, but may show extensive tubulointerstitial infiltration of white cells including eosinophils. Discontinuation of the offending agent often leads to reversal of the renal injury. However, depending on the duration of exposure and degree of tubular atrophy and interstitial fibrosis that has occurred, the renal damage may not be completely reversible. Glucocorticoid therapy may accelerate renal recovery but does not appear to impact long-term renal survival. It is best reserved for patients with severe renal failure in which dialysis is imminent or if renal function continues to deteriorate despite stopping the offending drug", 
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.36.png",
+      "questionNumber": 36
+    },
+    {
+      "question": "Eculizumab, used in the treatment of atypical hemolytic uremic syndrome, targets which of the following?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.37.png",
+      "options": [
+        "A.  C5",
+        "B.  Factor V",
+        "C.  Interleukin (IL)-6 receptor",
+        "D.  IL-17",
+        "E.  Tumor necrosis factor-α"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Atypical hemolytic-uremic syndrome (HUS) or complementmediated HUS is the result of complement dysregulation. The complement dysregulation can be congenital or acquired. The affected patients often have a low C3 and normal C4 levels characteristic of alternative pathway activation. Factor H deficiency, the most common defect, has been linked to families with atypical HUS (aHUS). Deficiencies in other complement-regulatory proteins, such as factor I, factor B, membrane cofactor protein (CD46), C3, complement factor H–related protein 1 (CFHR1), CFHR3, CFHR5, and thrombomodulin, have also been reported. Finally, an autoimmune variant of aHUS has been discovered. DEAP (deficiency of CFHR plasma proteins and CFH autoantibody– positive) HUS occurs when an autoantibody to factor H is formed. Eculizumab is a monoclonal antibody to C5 that is approved for use in aHUS, which has been shown to abort microangiopathic hemolytic anemia and improve renal function.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.37.png",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 66-year-old woman presents to the emergency room with malaise, confusion, and headache. Blood pressure is found to be 220/105. Physical examination is notable for skin thickening of the arms and legs, facial telangiectasias, and decreased oral aperture. Laboratory studies show a creatinine of 3.5 mg/dL, hemoglobin of 7.0 g/dL, platelets of 75,000/dL, lactate dehydrogenase of 700. What is the appropriate initial treatment?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.38.png",
+      "options": [
+        "A.  Amlodipine",
+        "B.  Captopril",
+        "C.  Eculizumab",
+        "D.  Heparin",
+        "E.  Plasmapheresis 462 "
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Scleroderma renal crisis occurs in 12% of patients with diffuse systemic sclerosis but in only 2% of those with limited systemic sclerosis. Scleroderma renal crisis is the most severe manifestation of renal involvement, and it is characterized by accelerated hypertension, a rapid decline in renal function, nephrotic range proteinuria, and hematuria. Retinopathy and encephalopathy may accompany the hypertension. Salt and water retention with microvascular injury can lead to pulmonary edema. Cardiac manifestations, including myocarditis, pericarditis, and arrhythmias, denote an especially poor prognosis. Although microangiopathic hemolytic anemia (MAHA) is present in more than half of patients, coagulopathy is rare. The renal lesion in scleroderma renal crisis is characterized by arcuate artery intimal and medial proliferation with luminal narrowing. This lesion is described as “onion-skinning” and can be accompanied by glomerular collapse due to reduced blood flow. Histologically, scleroderma renal crisis is indistinguishable from malignant hypertension, with which it can coexist. Fibrinoid necrosis and thrombosis are common. Before the availability of angiotensin-converting enzyme (ACE) inhibitors, the mortality rate for scleroderma renal crisis was >90% at 1 month. Introduction of renin-angiotensin system blockade has lowered the mortality rate to 30% at 3 years. Nearly two-thirds of patients with scleroderma renal crisis may require dialysis support, with recovery of renal function in 50% (median time, 1 year). Treatment with ACE inhibition is the first-line therapy unless contraindicated. The goal of therapy is to reduce systolic and diastolic blood pressure by 20 mmHg and 10 mmHg, respectively, every 24 hours until blood pressure is normal. Additional antihypertensive therapy, such as calcium channel blockers like amlodipine, may be given once the dose of drug for ACE inhibition is maximized. Both ACE inhibitors and angiotensin II receptor antagonists are effective, although data suggest that treatment with ACE inhibitors is superior. ACE inhibition alone does not prevent scleroderma renal crisis, but it does reduce the impact of hypertension. Eculizumab is used in another cause of MAHA, atypical hemolytic-uremic syndrome, and plasmapheresis is a key treatment for thrombotic thrombocytopenic purpura. There is no role for heparin to treat scleroderma renal crisis.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.38.png",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 35-year-old woman presents with complaints of bilateral lower extremity edema, polyuria, and moderate left-sided flank pain that began approximately 2 weeks ago. There is no past medical history. She is taking no medications and denies tobacco, alcohol, or illicit drug use. Examination shows normal vital signs, including normal blood pressure. There is 2+ edema in bilateral lower extremities. The 24-hour urine collection is significant for 3.5 g of protein. Urinalysis is bland except for the proteinuria. Serum creatinine is 0.7 mg/dL, and ultrasound examination shows the left kidney measuring 13 cm and the right kidney measuring 11.5 cm. You are concerned about renal vein thrombosis. What test do you choose for the evaluation?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.39.png",
+      "options": [
+        "A.  CT of the renal veins",
+        "B.  Contrast venography",
+        "C.  Magnetic resonance venography",
+        "D.  99Tc-labeled diethylene-triamine-pentaacetate acid (DTPA) imaging",
+        "E.  Ultrasound with Doppler evaluation of the renal veins"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Renal vein thrombosis occurs in 10–15% of patients with nephrotic syndrome accompanying membranous glomerulopathy and oncologic disease. The clinical manifestations can be variable but may be characterized by fever, lumbar tenderness, leukocytosis, and hematuria. Magnetic resonance venography is the most 478  sensitive and specific noninvasive form of imaging to make the diagnosis of renal vein thrombosis. Ultrasound with Doppler is operator dependent and therefore may be less sensitive. Contrast venography is the gold standard for diagnosis, but it exposes the patient to a more invasive procedure and contrast load. Nuclear medicine screening is not performed to make this diagnosis.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.39.png",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 28-year-old woman who is in the 30th week of her second pregnancy has been followed closely because of mild hypertension. Her first pregnancy was complicated by preeclampsia. She now complains of worsening fatigue over the last day. Her blood pressure is 140/90, and she has a heart rate of 84 beats/min and room air oxygen saturation of 95%. Fetal monitoring shows no distress. Laboratory studies are notable for a hemoglobin of 6 g/dL (10 g/ dL 1 week ago) and platelet count of 80,000/dL (180,000/ dL 1 week ago). A peripheral blood smear shows schistocytes. All of the following statements are true about her condition EXCEPT:",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.40.png",
+      "options": [
+        "A.  Glucocorticoids are effective in reducing morbidity and mortality.",
+        "B.  Her liver function enzymes are likely elevated.",
+        "C.  Preeclampsia predisposes to the condition.",
+        "D.  Renal failure is common.",
+        "E.  The condition will likely resolve after delivery of the fetus."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HELLP (hemolysis, elevated liver enzymes, low platelets) syndrome is a dangerous complication of pregnancy associated with microvascular injury. Occurring in 0.2–0.9% of all pregnancies and in 10–20% of women with severe preeclampsia, this syndrome carries a mortality rate of 7.4–34%. Most commonly developing in the third trimester, 10% of cases occur before week 27, and 30% occur postpartum. Although a strong association exists between HELLP syndrome and preeclampsia, nearly 20% of cases are not preceded by recognized preeclampsia. Risk factors include abnormal placentation, family history, and elevated levels of fetal mRNA for FLT1 (vascular endothelial growth factor receptor 1) and endoglin. Patients with HELLP syndrome have higher levels of inflammatory markers (C-reactive protein, interleukin[IL]-1Ra, and IL-6) and soluble HLA-DR than do those with preeclampsia alone. Renal failure occurs in half of patients with HELLP syndrome, although the etiology is not well understood. Although renal failure is common, the organ that defines this syndrome is the liver. Subcapsular hepatic hematomas sometimes produce spontaneous rupture of the liver and can be lifethreatening. Neurologic complications such as cerebral infarction, cerebral and brainstem hemorrhage, and cerebral edema are other potentially life-threatening complications. Many features are shared by HELLP syndrome, atypical HUS (aHUS), and thrombotic thrombocytopenic purpura (TTP). Diagnosis of HELLP syndrome is complicated by the fact that aHUS and TTP also can be triggered by pregnancy. Serum levels of ADAMTS13 activity are reduced (by 30–60%) in HELLP syndrome but not to the levels seen in TTP (<5%). Other markers, such as antithrombin III (decreased in HELLP syndrome but not in TTP) and D-dimer (elevated in HELLP syndrome but not in TTP), may also be useful. HELLP syndrome usually resolves spontaneously after delivery, although some HELLP cases occur postpartum. Glucocorticoids may decrease inflammatory markers, although two randomized controlled trials failed to show a mortality/morbidity benefit. Plasma exchange should be considered if hemolysis is refractory to glucocorticoids and/or delivery, especially if TTP has not been ruled out.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.40.png",
+      "questionNumber": 40
+    },
+    {
+      "question": "Which of the following interventions has been shown to decrease the recurrence of calcium oxalate renal stones?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.41.png",
+      "options": [
+        "A.  A diet with abundant spinach and rhubarb",
+        "B.  Aspirin",
+        "C.  Low-calcium diet (400 mg/day)",
+        "D.  Thiazide diuretics",
+        "E.  Vitamin C supplements"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Risk factors for calcium oxalate stones include higher urine calcium, higher urine oxalate, and lower urine citrate. Individuals with higher urine calcium excretion tend to absorb a higher percentage of ingested calcium. Nevertheless, dietary calcium restriction is not beneficial and, in fact, is likely to be harmful. In a randomized trial in men with high urine calcium and recurrent calcium oxalate stones, a diet containing 1200 mg of calcium and a low intake of sodium and animal protein significantly reduced subsequent stone formation from that with a low-calcium diet (400 mg/d). A thiazide diuretic, in doses higher than those used to treat hypertension, can substantially lower urine calcium excretion. Several randomized controlled trials have demonstrated that thiazide diuretics, most commonly chlorthalidone, can reduce calcium oxalate stone recurrence by ~50%. A reduction in urine oxalate will in turn reduce the supersaturation of calcium oxalate. In patients with the common form of nephrolithiasis, avoiding high-dose vitamin C supplements is the only known strategy that reduces endogenous oxalate production. Oxalate is a metabolic end product; therefore, any dietary oxalate that is absorbed will be excreted in the urine. Spinach, rhubarb, beer, and chocolate are all rich in oxalate. Aspirin has no known effect on nephrolithiasis.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.41.png",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 48-year-old man with diabetes mellitus, hyperlipidemia, and atrial fibrillation presents to the emergency department for evaluation of left flank pain and groin pain that has been severe and present for approximately 3 hours. His medications include metformin, atorvastatin, and warfarin. He is uncomfortable and has a temperature of 37°C (98.6°F), heart rate of 105 beats/min, blood pressure of 145/95, respiratory rate of 21 breaths/min, and room air oxygen saturation of 98%. His physical examination is notable for left flank pain but no abdominal organomegaly or focal tenderness. An electrocardiogram shows sinus tachycardia with nonspecific ST-T wave changes. International normalized ratio is 2.0. His renal function is normal, and urine analysis shows many red blood cells, few white blood cells, no bacteria, and no crystals. Which of the following is the preferred diagnostic study?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.42.png",
+      "options": [
+        "A.  24-Hour urine collection",
+        "B.  Cystoscopy",
+        "C.  MRI",
+        "D.  Noncontrast CT scan",
+        "E.  Ultrasound"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has a typical clinical, laboratory, and radiologic presentation of nephrolithiasis. The CT shows a10-mm obstructing calculus in the distal left ureter at the level of S1 and another 6-mmstone in the interpolar region of the left kidney. There is also left hydronephrosis and perinephric fat stranding. At present, there are no widely accepted, evidence-based guidelinesfor the evaluation and treatment of nephrolithiasis. The diagnosis is often made based onthe history, physical examination, and urinalysis. Thus, it may not be necessary to wait for radiographic confirmation before treating the symptoms. The diagnosis is confirmed by an appropriate imaging study, preferably helical CT, which is highly sensitive, allows visualization of uric acid stones (traditionally considered “radiolucent”), and is able to avoid radiocontrast. Helical CT detects stones as small as 1 mm that may be missed by other imaging modalities. Typically, helical CT reveals a ureteral stone or evidence of recent passage (e.g., perinephric stranding or hydronephrosis), whereas a plain abdominal radiograph (kidney/ureter/bladder) can miss a stone in the ureter or kidney, even if it is radiopaque, and does not provide information on obstruction. Abdominal ultrasound offers the advantage of avoiding radiation and provides information on hydronephrosis, but it is not as sensitive as CT and images only the kidney and possibly the proximal segment of the ureter; thus, most ureteral stones are not detectable by ultrasound. Urologic intervention, such as cystoscopy, should be postponed unless there is evidence of a urinary tract infection (UTI), a low probability of spontaneous stone passage (e.g., a stone measuring ≥6 mm or an anatomic abnormality), or intractable pain. A ureteral stent may be placed cystoscopically, but this procedure typically requires general anesthesia, and the stent can be quite uncomfortable, may cause gross hematuria, and may increase the risk of UTI. Many patients who experience their first episode of colic seek emergent medical care. Randomized trials have demonstrated that parenterally administered nonsteroidal anti-inflammatory drugs (such as ketorolac) are just as effective as opioids in relieving symptoms and have fewer side effects. Excessive fluid administration has not been shown to be beneficial; therefore, the goal should be to maintain euvolemia. Use of an alpha blocker may increase the rate of spontaneous stone passage.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.42.png",
+      "questionNumber": 42
+    },
+    {
+      "question": "In the patient described above, a noncontrast abdominal CT is performed (Figure VI-43). Which of the following is the most likely diagnosis?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.43.png",
+      "options": [
+        "A.  Appendicitis",
+        "B.  Nephrolithiasis",
+        "C.  Renal cell carcinoma",
+        "D.  Pyelonephritis",
+        "E.  Retroperitoneal hematoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has a typical clinical, laboratory, and radiologic presentation of nephrolithiasis. The CT shows a10-mm obstructing calculus in the distal left ureter at the level of S1 and another 6-mmstone in the interpolar region of the left kidney. There is also left hydronephrosis and perinephric fat stranding. At present, there are no widely accepted, evidence-based guidelinesfor the evaluation and treatment of nephrolithiasis. The diagnosis is often made based onthe history, physical examination, and urinalysis. Thus, it may not be necessary to wait for radiographic confirmation before treating the symptoms. The diagnosis is confirmed by an appropriate imaging study, preferably helical CT, which is highly sensitive, allows visualization of uric acid stones (traditionally considered “radiolucent”), and is able to avoid radiocontrast. Helical CT detects stones as small as 1 mm that may be missed by other imaging modalities. Typically, helical CT reveals a ureteral stone or evidence of recent passage (e.g., perinephric stranding or hydronephrosis), whereas a plain abdominal radiograph (kidney/ureter/bladder) can miss a stone in the ureter or kidney, even if it is radiopaque, and does not provide information on obstruction. Abdominal ultrasound offers the advantage of avoiding radiation and provides information on hydronephrosis, but it is not as sensitive as CT and images only the kidney and possibly the proximal segment of the ureter; thus, most ureteral stones are not detectable by ultrasound. Urologic intervention, such as cystoscopy, should be postponed unless there is evidence of a urinary tract infection (UTI), a low probability of spontaneous stone passage (e.g., a stone measuring ≥6 mm or an anatomic abnormality), or intractable pain. A ureteral stent may be placed cystoscopically, but this procedure typically requires general anesthesia, and the stent can be quite uncomfortable, may cause gross hematuria, and may increase the risk of UTI. Many patients who experience their first episode of colic seek emergent medical care. Randomized trials have demonstrated that parenterally administered nonsteroidal anti-inflammatory drugs (such as ketorolac) are just as effective as opioids in relieving symptoms and have fewer side effects. Excessive fluid administration has not been shown to be beneficial; therefore, the goal should be to maintain euvolemia. Use of an alpha blocker may increase the rate of spontaneous stone passage.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.43.png",
+      "questionNumber": 43
+    },
+    {
+      "question": "Which of the following fluid or electrolyte abnormalities can be seen in some patients after the relief of bilateral renal obstruction?",
+      "imageUrl": "images/books-images/Harrison-assessment/ch6/q/6.44.png",
+      "options": [
+        "A.  Hyperkalemia",
+        "B.  Hypermagnesemia",
+        "C.  Hypernatremia",
+        "D.  Hypovolemia",
+        "E.  C and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Relief of bilateral, but not unilateral, complete renal obstruction commonly results in polyuria, which may be massive and is known as postobstructive diuresis. The urine is usually hypotonic and may contain large amounts of sodium chloride, potassium, phosphate, and magnesium. The natriuresis is due in part to the correction of extracellular volume expansion, the increase in natriuretic factors accumulated during the period of renal failure, and depressed salt and water reabsorption when urine flow is reestablished. The retained urea is excreted with improved glomerular filtration rate, resulting in an osmotic diuresis, which increases the urine volume of electrolyte-free water. The urinary concentrations of sodium and potassium that when added are less than the serum sodium is evidence of electrolyte-free water excretion. In the majority of patients, this diuresis results in the appropriate excretion of the excesses of retained salt and water. When extracellular volume and composition return to normal, the diuresis usually abates spontaneously. Occasionally, iatrogenic expansion of extracellular volume is responsible for, or sustains, the diuresis observed in the postobstructive period. Replacement with IV fluids in amounts less than urinary losses usually prevents this complication. More aggressive fluid management is required in the setting of hypovolemia, hypotension, or disturbances in serum electrolyte concentrations. The loss of electrolyte-free water with urea may result in hypernatremia. Measured urinary output and serum and urine sodium, potassium, and osmolal concentrations should guide the use of appropriate IV replacement. Often replacement with 0.45% saline is required. Relief of obstruction may be followed by urinary salt and water losses severe enough to provoke profound dehydration and vascular collapse. In these patients, decreased tubular reabsorptive capacity is probably responsible for the marked diuresis. Appropriate therapy in such patients includes IV administration of salt-containing solutions to replace sodium and volume deficits.",
+      "explanationImageUrl": "images/books-images/Harrison-assessment/ch6/a/6.44.png",
+      "questionNumber": 44
+    }
+  ],
+  "title": "Nephrology"
+}

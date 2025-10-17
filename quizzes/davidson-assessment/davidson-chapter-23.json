@@ -1,0 +1,750 @@
+{
+  "title": "Haematology and transfusion medicine - Chapter 23",
+  "questions": [
+    {
+      "question": "In a patient with a vague history of weight loss but little else on examination you find lymphadenopathy confined to the right axilla. Which of the following conditions is most likely?",
+      "options": [
+        "A. Chronic lymphocytic leukaemia",
+        "B. Follicular lymphoma",
+        "C. Glandular fever",
+        "D. Human immunodeficiency virus (HIV) seroconversion illness",
+        "E. Metastatic breast cancer"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Follicular lymphoma and chronic lymphocytic leukaemia (CLL) are systemic malignancies with involvement of lymphoid tissue in many sites. HIV and Epstein-Barr virus (EBV) infection produce generalised lymphadenopathy and systemic illness. Cancers tend to metastasise to local regional nodes draining a specific tissue and so breast cancer tends to present with localised unilateral axillary lymphadenopathy.",
+      "questionNumber": 1
+    },
+    {
+      "question": "In the investigation of a patient with suspected essential thrombocythaemia, in which of the following genes may you find abnormalities?",
+      "options": [
+        "A. BCL-2",
+        "B. BCR",
+        "C. c-MYC",
+        "D. CAL-R",
+        "E. MYH-9"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "All of these mutated genes are associated with haematological conditions: BCR with chronic myeloid leukaemia (CML), c-MYC and BCL-2 with lymphoma, and MYH-9 with congenital thrombocytopathy. Only CAL-R, calreticulin, is associated with the myeloproliferative neoplasm essential thrombocythaemia.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Having made a new diagnosis of polycythaemia rubra vera (PRV) you are consulting with the patient regarding prognosis and complications of the condition. He has read the information booklet and wishes to know about common vascular complications of the condition. Which of the following is the most common vascular complication?",
+      "options": [
+        "A. Budd-Chiari syndrome",
+        "B. Ischaemic stroke",
+        "C. Livedo reticularis",
+        "D. Mesenteric vein thrombosis",
+        "E. Pulmonary embolism"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The most common complications of PRV involve vascular occlusion. All of the conditions listed are associated with PRV, but the most common is ischaemic stroke.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 65 year old man presents with an immune-mediated thrombocytopenia. He has been treated with antibiotics during a recent hospital admission. Which of the following is most likely implicated in the new development?",
+      "options": [
+        "A. Amoxicillin",
+        "B. Ciprofloxacin",
+        "C. Gentamicin",
+        "D. Metronidazole",
+        "E. Vancomycin"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Vancomycin is associated with immune-mediated thrombocytopenia - the others are not.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A patient with systemic lupus erythematosus (SLE) and immune thrombocytopenia (ITP) presents with a platelet count of 5x10^9/L. Which of these is the most likely presenting symptom?",
+      "options": [
+        "A. Haemarthrosis",
+        "B. Intracranial haemorrhage",
+        "C. Muscular haematoma",
+        "D. Oral mucosal bleeding",
+        "E. Retroperitoneal haematoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Haemarthrosis, muscular haematoma and retroperitoneal haemorrhage more commonly complicate bleeding disorders associated with reduced levels of coagulation factors. Intracranial haemorrhage can complicate severe thrombocytopenia or severe coagulation factor deficiency but oral mucosal bleeding is by far the most common feature of severe thrombocytopenia along with skin purpura.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following anticoagulants has a mechanism of action involving antithrombin-dependent inhibition of thrombin and factor Xa?",
+      "options": [
+        "A. Apixaban",
+        "B. Bivalirudin",
+        "C. Dabigatran",
+        "D. Dalteparin",
+        "E. Edoxaban"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Dalteparin is a low-molecular-weight heparin (LMWH), the effect of which is mediated by enhanced avidity of antithrombin for its natural substrates, thrombin and factor Xa. Apixaban and edoxaban are direct-acting inhibitors of factor Xa, while dabigatran and bivalirudin are direct thrombin inhibitors.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 72 year old woman who is on warfarin consults to ask if she can change to an alternative oral anticoagulant. You review her clinical case. In which of the following clinical circumstances would the answer be that she should stay on warfarin?",
+      "options": [
+        "A. Atrial fibrillation in a patient with a prosthetic mitral valve",
+        "B. Distal deep vein thrombosis (DVT) following plaster cast immobilisation",
+        "C. Lone atrial fibrillation with a CHA2DS2 VASc score of 2",
+        "D. Proximal DVT following total knee replacement",
+        "E. Unprovoked pulmonary embolism"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "All of the other circumstances are licensed indications for the use of rivaroxaban except for the management of patients with prosthetic heart valves. CHA2DS2-VASc is a well-known scoring system to evaluate risk of thrombosis in a patient with atrial fibrillation.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A patient who is admitted to the intensive care unit (ICU) with multi-organ failure and sepsis is suspected of having heparin-induced thrombocytopenia (HIT). Which of the following pieces of clinical information is most likely to suggest an alternative diagnosis?",
+      "options": [
+        "A. The heparin treatment commenced 16 days ago",
+        "B. The patient has been receiving treatment with unfractionated heparin (UFH)",
+        "C. The patient has had complex cardiac surgery with cardiopulmonary bypass",
+        "D. The patient has sustained a post-operative pulmonary embolus",
+        "E. The platelet count has dropped from normal to a level of 53x10^9/L"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HIT is most commonly seen in surgical patients, especially following major orthopaedic and cardiac surgery. HIT is more commonly seen when UFH is used compared with low-molecular-weight heparin (LMWH); it is commonly associated with moderate as opposed to severe thrombocytopenia and it is associated, somewhat paradoxically, with thrombotic events. The key period for developing HIT is after 5-10 days of exposure, with longer exposures less likely to be associated.",
+      "questionNumber": 8
+    },
+    {
+      "question": "What is the most likely diagnosis in a 2 year old boy who presents with an apparently unprovoked knee haemarthrosis? Initial investigations show that he has a normal platelet count and a normal prothrombin time (PT). His activated partial thromboplastin time (APTT) is prolonged at 76 seconds.",
+      "options": [
+        "A. Lupus anticoagulant",
+        "B. Severe factor XI deficiency",
+        "C. Severe factor XII deficiency",
+        "D. Severe haemophilia A (factor VIII deficiency)",
+        "E. Severe haemophilia B (factor IX deficiency)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "All of these conditions can present with a normal PT and a prolonged APTT. Lupus anticoagulant is very rarely associated with a bleeding diathesis. Factor XII deficiency causes a very marked prolongation of the APTT but is never associated with bleeding. Severe XI deficiency is associated with variable severity of bleeding and is rare. Factor VIII and IX deficiencies present with identical phenotypes but severe haemophilia A is 5 times more common than severe haemophilia B. The scenario is classical of the first presentation of severe haemophilia A or B.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 13 year old girl with significant menorrhagia is investigated to see if there is an underlying bleeding disorder. Her investigations show a normal platelet count, PT and fibrinogen. Her APTT is prolonged and her factor VIII level is 0.2 U/mL, her von Willebrand factor ristocetin co-factor (VWF: RICO) level is 0.05 U/mL and her von Willebrand factor antigen (VWF: Ag) is 0.14 U/mL. What is the most likely diagnosis?",
+      "options": [
+        "A. Haemophilia A carrier with low VIII levels",
+        "B. Type 1 von Willebrand disease",
+        "C. Type 2A von Willebrand disease",
+        "D. Type 2N von Willebrand disease",
+        "E. Type 3 von Willebrand disease"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "She has a low factor VIII level, which is compatible with all the diagnoses given. However, she has a level of functional WF (RICO) that is out of keeping with her WF antigen level (ratio is 0.35). This suggests a dysfunctional molecule and therefore type 2 VWD. Type 2N WD is associated with isolated low factor VIII and so the most likely diagnosis here is type 2A VWD. This is a common presentation in affected young women.",
+      "questionNumber": 10
+    },
+    {
+      "question": "In the context of routine clerking of a pre-surgical patient, which of the following is the most informative question in detecting an underlying bleeding disorder in a patient who reports a 'problem with bleeding'?",
+      "options": [
+        "A. Bleeding after shaving",
+        "B. Easy bruising",
+        "C. Epistaxis as a child",
+        "D. Post-partum haemorrhage",
+        "E. Previous post-surgical bleeding"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Epistaxis, easy bruising and bleeding after shaving are all symptoms commonly reported in patients without a bleeding disorder and so are very non-specific indicators of a bleeding disorder. Post-partum haemorrhage is usually associated with other pregnancy-associated illness, uterine atony or vaginal trauma.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A Dutch woman is referred following the development of a pulmonary embolism without obvious provoking factors. If she were investigated further, which form of inherited thrombophilia would you be most likely to find in this case?",
+      "options": [
+        "A. Antithrombin deficiency",
+        "B. Factor V Leiden",
+        "C. Protein C deficiency",
+        "D. Protein S deficiency",
+        "E. Prothrombin gene mutation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Factor V Leiden is a gain-of-function mutation found in around 5% of northern Europeans. The others are all less commonly found abnormalities associated with venous thromboembolic (VTE) risk.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 65 year old man is admitted as a medical emergency. A diagnosis of pulmonary embolism is made. Which of the following features in his clinical history is most likely to have contributed most to his thrombosis risk?",
+      "options": [
+        "A. He had a total knee replacement (TKR) 9 months previously",
+        "B. He had just flown back to the UK from a weekend break in Paris",
+        "C. He has recently started quinine for night cramps",
+        "D. He was discharged from hospital 4 weeks ago following treatment for congestive cardiac failure (CCF)",
+        "E. His 64 year old cousin has recently suffered from a pulmonary embolism following bowel surgery"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The TKR is too remote in time to be relevant; however, it is a strong risk factor for VTE in the 35 days post-surgery. Quinine can result in the development of thrombocytopenia and a systemic reaction but is not associated with VTE. Travel is a common but weak risk factor for thrombosis and only journeys of >3 hours of continuous travel are relevant. A cousin is not a first-degree relative and the event suffered by this man's cousin was provoked. CCF, or indeed any significant hospitalisation, is a strong risk factor for subsequent VTE - The Million Women Study suggests the period of attributable risk is about 12 weeks.",
+      "questionNumber": 13
+    },
+    {
+      "question": "You are asked to see a 59 year old man following 3 months of anticoagulation for an episode of proximal DVT that occurred without any identifiable risk factor. You are trying to decide whether you think he would benefit from long-term anticoagulation or not. Of the following, which is the strongest risk factor for predicting recurrence following discontinuation of the treatment?",
+      "options": [
+        "A. Age over 50 years",
+        "B. D-dimer level after stopping treatment",
+        "C. Hormone replacement therapy use",
+        "D. Male sex",
+        "E. Unprovoked episode"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The background to the event is the strongest predicting factor for recurrence. Unprovoked events have a far higher rate of recurrence than provoked events where the provoking factor has been removed. In predicting recurrence after an unprovoked event, male sex and elevated D-dimer are predictive of recurrence.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 32 year old woman who has been previously well presents with apparent loss of consciousness. You suspect a diagnosis of thrombotic thrombocytopenic purpura (TTP). Which of the following observations would be LEAST common in fitting with that diagnosis?",
+      "options": [
+        "A. Confusion",
+        "B. Fever",
+        "C. Microangiopathic haemolytic anaemia",
+        "D. Purpura",
+        "E. Thrombocytopenia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Purpura is rare in TTP despite the name of the disorder. In conditions where prothrombotic states are associated with thrombocytopenia, it is often the case that there is a lack of purpura: e.g. in haemolytic uraemic syndrome (HUS) and heparin-induced thrombocytopenia.",
+      "questionNumber": 15
+    },
+    {
+      "question": "Thrombin is generated as part of the process of activation of coagulation. Thrombin has many actions. Which of these actions directly results in the cross-linking of fibrin clot?",
+      "options": [
+        "A. Activation of factor VIII",
+        "B. Binding of endothelial cell-bound thrombomodulin",
+        "C. Binding of the platelet thrombin receptor",
+        "D. Cleavage of factor XIII",
+        "E. Cleavage of the fibrinopeptides on fibrinogen"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Factor XIII is cleaved and the A subunit then cross-links fibrin to form stable clot. Thrombomodulin binding results in activation of the protein C pathway, which has an anticoagulant effect. Activation of factor VIII amplifies coagulation activation and the cleavage of fibrinopeptides results in production of fibrin monomers.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 36 year old man presents with night-time cough and wheezing over the previous 2 months. He has a previous history of eczema. What finding in his full blood count would be in fitting with the scenario and help towards the diagnosis?",
+      "options": [
+        "A. Basophilia",
+        "B. Eosinophilia",
+        "C. Lymphocytosis",
+        "D. Monocytosis",
+        "E. Neutrophilia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Eosinophilia is often seen in association with atopic and allergic conditions. It can also be seen in pulmonary vasculitis. Other causes of reactive eosinophilia include drug reactions and parasitic infections.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A junior doctor phones you about a patient who is unwell after an episode of post-cholecystectomy pancreatitis. The patient has a normochromic normocytic anaemia, a leucocytosis and a mild thrombocytosis. The prothrombin time is 55 seconds, the APTT is 46 seconds and the fibrinogen is normal (4 g/L). What is the most likely diagnosis?",
+      "options": [
+        "A. Anticoagulation with LMWH",
+        "B. Disseminated intravascular coagulation",
+        "C. Factor XIII deficiency",
+        "D. Liver failure",
+        "E. Vitamin K deficiency"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Anticoagulation with LMWH produces minor prolongation of APTT only. Disseminated intravascular coagulation can complicate pancreatitis but would be expected to be associated with reduced platelet count and fibrinogen. Liver failure, again, can result in prolonged APTT and PT, but in advanced disease you would expect the fibrinogen level to fall. Vitamin K deficiency results in prolongation of PT and APTT with a normal fibrinogen level and is a common complication of hepatobiliary surgery.",
+      "questionNumber": 18
+    },
+    {
+      "question": "The blood film of a 67 year old man is reported to show target cells, acanthocytes, Howell-Jolly bodies, a leucocytosis and a mild thrombocytosis. What is the most likely cause of this picture?",
+      "options": [
+        "A. Alcoholic liver disease",
+        "B. Essential thrombocythaemia",
+        "C. Falciparum malaria",
+        "D. Hyposplenism",
+        "E. Myelofibrosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The described appearances are all part of a hyposplenic picture. Irrespective of the cause of the hyposplenism or splenectomy. Liver disease is associated with target cells but not with a hyposplenic picture. Myelofibrosis is associated with target cells, teardrop poikilocytes, polychromasia and a leucoerythroblastic appearance but not with the features of hyposplenism.",
+      "questionNumber": 19
+    },
+    {
+      "question": "Consider the haemoglobin-oxygen dissociation curve, below. Which condition results in increased oxygen release to hypoxic tissue, i.e. moves the dissociation curve to the right?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch23/q/23.20.png",
+      "options": [
+        "A. Haemoglobin S (HbS)",
+        "B. Hypothermia",
+        "C. Low levels of 2,3-bisphosphoglycerate (2,3-BPG)",
+        "D. Low levels of CO2",
+        "E. Reduced pH"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The oxygen dissociation curve shifts to the right - i.e. improves the release of oxygen to tissues - in conditions where the pH is decreased (Fig. 23.20). The other changes would tend to move the dissociation curve to the left, making oxygen release to tissues less readily. HbS does not have any affect on oxygen dissociation.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch23/a/23.20.png",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following changes is commonly seen in normal pregnancy?",
+      "options": [
+        "A. Low protein C levels",
+        "B. Low vitamin B12 levels",
+        "C. Lupus anticoagulant",
+        "D. Polycythaemia",
+        "E. Reducing fibrinogen level with advancing gestation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Low measured vitamin B12 level is common in pregnancy although vitamin B12 deficiency is rare - indeed decreased fertility is associated with vitamin B12 deficiency. Protein C levels rise in pregnancy, protein S levels fall. Procoagulant factors like factor VIII and fibrinogen increase as pregnancy progresses. Pregnant patients tend to have increased plasma volume and, if anything, tend to be anaemic rather than polycythaemic. Lupus anticoagulant is never a normal finding.",
+      "questionNumber": 21
+    },
+    {
+      "question": "When examining the abdomen for the presence of splenomegaly, which of the following statements is true?",
+      "options": [
+        "A. A palpable spleen moves downwards on expiration",
+        "B. A palpable spleen moves upwards on inspiration",
+        "C. A splenic rub is frequently heard following acute infarction of massive splenomegaly",
+        "D. If you can get above a mass in the left upper quadrant, then it is likely to be a spleen",
+        "E. The spleen is usually palpable in small people"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The normal spleen is rarely if ever felt and a palpable spleen has the clinical features of moving down on inspiration as the diaphragm contracts and upwards (away from the hand) on expiration. The examining hand cannot get above the spleen and under the left costal margin. Inflammation of the splenic capsule following infarction leads to an audible rub over an acutely painful spleen.",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which of the following statements relating to normal haematopoietic stem cells is true?",
+      "options": [
+        "A. Daughter cells of stem cells are always destined to become mature blood cells",
+        "B. Stem cells are easily identified when examining the bone marrow down the microscope",
+        "C. Stem cells can only give rise to daughter cells of a particular lineage",
+        "D. Stem cells circulate in the blood and can be mobilised into the blood in increased numbers by growth factors such as granulocyte colony-stimulating factor (G-CSF)",
+        "E. They are the commonest cell found in the bone marrow"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Stem cells are rare, accounting for about 0.1% of marrow cells. They cannot be identified on routine morphology and require immunological staining for identification. They have the important characteristics of self-renewal (daughter cells can remain as stem cells rather than differentiating into mature blood cells) and pluripotency (they give rise to cells of different lineages depending on requirements). Stem cells circulate in the blood in small numbers normally and these can be increased up to 1000-fold by mobilisation procedures following chemotherapy, G-CSF or plerixafor. In this way, stem cells can be harvested from the blood for transplantation.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A patient is referred after being found unexpectedly to have anaemia. Which of the following statements is in keeping with a diagnosis of acute myeloid leukaemia?",
+      "options": [
+        "A. Bleeding into a knee joint in a 6 month old boy",
+        "B. Splenomegaly is frequently massive",
+        "C. The leukaemic blasts proliferate excessively but differentiate normally",
+        "D. The platelet count is most likely to be increased",
+        "E. The presence of a high white cell count but very low neutrophil count in an elderly man"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The hallmark of acute leukaemia is bone marrow failure: the presence of one or more of anaemia, thrombocytopenia and neutropenia. This is because the leukaemic blast cells proliferate but fail to differentiate normally. The disease is most common in older adults. The total white cell count can be low, normal or high, depending on how many of the blasts escape the marrow into the blood. Splenomegaly is hardly ever massive, which is a feature of chronic myeloid leukaemia (CML). Bleeding is into skin and mucous membranes because of thrombocytopenia, not joints as in haemophilia.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 65 year old man presents to his doctor with increasing shortness of breath and is found to have an abnormal full blood count. With regard to the myelodysplastic syndromes (MDS), which of the following statements is true?",
+      "options": [
+        "A. Anaemia is the most frequent presenting abnormality and is commonly macrocytic",
+        "B. Erythropoietin (EPO) is not a useful therapy if the renal function is normal",
+        "C. Ring sideroblasts are dysplastic white cells and associated with mutations in the gene SF3B1",
+        "D. The median age of presentation is about 50 years",
+        "E. Transformation to acute myeloid leukaemia (AML) is diagnosed when the blast count rises to >30%"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "MDS are diseases of the elderly, with a median age of over 70 years. Anaemia is the commonest abnormality, occurring in 80% of patients at some point, and is usually macrocytic. Patients with anaemia and low transfusion requirement and a baseline EPO level of <200 U/L have a 70% chance of responding to EPO therapy, independent of renal function. Dysplasia is present in more than 10% of an affected bone marrow lineage and ring sideroblasts are one form of dysplastic red cell. Mutations in SF3B1 (a splicing factor) are very strongly associated with the presence of ring sideroblasts. Progression to AML is diagnosed when the blasts are over 20%.",
+      "questionNumber": 25
+    },
+    {
+      "question": "Which of the following situations would be in keeping with a diagnosis of monoclonal gammopathy of uncertain significance (MGUS)?",
+      "options": [
+        "A. A light chain only paraprotein with immunoparesis for immunoglobulin G (IgG) and immunoglobulin A (IgA)",
+        "B. A low-level IgG paraprotein associated with a single lytic lesion in the femur",
+        "C. A low-level IgG paraprotein with normal serum free light chain ratio",
+        "D. An IgA paraprotein in someone presenting with acute renal failure",
+        "E. An immunoglobulin M (IgM) paraprotein in someone presenting with mild anaemia and splenomegaly"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In MGUS, the paraprotein is at a low level and with no evidence of end-organ damage, i.e. no evidence of anaemia, bone disease or renal disease. IgM paraproteins are associated with low-grade lymphomas, most notably lymphoplasmacytic lymphoma, but can present as MGUS if there is no clinical evidence of lymphoma. A normal serum free light chain ratio in MGUS carries a very good prognosis.",
+      "questionNumber": 26
+    },
+    {
+      "question": "Which of the following clinical situations represents a likely diagnosis of multiple myeloma?",
+      "options": [
+        "A. A 10 year old child with acute renal failure and a positive urine test for Bence Jones protein",
+        "B. Acute renal failure in a 65 year old woman with hypercalcaemia, rib pain, immunoparesis for IgG and IgA but no intact paraprotein",
+        "C. An IgG paraprotein of 10 g/L in a young woman with widespread joint pains and neutropenia",
+        "D. Hypercalcaemia in an elderly man with a high alkaline phosphatase and sclerotic bone lesions",
+        "E. Pneumonia in a middle-aged man with lymphopenia, increased polyclonal plasma cells in the bone marrow and a polyclonal rise in immunoglobulins"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Myeloma is a disease of middle to old age. It is never seen in children and extremely rare under the age of 30 years. The diagnosis requires a paraprotein (including light chain only as in option B) with signs of end-organ damage and usually with an increase in bone marrow monoclonal plasma cells. Option D is most likely metastatic prostate cancer; option C is autoimmune disease, e.g. rheumatoid arthritis; and option E would fit with HIV infection. Normal light chains can appear in the urine in acute renal failure because of failed reabsorption by the renal tubules, as in option A.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 56 year old man presents to hospital with abdominal discomfort and is found to have splenomegaly and an abnormal full blood count. In CML, which of the following statements is correct?",
+      "options": [
+        "A. Allogeneic stem cell transplantation remains the first-choice therapy in chronic phase",
+        "B. At presentation a majority of white cells are blast cells",
+        "C. The disease arises from a mutated stem cell containing the t(15;17) translocation",
+        "D. The Philadelphia (Ph) chromosome is a small chromosome 22 resulting from the translocation t(9;22)",
+        "E. The platelet count is usually reduced"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "CML arises from a mutated stem cell containing the Ph chromosome, which results from the translocation t(9;22) and the resulting fusion gene BCR-ABL. The leukaemic clone proliferates and differentiates so in chronic phase the blast count is low and platelets tend to be high (sometimes very high: >2000*10^9/L). First-choice therapy for all patients in chronic phase is tyrosine kinase inhibition (TKI), e.g. imatinib, nilotinib or dasatinib, with allogeneic stem cell transplantation reserved for TKI failure. The translocation t(15;17) occurs in acute promyelocytic leukaemia (APL).",
+      "questionNumber": 28
+    },
+    {
+      "question": "Which of the following cases most likely represents a case of Hodgkin lymphoma (HL) rather than non-Hodgkin lymphoma (NHL)?",
+      "options": [
+        "A. A 19 year old man with pancytopenia and a large mediastinal mass with pleural and pericardial effusions",
+        "B. A 21 year old woman with painless, rubbery, cervical lymphadenopathy increasing over 3 months and an asymptomatic mediastinal mass on chest X-ray",
+        "C. A 25 year old woman with symptoms of mediastinal obstruction and massive mediastinal lymphadenopathy; the biopsy shows sheets of centroblasts that are CD20 positive",
+        "D. A 50 year old woman with new-onset epilepsy and a mass in the right cerebral hemisphere surrounded by oedema",
+        "E. A 60 year old man with widespread, asymptomatic, painless lymphadenopathy and splenomegaly"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "HL most commonly starts in the cervical region and spreads contiguously along the lymphatic channels. Young women with the nodular sclerosing subtype of HL typically present with cervical and mediastinal lymphadenopathy. The nodes are typically painless and rubbery or sometimes firm or hard if there is lots of sclerosis. All the other answers are more in keeping with forms of NHL: option C, primary mediastinal large B-cell lymphoma; option E, follicular lymphoma; option D, primary central nervous system lymphoma; option A, T-lymphoblastic lymphoma.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 68 year old man presents to his family physician with fever, night sweats and unexplained weight loss. Which one of the following is defined by low-grade, mature-looking lymphocytes that are CD5 and cyclin D1 positive but CD23 negative.",
+      "options": [
+        "A. B-cell acute lymphoblastic leukaemia (B-ALL)",
+        "B. Chronic lymphocytic leukaemia (CLL)",
+        "C. Diffuse large B-cell NHL (DLBL)",
+        "D. Follicular lymphoma",
+        "E. Mantle cell lymphoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Mantle cell lymphoma tends to present with morphologically low-grade looking mature lymphocytes that are positive for CD5 but negative for CD23. Mantle cell lymphoma harbours the translocation t(11;14), which leads to overexpression of cyclin D1. CLL tends to be CD5 and CD23 positive, whilst all the other conditions tend to be CD5 negative. ALL will have blast cells, not mature lymphocytes, and DLBL is also a high-grade lymphoma with centroblasts.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 73 year old man is found to have some abnormalities in a full blood count taken to investigate a symptom of fatigue. In patients with chronic lymphocytic leukaemia (CLL), which one of the following features is true?",
+      "options": [
+        "A. Most patients are symptomatic and require treatment at presentation",
+        "B. Patients with mutated immunoglobulin genes have a poorer prognosis than those with unmutated immunoglobulin genes",
+        "C. Signalling through the B-cell receptor complex (BCR) is not a useful target for treatment",
+        "D. The peripheral blood lymphocyte count is persistently above 5x10^9/L",
+        "E. The presence of a TP53 mutation predicts for a good response to chemotherapy"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is a requirement for CLL diagnosis. Patients with lower CLL lymphocyte counts are termed monoclonal B-cell lymphocytosis of uncertain significance. Some patients present with lymphadenopathy and lymphocyte counts <5*10^9/L and are called small cell lymphocytic lymphoma. Most patients are asymptomatic at presentation and undergo watch and wait. Mutated immunoglobulin genes carry a good prognosis and TP53 mutations carry a poor prognosis and a tendency to chemotherapy resistance. Targeting the BCR complex with drugs such as ibrutinib (Bruton's tyrosine kinase inhibitor) is a successful new form of therapy.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 48 year old woman with general malaise is found to have acute myeloid leukaemia (AML). With regard to allogeneic stem cell transplantation for patients with this condition, which of the following statements is true?",
+      "options": [
+        "A. Complications of the procedure lead to a treatment-related mortality (TRM) of about 1-5% by 2 years after transplantation",
+        "B. Older female donors are a better source of stem cells than younger male donors",
+        "C. Patients with chronic graft-versus-host disease (GVHD) are more likely to relapse from AML after the transplant",
+        "D. Reduced-intensity conditioning (RIC) is used for very young, fit patients",
+        "E. The anti-leukaemic effect originates predominantly from transplanted donor T lymphocytes (graft versus leukaemia; GvL)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The donor-derived T cells provide a new cell-mediated immune system that attacks residual leukaemic cells - GvL. Maintaining full (100%) donor chimerism in the T-cell population promotes long-term remission of AML and other haematological malignancies. The T cells also cause acute and chronic GVHD, which for similar reasons is associated with lower relapse rates. Older females are more likely to have been pregnant and to be sensitised to human leucocyte antigens (HLAs) and therefore younger male donors are preferable, all other criteria such as HLA matching and cytomegalovirus (CMV) status being equal. RIC is less tissue damaging and safer for older patients; however, younger and fitter patients benefit from full conditioning. The TRM for allogeneic transplants after 2 years is about 20%, mainly from infection and GVHD. The figure of 1-5% would apply to autologous stem cell transplantation.",
+      "questionNumber": 32
+    },
+    {
+      "question": "Which of the following best describes the action of the anthracycline group of chemotherapy drugs?",
+      "options": [
+        "A. They act as small-molecule inhibitors of tyrosine kinases and include nilotinib",
+        "B. They act as antimetabolites and include methotrexate",
+        "C. They act as inhibitors of topoisomerase II and include etoposide",
+        "D. They act as inhibitors of tubulin polymerisation and include vincristine",
+        "E. They act to intercalate between double-stranded DNA base pairs and include daunorubicin"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Anthracyclines lead to the inhibition of DNA and RNA synthesis by intercalating between base pairs of the DNA/RNA strand, thus preventing the replication of cancer cells. Some anthracyclines also inhibit topoisomerase II, but etoposide is not an anthracycline class of topoisomerase II inhibitor. All other answers describe a different class of chemotherapy drug.",
+      "questionNumber": 33
+    },
+    {
+      "question": "The first-line therapy for a 50 year old man with severe aplastic anaemia is best described as follows?",
+      "options": [
+        "A. A myeloablative allogeneic stem cell transplant from an unrelated donor",
+        "B. Immunosuppressive therapy with high-dose glucocorticoids",
+        "C. Immunosuppressive therapy with horse anti-thymocyte globulin (ATG) followed by ciclosporin",
+        "D. Immunosuppressive therapy with rabbit ATG",
+        "E. Supportive care only with red cells, platelets and G-CSF"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The treatment of choice is immunosuppression with horse ATG, which is safer than currently available rabbit ATG. Horse ATG should be followed by ciclosporin as longer-term immunosuppression. Allogeneic stem cell transplantation is reserved as first-line treatment for young patients (<30 years), ideally with a fully matched sibling donor. Supportive care is important but not as sole therapy and there is no proven useful role for G-CSF. Long-term glucocorticoids dramatically increase the risk of fatal fungal infection in neutropenic patients.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 68 year old woman has been found to have a low haemoglobin in the context of long-term rheumatoid arthritis and chronic kidney disease. What does the mechanism of the anaemia of chronic disease include?",
+      "options": [
+        "A. Chronic gastrointestinal (GI) tract bleeding",
+        "B. High hepcidin levels inhibiting iron export from macrophages",
+        "C. Iron toxicity to the bone marrow",
+        "D. Poor iron absorption because of achlorhydria",
+        "E. Red cell sequestration in a chronically enlarged spleen"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The anaemia of chronic disease largely results from induced hepcidin production from the liver. This occurs secondary to increased interleukin-6 (IL-6) levels in inflammation. Iron is trapped in iron-exporting cells, including duodenal enterocytes and macrophages. Iron does not cause direct marrow toxicity. Chronic GI tract bleeding leads to iron deficiency anaemia, as does achlorhydria, e.g. post-gastrectomy. Option E describes hypersplenism.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 4 year old girl is brought to her doctor with fever and is found to have acute leukaemia. Which of the following is considered the most important prognostic feature for childhood acute lymphoblastic leukaemia?",
+      "options": [
+        "A. T-cell rather than B-cell phenotype",
+        "B. The age and sex of the child",
+        "C. The chromosomal abnormalities acquired by the leukaemic cells",
+        "D. The height of the white cell count at presentation",
+        "E. The presence of minimal residual disease (MRD) post induction therapy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "All have been recognised prognostic factors at one time or another but the presence of MRD is now recognised as the most significant prognostic factor and used to modify therapy accordingly.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 6 year old patient has had severe neutropenia (<0.2x10^9/L) lasting for more than 7 days following initial treatment for AML. Which of the following is true?",
+      "options": [
+        "A. Azole prophylaxis against fungal infection with posaconazole is not recommended",
+        "B. Gram-negative sepsis is more common than Gram-positive sepsis",
+        "C. Indwelling Hickman lines are more commonly infected with Gram-negative organisms than Gram-positive ones",
+        "D. Neutropenic fever should be treated empirically prior to receiving the results of blood cultures",
+        "E. Quinolone prophylaxis is not recommended to prevent sepsis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Nowadays the use of indwelling lines and antibiotic prophylaxis with quinolone antibiotics (e.g. levofloxacin, ciprofloxacin) leads to more identified Gram-positive infections than Gram-negative, although Gram-negative infections are still more life-threatening. Quinolone prophylaxis and posaconazole prophylaxis have both been shown to be beneficial and to reduce mortality during induction therapy for AML. Indwelling plastic lines are more commonly infected with Gram-positive organisms, e.g. Staphylococcus epidermidis. Neutropenic sepsis is a medical emergency and must be treated empirically, e.g. with piperacillin/tazobactam with or without aminoglycosides, whilst waiting for culture results. Positive cultures only occur in about 30% of episodes of neutropenic sepsis.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 42 year old woman with alcoholic liver disease presents as an emergency to hospital with massive haematemesis. Her temperature is 37°C, pulse rate 130 beats/min and blood pressure is 70/40 mmHg. She is cool peripherally. She has stigmata of chronic liver disease with a palpable spleen at 3 cm below the left costal margin. She is initially resuscitated with intravenous fluids. Investigations show: haemoglobin 61 g/L; white cell count (WCC) 5.2x10^9/L; platelet count 84x10^9/L. You request 4 units of packed red cells urgently. Group and screen 2 years previously showed group B Rhesus D (RhD)-positive with a negative antibody screen. There is insufficient time to do compatibility testing. What is the most appropriate blood to transfuse?",
+      "options": [
+        "A. AB RhD-negative",
+        "B. B RhD-negative",
+        "C. B RhD-positive",
+        "D. O RhD-negative",
+        "E. O RhD-positive"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In an emergency, group O red cells can be given safely to any patient as the group O red cells lack surface antigens against which the patient's isohaemoglutinins can react (Box 23.38). There is a historic ABO and Rhesus D type available; however, group-specific units can only be issued when the group has been confirmed from a current sample. As this woman has child-bearing potential, she should receive RhD-negative. Plasma of group AB RhD-negative can safely be given to any patient as it lacks isohaemoglutinins that can react against the patient's red cell surface antigens.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch23/a/23.38.png",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 28 year old female, para 1+0, presents to obstetric triage at 27 weeks. All was well at booking. She reports intermittent vaginal bleeding for the past 2 weeks. Other than requiring a 3-unit red cell transfusion following a road traffic accident 3 years ago she has been well. Investigations show: haemoglobin 121 g/L; WCC 3.4x10^9/L; platelet count 238x10^9/L. Group and screen: group A RhD-negative with a positive antibody screen. Antibodies: anti-D (titre 1/32). What is the most likely reason for the development of the antibody?",
+      "options": [
+        "A. Fetal maternal haemorrhage during this pregnancy",
+        "B. Physiological increase in naturally occurring antibody",
+        "C. Previous pregnancy",
+        "D. Routine antenatal anti-D prophylaxis",
+        "E. Transfusion"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A female of child-bearing age would have received RhD- and Kell-negative units. Routine antenatal anti-D prophylaxis is administered at 28 weeks. Anti-D only occurs in RhD-negative individuals exposed to exogenous D antigen, and has clinical implications. She has not been pregnant before. It is most likely that her partner is D antigen positive and the fetus has inherited this antigen causing maternal allo-anti-D to form.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A patient receives a blood transfusion and has developed complications. Which of the following combinations will result in least insult to the patient?",
+      "options": [
+        "A. Group AB red cells into a group O adult",
+        "B. Group B red cells into a group A adult",
+        "C. Group B red cells into a group A neonate",
+        "D. Group O fresh frozen plasma (FFP) into a group A adult",
+        "E. Group O FFP into a group B adult"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Group O FFP contains both anti-A and anti-B, which will react with the recipient's red cells expressing A or B antigens. Group O patients have anti-A and anti-B that will react with A and or B antigens expressed on transfused cells. Group A patients have anti-B, which will react with B antigens expressed on transfused cells. The neonate immune system does not produce antibodies when exposed to exogenous antigens and so neonates tolerate ABO incompatibility better than adults.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 28 year old female, para 1+1, presents to obstetric triage at 22 weeks. She reports intermittent vaginal bleeding for the past 24 hours and thinks it is likely implantation bleeding. There has been no preceding trauma. On examination she appears comfortable at rest. Her temperature is 36.7°C, pulse rate is 88 beats/min and blood pressure is 98/68 mmHg. Fundal height measures 22 cm. There are no concerns about the baby. Investigations: haemoglobin 101 g/L; WCC 8.4x10^9/L; platelet count 238x10^9/L. Group and screen: group O RhD-negative with a negative antibody screen. What is the most appropriate initial management for this patient?",
+      "options": [
+        "A. Arrange a 2-unit red cell transfusion",
+        "B. Arrange an urgent abdominal ultrasound to exclude placental issues",
+        "C. Commence her on oral iron",
+        "D. Reassure her that baby is well and bloods are normal for this stage of pregnancy",
+        "E. Take blood for a Kleihauer test and give anti-D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A Kleihauer test or acid elution test is a blood test used to measure the amount of fetal haemoglobin transferred from a fetus to a mother's blood stream. It is vital not to miss this sensitising event. Implantation bleeds occur in the first trimester. Although exclusion of placental abnormality is required, the priority is to minimise the likelihood of RhD sensitisation occurring. Normal pregnancy causes a fall in the haemoglobin through haemodilution for which transfusion is not indicated. Red cell parameters will guide the need for iron replacement.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 72 year old man with NHL attends the oncology assessment area post-chemotherapy with chest discomfort and shortness of breath at rest. His temperature is 37.4°C, pulse rate is 110 beats/min and blood pressure is 90/64 mmHg. Investigations: haemoglobin 81 g/L; WCC 1.1x10^9/L; platelet count 40x10^9/L. Troponin: awaited. ECG shows T-wave flattening. The patient agrees to a 2-unit red cell transfusion. Which of the following actions is the most important one in ensuring a safe transfusion without patient harm?",
+      "options": [
+        "A. He confirms his name and date of birth to the person taking his pre-transfusion sample",
+        "B. He is provided with written patient information",
+        "C. He provides written consent",
+        "D. The reason for the transfusion is clearly documented in the notes",
+        "E. Transfusion is delayed until troponin is available"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "It is good practice to explain and document the reason for transfusion to the patient and to obtain the patient's consent but this may not always be possible. Key steps in the transfusion process are to positively identify the patient at the bedside prior to taking a blood sample and before administering a blood component. As he has evidence of cardiorespiratory compromise, transfusion should not be withheld.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 78 year old man with stable ischaemic heart disease is admitted with a traumatic hip fracture. He undergoes a right hemi-arthroplasty. Twenty-four hours post-operatively, investigations reveal a haemoglobin of 65 g/L. Fifteen minutes into transfusion of the first unit of red cells, his observations are: temperature 38.4°C; pulse rate 88 beats/min; blood pressure 100/60 mmHg. He is flushed but otherwise well. Observations were normal before transfusion was started. How would you manage this clinical situation?",
+      "options": [
+        "A. Do nothing",
+        "B. Stop the transfusion, give chlorphenamine and, provided well, restart in 15 minutes",
+        "C. Stop the transfusion, give paracetamol and, provided well, restart in 15 minutes",
+        "D. Stop the transfusion, initiate fluid resuscitation and inform the hospital transfusion team",
+        "E. Stop the transfusion, take blood cultures, give antibiotics and return unit to blood bank as concern about bacterial contamination"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "All symptoms and signs of a possible transfusion reaction require rapid clinical assessment of the patient after the transfusion has been stopped (Fig. 23.43). His symptoms are consistent with a febrile non-haemolytic transfusion reaction.",
+      "explanationImageUrl": "images/books-images/Davidson-assessment/ch23/a/23.43.png",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 22 year old man is admitted following a severe road traffic accident. He suffered significant blood loss at the scene. He is resuscitated with Gelofusine plasma expander and group O negative packed red cells. Intra-operatively the anaesthetist phones you for advice. Bloods show: haemoglobin 66 g/L; WCC 11.2x10^9/L; platelet count 83x10^9/L; PT 28 seconds; APTT 72 seconds; fibrinogen: 1.9 g/L. What is most appropriate to use to reduce his bleeding risk?",
+      "options": [
+        "A. Cryoprecipitate",
+        "B. Fresh frozen plasma",
+        "C. Platelets",
+        "D. Prothrombin complex concentrate",
+        "E. Vitamin K"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "His PT and APTT are significantly prolonged; therefore, FFP is indicated at a dose of 15 mL/kg. He will likely require platelets; however, at present, they are greater than the recommended threshold of 50*10^9/L. Cryoprecipitate is primarily used to replace fibrinogen when below 1.5 g/L. Prothrombin complex concentrate is used to reverse warfarin. Vitamin K has a 4- to 6-hour onset of action.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 69 year old man with myelodysplasia is admitted with haematuria. He is transfused with 2 units of packed red cells. Eight hours following his transfusion you are called to review him as he is now acutely unwell with breathlessness and chest tightness. Observations reveal: temperature 37.8°C, pulse rate 130 beats/min, blood pressure 88/60 mmHg, respiratory rate 34 breaths/min and oxygen saturation 82%. He is distressed with bilateral chest crepitations, R>L. Heart sounds are normal. Jugular venous pressure (JVP) is normal. Chest X-ray shows normal heart size, Kerley B lines and bilateral nodular infiltrates. Electrocardiography (ECG) shows sinus tachycardia. What is the most likely cause of the patient's deterioration?",
+      "options": [
+        "A. Myocardial infarction",
+        "B. Pulmonary embolus",
+        "C. Sepsis",
+        "D. Transfusion-associated circulatory overload",
+        "E. Transfusion-related acute lung injury"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Transfusion-related acute lung injury is characterised by the sudden onset of breathlessness within 6-24 hours of transfusion with bilateral nodular infiltrates on X-ray. This condition results in pulmonary oedema but is non-cardiac in origin. Temperature, JVP and ECG are normal. There is no history of pleuritic chest pain. Although the other conditions should be considered, the pattern is most consistent with transfusion-related acute lung injury.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 21 year old female medical student presents to her family physician with fatigue, shortness of breath and a sore mouth. On examination she is pale with a yellow tinge with a palpable splenic tip on inspiration. Bloods are checked. Investigations show: haemoglobin 68 g/L; mean cell volume (MCV) 118 fL; mean cell haemoglobin (MCH) 35 pg; WCC 1.9x10^9/L; platelet count 92x10^9/L. A blood film report reads: macrocytosis with macro-ovalocytes and hypersegmented neutrophils (see below). What is the most likely diagnosis?",
+      "options": [
+        "A. Acute myeloid leukaemia",
+        "B. Alcohol excess",
+        "C. Vitamin B12 deficiency",
+        "D. Hyperthyroidism",
+        "E. Iron deficiency"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Vitamin B12 deficiency results in ineffective haematopoiesis with nucleocytoplasmic asynchrony. Iron deficiency results in anaemia with small, pale red cells. Acute myeloid leukaemia can cause a pancytopenia but is associated with circulating immature blast cells. Alcohol excess can result in a macrocytosis and poor diet, usually leading to folate deficiency. Hypothyroidism can cause a macrocytosis and fatigue with normal neutrophil appearances on film.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 19 year old student presents to the emergency department feeling sweaty and unwell over the last 24 hours. Her initial observations show a temperature of 39.4°C, pulse 120 beats/min, blood pressure 94/64 mmHg, respiratory rate 22 breaths/min and oxygen saturations 99% on room air. Investigations reveal: haemoglobin 118 g/L; MCV 84 fL; MCH 29 pg; WCC 33.0x10^9/L; neutrophils 26x10^9/L; monocytes 4x10^9/L; lymphocytes 3x10^9/L; platelet count 580x10^9/L; blood glucose 6.9 mmol/L (124 mg/dL). Blood film: neutrophilia with toxic granulation (see below). What is the most likely cause of her leucocytosis?",
+      "options": [
+        "A. Acute bacterial infection",
+        "B. Acute myeloid leukaemia",
+        "C. Diabetic ketoacidosis",
+        "D. Infectious mononucleosis",
+        "E. Systemic autoimmune disease"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The blood film shows an increase in neutrophils with heavily staining granules consistent with bacterial infection. There are no immature blast cells. Infectious mononucleosis is associated with a lymphocytosis. Whilst diabetic ketoacidosis can cause a neutrophilia, the blood glucose is normal. Autoimmune disease is associated with a neutropenia.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 56 year old Scottish woman, previously fit and well, presents to her family physician with a 2-week history of increasing tiredness. On examination she is pale and jaundiced. Bloods are checked. Investigations: haemoglobin 68 g/L; MCV 109 fL; WCC 5.3x10^9/L; platelet count 152x10^9/L; reticulocyte count 280x10^9/L; alkaline phosphatase (ALP) 100 U/L; alanine aminotransferase (ALT) 54 U/L; bilirubin 32 µmol/L (1.87 mg/dL). Blood film: polychromasia with spherocytes; no red cell fragments (see below). What is the most appropriate next investigation?",
+      "options": [
+        "A. Bone marrow aspiration and trephine biopsy",
+        "B. Direct antiglobulin (Coombs) test",
+        "C. Hepatitis screen",
+        "D. Serum vitamin B12 and folate",
+        "E. Thyroid function tests"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Investigations are in keeping with haemolysis. A positive direct antiglobulin (Coombs) test would support an autoimmune aetiology, the most likely cause of this woman's haemolysis. A bone marrow aspirate is not indicated. Spherocytes are not associated with hepatitis, vitamin B12 or folate deficiency, or hypothyroidism.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 38 year old woman with known sickle-cell disease presents to the emergency department on Christmas Eve with severe back pain. Observations reveal: temperature 37.8°C, pulse rate 90 beats/min, blood pressure 118/80 mmHg, respiratory rate 18 breaths/min and oxygen saturation 96%. On examination she is distressed. Radiological examination is unremarkable. Investigations: haemoglobin 52 g/L; MCV 70 fL; WCC 12x10^9/L; platelet count 384x10^9/L; C-reactive protein (CRP) 18 mg/L. She is commenced on oxygen, broad-spectrum antibiotics, intravenous fluids and analgesia, but fails to improve. What is the most important next step in her management?",
+      "options": [
+        "A. Exchange transfusion",
+        "B. Folic acid",
+        "C. LMWH",
+        "D. Oral iron replacement",
+        "E. Red cell transfusion"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient is experiencing a vaso-occlusive crisis with compromised blood flow to the small vessels. A red cell transfusion will facilitate oxygenation and reverse the sickling process. Exchange is reserved for life-threatening crises. Folic acid and LMWH are indicated but not the most important next step. Sickle-cell disease is associated with small cells and normal iron metabolism.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A couple attends for pregnancy counselling. They both have beta-thalassaemia trait. Which of the following is correct?",
+      "options": [
+        "A. 1 in 2 chance the baby will be normal",
+        "B. 1 in 4 chance the baby will develop hydrops fetalis",
+        "C. 1 in 4 chance the baby will have beta-thalassaemia trait",
+        "D. 1 in 4 chance the baby will have beta-thalassaemia major",
+        "E. Pregnancy is unlikely to be successful"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Beta-thalassaemia trait is not associated with reduced fertility. With appropriate antenatal care, pregnancy outcome is successful. Hydrops fetalis is associated with alpha-chain abnormalities. The baby has a 1 in 4 chance it will not inherit the beta-thalassaemia gene, a 1 in 2 chance it will inherit one beta-thalassaemia gene and a 1 in 4 chance it will inherit two beta-thalassaemia genes and develop beta-thalassaemia major.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 16 year old boy with known sickle-cell disease is brought to the emergency department profoundly unwell. He has a reduced conscious level, temperature 39°C, pulse rate 160 beats/min and blood pressure 70/40 mmHg. Investigations: haemoglobin 78 g/L; MCV 68 fL; WCC 17x10^9/L; platelet count 480x10^9/L; reticulocyte count 120x10^9/L; CRP 41 mg/L. Blood film: neutrophilia with toxic granulation; red cell changes consistent with sickle cell disease and hyposplenism (see below). What is the most likely clinical diagnosis?",
+      "options": [
+        "A. Aplastic crisis",
+        "B. Infectious mononucleosis",
+        "C. Meningococcal sepsis",
+        "D. Painful vaso-occlusive crisis",
+        "E. Sickle chest syndrome"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Patients with sickle-cell disease have compromised splenic function resulting from microvascular occlusion. This puts them at risk of life-threatening infections from capsulated organisms. Aplastic crises produce a very low haemoglobin with a reticulocytopenia. There is no history of joint pain or shortness of breath to suggest a vaso-occlusive painful crisis or sickle chest syndrome.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A pale and lethargic 2 year old boy is brought to the emergency department by his parents. He recently started nursery. His temperature is 36.9°C, pulse rate is 110 beats/min and blood pressure is 90/40 mmHg. His urine is dark brown in colour. Investigations: haemoglobin 60 g/L; MCV 68 fL; MCH 31 pg; WCC 9.3x10^9/L; platelet count 330x10^9/L; reticulocyte count 240x10^9/L; ALT 61 U/L; ALP 108 U/L; bilirubin 60 μmol/L (3.5 mg/dL). Blood film shows polychromasia with bite and blister cells. What is the most appropriate next investigation?",
+      "options": [
+        "A. Direct antiglobulin test",
+        "B. Donath-Landsteiner assay",
+        "C. Glucose-6-phosphate dehydrogenase (G6PD) assay",
+        "D. Mid-stream urine (MSU)",
+        "E. Parvovirus serology"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This child has non-spherocytic haemolysis. G6PD deficiency is the most common cause in this age group. The Donath-Landsteiner antibody is found in paroxysmal cold haemoglobinuria. The direct antiglobulin test detects antibody-coated red cells found in autoimmune haemolysis. Parvovirus is associated with anaemia and reticulocytopenia. The urine discolouration is caused by haemosiderinuria.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A previously well 26 year old woman presents at term, after an uneventful pregnancy, in the late stages of labour. This is her first pregnancy. Delivery is uneventful; the baby is well but is noted to have a widespread petechial rash. Investigations: haemoglobin 168 g/L; MCV 90 fL; WCC 12x10^9/L; platelet count 7x10^9/L; PT 12 seconds; APTT 30 seconds; fibrinogen 4.0 g/L. Blood film: true thrombocytopenia. What is the most likely cause of the low platelets?",
+      "options": [
+        "A. Disseminated intravascular coagulation",
+        "B. Immune thrombocytopenic purpura",
+        "C. Infection",
+        "D. Intrauterine growth retardation",
+        "E. Neonatal alloimmune thrombocytopenia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Neonatal alloimmune thrombocytopenia occurs when maternal alloantibodies form against fetal platelet antigens inherited from the father. This can result in severe life-threatening thrombocytopenia in utero or at delivery, and in first pregnancy. Immune thrombocytopenic purpura is unlikely given the absence of a history of maternal immune thrombocytopenia. The coagulation is normal. Aside from the petechial rash, there are no concerns regarding the baby. The platelet count will recover spontaneously.",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 25 year old man wishes to be a blood donor. Which of the following will his blood not be screened for evidence of exposure to?",
+      "options": [
+        "A. Hepatitis A",
+        "B. Hepatitis B",
+        "C. Hepatitis C",
+        "D. Human T-lymphotrophic virus (HTLV)",
+        "E. Syphilis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Hepatitis A is transmitted through the faeco-oral route. All the other infective agents are transmitted through direct contact with infected blood or bodily fluids. The rate of transfusion-transmitted infection is monitored through national haemovigilance schemes. The UK Serious Hazards of Transfusion (SHOT) scheme has reported on proven or suspected cases of infection transmission arising from blood and component use in the UK since 1996.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 68 year old woman with ischaemic heart disease and rheumatoid arthritis presents with worsening angina. Bloods show: haemoglobin 98 g/L; MCV 80 fL; MCH 29 pg; WCC 7x10^9/L; platelets 300x10^9/L; iron 6 µmol/L (33.5 µg/dL); transferrin saturation 12%; total iron-binding capacity 33 µmol/L; vitamin B12 400 ng/L; folate 8 µg/L. What is the most likely cause of her anaemia?",
+      "options": [
+        "A. Anaemia of chronic disease",
+        "B. Autoimmune haemolysis",
+        "C. Folate deficiency",
+        "D. Iron deficiency",
+        "E. Myelodysplasia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "She has a normochromic, normocytic anaemia with low iron, iron-binding capacity and transferrin saturation in keeping with anaemia of chronic disease. Anaemia of chronic disease results from impaired iron handling. In iron deficiency anaemia, the patient is iron depleted, leading to a raised iron-binding capacity in the context of low iron and transferrin saturation. Folate deficiency, myelodysplasia and autoimmune haemolysis are associated with an elevated MCV.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 57 year old woman has just started a blood transfusion following coronary bypass grafting yesterday. What may happen 30 minutes later as a result of the transfusion?",
+      "options": [
+        "A. She becomes hypothermic",
+        "B. She becomes iron overloaded",
+        "C. She becomes thrombocythaemic",
+        "D. She develops an urticarial rash",
+        "E. She develops hypokalaemia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Non-specific allergic reactions can occur during a transfusion. Iron overload is associated with repeated red cell transfusion. Massive transfusion is associated with hyperkalaemia, hypothermia and thrombocytopenia.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 36 year old man receives a platelet transfusion prior to Hickman line removal following a stem cell transplantation for acute myeloid leukaemia. Ten minutes after the transfusion starts, he becomes acutely breathless, hypotensive and febrile. Despite intensive resuscitation he dies. What is the most likely cause for his death?",
+      "options": [
+        "A. Bacterial contamination",
+        "B. Metabolic-induced cardiac arrhythmia",
+        "C. Pulmonary embolism",
+        "D. Transfusion-associated circulatory overload",
+        "E. Transfusion of an ABO-incompatible unit"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Bacterial contamination of platelets can result in rapid onset of acute circulatory compromise. It is thought to occur secondary to exposure to significant bacterial toxin within the contaminated platelet unit rather than the bacterial load itself. Transfusion-associated circulatory overload is associated with transfusion of large volumes relative to the patient. Whilst transfusion can cause hyperkalaemia, this is in the context of massive transfusion. Pulmonary emboli are not generally associated with fever. ABO incompatibility resulting in catastrophic circulatory collapse is most often associated with red cell transfusion.",
+      "questionNumber": 57
+    }
+  ]
+}

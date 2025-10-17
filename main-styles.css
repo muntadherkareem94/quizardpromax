@@ -1,0 +1,99 @@
+/* ---- This is the full and correct code for main-styles.css ---- */
+
+/* Global styles for the entire page */
+body {
+    background-color: #3da0be; /* Dark slate background */
+    color: #52c4e0;           /* Light default text color */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+/* Style for main content cards */
+.custom-card {
+    background-color: #ebe5e5; /* A slightly lighter dark slate color */
+    border: 1px solid #f5efef;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for labels like "Overall Average Score" */
+.text-label {
+    color: rgba(255, 255, 255, 0.6); /* A soft, semi-transparent white */
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Style for the large metric numbers */
+.text-metric {
+    color: #ffffff; /* A solid, bright white */
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* A new style for the filter bar */
+.custom-filter-bar {
+    background-color: rgba(0, 0, 0, 0.2); /* A transparent black */
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: inline-flex;
+}
+
+/* A new style for the buttons inside the filter bar */
+.custom-filter-button {
+    background-color: transparent; /* No background by default */
+    color: #d1d5db; /* A light gray text color */
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+/* Style for the button when hovered or active */
+.custom-filter-button:hover,
+.custom-filter-button.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Add this new class for the header logo */
+.header-logo {
+    height: 2.5rem; /* 40px */
+    width: auto;
+}
+
+/* Add this new style for the circular header icons */
+.header-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    background-color: #e6ecee; /* A light gray background */
+    border-radius: 9999px; /* This makes it a perfect circle */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.header-icon-btn:hover {
+    background-color: #e5e7eb; /* A slightly darker gray on hover */
+}
+
+
+/* Add this style for the circular profile picture in the header */
+.header-profile-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* This prevents the image from being stretched */
+    border-radius: 9999px;
+}
+
+/* Style for the active view toggle button on the dashboard */
+.view-toggle-btn.active {
+    background-color: white;
+    color: #000000; /* A nice purple to match the theme */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

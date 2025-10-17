@@ -1,0 +1,191 @@
+{
+  "title": "Sexually transmitted infections - Chapter 13",
+  "questions": [
+    {
+      "question": "Most women with genital Chlamydia trachomatis are symptomless. In women who do develop symptoms, which of the following is the most common?",
+      "options": [
+        "A. Deep dyspareunia",
+        "B. Dysuria",
+        "C. Increased vaginal discharge",
+        "D. Lower abdominal pain",
+        "E. Unexpected vaginal bleeding"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Chlamydia can cause a cervicitis, and the resulting friability may present as unexpected bleeding, especially after sexual intercourse. Urethritis resulting in dysuria is less common, but may be mistaken for eubacterial cystitis. Deep dyspareunia and lower abdominal pain are symptoms of ascending infection (salpingitis/pelvic inflammatory disease), which occurs less frequently than was believed previously. Increased vaginal discharge is possible, but in most cases is probably due to an unrelated condition like bacterial vaginosis or candidiasis.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A patient with confirmed infection with herpes simplex virus type 2 (HSV-2) has had symptomatic recurrences approximately every month for the last year. What is the standard first-line antiviral regime to be prescribed in this case?",
+      "options": [
+        "A. Aciclovir 200mg four times daily",
+        "B. Aciclovir 400mg twice daily",
+        "C. Famciclovir 250 mg once daily",
+        "D. Famciclovir 750 mg once daily",
+        "E. Valaciclovir 500 mg once daily"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Early studies using aciclovir to suppress recurrences found that 200 mg four times daily was more effective than 400 mg twice daily, but the difference is small enough to recommend the less frequent dosing regime, which is going to make adherence easier. Valaciclovir and famciclovir are more expensive and so reserved for cases where aciclovir is ineffective. The recommended dose of valaciclovir is 500 mg once daily as per option E, but the correct starting dose of famciclovir is 250 mg twice daily.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 34 year old human immunodeficiency virus (HIV)-positive man who has sex with men (MSM) complains of severe rectal pain, blood-stained discharge and tenesmus. He is taking antiretroviral therapy, has a CD4 count of 636 and an undetectable HIV viral load. Proctoscopy reveals rectal inflammation and visible mucopus. Which is the most likely cause of this presentation?",
+      "options": [
+        "A. Campylobacter infection",
+        "B. Cytomegalovirus colitis",
+        "C. Gonorrhoea",
+        "D. Lymphogranuloma venereum",
+        "E. Secondary syphilis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Lymphogranuloma venereum is the likeliest cause of severe proctitis and is most often diagnosed in HIV-positive MSM in the UK. Gonococcal proctitis is usually less severe than in this case, as are the rare cases of syphilitic proctitis. Campylobacter infection is seen in MSM but diarrhoea would be a more prominent symptom. Cytomegalovirus (CMV) colitis is only seen in end-stage HIV infection, which is clearly not the case here.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Most of the following are complications of disseminated gonococcal infection (DGI). Which would you be UNLIKELY to see as a recognised complication of DGI?",
+      "options": [
+        "A. Arthritis",
+        "B. Endocarditis",
+        "C. Pustular rash",
+        "D. Tenosynovitis",
+        "E. Uveitis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Typical manifestations of DGI include monoarthropathy, vasculitic rash and tenosynovitis. Endocarditis is seen rarely. The sexually transmitted infection (STI) associated with uveitis is secondary syphilis.",
+      "questionNumber": 4
+    },
+    {
+      "question": "What is the most likely diagnosis in this 17 year old young man who has become aware of these painless 'lumps'?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch13/q/13.5.png",
+      "options": [
+        "A. Coronal papillae",
+        "B. Genital warts",
+        "C. Lichen planus",
+        "D. Molluscum contagiosum",
+        "E. Sebaceous glands"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Coronal papillae are a normal anatomical feature, which become more prominent in adolescence, and young men can mistake these normal skin appendages for an infection, especially genital warts. Warts would not be limited to the corona, and are usually either more papular or keratotic. Molluscum lesions are umbilicated. Lichen planus typically presents as violaceous flat-topped papules. Sebaceous glands, also known as Fordyce spots, are seen on the shaft and base of the penis.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following antimicrobial drugs is unlikely to be effective against genital Chlamydia trachomatis infection?",
+      "options": [
+        "A. Amoxicillin",
+        "B. Ciprofloxacin",
+        "C. Erythromycin",
+        "D. Ofloxacin",
+        "E. Oxytetracycline"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Erythromycin and oxytetracycline were used before the advent of azithromycin and doxycycline, respectively. Ofloxacin is a quinolone with antichlamydial efficacy, but this is not the case for ciprofloxacin. Somewhat surprisingly, amoxicillin was found to be effective in the treatment of Chlamydia in pregnancy, although azithromycin is much preferred now.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following statements is true of infection with human papilloma virus (HPV) types 6/11?",
+      "options": [
+        "A. More cases of perianal warts are seen in homosexual men than in heterosexual men",
+        "B. This is associated with penile cancer",
+        "C. This is cleared by treatment with topical liquid nitrogen",
+        "D. This is prevented by vaccination with Cervarix",
+        "E. This will result in visible genital warts in less than 50% of cases"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The percentage of infected patients who develop visible warts is unknown, but is definitely a small minority. Although homosexual men (MSM) are relatively more likely to get perianal warts, the majority of cases present in heterosexual men. The mode of inoculation is unclear. Liquid nitrogen destroys infected tissue but does not clear HPV infection. HPV types 6/11 are not associated with genital cancer - HPV types 16/18 are the most common oncogenic types. Cervarix vaccine only protects against HPV types 16/18. Gardasil also protects against types 6/11.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A symptomless 43 year old MSM undergoes a routine STI screen for the first time in 3 years. All tests for STIs were previously negative. His serological tests for syphilis are now as follows: Test Antitreponemal immunoglobulin G (IgG) enzyme immunoassay (EIA) Positive optical density 20.3 Rapid plasma reagin (RPR) Positive titre 4 Treponema pallidum particle agglutination assay (TPPA) Positive - titre >5120 Antitreponemal immunoglobulin M (IgM) EIA Negative Which of the following is most compatible with these results?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch13/q/13.8.png",
+      "options": [
+        "A. Early latent syphilis",
+        "B. Partially treated late syphilis",
+        "C. Primary syphilis",
+        "D. Secondary syphilis",
+        "E. Untreated late syphilis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A diagnosis of primary or secondary syphilis is based on typical clinical findings so cannot be applied to a symptomless individual. The negative IgM makes early latent syphilis unlikely, and the RPR titre in untreated early or late latent syphilis would be expected to be much higher at the very least 32. The titre here of 4 is more likely to represent accidental treatment in this case, antibiotics for a dental infection. It would still be prudent to offer definitive treatment, e.g. with a course of three injections of benzathine penicillin at weekly intervals.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 19 year old woman complains of moderate lower abdominal pain that has been present for 2 weeks, and is particularly noticeable during sex. Which of the following actively supports a diagnosis of chlamydial salpingitis?",
+      "options": [
+        "A. A dipstick urine test showing haematuria +++",
+        "B. A positive pregnancy test",
+        "C. A temperature of 36.3 degrees C",
+        "D. Diarrhoea",
+        "E. Right upper quadrant tenderness"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Right upper quadrant tenderness is a feature of perihepatitis, a rare complication of ascending chlamydial infection. Diarrhoea is not a symptom suggestive of salpingitis. Haematuria would be more suggestive of a urinary tract infection. A normal temperature neither supports nor refutes the diagnosis. A positive pregnancy test would raise concerns about a possible ectopic pregnancy.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 22 year old MSM presents for an STI screen. His only complaint is of pain on defecation. Examination reveals an anal fissure. Serological tests for syphilis are as follows: Test Antitreponemal IgG EIA Negative RPR Negative TPPA Positive titre 160 Antitreponemal IgM EIA Positive optical density 3.4 Which of the following is the most likely explanation of the serology?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch13/q/13.10.png",
+      "options": [
+        "A. Early latent syphilis",
+        "B. False-positive syphilis serology",
+        "C. Primary syphilis",
+        "D. Secondary syphilis",
+        "E. Treated syphilis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The positive IgM is suggestive of early infection. False-positive IgM tests are possible, but a second positive test, in this case the TPPA, makes that unlikely. The low TPPA titre is compatible with very early infection. Although the chancre of primary syphilis is usually painless, this is not necessarily so for an anal chancre, so primary infection is most likely. The RPR would be strongly positive in secondary or early latent syphilis. In treated infection, the IgG EIA would remain positive, but the IgM would become negative.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 38 year old married man tells you that he had unprotected sex exactly 1 week ago with a woman who he thinks may be an intravenous drug user (IDU). Which of the following statements is true?",
+      "options": [
+        "A. He can safely have sex with his wife if all tests for STIs taken today are negative",
+        "B. He can safely have sex with his wife if given treatment with a single dose of azithromycin 1g",
+        "C. He is at significant risk of acquiring hepatitis C (HCV)",
+        "D. He should be offered post-exposure prophylaxis (PEP) against HIV",
+        "E. He should be offered vaccination against hepatitis B (HBV)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A rapid course of vaccination against hepatitis B-with inoculations today, and in 1 and 3 weeks' time would give good protection against this infection that is more common in IDUS. PEP for HIV is only effective if given up to 72 hours following risk. Female to male sexual transmission of HCV is extremely rare. One week after exposure is too soon to rely upon negative tests for any STI. Negative tests for Chlamydia and gonorrhoea become reliable at 2 weeks, negative fourth-generation HIV tests become reliable at 4 weeks, and negative tests for HBV and HCV are reliable at 3 months. Azithromycin is only reliably curative for chlamydial infection, less so for syphilis and gonorrhoea, and would have no effect upon viruses such as HIV or HBV.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A symptomless 29 year old MSM presents for an STI screen. Serological tests for syphilis are as follows: Test Antitreponemal IgG EIA Positive optical density 33 RPR Negative TPPA Positive titre >5120 Antitreponemal IgM EIA Positive optical density 11.4 Which of the following is the most likely explanation of the serology?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch13/q/13.12.png",
+      "options": [
+        "A. Early latent syphilis",
+        "B. False-positive syphilis serology",
+        "C. Fully treated late latent syphilis",
+        "D. Partially treated late latent syphilis",
+        "E. Untreated late latent syphilis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Three of the four tests are positive, so this is not a false-positive scenario. The negative RPR is almost certainly false and represents a prozone phenomenon where the very high antibody titre prevents formation of the antibody-antigen lattice necessary to observe flocculation in the test. Diluting the serum will allow this to be observed. The strongly positive IgM test makes late infection extremely unlikely.",
+      "questionNumber": 12
+    },
+    {
+      "question": "The following infections are not thought of as being STIs, but which is the only one that cannot be sexually transmitted?",
+      "options": [
+        "A. Cytomegalovirus (CMV)",
+        "B. Hepatitis A (HAV)",
+        "C. Plasmodium vivax",
+        "D. Shigella sonnei",
+        "E. Zika virus"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Male to female transmission of Zika virus is described. Outbreaks of shigellosis and HAV are seen in MSM. CMV is shed in genital secretions. Plasmodium vivax (malaria) is not known to be sexually transmitted.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 27 year old woman is 24 weeks pregnant. She mentions to you that her current male partner has a previous history of genital herpes caused by herpes simplex virus type 1 (HSV-1). Although he has had few recurrences in the past, he has had no symptoms at all in the last year. Which of the following statements is most appropriate?",
+      "options": [
+        "A. As her partner has been symptom-free for a year, she can be reassured that there is no risk of transmission to her",
+        "B. Primary genital herpes is more likely to lead to disseminated infection if it is caused by HSV-2",
+        "C. She should avoid unprotected sex for the duration of the pregnancy",
+        "D. She should be commenced on valaciclovir 500 mg once daily to prevent transmission",
+        "E. Her baby should be delivered by caesarean section"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Both HSV-1 and HSV-2 have a greater risk of causing disseminated disease in pregnancy, so it is important that she is counselled effectively to prevent acquisition. Symptomless shedding of virus can continue in the absence of clinical episodes, so there is a risk of transmission in this scenario. Valaciclovir has been shown to reduce HSV transmission in sero-discordant couples, is probably safe to take in pregnancy, but would be a suboptimal strategy. Caesarean section would only be considered if she developed primary infection around the time of delivery. Avoidance of sex or consistent condom use represents the safest strategy in this case.",
+      "questionNumber": 14
+    }
+  ]
+}

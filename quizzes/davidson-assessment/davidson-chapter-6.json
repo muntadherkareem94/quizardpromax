@@ -1,0 +1,200 @@
+{
+  "title": "Principles of infectious disease - Chapter 6",
+  "questions": [
+    {
+      "question": "A 53 year old lawyer from South Africa who is human immunodeficiency virus (HIV)-seropositive has a medical review, which reveals a positive interferon-gamma release assay (IGRA), showing T cells reactive to Mycobacterium tuberculosis antigens. He is asymptomatic and a chest X-ray is reported as negative. Which of these most accurately describes his mycobacterial status?",
+      "options": [
+        "A. Active pulmonary disease",
+        "B. Commensal flora",
+        "C. Extrapulmonary infection",
+        "D. Latent infection",
+        "E. Opportunistic infection"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The test result with a positive IGRA but no symptoms or signs on chest X-ray suggesting infection and no evidence of active disease point to latent infection. Active pulmonary and extrapulmonary disease would have signs and/or symptoms and M. tuberculosis would not be found as commensal flora.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 9 month old infant has a temperature of 39.5°C and is not feeding. The parents attend the local clinic where the doctor can find no abnormalities on physical examination other than erythema of the right tympanic membrane. Treatment with which of the following is appropriate as a simple and safe intervention that may decrease the body temperature?",
+      "options": [
+        "A. Anti-tumour necrosis factor (TNF) antibody",
+        "B. Aspirin",
+        "C. Erythromycin",
+        "D. Paracetamol",
+        "E. Penicillin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Temperature elevation involves generation of cytokines and prostaglandins. Paracetamol is a simple intervention that can inhibit generation of prostaglandins and act as antipyretic. Although aspirin would do the same, it is not recommended routinely for children due to the risk of Reye's syndrome. Anti-TNF therapy has other medical indications and antimicrobials would not be appropriate for what appears to be a viral illness.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 44 year old woman is diagnosed with HIV infection and a low CD4 T-cell count. She starts antiretroviral therapy to treat her infection and is seen at clinic 3 months later when she has an undetectable HIV viral load and a significant increase in her CD4 T-cell counts. She complains of severe headaches, slurred speech and right arm weakness, and a computed tomography (CT) head scan shows multiple space-occupying lesions in her brain. What are her symptoms most likely due to?",
+      "options": [
+        "A. Antiretroviral drug-related side-effect",
+        "B. HIV-related damage to brain",
+        "C. Immune reconstitution inflammatory syndrome (IRIS)",
+        "D. Metastatic carcinoma",
+        "E. Syphilitic gumma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The symptoms in this case have come on after therapy was commenced, which raises suspicion of a drug-related side-effect, but the nature of the lesions on brain scan are not consistent. They have occurred at a time when the immunodeficiency associated with HIV has been reversed, which raises suspicion of IRIS. HIV itself can cause chronic loss of brain volume but not space-occupying lesions, and syphilitic gumma or metastatic carcinoma (although differential diagnoses) are not associated with therapy and immune reconstitution.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 59 year old woman presents with a pelvic tumour and is found to have cervical carcinoma. The use of which vaccine in childhood would have reduced the chance of this cancer developing?",
+      "options": [
+        "A. Hepatitis B virus vaccine",
+        "B. Human papilloma virus (HPV) vaccine",
+        "C. Measles vaccine",
+        "D. Pneumococcal conjugate vaccine",
+        "E. Rubella vaccine"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The HPV vaccine is now part of the vaccine schedule for girls in many countries and decreases the risk of cervical carcinoma. The hepatitis B vaccine also reduces the incidence of a cancer, in this case hepatocellular carcinoma, but the other vaccines do not have an obvious link to reduction of cancer incidence.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 33 year old Nigerian man who has had a haematopoeitic stem cell transplant for aplastic anaemia six months previously returns to visit his family in Nigeria once a year. He attends your vaccine clinic. Which of the following vaccines should be avoided?",
+      "options": [
+        "A. Hepatitis B virus vaccine",
+        "B. Influenza inactivated vaccine",
+        "C. Pneumococcal protein conjugate vaccine",
+        "D. Tetanus toxoid",
+        "E. Yellow fever virus vaccine"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Live vaccines should, in general, be avoided in immunocompromised patients or only given after careful risk-benefit analysis in exceptional cases. Yellow fever virus vaccine is a live virus vaccine. The other vaccines are not live vaccines.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 45 year old man is admitted to the intensive care unit with a short history of respiratory symptoms and shortness of breath. He arrived in the country 2 days ago. Initial polymerase chain reaction (PCR) for routine respiratory viruses is negative but a sample sent to the national laboratory detects a specific geographically restricted coronavirus. Travel to which of the following countries is most likely to be associated with this virus?",
+      "options": [
+        "A. Brazil",
+        "B. China",
+        "C. Saudi Arabia",
+        "D. United States of America",
+        "E. Zambia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The symptoms of severe respiratory syndrome and presence of a geographically restricted coronavirus raise the possibility of Middle East respiratory syndrome (MERS) coronavirus. Travel-related cases have been seen in many countries but the majority of cases have initially been associated with travel to countries in the Middle East.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 63 year old retired international aid worker who last worked abroad 15 months ago presents with fever and fatigue. He had worked in many African countries but particularly in Sudan and West Africa. On examination he is found to have splenomegaly and his full blood count reveals anaemia and thrombocytopenia. Which of the following tropical infections is most consistent with the clinical scenario?",
+      "options": [
+        "A. Dengue",
+        "B. Leishmaniasis",
+        "C. Plasmodium falciparum",
+        "D. Trypanosoma brucei gambiense",
+        "E. Typhoid fever"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The clinical scenario with fever, splenomegaly and abnormalities on the full blood count could be seen with most of these travel-associated infections, although at this late stage Trypanosoma brucei would generally present with encephalopathy. The key feature here is the incubation period. Of these infections, only leishmaniasis and sleeping sickness would present with such a long incubation period. The clinical scenario suggests visceral leishmaniasis not sleeping sickness.",
+      "questionNumber": 7
+    },
+    {
+      "question": "Your hospital has had three cases of severe community-acquired pneumonia in the last 3 weeks that have had positive tests for urinary Legionella antigen. You typically have one to two cases per year. The cases were cared for in different units and there was no direct contact between the cases while hospitalised. All three cases have the same postal code. You contact the public health doctors to discuss these cases. How would you best describe the clustering of these cases?",
+      "options": [
+        "A. Common source outbreak",
+        "B. Epidemic",
+        "C. Nosocomial linked cluster",
+        "D. Pandemic",
+        "E. Person-to-person community spread"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The cases are most consistent with a common source outbreak that is linked to some common environmental source. Since the patients were cared for in different units, there is no evidence of hospital transmission. Person-to-person transmission in the community would be a less likely scenario for this organism. The numbers are not consistent with a pandemic or epidemic.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 56 year old patient has had multiple orthopaedic operations to deal with complications of a road traffic accident. These have involved plates and screws for several fractures. Three weeks after the last operation there is purulent drainage from a wound in the right hip and a CT scan reveals a collection, which is aspirated. The microbiologists identify Gram-positive cocci in clusters that they identify as Staphylococcus aureus. The presence of which genetic element will influence therapy decisions for this patient?",
+      "options": [
+        "A. ampC extended-spectrum β-lactamase",
+        "B. mecA penicillin-binding protein",
+        "C. NDM-1 carbapenemase",
+        "D. TEM-12 β-lactamase",
+        "E. vanA gene cluster"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The mecA gene encodes a penicillin-binding protein with low affinity for penicillins, including antistaphylococcal penicillins, and is the usual basis of resistance in meticillin-resistant Staph. aureus (MRSA). Presence of this genetic element, which is often screened for in Staph. aureus strains, necessitates use of an antimicrobial other than an antistaphylococcal penicillin (e.g. flucloxacillin). vanA encodes a penicillin-binding protein that has low affinity for glycopeptides and is found in enterococci. The other options are β-lactamase or carbapenemase enzymes that mediate resistance in Gram-negative bacteria.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 73 year old patient develops Staphylococcus aureus bacteraemia with a meticillin-sensitive strain that remains persistent despite flucloxacillin therapy. All prosthetic material and collections of infection have been removed or drained. Which intervention may enhance the success of the therapy?",
+      "options": [
+        "A. Administering therapy as an infusion",
+        "B. High-dose once-a-day therapy",
+        "C. Increasing the dose frequency",
+        "D. Prolonging treatment duration",
+        "E. Switching to glycopeptide therapy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Persistent bacteraemia increases the risk of complications. When the strain is sensitive to antistaphylococcal penicillins (e.g. flucloxacillin) these should be prescribed in preference to other agents. Penicillins work by time-dependent killing so the efficacy is, in theory, improved by continuous infusion. Increasing the dose would be appropriate only for antimicrobials that kill by dose-dependent killing (e.g. aminoglycosides).",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 60 year old man with acute myeloid leukaemia develops pulmonary aspergillosis. He is placed on treatment with voriconazole. Which of the following is a recognised adverse effect of voriconazole therapy that the patient should be counselled about?",
+      "options": [
+        "A. Aplastic anaemia",
+        "B. Dermatitis",
+        "C. Oesophageal ulcer",
+        "D. Proximal renal tubular injury",
+        "E. Tendon rupture"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Voriconazole can cause photosensitive dermatitis and patients should be advised to avoid sun exposure or to use a high-level sunblock on light-exposed areas. The other side-effects are associated with other antimicrobials.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 33 year old man develops chicken pox with pulmonary involvement. He is previously fit and well and has had no prior therapy for viral infections. He is hypoxic and has tachypnoea. His chest X-ray reveals widespread nodules. In addition to oxygen, which antiviral agent should he receive?",
+      "options": [
+        "A. Aciclovir",
+        "B. Amantadine",
+        "C. Cidofovir",
+        "D. Foscarnet",
+        "E. Valaciclovir"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "All the listed choices except amantadine are active against herpes virus infections but for someone with an end-organ complication such as pneumonia, high-dose intravenous therapy aciclovir would be indicated. Valaciclovir would be appropriate for milder disease and foscarnet for someone who has an infection with resistance to aciclovir as may occur in an immunocompromised patient with frequent exposure.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 35 year old wildlife photographer plans a trip to Kenya and asks for advice about antimalarial treatment. She has a long history of depression but is currently not on any treatment. The medical history is otherwise unremarkable. Which is the best choice of malaria prophylaxis in this case?",
+      "options": [
+        "A. Atovaquone plus proguanil",
+        "B. Chloroquine",
+        "C. Doxycycline",
+        "D. Ivermectin",
+        "E. Mefloquine"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Atovaquone when combined with proguanil is active against Plasmodium falciparum. This is a good choice as it is well tolerated. Mefloquine is associated with neurocognitive side-effects and can worsen symptoms of pre-existing psychiatric conditions. Doxycycline is another option but can cause photosensitive dermatitis and may not be a good choice for someone who will be working out of doors. Resistance means chloroquine is no longer a suitable option in most malaria-endemic areas. Ivermectin is used against helminths not malaria.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 50 year old tourist returns from a trip in Kenya where she visited game parks and remembers receiving some tick bites. She has a necrotic eschar at the site of one bite a maculopapular rash and fever plus headache. A diagnosis of boutonneuse fever due to Rickettsia conorii is made and she is prescribed doxycycline. She has diabetes mellitus and hypertension as well as osteoporosis. Which medication that she currently takes should not be taken at the same time as doxycycline?",
+      "options": [
+        "A. Calcium",
+        "B. Metformin",
+        "C. Paracetamol",
+        "D. Ramipril",
+        "E. Simvastatin"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Tetracyclines absorption is limited by cations such as calcium, iron and antacids that contain aluminium or magnesium. The other medications will not alter absorption. Tetracyclines should be taken at a different time, several hours separate from the cation-containing medicine.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 63 year old patient develops bowel perforation after abdominal surgery and is admitted to the intensive care unit where he requires pressors and ventilation. Microbiology shows a mixed infection including coliforms, enterococci and Candida spp. He requires a range of antimicrobials initially including teiocoplanin, meropenem and caspofungin, but subsequently develops a nosocomial Acinetobacter baumannii infection and receives colistin and tigecycline. He makes steady progress but when weaned from the ventilator is found to have encephalopathy. Which of the antimicrobials he has received is associated with development of encephalopathy?",
+      "options": [
+        "A. Caspofungin",
+        "B. Colistin",
+        "C. Meropenem",
+        "D. Teicoplanin",
+        "E. Tigecycline"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although there are a range of potential causes of encephalopathy in a patient who has received ventilation for critical illness including infection, medication-related causes should always be considered. Of the antimicrobials listed, colistin is associated, in particular, with neurotoxicity including encephalopathy.",
+      "questionNumber": 15
+    }
+  ]
+}

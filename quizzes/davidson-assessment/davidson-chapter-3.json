@@ -1,0 +1,293 @@
+{
+  "title": "Clinical genetics - Chapter 3",
+  "questions": [
+    {
+      "question": "Deoxyribonucleic acid (DNA) repair mechanisms exist to repair damage that may arise spontaneously or as a result of environmental exposures. Failure to repair DNA damage prior to replication results in mutations. Spontaneous deamination of a cytosine results in its conversion to a uracil. If this were not repaired prior to replication, what would be the result?",
+      "options": [
+        "A. Conversion of a GA pair to a CT pair",
+        "B. Conversion of a GC pair to an AT pair",
+        "C. Conversion of a GT pair to an AC pair",
+        "D. Conversion of an AC pair to a GT pair",
+        "E. Conversion of an AT pair to a GC pair"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In DNA, bases are paired as follows: adenine (A) with thymine (T) and guanine (G) with cytosine (C). In RNA, the pairing is the same except that adenine (A) pairs with uracil (U). If unrepaired prior to replication, deamination of a cytosine (C) to a uracil (U) will result in pairing with adenine (A), ultimately replacing the original GC pair with an AT pair.",
+      "questionNumber": 1
+    },
+    {
+      "question": "The central dogma of molecular biology describes the steps by which information encoded by the DNA determines protein production. One of these steps is transcription. Which of the following elements are all essential components in transcription?",
+      "options": [
+        "A. Promoter sequence, deoxynucleotides, DNA polymerase",
+        "B. Promoter sequence, DNA template, DNA polymerase",
+        "C. Promoter sequence, DNA template, ribonucleic acid (RNA) polymerase",
+        "D. Ribosomes, DNA template, RNA polymerase",
+        "E. Ribosomes, messenger RNA (mRNA) template, transfer RNAs (tRNAS)"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Transcription describes the production of RNA from the DNA template. RNA polymerase binds to the promoter sequence on the DNA template strand, then moves along the strand producing a complementary mRNA molecule. DNA polymerase is not required for transcription but is an essential component of DNA replication. Translation (production of the protein encoded by the mRNA) occurs on the ribosome, and requires an mRNA template and tRNAs.",
+      "questionNumber": 2
+    },
+    {
+      "question": "In thyroid C cells, the calcitonin gene encodes the osteoclast inhibitor calcitonin, whereas in neurons, the same gene encodes calcitonin-gene-related peptide. Which of the mechanisms of controlling gene expression listed below is responsible for this multi-functionality?",
+      "options": [
+        "A. Acetylation of histone protein",
+        "B. Alternative splicing",
+        "C. Epigenetic modification",
+        "D. Gene silencing by microRNA species",
+        "E. Post-translational glycosylation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Transcription produces a nascent transcript, which then undergoes splicing to generate the shorter 'mature' mRNA molecule that provides the template for protein production. Splicing removes the intronic regions and joins together the exons. Different combinations of exons may be joined together (alternative splicing) to produce more than one form of mRNA, which may be tissue specific, as in this example.",
+      "questionNumber": 3
+    },
+    {
+      "question": "You receive a genetic test result for a 3 year old boy with a history of Wilms' tumour and microcephaly, confirming a diagnosis of mosaic variegated aneuploidy (MVA), a rare inherited predisposition to chromosomal non-dysjunction. The genetic test has identified a mutation in BUB1B, a key component of the mitotic spindle checkpoint. You now need to explain these results to his parents. Non-dysjunction occurs during cell division when the sister chromatids attach to the mitotic spindle and are pulled apart to separate poles of the cell. What is this phase of the cell cycle called?",
+      "options": [
+        "A. Anaphase",
+        "B. Interphase",
+        "C. Metaphase",
+        "D. Prophase",
+        "E. Telophase"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Whilst the other answers are all stages of the cell cycle, it is during anaphase that the spindle fibres attach to the sister chromatids and pull them apart.",
+      "questionNumber": 4
+    },
+    {
+      "question": "You receive a referral to see a 32 year old woman who has recently been diagnosed with triple-negative breast cancer. Triple-negative breast cancer is defined by the absence of oestrogen receptors, progesterone receptors and human epidermal growth factor receptor 2 (HER2) expression, and this tumour type is particularly common in BRCA1 mutation carriers. Genetic testing of the BRCA1 and BRCA2 genes reveals a heterozygous BRCA1 mutation (BRCA1 c.3748G>T). This mutation substitutes a G for a T, resulting in the creation of a premature stop codon and a truncated protein, a so-called 'stop-gain mutation'. What other name is commonly used for this type of mutation?",
+      "options": [
+        "A. Deletion",
+        "B. Frameshift mutation",
+        "C. Missense mutation",
+        "D. Nonsense mutation",
+        "E. Synonymous mutation"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A stop-gain (or nonsense) mutation introduces a premature stop codon, resulting in a truncated protein. A synonymous mutation is a base substitution that does not result in a change in the amino acid (because more than one codon may encode a particular amino acid). A missense (or non-synonymous) mutation is a base substitution that results in a change in the encoded amino acid. A deletion is the loss of one or more nucleotides. If the number of nucleotides deleted from within a coding region is not a multiple of three, this results in a frameshift mutation, with a typically severe effect.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 37 year old woman with type 1 myotonic dystrophy (DM1) attends your clinic for genetic counselling. She is 8 weeks pregnant. Which of the following pieces of advice is correct?",
+      "options": [
+        "A. A baby inheriting the condition is at risk of being more severely affected than her",
+        "B. Her chance of having a baby affected by this condition is 1 in 4",
+        "C. Her partner should be referred for genetic testing",
+        "D. Only a male baby will be affected with this condition",
+        "E. The mutation causing her condition is likely to have arisen post-zygotically"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Myotonic dystrophy type 1 (DM1) is a triplet-repeat disorder, caused by pathological expansion of a run of CTG repeats within the DMPK gene, located on chromosome 19. It shows autosomal dominant inheritance so there is a 50% chance that the patient's baby will be affected, regardless of gender. Expanded repeats are unstable and may expand further during meiosis, so that offspring inheriting the condition are often more severely affected than the affected parent - a phenomenon known as anticipation. Anticipation most commonly occurs during the transmission of the condition from mother to child. The vast majority of individuals with DM1 have inherited their expanded CTG allele from a parent; new expansions of a normal allele are rare.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 16 year old girl is referred to your clinic with primary amenorrhoea. On examination she is on 0.4th centile for height. You request a karyotype, the result of which is shown below. What is your diagnosis?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch3/q/3.7.png",
+      "options": [
+        "A. Edward's syndrome",
+        "B. Klinefelter's syndrome",
+        "C. Lynch's syndrome",
+        "D. Patau's syndrome",
+        "E. Turner's syndrome"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Turner's syndrome is a sex chromosome aneuploidy where there is monosomy of the X chromosome (note the single X chromosome and absence of Y chromosome in the karyotype). Girls with Turner's syndrome are typically shorter than average and have underdeveloped ovaries, resulting in delayed or arrested development of secondary sexual characteristics, delayed or absent menstruation and commonly infertility.",
+      "questionNumber": 7
+    },
+    {
+      "question": "You receive a referral to review an 18 month old girl with developmental delay. She is the first child of unrelated parents and there is no significant family history. On examination she has microcephaly (occipitofrontal circumference 0.4th centile), some subtle dysmorphic features and global developmental delay. Which of the investigations listed below is the most appropriate first-line investigation?",
+      "options": [
+        "A. Array comparative genomic hybridisation (CGH)",
+        "B. Exome sequencing",
+        "C. Fragile X testing",
+        "D. Karyotype",
+        "E. Whole-genome sequencing"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The initial management step here is to exclude a chromosomal cause for her difficulties. Array CGH would be the most appropriate first-line investigation as it provides a genome-wide screen for chromosomal abnormalities. It has superseded the use of karyotyping in this context as it provides a much higher-resolution screen. Fragile X is a recognised cause of developmental delay but is unlikely here in the context of the microcephaly. If the array CGH is normal, then you may wish to proceed to exome sequencing, or a developmental delay gene panel.",
+      "questionNumber": 8
+    },
+    {
+      "question": "Random double-stranded breaks in DNA are a necessary feature of meiotic recombination. The frequency of these breaks is dramatically increased by exposure to ionising radiation. These breaks are usually repaired accurately by DNA repair mechanisms within the cell; however, some will instead undergo non-homologous end-joining. Which of the following is a possible outcome of non-homologous end-joining between fragments from different chromosomes?",
+      "options": [
+        "A. Deletion",
+        "B. Duplication",
+        "C. Paracentric inversion",
+        "D. Pericentric inversion",
+        "E. Translocation"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Translocation is the result of joining of two segments of DNA from different chromosomes. All the other answers describe structural rearrangements that may be found within a single chromosome.",
+      "questionNumber": 9
+    },
+    {
+      "question": "Osteogenesis imperfecta type II is a lethal condition causing severe bone deformity and respiratory failure. It is caused by mutations in type I collagen genes, resulting in the production of an abnormal protein that interferes with the normal functioning of the wild-type protein. What is the name for this type of mutation?",
+      "options": [
+        "A. Dominant negative mutation",
+        "B. Gain-of-function mutation",
+        "C. Loss-of-function mutation",
+        "D. Protein-truncating mutation",
+        "E. Stop-gain mutation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A dominant negative mutation interferes with the function of the wild-type protein. A protein-truncating (or stop-gain) mutation produces a shorter, non-functional protein and is therefore an example of a loss-of-function mutation. A gain-of-function mutation results in activation or alteration of a protein's normal function.",
+      "questionNumber": 10
+    },
+    {
+      "question": "You are asked to review a 17 year old boy with a diagnosis of Becker muscular dystrophy. He has two siblings, an unaffected brother and a sister whose status is unknown. His parents are fit and well; however, his maternal grandfather also had Becker muscular dystrophy. You need to construct an appropriate pedigree for your notes. What symbol would you conventionally use to represent his mother in this case?",
+      "options": [
+        "A. A diamond",
+        "B. A half-shaded circle",
+        "C. A shaded circle",
+        "D. An open circle",
+        "E. An open circle with a central dot"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Becker muscular dystrophy is an X-linked disorder. Since his grandfather was also affected, the condition cannot have arisen in your patient de novo and his mother is an obligate carrier. In genetic pedigrees, females are represented by circles, and unaffected female carriers of X-linked conditions are represented by an open circle with a central dot. Female carriers of autosomal recessive conditions are represented by a half-shaded circle. Fully shaded symbols represent affected family members. Diamonds are used to represent ongoing pregnancies.",
+      "questionNumber": 11
+    },
+    {
+      "question": "You meet a family affected by Lynch syndrome, an autosomal dominant condition causing increased predisposition to cancer, mainly of the colon and endometrium. You need to explain the concept of autosomal dominant inheritance to the family. Which of the following is a typical feature of autosomal dominant inheritance?",
+      "options": [
+        "A. 25% recurrence risk for a couple with an affected child",
+        "B. 50% chance of an unaffected child with an affected sibling being a carrier",
+        "C. Affected individuals occurring in a single generation",
+        "D. Males more commonly affected than females",
+        "E. Variable penetrance"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Autosomal dominant conditions typically show variable penetrance not all people who inherit a mutation will develop the disease. Affected individuals typically occur in each generation (unless the mutation has arisen de novo in an affected individual). Males and females are equally affected. The recurrence risk for a couple with an affected child will depend on whether the mutation has arisen de novo in the affected child (in which case it is low, typically <1%), or has been inherited from a parent, in which case it is 50%.",
+      "questionNumber": 12
+    },
+    {
+      "question": "You receive a referral to review a 12 year old girl with a 2-year history of worsening muscle weakness and pain, recurrent migraines and vomiting. Her neurologist requested a genetic test, which confirmed the diagnosis of MELAS (mitochondrial encephalopathy, lactic acidosis and stroke-like episodes), a rare mitochondrial disorder. She and her parents wish to discuss the inheritance of this condition and its implications for their family. Which of the following statements is true in relation to her condition?",
+      "options": [
+        "A. Affected males cannot transmit the condition to their daughters",
+        "B. Affected males cannot transmit the condition to their sons but all their daughters would be carriers",
+        "C. Female carriers may be variably affected due to X-inactivation",
+        "D. Females are affected more often than males",
+        "E. The condition has arisen de novo and her siblings do not require genetic testing"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In mitochondrial inheritance, the mutation is in the mitochondrial DNA and, since mitochondria are contributed by the oocyte and not by the sperm, inheritance is exclusively via the maternal line. Males and females are equally affected. Variable penetrance and expressivity is common in mitochondrial disorders due to the degree of mitochondrial heteroplasmy (not due to X-inactivation, as in X-linked disorders). Whilst it is possible that the condition has arisen in the proband de novo, it is more likely that it was inherited from her mother. If her mother is indeed a carrier, she will have transmitted the condition to all her offspring. Both the mother and siblings should therefore be offered genetic testing, regardless of clinical symptoms.",
+      "questionNumber": 13
+    },
+    {
+      "question": "You are asked to provide genetic counselling for a couple who are expecting their third child. They have two older children, a normally developing 9 year old daughter and a son who, at age 5, has significant learning difficulties. There is a family history of learning difficulties in the maternal grandfather and a maternal uncle, and his daughter, in turn, has a degree of developmental delay. You construct a pedigree (Fig. 3.14) with the affected family members represented by the filled symbols. The couple has just found out that they are expecting a boy, and are concerned that, since in their family it is boys more than girls that seem to be affected, he may be at risk. They have heard that learning difficulties are commonly X-linked conditions, and want to know whether you think this could be the case in their family and, if so, whether they could have genetic testing of the X chromosome. When reviewing a pedigree, which of these features is NOT consistent with X-linked inheritance?",
+      "imageUrl": "images/books-images/Davidson-assessment/ch3/q/3.14.png",
+      "options": [
+        "A. Affected father and affected son",
+        "B. Affected members in each generation",
+        "C. Affected son and affected maternal uncle",
+        "D. The presence of an affected female",
+        "E. Variable expressivity"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "X-linked conditions are not passed from father to son, as the mutation is on the X chromosome. Whilst X-linked conditions are mostly restricted to males, occasionally female carriers may exhibit signs of an X-linked disease due to skewed X-inactivation. Also, when considering a pedigree, beware of the possible presence of phenocopies (i.e. individuals with a similar phenotype who do not carry the mutation); with a phenotype as common and multifactorial as developmental delay/learning difficulties, this could be a confounding factor in your analysis.",
+      "questionNumber": 14
+    },
+    {
+      "question": "You review a 39 year old woman with advanced breast cancer. She has been referred to you for genetic testing because of her young age at diagnosis. You undertake diagnostic genetic testing but are unable to identify a pathogenic mutation in either BRCA1 or BRCA2. Which of the following mechanisms could be a contributing mechanism in her tumour formation?",
+      "options": [
+        "A. Apoptosis",
+        "B. Autocrine stimulation",
+        "C. Gain-of-function mutation in a tumour suppressor gene",
+        "D. Loss-of-function mutation in an oncogene",
+        "E. Passenger mutation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "If a mutation results in activation of a growth factor gene or receptor, then that cell will replicate more frequently as a result of autocrine stimulation. Tumour formation is promoted by gain-of-function mutations in oncogenes and loss-of-function mutations in tumour suppressor genes, not the other way around. Passenger mutations accumulate within cancer cells but do not in themselves promote growth (unlike 'driver' mutations). Apoptosis is programmed cell death and does not have a role in tumour formation. (The BRCA test result is not relevant here the question is simply testing knowledge of mechanisms promoting tumourigenesis.)",
+      "questionNumber": 15
+    },
+    {
+      "question": "You receive an array comparative genomic hybridisation (array CGH) report for a patient with developmental delay and autism. The report is normal and has not identified a cause for the patient's difficulties. Which of the following statements is true about what array CGH is able to reliably detect?",
+      "options": [
+        "A. It will reliably detect aneuploidy",
+        "B. It will reliably detect balanced translocations",
+        "C. It will reliably detect intragenic deletions",
+        "D. It will reliably detect mosaicism at the 1% level",
+        "E. It will reliably detect triploidy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Array CGH provides a high-resolution genome-wide screen for chromosomal abnormalities. Mosaicism down to a 10% level can often be detected. Since it relies on analysis of comparative dosage across the genome, triploidy (all chromosomes present in an extra copy) may be missed. Similarly, because with balanced translocations dosage is unaffected, these may not be picked up and, if suspected, karyotyping should be undertaken. Even with the most powerful modern arrays, the resolution is limited to around 10kB. This would therefore miss many smaller intragenic deletions. Larger deletions and duplications (or indeed aneuploidy) would, however, be reliably detected.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 2 year old boy with global developmental delay and facial dysmorphism attends with his parents for the results of his array CGH testing. His parents are healthy and there is no family history of note. The test has identified a 446-kB deletion at 18p23, which has been reported as a copy number variant (CNV) of uncertain significance. What would be your next step in his management?",
+      "options": [
+        "A. Exome sequencing of the boy and his parents",
+        "B. Intellectual disability gene panel testing",
+        "C. Parental array CGH testing",
+        "D. Repeat the array using more closely spaced probes to give a higher resolution",
+        "E. Request a karyotype to exclude a balanced translocation"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The next step would be to test his parents to see whether either of them carried the same CNV. Since they are both phenotypically normal with no history of developmental problems, if either of them also carried the CNV it would be unlikely that it was contributing significantly to his phenotype. It is not uncommon to identify benign inherited CNVs during array CGH testing. If the CNV is not inherited from an unaffected parent it is harder to assess its significance. You would need to carefully consider any genes that could be potentially disrupted. If you remain unconvinced that the CNV provides an explanation for his difficulties you may wish to proceed to further genetic testing, and consider an intellectual disability gene panel or exome sequencing.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 27 year old woman is referred to your clinic by her family physician for advice. She was worried about her family history of breast cancer and decided to undergo genetic testing through a private company offering a next-generation sequencing (NGS) breast cancer susceptibility gene panel test. They sent her the report but she is having trouble understanding some of the terminology used and needs some clarification. In NGS, what does the term 'capture' refer to?",
+      "options": [
+        "A. Binding of the library fragments as they are washed over the flow cell",
+        "B. Downloading the relevant read data into the analysis software",
+        "C. Identifying the differences between the reads and the reference genome",
+        "D. Pulling out the part of the genome to be sequenced",
+        "E. Successfully identifying a disease-causing variant"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In NGS, 'capture' refers to the 'pull-down' of a targeted region of the genome for sequencing. This may constitute a single gene, a number of genes associated with a given phenotype or condition (a gene panel), the exons of all coding genes known to be associated with disease (a clinical exome) or the exons of all known coding genes (an exome).",
+      "questionNumber": 18
+    },
+    {
+      "question": "You review a family, several members of whom have the same, rare condition, for which no genetic cause has yet been identified. You are considering a clinical research project with the aim of identifying the disease-causing mutation in this family. You are trying to decide whether whole-exome sequencing or whole-genome sequencing would be a better approach. Which of the following is an advantage of whole-genome sequencing over whole-exome sequencing?",
+      "options": [
+        "A. Increased detection of gene dosage abnormalities",
+        "B. Increased detection of mosaicism",
+        "C. Increased likelihood that a variant detected will be pathogenic",
+        "D. Less expensive",
+        "E. Lower risk of identifying incidental findings"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Whole-genome sequencing enables more even coverage of genes, allowing better identification of gene dosage anomalies than whole-exome sequencing. (Gene dosage refers to the number of copies of a gene that are present in a genome, and anomalies may be caused by CNVs such as deletions or duplications.) Whole-exome sequencing is, however, less expensive, and allows deeper sequencing and consequently better detection of mosaicism. Whole-genome sequencing will detect many more variants, so it is associated with a greater risk of incidental findings, and the likelihood of any given variant detected being pathogenic is reduced.",
+      "questionNumber": 19
+    },
+    {
+      "question": "You are asked to review a 39 year old woman who has had a positive result for trisomy 21 during non-invasive prenatal testing for aneuploidy screening. She is very upset and is asking you if there is any chance that the test could be wrong. Which of the following is a possible cause of a false-positive result in this circumstance?",
+      "options": [
+        "A. Confined placental mosaicism",
+        "B. High maternal body mass index (BMI)",
+        "C. Maternal smoking",
+        "D. Previous miscarriage of aneuploid fetus",
+        "E. Test done too early in gestation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Confined placental mosaicism (the aneuploidy being present in placental tissue but not in the fetus) is the most well-recognised cause of false-positive results during non-invasive aneuploidy screening. Results should be viewed in the context of ultrasound findings, and positive results need confirmation with invasive testing. High maternal BMI and early gestation are recognised causes of false-negative results. A previous pregnancy will have no effect on these results as cell-free fetal DNA is cleared from the maternal circulation within 30 minutes of delivery.",
+      "questionNumber": 20
+    },
+    {
+      "question": "You are reviewing a 35 year old woman with triple-negative breast cancer, in whom you have identified an underlying BRCA1 mutation. Her oncologist has recommended that she enters a trial of treatment with a poly ADP ribose polymerase (PARP) inhibitor. She wants to know more about how they work. Which of the following statements about the mechanism of PARP inhibitors is true?",
+      "options": [
+        "A. They block the double-stranded DNA break-repair pathway",
+        "B. They block the double-stranded DNA break-repair pathway and up-regulate the single-stranded DNA break-repair pathway",
+        "C. They block the single-stranded DNA break-repair pathway",
+        "D. They repair the double-stranded DNA break-repair pathway",
+        "E. They repair the single-stranded DNA break-repair pathway"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "PARP inhibitors work by blocking the single-stranded DNA break-repair pathway. In a BRCA1/2 mutation-positive tumour with an already compromised double-stranded DNA break-repair pathway, the additional loss of the single-stranded break-repair pathway will drive the tumour cell towards apoptosis (programmed cell death).",
+      "questionNumber": 21
+    },
+    {
+      "question": "You review a 42 year old woman who developed breast cancer at the age of 27 that was successfully treated, and has now developed an osteosarcoma in her right femur. On discussion of her family history she tells you that her mother died when she was very young of brain cancer (glioblastoma) and that her brother is currently receiving treatment for a rhabdomyosarcoma. Apart from evidence of a previous mastectomy, there are no additional phenotypic features on physical examination. You suspect a familial cancer predisposition syndrome. Which of the following cancer predisposition syndromes would be the best fit for this tumour spectrum?",
+      "options": [
+        "A. Birt-Hogg-Dubé syndrome",
+        "B. Cowden's syndrome",
+        "C. Gorlin's syndrome",
+        "D. Li-Fraumeni syndrome",
+        "E. Lynch's syndrome"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Mutations in the TP53 gene cause Li-Fraumeni syndrome, a hereditary predisposition to sarcoma, breast carcinoma, brain cancer (especially glioblastoma) and adrenocortical carcinoma. There are no additional clinical features other than the cancer susceptibility in this syndrome. The other answers are also examples of other rare cancer predisposition syndromes, with different spectrums of tumour susceptibility, and in some cases additional phenotypic clinical features.",
+      "questionNumber": 22
+    }
+  ]
+}

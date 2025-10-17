@@ -1,0 +1,226 @@
+{
+  "title": "Pain and palliative care - Chapter 34",
+  "questions": [
+    {
+      "question": "Which of the following is normally involved in peripheral pain processing?",
+      "options": [
+        "A. Aβ fibres",
+        "B. Calcitonin gene-related peptide (CGRP)-containing C fibres",
+        "C. Interneurons",
+        "D. Meissner's corpuscles",
+        "E. Pacinian corpuscles"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Normally, light touch and pressure cause activation of specialised mechanoreceptors such as Pacinian and Meissner's corpuscles, with transmission of sensation such as light touch being via large myelinated Aβ fibres. Painful stimuli activate high-threshold nociceptors, found on small unmyelinated C fibres. C fibres may contain a range of neuropeptides involved in pain processing, such as CGRP. Spinal interneurons modulate input from peripheral nerves.",
+      "questionNumber": 1
+    },
+    {
+      "question": "The pain system can change in response to tissue injury. Which of the following neurotransmitters plays a key role in the process of central sensitisation?",
+      "options": [
+        "A. Galanin",
+        "B. Glutamate",
+        "C. Glycine",
+        "D. β-Endorphin",
+        "E. γ-Aminobutyric acid (GABA)"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A wide range of neurotransmitters are involved in pain processing (Box 34.2), with changes occurring in response to tissue injury. Glutamate, acting via the N-methyl-D-aspartate (NMDA) receptor plays a key role in central sensitisation (Fig. 34.2), with increased neuronal activity at the spinal cord level. Inhibitory amino acid neurotransmitters include glycine and GABA, with neuropeptides such as β-endorphin and galanin having inhibitory actions, although these may be altered in some chronic pain states.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A previously fit 72 year old man presents with severe pain affecting his right chest wall, such that he is struggling to remain living independently. From his history you discover that his clothes touching his skin is excruciatingly painful. His family physician has started him on tramadol 50 mg twice daily, without significant benefit. What symptom is he describing?",
+      "options": [
+        "A. Breakthrough pain",
+        "B. Formication",
+        "C. Hyperalgesia",
+        "D. Mechanical allodynia",
+        "E. Spontaneous pain"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "When normally non-painful stimuli become painful (either thermal or mechanical), the term 'allodynia' is used. This can occur in neuropathic pain, and may be associated with other sensory changes, resulting in other symptoms such as formication - the sensation of insects crawling over the skin. Breakthrough pain tends to occur when the usual pain is controlled by analgesia and something (such as movement) precipitates an increase in pain that is not controlled by the background analgesia. Hyperalgesia occurs in a painful area when the pain experienced is much greater than would be expected from the painful stimulus. Pain can also occur spontaneously without any precipitating stimulus, and may be related to spontaneously occurring electrical discharges in injured nerves.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 64 year old man with type 2 diabetes mellitus is complaining of numbness, paraesthesia and pain in both feet, spreading into his legs. On examination, light touch is painful, and he has reduced sensation to pin-prick testing in a stocking distribution, typical of peripheral diabetic neuropathy. His blood glucose control is not good, his renal function is impaired and he is overweight. He is reluctant to walk because of the pain, and lives alone, becoming increasingly socially isolated. What factor may make pharmacological management more difficult?",
+      "options": [
+        "A. Impaired renal function",
+        "B. Obesity",
+        "C. Pin-prick hypoalgesia",
+        "D. Reduced mobility",
+        "E. Social isolation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Assessment has shown features typical of diabetic neuropathy: stocking distribution, reduced sensation to pin-prick and mechanical allodynia. This man needs multidisciplinary management to address the range of issues that are affecting him. Psychosocial factors need to be considered with support in active rehabilitation, and use of non-pharmacological techniques to self-manage his pain. Support in managing his diabetes better will reduce the risk of worsening symptoms, and lifestyle/dietary advice is needed to increase what he is able to do. The renal impairment means that anti-neuropathic drugs such as pregabalin and duloxetine need to be used with care, as toxicity may result on lower doses than expected.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A range of patient-reported outcome measures have been validated for use in patients with chronic pain. Which one of the following assessment tools is likely to be most helpful in making the diagnosis of neuropathic pain?",
+      "options": [
+        "A. Beck Depression Inventory",
+        "B. Brief Pain Inventory",
+        "C. Pain Catastrophising Scale",
+        "D. Pain Detect",
+        "E. Tampa Scale of Kinesiophobia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The Brief Pain Inventory was originally designed for use in cancer patients and measures pain intensity and its interference with different aspects of life. It does not assess the character of the pain, which is necessary to make a diagnosis of neuropathic pain. Pain Detect does do this, and has been validated in a range of neuropathic pain types. The other measures assess physical and psychological effects of chronic pain in general (Box 34.5).",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 79 year old woman has osteoporosis with vertebral collapse at T10, demonstrated on plain X-ray. She is now struggling with washing and dressing herself because of severe pain. She lives alone, although she has a daughter who visits her every day, who has been giving her two co-codamol 30/500 (30 mg codeine and 500 mg of paracetamol), morning and evening. Her daughter is concerned that her mother's memory is not as good as it used to be. What is the likeliest cause of the memory impairment?",
+      "options": [
+        "A. Borderline cognitive impairment exacerbated by opioid medication",
+        "B. Depression",
+        "C. Lack of sleep due to pain",
+        "D. New onset of Alzheimer's disease",
+        "E. Undiagnosed malignant disease, with brain metastases"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "While all of the above may impact on memory, the likeliest cause is borderline opioid toxicity. Elderly patients with limited reserve in terms of cognitive function are much more sensitive to even low doses of opioids (Box 34.6).",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 27 year old man had a severe injury to his left arm in a motorcycle accident 4 years ago. He had extensive surgery, complicated by post-operative infection, and required a high dose of opioids to manage it at that time. He has had persistent pain since then, being unable to return to his job as a builder. When assessed in the pain clinic he has very limited movement, mechanical allodynia and intermittent swelling (below). The affected limb is noticeably colder than the other arm, with increased sweating in his hand. What is the likeliest diagnosis?",
+      "options": [
+        "A. Chronic osteomyelitis",
+        "B. Complex regional pain syndrome (CRPS) type 1",
+        "C. CRPS type 2",
+        "D. Secondary osteoarthritis",
+        "E. Ulnar neuropathy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The diagnosis of CRPS type 1 requires a combination of sensory, vasomotor, sudomotor and motor changes to be present. It can occur after an injury such as a fracture, without definite peripheral nerve lesion. CRPS type 2 occurs if there is a defined peripheral nerve lesion. CRPS is commoner in females between the ages of 35 and 50, occurring in about 20 per 100000 individuals. Active rehabilitation with early physiotherapy is important in management.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 24 year old woman with long-standing Crohn's disease, currently quiescent, has chronic abdominal pain. She is on modified-release oxycodone 30 mg twice daily, plus immediate-release (IR) oxycodone 5-10 mg as required for pain, up to 6 times a day. She is regularly admitted with a flare-up in her pain, despite no evidence of active disease, although she is often very constipated. What is the best long-term management option for her?",
+      "options": [
+        "A. Add in tramadol 100 mg 4 times daily for additional short-acting analgesia",
+        "B. Develop a management plan with the patient to support her in using self-management strategies",
+        "C. Ensure she has a thorough assessment by a dietician and advice on diet",
+        "D. Increase oxycodone IR to 15 mg with an increase in frequency, as required for the pain, up to 8 times a day.",
+        "E. Stop her strong opioids, as they may be causing the constipation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is a challenging pain syndrome to manage, with very limited evidence for efficacy of long-term opioids, and growing evidence of possible harms. While opioids may be required for short-term use, regular use of short-acting strong opioids should be avoided if possible. Support in developing pain management strategies, maintaining function, ensuring adequate nutrition and reducing opioids should be the goal. Strong opioids should not be stopped abruptly unless the patient is at risk of overdose.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 49 year old man with an advanced oropharyngeal tumour has severe pain in his mouth and jaw, and is also struggling to eat. He is taking soluble co-codamol, which helped initially but is not really working now. He has a past history of peptic ulcer disease. What type of analgesic would you choose next?",
+      "options": [
+        "A. A strong opioid should be considered, with appropriate formulation or route of administration (e.g. suspension or liquid; transdermal)",
+        "B. Diazepam should be given to help with any anxiety",
+        "C. Diclofenac should be started at maximum dose to reduce any inflammation",
+        "D. Low-dose amitriptyline, or other tricyclic antidepressant, should be started in case there is any neuropathic pain",
+        "E. Paracetamol should be added in"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The pain has responded to a weak opioid, but either some tolerance has developed or there is disease progression. He is, therefore, likely to get better analgesia from a strong opioid. Diazepam is not an analgesic, although it can be used for short-term anxiolysis. While there may be neuropathic features, a strong opioid should be started first. Non-steroidal anti-inflammatory drugs (NSAIDs) should be avoided if there is a history of peptic ulcer disease. Adding in paracetamol is unlikely to be effective, as he is already taking paracetamol in the compound preparation (co-codamol) and may result in exceeding safe dosing limits.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 65 year old man with inoperable lung cancer has increasing breathlessness. He is struggling to climb the stairs to his bedroom and more recently has found holding a conversation difficult. What would the first step be in managing his symptoms?",
+      "options": [
+        "A. A comprehensive assessment to determine if there is a reversible cause",
+        "B. Breathing retraining should be used to improve mechanical effectiveness of the respiratory system",
+        "C. Use of a hand-held fan to cool the air flowing over nasal receptors",
+        "D. Referral for physical therapy to reduce disability and strengthen muscles",
+        "E. Reassurance and involvement of a psychologist to manage anxiety"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "While all of the options given can be used in the management of breathlessness, it is important to assess for treatable causes first, such as pleural effusion, cardiac failure or bronchospasm, even though the patient is being managed palliatively. Options B-E can all be useful in the management of breathlessness, but it is important to diagnose and start to treat any potentially reversible underlying cause first.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 72 year old man with metastatic prostate cancer is admitted with severe nausea and some delirium. He is on morphine for pain control, for bony metastases. What investigations should you do initially?",
+      "options": [
+        "A. Blood test, including full blood count, urea and electrolytes, calcium and albumin",
+        "B. Computed tomography (CT) scan of abdomen and pelvis",
+        "C. CT scan of head",
+        "D. Electrocardiogram (ECG) and echocardiogram",
+        "E. Endoscopy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "There are many potential causes for confusion and nausea, including raised intracranial pressure and hypoxaemia due to a cardiovascular problem. While many of these tests may be appropriate, rapid checking of blood results allows exclusion of correctable causes such as electrolyte imbalance and, particularly, hypercalcaemia.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 68 year old patient with chronic obstructive pulmonary disease (COPD) attends your outpatient clinic after a recent admission to the high dependency unit. He remains short of breath on minimal exertion. His daughter asks whether he might be referred to the local palliative care team. Which of the following statements applies?",
+      "options": [
+        "A. He should be judged to be in the last 6 months of his life in order to benefit from specialist palliative care team input",
+        "B. He should have a diagnosis of cancer to be suitable for referral",
+        "C. He should have up-to-date pulmonary function tests before referral",
+        "D. He would benefit from advice on anticipatory planning for future exacerbations of his disease",
+        "E. Opiate medication is the likely treatment of choice for this patient"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Palliative care is the active total care for patients with incurable disease. A palliative care approach is likely to be suitable where symptom management becomes more important than aggressive treatment of the underlying disease, although the two goals of treatment can exist side by side. Although initially targeted at patients with malignant disease, patients with other life-limiting conditions such as COPD are now often suitable for palliative care input. There are usually no stringent guidelines regarding physiological parameters. Prognosis is often difficult to judge, but key events such as an admission to higher-level care are good opportunities to consider the future and make anticipatory care plans for the next exacerbation. Opiate medication is a possibility, but in the first instance he may benefit from non-pharmacological treatments and an assessment as to whether his inhaled medication is optimised.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 79 year old man is in the ward. He has presented with right flank pain and a sense of abdominal fullness. His liver function tests are abnormal and an ultrasound shows multiple lesions in the liver. He is tender over the right upper quadrant and tells the medical team that his pain is not helped by paracetamol. He has a past medical history of ischaemic heart disease, gout, total hip replacement and a resection of a colonic cancer 2 years ago. Which of the following would be a reasonable strategy if his pain persists?",
+      "options": [
+        "A. A glucocorticoid such as prednisolone or dexamethasone",
+        "B. An NSAID",
+        "C. Antispasmodic medication such as hyoscine butylbromide",
+        "D. Gabapentin",
+        "E. Oral morphine solution"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "It is likely that this patient has liver capsule pain as a result of metastases from his previous colonic carcinoma. This type of pain responds poorly to opiates and is best treated by glucocorticoids. An antispasmodic will not relieve the stretch of the liver capsule. An NSAID is better suited to ischaemic or bone pain and gabapentin to neuropathic pain (Box 34.13).",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 52 year old woman has metastatic cancer with bony metastases throughout her pelvis. She is requiring increasing doses of her opiate medication, and is concerned about the side-effects associated with the medication. Which of the following pieces of advice is true?",
+      "options": [
+        "A. Drowsiness after a dose increase is common and may improve within a few days",
+        "B. Morphine is the opiate of choice regardless of renal function",
+        "C. Once established on the right dose, further adjustments will not usually be necessary",
+        "D. The dry mouth associated with her morphine prescription will improve within a week of starting the drug",
+        "E. The nausea and vomiting are likely to persist and she should take long-term antiemetic medication in addition"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Nausea and vomiting can occur initially with opiate therapy but usually settle after a few days. Dry mouth and constipation are long-term effects, however, and will need ongoing treatment. Tolerance usually develops to drowsiness, so this problem is often transient after an increase in dose. Opiate toxicity is an ongoing concern for any patient on this medication and so follow-up review is advisable. This patient may need adjustments to her medication over time depending on increasing pain, changes in renal function or development of toxicity, if it arises. Patients who develop renal failure are at particular risk of opiate toxicity and consideration should be given to swapping from morphine to an alternative opiate such as alfentanil.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 71 year old woman with lung cancer and end-stage COPD is becoming increasingly distressed by dyspnoea and is referred to the respiratory team for assessment. She is tachypnoeic and anxious. Her symptoms are no longer relieved by inhaled bronchodilators. She has a cough productive of grey phlegm, which is unchanged from her normal situation. Her husband supports her at home; both of them continue to smoke. Her chest X-ray shows hyperinflation of both lungs and the known tumour at the left apex. Observations are unremarkable other than oxygen saturations of 89%. Which of the following might play a role in helping to manage her current condition?",
+      "options": [
+        "A. An oxygen concentrator, for use as required at home",
+        "B. Antibiotic therapy",
+        "C. Initiation of citalopram medication",
+        "D. Oral diuretic therapy to treat any coexisting cardiac failure",
+        "E. Sublingual lorazepam, to be taken as required"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Breathlessness is one of the most common symptoms in palliative care and is distressing for both patients and carers. Patients with breathlessness should be fully assessed to determine whether there is a reversible cause, such as a pleural effusion, heart failure or bronchospasm; if so, this should be managed in the normal way. There is no suggestion in the scenario here of fluid overload or new infection to justify antibiotics or diuretics. There are many potential causes of dyspnoea in cancer patients and in other chronic diseases; apart from direct involvement of the lungs, muscle loss secondary to cachexia, anxiety and fear can all contribute. A cycle of panic and breathlessness, often associated with fear of dying, can be dominant. Exploration of precipitating factors is important and patient education about breathlessness and effective breathing has been shown to be effective. Non-pharmacological approaches that include using a hand-held fan, pacing, and following a tailored exercise programme can help. There is no evidence to suggest that oxygen therapy reduces the sensation of breathlessness in advanced cancer any better than cool air flow, and oxygen is indicated only if there is significant hypoxia. In this case, oxygen is also likely to be precluded by both the husband and wife continuing to smoke in the house. Opioids, through both their central and their peripheral action, can palliate breathlessness and might be an alternative in this scenario. If anxiety is considered to be playing a significant role, a quick-acting benzodiazepine, such as lorazepam (used sublingually for rapid absorption), may also be useful. Citalopram would be useful for longer-term treatment of established anxiety or depression, but would not give instant relief in the short term in the way that lorazepam would.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 76 year old woman is an inpatient in the general medical unit. She is known to have multiple myeloma with bony metastases and has presented with vomiting. Her bowels have not moved for 8 days. She is delirious and looks as though she may be dying. Her initial blood results are as follows: haemoglobin 79 g/L, white cell count 6.7x10^9/L, platelets 314x10^9/L, urea 18.3 mmol/L (110 mg/dL), sodium 143 mmol/L, potassium 5.2 mmol/L, creatinine 213 µmol/L (2.4 mg/dL), calcium 2.94 mmol/L (11.8 mg/dL), albumin 23 g/L, adjusted calcium 3.28 mmol/L (13.1 mg/dL). Which of the following initial treatments would be most helpful to this patient?",
+      "options": [
+        "A. A subcutaneous infusion of haloperidol for her delirium and nausea",
+        "B. Blood transfusion to bring haemoglobin above 100 g/L and addition of a proton pump inhibitor",
+        "C. Intramuscular cyclizine",
+        "D. Intravenous fluids and bisphosphonate therapy",
+        "E. Intravenous fluids and laxatives to address the constipation"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although this patient is very unwell, her hypercalcaemia may be amenable to treatment. Even if it is not life saving, it will make her feel more comfortable and reducing her calcium level will be the most effective way to help her vomiting. The other treatments may have a role in due course, but would be of lower priority than addressing her hypercalcaemia.",
+      "questionNumber": 16
+    },
+    {
+      "question": "You are asked by hospital colleagues to undertake a palliative care review of a 77 year old man who is dying of end-stage cardiac failure in one of the general hospital wards. He is no longer able to eat or drink and is completely bed bound. He is now unconscious and is now unable to communicate his needs to his family or the nursing team caring for him. He is currently undistressed. Which of the following statements applies to his ongoing management?",
+      "options": [
+        "A. As he is unconscious, there is now no need for religious or spiritual support in this situation",
+        "B. He should have his urea and electrolytes checked at least twice weekly to check for worsening of his renal function",
+        "C. If he is unable to swallow medication, then he should receive his usual dose of diuretics by an intravenous route",
+        "D. Parenteral medication should be available as required for any symptoms that might arise",
+        "E. The family can be advised that he is likely to die within the next 2-3 days"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "When patients with any advanced condition become comatose and unable to take medication or oral intake with no reversible cause, they are likely to be dying. Although many will die within 2-3 days, this stage of life is often unpredictable and doctors should be cautious in any prognosis they give to families. Once the conclusion has been reached that a patient is dying, there is a significant change in management (Box 34.17). Symptom control, relief of distress and care for the family become the most important elements of care. Medication and investigation are only justifiable if they contribute to these ends. In the case of this patient, he has no oral intake and is undistressed; therefore diuretics are unlikely to help and intravenous treatment will be unnecessarily burdensome. Religious and spiritual support are very important in this situation, for the family as much as the patient. Priority should be given to checking the understanding of family members regarding the situation and their wishes regarding care, visiting and how they wish to be contacted. Although the patient does not currently have any symptoms at present, it is possible that he may develop them at some point in future. It is important to ensure availability of parenteral medication for symptom relief so that it can be given without delay should the need arise.",
+      "questionNumber": 17
+    }
+  ]
+}

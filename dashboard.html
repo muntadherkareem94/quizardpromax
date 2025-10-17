@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizard - Dashboard</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="main-styles.css">
+    <style> 
+    /* Add this inside the <style> tag */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem; /* 12px */
+    border-radius: 0.5rem; /* 8px */
+    color: #374151; /* text-gray-700 */
+    transition: background-color 0.2s;
+}
+.dropdown-item:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+.dropdown-item svg {
+    margin-right: 0.75rem; /* 12px */
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+    color: #4b5563; /* text-gray-600 */
+}
+
+
+
+</style> 
+
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+<meta name="theme-color" content="#3da0be">
+</head>
+<body class="flex flex-col min-h-screen">
+<header class="container mx-auto max-w-4xl mt-8 bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
+    <div class="flex-1"></div>
+    <div class="flex-shrink-0">
+        <a href="dashboard.html"><img src="images/logo.png" alt="Quizard Logo" class="h-16"></a>
+    </div>
+    <div class="flex-1 flex justify-end items-center space-x-3">
+        <a href="admin_dashboard.html" id="adminDashboardButton" class="header-icon-btn hidden" title="Admin Panel">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+        </a>
+
+       <button id="notificationButton" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition relative" title="Notifications">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+    <span id="notificationBadge" class="hidden absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"></span>
+</button>
+
+        <div class="relative">
+            <button id="profileDropdownButton" class="w-10 h-10 rounded-full bg-gray-200 flex justify-center items-center overflow-hidden" title="Account">
+                </button>
+            
+            <div class="absolute bottom-0 right-0 w-4 h-4 bg-gray-200 rounded-full flex items-center justify-center border-2 border-white pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            
+            <div id="profileDropdownMenu" class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl p-2 hidden">
+                 <a href="user_profile.html" class="flex items-center p-3 hover:bg-gray-100 rounded-lg">
+                    <div id="dropdownProfileImage" class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4 flex-shrink-0"></div>
+                    <div>
+                        <p id="dropdownUsername" class="font-semibold text-gray-800 break-all">Loading...</p>
+                        <p class="text-sm text-gray-500">View your profile</p>
+                    </div>
+                </a>
+                <hr class="my-2">
+                <a href="performance_analytics.html" class="dropdown-item">
+                    <img src="images/performance-analysis.png" alt="Performance Analytics" class="h-6 w-6 mr-3">
+                    <span>Performance Analytics</span>
+                </a>
+                <a href="#" class="dropdown-item">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    <span>Settings</span>
+                </a>
+                <a href="store.html" class="dropdown-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    <span>Store</span>
+                </a>
+                <hr class="my-2">
+                <button id="logoutButton" class="dropdown-item w-full text-left">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                    <span>Log Out</span>
+                </button>
+            </div>
+
+            <div id="notificationPanel" class="hidden absolute right-0 mt-2 w-80 max-w-sm bg-white rounded-lg shadow-xl overflow-hidden z-50">
+    <div class="p-4 font-semibold border-b">Notifications</div>
+    <div id="notificationList" class="divide-y max-h-96 overflow-y-auto">
+        <p id="notification-placeholder" class="p-4 text-sm text-gray-500">You have no new notifications.</p>
+    </div>
+</div>
+        </div>
+    </div>
+</header>
+    <main class="flex-grow container mx-auto px-4 py-8 md:py-12">
+      <div id="viewContainer" class="hidden">
+            <div class="flex justify-center mb-8 bg-white/20 p-1 rounded-lg max-w-md mx-auto">
+    <button id="showDisciplinesBtn" class="view-toggle-btn w-1/3 py-2 px-4 rounded-md font-semibold text-white">MCQ Banks By Disciplines</button>
+    <button id="showBooksBtn" class="view-toggle-btn w-1/3 py-2 px-4 rounded-md font-semibold text-white">MCQ Banks By Books</button>
+    <button id="showVideosBtn" class="view-toggle-btn w-1/3 py-2 px-4 rounded-md font-semibold text-white">My Video Courses</button>
+</div>
+            <div class="mb-8 max-w-2xl mx-auto">
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <input type="text" id="searchInput" class="block w-full pl-10 pr-3 py-3 border border-transparent rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent sm:text-sm" placeholder="Search for books, disciplines, or chapters...">
+                </div>
+            </div>
+
+            <h2 id="dashboardTitle" class="text-3xl font-extrabold text-white text-center mb-8"></h2>
+           <div id="disciplinesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+            <div id="booksGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+            <div id="videosGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+            
+            <div id="searchResultsContainer" class="hidden space-y-4 max-w-4xl mx-auto"></div>
+
+            <div id="customQuizBtnContainer" class="text-center mb-8 border-t border-white/20 pt-8 mt-8 hidden">
+                <button id="openCustomQuizMenuBtn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg">
+                    Custom Quiz
+                </button>
+            </div>
+        </div>
+
+        <div id="loadingState" class="text-center text-white py-10 text-xl">Loading content...</div>
+    </main>
+
+   <div id="quizModeModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center">
+        <h3 class="text-2xl font-bold text-gray-800 mb-6">How would you like to take the quiz?</h3>
+        <div class="flex flex-col gap-4">
+            <button id="sequentialModeButton" class="w-full py-3 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">Sequential</button>
+            <button id="randomModeButton" class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">Random</button>
+            <button id="customDisciplineModeButton" class="w-full py-3 px-6 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg">Custom</button>
+            <button id="cancelModeButton" class="mt-4 w-full py-2 px-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold rounded-lg">Cancel</button>
+        </div>
+    </div>
+</div>
+
+    <div id="customAlertModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[70]">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center">
+            <h3 class="text-2xl font-bold text-red-600 mb-4">Action Required</h3>
+            <p id="customAlertMessage" class="text-gray-700 mb-6"></p>
+            <button id="customAlertCloseBtn" class="w-full py-2 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">OK</button>
+        </div>
+    </div>
+ <!-- START: New Footer Section -->
+  <footer class="text-center py-6">
+        <div class="container mx-auto px-4">
+            <p class="text-white mb-4">Contact Us</p>
+            <div class="flex justify-center items-center space-x-6">
+                <!-- Telegram Icon -->
+                <a href="https://t.me/your_telegram_username" target="_blank" class="text-white hover:opacity-75 transition-opacity" title="Telegram">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.88l-1.44 6.99c-.14.68-.57 1.02-1.25.82l-2.55-.93-1.22 1.17c-.14.14-.25.25-.5.25l.18-2.62 4.52-4.08c.2-.18-.06-.28-.34-.1l-5.58 3.51-2.5-.78c-.67-.21-.67-.67.14-1l11.1-4.24c.57-.22 1.05.14.88.82z"/>
+                    </svg>
+                </a>
+    <!-- WhatsApp Icon -->
+<a href="https://wa.me/your_whatsapp_number" target="_blank" class="text-white hover:opacity-75 transition-opacity" title="WhatsApp">
+    <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="200px" height="200px">
+  <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.42 1.29 4.89L2 22l5.05-1.32c1.45.81 3.09 1.29 4.81 1.29h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM16.5 13.6c-0.2-0.1-1.2-0.6-1.4-0.7c-0.2-0.1-0.3-0.1-0.5 0.1c-0.1 0.2-0.5 0.7-0.6 0.8c-0.1 0.1-0.2 0.2-0.4 0.1c-0.2-0.1-0.9-0.3-1.6-1c-0.6-0.5-1-1.2-1.1-1.4c-0.1-0.2 0-0.3 0.1-0.4c0.1-0.1 0.2-0.3 0.3-0.4c0.1-0.1 0.1-0.2 0.2-0.3c0.1-0.1 0-0.3-0.1-0.4c-0.1-0.1-0.5-1.2-0.6-1.6c-0.2-0.4-0.3-0.4-0.5-0.4h-0.5c-0.2 0-0.4 0.1-0.5 0.3c-0.2 0.2-0.7 0.7-0.7 1.7c0 1 0.7 2 0.8 2.1c0.1 0.1 1.4 2.1 3.3 2.9c0.5 0.2 0.8 0.3 1.1 0.4c0.5 0.1 0.9 0.1 1.2-0.1c0.3-0.2 0.7-0.9 0.8-1.2c0.1-0.3 0.1-0.6 0.1-0.7c-0.01-0.3-0.19-0.4-0.39-0.5z"/>
+</svg>
+</a>
+                <!-- Email Icon -->
+                <a href="mailto:your_email@example.com" class="text-white hover:opacity-75 transition-opacity" title="Email">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- END: New Footer Section -->
+    <div id="quizModeModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">How would you like to take the quiz?</h3>
+            <div class="flex flex-col gap-4">
+                <button id="sequentialModeButton" class="w-full py-3 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">Sequential</button>
+                <button id="randomModeButton" class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">Random</button>
+                <button id="cancelModeButton" class="mt-4 w-full py-2 px-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold rounded-lg">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="customQuizChoiceModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[60]">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Custom Quiz</h3>
+            <div class="flex flex-col gap-4">
+                <button id="resumeCustomQuizBtn" class="hidden w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">Resume Previous Quiz</button>
+                <button id="createNewCustomQuizBtn" class="w-full py-3 px-6 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg">Create New Quiz</button>
+                <button id="cancelChoiceBtn" class="mt-4 w-full py-2 px-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold rounded-lg">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="customQuizModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-start justify-center p-4 z-50 overflow-y-auto">
+      <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-3xl w-full my-8 text-gray-800">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Advanced Quiz Builder</h3>
+            <form id="customQuizForm" class="space-y-6">
+                
+                <fieldset class="border-t pt-4">
+                    <legend class="text-lg font-semibold text-gray-700 mb-2">Number of Questions</legend>
+                    <div class="flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-6">
+    <label class="flex items-center"><input type="radio" name="questionCountMode" value="all_available" checked class="h-4 w-4 text-purple-600"> <span class="ml-2">All Available Questions</span></label>
+    <label class="flex items-center"><input type="radio" name="questionCountMode" value="from_sources" class="h-4 w-4 text-purple-600"> <span class="ml-2">From Selected Sources</span></label>
+    <div class="flex items-center">
+        <label class="flex items-center"><input type="radio" name="questionCountMode" value="set_number" class="h-4 w-4 text-purple-600"> <span class="ml-2">Set Total Number:</span></label>
+        <input type="number" id="customQuestionCount" value="50" min="1" class="ml-2 w-24 px-2 py-1 border border-gray-300 rounded-md shadow-sm">
+    </div>
+</div>
+                     <div id="recalculateHelpText" class="text-xs text-gray-500 mt-2 hidden">The number of available questions is based on your selected sources and active filters.</div>
+                </fieldset>
+                
+        <fieldset id="sourceTypeFieldset" class="border-t pt-4">
+    <legend class="text-lg font-semibold text-gray-700 mb-2">1. Choose Source Type</legend>
+    <div id="sourceTypeContainer" class="flex items-center space-x-6">
+       <label class="flex items-center">
+           <input type="radio" name="sourceType" value="book" class="h-4 w-4 text-purple-600"> 
+           <span class="ml-2">By Book</span>
+       </label>
+       <label class="flex items-center">
+           <input type="radio" name="sourceType" value="discipline" class="h-4 w-4 text-purple-600"> 
+           <span class="ml-2">By Discipline</span>
+       </label>
+    </div>
+</fieldset>
+                <fieldset id="questionSourcesFieldset" class="border-t pt-4 hidden">
+                    <legend class="text-lg font-semibold text-gray-700 mb-2">2. Select Question Sources</legend>
+                    <p class="text-sm text-gray-500 mb-2">Select the specific sources to include in your quiz.</p>
+                    <select id="sourcesSelect" multiple></select>
+                </fieldset>
+
+                <div id="percentageBuilderContainer" class="hidden border-t pt-4 space-y-2">
+                    <p class="text-sm font-semibold text-gray-700">Define Question Percentages from Selected Sources:</p>
+                    <div id="sliderList" class="space-y-3 pt-2"></div>
+                </div>
+
+                <fieldset class="border-t pt-4">
+                    <legend class="text-lg font-semibold text-gray-700 mb-2">Timer</legend>
+                    <div class="flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-6">
+    <label class="flex items-center"><input type="radio" name="timerMode" value="none" checked class="h-4 w-4 text-purple-600"> <span class="ml-2">No Time Limit</span></label>
+    <div class="flex items-center">
+        <label class="flex items-center"><input type="radio" name="timerMode" value="custom" class="h-4 w-4 text-purple-600"> <span class="ml-2">Set Time:</span></label>
+        <div id="timerInputs" class="flex items-center space-x-2 ml-2 opacity-50">
+            <input type="number" id="timerHours" value="0" min="0" max="23" class="w-16 px-2 py-1 border border-gray-300 rounded-md shadow-sm" disabled> <span class="text-sm">hr</span>
+            <input type="number" id="timerMinutes" value="30" min="0" max="59" class="w-16 px-2 py-1 border border-gray-300 rounded-md shadow-sm" disabled> <span class="text-sm">min</span>
+        </div>
+    </div>
+</div>
+                </fieldset>
+                
+              <fieldset class="border-t pt-4">
+                    <legend class="text-lg font-semibold text-gray-700 mb-2">Filters & Question Flow</legend>
+                    
+                    <div class="mb-6">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Available Filters</p>
+                         <div id="filterList" class="space-y-2 border rounded-lg p-3 bg-gray-50 max-h-60 overflow-y-auto">
+                            <div id="filter-unanswered" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="unanswered" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Un-answered questions</span></label></div>
+                            <div id="filter-initial-wrong" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="initial-wrong" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Answered Initially Wrong</span></label></div>
+                            <div id="filter-previously-wrong" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="previously-wrong" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Answered previously wrong</span></label></div>
+                            <div id="filter-review" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="review" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Questions labelled for review</span></label></div>
+                            <div id="filter-note" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="note" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Questions with a note</span></label></div>
+                            <div id="filter-very-difficult" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="very-difficult" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Very Difficult questions</span></label></div>
+                            <div id="filter-difficult" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="difficult" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Difficult questions</span></label></div>
+                            <div id="filter-moderate" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="moderate" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Moderate questions</span></label></div>
+                            <div id="filter-easy" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="easy" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Easy questions</span></label></div>
+                            <div id="filter-very-easy" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="very-easy" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Very Easy questions</span></label></div>
+                        </div>
+                    </div>
+                    
+                    <div id="flowControlContainer">
+                         <p class="text-sm text-gray-500 mb-2">Choose how the questions should be ordered.</p>
+                         <div class="flex items-center space-x-6">
+                            <label class="flex items-center"><input type="radio" name="flowMode" value="random" checked class="h-4 w-4 text-purple-600"> <span class="ml-2">Random Flow</span></label>
+                            <label class="flex items-center"><input type="radio" name="flowMode" value="sequential" class="h-4 w-4 text-purple-600"> <span class="ml-2">Sequential Flow</span></label>
+                         </div>
+                    </div>
+                    
+                    <div id="sequenceBuilderContainer" class="hidden mt-4 space-y-2">
+    <p class="text-sm font-semibold text-gray-700">Define Sequence Order:</p>
+    
+    <div id="globalSequenceTypeContainer" class="flex items-center space-x-6">
+       <label class="flex items-center">
+           <input type="radio" name="sequenceType" value="book" checked class="h-4 w-4 text-purple-600"> 
+           <span class="ml-2">By Book</span>
+       </label>
+       <label class="flex items-center">
+           <input type="radio" name="sequenceType" value="discipline" class="h-4 w-4 text-purple-600"> 
+           <span class="ml-2">By Discipline</span>
+       </label>
+    </div>
+    <p class="text-sm text-gray-500">Drag to re-order the sequence for your quiz.</p>
+    <div id="sequenceList" class="space-y-2 border rounded-lg p-2 bg-gray-50 max-h-60 overflow-y-auto"></div>
+</div>
+                </fieldset>
+
+                <div class="flex justify-end items-center pt-6 border-t">
+                    <span id="buildStatus" class="text-sm text-gray-600 mr-4"></span>
+                    <button type="button" id="closeQuizBuilderBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+                  <button type="button" id="startCustomQuizBtn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg">Start Quiz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+
+
+       // --- Supabase SDK Import ---
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+// --- Supabase Configuration ---
+const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
+
+// --- Initialize Supabase ---
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
+
+        // PASTE THIS ENTIRE BLOCK INTO EACH AUTHENTICATED PAGE
+
+const INACTIVITY_TIMEOUT = 30* 60 * 1000; // 30 minutes
+let inactivityTimer;
+
+
+
+// In dashboard.html, inside the <script type="module"> tag
+
+// --- Register Service Worker ---
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch(error => {
+        console.log('ServiceWorker registration failed: ', error);
+      });
+  });
+}
+
+// ... the rest of your dashboard.html script follows
+// import { createClient } from '...';
+// In dashboard.html
+function resetInactivityTimer() {
+    if (inactivityTimer) clearTimeout(inactivityTimer);
+    
+    inactivityTimer = setTimeout(() => {
+        alert("You have been logged out due to inactivity.");
+        
+        // FIX: Call the handleLogout function correctly.
+        // It no longer needs a 'user' parameter because it gets the
+        // session_id from local storage.
+        handleLogout();
+
+    }, INACTIVITY_TIMEOUT);
+}
+
+function setupActivityListeners() {
+    // Reset the timer on any of these events
+    ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+        document.addEventListener(event, resetInactivityTimer, true);
+    });
+    // Initial start of the timer
+    resetInactivityTimer();
+}
+
+// --- In dashboard.html's <script type="module"> block ---
+async function validateAndEnforceSession(user) {
+    // Get the specific session ID the browser is using
+    const sessionId = localStorage.getItem('sessionId');
+
+    if (!sessionId) {
+        await handleLogout();
+        return false;
+    }
+
+    // Query for that ONE specific session record
+    const { data: sessionData, error } = await supabase
+        .from('active_sessions')
+        .select('expires_at')
+        .eq('user_id', user.id)
+        .eq('session_id', sessionId)
+        .single(); // Expect exactly one result
+
+    if (error || !sessionData) {
+        // If no session was found matching the ID, log out
+        await handleLogout();
+        return false;
+    }
+
+    // Check if the session is expired
+    const now = new Date();
+    const expiryDate = new Date(sessionData.expires_at);
+
+    if (now > expiryDate) {
+        await handleLogout();
+        return false;
+    }
+
+    // If we reach here, the session is valid
+    return true;
+}
+async function handleLogoutForQuizPage() {
+            if (quizTimerInterval) clearInterval(quizTimerInterval);
+
+            console.log("Logout process started...");
+            const user = auth.currentUser;
+            const sessionId = localStorage.getItem('userSessionId');
+
+            console.log("Current User ID:", user ? user.uid : 'No user found');
+            console.log("Session ID from Local Storage:", sessionId);
+
+            try {
+                if (user && sessionId) {
+                    console.log("Attempting to delete Firestore session document...");
+                    const sessionRef = doc(db, "users", user.uid, "activeSessions", sessionId);
+                    await deleteDoc(sessionRef);
+                    console.log("Firestore session document deletion successful.");
+                } else {
+                    console.log("Skipping Firestore deletion because User or Session ID is missing.");
+                }
+            } catch (error) {
+                console.error("ERROR during Firestore session cleanup:", error);
+            } finally {
+                console.log("Cleaning up local storage and signing out.");
+                localStorage.removeItem('userSessionId');
+                sessionStorage.removeItem('masterBookList');
+                sessionStorage.removeItem('masterDisciplineList');
+                await signOut(auth);
+            }
+        }
+  // PASTE ALL OF THIS CODE AT THE TOP OF YOUR SCRIPT
+
+// --- New Dropdown Elements ---
+const profileDropdownButton = document.getElementById('profileDropdownButton');
+const profileDropdownMenu = document.getElementById('profileDropdownMenu');
+const dropdownProfileImage = document.getElementById('dropdownProfileImage');
+const dropdownUsername = document.getElementById('dropdownUsername');
+
+function updateUserProfileIcon(user, userData) {
+    const photoURL = user.user_metadata.photoURL;
+    const username = user.user_metadata.username || user.email;
+
+    const profileHTML = photoURL
+        ? `<img src="${photoURL}" alt="My Profile" class="w-full h-full object-cover">`
+        : `<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-gray-500 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>`;
+
+    profileDropdownButton.innerHTML = profileHTML;
+    dropdownProfileImage.innerHTML = profileHTML;
+
+    // Conditionally add the premium badge to the dropdown
+    let usernameHTML = `<p id="dropdownUsername" class="font-semibold text-gray-800 break-all">${username}</p>`;
+    if (userData && userData.account_type === 'premium') {
+        usernameHTML = `
+            <div class="flex items-center gap-x-2">
+                <p id="dropdownUsername" class="font-semibold text-gray-800 break-all">${username}</p>
+                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <img src="./images/general/crown.png" alt="Premium" class="w-3 h-3 object-contain">
+                    Premium
+                </span>
+            </div>`;
+    }
+    
+    const usernameContainer = document.getElementById('dropdownUsername').parentNode;
+    usernameContainer.innerHTML = usernameHTML + '<p class="text-sm text-gray-500">View your profile</p>';
+}
+
+// --- New logic to show/hide the dropdown menu ---
+profileDropdownButton.addEventListener('click', (event) => {
+    // This stops the click from immediately being caught by the document listener below
+    event.stopPropagation();
+    profileDropdownMenu.classList.toggle('hidden');
+});
+
+// --- New logic to close the dropdown when clicking anywhere else on the page ---
+document.addEventListener('click', () => {
+    if (!profileDropdownMenu.classList.contains('hidden')) {
+        profileDropdownMenu.classList.add('hidden');
+    }
+});
+
+// --- In dashboard.html, inside the <script type="module"> tag ---
+
+// PASTE THIS ENTIRE NOTIFICATION LOGIC BLOCK
+
+// --- Notification Elements & Logic ---
+const notificationButton = document.getElementById('notificationButton');
+const notificationPanel = document.getElementById('notificationPanel');
+const notificationList = document.getElementById('notificationList');
+const notificationBadge = document.getElementById('notificationBadge');
+const notificationPlaceholder = document.getElementById('notification-placeholder');
+
+// Replace your existing function with this clean version
+async function fetchAndDisplayNotifications() {
+    if (!currentUser) return;
+
+    const { data: userNotifications, error } = await supabase
+        .from('user_notifications')
+        .select(`id, is_read, notifications (content, type, link_url, created_at)`)
+        .eq('recipient_id', currentUser.id)
+        .eq('is_read', false)
+        .order('created_at', { foreignTable: 'notifications', ascending: false });
+    
+    if (error) {
+        console.error("Error fetching notifications:", error);
+        notificationPlaceholder.textContent = `Error: ${error.message}`;
+        return;
+    }
+
+    if (userNotifications.length > 0) {
+        notificationBadge.classList.remove('hidden');
+    } else {
+        notificationBadge.classList.add('hidden');
+    }
+    
+    notificationList.innerHTML = '';
+
+    if (userNotifications.length === 0) {
+        notificationList.appendChild(notificationPlaceholder);
+        return;
+    }
+
+    userNotifications.forEach(item => {
+        const notification = item.notifications; 
+        if (!notification) return; 
+
+        const notifElement = document.createElement('a');
+        notifElement.href = notification.link_url || '#';
+        notifElement.className = 'block p-4 hover:bg-gray-50';
+        notifElement.dataset.userNotificationId = item.id;
+
+        notifElement.innerHTML = `
+            <p class="font-semibold text-gray-800">${notification.content}</p>
+            <p class="text-xs text-gray-500 mt-1">${new Date(notification.created_at).toLocaleString()}</p>
+        `;
+        notificationList.appendChild(notifElement);
+    });
+}
+
+// Mark notification as read when it's clicked
+// This is the NEW, corrected click listener.
+notificationList.addEventListener('click', async (e) => {
+    e.preventDefault(); // Prevent the link from navigating immediately
+    const link = e.target.closest('a');
+    
+    if (link && link.dataset.userNotificationId) {
+        const userNotificationId = link.dataset.userNotificationId;
+        
+        // Step 1: Tell Supabase to update the row
+        const { error } = await supabase
+            .from('user_notifications')
+            .update({ is_read: true, read_at: new Date().toISOString() })
+            .eq('id', userNotificationId);
+            
+        // Step 2: Check for and log any errors from the database
+        if (error) {
+            console.error("Error marking notification as read:", error);
+            alert("Could not update notification status. See console for details.");
+            return; // Stop the function if there was an error
+        } 
+        
+        // Step 3: If successful, update the UI
+        console.log("Successfully marked as read. Navigating now...");
+        
+        // Visually remove the item from the list
+        link.remove();
+        
+        // Re-check if any unread notifications are left to update the badge
+        if (notificationList.children.length === 0 || !notificationList.querySelector('a')) {
+             notificationList.innerHTML = ''; // Clear the list completely
+             notificationList.appendChild(notificationPlaceholder);
+             notificationBadge.classList.add('hidden');
+        }
+        
+        // Step 4: Go to the link's destination
+        window.location.href = link.href;
+    }
+});
+
+
+// Toggle the notification panel visibility
+notificationButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    notificationPanel.classList.toggle('hidden');
+});
+
+// Hide panel when clicking elsewhere
+document.addEventListener('click', (e) => {
+    if (!notificationPanel.classList.contains('hidden') && !notificationPanel.contains(e.target) && !notificationButton.contains(e.target)) {
+        notificationPanel.classList.add('hidden');
+    }
+});
+
+// --- END OF NOTIFICATION LOGIC BLOCK ---
+
+    // --- DOM Element References ---
+        const dom = {
+            logoutButton: document.getElementById('logoutButton'),
+            adminDashboardButton: document.getElementById('adminDashboardButton'),
+            dashboardTitle: document.getElementById('dashboardTitle'),
+            loadingState: document.getElementById('loadingState'),
+            viewContainer: document.getElementById('viewContainer'),
+            showDisciplinesBtn: document.getElementById('showDisciplinesBtn'),
+            showBooksBtn: document.getElementById('showBooksBtn'),
+            disciplinesGrid: document.getElementById('disciplinesGrid'),
+            showVideosBtn: document.getElementById('showVideosBtn'),
+            videosGrid: document.getElementById('videosGrid'),
+            booksGrid: document.getElementById('booksGrid'),
+            openCustomQuizMenuBtn: document.getElementById('openCustomQuizMenuBtn'),
+            customQuizChoiceModal: document.getElementById('customQuizChoiceModal'),
+            resumeCustomQuizBtn: document.getElementById('resumeCustomQuizBtn'),
+            createNewCustomQuizBtn: document.getElementById('createNewCustomQuizBtn'),
+            cancelChoiceBtn: document.getElementById('cancelChoiceBtn'),
+            customQuizModal: document.getElementById('customQuizModal'),
+            closeQuizBuilderBtn: document.getElementById('closeQuizBuilderBtn'),
+            customQuizForm: document.getElementById('customQuizForm'),
+            timerInputs: document.getElementById('timerInputs'),
+            startCustomQuizBtn: document.getElementById('startCustomQuizBtn'),
+            buildStatus: document.getElementById('buildStatus'),
+            flowControlContainer: document.getElementById('flowControlContainer'),
+            customQuizBtnContainer: document.getElementById('customQuizBtnContainer'),
+            quizModeModal: document.getElementById('quizModeModal'),
+            sequentialModeButton: document.getElementById('sequentialModeButton'),
+            randomModeButton: document.getElementById('randomModeButton'),
+            cancelModeButton: document.getElementById('cancelModeButton'),
+            customAlertModal: document.getElementById('customAlertModal'),
+            customAlertMessage: document.getElementById('customAlertMessage'),
+            customAlertCloseBtn: document.getElementById('customAlertCloseBtn'),
+            searchInput: document.getElementById('searchInput'),
+            searchResultsContainer: document.getElementById('searchResultsContainer'),
+        };
+  
+
+// In dashboard.html
+// --- Global State ---
+let allDisciplines = [], allBooks = [], allChapters = [];
+
+// NEW: A dedicated object to hold securely filtered content for the quiz builder
+let accessibleContent = { books: [], disciplines: [], chapters: [] };
+let currentUserData = null;
+let purchasedCourseIds = new Set(); // ADD THIS LINE
+let videoCoursesForDashboard = []; // ADD THIS LINE
+let quizStartContext = { type: null, id: null, name: null };
+let currentUserSpecialty = null;
+let currentUser = null;
+let builderContext = 'global';
+let sourcesSelector;
+let sourceRelationshipMap = new Map();
+let userHistoryCache = new Map();
+     
+        
+
+// --- START: New Helper Function ---
+function hasVideoAccess(course) {
+    if (!course || !currentUserData) return false;
+
+    // Free content is always accessible
+    if (course.access_level === 'free') {
+        return true;
+    }
+
+    // Premium users can access premium content
+    if (currentUserData.account_type === 'premium' && course.access_level === 'premium') {
+        return true;
+    }
+
+    // Any user can access a course they have specifically purchased
+    if (purchasedCourseIds.has(course.id)) {
+        return true;
+    }
+
+    // Otherwise, they don't have access
+    return false;
+}
+// --- END: New Helper Function ---
+function switchView(view) {
+    if (dom.dashboardTitle) {
+        dom.dashboardTitle.textContent =
+            view === 'disciplines' ? 'Browse by Discipline' :
+            view === 'books' ? 'Browse by Book' : 'My Video Courses';
+    }
+
+    dom.disciplinesGrid.classList.toggle('hidden', view !== 'disciplines');
+    dom.booksGrid.classList.toggle('hidden', view !== 'books');
+    dom.videosGrid.classList.toggle('hidden', view !== 'videos');
+
+    dom.showDisciplinesBtn.classList.toggle('active', view === 'disciplines');
+    dom.showBooksBtn.classList.toggle('active', view === 'books');
+    dom.showVideosBtn.classList.toggle('active', view === 'videos');
+
+    // This logic now correctly shows the search bar on ALL views.
+    const isSearchViewVisible = view === 'disciplines' || view === 'books' || view === 'videos';
+    dom.searchInput.parentElement.parentElement.classList.toggle('hidden', !isSearchViewVisible);
+
+    // This logic correctly hides the custom quiz button on the video view.
+    const isQuizView = view === 'disciplines' || view === 'books';
+    dom.customQuizBtnContainer.classList.toggle('hidden', !isQuizView);
+
+    if (dom.viewContainer) dom.viewContainer.classList.remove('hidden');
+}
+        dom.showVideosBtn.addEventListener('click', () => switchView('videos'));
+
+
+function renderVideoCourses(coursesToRender, userData, purchasedCourseIds = new Set()) {
+    dom.videosGrid.innerHTML = '';
+
+    // Step 1: Filter out purchasable courses that the user has NOT bought.
+    const coursesToShow = coursesToRender.filter(course => {
+        if (course.access_level === 'purchasable') {
+            return purchasedCourseIds.has(course.id); // Only show if purchased
+        }
+        return true; // Keep all other types (free, premium)
+    });
+
+    if (coursesToShow.length === 0) {
+        dom.videosGrid.innerHTML = '<p class="text-white text-center col-span-full">No video courses are available for your specialty.</p>';
+        return;
+    }
+
+    // Step 2: Loop through the filtered list and apply the correct lock logic.
+    coursesToShow.forEach(course => {
+        const hasPurchased = purchasedCourseIds.has(course.id);
+        let isLocked = false;
+        
+        // A course is now ONLY locked if it's premium, the user is free, and they haven't bought it.
+        if (course.access_level === 'premium' && userData.account_type === 'free' && !hasPurchased) {
+            isLocked = true;
+        }
+
+        const card = document.createElement('div');
+        // ... (The rest of your card rendering HTML is correct and does not need to be changed)
+        card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col relative';
+        card.innerHTML = `
+            <div class="p-6 flex flex-col flex-grow">
+                <div class="relative h-48 overflow-hidden bg-gray-200 flex items-center justify-center mb-4 rounded-lg">
+                    <img src="${course.thumbnail_url || 'images/placeholder.png'}" alt="${course.title}" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">${course.title}</h3>
+                <p class="text-gray-600 text-sm flex-grow mb-4">${course.description}</p>
+            </div>
+            ${isLocked
+                ? `<div class="absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col items-center justify-center p-4 rounded-2xl"><img src="images/shopping-cart-white.png" alt="Premium Content" class="w-12 h-12 mb-4"><button onclick="window.location.href='store.html'" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">Upgrade to Access</button></div>`
+                : `<a href="view_course.html?id=${course.id}" class="mt-auto text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg">Watch Course</a>`
+            }
+        `;
+        dom.videosGrid.appendChild(card);
+    });
+}
+// In dashboard.html
+
+function renderDisciplines(disciplinesToRender, userData) {
+    dom.disciplinesGrid.innerHTML = '';
+    if (disciplinesToRender.length === 0) {
+        dom.disciplinesGrid.innerHTML = '<p class="text-white text-center col-span-full">No disciplines available for your specialty.</p>';
+        return;
+    }
+    
+    disciplinesToRender.forEach(disc => {
+        const card = document.createElement('div');
+
+
+        // Added 'relative' to allow the overlay to position correctly
+        card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6 text-center transition-all duration-300 relative';
+        
+
+        card.dataset.id = disc.id;
+        card.dataset.name = disc.name;
+
+        // The card's HTML now includes a conditional block for the overlay
+      // Replace it with this, which has no locking logic
+card.innerHTML = `
+    <img src="${disc.imageUrl || 'images/default-discipline.svg'}" alt="${disc.name}" class="w-24 h-24 object-contain mb-4">
+    <h3 class="text-xl font-bold text-gray-800">${disc.name}</h3>
+`;
+        dom.disciplinesGrid.appendChild(card);
+    });
+}
+
+// In dashboard.html
+
+function renderBooks(booksToRender, userData, purchasedBookIds = new Set()) {
+  
+    
+    dom.booksGrid.innerHTML = '';
+    
+    // The initial filter is no longer needed because the backend handles it.
+
+    if (!booksToRender || booksToRender.length === 0) {
+        dom.booksGrid.innerHTML = '<p class="text-white text-center col-span-full">No books available for your specialty.</p>';
+        return;
+    }
+
+    booksToRender.forEach(item => {
+         console.log("--- DEBUG: Processing item in renderBooks loop ---", item);
+        const book = item.book_data;
+        const hasAccess = item.has_access;
+        if (!book) return;
+
+        // The lock logic is now simple: just obey the flag from the backend.
+        const isLocked = !hasAccess;
+
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 relative';
+        if (!isLocked) { card.classList.add('hover:shadow-xl', 'hover:scale-105'); }
+        card.dataset.id = book.id;
+
+      card.innerHTML = `
+            <div class="card-content-area flex flex-col flex-grow ${isLocked ? 'cursor-not-allowed' : 'cursor-pointer'}">
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="h-48 overflow-hidden bg-gray-200 flex items-center justify-center mb-4 rounded-lg">
+                        <img src="${book.image}" alt="${book.title}" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">${book.title}</h3>
+                    <p class="text-gray-600 text-sm flex-grow">${book.description}</p>
+                </div>
+            </div>
+            ${isLocked
+                ? `<div class="absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col items-center justify-center p-4 rounded-2xl"><img src="images/shopping-cart-white.png" alt="Premium Content" class="w-12 h-12 mb-4"><button onclick="window.location.href='store.html'" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">Upgrade to Access</button></div>`
+                : book.isVirtual // If the book is not locked, check if it's a virtual book
+                    ? `<div class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 text-center cursor-pointer start-quiz-btn">Start Quiz</div>` // If yes, show the "Start Quiz" button
+                    : '' // Otherwise (it's a regular book), show nothing.
+            }
+        `;
+        dom.booksGrid.appendChild(card);
+    });
+}
+
+// In dashboard.html
+
+dom.booksGrid.addEventListener('click', (e) => {
+    const card = e.target.closest('[data-id]');
+    if (!card) return;
+
+    const bookId = card.dataset.id;
+    const bookItem = allBooks.find(item => item.book_data && item.book_data.id === bookId);
+    if (!bookItem) return;
+
+    const book = bookItem.book_data;
+
+    // For virtual books (which are single chapters), go directly to the quiz modal. This is correct.
+    if (book.isVirtual) {
+        quizStartContext = { type: 'virtual_chapter', originalBookId: book.originalBookId, chapterId: book.linkedChapterId };
+        
+        // Ensure the "Custom" button is hidden for virtual chapter quizzes
+        const customButton = dom.quizModeModal.querySelector('#customDisciplineModeButton');
+        if (customButton) {
+           customButton.classList.add('hidden');
+        }
+        dom.quizModeModal.classList.remove('hidden');
+    } else {
+        // For regular, full books, ANY click on the card (image or button) now navigates to the chapters page.
+        window.location.href = `book_chapters.html?bookId=${book.id}`;
+    }
+});
+        
+function handleSearch() {
+    const query = dom.searchInput.value.toLowerCase().trim();
+    const isSearching = query.length > 0;
+
+    dom.searchResultsContainer.classList.toggle('hidden', !isSearching);
+    dom.dashboardTitle.classList.toggle('hidden', isSearching);
+
+    if (isSearching) {
+        // When a search is active, hide all main content grids
+        dom.disciplinesGrid.classList.add('hidden');
+        dom.booksGrid.classList.add('hidden');
+        dom.videosGrid.classList.add('hidden');
+        dom.customQuizBtnContainer.classList.add('hidden');
+    } else {
+        // When search is cleared, this block runs to restore the correct view
+        const activeBtn = document.querySelector('.view-toggle-btn.active');
+        if (activeBtn) {
+            const activeViewId = activeBtn.id;
+            
+            // Explicitly show the correct grid
+            dom.disciplinesGrid.classList.toggle('hidden', activeViewId !== 'showDisciplinesBtn');
+            dom.booksGrid.classList.toggle('hidden', activeViewId !== 'showBooksBtn');
+            dom.videosGrid.classList.toggle('hidden', activeViewId !== 'showVideosBtn');
+
+            // Explicitly show the search bar container again
+            dom.searchInput.parentElement.parentElement.classList.remove('hidden');
+
+            // Show the custom quiz button only on quiz tabs
+            const isQuizView = activeViewId === 'showDisciplinesBtn' || activeViewId === 'showBooksBtn';
+            dom.customQuizBtnContainer.classList.toggle('hidden', !isQuizView);
+        }
+        return; // Stop the function
+    }
+
+    // --- Search Filtering (This logic is correct) ---
+    const disciplineResults = allDisciplines.filter(discipline => {
+        const nameMatches = discipline.name.toLowerCase().includes(query);
+        if (!nameMatches) return false;
+        return allChapters.some(chapter => {
+            if (chapter.discipline_id === discipline.id) {
+                const parentBook = allBooks.find(bookItem => bookItem.book_data.id === chapter.book_id);
+                return parentBook && parentBook.has_access === true;
+            }
+            return false;
+        });
+    });
+    const accessibleBookResults = allBooks.filter(item => item.has_access && (item.book_data.title.toLowerCase().includes(query) || item.book_data.description.toLowerCase().includes(query)));
+    const accessibleChapterResults = allChapters.filter(chapter => {
+        const parentBook = allBooks.find(b => b.book_data.id === chapter.book_id);
+        return parentBook && parentBook.has_access && chapter.name.toLowerCase().includes(query);
+    });
+    const accessibleVideoResults = videoCoursesForDashboard.filter(course => hasVideoAccess(course) && (course.title.toLowerCase().includes(query) || course.description.toLowerCase().includes(query)));
+
+    // --- Rendering search results (This logic is correct) ---
+    if (disciplineResults.length === 0 && accessibleBookResults.length === 0 && accessibleChapterResults.length === 0 && accessibleVideoResults.length === 0) {
+        dom.searchResultsContainer.innerHTML = '<p class="text-white text-center bg-white/10 p-4 rounded-lg">No accessible content found.</p>';
+        return;
+    }
+    let resultsHTML = '';
+    if (disciplineResults.length > 0) {
+        resultsHTML += '<h3 class="text-2xl font-bold text-white mb-3">Disciplines</h3>';
+        disciplineResults.forEach(disc => {
+            resultsHTML += `<div class="bg-white p-4 rounded-lg shadow flex items-center justify-between cursor-pointer" onclick="window.location.href='disciplines_chapters.html?disciplineId=${disc.id}&name=${encodeURIComponent(disc.name)}'"><div class="flex items-center"><img src="${disc.imageUrl || 'images/default-discipline.svg'}" class="w-10 h-10 mr-4"><span class="font-semibold text-gray-800">${disc.name}</span></div><span class="text-sm text-purple-600 font-semibold">View Chapters &rarr;</span></div>`;
+        });
+    }
+    if (accessibleBookResults.length > 0) {
+        resultsHTML += '<h3 class="text-2xl font-bold text-white mt-6 mb-3">Books</h3>';
+        accessibleBookResults.forEach(item => {
+            resultsHTML += `<a href="book_chapters.html?bookId=${item.book_data.id}" class="bg-white p-4 rounded-lg shadow flex items-center justify-between"><div class="flex items-center min-w-0"><img src="${item.book_data.image}" class="w-10 h-16 object-contain mr-4 flex-shrink-0"><div class="min-w-0"><p class="font-semibold text-gray-800 truncate">${item.book_data.title}</p><p class="text-sm text-gray-500 truncate">${item.book_data.description}</p></div></div><span class="text-sm text-purple-600 font-semibold flex-shrink-0 ml-4">View Chapters &rarr;</span></a>`;
+        });
+    }
+    if (accessibleVideoResults.length > 0) {
+        resultsHTML += '<h3 class="text-2xl font-bold text-white mt-6 mb-3">Video Courses</h3>';
+        accessibleVideoResults.forEach(course => {
+            resultsHTML += `<a href="view_course.html?id=${course.id}" class="bg-white p-4 rounded-lg shadow flex items-center justify-between"><div class="flex items-center min-w-0"><img src="${course.thumbnail_url}" class="w-16 h-10 object-cover mr-4 flex-shrink-0 rounded"><div class="min-w-0"><p class="font-semibold text-gray-800 truncate">${course.title}</p><p class="text-sm text-gray-500 truncate">${course.description}</p></div></div><span class="text-sm text-indigo-600 font-semibold flex-shrink-0 ml-4">Watch Course &rarr;</span></a>`;
+        });
+    }
+    if (accessibleChapterResults.length > 0) {
+        resultsHTML += '<h3 class="text-2xl font-bold text-white mt-6 mb-3">Chapters</h3>';
+        accessibleChapterResults.forEach(chapter => {
+            const parentBook = allBooks.find(b => b.book_data.id === chapter.book_id);
+            resultsHTML += `<a href="quiz_page.html?bookId=${chapter.book_id}&chapterId=${chapter.id}" class="bg-white p-4 rounded-lg shadow flex items-center justify-between"><div class="min-w-0"><p class="font-semibold text-gray-800 truncate">Ch. ${chapter.chapterNumber}: ${chapter.name}</p><p class="text-sm text-gray-500 truncate">From: ${parentBook.book_data.title}</p></div><span class="text-sm text-green-600 font-semibold flex-shrink-0 ml-4">Start Quiz &rarr;</span></a>`;
+        });
+    }
+    dom.searchResultsContainer.innerHTML = resultsHTML;
+}
+          // --- NEW/REWRITTEN Quiz Builder UI Functions ---
+
+        function updateSequenceNumbers(listElement) {
+            const items = listElement.querySelectorAll('.rule-item, .priority-item'); // Support both types of lists
+            items.forEach((item, index) => {
+                const numEl = item.querySelector('.priority-number');
+                if (numEl) numEl.textContent = `${index + 1}.`;
+            });
+        }
+
+
+        
+// This is the final, corrected function.
+async function populateHierarchicalSliders(questionPool) {
+    const listEl = document.getElementById('sliderList');
+    const totalCountInput = document.getElementById('customQuestionCount');
+    listEl.innerHTML = '';
+
+    if (!sourcesSelector) {
+        document.getElementById('percentageBuilderContainer').classList.add('hidden');
+        return;
+    }
+
+    const allSourceData = sourcesSelector.getData();
+    const selectedSourceIds = new Set(sourcesSelector.getSelected());
+
+    const selectedGroups = allSourceData.filter(group => {
+        const parentOpt = group.options.find(opt => !opt.value.startsWith('chapter_'));
+        const hasSelectedParent = parentOpt && selectedSourceIds.has(parentOpt.value);
+        const hasSelectedChild = group.options.some(opt => opt.value.startsWith('chapter_') && selectedSourceIds.has(opt.value));
+        return hasSelectedParent || hasSelectedChild;
+    });
+
+    if (selectedGroups.length === 0) {
+        document.getElementById('percentageBuilderContainer').classList.add('hidden');
+        return;
+    }
+    document.getElementById('percentageBuilderContainer').classList.remove('hidden');
+
+    selectedGroups.forEach(group => {
+        const parentOpt = group.options.find(opt => !opt.value.startsWith('chapter_'));
+        const parentId = parentOpt.value;
+        const childOpts = group.options.filter(opt => opt.value.startsWith('chapter_'));
+
+        const maxForParent = childOpts.reduce((sum, child) => {
+            // THE FIX: Changed child.id to child.value to correctly find the chapter's ID
+            return sum + questionPool.filter(q => q.chapter_id === child.value.split('_')[1]).length;
+        }, 0);
+
+        if (maxForParent === 0) return;
+
+        let childrenHTML = '';
+        childOpts.forEach(child => {
+            // THE FIX: Changed child.id to child.value here as well
+            const childMax = questionPool.filter(q => q.chapter_id === child.value.split('_')[1]).length;
+            if (childMax > 0) {
+                childrenHTML += `
+                    <div class="grid grid-cols-6 gap-4 items-center child-slider-row">
+                        <label class="col-span-2 truncate text-xs text-gray-600">${child.text}</label>
+                        <input type="range" data-child-id="${child.value}" min="0" max="${childMax}" value="0" class="child-slider col-span-3 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <span class="child-label col-span-1 text-xs font-mono text-right">0% (0)</span>
+                    </div>
+                `;
+            }
+        });
+
+       listEl.insertAdjacentHTML('beforeend', `
+            <div class="bg-gray-100 p-3 rounded-lg border parent-slider-group">
+                <div class="grid grid-cols-6 gap-4 items-center font-semibold">
+                    <label class="col-span-2 truncate text-sm">${group.label}</label>
+                    <input type="range" readonly disabled value="0" max="${maxForParent}" class="parent-slider col-span-2 h-2 bg-gray-300 rounded-lg appearance-none">
+                    <span class="parent-label col-span-2 text-sm font-mono text-right">0 Questions</span>
+                </div>
+                <div class="pl-6 pt-2 mt-2 border-t space-y-2">${childrenHTML}</div>
+            </div>
+        `);
+    });
+
+    const updateAllUI = () => {
+        let grandTotal = 0;
+        
+        // First Pass: Calculate totals for each parent and update child labels.
+        document.querySelectorAll('.parent-slider-group').forEach(groupEl => {
+            let parentTotal = 0;
+            groupEl.querySelectorAll('.child-slider').forEach(childSlider => {
+                parentTotal += parseInt(childSlider.value, 10);
+            });
+            
+            groupEl.querySelector('.parent-slider').value = parentTotal;
+            grandTotal += parentTotal;
+
+            groupEl.querySelectorAll('.child-slider-row').forEach(childRow => {
+                const childSlider = childRow.querySelector('.child-slider');
+                const childLabel = childRow.querySelector('.child-label');
+                const childValue = parseInt(childSlider.value, 10);
+                const percentage = parentTotal > 0 ? Math.round((childValue / parentTotal) * 100) : 0;
+                childLabel.textContent = `${percentage}% (${childValue})`;
+            });
+        });
+
+        // Second Pass: Now that we have the grandTotal, update the parent labels.
+        document.querySelectorAll('.parent-slider-group').forEach(groupEl => {
+            const parentTotal = parseInt(groupEl.querySelector('.parent-slider').value, 10);
+            const percentage = grandTotal > 0 ? Math.round((parentTotal / grandTotal) * 100) : 0;
+            // This is the updated line that adds the percentage.
+            groupEl.querySelector('.parent-label').textContent = `${percentage}% (${parentTotal} Questions)`;
+        });
+
+        totalCountInput.value = grandTotal;
+        dom.buildStatus.textContent = `${grandTotal} questions selected.`;
+    };
+
+    document.querySelectorAll('.child-slider').forEach(slider => {
+        slider.addEventListener('input', updateAllUI);
+    });
+
+    totalCountInput.addEventListener('input', () => {
+        let totalToDistribute = parseInt(totalCountInput.value, 10) || 0;
+        const allChildSliders = Array.from(document.querySelectorAll('.child-slider'));
+        allChildSliders.forEach(s => s.value = 0);
+
+        let protection = 0;
+        while (totalToDistribute > 0 && protection < 10000) {
+            for (const slider of allChildSliders) {
+                if (totalToDistribute > 0 && parseInt(slider.value) < parseInt(slider.max)) {
+                    slider.value = parseInt(slider.value) + 1;
+                    totalToDistribute--;
+                }
+            }
+            protection++;
+            if (allChildSliders.every(s => s.value === s.max)) break;
+        }
+        updateAllUI();
+    });
+
+    totalCountInput.dispatchEvent(new Event('input'));
+}
+
+// This is the new, improved logout function
+// In dashboard.html
+async function handleLogout() {
+    // Get the specific session ID from local storage.
+    const sessionId = localStorage.getItem('sessionId');
+
+    if (sessionId) {
+        // FIX: Delete only the row matching the current session's ID.
+        await supabase
+            .from('active_sessions')
+            .delete()
+            .eq('session_id', sessionId);
+    }
+
+    // The rest of the logout process remains the same.
+    await supabase.auth.signOut();
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.href = 'index.html';
+}
+  
+        
+// In dashboard.html
+      function openAdvancedBuilder(sourceData) {
+    // This is the new, single function to open the builder.
+    // It takes the source data as an argument, making it reusable.
+    
+    // *** THE FIX: Clear the history cache to get the latest data ***
+    userHistoryCache.clear();
+
+    sourcesSelector.setData(sourceData);
+    
+    // Reset the form to a clean, default state every time it's opened.
+    dom.customQuizForm.reset();
+    document.getElementById('percentageBuilderContainer').classList.add('hidden');
+    document.getElementById('sequenceBuilderContainer').classList.add('hidden');
+
+    // Trigger the initial UI setup and question calculation.
+    handleQuizBuilderState();
+    
+    // Show the modal.
+    dom.customQuizModal.classList.remove('hidden');
+}
+
+
+        
+    async function updateSourceSelectorLogic() {
+            const selectedValues = sourcesSelector.getSelected();
+            let selectedSet = new Set(selectedValues);
+
+            // NEW RULE: If a parent is selected, find its children and DESELECT them.
+            for (const selectedValue of selectedValues) {
+                const entry = sourceRelationshipMap.get(selectedValue);
+                if (entry && entry.children.size > 0) { // This identifies a selected parent.
+                    entry.children.forEach(childId => {
+                        // If a child was selected, remove it from our set of selected items.
+                        if (selectedSet.has(childId)) {
+                            selectedSet.delete(childId);
+                        }
+                    });
+                }
+            }
+            
+            // This set now holds the final, correct selections
+            const finalSelectedValues = Array.from(selectedSet);
+
+            // Now, determine which options to disable (this logic remains similar)
+            const toDisable = new Set();
+            for (const selectedValue of finalSelectedValues) {
+                const entry = sourceRelationshipMap.get(selectedValue);
+                if (entry) {
+                    // If a parent is selected, disable all its children.
+                    if (entry.children.size > 0) {
+                        entry.children.forEach(childId => toDisable.add(childId));
+                    }
+                }
+            }
+
+            const currentData = sourcesSelector.getData();
+            const newData = currentData.map(group => ({
+                ...group,
+                options: group.options.map(option => ({ ...option, disabled: toDisable.has(option.value) }))
+            }));
+
+        setTimeout(async () => {
+    sourcesSelector.setData(newData);
+    // Update the dropdown to show the final, correct selections
+    sourcesSelector.setSelected(finalSelectedValues, false); 
+    await recalculateAvailableQuestionsAndUpdateUI();
+
+    // FIX: This call ensures the sequential flow list updates automatically.
+    updateFlowControlUI();
+}, 0);
+        }
+function handleQuizBuilderState() {
+    const form = dom.customQuizForm;
+    // This is now reliable because the direct event listener ensures this function runs AFTER the click.
+    const mode = form.questionCountMode.value;
+
+    const sourceTypeFieldset = document.getElementById('sourceTypeFieldset');
+    const questionSourcesFieldset = document.getElementById('questionSourcesFieldset');
+    const countInput = document.getElementById('customQuestionCount');
+    const percentageContainer = document.getElementById('percentageBuilderContainer');
+    const helpText = document.getElementById('recalculateHelpText');
+    
+    const sourcesVisible = (mode === 'from_sources' || mode === 'set_number');
+
+    sourceTypeFieldset.classList.toggle('hidden', !sourcesVisible);
+    questionSourcesFieldset.classList.toggle('hidden', !sourcesVisible);
+
+    if (!sourcesVisible) {
+        const sourceTypes = form.querySelectorAll('input[name="sourceType"]');
+        sourceTypes.forEach(radio => radio.checked = false);
+        if (sourcesSelector) {
+            sourcesSelector.setData([]);
+            sourcesSelector.setSelected([], false);
+        }
+    }
+    
+    countInput.disabled = (mode !== 'set_number');
+    percentageContainer.classList.toggle('hidden', mode !== 'set_number');
+    helpText.classList.toggle('hidden', mode === 'all_available');
+    
+    recalculateAvailableQuestionsAndUpdateUI();
+    updateFlowControlUI();
+}
+  
+
+
+
+      function populateSequenceListFromSelection() {
+            const listEl = document.getElementById('sequenceList');
+            listEl.innerHTML = ''; // Clear the list first
+
+            // START: New safety check
+            // If the sourcesSelector dropdown hasn't been created yet, show a message and stop.
+            if (!sourcesSelector) {
+                listEl.innerHTML = `<p class="text-sm text-gray-500">Please choose a 'Source Type' first.</p>`;
+                return;
+            }
+            // END: New safety check
+
+            const sourceData = sourcesSelector.getData().flatMap(group => group.options);
+            const selectedSources = sourcesSelector.getSelected();
+
+            if (selectedSources.length === 0) {
+                listEl.innerHTML = `<p class="text-sm text-gray-500">Select sources above to build a sequence.</p>`;
+                return;
+            }
+
+            selectedSources.forEach((val, index) => {
+                const sourceInfo = sourceData.find(s => s.value === val);
+                if (!sourceInfo) return;
+
+                const ruleItem = document.createElement('div');
+                ruleItem.className = 'rule-item flex items-center p-3 bg-white rounded-md shadow-sm border cursor-grab';
+                ruleItem.dataset.id = val;
+                ruleItem.innerHTML = `
+                    <span class="priority-number font-bold w-6 text-center text-purple-700">${index + 1}.</span>
+                    <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <span>${sourceInfo.text.replace('All of ','')}</span>`;
+                listEl.appendChild(ruleItem);
+            });
+            
+            new Sortable(listEl, { animation: 150 });
+        }
+
+        function populateGlobalSequenceList() {
+            const listEl = document.getElementById('sequenceList');
+            const type = dom.customQuizForm.sequenceType.value; 
+            listEl.innerHTML = '';
+
+            // Use the master data lists we loaded at the start
+            const items = (type === 'book') 
+                ? accessibleContent.books 
+                : accessibleContent.disciplines;
+            
+            const prefix = (type === 'book') ? 'book_' : 'discipline_';
+
+            if (items.length === 0) {
+                 listEl.innerHTML = `<p class="text-sm text-gray-500">No ${type}s available to sequence.</p>`;
+                 return;
+            }
+
+            items.forEach((item, index) => {
+                const ruleItem = document.createElement('div');
+                ruleItem.className = 'rule-item flex items-center p-3 bg-white rounded-md shadow-sm border cursor-grab';
+                ruleItem.dataset.id = `${prefix}${item.id}`;
+                ruleItem.innerHTML = `
+                    <span class="priority-number font-bold w-6 text-center text-purple-700">${index + 1}.</span>
+                    <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <span>${item.title || item.name}</span>`;
+                listEl.appendChild(ruleItem);
+            });
+            
+            new Sortable(listEl, { animation: 150 });
+        }
+       function updateFlowControlUI() {
+            const form = dom.customQuizForm;
+            const flowMode = form.flowMode.value;
+            const sequenceContainer = document.getElementById('sequenceBuilderContainer');
+            const globalSequenceControls = document.getElementById('globalSequenceTypeContainer');
+            const questionMode = form.questionCountMode.value;
+
+            // Show the main sequence builder container only if "sequential" is chosen
+            sequenceContainer.classList.toggle('hidden', flowMode !== 'sequential');
+
+            if (flowMode === 'sequential') {
+                // Now, decide WHICH list to show inside the container
+                if (questionMode === 'all_available') {
+                    // In "All Available" mode, show the "By Book" / "By Discipline" radios
+                    globalSequenceControls.classList.remove('hidden');
+                    // And populate the list based on the currently selected radio
+                    populateGlobalSequenceList();
+                } else {
+                    // In "From Selected Sources" or "Set Number" modes, hide the radios
+                    globalSequenceControls.classList.add('hidden');
+                    // And populate the list from the multi-select dropdown
+                    populateSequenceListFromSelection();
+                }
+            }
+        }
+// This is the new, corrected recalculateAvailableQuestionsAndUpdateUI function
+async function recalculateAvailableQuestionsAndUpdateUI() {
+    dom.buildStatus.textContent = 'Calculating...';
+    await getUserHistory(currentUser.id); // Ensure user history is fresh
+
+    let questionPool = await getQuestionsForSourceAndFilters();
+    const totalAvailable = questionPool.length;
+
+    const form = dom.customQuizForm;
+    const mode = form.questionCountMode.value;
+    const countInput = document.getElementById('customQuestionCount');
+    countInput.max = totalAvailable;
+
+    let finalQuestionCount = 0;
+
+    if (mode === 'all_available') {
+        finalQuestionCount = totalAvailable;
+        countInput.value = finalQuestionCount;
+    } else if (mode === 'from_sources') {
+        const selectedSources = sourcesSelector.getSelected();
+        if (selectedSources.length > 0) {
+            const sourceIds = new Set();
+            selectedSources.forEach(s => {
+                const [type, id] = s.split('_');
+                if (type === 'chapter') {
+                    sourceIds.add(id);
+                } else { // It's a parent (book or discipline)
+                    accessibleContent.chapters.forEach(c => {
+                        if ((type === 'book' && c.book_id === id) || (type === 'discipline' && c.discipline_id === id)) {
+                            sourceIds.add(c.id);
+                        }
+                    });
+                }
+            });
+            finalQuestionCount = questionPool.filter(q => sourceIds.has(q.chapter_id)).length;
+        } else {
+            finalQuestionCount = 0;
+        }
+        countInput.value = finalQuestionCount;
+    } else { // mode === 'set_number'
+        if (!countInput.value || parseInt(countInput.value, 10) > totalAvailable) {
+            countInput.value = totalAvailable;
+        }
+        finalQuestionCount = parseInt(countInput.value, 10);
+    }
+    
+    if (mode === 'set_number') {
+        // This line now calls the correct hierarchical function
+        await populateHierarchicalSliders(questionPool);
+    } else {
+        document.getElementById('percentageBuilderContainer').classList.add('hidden');
+    }
+
+    dom.buildStatus.textContent = `${finalQuestionCount} questions selected.`;
+}
+
+// In dashboard.html
+
+
+
+   // --- NEW: Main Authentication Check ---
+document.addEventListener('DOMContentLoaded', async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (session) {
+        // First, validate the session against our custom table.
+        const isSessionValid = await validateAndEnforceSession(session.user);
+
+        if (isSessionValid) {
+            // If the session is valid, proceed to load the dashboard.
+            currentUser = session.user;
+
+            // Fetch user data from the 'users' table to check for premium status
+            const { data: userData } = await supabase.from('users').select('account_type').eq('id', session.user.id).single();
+            
+            // Pass both user and userData to the function
+            updateUserProfileIcon(session.user, userData);
+
+            await loadAllData(session.user);
+            await initializeCustomQuizBuilder();
+            await fetchAndDisplayNotifications(); 
+
+           // --- REPLACE the old handleUrlHash(); line with THIS BLOCK ---
+          // If the URL hash didn't specify a view, show the default one.
+            switchView('books');
+            // --- END OF NEW BLOCK ---
+        }
+        
+    } else {
+        // No user is signed in, redirect to login.
+        window.location.href = 'index.html';
+    }
+});
+
+async function loadAllData(user) {
+    try {
+        const [
+            userDataRes, booksRes, disciplinesRes, chaptersRes,
+            bookPurchasesRes, videoCoursesRes, videoPurchasesRes
+        ] = await Promise.all([
+            supabase.from('users').select('role, speciality, account_type').eq('id', user.id).single(),
+            supabase.rpc('get_dashboard_books'),
+            supabase.from('disciplines').select('*'),
+            supabase.from('chapters').select('*'),
+            supabase.from('user_purchases').select('book_id').eq('id', user.id),
+            supabase.rpc('get_dashboard_video_courses'),
+            supabase.from('user_video_purchases').select('course_id').eq('user_id', user.id)
+        ]);
+
+        if (userDataRes.error) throw userDataRes.error;
+        if (booksRes.error) throw booksRes.error;
+        if (videoCoursesRes.error) throw videoCoursesRes.error;
+        
+        currentUserData = userDataRes.data;
+        
+        const booksFromRpc = booksRes.data || [];
+        // THIS IS THE CRITICAL FIX:
+        // We now correctly populate 'allBooks' with the simple, flat list of book objects.
+       allBooks = booksFromRpc; // Keep the full structure with the has_access flag
+
+        allDisciplines = disciplinesRes.data;
+        allChapters = chaptersRes.data;
+        
+        if (currentUserData.role === 'admin') {
+            dom.adminDashboardButton.classList.remove('hidden');
+        }
+
+        const purchasedBookIds = new Set((bookPurchasesRes.data || []).map(p => p.book_id));
+        purchasedCourseIds = new Set((videoPurchasesRes.data || []).map(p => p.course_id));
+        
+        const booksForDashboard = booksFromRpc;
+        videoCoursesForDashboard = videoCoursesRes.data || [];
+
+    // --- CORRECTED DISCIPLINE DERIVATION LOGIC ---
+
+        // 1. First, create a set of book IDs that the user truly has access to.
+    // -- REPLACE WITH THIS CORRECTED CODE --
+
+// 1. Get the IDs of books the user can ACTUALLY access.
+const accessibleBookIds = new Set(
+    allBooks
+        .filter(item => item.has_access === true) // The key check
+        .map(item => item.book_data.id)
+);
+
+// 2. Find chapters that belong ONLY to those accessible books.
+const chaptersForDashboardDisciplines = allChapters.filter(chapter =>
+    accessibleBookIds.has(chapter.book_id)
+);
+
+// 3. Derive the disciplines from that safe list of chapters.
+const dashboardDisciplineIds = new Set(chaptersForDashboardDisciplines.map(c => c.discipline_id));
+const disciplinesForDashboard = allDisciplines.filter(d => dashboardDisciplineIds.has(d.id));
+        
+       renderDisciplines(disciplinesForDashboard, currentUserData);
+        renderBooks(booksForDashboard, currentUserData, purchasedBookIds);
+        renderVideoCourses(videoCoursesForDashboard, currentUserData, purchasedCourseIds);
+        
+        // --- START: NEW CODE TO POPULATE THE QUIZ BUILDER ---
+        // This ensures the quiz builder knows which content is available.
+        accessibleContent.books = allBooks
+            .filter(item => item.has_access === true)
+            .map(item => item.book_data);
+        accessibleContent.disciplines = disciplinesForDashboard;
+        accessibleContent.chapters = allChapters.filter(chapter => 
+            accessibleBookIds.has(chapter.book_id)
+        );
+        // --- END: NEW CODE ---
+
+        dom.loadingState.classList.add('hidden');
+     
+
+    } catch (error) {
+        console.error("Error loading dashboard content:", error);
+        dom.loadingState.textContent = `Error: ${error.message}`;
+    }
+}
+// In dashboard.html
+// This function now initializes the dropdown and populates it
+        function populateSourcesDropdown(sourceType) {
+            // Destroy any previous instance to ensure a clean slate
+            if (sourcesSelector) {
+                sourcesSelector.destroy();
+            }
+
+            // Create the data structure for the dropdown options
+            const dataForSelector = [];
+            if (sourceType === 'book') {
+                accessibleContent.books.forEach(book => {
+                    const bookChapters = accessibleContent.chapters
+                        .filter(c => c.book_id === book.id)
+                        .sort((a, b) => a.chapterNumber - b.chapterNumber);
+                    
+                    if (bookChapters.length > 0) {
+                        const chapterOptions = bookChapters.map(c => ({
+                            text: `Ch. ${c.chapterNumber} - ${c.name}`,
+                            value: `chapter_${c.id}`
+                        }));
+                        dataForSelector.push({
+                            label: book.title,
+                            options: [
+                                { text: `All of ${book.title}`, value: `book_${book.id}` },
+                                ...chapterOptions
+                            ]
+                        });
+                    }
+                });
+            } else if (sourceType === 'discipline') {
+                accessibleContent.disciplines.forEach(discipline => {
+                    const disciplineChapters = accessibleContent.chapters
+                        .filter(c => c.discipline_id === discipline.id)
+                        .sort((a, b) => a.chapterNumber - b.chapterNumber);
+
+                    if (disciplineChapters.length > 0) {
+                        const chapterOptions = disciplineChapters.map(c => ({
+                            text: `Ch. ${c.chapterNumber} - ${c.name}`,
+                            value: `chapter_${c.id}`
+                        }));
+                        dataForSelector.push({
+                            label: discipline.name,
+                            options: [
+                                { text: `All of ${discipline.name}`, value: `discipline_${discipline.id}` },
+                                ...chapterOptions
+                            ]
+                        });
+                    }
+                });
+            }
+
+            // Make the dropdown container visible BEFORE initializing
+            document.getElementById('questionSourcesFieldset').classList.remove('hidden');
+
+            // NOW, initialize SlimSelect on the visible element
+            sourcesSelector = new SlimSelect({
+                select: '#sourcesSelect',
+                settings: { placeholderText: 'Select sources...', searchPlaceholder: 'Search...' },
+                events: { afterChange: () => updateSourceSelectorLogic() }
+            });
+
+            // Finally, populate the new dropdown with data
+            sourcesSelector.setData(dataForSelector);
+        }
+async function initializeCustomQuizBuilder() {
+            sourceRelationshipMap.clear();
+            // Build the relationship map for parent/child logic (this part is unchanged)
+            accessibleContent.chapters.forEach(c => {
+                const chapterValue = `chapter_${c.id}`;
+                const bookValue = `book_${c.book_id}`;
+                const disciplineValue = `discipline_${c.discipline_id}`;
+                if (!sourceRelationshipMap.has(chapterValue)) sourceRelationshipMap.set(chapterValue, { parents: new Set(), children: new Set() });
+                if (c.book_id) sourceRelationshipMap.get(chapterValue).parents.add(bookValue);
+                if (c.discipline_id) sourceRelationshipMap.get(chapterValue).parents.add(disciplineValue);
+            });
+            accessibleContent.books.forEach(b => {
+                const bookValue = `book_${b.id}`;
+                if (!sourceRelationshipMap.has(bookValue)) sourceRelationshipMap.set(bookValue, { parents: new Set(), children: new Set() });
+                accessibleContent.chapters.filter(c => c.book_id === b.id).forEach(c => sourceRelationshipMap.get(bookValue).children.add(`chapter_${c.id}`));
+            });
+            accessibleContent.disciplines.forEach(d => {
+                const disciplineValue = `discipline_${d.id}`;
+                if (!sourceRelationshipMap.has(disciplineValue)) sourceRelationshipMap.set(disciplineValue, { parents: new Set(), children: new Set() });
+                accessibleContent.chapters.filter(c => c.discipline_id === d.id).forEach(c => sourceRelationshipMap.get(disciplineValue).children.add(`chapter_${c.id}`));
+            });
+
+            // Add event listener for the source type radio buttons
+            const sourceTypeContainer = document.getElementById('sourceTypeContainer');
+            if (!sourceTypeContainer.dataset.listenerAttached) {
+                sourceTypeContainer.addEventListener('change', (e) => {
+                    if (e.target.name === 'sourceType') {
+                        // This now calls the function that handles initialization and population
+                        populateSourcesDropdown(e.target.value);
+                    }
+                });
+                sourceTypeContainer.dataset.listenerAttached = 'true';
+            }
+    
+            // Attach other general listeners for the form (unchanged)
+if (!dom.customQuizForm.dataset.listenerAttached) {
+    // --- START OF NEW FIX ---
+
+    // Part A: Attach a dedicated, simple listener directly to each radio button.
+    const questionModeRadios = dom.customQuizForm.querySelectorAll('input[name="questionCountMode"]');
+    questionModeRadios.forEach(radio => {
+        radio.addEventListener('click', () => {
+            // This now calls the state handler every single time a radio is clicked.
+            handleQuizBuilderState();
+        });
+    });
+
+    // Part B: Keep a general listener for the rest of the form's controls.
+    dom.customQuizForm.addEventListener('click', (e) => {
+        const target = e.target;
+
+        // NOTE: We no longer check for 'questionCountMode' here.
+        if (target.classList.contains('filter-checkbox')) {
+            handleQuizBuilderState();
+        } else if (target.name === 'timerMode') {
+            const enabled = target.value === 'custom';
+            const timerInputs = document.getElementById('timerInputs');
+            if (timerInputs) {
+                timerInputs.style.opacity = enabled ? 1 : 0.5;
+                timerInputs.querySelectorAll('input').forEach(input => input.disabled = !enabled);
+            }
+        } else if (target.name === 'flowMode') {
+            updateFlowControlUI();
+        } else if (target.name === 'sequenceType') {
+            populateGlobalSequenceList();
+        }
+    });
+
+    // --- END OF NEW FIX ---
+
+    dom.customQuizForm.dataset.listenerAttached = 'true';
+}
+
+            // Attach listeners for modal buttons (unchanged)
+            if (!dom.closeQuizBuilderBtn.dataset.listenerAttached) {
+                dom.closeQuizBuilderBtn.addEventListener('click', () => dom.customQuizModal.classList.add('hidden'));
+                dom.closeQuizBuilderBtn.dataset.listenerAttached = 'true';
+            }
+            if (!dom.startCustomQuizBtn.dataset.listenerAttached) {
+                dom.startCustomQuizBtn.addEventListener('click', handleStartCustomQuiz);
+                dom.startCustomQuizBtn.dataset.listenerAttached = 'true';
+            }
+        }
+
+       function getQuestionSortKey(q) {
+            const chapter = allChapters.find(c => c.id === q.chapterId);
+            const book = allBooks.find(b => b.id === q.bookId);
+            const bookTitle = book ? book.title : 'zzzz';
+            const chapterNum = chapter ? String(chapter.chapterNumber || 0).padStart(4, '0') : '9999';
+            const questionNum = String(q.questionNumber || 0).padStart(4, '0');
+            // THE FIX: Appending the unique question ID makes the key 100% unique and the sort stable.
+            return `${bookTitle}-${chapterNum}-${questionNum}-${q.id}`;
+        }
+        
+// In dashboard.html
+
+async function handleStartCustomQuiz(e) {
+    e.preventDefault();
+    dom.startCustomQuizBtn.disabled = true;
+    dom.startCustomQuizBtn.textContent = 'Building...';
+
+    const form = dom.startCustomQuizBtn.closest('form');
+    const questionCountMode = form.questionCountMode.value;
+    const selectedSources = sourcesSelector.getSelected();
+
+    if ((questionCountMode === 'from_sources' || questionCountMode === 'set_number') && selectedSources.length === 0) {
+        dom.customAlertMessage.textContent = "Please select at least one question source to build your quiz.";
+        dom.customAlertModal.classList.remove('hidden');
+        dom.startCustomQuizBtn.disabled = false;
+        dom.startCustomQuizBtn.textContent = 'Start Quiz';
+        return;
+    }
+
+    try {
+        const settings = {
+            mode: questionCountMode,
+            count: parseInt(form.customQuestionCount.value, 10),
+            timer: form.timerMode.value === 'custom' ? (parseInt(form.timerHours.value, 10) * 3600 + parseInt(form.timerMinutes.value, 10) * 60) : -1,
+            sources: selectedSources,
+            flowMode: form.flowMode.value,
+            sequenceType: form.sequenceType.value
+        };
+
+        let finalQuestions = await getQuestionsForSourceAndFilters(settings.sources);
+
+        if (settings.flowMode === 'sequential') {
+            const sequenceOrder = Array.from(document.querySelectorAll('#sequenceList .rule-item')).map(item => item.dataset.id);
+            const sourceOrderMap = new Map(sequenceOrder.map((id, index) => [id, index]));
+            
+            finalQuestions.sort((a, b) => {
+                let idA, idB;
+                if (settings.mode === 'all_available') {
+                   const type = settings.sequenceType;
+                   idA = type === 'book' ? `book_${a.bookId}` : `discipline_${a.disciplineId}`;
+                   idB = type === 'book' ? `book_${b.bookId}` : `discipline_${b.disciplineId}`;
+                } else {
+                    idA = settings.sources.find(s => sourceRelationshipMap.get(s)?.children.has(`chapter_${a.chapterId}`)) || `chapter_${a.chapterId}`;
+                    idB = settings.sources.find(s => sourceRelationshipMap.get(s)?.children.has(`chapter_${b.chapterId}`)) || `chapter_${b.chapterId}`;
+                }
+                const indexA = sourceOrderMap.get(idA) ?? Infinity;
+                const indexB = sourceOrderMap.get(idB) ?? Infinity;
+
+                if (indexA !== indexB) return indexA - indexB;
+                if ((a.chapterNumber || 0) !== (b.chapterNumber || 0)) return (a.chapterNumber || 0) - (b.chapterNumber || 0);
+                return (a.questionNumber || 0) - (b.questionNumber || 0);
+            });
+        } else {
+            for (let i = finalQuestions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [finalQuestions[i], finalQuestions[j]] = [finalQuestions[j], finalQuestions[i]];
+            }
+        }
+
+        if (settings.mode === 'set_number') {
+             finalQuestions = finalQuestions.slice(0, settings.count);
+        }
+
+        if (finalQuestions.length === 0) {
+            dom.customAlertMessage.textContent = "No questions found that match your filter/source criteria.";
+            dom.customAlertModal.classList.remove('hidden');
+            dom.startCustomQuizBtn.disabled = false;
+            dom.startCustomQuizBtn.textContent = 'Start Quiz';
+            return;
+        }
+        
+        const serializableQuestions = finalQuestions.map(q => ({
+            id: q.id, question: q.question, options: q.options, 
+            correctAnswerIndex: q.correctAnswerIndex, explanation: q.explanation, 
+            imageUrl: q.imageUrl || null, explanationImageUrl: q.explanationImageUrl || null, 
+            bookId: q.bookId, chapterId: q.chapterId, disciplineId: q.disciplineId,
+            chapterNumber: q.chapterNumber, questionNumber: q.questionNumber
+        }));
+
+        localStorage.setItem('customQuizQuestions', JSON.stringify(serializableQuestions));
+        localStorage.setItem('customQuizTimer', String(settings.timer));
+
+        // --- THIS IS THE CRITICAL UPDATE ---
+        let redirectUrl = `quiz_page.html?quizType=advanced_custom&flowMode=${settings.flowMode}`;
+        
+        // If the builder was opened from a discipline view, add its info to the URL
+        if (builderContext === 'discipline') {
+            const disciplineId = dom.disciplineTitle.dataset.id;
+            const disciplineName = dom.disciplineTitle.textContent;
+            if (disciplineId && disciplineName) {
+                redirectUrl += `&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}`;
+            }
+        }
+        window.location.href = redirectUrl;
+        // --- END OF UPDATE ---
+
+    } catch (error) {
+        console.error("Error building custom quiz:", error);
+        dom.customAlertMessage.textContent = "A critical error occurred while building the quiz. Please try again.";
+        dom.customAlertModal.classList.remove('hidden');
+        dom.startCustomQuizBtn.disabled = false;
+        dom.startCustomQuizBtn.textContent = 'Start Quiz';
+    }
+}
+
+        async function getQuestionsFromSources(sources) {
+            const chapterIds = new Set();
+            if (sources.length === 0) {
+                const specialtyChapters = allChapters.filter(c => {
+                    const book = allBooks.find(b => b.id === c.bookId);
+                    return book && book.speciality === currentUserSpecialty;
+                });
+                specialtyChapters.forEach(c => chapterIds.add(c.id));
+            } else {
+                sources.forEach(source => {
+                    const [type, id] = source.split('_');
+                    if (type === 'chapter') chapterIds.add(id);
+                    else if (type === 'book') allChapters.forEach(c => { if (c.bookId === id) chapterIds.add(c.id); });
+                    else if (type === 'discipline') allChapters.forEach(c => { if (c.disciplineId === id) chapterIds.add(c.id); });
+                });
+            }
+            const questionPromises = [];
+            for (const chapterId of chapterIds) {
+                const chapterInfo = allChapters.find(c => c.id === chapterId);
+                if(chapterInfo) {
+                    const questionsRef = collection(db, "books", chapterInfo.bookId, "chapters", chapterId, "questions");
+                    questionPromises.push(getDocs(questionsRef).then(qSnap => qSnap.docs.map(doc => ({ ...chapterInfo, ...doc.data(), id: doc.id }))));
+                }
+            }
+            const questionArrays = await Promise.all(questionPromises);
+            const flatQuestions = questionArrays.flat();
+            
+            // De-duplicate based on question ID
+            const uniqueQuestionsMap = new Map();
+            flatQuestions.forEach(q => uniqueQuestionsMap.set(q.id, q));
+            return Array.from(uniqueQuestionsMap.values());
+        }
+       
+// WITH this new, robust version in dashboard.html
+// In dashboard.html
+
+      async function getQuestionsForSourceAndFilters(sources) {
+            await getUserHistory(currentUser.id);
+            const currentMode = dom.customQuizForm.questionCountMode.value;
+            let sourcesToUse = [];
+
+            // This is the corrected logic block
+            if (currentMode === 'all_available') {
+                // In this mode, we do NOT use the dropdown.
+                // We build the source list directly from our secure, accessible content arrays.
+                accessibleContent.chapters.forEach(c => sourcesToUse.push(`chapter_${c.id}`));
+            } else {
+                // For other modes, we safely check if the selector exists before using it.
+                if (sourcesSelector) {
+                    sourcesToUse = sources || sourcesSelector.getSelected();
+                }
+            }
+
+            let questionPool = await getBaseQuestionPool(sourcesToUse);
+
+            const activeFilterKeys = Array.from(document.querySelectorAll('.filter-checkbox:checked')).map(cb => cb.dataset.filterKey);
+            
+            if (activeFilterKeys.length > 0) {
+                const filterFunctions = await getFilterFunctions();
+                questionPool = questionPool.filter(q => {
+                    for (const key of activeFilterKeys) {
+                        if (filterFunctions[key] && filterFunctions[key](q)) {
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+            }
+            
+            return questionPool;
+        }
+// In dashboard.html
+async function getBaseQuestionPool(sources) {
+    const chapterIdsToFetch = new Set();
+    const sourceList = sources || sourcesSelector.getSelected();
+
+    if (sourceList.length > 0) {
+        sourceList.forEach(source => {
+            const [type, id] = source.split('_');
+            if (type === 'chapter') {
+                chapterIdsToFetch.add(id);
+            } else if (type === 'book') {
+                // ***THE FIX: Use the secure accessibleContent.chapters list***
+                accessibleContent.chapters.forEach(c => { if (c.book_id === id) chapterIdsToFetch.add(c.id); });
+            } else if (type === 'discipline') {
+                // ***THE FIX: Use the secure accessibleContent.chapters list***
+                accessibleContent.chapters.forEach(c => { if (c.discipline_id === id) chapterIdsToFetch.add(c.id); });
+            }
+        });
+    } else {
+                // This fallback is for when a user has not selected any specific source
+                // in modes like "From Selected Sources".
+                return [];
+            }
+            
+            if (chapterIdsToFetch.size === 0) return [];
+
+            const { data, error } = await supabase
+                .from('questions')
+                .select('*')
+                .in('chapter_id', Array.from(chapterIdsToFetch));
+
+            if (error) {
+                console.error("Error fetching base question pool:", error);
+                return [];
+            }
+            return data;
+        }
+
+
+async function getFilterFunctions() {
+            const standardFilters = {
+                'unanswered': q => !userHistoryCache.has(q.id),
+                'previously-wrong': q => userHistoryCache.get(q.id)?.lastResult === 'wrong',
+                'initial-wrong': q => userHistoryCache.get(q.id)?.firstAttemptResult === 'wrong',
+                'review': q => userHistoryCache.get(q.id)?.isForReview === true,
+                'note': q => userHistoryCache.get(q.id)?.hasNote === true,
+
+                // CORRECTED: Now checks for 'userDifficulty' in the user's history for the question.
+                'very-difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Difficult',
+                'difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Difficult',
+                'moderate': q => userHistoryCache.get(q.id)?.userDifficulty === 'Moderate',
+                'easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Easy',
+                'very-easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Easy',
+            };
+            return standardFilters;
+        }
+
+    async function getUserHistory(userId) {
+    if (userHistoryCache.size > 0) return userHistoryCache;
+    
+    const { data, error } = await supabase
+        .from('userQuestionHistory')
+        .select('*')
+        .eq('userId', userId);
+        
+    if (error) {
+        console.error("Error fetching user history:", error);
+        return new Map();
+    }
+    
+    const historyMap = new Map(data.map(item => [item.questionId, item]));
+    userHistoryCache = historyMap;
+    return userHistoryCache;
+}     
+        // --- General Event Listeners ---
+// Update the event listener to pass the current user to the function
+dom.logoutButton.addEventListener('click', () => {
+    // We use the `currentUser` variable we created earlier
+    if (currentUser) {
+        handleLogout(currentUser);
+    }
+});
+
+// --- START: NEW, CONSOLIDATED EVENT LISTENERS ---
+
+// --- View Toggling and Navigation ---
+dom.showDisciplinesBtn.addEventListener('click', () => switchView('disciplines'));
+dom.showBooksBtn.addEventListener('click', () => switchView('books'));
+dom.disciplinesGrid.addEventListener('click', (e) => {
+    const card = e.target.closest('[data-id]');
+    if (card) {
+        // CORRECTED: Navigate to the new page with URL parameters
+        const disciplineId = card.dataset.id;
+        const disciplineName = card.dataset.name;
+        window.location.href = `disciplines_chapters.html?disciplineId=${disciplineId}&name=${encodeURIComponent(disciplineName)}`;
+    }
+});
+
+// --- Standard Quiz Mode Logic ---
+dom.sequentialModeButton.addEventListener('click', async () => {
+    if (!quizStartContext.type || !currentUser) return;
+    let url = '';
+    if (quizStartContext.type === 'book') {
+        url = `quiz_page.html?quizType=book&bookId=${quizStartContext.id}&mode=sequential`;
+    } else if (quizStartContext.type === 'discipline') {
+        // This part is for the discipline page, but doesn't cause an error here
+        const priorityParam = `&priority=${encodeURIComponent(JSON.stringify([]))}`;
+        url = `quiz_page.html?quizType=discipline&disciplineId=${quizStartContext.id}&disciplineName=${encodeURIComponent(quizStartContext.name)}&mode=sequential${priorityParam}`;
+    } else if (quizStartContext.type === 'virtual_chapter') {
+        const ctx = quizStartContext;
+        url = `quiz_page.html?bookId=${ctx.originalBookId}&chapterId=${ctx.chapterId}&from=virtual&mode=sequential`;
+    }
+    if (url) window.location.href = url;
+});
+dom.randomModeButton.addEventListener('click', () => {
+    if (!quizStartContext.type) return;
+    let url = '';
+    if (quizStartContext.type === 'book') {
+        url = `quiz_page.html?quizType=book&bookId=${quizStartContext.id}&mode=random`;
+    } else if (quizStartContext.type === 'discipline') {
+        url = `quiz_page.html?quizType=discipline&disciplineId=${quizStartContext.id}&disciplineName=${encodeURIComponent(quizStartContext.name)}&mode=random`;
+    } else if (quizStartContext.type === 'virtual_chapter') {
+        const ctx = quizStartContext;
+        url = `quiz_page.html?bookId=${ctx.originalBookId}&chapterId=${ctx.chapterId}&from=virtual&mode=random`;
+    }
+    if (url) window.location.href = url;
+});
+dom.cancelModeButton.addEventListener('click', () => dom.quizModeModal.classList.add('hidden'));
+
+// --- Advanced Custom Quiz Logic ---
+dom.openCustomQuizMenuBtn.addEventListener('click', async () => {
+    const progressKey = `customQuizProgress_${currentUser.id}_general`;
+    const { data } = await supabase.from('quiz_progress').select('quiz_key').eq('user_id', currentUser.id).eq('quiz_key', progressKey).maybeSingle();
+    dom.resumeCustomQuizBtn.dataset.context = 'general';
+    dom.createNewCustomQuizBtn.dataset.context = 'general';
+    dom.createNewCustomQuizBtn.dataset.progressKey = progressKey;
+    dom.resumeCustomQuizBtn.classList.toggle('hidden', !data);
+    dom.customQuizChoiceModal.classList.remove('hidden');
+});
+
+// --- View Toggling and Navigation ---
+dom.showDisciplinesBtn.addEventListener('click', () => switchView('disciplines'));
+dom.showBooksBtn.addEventListener('click', () => switchView('books'));
+
+dom.disciplinesGrid.addEventListener('click', (e) => {
+    const card = e.target.closest('[data-id]');
+    if (card) {
+        const disciplineId = card.dataset.id;
+        const disciplineName = card.dataset.name;
+        window.location.href = `disciplines_chapters.html?disciplineId=${disciplineId}&name=${encodeURIComponent(disciplineName)}`;
+    }
+});
+
+const customDisciplineModeButton = document.getElementById('customDisciplineModeButton');
+customDisciplineModeButton.addEventListener('click', async () => {
+    const disciplineId = dom.disciplineTitle.dataset.id;
+    const progressKey = `customQuizProgress_${currentUser.id}_discipline_${disciplineId}`;
+    const { data } = await supabase.from('quiz_progress').select('quiz_key').eq('user_id', currentUser.id).eq('quiz_key', progressKey).maybeSingle();
+    dom.resumeCustomQuizBtn.dataset.context = 'discipline';
+    dom.createNewCustomQuizBtn.dataset.context = 'discipline';
+    dom.createNewCustomQuizBtn.dataset.progressKey = progressKey;
+    dom.resumeCustomQuizBtn.classList.toggle('hidden', !data);
+    dom.quizModeModal.classList.add('hidden');
+    dom.customQuizChoiceModal.classList.remove('hidden');
+});
+
+dom.resumeCustomQuizBtn.addEventListener('click', () => {
+    const context = dom.resumeCustomQuizBtn.dataset.context;
+    if (context === 'general') {
+        window.location.href = `quiz_page.html?quizType=advanced_custom`;
+    } else if (context === 'discipline') {
+        const disciplineId = dom.disciplineTitle.dataset.id;
+        const disciplineName = dom.disciplineTitle.textContent;
+        window.location.href = `quiz_page.html?quizType=advanced_custom&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}`;
+    }
+});
+dom.createNewCustomQuizBtn.addEventListener('click', async () => {
+            const progressKey = dom.createNewCustomQuizBtn.dataset.progressKey;
+            const { data } = await supabase.from('quiz_progress').select('quiz_key').eq('user_id', currentUser.id).eq('quiz_key', progressKey).maybeSingle();
+
+            const openBuilder = () => {
+                // Hide the modal that asks to "Resume" or "Create New"
+                dom.customQuizChoiceModal.classList.add('hidden');
+                
+                // Reset the main builder form to its default state
+                dom.customQuizForm.reset();
+                
+                // Manually hide the source selection dropdown, as no type is chosen yet
+                document.getElementById('questionSourcesFieldset').classList.add('hidden');
+
+                // Destroy any old SlimSelect instance if it exists
+                if (sourcesSelector) {
+                    sourcesSelector.destroy();
+                    sourcesSelector = null;
+                }
+                
+                // Show the main quiz builder modal
+                dom.customQuizModal.classList.remove('hidden');
+            };
+
+            if (data) {
+                if (confirm("You have an incomplete custom quiz. Starting a new one will delete your old progress. Are you sure?")) {
+                    await supabase.from('quiz_progress').delete().eq('quiz_key', progressKey);
+                    dom.resumeCustomQuizBtn.classList.add('hidden');
+                    openBuilder();
+                }
+            } else {
+                openBuilder();
+            }
+        });
+
+dom.cancelChoiceBtn.addEventListener('click', () => dom.customQuizChoiceModal.classList.add('hidden'));
+
+dom.customAlertCloseBtn.addEventListener('click', () => {
+    dom.customAlertModal.classList.add('hidden');
+});
+
+// --- END: NEW, CONSOLIDATED EVENT LISTENERS ---
+
+        dom.customAlertCloseBtn.addEventListener('click', () => {
+            dom.customAlertModal.classList.add('hidden');
+        });
+
+  
+
+        dom.searchInput.addEventListener('input', handleSearch);
+
+     dom.searchResultsContainer.addEventListener('click', (e) => {
+    const resultItem = e.target.closest('[data-type="discipline"]');
+    if (resultItem) {
+        const { id, name } = resultItem.dataset;
+        // NEW: Navigate to the new page from search results
+        window.location.href = `disciplines_chapters.html?disciplineId=${id}&name=${encodeURIComponent(name)}`;
+    }
+});
+    </script>
+</body>
+</html>

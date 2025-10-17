@@ -1,0 +1,668 @@
+{
+  "title": "Hepatology - Chapter 22",
+  "questions": [
+    {
+      "question": "Which of the following is correct about the anatomy of the liver?",
+      "options": [
+        "A. A fibrous capsule surrounds the liver lobule in humans",
+        "B. The hepatic vein radicles accompany the arteries in the portal tract",
+        "C. The liver has significant regenerative capacity",
+        "D. The liver is on the left side of the upper abdomen crossing the midline",
+        "E. The liver weighs around 0.75-1 kg in typical adults"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The liver has significant regenerative capacity, with stem cells within the canals of Hering playing a key role. This regenerative capacity plays an important role in recovery from liver failure and from liver resection. It also contributes to the phenotype of cirrhosis. The liver is on the right side of the upper abdomen crossing the midline and weighs 1-2 kg, depending on body size. Although drawings can give the impression that the liver lobule is encapsulated, this is not the case in humans (although it is in pigs). The portal tracts contain portal vein radicles and arterioles, together with small bile ducts. Sinusoids cross the liver lobule to the hepatic vein radicle.",
+      "questionNumber": 1
+    },
+    {
+      "question": "Which of the following is a marker of the function of the liver that is in widespread clinical use?",
+      "options": [
+        "A. Alanine transaminase",
+        "B. Fibroscan",
+        "C. Monoethylglycinexylidide (MEGX) test",
+        "D. Platelet count",
+        "E. Prothrombin time"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Synthesis of clotting factors by the liver makes prothrombin time (PT) a useful and easily available marker of hepatocyte function (although watch for vitamin K deficiency and patients on warfarin). Alanine transaminase is a marker of hepatocyte injury not function. Platelet count lowering and elevation of Fibroscan values are markers of fibrosis/ cirrhosis (through hypersplenism and liver fibrosis, respectively). MEGX, a dynamic test of lidocaine metabolism, is a direct, active test of hepatocyte function but toxicity can be an issue and it is not in widespread clinical use.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 63 year old man presents with yellowing of the skin and sclerae, dark urine and pale stools. He has no significant past medical history, other than appendicectomy as a teenager. What is the most likely diagnosis?",
+      "options": [
+        "A. Autoimmune hepatitis",
+        "B. Gilbert's syndrome",
+        "C. Haemolysis",
+        "D. Hypothyroidism",
+        "E. Pancreatic carcinoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Yellowing of the sclera and skin are features suggestive of jaundice. The presence of dark urine and pale stools suggest a post-hepatic or obstructive jaundice (conjugated bilirubin is leaking back into the circulation and being excreted through the kidney, causing urine darkening, whilst bilirubin metabolites are not reaching the bowel, causing stools to be pale). Pancreatic carcinoma is a common cause of this form of jaundice. Haemolysis is a cause of pre-hepatic jaundice through increased red blood cell breakdown and bilirubin generation in the spleen and thus would not give an obstructive pattern. Gilbert's syndrome is an inherited abnormality of bilirubin transport that gives rise to clinically non-significant elevation of bilirubin (other liver biochemistry is typically normal), particularly in times of physiological stress such as intercurrent illness, which would again not have an obstructive pattern. Autoimmune hepatitis causes hepatocellular jaundice in aggressive forms, but not obstructive jaundice. Hypothyroidism can cause skin pigmentation that can be mistaken for jaundice (although characteristically the sclerae remain normal colour, in contrast to jaundice where yellowing is characteristic).",
+      "questionNumber": 3
+    },
+    {
+      "question": "An 18 year old woman presents to the emergency department having taken an overdose of an unknown quantity of paracetamol. Which of the following statements regarding the clinical presentation and progress of paracetamol overdose is true?",
+      "options": [
+        "A. Deterioration from grade 1 to grade 4 encephalopathy typically takes place over several days",
+        "B. It has a worse outcome than acute liver failure of other aetiologies",
+        "C. If the patient recovers from acute liver failure, cirrhosis development is almost inevitable",
+        "D. Jaundice typically occurs before prothrombin time (PT) prolongation",
+        "E. Pancreatitis can be an accompanying complication"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Pancreatitis can be a rare complication of paracetamol overdose and typically has a very poor outcome (also frequently preventing liver transplantation). Paracetamol overdose causes acute liver injury, but if the acute event is survived, the liver typically returns to normal. Once encephalopathy develops, deterioration is typically very rapid (hours or even minutes). Encephalopathy typically occurs after PT prolongation and prior to the onset of jaundice. The outcome of acute liver failure in paracetamol is typically better than other causes of acute liver failure.",
+      "questionNumber": 4
+    },
+    {
+      "question": "In the course of a 'well-woman' check offered by her employer, a 50 year old woman was found to have an antinuclear antibody with a multiple nuclear dot pattern and mildly abnormal liver function tests (LFTs). What is the most likely diagnosis?",
+      "options": [
+        "A. Autoimmune hepatitis (AIH)",
+        "B. Lupus",
+        "C. Non-alcoholic steatohepatitis (NASH)",
+        "D. Primary biliary cirrhosis (PBC)",
+        "E. Primary sclerosing cholangitis (PSC)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The commonest autoantibody in PBC is antimitochondrial antibody (AMA; present in over 95% of patients). A minority of patients (around 20%) have characteristic antinuclear antibodies that are reactive with either nuclear dot or nuclear rim antibodies. Where present, these carry the same degree of diagnostic value as AMA (and may suggest a worse prognosis). Both AIH and lupus are associated with antinuclear antibodies but with a diffuse nuclear staining pattern. Low-titre diffuse nuclear antibodies are seen frequently in NASH. The 'characteristic' autoantibody in PSC is perinuclear antineutrophil cytoplasmic antibody (PANCA), although this is seen in only around 30% of patients.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 70 year old woman is admitted to hospital and develops abnormal LFTs. She has been on several different medications over the last few days. Which of the following statements about drug-induced liver injury (DILI) is true?",
+      "options": [
+        "A. Amoxicillin is a common cause of acute liver injury",
+        "B. DILI can be difficult to distinguish clinically from autoimmune hepatitis",
+        "C. In unexplained jaundice, recently started medications can be safely continued provided there have been no reports of DILI associated with them",
+        "D. It is seen with opiate use",
+        "E. The risk of co-amoxiclav-induced liver injury goes down with each repeat exposure"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "DILI can be difficult to distinguish on liver biopsy from autoimmune hepatitis due to a number of shared features, including parenchymal inflammation and eosinophilia. Clinical context needs to be considered (e.g. autoimmune disease history and drug exposure) and other immunological features of AIH (elevated IgG and autoantibodies) sought. Opiates are not reported to cause DILI; in terms of drugs of abuse, the major risk is ecstasy. When approaching a patient with possible DILI, the precautionary principle should apply and any potential risk therapy should be stopped until the causality becomes clearer.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 35 year old man is being considered for liver transplantation. Which of the following is true?",
+      "options": [
+        "A. Acute cellular rejection most commonly occurs between days 2 and 5",
+        "B. At least partial human leucocyte antigen (HLA) matching is essential for a good outcome",
+        "C. Hepatorenal failure will typically improve following liver transplantation",
+        "D. Immunosuppression can be safely stopped in most patients at 5 years",
+        "E. Mycophenolate mofetil (MMF) monotherapy is a useful immunosuppression regime"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hepatorenal failure complicating chronic liver disease is best regarded as a vascular consequence of cirrhosis and it typically improves when liver function returns to normal. HLA matching is unnecessary in liver transplantation (ABO and weight matching, in contrast, are important). Immunosuppression regimes differ between centres but most centres continue life-long immunosuppression. Research into safe discontinuation of immunosuppression has not translated into clinical practice. MMF monotherapy can be associated with very resistant cellular rejection. The most common time window for acute cellular rejection is days 7-10.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 42 year old man is in hospital with acute liver failure. The team are considering his prognosis. In this situation, which of the following liver functions, when deranged, has an important impact on outcome?",
+      "options": [
+        "A. Glucose regulation",
+        "B. Innate immune response",
+        "C. Oxalate metabolism",
+        "D. Red cell breakdown",
+        "E. Steroid hormone clearance"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The Kupffer cells play a key role in innate immunity, in particular acting as a barrier for gut bacteria/bacterial products entering the portal vein. Sepsis is one of the major causes of death in acute liver failure. Steroid hormone clearance is a liver function and loss of clearance function contributes to fluid retention/ ascites (aldosterone) and feminisation in men (oestrogen) with chronic liver failure. There is no impact in the acute setting. The liver plays a critical role in glucose homeostasis, buffering portal venous blood through glycogen synthesis/breakdown. Hepatocytes are also key in gluconeogenesis. Acute liver failure is frequently characterised by hypoglycaemia but this is relatively easy to manage with intravenous (IV) glucose in practice, and it is only rarely so profound as to impact on outcomes. Breakdown of red cells at the end of their life span is a function of the spleen not the liver. Hyperoxaluria is an inborn error of oxalic acid metabolism, expressed in the liver but manifest as renal failure. Transplantation of the kidney without the liver simply results in rapid renal failure in the graft. Combined transplant, in contrast, is highly effective. Oxalic acid plays no role in acute liver failure.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 28 year old woman presents to her family physician with fatigue and itch. She has obstructive LFTs. Which of the following is true about the autoimmune cholestatic liver disease primary biliary cholangitis?",
+      "options": [
+        "A. It is a different condition to primary biliary cirrhosis",
+        "B. It is commoner in men than in women",
+        "C. Patients usually show elevation of PT",
+        "D. The disease is more aggressive in younger patients",
+        "E. Ursodeoxycholic acid (UDCA) is first-line therapy and should be used once the patient is symptomatic"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Primary biliary cholangitis is the new name for primary biliary cirrhosis, so it is the same condition. The name was changed following a patient campaign in 2015. Typically thought of as a disease of middle-aged and older women (it is 10 times commoner in women than men), recent large cohort studies have identified an important group of younger patients (aged 20-50) who are more symptomatic and less likely to respond to UDCA. Younger patients should be monitored closely and treated aggressively. UDCA is first line-therapy and should be used at a dose of 13-15 mg/kg in all patients, regardless of symptom status or disease severity. The most characteristic blood test change is elevation of the alkaline phosphatase value, which reflects the cholestatic nature of the disease. Transaminase elevation can be a feature of aggressive disease and overlap with AIH. PT, as well as bilirubin and albumin levels, tend to be normal until late in the disease, as hepatocellular function is typically well preserved in this cholestatic disease.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 20 year old student with no significant past medical history presents with a 1-week history of acute lethargy and jaundice 2 weeks after returning from a week-long holiday in Turkey. His alanine aminotransferase (ALT) is found to be over 10000 U/L. What is the most likely diagnosis?",
+      "options": [
+        "A. Alcoholic hepatitis",
+        "B. Hepatitis B virus",
+        "C. Hepatitis C virus",
+        "D. Hepatitis E virus",
+        "E. Wilson's disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The clinical scenario is strongly suggestive of an acute viral hepatitis infection and the timing of onset would be most compatible with hepatitis E virus (HEV). The prodrome and onset in hepatitis B virus (HBV) are much more prolonged than those described here (although clearly infection prior to the holiday is possible). Hepatitis C virus (HCV) almost exclusively causes chronic liver injury with no recognised acute infection event. Wilson's disease can present with an acute hepatitis episode but is a rare condition and the acute presentation even rarer. There is an almost automatic assumption in some quarters that a hepatitis in a young man returning from abroad will be alcohol-related. In this case this is very unlikely, as an ALT of 10000 U/L would be very atypical (normal or even low ALT is characteristic of alcoholic hepatitis).",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 25 year old woman with well-controlled, non-cirrhotic AlH attends your clinic to say she is pregnant. She is currently maintained on azathioprine monotherapy. What advice would you give her?",
+      "options": [
+        "A. Disease flare-ups can occur following delivery",
+        "B. Her child runs a significant risk of developing AIH",
+        "C. Her disease will deteriorate during pregnancy",
+        "D. She should immediately swap to MMF maintenance therapy",
+        "E. She should undergo endoscopy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "AIH typically improves in terms of disease activity during pregnancy. It can, however, flare up during the early post-partum period. If patients have cirrhosis, then portal hypertension can worsen during the third trimester, so consideration should be given to endoscopy as they enter the third trimester. This only applies to cirrhosis patients. MMF is teratogenic and is contraindicated in pregnancy, so azathioprine should be continued. The offspring of mothers with AIH run a slightly increased risk of AIH later in life (because of the genetic contribution to pathogenesis). This small risk should not impact on plans for pregnancy.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 53 year old man with known oesophageal varies presents with a large gastrointestinal (GI) bleed. You are the first attending clinician. What is the first step you should take?",
+      "options": [
+        "A. Alert interventional radiology in case transjugular intrahepatic portosystemic stent shunt (TIPSS) is required",
+        "B. Arrange urgent cross-match",
+        "C. Arrange urgent endoscopy and banding",
+        "D. Insert large-bore cannula and give fluid",
+        "E. Organise bedside ultrasound to assess for portal vein thrombosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Variceal bleeding can be high pressure and can lead to the patient exsanguinating rapidly. It is therefore essential to secure venous access early and commence fluid resuscitation. Delay can lead to later failure to gain access. Cross-matching is clearly urgent but should be done once access is secured. However, the acute intervention of choice is endoscopy and banding; this should only be undertaken once the patient is haemodynamically stable. TIPSS is a radiological intervention that is appropriate after failed endoscopy or early rebleed. Ultrasound scan is a part of the workup to explore triggers for bleeding - portal venous thrombosis or occult hepatocellular carcinoma (HCC) being potential factors - but should be undertaken once the acute bleeding state is under control.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A patient with suspected variceal bleeding cannot have an endoscopy because of lack of an available trained endoscopist. She is becoming increasingly unstable. Which of the following is a medical therapy appropriate for use in the first instance to establish haemodynamic control?",
+      "options": [
+        "A. Glypressin",
+        "B. Noradrenaline (norephinephrine)",
+        "C. Propranolol",
+        "D. Subcutaneous octreotide",
+        "E. Tranexamic acid"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Glypressin is recognised to reduce the severity of acute variceal bleeding and can act as a bridge to endoscopy and an adjunct to endoscopy (helping a clearer endoscopic field). Noradrenaline (norepinephrine) may be required in the critical care setting to maintain cardiovascular status but is not primarily an agent to reduce bleeding risk. Octreotide has benefits in variceal bleeding but its use has been superseded by Glypressin: where used, it has to be intravenous. Propranolol should never be used in acute bleeding but is an important agent in the treatment of chronic portal hypertension. There is no clear evidence to support the use of tranexamic acid in GI bleeding (including variceal bleeding) although trials are ongoing.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A computed tomography (CT) scan performed in a patient with chronic liver disease has identified a mass lesion suspicious of a hepatocellular carcinoma. What is the next investigation you should consider?",
+      "options": [
+        "A. A magnetic resonance imaging (MRI) scan",
+        "B. Blood alpha-fetoprotein (AFP) measurement",
+        "C. Laparoscopy",
+        "D. Liver biopsy",
+        "E. Positron emission tomography (PET) scan"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A second imaging modality is the key next investigation in a case of suspected HCC. AFP has some use as a screening test in at-risk patients but it can be normal in patients with HCC, meaning it has no use in diagnosis. Laparoscopy and liver biopsy can be of use in staging and planning therapy in specific cases, once the diagnosis is supported by dual imaging. PET scan has utility in specific situations, in particular to explore for the presence of metastasis.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 45 year old woman presents with painful hepatomegaly and ascites. What imaging findings would you predict when investigating?",
+      "options": [
+        "A. An irregular liver on CT",
+        "B. Hepatic artery thrombosis",
+        "C. Hepatic venous thrombosis on triple-phase CT",
+        "D. Isolated gastric varies",
+        "E. Reversal of portal blood flow on ultrasound"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This clinical presentation is typical of Budd-Chiari syndrome (hepatic venous thrombosis). Cirrhosis is typically associated with a small, painless shrunken liver and reversal of portal venous flow; pain would be very unusual. Hepatic artery thrombus is a specific complication of liver transplantation.",
+      "questionNumber": 15
+    },
+    {
+      "question": "Twenty-four hours following liver transplantation for autoimmune hepatitis, a patient's ALT is climbing rapidly. What diagnosis is the most likely?",
+      "options": [
+        "A. Acute cellular rejection",
+        "B. Cytomegalovirus (CMV) infection",
+        "C. Delayed graft function",
+        "D. Hepatic artery thrombosis",
+        "E. Recurrent AIH"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "ALT elevation following liver transplantation is, as in other settings, a marker of liver injury. The commonest aetiology is dependent on the time point post-transplant. Immediately post-surgery, the commonest causes are thrombosis of the hepatic artery (a specific complication of liver transplant) and primary graft dysfunction (typically a consequence of preservation injury). Acute cellular rejection would typically not be seen until days 5-10. CMV infection is another characteristic post-transplant challenge, typically when there is a mismatch between the CMV status of the donor and recipient. Prophylactic regimes in at-risk individuals are effective. AIH recurrence post-liver transplant is described but is typically a late phenomenon.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A patient with primary biliary cholangitis is concerned about the prognosis of her disease. Which of the following is predictive of a poor outcome?",
+      "options": [
+        "A. Alkaline phosphatase (ALP) level",
+        "B. AMA titre",
+        "C. Large liver size on ultrasound",
+        "D. Older age at disease onset",
+        "E. Presence of intercurrent autoimmune disease"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Alkaline phosphatase level at presentation and in particular after therapy with ursodeoxycholic acid is predictive of outcome, with clinically relevant cut-offs identified and now in widespread clinical use. AMA is an important diagnostic feature but titre is not predictive of outcome. Intercurrent autoimmune disease is common and requires management but has no impact of liver disease risk. Liver size is typically increased in early PBC. Small liver size is a feature of cirrhosis with a worse outcome. Younger age is associated with a lower likelihood of response to UDCA and thus increased risk. PBC is typically benign in older patients.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 38 year old woman presents in the third trimester of pregnancy with itch. She is found to have a rise in liver enzymes and serum bile acids. Which of the following statements is correct?",
+      "options": [
+        "A. Acute viral hepatitis is a likely cause",
+        "B. Fatty liver of pregnancy is the most likely diagnosis",
+        "C. It is likely that the mother has underlying chronic liver disease",
+        "D. There is a risk of intrauterine fetal death, meaning that consideration should be given to early delivery",
+        "E. There is no effective drug treatment"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The combination of abnormal biochemistry, pregnancy stage and, in particular, elevation of serum bile acids all point to cholestasis of pregnancy. The bile acid elevation makes fatty liver of pregnancy unlikely. UDCA therapy is effective and rifampicin has been used in severe cases. There is no association with pre-existing maternal liver disease. Cholestasis pruritus can be very severe. The major clinical concern is sudden intrauterine death due, it is thought, to a toxic effect of bile acids on the fetal cardiac conducting apparatus. The risk rises exponentially from 36 weeks' gestation onwards and there is a strong case for early delivery to avoid this risk.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 76 year old man is referred to the outpatient clinic. His family physician has suspected that he has primary sclerosing cholangitis. Which of the following statements about diagnosis and treatment is correct?",
+      "options": [
+        "A. First-line imaging technique for the bile ducts is endoscopic retrograde cholangiopancreatography (ERCP)",
+        "B. HCC is the characteristic complication",
+        "C. The diagnosis is unlikely as the patient is male",
+        "D. There is no proven therapy able to improve prognosis",
+        "E. UDCA is proven to reduce mortality"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "PSC is a fibrotic cholestatic liver disease of presumed autoimmune aetiology, which has a male predominance. Although UDCA is widely used, and typically improves the cholestatic liver function tests seen in PSC, there is no evidence that it reduces mortality and there is no evidence to support any drug therapy. HCC can complicate cirrhosis PSC (as with cirrhosis of any cause) but the specific associated cancers are cholangiocarcinoma and colonic carcinoma, both of which should be screened for. Imaging of the bile ducts is a key part of the diagnostic workup but should be through magnetic resonance cholangiopancreatography (MRCP) in the first instance because of the risks associated with ERCP. The latter should be reserved for therapeutic, rather than diagnostic, procedures.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 60 year old woman is being treated for cellulitis and has developed abnormal LFTs. Her family physician calls you for advice as she suspects that the patient has flucloxacillin-induced liver injury. Which of the following statements is correct?",
+      "options": [
+        "A. Characteristic blood test abnormalities are elevation in ALT and eosinophil count",
+        "B. Loss of the small intrahepatic bile ducts can occur",
+        "C. Glucocorticoid therapy increases speed of recovery",
+        "D. The patient is safe to take the drug again in the future as the risk falls with repeat exposure",
+        "E. The patient should avoid all penicillin-based drugs in the future"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Flucloxacillin-induced liver injury is one of the commoner forms of drug-induced liver injury. It is thought to have an immune pathogenesis (there is a strong HLA association) and there is no crossover with other penicillins, which can be used safely. The immune element probably underpins the characteristic pattern of worsening injury with repeat exposure - a phenomenon that means that repeat use is absolutely contraindicated in patients suspected of the reaction. The process is principally cholestatic, with elevation of alkaline phosphatase being the characteristic biochemical change (eosinophilia can be seen as in all drug reactions). In severe cases, intrahepatic bile duct loss can be seen and UDCA therapy is advocated by some (although the evidence basis is limited). Glucocorticoid therapy has no role.",
+      "questionNumber": 20
+    },
+    {
+      "question": "An 18 year old medical student has his hepatitis B and C status checked as part of his occupational health screening for entrance to medical school. His results are as follows:\nLFTs:\nBilirubin 12 µmol/L (0.70 mg/dL)\nALT 19 U/L\nHCV antibody not detected\nHepatitis B surface antigen (HBsAg) positive\nAntibody to HBsAg (anti-HBs) negative\nAntibody to hepatitis B core antigen (anti-HBc) IgM negative\nAnti-HBc IgG positive\nWhat is the next step in his management?",
+      "options": [
+        "A. Check hepatitis B e antigen (HBeAg) and HBV DNA",
+        "B. Liver biopsy",
+        "C. Repeat blood tests in 6 months",
+        "D. Tenofovir",
+        "E. Vaccinate for hepatitis B"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This medical student has chronic hepatitis B. Hepatitis B surface antigen is the hallmark of chronic HBV infection if present for more than 6 months. This patient is unlikely to have acute infection with normal transaminases and negative anti-HBc IgM. Further management of the patient will depend on HBeAg status and HBV DNA to distinguish disease phase.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 42 year old female with a new diagnosis of chronic hepatitis B has recently had fluctuations in her LFTs with an abnormal ALT despite a low viral load. Her delta serology is checked and is positive with a high titre. Which of the following statements is true about the hepatitis D virus (HDV)?",
+      "options": [
+        "A. All patients with HBV have HDV co-infection",
+        "B. HBV-HDV co-infection has the same annual rate of cirrhosis and HCC as HBV mono-infection",
+        "C. HDV can infect individuals simultaneously with any acute hepatitis",
+        "D. HDV contains a single antigen to which infected individuals make an antibody (anti-HDV)",
+        "E. HDV is a DNA virus like HBV"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "HDV is an RNA-defective virus that requires the simultaneous presence of HBV for replication and has the same sources and modes of spread. HBV replication is usually suppressed by HDV. Liver damage is believed to be due to HDV and persistent HDV replication in co-infected patients leads to higher annual rates of cirrhosis and HCC. Interferon-alfa is the only effective drug against HDV but the optimal duration of therapy is not well defined.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 25 year old female who has chronic hepatitis B and is under long-term follow-up in the hepatology clinic is 27 weeks pregnant, about to enter her third trimester. She is worried she will give her baby hepatitis B and would like you to reassure her. You review her blood tests from this clinic appointment at 27 weeks' gestation.\nLFTs:\nBilirubin 18 µmol/L (1.05 mg/dL)\nALT 14 U/L\nALP 84 U/L\nHBsAg positive\nHBeAg negative\nHBV DNA 48 U/mL (low titre)\nWhat is the most appropriate next step in her management plan?",
+      "options": [
+        "A. Advise elective caesarean delivery",
+        "B. Interferon-alfa in third trimester",
+        "C. Observe",
+        "D. Tenofovir in third trimester",
+        "E. Vaccinate infant at birth"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Pregnant women with chronic hepatitis B are most infectious when markers of continuing viral replication, such as HBeAg, and high levels of HBV-DNA are present in the blood. Tenofovir can be given if there are high levels of HBV-DNA in the last trimester of pregnancy; however, in this clinical scenario, the patient has very low titres. Interferon-alfa is contraindicated in pregnancy. Neonates born to hepatitis B-infected mothers should be immunised at birth. In addition, to prevent vertical transmission, hepatitis B immunoglobulin (HBIg) is given to newborns of highly viraemic HBeAg-positive mothers. Guidelines do not recommend elective caesarean delivery for mothers with chronic hepatitis B infection.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 52 year old male ex-intravenous drug user with liver cirrhosis from hepatitis C virus has complications of diuretic-resistant ascites and previous episodes of encephalopathy. He has been waiting for treatment. Whilst he waits for treatment to be initiated, what is the most appropriate management plan?",
+      "options": [
+        "A. AFP and ultrasound in 12 months for HCC surveillance",
+        "B. Assessment for liver transplantation",
+        "C. Liver biopsy",
+        "D. Tenofovir",
+        "E. Trial of interferon for 4 weeks"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Liver transplantation should be considered when complications of cirrhosis occur. He should be undergoing 6-monthly interval AFP and ultrasound for HCC surveillance. This surveillance will be ongoing even after his HCV is cured, as he will still have cirrhosis. Interferon is contraindicated in decompensated cirrhosis, and tenofovir is a treatment used in hepatitis B.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 37 year old male prisoner is newly diagnosed with HCV. He has no significant past medical history or drug history. His results are as follows:\nFull blood count:\nHaemoglobin 130 g/L\nWhite cell count (WCC) 4.2x10^9/L\nPlatelets 98x10^9/L\nLFTs:\nBilirubin 42 µmol/L (2.46 mg/dL)\nALT 60 U/L\nALP 64 U/L\nUltrasound liver: irregular, shrunken liver with no focal lesion and no free fluid. Splenomegaly.\nHCV genotype 1a. HCV RNA 750000 U/mL.\nElastography 25 kPa (2-7 kPa).\nWhat is the next appropriate management step?",
+      "options": [
+        "A. Genotype 1a is more difficult to treat and therefore he should have interferon therapy",
+        "B. He does not have advanced fibrosis and therefore can be discharged from the clinic",
+        "C. He needs a liver biopsy to accurately stage his liver disease",
+        "D. He should be offered oral antiviral therapy",
+        "E. No treatment; patient should be observed with continued outpatient follow-up"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient is cirrhotic as evident by thrombocytopenia, ultrasound imaging and high elastography score. He does not need a liver biopsy. He should be treated for his hepatitis C with new all-oral direct-acting antiviral therapy. Combinations of these drugs have been targeted to be pan-genotypic with sustained viral response (SVR) rates >90%. Once treated, he will require life-long follow-up in clinic for HCC surveillance, and as he has only been recently diagnosed with cirrhosis he should also have an endoscopy to screen for varices.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 64 year old man has been admitted to hospital feeling tired and unwell, suffering from nausea and itching. A careful history elicits that he recently celebrated his wedding anniversary on a cruise ship from which they returned a few weeks ago. He has recently noted dark urine and pale stool. His wife is not unwell but she is vegetarian and he mentions he ate large amounts from the seafood buffet. He has no other risk factors for jaundice. His LFTs confirm he is jaundiced with an acute hepatitis. Which of the following is most likely to test positive?",
+      "options": [
+        "A. Delta antibody",
+        "B. Hepatitis A virus (HAV) RNA in sweat",
+        "C. Hepatitis B surface antigen",
+        "D. Hepatitis C antibody",
+        "E. Hepatitis E virus RNA in stool"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical presentation of hepatitis E is similar to that of hepatitis A with the likely source as shellfish in this clinical scenario. However, this question focuses on detection methods. Hepatitis A virus is excreted in faeces or diagnosis is made by detection of HAV IgM antibodies in the blood, which persists for up to 14 weeks after initial infection. Alternative samples such as serum and saliva can be used but assays are expensive and sensitivities vary. Therefore, answer E is the correct option.",
+      "questionNumber": 26
+    },
+    {
+      "question": "There has been an outbreak of hepatitis A virus (HAV) at a local nursery. The head teacher of a primary school in the same area would like some advice on prevention of secondary cases of hepatitis A infection. Of note, no one at the primary school (child or adult member of staff) has been identified as unwell or an index case. What advice do you give to her?",
+      "options": [
+        "A. Everyone in her primary school should be vaccinated",
+        "B. Good hygiene practice is the cornerstone of prevention",
+        "C. HAV is not highly infectious",
+        "D. Infected individuals will always have symptoms",
+        "E. There is a risk of becoming a chronic carrier"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "HAV belongs to the picornavirus group of enteroviruses. HAV is highly infectious and is spread by the faecal-oral route, but a chronic carrier state does not occur. Infected individuals may be asymptomatic. Health departments will investigate outbreaks and advise regarding vaccination. In this scenario vaccinating everyone is not necessary, as no one has been identified as the index case or close contact at the primary school.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 49 year old male with chronic hepatitis B who has cirrhosis and developed hepatocellular carcinoma has a liver transplant. What treatment should be prescribed in the post-operative period?",
+      "options": [
+        "A. Hepatitis B immunoglobulin",
+        "B. Hepatitis B immunoglobulin and oral nucleoside",
+        "C. Hepatitis B vaccination",
+        "D. Interferon-alfa",
+        "E. Ribavirin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The use of post-liver transplant prophylaxis with direct-acting antiviral agents and hepatitis B immunoglobulins has reduced the reinfection rate to 10% and increased 5-year survival to 80%, making transplantation an acceptable treatment option. Hepatitis B vaccination is ineffective in those already infected by HBV. Ribavirin is a treatment used in hepatitis C infection.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 79 year old male is admitted to the emergency department with rigors and abdominal pain. He has a past medical history of hypertension with no history of travel abroad. On examination he is febrile with a temperature of 40°C and tachycardic. He is tender in the right upper quadrant but without guarding or rebound. His inflammatory markers are raised with WCC 24x10^9/L and C-reactive protein (CRP) of 300 mg/L. He has deranged LFTs with bilirubin 64 µmol/L (3.74 mg/dL), ALT 74 U/L, ALP 320 U/L. A liver screen was sent. An ultrasound abdomen showed three cystic lesions in the right lobe of the liver with a dilated common bile duct and associated filling defect suggestive of gallstones and inflamed gallbladder. Intravenous antibiotics and fluids are started. Stool microscopy for ova/cysts and parasites was negative. Blood cultures were positive for Escherichia coli and subsequent aspirate of cyst was positive for the same bacteria. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Amoebic liver abscess",
+        "B. Hepatocellular carcinoma",
+        "C. Hydatid cyst",
+        "D. Polycystic liver disease",
+        "E. Pyogenic liver abscess"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Hepatic abscesses are rare and clinical features of pyogenic and amoebic liver abscesses can be similar. However, pyogenic abscesses are most common in older patients and usually result from ascending infection due to biliary obstruction (cholangitis). They are often described as more aggressive. E. coli and various streptococci, particularly Strep. milleri, are the most common organisms. Any associated biliary obstruction and cholangitis require biliary drainage. Hepatic hydatid disease is a parasitic zoonosis caused by the Echinococcus tapeworm.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 62 year old male with cirrhosis from non-alcoholic fatty liver disease (NAFLD) undergoes 6-monthly ultrasound for HCC surveillance and AFP. His AFP is normal but ultrasound shows a 3.5-cm lesion in the liver. What is the next appropriate management step?",
+      "options": [
+        "A. Carcinoembryonic antigen",
+        "B. PET scan",
+        "C. Repeat ultrasound liver by consultant radiologist",
+        "D. Repeat ultrasound liver in 3 months",
+        "E. Triple-phase CT scan"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "AFP is produced by 60% of HCCs; therefore a negative AFP does not exclude HCC. Carcinoembryonic antigen is a tumour marker that can be raised in colorectal cancer. Combination of imaging modalities more accurately diagnoses and stages the extent of disease, and using at least two modalities (typically, CT or MRI following initial screening ultrasound identification of a mass lesion) is recommended.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 52 year old male is referred to hepatology clinic due to an abnormal ultrasound scan. He was originally referred to haematology to be investigated for thrombocytopenia. He has a past medical history of type 2 diabetes, hypertension and body mass index (BMI) 33 kg/m². He has mildly deranged LFTs (which prompted the ultrasound scan request). Below are his results from clinic:\nFull blood count:\nHaemoglobin 106 g/L\nWCC 5.3x10^9/L\nPlatelets 89x10^9/L\nLFTs:\nBilirubin 33 µmol/L (1.93 mg/dL)\nALT 54 U/L\nALP 72 U/L\nAFP 892 kU/L\nUltrasound: 5-cm lesion in liver. Liver is shrunken and nodular. Further imaging is requested.\nWhat is the likely description of the lesion on a CT scan?",
+      "options": [
+        "A. Enhances in arterial phase with portal venous washout",
+        "B. Fluid-filled cystic lesion",
+        "C. Focal central scar",
+        "D. Low-density lesion with delayed arterial filling",
+        "E. Thick-walled cyst with calcification"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In this clinical scenario, the patient has cirrhosis as evidenced by thrombocytopenia and ultrasound imaging of liver. In this case, the likely aetiology is NAFLD with risk factors of diabetes, hypertension and obesity. The high AFP is diagnostic for HCC. HCC are hypervascular in the arterial phase, followed by washout in the portal venous phase. Option E is typical of a hydatid cyst and daughter cysts may be present. Option C is the appearance of a hepatic adenoma and focal nodular hyperplasia can be differentiated from adenoma because of a focal central scar.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 37 year old female presents to the emergency department with colicky right upper quadrant pain and nausea. This is her fourth presentation in 6 months. Ultrasound confirms gallstones and she is referred to the surgeons for elective cholecystectomy. Which of the following dietary recommendations do you advise her to adopt?",
+      "options": [
+        "A. Fermentable, oligo-, di-, monosaccharides and polyols (FODMAP) diet",
+        "B. Gluten-free diet",
+        "C. High-fat diet",
+        "D. Low-fat diet",
+        "E. Low-oxalate diet"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has biliary colic. Gallstones are conventionally classified into cholesterol or pigment stones, although the majority are of mixed composition. Patients are generally advised a low-fat diet to help reduce symptoms as fat releases cholecystokinin, which precipitates gallbladder contraction and might result in biliary pain. Low-oxalate diet is associated with renal stones. A FODMAP diet is a treatment option for patients with irritable bowel syndrome and gluten-free diets are for patients with coeliac disease.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 64 year old male with a background of ulcerative colitis and primary sclerosing cholangitis has upper abdominal pain and complains of dark urine and pale stool for a month. On further questioning he reveals recent weight loss. On examination he is afebrile, cachexic with a soft abdomen with no palpable abdominal mass. Further investigations are as follows.\nLFTs:\nBilirubin 240 µmol/L (14.03 mg/dL)\nALT 140 U/L\nALP 880 U/L\nUltrasound: dilated intrahepatic bile ducts with poorly demarcated echogenic tissue in hepatic hilum.\nWhich is the next best investigation?",
+      "options": [
+        "A. Carcinoembryonic antigen",
+        "B. Colonoscopy",
+        "C. CT abdomen",
+        "D. ERCP",
+        "E. Liver biopsy"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Primary sclerosing cholangitis carries a lifetime risk of cholangiocarcinoma of approximately 20%. It can arise from anywhere in the biliary tree. Often the diagnosis is made by a combination of CT and MRI. A liver biopsy may cause tumour seeding. The patient will need an ERCP due to biliary obstruction but is not currently septic and therefore the best next investigation would be further imaging. Patients with ulcerative colitis and PSC should undergo yearly colonoscopy as they are at high risk of colorectal cancer, but this is not the focus of this scenario.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 42 year old female has attended the emergency department numerous times with intermittent episodes of epigastric pain. She has been investigated as an outpatient with normal upper GI endoscopy. On this attendance, her results are as below:\nAmylase 400 U/L\nBilirubin 45 µmol/L (2.63 mg/dL)\nALT 56 U/L\nALP 142 U/L\nCRP 2 mg/L\nAbdominal ultrasound: normal liver, slightly dilated intrahepatic ducts and common bile duct. No stones or masses. MRCP: pancreas normal but, as on ultrasound, dilated common bile duct with no stones or masses.\nYou diagnose her with sphincter of Oddi dysfunction (SOD). What is the next best appropriate management step.",
+      "options": [
+        "A. Advise regular non-steroidal anti-inflammatory drugs and no other intervention",
+        "B. Cholecystectomy",
+        "C. Nifedipine",
+        "D. Observe",
+        "E. Sphincter of Oddi manometry"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient has SOD type I. The gold standard for diagnosis is sphincter of Oddi manometry. All biliary SOD patients with type I disease are treated with endoscopic sphincterotomy. Medical therapies can be tried in SOD type II patients.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 47 year old male with a BMI of 35 kg/m² presents with jaundice, loss of appetite with abdominal pain and increasing abdominal girth over 3-4 weeks. He is teetotal with no other past medical history. He does not take any regular medication. On examination he has hepatosplenomegaly and ascites, with no peripheral oedema.\nFull blood count:\nHaemoglobin 190 g/L\nWCC 13x10^9/L\nPlatelets 690x10^9/L\nLFTs:\nBilirubin 72 µmol/L (4.21 mg/dL)\nALT 500 U/L\nALP 460 U/L\nAlbumin 31 g/L\nAscitic fluid albumin 22 g/L\nWhat is the most likely cause of his presentation?",
+      "options": [
+        "A. Alcoholic liver disease",
+        "B. Congestive cardiac failure",
+        "C. Haemochromatosis",
+        "D. Hepatic vein thrombosis",
+        "E. NAFLD"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient has polycythaemia vera causing Budd-Chiari syndrome. The ascitic fluid is an exudate with a serum-ascites albumin gradient (SAAG) of <11 g/L. The other causes listed would have a high SAAG.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 45 year old patient with alcoholic liver disease is accompanied by his daughter to clinic. He has been abstinent of alcohol for 4 years but developed diuretic-resistant ascites and mild encephalopathy. Which of the following scoring systems should be used to identify and prioritise whether he should be assessed for liver transplantation?",
+      "options": [
+        "A. King's College criteria",
+        "B. Maddrey score",
+        "C. MELD (Model for End-Stage Liver Disease)",
+        "D. Rockall score",
+        "E. Serum-ascites albumin gradient"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The MELD score is used to identify and prioritise patients for liver transplantation. The Maddrey score enables the clinician to assess prognosis in alcoholic hepatitis. The King's College criteria identify indices associated with poor prognosis in patients with acute liver failure. The Rockall score identifies patients needing intervention in upper GI bleeds.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 21 year old female is diagnosed with fibrolamellar hepatocellular carcinoma of 3 cm with no underlying cirrhosis. Her AFP is normal. Which is the best treatment option for her?",
+      "options": [
+        "A. Chemotherapy",
+        "B. Do nothing and observe",
+        "C. Radiofrequency ablation (RFA)",
+        "D. Surgical resection",
+        "E. Transarterial chemoembolisation (TACE)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Fibrolamellar HCC occurs in young adults in the absence of cirrhosis. The treatment of choice is surgical resection. The tumour biology is different to standard HCC and, in the absence of cirrhosis, surgical resection is less likely to cause liver failure. TACE and RFA are treatment options for HCC.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 64 year old female with recent change in bowel habit and rectal bleeding who is awaiting lower GI investigation presents to the emergency department with dark urine and pale stool. On examination she is jaundiced with hepatomegaly and moderate-volume ascites.\nLFTs:\nBilirubin 240 µmol/L (14.03 mg/dL)\nALT 84 U/L\nALP 1400 U/L\nAlbumin 31 g/L\nCarcinoembryonic antigen (CEA) 230 µg/L\nAscitic fluid: blood-stained\nUltrasound: multiple liver lesions compressing bile ducts\nWhich of the following is the most likely diagnosis?",
+      "options": [
+        "A. Cholangiocarcinoma",
+        "B. Colorectal cancer",
+        "C. Focal nodular hyperplasia",
+        "D. Hepatic adenoma",
+        "E. HCC"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has secondary liver disease. Given the recent change in bowel habit and raised CEA, the primary is likely to be colorectal cancer. She has biliary obstruction from tumour burden in liver. Options D and E are benign lesions that would not present this way. Serum levels of the tumour marker CA19-9 are elevated in cholangiocarcinoma.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A hospital porter is seen in the occupational health clinic following a needlestick injury. Investigations taken in the clinic show that the patient is HBsAg negative, anti-HBc negative and anti-HBs positive. What is the correct interpretation of these results?",
+      "options": [
+        "A. Acute infection with hepatitis B",
+        "B. Chronic dual infection with hepatitis B and delta virus",
+        "C. Chronic mono-infection with hepatitis B",
+        "D. Previous immunisation against hepatitis B without prior infection",
+        "E. Previous infection to hepatitis B but the patient has cleared the virus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "HBV surface antigen (HBsAg) is a marker of current infection. HBV surface antibody (anti-HBs) may be positive following previous infection with HBV or if the patient has been immunised against HBV but immunisation against HBV does not induce HBV anti-core (anti-HBc) antibody production. As this patient is HBsAg negative, he is not currently infected. The absence of anti-HBc despite the presence of anti-HBs indicates he has not been exposed to the virus in the past but has been immunised to the virus.",
+      "questionNumber": 39
+    },
+    {
+      "question": "When assessing the severity of NAFLD in an overweight 65 year old type 2 diabetic patient with hypertension, which of the following statements is correct?",
+      "options": [
+        "A. A normal ALT level indicates that the disease is mild and that there is unlikely to be significant scarring of the liver",
+        "B. A raised γ-glutamyl transferase (GGT) indicates that the patient is probably dependent on alcohol",
+        "C. The AST: ALT ratio is a useful indicator of progressive liver fibrosis towards cirrhosis",
+        "D. The presence of obesity, hypertension and type 2 diabetes is not associated with a greater likelihood of steatohepatitis and liver fibrosis",
+        "E. The use of routine ultrasound can distinguish between simple steatosis and steatohepatitis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "NAFLD is an increasingly common liver disease that is associated with features of the metabolic syndrome; the more features that an individual possesses, the more likely they are to have progressive disease. NAFLD is often asymptomatic and may be associated with normal liver biochemistry, even when disease is advanced. AST rises and ALT falls as disease progresses towards cirrhosis. The AST:ALT ratio is included in calculated scores such as the NAFLD fibrosis score and FIB-4 score that are used to risk-stratify patients for presence of advanced fibrosis. GGT levels may be raised in NAFLD and so cannot be used to discriminate between alcoholic and non-alcoholic liver disease. Routine imaging modalities cannot distinguish between steatosis and steatohepatitis; at present this can only be reliably performed histologically.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A patient has suspected NAFLD. Which of the following statements about diagnosis and treatment is correct?",
+      "options": [
+        "A. Statins should be discontinued due to the risk of drug-induced liver injury",
+        "B. Testing for the PNPLA3 rs738409 genetic variant is part of the routine clinical testing of patients",
+        "C. The FIB-4 Score distinguishes between alcoholic liver disease and NAFLD",
+        "D. The presence of individual features of the metabolic syndrome should be sought and treated to reduce cardiovascular risk",
+        "E. Venesection should be commenced immediately if ferritin levels are raised, as this indicates haemochromatosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "NAFLD is a common, progressive liver disease that is also associated with an increased risk of cardiovascular disease. In patients with NAFLD, liver-related mortality is the third most common cause of death, after cardiovascular disease and extrahepatic malignancy. If a patient is found to have NAFLD, other features of the metabolic syndrome (including type 2 diabetes, hypertension, dyslipidaemia) should be sought and treated. NAFLD is not associated with an increased risk of statin-related liver injury and so statins are generally considered safe. Raised ferritin levels may be seen in patients with NAFLD and do not necessarily indicate the presence of haemochromatosis, which can be excluded by checking transferrin saturation. Although carriage of the PNPLA3 gene rs738409 variant is associated with more severe NAFLD, it is not currently used as part of routine clinical testing. The FIB-4 score is used to risk-stratify patients for presence of advanced fibrosis in NAFLD; it should not be used in patients with alcoholic liver disease.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 57 year old man is admitted with presumed alcoholic hepatitis. Which of the following statements about diagnosis and treatment is correct?",
+      "options": [
+        "A. A Maddrey 'discriminate function' of less than 32 is indicative of a poor prognosis",
+        "B. Alcohol consumption may safely continue",
+        "C. Patients should be fasted to avoid stressing the liver",
+        "D. The Steroids or Pentoxifylline for Alcoholic Hepatitis (STOPAH) trial showed that pentoxyfilline should be the first-line treatment for alcoholic hepatitis",
+        "E. The STOPAH trial showed that prednisolone 40 mg daily for 28 days leads to a modest reduction in short-term mortality"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A Maddrey discriminate function greater than 32 is indicative of severe disease. Cessation of all alcohol consumption is essential. Good nutrition is very important, and enteral feeding via a fine-bore nasogastric tube may be needed in severely ill patients. The STOPAH study was a large multicentre double-blind randomised trial to evaluate the relative merits of steroids and/or a weak anti-tumour necrosis factor (anti-TNF) agent (pentoxifylline), alone or in combination. In a cohort of 1103 patients, no significant benefit from pentoxifylline treatment was identified; however, treatment with prednisolone 40 mg daily for 28 days led to a modest reduction in short-term mortality, from 17% in placebo-treated patients to 14% in the prednisolone group. These findings were consistent with earlier studies, where an improvement in 28-day survival from 52% to 78% was seen when steroids were given to those with a Glasgow score of more than 9. However, neither steroids nor pentoxifylline improved survival at 90 days or 1 year. Sepsis is the main side-effect of steroids, and existing sepsis and variceal haemorrhage are the main contraindications to their use.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 54 year old male patient with alcohol-related cirrhosis is admitted with a 3-week history of increasing abdominal swelling and discomfort. He is mildly jaundiced and has a low-grade pyrexia but is haemodynamically stable. Routine blood tests and a chest X-ray have been requested. What test would you perform next?",
+      "options": [
+        "A. Diagnostic paracentesis",
+        "B. Electroencephalogram",
+        "C. ERCP",
+        "D. Triple-phase CT liver",
+        "E. Upper GI endoscopy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The most likely diagnosis would be spontaneous bacterial peritonitis. Diagnostic paracentesis (ascetic tap) may show cloudy fluid, and an ascites neutrophil count above 250*10^6/L almost invariably indicates infection. The source of infection cannot usually be determined, but most organisms isolated are of enteric origin and E. coli is most frequently found. Ascitic culture in blood culture bottles gives the highest yield of organisms. Spontaneous bacterial peritonitis (SBP) needs to be differentiated from other intra-abdominal emergencies, and the finding of multiple organisms on culture should arouse suspicion of a perforated viscus.",
+      "questionNumber": 43
+    },
+    {
+      "question": "An otherwise healthy 35 year old nurse and part-time tattoo artist is referred with a persistent, fluctuating transaminitis (ALT 40-120 U/L) that has been present for several years. What viral infection would you consider most likely?",
+      "options": [
+        "A. Epstein-Barr virus (EBV)",
+        "B. Hepatitis A",
+        "C. Hepatitis B",
+        "D. Hepatitis C",
+        "E. Hepatitis E"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hepatitis A, hepatitis E and EBV infections usually cause only a short-lived, acute hepatitis, with the exception that HEV may become chronic in patients that are immunocompromised. Health-care workers are routinely immunised against HBV, making chronic HBV infection less likely in this situation. HCV is caused by an RNA flavivirus. Acute symptomatic infection with hepatitis C is rare. Most individuals are unaware of when they became infected and are only identified when they develop chronic liver disease. Eighty per cent of individuals exposed to the virus become chronically infected and late spontaneous viral clearance is rare. Unlike HBV, there is no active or passive protection against HCV. HCV is usually identified in asymptomatic individuals screened because they have risk factors for infection, such as previous injecting drug use, tattoos, needlestick injury, etc.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 38-year old man is referred by his family physician to the outpatient clinic. His father had haemochromatosis and he is about to get married, so he is wondering whether he is likely to be affected. What would be the best first-line screening test in this case?",
+      "options": [
+        "A. CT liver",
+        "B. Ferritin",
+        "C. HFE genetic analysis",
+        "D. Liver biopsy",
+        "E. Transferrin saturation"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In hereditary haemochromatosis, iron is deposited throughout the body and causes damage to several organs, including the liver. Serum iron studies show a greatly increased ferritin, a raised plasma iron and saturated plasma iron-binding capacity. The differential diagnoses for elevated ferritin includes inflammatory disease, NAFLD or excess ethanol consumption for modest elevations (<1000 µg/L). Transferrin saturation of more than 45% is highly suggestive of iron overload and not affected by inflammatory state and so is more specific than ferritin. Genetic testing can be considered later, but in the first instance tests for iron overload would be first line and best value.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 45 year old woman presents with a 5-day history of pale stools and dark urine associated with cramping epigastric and right upper quadrant pains. Blood tests show bilirubin 120 µmol/L (7.02 mg/dL), ALT 65 U/L, ALP 580 U/L, GGT 640 U/L. What would be your first-line imaging investigation?",
+      "options": [
+        "A. CT pancreas",
+        "B. Endoscopic ultrasound",
+        "C. ERCP",
+        "D. PET-CT",
+        "E. Ultrasound abdomen"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient presents with a painful obstructive jaundice. The blood tests represent a typical cholestatic picture with elevated ALP and GGT, making viral hepatitis unlikely. In this setting, ultrasound would be the first-line investigation to seek evidence of biliary obstruction with dilated common bile duct due to, for example, gallstone disease. Depending on the findings, it may then be necessary to proceed to MRCP or endoscopic ultrasound prior to ERCP if an obstruction is identified. Pancreatic cancer is more classically associated with a painless obstructive jaundice.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 54 year old man with alcoholic cirrhosis presents with haematemesis. The patient is commenced on terlipressin and emergency upper GI endoscopy is performed, which demonstrates large oesophageal varices with active bleeding. The varices are banded with good haemostatic effect. What medicine would you start as secondary prophylaxis to reduce the chance of further variceal haemorrhage in the future?",
+      "options": [
+        "A. Atenolol",
+        "B. Isosorbide mononitrate",
+        "C. Losartan",
+        "D. Propranolol",
+        "E. Ramipril"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Non-selective β-adrenoceptor antagonists (β-blockers; e.g. propranolol) are used as a secondary measure to prevent recurrent variceal bleeding. Following successful treatment by endoscopic therapy, patients should also be entered into an oesophageal banding programme with repeated sessions of therapy at intervals until the varices are obliterated. In selected individuals, TIPSS may also be considered in this setting.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 48 year old male has recently been diagnosed with hemochromatosis with homozygous mutation of the HFE C282Y gene. His blood tests show a ferritin of 1950 µg/L and a transferrin saturation of 88%. What treatment would be the most appropriate to commence?",
+      "options": [
+        "A. Ferrous sulphate 200 mg 3 times daily",
+        "B. Fortnightly venesection",
+        "C. Propranolol 20 mg 3 times daily",
+        "D. Spironolactone 100 mg once daily",
+        "E. Vitamin C supplement twice daily"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The patient carries two copies of the most common HFE variant, C282Y, and has evidence of iron overload. Venesection would be the most appropriate treatment with frequency adjusted according to fall in ferritin and transferrin saturation. Vitamin C supplementation increases absorption of iron from the diet and so should be avoided.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A patient with NAFLD cirrhosis undergoes screening upper endoscopy and is noted to have moderate (grade 2) oesophageal varices with no signs of recent bleeding. What would be the best next step?",
+      "options": [
+        "A. Admit for TIPSS placement",
+        "B. Admit to intensive care unit and place Sengstaken-Blakemore tube immediately",
+        "C. Repeat upper GI endoscopy in 6 months",
+        "D. Start non-selective β-blocker (propranolol 20 mg 3 times daily)",
+        "E. Variceal banding"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "TIPSS is used in the management of refractory variceal bleeding that has not responded to other therapies. Placement of a Sengstaken-Blakemore tube is an emergency holding measure used when there is an uncontrollable variceal haemorrhage - for example, while plans are made for a TIPSS - and so is not necessary in this situation. If non-bleeding varices are identified at endoscopy, β-blocker therapy with propranolol (80-160 mg/day) or nadolol is effective in reducing portal venous pressure. Administration of these drugs at doses that reduce the heart rate by 25% has been shown to be effective in the primary prevention of variceal bleeding. In patients with cirrhosis, treatment with propranolol reduces variceal bleeding by 47% (number needed to treat for benefit (NNTB) 10), death from bleeding by 45% (NNTB 25) and overall mortality by 22% (NNTB 16). The efficacy of β-blockers in primary prevention is similar to that of prophylactic banding, which may also be considered, particularly in patients unable to tolerate β-blocker therapy. Carvedilol, a non-cardioselective vasodilating β-blocker, is also effective.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 53 year old bank employee in the UK is found at a routine check-up to have abnormal LFTs. What is the most common aetiology for abnormal liver biochemistry in developed countries?",
+      "options": [
+        "A. Alcoholic liver disease",
+        "B. Autoimmune hepatitis",
+        "C. Hepatitis C",
+        "D. NAFLD",
+        "E. Primary biliary cholangitis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Increasingly sedentary lifestyles and changing dietary patterns mean that the prevalence of obesity and insulin resistance has increased worldwide; thus, fat accumulation in the liver is a common finding during abdominal imaging studies and on liver biopsy. In the absence of high alcohol consumption (typically a threshold of <20 g/day for women and <30 g/day for men is adopted), this is called non-alcoholic fatty liver disease. Non-alcoholic fatty liver disease (NAFLD) is the most common cause for abnormal LFTs worldwide, estimated to affect 20-30% of the general population in Western countries and 5-18% in Asia, with about 1 in 10 NAFLD cases exhibiting non-alcoholic steatohepatitis (NASH). NAFLD is the leading cause of liver dysfunction in the non-alcoholic, viral hepatitis-negative population in Europe and North America and is predicted to become the main aetiology in patients undergoing liver transplantation during the next 5 years.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 60 year old man is found to have hepatitis C and undergoes a liver biopsy that confirms stage 4 fibrosis (cirrhosis). He is asymptomatic and subsequently receives antiviral therapy and successfully clears the virus (a sustained viral response). What further test will he need?",
+      "options": [
+        "A. Cardiac angiogram",
+        "B. Chest X-ray",
+        "C. Electrocardiogram (ECG)",
+        "D. HCV RNA annually to check for recurrence",
+        "E. Ultrasound every 6 months as part of routine HCC surveillance"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although the virus has been successfully cleared, the patient was found to have cirrhosis and so remains at risk of developing hepatocellular carcinoma (HCC). He will require follow-up and management to check for risks associated with cirrhosis, including HCC and portal hypertension/varices.",
+      "questionNumber": 51
+    }
+  ]
+}

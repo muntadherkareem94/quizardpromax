@@ -1,0 +1,382 @@
+{
+  "title": "Oncology - Chapter 33",
+  "questions": [
+    {
+      "question": "A 52 year old woman presents to her family physician concerned about her risk of cancer from her smoking. She has smoked 20 cigarettes per day for the last 35 years and several of her family members have died of cancer. She is in good health. What site of cancer is most likely to be caused by inhaled carcinogens from cigarette smoke?",
+      "options": [
+        "A. Bladder",
+        "B. Breast",
+        "C. Central nervous system",
+        "D. Colon",
+        "E. Ovary"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Inhaled carcinogens are absorbed across the bronchial mucosa and enter the blood stream and are then processed in the liver to become more water-soluble. The metabolised carcinogens are then filtered by the kidney and sit in the bladder for hours. After more than 10 years, the risk of bladder cancer is significantly elevated. The same is true for breast cancer, as carcinogens are secreted into the breast ducts, but the incidence of breast cancer caused by this aetiology is not as great as that for bladder cancer. Ovarian cancer is not affected by smoking but the risk of endometrial cancer is lower in smokers than non-smokers. Options C and D have no significant linkage to smoking. The best answer is option A.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 44 year old man presents to the urology clinic for assessment. He is suspected of having a bladder tumour in the renal tract and the consultant requests a urine cytology specimen. What is the best sample for cytological assessment?",
+      "options": [
+        "A. 24-Hour urine collection",
+        "B. First urine sample of the morning",
+        "C. Fresh, full voided sample",
+        "D. Mid-stream urine",
+        "E. Urine that is frozen immediately"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Options A and E would allow the cells to die and therefore be unsuitable for cytological assessment. Option B results in cells sitting in the bladder overnight with some also dying off. This is, however, the best option for suspected Mycobacterium infection. Option D is the best sample for culture as it minimises contamination at the start and end of stream. Option C gives the best yield for cytological assessment.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A research student is studying the effects of a new chemotherapy agent on cell cycle and cellular division. What phase of the cell cycle is most likely to correspond with nuclear division followed by cytokinesis?",
+      "options": [
+        "A. G0",
+        "B. G1",
+        "C. G2",
+        "D. M",
+        "E. S"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The second growth phase precedes nuclear division, which is in mitosis (M), and is followed by cytokinesis, which is still in mitosis (M).",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 23 year old woman presents to her family physician. She is 8 weeks pregnant and the family physician advises her to take folic acid daily. She asks if it is safe to take other vitamin supplements. Which vitamin in large doses can be teratogenic and so should be avoided?",
+      "options": [
+        "A. Vitamin A",
+        "B. Vitamin B12",
+        "C. Vitamin C",
+        "D. Vitamin D",
+        "E. Vitamin E"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "It is important to understand which drugs are safe in pregnancy, and vitamin A taken in large doses can cause fetal abnormalities. Other vitamins mentioned are not thought to have any teratogenic effect.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 71 year old man presents to the dermatology clinic with an ulcer over his left temple. It has been growing slowly over the previous 3 years. He worked as a farmer and spent most of the working day outdoors. On clinical examination the lesion appears as a non-healing, indolent, punched-out, clean-looking 2-cm ulcer over the left temple. There are no enlarged lymph nodes in the head and neck. What is the most appropriate next step in the patient care?",
+      "options": [
+        "A. Perform a full-thickness biopsy of the centre of this lesion",
+        "B. Perform a full-thickness biopsy of the edge of the lesion",
+        "C. Perform scrapings and culture from the ulcer base",
+        "D. Refer for radiotherapy treatment to this lesion",
+        "E. Resection of the whole lesion with a 1-cm clear margin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient is likely to have a basal cell carcinoma from the description. Options D and E relate to management but identification is required first, particularly before delivering invasive treatment. Option C would be used for a fungal lesion. Option A would biopsy the central necrotic portion and may not yield a diagnosis, whereas option B would sample the proliferative edge and therefore is best for histological diagnosis.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 52 year old man presents to the emergency department complaining of lightheadedness. He has a past medical history of lung cancer, which was diagnosed a month previously and found to be metastatic, involving the bone and pericardium. On clinical examination, his blood pressure is 70/40 mmHg and his pulse is 100 beats/min. His heart sounds are distant and soft. His electrocardiogram shows low-voltage complexes and electrical alternans is present. A chest X-ray film shows that the cardiac silhouette is enlarged. What is the most appropriate next step in this patient's care?",
+      "options": [
+        "A. Intravenous dexamethasone",
+        "B. Intravenous fluid challenge",
+        "C. Intravenous furosemide",
+        "D. Oral ibuprofen",
+        "E. Pericardiocentesis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical presentation of this patient describes a pericardial effusion resulting from his malignancy: hence the increased cardiac silhouette. His blood pressure is low as he is developing cardiac tamponade. This requires aspiration, usually under echocardiogram guidance.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 66 year old woman presents to the emergency department holding her right arm with a deformity that signifies an obvious fracture. She described that she was shopping and picked up a bag out of the trolley to place it in her car. She then felt a sharp, sudden pain in the middle of her arm and her humerus suddenly gave way. What is the most likely reason for the fracture?",
+      "options": [
+        "A. Bone metastasis in the humerus from breast cancer",
+        "B. Osteitis fibrosa cystica from parathyroid disease",
+        "C. Osteomalacia from nutritional deficiency",
+        "D. Osteoporosis",
+        "E. Primary malignant bone tumour of the humerus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient has no prior history of illness and the fracture has occurred spontaneously, i.e. without any trauma. In view of her gender and age, of the options listed, this is most likely to be due to breast cancer (1 in 8 lifetime risk).",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 51 year old woman presents to the endocrinology clinic for investigation of weight gain. She is found to have an elevated 24-hour urinary free cortisol, elevated serum adrenocorticotrophic hormone (ACTH) and elevated serum cortisol. The serum cortisol does not fall when she is given high-dose dexamethasone. What serum investigation is most likely to be elevated in this patient?",
+      "options": [
+        "A. Adrenaline (epinephrine)",
+        "B. Lactate dehydrogenase",
+        "C. Plasma osmolality",
+        "D. Prolactin",
+        "E. Renin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The clinical indicators suggest that this patient has Cushing's syndrome. There are four possible causes of Cushing's. These are: exogenous steroids, adrenal adenoma, ectopic ACTH and a pituitary adenoma. Only the latter two give a high ACTH and only ectopic production does not fall on a high-dose suppression test. Therefore, the clinical scenario is describing Cushing's syndrome with ectopic ACTH production. The most likely cause of that is small cell lung cancer (SCLC). LDH is an intracellular enzyme that is released during necrosis as a pathological process; therefore, in rapidly growing tumours (like SCLC), this can be elevated in a serum sample. Patients with SCLC can develop the syndrome of inappropriate antidiuretic hormone (vasopressin) secretion, but that would decrease plasma osmolality. Renin may be increased in some tumours but not lung. Adrenaline is increased in neuroendocrine tumours of the adrenal gland (phaeochromocytoma) but not neuroendocrine tumours of the lung (SCLC). Prolactin can be produced as a result of an ACTH-producing pituitary tumour causing loss of prolactin inhibitory factor (due to pituitary stalk compression), but ACTH would fall with high-dose dexamethasone in that scenario.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 65 year old man presents to the emergency department complaining of gradual loss of sensation in his right hand, weakness of the left lower leg and visual disturbance. He has smoked two packs of cigarettes daily for 40 years. His past medical history includes asthma and emphysema. On clinical examination, he is afebrile, pulse 86 beats/min, blood pressure 137/86 mmHg and respiration rate 24 breaths/min. Eye fundoscopy is normal. A magnetic resonance imaging (MRI) scan of the brain shows five different intracerebral lesions, ranging from 1 to 3 cm in diameter and located at the gray-white matter junction in both cerebral hemispheres. The lesions are sharply demarcated and contrast enhancement after gadolinium administration is present in all of them. What is the most likely diagnosis?",
+      "options": [
+        "A. Arteriovenous malformations",
+        "B. Embolic infarcts",
+        "C. Multifocal glioblastoma multiforme",
+        "D. Multiple abscesses",
+        "E. Multiple metastases"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical features do not suggest infection (option D) and option A would be more likely to cause a subarachnoid haemorrhage. Option B is more likely to have sudden onset. Option B, C and E are possible from the clinical history but the radiological description is more in keeping with option E.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 65 year old woman presents to the emergency department with constant, severe abdominal pain that has worsened over the previous week. She has no other associated symptoms but has noticed that her daily urine output had decreased significantly. She has had a constant desire to urinate, but when she tries, only a small amount of bloody urine is discharged. She is a long-time smoker, having smoked three packs per day for more than 45 years. On clinical examination she has a suprapubic mass arising from the bladder and appears to be in urinary retention. What is most likely to be detected upon imaging the patient's genitourinary system?",
+      "options": [
+        "A. Bilateral hydronephrosis",
+        "B. Bladder dilation",
+        "C. Bladder dyskinesis",
+        "D. Unilateral hydronephrosis",
+        "E. Urethral dilation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A long smoking history increases the exposure of the urological epithelium to inflammatory mediators such as carcinogens in tobacco. After more than 10 years, this increases the risk of developing a bladder cancer, which in turn is causing urinary retention. Given the time course, it is most likely that bilateral hydronephrosis will be present.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 54 year old woman presents to the emergency department complaining of severe lower abdominal pain and distension over a 24-hour period. Her bowels had not moved over the same time period and her abdomen has become visibly swollen with associated nausea and vomiting. Over the previous 4 months, she has lost 9 kg in weight and has noted progressive symptoms of constipation. She reports that on several occasions she has passed blood mixed in with her bowel movements, which have become thinner in calibre. She denies any recent travel, use of antibiotics, or fevers. On clinical examination, she appears acutely uncomfortable and has a temperature of 38.3°C. Her abdomen is diffusely distended and tender to palpation in the left lower quadrant. There are hyperactive rushing bowel sounds. On rectal examination, her stool is brown and tests positive for blood. A plain abdominal X-ray film shows multiple small bowel air fluid levels and a dilated colon proximal to the sigmoid colon. What is the most likely diagnosis?",
+      "options": [
+        "A. Amoebic abscess",
+        "B. Colonic polyp",
+        "C. Diverticulitis",
+        "D. Diverticulosis",
+        "E. Sigmoid carcinoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient is in bowel obstruction and the clinical history suggests many features to locate this to the sigmoid colon. Option A is unlikely in the absence of foreign travel and the symptoms would be right upper quadrant pain. Option B is unlikely to cause thin stools and obstruction. Option C (-itis) has inflammation and could result in abscess formation, even perforation, but would not fully explain the stool history (thin calibre). Option D may explain the increasing constipation over time but not the acute presentation. Option E is the best answer for all symptoms and progression into an emergency presentation to hospital in bowel obstruction. A high temperature can be seen in malignancy or when secondary infection is present.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 39 year old woman completed her last course of adjuvant chemotherapy for breast cancer 2 years earlier. She presents to the oncology clinic complaining of constant back pain for 3 weeks. On clinical examination she is tender to palpation over two well-circumscribed areas in the thoracic and lumbar spine. There is no neurological deficit. What is the most appropriate next step in investigation, assuming rapid availability of all?",
+      "options": [
+        "A. Computed tomography (CT) scan of whole spine",
+        "B. Isotope bone scan",
+        "C. Needle biopsy of the affected areas",
+        "D. Plain film X-rays of the affected areas",
+        "E. Ultrasound of the affected areas"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient is likely to be pre-menopausal and therefore osteoporosis is less likely. She has a diagnosis of breast cancer and could have progressive recurrent disease and therefore the onset of back pain requires investigation. The first step in investigation is to assess the whole skeleton to see if this is isolated or widespread and that is best done with a radioisotope bone scan. This will be followed with plain film imaging of any hot spots and, if suspicious, thereafter consider a biopsy of the abnormalities. CT imaging can show bone detail but would be less sensitive than a bone scan. Ultrasound would not be helpful. MRI would be best if there was also a neurological deficit, to look for cord compression or to distinguish osteoporotic collapse from metastatic involvement.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 62 year old woman has noticed a lesion on her face that has persisted for more than a month. It appears as an ulcerated lesion with a raised, rolled edge (see figure). What factor is the most likely cause of this problem in the UK?",
+      "options": [
+        "A. Arsenic",
+        "B. Benzene",
+        "C. Human papilloma virus (HPV)",
+        "D. Ultraviolet (UV) radiation",
+        "E. Vinyl chloride"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Each of these substances is associated with malignancy but UV exposure is most associated with a basal cell carcinoma. These tumours are therefore more common in individuals that work outdoors. Although arsenic is associated with skin cancer, it is most likely to be squamous cell carcinoma. HPV is associated with head and neck cancer and cervical cancer. Benzene is associated with leukaemia, particularly acute myeloid leukaemia but also non-Hodgkin lymphoma and myeloma. Vinyl chloride is hepatotoxic and has been associated with hepatic angiosarcoma.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 42 year old man previously worked at the Fukushima Daiichi Nuclear Power Plant and received radiation exposure as a result of the damage to the reactor caused by an earthquake and the subsequent leakage of nuclear material. He has concerns about his future cancer risk as a direct result of his exposure. What statement in relation to radiation exposure is the most accurate?",
+      "options": [
+        "A. Large exposure is required to develop the most serious malignancies",
+        "B. Leukaemia has the shortest latency period of all malignancies",
+        "C. Malignancies always occur within 10 years of exposure",
+        "D. Malignancy risk increases with advancing age at the time of exposure",
+        "E. Therapeutic radiation therapy given without chemotherapy does not increase the risk of a second malignancy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The carcinogenic effect of radiation exposure is related to the exposure rate. When we consider this in relation to therapeutic radiation, larger doses can be given in lots of small fractions over more time to lessen the effect (55 Gy over 5 weeks on average for radiotherapy treatment, whereas 8 Gy to the whole body over 30 seconds could prove fatal). Second malignancies induced by radiotherapy usually take more than 10 years to manifest. Patients that are young (<18 years) have tissues that are still developing and are therefore at highest risk of transformation. Chemotherapy is administered with radiotherapy to enhance the biologically effective dose, i.e. it produces a greater effect on tissue than the dose of radiation on its own. This acts as a sensitiser for the tissue and would therefore increase the risk of malignant transformation. Leukaemia has the shortest latency period.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 22 year old man presents to his family physician complaining of breathlessness worsening over the previous 7 days. He has no cough and denies smoking. A chest X-ray is performed, shown below. What is the most likely histological type of malignancy?",
+      "options": [
+        "A. Adenocarcinoma",
+        "B. Carcinosarcoma",
+        "C. Immature teratoma",
+        "D. Papillary serous carcinoma",
+        "E. Squamous cell cancer"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This question is about understanding the natural history of malignancy. Papillary serous carcinoma is most commonly associated with gynaecological cancers and is therefore unlikely in a male patient, although it can arise in the pancreas in older patients. Carcinosarcoma contains malignant elements from epithelial tissue (carcinoma) and connective tissue (sarcoma) and is most commonly found in the gynaecological system, although rarely it is found as a component of de-differentiated carcinoma of the lung, but not at this age. Adenocarcinoma can develop from many primary sites, including the lung, where it can arise in the periphery or hilar region and is not associated with tobacco products. This, too, is less likely at this age. Testicular immature teratoma is most likely to cause a large-volume lung metastases in a young male.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 28 year old woman presents to her family physician after finding a breast lump on self-examination. She found the lump 2 months previously, and although she was not initially concerned, has laterly become worried about the possibility of cancer. On further questioning, she reports that the lump had neither increased nor decreased in size since she first noticed it and that she had no family history of breast cancer. On clinical examination there was a 2x2 cm firm, non-tender, mobile lump in the left breast. What is the most appropriate next action for the family physician to take?",
+      "options": [
+        "A. Perform a fine needle aspiration of the lump himself for cytological assessment",
+        "B. Reassure the patient that the lump is probably benign and arrange a 1-month follow-up",
+        "C. Refer the patient to a breast cancer multidisciplinary team",
+        "D. Request a mammogram",
+        "E. Request an ultrasound of the breast"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "According to the National Institute for Health and Care Excellence (NICE) guidance, the lump requires follow-up and investigation, not reassessment in a month's time by the same doctor. However, whilst one of the listed investigations is the most appropriate (option A), it should be performed and interpreted by specialists and not in the primary care setting.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 64 year old man with known lung cancer presents with a history of progressive leg weakness and numbness, which began in his buttocks and gradually spread down the back of his legs into the soles of his feet. He has recently become impotent and incontinent of both faeces and urine. On examination there is wasting of the buttocks and calf muscles with bilateral weakness of hip extension, ankle dorsiflexion and plantar flexion. A sensory deficit is demonstrated, extending from the buttocks down the back of the legs and onto the soles of the feet. What is the most likely site of the lesion?",
+      "options": [
+        "A. A dorsal column of the spinal cord",
+        "B. Cauda equina",
+        "C. Distal spinal cord",
+        "D. Proximal spinal cord",
+        "E. Sciatic nerves"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has clinical signs that suggest lower motor neuron weakness and as the spinal cord ends at L1-L2, this abnormality is at a lower level than L2. Lung cancer will commonly metastasise to bone and although it can cause spinal cord compression, the neurology in this presentation infers that this is at a level where it results in compression of the cauda equina.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 49 year old man presents with a 1-week history of increasing nausea, vomiting and lethargy. He has an extensive smoking history of 30 pack years and was recently diagnosed with lung cancer. He is not taking any medications and has not yet initiated chemotherapy. On clinical examination, he is afebrile and somnolent. His lungs are clear to auscultation and his heart is regular in rate and rhythm. His skin demonstrates loss of elasticity. Laboratory results indicate a serum calcium level of 2.95 mmol/L (11.8 mg/dL). What is the most appropriate initial step in management?",
+      "options": [
+        "A. Calcitonin",
+        "B. Hydrochlorothiazide",
+        "C. Intravenous normal saline",
+        "D. Prednisolone",
+        "E. Zoledronic acid"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient is presenting with hypercalcaemia and the immediate management should be to rehydrate the patient (option C). Bisphosphonate therapy (option E) is indicated once his hydration state improves. Loop diuretics can be used if fully rehydrated but not a thiazide diuretic (option B) as it could increase the serum calcium. In patients with lung cancer, hypercalcaemia is most commonly associated with squamous cell carcinoma.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 37 year old accountant presents to his family physician to ask for advice regarding the future management of his ulcerative colitis. He has had pancolitis for the past 19 years and has been told that he is at an increased risk for developing colorectal cancer. He asks for recommendation regarding appropriate surveillance. What is the most appropriate investigation for regular surveillance?",
+      "options": [
+        "A. Barium enema",
+        "B. Colonoscopy",
+        "C. Colonoscopy and multiple biopsies",
+        "D. Faecal occult blood testing",
+        "E. Flexible sigmoidoscopy with multiple biopsies"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Patients with ulcerative colitis have an increased risk of developing a colonic carcinoma due to the chronic inflammation. It often will have a lead time of 10 years and is more likely in those with more significant inflammation. In order to assess the whole colon and biopsy for histology, option C is the best investigation. Option E will not assess the whole colon and the remaining options (without biopsy) do not allow histological assessment.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 72 year old woman presents with abdominal distension, feeling bloated and getting full quickly when eating. Her past medical history includes hypertension and she is prescribed an angiotensin-converting enzyme (ACE) inhibitor. Clinical examination reveals abdominal distension with shifting dullness. Pelvic examination reveals a large, non-tender right adnexal mass. Abdominal CT scan shows masses arising on both ovaries, ascites and omental thickening. Serum cancer antigen 125 (CA-125) level is 2000 U/mL. Serum alpha-fetoprotein (AFP) and human chorionic gonadotrophin (hCG) are normal. What is the most likely diagnosis?",
+      "options": [
+        "A. Choriocarcinoma",
+        "B. Dermoid cyst (cystic teratoma)",
+        "C. Epithelial ovarian cancer",
+        "D. Ovarian sarcoma",
+        "E. Sertoli stromal cell tumour"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Epithelial ovarian cancer is most likely to cause a rise in CA-125 and although this tumour marker is rarely diagnostic it can assist in disease activity monitoring. The remaining tumours do not normally cause a rise in CA-125 unless it is a false positive due to inflammatory changes arising from the tumour. Choriocarcinoma would cause a rise in serum hCG.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 25 year old woman, gravida 2, para 2 presents to her family physician to discuss contraception. She has no medical problems, is on no medications and has no family history of cancer. All clinical examinations are normal. After a discussion with the family physician, she chooses to take the oral contraceptive pill (OCP) and stays on the pill for the following 5 years. What cancer has the greatest reduction in risk as a result of this medication?",
+      "options": [
+        "A. Bone sarcoma",
+        "B. Breast cancer",
+        "C. Cervical cancer",
+        "D. Endometrial cancer",
+        "E. Hepatocellular carcinoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The risk of breast cancer and bone sarcoma remains the same in patients taking the OCP. The risk of cervical cancer is slightly increased, not by the medication but due to the increased sexual activity of this population of patients. The risk of endometrial cancer is reduced due to the reduced stimulation of this tissue. The use of a steroid-based drug such as oestrogen may slightly increase the risk of hepatocellular carcinoma.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 73 year old man presents to his family physician complaining of a drooping right eye lid. He has a 70-pack year history and his family physician has been seeing him for more than 10 years for management of his symptoms of chronic obstructive pulmonary disease (COPD). On clinical examination, he has ptosis of the right eye with a constricted right pupil. The remainder of the eye and cranial nerve examination is normal. What is the most likely finding on a chest X-ray of this patient?",
+      "options": [
+        "A. A calcified granuloma in the left mid-lung field",
+        "B. A left-sided pleural effusion",
+        "C. A right upper lobe pneumonia",
+        "D. An irregularly shaped mass at the apex of the left lung",
+        "E. An irregularly shaped mass at the apex of the right lung"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical features are that of Horner's syndrome and the clinical signs will be ipsilateral, therefore suggesting an invasive lesion in the apex of the right lung (option E). The remaining options are non-invasive or in the wrong location and therefore should not cause impairment of the sympathetic innervation on the right side. The presence of Horner's syndrome in a patient with a chest infection is suggestive of an underlying cancer.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 44 year old woman presents to her family physician complaining of a severe headache that had been present for several weeks and had not responded to the usual over-the-counter headache remedies. She locates the headache to the centre of her head and describes it as constant but worse in the mornings. She has no other neurological signs or symptoms. She has had 'tension headaches' previously but those were located in the back of her head and felt different from the present pain. She has a past history of breast cancer 2 years previously, which was treated with surgery followed by adjuvant chemotherapy. What is the most appropriate next step in diagnosis?",
+      "options": [
+        "A. Carotid arteriogram",
+        "B. CT scan of the head",
+        "C. Lumbar puncture",
+        "D. Psychiatric evaluation",
+        "E. Skull X-rays"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The past history of breast cancer should raise an index of suspicion for metastasis and the new headache is different to her previous episodes. This should be investigated as brain metastasis and the best initial investigation of those listed is CT scan (option B). The other options would not enable this diagnosis to be made.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 43 year old woman presents to the specialist breast clinic with a breast lump that she noticed on self-examination. She has a 2-cm, firm, non-tender mass in the left breast, which is movable from the chest wall, but not movable within the breast. She has no prior history of breast disease. What is the most appropriate initial step?",
+      "options": [
+        "A. Arrange a mammogram to find any other lesions that might also need to be addressed",
+        "B. Arrange an ultrasound scan and advise the patient she is unlikely to need a biopsy",
+        "C. Discuss the surgical options in case cancer is found",
+        "D. Obtain a fine needle aspirate and discharge the patient if no malignant cells are found",
+        "E. Wait for two menstrual cycles to see whether there is spontaneous resolution"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The first step is to look for other lesions and to examine for calcification and spiculation (option A). There is no need to wait for the menstrual cycle as the patient has not presented with cyclical changes in the breast. A fine needle aspiration will be required but a negative result does not exclude malignancy. A biopsy will be required, whether a mammogram is performed or not. In practice, patients attending a one-stop specialist breast clinic will have a mammogram or ultrasound, clinical examination and a fine needle biopsy at the same visit.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 70 year old man presents to his family physician with an episode of visible haematuria. He denies prior episodes and had been previously healthy. He is not on any medication. Urinalysis confirms gross haematuria without proteinuria or casts. The patient denies any pain and all physical examination is normal. What is the most appropriate next step?",
+      "options": [
+        "A. CT scan of the pelvis",
+        "B. Cystoscopy",
+        "C. Renal angiogram",
+        "D. Transrectal prostatic biopsy",
+        "E. Trimethoprim-sulfamethoxazole"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A single episode of frank haematuria requires investigation and is unlikely to be a simple urinary infection (option E). CT imaging may not detect small mucosal lesions (option A) and without stream impairment it is unlikely that this is related to prostatic enlargement (option D). The most likely diagnosis is a bladder lesion or cancer and that requires cystoscopy for inspection and biopsy.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 73 year old man presents to the chest clinic for annual review for asbestosis. He has a long smoking history and was diagnosed with asbestosis on biopsy 4 years previously. He has no change in his symptoms but continues to smoke cigarettes and denies any cough or shortness of breath. His chest X-ray shows left lower lobe pleural thickening with calcifications at the level of the diaphragm. He has many questions about his disease and wants to discuss his risk for malignancy and long-term prognosis. What explanation is most appropriate?",
+      "options": [
+        "A. Asbestosis itself (without smoking) is unlikely to progress to cancer",
+        "B. His risk of cancer is greater than 70 times that of the normal population",
+        "C. Mesothelioma is the most common cancer associated with asbestosis and smoking",
+        "D. Small cell lung cancer is the most common cancer associated with asbestosis and smoking",
+        "E. Steroids may slow progression of his disease"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Non-small cell cancer is the most likely malignancy that occurs in patients with asbestosis. Although asbestosis is due to previous asbestos exposure, only a small percentage of patients subsequently develop mesothelioma and the continued smoking will increase the risk of lung cancer. Moreover, smoking cessation will not negate the risk of malignancy. Steroid therapy may improve the symptoms but does not alter the natural history of asbestosis.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 42 year old woman presents to the clinic to discuss her concerns regarding breast cancer. She has no symptoms at review, but previously she had noted bilateral breast tenderness prior to her menses, which has since abated. She has had two caesarean deliveries but no other operations. She is taking a low-dose OCP and has no known drug allergies. She does not smoke and has no family history of cancer. All clinical examinations are normal. She wants to know whether BRCA1 and BRCA2 screening would be appropriate for her in addition to routine screening starting at age 50. What is the most appropriate response?",
+      "options": [
+        "A. BRCA1 and BRCA2 screening is not recommended",
+        "B. BRCA1 and BRCA2 screening should be performed after age 50",
+        "C. BRCA1 and BRCA2 screening should be performed if breast pain recurs",
+        "D. BRCA1 screening is recommended",
+        "E. BRCA2 screening is recommended"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Screening of patients for breast and ovarian susceptibility genes is indicated in individuals that have a personal history of both cancers, or that have a personal diagnosis of either breast or ovarian cancer and a first-degree relative with either breast or ovarian cancer. Routine screening of BRCA genes in a patient with no history would not be indicated.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 26 year old woman presents to her family physician complaining of facial hair on her upper lip. This has been present for many years and has not bothered her before. She has been trying to conceive for some time without success and previously has taken the OCP for irregular periods. On clinical examination, her body mass index (BMI) is 32 kg/m2. Her blood pressure is 135/88 mmHg, pulse is 72 beats/min and skin examination reveals acanthosis nigricans, mild acne and scattered plucked chin with facial hair on the upper lip. Abdominal examination is normal. This woman is at greatest risk for what condition?",
+      "options": [
+        "A. Diabetes mellitus",
+        "B. Gastric cancer",
+        "C. Ovarian cancer",
+        "D. Ovarian torsion",
+        "E. Uterine cancer"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Acanthosis nigricans is a paraneoplastic phenomenon associated with gastric cancer in middle-aged patients and males more than females. However, in younger patients it is more associated with insulin resistance and thus an increased risk of diabetes mellitus and polycystic ovary syndrome, which may explain some of the other signs and symptomatology. Her BMI will increase her risk of uterine cancer but only after she has become post-menopausal.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 59 year old man presents to his family physician with a 3-week history of dyspnoea, particularly on exertion, and had an occasional cough, which is dry and unproductive. He describes some chest tightness and discomfort, which was mostly dull in nature. On clinical examination there is nicotine staining of the left index and second fingers. There is no peripheral lymphadenopathy, no evidence of heart failure, the jugulovenous pressure is not raised and heart sounds are normal. On chest examination there is reduced expansion on the right, with decreased tactile vocal fremitus, dullness to percussion and diminished breath sounds. Examination of the left hemithorax is unremarkable. Peak flow rate is 450 L/min. Abdominal examination is normal. What is the most likely diagnosis?",
+      "options": [
+        "A. Collapse of the right lung",
+        "B. Consolidation of the right lung",
+        "C. Interstitial fibrosis throughout right lung field",
+        "D. Left tension pneumothorax",
+        "E. Right pleural effusion"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical features at presentation are those of a pleural effusion: reduced expansion, diminished tactile vocal fremitus (vocal resonance), dullness to percussion and diminished breath sounds. Tracheal deviation may be away from the side of the lesion in massive effusion but shift of the lower mediastinum (apex beat) is also likely to be away from the side of the effusion.",
+      "questionNumber": 29
+    }
+  ]
+}
