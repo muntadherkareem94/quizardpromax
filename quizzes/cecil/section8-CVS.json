@@ -1,0 +1,1291 @@
+{
+  "questions": [
+    {
+      "question": "What types of muscle are found in the heart?",
+      "options": [
+        "A. Skeletal and cardiac",
+        "B. Cardiac and smooth",
+        "C. Only smooth",
+        "D. Only cardiac",
+        "E. Smooth, cardiac, and skeletal"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cardiac muscle is termed striated muscle, and it is anatomically and mechanistically similar to but distinct from skeletal muscle. Cardiac muscle accounts for the contractile function of the heart. Smooth muscle comprises the media of the arteries in the heart and is responsible for arterial contraction and tone. There is no skeletal muscle in the heart.",
+      "questionNumber": 1
+    },
+    {
+      "question": "Which of the following functions is not a property of adult mammalian cardiac muscle?",
+      "options": [
+        "A. Rhythmic contractions to determine cardiac output",
+        "B. Relaxation to allow a cardiac chamber to refill",
+        "C. Hypertrophy in response to increased afterload (e.g., hypertension)",
+        "D. Rate-dependent increase in contractility",
+        "E. Regeneration after injury"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Adult cardiomyocytes are terminally differentiated, which means that they no longer can divide to form additional cells. They respond to stress by undergoing hypertrophy, a process in which individual cells enlarge, but the number of cells remains constant.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following is not true?",
+      "options": [
+        "A. Troponin C is a critical protein in cardiac muscle.",
+        "B. Potassium is the ion that activates skeletal and cardiac muscle contraction.",
+        "C. The mechanism of cardiac muscle contraction involves shortening of the sarcomeres.",
+        "D. Thick and thin filaments are present in cardiac, skeletal, and smooth muscle sarcomeres.",
+        "E. Both pharmacomechanical and electromechanical processes can activate cardiac muscle."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Potassium channels are involved in repolarization of the cardiac action potential, but calcium is the ion that activates muscle contraction by binding to troponin C and allowing actin-myosin cross-bridging to occur, thereby shortening the sarcomere. The source of calcium is intracellular calcium release from the sarcoplasmic reticulum through the ryanodine receptor/calcium release channel.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Phase 0 of the action potential, when the cardiac muscle cell is depolarized, represents influx of which of the following ions?",
+      "options": [
+        "A. Calcium",
+        "B. Copper",
+        "C. Potassium",
+        "D. Magnesium",
+        "E. Sodium"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Opening of the sodium channel, which is the initial event in the action potential, allows sodium to rush into the cardiomyocyte and to depolarize the membrane potential. Depolarization of the cell membrane opens voltage-gated calcium channels; repolarization occurs when potassium channels are activated.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following steps in cardiac muscle excitation-contraction coupling does not require ATP consumption?",
+      "options": [
+        "A. Pumping calcium back into the sarcoplasmic reticulum",
+        "B. Calcium release from the sarcoplasmic reticulum",
+        "C. Actin-myosin cross-bridge formation and contraction",
+        "D. Sodium-potassium exchange across the plasma membrane",
+        "E. Extrusion of calcium from the cell across the plasma membrane"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The release of calcium from the sarcoplasmic reticulum through the ryanodine receptor/calcium release channel occurs when the channel opens, allowing calcium to flow out of the sarcoplasmic reticulum and down its concentration gradient (millimolar inside the sarcoplasmic reticulum and nanomolar in the cytoplasm). Thus, no energy is required.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 64-year-old male has had mild exertional angina for 5 years. His electrocardiogram is normal. His total cholesterol is 210 and LDL is 160, HDL 35. While playing basketball with his son he experiences crushing chest pain. EMTs are called and he is rushed to the local hospital where his admitting ECG shows elevated T waves. The most likely cause of his chest pain and ECG changes is:",
+      "options": [
+        "A. Indigestion",
+        "B. Anger and stress due to losing to his son",
+        "C. Coronary artery plaque rupture and thrombosis",
+        "D. Coronary spasm",
+        "E. Coronary artery vascular smooth muscle proliferation"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The antecedent history of exertional chest pain is consistent with narrowing of one or more coronary artery due to enlarging atherosclerotic plaques. Acute rupture of an atherosclerotic plaque can present as a myocardial infarction.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Echocardiographic three-dimensional left ventricular volumes measured in a 55-year-old man receiving cardiotoxic chemotherapy are 120 mL at end diastole and 60 mL at end systole. Left ventricular ejection fraction is:",
+      "options": [
+        "A. 30%",
+        "B. 40%",
+        "C. 50%",
+        "D. 60%",
+        "E. 70%"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Left ventricular ejection fraction (EF) is calculated as stroke volume (end-diastolic volume [EDV] minus end-systolic volume [ESV]) divided by end-diastolic volume multiplied by 100%. [cite_start]In this case: EF = (120 - 60)/120 * 100% = 50%. [cite: 65, 66, 67]",
+      "questionNumber": 7
+    },
+    {
+      "question": "Echocardiographic evaluation in an 82-year-old woman with a systolic murmur shows a heavily calcified aortic valve. The severity of valve obstruction is best evaluated by:",
+      "options": [
+        "A. Three-dimensional imaging.",
+        "B. Pulsed Doppler.",
+        "C. Tissue Doppler.",
+        "D. Color flow Doppler imaging.",
+        "E. Continuous-wave Doppler."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Valve obstruction with reduced systolic opening of the aortic valve results in an increased velocity across the valve. Velocity is a direct measure of the severity of the stenosis and predicts clinical outcome. The velocity (v) across a stenotic valve is related to the pressure gradient (ΔP) as stated in the Bernoulli equation, ΔP = 4v². Measurement of high velocities requires continuous-wave Doppler ultrasound, which typically is not available on point-of-care ultrasound systems. Three-dimensional imaging allows more accurate identification of the number of valve leaflets and may show the degree of valve opening, but it is not accurate for measuring the severity of stenosis. Pulsed Doppler velocity measurements are accurate only at low velocities. Tissue Doppler measures the velocity of myocardial motion, which reflects left ventricular systolic and diastolic function, not the severity of stenosis. [cite_start]Color Doppler flow imaging is useful for visualizing the location of intracardiac flow disturbances but cannot measure high-flow velocities. [cite: 75, 76, 77, 78, 79, 80, 81]",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 68-year-old man presents with a 2-week history of increasing dyspnea and is found to be in atrial fibrillation with a ventricular rate of 120 beats per minute. The most appropriate test to evaluate for left atrial thrombus before cardioversion is:",
+      "options": [
+        "A. Point-of-care echocardiography.",
+        "B. Transthoracic echocardiography.",
+        "C. Intracardiac echocardiography.",
+        "D. Transesophageal echocardiography.",
+        "E. No testing is needed."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In patients being considered for cardioversion for atrial fibrillation, clinical approaches to avoiding systemic embolization with restoration of normal sinus rhythm include effective anticoagulation for several weeks before cardioversion or exclusion of a left atrial thrombus by visualizing the left atrial appendage. Left atrial thrombi cannot be accurately diagnosed by transthoracic or point-of-care echocardiography because atrial thrombi occur most often in the atrial appendage, which is distant from the transducer and difficult to visualize. Transesophageal echocardiography provides superior images of the left atrial appendage and is reliable for exclusion of atrial thrombus when images are obtained in at least two orthogonal views with use of zoom mode and a high-frequency transducer. Intracardiac echocardiography also may provide images of the left atrial appendage and may be used during an electrophysiologic or interventional cardiology procedure. [cite_start]However, intracardiac echocardiography is not used as a stand-alone diagnostic test. [cite: 89, 90, 91, 92, 93]",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 63-year-old woman presents with a 6-month history of midsternal chest pressure that occurs both at rest and with exertion. Her only cardiac risk factor is chronic hypertension with medical therapy. She also has osteoarthritis of her knees and is able to walk only short distances. The baseline electrocardiogram shows left ventricular hypertrophy with a strain pattern. An appropriate diagnostic test to evaluate this patient for coronary disease is:",
+      "options": [
+        "A. Treadmill electrocardiographic stress test.",
+        "B. Treadmill echocardiographic stress test.",
+        "C. Supine bicycle nuclear perfusion stress test.",
+        "D. Dobutamine stress echocardiography.",
+        "E. Coronary angiography."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Coronary artery disease may explain symptoms in this patient, so stress testing is appropriate for diagnosis and risk stratification. Electrocardiographic stress testing will not be diagnostic because her abnormal baseline electrocardiogram limits the accuracy of changes in ST segments with exercise for diagnosis of coronary disease. This patient also has significant lower extremity arthritis, which limits her ability to exercise. Diagnostic accuracy with an exercise test (either treadmill or bicycle) requires that the patient reach 85% of the maximum predicted heart rate for age. Exercise testing is likely to be nondiagnostic in this patient with lower extremity arthritis. Pharmacologic stress testing, either dobutamine stress echocardiography or pharmacologic nuclear perfusion imaging, is the most appropriate test choice. [cite_start]Coronary angiography would be appropriate only if stress testing suggests high-risk coronary disease that might benefit from revascularization. [cite: 102, 103, 104, 105, 106, 107, 108]",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 68-year-old man presents to the emergency department with a 1-hour history of severe chest pain and diaphoresis. The electrocardiogram shows ST depression in the lateral leads. Point-of-care echocardiography is appropriate to evaluate for:",
+      "options": [
+        "A. Aortic dissection.",
+        "B. Aortic valve stenosis.",
+        "C. Acute anterior infarction.",
+        "D. Papillary muscle rupture.",
+        "E. Pericardial effusion."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "All of these diseases can be accurately diagnosed by a complete transthoracic or transesophageal echocardiographic study under the supervision of a cardiologist. Point-of-care ultrasound systems typically have fewer features and limited image quality compared with complete diagnostic ultrasound systems. In addition, point-of-care ultrasound is performed and interpreted by physicians with limited training in this modality. The recommended scope of practice for point-of-care ultrasound studies includes diagnosis of pericardial effusion and evaluation of global left ventricular systolic function. In contrast, diagnosis of aortic dissection requires transesophageal echocardiographic or computed tomographic or magnetic resonance imaging. Diagnosis of aortic valve stenosis requires continuous-wave Doppler recording of the transvalvular velocity by an experienced sonographer. Acute anterior myocardial infarction results in hypokinesis or akinesis of the anterior wall, which can be visualized by echocardiography, but evaluation of regional myocardial dysfunction is challenging and requires additional training and experience. Papillary muscle rupture might be diagnosed on transthoracic imaging, but transesophageal imaging often is required. [cite_start]Papillary muscle rupture is likely to be missed with current point-of-care ultrasound systems or by less experienced clinicians. [cite: 112, 113, 114, 115, 116, 117, 118, 119, 120]",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which statement regarding the evaluation of the heart on chest radiography is correct?",
+      "options": [
+        "A. The main value of a chest radiograph is the ability to diagnose congenital cardiac disorders owing to a large number of disease-specific imaging signs.",
+        "B. Since the advent of echocardiography, the chest radiograph no longer plays a role in the evaluation of the patient with cardiac disease.",
+        "C. The chest radiograph is useful to monitor the progression of cardiac disease and its response to treatment.",
+        "D. The chest radiograph is an accurate imaging modality to assess the exact position of an implanted device.",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Although echocardiography and the other cross-sectional imaging modalities have replaced chest radiography for the diagnosis of most cardiac diseases, the value of chest radiography is its ability to monitor the progression of cardiac disease and its response to treatment rapidly and inexpensively. The diagnosis of congenital cardiac disorders is made with echocardiography, cardiac catheterization, and cardiac magnetic resonance imaging and computed tomography. Despite the ready availability of echocardiography, the chest radiograph is valuable for rapid evaluation of changes in heart size and pulmonary vascularity, as well as signs of heart failure. [cite_start]The radiograph shows the position of a device on a two-dimensional image, but assessment of the exact position may require cross-sectional imaging. [cite: 130, 131, 132, 133]",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which of the following groups of patients are good candidates for coronary artery calcium scoring?",
+      "options": [
+        "A. After coronary artery bypass surgery",
+        "B. After coronary stenting",
+        "C. High-risk Framingham score",
+        "D. Intermediate risk Framingham score",
+        "E. Low-risk Framingham score"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In patients at intermediate risk, knowing the coronary artery calcium score might change management in terms of aggressive lipid lowering. High-risk patients should already be receiving aggressive therapy, and no additional therapy is needed in low-risk patients. [cite_start]In patients with previously revascularized coronary artery disease (coronary artery bypass surgery or stenting), calcium scoring is not useful as a risk stratification tool. [cite: 140, 141, 142]",
+      "questionNumber": 13
+    },
+    {
+      "question": "Coronary computed tomographic angiography (CTA) is useful for the following indication:",
+      "options": [
+        "A. Evaluating native vessels in post-CABG patients",
+        "B. Evaluating in-stent restenosis",
+        "C. Screening asymptomatic patients with strong family histories of CHD",
+        "D. Evaluating low-to-intermediate risk patients in the emergency department",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Randomized trials have demonstrated the utility of CTA compared with standard evaluation in the emergency department. Native vessels are difficult to image post-CABG because they tend to shrink and calcify. Imaging within stents remains a challenge. [cite_start]Coronary CTA is not appropriate as a screening test in asymptomatic individuals. [cite: 148, 149, 150]",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 62-year-old white male presents with substernal chest discomfort that is \"aching\" in nature and occurs with mild exertion but also occasionally at rest. It seems to radiate to the throat and is relieved in a few minutes with rest. He has also noted some recent shortness of breath when walking up hills. He has a history of gastroesophageal reflux disease and a hiatal hernia. He has no history of hypertension, diabetes, or smoking. His BMI is 35, and his LDL cholesterol is 162 mg/dL. His father died suddenly of an unknown cause when he was 60 years old. He has been on a Mediterranean diet for the past 2 months. On physical examination, his blood pressure is 130/80 and the remainder of his exam is unremarkable. The patient is referred by his physician for an exercise SPECT myocardial perfusion scan. He exercises to a workload of 6 METS and a peak heart rate representing 77% of his age-predicted maximum. He stopped because of dyspnea and some slight chest discomfort. His exercise ECG showed some ST segment flattening but no depression of more than 0.5 mm. These changes resolved in recovery. His myocardial perfusion scan showed no perfusion defects. The left ventricular cavity size appeared larger on the stress than on the rest images. There was diffuse hypokinesis, and the left ventricular ejection fraction was 42%. Which one of the following statements is INCORRECT regarding this patient?",
+      "options": [
+        "A. His blood pressure does not need to be reduced further.",
+        "B. He most likely has a nonischemic cardiomyopathy.",
+        "C. He most likely has multivessel coronary artery disease.",
+        "D. His diet has been shown to reduce the risk for developing coronary artery disease.",
+        "E. According to guidelines, he should be started on statin therapy."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "He does not have a nonischemic cardiomyopathy. His SPECT scan shows transient ischemic cavity dilation of the left ventricle in association with diffuse left ventricular hypokinesis. The reason he has no perfusion defects is because of balanced ischemia in the supply regions of all 3 major coronary vessels. No focal defects will be observed if the reduction in perfusion is rather homogeneous in the myocardium. He has an intermediate-high pretest likelihood of coronary disease by clinical criteria. His blood pressure is adequately controlled. Diets such as the Mediterranean diet have been shown to reduce the risk of coronary disease. [cite_start]Due to the high likelihood of coronary disease, he should be started on statin therapy and is a good candidate for coronary arteriography because of likely multivessel disease with a reduced ejection fraction. [cite: 169, 170, 171, 172, 173, 174, 175]",
+      "questionNumber": 15
+    },
+    {
+      "question": "Cardiomyopathies that can be identified and characterized by cardiac magnetic resonance CMR with late gadolinium enhancement include all except:",
+      "options": [
+        "A. Amyloidosis",
+        "B. Sarciodosis",
+        "C. Hemochromatosis",
+        "D. Myocarditis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Iron overload diseases of the myocardium are identified by T2* imaging with a T2* value of less than 20 defining iron deposition in the heart. A T2* less than 10 generally is associated with LV dysfunction and clinical heart failure. Amyloidosis can be identified by either very elevated native T1 values or by difficult nulling of the myocardium post-contrast or by characteristic LGE findings with diffuse subendocardial enhancement. Focal regions of LGE in a noncoronary distribution are characteristic of cardiac sarcoidosis. [cite_start]Myocarditis can be identified by identification of myocardial edema/inflammation using T1 or T2 mapping and by characteristic subepicardial or midwall LGE in patients with the appropriate clinical presentation. [cite: 180, 181]",
+      "questionNumber": 16
+    },
+    {
+      "question": "Which of the following patients is suitable for cardiac catheterization?",
+      "options": [
+        "A. A 60-year-old man with atypical chest discomfort, no risk factors for coronary artery disease, a negative stress test result, and relief of symptoms with famotidine",
+        "B. A 67-year-old man with prior coronary artery bypass surgery who is asymptomatic and fully active and now wants to buy new life insurance",
+        "C. A 39-year-old woman with shortness of breath and a midsystolic click on physical examination",
+        "D. A 41-year-old man with palpitations",
+        "E. A 53-year-old man with palpitations, hypertension with β-blockers and aspirin, and reversible defect on stress perfusion imaging"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Indications for cardiac catheterization and coronary angiography according to guidelines recommend invasive angiography for patients with objective evidence of myocardial ischemia after treatment with medical therapy. Patient A has no ischemia and likely has gastrointestinal symptoms. Patient B is asymptomatic and is not in need of angiography. Patient C needs an echocardiogram before consideration of invasive assessment. [cite_start]Patient D has palpitations of unknown cause and could be evaluated with an echocardiogram, ambulatory arrhythmia monitoring, or a stress test, but cardiac catheterization is not indicated unless an ischemic origin is demonstrated for his palpitations. [cite: 190, 191, 192, 193, 194]",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which patient has the highest risk of complications of cardiac catheterization?",
+      "options": [
+        "A. An 82-year-old woman with hypertension",
+        "B. A 76-year-old man with creatinine concentration of 1.7 mg/dL",
+        "C. A 61-year-old woman with body mass index of 28",
+        "D. A 58-year-old man with a heart murmur",
+        "E. A 40-year-old woman with a history of syncope"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cardiac catheterization requires administration of radiocontrast media, which can impair renal function. In patients with preexisting renal failure, worsening renal failure is likely. [cite_start]Measures to prevent contrast-induced renal failure include preprocedural hydration to increase urine output. [cite: 200, 201, 202]",
+      "questionNumber": 18
+    },
+    {
+      "question": "Which of the following conditions does not require a right-sided heart hemodynamic study?",
+      "options": [
+        "A. Left ventricular systolic failure",
+        "B. Left ventricular diastolic failure",
+        "C. Pericardial disease",
+        "D. Aortic stenosis",
+        "E. Severe three-vessel coronary artery disease"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Right-sided heart catheterization is not routine for coronary artery disease but is mandatory for valvular heart disease and routine for heart failure, right ventricular dysfunction, pericardial disease, cardiomyopathy, intracardiac shunts, and congenital abnormalities. [cite: 209]",
+      "questionNumber": 19
+    },
+    {
+      "question": "Which of the following is an absolute contraindication to cardiac catheterization?",
+      "options": [
+        "A. Ventricular tachycardia",
+        "B. Sepsis",
+        "C. Inadequate imaging equipment",
+        "D. Uncontrolled hypertension",
+        "E. Creatinine concentration of 2.4 mg/dL"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Absolute contraindications to catheterization include inadequate facilities and patient refusal. [cite_start]Relative contraindications include severe uncontrolled hypertension, ventricular arrhythmias, recent acute stroke, severe anemia, active gastrointestinal bleeding, allergy to radiographic contrast material, acute renal failure, uncompensated heart failure such that the patient cannot lie flat, unexplained febrile illness or untreated active infection, electrolyte abnormalities (e.g., hypokalemia), severe coagulopathy, pregnancy, uncontrolled arrhythmias or hypertension, and an uncooperative patient. [cite: 216, 217]",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following coronary anomalies is associated with sudden death?",
+      "options": [
+        "A. A right coronary artery originating from the left coronary sinus",
+        "B. A right coronary artery originating from the anterior coronary cusp",
+        "C. A left coronary artery that originates from the right coronary cusp and traverses between the aorta and pulmonary artery",
+        "D. A circumflex coronary artery that arises from the right coronary cusp and traverses between the aorta and pulmonary artery",
+        "E. A circumflex coronary artery that arises from the right coronary cusp and traverses behind the aorta"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most critical coronary anomaly is when the left main coronary artery arises from the right cusp and traverses a course between the aorta and pulmonary artery. [cite_start]The artery's initial course through the aortic wall creates a narrow oval opening; when the aorta stretches during exercise, coronary blood flow is limited. [cite: 222, 223, 224]",
+      "questionNumber": 21
+    },
+    {
+      "question": "Which of the following statements is true regarding heart failure epidemiology?",
+      "options": [
+        "A. White patients have an increased incidence of heart failure compared with black patients.",
+        "B. Black patients are at an increased risk for rehospitalization for heart failure.",
+        "C. Women have better long-term survival after the diagnosis of heart failure compared with men.",
+        "D. The heart failure with preserved ejection fraction population represents approximately a third of overall heart failure cases.",
+        "E. The absolute mortality rate following the diagnosis of heart failure is approximately 25% at 5 years."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Black patients are at an increased risk for developing heart failure and have an increased risk for heart failure rehospitalization compared with white patients. Median survival is lower in women than men. Heart failure with preserved ejection fraction represents approximately half of heart failure cases. [cite_start]The absolute mortality rate following heart failure diagnosis is approximately 50% at 5 years. [cite: 234, 235, 236]",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which is the correct statement regarding guideline recommendations for the diagnosis of heart failure?",
+      "options": [
+        "A. Routine repeat measurements of left ventricular function in the absence of a clinical status change are reasonable.",
+        "B. Measurement of natriuretic peptides is recommended to support the diagnosis of heart failure in ambulatory patients with dyspnea as well as those with possible acute heart failure.",
+        "C. There is an established role for routine or periodic invasive hemodynamic measurements in the management of heart failure.",
+        "D. Endomyocardial biopsy should be performed in the routine evaluation of patients with heart failure given the need to diagnose the underlying etiology.",
+        "E. On cardiopulmonary exercise testing, a peak oxygen uptake (peak VO2) greater than 20 mL/kg/min is associated with a relatively poor prognosis."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Routine repeat measurements of left ventricular function in the absence of a clinical status change or treatment intervention should not be performed. An echocardiogram should be performed during the initial evaluation of patients with heart failure to assess ventricular function and valve function. Measurement of natriuretic peptides is recommended to support the diagnosis of heart failure in ambulatory patients with dyspnea as well as those with possible acute heart failure. Routine or periodic invasive hemodynamic measurements in the management of heart failure are not recommended. Guidelines indicate that endomyocardial biopsy should not be performed in the routine evaluation of patients with heart failure. However, endomyocardial biopsy may be useful in patients presenting with heart failure when a specific diagnosis is suspected that would influence therapy. [cite_start]A peak oxygen uptake (peak VO2) less than 14 mL/kg/min is associated with a relatively poor prognosis. [cite: 243, 244, 245, 246, 247, 248, 249]",
+      "questionNumber": 23
+    },
+    {
+      "question": "Which of the following statements is correct regarding the history and physical examination in heart failure patients?",
+      "options": [
+        "A. Sleep disordered breathing has a similar prevalence in heart failure patients compared with the general population.",
+        "B. Lower extremity edema is a relatively specific sign of underlying heart failure.",
+        "C. Rales on the pulmonary examination are common in chronic heart failure patients due to elevated ventricular filling pressures.",
+        "D. An apical S3 gallop is a strong indicator of left ventricular systolic dysfunction and elevated left ventricular filling pressures.",
+        "E. The blood pressure is most commonly low (systolic blood pressure <90 mm Hg) in chronic heart failure patients."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "An apical S3 gallop is a strong indicator of left ventricular systolic dysfunction and elevated left ventricular filling pressures. Sleep disordered breathing is prevalent in heart failure patients and is associated with increased morbidity and mortality. Upward of 70% of heart failure patients have sleep disordered breathing. The majority of patients with heart failure have a normal pulmonary examination. Despite having an elevation in left ventricular filling pressures that is transmitted back into the left atrium and pulmonary vasculature, most patients with compensated heart failure do not have evidence of pulmonary congestion. In heart failure patients, the blood pressure is most commonly normal or high, but it may be low (systolic blood pressure <90 mm Hg) in advanced low-output heart failure. [cite_start]Orthopnea (not lower extremity edema) is a relatively specific sign of heart failure. [cite: 256, 257, 258, 259, 260, 261, 262]",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 35-year-old man without vascular disease risk factors is found to have an abnormality on the electrocardiogram (ECG) with left axis deviation (-45 degrees) and a prolonged PR interval (260 msec) in association with mild left ventricular dilation and a mildly reduced ejection fraction (56%). Physical examination is unremarkable. A diagnosis of dilated cardiomyopathy with conduction disease is made. Which of the following is the most appropriate recommendation?",
+      "options": [
+        "A. Orchestrate a three-generation family history focusing on premature cardiac disease.",
+        "B. Perform myocardial perfusion studies to determine the need for coronary angiography.",
+        "C. Perform computed tomography or invasive coronary angiography to exclude significant coronary artery disease.",
+        "D. Initiate and up-titrate treatment with a β-blocker and an angiotensin-converting enzyme inhibitor.",
+        "E. Refer to a geneticist for mutation analysis."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A clinical presentation with unexplained conduction disease and left ventricular dysfunction usually results in a diagnosis of dilated cardiomyopathy (in Europe) or nonischemic cardiomyopathy (in the United States). When conduction disease is part of the early presentation of a dilated or nonischemic cardiomyopathy, it is a \"red flag\" for an arrhythmic form of dilated cardiomyopathy. [cite_start]A family history focusing on relatives who required pacemakers, had ventricular arrhythmias, died suddenly, or had associated phenotypes (e.g., skeletal myopathy, retinitis pigmentosa, sensory neural deafness) may provide clues to the ultimate diagnosis, requirements for genetic testing, and potential need for an implantable cardioverter-defibrillator. [cite: 275, 276, 277]",
+      "questionNumber": 25
+    },
+    {
+      "question": "An asymptomatic 70-year-old man is found to have an abnormality on the 12-lead ECG during a preoperative clinical evaluation. A two-dimensional echocardiogram reveals 2-cm asymmetrical septal hypertrophy without features of a left ventricular outflow tract gradient. Familial evaluation for hypertrophic cardiomyopathy reveals that his 43-year-old son has an abnormality on the ECG but normal findings on echocardiography, whereas an 18-year-old asymptomatic grandson has 2.2-cm asymmetric septal hypertrophy without left ventricular outflow tract obstruction. A 24-hour ECG reveals three beats of nonsustained ventricular tachycardia at 130 beats per minute. The estimated absolute 5-year risk for sudden cardiac death in the grandfather is 3.4%; in the son, 2.2%; and in the grandson, 5.2%. Which of the following recommendations is most appropriate?",
+      "options": [
+        "A. The grandson should receive an implantable cardioverter-defibrillator.",
+        "B. Mutation analysis should be performed to enable genetic cascade screening of the family.",
+        "C. Septal reduction therapies should be considered if the grandfather's exercise capacity is less than 75% of predicted during objective testing.",
+        "D. Both the patient and his grandson should receive an implantable cardioverter-defibrillator.",
+        "E. No interventions are warranted in the patient, his son, or his grandson, but serial evaluations should continue to assess risk of atrial fibrillation, emboli, and serious ventricular arrhythmia with a view to early introduction of prophylactic therapy."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Nonsustained ventricular tachycardia recorded during ambulatory ECG monitoring is usually asymptomatic, brief, and at rates of 140 to 160 beats per minute. It is, however, associated with increased risk of sudden death, particularly in the young, in whom it carries a relative risk of approximately 5 and an absolute 5-year sudden cardiac death event rate of 5 to 6% in a 20-year-old compared with a relative risk of 2 or 3 and absolute 5-year risk of 4% in a 70-year-old. Ultimately, the decision to implant an implantable cardioverter-defibrillator is individualized on the basis of the physician's assessment of the level of risk and the level of risk acceptable to the patient. [cite_start]The estimated events risks quoted here are excessive in an adolescent but only mildly increased in someone in the seventh to eighth decade. [cite: 288, 289, 290, 291]",
+      "questionNumber": 26
+    },
+    {
+      "question": "An 18-year-old African American female marathon runner presents with postexertional syncope. Her 12-lead ECG tracing is abnormal, with a biphasic T wave in leads V2 to V4. Family history reveals a maternal nephew who died suddenly at the age of 23 years while dancing in a discotheque. Her two-dimensional echocardiogram is unremarkable. Which of the following is incorrect?",
+      "options": [
+        "A. An implantable cardioverter-defibrillator should be recommended, given the family history and the postexertional syncopal episode.",
+        "B. An abnormality on the ECG is often the earliest manifestation of hypertrophic cardiomyopathy, arrhythmogenic right ventricular cardiomyopathy, and cardiac sarcoidosis.",
+        "C. Imaging with two-dimensional echocardiography or cardiac magnetic resonance imaging provides the definitive diagnosis for hypertrophic cardiomyopathy.",
+        "D. Familial evaluation is paramount to determine a diagnosis and potential risk to the patient.",
+        "E. A biphasic T wave in V2 and V3 is a recognized normal variant in African American athletes."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Electrocardiographic abnormalities in heart muscle disease are rarely diagnostic but are often the earliest manifestation of disease and warrant further diagnostic evaluation. Inverted or biphasic T waves in V1 to V3 are seen in African American athletes, but changes that extend to V4 or beyond are usually associated with myocardial disease. New-onset conduction disease and ventricular arrhythmia are common presenting features of Chagas disease and cardiac sarcoidosis, whereas conduction disease is rarely seen early in arrhythmogenic right ventricular cardiomyopathy or hypertrophic cardiomyopathy. Demonstration of left ventricular hypertrophy with echocardiographic or cardiac magnetic resonance imaging is usually diagnostic of hypertrophic cardiomyopathy, but concern should be raised about the accuracy of the measurements when the ECG recording is normal. Imaging abnormalities often provide the definitive diagnosis but are late manifestations of arrhythmogenic right ventricular cardiomyopathy because they reflect myocyte cell death with replacement scar. The onset of dilated cardiomyopathy in adults is usually insidious, with slow progression of left ventricular dilation and impaired contraction. [cite_start]The implantable cardioverter-defibrillator may be life-saving, but it is associated with lifelong consequences and should not be recommended without a diagnosis and clear estimate of sudden death risk. [cite: 300, 301, 302, 303, 304, 305, 306]",
+      "questionNumber": 27
+    },
+    {
+      "question": "The most import factor in determining the prognosis in patients with suspected arrhythmias is which of the following?",
+      "options": [
+        "A. The existence of underlying structural heart disease (e.g., coronary artery disease, prior myocardial infarction, or ventricular dysfunction)",
+        "B. The duration of the symptoms",
+        "C. The frequency of the symptoms",
+        "D. Family history of palpitations",
+        "E. Responsiveness to Valsalva maneuvers"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "See Clinical Manifestations. In general, the most important factor determining the prognosis of arrhythmias is whether they occur in the setting of underlying heart disease. Specifically, patients with heart failure, prior myocardial infarction, aortic stenosis, and hypertrophic cardiomyopathy have a much higher likelihood of having ventricular tachycardia or ventricular fibrillation that may lead to a cardiac arrest than do patients with a normal heart. In addition, other nonlethal arrhythmias, such as atrial fibrillation, also are more prevalent in these patients. [cite_start]Evaluation and treatment of symptoms of a suspected arrhythmia are therefore different in patients with and without structural heart disease. [cite: 316, 317, 318, 319]",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 25-year-old patient without any known prior cardiac disease presents with a 3-month history of intermittent palpitations, which occur every few weeks, persist for up to about 5 minutes, and spontaneously resolve. On occasion they are accompanied by dizziness, and on a recent episode he had a syncopal episode. What would be the most appropriate first test to obtain for him in the evaluation of his symptoms?",
+      "options": [
+        "A. A cardiac catheterization",
+        "B. A head-up tilt table test",
+        "C. A 12-lead electrocardiogram (ECG)",
+        "D. A 24-hour Holter monitor",
+        "E. A complete blood count and electrolyte panel"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "See Diagnostic Tests: Electrocardiography. Even though the patient is not having palpitations at this time, there may be clues on the ECG to indicate their cause and to guide further evaluation. For example, ventricular preexcitation makes supraventricular tachycardia (SVT) and Wolff-Parkinson-White syndrome the likely diagnosis. In addition, other syndromes such as the long QT syndrome, hypertrophic cardiomyopathy, or other abnormalities may be seen on a baseline ECG. The evaluation would not end with an ECG and would likely require further ambulatory monitoring. [cite_start]However, because the symptoms do not occur every day, a 24-hour Holter monitor is unlikely to capture the rhythm during his symptoms. [cite: 328, 329, 330, 331, 332]",
+      "questionNumber": 29
+    },
+    {
+      "question": "What type of ambulatory monitoring would be most appropriate for a patient who has intermittent palpitations that occur every 1 to 2 weeks?",
+      "options": [
+        "A. A 48-hour Holter monitor",
+        "B. An implantable loop recorder",
+        "C. Ambulatory blood pressure monitor",
+        "D. A wearable event monitor",
+        "E. A wearable defibrillator vest"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "See Diagnostic Tests: Ambulatory Monitoring. Because the symptoms occur less frequently than daily, it is very unlikely that a 24- or 48-hour Holter monitor will detect an event. A wearable event monitor, which can be worn for 3 to 4 weeks, is likely to capture an event. Although an implantable loop recorder would likely capture an event, it is inappropriate in this setting because of its expense and invasive nature. An ambulatory blood pressure monitor is unable to detect an arrhythmia. A wearable defibrillator vest is not necessary because the patient has not had a cardiac arrest. [cite_start]Assuming a baseline ECG was obtained as part of the initial evaluation (see previous question), an ECG following an episode when the patient is asymptomatic is unlikely to be helpful. [cite: 339, 340, 341, 342, 343, 344]",
+      "questionNumber": 30
+    }
+    ,
+    {
+      "question": "When a patient presents in a narrow-complex tachycardia, which of the following is the most useful diagnostic test?",
+      "options": [
+        "A. Carotid sinus massage",
+        "B. A 12-lead ECG of the tachycardia",
+        "C. Administration of adenosine while recording a continuous 12-lead ECG",
+        "D. An echocardiogram while still in the tachycardia",
+        "E. A nuclear stress test"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "See Diagnostic Tests. Adenosine is useful for narrow-complex tachycardias both diagnostically and therapeutically. For example, if the tachycardia continues with flutter waves or P waves during atrioventricular (AV) block, then a diagnosis of atrial flutter or atrial tachycardia is established. Likewise, the termination of the tachycardia with a P wave that is not conducted to the ventricle is much more likely to be an AV or AV nodal re-entrant tachycardia. In addition, adenosine after termination of the tachycardia can bring out ventricular preexcitation suggestive of Wolff-Parkinson-White syndrome that may be otherwise subtle on the baseline ECG. Comparison of the narrow complex tachycardia to the baseline ECG can also be very useful in identifying subtle differences in the QRS complexes that can be important clues to the mechanism of tachycardia. For example, in orthodromic AV re-entrant circus tachycardia (with the antegrade limb being the AV node and retrograde limb being an AV accessory pathway), preexcitation will be lost during tachycardia but may be present during normal sinus rhythm (though with concealed accessory pathways in which there is no antegrade conduction, there will not ever be ventricular preexcitation). Carotid massage can also terminate SVTs but is less useful diagnostically if not performed during simultaneous 12-lead ECG. A tilt table test is not a useful test in patients with palpitations or clearly documented tachycardia, even with syncope; it is useful only in neurocardiogenic syncope. A 12-lead ECG during the tachycardia is very useful and should be obtained whenever possible; however, more information will be obtained from a 12-lead ECG during adenosine administration. An echocardiogram might be useful in excluding valvular or structural heart disease, depending on the history and physical examination, but it does not need to be performed during the tachycardia. Similarly, a nuclear stress test is indicated only if there is suspicion of coronary artery disease, which is rarely the primary cause of an SVT.",
+      "questionNumber": 31
+    },
+    {
+      "question": "What features from the history are most important in distinguishing neurocardiogenic syncope from seizure disorder?",
+      "options": [
+        "A. Post-episode confusion lasting more than 5 minutes",
+        "B. Jerking movements of limbs during the episode",
+        "C. Triggered by pain",
+        "D. A prodrome of nausea and sweatiness",
+        "E. A, C, and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "See Table 56-2 and Neurocardiogenic Syncope and Related Syndromes. Because neurocardiogenic syncope commonly presents in young, otherwise healthy individuals, the differential diagnosis often involves a new seizure disorder. Several important historical features and the appearance of the patient during the syncopal episode (when observed by a bystander) can be very useful in distinguishing neurocardiogenic syncope from a seizure disorder. In seizure disorders, a postictal confusion period lasting more than 5 minutes is common; in neurocardiogenic syncope, by comparison, disorientation rapidly resolves within 1 or 2 minutes upon regaining consciousness. In a patient who has had a cardiac arrest (distinct from syncope), the period of confusion can last very long if the patient has suffered anoxic brain injury; however, anoxic brain injury is very uncommon in neurocardiogenic syncope. Jerking movements of the limbs can be confused with myoclonic movements that are common in neurocardiogenic syncope, so these movements are not helpful in distinguishing between seizure disorder and neurocardiogenic syncope. Neurocardiogenic syncope is often triggered by pain or prolonged standing; commonly one can elicit history of syncope or presyncope with abdominal cramping, phlebotomy, or other painful stimuli. Seizures are not usually triggered by pain. Although seizure disorders can sometimes be associated with prodromes, they commonly involve sensory auras. Neurocardiogenic syncope often is preceded by reproducible prodromes of nausea and sweatiness, which are triggered by the heightened parasympathetic tone that causes the acute drop in blood pressure and heart rate and which can persist after the episode.",
+      "questionNumber": 32
+    },
+    {
+      "question": "Which of the following electrocardiogram (ECG) patterns at first contact with a cardiac arrest victim has the lowest probability of survival?",
+      "options": [
+        "A. Asystole",
+        "B. Polymorphic ventricular tachycardia",
+        "C. Pulseless ventricular tachycardia",
+        "D. Pulseless electrical activity",
+        "E. Ventricular fibrillation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Cardiac arrest victims with shockable rhythms (B, C, and E) have higher probabilities of survival than pulseless electrical activity or asystole (A and D). Asystole may appear after delayed or prolonged treatment of ventricular tachyarrhythmias or fibrillation, or as a primary mechanism in patients with preexisting advanced heart disease or terminal noncardiac diseases. In either situation, survival is low. Pulseless electrical activity also has a low probability of survival because it generally takes longer to restore circulation in nonshockable rhythms, but survival is better than for asystole, in part because it is more commonly associated with reversible respiratory or metabolic causes.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 19-year-old female college student athlete suffered a cardiac arrest while playing basketball and was found to be in ventricular fibrillation by emergency rescue personnel. She had no prior history of chest pain, palpitations, or a recent viral infection, and a recent pre-participation ECG was normal. A structural cause for her cardiac arrest was identified at postmortem examination. Which of the following disorders is the most likely cause of her cardiac arrest?",
+      "options": [
+        "A. Aortic stenosis",
+        "B. Congenital long QT interval syndrome",
+        "C. Anomalous origin of a coronary artery",
+        "D. Hypertrophic cardiomyopathy",
+        "E. Nonischemic dilated cardiomyopathy"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most common cause of cardiac arrest in competitive athletes in the United States is hypertrophic cardiomyopathy, which is more common in basketball players but also more common in male athletes. The majority of subjects with clinically significant hypertrophic cardiomyopathy will have an abnormal ECG, as is the case for aortic stenosis. The second most common cause is anomalous origin of a coronary artery, which has no sex predilection and typically is not associated with any ECG changes. Cardiac arrest usually occurs during exercise in this condition.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 45-year-old man comes to the emergency department because of the sudden onset of a tachycardia associated with mild lightheadedness. Initial ECG shows a regular wide QRS tachycardia at a rate of 165 beats per minute; blood pressure is 126/82 mm Hg. He denies a prior history of heart disease, and no information is available on his left ventricular function. Which of the following drugs should not be used as initial management of this arrhythmia?",
+      "options": [
+        "A. Adenosine",
+        "B. Digoxin",
+        "C. Metoprolol",
+        "D. Procainamide",
+        "E. Verapamil"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Verapamil given intravenously causes clinically relevant myocardial depression in patients with left ventricular dysfunction due to structural heart disease. Therefore, regardless of the mechanism of a tachycardia, intravenous verapamil should not be used in the absence of prior knowledge that left ventricular function is normal.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 72-year-old woman with a prior myocardial infarction and an ejection fraction of 40% collapsed in a shopping mall. A bystander found her to be pulseless and began \"compression-only\" cardiopulmonary resuscitation (CPR). An automated external defibrillator was deployed approximately 3 minutes after collapse and demonstrated ventricular fibrillation. An initial 200-J biphasic shock failed to restore sinus rhythm. Which of the following should be the next step in management?",
+      "options": [
+        "A. Deliver a second 200-J biphasic shock immediately.",
+        "B. Inflate the lungs with mouth-to-mouth respirations twice and then deliver a second shock.",
+        "C. Resume CPR for five cycles of 15: 2 compressions/ventilations before delivering another shock.",
+        "D. Deliver a precordial thump, and recheck the rhythm.",
+        "E. Resume CPR immediately and deliver another 200-J biphasic shock after 2 minutes of chest compressions."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Based on the concept of maximizing chest compressions for preserving organ viability, the prior strategy of delivering three successive shocks before resuming CPR has been replaced by the guideline that CPR should be resumed after a single shock that fails to restore circulation. CPR should be continued using the compression-only technique for 2 minutes before the second shock is delivered.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A cardiac arrest victim, whose collapse was witnessed by a bystander, was found to be in ventricular fibrillation. Multiple attempts to restore a spontaneous circulation failed despite CPR, attempted defibrillation, and epinephrine. Which of the following intravenous medications should be tried next?",
+      "options": [
+        "A. Amiodarone in the preferred drug",
+        "B. Lidocaine or amiodarone are acceptable alternatives",
+        "C. Magnesium sulfate",
+        "D. Procainamide",
+        "E. Propranolol"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "After failure to restore sinus rhythm by three cycles of defibrillator shocks and chest compressions, including the administration of epinephrine or vasopressin, a recent randomized clinical trial demonstrated that either amiodarone or lidocaine intravenously is more effective than placebo for restoring circulation. Lidocaine may be preferred if the ventricular fibrillation (VF) event is due to an acute ischemic syndrome, and magnesium sulfate is preferable when VF is due to prolonged QT interval syndrome. Procainamide can be tried after amiodarone and/or lidocaine has failed, but it is unlikely to be of benefit.",
+      "questionNumber": 37
+    },
+    {
+      "question": "Supraventricular tachyarrhythmias. A 25-year-old woman presents to the emergency department with palpitations and the attached electrocardiogram. Which of the following statements is false?",
+      "imageUrl": "images/books-images/cecil/ch8/q/8.38.png",
+      "options": [
+        "A. The rhythm can be treated with intravenous diltiazem.",
+        "B. The rhythm is best treated with adenosine.",
+        "C. The rhythm is curable with radiofrequency ablation.",
+        "D. The rhythm is most consistent with atrial flutter.",
+        "E. The rhythm is most consistent with atrioventricular (AV) nodal re-entrant tachycardia."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The rhythm is AV nodal re-entrant tachycardia given the absence of evident P waves. This rhythm is typical in women in this age group. It can be treated acutely with adenosine or diltiazem, and long-term treatment can include a curative ablation procedure. The absence of flutter waves makes atrial flutter unlikely.",
+      "questionNumber": 38
+    },
+    {
+      "question": "Supraventricular tachyarrhythmias. A 54-year-old man presents to the emergency department with the new onset of palpitations and shortness of breath. The accompanying electrocardiogram is obtained. What is the diagnosis?",
+      "imageUrl": "images/books-images/cecil/ch8/q/8.39.png",
+      "options": [
+        "A. AV nodal re-entrant tachycardia",
+        "B. AV re-entrant tachycardia",
+        "C. Atrial flutter",
+        "D. Atrial fibrillation",
+        "E. Atrial tachycardia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The electrocardiogram demonstrates negative (\"sawtooth\") waves in leads 2, 3, and aVF, positive flutter waves in V1 and negative in V6 There are two flutter waves for every QRS complex, consistent with typical atrial flutter with 2:1 conduction.",
+      "questionNumber": 39
+    },
+    {
+      "question": "Atrioventricular conduction disturbances. An 18-year-old man presents to the hospital with fatigue for the prior week. It is late August and he has spent the summer on Nantucket as a life guard. His pulse is 40 beats per minute, and the accompanying electrocardiogram is obtained. What is the most likely diagnosis?",
+      "imageUrl": "images/books-images/cecil/ch8/q/8.40.png",
+      "options": [
+        "A. Sinus bradycardia",
+        "B. AV Wenckebach",
+        "C. Complete heart block",
+        "D. 2:1 AV block",
+        "E. Junctional rhythm"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The rhythm shows 2: 1 AV block with a long PR interval associated with the conducted P wave. The clinical history is consistent AV block secondary to Lyme disease. It should be treated with antibiotics, and in most cases there will be resolution of conduction disease.",
+      "questionNumber": 40
+    },
+    {
+      "question": "Supraventricular tachycardia. An 18-year-old man presents with a syncopal episode while playing basketball. He is brought to the emergency department where the following electrocardiogram is recorded. His blood pressure is stable. What is the diagnosis?",
+        "imageUrl": "images/books-images/cecil/ch8/q/8.41.png",
+      "options": [
+        "A. Ventricular tachycardia",
+        "B. Atrioventricular tachycardia with aberration",
+        "C. Atrioventricular tachycardia without aberration",
+        "D. Atrial fibrillation with conduction over an accessory pathway (bypass tract)",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The rhythm is irregularly irregular, consistent with atrial fibrillation, and the variable QRS durations are consistent with varying amounts of conduction over an accessory pathway. This classic fast, broad, and irregular pattern is consistent with atrial fibrillation conducted over an accessory pathway.",
+      "questionNumber": 41
+    },
+    {
+      "question": "Bradyarrhythmias. A 45-year-old man complains of daytime somnolence. Evaluation is notable for morbid obesity and hypertension. He takes 20 mg of lisinopril for hypertension. The following telemetry strip occurred during sleep and was not associated with symptoms. During daytime hours, his heart rate never dropped below 70 beats per minute. Which statement is true?",
+        "imageUrl": "images/books-images/cecil/ch8/q/8.42.png",
+      "options": [
+        "A. The telemetry strip shows complete heart block.",
+        "B. The telemetry strip shows sinus node dysfunction, which requires a pacemaker.",
+        "C. The telemetry strip shows sinus bradycardia progressing to sinus arrest, consistent with a vagal mechanism.",
+        "D. Sinus bradycardia is due to metoprolol.",
+        "E. The telemetry strip shows sinus arrhythmia."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The telemetry strip shows sinus bradycardia progressing to a sinus pause. This finding is most consistent with a vagal mechanism, probably associated with obstructive sleep apnea. The best approach is to treat the sleep apnea. In the absence of symptoms such as syncope, a pacemaker is not indicated.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 43-year-old woman with hypertrophic cardiomyopathy and a dual-chamber implantable cardioverter defibrillator requires magnetic resonance imaging of the brain. The electrocardiogram shows atrial fibrillation, with a conducted rate of 86 beats per minute. Which of the following is the most appropriate recommendation?",
+      "options": [
+        "A. Remove the ICD to allow the MRI; then re-implant after completion.",
+        "B. Proceed with MRI. No special precautions are required.",
+        "C. Clarify device compatibility with MRI. Proceed with MRI only if the ICD system is MRI-conditional (compatible).",
+        "D. Proceed with MRI. Personnel with expertise in device management should be present if the device or lead is MRI-nonconditional.",
+        "E. MRI is contraindicated. Use only alternative imaging."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Evidence indicates that MRI can be performed with low risk in patients with MRI-conditional and nonconditional devices if proper precautions and protocols are followed.",
+      "questionNumber": 43
+    },
+    {
+      "question": "An active 84-year-old man has sinus bradycardia at 56 beats per minute and dyspnea on exertion. On a treadmill stress test, his maximum heart rate is 74 beats per minute. Sinus rhythm with RBBB and a QRS duration of 150 msec is present throughout. An angiogram 8 months ago showed no coronary artery disease. An echocardiogram is normal. A pacemaker is recommended. What is the appropriate pacing modality?",
+      "options": [
+        "A. Single-chamber VVIR",
+        "B. Single-chamber AAI",
+        "C. Dual-chamber VDD mode",
+        "D. Dual-chamber DDDR mode",
+        "E. Dual-chamber biventricular pacing (CRT-P) in DDD mode"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A dual-chamber pacemaker with rate-responsive pacing is most appropriate for sinus node dysfunction with chronotropic incompetence. CRT is not required in the absence of left ventricular dysfunction or heart block.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 61-year-old man with heart failure (left ventricular ejection fraction of 30%) owing to ischemic cardiomyopathy for 2 years presents with edema and worsened dyspnea on exertion. ECG and telemetry show sinus rhythm with persisting 2: 1 AV block (rate, 38 beats per minute) and episodes of atrial fibrillation at 65 beats per minute. The QRS duration is normal (105 msec). Which device should be recommended?",
+      "options": [
+        "A. AAIR pacemaker",
+        "B. Dual-chamber pacemaker",
+        "C. Single-chamber ICD",
+        "D. Subcutaneous ICD",
+        "E. ICD with cardiac resynchronization therapy (CRT-D)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "With ischemic cardiomyopathy and an ejection fraction of 30%, an ICD is indicated because of the risk of ventricular arrhythmias and sudden death. The patient needs pacing because of heart block, and the preferred modality is biventricular pacing because of an expected high burden (>40%) of ventricular pacing.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 43-year-old man presents to the emergency department with a history of tetralogy of Fallot and syncope. He currently feels well. He has no chest pain. His 12-lead electrocardiogram (ECG) shows a right bundle branch block and three premature ventricular ectopic beats. What is your plan with respect to this patient's disposition?",
+      "options": [
+        "A. You admit him to a monitored bed and consult a cardiologist with expertise in adult congenital heart disease.",
+        "B. You check his old ECG and find that this one is unchanged, so you send him home to follow up with his cardiologist as an outpatient.",
+        "C. You consult the neurologist because you are worried that given his history, he may have had a seizure.",
+        "D. You admit him for a cardiac catheterization because you know that tetralogy of Fallot may be associated with an anomalous coronary artery.",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Patients with tetralogy of Fallot have up to a 5% risk of sudden cardiac death. Therefore, the presentation of syncope should always prompt an admission for monitoring to exclude a malignant ventricular arrhythmia. In addition, consultation with a congenital heart disease expert should always be initiated to exclude any new or progressive hemodynamic abnormality, such as pulmonary regurgitation that may require intervention. Although patients with tetralogy of Fallot may have coronary artery anomalies, syncope always warrants monitoring, and unexplained syncope may warrant an electrophysiology study.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 50-year-old woman presents with shortness of breath to your office. One year ago, she had a moderate-sized myocardial infarction, for which she underwent successful dilation of a midcircumflex lesion with no complications. She denies angina. You examine her and find that her blood pressure is 140/90 mm Hg and her heart rate is 80 beats per minute. She has no evidence of systemic or pulmonary venous congestion. She has a positive hepatojugular reflux and a widely split second heart sound. She has an incomplete right bundle branch block on the ECG with no ischemic changes. You order an echocardiogram and find that she has an enlarged right side of the heart, which was not seen on her last echocardiogram 1 year ago. What investigations are you interested in?",
+      "options": [
+        "A. You review the echocardiogram looking for evidence of a right-to-left shunt at the atrial level.",
+        "B. You order a cardiac catheterization to exclude disease of the right coronary artery.",
+        "C. You review the echocardiogram looking for evidence of a left-to-right shunt at the atrial level.",
+        "D. You order an exercise echocardiogram to see if there are new wall motion anomalies.",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a classic presentation of an atrial septal defect that becomes symptomatic when diastolic dysfunction from acquired cardiovascular disease reduces left ventricular compliance, increases left ventricular end-diastolic pressure and left atrial pressure, and increases left-to-right shunting. Patients who have an atrial septal defect may be asymptomatic into their fourth and fifth decade until a condition such as hypertension, mitral regurgitation, aortic valve disease, cardiomyopathy, or myocardial infarction decreases left ventricular compliance and increases left-to-right shunting. Atrial septal defects can be easily missed on echocardiography if they are not specifically sought. The patient is not cyanotic, so an increase in right-to-left shunting may not be found. In addition, although the patient has coronary disease, an echocardiogram would still be the best initial test to evaluate ventricular function.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 20-year-old man is referred to you for unexplained hypertension. He otherwise feels well. You notice he has a well-developed torso, and he tells you he lifts weights. His blood pressure is 150/90 mm Hg in both arms. He has a sustained apical impulse and a midsystolic ejection click. His ECG shows left ventricular hypertrophy. What is in your management plan?",
+      "options": [
+        "A. You order an echocardiogram to exclude a bicuspid aortic valve and initiate β-blocker therapy.",
+        "B. You order an evaluation for renal artery stenosis and initiate therapy with an angiotensin-converting enzyme inhibitor.",
+        "C. You are unsure of what to do so you refer him to a local cardiologist.",
+        "D. You order an echocardiogram to exclude aortic coarctation, you order a 24-hour blood pressure monitor to confirm his hypertension, and you give him a follow-up appointment in 2 weeks with the intention of starting antihypertensive medication.",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The finding of unexplained hypertension in a young man should always prompt a careful clinical examination to detect a possible brachial-to-femoral pulse delay and an echocardiogram to exclude aortic coarctation. Because blood flow is decreased in the lower extremities, these patients often have small hips relative to a well-developed torso. A significant portion of patients also have a bicuspid aortic valve, and associated ascending aortopathy. Because aortic coarctation is a reversible cause of hypertension, it is important to look for it and to address its complications.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 45-year-old woman is referred to you from another general internal medicine practice where the internist is retiring. She is in a wheelchair with an oxygen tank and nasal prongs. She has bluish discoloration of her skin and clubbing of her fingernails. She explains that she has a heart condition and is here to have her monthly phlebotomy. What should you do?",
+      "options": [
+        "A. You order the phlebotomy, and you have her come back in 1 month.",
+        "B. You review her medical record, take a history for symptoms of hyperviscosity, exclude dehydration, and order serum iron studies.",
+        "C. You make sure she does not smoke and consult a pulmonologist to determine if she needs the oxygen.",
+        "D. You go through the medical record and wonder why she has not had an operation for her cyanosis. You consult the nearest adult congenital heart specialist.",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Patients with cyanotic congenital heart disease often undergo unnecessary phlebotomy. This clinical scenario requires a careful history to establish the presence or absence of hyperviscosity, which is an indication for phlebotomy in the absence of iron deficiency, and a discussion of the need or lack thereof for phlebotomy. Patients are often resistant initially; but after their hemoglobin levels stabilize and in the absence of iron deficiency, they often feel much better.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 25-year-old woman with a bicuspid aortic valve and mild aortic regurgitation consults you before visiting her dentist. She requests a prescription for antibiotic prophylaxis before undergoing extensive dental cleaning. How do you respond?",
+      "options": [
+        "A. You give her the prescription as she requests.",
+        "B. You call the dentist, who confirms the request, and you give her the prescription.",
+        "C. You take a careful history to be sure she is not allergic to penicillin.",
+        "D. You explain that antibiotic prophylaxis is no longer required for dental procedures and write her dentist a confirmatory letter.",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Bacterial endocarditis prophylaxis is no longer recommended for isolated native valve lesions, such as a bicuspid aortic valve, in the absence of surgery or a previous episode of infective endocarditis. It is important to understand the rationale for the change in guidelines. It is not that infective endocarditis does not occur in patients with isolated lesions; rather, antibiotic prophylaxis cannot be shown to reduce the risk of this complication, especially because bacteremias after routine dental procedures are no worse than after brushing one's teeth. This situation requires careful discussion and accurate transmission of information to the patient.",
+      "questionNumber": 50
+    },
+    {
+      "question": "In comparison to patients with ST segment elevation myocardial infarction (STEMI), the mortality rates for subjects with non-ST segment elevation acute coronary syndrome (NSTE ACS) are:",
+      "options": [
+        "A. Lower in-hospital, similar at 6 months, and higher long term",
+        "B. Similar in-hospital, at 6 months, and long term",
+        "C. Higher in-hospital, 6 months later, and long term",
+        "D. Lower in-hospital, 6 months later, and long term",
+        "E. Higher in-hospital, then similar at 6 months as well as long term"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Large observational cohort studies have demonstrated that mortality rates with NSTE ACS are lower in-hospital, similar at 6 months, and actually higher long term, such that 4 years after the event, the mortality for those with NSTE ACS is twice that of survivors of STEMI. As a result, the chosen management strategy for patients with NSTE ACS is designed to minimize the chance of recurrent ACS or death, both acutely and chronically.",
+      "questionNumber": 51
+    },
+    {
+      "question": "The acute coronary syndrome (ACS) patient with the following criteria is considered to be at high risk and, unless it is contraindicated, should be managed with aggressive medical therapy as well as coronary angiography and revascularization if it is anatomically appropriate:",
+      "options": [
+        "A. Age younger than 65 years, diabetes mellitus, and a history of smoking",
+        "B. Three or more Thrombolysis in Myocardial Infarction (TIMI) risk variables, age older than 75 years, and a positive serum troponin concentration",
+        "C. ST segment depression, positive serum troponin concentration, and male gender",
+        "D. Previous coronary artery bypass grafting or percutaneous coronary intervention, diabetes mellitus, and hypertension",
+        "E. Heart rate above 100 beats per minute, T wave inversions in multiple leads, and more than three TIMI risk variables"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Meta-analyses of all randomized trials of management of subjects with NSTE ACS have demonstrated that those with more than three TIMI risk variables, age older than 75 years, and a positive serum troponin concentration are at high risk of a recurrent ischemic event (myocardial infarction, recurrent ischemia, or death) and obtain a substantial benefit when they are managed invasively (intensive medical therapy and coronary angiography/revascularization within 72 hours of hospitalization).",
+      "questionNumber": 52
+    },
+    {
+      "question": "To promote plaque stabilization, all patients with NSTE ACS should receive the following before and after hospital discharge:",
+      "options": [
+        "A. Rosuvastatin, 10 mg daily",
+        "B. Simvastatin, 40 mg daily",
+        "C. Rosuvastatin, 5 mg daily",
+        "D. Pravastatin, 40 mg daily",
+        "E. Atorvastatin, 80 mg daily"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Randomized trials have shown that high-dose atorvastatin (80 mg daily), begun in-hospital and continued indefinitely, effectively reduces the incidence of recurrent ischemic events. Lower doses of the same drug and other statins have not been assessed in this population of patients. Pravastatin 40 mg and simvastatin 40 mg are inferior to high-dose atorvastatin in NSTE ACS patients. Although rosuvastatin 20 to 40 mg is equivalent to high dose atorvastatin, low dose rosuvastatin is inferior.",
+      "questionNumber": 53
+    },
+    {
+      "question": "The anticoagulant of choice for the subject with heparin-induced thrombocytopenia who is referred for coronary arteriography is:",
+      "options": [
+        "A. Low-molecular-weight heparin",
+        "B. Dextran",
+        "C. Fondaparinux",
+        "D. Bivalirudin",
+        "E. High-dose aspirin and clopidogrel"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In the subject with heparin-induced thrombocytopenia, any form of heparin is contraindicated (hence, low-molecular-weight heparin is an incorrect choice). Intensive high-dose antiplatelet therapy (aspirin and clopidogrel) is of no additional benefit. Dextran is of no benefit at all. Because an increased incidence of catheter-related thrombosis has been reported after fondaparinux treatment, it is not recommended for the patient who is likely to undergo coronary angiography.",
+      "questionNumber": 54
+    },
+    {
+      "question": "The recommended duration of antiplatelet therapy with a P2Y12 inhibitor after drug-eluting stent placement for ST segment elevation myocardial infarction (STEMI) is:",
+      "options": [
+        "A. 1 month",
+        "B. 3 months",
+        "C. 6 months",
+        "D. 1 year",
+        "E. Indefinitely"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Early discontinuation of P2Y12 inhibition is associated with an increased risk of stent thrombosis. A favorable benefit-to-risk ratio of longer-term/indefinite therapy has not been proved.",
+      "questionNumber": 55
+    },
+    {
+      "question": "Which of the following scenarios should not be considered for immediate reperfusion therapy (e.g., primary percutaneous coronary intervention) in a patient presenting with suspected acute coronary syndrome?",
+      "options": [
+        "A. ST elevation >2 mm in precordial leads or >1 mm in limb leads",
+        "B. New-onset left bundle branch block",
+        "C. Resuscitated ventricular fibrillation (VF) arrest",
+        "D. ST depression in precordial leads and ST elevation in supplemental leads V7 to V9",
+        "E. None of the above (i.e., all of the above are correct)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A and B are classic indications. VF in the setting of suspected acute coronary syndrome/STEMI is also an indication for rapid percutaneous coronary intervention. D represents a posterior myocardial infarction, which typically is caused by occlusion of the left circumflex coronary artery and should be treated as STEMI.",
+      "questionNumber": 56
+    },
+    {
+      "question": "Newly available high-sensitivity, cardiac-specific troponin assays promise the following diagnostic advantages except:",
+      "options": [
+        "A. Increased diagnostic sensitivity",
+        "B. Increased diagnostic specificity",
+        "C. Reduced time to diagnostic rise in troponin levels after the onset of pain",
+        "D. All of the above",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "There are many non-myocardial infarction causes of troponin elevation; the newer, high-sensitivity assays can detect circulating troponin at baseline in a higher percentage of all patients, including those without acute coronary syndromes. As a result, the assays increase sensitivity, reduce time to diagnosis, and reduce specificity, thereby necessitating improved clinical judgment in their interpretation.",
+      "questionNumber": 57
+    },
+    {
+      "question": "An implantable cardioverter-defibrillator (ICD) should be considered before discharge for which of the following STEMI patients?",
+      "options": [
+        "A. STEMI presenting with VF (successfully resuscitated)",
+        "B. STEMI with sustained ventricular tachycardia (VT)/VF occurring more than 48 hours after presentation",
+        "C. STEMI with ongoing runs of nonsustained VT on telemetry",
+        "D. STEMI with predischarge ejection fraction of 30% or less, regardless of rhythm",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The risk of recurrent VT/VF is generally low for early (ischemic) VF, given current reperfusion and antithrombotic therapies. In contrast, convalescent presentation (at >48 hours) of sustained VT/VF carries a high risk of recurrence, and early ICD implantation should be considered. For patients with low ejection fractions, clinical trials (and Medicare reimbursement rules) support a waiting period of at least 40 days after myocardial infarction before considering an ICD. For nonsustained VT, implantation of an ICD is generally not indicated except in patients who have a reduced left ventricular ejection fraction and in whom it is induced on an electrophysiologic study.",
+      "questionNumber": 58
+    },
+    {
+      "question": "Bare metal coronary stents reduce restenosis by:",
+      "options": [
+        "A. Providing a semirigid scaffold that resists vessel recoil and remodeling.",
+        "B. Inhibiting intimal proliferation.",
+        "C. Reducing thrombus formation.",
+        "D. Increasing blood flow within the coronary artery.",
+        "E. Reducing vessel spasm."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Bare metal stents use mechanical force to hold a vessel open. They do not reduce vessel spasm or thrombus formation. Stents increase intimal proliferation. Although stents increase vessel blood flow, the increased blood flow does not influence restenosis rates.",
+      "questionNumber": 59
+    },
+    {
+      "question": "Compared with medical therapy, percutaneous coronary intervention:",
+      "options": [
+        "A. Reduces the mortality rate in patients with stable angina.",
+        "B. Reduces costs associated with medical care.",
+        "C. Reduces the mortality rate in patients experiencing an acute myocardial infarction.",
+        "D. Decreases myocardial infarction in patients with stable coronary artery disease.",
+        "E. Reduces hospitalization rates."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In randomized trials, coronary stents have been shown to reduce mortality rates compared with medical therapy alone in patients experiencing an acute myocardial infarction (MI). In patients with stable coronary disease, stents reduce angina but do not reduce death, MI, hospitalization rates, or costs.",
+      "questionNumber": 60
+    }
+    ,
+    {
+      "question": "Randomized trials comparing bypass surgery to coronary stents:",
+      "options": [
+        "A. Found an increased late stroke rate in patients receiving bypass surgery.",
+        "B. Found less angina in patients who underwent bypass surgery.",
+        "C. Found higher MI rates in patients undergoing stenting.",
+        "D. Demonstrated improved late outcomes in patients with diabetes undergoing stenting.",
+        "E. Demonstrate improved survival for bypass surgery in patients with extensive complex coronary disease"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In randomized trials, bypass surgery has been shown to reduce mortality rates compared with coronary stenting in patients with three-vessel, complex coronary disease. Stroke rates are higher in bypass patients early after surgery, but stroke rates are similar at later follow-up. Rates of MI and angina are equivalent on long-term follow-up. Patients with diabetes who have multivessel disease have better long-term outcomes with bypass surgery.",
+      "questionNumber": 61
+    },
+    {
+      "question": "What is an important component of the coronary bypass surgery operation for increasing life expectancy?",
+      "options": [
+        "A. Saphenous vein graft to the left anterior descending (LAD) coronary artery",
+        "B. Radial graft to the right coronary artery",
+        "C. Minimally invasive surgery",
+        "D. Left internal mammary artery graft to the LAD coronary artery",
+        "E. The right gastroepiploic graft to the right coronary artery"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although no randomized trials have examined the impact of the left internal mammary artery to LAD graft, many observational comparative studies have established the long-term survival benefit of this surgical strategy.",
+      "questionNumber": 62
+    },
+    {
+      "question": "What is the most common indication for recommending bypass surgery for patients with stable angina in preference to other treatment options?",
+      "options": [
+        "A. To prevent myocardial infarction",
+        "B. To increase exercise capacity",
+        "C. To improve life expectancy",
+        "D. To decrease the side effects of optimal medical therapy"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Advances in medical therapy and in percutaneous interventions have commonly been successful in controlling symptoms of angina; therefore, coronary bypass surgery is rarely needed to treat symptoms that are unresponsive to alternative management strategies. However, for patients with severe coronary artery disease, bypass surgery is the form of therapy that has been most clearly shown to improve life expectancy. The most common indications for CABG are in anatomic and clinical situations in which it offers a survival benefit.",
+      "questionNumber": 63
+    },
+    {
+      "question": "Each of the following findings indicates severe valvular heart disease except:",
+      "options": [
+        "A. In mitral stenosis, the S2 opening snap interval is 0.06 seconds.",
+        "B. In aortic stenosis, there is a harsh systolic murmur peaking in mid systole.",
+        "C. In aortic stenosis, there is a soft single second sound.",
+        "D. In aortic regurgitation, an Austin Flint murmur is heard.",
+        "E. In mitral regurgitation, an S3 is heard."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The murmur of severe aortic stenosis peaks late in systole, not in mid systole. An S2-OS interval of 0.06 seconds is short, indicating high left atrial pressure and severe mitral stenosis. Severe aortic regurgitation impinges on the mitral valve, thereby causing an Austin Flint murmur. A severely calcified and stenotic aortic valve produces little sound when it closes, so S2 will be soft and single.",
+      "questionNumber": 64
+    },
+    {
+      "question": "Pick the best choice regarding the hemodynamic overload of valvular heart disease.",
+      "options": [
+        "A. Aortic regurgitation places a pure volume overload on the left ventricle.",
+        "B. Aortic stenosis produces a combined pressure and volume overload on the left ventricle.",
+        "C. Aortic regurgitation places a combined pressure and volume overload on the left ventricle.",
+        "D. Mitral regurgitation places a combined pressure and volume overload on the left ventricle.",
+        "E. Tricuspid regurgitation places a combined pressure and volume overload on the right ventricle."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The increased total stroke volume in aortic regurgitation increases systolic blood pressure, thereby placing a combined pressure and volume overload on the left ventricle. Whereas aortic stenosis causes a pure left ventricle pressure overload, mitral and tricuspid regurgitation place a pure volume overload on the left ventricle and right ventricle, respectively.",
+      "questionNumber": 65
+    },
+    {
+      "question": "Indications for valve surgery or other valve intervention include all but which of the following?",
+      "options": [
+        "A. A patient with syncope and an aortic valve area of 0.9 cm².",
+        "B. An asymptomatic patient with severe mitral regurgitation and an ejection fraction of 0.55.",
+        "C. An asymptomatic patient with mitral stenosis and a pulmonary artery pressure of 60 mm Hg.",
+        "D. An asymptomatic patient with an Austin Flint murmur and an ejection fraction that has decreased from 0.60 to 0.45.",
+        "E. A patient with functional mitral regurgitation, class II symptoms, and a left bundle branch block."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A patient with functional mitral regurgitation should undergo evaluation for cardiac resynchronization therapy, which might substantially improve his or her mitral regurgitation. A patient with aortic stenosis has classic symptoms that require aortic valve replacement. Pulmonary hypertension in mitral stenosis worsens prognosis, so further delay is contraindicated. The other two patients have developed left ventricular dysfunction requiring prompt surgical intervention to prevent further deterioration.",
+      "questionNumber": 66
+    },
+    {
+      "question": "The best defined need for medical therapy in valve disease is:",
+      "options": [
+        "A. The use of vasodilators in chronic aortic regurgitation.",
+        "B. The use of statins in aortic stenosis.",
+        "C. The use of vasodilators in asymptomatic aortic regurgitation.",
+        "D. The use of vasodilators in asymptomatic mitral regurgitation.",
+        "E. The use of warfarin in patients with mitral stenosis, atrial fibrillation, and a remote history of peptic ulcer disease."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The risk of stroke in the patient with mitral stenosis far outweighs the small risk of gastrointestinal bleeding. Statins in aortic stenosis and vasodilators in asymptomatic regurgitant disease have not been proven to be effective.",
+      "questionNumber": 67
+    },
+    {
+      "question": "The least desirable option for the treatment of severe valvular heart disease is:",
+      "options": [
+        "A. Mitral repair for mitral regurgitation.",
+        "B. Balloon valvotomy for mitral stenosis.",
+        "C. Mitral valve replacement for a patient with posterior leaflet prolapse.",
+        "D. A pulmonary autograft for a young patient with aortic stenosis.",
+        "E. A tricuspid valve repair for tricuspid regurgitation."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Mitral valve replacement for a patient with simple posterior leaflet prolapse that can easily be repaired is an error in management because mitral valve repair is far superior to mitral valve replacement. Balloon valvotomy is preferred over surgery in most cases of mitral stenosis. A pulmonary autograft is a good choice in a young patient in whom lifelong anticoagulation with a mechanical valve may be undesirable.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A 76-year-old man with known rheumatic valvular heart disease underwent elective mitral valve replacement with a Saint Jude prosthetic valve. His dentist calls you for advice regarding choice of antibiotic prophylaxis before dental extraction because the patient had developed bronchospasm and a diffuse urticarial rash after amoxicillin administration before a dental cleaning approximately 6 months ago. Which antibiotic should be administered?",
+      "options": [
+        "A. Clindamycin 600 mg orally 1 hour before the procedure",
+        "B. Cefuroxime axetil 500 mg orally before the procedure",
+        "C. Amoxicillin 2 g intravenously 1 hour before the procedure with corticosteroid and antihistamine coverage",
+        "D. Nafcillin sodium 2 g IV 1 hour before the procedure",
+        "E. Gentamicin sulfate 1 mg/kg IV 1 hour before the procedure"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The current (2007) AHA guidelines recommend clindamycin in patients who have a history of an immediate type hypersensitivity reaction to β-lactam antibiotics, which this patient demonstrated. Therefore, amoxicillin, cephalosporins, and nafcillin should be avoided. Levofloxacin and gentamicin are not recommended in these guidelines. (Wilson W, Taubert KA, Gewitz M, et al. Prevention of infective endocarditis: guidelines from the American Heart Association: a guideline from the American Heart Association Rheumatic Fever, Endocarditis, and Kawasaki Disease Committee, Council on Cardiovascular Disease in the Young, and the Council on Clinical Cardiology, Council on Cardiovascular Surgery and Anesthesia, and the Quality of Care and Outcomes Research Interdisciplinary Working Group. Circulation. 2007;116:1736-1754.)",
+      "questionNumber": 69
+    },
+    {
+      "question": "A 68-year-old man with diabetes on chronic hemodialysis developed the acute onset of fever, chills, and left-sided abdominal pain. He had an ICD implanted 3 years ago. Blood cultures grew Staphylococcus aureus, and transesophageal echocardiography demonstrated vegetations on the mitral valve. Splenic infarctions were seen on computed tomographic scanning. Which one of the following is true regarding this presentation?",
+      "options": [
+        "A. Health care-associated infection is accounting for an increasing number of infective endocarditis cases in this country.",
+        "B. Escherichia coli is a common cause of infective endocarditis in the hemodialysis population.",
+        "C. Pending susceptibility testing results, gentamicin should be administered.",
+        "D. To reduce health care costs, transthoracic echocardiography should have been performed instead of transesophageal echocardiography.",
+        "E. For chronic hemodialysis, a tunneled catheter has a lower risk of blood stream infection compared with an arteriovenous fistula."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Health care exposure accounts for an increasing number of cases of infective endocarditis in developed countries. Staphylococcus aureus, including methicillin-resistant strains, is a common cause of these infections. Empiric vancomycin should be administered until susceptibility results are known. (Athan E, Chu VH, Tattevin P, et al. Clinical characteristics and outcome of infective endocarditis involving implantable cardiac devices. JAMA. 2012;307:1727-1735.)",
+      "questionNumber": 70
+    },
+    {
+      "question": "A 55-year-old veterinarian presents with several months of low-grade fever and night sweats. On an echocardiograph, he has evidence of endocarditis. Despite no recent antibiotic therapy, three sets of blood cultures remain negative for 7 days. Which one of the following is the most likely pathogen?",
+      "options": [
+        "A. Coagulase-negative staphylococcus",
+        "B. Coxiella burnetii",
+        "C. Enterococcus faecium",
+        "D. Escherichia coli",
+        "E. Orf virus"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Exposure to animals, particularly sheep and goats, is a risk factor for Coxiella infection and a well-known cause of culture-negative endocarditis. Orf virus does not cause endocarditis. The other choices should result in positive blood culture results in a patient who has infective endocarditis and who has not received antibiotic therapy recently. (Baddour LM, Wilson WR, Bayer AS, et al. Infective endocarditis: diagnosis, antimicrobial therapy, and management of complications: a statement for healthcare professionals from the Committee on Rheumatic Fever, Endocarditis, and Kawasaki Disease, Council on Cardiovascular Disease in the Young, and the Councils on Clinical Cardiology, Stroke, and Cardiovascular Surgery and Anesthesia, American Heart Association: endorsed by the Infectious Diseases Society of America. Circulation. 2005;111:e394-434.)",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 78-year-old woman presents with left upper chest pain, swelling, and purulent drainage at the site where a permanent pacemaker generator was implanted. She has had no fever or chills, and her white blood cell count is normal. She underwent generator exchange 4 months ago and underwent a dental cleaning without prophylaxis 3 months ago. Which one of the following is true regarding cardiac implantable electronic device (CIED) infections?",
+      "options": [
+        "A. Surgical site prophylaxis has not been shown to reduce the risk of a CIED site infection.",
+        "B. Prophylactic antibiotic should have been given before her dental cleaning.",
+        "C. Device manipulation is a risk factor for device infection.",
+        "D. The most likely cause of this infection is a HACEK organism.",
+        "E. Antibiotic therapy for 4 weeks will likely cure the device infection without the device being removed."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Manipulation of an implantable cardiac device is associated with the development of acute infection. Antibiotic prophylaxis before manipulation of the surgical site is beneficial, but dental prophylaxis is not. The most likely cause is Staphylococcus spp., and removal of the device is required for cure of the infection. (Baddour LM, Cha YM, Wilson WR. Clinical practice. Infections of cardiovascular implantable electronic devices. N Engl J Med. 2012;367:842-849.)",
+      "questionNumber": 72
+    },
+    {
+      "question": "A 25-year-old morbidly obese man who injects heroin and cocaine presents with fever and blood cultures that grow Staphylococcus aureus. He had a past history of prior S. aureus blood stream infection 2 years ago, when he had an allergic reaction to vancomycin. At that time, he had evidence of tricuspid valve endocarditis. Which one of the following is true?",
+      "options": [
+        "A. A transthoracic echocardiography should be obtained.",
+        "B. Initial empiric therapy should include daptomycin until susceptibility results are known.",
+        "C. His mortality risk is high (>50%).",
+        "D. Two weeks of antibiotic therapy should be curative.",
+        "E. Rifampin should be administered."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Daptomycin should be administered in case the blood culture isolate is methicillin-resistant Staphylococcus aureus. Transesophageal, rather than transthoracic, echocardiography should be obtained to evaluate for both right-sided and left-sided endocarditis. Cure rates with active antibiotic therapy for 2 weeks are high, provided there is no evidence of left-sided endocarditis or of metastatic foci of infection. Rifampin is not routinely recommended in native valve infections caused by staphylococci. (Fowler VG Jr, Boucher HW, Corey GR, et al. Daptomycin versus standard therapy for bacteremia and endocarditis caused by Staphylococcus aureus. N Engl J Med. 2006;355:653-665.)",
+      "questionNumber": 73
+    },
+    {
+      "question": "An 80-year-old woman makes an appointment for initial evaluation of hypertension, which was detected by her orthopedist. She has enjoyed excellent health her entire life and remains very active. She has never been treated for hypertension. Her only other medical issue is occasional sciatica from lumbar degenerative disc disease. Her only medication is vitamin D with calcium. In your office, her seated blood pressure averages 200/90 mm Hg and heart rate is 77 beats per minute. There are no significant orthostatic changes in her blood pressure or heart rate. Her complete metabolic panel and resting electrocardiogram are normal. Which of the following is the most appropriate course of action?",
+      "options": [
+        "A. Initiate antihypertensive therapy by prescribing a thiazide-type diuretic.",
+        "B. Schedule a follow-up visit in 2 weeks to repeat the blood pressure measurement to confirm the diagnosis of hypertension before prescribing medication.",
+        "C. Order an ambulatory blood pressure monitor.",
+        "D. Send the patient to the emergency department for treatment of a hypertensive urgency.",
+        "E. Initiate antihypertensive therapy immediately with an angiotensin-converting enzyme (ACE) inhibitor plus a thiazide diuretic because the patient has stage 2 hypertension."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "White coat hypertension and masked hypertension are so common in elderly patients that the office blood pressure will lead to overtreatment or undertreatment of blood pressure in 3 out of 4 patients. Because this patient has no evidence of target organ damage, you suspect white coat hypertension; the best option is to order a 24-hour ambulatory blood pressure monitor. Suspected white coat hypertension without a diagnosis of hypertension and without target organ damage is the only Medicare-approved indication for ambulatory blood pressure monitoring. Her out-of-office daytime blood pressure averages 141/55 mm Hg, and her nocturnal blood pressure averages 143/57 mm Hg. Normal awake daytime blood pressure is less than 135/85 mm Hg, and normal nighttime sleeping blood pressure is less than 120/70 mm Hg. Thus, this patient has a brisk white coat reaction superimposed on mild daytime hypertension and significant nocturnal hypertension, which merits careful medication therapy. There is no indication that the patient has a hypertensive urgency. It is not appropriate to institute medication therapy before confirming the diagnosis of hypertension, but a second office visit is almost certainly going to evoke another large white coat reaction. The size of the white coat reaction increases linearly with age and, in the absence of any cardiovascular risk factors other than age, white coat hypertension per se does not increase the risk of hypertensive complications.",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 61-year-old African American man is referred for evaluation of possible hypertension. His office blood pressures average 140/65 mm Hg. He has a 30 pack-year history of cigarette smoking and cannot quit. Complete metabolic panel is normal. HBA1C is 5.5% and his BMI is 31, so diet and exercise have been recommended. The patient biked 15 miles 5 days per week and lost more than 20 pounds in 9 months. His office blood pressure now averages 154/75 mm Hg. Single pill benezopril/HCTZ (20/12.5) was started, and his manual office blood pressure is now 143/70 mm Hg. The patient seeks a second opinion with you. In your office, his unattended office blood pressure is 132/65 mm Hg. A lipid panel shows total cholesterol 240 mg/dL HDL cholesterol 36 mg/dL, and LDL cholesterol 154 mg/dL. What would you recommend?",
+      "options": [
+        "A. Continue current therapy because the patient's hypertension is now well controlled.",
+        "B. Discontinue the current medication and initiate intensive blood pressure-lowering therapy with amlodipine 5 mg daily and olmesartan 150 mg daily, with plans to increase the doses of both drugs to achieve a home blood pressure 120 mm Hg or lower.",
+        "C. Recommend a high-intensity statin (atorvastatin up to 80 mg daily).",
+        "D. Recommend smoking cessation.",
+        "E. B, C, and E."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient is an ideal candidate for high-intensity blood pressure-lowering therapy because of his age, his systolic blood pressure of 130 to 180 mm Hg, and his 10-year cardiovascular disease risk estimate of 27% by the American College of Cardiology ASCVD Pooled Cohort Calculator http://tools.acc.org/ASCVD-Risk-Estimator-Plus/#!/calculate/estimate/. To achieve a home systolic blood pressure goal 120 mm Hg or lower, his current mild regimen should be discontinued and high-intensity therapy should be initiated, with a potent, once-daily calcium-channel blocker (e.g., amlodipine 5 mg daily) and a potent, once-daily angiotensin II receptor blocker (e.g., olmesartan 150 mg daily). The next step is to maximize the dose of both drugs: amlodipine up to 10 mg daily and olmesartan up to 300 mg daily. If his systolic blood pressure still is not at goal, a potent long-acting thiazide-type diuretic (e.g., indapamide 0.625 mg daily) should be added. Because of his high cardiovascular risk, a high-intensity statin (e.g., atorvastatin up to 80 mg daily) should be initiated. Of course, smoking cessation must be addressed as well.",
+      "questionNumber": 75
+    },
+    {
+      "question": "A 69-year-old woman has chronic hypertension with recently diagnosed type 2 diabetes, which is being treated with diet, exercise, and metformin. Her blood pressure medications are lisinopril/hydrochlorothiazide 40/25 mg daily and amlodipine 5 mg daily. On this regimen, she has a mild dry cough. Her unattended automated office blood pressure averages 145/91 mm Hg, which is similar to her average home blood pressure of 140/87 mm Hg. There is no orthostatic change in blood pressure after standing for 5 minutes. Her basic metabolic panel includes: Na 127 mEq/L, K 3.7 mEq/, CO2 25 mmol/L, Cl 100 mmol/L, creatinine 0.9 mg/dL, and BUN 20 mg/dL Her estimated glomerular filtration rate (eGFR) is 69 mL/min/1.73 m². Her hemoglobin A1C is 6.2%. A spot morning urine albumin-to-creatinine ratio is 39 mg/g. Her LDL cholesterol is 130 mg/dL. Which of the following is the most appropriate next step?",
+      "options": [
+        "A. Add an angiotensin receptor blocker (ARB) to the current regimen to prevent diabetic nephropathy.",
+        "B. Add the direct renin inhibitor aliskiren to the current regimen to prevent diabetic nephropathy.",
+        "C. Replace HCTZ with chlorthalidone while continuing lisinopril and amlodipine",
+        "D. Replace lisinopril/HCTZ with irbesartan 150 mg QD and carvedilol 6.25 mg twice daily after breakfast and dinner; continue amlodipine and add rosuvastatin 20 mg daily.",
+        "E. Make no changes in her regimen."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This complicated patient has uncontrolled hypertension in the setting of recent type 2 diabetes with borderline microalbuminuria and a normal eGFR. She has two medication-induced side effects: (1) an angiotensin-converting enzyme (ACE) inhibitor cough, and (2) thiazide-induced hyponatremia, which is common after age 60 years, particularly in women. Dual renin-angiotensin system blockade, with either any combination of an ARB plus ACE inhibitor or an ACE inhibitor plus aliskiren, increases the risk of acute kidney injury and end-stage renal disease without providing cardiovascular benefit compared with either an ACE inhibitor alone or an ARB alone and should not be used. Because this patient with recent type 2 diabetes has neither orthostatic hypotension nor chronic kidney disease, it is appropriate to consider intensified blood pressure lowering with a home systolic blood pressure goal of below 130 mm Hg. Also, ambulatory monitoring is indicated, if covered by her insurance (it was not), because masked nocturnal hypertension is common in patients with type 2 diabetes. Although chlorthalidone is far more effective than HCTZ in lowering blood pressure and preventing hypertensive complications, a potent thiazide-type diuretic is not an option for this patient because she already has hyponatremia from HCTZ. The best option is to replace the ACE inhibitor with an ARB (such as long-acting generic irbesartan) to eliminate her cough and to add a vasodilating β-blocker (such as carvedilol), which will not exacerbate her insulin resistance. A high-intensity statin is indicated because of her high estimated 10-year cardiovascular disease risk of 28%.",
+      "questionNumber": 76
+    },
+    {
+      "question": "A 55-year-old male bus driver transfers to your care with a chief complaint of resistant and labile hypertension and an inability to return to work until you provide medical clearance. He has a normal complete metabolic panel and no history of cardiovascular disease. His current regimen is hydrochlorothiazide 25 mg daily, metoprolol XL 100 mg daily, and clonidine 0.2 mg twice daily, with an extra dose of 0.1 mg if his systolic blood pressure is above 180 mm Hg or his diastolic blood pressure is above 110 mm Hg. His office blood pressure is 189/98 mm Hg with a heart rate of 50 seated, and 195/106 mm Hg with a heart rate of 50 standing. The patient's home blood pressure readings range anywhere from 85/55 to 225/125 mm Hg. He is generally lethargic, often dizzy, and feels anxious when his blood pressure spikes. What is the most likely issue and best course of action?",
+      "options": [
+        "A. Medication nonadherence: draw drug blood levels and confront the patient if they are low.",
+        "B. Clonidine rebound: taper clonidine gradually while starting a calcium-channel blocker (amlodipine 5 mg daily) and an angiotensin receptor blocker (irbesartan 150 mg daily), and replace hydrochlorothiazide with indapamide 0.625 mg daily.",
+        "C. Pheochromocytoma: measure plasma metanephrines and start an α-blocker (doxazosin 8 mg twice daily).",
+        "D. Dysautonomia: refer the patient to a neurologist for autonomic function testing",
+        "E. Resistant hypertension: refer the patient to a hypertension specialist for consideration of renal denervation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has pseudoresistant hypertension owing to an inadequate medical regimen with clonidine rebound. His blood pressure is rebounding in your office (the appointment is 8 hours after his morning dose of clonidine). The appropriate course of action is to taper off the clonidine. One way is to reduce the clonidine dose to 0.1 mg at breakfast, lunch, and dinner so as to prevent rebound between doses and to add guanfacine 1 mg at bedtime temporarily to prevent rebound overnight. The next week, the clonidine dose can be reduced to 0.05 mg with meals for another week and then stopped; then, the guanfacine can be reduced to 0.5 mg QHS for one more week and then discontinued. At the same time, the patient should be started on the three first-line drugs for hypertension recommended by almost all current guidelines: a long-acting calcium-channel blocker, an angiotensin receptor blocker or an angiotensin-converting enzyme inhibitor, and a thiazide-type diuretic. The patient's heart rate of 50 beats per minute indicates that he is taking his metoprolol, which is not a first-line drug for hypertension. Metoprolol should be tapered gradually later if he has no indication, such as coronary artery disease or heart failure, for a β-blocker. There is nothing in his history to suggest a pheochromocytoma, which is far less common than clonidine rebound, which itself can cause false-positive metanephrine screening. There is no orthostatic hypotension to suggest autonomic failure as the cause of his labile hypertension. Renal denervation remains an investigational intervention for drug-resistant hypertension, which he does not have.",
+      "questionNumber": 77
+    },
+    {
+      "question": "A 57-year-old African American man has a progressive increase in his serum creatinine level from 1.7 to 2.8 mg/dL (eGFR 41) over the past 2 years, accompanied by macroalbuminuria (1.6 gram per 24 urine) and left ventricular hypertrophy with repolarization abnormalities (\"strain\") by electrocardiogram despite having office blood pressures consistently averaging 130/65 mm Hg on the following regimen: furosemide 40 mg daily, atenolol 50 mg daily, and amlodipine 5 mg daily. He does not have diabetes and quit smoking 30 years ago. What would you recommend?",
+      "options": [
+        "A. Order a 24-hour ambulatory blood pressure monitor.",
+        "B. Continue current medications and refer the patient to a nephrologist for renal biopsy.",
+        "C. Replace furosemide with indapamide 1.25 mg daily, taper off atenolol, and add an angiotensin receptor blocker (telmisartan 40 mg daily), while continuing amlodipine 5 mg daily.",
+        "D. A, B, and C",
+        "E. A and C"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient with Stage 3B hypertensive (nondiabetic) chronic kidney disease likely has masked and nocturnal hypertension, which can be documented only by ambulatory blood pressure monitoring. Masked hypertension and nocturnal hypertension are especially common in patients with chronic kidney disease, presumably owing to sympathetic overactivity, and they increase the risk for left ventricular hypertrophy and cardiovascular death. In fact, this patient has a greater chance of dying of a heart attack, stroke, or sudden cardiac death than living long enough to progress to end-stage renal disease requiring renal replacement therapy. His current regimen is not appropriate. An angiotensin receptor blocker is indicated for renal protection in chronic kidney disease with microalbuminuria and for regression of left ventricular hypertrophy. Once-daily furosemide is not an effective antihypertensive medication because of its short half-life; indapamide or chlorthalidone is a much better diuretic for 24-hour blood pressure control and is effective in stage 3 chronic kidney disease. Furthermore, amlodipine should not be given without first starting an angiotensin receptor blocker or angiotensin-converting enzyme inhibitor in the setting of chronic kidney disease.",
+      "questionNumber": 78
+    },
+    {
+      "question": "With the following pressures, calculate the patient's ankle-brachial index: right arm, 150/80 mm Hg; left arm, 120/98 mm Hg; right dorsalis pedis, 100/50 mm Hg; right posterior tibial, 60/40 mm Hg; left dorsalis pedis, 75/50 mm Hg; and left posterior tibial, 40/20 mm Hg.",
+      "options": [
+        "A. Right, 0.66; left, 0.50",
+        "B. Right, 0.50; left, 0.33",
+        "C. Right, 0.40; left, 0.33",
+        "D. Right, 0.66; left, 0.625"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The highest arm systolic pressure is used as the denominator (150 mm Hg), with the highest ankle systolic pressure on the right (100 mm Hg) and left (75 mm Hg) as the numerator.",
+      "questionNumber": 79
+    },
+    {
+      "question": "Which of the following has the strongest effect impact on walking distance for patients with claudication?",
+      "options": [
+        "A. Structured exercise therapy",
+        "B. Revascularization",
+        "C. Combination of structured exercise and revascularization",
+        "D. Combination of guideline directed medical therapy, structured exercise, and revascularization"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The combination of structured exercise with revascularization is superior to either method alone. Adding guideline-directed medical therapy is valuable for reducing cardiovascular events, but it does not impact walking distance.",
+      "questionNumber": 80
+    },
+    {
+      "question": "Which of the following serious complications is most likely to occur with magnetic resonance angiography imaging of the lower extremities?",
+      "options": [
+        "A. Contrast-induced nephropathy",
+        "B. Anaphylaxis to gadolinium contrast",
+        "C. Nephrogenic systemic fibrosis",
+        "D. Hemolytic anemia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The major toxicity of gadolinium is an uncommon but potentially lethal systemic disorder called nephrogenic systemic fibrosis or nephrogenic sclerosing dermopathy (Chapter 251). A glomerular filtration rate of 60 mL/min or less is the major risk factor.",
+      "questionNumber": 81
+    },
+    {
+      "question": "Lower extremity amputation, rather than revascularization, is the most appropriate therapy for a patient with which of the following conditions?",
+      "options": [
+        "A. Acute limb ischemia for more than 2 weeks",
+        "B. Critical limb ischemia in a diabetic with heavily calcified tibial arteries",
+        "C. An inability to walk because of frailty and comorbidities",
+        "D. Dry gangrene of the forefoot"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Patients who are unlikely to be ambulatory following revascularization are often better suited to amputation of the affected portion of the lower limb. Patients with acute limb ischemia for more than 14 days can have their limb preserved if the extremity is viable. Calcified diabetic vessels can be treated with atherectomy. A patient with dry gangrene of the forefoot will benefit from revascularization even if the necrotic tissue auto-amputates at a later time.",
+      "questionNumber": 82
+    },
+    {
+      "question": "The major advantage for magnetic resonance angiography over computed tomography angiography for lower extremity imaging is:",
+      "options": [
+        "A. Lower total diagnostic costs",
+        "B. Better imaging of calcified arteries",
+        "C. Better imaging of metallic stents",
+        "D. Better throughput due to more rapid imaging"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Calcifications can cause artifacts that may be misdiagnosed as stenosis in computed tomography angiography but not magnetic resonance angiography. An advantage of computed tomographic angiography over magnetic resonance angiography is its ability to visualize metallic stents and stent grafts (see Fig. 71-4). Computed tomography angiography can be performed more quickly and with less pretreatment planning than magnetic resonance angiography. In a randomized trial comparing magnetic resonance angiography with computed tomography angiography for initial imaging in peripheral arterial disease, there was no difference between the two techniques in terms of ease of use, clinical utility, or patient's outcome, but computed tomography angiography reduced total diagnostic costs.",
+      "questionNumber": 83
+    },
+    {
+      "question": "A 45-year-old man was diagnosed 3 days ago to have a left lower extremity deep venous thrombosis (DVT) by ultrasound. No provoking factors were identified. He was discharged from the emergency department without further evaluation but with instructions to begin subcutaneous injections of therapeutic doses of a low-molecular-weight heparin together with daily warfarin at a dose of 7.5 mg/day to be followed up by you in your primary care office. Which of the following would you do on this visit?",
+      "options": [
+        "A. Initiate an evaluation to search for occult malignant disease with CT imaging of chest, abdomen, and pelvis.",
+        "B. Obtain a prothrombin time (international normalized ratio).",
+        "C. Repeat the lower extremity ultrasound.",
+        "D. Order multidetector chest computed tomographic angiography to diagnose or exclude a pulmonary embolism.",
+        "E. Test for most common primary hypercoagulable states (thrombophilias)."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The emergency department physicians correctly initiated therapeutic heparin while at the same time beginning longer term warfarin oral anticoagulation to prevent recurrent venous thromboembolism (VTE). It is now time to begin regulating the warfarin dose on the basis of the prothrombin time, with a target international normalized ratio of 2.0 to 3.0. Although several studies have shown some otherwise healthy individuals with VTE have an increased risk of harboring an occult malignant neoplasm, a thorough history and physical examination, including stool samples for occult blood and basic studies such as chest radiography and mammography in women, are considered to be sufficient. Advanced imaging studies to look for cancer are indicated only if abnormalities are found in this basic evaluation. Another lower extremity ultrasound examination at this point is not indicated unless there is some uncertainty about the original diagnosis. The finding of a simultaneous, silent pulmonary embolism will not make any difference in your diagnostic and therapeutic plan. In fact, a large percentage (up to 50%) of patients with symptomatic lower extremity DVT have silent pulmonary emboli on imaging. Whatever might be found on blood tests for a primary hypercoagulable state at this point would not alter therapy, and the test results may be misleading in a patient in warfarin therapy, especially this soon after an acute thrombotic event.",
+      "questionNumber": 84
+    },
+    {
+      "question": "You are the primary care physician of a 50-year-old woman with a history of pregnancy-associated DVT 20 years ago. She has had no evaluation for hypercoagulable states (thrombophilias). The patient has had no recurrent venous thromboembolism and is not taking anticoagulants, but she is planning a nonstop flight from New York to Hong Kong. Which of the following would you recommend?",
+      "options": [
+        "A. Start aspirin 325 mg daily until she returns from Hong Kong.",
+        "B. Prescribe a single dose of subcutaneous injection of low-molecular-weight heparin immediately before embarking on flights to and from Hong Kong.",
+        "C. Recommend nothing except frequent ambulation and hydration on the flights.",
+        "D. Do thrombophilia testing before flights.",
+        "E. Strongly recommend interrupting the flights with layovers."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A single prior episode of deep venous thrombosis clearly related to a provoking event (i.e., pregnancy) does not require any special preventive measures before a long-haul flight, other than the general recommendation for ample hydration (with nonalcoholic beverages), frequent ambulation, and leg exercises. There is no evidence that prophylactic aspirin or low-molecular-weight heparin coverage for the flights would significantly reduce her risk of flight-related venous thromboembolism, even if a thrombophilia were found. There is a very rough relationship between the duration of long-haul air travel and the risk of venous thromboembolism, but the risk in any case is very small, and there is no evidence to suggest that it requires interruption of nonstop flights.",
+      "questionNumber": 85
+    },
+    {
+      "question": "Which of the following statements is INCORRECT with regard to cancer-associated venous thromboembolism?",
+      "options": [
+        "A. Venous thromboembolism may precede detection of an occult malignant neoplasm by months or years.",
+        "B. The risk of cancer-associated venous thromboembolism is further increased by surgery.",
+        "C. The risk of cancer-associated venous thromboembolism is further increased by some chemotherapeutic drugs.",
+        "D. The risk of venous thromboembolism is increased with localized as well as with advanced and metastatic cancers.",
+        "E. The risk of recurrent venous thromboembolism is best prevented by use of warfarin for as long as the cancer is active."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although prophylactic anticoagulation is recommended in most cancer patients after one or more thrombotic events, low-molecular-weight heparin has been demonstrated to be superior to warfarin in this particular setting. Edoxaban is now also an alternative. Venous thromboembolism may be an indicator of an occult malignant neoplasm months or even years before its discovery (see algorithm in Figure 73-4). Major surgery clearly increases the risk of thrombosis in a patient with cancer. The same is true for certain antineoplastic agents, including antiangiogenic agents (thalidomide, lenalidomide, bevacizumab, sunitinib, sorafenib), all-trans-retinoic acid, and arsenic trioxide (used for treatment of acute promyelocytic leukemia), L-asparaginase, cisplatinum, and methotrexate. Thrombotic complications are more frequent in cancer patients with advanced disease but certainly can also develop in patients with localized tumors.",
+      "questionNumber": 86
+    },
+    {
+      "question": "Which of the following statements about D-dimer testing is true?",
+      "options": [
+        "A. When abnormal, the test is diagnostic of VTE.",
+        "B. The test can be used to diagnose pulmonary embolism when the pretest probability is high or intermediate.",
+        "C. When the results are normal in combination with a low pretest probability in suspected DVT, DVT can be excluded.",
+        "D. The degree of D-dimer elevation accurately estimates clot size.",
+        "E. All D-dimer assays provide equivalent results."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "D-Dimer is a sensitive but not specific test for diagnosing VTE. As a result, a negative test in a low-risk patient effectively excludes the diagnosis.",
+      "questionNumber": 87
+    },
+    {
+      "question": "Which of the statements about VTE in pregnancy is true?",
+      "options": [
+        "A. In at least 90% of pregnant women with DVT, the left leg is involved.",
+        "B. Warfarin can be used in pregnant women between 6 and 12 weeks of gestation.",
+        "C. Rivaroxaban or apixaban can be used safely to treat VTE in pregnancy.",
+        "D. Rivaroxaban or apixaban can be used safely in nursing mothers.",
+        "E. Fondaparinux is preferred over low-molecular-weight heparin for treatment of VTE in pregnancy."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "DVT in pregnancy usually involves the left leg.",
+      "questionNumber": 88
+    },
+    {
+      "question": "Which of these statements about post-thrombotic syndrome is true?",
+      "options": [
+        "A. It inevitably leads to skin ulcers.",
+        "B. There is no gold standard test to diagnose it.",
+        "C. Elastic stockings reduce the risk of post-thrombotic syndrome.",
+        "D. It can be confused with recurrent DVT.",
+        "E. Varicose veins increase the risk of post-thrombotic syndrome."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "It is often difficult to distinguish between post-thrombotic syndrome and recurrent DVT.",
+      "questionNumber": 89
+    },
+    {
+      "question": "Which of the following is the most appropriate treatment for a patient with pulmonary embolism associated with right ventricular enlargement and an elevated troponin?",
+      "options": [
+        "A. Outpatient treatment with rivaroxaban",
+        "B. Systemic thrombolytic therapy",
+        "C. Catheter-directed thrombolysis",
+        "D. Inpatient treatment with low-molecular-weight heparin until the patient is stable",
+        "E. Inferior vena cava filter and low-molecular-weight heparin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "With the right ventricular enlargement and elevated troponin, the patient may decompensate. Therefore, admission and treatment with low-molecular-weight heparin is advisable. Systemic or catheter-directed thrombolysis should be undertaken only if the patient decompensates and becomes hypotensive. There is no indication for an inferior vena cava filter. As soon as the patient is stable, rivaroxaban can be prescribed.",
+      "questionNumber": 90
+    },
+    {
+      "question": "What is the suggested duration of treatment for a 65-year-old man with unprovoked pulmonary embolism who has no risk factors for bleeding?",
+      "options": [
+        "A. 3 months",
+        "B. 6 months",
+        "C. 12 months",
+        "D. Stop after 3 months if the D-dimer level measured 1 month after stopping is normal",
+        "E. Indefinite"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The risk of recurrence if anticoagulation therapy is stopped after 3, 6 or 12 months is about 10% at one year and 30% at five years even if the D-dimer is negative one month after stopping treatment. Therefore, indefinite anticoagulation is advisable.",
+      "questionNumber": 91
+    },
+    {
+      "question": "A 63-year-old man presents with a 3-year history of progressive dyspnea on exertion. He is now unable to walk more than 100 feet without becoming dyspneic. On physical examination, he has a parasternal lift, a loud pulmonic component to the second heart sound, a tricuspid regurgitant murmur, a pulmonary vascular bruit, and 1+ lower extremity edema. His echocardiogram demonstrates normal left ventricular function, moderate right ventricular enlargement and dysfunction, and an estimated right ventricular systolic pressure of 75 mm Hg. Which is the most likely diagnosis?",
+      "options": [
+        "A. Heart failure with preserved ejection fraction",
+        "B. Chronic thromboembolic pulmonary hypertension",
+        "C. Sleep-disordered breathing",
+        "D. Idiopathic pulmonary arterial hypertension",
+        "E. Pulmonary arterial hypertension due to an atrial septal defect"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The presence of a pulmonary vascular bruit on physical examination is specific to chronic thromboembolic pulmonary hypertension. Pulmonary vascular bruits arise from turbulent flow through partially obstructed pulmonary arteries. A history of a prior acute pulmonary embolism is absent in about 50% of patients who are diagnosed with chronic thromboembolic pulmonary hypertension.",
+      "questionNumber": 92
+    },
+    {
+      "question": "A 35-year-old woman presents with a 1-year history of progressive dyspnea. She has been treated with bronchodilators but has not improved. She has symptoms of dyspnea and chest discomfort with modest exertion. Her physical examination reveals a right ventricular heave, a loud pulmonic component to her second heart sound, and a 2/6 tricuspid regurgitant murmur. Her electrocardiogram demonstrates right axis deviation. What is the most appropriate next study in her evaluation?",
+      "options": [
+        "A. Exercise treadmill test",
+        "B. Echocardiogram",
+        "C. Pulmonary function tests",
+        "D. High-resolution chest computed tomography",
+        "E. Right-sided heart catheterization"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has typical symptoms of pulmonary hypertension, and her physical examination is consistent with that diagnosis. The most appropriate next study is an echocardiogram to assess the size and function of her right-sided heart chambers, to estimate her right ventricular systolic pressure, and to evaluate her for other potential cardiac abnormalities that may contribute to pulmonary hypertension. Although she has exertional chest discomfort, coronary artery disease is unlikely to be the cause on the basis of her age and the findings on physical examination. Further evaluation of parenchymal lung disease may be appropriate at some point, but on the basis of her symptoms and physical examination findings, pulmonary hypertension is more likely.",
+      "questionNumber": 93
+    },
+    {
+      "question": "A 32-year-old woman is diagnosed with idiopathic pulmonary arterial hypertension. On presentation, she had dyspnea with minimal exertion, exertional lightheadedness, and evidence of right-sided heart failure with 2+ lower extremity edema. Her right-sided heart catheterization revealed a mean pulmonary artery pressure of 60 mm Hg, right atrial pressure of 21 mm Hg, pulmonary capillary wedge pressure of 7 mm Hg, and cardiac index of 1.8 L/min/m². What is the most appropriate initial therapy for her?",
+      "options": [
+        "A. Macitentan",
+        "B. Sildenafil",
+        "C. Riociguat",
+        "D. Intravenous epoprostenol",
+        "E. Inhaled iloprost"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has advanced symptoms (functional class IV), signs of right-sided heart failure, and hemodynamics that portend a poor prognosis. Intravenous epoprostenol is the only pulmonary arterial hypertension therapy that has a grade A recommendation for patients with functional class IV symptoms. The other agents may be appropriate therapy for patients with less advanced symptom.",
+      "questionNumber": 94
+    },
+    {
+      "question": "Which of the following are accepted treatment goals for patients with pulmonary arterial hypertension?",
+      "options": [
+        "A. Functional class 1 or II symptoms",
+        "B. Cardiac index >2.5 L/min/m²",
+        "C. Nearly normal right ventricular function on imaging study",
+        "D. Normal brain natriuretic peptide",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Treatment goals of pulmonary arterial hypertension have been established primarily from observational studies. Improving right ventricular function and consequently symptoms and exercise tolerance portends a better prognosis, regardless of which therapies have been used to obtain the goal. Patients with pulmonary arterial hypertension should be observed with reassessment of symptoms, exercise tolerance, and right ventricular function on a periodic basis. Combination therapy may be required to achieve treatment goals.",
+      "questionNumber": 95
+    },
+    {
+      "question": "Based on the half-life and onset of action of warfarin, which of the following is the optimal management of this drug in the case of uncomplicated major surgery?",
+      "options": [
+        "A. Warfarin should be stopped 5 days before surgery and restarted as soon as the patient can take oral medications after surgery.",
+        "B. Warfarin should be stopped 2 days before surgery and restarted as soon as the patient can take oral medications after surgery.",
+        "C. Warfarin should be stopped 5 days before surgery and restarted at least 5 days after surgery.",
+        "D. Warfarin should be stopped 2 days before surgery and restarted at least 5 days after surgery.",
+        "E. Warfarin should be stopped 1 day before surgery and a dose of vitamin K given 1 day before surgery to reverse warfarin, which then is restarted as soon as the patient can take oral medications after surgery."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "With a half-life of 40 hours, warfarin has to be stopped 5 days before surgery to eliminate the anticoagulant effect. It takes 5 to 7 days for warfarin to achieve therapeutic anticoagulant effect, and thus it can be started very shortly after surgery provided that there is no bowel paralysis or active bleeding.",
+      "questionNumber": 96
+    },
+    {
+      "question": "For a patient requiring treatment for pulmonary embolism but with a high risk for bleeding, for whom quick elimination of the anticoagulant effect if needed is desirable, which one of the heparins is preferable?",
+      "options": [
+        "A. Unfractionated heparin (as intravenous infusion)",
+        "B. Fondaparinux",
+        "C. Danaparoid",
+        "D. Low-molecular-weight heparin",
+        "E. No difference they are all equivalent"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "With a half-life of 1 hour at therapeutic concentration, unfractionated heparin is the heparin that will be eliminated fastest. Low-molecular-weight heparins have half-lives of 2 to 3 hours, and fondaparinux and danaparoid about 20 hours.",
+      "questionNumber": 97
+    },
+    {
+      "question": "For which one of the new oral anticoagulants would screening with a thrombin time analysis be sensitive to identify clinically important plasma concentrations of the drug?",
+      "options": [
+        "A. Dabigatran",
+        "B. Rivaroxaban",
+        "C. Apixaban",
+        "D. Edoxaban",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Dabigatran is a direct thrombin inhibitor, for which a thrombin time is a sensitive test. The others are factor Xa inhibitors, for which thrombin time is not sensitive.",
+      "questionNumber": 98
+    },
+    {
+      "question": "A 59-year-old male with hypertension and obesity is seen in the emergency department with subsequent chest pain. The ECG shows ST-elevations and sinus rhythm. How should aspirin best be given-dose and duration-to this patient?",
+      "options": [
+        "A. 81 mg chewable aspirin immediately and then daily for the rest of his life",
+        "B. 325 mg chewable aspirin immediately and then daily for one year, after which the dose is reduced to 81 mg daily",
+        "C. 325 mg chewable aspirin immediately and then 81 mg daily for 1 year",
+        "D. 162 to 325 mg chewable aspirin immediately and then 162 mg daily for 1 year",
+        "E. 162 to 325 mg chewable aspirin immediately and then 81 mg daily for the rest of his life"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "For patients with non-ST-elevation ACS or ST-elevation MI 162 to 325 mg chewable aspirin should be given immediately. Subsequently, an 81-mg dose gives comparable ischemic protection but lower risk of bleeding compared with a dose of 162 to 325 mg and is therefore preferable for long-term use.",
+      "questionNumber": 99
+    }
+  ]
+}
