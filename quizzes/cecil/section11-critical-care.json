@@ -1,0 +1,602 @@
+{
+    "questions": [
+        {
+            "question": "Modern day critical care should be:",
+            "options": [
+                "A. Patient and family centered",
+                "B. Focused on resuscitation and stabilization",
+                "C. Attempts to minimize the clinical and iatrogenic complications of critical illness",
+                "D. Concerned about optimal end-of-life care as much as optimal rehabilitation and recovery, when appropriate",
+                "E. All of the above"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "The stabilization of critically ill patients by resuscitation is followed by improvement and then stabilization and rehabilitation to maximize the chance of optimal recovery and minimize the adverse sequelae of critical illness. An ethos of patient- and family-centered care is important throughout the continuum of critical illness for both survivors and decedents.",
+            "questionNumber": 1
+        },
+        {
+            "question": "The red blood cell transfusion threshold for hemoglobin values <7.0 g/dL in the ICU holds for:",
+            "options": [
+                "A. General critically ill patients",
+                "B. Patients in septic shock",
+                "C. Patients who have myocardial ischemia",
+                "D. A and B",
+                "E. A, B, and C"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "General ICU patients and those in septic shock do not fare better when higher hemoglobin levels are targeted. Data are insufficient on the impact of transfusion triggers for patients with active myocardial ischemia in the ICU.",
+            "questionNumber": 2
+        },
+        {
+            "question": "Regarding complications of central venous access, which of the following are false?",
+            "options": [
+                "A. Infectious complications have recently been virtually eradicated because of sterile insertion and management strategies.",
+                "B. Complications can be thrombotic, infectious, and/or mechanical, regardless of access site.",
+                "C. The internal jugular site is associated with a lower risk of pneumothorax than the subclavian site.",
+                "D. A and B",
+                "E. A and C"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Whether inserted in the internal jugular vein, subclavian vein, or femoral vein, central venous access can be complicated by events such as catheter-associated venous thrombosis or pulmonary embolism, catheter exit site infection, catheter-related bacteremia, pneumothorax, arterial bleeding, pseudoaneurysm, or nerve damage. Complications are operator dependent (e.g., the individual inserting the catheter) and patient dependent (e.g., influenced by body habitus). All else being equal, subclavian access sites appear to be associated with a lower risk of infectious and thrombotic complications but higher risk of mechanical complications.",
+            "questionNumber": 3
+        },
+        {
+            "question": "The concept of \"less is more\" or \"less is better\" in the critical care holds for:",
+            "options": [
+                "A. Tidal volume ventilation for patients with ARDS",
+                "B. Enteral nutrition targets for general ICU patients",
+                "C. Oxygen saturation targets for general ICU patients",
+                "D. Hemoglobin levels for general ICU patients",
+                "E. A, C, and D"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Many practices to \"normalize\" physiology in critical care medicine are harmful. For example, low rather than normal tidal volume ventilation is associated with lower mortality in patients with ARDS. Outcomes are similar or better when targeting a more modest oxygen saturation level than high saturation levels and when using lower compared with higher transfusion triggers. Data are insufficient on caloric exposure from enteral nutrition, but hypocaloric feeding generally is not recommended.",
+            "questionNumber": 4
+        },
+        {
+            "question": "Regarding the rehabilitation of critically ill patients, which of the following is true?",
+            "options": [
+                "A. Patients at greatest risk of disability following critical illness are primarily frail elders.",
+                "B. Disability among ICU survivors is primarily physical.",
+                "C. Early physiotherapy in the ICU has been shown to decrease hospital length of stay but not ICU survival.",
+                "D. Coordinating critical care rehabilitation with interruption of sedation and spontaneous breathing tests can hasten recovery.",
+                "E. None of the above."
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Although frailty portends a poor prognosis following critical illness, frailty crosses all age boundaries, and the frail elderly are not the dominant group who have poor outcomes. Disability following an ICU admission is multidimensional. Early physiotherapy within the ICU setting has not been clearly shown to decrease the risk of death, but combined approaches to \"wake and wean\" patients may improve the trajectory of recovery.",
+            "questionNumber": 5
+        },
+        {
+            "question": "A patient's ambient air arterial blood gas shows a PaO2 of 60 torr and a PaCO2 of 60 torr (at sea level). What is this patient's alveolar-arterial oxygen gradient?",
+            "options": [
+                "A. 4 torr",
+                "B. 14 torr",
+                "C. 24 torr",
+                "D. 34 torr",
+                "E. 37 torr"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The alveolar-arterial oxygen gradient at sea level (barometric pressure = 760 mm Hg) is calculated as 149 - ([1.25]PaCO2 + PaO2). The alveolar-arterial oxygen gradients with these arterial blood gas values = 14 torr (or mm Hg).",
+            "questionNumber": 6
+        },
+        {
+            "question": "Which of the following represents the normal response to hypercapnia?",
+            "options": [
+                "A. Polycythemia",
+                "B. Decrease in serum bicarbonate",
+                "C. Elevation of serum bicarbonate",
+                "D. Decreased respiratory drive",
+                "E. Increased oxygen binding to hemoglobin"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "With normal renal function, serum bicarbonate will rise in response to hypercapnia as the kidney retains bicarbonate in an attempt to preserve a normal or near-normal pH.",
+            "questionNumber": 7
+        },
+        {
+            "question": "Dead space ventilation occurs when:",
+            "options": [
+                "A. Areas of lung without ventilation receive blood flow.",
+                "B. Perfusion increases in areas of non-aerated lung (i.e., atelectasis).",
+                "C. A mainstem bronchus is occluded.",
+                "D. Areas of lung are ventilated without accompanying perfusion.",
+                "E. Cardiac output increases."
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Dead space ventilation occurs when areas of lung are ventilated without accompanying perfusion.",
+            "questionNumber": 8
+        },
+        {
+            "question": "Which of the following conditions would be expected to decrease respiratory compliance?",
+            "options": [
+                "A. Pulmonary fibrosis",
+                "B. Acute respiratory distress syndrome",
+                "C. Morbid obesity",
+                "D. Guillain-Barré syndrome",
+                "E. All of the above"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "All of the above conditions would be expected to decrease respiratory compliance because greater inspiratory pressure will be needed to inflate the lungs to the same or smaller volumes.",
+            "questionNumber": 9
+        },
+        {
+            "question": "Which one of the following effects of positive end-expiratory pressure (PEEP) is NOT usually expected when used for a patient with the acute respiratory distress syndrome (ARDS)?",
+            "options": [
+                "A. Reduced right ventricle afterload",
+                "B. Recruit alveolar regions",
+                "C. Decrease ventilator-induced lung injury",
+                "D. Increase oxygenation",
+                "E. Increase functional residual capacity"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "PEEP is expected to recruit the lung and increase lung volume, with beneficial effects on oxygenation and potentially a reduced risk of ventilator-induced lung injury if the patient is recruitable. By increasing intrathoracic pressures, PEEP usually increases right ventricle afterload. In situations of major derecruitment, PEEP may recruit part of the pulmonary vasculature, which can decrease pulmonary resistance. However, under most clinical settings, increasing PEEP from a baseline level increases right ventricle afterload.",
+            "questionNumber": 10
+        },
+        {
+            "question": "Which one of the following benefits is NOT to be expected in a patient with an exacerbation of chronic obstructive pulmonary disease (COPD) who is being treated with noninvasive ventilation (NIV):",
+            "options": [
+                "A. Unload the respiratory muscles",
+                "B. Increase tidal volume",
+                "C. Reduce the need for intubation",
+                "D. Reduced infectious complications",
+                "E. Reduced readmission rates"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "NIV improves gas exchange by increasing tidal volume and unloading the respiratory muscles, thereby allowing the patient to avoid endotracheal intubation, with a subsequent reduction in infectious complications. NIV is therefore associated with less intubation and improved hospital survival, but there is no evidence that NIV reduces the rate of subsequent readmissions.",
+            "questionNumber": 11
+        },
+        {
+            "question": "High-flow nasal cannula can provide short-term or outcome benefits in all of the following conditions except which one?",
+            "options": [
+                "A. Poor tolerance of face mask oxygen",
+                "B. Postextubation period in low-risk patients",
+                "C. Postextubation period in high-risk patients",
+                "D. Exacerbation of COPD",
+                "E. Hypoxemic respiratory failure due to pneumonia"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "High flow oxygen is usually better tolerated than a classic Venturi mask to improve oxygenation and has been shown to have clinical benefits postextubation and in hypoxemia due to pneumonia. There is no good evidence concerning its role in obstructive lung disease.",
+            "questionNumber": 12
+        },
+        {
+            "question": "A 72-year-old woman weighing 60 kg presents to the emergency department with 2 days of fever, rigors, and difficulty breathing. Her blood pressure is 85/50 her heart rate is 110/min and she appears uncomfortable and somewhat confused. A chest radiograph shows a lobar pneumonia. Her blood lactate level is 4.2 mmol/L. In addition to treating her with supplemental oxygen, additional steps should include:",
+            "options": [
+                "A. Insert a peripheral IV catheter, obtain a sputum culture, and start normal saline at 100 cc/hr.",
+                "B. Insert a peripheral IV catheter, obtain a sputum culture, and give a bolus of 1.5 L of normal saline.",
+                "C. Insert a peripheral IV catheter, obtain blood and sputum cultures, start broad-spectrum antibiotics, and give a bolus of 1.5 L of lactated Ringer solution.",
+                "D. Insert a peripheral IV catheter, obtain blood and sputum cultures, start broad-spectrum antibiotics, and give normal saline at 100 cc/hr",
+                "E. Insert a central venous catheter, obtain blood and sputum cultures, start broad-spectrum antibiotics, and give normal saline at 100 cc/hr."
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "See clinical features, diagnosis, management and treatment sections of \"Approach to the patient with shock.\" This patient has pneumonia and features of septic shock (hypotension, altered mental status suggesting hypoperfusion, an elevated serum lactate level). Priorities for care, in addition to providing respiratory support, include establishing intravenous access, initiating treatment for the pneumonia (which is the inciting cause of sepsis), and starting with a 20 to 30 cc/kg bolus of lactated Ringer solution, which is preferred over normal saline. Central venous access is not required if adequate peripheral access can be established.",
+            "questionNumber": 13
+        },
+        {
+            "question": "Regardless of the original type of shock, persistent tissue hypoperfusion can promote features typical of which form of shock:",
+            "options": [
+                "A. Hypovolemic shock",
+                "B. Cardiogenic shock",
+                "C. Distributive shock",
+                "D. Dissociative shock",
+                "E. Obstructive shock"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "See pathobiology section of \"Approach to the patient with shock.\" Prolonged hypoperfusion of vital tissue beds results in activation of an innate immune response, with direct release of local vasoactive substances, that together disrupt microvascular flow and interfere with regional vasomotor control, thereby producing a distributive shock component.",
+            "questionNumber": 14
+        },
+        {
+            "question": "When resuscitating a patient with massive bleeding caused by trauma, coagulopathic bleeding can be reduced by the following strategy:",
+            "options": [
+                "A. Avoid all crystalloid fluids.",
+                "B. Give 1 to 2 L crystalloid followed by plasma to platelets to packed cells in a ratio of 1:1:1.",
+                "C. Give 1 to 2 L crystalloid followed by plasma to platelets to packed cells in a ratio of 1:1:3.",
+                "D. Give 1 to 2 L crystalloid followed by plasma to platelets to packed cells in a ratio of 1:3:1.",
+                "E. Avoid all crystalloids and give plasma to platelets to packed cells in a ratio of 1:1:3."
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "See blood and blood products section of \"Approach to the patient with shock.\" Current recommendations for the management of trauma-related hemorrhage are to commence with 1 to 2 L crystalloid followed by plasma, platelets, and packed cells. The ratio of 1:1:1 reduces the likelihood of coagulopathy.",
+            "questionNumber": 15
+        },
+        {
+            "question": "After six hours of resuscitating a 65-year-old man in septic shock with several liters of intravenous fluids and high-dose norepinephrine, his blood pressure is currently 90/65 mm Hg. However, his nurse reports that his urine output is poor, and he is requiring increasing FiO2 to maintain an arterial oxygen saturation greater than 90%. At this point, you should:",
+            "options": [
+                "A. Add low-dose dopamine to increase urine output.",
+                "B. Conduct a straight leg raise test to assess his preload dependency.",
+                "C. Insert a pulmonary artery catheter to determine venous oxygen saturation.",
+                "D. Add dobutamine to increase cardiac output.",
+                "E. Stop intravenous fluids to avoid worsening pulmonary edema."
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "See management and treatment section of \"Approach to the patient with shock.\" This patient still requires vasopressors to maintain his blood pressure, so he is still in shock. He also has signs suggestive of worsening organ dysfunction, including oliguria and poor oxygenation. However, even though many liters of IV fluid have been administered, it is unclear if he is adequately fluid-resuscitated. In particular, it is important to establish that he is preload independent. A straight leg raise can be used as a dynamic measure of preload dependency. Low-dose dopamine is not helpful in septic shock. A pulmonary artery catheter provides many measures of central hemodynamics, but a static measure of venous oxygen saturation will not help determine preload dependency; furthermore, trials using the pulmonary artery catheterization in this setting have not shown improved outcome. Myocardial depression can occur in sepsis, so the patient may benefit from the judicious use of dobutamine. However, randomized trials of the routine use of inotropic agents have not shown improved outcomes, and dobutamine would be appropriate only if it was clear that he had impaired myocardial contractility (e.g., by a bedside echocardiogram). Until preload independency or fluid overload has been demonstrated, it would be very unwise to discontinue intravenous fluids.",
+            "questionNumber": 16
+        },
+        {
+            "question": "The most common cause of shock in the United States is:",
+            "options": [
+                "A. Sepsis",
+                "B. Major trauma",
+                "C. Acute myocardial infarction",
+                "D. Pulmonary embolus",
+                "E. Status asthmaticus"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "See epidemiology section of \"Approach to the patient with shock.\" Septic shock accounts for over half of all cases of shock in the United States, followed by trauma and acute myocardial infarction. Other causes are considerably more rare.",
+            "questionNumber": 17
+        },
+        {
+            "question": "Which of the following is the most common cause of cardiogenic shock?",
+            "options": [
+                "A. Pump failure in acute myocardial infarction",
+                "B. Myocarditis",
+                "C. Mechanical complications of acute myocardial infarction",
+                "D. Right ventricular infarction",
+                "E. Valvular heart disease"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The predominant cause of cardiogenic shock is left ventricular failure secondary to acute myocardial infarction. The other listed answers can lead to cardiogenic shock but are less common.",
+            "questionNumber": 18
+        },
+        {
+            "question": "Coronary angiography in patients with cardiogenic shock in the setting of acute myocardial infarction most commonly shows which of the following?",
+            "options": [
+                "A. Left main coronary artery disease",
+                "B. Single-vessel left anterior descending coronary artery disease",
+                "C. Multivessel disease",
+                "D. Extensive collateralization",
+                "E. Two-vessel disease involving the right coronary artery"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "In cardiogenic shock resulting from acute myocardial infarction, coronary angiography most often demonstrates multivessel disease. About 30% of patients have a left main coronary artery occlusion, about 60% have three-vessel coronary disease, and only about 20% have single-vessel disease.",
+            "questionNumber": 19
+        },
+        {
+            "question": "Which of the following is true concerning the use of vasopressor agents in cardiogenic shock?",
+            "options": [
+                "A. Norepinephrine is more arrhythmogenic than dopamine.",
+                "B. Norepinephrine is associated with decreased 28-day mortality compared with dopamine in patients with cardiogenic shock.",
+                "C. Dopamine is preferable because it improves renal function.",
+                "D. Dobutamine is more effective at raising blood pressure.",
+                "E. Blood pressure should be monitored noninvasively to avoid vascular complications."
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In a randomized trial of patients with shock, norepinephrine reduced 28-day mortality in a prespecified subgroup of patients with cardiogenic shock compared with dopamine. Dopamine was more arrhythmogenic and does not improve renal function in patients with shock, although some patients have increased urine output. Dobutamine has vasodilatory effects and can worsen hypotension. Noninvasive blood pressure monitoring can be unreliable in patients with shock; arterial line placement is recommended.",
+            "questionNumber": 20
+        },
+        {
+            "question": "Complete the following statement correctly: Percutaneous left ventricular assist devices for cardiogenic shock:",
+            "options": [
+                "A. Improve hemodynamics compared with intra-aortic balloon pumping.",
+                "B. Improve 30-day mortality compared with intra-aortic balloon pumping.",
+                "C. Should be reserved for patients eligible for cardiac transplantation.",
+                "D. Are associated with decreased vascular complication rates compared with intra-aortic balloon pumping.",
+                "E. Provide support independent of right ventricular function."
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Percutaneous left ventricular assist devices (LVADs) provide short-term hemodynamic support after cardiogenic shock. By allowing time for left ventricular recovery, they are usually intended as a bridge to definitive therapy, such as transplantation. Percutaneous LVADs provide better hemodynamics compared with an intra-aortic balloon pump, with higher cardiac indices and mean arterial pressures as well as lower filling pressures; however, they have not been shown to improve mortality at 30 days. Known complications of percutaneous LVADs include limb ischemia and bleeding. The available percutaneous devices support the left ventricle and thus require adequate right ventricular function.",
+            "questionNumber": 21
+        },
+        {
+            "question": "Which of the following is true concerning prognosis after cardiogenic shock in the setting of myocardial infarction?",
+            "options": [
+                "A. Hemodynamics predict long-term mortality among patients undergoing revascularization.",
+                "B. The early survival benefits of revascularization are lost by 5-year follow-up.",
+                "C. Benefits of revascularization are seen only in younger patients.",
+                "D. Prognosis is worse than in patients with end-stage nonischemic myocardial disease.",
+                "E. Quality of life in survivors is usually excellent."
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "The quality of life in survivors of cardiogenic shock complicating acute myocardial infarction is usually excellent, with 83% of patients either asymptomatic or having only mildly symptomatic heart failure. Hemodynamics predict short-term but not long-term mortality. The survival benefit of early revascularization is maintained at 6-year follow-up, with 5-year survival approaching 45%. Among patients undergoing revascularization, age and time to revascularization predict survival, but the benefits of revascularization are seen at every level of risk, with an average 1-year survival of 50 to 55%. For patients with end-stage nonischemic myocardial disease, the prognosis is very poor in the absence of heart transplantation.",
+            "questionNumber": 22
+        },
+        {
+            "question": "The incidence of sepsis and septic shock are affected by all of the following except:",
+            "options": [
+                "A. Increasing age of the population.",
+                "B. Increasing use of immunosuppression.",
+                "C. Increasing frequency of resistant bacteria.",
+                "D. Increasing rates of the acquired immune deficiency syndrome (AIDS).",
+                "E. Increasing handwashing."
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "The frequency of sepsis is not increasing because of increased incidence of AIDS. Factors A, B, and C, are associated with an increasing incidence of sepsis and septic shock. Increased handwashing decreases the risk of nosocomial transmission of infection by staff.",
+            "questionNumber": 23
+        },
+        {
+            "question": "Several components of early emergency care are important and are associated with decreasing mortality of sepsis and septic shock. The best evidence for an association with decreased mortality is with which of the following early interventions?",
+            "options": [
+                "A. Insertion of a central venous catheter to monitor and modify mixed venous oxygen saturation by cardiovascular interventions using early goal-directed therapy",
+                "B. Early prophylactic intubation",
+                "C. Volume resuscitation great than 5 L",
+                "D. Transfusion to a hemoglobin level of greater than 10 G/L",
+                "E. Early initiation of antibiotics"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Very recent large multicenter studies show that early antibiotics are most associated with decreased mortality of septic shock. Insertion of a central venous catheter to monitor and modify mixed venous oxygen saturation by cardiovascular interventions is no better than usual care. Early prophylactic intubation has not been shown to change mortality of septic shock. Volume resuscitation great than 5 L has been associated with increased mortality of septic shock. Transfusion to a hemoglobin level of greater than 10 G/L is not associated with decreased mortality.",
+            "questionNumber": 24
+        },
+        {
+            "question": "Which one of the following statements about the risk of acute kidney injury (AKI) in septic shock is true?",
+            "options": [
+                "A. Vasopressin has similar effects on risk of AKI compared with norepinephrine.",
+                "B. A mean arterial pressure target of 80 to 85 mm Hg prevents AKI compared to a mean arterial pressure target of 65 to 70 mm Hg in patients with septic shock.",
+                "C. Early goal-directed therapy (EGDT) prevents AKI.",
+                "D. Angiotensin II is better than norepinephrine to prevent AKI.",
+                "E. Levosimendan infusion prevents AKI."
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Two trials show that vasopressin and norepinephrine had similar risk of AKI in patients with septic shock. In one trial, a higher mean arterial pressure target (80 to 85 mm Hg) may decrease the risk of acute kidney injury and the need for renal replacement therapy in patients with preexisting hypertension, but not in septic shock in general. Early goal-directed therapy (A3, A4, A5), angiotensin II, and levosimendan do not prevent AKI.",
+            "questionNumber": 25
+        },
+        {
+            "question": "Which of the following (up to two choices) should be present to now define septic shock according to Sepsis-3?",
+            "options": [
+                "A. Tachypnea >22/min.",
+                "B. Tachycardia >100/min.",
+                "C. Serum lactate >2 mmol/L",
+                "D. Need for a second agent such as vasopressin or hydrocortisone",
+                "E. Vasopressors to maintain a mean arterial pressure ≥65 mm Hg despite adequate volume resuscitation"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Both a serum lactate >2 mmol/L and vasopressors to maintain a mean arterial pressure ≥65 mm Hg despite adequate volume resuscitation are required in the latest definition of septic shock (Sepsis-3). Tachypnea >22/min and tachycardia >100/min are components of the quick SOFA, not septic shock. There is no need for a second agent such as vasopressin or hydrocortisone. Both should be considered in patients who do not respond adequately to norepinephrine. (Note: The text explicitly marks both C and E as correct components but the question asks for \"up to two choices\" and the answer key lists C and E. In single-choice format, usually one is selected, but the provided text indicates both are required conditions).",
+            "questionNumber": 26
+        },
+        {
+            "question": "The diagnosis of exertional heat stroke primarily includes which signs and symptoms?",
+            "options": [
+                "A. Hot skin and low blood pressure",
+                "B. Headache and collapse",
+                "C. Heart rate greater than 180 bpm and dry skin",
+                "D. Profound mental status change and core temperature more than 40°C",
+                "E. Loss of consciousness and dehydration"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Exertional heat stroke is characterized by profound mental status changes with high body temperatures, usually but not always above 40°C",
+            "questionNumber": 27
+        },
+        {
+            "question": "Heat stroke is NOT associated with the following organ or tissue injuries and complications?",
+            "options": [
+                "A. Hypothalamic damage",
+                "B. Liver failure",
+                "C. Coagulopathies",
+                "D. Systemic inflammatory response",
+                "E. Rhabdomyolysis"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Hypothalamic damage. Heat stroke can be complicated by liver damage, rhabdomyolysis, disseminated intravascular coagulation, water and electrolyte imbalance, and renal failure.",
+            "questionNumber": 28
+        },
+        {
+            "question": "Frostbitten tissues should be immediately treated by:",
+            "options": [
+                "A. Whole body rewarming and tissue salvage",
+                "B. Vigorous rubbing to regain circulation, and the draining of hemorrhagic blisters",
+                "C. Gentle rewarming, if the patient is able to maintain warmth, and ibuprofen",
+                "D. Plasma volume restoration and thrombolytic treatment",
+                "E. Tissue salvage and minimizing body temperature after-drop"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Frostbitten tissue should be protected from friction or trauma but should not be thawed until there is confidence in the ability to maintain warmth. Gentle rewarming in a water bath (30° to 43°C) is recommended. Ibuprofen should be started in the field at a dose of 12 mg/kg (divided twice daily) to inhibit harmful prostaglandins.",
+            "questionNumber": 29
+        },
+        {
+            "question": "Exertional heat stroke is one of the most common reported causes of exertional sudden death in young adults, and is largely preventable. Which of the following is not a reported risk factor for exertional heat stroke?",
+            "options": [
+                "A. Lack of acclimatization",
+                "B. A prior history of exertional heat stroke",
+                "C. Previous compromised heat exposures",
+                "D. Viral or bacterial infection",
+                "E. All of the above represent proven risk factors."
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "See Chapter 101, Heat Illness Epidemiology section. Exertional heat stroke is largely a preventable illness with multiple individual and environmental factors including medical conditions and medications. The lack of acclimatization is perhaps the most important risk factor for exertional heat stroke, however ongoing infection, consecutive days of compromised heat exposure, and a history of a prior heat stroke event are all thought to represent important risk factors.",
+            "questionNumber": 30
+        },
+        {
+            "question": "An important step in the initial management of the patient with potential exertional heat stroke is a correct assessment of temperature. Which of the following should not be relied on to assess temperature in a potential heat stroke victim?",
+            "options": [
+                "A. Rectal temperature",
+                "B. Tympanic temperature",
+                "C. Esophageal temperature",
+                "D. Ingestible telemetry",
+                "E. All of the above are reliable instruments"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "See Chapter 101, Heat Illness, section on Temperature Regulation. Ear (tympanic and auditory meatus) or scanned temporal artery temperature should not be relied on for clinical judgment. These devices have not been validated to be reliable in exercising adults at potential risk for exertional heat stroke.",
+            "questionNumber": 31
+        },
+        {
+            "question": "A patient presents to the emergency department with a metabolic acidosis after exposure to an unknown toxin. For which one of the following toxic etiologies is hemodialysis indicated?",
+            "options": [
+                "A. Acetaminophen",
+                "B. Aspirin",
+                "C. Carbon monoxide",
+                "D. Cyanide",
+                "E. Isopropyl alcohol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Acetaminophen can cause a metabolic acidosis immediately after massive overdose or after hepatic failure develops. N-Acetylcysteine in addition to supportive care is the treatment of choice. Both carbon monoxide and cyanide inhibit oxidative phosphorylation and cause an elevated lactate level. Accepted treatments include hyperbaric oxygen therapy and hydroxocobalamin, respectively. Isopropanol does not cause a significant metabolic acidosis, and hemodialysis is rarely needed. Aspirin can uncouple oxidative phosphorylation and cause an anion gap metabolic acidosis; treatment for severe clinical effects of aspirin poisoning should include hemodialysis.",
+            "questionNumber": 32
+        },
+        {
+            "question": "A middle-aged patient who is enrolled in a methadone-maintenance program presents to the emergency department with altered mental status. On physical examination, he is deeply obtunded and has a respiratory rate of 4/min with a pulse oximeter saturation reading of 85%. Which one of the following is the optimal initial approach?",
+            "options": [
+                "A. Bag-valve-mask ventilation",
+                "B. Intubation and ventilation",
+                "C. Irritant stimulation",
+                "D. Naloxone, 2 mg IV",
+                "E. Nasal cannula oxygen"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "There is no rush to reverse the opioid intoxication with naloxone in patients who are in a health care setting because only oxygenation and ventilation are impaired by such an overdose. Simple external support of the patient's respiratory efforts with bag-valve-mask ventilation for a short time is sufficient while assessing the patient. Delivery of oxygen alone is not sufficient as it does not address the equally important ventilatory impairment. Naloxone may be used, but at a very low initial dose, such as 0.04 mg, to avoid intubation while also not precipitating opioid withdrawal, as can occur with larger doses. Endotracheal intubation is often required in patients who have the acute respiratory distress syndrome or who do not respond to naloxone.",
+            "questionNumber": 33
+        },
+        {
+            "question": "A young woman with a history of depression presents to the emergency department after being started on a second psychiatric medication. Her initial vital signs include a body temperature of 108° F. After external cooling, what specific pharmacotherapy can be provided?",
+            "options": [
+                "A. Acetaminophen",
+                "B. Cyproheptadine",
+                "C. Dantrolene",
+                "D. Diazepam",
+                "E. Diphenhydramine"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Acetaminophen is ineffective for fever in which the body's set point is elevated. This patient likely has serotonin toxicity (or serotonin syndrome), which is due to excessive production of heat. Dantrolene is indicated for malignant hyperthermia and may have nonspecific effects in other hyperthermic syndromes. Diazepam is similarly nonspecific. Diphenhydramine is contraindicated because of its impairment of heat loss through sweating, given its antimuscarinic effects. Cyproheptadine is a serotonin receptor antagonist; although it has not been adequately studied, in part given the rarity of serotonin toxicity, it is the preferred specific therapy.",
+            "questionNumber": 34
+        },
+        {
+            "question": "In a patient with an acute, intentional overdose with suicidal intent, which of the following laboratory tests is mandatory?",
+            "options": [
+                "A. Acetaminophen level",
+                "B. β-Human chorionic gonadotropin level",
+                "C. Aspirin level",
+                "D. Carbon monoxide (carboxyhemoglobin) level",
+                "E. Urine drug screen"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pregnancy test is indicated in women of childbearing potential but not in other patients. Blood aspirin levels and urine drug screens are often obtained, but they offer little information in acute management. Aspirin poisoning should be identified clinically. Urine drug-of-abuse screens may help in a psychiatric evaluation but are as likely to mislead the initial clinical evaluation as they are to offer any insight. Carbon monoxide is a distinctly uncommon form of suicide and should be assessed by the history or other findings. Acetaminophen overdose is extremely common because of the wide availability of this medication in various forms, and overdose is very difficult to detect clinically until hepatic failure develops. Given the availability of an effective antidote, early detection is critical and should be sought in all patients with suicidal intent.",
+            "questionNumber": 35
+        },
+        {
+            "question": "Which of the following methods of gastrointestinal decontamination should be performed in the majority of patients with oral exposures to poisons?",
+            "options": [
+                "A. Ipecac-induced emesis",
+                "B. No decontamination",
+                "C. Oral activated charcoal",
+                "D. Orogastric lavage",
+                "E. Whole bowel irrigation"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The benefit of gastrointestinal decontamination has been difficult to prove. For patients with high-risk exposures to significant quantities of toxin (such as calcium-channel blockers, monoamine oxidase inhibitors, colchicine), the benefits generally outweigh the risks. For the majority of exposures, it is perfectly acceptable to avoid oral decontamination, including administration of oral activated charcoal. Whole bowel irrigation is reserved for sustained-release medication (or drug mules), and orogastric lavage is generally performed only for the highest risk exposures in patients who present within several hours of ingestion. Ipecac is no longer used.",
+            "questionNumber": 36
+        },
+        {
+            "question": "A 56-year-old pedestrian is struck by a motor vehicle and suffers a closed head injury, bilateral lower extremity fractures, and a grade-one splenic laceration. At what time points does death typically occur in nonsurvivors of such trauma?",
+            "options": [
+                "A. Such injury combinations do not result in death.",
+                "B. Immediate death is typical.",
+                "C. A trimodal distribution of death can be expected: within minutes from massive hemorrhage or very severe brain trauma, within hours from hemorrhage or tissue anoxia or progressive brain injury, or later from sepsis and organ failures.",
+                "D. All such deaths occur after several weeks from sepsis.",
+                "E. Death typically occurs hours after injury from hemorrhage."
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Death after injury has a trimodal distribution. At least 50% of fatalities occur within minutes of the injury as a result of massive hemorrhage or nonsurvivable brain injury. Approximately one third of deaths occur within a few hours of injury, usually by hemorrhage, anoxia, or progressive brain trauma. This interval provides an opportunity for emergent intervention. Later fatalities are usually the result of multisystem organ dysfunction or overwhelming infection in the days and weeks after the injury. (Clark DE, Qian J, Sihler KC, et al. The distribution of survival times after injury. World J Surg. 2012;36:1562-1570.)",
+            "questionNumber": 37
+        },
+        {
+            "question": "A 25-year-old woman is standing at the periphery of a crowd in which a suicide bomb is detonated in a crowded mall. She is noted to be hemodynamically stable without bleeding or violation of her skin, but she has multiple cutaneous petechiae and subconjunctival hemorrhages. Two days later she remains hemodynamically normal but complains of increasing abdominal pain and fever. What is the most pressing concern?",
+            "options": [
+                "A. Infected subconjunctival hematoma",
+                "B. Missed pulmonary blast injury with pneumonia",
+                "C. Acute cholecysitis",
+                "D. Missed small bowel injury with evolving peritonitis",
+                "E. Cellulitis as a complication of cutaneous petechia"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Blast injuries are graded complex injuries with four characteristics: primary injury to air-filled structures and the central nervous system, secondary injury from flying debris, tertiary injury from collisions with stationary objects, and quaternary injury from associated crush or other trauma. Blast injuries of all types can be subtle or have a delayed clinical presentation, and visceral injuries often are not diagnosed promptly. (Cancio LC, Sheridan RL, Dent R, et al. Guidelines for burn care under austere conditions: special etiologies: blast, radiation, and chemical injuries. J Burn Care Res. 2017;38:e482-e496.)",
+            "questionNumber": 38
+        },
+        {
+            "question": "A 30-year-old man falls from a construction scaffold. Respiratory distress is addressed with intubation and tension pneumothorax with chest thoracostomy. After immediate primary survey and stabilization, what is the next most appropriate organizational step?",
+            "options": [
+                "A. The primary survey",
+                "B. CT scanning of the abdomen and pelvis",
+                "C. Transfusion of two units of type-specific blood",
+                "D. Immediate fracture stabilization",
+                "E. A secondary survey should be completed next, which is a careful head-to-toe physical examination, including appropriate imaging and laboratory studies."
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "The secondary survey includes a much more detailed head-to-toe physical examination after the patient has a reliable airway and has been hemodynamically stabilized. (Sharrock AE, Midwinter M. Damage control-trauma care in the first hour and beyond: a clinical review of relevant developments in the field of trauma care. Ann R Coll Surg Engl. 2013;95: 177-183.)",
+            "questionNumber": 39
+        },
+        {
+            "question": "An 86-year-old woman falls in her home. Multiple rib fractures and respiratory distress are successfully managed nonoperatively with an epidural catheter and noninvasive positive pressure ventilation. She is referred to a rehabilitation facility to address her deconditioned state 3 weeks after injury. Discharge home is complicated by an inability to hold feeding utensils with her dominant hand. Radiography reveals a malunion of her wrist from a fracture probably incurred in the initial fall. How might this complication have been most reasonably avoided?",
+            "options": [
+                "A. CT scanning at the time of initial injury evaluation",
+                "B. A scheduled structured tertiary survey during the initial hospitalization",
+                "C. Skeletal radiographic survey of all extremities during the initial hospitalization",
+                "D. Nuclear medicine bone scan prior to initial discharge",
+                "E. Serial measurement of urinary calcium during the initial hospitalization"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The tertiary survey is a planned repeat physical examination, usually 1 or 2 days after admission, often accompanied by focused imaging tests. The goal is to exclude missed subtle injuries that might otherwise cause significant long-term morbidity. Examples include minor fractures of the wrist or foot, small deep lacerations of the scalp, subtle eye injuries, and some abdominal injuries, particularly retroperitoneal duodenal or colonic perforations. Such injuries can become the patient's dominant source of long-term morbidity if they are missed during initial evaluation and treatment. (Hajibandeh S, Hajibandeh S, Idehen N. Meta-analysis of the effect of tertiary survey on missed injury rate in trauma patients. Injury. 2015;46:2474-2482.)",
+            "questionNumber": 40
+        },
+        {
+            "question": "A 71-year-old man is exposed to superheated air and smoke during an apartment fire, with his exposure prolonged by efforts to secure valuables prior to evacuation and by poor illumination of emergency exit signs. He suffered no cutaneous burn. On arrival to the emergency department, he is alert, coughing up black sputum, and has an oxygen saturation of 100% on supplemental humidified oxygen administered by face mask. He does not have stridor. Optimal management is most likely described by which of the following.",
+            "options": [
+                "A. Elevation of the head of the bed, continued humidified oxygen, inpatient observation, determination of carboxyhemoglobin level",
+                "B. Immediate intubation",
+                "C. Elevation of the head of the bed, continued humidified oxygen, broad spectrum antibiotics, intravenous steroids, inpatient observation",
+                "D. Hyperbaric oxygen",
+                "E. CT scanning of the chest"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "In burn patients, inhalation injury is an important cause of respiratory failure. The diagnosis of inhalation injury is best made by history and by a clinical examination that reveals singed nasal vibrissae and carbonaceous debris in the mouth and pharynx. Chest radiographs are usually normal initially. Carbon monoxide poisoning can be seen in conjunction with inhalation injury; the standard of care is 100% oxygen at the prevailing atmospheric pressure for 6 hours, with hyperbaric oxygen reserved for patients who have a carboxyhemoglobin level above 30% or neurologic changes. (Sheridan RL. Fire-related inhalation injury. N Engl J Med. 2016;375:464-469.)",
+            "questionNumber": 41
+        },
+        {
+            "question": "Rhabdomyolysis is a condition of muscular damage with many potential etiologies. Medications, dietary supplements, and intoxications have all been identified as potential culprits. Which of the following listed medications/supplements/intoxicants has not been found to be associated with rhabdomyolysis?",
+            "options": [
+                "A. Statins",
+                "B. Creatine monohydrate",
+                "C. Amphetamines",
+                "D. Caffeine",
+                "E. Alcohol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Many drugs, supplements and intoxications have been implicated in the etiology of rhabdomyolysis. Although creatine monohydrate is commonly used by athletes, it does not appear to be causal in rhabdomyolysis.",
+            "questionNumber": 42
+        },
+        {
+            "question": "Rhabdomyolysis is a clinically relevant condition when the patient has acute kidney injury or presents with signs of an acute compartment syndrome. Which of the following clinical signs represents the earliest manifestation of an acute compartment syndrome and warrants urgent consideration for assessment of intracompartmental pressure testing?",
+            "options": [
+                "A. Pulselessness",
+                "B. Sensory abnormalities of the affected compartment",
+                "C. Pain with passive stretch of the affected muscle group",
+                "D. Purple discoloration of the affected muscle group",
+                "E. Intense muscular cramping"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The traditional 5 P's of acute ischemia in a limb affected by acute compartment syndrome include pain, paresthesia, pallor, pulselessness, and paralysis. They are not necessarily clinically reliable because they may manifest only in the late stages of compartment syndrome. Pain with certain movements, particularly passive stretching of the muscles, is thought to be the earliest clinical sign of acute compartment syndrome.",
+            "questionNumber": 43
+        },
+        {
+            "question": "Exertional rhabdomyolysis is most commonly the result of doing \"too much, too soon and too fast.\" On rare occasions, however, in particular with recurrent rhabdomyolysis, metabolic myopathic conditions may underlie the clinical presentation. Which of the following does not represent a metabolic myopathy?",
+            "options": [
+                "A. Mitochondrial dysfunction, e.g., succinate dehydrogenase deficiency",
+                "B. Glycogen storage disorder, e.g., McArdle disease",
+                "C. Fatty Acid beta oxidation disorder, e.g., carnitine palmitoyltransferase II deficiency",
+                "D. Ryanodine receptor defect, e.g., malignant hyperthermia",
+                "E. Protein metabolic disorder, e.g., myoadenylate deaminase deficiency"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "All of the following represent metabolic myopathies, excluding malignant hyperthermia. Although malignant hyperthermia can result in rhabdomyolysis, malignant hyperthermia is not categorized as a metabolic myopathy. Malignant hyperthermia is a life-threatening clinical syndrome of hypermetabolism involving the skeletal muscle. Evidence from molecular studies indicates that 25% of patients who are susceptible to malignant hyperthermia have mutations in the ryanodine receptor (RYR1) gene, which encodes the protein for one of the primary Ca2+ release channels involved in triggering muscle contraction. When a susceptible patient is exposed to a triggering anesthetic agent, excessive release of Ca2+ into the myoplasm leads to a hypermetabolic state manifested by hypercapnia, tachycardia, and metabolic acidosis.",
+            "questionNumber": 44
+        },
+        {
+            "question": "The cornerstone of managing rhabdomyolysis is hydration to protect the kidney from the toxic effects of myoglobin. Although controversial, alkalization of the urine is recommended by some to assist in facilitating the clearance of myoglobin. Additionally, in some cases of rhabdomyolysis, renal replacement therapy should be considered earlier rather than later. Which of the following would not be a routinely recommended course of action in the management of exertional rhabdomyolysis?",
+            "options": [
+                "A. The patient should be treated with dantrolene sodium, 2.5 to 4 mg/kg intravenously, followed by about 1 mg/kg every 4 hours for up to 48 hours to avoid recrudescence.",
+                "B. Consider treatment with bicarbonate. Check urine pH: if it is <6.5, alternate each liter of normal saline with 1 L 5% dextrose or 0.45% saline plus 100 mmol bicarbonate. Avoid potassium- and lactate-containing solutions.",
+                "C. Consider renal replacement therapy in patients who have resistant hyperkalemia (>6.5 mmol/L) that is symptomatic (as assessed by electrocardiography), rapidly rising serum potassium levels, oliguria (<0.5 mL of urine/kg/hr for 12 hours), anuria, volume overload, or resistant metabolic acidosis (pH < 7.1).",
+                "D. Initiate volume repletion with normal saline promptly at a rate of approximately 400 mL/hr (200-1000 mL/hr, depending on the patient size, setting, and severity) and monitor the clinical course or central venous pressure.",
+                "E. Consider treatment with mannitol (up to 200 g/day; cumulative dose up to 800 g). Check for plasma osmolality and calculate the plasma osmolal gap. Discontinue if diuresis (>20 mL/hr) is not established."
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "All of the listed treatments above are cornerstone therapies in the management of exertional rhabdomyolysis to prevent the progression of acute kidney injury, except for the routine administration of dantrolene, which is commonly part of the treatment for malignant hyperthermia.",
+            "questionNumber": 45
+        },
+        {
+            "question": "Exertional rhabdomyolysis is most commonly the result of unaccustomed exercise in either a novice or experienced exerciser. The most frequently identified forms of exercise that contribute to exertional rhabdomyolysis are thought to be eccentric in origin. Which of the following best describes eccentric exercise?",
+            "options": [
+                "A. Eccentric contractions are most often associated with exercises that involve lifts where the body weight is exceeded.",
+                "B. Eccentric exercises are more commonly the result of aerobic training as opposed to resistance training.",
+                "C. Eccentric contractions are those in which the muscle lengthens as it is attempting to contract, for example lowering a weight during a biceps curl.",
+                "D. Eccentric contractions are those where the muscle shortens as it is attempting to contract, for example lifting a weight during a biceps curl.",
+                "E. Eccentric contractions are most often associated with exercises that involve single maximal lifts."
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Eccentric exercise occurs when the muscle lengthens as it attempts to contract; in concentric exercise, the muscle shortens. The type of exercise is considered an important factor in the development of rhabdomyolysis, because it has been found that eccentric contraction of muscles may cause exertional rhabdomyolysis more often than concentric contraction. Kinematic factors of tension, changes in the length of eccentric contraction of the muscle, and attenuation of the bonding between contractile proteins have been suggested to explain these findings.",
+            "questionNumber": 46
+        }
+    ]
+}

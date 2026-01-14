@@ -1,0 +1,194 @@
+{
+  "questions": [
+    {
+      "question": "A 26-year-old woman collapses in her apartment because of a cardiac arrest. Her husband calls 9-1-1 after discovering her unconscious. Paramedics take her to the hospital, where she is intubated, ventilated, and ultimately diagnosed as being in a persistent vegetative state. The husband, appointed by the court as his wife's legal guardian, moves to petition to remove the feeding tube. The woman's parents oppose the movement. The woman has no living will. Who has the legal right to make end-of-life decisions in this case?",
+      "imageUrl": "",
+      "options": [
+        "A. The husband, as he is the legal guardian.",
+        "B. The parents, as they are next of kin.",
+        "C. The state, as the woman lacked a living will.",
+        "D. The physicians, as they are the ones who would actually terminate care.",
+        "E. The hospital's ethics committee."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient was legally incompetent and therefore unable to make end-of-life care decisions. Health care surrogates are selected according to the following priority: guardian, spouse, adult son or daughter, parents, adult siblings, adult relative, close friend, guardian of the estate. Her husband was therefore lawfully appointed to be her guardian and proxy decision maker, as he has higher priority than the woman's parents. Despite the parents' objections, the husband has full legal authority to make the final decisions. [cite: 731-743]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "A patient with a headache goes to see his primary care physician. The patient describes the pain as a dull throbbing, not particularly painful, and as having appeared 12 hours earlier after a poor night's sleep. The physician sits on an advisory board of a pharmaceutical company that makes pain relievers. Which of the following represents the MOST ethical course of action by the physician?",
+      "imageUrl": "",
+      "options": [
+        "A. Offer to enroll the patient in the study on a new pain relief medication for migraines.",
+        "B. Order magnetic resonance imaging.",
+        "C. Prescribe the patient pain relievers from the company on whose board the physician sits.",
+        "D. Refer the patient to another provider, as the physician has too many conflicts of interest to be involved in this case.",
+        "E. Recommend the patient take an over-the-counter pain reliever, go home, and call back if pain persists or worsens."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient's symptoms are neither severe nor life-threatening. Especially given the patient's poor sleep prior to the headache's onset, it is reasonable for the physician to only recommend over-the-counter pain relievers and follow-up should the pain persist. Enrolling the patient in the migraine study presents a conflict of interest because the physician would be compensated for such action, and it does not appear the patient actually suffers from migraines. Ordering a magnetic resonance imaging scan would be an example of unnecessary care simply to increase the physician's compensation. Prescribing medications from the company on which the physician sits on the board is also a conflict of interest, because such prescription pills are not needed. If the physician is cognizant of his potential conflicts of interest, he can still provide high-quality care without having to refer the patient to another provider. [cite: 745-759]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 75-year-old man with lung cancer is admitted to the hospital with severe shortness of breath. Work-up reveals no other cause of his shortness of breath other than lymphogenic spread of his cancer. His oxygen saturation is 94%. Which of the following treatments should be instituted for his dyspnea?",
+      "imageUrl": "",
+      "options": [
+        "A. Morphine",
+        "B. Benzodiazepines",
+        "C. Oxygen",
+        "D. A and C",
+        "E. All the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In randomized controlled data, opioids have been shown to decrease dyspnea both in lung cancer patients and in patients with COPD. Oxygen is helpful only if the patient has hypoxia. Benzodiazepines have not been shown to decrease breathlessness. [cite: 763-772]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following is NOT required for a patient to be in hospice?",
+      "imageUrl": "",
+      "options": [
+        "A. The patient must be DNR.",
+        "B. The patient must have a life-limiting illness, which is likely to cause her death in 6 months.",
+        "C. The patient wishes to focus on quality of life rather than longevity of life.",
+        "D. If the patient lives at home, she must have a primary caregiver."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient does not have to be DNR to be in hospice. The others are requirements of hospice. [cite: 773-778]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following is true of depression in life-limiting illnesses?",
+      "imageUrl": "",
+      "options": [
+        "A. It is a normal reaction when people have a life-limiting illness, and it should not be treated.",
+        "B. It cannot be improved because the treatments take too long to work in patients with serious illness.",
+        "C. Treatment of depression decreases both morbidity and mortality.",
+        "D. It requires a psychiatric consult because treatment is very complicated."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Data show that the treatment of depression improves both quality of life and mortality. [cite: 779-783]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following is true?",
+      "imageUrl": "",
+      "options": [
+        "A. Telling patients that they have a terminal illness will result in their losing hope.",
+        "B. Telling patients they have a terminal illness has no impact on their desire for future treatment.",
+        "C. Telling patients that they have terminal illnesses is associated with their choosing hospice more frequently.",
+        "D. Patients have clearly stated that they do not want to be told that they have a terminal illness."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Data suggest that telling patients that they have a life-limiting illness is associated with a lower likelihood of choosing aggressive care at the end of life and is not associated with poorer psychiatric outcomes. [cite: 784-789]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following is NOT a key component of the definition of specialty palliative care?",
+      "imageUrl": "",
+      "options": [
+        "A. The care is interdisciplinary.",
+        "B. The care focuses on physical, spiritual, and psychological components.",
+        "C. The care is inconsistent with life-prolonging treatment.",
+        "D. The care model includes the family."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Specialty palliative care can be given while a patient is also receiving life-prolonging care. All the other answers are correct. [cite: 790-795]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "Pain is a common symptom in patients with cancer, and opiates are often required to control the pain. Patients who are taking oral opiates should also be assessed for which of the following problems?",
+      "imageUrl": "",
+      "options": [
+        "A. Hypogonadism",
+        "B. Constipation",
+        "C. HIV infection",
+        "D. QT prolongation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Constipation is a very common symptom of opiates and most patients on opiates need a laxative. On the other hand, hypogonadism is an uncommon side effect of opiates and should not routinely be screened for. QT prolongation is seen with methadone but not other opiates. HIV is not associated with oral opiate use. [cite: 796-803]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which U.S. racial/ethnic group has the highest age-adjusted death rates due to heart disease?",
+      "imageUrl": "",
+      "options": [
+        "A. Non-Hispanic whites",
+        "B. African Americans",
+        "C. Hispanics",
+        "D. Asians and Pacific Islanders",
+        "E. American Indians and Alaska Natives"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "African Americans have the highest U.S. death rates due to heart disease (Table 4-1). Major contributors to this increased risk include high rates of hypertension, diabetes, and smoking. [cite: 807-814]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which U.S. racial/ethnic group has the highest age-adjusted death rates due to opioid overdoses?",
+      "imageUrl": "",
+      "options": [
+        "A. Non-Hispanic whites",
+        "B. African Americans",
+        "C. Hispanics",
+        "D. Asians and Pacific Islanders",
+        "E. American Indians and Alaska Natives"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Deaths due to drug overdoses have more than tripled since 1999 among non-Hispanic whites (Fig. 4-3). This marked increase is largely due to increased rates of opioid overdoses. [cite: 815-823]",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "Which U.S. racial/ethnic group has the highest percentage of uninsured non-elderly adults?",
+      "imageUrl": "",
+      "options": [
+        "A. Non-Hispanic whites",
+        "B. African Americans",
+        "C. Hispanics",
+        "D. Asians and Pacific Islanders",
+        "E. American Indians and Alaska Natives"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In 2017, 24% of non-elderly Hispanic adults were uninsured (Fig. 4-5). Hispanic adults are more likely to be undocumented or recent legal immigrants who are not eligible for expanded Medicaid coverage or subsidized private insurance under the Affordable Care Act. Low-income Hispanic adults are also more likely to reside in states such as Texas and Florida that have chosen not to expand Medicaid. [cite: 824-832]",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "Hypertension or high blood pressure is the major risk factor for heart disease, stroke, and kidney diseases worldwide. Which of the following statements is incorrect?",
+      "imageUrl": "",
+      "options": [
+        "A. The prevalence of hypertension over the age of 25 varies between 35 and 45% globally.",
+        "B. Across all countries, men have a slightly higher prevalence of hypertension than do women.",
+        "C. The global hypertension control rate is about 60%.",
+        "D. Early diagnosis of hypertension leads to prevention of all forms of vascular complications.",
+        "E. According to the World Health Organization, population attributable deaths owing to hypertension are estimated to be about 7.5 million per year."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The global control rate varies from less than 5% in Zambia to 66% in Canada and is very low overall worldwide. All other statements (Answers A, B, D and E) are correct. [cite: 836-844]",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which of the following statements about global health is correct?",
+      "imageUrl": "",
+      "options": [
+        "A. Global health is not the opposite of domestic health.",
+        "B. Global health must integrate both infectious diseases and noncommunicable diseases.",
+        "C. Public, private, and societal partnership is necessary to deliver effective global health.",
+        "D. Academia has a major role in promoting global health.",
+        "E. All of the above."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Statement A is true since global health includes domestic health as well, particularly on the health of marginalized people in developed countries. Statement B is true, since the current health system must address all diseases, particularly when noncommunicable diseases account for 65% of all global causes of death. New evidence shows that one fifth of all cancers worldwide are caused by chronic infections produced by agents such as HIV, human papillomavirus, and hepatitis B virus. Infections and parasitic diseases also cause other noncommunicable diseases, such as rheumatic heart disease, Chagas disease, cardiomyopathy, and peptic ulcer. As HIV/AIDS survivors live longer, they also are exposed to lifestyle-related risk factors and noncommunicable diseases. Statement C is true. The economic burden of diseases is so large that public-private partnership is essential. Statement D is true. Academia should develop and supply needed knowledge and train the next generation of the global health work force. [cite: 845-856]",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    }
+  ]
+}

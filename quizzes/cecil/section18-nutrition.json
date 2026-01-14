@@ -1,0 +1,108 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following, when included in the diet, is most likely to increase a person's risk for cardiovascular disease?",
+      "options": [
+        "A. Monounsaturated fatty acids",
+        "B. Trans-fatty acids",
+        "C. Soy protein",
+        "D. Alcohol",
+        "E. Dietary cholesterol"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "As noted in the Coronary Heart Disease section of the chapter, hydrogenation of vegetable oils to create margarine and shortening results in the formation of trans-fatty acids, which affect serum cholesterol levels in a manner similar to and even worse than the saturated fatty acids found in butter and lard. Monounsaturated fatty acids, soy protein, and alcohol are all noted in the same section to have potentially protective effects against CHD. Dietary cholesterol was removed as a nutrient of concern in the Dietary Guidelines for Americans 2015-2020.",
+      "questionNumber": 1
+    },
+    {
+      "question": "The risk of hypertension is reduced by relatively high intakes of which of the following dietary sources?",
+      "options": [
+        "A. Alcohol",
+        "B. Fat",
+        "C. Fruits and vegetables",
+        "D. Sodium",
+        "E. Saturated fat"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "As noted in the Hypertension section of the chapter, the Dietary Approaches to Stop Hypertension (DASH) diet, which is rich in fruits, vegetables, and low-fat dairy products and advocates a reduced saturated and total fat content, can decrease blood pressure levels; reducing one's sodium intake provides an additional benefit both alone and when included as part of the DASH diet.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following dietary factors has been shown to be most convincingly related to an increased risk of cancer?",
+      "options": [
+        "A. Artificial sweeteners",
+        "B. Genetically modified foods",
+        "C. High intake of meats, especially red and processed meats",
+        "D. Coffee",
+        "E. High intake of vegetable protein"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "High intakes of red and processed meats have been consistently associated with increased risk of colorectal and other cancers. There is little or no evidence that artificial sweeteners or genetically modified foods increase cancer risk. Coffee and vegetable protein may be protective.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Deficiency of which of the following nutrients is least likely to occur in a patient with a malabsorption syndrome?",
+      "options": [
+        "A. Vitamin A",
+        "B. Vitamin C",
+        "C. Vitamin B\u2081\u2082",
+        "D. Iron",
+        "E. Calcium"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Vitamin C is water soluble and is absorbed throughout the small intestine; its absorption is not dependent on pancreatic enzymes or bile. Vitamin A is fat soluble and depends on both for its digestion and absorption. Vitamin B\u2081\u2082 requires gastric acid and intrinsic factor for its absorption in the terminal ileum. Iron is absorbed in the duodenum and proximal jejunum and requires an acidic environment. Calcium absorption is vitamin D dependent and can be impaired by fat malabsorption.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A patient with which of the following conditions would be most likely to benefit from a low-FODMAP diet?",
+      "options": [
+        "A. Celiac disease",
+        "B. Crohn disease",
+        "C. Irritable bowel syndrome",
+        "D. Ulcerative colitis",
+        "E. Diverticulosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A diet low in fermentable oligosaccharides, disaccharides, monosaccharides, and polyols (FODMAPs) has been shown to be effective in reducing symptoms in patients with irritable bowel syndrome. While it may also be helpful in some patients with inflammatory bowel disease, the evidence is strongest for IBS. A gluten-free diet is the treatment for celiac disease.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following is true regarding the prevalence of obesity?",
+      "options": [
+        "A. The prevalence of obesity (body mass index \u226530 kg/m\u00b2) among adults in the United States has increased from 15% in 1980 to 23% in 1994 to 39.8% in 2016.",
+        "B. The prevalence of obesity in the United States is greater among men than among women.",
+        "C. The prevalence of obesity is uniform among racial and ethnic groups in the United States.",
+        "D. The prevalence of obesity is decreasing in children and adolescents.",
+        "E. Obesity is a problem only in high-income countries."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The prevalence of obesity has increased dramatically in the United States and worldwide over the past several decades. In the United States, the prevalence is higher among women than among men and varies significantly by race and ethnicity, with non-Hispanic blacks and Hispanics having higher rates than non-Hispanic whites. The prevalence of obesity is increasing in children and adolescents and in low- and middle-income countries.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 45-year-old woman with a BMI of 32 kg/m\u00b2 comes to you for advice on weight loss. She has tried several commercial diets in the past but has regained the weight she lost. She is motivated to lose weight again. Which of the following is the most appropriate initial recommendation?",
+      "options": [
+        "A. Refer her for bariatric surgery.",
+        "B. Prescribe phentermine.",
+        "C. Recommend a comprehensive lifestyle intervention comprising diet, physical activity, and behavior therapy.",
+        "D. Advise her to follow a very-low-calorie diet (<800 kcal/day).",
+        "E. Tell her that weight loss is unlikely to be sustained and she should focus on preventing further weight gain."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A comprehensive lifestyle intervention is the cornerstone of obesity treatment and should be the first step for most patients. It produces clinically meaningful weight loss that can be sustained with ongoing support. Bariatric surgery is generally reserved for patients with a BMI \u226540 kg/m\u00b2 or \u226535 kg/m\u00b2 with obesity-related comorbidities who have not responded to lifestyle modification and pharmacotherapy. Pharmacotherapy can be considered as an adjunct to lifestyle intervention in patients with a BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidities who have not met weight loss goals with lifestyle alone. Very-low-calorie diets should be used only under medical supervision and in selected patients.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 50-year-old woman with a BMI of 36 kg/m\u00b2 complains that she eats very little but cannot lose weight. She reports eating a healthy diet and walking 30 minutes a day. She denies binge eating or night eating. Which of the following is the most likely explanation for her inability to lose weight?",
+      "options": [
+        "A. She has a low metabolic rate due to hypothyroidism.",
+        "B. She is underestimating her caloric intake.",
+        "C. She has a genetic predisposition to obesity that prevents weight loss.",
+        "D. Her physical activity is insufficient to produce weight loss.",
+        "E. She is retaining fluid."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Underreporting of caloric intake is common among individuals struggling with weight loss. While hypothyroidism and genetic factors can contribute to obesity, they rarely prevent weight loss when caloric intake is truly restricted. Physical activity is important for weight maintenance and health but has a modest effect on weight loss compared to dietary restriction. Fluid retention would be unlikely to mask fat loss over a prolonged period.",
+      "questionNumber": 8
+    }
+  ]
+}

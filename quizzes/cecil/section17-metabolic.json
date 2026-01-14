@@ -1,0 +1,354 @@
+{
+  "questions": [
+    {
+      "question": "A 35-year-old woman is brought to the emergency department with a history of acute-onset nausea, headaches, and stupor after a protein-rich meal. She has a history of similar events in the past. Her brother died as an infant due to an encephalopathic crisis. The plasma ammonium level on admission is 400 \u03bcmol/L (reference: <40 \u03bcmol/L). What is the most appropriate initial treatment?",
+      "options": [
+        "A. Enzyme replacement therapy",
+        "B. Liver transplantation",
+        "C. Intravenous fluids only",
+        "D. Alternative pathway therapy using intravenous sodium benzoate and/or sodium phenylbutyrate",
+        "E. Hydroxycobalamin IM"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The 35-year-old woman suffers from ornithine transcarbamylase (OTC) deficiency. OTC is a urea cycle enzyme that is part of the urea cycle responsible for conversion of nitrogen to urea. Deficiency of any of the five urea cycle enzymes and three transporter proteins will lead to variable elevations of plasma ammonium during episodes of intercurrent illnesses, catabolism, or high-protein meals. OTC deficiency is inherited as an X-linked recessive trait, explaining why the affected brother died as an infant during a hyperammonemic crisis. Female carriers of OTC deficiency may only show symptoms when exposed to a high-protein meal. The goal of therapy is to normalize ammonium levels quickly through alternative pathway therapy and/or hemofiltration and/or hemodialysis. Outcome is poor if ammonium levels are not corrected in a timely manner.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 32-year-old man from Pakistan with a seizure disorder has been recently diagnosed with an inborn error of metabolism. His family history is remarkable for an affected sister and consanguinity of the healthy parents. There is a distant male cousin with the same condition. Given this family history, what is the most likely mode of inheritance for this condition?",
+      "options": [
+        "A. Mitochondrial inheritance",
+        "B. X-linked recessive inheritance",
+        "C. Autosomal recessive inheritance",
+        "D. Autosomal dominant inheritance with complete penetrance",
+        "E. Complex inheritance including different genetic and environmental factors"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Because of consanguinity of the healthy parents and absence of affected family members in other generations, autosomal recessive inheritance is the most likely mode of inheritance for the condition in question. Mitochondrial (maternal) inheritance of mutations in mitochondrial genes may be observed in respiratory chain disorders, with variable expressivity of disease as a result of heteroplasmy. X-linked recessive inheritance as in OTC deficiency results in severely affected males and mildly affected or unaffected carrier females. Disorders with an autosomal dominant inheritance with complete penetrance affect multiple family members at each generation. The recurrence risk is 50% for future offspring of affected individuals. Complex inheritance may be observed in cancer, glaucoma, and Alzheimer disease due to different contributions from genetic and environmental factors.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 23-year-old woman and her 25-year-old husband, both of Ashkenazi Jewish ancestry, are seen for genetic counseling regarding their risk of having a child with Gaucher disease and/or other conditions. What is the most appropriate response regarding their risk?",
+      "options": [
+        "A. Their risk to have a child with Gaucher disease is negligible.",
+        "B. Carrier screening of both parents for Gaucher disease through analysis of common mutations in the GBA gene is indicated.",
+        "C. Prenatal diagnosis is recommended during early pregnancy through analysis of glucocerebrosidase activity in amniocytes.",
+        "D. Carrier screening of both parents should be comprehensive and include an Ashkenazi Jewish disease panel and spinal muscular atrophy (SMA) for both parents and fragile X for the mother.",
+        "E. Only karyotyping for the mother is indicated."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The carrier frequency for a number of genetic conditions, including Gaucher disease, is markedly increased in individuals of Ashkenazi Jewish ancestry. Carrier screening should therefore not be restricted to Gaucher disease but also include Tay-Sachs disease, Canavan disease, SMA, and many others for both parents, as well as fragile X for the mother.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 19-year-old man has been diagnosed with a disorder of fatty acid oxidation. He is at increased risk for complications due to which pathophysiologic mechanism?",
+      "options": [
+        "A. Accumulation of toxic substrates due to blockage of pathway",
+        "B. Energy failure due to primary blockage of a pathway that is important for ATP synthesis",
+        "C. Progressive accumulation of nontoxic substrates due a defect in a catabolic pathway",
+        "D. Defect in post-translational glycosylation",
+        "E. Blockage of an anabolic pathway"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Disorders of fatty acid oxidation lead to reduced \u03b2-oxidation of fatty acids of various chain lengths depending on the exact enzyme deficiency. As a consequence, fewer acetyl-CoA equivalents are produced that would be available for ATP and/or ketone body synthesis. Clinically, patients with disorders of fatty acid oxidation have a reduced fasting tolerance and are at risk for hypoglycemia and energy failure in skeletal and cardiac muscles.",
+      "questionNumber": 4
+    },
+    {
+      "question": "The diagnosis of a mucopolysaccharidosis type 1 (MPS-1) is suspected in a 21-year-old woman with hepatosplenomegaly, corneal clouding, and carpal tunnel syndrome. What is the first-line diagnostic test to confirm the diagnosis?",
+      "options": [
+        "A. Urine glycosaminoglycans",
+        "B. Urine organic acids",
+        "C. Plasma acylcarnitine profile",
+        "D. Plasma amino acids",
+        "E. Whole exome sequencing"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Mucopolysaccharidosis type 1 is characterized through increased excretion of dermatan and heparin sulfates (glycosaminoglycans).",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following symptoms and signs would not be a likely presenting manifestation of glycogen storage disease in an adult?",
+      "options": [
+        "A. Unexplained hepatomegaly",
+        "B. Limb-girdle muscle weakness",
+        "C. Transient ischemic attacks",
+        "D. Symptoms of hypoglycemia",
+        "E. Muscle cramps"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Most cases of glycogen storage disease seen by internists will have been already diagnosed in childhood. However, individuals with much milder disease (presumably associated with less severe enzyme activity as determined by genotype) may present with symptoms and signs in adulthood. Hepatomegaly (A) and hypoglycemia (D) are the principal clinical manifestations of the hepatic glycogenoses; muscle cramps (E), exercise intolerance, and progressive fatigue and weakness are the major manifestations of the muscle glycogenoses (see Table 196-1). For example, whereas infants with Pompe disease (type II glycogen storage disease) present at birth (floppy infant syndrome) or shortly thereafter and progress to respiratory failure, cardiomyopathy, and death by the age of 1 year unless treated, adult-onset disease commonly is manifested as limb-girdle muscle weakness (B), which can mimic that of other musculoskeletal disorders, especially muscular dystrophies. Cerebrovascular disease (C) may be seen in homocystinuria but is not known to be associated with glycogen storage diseases.",
+      "questionNumber": 6
+    },
+    {
+      "question": "What is the only glycogen storage disease that affects both the liver and the muscle?",
+      "options": [
+        "A. Type Ia glycogen storage disease",
+        "B. Type III glycogen storage disease",
+        "C. Type VI glycogen storage disease",
+        "D. Type IX glycogen storage disease"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "As a result of both liver and muscle involvement, type III GSD is the only type of glycogen storage disease that involves the heart.",
+      "questionNumber": 7
+    },
+    {
+      "question": "All except which of the following are different defects that can result in lysosomal storage disorders?",
+      "options": [
+        "A. Sphingolipidosis",
+        "B. Lysosomal transport disorders",
+        "C. Phenylketonuria",
+        "D. Oligosaccharidoses",
+        "E. Lipid storage disorders"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Lysosomal storage disorders are a group of more than 45 different inherited disorders, all sharing a defect in lysosomal function. Lysosomes, acidic, membrane-bound organelles present in the cytoplasm, contain enzymes that degrade cellular macromolecules. These disorders occur when one or more of the hydrolytic enzymes are deficient or when essential lysosomal transporters, receptors, cofactors, or protective proteins are defective or lacking. Sphingolipidosis, the oligosaccharidoses, lipid storage disorders, and lysosomal transport disorders are all considered lysosomal storage disorders. Phenylketonuria is a disorder of amino acid metabolism, and abnormal lysosomal storage does not occur.",
+      "questionNumber": 8
+    },
+    {
+      "question": "Dyslipidemia, hypertriglyceridemia and elevated liver enzymes, while encountered in many common cardiovascular and hepatic disorders, are characteristic of this treatable rare metabolic disorder:",
+      "options": [
+        "A. Cystinosis",
+        "B. Lysosomal acid lipase deficiency",
+        "C. Aspartylglucosaminuria",
+        "D. Neuronal ceroid lipofuscinosis",
+        "E. Down syndrome"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Lysosomal acid lipase deficiency (LAL-D) may present in adulthood with symptoms similar to other more common disorders including hepatomegaly, dyslipidemia, hypertriglyceridemia, and elevated liver enzymes. Consideration of LAL-D in the differential diagnosis of these patients is essential because management of the symptoms will change if this diagnosis is made, because there is an FDA approved enzyme replacement therapy.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 24-year-old woman with no prior health issues presents with sudden onset of dysarthria and right hemiparesis. She also mentions that she \"sweats less than her peers during exercise.\" She had a paternal grandmother and uncle who both died of renal disease in their fourth decade. Her work-up should include testing for:",
+      "options": [
+        "A. Gaucher disease",
+        "B. Fabry disease",
+        "C. Glycogen storage disease",
+        "D. Wolman disease",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Female carriers of Fabry disease, which is an X-linked disorder, have less severe symptoms with a later age at onset. About 40% of affected women have stroke as the initial symptom. Whereas the typical skin finding in Fabry disease of angiokeratoma is not seen in women, about half complain of hypohidrosis and heat intolerance. Renal involvement is common, with progressive renal insufficiency and end-stage renal disease in the second to fourth decades. Affected men have proteinuria, which is less frequently seen in affected women, even those affected with renal disease. Gaucher disease, glycogen storage disease, and Wolman disease are not manifested with stroke symptoms in men or women.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 22-year-old Ashkenazi Jewish college student presents with thrombocytopenia and painless splenomegaly. He is otherwise healthy with no relevant family history. His work-up should include diagnostic testing for:",
+      "options": [
+        "A. Hurler disease",
+        "B. Fucosidosis",
+        "C. Cystinosis",
+        "D. Gaucher disease",
+        "E. Hereditary hemorrhagic telangiectasia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Type 1 Gaucher disease should be considered in an otherwise healthy young adult with thrombocytopenia and painless splenomegaly. The carrier frequency of mutations in the gene encoding glucocerebrosidase (GBA1), which underlies Gaucher disease, is about 1 in 16 in Ashkenazi Jews, in contrast to the carrier frequency in the general population of about 1 in 100. Hurler disease is a mucopolysaccharidosis that manifests with hepatosplenomegaly, typically in childhood, although patients may live to adulthood. Cystinosis manifests in adults with corneal crystals. Hereditary hemorrhagic telangiectasia is an autosomal dominant disease that is manifested with abnormal blood vessel formations (telangiectasias) of the skin, mucous membranes, lungs, and gut. Fucosidosis manifests in childhood with developmental delay and a neurodegenerative course.",
+      "questionNumber": 11
+    },
+    {
+      "question": "The following is true about the association between Gaucher disease and Parkinsonism:",
+      "options": [
+        "A. All patients with Gaucher disease ultimately develop Parkinsonism.",
+        "B. The increased risk of Parkinson disease is observed only in Ashkenazi Jews.",
+        "C. Mutations in GBA, the gene encoding glucocerebrosidase, are extremely rare in subjects with Parkinsonism.",
+        "D. An increased frequency of Parkinsonism is seen in both patients with Gaucher disease and Gaucher disease carriers.",
+        "E. Lewy body disorders other than Parkinson disease are not associated with mutations in GBA1."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Mutations in the glucocerebrosidase gene are one of the most common genetic risk factors for the development of Parkinsonism. Both patients with Gaucher disease and Gaucher disease carriers have an increased risk of both Parkinson disease and related synucleinopathies, such as dementia with Lewy bodies. The increased frequency of GBA1 mutations is observed in both Jewish and non-Jewish patients with Parkinsonism. However, the majority of patients with Gaucher disease never develop Parkinson disease.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A man 56 years of age presents with ectopia lentis and venous thrombosis. What would be the first step in ruling out homocystinuria due to cystathionine \u03b2-synthase deficiency?",
+      "options": [
+        "A. Rule out Marfan syndrome",
+        "B. Measure cystathionine \u03b2-synthase in cultured fibroblasts",
+        "C. Measure total homocysteine and methionine in plasma",
+        "D. Try oral vitamin B\u2086",
+        "E. Sequence the cystathionine \u03b2-synthase gene"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Given the clinical picture, if plasma methionine and tHcy are elevated, the diagnosis of CBS deficiency is certain and therapy is urgently needed.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A patient is diagnosed with cystathionine \u03b2-synthase deficiency. The mutation is not known. What is the best way to start therapy?",
+      "options": [
+        "A. Oral aspirin",
+        "B. Oral vitamin B\u2086 along with oral folinic acid",
+        "C. Vitamin B\u2081\u2082 injections",
+        "D. Oral vitamin B\u2086 alone",
+        "E. Cocktail of all the vitamins B\u2082, B\u2086, B\u2081\u2082 and folinic acid"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Determination of B\u2086 responsiveness is key because vitamin B\u2086 can be the sole and effective life-long treatment. Folate repletion with folinic acid supplementation is necessary to permit a pyridoxine response.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 27-year-old woman presents with renal failure, malignant hypertension, and mechanical hemolysis. She has early-onset nystagmus and had an unexplained stroke a few years earlier. What do you do?",
+      "options": [
+        "A. Start immunosuppressive therapy",
+        "B. Start plasmapheresis",
+        "C. Measure plasma total homocysteine, methionine, and methylmalonic acid and start hydroxocobalamin parenteral injection",
+        "D. Give high dose folinic acid and betaine",
+        "E. Give vitamin B6"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Atypical HUS associated with stroke and nystagmus points toward cblC deficiency. Hydroxocobalamin IM is urgent to correct HUS.",
+      "questionNumber": 15
+    },
+    {
+      "question": "If a cystathionine \u03b2-synthase-deficient patient does not respond to B-vitamin therapy, what other therapeutic option remains?",
+      "options": [
+        "A. Enzyme replacement",
+        "B. Adding cysteine as N-acetylcysteine",
+        "C. Dietary methionine restriction",
+        "D. Aspirin administration",
+        "E. Stem cell donation"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Dietary methionine restriction is the first line of treatment in pyridoxine unresponsive CBS deficiency.",
+      "questionNumber": 16
+    },
+    {
+      "question": "One should determine homocysteine if a patient manifests with:",
+      "options": [
+        "A. Neural tube defect",
+        "B. Hypotonia",
+        "C. Stroke at under 18 years",
+        "D. Brittle hair",
+        "E. Liver dysfunction"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Any stroke or thrombosis at any age, especially in adolescents and younger adults, should prompt measurement tHcy in plasma because treatments aimed at lowering tHcy levels and reducing (if not abolishing) the vascular risk are available.",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which is the commonest form of acute hepatic porphyria?",
+      "options": [
+        "A. Acute intermittent porphyria",
+        "B. ALA dehydratase deficiency",
+        "C. Hereditary coproporphyria",
+        "D. Porphyria cutanea tarda",
+        "E. Variegate porphyria"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "All forms of acute porphyria are hepatic porphyrias, and acute intermittent porphyria is the commonest everywhere except in the South African white population where variegate porphyria is locally prevalent as a result of a founder effect. Hereditary coproporphyria is considerably less common than both these forms of porphyria, and ALA dehydratase porphyria is excessively rare, having been described in fewer than 10 patients. Though porphyria cutanea tarda is a hepatic porphyria, it is not an acute porphyria because it presents clinically with skin disease alone and never with acute attacks.",
+      "questionNumber": 18
+    },
+    {
+      "question": "The enzyme 5-aminolevulinate synthase 1 (ALAS1) is regulated by:",
+      "options": [
+        "A. Cytochrome P450 concentration",
+        "B. Erythrocyte hemoglobin concentration",
+        "C. Free heme pool within the hepatocyte",
+        "D. Iron availability",
+        "E. Substrate availability"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "ALAS1 is the hepatic isoenzyme. When the regulatory free heme pool in the hepatocyte is reduced, ALAS1 is induced, heme biosynthesis is upregulated, and heme levels rise. Conversely, when it is replete, heme synthesis stops. The erythroid isoenzyme, ALAS2, by contrast, is principally regulated by iron availability. The availability of the substrates, glycine and succinyl-CoA, is not a limiting factor in heme synthesis. Hemoglobin concentrations are of no relevance to the regulation of hepatic heme synthesis.",
+      "questionNumber": 19
+    },
+    {
+      "question": "What is the characteristic clinical presentation of erythropoietic protoporphyria?",
+      "options": [
+        "A. Erosions and blisters",
+        "B. Hyperpigmentation",
+        "C. Hypertrichosis",
+        "D. Immediate photosensitivity",
+        "E. Photomutilation"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patients with erythropoietic protoporphyria and X-linked protoporphyria complain of immediate photosensitivity, which manifests as burning, itching, and pain in the skin after a short period of exposure to sunlight. This may be accompanied by erythema and edema. The other options on this list are not characteristic of this form of photosensitivity. Blisters and erosions are typical of the vesiculo-erosive form of cutaneous porphyria noted in variegate porphyria, porphyria cutanea tarda, hereditary coproporphyria, and congenital erythropoietic porphyria. Hypertrichosis may be noted in chronic cases, particularly in porphyria cutanea tarda, and photomutilation is only encountered in the most severe forms of vesiculo-erosive porphyria, such as congenital erythropoietic porphyria, hepatoerythropoietic porphyria, and the homozygous forms of variegate porphyria and hereditary coproporphyria.",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following statements best characterizes the solubility and route of excretion of protoporphyrin?",
+      "options": [
+        "A. It is of intermediate water solubility and may be identified in both urine and stool.",
+        "B. It is water insoluble and may be identified in urine.",
+        "C. It is water insoluble and may be identified in stool.",
+        "D. It is water soluble and may be identified in stool.",
+        "E. It is water soluble and may be identified in urine."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The different porphyrins vary in their water solubility. The earlier porphyrins such as uroporphyrin and the porphyrin precursors are water soluble or hydrophilic and are readily detectable in urine, whereas very little emerges in the stool. Water solubility decreases with each step in the heme biosynthetic pathway. Protoporphyrin is hydrophobic and for practical purposes is undetectable in urine. It is excreted in bile and is therefore identified in stool. Some of the intermediate porphyrins, including coproporphyrin, are of intermediate solubility and detectable in both urine and stool. These properties are important because it is necessary to analyze both urine and stool (as well as plasma, and in the case of erythropoietic porphyrias, in erythrocytes) for an accurate diagnosis.",
+      "questionNumber": 21
+    },
+    {
+      "question": "Which of the following treatment modalities is of most importance in modifying the course of the acute attack of porphyria?",
+      "options": [
+        "A. Assisted ventilation",
+        "B. \u03b2-Blockade",
+        "C. Hemin",
+        "D. Liver transplantation",
+        "E. Meperidine"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hemin is safe and highly effective in terminating the acute attack. When administered early, it will prevent serious complications such as quadriparesis and will reduce the hospital stay. Analgesia is an essential part of management, but does not affect the natural history of the attack. \u03b2-Blockade may counteract the autonomic activity but is usually not necessary and will not alter the natural history of the attack. Assisted ventilation is only relevant in the patient who has had a serious attack with motor neuropathy, quadriparesis, and respiratory failure. Orthotopic liver transplantation is reserved for patients with a severe progressive course marked by recurrent acute attacks.",
+      "questionNumber": 22
+    },
+    {
+      "question": "The diagnosis of Wilson disease can be excluded in a patient:",
+      "options": [
+        "A. If the individual is younger than 21 years.",
+        "B. If a Kayser-Fleischer ring is detected on slit-lamp examination.",
+        "C. If the individual's penmanship is neat.",
+        "D. If results of repeated 24-hour urine copper collections are normal.",
+        "E. If serum ceruloplasmin and serum copper levels are normal."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Wilson disease may be manifested at any age, although appearance of symptoms before the age of 5 years is rare. The Kayser-Fleischer ring representing copper accumulation in the periphery of the cornea is a diagnostic hallmark of Wilson disease. Dysgraphia is sometimes reported by affected patients, but if it is not present, it should not exclude the diagnosis. The 24-hour urine copper excretion is reliably elevated in Wilson disease, and normal results exclude the diagnosis.",
+      "questionNumber": 23
+    },
+    {
+      "question": "All except which of the following are true concerning the diagnosis of Wilson disease?",
+      "options": [
+        "A. Schizophrenia in a 20-year-old can be a presenting manifestation.",
+        "B. Hepatic manifestations usually precede neurologic symptoms.",
+        "C. Serum copper and serum ceruloplasmin levels are invariably low.",
+        "D. ATP7B mutation analysis is useful for detection of presymptomatic affected individuals.",
+        "E. Neurologic symptoms often occur later than hepatic signs."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "An estimated 10% of individuals with Wilson disease have normal serum copper and ceruloplasmin levels, for reasons that remain unclear.",
+      "questionNumber": 24
+    },
+    {
+      "question": "ATP7B is a copper-transporting molecule that:",
+      "options": [
+        "A. Mediates copper transport to the brain.",
+        "B. Enables biliary excretion of copper.",
+        "C. Is mutated in Menkes disease.",
+        "D. Has its gene located on the X chromosome.",
+        "E. Is responsible for intestinal copper absorption."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The Wilson disease gene product, ATP7B, normally mediates excretion of copper from the liver into the bile. The gene is located on chromosome 13. ATP7A is the gene mutated in X-linked recessive Menkes disease.",
+      "questionNumber": 25
+    },
+    {
+      "question": "Low serum copper and ceruloplasmin levels may be found in all except which of the following?",
+      "options": [
+        "A. ATP7A-related distal motor neuropathy",
+        "B. Wilson disease",
+        "C. Aceruloplasminemia",
+        "D. Menkes disease",
+        "E. Postbariatric surgery"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Serum copper and ceruloplasmin levels are normal in patients with ATP7A-related isolated distal motor neuropathy. These can be low in all the other conditions listed.",
+      "questionNumber": 26
+    },
+    {
+      "question": "Neurologic presentations of Wilson disease:",
+      "options": [
+        "A. Never coincide with hepatic symptoms.",
+        "B. Do not include dysarthria, dystonia, rigidity, tremor, or choreiform movements.",
+        "C. Usually involve stroke events affecting the basal ganglia.",
+        "D. Never feature a sensory neuropathy.",
+        "E. Are nearly always (95% of the time) associated with presence of Kayser-Fleischer rings."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Kayser-Fleischer rings are typically associated with neurologic presentation of Wilson disease. Basal ganglia copper deposition is a pathologic feature in Wilson disease; however, stroke is not.",
+      "questionNumber": 27
+    }
+  ]
+}

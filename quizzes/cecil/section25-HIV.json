@@ -1,0 +1,509 @@
+{
+  "questions": [
+    {
+      "question": "What is the most likely cause of CD4 depletion in HIV-infected patients?",
+      "imageUrl": "",
+      "options": [
+        "A. Chronic immune activation",
+        "B. Direct killing of productively infected cells",
+        "C. Infection by opportunistic pathogens",
+        "D. Metabolic disturbances"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Chronic immune activation is thought to play the most significant role, although a recent study suggests that non-productively infected cells may die from a protective host response. Only 1% of cells are productively infected, and therefore it is felt that the death of these cells cannot explain the level of CD4 depletion seen.",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "At what CD4 count do patients become susceptible to Pneumocystis jiroveci?",
+      "imageUrl": "",
+      "options": [
+        "A. 50 cells/µL",
+        "B. 100 cells/µL",
+        "C. 200 cells/µL",
+        "D. 500 cells/µL"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Clinical studies have shown that patients become susceptible to Pneumocystis jiroveci at a CD4 count of less than 200 cell/µL Cryptococcus neoformans and Toxoplasma gondii infections occur at CD4 counts less than 100 cells/µL and Mycobacterium avium complex and CMV infections occur at CD4 counts less than 50 cells/µL.",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "HIV-1-infected patients are highly susceptible to invasive pneumococcal disease because of:",
+      "imageUrl": "",
+      "options": [
+        "A. Immune activation",
+        "B. Dysfunction of B cells",
+        "C. Apoptosis of CD8 T cells",
+        "D. Increased exposure to pneumococcus",
+        "E. Hyposplenism"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although HIV-1 infection typically causes a defect of cellular immunity, humoral immunity is also affected because of a B-cell dysfunction and patients become susceptible to bacterial infections.",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "At what point after HIV infection do patients develop the acute retroviral syndrome?",
+      "imageUrl": "",
+      "options": [
+        "A. 2 weeks",
+        "B. 6 weeks",
+        "C. 3 days",
+        "D. 3 months"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Patients typically develop the constellation of symptoms known as the acute retroviral syndrome 2 weeks after infection. At that point, as a result of the massive early infection, plasma levels of virion-associated HIV-1 RNA of more than 1 million copies/mL are typically seen in plasma.",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "What is the mechanism of the drop in HIV-1 RNA to the set point level in primary infection?",
+      "imageUrl": "",
+      "options": [
+        "A. The development of an HIV-1-specific CD4 T-cell immune response",
+        "B. The establishment of the latent reservoir",
+        "C. The development of neutralizing antibodies",
+        "D. The development of an HIV-1-specific CD8 T-cell immune response"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The development of the HIV-specific CD8+ T-cell response has been associated with partial control of viral replication in clinical studies and depletion of CD8+ T cells in an animal model abrogates this control of viremia.",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following is the biggest barrier to the eradication of HIV-1?",
+      "imageUrl": "",
+      "options": [
+        "A. The establishment of the latent reservoir",
+        "B. Chronic immune activation",
+        "C. B-cell dysfunction",
+        "D. Microbial translocation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The quiescent memory CD4+ T cells of the latent reservoir probably do not express HIV antigens and thus are not targeted by the immune response. They are also not effectively targeted by antiretroviral therapy, thus preventing the eradication of HIV-1.",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following animals represents the most likely source of HIV-1?",
+      "imageUrl": "",
+      "options": [
+        "A. Sooty mangabey",
+        "B. Chimpanzee",
+        "C. Gorilla",
+        "D. Macaques",
+        "E. Mandrill"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "HIV-1 is responsible for more than 30 million infections worldwide and is closely related to a simian immunodeficiency virus (SIV) present in chimpanzee populations. Although gorillas have an SIV, that virus is more distantly related to HIV-1 than the chimpanzee virus. Sooty mangabeys have SIV that is very closely related to HIV-2 but not to HIV-1. Macaques and mandrills are species of monkeys with SIV variants that are only distantly related to HIV.",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which of the following inhibits HIV infection by introducing numerous G-to-A mutations in the HIV genome?",
+      "imageUrl": "",
+      "options": [
+        "A. Tetherin",
+        "B. APOBEC",
+        "C. TRIMS-alpha",
+        "D. Vif"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "APOBEC is a cytidine deaminase and one part of the innate immune system that inactivates virus by introducing multiple G-to-A changes, which result in multiple mutations and stop codons. Tetherin is a cell surface protein that retains virions at the cell surface and is antagonized by VPU. TRIM5-alpha is involved in blocking uncoating before reverse transcription, and Vif is a viral protein that abrogates APOBEC activity by excluding it from incorporation into the virion.",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "HIV-2 is naturally resistant to which of the following agents?",
+      "imageUrl": "",
+      "options": [
+        "A. Non-nucleoside reverse transcriptase inhibitors (NNRTI)",
+        "B. Nucleoside reverse transcriptase inhibitors (NRTI)",
+        "C. Protease inhibitors (PI)",
+        "D. Integrase inhibitors (INSTI)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HIV-2 is only distantly related to HIV-1 and encodes a reverse transcriptase that is naturally resistant to non-nucleoside reverse transcriptase inhibitors. HIV-2 remains susceptible to NRTI, P1, and integrase inhibitors. It is critical that individuals with HIV-2 or HIV-1/2 not be treated with NNRTI because mutants resistant to the other components of the regimen will emerge.",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "HIV virion assembly takes place:",
+      "imageUrl": "",
+      "options": [
+        "A. At the plasma membrane",
+        "B. Within the cytoplasm",
+        "C. At the nuclear membrane",
+        "D. Within the nucleus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HIV assembles at the plasma membrane; no virus-like particles are seen in the cytoplasm or at or within the nucleus.",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "HIV protease inhibitors inhibit which of the following steps in HIV replication?",
+      "imageUrl": "",
+      "options": [
+        "A. Proteolytic processing of HIV Gag and Gag/pol precursors",
+        "B. Proteolytic processing of Env precursor",
+        "C. Proteolytic processing of the HIV core during virion uncoating",
+        "D. Proteolytic processing of the intasome before integration"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Protease inhibitors are often a key component of combination antiretroviral therapy. They block a late step in virus replication after virions have assembled. The immature virus is not infectious until after protease acts on Gag and Gag/Pol",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "After occupational exposure by a health care worker to HIV through a needlestick injury, management should include which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. The HIV status of the exposure source patient should be determined.",
+        "B. Postexposure prophylaxis should contain no more than two antiretrovirals.",
+        "C. Antretroviral therapy should be started within 72 hours of exposure and continued for 4 weeks",
+        "D. All of the above are correct.",
+        "E. Only A and C are correct."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In managing health care personnel who experience occupational exposure to blood and/or body fluids that might contain HIV, the USPHS guidelines published in 2013 recommend that after occupational exposure to HIV occurs the HIV status of the exposure source be determined (if possible). Postexposure prophylaxis should be started as soon as possible (within 72 hours) and continued for 4 weeks, and three or more antiretrovirals should be prescribed.",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "The most effective strategy for the prevention of sexual transmission of HIV from an infected to an uninfected partner is:",
+      "imageUrl": "",
+      "options": [
+        "A. Voluntary HIV counseling and testing",
+        "B. Antiretroviral therapy of the infected partner",
+        "C. Antretroviral therapy of the uninfected partner",
+        "D. Prompt treatment of sexually transmitted infections",
+        "E. Avoidance of oral sex"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Antiretroviral therapy to bring HIV replication below the limits of detection has proved to be an effective strategy to decrease by 96% the risk for HIV transmission among serodiscordant couples.",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "Confidential donor exclusion, HIV antibody screening, testing for antibodies to HIV-2 and p24 antigen, and nucleic acid testing have reduced the risk for HIV infection through the transfusion of blood or blood products to:",
+      "imageUrl": "",
+      "options": [
+        "A. Approximately 1 in 20,000",
+        "B. Approximately 1 in 200,000",
+        "C. Approximately 1 in 2,000,000",
+        "D. Approximately 1 in 20,000,000"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "HIV has been transmitted through the transfusion of single-donor blood and blood products, including whole blood, fresh-frozen plasma, packed red blood cells, cryoprecipitate, clotting factors, and platelets. Confidential donor exclusion, as well as the institution of HIV antibody screening in 1985, followed by additional testing for antibodies to HIV-2 and p24 antigen in 1996 and nucleic acid testing in 2002, has reduced the risk for HIV infection through the transfusion of blood or blood products to approximately 1 in 2,135,000.",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "The effectiveness of condoms in preventing heterosexual transmission of HIV has been estimated to be:",
+      "imageUrl": "",
+      "options": [
+        "A. As low as 60% and as high as 96% (~87%)",
+        "B. Higher for anal than for vaginal sex",
+        "C. Equal for latex and natural skin condoms",
+        "D. Enhanced by petroleum-based lubricants"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The effectiveness of condoms in preventing heterosexual transmission of HIV has been estimated to be 87%, but it may be as low as 60% or as high as 96%. Consistent use of latex condoms has been shown to be effective in preventing of HIV transmission at both individual and population levels. The condom should be made of latex and must be used properly. Natural skin condoms should not be used because they do not prevent transmission of HIV. Petroleum-based lubricants enhance the likelihood of rupture of latex condoms and should be avoided. If needed, water-based lubricants such as K-Y jelly should be used.",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    },
+    {
+      "question": "HIV transmission risk is highest in:",
+      "imageUrl": "",
+      "options": [
+        "A. Patients taking antiretrovirals",
+        "B. Patients with a sexually transmitted infection such as genital warts",
+        "C. Early HIV infection and advanced infection",
+        "D. An episode of a concomitant viral infection such as influenza"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The risk for HIV transmission is highest in early HIV infection and in advanced infection, demonstrating that the HIV viral concentration in the genital secretions is the strongest predictor of the risk for transmission.",
+      "explanationImageUrl": "",
+      "questionNumber": 16
+    },
+    {
+      "question": "Which CD4 cell count should prompt starting antiretroviral therapy (ART) in an HIV-infected individual?",
+      "imageUrl": "",
+      "options": [
+        "A. Less than 200/µL",
+        "B. Less than 350/µL",
+        "C. Less than 500/µL",
+        "D. Treatment should be started regardless of CD4 cell count."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "On the basis of potency, tolerability, convenience, randomized clinical trials demonstrating clinical benefits, and reduction in transmission, ART should be started regardless of CD4 cell count.",
+      "explanationImageUrl": "",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which treatment strategy is not recommended for initial ART?",
+      "imageUrl": "",
+      "options": [
+        "A. Two nucleoside analogue reverse transcriptase inhibitors (NRTIs) + a non-nucleoside reverse transcriptase inhibitor (NNRTI)",
+        "B. Three NRTIs",
+        "C. Two NRTIs + a protease inhibitor (PI)",
+        "D. Two NRTIs + an integrase strand transfer inhibitor (INSTI)"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Current initial ART consists of a three-drug regimen: two NRTIS + a third drug (INSTI, NNRTI, or PI). Three NRTI regimens are inferior and should not be used.",
+      "explanationImageUrl": "",
+      "questionNumber": 18
+    },
+    {
+      "question": "When should you change an antiretroviral regimen for treatment failure?",
+      "imageUrl": "",
+      "options": [
+        "A. HIV RNA repeatedly 50 to 200 copies/mL",
+        "B. HIV RNA repeatedly greater than 500 copies/mL",
+        "C. Any confirmed HIV RNA above the limit of detection",
+        "D. CD4 cell count less than 200 cells/µL"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Confirmed detectable viremia greater than 200 copies/mL in a patient taking ART reflects virologic failure, and the regimen should be changed.",
+      "explanationImageUrl": "",
+      "questionNumber": 19
+    },
+    {
+      "question": "What is the best regimen to treat both HIV and hepatitis B virus (HBV) infections?",
+      "imageUrl": "",
+      "options": [
+        "A. Zidovudine/lamivudine + darunavir/ritonavir",
+        "B. Abacavir/lamivudine + raltegravir",
+        "C. Tenofovir (either formulation)/emtricitabine + zidovudine",
+        "D. Tenofovir (either formulation)/emtricitabine + dolutegravir"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Emtricitabine, lamivudine, and tenofovir (either formulation) all have activity against both HBV and HIV. Two active drugs should be used to treat HBV and three active drugs to treat HIV (e.g., tenofovir [either formulation]/emtricitabine + a third drug). For the third drug, the integrase inhibitor dolutegravir is recommended; zidovudine is a nucleoside analogue (NRTI), and three NRTI combinations are not recommended for HIV.",
+      "explanationImageUrl": "",
+      "questionNumber": 20
+    },
+    {
+      "question": "HIV preexposure prophylaxis (PrEP) should be offered to all except:",
+      "imageUrl": "",
+      "options": [
+        "A. An active heroin user",
+        "B. An HIV-negative partner of an HIV-positive individual with an HIV RNA of 250,000 copies/mL",
+        "C. A heterosexual woman with several sexual partners who \"doesn't always use condoms\"",
+        "D. A gay man in a monogamous relationship with an HIV-negative partner"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "PrEP reduces the risk for HIV infection in at-risk men who have sex with men, heterosexual couples, and injection drug users. A gay man in an monogamous relationship with an HIV-negative partner is not at risk for HIV.",
+      "explanationImageUrl": "",
+      "questionNumber": 21
+    },
+    {
+      "question": "Which of the following opportunistic infections is most typical of HIV infection with a CD4 count less than 50 cells/µL in the United States?",
+      "imageUrl": "",
+      "options": [
+        "A. Mucormycosis",
+        "B. BK virus nephropathy",
+        "C. Nocardiosis",
+        "D. Mycobacterium avium complex disease",
+        "E. Listeria monocytogenes meningitis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patients with HIV infection and low CD4 counts (<50 cells/µL) characteristically develop pneumocystosis, toxoplasmosis, CMV retinitis, tuberculosis, cryptococcal meningitis, cryptosporidiosis, and disseminated Mycobacterium avium complex infection. Mucormycosis is typically seen in patients with neutropenia or diabetes mellitus and is rare in patients immunosuppressed because of HIV infection. Listeria, surprisingly, does not appear to occur with enhanced frequency among patients with HIV infection although it is an intracellular pathogen. Nocardiosis can occur in patients with HIV infection, but is unusual. BK virus causes disease in transplant recipients, with nephropathy seen in renal transplant patients. BK virus is most unusual in patients with HIV infection.",
+      "explanationImageUrl": "",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which of the following peripheral blood assays is the best indicator of susceptibility to opportunistic infections for patients with HIV infection?",
+      "imageUrl": "",
+      "options": [
+        "A. CD4 lymphocyte count",
+        "B. CD8 lymphocyte count",
+        "C. Total lymphocyte count",
+        "D. Total neutrophil count",
+        "E. Total leukocyte count"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "For HIV-infected patients, CD4 T-cell counts in the peripheral blood are excellent indicators of susceptibility to opportunistic infections. There is a tight correlation between the counts and susceptibility to AIDS-defining illnesses. Counts under 200 cells/µL are a good estimate of susceptibility to pathogens such as Pneumocystis pneumonia. Counts under 100 cells/µL are indicators of susceptibility to CMV, Toxoplasma, and Mycobacterium avium. The total lymphocyte count also can be used, but is not nearly so specific and sensitive. CD8 suppressor cells are related to immune response, but also are not tightly correlated with infectious susceptibility. Patients with HIV infection become neutropenic only with very-late-stage disease, when their marrow is involved by certain infections or tumors, or if they have marrow suppression resulting from a drug effect or a nutritional deficiency. Neutropenia in this population is not as ominous as in patients who have had chemotherapy and who have eroded mucosal barriers.",
+      "explanationImageUrl": "",
+      "questionNumber": 23
+    },
+    {
+      "question": "For HIV-infected patients on long-term antiretroviral therapy, and viral loads less than 50 copies, and CD4 counts greater than 300 cells/µL, which of the following groups of problems are the major cause of HIV-related morbidity and mortality?",
+      "imageUrl": "",
+      "options": [
+        "A. Candida, herpes zoster, and herpes simplex",
+        "B. Kaposi sarcoma and multicentric Castleman disease",
+        "C. Progressive multifocal leukoencephalopathy and central nervous system lymphoma",
+        "D. Accelerated liver, heart, and kidney disease",
+        "E. Sepsis and septic shock"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "For patients with HIV infection well controlled on antiretroviral therapy, accelerated liver disease, coronary atherosclerosis, renal disease, and neurocognitive disorders are emerging as major causes of morbidity. At CD4 counts greater than 300, Kaposi sarcoma occurs, but it is not common in the United States. Similarly, at such counts progressive multifocal leukoencephalopathy and CNS lymphoma are uncommon. Septic shock does not occur with substantially increased frequency in patients with HIV infection. They are susceptible at all CD4 counts to increased incidence of pneumococcal disease, but most cases of sepsis in this population come from predictable sources such as intravenous catheters or intravenous drug abuse.",
+      "explanationImageUrl": "",
+      "questionNumber": 24
+    },
+    {
+      "question": "For a patient with HIV infection whose CD4 count is 50 cells/µ1 and who is going to start antiretroviral therapy in the next few weeks, which of the following prophylactic drugs would be most beneficial in the United States pending sustained HIV viral suppression?",
+      "imageUrl": "",
+      "options": [
+        "A. Fluconazole",
+        "B. Valganciclovir",
+        "C. Valacyclovir",
+        "D. Trimethoprim-sulfamethoxazole",
+        "E. Caspofungin"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patients with CD4 counts below 200 cells/µL are susceptible to Pneumocystis pneumonia (PCP), and the susceptibility increases as the CD4 count decreases. In the pre-antiretroviral era, 70 to 80% of HIV-infected patients ultimately developed PCP if they did not take anti-pneumocystis prophylaxis. Azithromycin to prevent disseminated Mycobacterium avium complex infection may still be appropriate, although guidelines may change soon in recognition of declining incidence of disseminated MAC. This option was not offered as an answer. Antiviral prophylaxis with valacyclovir would reduce the frequency of herpes simplex and herpes zoster, but this prophylaxis is not recommended in preference to treating episodes caused by these pathogens when they occur. Similarly, fluconazole could be used to reduce the likelihood of mucosal candidiasis, but the recommendation is not to give prophylaxis but to treat episodes when they occur. Caspofungin, a parental antifungal, would have no role for prophylaxis. Some drugs that are effective for prophylaxis, such as fluconazole and acyclovir, are not recommended for routine use because of potential drug interactions, drug toxicities, cost, and the fact that episodes of the targeted diseases are usually not life-threatening and can be treated when they occur acutely.",
+      "explanationImageUrl": "",
+      "questionNumber": 25
+    },
+    {
+      "question": "Which of the following vaccines would be appropriate to give to a patient with newly diagnosed HIV infection (CD4 count = 100 cells/µL, viral load = 1 million copies) who had childhood immunizations but none since then and who will be starting on antiretroviral therapy plus chemoprophylaxis with trimethoprim-sulfamethoxazole and azithromycin in 1 week?",
+      "imageUrl": "",
+      "options": [
+        "A. Herpes zoster vaccine",
+        "B. Herpes simplex vaccine",
+        "C. Pneumococcal vaccine (conjugated)",
+        "D. Attenuated influenza vaccine",
+        "E. Measles-mumps-rubella vaccine"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "For patients with low CD 4 counts (<200 cells/µL) it is not prudent to administer live virus vaccines such as the zoster vaccine or measles-mumps-rubella or the live attenuated influenza virus vaccine. There is no licensed vaccine for herpes simplex. Pneumococcal vaccine is important to administer. CDC guidelines and guidelines at http://www.aidsinfo.nih.gov provide information on the vaccine products to use. Pneumococcal vaccines are effective in reducing the morbidity of pneumococcal disease in this patient population. It may be wise to readminister this when the CD4 count has risen substantially if the initial immunization was administered when the CD4 count was below the 100 to 200 range.",
+      "explanationImageUrl": "",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 55-year-old white man with well-controlled HIV on a salvage regimen of atazanavir and co-formulated elvitegravir/cobicistat/tenofovir disoproxil fumarate/emtricitabine presents to you for a follow-up visit. Laboratory tests from this visit reveal electrolytes and a serum glucose level within normal range but a creatinine level of 1.6 mg/dL (prior or results 5 months ago were 1.2 mg/dL). His urinalysis was notable for a protein of 100 mg/dL and glucose 150 mg/dL with no white blood cells, red blood cells, or casts. What is the most likely cause of the creatinine elevation?",
+      "imageUrl": "",
+      "options": [
+        "A. HIV-associated nephropathy (HIVAN)",
+        "B. Medication related: cobicistat",
+        "C. Medication related: tenofovir disoproxil fumarate (TDF)",
+        "D. Medication related: atazanavir",
+        "E. Hypertension"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "HIVAN is largely restricted to individuals of African background, and it would be highly unusual for a white individual to develop HIVAN. Although cobicistat can cause an artifactual elevation in serum creatinine levels owing to inhibition of the renal transporter MATE 1, the level of elevation is higher than what would be expected from this etiology. The clue to TDF toxicity relates to the presence of euglycemic glycosuria. Proteinuria may be seen with chronic kidney disease from a variety of causes, including hypertension and HIVAN, although with the latter the level of proteinuria is typically in the nephrotic range. However, euglycemic glycosuria, which is an indication of proximal tubular dysfunction, would only be seen with TDF toxicity. It is not necessary to have the full complement of findings for Fanconi syndrome to make this diagnosis. Crystalluria from atazanavir may be asymptomatic (i.e., no flank pain), but there is often evidence of inflammation with sterile pyuria or crystals seen on microscopic examination of urine. Neither atazanavir nephrotoxicity or hypertensive renal disease would cause glycosuria. (Campos P, Ortiz A, Soto K. HIV and kidney diseases: 35 years of history and consequences. Clin Kidney J. 2016;9:772-781.)",
+      "explanationImageUrl": "",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 25-year-old African American man who was diagnosed with HIV 6 months ago at a health fair comes to you for a scheduled clinic follow-up visit. He is virologically suppressed on a regimen of co-formulated dolutegravir/abacavir/lamivudine, and his laboratory results show an increase in his CD4 cell count from 50 cells/µL at the time of diagnosis to 150 cells/µL at his current visit. He is worried, however, about a new itchy rash he has developed. On examination, you note a maculopapular erythematous rash that spares the palms and soles. There is no evidence of mucosal involvement. You are concerned about a possible drug reaction to the trimethoprim-sulfamethoxazole he has been taking for Pneumocystis pneumonia prophylaxis and advise him to stop this and switch to dapsone instead. The patient calls you 2 days later requesting to be seen for worsening fatigue and weakness, which are preventing him from keeping up with his normal routine at the gym. You obtain the following blood tests: hemoglobin 9 g/dL (value at last visit was 12 g/dL), reticulocyte count 3.08% (normal, 0.5-2.17%), lactate dehydrogenase 300 IU/L (normal, 98-192 IU/L), haptoglobin 10 mg/dL' (normal, 36-195 mg/dL), normal white blood cell count and platelet count. What is the most likely cause of the patient's anemia?",
+      "imageUrl": "",
+      "options": [
+        "A. Disseminated infection with Mycobacterium avium complex (MAC)",
+        "B. Dapsone reaction",
+        "C. Iron deficiency",
+        "D. B12 folate deficiency",
+        "E. Parvovirus B19 infection"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The patient's results indicate that his anemia is due to hemolysis. Parvovirus B19 causes an aplastic anemia, and one would not see an elevated reticulocyte count. Disseminated MAC infection would typically cause a pancytopenia due to marrow infiltration and not an isolated anemia. Furthermore, the patient is 6 months out from his nadir CD4 cell count of 50 cells/µL and at his current level should not be at risk for this infection. Individuals of Middle Eastern and African descent are at higher risk for glucose-6-phosphate dehydrogenase (G6PD) deficiency. Patients typically exhibit evidence of hemolysis relatively acutely after taking a contraindicated mediation (i.e., within 24-72 hours). It is also important to note that G6PD testing should be done before starting medications that may cause an oxidative stress not only to avoid a potentially serious adverse drug reaction but also because testing that is done after hemolysis is noted may appear falsely normal. This is because older erythrocytes are more sensitive to oxidative stress, and after these erythrocytes are hemolyzed, the younger erythrocytes may still have sufficient levels of G6PD to give a normal value on testing. (Vishnu P, Aboulafia DM. Haematological manifestations of human immune deficiency virus infection. Br J Haematol. 2015;171:695-709.)",
+      "explanationImageUrl": "",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 26-year-old man with HIV infection requires the addition of an inhaled corticosteroid to manage his asthma. His antiretroviral regimen is tenofovir alafenamide/emtricitabine plus atazanavir/cobicistat. Based on the least potential for drug-drug interactions, which is the preferred corticosteroid for this patient?",
+      "imageUrl": "",
+      "options": [
+        "A. Fluticasone",
+        "B. Mometasone",
+        "C. Beclomethasone",
+        "D. Budesonide",
+        "E. All inhaled corticosteroids are contraindicated."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Drug-drug interactions between exogenously administered corticosteroids and antiretroviral agents are now the primary causes of cortisol-related problems in people living with HIV. Protease inhibitors and the pharmacokinetic-boosting drug cobicistat inhibit the metabolism of commonly used corticosteroids, including fluticasone, budesonide, and triamcinolone, which can lead to systemic exposure to corticosteroids that are administered topically or by injection into joint spaces, for example. These interactions can cause transient symptoms of corticosteroid excess followed by symptoms of adrenal insufficiency due to inhibition of endogenous cortisol production. Based on a drug interaction study in healthy volunteers, beclomethasone is the inhaled corticosteroid of choice for patients taking protease inhibitors and, by extension, cobicistat. (Boyd SD, Hadigan C, McManus M, et al. Influence of low-dose ritonavir with and without darunavir on the pharmacokinetics and pharmacodynamics of inhaled beclomethasone. J Acquir Immune Defic Syndr. 2013;63:355-361.)",
+      "explanationImageUrl": "",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 54-year-old woman with HIV on a regimen of tenofovir disoproxil fumarate, didanosine, ritonavir, and atazanavir with a CD4 count of 216 cells/µL and a viral load of less than 20 copies/mL for several years presents for a visit with tachypnea. She has had no fever or weight loss, and symptoms were gradual in onset over the last few days. She has no cough. On routine laboratory examination, she is found to have a normal white blood cell count, serum bicarbonate of 12 mmol/I, glucose of 220 mg/dL creatinine of 1.9 mg/dL a markedly elevated anion gap, and arterial blood gas analysis with pH 7.02, PCO, of 24 mm Hg, and PO2 of 114 mm Hg on room air. Chest x-ray shows no infiltrates. You should:",
+      "imageUrl": "",
+      "options": [
+        "A. Begin empirical therapy for Pneumocystis jiroveci pneumonia with high-dose trimethoprim-sulfamethoxazole and corticosteroids",
+        "B. Continue antiretroviral medications and begin broad-spectrum antibiotics for presumed sepsis",
+        "C. Switch tenofovir disoproxil fumarate to tenofovir alafenamide",
+        "D. Discontinue all antiretrovirals and begin supportive care",
+        "E. Start an insulin drip"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has lactic acidosis due to mitochondrial toxicity from didanosine. Although didanosine is infrequently used in the modern combination antiretroviral therapy era, some patients who have been successfully treated for years on older regimens are unwilling to change and may still be on drugs such as stavudine or didanosine. Patients with Pneumocystis pneumonia may present with gradual onset of dyspnea on exertion and rarely also have a normal chest x-ray. This patient, however, despite a CD4 count of close to 200 cells/µL, has an undetectable HIV viral load and therefore is at extremely low risk of Pneumocystis pneumonia. Furthermore, there is no evidence of hypoxemia, and Pneumocystis pneumonia does not typically present with acidosis. Although patients who are septic can present with significant lactic acidosis, this patient has a normal white blood cell count, and even though you would not be faulted for starting empirical broad-spectrum antibiotics in this situation, it is imperative to stop the offending agent in lactic acidosis associated with mitochondrial toxicity; therefore, answer B is incorrect. With a glucose level of 220 mg/dL one would not expect to see this degree of acidosis, and diabetic ketoacidosis is unlikely. Although tenofovir disoproxil fumarate can cause a Fanconi-like renal tubular acidosis, this is typically nongap and presents as an asymptomatic elevation in creatinine, often with associated hypophosphatemia and glucosuria even without elevated serum glucose. (Margolis AM, Heverling H, PA et al. A review of the toxicity of HIV medications. J Med Toxicol. 2014;10: 26-39.)",
+      "explanationImageUrl": "",
+      "questionNumber": 30
+    },
+    {
+      "question": "A patient with acute HIV infection found on routine testing with a CD4 count of 432 cells/µL and a viral load of 5,556,000 copies/mL starts on a four-drug regimen of tenofovir alafenamide/emtricitabine, dolutegravir, and ritonavir-boosted darunavir. He presents 4 weeks later with up to 15 watery bowel movements daily of large volume, with mild bloating and abdominal cramps. He is non-toxic-appearing with a normal bowel examination other than hyperactive bowel sounds. He has not traveled outside of New York City in the preceding months and until starting antiretroviral drugs had not been on any medications for years. He has never been hospitalized and has led an active life, including swimming daily in local pools. Which is the most likely diagnosis?",
+      "imageUrl": "",
+      "options": [
+        "A. Clostridium difficile infection",
+        "B. Cryptosporidiosis",
+        "C. Cytomegalovirus colitis",
+        "D. HIV enteropathy",
+        "E. Protease inhibitor-induced diarrhea"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "When evaluating HIV-infected patients with diarrhea, a careful history can usually differentiate between small and large bowel pathogens. Small bowel pathogens typically cause large-volume watery diarrhea that may be associated with bloating and gas. Large bowel pathogens are more likely to cause small-volume diarrhea, sometimes bloody, associated with painful cramps and tenesmus. This patient has no clear risk factor for C. difficile infection, and the symptoms are more characteristic of a small bowel pathogen. Cytomegalovirus colitis, also a large bowel pathogen, is extremely rare in patient with CD4 counts higher than 100 cells/µL. Although HIV enteropathy can have a similar presentation, the frequency and volume of diarrhea are atypical and would usually be seen at presentation, although the diarrhea may continue or worsen on antiretroviral therapy. Protease inhibitors, notably ritonavir, can certainly cause diarrhea but not usually with this frequency and volume. Cryptosporidiosis has been increasingly seen in outbreaks associated with municipal swimming pools and can cause a diarrheal illness with these symptoms even in immune-competent individuals. (CDC Press Release May 18, 2017. Crypto outbreaks linked to swimming have doubled since 2014. https://www.cdc. gov/media/releases/2017/p0518-cryptosporidium-outbreaks.html.)",
+      "explanationImageUrl": "",
+      "questionNumber": 31
+    },
+    {
+      "question": "A major risk factor for developing paradoxical tuberculosis immune reconstitution inflammatory syndrome (TB-IRIS) is:",
+      "imageUrl": "",
+      "options": [
+        "A. Starting antiretroviral therapy (ART) in a patient with a low CD4+ T-cell count",
+        "B. Starting ART in a patient with a high CD4 T-cell count",
+        "C. Starting ART in a patient with pulmonary TB",
+        "D. Starting a protease inhibitor-containing regimen",
+        "E. Starting ART in a patient with rifampin-resistant TB"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "TB-IRIS has been associated with a low CD4 T-cell count (usually <50/µL) in several studies, probably because it is a marker of a high pathogen load and an increased susceptibility to restoration of a pathogen-specific immune response that causes immunopathology. All ART regimens may cause TB-IRIS, and TB-IRIS may develop in patients with all types of TB, including patients with multidrug-resistant TB.",
+      "explanationImageUrl": "",
+      "questionNumber": 32
+    },
+    {
+      "question": "Which of the following statements is correct?",
+      "imageUrl": "",
+      "options": [
+        "A. In an HIV-infected patient with cryptococcal meningitis, ART should be started within 2 weeks after the start of the cryptococcal treatment.",
+        "B. In an HIV-infected patient with cryptococcal meningitis, ART should be started at least 4 weeks after the start of the cryptococcal treatment.",
+        "C. In an HIV-infected patient with cryptococcal meningitis and a CD4* T-cell count below 50 cells/µL ART should be started within 2 weeks after the start of the cryptococcal treatment.",
+        "D. In an HIV-infected patient with cryptococcal meningitis and very few leucocytes in the cerebrospinal fluid (CSF), ART can be started together with the start of the cryptococcal treatment."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Commencing ART within the first 2 weeks after starting cryptococcal meningitis treatment is associated with increased mortality compared with starting ART at least 4 weeks after the start of the cryptococcal treatment. The presence of very few leukocytes in the CSF is a further risk factor for developing cryptococcal IRIS.",
+      "explanationImageUrl": "",
+      "questionNumber": 33
+    },
+    {
+      "question": "Which of the following statements is correct?",
+      "imageUrl": "",
+      "options": [
+        "A. All patients with IRIS should be treated with prednisone.",
+        "B. Patients with IRIS should never be treated with prednisone.",
+        "C. In patients with IRIS, ART should be stopped.",
+        "D. In patients with TB-IRIS, prednisone may be beneficial."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The effectiveness of prednisone as treatment for IRIS varies from one type of IRIS to another. A randomized controlled trial in South Africa demonstrated that prednisone therapy is a safe and effective treatment option for paradoxical TB-IRIS. For progressive multifocal leukoencephalopathy (PML)-IRIS, only early use of corticosteroid therapy may be effective. For Kaposi sarcoma (KS)-IRIS, corticosteroids are likely to be harmful. Potential risks of using corticosteroid therapy in patients with HIV infection who are very immunodeficient should always be considered.",
+      "explanationImageUrl": "",
+      "questionNumber": 34
+    },
+    {
+      "question": "IRIS can be prevented by which one of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Early ART at a high CD4+ T-cell count",
+        "B. Prophylaxis for opportunistic infections",
+        "C. Early diagnosis and treatment of opportunistic infections",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Commencing ART at a high CD4+ T-cell count, as well as prophylaxis for opportunistic infections, will prevent the occurrence of opportunistic infections and therefore IRIS. Earlier diagnosis and treatment of opportunistic infections will reduce the pathogen load and therefore the risk of developing IRIS.",
+      "explanationImageUrl": "",
+      "questionNumber": 35
+    }
+  ]
+}

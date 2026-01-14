@@ -1,0 +1,565 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following demographic trends contributes to global aging?",
+      "imageUrl": "",
+      "options": [
+        "A. Decrease in mortality rates in infancy",
+        "B. Decrease in birth rates",
+        "C. Decrease in mortality rates in adults 65 and older",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "All of these trends are occurring together and are especially rapid in developing countries.",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "The most common causes of death in older adults after age 65:",
+      "imageUrl": "",
+      "options": [
+        "A. Are cardiovascular disease and cancer",
+        "B. Cannot be determined because of multimorbidity",
+        "C. Are pneumonia and dementia",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Although pneumonia and dementia have become more common as causes of death, the most common causes remain cardiovascular disease and cancer.",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "Disability in older adults is related to:",
+      "imageUrl": "",
+      "options": [
+        "A. The number of chronic health conditions",
+        "B. Mortality",
+        "C. Institutionalization",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Disability strongly reflects the underlying health status of older adults and, thus, predicts all of these poor health outcomes.",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "Muscle aging is characterized by the following features:",
+      "imageUrl": "",
+      "options": [
+        "A. Loss of contractile force",
+        "B. Loss of muscle fat infiltration",
+        "C. Increase of muscle innervation",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Loss of contractile force is related to an increase in muscle fat infiltration and decrease in innervation.",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "Longevity:",
+      "imageUrl": "",
+      "options": [
+        "A. Is predominantly genetic",
+        "B. Is predominantly related to environmental factors",
+        "C. Has not increased over the last century",
+        "D. Is not influenced by caloric restriction"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although genetics plays a role, environmental factors are stronger determinants of longevity. Longevity has increased dramatically. Caloric restriction increases longevity in many species.",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following interventions has been shown to extend maximum lifespan in mice?",
+      "imageUrl": "",
+      "options": [
+        "A. Rapamycin",
+        "B. Vitamin E",
+        "C. Vitamin C",
+        "D. Vitamin D",
+        "E. Testosterone"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Several compounds have been shown to extend maximum lifespan in mice, including rapamycin, resveratrol, and metformin. Vitamin supplements and testosterone have not been shown to extend lifespan in mammals.",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following is true about aging and inflammation?",
+      "imageUrl": "",
+      "options": [
+        "A. Levels of inflammatory cytokines such as interleukin-6 (IL-6) and tumor necrosis factor-alpha (TNF-a) decrease with age.",
+        "B. Inflammation is generally beneficial in old age.",
+        "C. Chronic inflammation is associated with frailty and mortality.",
+        "D. Anti-inflammatory drugs have been shown to extend lifespan in humans."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Aging is associated with a chronic low-grade inflammatory state often termed \"inflammaging.\" Levels of inflammatory cytokines like IL-6 and TNF-a increase with age. This chronic inflammation is associated with numerous age-related diseases, frailty, and mortality. While anti-inflammatory drugs are being investigated, none have yet been proven to extend human lifespan.",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which of the following cellular processes is thought to contribute to aging?",
+      "imageUrl": "",
+      "options": [
+        "A. Increased telomere length",
+        "B. Decreased cellular senescence",
+        "C. Impaired autophagy",
+        "D. Enhanced mitochondrial function"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Autophagy is a process by which cells recycle damaged components. This process declines with age, leading to the accumulation of damaged proteins and organelles, which contributes to cellular dysfunction and aging. Telomeres shorten with age, cellular senescence increases, and mitochondrial function declines.",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which of the following is a hallmark of cellular senescence?",
+      "imageUrl": "",
+      "options": [
+        "A. Continuous cell division",
+        "B. Apoptosis",
+        "C. Secretion of pro-inflammatory cytokines",
+        "D. Decreased size"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Senescent cells stop dividing but remain metabolically active and secrete a variety of pro-inflammatory cytokines, growth factors, and proteases, collectively known as the senescence-associated secretory phenotype (SASP). This contributes to chronic inflammation and tissue dysfunction.",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following is true regarding stem cells and aging?",
+      "imageUrl": "",
+      "options": [
+        "A. Stem cell function improves with age.",
+        "B. Stem cell exhaustion contributes to tissue aging.",
+        "C. Stem cells are immune to DNA damage.",
+        "D. The number of stem cells increases in all tissues with age."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Stem cell exhaustion, or the decline in the number and/or function of stem cells, is a hallmark of aging. This impairs tissue regeneration and repair. Stem cells do accumulate DNA damage over time. The number of stem cells may decrease or remain stable, but their function generally declines.",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "Which of the following is most accurate regarding the definition of physical frailty?",
+      "imageUrl": "",
+      "options": [
+        "A. It is synonymous with disability.",
+        "B. It is synonymous with comorbidity.",
+        "C. It is a medical syndrome with multiple causes and contributors that is characterized by diminished strength, endurance, and physiologic function that increases an individual's vulnerability for developing increased dependency and/or death.",
+        "D. It is an inevitable consequence of aging."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Physical frailty is distinct from disability and comorbidity, although they often overlap. It is a state of increased vulnerability to stressors due to age-related declines in physiologic reserves. It is not an inevitable part of aging, as some older adults remain robust.",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which of the following is a key component of the frailty phenotype?",
+      "imageUrl": "",
+      "options": [
+        "A. Cognitive impairment",
+        "B. Slow walking speed",
+        "C. Social isolation",
+        "D. Depressed mood"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The frailty phenotype, as defined by Fried et al., includes five components: unintentional weight loss, self-reported exhaustion, low energy expenditure (physical activity), slow walking speed, and weak grip strength. Cognitive impairment, social isolation, and depression are associated with frailty but are not part of the core phenotypic definition.",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which of the following is the most appropriate initial intervention for a frail older adult?",
+      "imageUrl": "",
+      "options": [
+        "A. Testosterone replacement therapy",
+        "B. Growth hormone therapy",
+        "C. Resistance exercise training",
+        "D. High-calorie nutritional supplements"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Resistance exercise training is the most effective intervention for improving muscle mass, strength, and physical function in frail older adults. Hormone therapies have significant side effects and limited proven benefit for frailty. Nutritional supplements alone are less effective than when combined with exercise.",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "Sarcopenia is defined as:",
+      "imageUrl": "",
+      "options": [
+        "A. Age-related loss of muscle mass alone",
+        "B. Age-related loss of muscle strength alone",
+        "C. Age-related loss of muscle mass and strength/function",
+        "D. Loss of muscle mass due to disuse"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Sarcopenia is defined as the age-related loss of skeletal muscle mass combined with loss of muscle strength and/or physical performance. It is a key component of the frailty syndrome.",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "Which of the following screening tools is most useful for identifying frailty in clinical practice?",
+      "imageUrl": "",
+      "options": [
+        "A. The Mini-Mental State Examination (MMSE)",
+        "B. The Geriatric Depression Scale (GDS)",
+        "C. The FRAIL scale",
+        "D. The Tinetti Performance Oriented Mobility Assessment"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The FRAIL scale (Fatigue, Resistance, Ambulation, Illnesses, Loss of weight) is a simple, validated screening tool for frailty. The MMSE screens for cognitive impairment, the GDS for depression, and the Tinetti assessment for gait and balance problems.",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 78-year-old man is admitted to the hospital for elective hip replacement surgery. On the second postoperative day, he becomes agitated, combative, and disoriented. He pulls out his intravenous line and attempts to get out of bed. Which of the following is the most likely diagnosis?",
+      "imageUrl": "",
+      "options": [
+        "A. Dementia",
+        "B. Delirium",
+        "C. Depression",
+        "D. Psychosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The acute onset, fluctuating course, and altered level of consciousness (agitation) are hallmark features of delirium. Dementia typically has a gradual onset and chronic course. Depression and psychosis do not typically present with such acute confusion and disorientation in this context.",
+      "explanationImageUrl": "",
+      "questionNumber": 16
+    },
+    {
+      "question": "Which of the following is the most important risk factor for developing delirium in the hospital?",
+      "imageUrl": "",
+      "options": [
+        "A. Use of a bladder catheter",
+        "B. Preexisting cognitive impairment (dementia)",
+        "C. Sleep deprivation",
+        "D. Dehydration"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "While all the options are risk factors, preexisting cognitive impairment (dementia) is the strongest and most consistent predictor of developing delirium in hospitalized older adults.",
+      "explanationImageUrl": "",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which of the following medications is most likely to contribute to delirium?",
+      "imageUrl": "",
+      "options": [
+        "A. Acetaminophen",
+        "B. Diphenhydramine",
+        "C. Lisinopril",
+        "D. Atorvastatin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Diphenhydramine is an anticholinergic medication. Drugs with anticholinergic properties are strongly associated with an increased risk of delirium in older adults and should be avoided or used with caution.",
+      "explanationImageUrl": "",
+      "questionNumber": 18
+    },
+    {
+      "question": "The Confusion Assessment Method (CAM) diagnostic algorithm for delirium requires the presence of:",
+      "imageUrl": "",
+      "options": [
+        "A. Acute onset and fluctuating course AND inattention AND (disorganized thinking OR altered level of consciousness)",
+        "B. Acute onset AND memory impairment AND disorientation",
+        "C. Hallucinations AND delusions AND agitation",
+        "D. Sleep disturbance AND psychomotor agitation AND emotional lability"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The CAM algorithm requires identifying an acute onset and fluctuating course of mental status changes, plus inattention, and either disorganized thinking or an altered level of consciousness to diagnose delirium.",
+      "explanationImageUrl": "",
+      "questionNumber": 19
+    },
+    {
+      "question": "Which of the following is the primary treatment strategy for delirium?",
+      "imageUrl": "",
+      "options": [
+        "A. High-dose antipsychotics",
+        "B. Benzodiazepines",
+        "C. Identification and treatment of underlying causes",
+        "D. Physical restraints"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most effective management for delirium is to identify and treat the underlying precipitating factors (e.g., infection, medications, electrolyte disturbances). Antipsychotics should be reserved for severe agitation that poses a safety risk and used at the lowest effective dose. Benzodiazepines may worsen delirium (except in alcohol withdrawal). Physical restraints should be avoided as they can increase agitation and injury.",
+      "explanationImageUrl": "",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following age-related changes most contributes to gait disorders?",
+      "imageUrl": "",
+      "options": [
+        "A. Reduced visual acuity",
+        "B. Decreased proprioception",
+        "C. Slowed reaction time",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Gait is a complex activity requiring the integration of sensory input (vision, proprioception, vestibular), central processing, and motor output. Age-related declines in all these systems contribute to gait disorders.",
+      "explanationImageUrl": "",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 75-year-old woman presents with difficulty walking. She describes feeling \"unsteady\" and having a fear of falling. On examination, she has a wide-based gait, short stride length, and difficulty with turns. She has no tremor or rigidity. Her cognitive testing reveals mild impairment. What is the most likely diagnosis?",
+      "imageUrl": "",
+      "options": [
+        "A. Parkinson's disease",
+        "B. Normal pressure hydrocephalus (NPH)",
+        "C. Cerebellar ataxia",
+        "D. Peripheral neuropathy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The triad of gait disturbance (often described as \"magnetic\" or \"apraxic\"), cognitive impairment, and urinary incontinence (not mentioned here but often present) is characteristic of NPH. The gait is typically wide-based with short steps. Parkinson's usually presents with tremor, rigidity, and bradykinesia. Cerebellar ataxia presents with a lurching, uncoordinated gait. Peripheral neuropathy usually causes a sensory ataxia (steppage gait) or distal weakness.",
+      "explanationImageUrl": "",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which of the following is a common cause of sensory ataxia in older adults?",
+      "imageUrl": "",
+      "options": [
+        "A. Vitamin B12 deficiency",
+        "B. Osteoarthritis",
+        "C. Spinal stenosis",
+        "D. Glaucoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Vitamin B12 deficiency causes damage to the posterior columns of the spinal cord and peripheral nerves, leading to loss of proprioception and sensory ataxia. This results in a gait that is unsteady, especially in the dark or on uneven surfaces.",
+      "explanationImageUrl": "",
+      "questionNumber": 23
+    },
+    {
+      "question": "Which clinical test is most useful for assessing gait and fall risk in a primary care setting?",
+      "imageUrl": "",
+      "options": [
+        "A. Romberg test",
+        "B. Timed Up and Go (TUG) test",
+        "C. Heel-to-shin test",
+        "D. Babinski sign"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The Timed Up and Go (TUG) test is a quick and validated measure of functional mobility and fall risk. It involves timing a patient standing up from a chair, walking 3 meters, turning, walking back, and sitting down. A time of >12 seconds indicates increased risk of falling.",
+      "explanationImageUrl": "",
+      "questionNumber": 24
+    },
+    {
+      "question": "The most appropriate initial intervention for an older adult with a gait disorder is:",
+      "imageUrl": "",
+      "options": [
+        "A. Prescribing a walker",
+        "B. Referring to physical therapy",
+        "C. Ordering a brain MRI",
+        "D. Recommending bed rest"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Physical therapy can assess the specific gait abnormalities and design an exercise program to improve strength, balance, and gait mechanics. Assistive devices like walkers should be prescribed based on the PT assessment. Imaging should be reserved for cases with specific neurologic findings. Bed rest leads to deconditioning and should be avoided.",
+      "explanationImageUrl": "",
+      "questionNumber": 25
+    },
+    {
+      "question": "Which of the following is the strongest risk factor for falls in community-dwelling older adults?",
+      "imageUrl": "",
+      "options": [
+        "A. History of a previous fall",
+        "B. Use of antihypertensive medication",
+        "C. Visual impairment",
+        "D. Arthritis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A history of a previous fall is the single strongest predictor of future falls. Other significant risk factors include muscle weakness, gait and balance problems, and visual impairment.",
+      "explanationImageUrl": "",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 82-year-old woman falls in her bathroom at night. She is taking multiple medications. Which of the following classes of medications is most strongly associated with an increased risk of falls?",
+      "imageUrl": "",
+      "options": [
+        "A. Statins",
+        "B. Benzodiazepines",
+        "C. Proton pump inhibitors",
+        "D. Calcium channel blockers"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Benzodiazepines and other psychoactive medications (antipsychotics, antidepressants, sedative-hypnotics) are strongly associated with increased fall risk due to sedation, dizziness, and impaired balance.",
+      "explanationImageUrl": "",
+      "questionNumber": 27
+    },
+    {
+      "question": "Which of the following environmental modifications is most effective for preventing falls in the home?",
+      "imageUrl": "",
+      "options": [
+        "A. Removing throw rugs",
+        "B. Installing grab bars in the bathroom",
+        "C. Improving lighting",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Home safety assessments and modifications should address multiple hazards, including tripping hazards like throw rugs, lack of support in bathrooms (grab bars), and poor lighting. A multifaceted approach is most effective.",
+      "explanationImageUrl": "",
+      "questionNumber": 28
+    },
+    {
+      "question": "Vitamin D supplementation has been shown to reduce fall risk in which population?",
+      "imageUrl": "",
+      "options": [
+        "A. All community-dwelling older adults",
+        "B. Older adults with documented Vitamin D deficiency",
+        "C. Older adults living in nursing homes only",
+        "D. Vitamin D does not reduce fall risk"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Evidence supports Vitamin D supplementation for fall prevention specifically in older adults who are Vitamin D deficient. Routine supplementation in community-dwelling adults with normal Vitamin D levels is not currently recommended for fall prevention alone.",
+      "explanationImageUrl": "",
+      "questionNumber": 29
+    },
+    {
+      "question": "What is the recommended components of a multifactorial fall risk assessment?",
+      "imageUrl": "",
+      "options": [
+        "A. Review of medications, vision check, and heart exam only",
+        "B. Focused history, physical exam (including orthostatics, vision, gait/balance, cognition), and functional assessment",
+        "C. Brain MRI and EEG",
+        "D. DEXA scan and Vitamin D level"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A comprehensive fall risk assessment should include a focused history of falls, review of medications, and a physical exam covering orthostatic blood pressure, visual acuity, gait and balance, muscle strength, cognitive function, and neurological function.",
+      "explanationImageUrl": "",
+      "questionNumber": 30
+    },
+    {
+      "question": "Which type of urinary incontinence is characterized by the involuntary loss of urine associated with a strong desire to void?",
+      "imageUrl": "",
+      "options": [
+        "A. Stress incontinence",
+        "B. Urge incontinence",
+        "C. Overflow incontinence",
+        "D. Functional incontinence"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Urge incontinence is characterized by urgency (a sudden compelling desire to pass urine which is difficult to defer) and leakage. It is often associated with detrusor overactivity. Stress incontinence involves leakage with exertion (coughing, sneezing). Overflow involves leakage from an overdistended bladder.",
+      "explanationImageUrl": "",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 65-year-old woman complains of leaking urine when she coughs, laughs, or exercises. She denies urgency or frequency. What is the most likely diagnosis?",
+      "imageUrl": "",
+      "options": [
+        "A. Stress incontinence",
+        "B. Urge incontinence",
+        "C. Mixed incontinence",
+        "D. Overflow incontinence"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is the classic presentation of stress incontinence, which is caused by urethral hypermobility or intrinsic sphincter deficiency leading to leakage during activities that increase intra-abdominal pressure.",
+      "explanationImageUrl": "",
+      "questionNumber": 32
+    },
+    {
+      "question": "Which of the following is a reversible cause of urinary incontinence (DIAPPERS mnemonic)?",
+      "imageUrl": "",
+      "options": [
+        "A. Delirium",
+        "B. Infection (symptomatic UTI)",
+        "C. Pharmaceuticals (medications)",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Transient or reversible causes of incontinence can be recalled using the mnemonic DIAPPERS: Delirium, Infection, Atrophic urethritis/vaginitis, Pharmaceuticals, Psychological factors, Excess urine output, Restricted mobility, Stool impaction.",
+      "explanationImageUrl": "",
+      "questionNumber": 33
+    },
+    {
+      "question": "First-line behavioral therapy for urge incontinence includes:",
+      "imageUrl": "",
+      "options": [
+        "A. Bladder training (scheduled voiding)",
+        "B. Pelvic floor muscle exercises (Kegels)",
+        "C. Fluid restriction",
+        "D. Intermittent catheterization"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Bladder training, which involves scheduled voiding with progressive increases in the interval between voids, is a first-line behavioral treatment for urge incontinence. Pelvic floor exercises are primarily for stress incontinence but can help with urge suppression.",
+      "explanationImageUrl": "",
+      "questionNumber": 34
+    },
+    {
+      "question": "Which medication class is most commonly used to treat urge incontinence but requires caution in older adults due to side effects?",
+      "imageUrl": "",
+      "options": [
+        "A. Anticholinergics (antimuscarinics)",
+        "B. Alpha-blockers",
+        "C. Beta-agonists",
+        "D. Cholinergics"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Anticholinergics (e.g., oxybutynin, tolterodine) are commonly used for overactive bladder/urge incontinence. However, they can cause side effects like dry mouth, constipation, and cognitive impairment, which are particularly problematic in older adults. Beta-3 agonists (e.g., mirabegron) are an alternative.",
+      "explanationImageUrl": "",
+      "questionNumber": 35
+    },
+    {
+      "question": "Which physiologic change in aging affects pharmacokinetics?",
+      "imageUrl": "",
+      "options": [
+        "A. Increased total body water",
+        "B. Increased lean muscle mass",
+        "C. Decreased glomerular filtration rate (GFR)",
+        "D. Increased hepatic blood flow"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Aging is associated with a decrease in GFR, which reduces the renal elimination of many drugs. Total body water and lean muscle mass decrease, while body fat increases. Hepatic blood flow and metabolism also generally decrease.",
+      "explanationImageUrl": "",
+      "questionNumber": 36
+    },
+    {
+      "question": "Polypharmacy is typically defined as the use of how many medications?",
+      "imageUrl": "",
+      "options": [
+        "A. 2 or more",
+        "B. 5 or more",
+        "C. 10 or more",
+        "D. Any unnecessary medication"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "While definitions vary, polypharmacy is most commonly defined as the concurrent use of 5 or more medications. This threshold is associated with an increased risk of adverse drug events, drug interactions, and non-adherence.",
+      "explanationImageUrl": "",
+      "questionNumber": 37
+    },
+    {
+      "question": "The \"prescribing cascade\" refers to:",
+      "imageUrl": "",
+      "options": [
+        "A. Prescribing generic drugs instead of brand names",
+        "B. Prescribing a new drug to treat the side effect of another drug, often mistaken for a new medical condition",
+        "C. Prescribing drugs based on guidelines",
+        "D. Stopping medications abruptly"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The prescribing cascade occurs when an adverse drug reaction is misinterpreted as a new medical condition, leading to the prescribing of potentially unnecessary additional medications to treat the symptoms.",
+      "explanationImageUrl": "",
+      "questionNumber": 38
+    },
+    {
+      "question": "Which criteria are widely used to identify potentially inappropriate medications for older adults?",
+      "imageUrl": "",
+      "options": [
+        "A. The Beers Criteria",
+        "B. The START/STOPP Criteria",
+        "C. Both A and B",
+        "D. Neither A nor B"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Both the AGS Beers Criteria and the START/STOPP criteria are evidence-based tools used to identify medications that are potentially inappropriate for older adults due to a high risk of adverse events or lack of efficacy.",
+      "explanationImageUrl": "",
+      "questionNumber": 39
+    },
+    {
+      "question": "Which of the following is a strategy to reduce polypharmacy and improve medication safety?",
+      "imageUrl": "",
+      "options": [
+        "A. Deprescribing",
+        "B. Using a single pharmacy",
+        "C. Regular medication reconciliation",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Deprescribing (systematically stopping unnecessary meds), using one pharmacy to track interactions, and regular medication reconciliation at transitions of care and clinic visits are all effective strategies to manage polypharmacy and enhance safety.",
+      "explanationImageUrl": "",
+      "questionNumber": 40
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "questions": [
+    {
+      "question": "A 24-year-old-woman with right lower quadrant abdominal pain and vaginal bleeding has a positive home pregnancy test. Before a pelvic ultrasound is ordered, the pelvic examination is performed and reveals cervical motion tenderness. Cervical motion tenderness has the following diagnostic characteristics for an ectopic pregnancy: sensitivity 45%, specificity 91%, likelihood ratio positive (LR+) 4.9, LR negative (LR-) 0.62, positive predictive value (PPV) 46%. Which of these values is most helpful for assessing the probability that she has an ectopic pregnancy?",
+      "imageUrl": "",
+      "options": [
+        "A. Sensitivity",
+        "B. Specificity",
+        "C. Likelihood ratio positive",
+        "D. Likelihood ratio negative",
+        "E. Positive predictive value"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The sensitivity is the percentage of patients who have cervical motion tenderness among women with an ectopic pregnancy. The specificity is the percentage of patients who do not have cervical motion tenderness among women without an ectopic pregnancy. These individual values are not helpful for this particular patient because without knowing whether or not she has an ectopic pregnancy, we do not know which result applies. The PPV describes the probability of ectopic pregnancy when there is cervical motion tenderness. To use the PPV for this patient requires knowing the prevalence of disease from which the PPV was derived. Without knowing that value, you cannot be certain whether the PPV is appropriate for your patient. The LR+ quantifies the increase in odds of disease among those with cervical motion tenderness, and the LR- quantifies the decrease in odds of disease when cervical motion tenderness is absent. Based on your assessment of the prior probability of ectopic pregnancy, which is 10 to 20% among all pregnant women with abdominal pain and/or vaginal bleeding, the LR+ is the most relevant value because it can be used to determine the increase in likelihood of ectopic pregnancy. [cite: 869-876]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "The primary role of completing a review of systems in helping with clinical diagnosis during the clinical evaluation is which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. To review symptoms associated with the presenting problem",
+        "B. To pick up the presence of concerns that were uncomfortable to address during the history of the present illness",
+        "C. To complete a record that enhances patient billing",
+        "D. To focus on the presence or absence of findings during a constrained time period",
+        "E. To allow open-ended questioning that enhances the patient's relationship with the physician"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A complete medical history should reveal the most important symptoms experienced by the patient that are pertinent to the presenting problems. Open-ended questioning should occur during elicitation of the medical history. Although completing a review of systems may be required for electronic medical records and billing, simply fulfilling that function does not help with diagnosis. However, about 10% of the time, the review of systems might pick up on an important finding that was not addressed during the rest of the evaluation. The main purpose of the review of systems is to use direct questioning to pick up on a limited set of symptoms, during a specified recent time interval (e.g., over the past week, or the past month). This approach helps the patient focus on a well-defined and recent time period that should enhance the reliability of their answers that pertain to their current condition. [cite: 883-888]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "While conducting your new patient evaluation on a 35-year-old male veteran who served in combat duty in Afghanistan, you note that he seems anxious and that he is questioning you frequently about a variety of difficulties in making his appointment and the attitudes of your office staff. You recognize the need to screen for post-traumatic stress disorder using a four-item screening instrument. You start by asking, \"In your life, have you ever had an experience so horrible, frightening, or upsetting that, in the past month you...\" All of the items below are part of the four-item screening instrument for post-traumatic stress disorder that follows this introduction except:",
+      "imageUrl": "",
+      "options": [
+        "A. Have little interest or pleasure in doing things?",
+        "B. Have had nightmares about it or thought about it when you did not want to?",
+        "C. Tried hard not to think about it or went out of your way to avoid situations that reminded you of it?",
+        "D. Were constantly on guard, watchful, or easily startled?",
+        "E. Felt numb or detached from others, activities, or your surroundings?"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The loss of interest or pleasure in doing things is a symptom that suggests depression. The other symptom that is elicited in a two-item screener for depression asks the patient whether they feel down, depressed, or hopeless. Patients who answer \"yes\" to at least one of the items have an LR+ of 2.7 for depression, whereas answering \"no\" to both questions makes depression much less likely with an LR of 0.14. Although it is important to screen for depression among patients with post-traumatic stress disorder (military related or not), screening for depression alone may not detect the associated post-traumatic stress disorder. [cite: 896-899]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "A patient presents with malaise, cough, and shortness of breath. Vital signs include temperature 40°C blood pressure 120/74 mm Hg, respiratory rate 18 breaths per minute, pulse 70 beats per minute, and oxygen saturation 97%. This presentation could be consistent with:",
+      "imageUrl": "",
+      "options": [
+        "A. Streptococcal pneumonia",
+        "B. Pyelonephritis due to Escherichia coli",
+        "C. Legionella pneumonia",
+        "D. Influenza-like illness",
+        "E. Mycoplasma pneumonia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient is exhibiting a pulse-temperature dissociation because the pulse (70) is far lower than one would expect given that the patient is febrile to 40°C. This phenomenon is seen in a number of conditions, including typhoid fever and legionella infection. The other conditions would all be expected to produce tachycardia unless the patient could not become tachycardic because of medications (e.g., B-blockers) or cardiac conduction problems. [cite: 911-912]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "An 88-year-old man presents from a nursing home with slight agitation and vital signs that include temperature 38.7°C, blood pressure 96/64 mm Hg, respiratory rate 22 breaths per minute, pulse 94 beats per minute, and oxygen saturation 96%. Physical examination reveals dry mucous membranes, clear lungs, a soft abdomen, an indwelling Foley catheter, and slightly cool but noncyanotic extremities. The patient should be given:",
+      "imageUrl": "",
+      "options": [
+        "A. Antipyretics (e.g., acetaminophen)",
+        "B. Intravenous normal saline, 500 mL with additional boluses as tolerated",
+        "C. Intravenous antibiotics",
+        "D. All of the above",
+        "E. Only A and B until urine culture results are available"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This case is an example of how vital signs can guide treatment in the absence of a firm diagnosis. The patient meets all three of the physical examination criteria for the systemic inflammatory response syndrome (SIRS) and is likely septic. The physician should not wait for his white blood cell count or other laboratory results to initiate antibiotic treatment because evidence suggests that early antibiotics are a crucial step in preventing morbidity and mortality. Although antibiotics should not be overused, the early provision of appropriate broad-spectrum antibiotics before the confirmation of a specific diagnosis is prudent and may be life-saving for this patient. [cite: 920-923]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "An intern is awakened at 3 AM by the ward nurse regarding a patient who is postoperative day 2 from a hip replacement and is newly tachycardic. Vital signs include temperature 36°C blood pressure 146/82 mm Hg, respiratory rate 18 breaths per minute, pulse 112 beats per minute, and oxygen saturation 97% on room air. The intern drowsily orders a 1000-mL normal saline fluid challenge for dehydration. Later that morning, the patient is acutely intubated for respiratory distress. What most likely went wrong?",
+      "imageUrl": "",
+      "options": [
+        "A. The intern failed to consider pulmonary embolism as a possible cause for the tachycardia.",
+        "B. The intern failed to consider fat embolism in a patient who had recently undergone hip surgery.",
+        "C. The intern failed to consider sepsis in the differential diagnosis.",
+        "D. The intern failed to consider failure of the patient controlled anesthesia (PCA) pump in the differential diagnosis.",
+        "E. The intern failed to realize that tachycardia can be present in both dehydration and heart failure."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "First and foremost, the intern's main mistake was not getting out of bed to evaluate the patient in person. Vital signs alone are not sufficient data on which to base an important clinical decision. Although choices A and B are certainly possible in a postoperative orthopedic patient, heart failure is a more likely diagnosis. There is little clinical support for the other choices. [cite: 933-936]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "A patient arrives in the emergency department comatose with decreased respiratory rate in the winter. Vital signs are temperature 36°C blood pressure 128/68 mm Hg, respiratory rate 10 breaths per minute, pulse 100 beats per minute, and oxygen saturation 100% on room air. Pupils are 6 mm and reactive, and lungs are clear. What is the single most important initial treatment?",
+      "imageUrl": "",
+      "options": [
+        "A. High-flow O2 administered by non-rebreather mask",
+        "B. Intravenous normal saline, 1000 mL with additional boluses as tolerated",
+        "C. Intravenous antibiotics",
+        "D. Naloxone, 0.8 mg IV",
+        "E. Immediate endotracheal intubation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient may have carbon monoxide poisoning. It is winter, a time when people use heating devices that may have incomplete combustion. The pupillary examination is not suggestive of opiate intoxication (D), and no other diagnosis is apparent. Because oxygen is the best treatment for this condition and is generally harmless in adults, it makes sense to initiate this therapy while efforts (e.g., blood gas analysis with co-oximetry) are made to confirm the diagnosis. There is no basis for thinking this patient is dehydrated (B) or infected (C), and intubation would be premature (E). Remember that pulse oximetry is falsely elevated in carbon monoxide poisoning, so the 100% oxygen saturation means nothing. [cite: 945-949]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "A study of 105 vegan Buddhist nuns randomly sampled from monasteries around Ho Chi Minh City found that the average femoral neck bone mineral density was 0.62 g/cm² with a standard deviation of 0.11 g/cm². Which of the following statements about this result is correct?",
+      "imageUrl": "",
+      "options": [
+        "A. The 95% confidence interval for the mean bone mineral density in these women is about 0.4 g/cm² to 0.84 g/cm².",
+        "B. If bone mineral density is normally distributed, we would expect about 10% of the women in the sample to have bone mineral density outside of the interval: 0.4 g/cm² to 0.84 g/cm².",
+        "C. The 95% confidence interval for the mean bone mineral density in these women is about 0.60 g/cm² to 0.64 g/cm².",
+        "D. Because the women were sampled randomly, there is a 95% chance that a randomly selected woman from the population would have a bone mineral density between 0.60 g/cm² and 0.64 g/cm².",
+        "E. Because the women were sampled randomly, there is a 95% chance that a randomly selected woman from the sample would have a bone mineral density between 0.60 g/cm² and 0.64 g/cm²."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "We would expect about 95% of observations to be within 2 standard deviations of the sample mean, leaving 5% out, so choice B is incorrect. The 95% confidence interval for a sample mean is about mean +/- 2 standard errors of the mean (SEM), where the SEM = SD / sqrt(N). In this case the SD is 0.11 g/cm² and the N is about 100, so the SEM will be about 0.11/10 = 0.01 g/cm² and the 95% CI will be about 0.60 g/cm² to 0.64 g/cm² as indicated in choice C. Choices D and E are incorrect because the range given is too narrow: it is +/- 2 SEM when it should be +/- 2 SD. [cite: 959-962]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "A study of data collected through the \"Get with the Guidelines-Stroke Program\" examined the time from onset of stroke symptoms to treatment with tissue-type plasminogen activator (tPA) among 58,353 patients with acute ischemic stroke treated within 4.5 hours of the onset of symptoms. The authors reported that \"faster onset-to-treatment time, in 15-minute increments, was associated with... increased achievement of independent ambulation at discharge (OR, 1.04; 95% CI 1.03-1.05; P<0.001)...\" Which of the following is a correct interpretation of these findings?",
+      "imageUrl": "",
+      "options": [
+        "A. In this study, the effect of a 15-minute reduction in onset-to-treatment time was associated with a 4% (relative) increase in the odds of independent ambulation at discharge.",
+        "B. Because the odds ratio is very close to 1.0, the results are not statistically significant.",
+        "C. Because the odds ratio is very close to 1.0, the results, while highly statistically significant, are not clinically significant.",
+        "D. The 4% increase in odds of independent ambulation translates into a number needed to treat (NNT) of 25.",
+        "E. None of the above is correct."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Choice A exactly expresses the meaning of the odds ratio for this study. Choices B and C are incorrect because the proximity of the odds ratio to 1 is in this case based partly on the choice of the authors to express it per 15 minutes onset-to-treatment time. This illustrates the importance of knowing the units of the predictor variable when it is not dichotomous. If the authors had expressed the difference per hour instead of per 15 minutes, the odds ratios would have been taken to the fourth power, i.e., the odds ratio for independent ambulation at discharge would have been about 1.04^4 = 1.17. Choice D is incorrect because estimation of the NNT requires knowing the absolute risk reduction, which was not provided in this case. [cite: 970-973]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Assume a study of both smoking and nonsmoking mothers reports that the effect of smoking on birthweight is about a 32-gram decrease in birth weight per cigarette smoked per day during pregnancy. Which of the following statements about this finding is NOT correct?",
+      "imageUrl": "",
+      "options": [
+        "A. The result is based on a model, in which the predicted birthweight is linearly related to the number of cigarettes smoked per day.",
+        "B. This model predicts that the difference in birthweight between a baby whose mother did not smoke and one who smoked 5 cigarettes per day is the same as the difference between babies of mothers who smoked 20 and 25 cigarettes per day.",
+        "C. The model predicts the same effect of smoking on birthweight, regardless of the mother's age and prepregnancy weight.",
+        "D. This model predicts that cutting cigarette smoking in half will lead to a 64 gram expected weight increase in the baby.",
+        "E. The model could include additional terms that would reflect the effect of mother's age and prepregnancy weight."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Choices A, B and C accurately describe characteristics of a linear model for the effect of smoking on birthweight. Choice D is not consistent with a linear model. Choice E reflects that the effects of other variables can be taken into account, while still maintaining a linear model for the effect of cigarettes smoked on birthweight. [cite: 981-982]",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "A case-control study of the relationship of breast cancer with the use of COX-2 inhibitors found that the odds ratio and confidence interval relating cancer to use of baby aspirin was OR=0.77, 95% CI (0.42-1.41). The authors then stated \"Neither acetaminophen nor baby aspirin had any effect on the relative risk of breast cancer.\" This is incorrect because:",
+      "imageUrl": "",
+      "options": [
+        "A. The confidence interval crosses 1.",
+        "B. They do not give the p-value.",
+        "C. The confidence interval has a lower limit of 0.42.",
+        "D. Odds ratios are inappropriate for this study.",
+        "E. They should have used a higher level of confidence."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "C is correct because the confidence interval allows for a 58% reduction (from (1-.42) 100%) in the chance of breast cancer associated with the use of baby aspirin, a potentially important effect. Choice A is incorrect because it merely indicates a lack of a statistically significant result and does not bear on the size of the effect. Choice B is incorrect because CIs are more useful for ruling out important effects. Odds ratios are especially useful in case-control studies, so D is incorrect. And E is incorrect because a higher level of confidence would make the CI even wider. [cite: 991-995]",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "In a randomized trial of an intervention to reduce hypertension, researchers selected subjects from a single antihypertensive patient club in Shanghai. About one third of those approached agreed to be randomized. The results of this study can be safely generalized to:",
+      "imageUrl": "",
+      "options": [
+        "A. All hypertensives.",
+        "B. All hypertensives in China.",
+        "C. All hypertensives in Shanghai.",
+        "D. All hypertensives belonging to the single club in Shanghai.",
+        "E. None of the above."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Because two thirds of the participants refused to participate, the extrapolation of the effect of the intervention might not even apply to the particular club in which the study was conducted, much less a broader population. [cite: 1002]",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 53-year-old man presents to his primary care physician with a chief complaint of chest pain for the last two weeks. The pain is described as intermittent, usually exertional, midline, and aching in nature. His electrocardiogram is completely normal. Which of the following is the most appropriate next step?",
+      "imageUrl": "",
+      "options": [
+        "A. Watch and wait",
+        "B. Exercise electrocardiography",
+        "C. B-type natriuretic peptide",
+        "D. Exercise nuclear scintigraphy",
+        "E. Coronary angiography"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The immediate question is whether this patient's symptoms represent new ischemic heart disease. His clinical presentation suggests a moderate probability of coronary artery disease, so watch-and-wait is probably too risky a strategy. At the same time, he does not appear to have unstable ischemic disease, so there is no need to proceed immediately to coronary angiography in preparation for coronary revascularization. Measurement of B-type natriuretic peptide would not alter management. Of the two noninvasive tests for ischemic heart disease, exercise electrocardiography is the least expensive, most convenient, and carries no radiation exposure. Guidelines would thus suggest B as the most appropriate next step. [cite: 1012-1017]",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "A patient undergoes an exercise test, and has 2 mm of ST-segment depression on electrocardiogram. In which of these patients would this finding be most likely to change management?",
+      "imageUrl": "",
+      "options": [
+        "A. A healthy 19-year-old volunteer in a research study",
+        "B. A 62-year-old woman who is completely asymptomatic",
+        "C. A 62-year-old woman with frequent nonexertional aching chest pain",
+        "D. A 62-year-old woman with recent myocardial infarction and chest pain at rest",
+        "E. A 62-year-old woman who is completely asymptomatic four months after coronary artery bypass graft surgery"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Patients A and B are of sufficiently low probability for having coronary disease that the exercise test abnormality is highly likely to be a false-positive result. Patient D has an extremely high probability of coronary disease, and likely needs coronary angiography and revascularization as next steps; she does not need exercise electrocardiography, because the test is unlikely to change this management plan. Patient E's care is also not likely to be influenced by an exercise test result because she is asymptomatic after major coronary revascularization surgery. Patient C has a low-to-moderate probability of coronary disease, and this abnormal exercise test result moves her into a midrange probability. Thus, she is likely to undergo either further testing, initiation of antianginal therapy, or both as a result of this exercise test result. [cite: 1026-1031]",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "Which of the following is NOT an important consideration when weighing whether to order a test for a patient?",
+      "imageUrl": "",
+      "options": [
+        "A. Test may influence decision making for patient's care",
+        "B. Test is less expensive than alternative strategies",
+        "C. Test is safer than alternative strategies",
+        "D. Test reduces patient's or clinician's uncertainty",
+        "E. Test is expected to be abnormal in presence of patient's already confirmed diagnosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Tests should be ordered when they are expected to change care, and should be chosen on basis of safety, cost, and impact. They should not be ordered simply because they can confirm an already known diagnosis. [cite: 1038-1039]",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    },
+    {
+      "question": "Which one of the following is the current number of randomized clinical trials published each year?",
+      "imageUrl": "",
+      "options": [
+        "A. 1000",
+        "B. 5000",
+        "C. 13,000",
+        "D. 21,500",
+        "E. 31,000"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Without discounting the value of experience and mature clinical judgment, the modern paradigm for determining optimal practice has changed, driven by the explosion in clinical research during the past 30 years; for example, the number of randomized clinical trials grew from 350 per year in 1970 to more than 31,000 per year in 2015. [cite: 1049-1050]",
+      "explanationImageUrl": "",
+      "questionNumber": 16
+    },
+    {
+      "question": "Which one of the following would not be characterized as process measures under Donabedian triad?",
+      "imageUrl": "",
+      "options": [
+        "A. Fraction of patients with myocardial infarction who received B-blockers",
+        "B. Fraction of patients with stroke who died within 30 days (risk adjusted)",
+        "C. Fraction of hospitalized patients with pneumonia given pneumococcal vaccination",
+        "D. Fraction of hospitalized patients with heart failure with documented predischarge instructions",
+        "E. Fraction of diabetic outpatients who received eye examinations"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Many of the widely used quality measures are process measures for which clinical research has established a link between such processes and improved outcomes. An example is the rate at which aspirin or a B-blocker is given to survivors of a myocardial infarction before hospital discharge (Chapter 64). However, when processes are less relevant and the science of case-mix adjustment is suitably advanced (e.g., cardiac bypass surgery; Chapter 65), outcome measurement (e.g., risk-adjusted mortality rate or 30-day readmission rate) is increasingly used. In other areas involving complex processes, structural measures are used as proxies for quality; examples here include the presence of intensivists to staff critical care units, a dedicated stroke service, and computerized physician order entry (CPOE) systems. [cite: 1055-1059]",
+      "explanationImageUrl": "",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which of one the following is a policy lever that has been used to promote improved quality and safety?",
+      "imageUrl": "",
+      "options": [
+        "A. Public reporting of performance",
+        "B. Pay for performance",
+        "C. No pay for errors",
+        "D. Appeal to professionalism",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The recent recognition of major gaps in quality and of the need for systemic change to improve quality has led to a variety of initiatives to catalyze quality improvement. Virtually all involve several steps: defining reasonable quality measures (evidence-based measures; capturing appropriate structures, process, or outcomes), measuring the performance of providers or systems, and using these results to promote change. This final imperative creates the greatest degree of uncertainty and experimentation. Although one might hope that simply giving a physician information about prior performance would generate meaningful improvement, this strategy yields only modest change at best. Increasingly, a more aggressive and transparent strategy, such as disseminating the results of quality measurement to key stakeholders, is being adopted. In some cases, simple transparency is the main strategy-the rationale being that providers will find the exposure of their gaps in quality to be sufficiently concerning or embarrassing to motivate improvement. [cite: 1066-1071]",
+      "explanationImageUrl": "",
+      "questionNumber": 18
+    },
+    {
+      "question": "The \"Swiss cheese model\" for patient safety refers to which one of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. The importance of ensuring that the work force is well fed and rested",
+        "B. The ability of Swiss trains and watches to run on time",
+        "C. The observation that many errors relate to the failure of multiple incomplete layers of protection",
+        "D. The inadequate incentives to promote safety",
+        "E. The tendency for computer systems to create new classes of errors"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The \"Swiss cheese\" model of accidents, drawn from innumerable investigations of accidents in commercial aviation and the nuclear power industry, for example, emphasizes that single errors by one individual working in an otherwise safety-conscious system rarely cause harm. Instead, such errors must penetrate multiple incomplete layers of protection (\"layers of Swiss cheese\") to cause terrible harm. The lesson is to focus not on the futile goal of trying to perfect human behavior but rather on creating multiple overlapping layers of protection to decrease the probability that the holes in the Swiss cheese will ever align, allowing an error to slip through. [cite: 1083-1085]",
+      "explanationImageUrl": "",
+      "questionNumber": 19
+    },
+    {
+      "question": "Which one of the following would be an accurate equation to capture health care \"value\"?",
+      "imageUrl": "",
+      "options": [
+        "A. Quality / safety + patient satisfaction X cost",
+        "B. Quality + patient satisfaction / cost X safety",
+        "C. Cost + quality",
+        "D. Quality + safety + patient satisfaction / cost",
+        "E. Quality / cost + patient satisfaction"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Outside of health care, most purchasing decisions are based on perceived value: (quality + safety) + cost. Health care decisions historically have not been made this way, in part because of the limited ability of patients and payers to make rational judgments about the quality and safety of a given provider or system, and in part because health care insurance insulates patients from the full cost of care. In the United States, which spends nearly 20% of its Gross Domestic Product on health care, policy pressures are increasingly being brought to bear on the entire value equation (\"promoting value, not volume\"). For example, Medicare's Value-based Purchasing program modifies hospital reimbursement based on quality, safety, and patient satisfaction scores. [cite: 1089-1092]",
+      "explanationImageUrl": "",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following statements about a practice's chronic disease performance measures (e.g., percentage of hypertensive patients 18 to 59 years of age whose blood pressure was <140/90 mm Hg) is NOT true?",
+      "imageUrl": "",
+      "options": [
+        "A. They tend to be better in practices where staff other than physicians are involved in chronic disease care.",
+        "B. They are strongly influenced by the pregraduate and postgraduate clinical training of the provider.",
+        "C. They tend to improve when practices put systems in place to ensure that poorly controlled patients are closely followed and therapy changed if no improvement.",
+        "D. They generally reflect the extent to which a practice has put in place standardized approaches to ensure that chronically ill patients consistently receive evidence-based pharmacologic and self-management supportive therapy.",
+        "E. All of the above."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Most studies of various interventions that improve the control of diabetes, hypertension, and other chronic diseases indicate that it is the systems of care, not the expertise or training of the physician, that has the major impact on a practice's ability to keep patients under control. [cite: 1102]",
+      "explanationImageUrl": "",
+      "questionNumber": 21
+    },
+    {
+      "question": "Which of the following elements are important for programs aimed at improving chronic illness care?",
+      "imageUrl": "",
+      "options": [
+        "A. Self-management support",
+        "B. Delivery system design",
+        "C. Community resources",
+        "D. Clinical information systems",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The chronic care model identifies six evidence-based elements essential for improving chronic illness care. These include (1) training patients in self-management support to prepare and empower patients to manage their health and health care, (2) designing delivery systems to ensure proactive, evidence-based, and planned follow-up of patients with chronic illness, (3) mobilizing and tailoring community resources to meet the needs of patients, and (4) using clinical information systems to organize patient and population data to facilitate efficient and effective care. The two elements of the chronic care model not included in the responses above are (5) using decision support to promote care that is consistent with both scientific evidence and patient preference and (6) creating a culture, organization, and mechanism within health care systems to promote safe, high-quality care. The most effective chronic care interventions use all six of these elements together. [cite: 1109-1112]",
+      "explanationImageUrl": "",
+      "questionNumber": 22
+    },
+    {
+      "question": "Care management is a commonly used strategy to help care for patients living with chronic diseases. Which of the following is NOT true about care management?",
+      "imageUrl": "",
+      "options": [
+        "A. Care management for patients with multiple chronic diseases can be challenging due to the competing demands of different chronic diseases.",
+        "B. Care management performed by nurses outside of the primary care team is more effective than care management delivered within a primary care team.",
+        "C. Self-monitoring of chronic diseases coupled with care management between office visits can improve outcomes in chronic diseases.",
+        "D. Care management targeting multimorbidity in patients at risk for hospitalization has not reduced health care costs."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Care management is more likely to be effective if the care manager collaborates closely with the primary care clinician. Competing demands for self-management in patients with multiple chronic conditions can be challenging for care managers who are often focused on a single or small set of chronic diseases. Self-monitoring combined with a nurse care management between office visits can be more effective than only sharing self-monitoring results during office visits. Care management appears to be most effective when focused on a single or small set of chronic diseases with guideline-driven care. Care management programs targeting multimorbidity for patients at risk of hospitalization have shown improvements in self-reported health status but have not shown a reduction in health care utilization, costs, or mortality. [cite: 1119-1123]",
+      "explanationImageUrl": "",
+      "questionNumber": 23
+    },
+    {
+      "question": "Which of the following is most true regarding self-management training of patients with chronic diseases?",
+      "imageUrl": "",
+      "options": [
+        "A. Self-management training by peers with chronic illness is not effective.",
+        "B. Some patient groups do not benefit from self-management training.",
+        "C. Patients with hypertension or type 2 diabetes who have gone through self-management training generally experience significant improvements in blood pressure or hemoglobin A1c",
+        "D. Self-management training in group settings is not effective."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Self-management training of patients with hypertension or type 2 diabetes generally improves blood pressure or hemoglobin A1c without significant changes in medication therapy. Peer-led self-management training programs are effective. Self-management training is effective across a broad range of patient populations and chronic diseases. Both group and individual self-management training can be effective. [cite: 1129-1131]",
+      "explanationImageUrl": "",
+      "questionNumber": 24
+    }
+  ]
+}

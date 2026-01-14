@@ -1,0 +1,226 @@
+{
+  "questions": [
+    {
+      "question": "A 60-year-old woman presents to her physician to discuss her recent bone density results and management options. She has treated hypertension and a history of atrial fibrillation, as well as rheumatoid arthritis, for which she takes infliximab. Family history is notable for a hip fracture in her mother after a fall at age 65 years. She drinks socially and does not smoke. Her physical examination is unremarkable, including only 1 inch of height loss from her young adult maximum. Her spine examination reveals normal curvature, no kyphosis, normal rib to pelvis distance of 3 fingerbreadths, and 0 fingerbreadth wall to occiput distance. Laboratory studies are normal, including 25(OH)D level. Duel-energy x-ray absorptiometry bone density reveals lumbar spine, femoral neck, and total hip T scores of -2.5, -3.0, and-2.7, respectively. Her FRAX 10-year estimates of hip and major osteoporotic fracture are 5.6 and 29%, respectively. What is the best management recommendation for this woman?",
+      "options": [
+        "A. Calcium and vitamin D supplementation alone",
+        "B. Hormone replacement therapy",
+        "C. Raloxifene",
+        "D. Oral bisphosphonate",
+        "E. Denosumab"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has osteoporosis based on T score at the lumbar spine and proximal femur. In addition, she has an absolute fracture risk that supports pharmacologic intervention on a cost-effectiveness basis. Oral bisphosphonates are effective and generally frontline therapy. Active use of immunosuppressive therapy increases her risk for infection, which was seen more frequently in denosumab-treated patients in randomized controlled trials. Her cardiovascular history increases her risk for stroke, which has been observed more frequently in raloxifene- and estrogen-treated patients. Finally, calcium and vitamin D are important adjuncts to her management but should not be considered adequate alone for fracture risk reduction in this woman.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 65-year-old woman presents with 6 months of progressive lower extremity pain and describes difficulty ascending stairs because of pain and weakness. She also brings a recent outside duel-energy x-ray absorptiometry bone density test, which shows total hip T and Z scores of-4.5 and-2.5, respectively. She does not have a history of fragility fractures. Past medical history is notable for hypertension and long-standing irritable bowel syndrome. She takes 600 mg of calcium and 400 IU of vitamin D daily, but no other medications. Family history is negative for osteoporosis or parental hip fracture. She does not smoke or drink alcohol. Physical examination is notable for tenderness to palpation over the mid-tibia bilaterally. She also has a wide-based, nonantalgic gait. What is the next best choice for her skeletal management?",
+      "options": [
+        "A. Double her calcium and vitamin D daily intake.",
+        "B. Measure serum 25(OH)D level.",
+        "C. Start an oral bisphosphonate.",
+        "D. Measure fasting serum C telopeptide level (CTx).",
+        "E. Start teriparatide therapy."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has lower bone density than expected for age based on Z score of-2.0 or less. This suggests a secondary cause for low bone mineral density (BMD) besides menopause. Her clinical presentation is consistent with osteomalacia, which cannot be distinguished from osteoporosis based solely on BMD. In addition, the prevalence of vitamin D deficiency or insufficiency and established hip fracture efficacy with vitamin D repletion warrant its identification and treatment as the next best step in patient management. The recommended increase in calcium and vitamin D would be insufficient to treat vitamin D deficiency-related osteomalacia in this woman, and bisphosphonate and teriparatide therapy would be inappropriate until the vitamin D deficiency is corrected. Finally, bone turnover markers cannot be used independently for diagnosis in patients with metabolic bone disease.",
+      "questionNumber": 2
+    },
+    {
+      "question": "An 81-year-old man is admitted after a fall and low-impact fracture of the proximal femur. His history is notable for Parkinson disease treated with dopamine agonist therapy. On physical examination, the patient has a mild resting tremor while lying in bed. Laboratory investigations do not reveal secondary causes of osteoporosis, including a 25(OH)D level of 30 ng/mL and testosterone of 300 ng/dL. The patient has normal renal function and calcium. The patient undergoes successful operative repair. After discharge, the patient undergoes 4 weeks of inpatient rehabilitation. What is the most definitive choice for this patient's metabolic bone management?",
+      "options": [
+        "A. Start calcium and vitamin D supplementation.",
+        "B. Increase dopamine agonist therapy for Parkinson disease.",
+        "C. Give zoledronic acid, 5 mg intravenously.",
+        "D. Start testosterone replacement therapy.",
+        "E. Prescribe ergocalciferol 50,000 IU once weekly."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This gentleman has incurred a low trauma femur fracture, which greatly increases his risk for subsequent fractures. Furthermore, the fracture confers a mortality rate up to 30% within 1 year of the event. Zoledronic acid has been proved not only to reduce the risk for subsequent fracture but also to reduce mortality by 27% based on results of the Horizon Recurrent Fracture Trial. Calcium and vitamin D are important adjuncts to treatment but are not definitive. Given his level of 25(OH)D, additional antifracture and/or fall risk reduction would not be anticipated from pharmacologic vitamin D treatment. There is no randomized control trial evidence that testosterone treatment of either eugonadal or hypogonadal men reduces fracture risk. Finally, optimal management of his Parkinson disease, which does not appear undertreated in this patient, might reduce his risk for falls but not his risk for fracture.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 55-year-old white woman presents to her physician with intense mid-back pain after a fall onto her backside while walking. Her history is notable for a recent diagnosis of polymyalgia rheumatica, for which she has taken prednisone 10 mg daily for the last 6 months. She does have known osteopenia, with lumbar spine, femoral neck, and total hip T scores of -2.0, -1.8, and -0.8, respectively. Physical examination is notable for tenderness to palpation and percussion over the lower thoracic spine. Plain films of the thoracolumbar spine reveal a new moderate (35%) anterior compression fracture at T11. Laboratory work-up, including 25(OH), is within normal limits. Other than continuing the calcium and vitamin D that the patient is currently taking, what is the most appropriate pharmacologic choice for treatment at this time?",
+      "options": [
+        "A. Vitamin D 50,000 IU once weekly",
+        "B. Alendronate 70 mg once weekly",
+        "C. Risedronate 150 mg once monthly",
+        "D. Teriparatide 20 \u00b5g subcutaneously daily",
+        "E. Denosumab 60 mg subcutaneously every 6 months"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This woman presents with an acute vertebral fracture following a low trauma event. Her level of BMD is not osteoporotic, underscoring the independent contribution of glucocorticoids to fracture risk such that fractures may occur at a higher (i.e., better) level of BMD. The recent nature of her fracture further underscores the need for initiation of treatment now. There is no evidence that increasing this patient's vitamin D level will further reduce her risk for fracture. Denosumab will likely reduce her risk for subsequent fracture, although the association with infection and use of concurrent prednisone in this woman necessarily lessen its consideration at present. Alendronate and risedronate are approved for the prevention and treatment of glucocorticoid-induced osteoporosis (GIO). Despite this, teriparatide has been proved more effective that bisphosphonates in patients with GIO and is indicated for this woman, assuming she has no contraindications to treatment",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 70-year-old man presents with acute, mid-back pain after lifting a bag of topsoil while gardening 8 weeks ago. Although significant, his pain is improving. His medical history is notable for known male hypogonadism due to mumps orchitis in his 20s, although he does not take testosterone because of severe benign prostatic hypertrophy. He does take 600 mg of calcium twice daily and 1000 IU of vitamin D once daily. On physical examination, he has mild tenderness to palpation and percussion over his mid-thoracic spine. Laboratory investigations are unrevealing, including a 25(OH) level of 45 ng/mL. Duel-energy x-ray absorptiometry bone density study confirms osteoporosis with lumbar spine T score of -3.0, although femoral neck and total hip T scores are normal. Radiographs of the thoracic spine reveal a new severe (50%) biconcave compression fracture at T8 without apparent widening of the pedicles. In addition to prescribing alendronate, which of the following is best adjunct management for this patient?",
+      "options": [
+        "A. Analgesic therapy and referral to physical therapy for postfracture consultation",
+        "B. Prescription for a spinal brace that patient should wear for 6 months",
+        "C. Percutaneous vertebroplasty",
+        "D. Nasal calcitonin use for 1 year",
+        "E. No additional interventions are required at this time."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This gentleman has osteoporosis secondary to long-standing hypogonadism, exhibited by predominantly great bone density loss and deficit in cancellous bone (i.e., spine). He has incurred by definition a low-trauma fracture and is in need of a pharmacologic antifracture therapy (i.e., alendronate). Although he has significant pain that must be addressed, there is no evidence that conservative therapy with analgesics is inferior to vertebroplasty in regard to longer term (i.e., >6 months) pain management. In addition, his radiographic findings do not suggest fracture instability that might benefit from vertebroplasty. Physical therapy is also helpful both short-term as an adjunct to pain management and long-term regarding modification of lifestyle and exercise to maximally reduce future fracture risk. A supportive spine brace may be used, although its use should be limited to only 4 to 6 weeks because of the necessary induction of paraspinal muscle weakness associated with long-term use. Similarly, nasal calcitonin may have some analgesic benefit in the acute, postfracture period based on limited data, although there is no evidence of a long-term analgesic benefit with continued use of the drug.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 65-year-old woman presents to her physician to discuss her recent bone density results and management options. She has been treated with alendronate 70 mg weekly for 5 years, during which time she experienced an 8.5 and 4.5% increase in lumbar spine and right total hip bone mineral density (BMD), respectively. She has treated hypertension but is otherwise well. Family history is negative for osteoporosis and for parental history of hip fracture. She does not drink alcohol and does not smoke. Her weight has been stable for the past 10 years. Her physical examination is unremarkable, including only 1 inch of height loss from her young adult maximum. Her spine examination reveals normal curvature, no kyphosis, normal rib to pelvis distance of 2 fingerbreadths, and 1 fingerbreadth wall to occiput distance. Laboratory studies are normal, including 25(OH)D level. Dual-energy x-ray absorptiometry bone density reveals lumbar spine, femoral neck, and total hip T scores of -1.8, 2.2, and -2.3, respectively. Her T scores at the start of alendronate therapy were -2.6, -2.6, and-2.5, respectively. In addition to continuing calcium and vitamin D supplementation, what is the best management recommendation for this woman?",
+      "options": [
+        "A. Continue alendronate therapy.",
+        "B. Switch to teriparatide therapy",
+        "C. Stop alendronate therapy and recheck BMD in 1-2 years.",
+        "D. Switch to an alternative oral bisphosphonate.",
+        "E. Switch to IV zoledronic acid therapy."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient was appropriately treated for osteoporosis with an oral bisphosphonate, based on bone density evidence for osteoporosis under the National Osteoporosis Foundation guidelines. Based on the FLEX trial and American Society for Bone and Mineral Research task force guidelines, it is reasonable for her to consider a drug holiday at this time. Given this, there is no indication to switch her to an alternative oral or IV bisphosphonate therapy. In addition, given her low risk for fracture and previous studies confirming a blunted anabolic effect with both combination parathyroid hormone (PTH) and bisphosphonate therapy and with PTH therapy following long-term oral bisphosphonate therapy, there is no indication for teriparatide in this woman. If she does have evidence for declining bone density on follow-up or incurs a fragility fracture, she would be a candidate to restart pharmacologic antifracture therapy.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 75-year-old woman presents to the clinic with a history of osteoporosis. Specifically, she was diagnosed at age 69 years when she presented with acute lower back pain following a ground-level fall. Radiographs revealed moderate compression fractures in the lumbar spine. After completing a secondary work-up for osteoporosis, she was placed on denosumab therapy every 6 months, in light of a history of severe esophageal reflux disease requiring esophageal dilation and precluding the use of oral bisphosphonates. She is now completing 6 years of denosumab therapy and wishes for an opinion from you with regard to her osteoporosis management. Additionally, she has worries about continuing denosumab therapy given her concerns about long-term exposure and potential adverse effects. Her medical history is otherwise unremarkable. On physical examination, she has a flattened lumbar lordotic curve with vertebral prominence at L2 and L3. Rib-to-pelvis distance is reduced at \u00bd fingerbreadth bilaterally. Wall to occiput distance is 1 fingerbreadth. The remainder of her examination is unremarkable. Laboratory studies, including chemistry panel, thyroid-stimulating hormone, and 25(OH)D, are within normal limits. Bone mineral density study shows osteoporosis, with lumbar spine T score of-3.5, and with right femoral neck and total hip T scores of-2.9 and-2.5, respectively. Compared with baseline bone density 6 months prior, lumbar spine and total hip bone mineral density has improved significantly by 9.5 and 6.8%, respectively. Given her clinical history, what is your recommendation regarding osteoporosis pharmacologic management?",
+      "options": [
+        "A. Stop denosumab therapy.",
+        "B. Switch denosumab to an oral bisphosphonate.",
+        "C. Switch denosumab to raloxifene.",
+        "D. Switch denosumab to annual zoledronic acid therapy.",
+        "E. Switch denosumab to teriparatide therapy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Because this woman has requested to discontinue denosumab therapy, it is important that she start a bone-stabilizing therapy given reports of rapid bone density decline and multiple vertebral fractures that have occurred in patients within 6 to 12 months of stopping the denosumab therapy. With regard to other treatment considerations, her best choice is to switch to IV bisphosphonate. She is not a candidate for oral bisphosphonates based on her gastrointestinal history. She is also not an ideal candidate for raloxifene, given potential concerns over a risk for fatal stroke based on data from the Raloxifene Use and the Heart (RUTH) study. Finally, switching to teriparatide is not recommended based on recent studies that suggest higher bone remodeling and significant bone loss in the forearm in patients who are switched from denosumab to teriparatide.",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which one of the following statements is true for the actions of parathyroid hormone (PTH)?",
+      "options": [
+        "A. Acts directly on renal, bone, and intestinal cells",
+        "B. Acts directly on renal cells and indirectly on bone and intestinal cells",
+        "C. Acts directly on renal and bone cells and indirectly on intestinal cells",
+        "D. Has no direct actions on renal, bone, and intestinal cells",
+        "E. Acts via a tyrosine kinase receptor"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "PTH shares a receptor with PTH-related peptide (PTHrP), and this receptor is a member of the G protein-coupled receptor (GPCR) family. PTH/PTHrP receptors are expressed by kidney and bone cells, and PTH acts directly on renal and bone cells. PTH acts indirectly on intestinal cells to enhance calcium absorption as follows: PTH stimulates renal 1\u03b1-hydroxylase activity to promote synthesis of the active form of vitamin D (1,25-dihydroxyvitamin D), which then acts on the intestine to enhance calcium absorption.",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which of the following is not a cause of hypercalcemia?",
+      "options": [
+        "A. Granulomatous disorders",
+        "B. PTH receptor loss-of-function mutation",
+        "C. Autoimmunity",
+        "D. Renal 1\u03b1-hydroxylase overactivity",
+        "E. Myeloma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "PTH receptor loss-of-function mutations result in Blomstrand chondrodysplasia, which is not associated with hypercalcemia. Instead, PTH receptor gain-of-function mutations that lead to Jansen metaphyseal chondroplasia are associated with severe hypercalcemia. Granulomatous disorders, autoimmunity (e.g., autoantibodies to the calcium-sensing receptor), renal 1\u03b1-hydroxylase overactivity, and myeloma may all be associated with hypercalcemia.",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following statements are recommendations for parathyroid surgery in asymptomatic primary hyperparathyroid patients?",
+      "options": [
+        "A. Serum calcium >1.0 mg/dL (0.25 mmol/L) above upper limit of normal",
+        "B. Reduction in bone mineral density by T score <-2.5",
+        "C. Reduction in creatinine clearance below 60 mL/min",
+        "D. Marked hypercalciuria (>400 mg per 24 hr, >9 mmol/L per 24 hr)",
+        "E. Age <50 years"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Answer: All (A-E) Marked hypercalciuria (>400 mg per 24 hr, >9 mmol/L per 24 hr) was not included as a recommendation for parathyroid surgery in asymptomatic primary hyperparathyroidism by the Third International Conference (2008), but included as a recommendation by the Fourth International Conference (2013).",
+      "questionNumber": 10
+    },
+    {
+      "question": "Which of the following statements regarding parathyroid tumors in multiple endocrine neoplasia (MEN) syndrome is false?",
+      "options": [
+        "A. In MEN 1, parathyroid tumors occur with equal frequency in men and women.",
+        "B. In MEN 2b (MEN 3), parathyroid tumors are a rare occurrence.",
+        "C. In MEN 1, minimally invasive surgery is not a suitable approach because of the high occurrence of multiple parathyroid tumors.",
+        "D. Patients with MEN 2a have a higher risk for developing parathyroid carcinomas.",
+        "E. Parathyroid tumors occur in more than 95% of MEN 1 patients."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "MEN 1 is an autosomal dominant disorder, and this generally affects men and women equally. Parathyroid tumors are found in more than 95% of patients with MEN 1, who usually have multiple parathyroid tumors, and hence minimally invasive surgery is not recommended. Parathyroid tumors rarely occur in patients with MEN 2b (MEN 3), and about 20% of MEN 2a patients will usually have parathyroid hyperplasia and not parathyroid carcinoma. However, patients with hyperparathyroidism with jaw tumors are at high risk for developing parathyroid carcinomas.",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which of the following is not a cause of hypocalcemia?",
+      "options": [
+        "A. Vitamin D-resistance disorders",
+        "B. Secondary hyperparathyroidism",
+        "C. Adrenal insufficiency",
+        "D. Autoimmunity",
+        "E. Acute pancreatitis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Acute adrenal insufficiency is associated with hypercalcemia, not hypocalcemia. Hypocalcemia typically occurs in patients with secondary hyperparathyroidism and in those with vitamin D-resistance disorders, and it may be found in patients with acute pancreatitis. In addition, autoimmune destruction of the parathyroids, resulting in hypoparathyroidism, or autoantibodies to the calcium-sensing receptor may be associated with hypocalcemia.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A previously healthy 75-year-old man presents to his primary care physician with pain in the left hip that is worse on walking. Systematic enquiry is unremarkable, but examination reveals pain and a reduction in range of movement of the left hip. Radiography shows mixed osteosclerotic-osteolytic lesions in the right hemipelvis with expansion of the iliac bone. Osteophytes and joint space narrowing are observed in the left hip. Routine hematology, urea and electrolytes, calcium and phosphate, and liver function tests are normal, but alkaline phosphatase is raised at 200 \u03bc/L (reference range, 40 to 125). Serum 25(OH)D is 35 nmol/L parathyroid hormone is 7 ng/L (normal, 2 to 12). What is the most likely cause of the hip pain?",
+      "options": [
+        "A. Paget disease of the pelvis",
+        "B. Osteoarthritis of the hip",
+        "C. Osteomalacia",
+        "D. Osteoporosis",
+        "E. Prostate cancer"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Osteoarthritis of the hip. Although the blood test results are consistent with Paget disease, the pain is localized to the noninvolved side of the pelvis. Although serum 25(OH)D is slightly reduced, osteomalacia is unlikely because this does not usually present with localized pain, and parathyroid is normal. Prostate cancer with bone metastases can cause osteosclerotic metastases, which can look similar to Paget disease on radiography, but the fact that he is clinically well makes this less likely.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 47-year-old man with known Paget disease of the left tibia presents with pain localized to the anterior aspect of the affected tibia. On examination, there is mild deformity of the tibia on the left side, with warmth of the skin overlying the tibia. Hematology and biochemistry are normal, including alkaline phosphatase, which is 105 (reference range, 40 to 125). What is the most appropriate treatment?",
+      "options": [
+        "A. Paracetamol",
+        "B. Surgical osteotomy of the tibia to correct the deformity",
+        "C. Amitriptyline",
+        "D. Intravenous zoledronic acid, 5 mg IV annually for 3 years",
+        "E. Intravenous zoledronic acid, 5 mg IV"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A single infusion of zoledronic acid would be the most appropriate option. The pain is clearly localized to an affected site and is likely due to Paget disease, even though the alkaline phosphatase is normal, because there is warmth of the overlying skin. To give three infusions would be unnecessary and would represent overtreatment because the clinical effects of zoledronic acid usually last for several years in Paget disease. Osteotomy can be used to correct significant deformity but would not be indicated to treat pain in a patient with mild deformity. Both paracetamol and amitriptyline can be used to help pain control in Paget disease, but in this case it would be appropriate to first assess the response to bisphosphonate before progressing to other treatments.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 62-year-old women presents with a 5-year history of musculoskeletal pain affecting the low back region, both shoulders, both hips, neck, and head. She reports that her father and older brother have a history of Paget disease. Routine hematology, urea and electrolytes, calcium and phosphate, and liver function tests are normal, but alkaline phosphatase is raised at 2350 \u03bc/L (reference range, 40 to 125). A radiograph of the pelvis shows typical changes of Paget disease. What would be the most appropriate investigation to determine the extent of the disease?",
+      "options": [
+        "A. Magnetic resonance imaging (MRI) of the spine",
+        "B. Computed tomography (CT) of the abdomen, chest, and pelvis",
+        "C. Serum bone-specific alkaline phosphatase",
+        "D. Radionuclide bone scan",
+        "E. Radiograph of the skull, shoulders, and cervical spine"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Radionuclide bone scan. Bones that are affected by Paget disease typically show intense tracer uptake, allowing one to delineate the extent of involvement in a single test. Imaging with MRI or CT can be useful if complications of Paget disease are suspected, such as spinal stenosis or osteosarcoma, but are not as useful in determining the extent of the disease. Bone-specific alkaline phosphatase will provide information on whether the elevated alkaline phosphatase is of bony origin but will not provide information on disease extent. Although radiographs can detect Paget disease with reasonable sensitivity, one would need to perform a whole skeletal survey to evaluate the extent of the disease.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 75-year-old man develops pain in the low back region that is gradually worsening and has started to radiate into the buttocks on walking. A lateral radiograph of the lumbar spine shows mixed osteosclerotic-osteolytic lesions in lumbar vertebrae 2, 3, and 4, with expansion of all three vertebrae. Routine hematology, urea and electrolytes, calcium and phosphate, and liver function tests are normal, but alkaline phosphatase is raised at 350 \u03bc/L (reference range, 40 to 125). What further investigations would be useful in determining the cause of the pain?",
+      "options": [
+        "A. MRI of the lumbar spine",
+        "B. Anteroposterior radiograph of the spine",
+        "C. Radionuclide bone scan",
+        "D. Serum procollagen IN peptide (PINP)",
+        "E. CT scan of the lumbar spine"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "MRI of the lumbar spine would be the most appropriate test because the symptoms are suspicious of spinal stenosis, which is a known complication of Paget disease of the lumbar spine and caused by expansion of the affected bones with encroachment on the cauda equina. The anteroposterior radiograph would not be useful in identifying spinal stenosis. Although the CT scan could give information on narrowing of the lumbar canal, it does not provide detail on the soft tissues, which would be necessary to determine whether the cauda equina is being compromised. The bone scan may show evidence of Paget disease in the spine but would not provide information on cauda equina compression. Measurement of PINP would provide information on bone formation but would not be helpful in defining the cause of the pain.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 54-year-old man falls and sustains an injury to his right ankle. A radiograph is taken to exclude a fracture. No evidence of fracture is found, but changes consistent with early Paget disease are noted affecting the upper part of the right tibia. On clinic review 6 weeks after the injury, the patient has fully recovered and is symptom free. Routine biochemistry and hematology are normal. What would be the most appropriate evidence-based treatment option for this patient?",
+      "options": [
+        "A. Prophylactic therapy with intravenous zoledronic acid every 3 years for the next 10 years to prevent progression of the disease.",
+        "B. Prophylactic therapy with oral alendronate 70 mg once a week on a long-term basis to prevent progression of the disease.",
+        "C. Close observation with repeat radiographs on an annual basis followed by zoledronic acid treatment, 5 mg IV, if the radiographs shows signs of progression.",
+        "D. Surgical removal of the upper part of the tibia with total knee replacement.",
+        "E. Observation at periodic intervals with initiation of bisphosphonate treatment should symptoms that are suggestive of Paget disease develop."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "There is currently no evidence that prophylactic therapy with any bisphosphonate can alter the natural history of the disease. Similarly, there is no evidence that prophylactic surgery would be helpful in this situation. The most appropriate option would be to keep the patient under review to look for the development of symptoms that might be attributable to the Paget disease and give treatment if these occur.",
+      "questionNumber": 17
+    }
+    
+  ]
+}

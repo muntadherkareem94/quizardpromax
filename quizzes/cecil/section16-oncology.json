@@ -1,0 +1,598 @@
+{
+  "questions": [
+    {
+      "question": "A 65-year-old man reports symptoms of fatigue and loss of appetite. Physical examination demonstrates jaundice and an abdominal mass. CT scan of the abdomen reveals a mass at the head of the pancreas, with surrounding nodal involvement. The most appropriate next step in this patient's care is:",
+      "options": [
+        "A. Examination of serum biomarker studies including CEA and \u03b1-fetoprotein",
+        "B. Image-guided biopsy of the abdominal mass",
+        "C. Initiation of combination chemotherapy for advanced pancreatic cancer",
+        "D. Referral for surgical resection and subsequent pathologic staging"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The diagnosis of locally advanced pancreatic cancer can often be made by CT-guided biopsy. In this patient with regionally advanced disease, surgery is unlikely to be beneficial; neither are serum biomarkers of use in making a tissue diagnosis, which is the first step in planning further treatment.",
+      "questionNumber": 1
+    },
+    {
+      "question": "An 82-year-old woman is found to have a stage III left-sided invasive ductal carcinoma of the breast. She has well-controlled inflammatory bowel disease and adult-onset diabetes, lives alone, and has no immediate family. The most important factor in choosing a program for further diagnostic evaluation and treatment is her:",
+      "options": [
+        "A. Age",
+        "B. Comorbid illnesses",
+        "C. ECOG performance score",
+        "D. Lack of family support"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A patient's performance status on the ECOG scale has been demonstrated to correlate well with the ability to tolerate aggressive chemotherapeutic or radiation therapy regimens. Age is not a contraindication to treatment, nor is a lack of social support, although the latter may indicate that other services such as social work intervention may be useful adjuncts to therapy.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 63-year-old woman was recently diagnosed with stage IV melanoma. Staging workup showed lung and liver metastases. She had no symptoms at that time. Her melanoma tested negative for BRAF mutation. She started treatment with a PD-1 antibody, pembrolizumab, and has been on treatment for 6 months. Though her scans have shown improvement in her melanoma, she reports new fatigue, cold intolerance, mild constipation, and weight gain. Her past medical history is remarkable for hypertension and diabetes mellitus. Which of the following best explains her current symptoms?",
+      "options": [
+        "A. Depression",
+        "B. Progression of her melanoma",
+        "C. Hypothyroidism related to treatment with pembrolizumab",
+        "D. Hepatitis related to pembrolizumab",
+        "E. Worsening diabetes mellitus"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most common side effects of the anti-PD-1 antibody pembrolizumab are immune mediated and include endocrinopathies, colitis, and dermatitis. Hypothyroidism occurs in about one third of patients treated with anti-PD-1 antibodies. Regular testing of thyroid-stimulating hormone and thyroid function tests is a part of monitoring for patients on immunotherapy.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following interventions has been proven to lower cancer mortality?",
+      "options": [
+        "A. Colonoscopy",
+        "B. Mammography",
+        "C. Pap smears",
+        "D. Low-dose CT of the chest",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Early detection with mammography, Pap smears, colonoscopy, and low-dose CT have all been shown to reduce cancer mortality in randomized controlled trials.",
+      "questionNumber": 4
+    },
+    {
+      "question": "An obese 50-year-old woman is worried about her cancer risk. She has heard that being overweight can increase her risk of cancer. Which of the following cancers is not associated with obesity?",
+      "options": [
+        "A. Breast cancer",
+        "B. Endometrial cancer",
+        "C. Lung cancer",
+        "D. Kidney cancer",
+        "E. Colon cancer"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Obesity is associated with an increased risk of breast cancer in postmenopausal women, esophageal adenocarcinoma, and cancers of the colon, endometrium, kidney, and pancreas. Lung cancer is not associated with obesity.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 22-year-old woman is newly diagnosed with Hodgkin lymphoma. She is asking about the cause of her lymphoma. Which of the following viruses is associated with the development of Hodgkin lymphoma?",
+      "options": [
+        "A. Hepatitis B",
+        "B. Epstein-Barr virus",
+        "C. Human papillomavirus",
+        "D. Hepatitis C",
+        "E. Herpes simplex virus"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hepatitis B and C are associated with hepatocellular carcinoma. Human papillomavirus causes cervical cancer and head and neck cancer. Epstein-Barr virus is associated with Hodgkin lymphoma, Burkitt lymphoma, and nasopharyngeal carcinoma.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 25-year-old woman is found to have a BRCA1 mutation. You are counseling her on her lifetime risk of cancer. This mutation puts her at increased risk for which of the following cancers?",
+      "options": [
+        "A. Breast and ovarian cancer",
+        "B. Breast and uterine cancer",
+        "C. Breast and colon cancer",
+        "D. Breast and pancreatic cancer",
+        "E. Breast and cervical cancer"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "BRCA1 mutations are associated with a very high lifetime risk of breast and ovarian cancer. The risks of other cancers are not substantially elevated. Screening with breast MRI and mammography is recommended starting at age 25. Prophylactic mastectomy and oophorectomy are often considered.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 65-year-old man presents with bright red blood per rectum. Colonoscopy reveals a mass in the sigmoid colon. Biopsy confirms adenocarcinoma. Molecular testing of the tumor is most likely to reveal a mutation in which of the following genes?",
+      "options": [
+        "A. APC",
+        "B. BRCA1",
+        "C. TP53",
+        "D. EGFR",
+        "E. KRAS"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Mutations in the APC gene are the earliest and most common genetic alteration in colorectal cancer, occurring in >80% of sporadic cases. APC is a tumor suppressor gene that regulates \u03b2-catenin in the Wnt signaling pathway. Loss of APC function leads to accumulation of \u03b2-catenin and unchecked cell proliferation.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 42-year-old woman presents to her primary care physician with a palpable mass in her left breast. She undergoes diagnostic mammography, which shows a 2-cm speculated mass in the upper outer quadrant of the left breast. Core biopsy confirms invasive ductal carcinoma, which is estrogen receptor (ER) and progesterone receptor (PR) positive and HER2/neu negative. She undergoes lumpectomy and sentinel lymph node biopsy. The tumor is 2.2 cm, and the sentinel node is negative for metastasis. Which of the following is the most appropriate adjuvant systemic therapy?",
+      "options": [
+        "A. Chemotherapy followed by endocrine therapy",
+        "B. Endocrine therapy alone",
+        "C. Chemotherapy alone",
+        "D. Chemotherapy plus trastuzumab",
+        "E. No adjuvant systemic therapy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "For hormone receptor-positive, node-negative breast cancer with tumors >1 cm (or >0.5 cm with unfavorable features), adjuvant endocrine therapy is indicated. The role of chemotherapy is determined by estimating the risk of recurrence, often using gene expression profiling (e.g., Oncotype DX). If the recurrence score is high, chemotherapy is added. Given the tumor size >2 cm, chemotherapy followed by endocrine therapy is a standard recommendation to reduce the risk of recurrence.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 55-year-old postmenopausal woman had a lumpectomy and radiation therapy for a stage I ER-positive, PR-positive, HER2-negative breast cancer 3 years ago. She has been taking an aromatase inhibitor (anastrozole) since then. She presents with new onset of back pain. Bone scan reveals multiple areas of increased uptake in the thoracic and lumbar spine. X-rays confirm lytic lesions. Biopsy of a bone lesion confirms metastatic breast carcinoma with the same receptor status. What is the most appropriate next line of systemic therapy?",
+      "options": [
+        "A. Switch to tamoxifen",
+        "B. Switch to another aromatase inhibitor (letrozole)",
+        "C. Fulvestrant plus a CDK4/6 inhibitor",
+        "D. Chemotherapy with doxorubicin and cyclophosphamide",
+        "E. Chemotherapy with paclitaxel"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "For patients with hormone receptor-positive, HER2-negative metastatic breast cancer who progress on an aromatase inhibitor, the combination of the estrogen receptor degrader fulvestrant with a CDK4/6 inhibitor (e.g., palbociclib, ribociclib, abemaciclib) has been shown to significantly improve progression-free survival compared to fulvestrant alone and is a preferred second-line option. Switching to another aromatase inhibitor or tamoxifen is less effective. Chemotherapy is generally reserved for visceral crisis or when endocrine therapy options are exhausted.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 30-year-old woman detects a lump in her right breast during self-examination. Her mother was diagnosed with breast cancer at age 45. On examination, there is a 1.5-cm mobile mass in the right breast. No axillary adenopathy is palpable. What is the most appropriate initial imaging modality?",
+      "options": [
+        "A. Screening mammography",
+        "B. Diagnostic mammography",
+        "C. Breast MRI",
+        "D. Breast ultrasound",
+        "E. PET-CT scan"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In women younger than 30 presenting with a palpable breast mass, ultrasound is the initial imaging modality of choice because of the higher density of breast tissue, which limits the sensitivity of mammography. Ultrasound can differentiate between cystic and solid masses. If the mass is suspicious or indeterminate, a mammogram may be added, but ultrasound is the starting point.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 60-year-old woman presents with inflammatory breast cancer characterized by diffuse erythema, edema (peau d'orange), and induration of the left breast. Biopsy confirms invasive carcinoma. Which of the following is the correct sequence of treatment for inflammatory breast cancer?",
+      "options": [
+        "A. Mastectomy, then chemotherapy, then radiation",
+        "B. Neoadjuvant chemotherapy, then mastectomy, then radiation",
+        "C. Radiation, then mastectomy, then chemotherapy",
+        "D. Mastectomy, then radiation, then chemotherapy",
+        "E. Neoadjuvant endocrine therapy, then mastectomy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Inflammatory breast cancer is an aggressive disease (T4d) that is treated with a trimodality approach. Neoadjuvant (preoperative) systemic chemotherapy is administered first to cytoreduce the tumor and treat micrometastatic disease. If there is a response, modified radical mastectomy follows. Postmastectomy radiation therapy is then standard to reduce locoregional recurrence risk.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 45-year-old woman is diagnosed with HER2-positive early-stage breast cancer. She receives adjuvant chemotherapy with doxorubicin and cyclophosphamide followed by paclitaxel and trastuzumab. What is the most significant toxicity associated with trastuzumab that requires monitoring?",
+      "options": [
+        "A. Peripheral neuropathy",
+        "B. Pulmonary fibrosis",
+        "C. Cardiomyopathy",
+        "D. Hemorrhagic cystitis",
+        "E. Secondary leukemia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Trastuzumab is associated with a risk of cardiomyopathy, manifesting as a decrease in left ventricular ejection fraction (LVEF) and potentially heart failure. The risk is increased when used concurrently or sequentially with anthracyclines (like doxorubicin). Cardiac monitoring with echocardiography or MUGA scans is required at baseline and regularly during treatment.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 55-year-old woman presents with postmenopausal bleeding. Endometrial biopsy confirms grade 1 endometrioid adenocarcinoma. She undergoes total abdominal hysterectomy and bilateral salpingo-oophorectomy. Pathology reveals invasion into the inner half of the myometrium. There is no cervical or adnexal involvement. What is the appropriate adjuvant treatment?",
+      "options": [
+        "A. Pelvic radiation therapy",
+        "B. Vaginal brachytherapy",
+        "C. Systemic chemotherapy",
+        "D. Progestin therapy",
+        "E. Observation"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient has Stage IA (tumor confined to the uterus, invading less than half of the myometrium) grade 1 endometrial cancer. The risk of recurrence is very low, and no adjuvant therapy is indicated. Observation is the standard of care.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 65-year-old woman presents with abdominal bloating, early satiety, and weight loss. On examination, she has a pelvic mass and ascites. CT scan shows a complex adnexal mass, omental cake, and moderate ascites. CA-125 is elevated at 1500 U/mL. She undergoes exploratory laparotomy with tumor debulking. Pathology confirms high-grade serous ovarian carcinoma. What is the standard first-line chemotherapy regimen?",
+      "options": [
+        "A. Doxorubicin and cisplatin",
+        "B. Paclitaxel and carboplatin",
+        "C. Gemcitabine and cisplatin",
+        "D. Topotecan and bevacizumab",
+        "E. Cyclophosphamide and vincristine"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The standard first-line chemotherapy for epithelial ovarian cancer is the combination of a taxane (paclitaxel) and a platinum agent (carboplatin), usually given intravenously every 3 weeks for 6 cycles. This regimen has shown the best efficacy/toxicity profile.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 40-year-old woman presents with a 4-cm cervical mass. Biopsy shows invasive squamous cell carcinoma. Clinical staging is IB2. Which of the following is the recommended primary treatment?",
+      "options": [
+        "A. Radical hysterectomy alone",
+        "B. Concurrent chemoradiation therapy",
+        "C. Neoadjuvant chemotherapy followed by surgery",
+        "D. Simple hysterectomy",
+        "E. Radiation therapy alone"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "For locally advanced cervical cancer (Stage IB2 to IVA), concurrent chemoradiation (cisplatin-based chemotherapy with external beam radiation followed by brachytherapy) is the standard of care, offering superior survival compared to radiation alone or surgery alone.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 30-year-old woman is diagnosed with a molar pregnancy. She undergoes suction dilation and curettage (D&C). Pathology confirms a complete hydatidiform mole. Which of the following is the most appropriate follow-up monitoring?",
+      "options": [
+        "A. Weekly quantitative beta-hCG until normal for 3 weeks, then monthly for 6 months",
+        "B. Monthly quantitative beta-hCG for 1 year",
+        "C. CT chest, abdomen, and pelvis every 3 months",
+        "D. Repeat D&C in 1 month",
+        "E. Prophylactic chemotherapy with methotrexate"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "After evacuation of a molar pregnancy, patients must be monitored with serial quantitative beta-hCG levels to detect persistent gestational trophoblastic neoplasia. Levels are checked weekly until undetectable for 3 consecutive weeks, then monthly for 6 months. Pregnancy should be avoided during the surveillance period.",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which of the following is the most significant risk factor for the development of vulvar squamous cell carcinoma?",
+      "options": [
+        "A. Obesity",
+        "B. Hypertension",
+        "C. Human papillomavirus (HPV) infection",
+        "D. Diabetes",
+        "E. Nulliparity"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "HPV infection, particularly with high-risk types 16 and 18, is the major etiologic factor for vulvar intraepithelial neoplasia (VIN) and younger-onset vulvar squamous cell carcinoma. Chronic dermatoses like lichen sclerosus are associated with vulvar cancer in older women, but HPV is a distinct and significant viral carcinogen.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 25-year-old man presents with a painless right testicular mass. Ultrasound reveals a solid hypoechoic mass. Radical inguinal orchiectomy is performed. Pathology shows a pure seminoma. CT scan of the abdomen and pelvis shows a single 2-cm retroperitoneal lymph node. Serum tumor markers (AFP, beta-hCG, LDH) are normal post-orchiectomy. What is the most appropriate management?",
+      "options": [
+        "A. Surveillance",
+        "B. Adjuvant chemotherapy with carboplatin",
+        "C. Retroperitoneal lymph node dissection (RPLND)",
+        "D. Radiation therapy to the retroperitoneum",
+        "E. Combination chemotherapy with BEP (bleomycin, etoposide, cisplatin)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has Stage IIA pure seminoma (retroperitoneal lymphadenopathy 1-2 cm). The standard treatment options are radiation therapy to the retroperitoneum (dog-leg field) or chemotherapy (BEP x 3 or EP x 4). Given the small volume of disease, radiation is a highly effective and standard option with excellent cure rates.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 30-year-old man presents with metastatic non-seminomatous germ cell tumor (NSGCT) with lung metastases. He is treated with 4 cycles of BEP chemotherapy. Post-treatment CT scan shows resolution of lung metastases but a residual 3-cm retroperitoneal mass. Serum tumor markers have normalized. What is the next best step?",
+      "options": [
+        "A. Observation",
+        "B. Radiation therapy to the retroperitoneum",
+        "C. Retroperitoneal lymph node dissection (RPLND)",
+        "D. Second-line chemotherapy (e.g., TIP)",
+        "E. PET scan to assess viability"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "For patients with NSGCT and a residual retroperitoneal mass >1 cm after chemotherapy with normal markers, surgical resection (RPLND) is indicated. About 40-50% will have fibrosis/necrosis, 40% teratoma, and 10-15% viable cancer. Leaving teratoma can lead to growing teratoma syndrome or malignant transformation. PET scan is not reliably predictive in NSGCT (unlike in seminoma).",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following serum tumor marker profiles is consistent with a pure seminoma?",
+      "options": [
+        "A. Elevated AFP, normal beta-hCG",
+        "B. Elevated AFP, elevated beta-hCG",
+        "C. Normal AFP, elevated beta-hCG",
+        "D. Normal AFP, normal beta-hCG",
+        "E. C and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Pure seminomas never produce AFP. If AFP is elevated, the tumor is considered a non-seminoma (or mixed germ cell tumor) regardless of the histologic appearance. Seminomas can produce beta-hCG (in about 10-15% of cases) or have normal markers. Therefore, either normal AFP/elevated beta-hCG or normal markers are consistent profiles.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 28-year-old man receives bleomycin as part of his chemotherapy for testicular cancer. He presents with dry cough and dyspnea on exertion. Physical exam reveals bibasilar crackles. What is the most likely diagnosis?",
+      "options": [
+        "A. Pneumocystis jirovecii pneumonia",
+        "B. Pulmonary embolism",
+        "C. Bleomycin-induced pulmonary toxicity",
+        "D. Lung metastases progression",
+        "E. Congestive heart failure"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Bleomycin is known to cause pulmonary toxicity, ranging from pneumonitis to pulmonary fibrosis. Symptoms include cough, dyspnea, and fever. Risk factors include cumulative dose >400 units, age >40, renal insufficiency, and prior chest radiation. It is a diagnosis of exclusion but highly suspected in this clinical context.",
+      "questionNumber": 22
+    },
+    {
+      "question": "What is the primary treatment for stage I non-seminomatous germ cell tumor (NSGCT) after orchiectomy?",
+      "options": [
+        "A. Adjuvant radiation therapy",
+        "B. Adjuvant chemotherapy with 2 cycles of BEP",
+        "C. Primary retroperitoneal lymph node dissection (RPLND)",
+        "D. Active surveillance",
+        "E. B, C, or D depending on risk factors and patient preference"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "For clinical Stage I NSGCT, options include active surveillance (preferred for low-risk disease), primary RPLND (preferred for high-risk pathology or those unwilling/unable to adhere to surveillance), or 1-2 cycles of adjuvant BEP chemotherapy. Radiation is not used for NSGCT.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 65-year-old African American man presents for a routine check-up. He has no urinary symptoms. His PSA is 6.5 ng/mL. Digital rectal exam is normal. What is the most appropriate next step?",
+      "options": [
+        "A. Repeat PSA in 1 year",
+        "B. Empirical antibiotics for prostatitis",
+        "C. Transrectal ultrasound-guided prostate biopsy",
+        "D. Pelvic MRI",
+        "E. Start finasteride"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "An elevated PSA (>4 ng/mL) warrants further evaluation to rule out prostate cancer. Given the patient's age, race (African American men are at higher risk), and PSA level, a prostate biopsy is indicated. While MRI is increasingly used, biopsy remains the definitive diagnostic test. Empirical antibiotics are generally reserved for patients with symptoms of prostatitis.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 70-year-old man is diagnosed with metastatic prostate cancer with bone metastases. He is started on androgen deprivation therapy (ADT) with a GnRH agonist. What additional medication should be started initially to prevent a tumor flare?",
+      "options": [
+        "A. Prednisone",
+        "B. An antiandrogen (e.g., bicalutamide)",
+        "C. Docetaxel",
+        "D. Abiraterone",
+        "E. Denosumab"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "GnRH agonists (e.g., leuprolide) initially cause a surge in testosterone due to stimulation of the pituitary-gonadal axis before downregulation occurs. This can cause a \"tumor flare\" with worsening symptoms (e.g., bone pain, spinal cord compression). An antiandrogen (like bicalutamide) is given for the first few weeks to block the action of the transiently elevated testosterone.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A patient with metastatic castration-resistant prostate cancer (mCRPC) has progressed after docetaxel chemotherapy. He has minimal symptoms. Which of the following is an appropriate next line of therapy?",
+      "options": [
+        "A. Enzalutamide",
+        "B. Cabazitaxel",
+        "C. Abiraterone",
+        "D. Sipuleucel-T",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "For mCRPC, several agents have shown survival benefit. Enzalutamide (androgen receptor inhibitor) and abiraterone (CYP17 inhibitor) are hormonal agents. Cabazitaxel is a taxane chemotherapy. Sipuleucel-T is an autologous cellular immunotherapy (best for asymptomatic/minimally symptomatic disease). Radium-223 is another option for bone-predominant disease. The choice depends on prior therapies, symptoms, and comorbidities.",
+      "questionNumber": 26
+    },
+    {
+      "question": "Which of the following is a criterion for \"active surveillance\" in prostate cancer?",
+      "options": [
+        "A. PSA > 20 ng/mL",
+        "B. Gleason score 8-10",
+        "C. Clinical stage T1c or T2a",
+        "D. >50% of biopsy cores positive",
+        "E. Life expectancy < 5 years"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Active surveillance is an option for men with low-risk prostate cancer: PSA < 10 ng/mL, Gleason score \u2264 6, and clinical stage T1c-T2a (low volume disease). The goal is to delay or avoid curative treatment (and its side effects) until there is evidence of disease progression, without compromising survival.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 75-year-old man with metastatic prostate cancer to the bones presents with new onset back pain and leg weakness. MRI shows spinal cord compression at T10. In addition to high-dose corticosteroids, what is the definitive management?",
+      "options": [
+        "A. Increase dose of antiandrogen",
+        "B. Emergency radiation therapy or neurosurgical decompression",
+        "C. Intravenous bisphosphonates",
+        "D. Chemotherapy with docetaxel",
+        "E. Radium-223"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Spinal cord compression is an oncologic emergency. Immediate high-dose steroids (dexamethasone) are given to reduce edema. Definitive treatment requires rapid decompression, either via surgical laminectomy/stabilization or emergency radiation therapy, to preserve neurologic function.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 60-year-old man is found to have a 5-cm solid renal mass on CT scan. He undergoes radical nephrectomy. Pathology reveals clear cell renal cell carcinoma, Fuhrman grade 2, negative margins. No metastases are seen on staging scans. What is the recommended adjuvant therapy?",
+      "options": [
+        "A. Sunitinib",
+        "B. Interleukin-2",
+        "C. Radiation therapy",
+        "D. Chemotherapy",
+        "E. Observation"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Currently, there is no standard adjuvant therapy for resected localized renal cell carcinoma that has consistently shown overall survival benefit. While adjuvant sunitinib is FDA approved for high-risk patients, its benefit is debated (improved disease-free survival but not overall survival in one trial, negative in another). Observation is the standard of care for most patients.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 55-year-old man presents with metastatic clear cell renal cell carcinoma to the lungs. He has a good performance status and favorable risk features. Which of the following is a first-line systemic therapy option?",
+      "options": [
+        "A. Cisplatin and gemcitabine",
+        "B. Sunitinib or Pazopanib",
+        "C. Tamoxifen",
+        "D. Doxorubicin",
+        "E. Rituximab"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The tyrosine kinase inhibitors (TKIs) targeting the VEGF pathway, such as sunitinib and pazopanib, are standard first-line therapies for metastatic clear cell renal cell carcinoma, particularly for patients with favorable or intermediate risk. Immunotherapy combinations (e.g., ipilimumab/nivolumab, pembrolizumab/axitinib) are also front-line options, especially for intermediate/poor risk.",
+      "questionNumber": 30
+    }
+    ,
+    {
+      "question": "In choosing a therapeutic regimen for systemic administration, of the following, which is the most important consideration for an adult cancer patient?",
+      "options": [
+        "A. Drug pharmacokinetics",
+        "B. The ratio of the amount of treatment that can be delivered to the toxicity expected at that dose",
+        "C. Route of drug administration",
+        "D. The range of potential toxicities that might accompany drug administration"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pharmacokinetic profiles and routes of administration are important factors in early drug development; however, the \"therapeutic index\" relating efficacy to toxicity is of paramount consideration in deciding which treatment should be employed. [cite: 955, 956]",
+      "questionNumber": 31
+    },
+    {
+      "question": "Altered hepatic function would require substantive dose reduction of which one of the following anticancer agents?",
+      "options": [
+        "A. 5-Fluorouracil",
+        "B. Imatinib",
+        "C. Oxaliplatin",
+        "D. Carboplatin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Only imatinib, which unlike the other three drugs is metabolized by the hepatic cytochrome P-450 system, requires significant dose reduction for liver dysfunction. [cite: 961]",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 52-year-old man with chronic hepatitis C develops a multifocal hepatocellular carcinoma, accompanied by malignant ascites and thrombocytopenia. The most appropriate approach to the control of the patient's malignant effusion is:",
+      "options": [
+        "A. Fluid restriction and diuresis",
+        "B. Regular large-volume paracentesis in the clinic",
+        "C. Cryosurgery for the major hepatic lesions",
+        "D. Insertion of a permanent catheter for self-drainage"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient's tumor is not curable surgically; fluid restriction will lead to hyponatremia without producing symptomatic benefit; and large-volume paracentesis without ultrasound guidance in this patient carries an excessive risk of bleeding. [cite: 968, 969]",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 33-year-old woman was recently diagnosed with breast cancer. She has a strong family history of breast and ovarian cancer, and has a germline DNA testing for BRCA1 and 2 that reveals no mutations. You tell her that her breast cancer:",
+      "options": [
+        "A. Is not related to any germline DNA alterations",
+        "B. May be related but repeat testing for BRCA1 and 2 mutations should be performed",
+        "C. Is likely related to a BRCA3 mutation",
+        "D. May still be related to a germline mutation in another gene and further testing should be performed",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although BRCA1 and 2 gene mutations account for the majority of familial breast and ovarian cancers, they are not the only genes that can be mutated and impart increased risk. Further testing should be considered with panels containing additional DNA repair and other genes. There is no BRCA3 gene, however, and generally the likelihood of a false-negative is extremely low and therefore repeat testing is not often indicated. [cite: 981, 982, 983]",
+      "questionNumber": 34
+    },
+    {
+      "question": "A patient with metastatic prostate cancer who has developed rapidly progressive castration-resistant disease comes to discuss potential treatment options and clinical trial participation. Next-generation sequencing (NGS) of his tumor reveals a frameshift mutation in the mismatch repair gene MLH1 that is known to be pathogenic. You tell the patient:",
+      "options": [
+        "A. This is a germline mutation and therefore family members should be tested and screened for cancers if they are positive.",
+        "B. This is a somatic mutation so there is nothing to worry about.",
+        "C. One cannot tell if this mutation is somatic or germline because no germline DNA was sequenced; consultation with a genetic counselor about germline testing is recommended.",
+        "D. This result is an artifact of how NGS is performed and is not concerning because prostate cancers are not part of Lynch syndrome.",
+        "E. There is only one mutation present so this is of no consequence since the other allele is intact."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Tumor only sequencing cannot determine with certainty whether a mutation is germline or somatic. Sequencing of a source of germline DNA (from skin cells, saliva, blood lymphocytes, etc.) is needed in order to compare normal DNA from tumor DNA and determine whether this mutation is in the germline or somatic. Prostate cancer can arise from germline mutations (Lynch syndrome) as well as somatic alterations in mismatch repair genes, and the second allele \"hit\" is usually due to loss of the wild-type allele and not by a new mutation. Epigenetic silencing could also lead to a functional loss while retaining the wild-type sequence of the other allele. [cite: 993, 994, 995, 996]",
+      "questionNumber": 35
+    },
+    {
+      "question": "The same patient from question 35 is found to have a germline MLH1 mutation, and his tumor testing also showed a high mutation burden. You recommend:",
+      "options": [
+        "A. Docetaxel chemotherapy",
+        "B. Further hormone therapy",
+        "C. Clinical trial of PARP inhibitors",
+        "D. Further genomic testing",
+        "E. Immune checkpoint inhibitor therapy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Le et al. demonstrated that MSI tumors have a high response rate to immune checkpoint inhibitor therapies (anti-PD1 antibody therapy) due to the increased number of neoantigens. This has led to the recent approval of these therapies for MSI positive tumors regardless of histology. [cite: 1003, 1004]",
+      "questionNumber": 36
+    },
+    {
+      "question": "You are teaching a medical student lecture on tumor suppressor genes and an astute student asks you what the definition of a tumor suppressor is. Another student states that it is any gene involved with slowing or halting the cell cycle. You respond by stating:",
+      "options": [
+        "A. Yes, that is the correct definition.",
+        "B. The genetic definition is a gene that when mutated in the germline predisposes to tumor formation.",
+        "C. That is incorrect, because there are genes that induce cell death that should be included in the definition.",
+        "D. That is the correct definition, but it also includes genes that suppress metastases formation.",
+        "E. None of the above."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Tumor suppressors have many liberal definitions, but the strictest genetic definition is as stated in B. [cite: 1012]",
+      "questionNumber": 37
+    },
+    {
+      "question": "A patient whose father has a tumor suppressor gene pathogenic germline mutation asks about her risk of developing cancer. You respond that:",
+      "options": [
+        "A. Her chance is extremely unlikely as a tumor suppressor requires a second hit. Unless her mother has a mutation in the same gene, which is unlikely, she does not have an elevated risk of cancer.",
+        "B. It is very likely if her mother also has a mutation, in which case her chance of getting cancer is 1 in 4 because this would be an autosomal recessive disease.",
+        "C. It is highly likely because most familial cancer syndromes follow an autosomal dominant pattern of inheritance.",
+        "D. There is no concern because these diseases are x-linked.",
+        "E. Inheriting two mutant tumor suppressor genes is generally embryonic-lethal, so because she is alive, it is nothing to worry about because she is just a carrier."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Although Knudson's two-hit hypothesis on tumor suppressor genes does postulate that biallelic inactivation is required to initiate tumorigenesis, the second hit occurs somatically. However, because every cell has the germline mutation, the lifetime risk of functionally inactivating the second allele is extremely high, approaching 100% for some tumor suppressor mediated heritable cancer syndromes. [cite: 1021, 1022]",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 45-year-old man presents with pallor and recurrent nosebleeds and is found to be pancytopenic with a hematocrit of 22%, a white blood cell count of 45,000/µL with peripheral blasts, and a platelet count of 13,000/µL. A bone marrow examination shows 55% myeloblasts consistent with acute myeloid leukemia. Molecular testing reveals FLT3-ITD with an allelic ratio of 0.3. Assuming that a matched related or unrelated donor can be found, which of the following statements is correct?",
+      "options": [
+        "A. Because of the low allelic ratio, there is no evidence that midostaurin is of benefit, and the patient is not at increased risk for relapse. Thus, the patient should be treated with conventional induction and consolidation chemotherapy.",
+        "B. Because of the low allelic ratio, there is no evidence that midostaurin is of benefit, and so the patient should be treated with conventional chemotherapy followed by allogenic transplantation in first remission.",
+        "C. Despite the low allelic ratio, midostaurin should be added as induction, consolidation, and maintenance, and with the addition of midostaurin, transplantation is no longer indicated.",
+        "D. Despite the low allelic ratio, midostaurin should be added as induction and consolidation; transplantation is still indicated, but there is no evidence that midostaurin maintenance after transplantation is of benefit.",
+        "E. Despite the low allelic ratio, midostaurin should be added during induction, consolidation, and as post-transplant maintenance."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "See Stone RM, Mandrekar SJ, Sanford BL, et al. Midostaurin plus chemotherapy for acute myeloid leukemia with a FLT3 mutation. N Engl J Med. 2017;377:454-464. [cite: 1036, 1037]",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 42-year-old woman presents with diffuse severe arthralgias and is found to have a hematocrit of 33%, a white blood cell count of 11,000/µL with peripheral blasts, and a platelet count of 45,000/µL. A bone marrow examination is consistent with acute lymphoblastic leukemia, and the blasts are positive by flow cytometry for CD10, CD19, CD20, CD22, and CD45. Cytogenetics are normal. What is the most appropriate initial therapy?",
+      "options": [
+        "A. Prednisone, vincristine, daunorubicin, l-asparaginase, plus the tyrosine kinase inhibitor imatinib",
+        "B. Prednisone, vincristine, daunorubicin, l-asparaginase, plus the anti-CD19 bi-specific T-cell-engaging antibody blinatumomab",
+        "C. Prednisone, vincristine, daunorubicin, l-asparaginase, plus the anti-CD20 antibody rituximab",
+        "D. Prednisone, vincristine, daunorubicin, l-asparaginase, plus the anti-CD22 antibody-drug conjugate inotuzumab ozogamicin",
+        "E. Prednisone, vincristine, daunorubicin, l-asparaginase, plus anti-CD19 chimeric antigen receptor T cells."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "See Maury S, Chevret S, Thomas X, et al. Rituximab in B-lineage adult acute lymphoblastic leukemia. N Engl J Med. 2016;375:1044-1053. [cite: 1046, 1047]",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 63-year-old man with known myelodysplasia presents with increasing red blood cell transfusion requirements. His peripheral counts now show a hematocrit of 25%, a white blood cell count of 2300/µL and a platelet count of 43,000/µL. An occasional circulating blast is seen. A bone marrow examination shows 23% blasts, which has increased from a level of 5% 6 months earlier. Cytogenetics show trisomy 8. The patient is otherwise healthy and is known to have an HLA-matched brother. What is the most appropriate therapy for this man?",
+      "options": [
+        "A. Immediate allogeneic hematopoietic cell transplantation from his brother",
+        "B. Standard induction and consolidation chemotherapy",
+        "C. Induction and consolidation chemotherapy with CPX-351 followed by allogeneic transplantation in first remission",
+        "D. Azacytidine until disease progression, then allogeneic transplantation",
+        "E. Four cycles of azacytidine followed by allogeneic transplantation"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "See Döhner H, Estey E, Grimwade D, et al. Diagnosis and management of AML in adults: 2017 ELN recommendations from an international expert panel. Blood. 2017; 129:424-447. Also see Lancet JE, Uy GL, Cortes JE, et al. CPX-351 (cytarabine and daunorubicin) liposome for injection versus conventional cytarabine plus daunorubicin in older patients with newly diagnosed secondary acute myeloid leukemia. J Clin Oncol. 2018;36:2684-2692. [cite: 1058, 1059, 1060, 1061, 1062]",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 22-year-old man presents with easy bruising and pallor. A peripheral blood examination shows a hematocrit of 29%, a white blood cell count of 4000/µL with 10%, and a platelet count of 35,000/µL. A bone marrow examination shows 45% myeloblasts with normal cytogenetics. Molecular testing shows a mutation in RUNX1. The patient is treated with combination chemotherapy and achieves a complete remission. He has three siblings, all of whom are reported to be healthy. What is the next step in this patient's care?",
+      "options": [
+        "A. Treat with conventional consolidation chemotherapy.",
+        "B. Perform a skin biopsy, and send for mutational analysis to determine whether he has a germline mutation.",
+        "C. Begin HLA typing of his three siblings.",
+        "D. Begin an unrelated donor search.",
+        "E. Store his own stem cells and proceed to an autologous transplant."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "See Godley LA. Inherited predisposition to acute myeloid leukemia. Semin Hematol. 2014;51:306-321. [cite: 1071, 1072]",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 66-year-old man presents with fatigue and is found to have pancytopenia with a hematocrit of 31%, a white blood cell count of 2300/µL with peripheral blasts, and a platelet count of 9000/µL. A bone marrow study shows 60% myeloblasts consistent with acute myeloid leukemia (AML). The patient had previously been in outstanding health. The choice is made to attempt induction therapy with daunorubicin and cytarabine. Which of the following statements is correct concerning prophylaxis against bleeding during induction?",
+      "options": [
+        "A. No platelet prophylaxis is necessary. It is sufficient to wait until clinical evidence of bleeding (petechiae or ecchymoses) for transfusing platelets.",
+        "B. Prophylactic platelet transfusions from random donors should be given when platelet counts drop below 10,000/µL",
+        "C. Prophylactic platelet transfusions from random donors should be given when platelet counts drop below 20,000/µL",
+        "D. Prophylactic platelet transfusions from HLA-matched donors should be given when platelet counts drop below 10,000/µL",
+        "E. Prophylactic platelet transfusions from HLA-matched donors should be given when platelet counts drop below 20,000/µL."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "See Stanworth SJ, Estcourt LJ, Powter G, et al. A no-prophylaxis platelet-transfusion strategy for hematologic cancers. N Engl J Med. 2013;368:1771-1780. [cite: 1081, 1082]",
+      "questionNumber": 43
+    },
+    {
+      "question": "Which of the following is not considered to be a complication of chronic lymphocytic leukemia (CLL):",
+      "options": [
+        "A. Herpesvirus infection",
+        "B. Central nervous system (CNS) involvement",
+        "C. Autoimmune hemolytic anemia",
+        "D. Squamous cell skin cancer",
+        "E. Colorectal carcinoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Leptomeningeal infiltration and CNS involvement are seen in acute lymphoblastic anemia, especially in relapse, but are not characteristic of CLL. However, severe humoral and cellular immune dysfunction even in early stages of CLL, sometimes complicated by the treatment given, are major causes of morbidity and mortality in this disease. This can take the form of both bacterial and viral infections (particularly with herpesvirus family members), as well as opportunistic infections when CLL progresses. It can also underlie the emergence of many different kinds of secondary malignancies, prominently including skin cancers. Autoimmune cytopenias, including autoimmune hemolytic anemia, immune-mediated thrombocytopenia, and autoimmune neutropenia, are well described in association with CLL, although systemic autoimmune disorders such as systemic lupus erythematosus, rheumatoid arthritis, or thyroid disorder, are not clearly linked. [cite: 1092, 1093, 1094, 1095, 1096]",
+      "questionNumber": 44
+    },
+    {
+      "question": "Which of the following is considered to be a poor prognostic indicator in CLL?",
+      "options": [
+        "A. Advanced age",
+        "B. Disseminated disease at diagnosis",
+        "C. Prior finding of monoclonal B-cell lymphocytosis",
+        "D. IGHV (immunoglobulin heavy chain variable sequence) mutated disease",
+        "E. Hepatosplenomegaly and lymphadenopathy"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Hepatomegaly, splenomegaly, and generalized lymphadenopathy, as well as systemic B symptoms, usually reflect a more advanced stage of CLL that requires treatment compared with CLL patients with only asymptomatic lymphocytosis. However, CLL is typically seen in older adults (median age of 72 years) and invariably presents with disseminated disease, so these factors do not portend poor prognosis. It has been recently recognized that monoclonal B-cell lymphocytosis in an adult may progress to CLL in a minority of cases but is usually of indeterminate significance. IGHV mutated CLL actually has a favorable prognosis in contrast to IGHV unmutated disease. [cite: 1103, 1104, 1105, 1106]",
+      "questionNumber": 45
+    },
+    {
+      "question": "Which of the following should not be by itself considered an indication to begin CLL directed therapy:",
+      "options": [
+        "A. Increased frequency of infections",
+        "B. Night sweats and weight loss",
+        "C. Anemia and thrombocytopenia",
+        "D. Splenomegaly",
+        "E. Progressive lymphadenopathy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Systemic symptoms such as night sweats, fevers, or weight loss, cytopenias that are poorly controlled with standard therapy, splenomegaly (especially when symptomatic), and bulky, progressively enlarging, or symptomatic lymphadenopathy are all considered to be indications to begin CLL-directed therapy. CLL patients are predisposed to increased frequency of viral and bacterial infections even from the earliest stage of their disease, and increased infections in isolation are never an indication to begin CLL treatment. [cite: 1110, 1111]",
+      "questionNumber": 46
+    }
+  ]
+}

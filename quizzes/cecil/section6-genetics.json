@@ -1,0 +1,183 @@
+{
+  "questions": [
+    {
+      "question": "A couple have a child with autism spectrum disorder in whom chromosomal analysis has been done and was normal. Which of the following is recommended to search for a possible genetic cause?",
+      "imageUrl": "",
+      "options": [
+        "A. Cytogenomic microarray testing",
+        "B. Fluorescence in situ hybridization",
+        "C. High-resolution chromosome banding",
+        "D. Whole exome sequencing",
+        "E. Whole genome sequencing"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Cytogenomic microarray testing now can detect small copy-number changes (deletions or duplications) that would not be detected by standard cytogenetic analysis, including high-resolution banding. (See Genetic Testing.) [cite: 173-176]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "A man has a direct-to-consumer genomic test and is found to have a 1.2 increased odds of type 2 diabetes. The basis for this testing is which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Sequencing a gene known to be involved in type 2 diabetes",
+        "B. Single-nucleotide polymorphism variant genotyping",
+        "C. Analysis of RNA sequences in a saliva sample",
+        "D. Whole exome sequencing",
+        "E. Whole genome sequencing"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Direct-to-consumer genomic testing is currently based on genotyping of a large number of single nucleotide polymorphism variants. (See Population Studies.) [cite: 184-186]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "A woman requests genetic testing for risk for breast cancer. Which of the following would constitute a risk factor for familial breast and ovarian cancer?",
+      "imageUrl": "",
+      "options": [
+        "A. History of tobacco use",
+        "B. Sister with breast cancer diagnosed at 40 years of age",
+        "C. Mother with ovarian cancer diagnosed at 75 years of age",
+        "D. Early menarche",
+        "E. Late menopause"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A first-degree relative with breast cancer diagnosed at a young age is a risk factor for familial breast and ovarian cancer. Tobacco use, early menarche, and late menopause are general risk factors for breast cancer. (See Genomic Medicine in Clinical Practice.) [cite: 194-196]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 25-year-old woman is found to have a long QT interval on electrocardiogram. Genetic testing reveals a pathogenic variant in the KCNQ1 gene. She is asymptomatic. Which of the following is recommended?",
+      "imageUrl": "",
+      "options": [
+        "A. No treatment",
+        "B. Treatment with a beta-blocker",
+        "C. Implantable cardioverter-defibrillator",
+        "D. Radiofrequency ablation",
+        "E. Exercise restriction"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Treatment with a beta-blocker is recommended for individuals with long QT syndrome type 1 (caused by KCNQ1 pathogenic variants) to reduce the risk of cardiac events, even if they are asymptomatic. (See Genomic Medicine in Clinical Practice.) [cite: 204-206]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 50-year-old man is found to have a pathogenic variant in the LDLR gene. Which of the following is recommended?",
+      "imageUrl": "",
+      "options": [
+        "A. Diet and exercise only",
+        "B. Statin therapy",
+        "C. PCSK9 inhibitor",
+        "D. Bile acid sequestrant",
+        "E. Niacin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Individuals with familial hypercholesterolemia (caused by pathogenic variants in LDLR, APOB, or PCSK9) are at high risk for premature coronary artery disease and should be treated with statin therapy to lower LDL cholesterol levels. (See Genomic Medicine in Clinical Practice.) [cite: 214-216]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following is the most common potential risk associated with gene therapy?",
+      "imageUrl": "",
+      "options": [
+        "A. Insertional mutagenesis",
+        "B. Immune response to the vector",
+        "C. Off-target effects",
+        "D. Germline transmission",
+        "E. Overexpression of the transgene"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Immune responses to the viral vectors used in gene therapy are a significant concern and can limit the efficacy of the treatment or cause adverse events. Insertional mutagenesis, off-target effects, and germline transmission are potential risks but are less common or are actively minimized by vector design. Overexpression is a potential issue but is usually managed by promoter selection. (See Safety of Gene Therapy.) [cite: 226-229]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following vectors is most commonly used for in vivo gene therapy involving the liver?",
+      "imageUrl": "",
+      "options": [
+        "A. Retrovirus",
+        "B. Lentivirus",
+        "C. Adenovirus",
+        "D. Adeno-associated virus (AAV)",
+        "E. Herpes simplex virus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "AAV vectors are commonly used for liver-directed gene therapy because they can transduce non-dividing cells (like hepatocytes) and have a relatively good safety profile. Retroviruses and lentiviruses integrate into the genome, which carries a risk of insertional mutagenesis. Adenoviruses are highly immunogenic. Herpes simplex virus vectors are neurotropic. (See Viral Vectors.) [cite: 237-240]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which one of the following is not a form of gene therapy?",
+      "imageUrl": "",
+      "options": [
+        "A. Transfection",
+        "B. Transduction",
+        "C. RNA interference",
+        "D. Gene editing",
+        "E. DNA electroporation"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Electroporation is a strictly in vitro research method in cell biology that electropermeabilizes cell membranes by an externally applied electrical field to introduce a piece of DNA (or other agents) into a cell. All the other choices are methods of gene therapy. Transfection is the direct delivery of naked DNA by injection, the use of liposomes, nanoparticles, and other means. Transduction is gene therapy that is mediated by viral vectors. RNA interference is a highly precise mechanism of regulating gene expression by sequence-directed silencing (by degrading specific messenger RNAs or by blocking their translation into protein). Gene editing is a way of correcting a pathogenic mutation in its natural gene location (rather than the more conventional gene therapy method of gene restoration, in which a whole gene is inserted into the genome). (See Gene Therapy Delivery Methods and Other Forms of Molecular Therapies: RNA Interference and Gene Editing under the main heading of Gene Therapy.) [cite: 247-257]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "Ex vivo gene therapy is most suitable for targeting which of the following tissues?",
+      "imageUrl": "",
+      "options": [
+        "A. Brain",
+        "B. Heart",
+        "C. Hematopoietic stem cells",
+        "D. Lung",
+        "E. Muscle"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Ex vivo gene therapy involves removing cells from the body, modifying them genetically, and then returning them to the patient. This approach is particularly suitable for hematopoietic stem cells, which can be easily harvested, manipulated, and transplanted. It is more difficult to apply this approach to solid organs like the brain, heart, lung, or muscle. (See Ex Vivo Gene Therapy.) [cite: 265-268]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following is a key characteristic of induced pluripotent stem cells (iPSCs)?",
+      "imageUrl": "",
+      "options": [
+        "A. They are derived from embryos.",
+        "B. They can only differentiate into blood cells.",
+        "C. They are generated by reprogramming somatic cells.",
+        "D. They have limited proliferation potential.",
+        "E. They are identical to adult stem cells."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "iPSCs are generated by reprogramming somatic cells (like skin fibroblasts) to a pluripotent state using specific transcription factors. They are not derived from embryos (unlike embryonic stem cells), can differentiate into many cell types, have unlimited proliferation potential, and are distinct from adult stem cells. (See Induced Pluripotent Stem Cells.) [cite: 278-281]",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "Which of the following is a potential application of regenerative medicine?",
+      "imageUrl": "",
+      "options": [
+        "A. Replacement of damaged tissues",
+        "B. Drug toxicity testing",
+        "C. Disease modeling",
+        "D. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Regenerative medicine has the potential to replace damaged tissues (e.g., in heart failure, diabetes, Parkinson's disease), test drugs for toxicity (using tissue-specific cells derived from stem cells), and model diseases (using iPSCs from patients with genetic disorders). (See Applications of Regenerative Medicine.) [cite: 287-290]",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "Fetal tissue transplantation has been most extensively studied for the treatment of which condition?",
+      "imageUrl": "",
+      "options": [
+        "A. Diabetes mellitus",
+        "B. Parkinson disease",
+        "C. Spinal cord injury",
+        "D. Myocardial infarction",
+        "E. Stroke"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although fetal tissue therapy represents a form of regenerative medicine with great potential, the only fetal-derived cells that have been used in clinical applications to date are the dopaminergic cells derived from the developing fetal nervous system for the treatment of Parkinson disease. (See Engraftment of Fetal Tissue.) [cite: 298-301]",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    }
+  ]
+}

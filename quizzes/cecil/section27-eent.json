@@ -1,0 +1,454 @@
+{
+  "questions": [
+    {
+      "question": "A 45-year-old woman is having difficulty with near-vision tasks in both eyes. What is the likely cause of this problem?",
+      "imageUrl": "",
+      "options": [
+        "A. A decreased range of accommodation",
+        "B. Increased opacification of the crystalline lens",
+        "C. A separation of the retina from the retinal pigment epithelium",
+        "D. Scarring on the internal surface of the retina",
+        "E. Neovascularization and scarring of the external retina"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "At age 45 years, the amount of available accommodative reserve decreases to the point at which reading and other near tasks become difficult. Although cataracts can occur at age 45 years, the incidence is very low, and such early cataracts are usually unilateral. A serous detachment of the retina usually occurs in one eye and causes acquired asymmetrical vision. Scarring of the internal surface of the retina (epiretinal membrane formation) is also usually a unilateral abnormality. Neovascularization of the external surface of the retina (subretinal neovascularization) is also usually a unilateral acquired abnormality. [cite: 1519-1530]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 35-year-old man developed mild focal upper eyelid pain and swelling associated with a tender mass. What is the likely cause of the mass?",
+      "imageUrl": "",
+      "options": [
+        "A. An abscess of the eyelash follicle",
+        "B. A rupture of a meibomian gland",
+        "C. Proliferation of the basal layers of the eyelid epidermis",
+        "D. A blockage of an eccrine duct of the eyelid",
+        "E. Proliferation of non-nodal lymphoid tissue of the conjunctiva"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Unilateral eyelid pain and swelling is the usual presentation of a chalazion (rupture of a meibomian gland). A stye, which is an abscess of a pilosebaceous unit, presents with extreme pain and the risk for anterior or posterior cellulites. Basal cell carcinoma is a painless mass. Blockage of an eccrine duct (ductal cyst) is also painless and usually occurs in the conjunctiva. Proliferation of non-nodal lymphoid tissue (lymphoma) is also painless and usually found in the upper or lower fornix of the conjunctiva. [cite: 1531-1541]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 43-year-old near-sighted man notes the sensation of flashing lights and an increased number of small floaters in the right eye. This afternoon during his annual physical examination, he notes loss of the inferior visual field of that eye. What is the most appropriate course of action?",
+      "imageUrl": "",
+      "options": [
+        "A. Chest imaging for a primary neoplasm",
+        "B. Carotid artery imaging",
+        "C. Evaluation for systemic hypertension",
+        "D. Immediate referral for intraocular evaluation",
+        "E. Schedule for next available eye examination"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Recent onset of the sensation of floaters and flashing lights is the common presentation of retinal detachment. Visual outcome is dependent on early diagnosis and treatment. The other systemic conditions present much differently. [cite: 1542-1548, 1574-1576]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 71-year-old man has noted halos around oncoming car headlights and double vision in only one eye. What is the most likely cause of his vision change?",
+      "imageUrl": "",
+      "options": [
+        "A. Intimal thickening of the ipsilateral carotid artery",
+        "B. Cerebral aneurysm",
+        "C. Brainstem vascular insufficiency",
+        "D. Serous retinal detachment",
+        "E. Increase of refractive index of the lens"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Monocular diplopia (diplopia with one eye open) is a common presentation of a cataract, although corneal surface abnormalities may present similarly. The other conditions present with bilateral diplopia (diplopia disappears with closure of one eye). [cite: 1549-1557]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "The notation in a drug insert states that the drug should not be used if the patient has glaucoma. Which type of glaucoma puts the patient at risk for vision loss with this drug?",
+      "imageUrl": "",
+      "options": [
+        "A. Chronic open-angle glaucoma",
+        "B. Exfoliative glaucoma",
+        "C. Narrow-angle glaucoma",
+        "D. Neovascular glaucoma",
+        "E. Trauma-associated glaucoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most common cause of nonsteroidal-induced glaucoma is that associated with narrow-angle anterior chamber configuration. The other types of glaucoma are not risk factors for drug-induced glaucoma. [cite: 1558-1565]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 50-year-old man with a hemoglobin A1c level of 10% has noted over the past week that he can read comfortably without his bifocals. What is the significance of this observation?",
+      "imageUrl": "",
+      "options": [
+        "A. Induced myopia due to hyperglycemia",
+        "B. Macular edema",
+        "C. Occlusion of a branch retinal artery",
+        "D. Late-stage background diabetic retinopathy",
+        "E. Early-stage proliferative diabetic retinopathy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This person has uncontrolled diabetes associated with induced myopia. The induced myopia has corrected his near vision but made his distance vision difficult. All of the other conditions will decrease visual acuity at near. [cite: 1566-1573]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "Lesions in which of the following structures could not produce a hemianoptic field defect?",
+      "imageUrl": "",
+      "options": [
+        "A. Parietal lobe",
+        "B. Occipital lobe",
+        "C. Temporal lobe",
+        "D. Geniculate ganglion",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Lesions in all of these structures can involve the optic radiations and produce a hemianoptic defect. [cite: 1581-1587]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which of the following would be atypical for retrobulbar neuritis?",
+      "imageUrl": "",
+      "options": [
+        "A. Loss of visual acuity",
+        "B. Swelling of the optic disc",
+        "C. Atrophy of the optic disc",
+        "D. Color saturation",
+        "E. Later development of multiple sclerosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The optic disc looks normal with acute retrobulbar neuritis, but the disc can later become pale and atrophic. Monocular loss of visual acuity and color saturation is common, and more than 50% of patients will eventually be diagnosed as having multiple sclerosis. [cite: 1588-1595]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which of the following would be atypical for papilledema?",
+      "imageUrl": "",
+      "options": [
+        "A. Enlargement of the blind spot",
+        "B. Loss of visual acuity",
+        "C. Gradual loss of peripheral vision",
+        "D. Brief episodes of amaurosis",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Visual acuity is nearly always maintained with papilledema. A, C, and D all occur with papilledema. [cite: 1596-1602]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following is not associated with Horner syndrome?",
+      "imageUrl": "",
+      "options": [
+        "A. Lateral medullary infarction",
+        "B. Lung cancer",
+        "C. Carotid artery dissection",
+        "D. Anterior communication artery aneurysm",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Anterior communicating artery aneurysms can cause an enlarged pupil by compressing the parasympathetic innervation of the pupil, which is carried in the third nerve. The other three conditions all can damage the sympathetic innervation of the pupil, thereby causing Horner syndrome. [cite: 1603-1609]",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 35-year-old woman with known multiple sclerosis presents with new-onset double vision. Which of the following findings would be unlikely on neurologic examination?",
+      "imageUrl": "",
+      "options": [
+        "A. Nystagmus of the abducting eye on lateral gaze",
+        "B. Impaired adduction on lateral gaze",
+        "C. Atrophy of the left optic disc",
+        "D. Enlarged pupil on the left side",
+        "E. Loss of visual acuity on the left side"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A and B are features of internuclear ophthalmoplegia, which is a common cause of double vision in a patient with multiple sclerosis. Unilateral optic neuritis with visual loss and development of optic atrophy would be common additional findings in patients with known multiple sclerosis. The pupils are symmetrical in patients with optic neuritis because the light reflex is bilateral. Involvement of the parasympathetic control of the pupil would be unusual with multiple sclerosis. [cite: 1610-1620]",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "A new 62-year-old female patient complains of various bilateral joint pains. In the course of examination, you observe symmetrical parotid gland enlargement, which is soft and nontender to palpation. Intraoral examination is within normal limits. Which of the following is the most appropriate recommendation?",
+      "imageUrl": "",
+      "options": [
+        "A. Request labial salivary gland biopsy to evaluate possible Sjögren syndrome.",
+        "B. Request parotid gland biopsy to exclude multifocal neoplasia, such as lymphoma.",
+        "C. Request a chest radiograph to evaluate possible sarcoidosis.",
+        "D. Request serum anti-SS-A/-B, rheumatoid factor and antinuclear antibody to seek serologic evidence of Sjögren syndrome.",
+        "E. Request a blood glucose level to consider diabetes."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient has sialadenosis, distinguished by its bilaterally symmetrical enlargement and the absence of induration, which would indicate an absence of intraglandular inflammation or neoplasia. This condition is most commonly associated with diabetes mellitus or alcoholic cirrhosis, but it may also occur in patients with gonadal hypofunction, acromegaly, chronic pancreatitis, hyperlipoproteinemia, or anorexia nervosa-bulimia. This type of parotid enlargement is self-limited and does not require treatment. Biopsy, which in this condition would show only parenchymal hyperplasia, is not indicated. [cite: 1624-1635]",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 35-year-old female patient who is taking prescription drugs to manage depression complains of a progressive burning sensation on her tongue during the last several months. She smokes one pack of cigarettes per day. On physical examination, the dorsal surface of her tongue exhibits diffuse erythema and generalized atrophy of the filiform papillae. Her oral mucosa is moist, but little saliva accumulates in the floor of her mouth during your examination. Which of the following is the most appropriate recommendation?",
+      "imageUrl": "",
+      "options": [
+        "A. Request biopsy of the affected area of her tongue to exclude mucosal dysplasia or neoplasia.",
+        "B. Change her current combination of medications.",
+        "C. Prescribe a course of topical steroid application to reduce the mucosal inflammation.",
+        "D. Prescribe a course of fluconazole, lasting at least 2 weeks or until the erythema resolves and filiform papillae return.",
+        "E. Recommend that she stop smoking."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although smoking cessation is certainly to be recommended for any patient, this patient's lingual mucosal changes are characteristic of mucosal candidiasis, possibly as a result of decreased salivary function from medications used to manage her depression. In patients with little or no residual salivary function (e.g., in advanced Sjögren syndrome or after head and neck radiation therapy), treatment of oral mucosal candidiasis may require the use of topical antifungal therapy. [cite: 1636-1646]",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 38-year-old man complains weight loss and night sweats. His history includes smoking one pack of cigarettes per day for about 20 years. On physical examination, you observe corrugated, well-defined white patches on the ventrolateral tongue, bilaterally. Which of the following is the most appropriate recommendation?",
+      "imageUrl": "",
+      "options": [
+        "A. Refer the patient for biopsy of the lingual lesions to exclude dysplasia or carcinoma.",
+        "B. Advise the patient to discontinue smoking.",
+        "C. Request a complete blood count and HIV test, then have the lesions biopsied.",
+        "D. Have him return in 1 month to see if the lesions resolve spontaneously.",
+        "E. Search for causes of chronic trauma."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Although discontinuance of smoking is always good advice, many oral mucosal lesions are not associated with tobacco consumption. This case may represent oral hairy leukoplakia, an Epstein-Barr virus (which can be identified in the biopsy specimen) lesion and a manifestation of systemic HIV infection. These are uncommon lesions and are associated with a high HIV viral load; clinical suspicion should encourage further search for other HIV-related symptoms or signs. [cite: 1647-1659]",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 52-year-old woman complains of dry mouth of long duration. She is taking five prescription medications, two of which have anticholinergic effects, and her affect suggests clinical depression. On examination, palpation of the four major salivary glands exhibits slight to mild induration. Which of the following is the most appropriate recommendation?",
+      "imageUrl": "",
+      "options": [
+        "A. Perform or refer the patient for a labial salivary gland biopsy to consider the salivary component of Sjögren syndrome.",
+        "B. Replace the two prescription drugs with alternatives that have less or no anticholinergic effects.",
+        "C. Refer the patient for specialty management of her depression.",
+        "D. Include rheumatoid factor (RF) and antinuclear antibody (ANA) titer in your laboratory request to consider the serologic component of Sjögren syndrome.",
+        "E. Perform an unanesthetized Schirmer tear test to consider the ocular component of Sjögren syndrome."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Although the patient's symptoms may be caused by the side effects of anticholinergic drugs, palpable salivary induration raises the suspicion of inflammation within them. Sjögren syndrome is high on the differential diagnosis and is an indication for labial salivary gland biopsy. Positive RF and ANA are usually seen in patients with Sjögren syndrome, but they lack specificity, even if both are positive. Positive anti-SS-A/SS-B serology can represent the serologic component of Sjögren syndrome but is insufficient alone. A positive Schirmer test is currently insufficient to identify the ocular component of Sjögren syndrome. [cite: 1660-1673]",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    },
+    {
+      "question": "Examination of an asymptomatic 27-year-old male nonsmoker reveals numerous circular white lesions surrounding red atrophic patches on the dorsum of the tongue. The lesions cannot be rubbed off with a gauze square. The patient most likely has which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Fissured tongue",
+        "B. Speckled leukoplakia",
+        "C. Benign migratory glossitis (geographic tongue)",
+        "D. Squamous cell carcinoma",
+        "E. Lichen planus"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient has geographic tongue, a harmless and common condition that results in transient depapillation of the tongue with a surrounding white halo. Over the course of several weeks, the depapillated area returns to normal. However, other areas may become affected, thereby giving the patient the perception that the lesion is migrating over the tongue. Despite its superficial resemblance to psoriasis, microscopically there is no relation. For the symptomatic patient, bland mouth rinses (baking soda in warm water, salt water) may provide symptomatic relief. Antifungal treatments are not recommended. There is no association with oral cancer. [cite: 1674-1686]",
+      "explanationImageUrl": "",
+      "questionNumber": 16
+    },
+    {
+      "question": "A patient without other systemic disease or immunocompromise presents with otitis externa confined to the external auditory canal. Which of the following interventions would be recommended?",
+      "imageUrl": "",
+      "options": [
+        "A. The physician should prescribe an oral quinolone antibiotic.",
+        "B. The physician should order a CT scan with contrast of the temporal bone.",
+        "C. The physician should prescribe topical antibiotics.",
+        "D. The physician should obtain a neurosurgical consultation.",
+        "E. The physician should recommend oral steroid medication."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Otitis externa or \"swimmer's ear\" usually responds to topical antibiotic treatment. Oral or systemic antibiotics are specifically not recommended unless the patient is immunocompromised or the infection is spreading to the pinna cartilage of the external ear outside of the external auditory canal. [cite: 1690-1698]",
+      "explanationImageUrl": "",
+      "questionNumber": 17
+    },
+    {
+      "question": "A patient presents to your office with recurrent epistaxis. A crust on the anterior septum is identified on the side of greatest bleeding. There is no active bleeding during the visit. The best course of action is which of the following choices?",
+      "imageUrl": "",
+      "options": [
+        "A. The patient should be admitted to the hospital for interventional embolization of the internal maxillary artery.",
+        "B. The patient should be electively scheduled for a computed tomographic angiogram.",
+        "C. The patient should be given a prescription for a B-blocker.",
+        "D. The patient should be queried about aspirin use and be asked to take an \"aspirin holiday.\"",
+        "E. A bone marrow biopsy should be obtained."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patients with epistaxis are often on antiplatelet drugs for a variety of reasons. On intake history, use of nonsteroidal anti-inflammatory drugs should be specifically sought because curtailing antiplatelet medication will often eliminate troublesome epistaxis. [cite: 1699-1709]",
+      "explanationImageUrl": "",
+      "questionNumber": 18
+    },
+    {
+      "question": "An adult patient presents with left ear pain but no hearing loss, beginning 4 weeks ago and partially controlled with narcotic pain medication. On physical examination, there is no evidence of otitis externa or otitis media. Which of the following choices is the best next step?",
+      "imageUrl": "",
+      "options": [
+        "A. A smoking history should be obtained, a neck examination should be performed, and the patient should be referred for upper airway endoscopic examination.",
+        "B. An empirical trial of oral antibiotics should be prescribed for presumptive otitis media.",
+        "C. An empirical trial of topical antibiotics should be prescribed for presumptive otitis externa.",
+        "D. A magnetic resonance image of the brain and temporal bone, with contrast, should be ordered.",
+        "E. The patient should be sent for a hearing test."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Unexplained unilateral otalgia may be a referred pain from an upper aerodigestive tract lesion. Physical examination of the oral cavity, oropharynx, larynx, and hypopharynx should be performed. Tumors of the upper aerodigestive tract often present with an easily palpable, metastatic lymph node in the neck. Smoking, alcohol use, and human papillomavirus infection are risk factors for head and neck cancer. [cite: 1710-1722]",
+      "explanationImageUrl": "",
+      "questionNumber": 19
+    },
+    {
+      "question": "A patient presents with nasal polyps visible on anterior rhinoscopy and also notes a history of asthma exacerbated by nonsteroidal anti-inflammatory drug use. What is the best treatment recommendation?",
+      "imageUrl": "",
+      "options": [
+        "A. The patient should be scheduled for nasal surgery.",
+        "B. The patient should be scheduled for CT imaging of the sinuses.",
+        "C. The patient should be given a prescription for ciprofloxacin.",
+        "D. The patient should be scheduled for a sweat chloride test.",
+        "E. The patient should be given an oral prednisone taper."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient likely has aspirin exacerbated respiratory disease, also called Samter's triad or \"aspirin allergy.\" Oral corticosteroids can shrink nasal polyps and help control symptoms in patients with this disorder. [cite: 1723-1730]",
+      "explanationImageUrl": "",
+      "questionNumber": 20
+    },
+    {
+      "question": "A patient presents to your office with a 4-day history of an upper respiratory infection that has prevented attendance at school. The physician should take which of the following steps?",
+      "imageUrl": "",
+      "options": [
+        "A. The history suggests chronic infection, and the patient should be given oral antibiotics.",
+        "B. The history suggests acute infection, and the patient should be given oral antibiotics.",
+        "C. The history is consistent with a viral upper respiratory infection, and symptomatic treatment should be recommended.",
+        "D. The patient should be given a prescription for topical antifungal medication.",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Several meta-analyses have shown that oral antibiotics or topical antibiotics provide no meaningful improvement in sinusitis during the first 7 to 10 days of treatment. Supportive care is the best option; it should include decongestants, hydration, fever control with antipyretics, and patience in allowing the symptoms to resolve. [cite: 1731-1739]",
+      "explanationImageUrl": "",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 53-year-old woman being treated for metastatic breast cancer complains of loss of taste. Which of the following is least likely to explain the taste loss?",
+      "imageUrl": "",
+      "options": [
+        "A. Radiation therapy",
+        "B. Poor nutrition",
+        "C. Chemotherapy",
+        "D. Age",
+        "E. Hormonal changes"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although age can lead to minor deficits in taste because of decreased turnover in taste bud cells, age would not be likely to explain taste loss in this relatively young woman. A, B, C, and E can cause severe loss of taste, particularly in this clinical circumstance. [cite: 1743-1751]",
+      "explanationImageUrl": "",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 39-year-old woman presents with subacute onset of loss of smell. What is the most likely cause?",
+      "imageUrl": "",
+      "options": [
+        "A. Head trauma",
+        "B. Viral infection",
+        "C. Vitamin deficiency",
+        "D. Multiple sclerosis",
+        "E. Sinusitis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Viral infections are the most common cause of loss of smell. The other conditions also can cause loss of smell but are less likely. [cite: 1752-1759]",
+      "explanationImageUrl": "",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 42-year-old man presents with subacute onset of hemifacial paralysis and persistent taste of sweetness. What clinical feature is not consistent with Bell palsy (VII cranial nerve palsy)?",
+      "imageUrl": "",
+      "options": [
+        "A. Hemifacial paralysis",
+        "B. Loss of taste in the anterior two thirds of the tongue",
+        "C. Persistent taste of sweetness",
+        "D. Intact taste in the posterior third of the tongue",
+        "E. Drooling or dry mouth with difficulty in eating"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A major branch of the mastoid segment of cranial nerve VII is the chorda tympani, which contains afferent taste fibers from the anterior two thirds of the tongue and is the anatomic basis for the loss of taste in the anterior two thirds of the tongue in idiopathic cranial nerve VII palsy. In contrast with loss of taste, a persistent sense of sweetness is a worrisome symptom for an irritative lesion, such as a neoplastic, inflammatory, or demyelinating lesion involving cranial nerve VII. [cite: 1760-1768]",
+      "explanationImageUrl": "",
+      "questionNumber": 24
+    },
+    {
+      "question": "What is the molecular basis that allows us to taste carbonation in sodas, sparkling wines, and other carbonated drinks?",
+      "imageUrl": "",
+      "options": [
+        "A. G protein-coupled glutamate receptor for umami",
+        "B. Carbonic anhydrase IV expressed on the surface of sour-sensing cells",
+        "C. TASIR heterodimers for sweetness",
+        "D. TAS2R proteins for bitter taste",
+        "E. Epithelial sodium channel receptor for salty taste"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Mountaineers who take acetazolamide (a carbonic anhydrase inhibitor) to prevent altitude sickness have long reported that carbonated beverages lacked pleasurable taste or tingle sensation. Patients treated with acetazolamide and other medications with carbonic anhydrase-inhibiting activities also experience taste disturbances. [cite: 1769-1776]",
+      "explanationImageUrl": "",
+      "questionNumber": 25
+    },
+    {
+      "question": "Which of the following would not be typical of a conductive hearing loss?",
+      "imageUrl": "",
+      "options": [
+        "A. Marked improvement with amplification",
+        "B. Ability to hear speech in a noisy background",
+        "C. Relatively maintained speech recognition",
+        "D. Loud speech is annoying.",
+        "E. Bone greater than air conduction"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patients with conductive hearing loss prefer loud speech, which they can understand as well as normal people can. A, B, C, and E are typical for conductive hearing loss. [cite: 1780-1787]",
+      "explanationImageUrl": "",
+      "questionNumber": 26
+    },
+    {
+      "question": "Which of the following diagnoses would be least likely to be manifested with a unilateral hearing loss?",
+      "imageUrl": "",
+      "options": [
+        "A. Acoustic neuroma",
+        "B. Meniere disease",
+        "C. Otosclerosis",
+        "D. Brain stem glioma",
+        "E. Otitis media"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Brain stem lesions rarely cause unilateral hearing loss unless they involve the root entry zone of the cochlear nerve. Otosclerosis is usually bilateral but often begins unilaterally. The other conditions are typically unilateral. [cite: 1788-1795]",
+      "explanationImageUrl": "",
+      "questionNumber": 27
+    },
+    {
+      "question": "Which of the following is least likely to be manifested with vertigo?",
+      "imageUrl": "",
+      "options": [
+        "A. Acoustic neuroma",
+        "B. Meniere disease",
+        "C. Lateral medullary infarction",
+        "D. Migraine",
+        "E. Vestibular neuritis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Acoustic neuroma typically is manifested with unilateral hearing loss or tinnitus. It compresses the vestibular nerve slowly, so central compensation can occur. It rarely is manifested with vertigo. B, C, D, and E commonly are manifested with vertigo. [cite: 1796-1804]",
+      "explanationImageUrl": "",
+      "questionNumber": 28
+    },
+    {
+      "question": "Which of the following would be an unusual precipitant for benign paroxysmal positional vertigo?",
+      "imageUrl": "",
+      "options": [
+        "A. Turning in bed",
+        "B. Yoga class",
+        "C. Driving",
+        "D. Reaching for something on a high shelf",
+        "E. Working under an automobile"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Benign paroxysmal positional vertigo is typically triggered by movement in the vertical plane (plane of the posterior semicircular canal). It would be unusual to make such a movement while driving. The other maneuvers are common precipitating circumstances. [cite: 1805-1812]",
+      "explanationImageUrl": "",
+      "questionNumber": 29
+    },
+    {
+      "question": "Which of the following would most likely be associated with a positive head-thrust test result?",
+      "imageUrl": "",
+      "options": [
+        "A. Meniere disease",
+        "B. Lateral medullary infarction",
+        "C. Cerebellar infarction",
+        "D. Gentamicin ototoxicity",
+        "E. Otitis media"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Gentamicin is remarkably selective for the vestibular system, and the head-thrust test is useful for identifying toxicity at the bedside. The head-thrust test result is rarely positive with Meniere disease and would be negative with lateral medullary infarction, cerebellar infarction, and otitis media. [cite: 1813-1820]",
+      "explanationImageUrl": "",
+      "questionNumber": 30
+    }
+  ]
+}

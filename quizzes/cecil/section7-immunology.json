@@ -1,0 +1,222 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following cell types is not considered to be a component of the innate immune system?",
+      "imageUrl": "",
+      "options": [
+        "A. Macrophages",
+        "B. Neutrophils",
+        "C. T lymphocytes",
+        "D. Plasmacytoid dendritic cells",
+        "E. Eosinophils"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "CTlymphocytes are important components of the adaptive immune system. T and B lymphocytes use mechanisms that rearrange DNA to form novel specific antigen-binding receptors. Cells of the innate immune system express pattern recognition receptors but do not express specific antigen-binding receptors. [cite: 1151-1153]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "Endosomal Toll-like receptors (TLRs) recognize which of the following pathogen-associated molecular patterns (PAMPs)?",
+      "imageUrl": "",
+      "options": [
+        "A. Flagellin",
+        "B. Lipopolysaccharide",
+        "C. Antigenic peptides",
+        "D. Nucleic acids"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "TLRs are important innate immune system receptors that recognize patterns expressed by pathogenic microbes and some endogenous molecules. Cell surface-expressed TLRs recognize molecules that are typically expressed on the surface of microbes. Intracellular endosomal TLRs, such as TLR-3, -7, -8, and -9, recognize RNA or DNA. The sequestering of those nucleic acid-responsive TLRs protects the immune system from inadvertent activation by self-nucleic acids. However, in diseases such as systemic lupus erythematosus, nucleic acid-containing immune complexes can gain access to the endosomal TLRs and induce an innate immune response. [cite: 1159-1163]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following innate immune system stimuli utilizes the inflammasome to trigger an inflammatory disease?",
+      "imageUrl": "",
+      "options": [
+        "A. Peptide-major histocompatibility class (MHC) class II complex",
+        "B. Monosodium urate crystals",
+        "C. Interleukin-6 (IL-6)",
+        "D. Immunoglobulin E",
+        "E. Complement"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Urate crystals access the components of the NOD-like receptors of the inflammasome, activate caspase I, and induce the formation of IL-1, a pro-inflammatory mediator that can amplify an innate immune response. In some patients, this response leads to the acute inflammatory arthritis known as gout. Peptide-MHC class II complexes are stimuli for activation of an adaptive immune response. IL-6 is a broadly active cytokine, and immunoglobulin E is a component of an allergic response. [cite: 1169-1172]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "M2 macrophages participate in which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Wound healing responses",
+        "B. Antigen presentation",
+        "C. Production of IL-12",
+        "D. Recognition of oxidized low-density lipoprotein (LDL)",
+        "E. Complement activation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Although the designation of M1 and M2 macrophages is overly simplistic, macrophages do shift their functional program as the course of an immune response progresses toward a more chronic state, with M2 macrophages expanding and producing mediators, such as transforming growth factor-B and IL-10, that contribute to resolution of responses and repair of damaged tissue. Antigen presentation, production of IL-12, and recognition of oxidized LDL are more likely to be features of M1 macrophages. [cite: 1178-1179]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "Cells of the innate immune system produce soluble mediators that contribute to activation and expansion of an adaptive immune response. Among those mediators are which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. BAFF",
+        "B. IL-23",
+        "C. LL37",
+        "D. All of the above",
+        "E. A and B"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Macrophages and dendritic cells produce mediators that influence both the T- and B-cell arms of the adaptive immune response. IL-23 can promote generation of T-cell effector programs. BAFF is a B-cell survival and differentiation factor. LL37 is a cathelicidin that is produced by neutrophils and participates in the killing of phagocytosed microbes. [cite: 1186-1188]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "IgG antibodies are characterized by all of the following except which one?",
+      "imageUrl": "",
+      "options": [
+        "A. Two heavy chains and two light chains",
+        "B. A common y chain",
+        "C. Disulfide bonds",
+        "D. Subclasses"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "IgG molecules consist of two identical heavy and two identical light chains, linked by disulfide bonds. IgG and IgA molecules include distinct subclasses encoded by distinct genomic DNA sequences. A common y chain is a signaling component of certain cytokine and Fc receptors but is not a component of IgG antibodies. [cite: 1197-1199]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "CD4 T cells recognize antigenic peptides presented on which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Epithelial cells",
+        "B. Major histocompatibility complex (MHC) class I molecules",
+        "C. MHC class II molecules",
+        "D. Costimulatory molecules",
+        "E. CD80"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Antigenic peptides processed by specialized antigen-presenting cells associate with the peptide-binding cleft of MHC class II molecules and are recognized by the T-cell receptor expressed on CD4+ T cells. CD8+ T cells recognized antigenic peptides associated with MHC class I molecules. CD80 is an example of a costimulatory molecule expressed on antigen-presenting cells that supports the activation of T cells that have interacted with peptide-MHC complexes. Epithelial cells do not typically activate CD4 T cells. [cite: 1205-1208]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which of the following functions is provided by differentiated T cells?",
+      "imageUrl": "",
+      "options": [
+        "A. Production of interleukin-17 (IL-17)",
+        "B. Lysis of virus-infected target cells",
+        "C. Help for B-cell activation and differentiation",
+        "D. Production of interferon-y",
+        "E. All the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The cytokine milieu of T cells contributes to differentiation of those cells to provide various effector functions. These include support for B-cell activation and differentiation (through CD154-CD40 interactions and production of IL-21), secretion of cytokines (interferon-y) that support macrophage activation and delayed-type hypersensitivity reactions, induction of inflammatory responses (IL-17), and mediating the killing of virus-infected cells. [cite: 1215-1216]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "B cells minimize self-reactivity through a process called which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Isotype switching",
+        "B. Costimulation",
+        "C. Somatic hypermutation",
+        "D. Recombination",
+        "E. Receptor editing"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Isotype switching, somatic hypermutation, and recombination are processes that promote the diversity of the B-cell repertoire. Costimulation of T-cell activation supports amplification of an adaptive immune response. Receptor editing modifies the sequence of the B-cell receptor to avoid production of autoreactive B cells. [cite: 1223-1225]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Immunologic tolerance is mediated by which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Thymic deletion of T cells that recognize antigen with high affinity",
+        "B. Regulatory T cells",
+        "C. Clonal ignorance",
+        "D. T-cell activation in the absence of costimulation",
+        "E. It is mediated by all of the above."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Central and peripheral tolerance mechanisms include thymic deletion of self-reactive T cells, T-cell activation without costimulation, clonal ignorance, and control of self-reactive cells by regulatory T cells. [cite: 1232]",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "Type III hypersensitivity reactions are caused by tissue deposition of immune complexes which activate local effectors and lead to injury. Which of the following mediators are NOT characteristic of this pathway of inflammation?",
+      "imageUrl": "",
+      "options": [
+        "A. Fc receptors for IgE",
+        "B. Complement",
+        "C. Neutrophils",
+        "D. Mononuclear phagocytes"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Type III responses are mediated by IgG directed against soluble antigens. Localized deposition of immune complexes activates mast cells, monocytes, neutrophils, and platelets bearing the Fc receptor for IgG (FcYR) and initiates the complement cascade, all effectors of tissue damage. Generation of complement components C3a and CSa recruits and stimulates inflammatory cells and amplifies effector functions. IgE does not participate in the inflammatory response. Of note, mast cells may be activated in type III responses through receptors for IgG or complement. [cite: 1241-1244]",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "Type IV hypersensitivity reactions, as exemplified by the tuberculin test, do NOT require which of the following elements?",
+      "imageUrl": "",
+      "options": [
+        "A. IgG",
+        "B. Macrophages",
+        "C. Th1 effector cells",
+        "D. IFN-Y"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The prototypic type IV hypersensitivity reaction is the tuberculin test, in which antigen is taken up, processed, and presented by macrophages. Type 1 helper T (Th1) effector cells that recognize the specific antigen are stimulated to release chemokines, which recruit macrophages to the site, and release cytokines including IFN- , which activate macrophages and enhance their release of inflammatory mediators. IgG does not participate in type IV hypersensitivity reactions. [cite: 1250-1252]",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "In which of the following clinical situations are autoantibodies NOT critical triggers of tissue damage?",
+      "imageUrl": "",
+      "options": [
+        "A. Asthma",
+        "B. Pemphigus vulgaris",
+        "C. Graves disease",
+        "D. Systemic lupus erythematosus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "IgE antibodies against innocuous environmental antigens initiate asthma, not autoantibodies. Autoantibodies against TSH receptors act as agonists in Graves disease. Autoantibodies against desmoglein-3 effect adhesion between epidermal keratinocytes and cause blister formation. In systemic lupus erythematosus, inflammation is initiated by deposition of immune complexes containing autoantibodies directed against common cellular constituents (e.g., DNA and ribonucleolar proteins). [cite: 1258-1261]",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "A syndrome similar to serum sickness occurs in which of the following infections?",
+      "imageUrl": "",
+      "options": [
+        "A. Hepatitis B",
+        "B. Tuberculosis",
+        "C. Pneumococcal pneumonia",
+        "D. Influenza"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A syndrome similar to serum sickness occurs in chronic infections in which pathogens persist in the face of continued immune response. Hepatitis B virus infection may be associated with immune complex deposition early in its course, during a period of antigen excess, because antibody production in response to hepatitis B surface antigen is as yet relatively insufficient. Efficiency of clearance of immune complexes depends on their size and valence. Smaller immune complexes, which form in antigen excess as occurs early in an immune response-circulate in the blood and are deposited in blood vessels, where they initiate inflammatory reactions and tissue damage through interactions with FcyRs and complement receptors. In influenza and pneumococcal pneumonia, there is no clinical evidence of systemic immune complex deposition. Tuberculosis generates T-cell responses. [cite: 1265-1269]",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "The effector mechanisms that lead to tissue damage in autoimmune diseases are similar to those elicited in response to environmental antigens that result in allergy. Which hypersensitivity reaction is correctly matched to an autoimmune condition that occurs through a similar mechanism?",
+      "imageUrl": "",
+      "options": [
+        "A. Systemic lupus erythematosus and serum sickness",
+        "B. Idiopathic thrombocytopenia purpura and asthma",
+        "C. Multiple sclerosis and heparin-induced thrombocytopenia",
+        "D. Myasthenia gravis and atopic dermatitis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Systemic lupus erythematosus, the prototypical immune complex-mediated autoimmune disease, is characterized by circulating IgG directed against common cellular constituents, typically DNA and DNA-binding proteins. Like in the case of serum sickness, small immune complexes are deposited in skin, joints, and glomeruli and initiate local tissue damage. Idiopathic thrombocytopenia purpura, like type II hypersensitivity reactions, is mediated by autoantibodies that are directed to platelet surface antigens, whereas asthma is triggered by IgE against innocuous environmental antigens (type I hypersensitivity reaction). T cells are key effectors in multiple sclerosis, whereas heparin-induced thrombocytopenia is caused by IgG autoantibodies. Myasthenia gravis is caused by IgG autoantibodies that recognize acetylcholine receptors and impair neuromuscular signaling, whereas atopic dermatitis is mediated by T cells. [cite: 1275-1279]",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    }
+  ]
+}

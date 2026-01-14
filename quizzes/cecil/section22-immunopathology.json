@@ -1,0 +1,256 @@
+{
+    "questions": [
+        {
+            "question": "A 27-year-old woman wakes up with hives and appears in your office the same day for an urgent visit. On examination, she is not in acute distress but has multiple raised pruritic papules that blanch. The first medication you should prescribe is:",
+            "options": [
+                "A. First-generation type 1 antihistamine",
+                "B. Second-generation type 1 antihistamine",
+                "C. Type 2 antihistamine",
+                "D. Leukotriene pathway inhibitor",
+                "E. Corticosteroid"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Second-generation type 1 antihistamines (cetirizine, fexofenadine, and loratadine) are better tolerated than the first-generation type 1 antihistamines. Often, the first-generation antihistamines (e.g., diphenhydramine) are prescribed for breakthrough symptoms.",
+            "questionNumber": 1
+        },
+        {
+            "question": "A 45-year-old man has had hives daily for 8 weeks. A combination of antihistamines (types 1 and 2) at high doses plus prednisone 20 mg daily controls the hives. What is the next step?",
+            "options": [
+                "A. Perform extensive testing to discover the offending food.",
+                "B. Continue prednisone after documenting a discussion of possible side effects.",
+                "C. Explain the importance of adherence to prescribed medications.",
+                "D. Discuss adding the biologic drug omalizumab.",
+                "E. Initiate a workup for systemic lupus erythematosus."
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "This patient has failed to respond to conservative medical management. Chronic urticaria is a life-altering disease, and chronic steroid use is often associated with significant side effects. Current literature suggests that some immunomodulatory drugs, such as cyclosporine, can result in remission of the disease.",
+            "questionNumber": 2
+        },
+        {
+            "question": "A 20-year-old man appears in your emergency department with acute abdominal pain. He has presented in this way in the past, without a definitive diagnosis. Examination now reveals a tender, swollen abdomen without bowel sounds. What is your next step?",
+            "options": [
+                "A. Laparotomy",
+                "B. Appendectomy",
+                "C. Narcotics",
+                "D. Discharge secondary to malingering",
+                "E. Take a detailed personal and family history"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Attacks of abdominal angioedema in patients with hereditary angioedema can mimic an acute abdomen. Also, these patients often seek pain relief and are incorrectly labeled \"drug seeking.\" A detailed personal and family history may reveal a pattern of swelling of the bowels or other parts of the body in either the patient or his immediate relatives. This will lead to appropriate laboratory studies and medical management.",
+            "questionNumber": 3
+        },
+        {
+            "question": "A 50-year-old man carries the diagnosis of hereditary angioedema. He has been intubated twice and has minor episodes of swelling monthly. A trial of an attenuated androgen resulted in severe acne. Therapeutic options at this time include:",
+            "options": [
+                "A. Prophylactic treatment with C1 INH, twice weekly",
+                "B. On-demand C1 inhibitor",
+                "C. On-demand icatibant",
+                "D. On-demand ecallantide",
+                "E. All of the above"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "All of these options are possible. Patients now have multiple options for management of hereditary angioedema, and these should be instituted on the basis of the needs of each patient.",
+            "questionNumber": 4
+        },
+        {
+            "question": "A 10-year-old girl presents with a history of a hivelike rash that occurs when she is exposed to cold weather. Further questioning reveals that this is sometimes associated with myalgias and arthralgias and that several first-degree relatives have similar complaints. What is the most likely diagnosis?",
+            "options": [
+                "A. Chronic spontaneous urticaria",
+                "B. Cholinergic urticaria",
+                "C. Familial cold urticaria",
+                "D. Familial cold autoinflammatory syndrome",
+                "E. Systemic lupus erythematosus"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "This uncommon disorder is often mistaken for familial cold urticaria, another unusual disease, and must be differentiated from common conditions such as chronic urticaria and systemic lupus erythematosus.",
+            "questionNumber": 5
+        },
+        {
+            "question": "A 35-year-old woman with a diagnosis of neurosyphilis has been avoiding penicillins for 30 years due to an episode of anaphylaxis to penicillin in early childhood. Which would be the best clinical option?",
+            "options": [
+                "A. Begin treating with a different type of penicillin.",
+                "B. Begin treating with penicillin G.",
+                "C. Perform penicillin allergy testing and if positive, pretreat with H₁R and H₂R antihistamines and begin treating with penicillin G.",
+                "D. Perform penicillin allergy testing and if positive, pretreat with a glucocorticoid and H₁R and H₂R antihistamines, and then begin treating with penicillin G.",
+                "E. Perform penicillin allergy testing and if positive, desensitize to penicillin G and then begin treating with this antibiotic."
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Although most patients with a history of penicillin allergy during childhood will no longer prove to be sensitive as adults, some will remain sensitive. Because the β-lactam ring may be the allergic epitope, treating with another penicillin having that same moiety would be risky. Penicillin allergy testing can be performed in an allergist's office safely and takes only several hours to complete. If negative, penicillin allergy should be removed as a current problem, and treating with penicillin G could safely proceed. If the allergy testing is positive, prophylactic treatment with antihistamines may not be adequate to prevent a severe systemic anaphylaxis, because activated mast cells secrete additional vasoactive mediators and the concentration of histamine at its site of release may be too high to totally block its effects with antihistamines. Glucocorticosteroids do not inhibit mast cell activation and the wheal and flare reactions seen with allergen skin tests, and have a significant side-effect profile. Instead, a penicillin-sensitive patient can be safely desensitized to penicillin over several hours and then undergo a course of treatment. After the treatment has been completed, sensitivity is expected to return.",
+            "questionNumber": 6
+        },
+        {
+            "question": "A 60-year-old man who enjoys hiking on the Appalachian Trail in Virginia and North Carolina has dinner at 8 PM, consisting of a shrimp cocktail appetizer, a salad with tree nuts, an entrée with legumes, potatoes, and lamb shank with a couple glasses of red wine, and fresh fruit with liquor for dessert. At 11 PM he goes to bed, and awakens at 2 AM with pruritic skin and fecal urgency. On his way to the bathroom he passes out and falls. In the emergency department he is hypotensive and tachycardic and has hives. The most likely trigger of this event is:",
+            "options": [
+                "A. Antibiotic contaminants in the meat",
+                "B. Tree nut protein allergens",
+                "C. Tropomyosin protein allergen in the shrimp",
+                "D. Banana protein allergens",
+                "E. Alpha-gal carbohydrate in the meat"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Particularly in the southeastern-mid-Atlantic states, related to sensitization to galactose-alpha-1,3-galactose (alpha-gal) associated with Lone Star tick bites, IgE antibodies form against this carbohydrate moiety. Sensitized individuals exhibit delayed urticarial or anaphylactic responses 3 to 7 hours after eating red meats such as beef, pork, or lamb, presumably because the monovalent alpha-gal-conjugated proteins in these meats must be transformed to polyvalent antigens during the digestive process, taking several hours to occur. If someone with IgE against alpha-gal alone undergoes allergy testing, his or her skin test will be negative while the blood test will be positive, because the skin test requires aggregation of IgE:FcERI on the surface of cutaneous mast cells, whereas the in vitro test only requires binding to IgE. In contrast, someone with IgE against meat proteins will have both a positive skin test and a positive in vitro test. Anaphylactic reactions to protein allergens in shrimp, tree nuts, banana, and meats occur acutely, generally within an hour of ingestion. Anaphylaxis to antibiotics such as penicillin in lamb, beef, or pork from antibiotic-fed animals is uncommon, but can occur in penicillin-sensitive patients, typically less than an hour after ingestion. Banana proteins may cross-react with IgE anti-latex allergens, but occur soon after ingestion, and we have no history of latex allergy in this individual.",
+            "questionNumber": 7
+        },
+        {
+            "question": "Vancomycin, when infused too rapidly, causes systemic anaphylaxis by activating mast cells through which one of the following receptors?",
+            "options": [
+                "A. FcγRIII",
+                "B. Mas-related G protein-coupled receptor X2",
+                "C. FcERI",
+                "D. FcγRIIa",
+                "E. CD88 (C5aR)"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Vancomycin directly activates most human mast cells in the skin and blood vessels, though not in the lung, on first and subsequent exposures by activating Mas-related G protein-coupled receptor X2 expressed on the surface of responding mast cells. When peak levels of vancomycin are modest, red man syndrome results; when higher, red man syndrome can progress to hypotensive anaphylaxis. The high-affinity receptor for IgE, FcERI, is involved in allergen-IgE-triggered reactions; the low-affinity activating receptors for IgG, FcγRIIa and FcγRIII, in IgG immune complex-triggered reactions (and FcγRIII is not expressed by human mast cells); and CD88 in reactions triggered by C5a produced during complement activation-not by vancomycin.",
+            "questionNumber": 8
+        },
+        {
+            "question": "Mastocytosis, a clonal mast cell disorder that increases the risk for anaphylaxis, should be suspected if which of the following is elevated in baseline serum, that is, serum taken from a patient at a time when he or she has been asymptomatic for at least 24 hours?",
+            "options": [
+                "A. Bradykinin",
+                "B. Metanephrine",
+                "C. Tryptase",
+                "D. Serotonin",
+                "E. C5a"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Enzymatically inactive α and β protryptases are spontaneously released by mast cells at rest, and detected in serum, where elevated levels reflect the increased mast cell burden and abnormal mast cell phenotype associated with systemic mastocytosis. Bradykinin, generated extracellularly from high and low-molecular-weight kininogen precursors when plasma prekallikrein is activated to plasma kallikrein, is not released by mastocytosis mast cells or substantially generated during nonacute time periods. Metanephrine is elevated in pheochromocytoma. Serotonin is not abundantly produced by mast cells and blood levels may be somewhat lower in mastocytosis than healthy control subjects; it is elevated in carcinoid syndrome associated with the carcinoid type of neuroendocrine tumors. Complement activation does not typically occur at baseline in mastocytosis patients. C5a is generated from C5 by proteases, typically by C5 convertases generated during activation of the complement pathways, but also by other proteases, including mature mast cell tryptase; however, it is not generated during times when mastocytosis is clinically quiescent.",
+            "questionNumber": 9
+        },
+        {
+            "question": "Your 25-year-old patient had anaphylaxis triggered by eating eggs 3 years ago and tests positive for egg allergy. Although inactivated flu vaccine was tolerated before this event, no vaccine has been administered since the egg-triggered reaction. When it is time for the annual influenza vaccine, what is the best advice to give your patient?",
+            "options": [
+                "A. Trivalent inactivated influenza vaccination is safe for those with egg allergy.",
+                "B. Trivalent inactivated influenza vaccination is contraindicated.",
+                "C. Egg desensitization will make trivalent inactivated influenza vaccination safe.",
+                "D. Trivalent inactivated influenza vaccination should be administered after pretreatment with glucocorticosteroids and H₁R and H₂R antihistamines.",
+                "E. Vaccination with recombinant influenza vaccine is mandated."
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Influenza vaccination has proven to be safe in egg-allergic subjects due to the small amounts of residual egg protein in the vaccine. Rare cases of anaphylaxis to vaccines have been associated with IgE against other vaccine components. Egg desensitization protocols for egg-allergic patients who would like to be protected against accidental egg exposures or long-term tolerance- inducing protocols remain experimental and would not protect against IgE- mediated reactions to non-egg-related vaccine components. Pretreatment of egg-allergic subjects with glucocorticosteroids and antihistamines is not medically necessary and the steroid may have more side effects than the vaccine. The more expensive recombinant influenza vaccine is not necessary for egg- allergic patients.",
+            "questionNumber": 10
+        },
+        {
+            "question": "Which of the following drugs is most likely to cause drug hypersensitivity?",
+            "options": [
+                "A. Murine monoclonal anti-CD3 antibody",
+                "B. Human insulin",
+                "C. Chimeric monoclonal anti-CD20 antibody",
+                "D. Humanized tumor necrosis factor antibody",
+                "E. Human tumor necrosis factor antibody"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Biologic proteins from most to least allergenic are murine, chimeric, humanized, and finally fully human protein. Even fully human proteins like human insulin or fully human anti-tumor necrosis factor can cause hypersensitivity. However, the most likely protein to cause drug allergy is the most foreign protein, that is, a murine protein.",
+            "questionNumber": 11
+        },
+        {
+            "question": "Which of the following clinical characteristics is least concerning for a serious cutaneous adverse reaction (SCAR) to a drug?",
+            "options": [
+                "A. Blistering lesions",
+                "B. Painful lesions",
+                "C. Pruritic lesions",
+                "D. Pustular lesions"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Some features of SCARs that distinguish them from nonserious cutaneous reactions include involvement of other organs (e.g., liver, kidneys); fever; eosinophilia; mucosal involvement; and lesions that are painful, blistering, or pustular. Pruritus is not a distinguishing feature.",
+            "questionNumber": 12
+        },
+        {
+            "question": "A patient taking multiple medications develops acute interstitial nephritis with normal findings on skin examination. Which of the listed drugs is the most likely culprit?",
+            "options": [
+                "A. Propranolol",
+                "B. Phenytoin",
+                "C. Colchicine",
+                "D. Ampicillin"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Although most drug reactions include cutaneous manifestations, some only involve other organ systems, for example, pulmonary infiltrates with eosinophilia, hepatitis, and acute interstitial nephritis. Drugs that have been described to cause acute interstitial nephritis in the absence of cutaneous involvement include sulfonamides, nonsteroidal anti-inflammatory drugs, and penicillins like ampicillin and methicillin.",
+            "questionNumber": 13
+        },
+        {
+            "question": "HLA genotyping has been useful in identifying individuals at increased risk of hypersensitivity to which of the following drugs?",
+            "options": [
+                "A. Amoxicillin",
+                "B. Minocycline",
+                "C. Ganciclovir",
+                "D. Abacavir"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Human leukocyte antigen (HLA) genotyping can reportedly identify individuals who are at increased risk for drug hypersensitivity. For example, individuals with HLA-B*5701 are at greater risk for a drug hypersensitivity reaction to abacavir, an HIV transcriptase inhibitor. At many centers, abacavir is prescribed only after the HLA genotype is determined not to be HLA-B 5701.",
+            "questionNumber": 14
+        },
+        {
+            "question": "Among the following, what is the most significant risk factor for drug allergy?",
+            "options": [
+                "A. Male sex",
+                "B. HIV infection",
+                "C. Atopy",
+                "D. HLA-B27 genotype"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Drug-related rashes have been estimated to be 100 times more common in HIV-positive patients than in the general population. The reasons for this are not clear but are likely to be multifactorial and include changes in drug metabolism, oxidative stress, cytokine profiles, and immune hyperactivation.",
+            "questionNumber": 15
+        },
+        {
+            "question": "Which of the following markers is aberrantly expressed by mast cells in patients with systemic mastocytosis?",
+            "options": [
+                "A. CD25",
+                "B. CD117 (Kit)",
+                "C. High-affinity IgE receptor",
+                "D. CD45"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "CD25 (alpha chain of the interleukin-2 receptor) is aberrantly expressed and is a sensitive diagnostic marker in systemic mastocytosis. All others are expressed by both normal and pathologic mast cells. (Valent P, Horny HP, Escribano L, et al. Diagnostic criteria and classification of mastocytosis: a consensus proposal. Leuk Res. 2001;25:603-625.)",
+            "questionNumber": 16
+        },
+        {
+            "question": "A 25-year-old woman has recently been diagnosed with systemic mastocytosis by a bone marrow biopsy. There was no other hematologic disease noted. She experiences pruritus of the skin in hot weather and occasional abdominal cramping but is otherwise asymptomatic. KIT mutational analysis reveals the D816V mutation in bone marrow. Which of the following is the most appropriate treatment?",
+            "options": [
+                "A. Imatinib",
+                "B. H₁ and H₂ antihistamines",
+                "C. Prednisone",
+                "D. Interferon alfa",
+                "E. Bone marrow transplantation"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "This patient has indolent systemic mastocytosis and should be treated symptomatically. Cytoreductive therapies such as interferon alfa are indicated in patients with aggressive mastocytosis. The patient is not a candidate for imatinib because of indolent disease and presence of D816V KIT mutation. The patient's symptoms do not warrant bone marrow transplantation or use of systemic glucocorticoids, which are associated with long-term adverse effects. (Valent P, Akin C, Escribano L, et al. Standards and standardization in mastocytosis: consensus statements on diagnostics, treatment recommendations, and response criteria. Eur J Clin Invest. 2007;37:435-453.)",
+            "questionNumber": 17
+        },
+        {
+            "question": "A 35-year-old farmer with a 10-year history of mastocytosis who is otherwise healthy has recently experienced anaphylaxis with brief loss of consciousness after being stung by a honeybee. Allergy skin testing confirmed honeybee allergy. What is the most appropriate next step in management of honeybee allergy in this patient?",
+            "options": [
+                "A. Venom immunotherapy is not recommended because of increased risk of reactions to immunotherapy due to mastocytosis.",
+                "B. Recommend venom immunotherapy for 5 years.",
+                "C. Recommend venom immunotherapy indefinitely.",
+                "D. Confirm skin test results by blood testing before recommending immunotherapy."
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Patients with mastocytosis are at increased risk for life-threatening reactions to hymenoptera stings. Fatalities have been reported in patients after discontinuation of venom immunotherapy. Therefore, most experts recommend immunotherapy when IgE-mediated sensitization is found by either skin or blood testing in these patients. Whereas the patients are also at increased risk of having a systemic reaction during immunotherapy, the risk-benefit ratio is often considered favorable to initiate immunotherapy. The patients should always continue to carry a self-injectable epinephrine because the protection is lower than for those without mastocytosis. (Niedoszytko M, de Monchy J, van Doormaal JJ, et al. Mastocytosis and insect venom allergy: diagnosis, safety and efficacy of venom immunotherapy. Allergy. 2009;64:1237- 1245; and Alvarez-Twose I, Bonadonna P, Matito A, et al. Systemic mastocytosis as a risk factor for severe Hymenoptera sting-induced anaphylaxis. J Allergy Clin Immunol. 2013;131:614-615.)",
+            "questionNumber": 18
+        },
+        {
+            "question": "Which of the following patients is a candidate for therapy with imatinib?",
+            "options": [
+                "A. 30-year-old with adult-onset indolent systemic mastocytosis with D816V KIT mutation who remains symptomatic despite symptomatic therapy",
+                "B. 30-year-old with adult-onset systemic mastocytosis with occasional symptoms on symptomatic therapy; peripheral blood analysis negative for D816V KIT mutation",
+                "C. 60-year-old with systemic mastocytosis, splenomegaly, and pancytopenias; peripheral blood and bone marrow positive for D816V KIT mutation",
+                "D. 40-year-old with childhood-onset cutaneous mastocytosis that persisted into adulthood; patient recently developed progressive splenomegaly and anemia; mutational analysis of bone marrow shows an exon 8 KIT mutation"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Patients with D816V KIT mutation regardless of the category of mastocytosis are resistant to therapy with imatinib. Patients with cutaneous or indolent systemic mastocytosis with symptoms manageable by symptomatic therapy are not candidates for cytoreductive therapy regardless of the mutational status. Patients with well-differentiated systemic mastocytosis without codon 816 (exon 17) KIT mutations have a high likelihood of response to imatinib. (Akin C, Fumo G, Yavuz AS, et al. A novel form of mastocytosis associated with a transmembrane c-kit mutation and response to imatinib. Blood. 2004;103:3222-3225.)",
+            "questionNumber": 19
+        },
+        {
+            "question": "Which of the following mast cell mediator measurements raises the greatest suspicion for mastocytosis?",
+            "options": [
+                "A. Tryptase level of 50 ng/mL in a patient with perioperative anaphylaxis, obtained 1 hour after the event",
+                "B. Baseline tryptase level of 90 ng/mL in a patient who experiences recurrent anaphylactic episodes of unclear etiology",
+                "C. Elevated urinary N-methylhistamine in a patient with recurrent unexplained flushing",
+                "D. Elevated urinary prostaglandin D, in a patient with chronic diarrhea and osteoporosis"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Urinary metabolites of mast cell mediators are neither more sensitive nor more specific than measurement of baseline tryptase in diagnosis of systemic mastocytosis. Tryptase levels increase (usually within 4 hours) after an anaphylactic event regardless of whether it is associated with mastocytosis. Some patients with recurrent unexplained anaphylaxis who may have been previously diagnosed with idiopathic anaphylaxis may have mastocytosis as an underlying disorder (especially if the anaphylactic episodes involve hypotension and syncope rather than urticaria or angioedema). The diagnosis should be confirmed by a bone marrow biopsy in the patient in option D. (Akin C, Scott LM, Kocabas CN, et al. Demonstration of an aberrant mast-cell population with clonal markers in a subset of patients with \"idiopathic\" anaphylaxis. Blood. 2007;110:2331-2333; and Akin C, Metcalfe DD. Surrogate markers of disease in mastocytosis. Int Arch Allergy Immunol. 2002;127:133-136.)",
+            "questionNumber": 20
+        }
+    ]
+}

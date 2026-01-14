@@ -1,0 +1,523 @@
+{
+  "questions": [
+    {
+      "question": "Idiopathic membranous nephropathy is associated with which of the following?",
+      "options": [
+        "A. Hepatitis B infection",
+        "B. Hepatitis C infection",
+        "C. Antibodies to the M-type phospholipase A\u2082 receptor",
+        "D. Nonsteroidal use",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Idiopathic membranous nephropathy has been identified to have antibodies to the M-type phospholipase A\u2082 receptor. Although secondary membranous nephropathy can be associated with hepatitis B and rarely with hepatitis C or drugs, the idiopathic disease seems to be mediated by autoimmunity.",
+      "questionNumber": 1
+    },
+    {
+      "question": "The most sensitive screening test for detection of a monoclonal gammopathy is:",
+      "options": [
+        "A. Serum immunoelectrophoresis",
+        "B. Serum free light chain ratio",
+        "C. Urine for Bence Jones",
+        "D. Bone marrow biopsy",
+        "E. Urine free light chain ratio"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The serum immunoelectrophoresis is sensitive for the detection of intact immunoglobulins but less so for the detection of isolated light chains, which can occur in a substantial proportion of monoclonal gammopathies. An abnormal \u03ba:\u03bb ratio is the most sensitive test to detect a clonal plasma cell disorder. Urine free light chain ratios are less reliable than serum ratios. A bone marrow biopsy is used to diagnose myeloma, but small numbers of plasma cells can cause many plasma cell disorders.",
+      "questionNumber": 2
+    },
+    {
+      "question": "What is the best estimate of glomerular filtration rate in patients with renal function in the upper limits of the normal range?",
+      "options": [
+        "A. Modification of Diet in Renal Disease (MDRD) 1 equation",
+        "B. Modification of Diet in Renal Disease (MDRD) 2 equation",
+        "C. Chronic Kidney Disease Epidemiology Collaboration (CKD-EPI) equation",
+        "D. None of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "MDRD 1 and 2 equations were derived in a population of patients with chronic kidney disease. MDRD 1 equation includes race, gender, creatinine, age, blood urea nitrogen, and albumin, but the other two equations do not include blood urea nitrogen or albumin. Of these equations, CKD-EPI is the most accurate for patients with mild chronic kidney disease.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following statements regarding the urine dipstick is false?",
+      "options": [
+        "A. The specific gravity can be lowered by contrast agents in the urine.",
+        "B. Red blood cells, myoglobin, or hemoglobin can be detected by the presence of heme.",
+        "C. The dipstick can miss Bence Jones proteins.",
+        "D. The urine pH can be high in the presence of infections.",
+        "E. The urine pH is usually higher than 5.5 in distal renal tubular acidosis."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The high density of contrast material makes the urine specific gravity high rather than low. The dipstick detects all heme pigments, including myoglobin and hemoglobin, as well as red blood cells themselves. The dipstick detects albumin, but Bence Jones proteins may be missed or may cause only weak reaction in the dipstick. Hence, an immunoelectrophoresis or urine protein-to-creatinine ratio will be important; immunoelectrophoresis identifies the presence of clonal light chains, and the urine protein-to-creatinine ratio is for the actual quantification of the degree of proteinuria.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 50-year-old patient with hypertension and hypokalemia has suppressed renin and elevated aldosterone levels. Which of the following statements is true?",
+      "options": [
+        "A. A renal angiogram is indicated to determine if unilateral renal artery stenosis is present.",
+        "B. An ACTH-secreting tumor is the likely diagnosis.",
+        "C. A urinary cortisol to cortisone ratio will be elevated.",
+        "D. An adrenal scan will demonstrate an adrenal mass.",
+        "E. The patient has been eating a pound of licorice daily."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Renin and aldosterone profiling is useful in identifying the cause of hypertension and hypokalemia. An aldosterone-secreting adrenal adenoma, which is a common cause of hypokalemia and hypertension at this age, will depress the renin level owing to the volume expansion caused by the high aldosterone. Unilateral renal artery stenosis causes renin secretion from the kidney affected by the stenosis, but renin secretion is suppressed in the unaffected kidney; moreover, both renin and aldosterone levels will be increased. Both renin and aldosterone will be suppressed in ACTH-secreting tumors because the hypokalemia is caused by a very high cortisol level. An increased ratio of urinary cortisol to cortisone would suggest a defect in 11Beta-hydroxysteroid dehydrogenase type 2. In this situation, endogenous cortisol stimulates the aldosterone receptor and suppresses renin and aldosterone. Licorice inhibits this enzyme in the principal cell of the collecting duct.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A patient with sickle cell anemia has chronic kidney disease with a creatinine of 2 mg/dl. Which statement is the least likely to be true?",
+      "options": [
+        "A. Severe hypokalemia will develop owing to polyuria from nephrogenic diabetes insipidus.",
+        "B. Hyperkalemia will develop owing to underexcretion of potassium.",
+        "C. A trial of a mineralocorticoid medication (e.g., fludrocortisone) may increase the transtubular potassium gradient.",
+        "D. The patient may have sinus bradycardia owing to hyperkalemia.",
+        "E. Loop diuretics would not be a good treatment for the hyperkalemia."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The tubular dysfunction in sickle cell anemia often impairs potassium secretion. Although papillary necrosis causes nephrogenic diabetes insipidus, the resulting polyuria is unlikely to cause hypokalemia. When the glomular filtration rate decreases, the serum potassium level often increases, particularly with hemolysis. The hyperkalemia is usually associated with underexcretion of potassium, as would be demonstrated by a low TTKG (<6). Loop diuretics are unlikely to increase potassium excretion, but a mineralocorticoid often improves potassium secretion in the distal nephron. Another reason to avoid a loop diuretic is that these patients already have an impaired concentrating ability and may become volume depleted. Bradyarrhythmias are common in hyperkalemia.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A young patient with type 1 diabetes mellitus and normal renal function presents with a febrile illness and a blood glucose level of 345 mg/dL The arterial pH is 7.30 and the Pco\u2082 is 30 mm Hg. Serum laboratory values include sodium 135 meq/L; potassium 5.5 meq/L; chloride 110 meq/L; bicarbonate 15 meq/L The urine sodium is 50 meq/L; urine potassium 50 meq/L and urine chloride 20 meq/L. The urine pH is 5.0. Urine glucose 2+. Which of the following statements is most likely to be true?",
+      "options": [
+        "A. The patient has diabetic ketoacidosis.",
+        "B. The patient has a proximal renal tubular acidosis.",
+        "C. The patient has an excess of total body potassium.",
+        "D. There is bicarbonaturia.",
+        "E. The normal serum anion gap is an error."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient with well-preserved glomerular filtration rate will spill large amounts of keto acids in the urine, with sodium and potassium giving a large urinary charge gap but a normal serum anion gap. Since the urinary pH is acid, the urine gap is not bicarbonaturia. Loss of keto acid anions and osmotic polyuria will likely lead to total body potassium deficits despite the shift of potassium from cells to extracellular water. In this case, ketoacidosis is the cause of a non-gap acidosis.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 36-year-old woman returns from an overseas trip with gastroenteritis and is found to have a urinary Na of 34 mEq/L, a urinary K\u207a of 11 mEq/L, and a urinary Cl of 6 mEq/L. Which one of the following statements is most likely to be correct?",
+      "options": [
+        "A. She has severe metabolic acidosis from the diarrhea.",
+        "B. She has both metabolic acidosis from diarrhea and bicarbonaturia from an unsuspected renal tubular acidosis.",
+        "C. She may have acidosis from diarrhea but must also have more significant metabolic alkalosis from vomiting. Her blood is alkalemic.",
+        "D. She has not been vomiting but has metabolic alkalosis from congenital chloridorrhea.",
+        "E. Her urinary NH\u2084 must be very high."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "She has chloride losses that are most likely gastric losses of HCl. The urine has very little chloride, consistent with hypochloremia. Congenital chloridorrhea is very unlikely to produce this syndrome in an otherwise healthy 36 year old. Diarrhea causing metabolic acidosis would be compensated by increased ammoniagenesis and high chloride excretion.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 55-year-old woman with ovarian cancer is being treated with carboplatin, Taxol, and pelvic irradiation. She now complains of chronic diarrhea and is found to have the following blood serum levels: magnesium 0.8 mg/dL, calcium 6.1 mg/dL, albumin 3 g/dL, and creatinine 1.3 mg/dL Her urine magnesium is 17 mg/dL, with a urine creatinine 58 mg/dL. The most likely cause of her laboratory abnormalities is:",
+      "options": [
+        "A. Carboplatin.",
+        "B. Diarrhea.",
+        "C. Vitamin D deficiency.",
+        "D. Radiation nephritis.",
+        "E. Primary hypoparathyroidism."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The fractional excretion of magnesium is 68%, thereby indicating that the cause of the hypomagnesemia is severe renal magnesium wasting rather than diarrheal losses. Platinum-based chemotherapeutic agents, which are toxic to the renal tubule, are a well-recognized cause of hypomagnesemia. This toxicity, which is more common with cisplatin but also has been reported with carboplatin, can persist after discontinuation of therapy. The hypocalcemia in this case is likely secondary to the severe hypomagnesemia, which impairs parathyroid hormone secretion and also causes peripheral resistance to its actions.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 46-year-old man with diabetes mellitus, chronic stage IV kidney disease, and chronic constipation has been taking magnesium citrate for 4 consecutive days. He now presents with hypotension, muscle weakness, and hyporeflexia. His serum magnesium level is 5.8 mg/dL and his serum creatinine 3.6 mg/dL. All of the following treatments would be appropriate except:",
+      "options": [
+        "A. Forced diuresis with saline and furosemide.",
+        "B. Hemodialysis.",
+        "C. Calcium chloride intravenously.",
+        "D. Sodium polystyrene sulphonate.",
+        "E. Lactulose."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Magnesium ingestion in patients with renal insufficiency can cause hypermagnesemia. Hypotension, flaccid muscle paralysis, and hyporeflexia are typical manifestations. Hypermagnesemia can be treated by antagonizing the effects of magnesium with intravenous calcium salts, by increasing the excretion of magnesium with furosemide, or by hemodialysis. Alternative laxatives that are safe to use with impaired renal function include lactulose, docusate, bisacodyl, and senna glycoside. Sodium polystyrene sulfonate is effective at binding intestinal potassium but not magnesium; if administered in this setting, it could cause hypokalemia that would exacerbate the muscle weakness.",
+      "questionNumber": 10
+    },
+    {
+      "question": "An 18-year-old woman with anorexia nervosa and malnutrition was admitted for parenteral nutrition and subsequently developed hypophosphatemia with a serum phosphorus level of 0.6 mg/dL. The mechanism for hypophosphatemia is:",
+      "options": [
+        "A. Renal phosphate wasting.",
+        "B. Fanconi syndrome.",
+        "C. Shift of phosphorus into intracellular stores.",
+        "D. Diarrheal phosphate losses.",
+        "E. Excess bone deposition."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In malnourished patients, total body phosphate stores are depleted. Intravenous refeeding without appropriate phosphate supplementation with carbohydrate-rich fluids may stimulate insulin release and cause an acute shift of phosphate into intracellular stores.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 55-year-old man with HIV infection is maintained on antiretroviral therapy with tenofovir, emtricitabine, ritonavir, and atazanavir. Routine laboratory examination revealed the following: serum sodium 133 mEq/L; potassium 2.6 mEq/L; chloride 110 mEq/L; bicarbonate 15 mEq/L; glucose 96 mg/dL; urea nitrogen 16 mg/dL; creatinine 1.8 mg/dL; phosphorus 0.7 mg/dL; and uric acid 2.6 mg/dL. Urinalysis shows 4+ glucose and trace protein. The most likely cause of his hypophosphatemia is:",
+      "options": [
+        "A. HIV-associated nephropathy.",
+        "B. Tenofovir.",
+        "C. Acute tubular necrosis.",
+        "D. Multiple myeloma.",
+        "E. Oncogenic osteomalacia."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has hypophosphatemia, hypokalemia, a probable hyperchloremic metabolic acidosis, hypouricemia, and glycosuria without hyperglycemia. All of these findings are features of Fanconi syndrome or proximal tubulopathy. Tenofovir is an acyclic nucleotide analogue reverse-transcriptase inhibitor (as are cidofovir and ade ladefovir) that is transported into the proximal renal tubule by organic anion transporters and causes mitochondrial toxicity. Fanconi syndrome occurs in as many as 20% of tenofovir-treated patients. Tenofovir also can cause acute tubular necrosis and acute kidney injury, but these clinical syndromes would tend to increase the serum phosphate concentration. Multiple myeloma can also cause Fanconi syndrome, but it is much less common. Oncogenic osteomalacia is a rare syndrome caused by mesenchymal tumors that secrete circulating phosphaturic factors, which cause renal phosphate wasting; however, oncogenic osteomalacia is not associated with Fanconi syndrome.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 34-year-old man presents with muscle soreness and voiding dark brown urine soon after initiating a high-intensity home exercise regimen. His serum potassium is 6.5 mEq/L, creatinine 4.6 mg/dL, phosphorus 8.3 mg/dL, and creatine kinase 17,500 U/L. The most appropriate treatment for his hyperphosphatemia is:",
+      "options": [
+        "A. Calcium acetate.",
+        "B. Calcium carbonate.",
+        "C. Insulin and glucose.",
+        "D. Sodium bicarbonate.",
+        "E. Hemodialysis."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient has rhabdomyolysis, as evidenced by the very high creatine kinase value. Hyperkalemia and hyperphosphatemia resulting from release of intracellular ions is typical in this disease. Myoglobinuria is thought to be the cause of acute kidney injury. Given the degree of renal insufficiency and concomitant hyperkalemia, extracorporeal therapy with either hemodialysis or continuous venovenous hemodiafiltration would be appropriate and would effectively remove phosphate. Forced saline or alkaline diuresis is contraindicated in the setting of renal insufficiency. Calcium salts would not be very effective because they would bind only dietary phosphate in the intestinal lumen; moreover, some of the calcium would be absorbed and increase the likelihood of metastatic precipitation of calcium-phosphate crystals. Insulin would shift some phosphorus into cells, but this would not have a large or lasting effect. Sodium bicarbonate can be used in an attempt to alkalinize the urine, which is believed to decrease the renal toxicity of myoglobin, but it would not affect the phosphate level.",
+      "questionNumber": 13
+    },
+    {
+      "question": "Acute kidney injury is a common disorder in hospitalized patients, occurring in up to 20% of all adult admissions. Within a broad differential, which particular process is most likely as the cause of acute kidney injury in hospitalized patients?",
+      "options": [
+        "A. Outflow obstruction.",
+        "B. Glomerulonephritis",
+        "C. Acute interstitial nephritis",
+        "D. Prerenal azotemia",
+        "E. Ischemic acute tubular necrosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Up to 50% of patients diagnosed with acute kidney injury in a hospital setting have prerenal azotemia. It is important to make this diagnosis, and it usually is a rapidly reversible alteration that is responsive to fluid therapy, with low morbidity and mortality if treated rapidly and appropriately. However, prerenal azotemia also can lead to ischemic acute tubular necrosis if it persists or worsens.",
+      "questionNumber": 14
+    },
+    {
+      "question": "The diagnosis of prerenal azotemia is made after an appropriate history and physical examination. What urinary and serum biomarkers can be used to help confirm the diagnosis of prerenal azotemia?",
+      "options": [
+        "A. A ratio of BUN to creatinine greater than 20",
+        "B. A fractional excretion of sodium less than 1%",
+        "C. A bland urine analysis",
+        "D. A and B",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Prerenal azotemia is an adaptation by the kidney to hypoperfusion without cellular injury. In the prerenal state, the kidney is being inadequately perfused but not yet to a level that results in low cellular ATP and cell injury. The kidney tries to increase the volume status of the patient by reabsorbing nearly all of the filtered sodium, thereby resulting in a low FE\u2099\u2090. Urea reabsorption is also increased, thereby resulting in the high ratio of BUN to creatinine.",
+      "questionNumber": 15
+    },
+    {
+      "question": "Risk factors for the development of acute kidney injury include all of the following except:",
+      "options": [
+        "A. Chronic kidney disease",
+        "B. Volume depletion",
+        "C. Use of nonsteroidal anti-inflammatory agents",
+        "D. Hypertension with blood pressure of 160/100 mm Hg",
+        "E. Nephrotoxins"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hypertension causes chronic kidney injury but does not usually cause acute kidney injury except with malignant hypertension. Of the remaining four risk factors, chronic kidney disease is the most important; the more severe the chronic kidney disease, the more likely acute kidney injury is to occur.",
+      "questionNumber": 16
+    },
+    {
+      "question": "Serum creatinine is used as a marker of glomerular filtration and therefore kidney function in patients. Numerous attempts have been made to develop estimating equations based around serum creatinine and other serum markers in an attempt to help quantify glomerular filtration rate without undertaking timely and costly studies. In a patient with acute kidney injury and either a rising or falling serum creatinine, the calculation of an eGFR is inappropriate for which of the following reasons?",
+      "options": [
+        "A. Serum creatinine is not in equilibrium, and therefore it is not possible to calculate eGFR.",
+        "B. There may be an alteration in the rate of creatinine released from muscles in a hospitalized patient.",
+        "C. Other factors such as fever, glucocorticoids, or trauma influence creatinine release.",
+        "D. With complete loss of kidney function, the serum creatinine can rise between 1 and 4 mg/dL/day depending on the patient's circumstances.",
+        "E. All of the above."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although a stable serum creatinine can be used to estimate the glomerular filtration rate using estimating equations, the equations are reasonably accurate only when the serum creatinine level is stable. Multiple factors, including fever, glucocorticoids, or trauma, affect the muscle release of creatine, which is the precursor of serum creatinine.",
+      "questionNumber": 17
+    },
+    {
+      "question": "Dialysis for acute kidney injury is a sign of moderate-to-severe injury with an enhanced morbidity and mortality for the patient. Which of the following is true regarding dialysis for acute kidney injury?",
+      "options": [
+        "A. Dialysis should be intensive both in frequency and duration to provide the patient with the most appropriate internal milieu.",
+        "B. The major reasons to start dialysis in a patient with acute kidney injury include acidosis, hyperkalemia, and volume overload.",
+        "C. Continuous renal replacement has been shown to have a better outcome for patients than intermittent hemodialysis.",
+        "D. The serum creatinine level at the initiation of dialysis inversely correlates with outcomes in patients with acute kidney injury.",
+        "E. Starting dialysis early in patients with sepsis improves outcomes."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The patient's volume, potassium level, and acid-base status are major indications for dialysis in AKI. Adequate dialysis is critically important, but neither increasing the intensity of dialysis nor initiating it earlier improves outcomes.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 24-year-old Asian man presents to his family physician with one episode of painless gross hematuria. He is otherwise healthy with no significant family history. On physical examination, his blood pressure is normal and there are no other abnormalities. Laboratory examination shows a normal metabolic profile, hemogram, liver enzymes, and renal function tests, as well as a negative urine culture. Serologic tests including complement levels, antinuclear antibody, antineutrophil cytoplasmic antibody, and a hepatitis panel are all negative. Urine examinations show 3+ blood, 3+ protein, and many RBCs and RBC casts on microscopic examination. His renal ultrasound is normal. A repeat physical examination and laboratory tests after 1 week show 1+ heme, 5 to 10 RBCs, and trace urinary protein, which quantitates to 150 mg/day. Your recommendation at this point should be:",
+      "options": [
+        "A. Continue observation.",
+        "B. Renal biopsy.",
+        "C. Empiric therapy with alternate day steroids.",
+        "D. Genetic testing for patient and his family.",
+        "E. Urology referral."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The presence of gross hematuria associated with RBC and RBC casts and proteinuria point to a glomerular origin as opposed to a urologic origin (hence a urologic consult is not appropriate). In this patient with an Asian ancestry, negative serologies (particularly normal complement levels), and a self-limiting course, an IgA nephropathy is the most likely diagnosis. A renal biopsy is not appropriate at this time because he has no high-risk features for progressive disease, such as proteinuria greater than 0.5 to 1 g/day or impaired renal function. Likewise, empiric treatment is not warranted with these low-risk features. Although hereditary nephritis may present like this, an insidious progression to renal failure without episodes of gross hematuria is more typical, and the absence of a family history makes this entity less likely. If proteinuria persists and increases to more than 500 mg to 1 g daily many clinicians would add an ACE inhibitor or angiotensin-receptor blocker to the regimen.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 50-year-old man is admitted with shortness of breath, 1 week of hemoptysis, and mild swelling of his lower extremities. He also notes a 1-month history of myalgia and arthralgia, partially relieved by ibuprofen, which he takes twice daily. On examination, his blood pressure is 150/90 mm Hg, he is afebrile, and his lung examination shows bibasilar crackles. Laboratory tests reveal mild leukocytosis with a neutrophilic preponderance and hemoglobin of 11.2 g/dL. His urine shows 2+ protein, many RBCs, and a few RBC casts. His creatinine is 2.4 mg/dL. His chest radiograph is notable for bilateral diffuse infiltrates, which worsen in the next 24 hours. Serologic tests are pending. Your management at this point would include:",
+      "options": [
+        "A. Continue observation until serologic tests are available",
+        "B. Arrange for an urgent renal biopsy",
+        "C. Choice B + intravenous steroids",
+        "D. Choice B + intravenous steroids + plasmapheresis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has the pulmonary renal syndrome with a nephritic urine sediment. The possibilities are immune complex disease, anti-glomerular basement membrane antibody disease (Goodpasture syndrome), and small vessel vasculitis. The hemoptysis and worsening pulmonary infiltrate require empirical therapy with high-dose steroids and plasmapheresis while awaiting renal biopsy and serologic results to confirm the diagnosis. Plasmapheresis is indicated in view of the pulmonary hemorrhage. Cyclophosphamide (or rituximab in small vessel vasculitis) is administered after confirming the diagnosis.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 65-year-old white woman with nephrotic syndrome (urine protein 6 g/day, normal renal function, serum albumin 2.2 g/dL) recently has been diagnosed with membranous nephropathy. Testing of the serum and staining of the renal biopsy for the PLA2R is negative. All of the following statements about membranous nephropathy are true except:",
+      "options": [
+        "A. Further investigations should include a malignancy workup.",
+        "B. The patient should start on cyclic cyclophosphamide alternating with steroids.",
+        "C. There is a significant risk for thrombotic events, and prophylactic anticoagulation may be considered in patients at low risk for bleeding.",
+        "D. She should be screened for hepatitis B, which is known to be associated with membranous nephropathy.",
+        "E. She is at risk for progressive renal disease if proteinuria remains at the same level after 6 months."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Patients with membranous nephropathy should be evaluated for secondary causes, including malignancies, infections (e.g., hepatitis viruses), systemic lupus, and medications. Up to 30% of idiopathic membranous neuropathy patients have no circulating antibodies to PLA2R and require more intensive evaluation and follow-up for secondary causes. The risk for thrombotic events is significant and rises when the serum albumin level is less than 2.8 g/dL; some authorities recommend prophylactic anticoagulation in such patients if they are at low risk for bleeding. The risk for progressive renal disease is associated with persistent high-grade proteinuria. However, approximately 30% of patients undergo spontaneous remission, so observation for 3 to 6 months is recommended before considering specific immunosuppression.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 71-year-old man with controlled hypertension has been experiencing progressive shortness of breath and lower extremity edema for 1 month. He has just been discharged after being admitted with a diagnosis of heart failure with preserved ejection fraction. On examination, his blood pressure is 110/70 mm Hg supine but drops to 90/60 mm Hg on standing with no increase in his heart rate. His liver is enlarged 5 cm below the costal margin. His lung examination shows diminished breath sounds over the bases. Diagnostic tests done during his hospitalization show a normal hemogram, serum albumin 2.5 g/dL, serum creatinine 1.5 mg/dL, and urine protein 8 g/day with no cells in the urine sediment. Further diagnostic evaluation shows normal serologies (including complement levels), an elevated \u03bb light chain, and a decreased \u03ba/\u03bb ratio. A renal biopsy shows mesangial expansion with an amorphous material on light microscopy. All of the following statements are true about this patient's disease, except:",
+      "options": [
+        "A. The mesangial deposits are Congo red positive with 10-nm fibrils on electron microscopy.",
+        "B. Treatment directed against the abnormal plasma cell clone may help stabilize his disease course.",
+        "C. Bone marrow biopsy typically will not show features of multiple myeloma.",
+        "D. There is usually an underlying inflammatory condition as the basis of this disease.",
+        "E. Fat pad biopsy may obviate the need for a renal biopsy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient with nephrotic-range proteinuria, cardiac failure with preserved ejection fraction, and autonomic neuropathy likely has AL amyloid, which on biopsy (renal, cardiac, or fat pad) will show the typical deposits that stain apple green on Congo red staining under a polarizing microscope. Treatment is similar to that for myeloma even though the bone marrow does not show evidence for active myeloma. The elevated \u03bb light-chain levels are a clue for AL amyloid; definitive diagnosis is based on staining the biopsy material for light chains, which will show the monoclonal nature of the deposit. The diagnosis of AA amyloid or hereditary amyloidosis is made when the Congo red stain shows typical birefringence and the deposits either stain for AA protein or contain specific abnormally folded hereditary proteins.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 35-year-old man employed in a long-term modeling contract sees you for the first time. He is worrying that he had seen blood in his urine. An ardent disciple of exercise, dieting, and supplements, he is in a monogamous relationship and taking no pharmaceuticals. On routine testing he has a serum creatinine of 2.3 mg/dL with +2 protein and blood in his urine without bacteria. Computed tomographic scan revealed normal-sized kidneys and a bladder mass. The most likely cause of his renal injury is:",
+      "options": [
+        "A. Herbal nephropathy",
+        "B. BK virus nephropathy",
+        "C. Myeloma kidney",
+        "D. Sj\u00f6gren syndrome",
+        "E. Silent pyelonephritis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient was taking various unknown herbal agents freely available over the counter. The likely exposure to aristolochic acid in these supplements has led to chronic interstitial nephritis and a uroepithelial tumor in the bladder producing hematuria. BK virus nephropathy is seen only after transplantation on immunosuppression. This is the wrong age for myeloma kidney, there are no symptoms of Sj\u00f6gren syndrome, and pyelonephritis is unlikely in the absence of fever and bacteria in the urine.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 44-year-old female office manager for a well-known U.S. senator has suffered from self-described stomach pains for many years. In the distant past, she was periodically given short courses of tetracycline from a friend for presumed gastric ulcers with unclear relief. Her regular physician has had her on long-term proton pump inhibitors for chronic gastroesophageal reflux. Following a persistent low-grade fever, she visited her physician, and testing revealed a recent rise in her serum creatinine to 1.5 mg/ dL, pyuria without bacteria, and a fever of 100.5\u00b0 F. The most likely diagnosis is:",
+      "options": [
+        "A. Omeprazole nephropathy",
+        "B. Sarcoidosis",
+        "C. Tetracycline nephropathy",
+        "D. Malakoplakia",
+        "E. Renal calculi"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Patient was taking proton pump inhibitors for a long time, which can cause acute interstitial nephritis; the reaction is idiosyncratic. Tetracyclines are an unlikely cause because she is not taking them presently. She has no symptoms of sarcoidosis. Malakoplakia is extremely rare and typically involves the lower urinary tract. Renal calculi often produce hematuria, a different pain syndrome, and raise serum creatinine usually as a result of bilateral obstruction.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 67-year-old retired auto mechanic living in a rural town visits his physician with complaints of fatigue, shortness of breath, and generally not feeling well. He takes no pharmaceuticals or over-the-counter drugs. His vital signs were normal, HIV screen was negative, serum calcium was 11.9 mg/dL, serum hemoglobin was 7.9 g/dL, and serum creatinine was 2.8 mg/dL His urine protein was 723 mg/L, and only a few white blood cells were found on urinalysis. He was admitted to the hospital when a lucency on his left femur was seen on a bone radiograph. The most likely diagnosis is:",
+      "options": [
+        "A. Myeloma nephropathy",
+        "B. Focal glomerulosclerosis",
+        "C. Xanthogranulomatous pyelonephritis",
+        "D. Balkan nephropathy",
+        "E. Ouch-ouch disease"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient presents with substantial clinical evidence of classic plasma cell dyscrasia, probably a form of myeloma. His urine contained highly abnormal levels of \u03ba light chains with a monoclonal spike. Biopsy revealed cast nephropathy with diffuse interstitial nephritis, and his elevated calcium with lytic lesions suggests systemic bony involvement. With normal vital signs, less than a gram of protein in the urine, and a negative HIV test, focal glomerulosclerosis seems unlikely. The absence of fever or obvious pyuria eliminates xanthogranulomatous pyelonephritis. Patients with Balkan nephropathy or ouch-ouch disease (cadmium toxicity) do not normally present with hypercalcemia and lytic bone lesions, and there is no history of exposure to herbals or toxic metals.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 19-year-old female college student appeared in a student health clinic with complaints of generalized weakness, a sense of increased respiration, and bilateral blurry vision. She was taking birth control pills but had been otherwise well. Her college physical examination was completely normal, and her childhood uneventful. Her vital signs were normal, and her retina was normal on ophthalmoscopy. Her blood work showed a serum creatinine of 1.6 mg/dL, serum HCO\u2083 of 19 mEq/L, serum glucose of 90 mg/dL serum calcium of 9.1 mg/dL and a serum phosphate of 3.2 mg/dL. Her chest radiograph was normal, but her urinalysis demonstrated pyuria and glycosuria. She was admitted urgently for a kidney biopsy and a formal ophthalmologic examination. The most likely cause is:",
+      "options": [
+        "A. Tubulointerstitial nephritis and uveitis (TINU) syndrome",
+        "B. Sarcoidosis",
+        "C. Epstein-Barr virus nephropathy",
+        "D. Lead nephropathy",
+        "E. Light chain nephropathy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient presents with substantial clinical evidence of Fanconi syndrome with an elevated serum creatinine level. Her kidney biopsy will likely show interstitial nephritis, and her eye examination will likely reveal anterior uveitis. Sarcoidosis is unlikely with a normal chest radiograph and serum calcium level. She has no findings of Epstein-Barr virus infection, no history of lead exposure, and is too young for light chain disease.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 64-year-old Hispanic male with moderately controlled type 2 diabetes, hypertension, and chronic kidney disease with nephrotic-range proteinuria and serum creatinine of 2.4 is admitted to the hospital because he has suffered a stroke. Which is the best single answer concerning this patient?",
+      "options": [
+        "A. Intensive glycemic control of type 2 diabetes does not decrease the incidence of nephropathy or cardiovascular mortality.",
+        "B. Type 2 diabetic patients with chronic kidney disease always have increased albuminuria.",
+        "C. In type 2 diabetes, proteinuria correlates with an increased incidence of coronary heart disease but not with stroke.",
+        "D. In both type 1 and type 2 diabetes, hypertension usually indicates evidence of diabetic nephropathy.",
+        "E. Nephrotic range proteinuria is greater than 1.5 grams of proteinuria/day."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Intensive glycemic control of type 2 diabetes does not decrease the incidence of nephropathy and cardiovascular mortality. The ACCORD trial indicated an increased risk of overall mortality with intensive glucose lowering in this population. Recent meta-analyses have indicated a decrease in cardiovascular disease outcomes, specifically nonfatal myocardial infarctions and risk of progression of nephropathy, but could not confirm that there was any decrease in the incidence of nephropathy or cardiovascular mortality. B is false because about 20% of type 2 diabetic patients with chronic kidney disease do not have albuminuria. C is false because proteinuria correlates with an increased incidence of coronary heart disease and stroke in patients with type 2 diabetes. D is false because patients with type 2 diabetes are older and often have hypertension prior to the onset of diabetic kidney injury. E is false because the definition of nephrotic range proteinuria is greater than 2.5 grams/day.",
+      "questionNumber": 27
+    },
+    {
+      "question": "Which is the best single answer concerning structural changes to the kidney during the course of diabetic nephropathy?",
+      "options": [
+        "A. Afferent and efferent arteriolar hyalinosis are nonspecific findings and are found in a variety of glomerular diseases.",
+        "B. More than 90% of patients with type 2 diabetes have evidence of retinopathy at the time of diagnosis of overt nephropathy.",
+        "C. Thickening of the glomerular basement membrane is a late finding in diabetic nephropathy.",
+        "D. Kimmelstiel-Wilson lesions are observed in a minority of patients diagnosed with diabetic nephropathy.",
+        "E. Kidney hypertrophy always indicates that the patient will develop overt nephropathy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Kimmelstiel-Wilson lesions are observed in a minority of patients diagnosed with diabetic nephropathy. A is false because the combination of afferent and efferent arteriolar hyalinosis is characteristic of diabetic nephropathy. B is false because only 60 to 65% of type 2 diabetic patients have retinopathy concomitant with onset of nephropathy. C is false because thickening of the glomerular basement membrane can be observed 2 to 5 years after the onset of diabetes and occurs before the onset of overt proteinuria or decline in renal function. E is false because kidney hypertrophy does not always indicate that the patient will develop overt nephropathy.",
+      "questionNumber": 28
+    },
+    {
+      "question": "You are asked to review a case regarding a 67-year-old man who is being evaluated for progressive chest pain. He has type 2 diabetes mellitus with chronic kidney disease (HbA\u2091c = 8.7% serum Cr = 2.1 mg/dL). Other tests include ratio of total cholesterol to high-density lipoprotein of 7.2 and a distant history of smoking (15 pack years), but he quit 20 years ago. He is also noted to have poorly controlled hypertension and despite being treated with atenolol, hydrochlorothiazide, and amlodipine, with systolic pressures remaining above 180 mm Hg. He states that he is compliant with all medications but does not follow his diet very well. His ejection fraction by echocardiography is 40%, and stress echocardiography showed stress-induced anterior wall motion abnormalities. What should you recommend?",
+      "options": [
+        "A. A gadolinium-enhanced renal artery magnetic resonance image after overnight hydration with 0.5% normal saline. If it is positive for renal artery stenosis, perform renal angiography at the time of the cardiac catheterization that he also needs.",
+        "B. Proceed with a cardiac catheterization after overnight hydration. Perform renal angiography only if the patient will require coronary bypass surgery. If coronary stenting is performed, delay the renal angiography for 6 weeks to reduce his acute exposure to contrast dye.",
+        "C. Start statin therapy and improve his diabetes management. When his cardiac evaluation is completed, consider initiating an ACE inhibitor if his renal function remains stable and careful follow-up of the serum creatinine concentration.",
+        "D. Order renal artery Doppler studies with resistive indices. If there is greater than 60% stenosis of one or both renal arteries and the resistive index is less than 0.8, proceed with renal artery stenting of the most severe lesion and stage the second artery if necessary.",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient is taking multiple hypertensive medications, but his blood pressure remains poorly controlled, and he has renal dysfunction, left ventricular dysfunction, and probable coronary artery disease. Therefore, he has many risk factors for atherosclerotic renal artery stenosis. Multiple randomized trials have shown no efficacy for renal revascularization for atherosclerotic renal artery stenosis, so screening in this scenario would be of no clinical benefit. Furthermore, his estimated glomerular filtration rate is likely to be less than 30 mL/min, thereby making gadolinium contraindicated. On the other hand, treatment of his risk factors and addition of an ACE inhibitor for left ventricular dysfunction and diabetes mellitus has the most clinical benefit for reducing major adverse cardiovascular events.",
+      "questionNumber": 29
+    },
+    {
+      "question": "In confirming a diagnosis of autosomal dominant polycystic kidney disease in an adult patient with a positive family history, which of the following is needed?",
+      "options": [
+        "A. Ultrasonography",
+        "B. Gene mutational analysis of the patient",
+        "C. Gene mutational analysis of the patient and at least two family members (one of whom has the disease)",
+        "D. MRI to determine total cyst volume",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A positive ultrasonography result in a patient with a positive family history of autosomal dominant polycystic kidney disease is sufficient to confirm the diagnosis. Unfortunately, a negative ultrasound result does not necessarily exclude the disease in such a patient.",
+      "questionNumber": 30
+    }
+    ,
+    {
+      "question": "Risk factors for disease progression in autosomal dominant polycystic kidney disease include:",
+      "options": [
+        "A. Male gender.",
+        "B. Early onset of hypertension.",
+        "C. Proteinuria.",
+        "D. Height-adjusted total kidney volume greater than 600 cc/m.",
+        "E. All the above."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Male gender, early onset of hypertension, total kidney volume greater than 600 cc/m, and proteinuria are risk factors for the progression of disease.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 50-year-old man presents with lower urinary tract symptoms. Digital rectal examination reveals an enlarged prostate complicated by lower urinary tract symptoms. In discussing the potential side effects of dutasteride with the patient, which of the following would not apply in regard to sexual function?",
+      "options": [
+        "A. Decreased libido",
+        "B. Decreased ejaculatory volume",
+        "C. Erectile dysfunction",
+        "D. Ejaculatory pain",
+        "E. A and C"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "5Alpha-Reductase inhibitors, such as dutasteride, were developed to block the conversion of testosterone to dihydrotestosterone, thus reducing prostate volume and thereby decreasing bladder outlet obstruction. The side effects of a 5Alpha-reductase inhibitor include decreased libido, decreased ejaculatory volume, and erectile dysfunction.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 60-year-old man has significant lower urinary tract symptoms refractory to other therapies. He does not have any major morbid conditions that would be contraindications to surgery. Which of the following is not an absolute indication for surgery?",
+      "options": [
+        "A. The patient has developed acute urinary retention.",
+        "B. The patient has renal insufficiency secondary to benign prostatic hyperplasia.",
+        "C. The patient has recurrent gross hematuria due to benign prostatic hyperplasia.",
+        "D. Cystoscopy revealed a bladder diverticulum.",
+        "E. B and D"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Surgical intervention is an appropriate treatment alternative for patients with moderate to severe lower urinary tract symptoms and for patients who have developed acute urinary retention or other benign prostatic hyperplasia-related complications. Surgery is recommended for patients who have renal insufficiency secondary to benign prostatic hyperplasia; for patients who have recurrent urinary tract infections, bladder stones, or gross hematuria due to benign prostatic hyperplasia; and for those who have lower urinary tract symptoms refractory to other therapies. The presence of a bladder diverticulum is not an absolute indication for surgery unless it is associated with recurrent urinary tract infection or progressive bladder dysfunction.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 35-year-old man presents with the following symptoms indicative of chronic prostatitis/chronic pelvic pain syndrome: frequent urination, increased urgency, and postejaculatory pain for the past 4 months. In this case, which of the following evaluations would not be mandatory?",
+      "options": [
+        "A. Abdominal examination",
+        "B. Digital rectal examination",
+        "C. Semen analysis",
+        "D. Urinalysis",
+        "E. Urine culture"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The physician must ask pertinent questions about voiding history, sexual history, characterization of symptoms, and pain. A thorough medical and surgical history should focus on neurologic disorders and pelvic surgery. Physical examination must include abdominal, external genital, perineal, and digital rectal examination. Attention should be placed on identifying pelvic wall discomfort, structural abnormalities, or prostatic pain on digital rectal examination. Urinalysis and urine culture should be performed for every patient.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 45-year-old man has a history of recurrent urinary tract infections. Bacterial growth on culture of expressed prostatic fluid and a post-prostate massage urine specimen confirms a diagnosis of chronic bacterial prostatitis. The expressed prostatic secretion contains more than 10 white blood cells per high-power field. Digital rectal examination demonstrates a normal benign prostate. Which antibiotic class is usually recommended for treatment of his prostatitis?",
+      "options": [
+        "A. Fluoroquinolones",
+        "B. Macrolides",
+        "C. Trimethoprim/sulfamethoxazole",
+        "D. Doxycycline",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Fluoroquinolones have been recommended as first-line therapy for chronic bacterial prostatitis. With high lipid solubility, they show the best penetration into the prostate and seminal fluid. The usual course is 4 to 6 weeks.",
+      "questionNumber": 35
+    },
+    {
+      "question": "After 48 hours of therapy with appropriate intravenous broad-spectrum antibiotics for his prostatitis, a 40-year-old man continues to be febrile and highly symptomatic with chills and malaise. Which of the following is the \"gold standard\" imaging modality for a patient with a suspected prostatic abscess?",
+      "options": [
+        "A. Computed tomography scan",
+        "B. Magnetic resonance imaging scan",
+        "C. Abdominal plain film and intravenous pyelography",
+        "D. Transrectal ultrasound",
+        "E. There is no gold standard imaging modality for a patient with a suspected prostatic abscess."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Transrectal ultrasound is a useful tool in identifying a prostatic abscess and is considered the gold standard. This modality can also identify seminal vesicle or ejaculatory duct abnormalities, especially in patients with ejaculatory pain or hematospermia.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 50-year-old man with chronic kidney disease, hypertension, and 4+ edema is being evaluated. Which of the tests listed are required for the initial evaluation?",
+      "options": [
+        "A. Urine electrolytes",
+        "B. Urinary tract ultrasound assessment",
+        "C. A 24-hour urine to measure urea nitrogen and sodium content",
+        "D. Evaluation for renal artery stenosis",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The presence of hypertension and edema indicates that the patient exhibits positive sodium balance, which will contribute to hypertension. From the 24-hour sodium and urea nitrogen excretion values, a 2 g Na diet can be planned. The estimated amount of dietary protein will be useful in planning dietary changes. Obtaining an ultrasound or searching for renal artery stenosis would not be included in the initial evaluation because they do not produce 4+ edema. For a patient with chronic kidney disease and sodium retention, urine electrolytes would not yield insights into the mechanism causing the abnormalities nor methods of treatment.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 45-year-old woman with diabetes and fatigue was found to have a blood uric nitrogen (BUN) level of 100 mg/dL and a serum creatinine of 2.5 mg/ dL. What initial tests are needed for the evaluation?",
+      "options": [
+        "A. Hemoglobin",
+        "B. Glucose tolerance test",
+        "C. Referral to gymnasium for training",
+        "D. Stool test for blood",
+        "E. A and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although a poorly controlled glucose level can produce fatigue, it would not raise the BUN/serum creatinine ratio to 40 (compared with the expected value of 10:1). Gym exercise also would not increase the ratio to this level. A tentative diagnosis would be gastrointestinal bleeding as the cause of the elevated ratio, so blood hemoglobin and stool hemoccult should be tested.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 40-year-old woman with polycystic kidney disease develops edema and weakness while being prescribed an angiotensin-converting-enzyme inhibitor for hypertension. She was found to have a serum bicarbonate level of 16 mEq/dL and potassium level of 6 mEq/dL. Which treatment would be appropriate?",
+      "options": [
+        "A. Reduce the angiotensin-converting-enzyme inhibitor dose by 50%.",
+        "B. Begin calcium-channel blockers.",
+        "C. Correct the metabolic acidosis.",
+        "D. Begin treatment with a loop diuretic and increase its dose to correct the edema.",
+        "E. C and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Achieving diuresis with a loop diuretic will improve the excretion of acid and correct the adverse effects of metabolic acidosis on kidney function, muscle mass, and bone mass. The adverse effects of angiotensin-converting-enzyme inhibitors include the development of hyperkalemia. Although calcium-channel blockers may be needed in the future, they are not part of the initial treatment in patients with chronic kidney disease. The patient should also be educated in dietary interventions used to treat metabolic acidosis.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 30-year-old man who has become an expert in computer-based games has been told he has kidney disease and needs dialysis. He comes to you for a second opinion. His physical examination reveals 3+ edema and a blood pressure of 200/98 mm Hg plus. Abnormal blood chemistry values include the following: serum creatinine, 2 mg/dL; blood urea nitrogen (BUN), 50 mg/dL; serum potassium, 5 mEq/L; serum bicarbonate, 16 mM/uL; and serum phosphorus, 6.2 mg/dL. Which of the following initial evaluations will be most helpful in the treatment of the patient?",
+      "options": [
+        "A. A discussion of the role of dialysis in avoiding complications of end-stage renal disease",
+        "B. A careful family history to determine if there are inherited kidney diseases and potential family members who might donate a kidney",
+        "C. A dietary history plus collection of a 24-hour urine specimen to measure the content of urea nitrogen, creatinine, albumin, and sodium",
+        "D. Administration of hydralazine and amlodipine to reduce his blood pressure",
+        "E. Measurements of calcitriol and 25-hydroxyvitamin D\u2083 levels. If the values are low, supplement him with vitamin D. To compensate for protein losses, patients with the nephrotic syndrome should gain 2.5 to 3.5 g/ kg of nonedematous body weight daily."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient has complications of CKD, but the degree of CKD is within stage 3 (estimated glomerular filtration rate, 45 mL/min/1.73 m2). The 24-hour urine sample can guide dietary changes to reduce complications of CKD. His urinary albumin-to-creatinine ratio will provide more information about the severity of CKD, and his excretion of urea nitrogen will be used to restrict dietary protein to lower his BUN and to correct the retention of phosphates and acid. Sodium excretion will be used to design a salt-restricted diet because the patient has hypertension and edema. A and B: the degree of CKD is too low to consider dialysis or transplantation at this time. D: the preferred antihypertensive drug is an ACE inhibitor or angiotensin receptor blocker, and it will be difficult to correct his blood pressure without diuresis and dietary salt restriction. E: because he remains inside to play computer games, he may have low vitamin D levels. However, he has an elevated serum phosphorus level, which is a contraindication to vitamin D administration.",
+      "questionNumber": 40
+    }
+  ]
+}

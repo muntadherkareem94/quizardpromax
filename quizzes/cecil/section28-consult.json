@@ -1,0 +1,135 @@
+{
+  "questions": [
+    {
+      "question": "Your hospital seeks your advice on the development of a comanagement model between internal medicine and the inpatient orthopedic service. Which of the following strategies will provide the most optimal comanagement?",
+      "imageUrl": "",
+      "options": [
+        "A. Internists and orthopedists round together in the morning along with nursing staff.",
+        "B. Orthopedists write all orders.",
+        "C. Internists consult only when a postoperative medical complication occurs.",
+        "D. Primary care physician determines whether comanagement is necessary."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Comanagement is a strategy in which all patients on a particular service, usually a surgical service such as orthopedics, receive a mandatory internal medicine consult. In most instances, hospitalists provide this service. The intent is to provide optimal postoperative care in order to prevent, rather than simply to treat, complications. Both the consulting internist and the surgeon may write orders. Optimally, both services round together in the morning to identify patient management issues and to establish the daily plan along with the assistance of the nursing staff. [cite: 1478-1486]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "Rapid response teams exist to prevent \"failure to rescue\" on inpatient non-intensive care unit (ICU) services. Which of the following represents an appropriate trigger to call a rapid response team?",
+      "imageUrl": "",
+      "options": [
+        "A. Systolic blood pressure of 110 mm Hg",
+        "B. Oxygen saturation of 82% on room air",
+        "C. Temperature of 101.5° F",
+        "D. More than 5 ectopic ventricular beats per minute"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Rapid response teams are an example of a consultation team. Their purpose is to prevent \"failure to rescue,\" reduce unplanned ICU transfers, and hopefully reduce in-hospital mortality. Certain triggers automatically initiate a request for consultation. The most important of these are critical vital sign values and respiratory distress. In this example, oxygen desaturation is a trigger. Fever alone warrants clinical evaluation but is not a trigger in the absence of other features. [cite: 1487-1496]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following strategies does not improve adherence to a consultant's recommendations?",
+      "imageUrl": "",
+      "options": [
+        "A. Limit recommendations to less than five",
+        "B. Provide contingency plans for potential clinical scenarios",
+        "C. Make a direct call to requesting physician to discuss care plans",
+        "D. Provide literature references",
+        "E. Determine the question"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Substantial literature provides guidance on strategies to improve adherence to a consultant's recommendations and thus to improve patient care. Consultations that are concise, with a limited number of key recommendations, are most likely to be followed. Contingency plans outline steps that the requesting doctor should take in the event of certain changes in clinical condition. It is critical to understand the question. If the requesting and consulting physician do not agree on or understand the question, the consult is doomed to be unhelpful. Requesting physicians are generally uninterested in literature references to support the recommendations of the consultant. [cite: 1497-1506]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "When performing a preoperative medical consultation, the consultant identifies risk factors for postoperative medical complications. The consultant should do which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Clear the patient for surgery",
+        "B. Advise the patient to forgo surgery",
+        "C. Determine the impact of the risk factor and propose strategies to reduce the risk",
+        "D. Request another consultation from a subspecialist"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A consultant should never \"clear\" a patient before surgery. Such a message may imply zero risk and fails to consider the impact of particular risk factors. Rather, the appropriate approach is to determine what factors may increase risk, estimate overall risk, and then propose strategies to reduce risk. The goal is for the patient to be in the best possible condition before surgery. The consulting medical physician's primary responsibility is to the requesting physician. The consultant should not directly advise the patient to forgo surgery. Rather, the consultant should share any concerns with the requesting surgeon and develop a collaborative plan. If the consultant determines that a subspecialty consultation is warranted, he or she should suggest that to the surgeon but should not directly obtain another consultation without first obtaining agreement from the surgeon. [cite: 1508-1521]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "Your primary care colleague asks you for a curbside consultation in infectious disease. You have not met the patient. Your consultation will achieve which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Improve patient care",
+        "B. Expose you to unnecessary medicolegal risk",
+        "C. Be based on an accurate and complete patient history",
+        "D. Generate income as an evaluation and management (E&M) activity"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Curbside consultations are a common and important activity for consultants, particularly in \"cognitive\" specialties in which the consultant does not commonly perform procedures. The consultant has no doctor-patient relationship. Therefore, most courts have held that there is no medicolegal risk to the consultant. When a formal consultation follows, it is often true that additional elements emerge from the history and physical examination. Despite this limitation, curbside consultations improve access to subspecialty care and patient care. Unfortunately, curbside consultations are not generally billable activities; however, approximately one third of curbside consultations result in a request for a formal, billable consultation. [cite: 1522-1532]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 70-year-old man is scheduled for cataract surgery. Past medical history includes hypertension, COPD, and coronary artery disease with a myocardial infarction 10 years ago. He has been asymptomatic since then but has a sedentary lifestyle. He is a former smoker. Medications include aspirin, metoprolol, atorvastatin, and inhaled bronchodilators. He denies chest pain or dyspnea. Vital signs and physical examination are within normal limits. His electrocardiogram at the time of his last visit 3 months ago showed normal sinus rhythm with left ventricular hypertrophy and evidence of an old inferior wall myocardial infarction. Which of the following would you recommend preoperatively?",
+      "imageUrl": "",
+      "options": [
+        "A. Basic metabolic panel (electrolytes, renal function, glucose)",
+        "B. Electrocardiogram",
+        "C. Hemoglobin",
+        "D. Stress test",
+        "E. No further testing"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Despite having multiple risk factors, the patient is undergoing a low-risk procedure, and no further testing would be helpful. His risk for major cardiac complications is less than 1%, and the procedure is not associated with any significant hemodynamic changes or blood loss. Therefore, even an abnormal result (anemia, chronic kidney disease, hyperglycemia) would be unlikely to change management. [cite: 1536-1549]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 75-year-old man is scheduled for transurethral resection of the prostate. His medical history is pertinent for hypertension, heart failure, diabetes mellitus, and atrial fibrillation, but no history of coronary artery disease or stroke. He is taking warfarin, metformin, lisinopril, and amlodipine. Which of the following would you recommend regarding perioperative anticoagulation management?",
+      "imageUrl": "",
+      "options": [
+        "A. Continue warfarin.",
+        "B. Continue warfarin but give fresh-frozen plasma 2 hours before surgery.",
+        "C. Stop warfarin 5 days before surgery.",
+        "D. Stop warfarin 5 days before surgery and \"bridge\" with low-molecular-weight heparin preoperatively.",
+        "E. Stop warfarin 5 days before surgery and \"bridge\" with low-molecular-weight heparin preoperatively and postoperatively."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In general, warfarin needs to be stopped before a transurethral resection of the prostate because of the risk for bleeding. This patient has a CHADS2 score of 4, so he is in the intermediate-risk group for thromboembolism if he temporarily stops taking warfarin. Furthermore, if full-dose anticoagulation is started too early after the procedure, there is an increased risk for bleeding. He should stop warfarin 5 days before the procedure (to allow the international normalized ratio to drop below 1.5) and should not receive bridging anticoagulation therapy. [cite: 1550-1561]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 65-year-old woman is seen preoperatively before a scheduled total abdominal hysterectomy. She has hypertension, diabetes, chronic kidney disease, and coronary artery disease but no history of myocardial infarction, recent chest pain, or dyspnea. She walks 1 mile three times a week and can climb two flights of stairs without symptoms. She states she had a negative stress test 5 years ago. She is taking aspirin, nitrates, metoprolol, lisinopril, furosemide, and insulin. Her physical examination is unremarkable, and her preoperative test results are glucose 150 mg/dL blood urea nitrogen 40, creatinine 2.1. Her electrocardiogram shows normal sinus rhythm with no ischemic changes. Which of the following would you recommend preoperatively?",
+      "imageUrl": "",
+      "options": [
+        "A. Two-dimensional echocardiogram",
+        "B. Exercise electrocardiogram",
+        "C. Adenosine nuclear stress test",
+        "D. Dobutamine stress echocardiogram",
+        "E. No further testing"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although she is at elevated risk (21%) based on a revised cardiac risk index score of 3 as well as the myocardial infarction or cardiac arrest calculator, she has no active cardiac conditions and has a functional capacity of >4 metabolic equivalents, so no further cardiac testing is indicated before surgery. [cite: 1562-1575]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 70-year-old man is scheduled to undergo an elective total knee replacement for severe osteoarthritis, which limits his activity. He has coronary artery disease and, after an abnormal stress test, had a drug-eluting stent placed in his proximal left anterior descending coronary artery 3 months ago. He is on dual antiplatelet therapy with aspirin and clopidogrel and has had no chest pain or dyspnea since the stent placement. Which of the following would you recommend?",
+      "imageUrl": "",
+      "options": [
+        "A. Proceed to surgery; continue aspirin and clopidogrel.",
+        "B. Proceed to surgery; continue aspirin; stop clopidogrel 5 to 7 days preoperatively.",
+        "C. Proceed to surgery; continue clopidogrel; stop aspirin 5 to 7 days before surgery.",
+        "D. Postpone surgery for at least 3 more months of dual antiplatelet therapy.",
+        "E. Postpone surgery for at least 9 more months of dual antiplatelet therapy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Current guidelines recommend continuing uninterrupted dual antiplatelet therapy optimally for at least 6 months after placement of a drug-eluting stent to minimize the chance of in-stent thrombosis. However, if the risk for delaying surgery outweighs the risk for stent thrombosis, surgery can be done after at least 3 months of dual antiplatelet therapy. The newer generation drug-eluting stents have lower risk and require shorter durations of dual antiplatelet therapy than first-generation drug-eluting stents. In this case, elective surgery should be postponed for another 3 months in order to complete the recommended course of uninterrupted dual antiplatelet therapy. At that time, a decision can be made about whether to continue both drugs or to continue just aspirin, which is continued for life. [cite: 1576-1590]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    }
+  ]
+}

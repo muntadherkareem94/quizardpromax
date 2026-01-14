@@ -1,0 +1,360 @@
+{
+  "questions": [
+    {
+      "question": "A drug is considered to be effectively cleared from the circulation after how many half-lives?",
+      "imageUrl": "",
+      "options": [
+        "A. 1.5",
+        "B. 2",
+        "C. 5",
+        "D. 7",
+        "E. 10"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A drug is considered to be effectively cleared when less than 10% of drug remains in the circulation. This is typically 3 to 5 half-lives. [cite: 1143-1144]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "Which one of the following drugs may be difficult to remove in an overdose setting because of a large volume of distribution (VD)?",
+      "imageUrl": "",
+      "options": [
+        "A. Procainamide",
+        "B. Aspirin",
+        "C. Digoxin",
+        "D. Phenobarbital",
+        "E. Phenytoin"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A large VD indicates that a large fraction of the specific drug is present outside the circulation. Examination of drugs in Table 26-1 demonstrates that digoxin's VD is much higher than the other four drugs such that, in an overdose situation, easy removal of digoxin from the affected individual would be difficult because a large fraction of the drug is outside the circulation and therefore relatively inaccessible. [cite: 1151-1152]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "The antihistamine terfenadine (Seldane) should not be administered with which one of the following fruit juices?",
+      "imageUrl": "",
+      "options": [
+        "A. Lemon juice",
+        "B. Orange juice",
+        "C. Prune juice",
+        "D. Grapefruit juice",
+        "E. Apple juice"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Many drugs are metabolized by CYP3A4 in the small intestine. Certain chemicals in grapefruit juice, but not in the other juices listed, block the action of CYP3A4, so instead of being metabolized, more of the drug enters the blood stream and stays in the body longer. The result is that potentially dangerous levels of the drug accumulate. This finding has led to more attention to foods, herbs, and other natural substances that are coadministered with drugs. [cite: 1159-1162]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which one of the following drugs has pharmacokinetics characterized as dose-dependent, nonlinear saturation kinetics?",
+      "imageUrl": "",
+      "options": [
+        "A. Digoxin",
+        "B. Tobramycin",
+        "C. Lidocaine",
+        "D. Glimepiride",
+        "E. Phenytoin"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Not all drugs behave the same when drug dose is increased. The elimination of most drugs follows first-order or linear kinetics, such that the amount of drug eliminated is directly proportional to the plasma concentration of the drug. A few drugs (e.g., phenytoin) have a different pattern of elimination that is, dose-dependent, nonlinear kinetics-such that as the drug dose increases and the plasma concentration of the drug rises, the relative amount of the drug being eliminated falls (i.e., clearance decreases) until the rate of drug metabolism is at a maximum. At this point, drug elimination is said to be zero order, and the drug concentration in plasma starts to increase much more (no longer linear). This is shown in Figure 26-5B. [cite: 1168-1172]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "Before administration of vemurafenib, which one of the following genes should be monitored for the presence of a V600E single-nucleotide polymorphism?",
+      "imageUrl": "",
+      "options": [
+        "A. EGFR",
+        "B. BRAF",
+        "C. NMYC",
+        "D. VEGF",
+        "E. CMYC"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The effectiveness of vemurafenib in tumors has been demonstrated to be dependent on the presence of a specific mutation in the BRAF gene of the tumor, a valine-to-glutamic acid mutation at residue 600 (V600E). This mutation results in the oncogene protein product, BRAF(V600E) kinase, exhibiting a markedly elevated activity that overactivates the MAPK signaling pathway. Vemurafenib selectively binds to the adenosine triphosphate-binding site of BRAF(V600E) kinase and inhibits its activity, resulting in inhibition of an overactivated MAPK signaling pathway downstream in BRAF(V600E) kinase-expressing tumor cells, thereby reducing tumor cell proliferation. Before considering this drug, specific testing for the presence of this mutation is recommended. [cite: 1179-1182]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "In addition to dopamine, all of following are important mediators of reward signals in the brain EXCEPT which?",
+      "imageUrl": "",
+      "options": [
+        "A. Acetylcholine",
+        "B. Endocannabinoids",
+        "C. Dynorphin",
+        "D. Endorphins and enkephalins"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Dynorphin, although an endogenous opioid peptide, does not activate u (mu) and 8 (delta) opioid receptors. Rather, it activates K (kappa) opioid receptors, which mediate an aversive effect. [cite: 1191-1192]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following brain regions is NOT important in controlling responses to rewarding stimuli in the environment?",
+      "imageUrl": "",
+      "options": [
+        "A. Amygdala",
+        "B. Occipital cortex",
+        "C. Hippocampus",
+        "D. Prefrontal cortex",
+        "E. Dorsal striatum"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All of the other brain regions listed are key components of the brain's reward circuitry. In contrast, the occipital cortex is most important for detecting and interpreting visual stimuli. [cite: 1199-1200]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which of the following statements best describes the activity of dopamine neurons in the ventral tegmental area in response to rewards?",
+      "imageUrl": "",
+      "options": [
+        "A. The neurons show large increases in phasic firing in response to an unexpected reward.",
+        "B. The neurons show large increases in phasic firing in response to the withholding of an expected reward.",
+        "C. The neurons show large increases in tonic firing in response to the withholding of an expected reward.",
+        "D. The neurons show large decreases in tonic firing in response to an unexpected reward."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Unexpected rewards induce an increase in phasic firing of the neurons. All other answers are incorrect responses. [cite: 1206]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which of the following properties is unique to a drug of abuse?",
+      "imageUrl": "",
+      "options": [
+        "A. It increases dopamine signaling from the ventral tegmental area to the nucleus accumbens.",
+        "B. It increases dopamine signaling from the substantia nigra to the dorsal striatum.",
+        "C. It decreases dopamine signaling from the substantia nigra to the dorsal striatum.",
+        "D. Its repeated use is associated with tolerance.",
+        "E. Its repeated use is associated with dependence and withdrawal."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "All drugs of abuse share only one property: increasing dopamine transmission from the ventral tegmental area to the nucleus accumbens. Choices B and C are incorrect. Although drugs of abuse do cause tolerance and dependence/withdrawal (choices D and E), many nonabused drugs do so as well. [cite: 1213-1214]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which of the following is NOT a known mechanism of a drug of abuse?",
+      "imageUrl": "",
+      "options": [
+        "A. Cannabinoid receptor agonist",
+        "B. Nicotinic cholinergic receptor agonist",
+        "C. NMDA glutamate receptor antagonist",
+        "D. GABA, receptor agonist",
+        "E. Dopamine receptor antagonist"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "All drugs of abuse increase dopamine signaling; a dopamine receptor antagonist would block some of the actions of a drug of abuse. All other answers are known mechanisms of a drug of abuse. [cite: 1221-1222]",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "The level of reduction in smoking that is associated with significantly lowering cardiovascular and respiratory disease risk is:",
+      "imageUrl": "",
+      "options": [
+        "A. 25%.",
+        "B. 50%.",
+        "C. 75%.",
+        "D. 100%."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Any amount of tobacco smoking increases the risk of cardiovascular and respiratory disease. [cite: 1231]",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "All of the following signs and symptoms are associated with nicotine withdrawal except:",
+      "imageUrl": "",
+      "options": [
+        "A. Irritability.",
+        "B. Insomnia.",
+        "C. Weight gain.",
+        "D. Gastrointestinal discomfort."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Nicotine is highly addictive, and its discontinuation is associated with irritability, insomnia, and weight gain. Unlike opioid withdrawal, however, nicotine is not associated with gastrointestinal symptoms. [cite: 1237-1238]",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 58-year-old man presents to his primary care physician's office for follow-up of hypertension. During the visit, he reports that he consumes 3 to 4 glasses (approximately 5 ounces each) of red wine every day but denies any medical, behavioral, or social problems related to his drinking. He is a nonsmoker and does not have a history of alcohol or other substance use disorders. On examination, his blood pressure is 144/96 mm Hg, his pulse is 80 beats per minute, and the remainder of his examination is unremarkable. What would be the most appropriate next step concerning his alcohol consumption?",
+      "imageUrl": "",
+      "options": [
+        "A. Refer him to Alcoholics Anonymous.",
+        "B. Suggest that his current red wine consumption might have health benefits, but he should not drink more than this amount.",
+        "C. Prescribe naltrexone to help him stop drinking.",
+        "D. Refer him to an alcohol treatment program for counseling.",
+        "E. Advise him to decrease his consumption to no more than 2 drinks a day and reassess his alcohol use at the next visit."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient exhibits \"at-risk\" drinking-a level of alcohol consumption that increases his risk for alcohol-related health or social problems. Randomized clinical trials have demonstrated that brief physician advice in a primary care setting can result in reduced alcohol consumption, often to levels that are below those considered to be of risk in a patient such as this (e.g., <2 drinks/day). In this patient's case, decreasing his alcohol use may also improve his blood pressure control. The health-related risks associated with this level of alcohol consumption are likely to far outweigh any potential (and likely minimal if any) benefit from consumption of red wine. Alcoholics Anonymous, naltrexone, and referral to an alcohol treatment program for counseling should be considered in patients who meet criteria for an alcohol use disorder, which is not the case with this patient. [cite: 1252-1256]",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 30-year-old woman presents for evaluation of \"shakiness.\" She reports several months' history of heavy alcohol consumption, typically 8 to 10 drinks per day including wine and vodka. Her presenting complaint began when she decided to quit drinking 1 day ago because she was recently placed on probation at work because of frequent tardiness related to her alcohol use. She notes that she has been drinking increased amounts of alcohol to \"keep going\" and that when she does try to decrease her alcohol use, especially with her recent trouble at work and some \"close calls\" while driving, she is unsuccessful. Which of the following best describes her alcohol consumption pattern and its related effects?",
+      "imageUrl": "",
+      "options": [
+        "A. She is suffering from alcohol-related delirium tremens.",
+        "B. She has a severe alcohol use disorder.",
+        "C. She meets criteria for alcohol abuse.",
+        "D. She has a mild alcohol use disorder.",
+        "E. She is not a binge drinker."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient meets at least six of the DSM-5 criteria for an alcohol use disorder and thus would be considered in the severe category. Her presentation as described includes several of these criteria: evidence of tolerance, withdrawal, more use than intended, unsuccessful attempts to cut down, tolerance, use despite negative effects, failure to fulfill a major role obligation, and use in hazardous situations. Although she does present with symptoms likely related to alcohol withdrawal, there is nothing in the presentation to suggest delirium tremens. Alcohol abuse is a term from earlier versions of DSM and is no longer used as diagnosis. Patients with a \"mild\" alcohol use disorder have only two or three of the DSM-5 criteria. She does not meet criteria for binge drinking. [cite: 1266-1271]",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "The same 30-year-old woman described in question 2 eventually develops severe enough withdrawal symptoms to be hospitalized for the medical management of her alcohol withdrawal. Which of the following is true concerning the course of her alcohol withdrawal?",
+      "imageUrl": "",
+      "options": [
+        "A. If present, withdrawal seizures are likely to occur between 48 and 72 hours after the last drink.",
+        "B. Chlordiazepoxide and diazepam are the only benzodiazepines that have been approved by the FDA for the treatment of alcohol withdrawal.",
+        "C. Benzodiazepines have been demonstrated to effectively reduce the occurrence of alcohol withdrawal seizures.",
+        "D. Longer acting benzodiazepines are always preferred to those that are shorter acting.",
+        "E. B-Blockers are an effective alternative to benzodiazepines for the treatment of alcohol withdrawal."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Benzodiazepines are the treatment of choice for the alcohol withdrawal syndrome. There is strong evidence that they decrease the frequency of alcohol withdrawal seizures, and numerous randomized trials have demonstrated their effectiveness in controlling withdrawal-related symptoms and vital sign abnormalities. Alcohol withdrawal seizures tend to occur within 12 to 24 hours after alcohol consumption is reduced or stopped. There are four benzodiazepines that have been approved by the FDA-in addition to the two mentioned in choice B, oxazepam and lorazepam are also FDA approved. Short-acting benzodiazepines may be preferred in patients with severe liver disease. B-Blockers are effective adjuncts to benzodiazepines in the treatment of alcohol withdrawal but should not be used alone as an alternative to benzodiazepines. [cite: 1279-1284]",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    },
+    {
+      "question": "The same 30-year-old patient presented in questions 2 and 3 is discharged from the hospital after successful treatment of the alcohol withdrawal syndrome. Which of the following is the appropriate \"next step\" in the management of her alcohol-use disorder?",
+      "imageUrl": "",
+      "options": [
+        "A. Assess her motivation to remain alcohol free and determine her interest in receiving treatment for relapse prevention.",
+        "B. Refer her to the Alcoholics Anonymous program that your father went to.",
+        "C. Continue her benzodiazepines as an outpatient to help her stay away from alcohol.",
+        "D. Discharge her on disulfiram and see her back in your office in a month.",
+        "E. Advise her to abstain from alcohol and see her back in your office in a month."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The first step in managing patients with alcohol use disorders who have been successfully detoxified is to assess their motivation to remain alcohol free and discuss various follow-up treatment options in order to assess their interest in treatment and help identify the best approach to getting relapse prevention therapy. Patients who are suitably motivated and interested in engaging in ongoing treatment should then be referred as appropriate. Those who are not ready to accept treatment may benefit from motivational interviewing approaches and close follow-up in order to engage them in treatment in the future. Alcoholics Anonymous may be helpful to many patients; however, without assessing a patient's motivation, it is difficult to tell if such a referral will be followed. In addition, AA meetings differ in terms of their content and membership, and patients may need to try several meeting sites to find a group that they are comfortable with. Benzodiazepines are not indicated for the prevention of relapse to alcohol use. Disulfiram has been shown to be effective in highly motivated patients who receive treatment in a highly supervised manner. There is no evidence that brief advice alone is effective in the treatment of alcohol use disorders. [cite: 1292-1299]",
+      "explanationImageUrl": "",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 47-year-old man presents to his primary care physician for a routine preventive health visit. He has a history of an alcohol use disorder and has been hospitalized three times for alcohol withdrawal, is participating in Alcoholics Anonymous, and is currently getting cognitive behavioral therapy from a therapist. Despite this, he continues to struggle with craving for alcohol and has had numerous relapses interrupting episodes of sobriety. He has heard about medications that might help him prevent these relapses and would like to try something. Which of the following is the most appropriate recommendation?",
+      "imageUrl": "",
+      "options": [
+        "A. Don't use a relapse prevention medication because this will be frowned upon by his Alcoholics Anonymous group.",
+        "B. Give him a prescription for disulfiram and ask him to follow up in 3 months.",
+        "C. Start with a combination of naltrexone and acamprosate because this will yield the best results.",
+        "D. Consider the use of intramuscular naltrexone, 380 mg per month.",
+        "E. Prescribe topiramate, 300 mg a day."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In several clinical trials, naltrexone has been demonstrated to decrease alcohol consumption in individuals who are dependent on alcohol. Although generally well tolerated, contraindications include current opioid dependence and severe liver disease. Although it is true that some Alcoholics Anonymous participants or groups may frown upon the use of medication to treat alcohol use disorders, this is not a reason to not use these medications. However, patients should be made aware of this possibility and counseled on how to deal with this if it occurs. Disulfiram has been shown to be effective in highly structured treatment programs. Although it may be helpful in some primary care patients, there is no evidence that it is effective when used by primary care physicians in an unstructured manner. There is no significant evidence that combinations of relapse prevention medications improve outcomes in patients who are dependent on alcohol. Topiramate has been demonstrated to be effective in preventing relapse to alcohol use in some studies, but it is not yet approved for this indication. [cite: 1312-1319]",
+      "explanationImageUrl": "",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which of the following medications is not approved for the treatment of opioid use disorder?",
+      "imageUrl": "",
+      "options": [
+        "A. Sublingual buprenorphine-naloxone",
+        "B. Intranasal naloxone",
+        "C. Injectable naltrexone",
+        "D. Buprenorphine implant",
+        "E. Oral naltrexone"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Intranasal naloxone is only approved for reversal of opioid overdose, not for treatment of opioid use disorder. [cite: 1329]",
+      "explanationImageUrl": "",
+      "questionNumber": 18
+    },
+    {
+      "question": "A major reason for the dramatic increase in overdose deaths in recent years is:",
+      "imageUrl": "",
+      "options": [
+        "A. The dramatic rise in misuse of prescription opioids since 2010",
+        "B. The difficulty diagnosing opioid overdose",
+        "C. The rise in the use of illicit fentanyl",
+        "D. The rapid rise in the mixture of opioids with cocaine",
+        "E. The increase in combining opioids with cannabis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The rapid rise of illicit fentanyl, either as an adulterant in heroin use or as a substitute for opioid analgesics sold illicitly, has contributed to the rapid rise in overdose deaths due to its great strength. [cite: 1336-1337]",
+      "explanationImageUrl": "",
+      "questionNumber": 19
+    },
+    {
+      "question": "Extended-release injectable naltrexone lasts for how long?",
+      "imageUrl": "",
+      "options": [
+        "A. 1 week",
+        "B. 2 weeks",
+        "C. 4 weeks",
+        "D. 3 months",
+        "E. 6 months"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A single 380 mg dose of extended-release injectable naltrexone lasts for approximately 4 weeks. [cite: 1358]",
+      "explanationImageUrl": "",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following is a partial opioid agonist?",
+      "imageUrl": "",
+      "options": [
+        "A. Buprenorphine",
+        "B. Naloxone",
+        "C. Naltrexone",
+        "D. Methadone",
+        "E. Meperidine"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Buprenorphine is a partial agonist. This leads to greater safety with regard to overdose and is responsible for the plateauing of its opioid effect. [cite: 1346]",
+      "explanationImageUrl": "",
+      "questionNumber": 21
+    },
+    {
+      "question": "Which of the following drugs is most likely to cause a seizure as a result of intoxication?",
+      "imageUrl": "",
+      "options": [
+        "A. Buprenorphine",
+        "B. Cocaine",
+        "C. LSD",
+        "D. Marijuana",
+        "E. Lorazepam"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cocaine can cause an intoxication seizure. Therefore, a urine or blood toxicology screen can be valuable in evaluating a patient who has had a seizure. [cite: 1353]",
+      "explanationImageUrl": "",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which of the following characterizes the current use of natural products by adults in the United States?",
+      "imageUrl": "",
+      "options": [
+        "A. Most are used by individuals illicitly.",
+        "B. Most are available without the FDA approval process required for prescription drugs.",
+        "C. Most have known adverse effects or adverse drug interactions.",
+        "D. Most cannot be subjected to conventional randomized clinical trials because of their large placebo effect.",
+        "E. Most are used by individuals with psychiatric problems or terminal illnesses."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Under the Dietary Supplement Health and Education Act of 1994, dietary supplements are considered to be food, and their manufacturers do not need U.S. Food and Drug Administration (FDA) approval if they were marketed before 1994. Dietary supplements marketed after 1994 require reasonable evidence of their safety. Most natural products are freely and legally available through commercial sources, and most are used by the population at large, including individuals without any major health problems. Adverse effects or adverse drug interactions have been rigorously documented in only a small minority of natural products. Although significant placebo effects could be involved with trials of some of these products for certain indications, this should not prevent them from being subjected to traditional randomized, double-blind, placebo-controlled clinical trials of efficacy and safety. [cite: 1433-1436]",
+      "explanationImageUrl": "",
+      "questionNumber": 23
+    },
+    {
+      "question": "Which of the following conditions is not an evidence-based indication for management with mind and body practices?",
+      "imageUrl": "",
+      "options": [
+        "A. Chronic pain",
+        "B. Acute low back pain",
+        "C. Blood pressure regulation",
+        "D. Schizophrenia",
+        "E. Chemotherapy side effects"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In general, mind and body practices have not been rigorously tested as treatment for specific diseases, including psychiatric disorders such as schizophrenia. On the other hand, clinical trials and even meta-analyses of clinical trials have demonstrated efficacy of mindfulness-based stress reduction and other meditation approaches, as well as yoga, for chronic pain; massage therapy, acupuncture, and spinal manipulation for acute low back pain; yoga and massage therapy for blood pressure control; and acupuncture for the control of chemotherapy-induced nausea and vomiting. [cite: 1443-1446]",
+      "explanationImageUrl": "",
+      "questionNumber": 24
+    }
+  ]
+}

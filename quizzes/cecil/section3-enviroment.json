@@ -1,0 +1,288 @@
+{
+  "questions": [
+    {
+      "question": "A 40-year-old married woman comes for her periodic health examination. She has had negative annual Pap tests for the last 5 years. Which of the following options describes a recommended strategy for cervical cancer screening?",
+      "imageUrl": "",
+      "options": [
+        "A. Offer her the option of human papillomavirus (HPV) testing without a Pap test. If the HPV test result is normal, repeat in 5 years.",
+        "B. Because her last Pap test was normal, defer Pap testing until next annual examination.",
+        "C. Continue annual screening until the age of 64 years.",
+        "D. Continue annual screening until age 50 years.",
+        "E. Begin annual HPV testing, but lengthen the interval for Pap testing to every 5 years."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In the absence of HPV testing, every-3-year Pap testing is recommended by the U.S. Preventive Services Task Force (USPSTF) and the American College of Obstetrics and Gynecology (ACOG) for women with previously normal Pap tests. Based on the excellent sensitivity of HPV testing for finding high-risk cervical lesions, women who are HPV negative can forgo Pap testing. The interval for HPV testing is every 5 years, but testing should not begin until age 30 because transient infection is very common. Co-testing (combined Pap and HPV testing) at 5-year intervals is recommended by ACOG beginning at age 30 years and continuing to age 65 years. [cite: 1144-1147]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 52-year-old woman is new to your practice. She is a lifelong nonsmoker, and she had her first mammogram in the past year, with normal results. She has never undergone colorectal cancer screening. Which of the following is true regarding recommendations for screening and options available to her?",
+      "imageUrl": "",
+      "options": [
+        "A. As an average-risk adult, she could be offered screening with any of the following options, which differ in their risks, intervals, and burdens of testing: high-sensitivity fecal occult blood testing (FOBT); fecal immunochemical test (FIT); flexible sigmoidoscopy with or without FIT, or colonoscopy.",
+        "B. Regular colorectal cancer screening in adults should stop at age 65 years.",
+        "C. Computed tomography (CT) colonography at 5-year intervals or annual multitargeted stool DNA test may be acceptable options in place of colonoscopy.",
+        "D. Colonoscopy every 5 years is the preferred option because of its higher sensitivity.",
+        "E. A and C"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The U.S. Preventive Services Task Force (USPSTF) recommendations suggest beginning screening at age 50 years and stopping regular screening at age 75 years. Their analyses indicated that either (1) annual high-sensitivity fecal occult blood testing (FOBT) or fecal immunochemical test (FIT), (2) flexible sigmoidoscopy every 10 years combined with FIT every year, or (3) colonoscopy every 10 years would yield similar benefits over a population. Models also suggest CT colonography every 5 years and annual multitargeted DNA tests would have comparable benefits. [cite: 1156-1159]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 62-year-old African American man comes in for his first visit. Other than a 5-year history of high blood pressure, he is in good health. In response to questions about whether he should get a prostate-specific antigen (PSA) test, which of the following statements reflects information that should be part of a shared decision-making discussion?",
+      "imageUrl": "",
+      "options": [
+        "A. As an African American, he has a higher risk for prostate cancer but may not benefit more from screening compared with men of other ethnic backgrounds.",
+        "B. PSA screening has been shown to reduce mortality and metastasis from prostate cancer in some studies.",
+        "C. False-positive PSA tests are common and may require a biopsy.",
+        "D. PSA testing may result in detection and treatment of a cancer that would not have caused clinical problems (overdiagnosis).",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although African American men do have an increased risk for prostate cancer, there is no evidence that benefits of screening are any higher in this group. PSA testing was associated with lower prostate cancer mortality in one European study, in which 48 men needed to be treated for every 1 death prevented after 9 years. False-positive PSA results and potential overdiagnosis are the major concerns regarding prostate cancer screening. As a result, the U.S. Preventive Services Task Force and other major organizations recommend a shared decision-making approach that discusses the possible benefits and potential harms with men ages 55 to 69 years who are most likely to benefit. [cite: 1169-1172]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 58-year-old male accountant comes in for a periodic examination. He is recently divorced and has a steady female partner with whom he is sexually active. Because his partner is postmenopausal, they do not use condoms. He has never been screened for any sexually transmitted diseases and has no symptoms or history of any drug use or transfusions. Which of the following tests are indicated as a screening test?",
+      "imageUrl": "",
+      "options": [
+        "A. HIV",
+        "B. Hepatitis C",
+        "C. Chlamydia",
+        "D. Hepatitis B",
+        "E. A and B"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "HIV testing is indicated in all adults who have never been screened. Although the subject has no specific risk factors for hepatitis C, testing is recommended for adults in his age cohort (born between 1945 and 1965). Chlamydia screening might be indicated for a woman based on having a new sexual partner but is not recommended for men. Hepatitis B screening is recommended only for high-risk groups in nonpregnant adults. [cite: 1182-1185]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 40-year-old nonsmoking man is seen for his periodic examination. He has a healthy weight (body mass index = 20), blood pressure of 118/78 mm Hg, and no history of diabetes, and he is able to exercise regularly without symptoms. Last year, his nonfasting total cholesterol was 232 with a high-density lipoprotein (HDL) of 50. Which of the following represents appropriate steps to address cardiovascular prevention in this patient?",
+      "imageUrl": "",
+      "options": [
+        "A. Perform a baseline electrocardiogram (ECG) to look for evidence of ischemia or ventricular hypertrophy.",
+        "B. Obtain a fasting lipoprotein analysis and calculate his 10-year risk for cardiovascular disease to assess the need to consider further interventions.",
+        "C. Recommend he begin a daily low-dose aspirin regimen.",
+        "D. Obtain a coronary computed tomography (CT) to look for evidence of calcifications.",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Ten-year cardiovascular risk can be calculated using age, gender, lipids, blood pressure, and history of diabetes and smoking. This patient's 10-year risk is only 1.3%, putting him in a low-risk category; any benefits of aspirin will be offset by risks for gastrointestinal bleeding. Although some risk calculators require only total cholesterol and HDL cholesterol, the updated American College of Cardiology/American Heart Association risk calculator recommended by the U.S. Preventive Services Task Force and other guidelines relies on measures of LDL cholesterol as well, which requires a fasting sample. Neither ECG nor coronary CT is recommended by the U.S. Preventive Services Task Force as a screening test for coronary disease. [cite: 1194-1199]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "In asymptomatic healthy adults, an evidence-based approach to reducing risk of activity-related injuries includes:",
+      "imageUrl": "",
+      "options": [
+        "A. Gradually increasing physical activity level over time.",
+        "B. Prescribing flexibility exercises.",
+        "C. Screening for coronary artery disease using either an exercise test or electron-beam computed tomography.",
+        "D. Starting with supervised exercise in those seeking to increase their amount of physical activity."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Gradually increasing physical activity over time is a key guideline for preventing injuries. There is no evidence that flexibility exercises have health benefits or that they prevent injuries. The U.S. Preventive Services Task Force does not recommend routine screening for coronary artery disease using exercise treadmill or using electron-beam computed tomography. There is no evidence that supervised exercise reduces the risk of injury in healthy adults. [cite: 1208-1211]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which one of the following statements about the benefits and risks of physical activity is true?",
+      "imageUrl": "",
+      "options": [
+        "A. The overall risk of sudden death is higher in people who exercise regularly.",
+        "B. Obese adults do not obtain benefits from physical activity unless they lose weight.",
+        "C. The total volume of physical activity is the main determinant of health benefits.",
+        "D. The benefits of being active at less than recommended levels are so small that it is of little value to recommend and promote physical activity in people who are not capable of meeting guidelines.",
+        "E. The benefits of increasing moderate-to-vigorous aerobic activity do not depend upon current level of activity. A person who increases physical activity 0 to 30 minutes a day obtains the same health benefits as a person who increases activity from 120 minutes a day to 150 minutes per day."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The overall risk of sudden death is lower in people who exercise. The health benefits of physical activity are independent of other risk factors, and obese adults obtain benefits from physical activity even if obesity persists. Consistent with the dose-response effect of exercise, less than the recommended amounts of activity provide meaningful benefits. The benefit of exercise is a curvilinear dose-response relationship, such that the marginal health benefits of increasing activity are less at high levels of physical activity. [cite: 1219-1222]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which one of the following is recommended for the promotion of physical activity in clinical settings?",
+      "imageUrl": "",
+      "options": [
+        "A. Advising patients that muscle-strengthening activities are relatively unimportant compared with regular aerobic exercise",
+        "B. Recommending people start with moderate-intensity activities such as walking, but advising virtually all patients gradually to shift to doing mainly vigorous-intensity activity.",
+        "C. Paying little attention to community resources such as access to parks, gyms, and multiuse trials, because there is little scientific evidence that these resources influence physical activity",
+        "D. Advising virtually all patients to engage in regular physical activity, with the specific activity recommendation based upon integrating public health guidelines for prevention with any applicable therapeutic guidelines",
+        "E. Emphasizing exercise prescription and exercise classes, because most people prefer these activities over lifestyle activities such as walking for transportation and gardening"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The physician should advise patients regarding the types and amounts of activity appropriate for them, while specifically taking into account the presence of chronic diseases and any limitations in activity when making the recommendation. However, guidelines do not require vigorous activity, and it is not recommended for all adults. Strength training produces incremental health benefit when added to aerobic training. Most people do not prefer exercise classes over home-based exercise, and recommendations generally should be tailored to a patient's preferences. There is strong evidence that access to community resources positively affects physical activity levels. [cite: 1229-1233]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "Which one of the following statements is true about the use of physical activity to reduce risk of falls and fall injuries?",
+      "imageUrl": "",
+      "options": [
+        "A. It is recommended that all adults and older adults participate in balance training to prevent falls and fall injuries.",
+        "B. The fact that falls are more likely during activities such as walking explains why exercise programs in older adults do not reduce the risk of falls.",
+        "C. Balance training commonly causes falls and thus should be done only under supervision by a trained health care provider (e.g., a physical therapist).",
+        "D. Fall prevention exercise programs prevent falls, but unfortunately they mainly prevent noninjurious falls.",
+        "E. Exercise programs to prevent falls and fall-related injuries emphasize muscle-strengthening activity and balance training."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Muscle strengthening and balance are the main focus of fall prevention programs. Guidelines recommend balance training only for older adults and only for those at risk of falls. [cite: 1240-1241]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which ONE of the following statements about sexual maturity ratings (SMR) is correct?",
+      "imageUrl": "",
+      "options": [
+        "A. SMR is based on chronologic age.",
+        "B. SMR is based on the development of breasts only among girls.",
+        "C. SMR is based on the appearance of pubic hair only among boys.",
+        "D. SMR 2 to SMR 5 indicate the progression of puberty to adulthood.",
+        "E. SMR 0 corresponds to the prepubertal stage."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Sexual maturity rating (SMR) 1 corresponds to the prepubertal stage: puberty has not begun and no sexual development has occurred. SMR 2 to SMR 5 indicate the progression of puberty to adulthood. Once young people reach SMR 5, they have fully developed secondary sexual characteristics. Sexual maturation correlates with linear growth, changes in weight and body composition, and hormonal changes. Sexual maturation provides important assurance regarding the normal progression of puberty or identification of abnormal pubertal development. [cite: 1251-1255]",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "What are the THREE leading causes of death in adolescents 15 to 19 years old who live in the United States?",
+      "imageUrl": "",
+      "options": [
+        "A. Unintentional injury, suicide, congenital malformations",
+        "B. Suicide, homicide, malignant neoplasias",
+        "C. Unintentional injury, suicide, homicide",
+        "D. Suicide, malignant neoplasias, diseases of the heart",
+        "E. Unintentional injury, homicide, congenital malformations"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Morbidity and mortality among 15-to 19-year-olds are often the result of risky behaviors and environmental factors (see Table 14-1). Unintentional injury is the leading cause of death in this age group, followed by suicide and homicide. Most deaths due to unintentional injury, suicide, and homicide are theoretically preventable. [cite: 1262-1264]",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "Which ONE of the following statements about confidentiality is correct?",
+      "imageUrl": "",
+      "options": [
+        "A. Parents are not able to appreciate the importance of allowing the adolescent the opportunity to speak alone with the clinician.",
+        "B. Confidentiality and defining the limits of confidentiality should be discussed with the adolescent and not with the parents.",
+        "C. The adolescent and family need to know that the clinician will intervene if he or she believes that the adolescent's actions may cause him or her, or another person, significant harm.",
+        "D. The duty of confidentiality precludes encouraging and empowering adolescents to talk to their parents or guardians about important health care issues.",
+        "E. The legal definition of confidentiality is the same for all geographic locations."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Confidentiality and its limits should be discussed with the adolescent and his or her parents or guardians at the beginning of the interview. The adolescent and family need to know that the clinician will intervene if he or she believes that the adolescent's actions may cause him or her, or another person, significant harm or that the adolescent is in imminent danger. Examples of situations in which the clinician would not maintain confidentiality when dealing with young people include disclosure of current suicidal or homicidal intent. Parents appreciate education about the concept of confidentiality and recognize the importance of allowing the adolescent the opportunity to speak alone with the clinician. The legal definition of confidentiality varies, depending on geographic location, and clinicians should be familiar with local laws. [cite: 1271-1275]",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which statement BEST describes the overall goals of treatment in adolescents with eating disorders?",
+      "imageUrl": "",
+      "options": [
+        "A. The goals of treatment are to restore physical and mental health, normal eating behavior patterns, and to reduce the impact of the eating disorder on the quality of life.",
+        "B. The goals of treatment are to restore mental health, parental relationships, normal eating behavior patterns, and to reduce the impact of the eating disorder on the quality of life.",
+        "C. The goals of treatment are to restore physical and mental health, to reduce the impact of the eating disorder on the quality of life, and to improve academic performance",
+        "D. The goals of treatment are to restore physical and mental health, normal eating behavior patterns, and parental relationships.",
+        "E. The goals of treatment are to restore physical health, healthy weight, normal eating behavior patterns, and to increase physical endurance."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The goals of treatment are to restore physical health, normal eating behavior patterns, and mental health, as well as to reduce the impact of the eating disorder on the quality of life. [cite: 1282]",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "Which ONE of the following statements about the influence of peer groups on adolescents is correct?",
+      "imageUrl": "",
+      "options": [
+        "A. Peer groups are equally influential throughout adolescent development.",
+        "B. Peers groups are most influential during early adolescence.",
+        "C. Peers groups are most influential during middle adolescence.",
+        "D. Peer groups are most influential during late adolescence.",
+        "E. Peer groups play a greater role in female compared to male adolescent development."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "As adolescents pull away from parents in search of their own identity, their peer group begins to take on increasing salience. During middle adolescence, peer groups play a powerful role, and adolescents are increasingly involved in partnering relationships that include dating, sexual experimentation, and adverse health behaviors such as smoking cigarettes, drinking alcohol, using street drugs, and being truant. During late adolescence, peer group values tend to become less important, as many young people spend more time in a relationship with one person. [cite: 1288-1290]",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "Tdap vaccine is recommended to be given only once for all groups except which of these?",
+      "imageUrl": "",
+      "options": [
+        "A. Pregnant women",
+        "B. Parents of children younger than 2 years of age",
+        "C. Adults 65 years of age and older",
+        "D. Children age 11 or older who did not complete their DTaP vaccine series",
+        "E. Adolescents and adults entering college"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Pregnant women should receive Tdap vaccine during each pregnancy to offer protection to each newborn. Available data indicate fairly rapid waning of pertussis immunity after Tdap vaccination and no significant adverse events after repeated Td or Tdap vaccinations with short intervals between them. [cite: 1300-1302]",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    },
+    {
+      "question": "Persons who are at increased risk of meningococcal disease and for whom meningococcal vaccine is recommended include all except which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Persons without spleens or whose spleens are not functional (e.g., have sickle cell disease)",
+        "B. Persons with persistent complement deficiencies",
+        "C. Persons 65 years and older",
+        "D. Microbiologists regularly working with Neisseria meningitidis isolates",
+        "E. Persons traveling to sub-Saharan Africa"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Available data indicate increased risk of meningococcal disease for all the listed groups except persons 65 years and older. [cite: 1308]",
+      "explanationImageUrl": "",
+      "questionNumber": 16
+    },
+    {
+      "question": "Pneumococcal conjugate vaccine is recommended for which of these adult groups?",
+      "imageUrl": "",
+      "options": [
+        "A. Persons with nephrotic syndrome",
+        "B. Persons with liver cirrhosis",
+        "C. Persons with chronic obstructive pulmonary disease",
+        "D. Persons with coronary artery disease",
+        "E. Persons with diabetes"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Most of the additional benefit of pneumococcal conjugate vaccination, when it is used to supplement pneumococcal polysaccharide vaccination, accrues to persons with iatrogenic or disease-related immunocompromising conditions, including nephrotic syndrome, as well as persons with functional or anatomic asplenia, cerebrospinal fluid leaks, and cochlear implants. [cite: 1316-1317]",
+      "explanationImageUrl": "",
+      "questionNumber": 17
+    },
+    {
+      "question": "Adults at increased risk of hepatitis B infection who should receive hepatitis B vaccine include which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Persons with chronic obstructive pulmonary disease",
+        "B. Persons with coronary artery disease",
+        "C. Persons with nephrotic syndrome not on dialysis",
+        "D. Persons 19 to 59 years old with diabetes mellitus",
+        "E. Persons 65 years and older"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Persons who have frequent contact with contaminated blood or body fluids are at increased risk of hepatitis B infection. Adults 19 to 59 years of age with diabetes mellitus also are at increased risk of hepatitis B infection, at least in part because of poor infection control practices with assisted blood glucose monitoring. Therefore, the Centers for Disease Control and Prevention recommend that adults with diabetes mellitus younger than 60 years receive hepatitis B vaccine. [cite: 1325-1327]",
+      "explanationImageUrl": "",
+      "questionNumber": 18
+    },
+    {
+      "question": "Human papillomavirus (HPV) vaccine is licensed for:",
+      "imageUrl": "",
+      "options": [
+        "A. Routine vaccination of boys and girls beginning at 11 years, with catchup vaccination for men and women up to 45 years.",
+        "B. Persons 65 years and older",
+        "C. Only for men who have sex with men",
+        "D. Girls and women 11 to 50 years",
+        "E. Girls and boys beginning at 9 years of age"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HPV vaccine is recommended for persons primarily before they begin sexual activity and have been infected with HPV. The upper age range for both licensed vaccines is 45 years for both women and men. [cite: 1334-1336]",
+      "explanationImageUrl": "",
+      "questionNumber": 19
+    }
+  ]
+}

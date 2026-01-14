@@ -1,0 +1,749 @@
+{
+  "questions": [
+    {
+      "question": "Hormones are synthesized and secreted by:",
+      "options": [
+        "A. Specialized collections of cells that form endocrine glands",
+        "B. Cells dispersed throughout the lining of the small intestine and within the pancreas",
+        "C. Neurons that comprise the posterior pituitary",
+        "D. The kidney, adipose tissue, and some other organs",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Research has shown that not only classical endocrine glands such as the thyroid and adrenal, but also dispersed enteroendocrine cells in the gut lining and islets in the pancreas, neuroendocrine cells in the posterior pituitary, and nonclassical hormone-secreting sites such as kidney, heart, and adipose are all sources of hormone secretion.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A genetic hormone deficiency disorder may be caused by:",
+      "options": [
+        "A. A mutation in the gene encoding the hormone's signal sequence",
+        "B. Exposure of the pregnant mother to an endocrine \"disruptor\"",
+        "C. A mutation in a gene encoding an enzyme in the TCA cycle",
+        "D. Paternal advanced age at time of conception",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A mutation in the hormone gene altering the signal sequence of a peptide hormone and thereby impairing its ability to be secreted may cause genetic forms of hormone deficiency such as hypoparathyroidism.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Negative feedback suppression is:",
+      "options": [
+        "A. The basis for the diurnal rhythm in serum cortisol",
+        "B. The mechanism whereby an \"output\" regulated by a hormone feeds back to regulate the secretion of that hormone",
+        "C. The basis for menopause in women and lower testosterone with age in men",
+        "D. Always involves one hormone regulating the secretion of another hormone",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "B is the correct definition of negative feedback suppression. The latter is not the primary cause of either A or C. D is incorrect because outputs other than hormones can exert negative feedback suppression (e.g., Ca\u00b2\u207a suppressing PTH secretion).",
+      "questionNumber": 3
+    },
+    {
+      "question": "Hormone receptors are:",
+      "options": [
+        "A. Always located on the cell surface",
+        "B. When activated, may exert their effects via a second messenger cascade",
+        "C. When activated, may exert their effects by directly regulating gene transcription",
+        "D. Irrespective of starting location, always translocate to the nucleus to exert their actions",
+        "E. Both B and C"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Because there are cell surface receptors that do not translocate to exert their action and nuclear receptors for steroid hormones, A and D are incorrect. Both B and C are true for cell surface and nuclear receptors, respectively.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Genetic hormone resistance disorders:",
+      "options": [
+        "A. Are due to gain-of-function mutations in hormone receptors",
+        "B. Are always due to loss-of-function mutations in nuclear receptors",
+        "C. Are due to overactivity of enzymes that degrade hormones",
+        "D. May be caused by loss-of-function mutations in genes encoding cell surface or nuclear receptors or other components of the signal transduction pathway",
+        "E. Are generally associated with autoimmune disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "All the cited examples may be causes of inherited hormone resistance diseases, not just B. A, C, and E do not apply.",
+      "questionNumber": 5
+    },
+    {
+      "question": "The hormone vasopressin (AVP) that regulates body water balance is synthesized where?",
+      "options": [
+        "A. The anterior pituitary gland",
+        "B. The posterior pituitary gland",
+        "C. The supraoptic and paraventricular nuclei of the hypothalamus",
+        "D. The anterior hypothalamus near the osmoreceptor cells",
+        "E. The principal collecting duct cells of the kidney"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The supraoptic and paraventricular nuclei of the hypothalamus. The hormones of the posterior pituitary, vasopressin and oxytocin, are synthesized in specialized neurons in the hypothalamus, the neurohypophysial neurons. These neurons, notable for their large size, are termed magnocellular neurons. In the hypothalamus, magnocellular neurons are clustered in the paired paraventricular and supraoptic nuclei (see Fig. 212-1). The synthesized vasopressin prohormone is transported down the axons of the magnocellular neurons to the posterior pituitary gland, where vasopressin is released in response to specific stimuli.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Vasopressin secretion is stimulated at what levels of plasma osmolality?",
+      "options": [
+        "A. Plasma osmolality above the thirst threshold of 295 mOsm/kg H\u2082O",
+        "B. Increases of plasma osmolality of 4 to 5%",
+        "C. Increases of plasma osmolality of 2 to 3%",
+        "D. Increases of plasma osmolality of 1 to 2%",
+        "E. Decreases in plasma osmolality of 1 to 2%"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Increases of plasma osmolality of 1 to 2%. Increases in plasma osmolality as small as 1 to 2% stimulate vasopressin release. Basal plasma levels of vasopressin are generally 0.5 to 2 pg/mL, which is sufficient to maintain urine osmolality above plasma osmolality and urine volume in the range of 2 to 3 L/day When vasopressin levels are suppressed below 0.5 pg/mL, maximal urine osmolality decreases to less than 100 mOsm/kg H2O, and a free water diuresis (or \"aquaresis\") ensues at levels approaching 800 to 1000 mL/ hour (18 to 24 L/day). Increases in plasma osmolality cause a linear increase in plasma vasopressin and a corresponding linear increase in urine osmolality. At a plasma osmolality of approximately 295 mOsm/kg H\u2082O, urine osmolality is maximally concentrated to 1000 to 1200 mOsm/kg H\u2082O Thus, the entire physiologic range of urine osmolality is accomplished by relatively small changes in plasma vasopressin of 0 to 5 pg/mL (see Fig. 212-2).",
+      "questionNumber": 7
+    },
+    {
+      "question": "Patients with diabetes insipidus and inability to concentrate their urine usually present with what manifestations?",
+      "options": [
+        "A. Polyuria, polydipsia, and hyperosmolality",
+        "B. Polyuria, polydipsia, and dehydration",
+        "C. Polyuria, polydipsia, and hypernatremia",
+        "D. Polyuria, polydipsia, and elevated BUN and creatinine",
+        "E. Polyuria, polydipsia, and normal serum sodium, osmolality, BUN, and creatinine"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Polyuria, polydipsia, and normal serum sodium, osmolality, BUN, and creatinine. Most patients with diabetes insipidus are not hypernatremic, because the polydipsia produced by a normal thirst response is generally sufficient to maintain water homeostasis. Instead, they present with polyuria, polydipsia, and a normal sodium level and osmolality. Because their fluid intake is sufficient to maintain homeostasis, they are not dehydrated and do not have an elevated BUN or creatinine. In these patients, further testing is necessary to increase serum osmolality and then measure the plasma vasopressin level or the urinary response to an administered vasopressin agonist.",
+      "questionNumber": 8
+    },
+    {
+      "question": "After a water deprivation test, a patient increases their urine osmolality from 350 to 375 mOsm/kg H\u2082O following administration of desmopressin (7% increase). What is the most likely diagnosis?",
+      "options": [
+        "A. Primary polydipsia",
+        "B. Nephrogenic diabetes insipidus",
+        "C. Partial hypothalamic diabetes insipidus",
+        "D. Gestational diabetes insipidus",
+        "E. Osmoreceptor dysfunction."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Primary polydipsia. Adults with normal vasopressin secretion can concentrate their urine to greater than 800 mOsm/kg H\u2082O and have less than a 10% increase in urine osmolality in response to administered desmopressin. Patients with complete central diabetes insipidus have minimal concentration of the urine with dehydration, and a marked increase in urine osmolality (usually >50%) in response to administered desmopressin. Patients with nephrogenic diabetes insipidus usually have no increase in urine concentration in response to administered desmopressin, although in some cases of acquired nephrogenic diabetes insipidus, some increased urinary concentration (generally <10%) can occur. In patients with partial central diabetes insipidus and patients with primary polydipsia, the urine is often somewhat concentrated in response to dehydration, but not to the maximum of a normal person. The chronically reduced level of vasopressin downregulates the synthesis of aquaporin-2 water channels, and the large urine volume, regardless of cause, washes out the medullary osmotic gradient that determines the maximal urine concentration. When desmopressin is administered, patients with partial central diabetes insipidus have a further increase (usually >10% but <50%) in urine osmolality, whereas most patients with primary polydipsia have no further increase (i.e., <10%). Patients with gestational diabetes insipidus respond well to desmopressin because desmopressin is resistant to destruction by placental cystine aminopeptidase. Osmoreceptor dysfunction also responds well to desmopressin because it is a variant of central diabetes insipidus, with inadequate osmotic stimulation of vasopressin secretion.",
+      "questionNumber": 9
+    },
+    {
+      "question": "What is the treatment of choice for patients with central diabetes insipidus?",
+      "options": [
+        "A. Vasopressin",
+        "B. Desmopressin",
+        "C. Thiazide diuretics",
+        "D. Water",
+        "E. Insulin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Desmopressin. The best therapeutic agent for the treatment of hypothalamic diabetes insipidus is the vasopressin agonist desmopressin. Desmopressin is different from vasopressin in that the amino group of the N-terminal cystine residue has been removed to prolong the duration of action, and D-arginine has been substituted for L-arginine in position 8 to decrease the vasopressor effects. At therapeutic dosages, this agent acts on V\u2082 or antidiuretic receptors, with minimal activity at V\u2081 or pressor receptors. Because excess diuresis of water is the primary manifestation of diabetes insipidus, water replacement in adequate quantities avoids the metabolic complications of this disease. However, oral or intravenous administration of the volume of fluid required to replace urinary losses in diabetes insipidus is difficult and inconvenient. Thiazide diuretics and amiloride are useful to reduce polyuria in nephrogenic diabetes insipidus by causing sodium depletion and volume contraction, thereby decreasing urine volume by increasing proximal tubular reabsorption of glomerular filtrate, but do not have as great an effect as desmopressin for hypothalamic diabetes insipidus. Insulin is used to treat diabetes mellitus, not diabetes insipidus.",
+      "questionNumber": 10
+    },
+    {
+      "question": "An 84-year-old man is found to have an elevated TSH level of 6.5 mU/L (reference range 0.5 to 4.5 mU/L) on routine screening. The patient has been in good health previously and feels entirely well. His physical examination is normal, including the thyroid, which is not palpable. Repeat laboratory results 2 months later: Free T\u2084 1.1 ng/dL (0.8-1.8 ng/mL), TSH 5.9 mU/L Anti-thyroperoxidase antibodies are negative. Which of the following statements is correct regarding this patient?",
+      "options": [
+        "A. TSH in this range is associated with increased cardiovascular mortality.",
+        "B. Treatment with levothyroxine will improve his quality of life.",
+        "C. The abnormal serum TSH is likely an artifact due to assay interference.",
+        "D. His TSH values are normal for an octogenarian."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Cross-sectional and prospective studies show that serum TSH levels rise with age, and that this increase is not associated with underlying thyroid disease or adverse effects. In fact, some data suggest that elderly individuals with higher serum TSH levels have lower mortality rates and better functional status. The largest published cross-sectional study, using data from the U.S. National Health and Nutrition Epidemiologic Study (NHANES), showed that the 2.5 to 97.5% confidence intervals for serum TSH for healthy octogenarians was 1.9 to 7.5 mU/l",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 59-year-old male was started on nivolumab (an immune checkpoint inhibitor) for treatment of metastatic melanoma. Five months after beginning therapy the patient developed nausea, vomiting, weakness, and fatigue. A viral gastroenteritis was initially suspected, but hypophysitis and secondary adrenal insufficiency were later recognized. The patient was treated with hydrocortisone for secondary adrenal insufficiency and had resolution of his nausea and vomiting. However, he continued to have weakness and fatigue. Hypothyroidism was suspected. Which of the following laboratory tests would be most useful in confirming hypothyroidism in this particular situation?",
+      "options": [
+        "A. An MRI of the pituitary",
+        "B. A serum TSH level",
+        "C. A free T level",
+        "D. Thyroid peroxidase antibodies"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Immune checkpoint inhibitors are commonly used for cancer therapy. Although very effective, they have several side effects, including the development of endocrinopathies as a result of autoimmune damage to endocrine glands. This patient has sustained damage to his pituitary gland, and although an MRI of the pituitary gland would show evidence of inflammation, such imaging would not delineate which pituitary hormones were affected. If the patient had developed secondary hypothyroidism in addition to secondary adrenal insufficiency, a serum TSH would not be elevated (as it would be in primary hypothyroidism), and could be normal or low. Although thyroid peroxidase antibodies are associated with autoimmune damage to the thyroid gland itself, including in association with nivolumab-induced thyroiditis, they do not provide information about whether thyroid insufficiency has actually developed. The best test to confirm the suspicion of secondary hypothyroidism is a free T\u2084 which would be low or in the lower part of the normal range.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 30-year-old woman develops heat intolerance, palpitations, tremor, and a 10-lb weight loss despite an increase in food intake. There is a strong family history of both hypothyroidism and hyperthyroidism. On physical exam, her pulse is 100 beat/minute and there is a mild stare but no proptosis. Her thyroid is enlarged 2-fold, symmetrical, and rubbery. There is a fine tremor. Thyroid function tests show the following: free T\u2084 +2.8 ng/dL (0.8 to 1.8 ng/dL), T\u2083 300 ng/dL (80 to 180 ng/dL) and TSH less than 0.02 mU/L AntiTSH receptor antibody titers are positive. The patient is started on atenolol 50 mg/day with improvement in her adrenergic symptoms, and one week later wishes to discuss specific management strategies for her Graves disease. Which is the best specific treatment for this patient?",
+      "options": [
+        "A. Methimazole for 12 to 18 months to see if she has a remission",
+        "B. Radioiodine therapy to induce permanent hypothyroidism",
+        "C. Thyroidectomy with permanent hypothyroidism",
+        "D. Either methimazole, radioiodine, or surgery",
+        "E. No specific treatment as her Graves disease may spontaneously remit"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "There is no \"best\" treatment for Graves disease in a young otherwise healthy individual. The only prospective randomized controlled study of antithyroid drugs, radioiodine, and surgery found that the three treatments were equivalent in terms of efficacy, patient satisfaction, and quality of life (Abraham-Nording M, et al. Thyroid. 2005;15:1279-1285). The American Thyroid Association hyperthyroidism guidelines recommends all three therapies, recognizing that many factors play into decision making, including patient preferences, other medical problems and comorbidities, and desire for pregnancy, among many others. Although some patients do have spontaneous remissions, these are uncommon, and overt hyperthyroidism always requires treatment.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 60-year-old woman is found to have a 1.5-cm right thyroid nodule after undergoing a cervical MRI. On physical exam, a vague rubbery thyroid nodule is noted, corresponding to the nodule seen on imaging. Thyroid function tests are normal and thyroid ultrasound reveals an isoechoic 1.6-cm nodule with a sonolucent rim and mainly peripheral flow. FNA of the nodule is benign (an adenomatoid nodule). What is the most likely scenario in the follow-up of this patient over the next 3 to 5 years?",
+      "options": [
+        "A. The nodule will grow slowly",
+        "B. The nodule will remain stable",
+        "C. The nodule will decrease in size",
+        "D. The nodule will need to be rebiopsied because of a greater than 50% increase in volume"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Two prospective studies have shown that over a 5-year follow-up period, thyroid nodules remain stable. In one of the studies of 1567 nodules monitored annually, 15% of nodules grew, 18% decreased in size, and the rest remained stable. Nodule growth was associated with larger nodule size at baseline, the presence of multiple nodules, male sex, and younger age (<age 45).",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 29-year-old female was found to have a thyroid nodule by her gynecologist. She was referred to an endocrinologist who suggested further evaluation with laboratory testing, a thyroid ultrasound, and ultimately a fine-needle aspiration biopsy of the documented 1.8-cm nodule. The FNA revealed a diagnosis of papillary thyroid cancer and the patient underwent a thyroidectomy. The final histology showed a 2-cm papillary thyroid carcinoma in the right lobe. There was no lymphatic or vascular invasion, extrathyroidal extension, or cervical lymph node involvement. In discussing this patient's prognosis with her, which of the following statements is true?",
+      "options": [
+        "A. Her risk of a recurrence of her thyroid cancer is 30%.",
+        "B. Her risk of death from thyroid cancer is 5%.",
+        "C. Her risk of recurrence and death related to her thyroid cancer will be reduced by radioactive iodine therapy.",
+        "D. She can be expected to have an essentially normal life span."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has a T1 (tumor \u22642 cm), N0 (no evidence of regional lymph node metastases) thyroid cancer (see E-Table 213-2). Regardless of her age, her thyroid cancer stage is classified as stage I (see E-Table 213-3). A patient such as this requires thyroid hormone therapy for her postsurgical hypothyroidism. In addition, she should be monitored for possible recurrence of her thyroid cancer. However, she does not require radioiodine therapy, because her prognosis is excellent and unlikely to be altered by administration of radioactive iodine. Her risk of death from thyroid cancer is less than 1% and her risk of thyroid cancer recurrence is less than 5%. Therefore, answer D best reflects this patient's excellent prognosis.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 35-year-old woman has had weight gain, insomnia, decreased short-term memory, and depression for the last year. She states that her symptoms are worsening. Two recent urine free cortisol (UFC) test results are threefold increased. She takes lisinopril for recent-onset hypertension. What is the next best diagnostic test?",
+      "options": [
+        "A. A 1-mg dexamethasone suppression test",
+        "B. A pituitary magnetic resonance imaging study",
+        "C. An adrenocorticotropic hormone (ACTH) measurement",
+        "D. Another UFC determination",
+        "E. A dexamethasone-corticotropin-releasing hormone test"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Recent guidelines and expert opinion suggest that at least two different screening test results should be abnormal to confirm the clinical suspicion of Cushing syndrome (see Fig. 214-4). This patient has had two abnormal UFC results and should undergo another screening test, either measurement of late-night salivary cortisol or a 1-mg or 2-day 2-mg dexamethasone suppression test. Another UFC determination will not obviate the need for a different screening test. The dexamethasone-corticotropin-releasing hormone stimulation test is more cumbersome and expensive than the dexamethasone suppression test and would not be a better choice. Tests that are used for the differential diagnosis, such as ACTH level or magnetic resonance imaging, should not be used to establish the diagnosis of Cushing syndrome.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 32-year-old white woman with known idiopathic primary adrenal insufficiency complains of recent fatigue and a feeling of being unwell. This has been worse lately when she has been more active with gardening and is worse in the afternoon and evening. She denies dizziness, anorexia, increase in pigmentation, or change in weight. On physical examination, she weighs 125 pounds, with a height of 63 inches. Blood pressure is 110/75, and pulse is 86 without orthostasis. She has pigmented palmar creases and some buccal pigmentation, unchanged from the last visit. There are no other skin lesions. She does not appear cushingoid, there is no abdominal tenderness, and the joint examination findings are normal. Her only medications are hydrocortisone, 15 mg in the morning and 5 mg in the afternoon, and fludrocortisone, 50 mg every other day. What is the next best step?",
+      "options": [
+        "A. Measure a plasma renin level.",
+        "B. Increase the afternoon hydrocortisone dose to 10 mg.",
+        "C. Measure the urine free cortisol excretion.",
+        "D. Add a late afternoon hydrocortisone dose of 5 mg.",
+        "E. Measure plasma ACTH before the morning hydrocortisone dose."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This woman has somewhat nonspecific symptoms that are exacerbated by gardening (perhaps by heat). She is receiving adequate hydrocortisone replacement but taking a low fludrocortisone dose. Such nonspecific symptoms may occur in the setting of relative mineralocorticoid deficiency, which can be evaluated through renin measurement. If the renin were elevated, an increased fludrocortisone dose might eliminate her vague symptoms of being unwell. The history and the amount of prescribed hydrocortisone do not suggest that she needs additional glucocorticoid. If she is mineralocorticoid deficient, she might feel better with a higher hydrocortisone dose because of its mineralocorticoid activity; however, a slightly supraphysiologic dose would put her at risk for osteopenia and other features of glucocorticoid excess. (See the section on adrenal insufficiency, assessment to ensure proper dosing.) Measurement of ACTH and urine free cortisol usually is not helpful in assessing adequacy of dosage.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 30-year-old woman presents to the emergency department with the acute onset of nausea, vomiting, diarrhea, and dizziness. Her only medication is levothyroxine, 88 \u00b5g daily. On examination, she is hypotensive, tachycardic, and orthostatic. She has dark skin, and no hyperpigmentation is seen on cursory examination. She has abdominal pain and increased bowel sounds. She is extremely weak but able to move all extremities and to respond to questions. The sodium concentration is 129 mEq/L potassium concentration is 5.3 mEq/L, and blood urea nitrogen level is 40 mg/dL. Apart from initiating fluid resuscitation and evaluation for sepsis, what treatment and testing should be ordered immediately?",
+      "options": [
+        "A. Draw blood for cortisol measurement before giving hydrocortisone 100 mg IV.",
+        "B. Give dexamethasone 8 mg and perform an ACTH stimulation test.",
+        "C. Measure an ACTH level and give hydrocortisone 100 mg IV.",
+        "D. Give dexamethasone 8 mg and defer further testing.",
+        "E. Give hydrocortisone 100 mg IV and obtain an adrenal computed tomography scan to evaluate for hemorrhage."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This woman presents with the signs and symptoms of acute primary adrenal insufficiency. The knowledge that she takes thyroid hormone suggests polyglandular failure. However, it is possible that this constellation of features is caused by sepsis, renal failure, or hypothyroidism. Thus it is prudent to measure cortisol in blood obtained during intravenous line insertion to confirm the diagnosis of adrenal insufficiency. Other biochemical and stimulation testing can be deferred. She has no apparent reason to have adrenal hemorrhage. Dexamethasone 8 mg is more than what is needed for treatment of adrenal insufficiency; hydrocortisone 100 mg is the recommended initial dose. (See the section on adrenal insufficiency, replacement of adrenal tissue, and treatment.)",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 50-year-old man is evaluated for hyperaldosteronism because of difficult-to-control hypertension. He is otherwise healthy. Evaluation was done during treatment with agents that do not affect aldosterone or renin levels and include an aldosterone-to-renin ratio of more than 40 and lack of aldosterone suppression to oral salt loading. A computed tomography (CT) scan of the adrenal glands shows a 1-cm mass on the right with a density of 10 HU. What is the next best step?",
+      "options": [
+        "A. Adrenal venous sampling",
+        "B. Right laparoscopic adrenalectomy",
+        "C. Treatment with eplerenone",
+        "D. Review of CT scan to exclude hyperplasia of the left adrenal gland",
+        "E. Ultrasound ablation of the adrenal gland"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Adrenal venous sampling should be performed to identify the source of excess aldosterone. It is possible that the visualized mass is a nonfunctioning tumor. This man is a good surgical candidate, and laparoscopic adrenalectomy would be recommended if venous sampling is consistent with unilateral disease. The CT scan is not helpful in identifying bilateral disease. Treatment with eplerenone and ultrasound ablation would be possibilities if he were not a surgical candidate; eplerenone would be an appropriate treatment for bilateral disease. (See section on mineralocorticoid excess, diagnosis and treatment.)",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 35-year-old woman presents with a 6-month history of increasing body hair growth. Before that time, she states that she was mildly \"hairy\" but now needs to shave her face daily. (She has stopped shaving for 3 days so that her hair growth would be visible.) She has had only two episodes of vaginal spotting during this time. Her menses started at the age of 13 years and are usually irregular, occurring every 30 to 45 days. The extra hair growth started in her teens and until 6 months ago was similar to the hair pattern of her mother and sister. She admits to some recent irritability and perhaps has gained 5 pounds. She has always had a low voice and does not notice any recent change. She has a 3-year-old daughter. She has been able to continue her 35 minutes of daily cardiovascular exercise. On physical examination, body mass index is 30, blood pressure 125/85 mm Hg, pulse 82. The Ferriman-Galway score is 17. Fat distribution is normal with some increased abdominal fat, and she appears \"well developed but not especially muscular. There is no temporal hair recession, but her scalp hair appears thin. Acne is present on the chest and back. The clitoral index is 100 mm. Laboratory results include low luteinizing hormone and follicle-stimulating hormone, estradiol 50 pg/mL dehydroepiandrosterone sulfate (DHEA-S) 653 ng/dL (reference range, 4 to 332), and testosterone 235 ng/dL. These abnormalities are confirmed on a second set of tests. What is the next best diagnostic step?",
+      "options": [
+        "A. Obtain a CT scan of the adrenal glands.",
+        "B. Obtain an ovarian ultrasound.",
+        "C. Perform a 1-mg overnight dexamethasone suppression test.",
+        "D. Measure a morning17-hydroxyprogesterone level.",
+        "E. Measure an androstenedione level."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This woman has recent-onset hirsutism and virilization. Althoug worsening polycystic ovary syndrome is a possibility, the degree of DHEA-S and testosterone elevation suggests the possibility of an adrenal tumor. The slight weight gain and irritability might also point to possible cortisol excess. Although androstenedione would confirm an adrenal source, it is unlikely to point to another cause, and so proceeding to adrenal CT scan is reasonable, particularly because adrenal cancer is part of this differential diagnosis. An ovarian ultrasound is less likely to be abnormal (i.e., an ovarian tumor is less likely). Congenital adrenal hyperplasia is consistent with these signs and symptoms but not with the time course of rapid worsening. Cushing syndrome is a possibility, but it is less likely to be Cushing disease with these levels of hormones; adrenal cancer is a possibility that would be identified by the CT scan, making a 1-mg dexamethasone suppression test less urgent. (See the section on androgen excess.)",
+      "questionNumber": 20
+    },
+    {
+      "question": "An effective class of antihypertensive drugs could be based on which of the following?",
+      "options": [
+        "A. Postsynaptic \u03b1\u2081-receptor agonists",
+        "B. Presynaptic \u03b1\u2082-receptor agonists",
+        "C. Tyrosine hydroxylase activators",
+        "D. \u03b2\u2081-Receptor agonists",
+        "E. \u03b2\u2082-Receptor agonists"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "See introduction section of the chapter on catecholamines and adrenergic receptors. Agonism at the presynaptic \u03b1\u2082 receptor is the only option listed that would decrease catecholamine synthesis or release. Central \u03b1\u2082. receptor agonists are Food and Drug Administration-approved antihypertensive drugs (e.g., clonidine, guanfacine).",
+      "questionNumber": 21
+    },
+    {
+      "question": "Your patient has a disease-causing mutation in succinate dehydrogenase subunit D (SDHD) and is currently pregnant. She asks you if her child inherits the SDHD mutation from her, what is the chance that her child will develop a paraganglioma in his or her lifetime? You advise her that if her child inherits the SDHD mutation, the risk for development of a paraganglioma is closest to:",
+      "options": [
+        "A. 0%",
+        "B. 25%",
+        "C. 50%",
+        "D. 75%",
+        "E. 100%"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "See section on familial paraganglioma under Pathobiology and Genetics. In patients with SDHD mutations, penetrance depends on the mutation's parent of origin. Hence, the disease does not manifest when the mutation is inherited from the mother but is highly penetrant when it is inherited from the father. This phenomenon is known as maternal imprinting.",
+      "questionNumber": 22
+    },
+    {
+      "question": "In a patient with an incidentally discovered adrenal mass, which of the following imaging characteristics is consistent with pheochromocytoma?",
+      "options": [
+        "A. Lack of enhancement with intravenous contrast medium on computed tomography (CT)",
+        "B. Low signal intensity on T2-weighted magnetic resonance imaging (MRI)",
+        "C. Homogeneous mass with absent cystic and hemorrhagic changes",
+        "D. Increased precontrast CT attenuation (e.g., >20 Hounsfield units)",
+        "E. Rapid contrast washout with more than 50% washout at 10 minutes"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "See section on diagnosis. Imaging characteristics of an incidentally discovered adrenal mass consistent with pheochromocytoma include increased precontrast CT attenuation (e.g., >20 Hounsfield units); marked enhancement with intravenous contrast medium on CT; high signal intensity on T2-weighted MRI; cystic and hemorrhagic changes; bilaterality; and large size (>4 cm). In addition, pheochromocytomas are characterized by slow contrast washout (e.g., <50% at 10 minutes after administration of contrast material).",
+      "questionNumber": 23
+    },
+    {
+      "question": "Medications and agents that frequently increase measured levels of catecholamines and metanephrines include:",
+      "options": [
+        "A. \u03b2-Adrenergic inhibitors",
+        "B. Presynaptic \u03b1\u2082-receptor agonists",
+        "C. Tyrosine hydroxylase inhibitors",
+        "D. Tricyclic antidepressants",
+        "E. Calcium-channel blockers"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "See Table 215-2. In addition, \u03b2-adrenergic inhibitors do not affect circulating levels of catecholamines or metanephrines in a clinically important way. Central a-receptor agonists (e.g., clonidine) decrease the release of catecholamines. Tyrosine hydroxylase is the rate-limiting step in catecholamine synthesis, and inhibition of this step decreases total body catecholamine production. Use of tricyclic antidepressants is the most common cause of false-positive results of biochemical testing for pheochromocytoma.",
+      "questionNumber": 24
+    },
+    {
+      "question": "In preparing the patient with pheochromocytoma for surgery, which of the following statements is correct with regard to \u03b2-adrenergic blockade?",
+      "options": [
+        "A. The \u03b2-adrenergic antagonist should be administered before the \u03b1-adrenergic blocker is started.",
+        "B. It is indicated to control the tachycardia associated with both the high concentrations of circulating catecholamines and the \u03b1-adrenergic blockade.",
+        "C. The dosing of the \u03b2-adrenergic antagonist is not affected by asthma or congestive heart failure in this unique setting of catecholamine excess.",
+        "D. The dose of the \u03b2-adrenergic antagonist should be titrated for a heart rate of 50 beats per minute.",
+        "E. The dose of the \u03b2-adrenergic antagonist should be titrated for a systolic blood pressure of 100 mm Hg."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "See medical therapy section on treatment. The \u03b2-adrenergic antagonist should be administered only after \u03b1-adrenergic blockade is effective; with \u03b2-adrenergic blockade alone, hypertension may be more severe from the unopposed \u03b1-adrenergic stimulation. Preoperative \u03b2-adrenergic blockade is indicated to control the tachycardia associated with both the high concentrations of circulating catecholamines and the \u03b1-adrenergic blockade. The clinician should exercise caution if the patient is asthmatic or has heart failure. Chronic catecholamine excess can produce a cardiomyopathy that may become evident with the initiation of \u0392-adrenergic blockade, resulting in acute pulmonary edema. Therefore the \u0392-adrenergic blocker should be administered cautiously and at a low dose.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 51-year-old man has a history of type 2 diabetes mellitus for 6 years. Past medical history is significant for chronic hepatitis C infection, chronic kidney disease stage 3, and a recent hospitalization for an upper gastrointestinal bleed. He takes a sulfonylurea for blood glucose control and rarely checks his blood glucose level. Fasting plasma glucose concentration in the office is 195 mg/dL and his HbA\u2091c is 6.8%. What do you conclude about his glucose control?",
+      "options": [
+        "A. His average blood glucose concentration during the past 3 months is approximately 140 mg/dL.",
+        "B. HbA\u2091c may be falsely high because of chronic kidney disease.",
+        "C. HbA may be falsely low because of liver disease.",
+        "D. HbA\u2091c levels are increased after acute blood loss.",
+        "E. HbA\u2081c levels are more reflective of postprandial than of fasting glucose concentration."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient has several reasons that his HbA\u2091c may not accurately reflect his mean plasma glucose concentration. HbA\u2091c results may be influenced by a number of factors, including conditions that alter red cell survival or cause interference with a specific assay. The HbA\u2091c may be falsely low in this patient because of cirrhosis (increased red cell turnover), recovery from recent acute blood loss (greater percentage of younger erythrocytes with shorter exposure to glucose), or transfusion (dilution of patient's blood with nondiabetic donor blood). In these instances, measurement of glycated serum proteins (fructosamine) or direct measurement of plasma glucose concentration will more accurately reflect glycemic control. Additional information about HbA\u2081c assay methodology and interpretation of results can be obtained from the National Glycohemoglobin Standardization Program: http://www.ngsp.org.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 38-year-old woman has had type 1 diabetes mellitus since the age of 12 years. She has maintained excellent control (HbA\u2091c 6.0%) with a basal/ bolus injection regimen. She tests her glucose level four or five times a day, and review of her meter download shows many glucose levels in the 30s and 40s. However, the patient is unconcerned because she has no symptoms at these times. On questioning, she admits to recently \"spacing out\" while driving, which led to a minor traffic accident. Regarding the etiology and treatment of hypoglycemia in this patient:",
+      "options": [
+        "A. She has adapted to low blood glucose concentration and no change in treatment is required.",
+        "B. She has developed hypoglycemia unawareness and her target should be increased.",
+        "C. Strict avoidance of hypoglycemia is of little benefit in reversing hypoglycemia-associated autonomic failure.",
+        "D. An excessive counter-regulatory hormone response to hypoglycemia may contribute to her lack of symptoms.",
+        "E. Treatment with \u03b2-blocker should be considered."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In patients with long-standing diabetes, the counter-regulatory systems that normally would counteract the decline of glucose to dangerous levels may be impaired. This is especially true for patients with type 1 diabetes, who often have defects in glucagon and epinephrine response during hypoglycemia. This decrease in epinephrine response during hypoglycemia is accompanied by an attenuated autonomic neural response, which results in the clinical syndrome of impaired awareness of hypoglycemia. Without autonomic symptoms, mild hypoglycemia may proceed unnoticed to more advanced and dangerous phases. There is, however, evidence that hypoglycemia-associated autonomic failure can be reversed by strict avoidance of hypoglycemia, which can be facilitated by increasing target glucose levels. Reno CM, Litvin M, Clark AL, Fisher SJ. Defective counterregulation and hypoglycemia unawareness in diabetes: mechanisms and emerging treatments. Endocrinol Metab Clin North Am. 2013;42:15-38.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A mother brings her 19-year-old son, who has type 1 diabetes and uses an insulin pump, to see you and to ask for referral to a dietitian. She complains that her son refuses to follow his \"diabetic diet\" and frequently eats junk food, including fast food (burgers, fries, pizza) and ice cream. She also worries that he sometimes skips meals, saying he is not hungry. His body mass index is 22, and his recent laboratory results show an HbA\u2091c of 7.8%, low-density lipoprotein cholesterol of 95, and normal triglycerides. Which of the following dietary recommendations is most appropriate for this patient?",
+      "options": [
+        "A. An 1800-calorie/day American Diabetes Association diet",
+        "B. A low-carbohydrate diet",
+        "C. A low-protein diet",
+        "D. A low-fat, high-fiber diet",
+        "E. A flexible \"heart healthy\" meal plan that limits concentrated sweets and emphasizes fruits and vegetables"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Dietary recommendations for patients with diabetes have changed substantially over time, from the extremely low-carbohydrate, high-fat diets used before the discovery of insulin as a therapy, to \"exchange diets,\" to more flexible meal plans. For patients with type 1 diabetes, the key element is for the patient to learn to match mealtime insulin doses to the carbohydrate content of the meal. Severely restricted diets (very low carbohydrate or low calorie) are neither required nor advisable, although avoidance of large carbohydrate loads will help minimize postmeal glycemic excursions. For most patients with type 2 diabetes who are typically overweight or obese, moderate carbohydrate intake and reduction in total calories are advised. Current recommendations allow a variety of eating styles and ethnic food preferences, with emphasis on fruits and vegetables, low-fat protein sources, and use of monounsaturated or polyunsaturated fats. Evert A, Boucher J, Cypress M, et al. Nutrition therapy recommendations for the management of adults with diabetes. Diabetes Care. 2013;36:3821-3842. Lasa A, Miranda J, Bullo M, et al. Comparative effect of two Mediterranean diets versus a low-fat diet on glycaemic control in individuals with type 2 diabetes. Eur J Clin Nutr. 2014;68:767-772.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 54-year-old woman presents to her physician for treatment of hypertension. She had gestational diabetes during her last pregnancy 15 years ago, and there is a family history of type 2 diabetes (mother and older brother). Her body mass index is 36. Fasting glucose concentration is 110 mg/dL, and HbA\u2081 is 6.2%. Which of the following have been shown to reduce the progression to diabetes in high-risk patients?",
+      "options": [
+        "A. Weight loss by reduced calorie diet",
+        "B. Treatment with metformin",
+        "C. Treatment with acarbose",
+        "D. Bariatric surgery",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient has multiple risk factors for the development of type 2 diabetes, including family history, prior history of gestational diabetes, obesity, and hypertension. In addition, her glucose and HbA levels are already elevated above normal, in the defined \"pre-diabetes\" range. All of the treatments listed have been shown to prevent or to delay the onset of diabetes in randomized clinical trials. The most consistent evidence comes from weight loss trials. Both the Finnish Diabetes Prevention Study and the U.S. Diabetes Prevention Program reported 58% reduction in diabetes with a hypocalorie, reduced fat diet combined with moderate-intensity physical activity. Weight loss achieved with bariatric surgery is also highly effective in preventing (or even reversing) diabetes. Medications, including metformin, the \u03b1-glucosidase inhibitor acarbose, and troglitazone (a thiazolidinedione), have also been shown to reduce diabetes in high-risk patients, although somewhat less effectively than by lifestyle modification. Lifestyle changes and metformin are reported to be cost-effective interventions, but whether delay or prevention of type 2 diabetes will result in lower rates of cardiovascular disease and diabetes microvascular complications will require longer-term follow-up studies. Schwarz PE, Greaves CJ, Lindstrom J, et al. Nonpharmacologic interventions for the prevention of type 2 diabetes mellitus. Nat Rev Endocrinol. 2012;8:363-373.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 28-year-old woman with type 1 diabetes since the age of 12 years is considering having a child. Currently, her blood glucose is reasonably well controlled, although she admits this was not the case during her teens and early 20s, when her HbA\u2091c was in the 9 to 11% range. She has mild background diabetic retinopathy, normal blood pressure, urine albumin-to-creatinine ratio of 25 mg/g and normal findings on foot examination. Which of the following is true?",
+      "options": [
+        "A. She should delay pregnancy until she has achieved optimal glucose control (HbA\u2091c approximately 6.5%).",
+        "B. She should be treated with an angiotensin-converting enzyme inhibitor to prevent progression of renal disease during pregnancy.",
+        "C. Progression of her retinopathy during pregnancy is likely to result in vision loss.",
+        "D. The risk of her child's developing type 1 diabetes is 25 to 50%.",
+        "E. She should be advised to avoid pregnancy because of the risk of both maternal and fetal complications."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Although pregnancies in women with type 1 diabetes are generally considered \"high risk,\" the outlook for patients with minimal complications and good metabolic control is good. Women with advanced renal disease (proteinuria, reduced glomerular filtration rate) or proliferative retinopathy may experience rapid progression during pregnancy because of the influence of hormonal and hemodynamic changes and should be monitored closely by specialists. Use of angiotensin-converting enzyme inhibitors is contraindicated during pregnancy because of the risk of fetal renal damage. The key to successful pregnancy outcomes is achieving optimal glucose control before conception because the developing fetus is most susceptible to the teratogenic effects of hyperglycemia in the first 6 to 8 weeks of pregnancy, before the time that most women are aware of being pregnant. Maintaining strict glucose control during the pregnancy will reduce the risk of fetal complications, such as macrosomia and hyperbilirubinemia. Many patients benefit from use of an insulin pump and continuous glucose monitoring during this time. Although a child of a mother with type 1 diabetes is at increased risk of diabetes compared with the general population, the risk is less than 10%.",
+      "questionNumber": 30
+    },
+    {
+      "question": "Which of the following is true in relation to glucose physiology?",
+      "options": [
+        "A. Insulin stimulates gluconeogenesis.",
+        "B. Glycogenolysis predominantly takes place in the kidney.",
+        "C. Lipolysis is dependent on ketogenesis.",
+        "D. Glucagon stimulates glycogenolysis.",
+        "E. Pancreatic beta cells stop producing insulin when the blood glucose level reaches 2.4 mmol/L."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Glucagon stimulates glycogenolysis and releases stored glucose.",
+      "questionNumber": 31
+    },
+    {
+      "question": "In the counter-regulatory hormonal response to hypoglycemia:",
+      "options": [
+        "A. Growth hormone is the first hormone to increase in response to a falling blood glucose level.",
+        "B. Serum cortisol levels increase in parallel to glucagon.",
+        "C. Adrenaline and noradrenaline are the first line of defense against a falling blood glucose level.",
+        "D. Pancreatic delta cells produce glucagon in response to hypoglycemia.",
+        "E. The main glucosensors for hypoglycemia are located in the carotid body."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Adrenaline and noradrenaline are the first line of defense against a falling blood glucose level. Adrenaline and noradrenaline with glucagon are the key counter-regulatory hormones produced in response to a falling blood glucose level.",
+      "questionNumber": 32
+    },
+    {
+      "question": "Which of the following does not constitute Whipple triad?",
+      "options": [
+        "A. A low measured plasma glucose concentration",
+        "B. Symptoms and/or signs compatible with hypoglycemia",
+        "C. Occurrence of any symptoms and/or signs during hypoglycemia.",
+        "D. Resolution of symptoms and signs when glucose concentrations are corrected"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Whipple triad includes a low measured plasma glucose concentration, symptoms and/or signs compatible with hypoglycemia, and resolution of symptoms and signs when glucose concentrations are corrected.",
+      "questionNumber": 33
+    },
+    {
+      "question": "Which of the following polyglandular neoplastic syndromes is not caused by a germline mutation?",
+      "options": [
+        "A. McCune-Albright syndrome",
+        "B. MEN 1",
+        "C. Carney complex",
+        "D. von Hippel-Lindau disease",
+        "E. MEN 2"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The polyglandular neoplastic syndromes are all due to germline mutations in either tumor suppressor genes (MEN1, MEN4, Carney complex, VHL) or in an oncogene (MEN2). Only McCune-Albright syndrome is due to a somatic mutation, but because the mutation may occur early in embryogenesis, multiple endocrine and nonendocrine organs may be affected.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 25-year-old man presents with kidney stones and is found to be hypercalcemic with an elevated PTH. All the following steps are indicated except:",
+      "options": [
+        "A. Ultrasound localization of parathyroids and immediate parathyroidectomy",
+        "B. Take a careful family history and consider screening first-degree relatives for hypercalcemia",
+        "C. Consider testing the patient for anterior pituitary and pancreatic islet lesions",
+        "D. Test the patient's germline DNA for MEN1 gene mutations"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Age 25 is quite young to present with primary hyperparathyroidism on a sporadic basis and raises suspicion of familial disease, particularly MEN 1. Steps in B through D are indicated because a positive family history for parathyroid, anterior pituitary, and/or pancreatic islet tumors would bolster the likelihood of MEN 1, as would positive results of screening for pituitary and pancreatic islet disease, and of course if MEN1 gene mutation is identified.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 35-year-old woman with type 1 diabetes and Hashimoto thyroiditis presents for routine follow-up. She has no specific complaints, and her physical examination is normal except for a small thyroid gland. Which additional screening test should be done to evaluate adrenal function?",
+      "options": [
+        "A. Measurement of antiadrenal antibodies",
+        "B. Measurement of morning serum cortisol",
+        "C. No screening test is necessary; adrenal insufficiency is unlikely",
+        "D. A Cortrosyn stimulation test"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Antiadrenal antibodies predict the development of adrenal insufficiency and in the absence of clinical features are a reasonable screening test in this woman with a high probability of having autoimmune polyglandular syndrome 2. One might argue that no test is needed in the absence of clinical symptoms; however, many would advocate measurement of the antibodies, which, if positive, might increase the frequency of clinical surveillance.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A patient with autoimmune adrenal insufficiency and type 1 diabetes presents with complaints of abdominal discomfort and occasional diarrhea. This is not precipitated by food. She does not have orthostasis, nausea, vomiting, or joint aches and otherwise feels well, although she recently lost 5 pounds. What is the next best step?",
+      "options": [
+        "A. Consider increasing her hydrocortisone dose to test whether this represents subtle glucocorticoid deficiency.",
+        "B. Measure tissue transglutaminase (TTG) antibody to exclude celiac disease.",
+        "C. Assess gastric motility to evaluate for gastroparesis.",
+        "D. Measure liver function tests to exclude hepatitis."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient may have celiac disease, which is associated with autoimmune adrenal insufficiency. These symptoms do not suggest that the other conditions are more likely.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 22-year-old woman with autoimmune polyglandular syndrome (APS) 1 mentions during a routine visit that she is thinking of becoming pregnant. She wants to know whether she will pass on the disorder to her child and what genetic testing should be done. She is not related to her partner. You reassure her that it is extremely unlikely that her child will have APS 1 because of its recessive genetic transmission. What else should you tell her regarding testing for the AIRE gene?",
+      "options": [
+        "A. She could get the AIRE gene tested to see if her child will carry a mutation.",
+        "B. Her partner could get the AIRE gene tested to see if her child will carry a mutation.",
+        "C. The child should be tested for AIRE mutations at birth.",
+        "D. No gene testing is necessary."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Her child will be an obligate carrier of an AIRE haplotype mutation; this is not sufficient to cause the disease and does not need to be documented by analysis of her mutations. Given that she is not related to her partner, it is unlikely that he will carry a mutation, thus testing of the partner is not indicated. There is no reason to test the child at birth.",
+      "questionNumber": 38
+    },
+    {
+      "question": "Bilateral inguinal masses are palpated on routine examination of a newborn girl. There is a patent vaginal orifice. A karyotype is 46,XY. Which of the following disorders is not a possibility in this child?",
+      "options": [
+        "A. Complete androgen insensitivity",
+        "B. 17-Hydroxylase deficiency",
+        "C. 11\u03b2-Hydroxylase deficiency",
+        "D. 5\u03b1-Reductase deficiency",
+        "E. 17-Ketosteroid reductase deficiency"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a genetic male who has testes, with female-appearing external genitalia. The failure of development of normal male external genitalia must be due to failure of biosynthesis (answers B, D, or E) or action (answer A) of the most potent androgen, dihydrotestosterone. Deficiency of 17-hydroxylase (B) prevents synthesis of all androgens; 5\u03b1-reductase deficiency (D) prevents conversion of testosterone to dihydrotestosterone, and 17-ketosteroid reductase deficiency (E) prevents conversion of androstenedione to testosterone. In contrast, 11\u03b2-hydroxylase deficiency (answer C) is associated with increased secretion of androgen precursors by the fetal adrenal gland, which causes virilization of affected 46,XX female fetuses but no genital abnormality in males.",
+      "questionNumber": 39
+    },
+    {
+      "question": "An 8-year-old boy has bilateral inguinal hernias and bilateral cryptorchidism. The penis and scrotum are normal. At operation, a uterus and fallopian tube are noted in the left inguinal canal, after which the surgeon terminates the operation and pages you, the on-call endocrinologist. What gene is most likely affected in this patient?",
+      "options": [
+        "A. AMHR2 (antim\u00fcllerian hormone receptor)",
+        "B. CYP21A2 (steroid 21-hydroxylase)",
+        "C. SRY (sex-determining region Y)",
+        "D. SF1 (steroidogenic factor 1)",
+        "E. LHGCR (luteinizing hormone receptor)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This boy has persistent m\u00fcllerian duct syndrome, which can be caused by mutations in either antim\u00fcllerian hormone or (equally likely) in its receptor. Persistence of m\u00fcllerian structures (uterus and fallopian tubes) in this otherwise normal boy prevents descent of the testes. CYP21A2 mutations (answer B) do not cause any abnormalities of reproductive structures in 46,XY males. Affected 46, XX females might have virilization of the external genitalia that could be severe enough to be mistaken for males and would indeed have a normal uterus and fallopian tubes. However, such individuals almost invariably develop adrenal insufficiency shortly after birth, and all newborns in the United States are screened for this disorder. Moreover, the m\u00fcllerian structures in females with CYP21A2 mutations are found in their normal positions because there are no testes and spermatic ducts to drag them into the inguinal canals. Mutations of SRY (answer C), SF1 (D), and LHGCR (E) are found in 46,XY phenotypic females.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 15-year-old girl presents for evaluation of primary amenorrhea. She has Tanner 5 breasts and an adult female distribution of pubic and axillary hair. There are no inguinal or labial masses. An ultrasound examination shows ovaries in the normal position but no uterus. The patient's karyotype and diagnosis are most likely to be which of the following?",
+      "options": [
+        "A. 46,XY; complete androgen insensitivity syndrome",
+        "B. 45,X/46,XX mosaic; Turner syndrome",
+        "C. 46,XY; 17,20-lyase deficiency",
+        "D. 46,XX; Mayer-Rokitansky-K\u00fcster-Hauser syndrome",
+        "E. 46,XX; Kallman syndrome"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patients with Mayer-Rokitansky-K\u00fcster-Hauser syndrome have normal ovaries and therefore have normal female secondary sexual characteristics. By definition, they have atresia of the uterus and upper vagina. This phenotypic female has axillary and pubic hair, meaning that she responds normally to androgens secreted by the adrenal glands and (if present) by the ovaries. This rules out complete androgen insensitivity syndrome (answer A); 46,XY males with that condition have absent or sparse axillary and pubic hair. Moreover, they have testes that are often palpable in the inguinal canals or labia. Girls with Turner syndrome (answer B) often have pubic and axillary hair (owing to adrenal androgen secretion) and may have some degree of breast development, owing to local aromatization of adrenal androgens in breast fat and (if mosaic) to some residual ovarian function. But the uterus is normally formed. 46, XY males with 17,20 lyase deficiency (answer C) cannot synthesize androgens and have a phenotype similar to patients with complete androgen insensitivity syndrome. Patients with Kallman syndrome (answer E) have hypogonadotropic hypogonadism; affected females indeed have primary amenorrhea and may or may not have development of secondary sexual characteristics depending on degree of severity, but they have normal development of the uterus.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 13-year-old boy is brought to your office by his parents because he insists that he is really a girl. He has had this feeling as long as he can remember, but it is causing him increasing distress now that he is in early adolescence. He has insisted on wearing dresses or gender-neutral clothing whenever possible. On examination, he is at the 50th percentile for height and weight for boys for his age. He has downy hair on his upper lip, axillary hair, a normally formed penis with the urethral meatus at the tip of the glans, bilaterally descended 4-mL testes, Tanner stage 2 pubic hair, and 1 cm of firm glandular tissue under each nipple. What would be the single most informative evaluation at this point?",
+      "options": [
+        "A. Psychology consultation",
+        "B. Karyotype",
+        "C. Serum levels of dehydroepiandrosterone, androstenedione, and testosterone",
+        "D. FSH and LH",
+        "E. Estradiol"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Any patient with gender dysphoria requires psychological evaluation, preferably in the context of evaluation by an experienced multidisciplinary team, before considering any medical management. Transgender patients rarely have identifiable medical etiologies for their condition unless the history and physical examination raise suspicion for a disorder of sexual development. This phenotypic boy has palpable testes, strongly suggesting that he is 46,XY (answer B), and a normally formed penis, strongly suggesting intact ability to synthesize androgens (answer C). He has age-appropriate development of secondary sexual characteristics, suggesting that his ability to secrete gonadotropins is intact (answer D). Mild gynecomastia is common in boys in early to midadolescence (owing to aromatization of androgens in breast tissue, in the context of low testosterone levels relative to adults) and is without clinical significance; estradiol levels will not be elevated.",
+      "questionNumber": 42
+    },
+    {
+      "question": "You are paged to the intensive care nursery to evaluate a 2300-g term infant for ambiguous genitalia. The baby developed respiratory distress at delivery and is now intubated on a respirator. You are told that a cleft palate was noted on intubation. You hear a grade 3/6 harsh holosystolic murmur. The baby has accessory digits bilaterally. The penis is small and the urethral meatus is at the base of the shaft. There is a bifid scrotum; gonads are palpable bilaterally in the inguinal canals. What laboratory tests are most likely to establish the diagnosis?",
+      "options": [
+        "A. 17-Hydroxyprogesterone and androstenedione",
+        "B. Testosterone and dihydrotestosterone",
+        "C. Androstenedione and testosterone",
+        "D. 11-Deoxycortisol and cortisol",
+        "E. 7-Dehydrocholesterol and cholesterol"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This male infant has Smith-Lemli-Opitz syndrome, owing to an inability to synthesize cholesterol from its immediate precursor. He is small for gestational age and, as a term infant, must have serious cardiorespiratory dysfunction (such as lung hypoplasia) to require ventilator support. The character of the murmur suggests a ventriculoseptal defect. The other physical findings are all typical of this syndrome. Boys with 5\u03b1-reductase deficiency are unable to synthesize dihydrotestosterone from testosterone (answer B); they may have female-appearing or ambiguous genitalia, but have no other medical problems. Boys with 17-ketosteroid reductase deficiency cannot synthesize testosterone from androstenedione (answer C); the phenotype is identical to 5\u03b1-reductase deficiency. Patients with 11-hydroxylase deficiency cannot synthesize cortisol from 11-deoxycortisol (answer D). Males are phenotypically normal; females may have ambiguous genitalia but no other congenital anomalies.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 22-year-old man presents to his primary care physician with decreased libido and loss of morning erections. He had a recent low-impact fracture of his right tibia. His height was 185 cm and weight was 230 pounds. Laboratory tests included a serum testosterone of 96 ng/dL on a sample obtained at 4:00 PM and serum LH of 1.0 miU/mL. Which of the following information is not necessary in the evaluation of this patient?",
+      "options": [
+        "A. DXA scan of the hip and spine",
+        "B. Karyotype to evaluate for Klinefelter syndrome",
+        "C. Serum prolactin level",
+        "D. Repeat serum testosterone obtained between 7:00 AM and 10:00 AM",
+        "E. MRI of the sella with and without gadolinium"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Patients with Klinfelter syndrome have low testosterone and elevated LH levels. This patient has a low serum testosterone consistent with his clinical complaints. A DEXA scan is appropriate because he had a low- impact trauma and low serum T is a risk factor for osteoporosis and fractures. The serum testosterone should be repeated even though it is very low because it was collected in the afternoon and serum testosterone declines because of diurnal variation. An MRI and prolactin are appropriate because the low serum testosterone is coupled with a low serum LH, thus raising the possibility that the patient has hypogonadotropic hypogonadism, which could be due to a pituitary mass lesion that might be secreting prolactin (prolactinoma).",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 37-year-old man presented to his primary care physician complaining of inability of he and his wife to conceive. They have been married for 3 years. She is 27 years old, is not on contraceptives, and has regular menstrual periods. Neither has had a prior pregnancy. His semen specimen showed no spermatozoa in the ejaculate with a specimen volume of 3 mL. The man has a serum testosterone of 240 ng/dL and serum LH and FSH levels were 2 to 3 times above the upper reference range. A karyotype was XXY. The most appropriate recommendation would be:",
+      "options": [
+        "A. Referral to clinic offering assisted reproductive technology including urological consultation for consideration of testicular sperm extraction and intracytoplasmic sperm injection into eggs obtained from his wife.",
+        "B. MRI of the sella.",
+        "C. Treatment with HCG and FSH.",
+        "D. Treatment with clomiphene.",
+        "E. Repeat karyotype."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient has Klinefelter syndrome as diagnosed by karyotype. Other than artificial insemination of the partner using donor spermatozoa or adoption of a child, the best approach to achieve fertility would be to attempt to extract spermatozoa by testicular sperm extraction and intracytoplasmic sperm injection into oocytes obtained from his female partner. The success rates depend on whether the urologist can find spermatozoa in the testis and the quality of the spermatozoa and the oocyte. There is no need for an MRI of the sella or treatment with HCG or clomiphene, because LH and FSH levels are elevated and a pituitary/hypothalamic lesion is not likely. A repeat karyotype could be done but is not necessary because everything fits the present diagnosis of Klinefelter syndrome.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 75-year-old man complains of erectile dysfunction (ED). His libido is mildly decreased. He has had two previous myocardial infarctions and is being treated with a calcium-channel blocker for hypertension and denies angina but appears to be out of breath when he climbs two flights of stairs. His morning serum testosterone is 380 ng/dL with serum LH and FSH in the normal range. The best first-line treatment is:",
+      "options": [
+        "A. Transdermal testosterone to increase his serum testosterone to over 500 ng/dL.",
+        "B. Phosphodiesterase-5 (PDE-5) inhibitor.",
+        "C. A \u03b2-blocker to reduce the stress levels to the penis.",
+        "D. Cardiology evaluation",
+        "E. Referral to a psychologist to evaluate for psychogenic erectile dysfunction."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This elderly man has ED without hypogonadism. The first-line treatment is a PDE-5 inhibitor to increase the vasodilatory functioning in the penis. However, because he is symptomatic on mild exertion, referral to a cardiologist is recommended before treatment with PDE5 inhibitor. The other treatments are unnecessary because they are directed toward treatment of primary or secondary hypogonadism (use of testosterone or aromatase inhibitors). A \u03b2-blocker is not an effective treatment for ED.",
+      "questionNumber": 46
+    },
+    {
+      "question": "An 82-year-old man has decreased libido, decreased muscle strength, and osteopenia on DXA scan. He has a strong family history of prostate cancer. A serum testosterone level was 300 ng/dL with a free testosterone by equilibrium dialysis that is below the reference range. Serum LH was in the high-normal range. A PSA was 7 ng/mL. The best strategy is to:",
+      "options": [
+        "A. Treat with a 5\u03b1-reductase inhibitor.",
+        "B. Treat with testosterone to reverse the manifestation of hypogonadism.",
+        "C. Refer to a urologist for assessment of his prostate.",
+        "D. Treat with an aromatase inhibitor to reduce estradiol levels.",
+        "E. Ignore his complaints because it is normal and acceptable for age"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The appropriate first-line approach is to refer to a urologist to rule out prostate cancer. The patient is elderly and hypogonadism might be present, but his total testosterone is 300 ng/dL with a low free testosterone that is probably the result of an age-associated increase in SHBG. Even if he were hypogonadal, his PSA is elevated, thus requiring a prostate assessment. Although the clinical symptoms are important to the patient, all treatments (testosterone replacement, use of an aromatase inhibitor to increase endogenous testosterone levels) must be delayed until the prostate risk is assessed. Treatment with a 5\u03b1-reductase inhibitor is not appropriate until he has been assessed for possible prostate cancer.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 60-year-old obese man complains of low libido. He had a serum testosterone checked by liquid chromatography tandem mass spectrometry; it was 190 ng/dL. A serum LH level was above the reference range for adult men. The physician decided to treat the patient for hypogonadism with testosterone replacement. Which one of the following adverse events is the most commonly seen?",
+      "options": [
+        "A. Elevated LDL cholesterol",
+        "B. Anemia",
+        "C. Hypercalcemia",
+        "D. Priapism",
+        "E. Erythrocytosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Testosterone increases red blood cell mass by several mechanisms. An increase in both hemoglobin and hematocrit of 5 to 7% from baseline after testosterone is not uncommon. The increase in hemoglobin and hematocrit is dose dependent. Elevation of hematocrit to greater than 54% or hemoglobin greater than 17 g/dL requires either phlebotomy or the withdrawal of testosterone until the hematocrit and hemoglobin decrease into the reference range. Anemia may be seen in testosterone deficiency but not causally associated with testosterone treatment. With physiologic replacement of testosterone, LDL cholesterol levels are not elevated. Hypercalcemia does not occur as a result of testosterone therapy. Priapism may occur with PDE-5 inhibitors but not with testosterone treatment.",
+      "questionNumber": 48
+    },
+    {
+      "question": "Which statement is true regarding pubertal development?",
+      "options": [
+        "A. It is characterized by resetting the positive gonadal steroid feedback loop.",
+        "B. Development of breast and pubic hair results from increasing ovarian estrogen production.",
+        "C. Testosterone is the primary hormone mediating pubertal bone growth in boys.",
+        "D. Prepubertal ovaries produce sex steroids.",
+        "E. Ovaries produce low levels of deoxycorticosterone and androstenedione."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Though produced at low levels, the prepubertal ovaries regulate pituitary production of FSH and LH. Option A is incorrect; pubertal development is characterized by resetting negative feedback loops. Option B is incorrect; pubic hair results from androgen production. Option C is incorrect; estradiol is the primary hormone for both girls and boys. Option E is incorrect; ovaries do not produce measurable deoxycorticosterone, whereas a primary ovarian product is androstenedione. See Ovarian Function in Childhood and Puberty.",
+      "questionNumber": 49
+    },
+    {
+      "question": "Which statement is true regarding ovarian cysts?",
+      "options": [
+        "A. Identification of ovarian cyst is a concerning finding requiring workup.",
+        "B. Palpable masses in a child or postmenopausal woman are not follicular growths.",
+        "C. Ovarian cysts identified radiologically require gynecologic consultation.",
+        "D. Ectopic pregnancy can be definitively diagnosed by ultrasound.",
+        "E. CA-125 is used to diagnose ovarian cancer in all women with pelvic masses."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Women outside of reproductive years do not produce follicles (that would ultimately result in an ovulated oocyte). Option A is incorrect; in the reproductive years, follicular development occurs in all women with menstrual cycles. Option C is incorrect; ovarian cysts, particularly in cycling women, are common and are not pathologic. Option D is incorrect; a pregnancy test is also required. Option E is incorrect; CA-125 may be helpful in postmenopausal women, but is nonspecific in reproductive-age women. See Ovarian Cysts and Adnexal Masses.",
+      "questionNumber": 50
+    },
+    {
+      "question": "Which statement is true regarding precocious puberty?",
+      "options": [
+        "A. Diagnostic investigation is required if puberty initiates before 8 years of age.",
+        "B. It is more common in boys than girls.",
+        "C. Premature adrenarche requires diagnosis and treatment.",
+        "D. Organic brain disease is a common cause of true precocious puberty.",
+        "E. In the majority of girls, the cause of true precocious puberty can be identified."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Organic brain disease occurs in as many as 20% of patients with true precocious puberty. Option A is incorrect; requirement for workup is controversial, and it is often focused on girls younger than 6 years old. Option B is incorrect; it is more common in girls. Option C is incorrect; it is a normal variant and should be managed based on patient concern. Option E is incorrect; in at least 75%, no cause is identified. See Precocious Puberty.",
+      "questionNumber": 51
+    },
+    {
+      "question": "Which statement is true regarding delayed puberty?",
+      "options": [
+        "A. It is defined as absence of thelarche by 13 years, or menarche by 15 years.",
+        "B. Constitutional delay is diagnosed in less than 5% of cases.",
+        "C. Evaluation is not indicated until 15 years of age.",
+        "D. Most congenital anomalies of the m\u00fcllerian ducts cause amenorrhea.",
+        "E. HOX gene mutations are sufficient to disrupt m\u00fcllerian tract development."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The definition is correct as presented. Option B is incorrect; constitutional delay can be diagnosed in about two thirds of cases. Option C is incorrect; evaluation is concerned at any age if there is patient concern. Option D is incorrect; most have little impact on amenorrhea. Option E is incorrect; HOX gene mutations, though essential, are not sufficient. See Delayed Puberty.",
+      "questionNumber": 52
+    },
+    {
+      "question": "Which statement is true regarding polycystic ovary syndrome?",
+      "options": [
+        "A. It is a rare cause of heterosexual pubertal development.",
+        "B. It commonly begins in the third decade.",
+        "C. It is commonly associated with ovulation of more than one oocyte per cycle.",
+        "D. Obesity is a diagnostic criterion for polycystic ovary syndrome (PCOS).",
+        "E. Abnormalities in insulin signaling are common."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Insulin resistance is common, but not required. Option A is incorrect; it is a common cause of heterosexual pubertal development. Option B is incorrect; it commonly begins at or shortly after the initiation of puberty. Option C is incorrect; it is associated with anovulation or oligo-ovulation of one oocyte. Option D is incorrect; obesity can worsen PCOS, but it is not a diagnostic criterion. See Polycystic Ovary Syndrome.",
+      "questionNumber": 53
+    },
+    {
+      "question": "Regarding the menstrual cycle:",
+      "options": [
+        "A. Progesterone withdrawal results in menstrual bleeding.",
+        "B. Prostaglandin synthetase inhibitors work by initiating vasospasm in the endometrium.",
+        "C. Estrogen stimulates cervical mucus thickening and loss.",
+        "D. Estrogen inhibits cornified epithelial cell proliferation.",
+        "E. Ovarian antral follicles are gonadotropin-releasing hormone (GnRH) independent."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Once the former follicle, the corpus luteum, regresses and decreases progesterone production, the cascade is initiated, resulting in menstruation. Option B is incorrect; prostaglandins, not prostaglandin inhibitors, initiate vasospasm. Option C is incorrect; progesterone stimulates cervical mucus thickening, not estrogen. Option D is incorrect; estrogen stimulates cornification. Option E is incorrect; antral follicles are GnRH dependent. See The Normal Menstrual Cycle.",
+      "questionNumber": 54
+    },
+    {
+      "question": "Regarding dysmenorrhea:",
+      "options": [
+        "A. It is rare in postpubertal women.",
+        "B. It can be caused by endometriosis, which is endometrial tissue growing into the uterus.",
+        "C. Prostaglandins induce myometrial ischemia.",
+        "D. It can be treated surgically in most cases.",
+        "E. Oral contraceptives are preferable to surgery when fertility is desired."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Prostaglandins induce vasospasm and myometrial ischemia. Option A is incorrect; it occurs in approximately half of postpubertal women. Option B is incorrect; endometriosis is endometrial glands and stroma outside of the uterus, whereas adenomyosis is endometrial glands found within the myometrium. Option D is incorrect; there is no such thing as a \"painectomy\"; surgical intervention is rarely warranted. Option E is incorrect; oral contraceptives prevent pregnancy and therefore are contraindicated when fertility is desired. See Dysmenorrhea and Endometriosis.",
+      "questionNumber": 55
+    },
+    {
+      "question": "Regarding amenorrhea:",
+      "options": [
+        "A. It is normal for menstrual cycles to be delayed up to 3 months after oral contraceptive pills (OCPs) are discontinued.",
+        "B. In hypogonadal women, arm span is 5 cm greater than height.",
+        "C. Fusion of labia and clitoral enlargement occurs due to androgen in exposure in the third trimester.",
+        "D. Turner syndrome is an example of hypogonadotropic hypogonadism.",
+        "E. Progestin treatment is used to ascertain whether the outflow tract is intact."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "After puberty, height increases to be comparable to arm span. Option A is incorrect; postpill amenorrhea is not a diagnosis; attempt should be made to assess amenorrhea if a menstrual cycle is missed after OCPs are discontinued. Option C is incorrect; labial fusion and clitoromegaly occur in the first 3 months. Option D is incorrect; Turner syndrome is an example of hypergonadotropic hypogonadism. Option E is incorrect; estrogen is required to stimulate endometrial growth before progestin treatment. See Amenorrhea.",
+      "questionNumber": 56
+    },
+    {
+      "question": "Regarding infertility:",
+      "options": [
+        "A. Serum progesterone should be measured on day 3 of the menstrual cycle.",
+        "B. For women with hypogonadotropic hypogonadism, clomiphene is the treatment of choice.",
+        "C. Dexamethasone is an acceptable alternative for ovulation induction.",
+        "D. Gonadotropins induce ovulation by stimulating pituitary release of FSH and LH.",
+        "E. Unsuspected diseases can be treated before pregnancy."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Through preconception counseling and preimplantation genetic diagnosis, diseases that do not affect either parent can be identified, thereby allowing for transfer of unaffected embryos, resulting in pregnancy. Option A is incorrect; progesterone is measured in the luteal phase as a marker of ovulation. Option B is incorrect; clomiphene induces gonadotropin release from the pituitary; \"hypo/hypo\" patients may not respond. Option C is incorrect; dexamethasone may be added to clomiphene, but it is not useful to induce ovulation. Option D is incorrect; gonadotropins are FSH and LH (or LH equivalent); they do not affect pituitary release of gonadotropins. See Infertility.",
+      "questionNumber": 57
+    },
+    {
+      "question": "Regarding sexual dysfunction:",
+      "options": [
+        "A. Vaginal lubrication is due to formation of an exudate in the vagina.",
+        "B. Estrogen deficiency is a very rare cause of dyspareunia.",
+        "C. Vaginismus involves involuntary contractions of muscles surrounding the introitus.",
+        "D. Flibanserin is an effective treatment for dyspareunia.",
+        "E. Testosterone is standard of care for the treatment of sexual dysfunction."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Vaginismus is defined as involuntary contractions of muscles surrounding the introitus. Option A is incorrect; vaginal lubrication is due to formation of transudate, not exudate. Option B is incorrect; estrogen deficiency due to menopause is common. Option D is incorrect; flibanserin has no impact on dyspareunia. Option E is incorrect; testosterone has been tested, but the method of treatment remains undefined. See Sexual Dysfunction.",
+      "questionNumber": 58
+    }
+  ]
+}

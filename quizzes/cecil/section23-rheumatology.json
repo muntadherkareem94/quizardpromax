@@ -1,0 +1,1033 @@
+{
+  "questions": [
+    {
+      "question": "On physical examination, which of the following categories of rheumatic disease, when active, is not typically associated with inflammatory signs of synovitis?",
+      "options": [
+        "A. Systemic autoimmune diseases",
+        "B. Degenerative diseases of bones and joints",
+        "C. Pain syndromes",
+        "D. Seronegative spondyloarthropathies",
+        "E. By definition, they are all associated with synovitis."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Signs of synovial inflammation (synovitis), including erythema, warmth, and swelling, are typically not found in the pain disorders like fibromyalgia, complex regional pain syndrome, adhesive capsulitis, and regional myofascial pain syndromes. It is important to distinguish between arthralgia, which is subjective joint pain without objective signs, and arthritis, in which pain is associated with objective signs of tenderness, swelling, and warmth (synovitis); the latter is sometimes also associated with deformity or limitation of movement.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 65-year-old woman presents with complaints of increasing pain in her fingers and hands. She states that she has morning stiffness in those regions that tends to resolve within 10 to 15 minutes after start of activity. There are no other rheumatic or systemic symptoms, and physical examination of the hands is completely normal. Which of the following is the most likely clinical diagnosis?",
+      "options": [
+        "A. Osteoarthritis",
+        "B. Rheumatoid arthritis",
+        "C. Fibromyalgia",
+        "D. Scleroderma/systemic sclerosis",
+        "E. Systemic lupus erythematosus (SLE)"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Morning stiffness that resolves in 10 to 15 minutes is most characteristic of osteoarthritis. The morning stiffness of rheumatoid arthritis and other inflammatory rheumatic diseases typically lasts longer: at least 1 hour and even for much of the day. Hand involvement with scleroderma/systemic sclerosis is characteristically associated with initial swelling of the digits, then progressing to skin tightness, which was not observed in this patient. Fibromyalgia involves widespread body pain of both sides, including upper and lower extremities, back, and neck. This would be an unusual age for presentation with SLE, which typically begins in women in the age range of 15 to 45 years.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Which of the following would not be considered an important factor in reducing the number of differential diagnoses of a patient with presenting with inflammatory joint pain?",
+      "options": [
+        "A. Occupation and recreational activities",
+        "B. Age and sex",
+        "C. Concomitant medication use",
+        "D. Family history",
+        "E. Global geographic origin"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Connective tissue diseases are ubiquitous around the world and for the most part have a similar incidence and prevalence throughout the globe (see Table 241-2). Although there are some conditions such as Beh\u00e7et disease for which country of origin is considered in making the diagnosis, for the most part geographic region has not been shown to be useful in diagnostic or classification criteria to diagnose a rheumatic disease. In contrast, the clinical onset of a given rheumatic disease is often associated with age (e.g., ranging from autoinflammatory diseases typically presenting in childhood to polymyalgia rheumatica or osteoarthritis presenting in older age groups) and sex (with increased prevalence of autoimmune diseases in women and gout in men). A variety of medications taken chronically can be linked to specific rheumatic syndromes. Positive family histories of autoimmunity co-occur with the index case (patient) who presents with an autoimmune or other rheumatic disorder. For example, one of the classification criteria for ankylosing spondylitis is family history of the disease or of an associated extraspinal disease such as psoriasis or inflammatory bowel disease. Rheumatoid arthritis risk is increased in certain occupations that involve exposure to silica and also by smoking.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Which of the following antibodies is a classification criterion for systemic lupus erythematosus?",
+      "options": [
+        "A. Anti-La",
+        "B. Anti-Ro",
+        "C. Anti-RNP",
+        "D. Anti-Sm",
+        "E. Anti-ribosomal P"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although the other antibodies are often found in patients with lupus, only anti-Sm is a classification criterion. Anti-Sm and anti-RNP commonly occur together, and in lupus, anti-RNP may be more frequent. Anti-RNP, however, has been associated with an entity known as mixed connective tissue disease, which has overlapping features with other rheumatic diseases. As a result, anti-RNP has not been a classification criterion.",
+      "questionNumber": 4
+    },
+    {
+      "question": "What is the antigenic target of rheumatoid factors?",
+      "options": [
+        "A. Lambda light chain",
+        "B. Kappa light chain",
+        "C. Antibody Fc",
+        "D. Antibody Fab",
+        "E. Antibody F(ab')2."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "RFs are IgM antibodies directed to the Fc portion of the IgG molecule. These antibodies likely react with a conformational determinant that becomes available when an IgG molecule binds to its antigen. Denatured IgG preparations may also expose this determinant. Although the predominant antigenic target of RFs is the Fc portion, some antibodies to IgG may react to other parts of the IgG molecule.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Citrulline is a post-translational modification of which amino acid?",
+      "options": [
+        "A. Arginine",
+        "B. Lysine",
+        "C. Asparagine",
+        "D. Aspartic acid",
+        "E. Glutamic acid"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Citrulline is a post-translational modification of arginine that is mediated by an enzyme called peptidylarginine deiminase. The function of this modification is not well understood. Antibodies to citrullinated proteins (ACPAs) can be assayed using synthetic antigens known as cyclic citrullinated peptide (CCP). Antibodies reacting with the peptide are known as anti-CCP. Antibodies can also be assessed using specific citrullinated proteins as antigens.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Antibodies to centromeres occur most commonly in which of the following diseases?",
+      "options": [
+        "A. Progressive systemic sclerosis",
+        "B. CREST syndrome",
+        "C. Polymyositis",
+        "D. Dermatomyositis",
+        "E. Sj\u00f6gren syndrome"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Antibodies to centromere proteins occur most commonly in CREST syndrome or limited scleroderma. This syndrome is characterized by calcinosis, Raynaud phenomenon, esophageal dysmotility, and telengiectasias. Antibodies to centromeres can be recognized by a characteristic staining pattern on the ANA as well as ELISA assay using specific proteins as antigens. In contrast to the CREST syndrome, the diffuse form of progressive systemic sclerosis demonstrates antibodies to a protein called SCL-70 or DNA topoisomerase. The basis for these patterns of expression is unclear. Both antigens are ubiquitous and intracellular. It is difficult to understand why these antibodies would be associated with distinct clinical patterns even if there is some overlap in the clinical features.",
+      "questionNumber": 7
+    },
+    {
+      "question": "Which of the following antibodies produces rim staining by the indirect immunofluorescence assay for antinuclear antibodies?",
+      "options": [
+        "A. Anti-Sm",
+        "B. Anti-RNP",
+        "C. Anti-DNA",
+        "D. Anti-Jo1",
+        "E. Anti-Ro"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The pattern of immunofluorescence reflects the localization of the target antigen. The difficulty with this approach relates to the complexity of sera from patients with rheumatic diseases, especially lupus. Thus, sera may contain many different specificities, and although each may produce a characteristic staining pattern, the ability to see that pattern depends on the concentration of the different antibodies. Sometimes, serum will show different patterns depending on the concentration. Thus, serum can show homogeneous staining at a titer of 1:640 and speckles at a titer of 1:2560. Homogenous staining often results from the presence of antibodies to chromatin. Because antibodies to chromatin and anti-DNA commonly coexist, the rim pattern may not be readily observed.",
+      "questionNumber": 8
+    },
+    {
+      "question": "With regard to imaging of gout, the following statement(s) is (are) true:",
+      "options": [
+        "A. The presence of periarticular articular erosions and soft tissue nodules is pathognomonic.",
+        "B. Osteopenia is a hallmark of the disease.",
+        "C. Dual-energy computed tomography can be of value to assess disease extent.",
+        "D. Chondrocalcinosis has a characteristic appearance on ultrasound in these patients.",
+        "E. B and D are correct."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Dual-energy CT is well suited to assess the distribution of tophaceous deposits in patients with gout due to differences of the absorption characteristics of sodium urate crystals in comparison with other types of deposition diseases. On ultrasound, calcification along the superficial margin of the cartilage is characteristic of gout, giving rise to a double-line sign. (Note: The provided text says \"Answer: E\" but then describes dual-energy CT and ultrasound. Option E is \"B and D are correct\". B is \"Osteopenia is a hallmark\" which is generally false for gout, and D is \"Chondrocalcinosis...\" which is usually CPPD. However, the explanation says \"Dual-energy CT is well suited...\" which matches option C. There might be a discrepancy in the source text's answer key or my reading. Looking closely at the source text: \"Answer: E Dual-energy CT is well suited... On ultrasound, calcification... characteristic of gout, giving rise to a double-line sign.\" This description supports C (Dual-energy CT) and possibly D (if \"double-line sign\" refers to gout urate crystals, though typically double line is CPPD, gout is often tophi/erosions. Wait, source says \"calcification... characteristic of gout\" - this is unusual, usually gout is monosodium urate. But I must follow the source text verbatim. The source text lists Answer E. But the text explanation discusses Dual-energy CT (Option C) and Ultrasound features. Wait, Option E says \"B and D are correct\". B is osteopenia (usually not gout). D is chondrocalcinosis (usually CPPD). The Explanation discusses Dual Energy CT (Option C). This suggests a mismatch in the source. I will provide the answer index as E as per the text, and the explanation as per the text.)",
+      "questionNumber": 9
+    },
+    {
+      "question": "A patient presents with radial-sided wrist pain that extends proximally into the forearm. What imaging test(s) would assess possible etiologies?",
+      "options": [
+        "A. Radiographs alone should be adequate.",
+        "B. MRI",
+        "C. Ultrasound",
+        "D. A and B are correct.",
+        "E. B and C are correct"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical history suggests de Quervain tenosynovitis. Radiographs would allow assessment of the osseous structures but not the adjacent tendons. Although MRI would provide the most complete examination of the radial-sided structures, ultrasound is well suited to evaluate the soft tissues, including the first dorsal compartment tendons. One also could perform ultrasound-guided therapy at the time of diagnosis.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A patient is suspected of having sacroiliitis. What imaging study (ies) would be appropriate to evaluate the patient?",
+      "options": [
+        "A. Radiographs of the SI joints",
+        "B. Computed tomography",
+        "C. Nuclear scintigraphy (bone scan)",
+        "D. MRI",
+        "E. All the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Dedicated radiographic views of the sacroiliac joints should be the first study ordered to assess for possible erosions and may be sufficient to establish the diagnosis. Computed tomography would provide a more sensitive evaluation for subtle erosions as well as the adjacent soft tissues, particularly with the addition of intravenous contrast. Computed tomography provides an ideal method to perform guided therapy or aspiration. Bone scan would provide a sensitive evaluation of the SI joints, but would be abnormal for trauma, inflammatory, or degenerative etiologies. Bone scan would allow a global assessment of the axial and appendicular skeleton to determine whether other sites are potentially affected. MRI allows the best assessment of the bone, adjacent marrow space, and soft tissues.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A patient has shoulder pain and gives a history of prior dislocation. There is an equivocal abnormality on the humeral head on radiographic evaluation. Which additional study should be considered?",
+      "options": [
+        "A. Ultrasound to rule out rotator cuff tear",
+        "B. Noncontrast computed tomography",
+        "C. Additional specialized radiographs to evaluate the scapula",
+        "D. Direct MR arthrography",
+        "E. Nuclear scintigraphy"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although ultrasound could evaluate the rotator cuff, it does not provide adequate assessment of the capsular labral complex. Cross-sectional imaging with intra-articular contrast would best accomplish this. MR arthrography would be optimal. Direct arthrography has been the method of choice in assessing the glenoid labrum, surrounding ligaments, and capsule. CT arthrography is of value, particularly in the postoperative shoulder, and provides indirect imaging of internal structures by coating them with contrast material. A noncontrast CT would be very limited in assessing the labroligamentous complex, even in the presence of a joint effusion due to poor soft tissue contrast.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A patient with early rheumatoid arthritis is being considered for placement on a DMARD. All of the imaging studies below could assess the level of disease activity and response to therapy except:",
+      "options": [
+        "A. 18FDG scan",
+        "B. Radiographs of the hands and wrists",
+        "C. Gray scale ultrasound with power Doppler",
+        "D. MRI with gadolinium",
+        "E. Parametric MRI of distribution volumes of contrast in the extravascular space"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Radiographic findings in rheumatoid arthritis usually occur when there has already been irreversible joint damage. Ideally, therapy would be instituted on a radiographically negative patient. The remaining examinations can provide sensitive evaluation of disease activity before the development of either bone or cartilage erosion.",
+      "questionNumber": 13
+    },
+    {
+      "question": "Osteogenesis imperfecta (OI) syndromes demonstrate:",
+      "options": [
+        "A. Intergenic heterogeneity",
+        "B. Intragenic heterogeneity",
+        "C. Variable expression",
+        "D. Pleiotropy",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "All four of the choices are correct. Mutations in multiple genes can cause OI (intergenic heterogeneity). With a single locus, many different mutant alleles have been discovered (intragenic heterogeneity). Within a given type of OI, relatives with the same mutation can demonstrate different features of varying severity (variable expression). Multiple organ systems are affected in OI (pleiotropy).",
+      "questionNumber": 14
+    },
+    {
+      "question": "Which of the following is not a common feature of Marfan syndrome?",
+      "options": [
+        "A. Pulmonary arteriovenous malformation",
+        "B. Aortic root dilation",
+        "C. Mitral valve prolapse",
+        "D. Pulmonic artery dilation",
+        "E. Aortic dissection"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "All four of the latter choices are common features. Arteriovenous malformations are common in hereditary hemorrhagic telangiectasia but not in Marfan syndrome.",
+      "questionNumber": 15
+    },
+    {
+      "question": "Hypertension is a relatively common feature in which syndrome?",
+      "options": [
+        "A. Osteogenesis imperfecta",
+        "B. Hurler syndrome",
+        "C. Marfan syndrome",
+        "D. Vascular Ehlers-Danlos syndrome",
+        "E. Pseudoxanthoma elasticum"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Because of partial occlusion of the renal arteries, elevated blood pressure can occur in pseudoxanthoma elasticum. None of the other syndromes has a predisposition to hypertension.",
+      "questionNumber": 16
+    },
+    {
+      "question": "Which of the following is not a currently accepted approach to management of Marfan syndrome?",
+      "options": [
+        "A. Prophylactic surgery of the aortic root",
+        "B. Exercise restriction",
+        "C. Annual echocardiography",
+        "D. Gene therapy",
+        "E. Chronic \u03b2-adrenergic blockade"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "At the present time, no approach to correcting the specific mutation in FBN1 is feasible. All of the other approaches are thought to be beneficial.",
+      "questionNumber": 17
+    },
+    {
+      "question": "If treatment is not offered, which of the following conditions is associated with the best prognosis?",
+      "options": [
+        "A. Ehlers-Danlos syndrome, hypermobility type",
+        "B. Osteogenesis imperfecta, type II",
+        "C. Marfan syndrome",
+        "D. Hurler syndrome",
+        "E. Ehlers-Danlos syndrome, vascular type"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The hypermobility form of Ehlers-Danlos syndrome has little to no added mortality. Osteogenesis imperfecta type II is usually lethal in infancy. Marfan syndrome has reduced life expectancy because of aortic dissection. Patients with Hurler syndrome rarely survive to their third decade. Patients with the vascular form of Ehlers-Danlos syndrome are at high risk for death from arterial or bowel rupture.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 78-year-old woman who has had periodic discomfort in her neck and radiating to both shoulders for several years had a fall, landing on her outstretched right arm. She had pain in the right shoulder and weakness on use. At the urgent care center she was found to have some pain on passive motion and was unable to actively abduct the right shoulder. She had a positive drop arm sign of the right shoulder but not of the left one. All upper extremity deep tendon reflexes were normal. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Rotator cuff tendinitis is the main diagnosis.",
+        "B. X-ray examination of the humerus of the injured side is not indicated in this case because tendon injuries are not visualized on plain x-ray film of the shoulder.",
+        "C. Bicipital tendinitis is the likely diagnosis.",
+        "D. A tear of the rotator cuff best fits as the diagnosis.",
+        "E. Cervical spine disc herniation is the most likely diagnosis based on the history of neck pain and arm weakness."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Acute trauma is often the cause of rotator cuff tears, although most tears occur gradually through chronic tendinitis. The positive drop arm sign is typical of a significant rotator cuff tear. Sometimes with trauma, a humeral fracture can occur along with the rotator cuff tear. Pain on abduction and especially on resisted abduction are seen in rotator cuff tendinitis; also, the drop arm sign is typically negative. Bicipital tendinitis usually does not cause shoulder weakness. The clinical picture does not fit a cervical disc herniation, and the reflexes are normal. (Biundo JJ. Regional Rheumatic Pain Syndromes, Primer on the Rheumatic Diseases, 13th ed. New York: Springer; 2006.)",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 51-year-old male insurance agent, whose hobby is wood working, complains of right hand pain of approximately 4 months' duration. He had been doing more wood working during that period until the hand pain began to limit this activity. On examination there were no Heberden nodes of the DIP joints, and the PIP and MCP were not tender or swollen. Moderate-to-severe tenderness on palpation was present over the palm side of the hand at the region of the second and third metacarpal bones. Some swelling was detected at these sites. Crepitus was noted on palpation on flexion of these two digits. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Because rheumatoid arthritis is a likely diagnosis, you should obtain RF, ANA, and hand x-ray films.",
+        "B. Because of his age, he most likely has osteoarthritis of the hand.",
+        "C. He fits the picture of volar flexor tenosynovitis.",
+        "D. A C7 radiculopathy would best explain pain in this part of his hand.",
+        "E. Overuse of his hands has caused carpal tunnel syndrome."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Volar flexor tenosynovitis is one of the most common musculoskeletal syndromes and is frequently overlooked. It is manifest by pain in the palm of the hand. The volar flexor tendon sheath is tender on palpation and thickened. Triggering or snapping of the digit sometimes occurs, especially when more chronic. Overuse of the hand is the usual cause, but is also seen in association with OA of the hands and diabetes. Stretching of the involved digit and an injection of a small amount of a corticosteroid into the tendon sheath is usually helpful. (Biundo JJ. Regional Rheumatic Pain Syndromes, Primer on the Rheumatic Diseases, 13th ed. New York: Springer; 2006.)",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 48-year-old male professional cellist, whose hobby is gardening, has had a 4-month history of right shoulder pain. Pain occurs on various movements of the shoulder, and there is some limitation of movement. Night pain in bed is also reported. On examination, pain limits active abduction to 90 degrees. Less pain is noted on passive abduction, and 180 degrees of abduction is present. The drop arm sign is negative, but pain occurs on active internal rotation of the shoulder. There is no crepitus. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Rotator cuff tendinitis is the most likely diagnosis.",
+        "B. Rotator cuff tear best fits this clinical picture.",
+        "C. Rupture of the biceps tendon is the diagnosis because the drop arm sign is negative.",
+        "D. Adhesive capsulitis (frozen shoulder) is the diagnosis.",
+        "E. OA of the shoulder (glenohumeral joint) is the likely diagnosis, and a plain x-ray film of the shoulder is needed to confirm the diagnosis."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The typical physical examination findings of rotator cuff tendinitis are pain on active abduction, less pain on passive abduction, and more pain on resistive abduction. Loss of motion on active movements can occur when more severe. Also, pain may occur on active internal and on external rotation. In addition to the physical examination, ultrasonography and MRI can detect tendinitis, but not plain x-ray examination. In adhesive capsulitis restriction, the range of motion in all directions is usually seen. The full range on abduction and other motions in this case are not typical of a frozen shoulder. OA of the shoulder would not have had a pain history of only 4 months, and it is a much less frequent entity than rotator cuff tendinitis. Crepitus on range of motion is very common in OA of the glenohumeral joint. (Biundo JJ. Regional Rheumatic Pain Syndromes, Primer on the Rheumatic Diseases, 13th ed. New York: Springer; 2006.)",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 76-year-old woman with a known history of moderate OA of both knees and a partially torn right medial meniscus experienced pain in her right knee after stooping down to clean something off the floor. The next day she had discomfort and fullness behind her right knee and swelling of her lower leg and ankle. She was able to walk but had a limp. She was seen that day by her primary care physician for evaluation. Which of the following is the best course of action?",
+      "options": [
+        "A. Begin treatment with heparin or enoxaparin for a deep vein thrombosis.",
+        "B. Give oral prednisone for days as a tapering dose for an acute flare of the OA of her knee.",
+        "C. Obtain a new x-ray film of the knees, with a standing AP and lateral view of the involved leg.",
+        "D. Because of the acute flare of knee symptoms, give colchicines for a possible acute attack of gout.",
+        "E. Obtain a Doppler ultrasound of the right leg for a deep vein thrombosis and an ultrasound image of the right knee to identify a Baker cyst that has dissected, causing a pseudothrombophlebitis picture."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Popliteal cysts, also known as Baker cysts, are often asymptomatic. However, at times they may enlarge as a result of increasing pressure from a synovial effusion of the knee, flowing through a one-way valve from the knee to the popliteal cyst. The cyst can at times dissect downward, causing swelling of the leg and simulating thrombophlebitis. Thus the name given to the syndrome is pseudothrombophlebitis. The swelling of the leg may resolve on its own after several days. Often, a corticosteroid injection into the knee joint may help by decreasing the inflammation and synovial effusion of the knee. OA of the knee should not produce swelling of the lower leg, nor should gout. Treatment with anticoagulants should not be given unless the diagnosis of DVT is confirmed. (Biundo JJ. Regional Rheumatic Pain Syndromes, Primer on the Rheumatic Diseases, 13th ed. New York: Springer; 2006.)",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 52-year-old moderately obese man complains of pain in his right foot that has been present for approximately 4 months. The pain has become worse recently, and he has had to stop the walks he was taking for exercise. The pain is described to be more in the rear foot and is particularly bad when he first gets out of bed in the morning. He has no history of gout or other arthritis except for some back pain. On examination there is no joint swelling. He does have pes cavus, and tenderness of the plantar surface of the rear foot. His calf muscles are also tight. What is the most likely diagnosis and/or the best course of evaluation and treatment?",
+      "options": [
+        "A. Order an MRI of the foot or technetium bone scan for possible stress fracture.",
+        "B. Inject the calcaneus with a steroid, because that is the best initial treatment for heel pain.",
+        "C. Make a tentative diagnosis of plantar fasciitis and treat with analgesics, stretching of calf and plantar fascia, and use of a heel cushion as the initial treatment.",
+        "D. Obtain uric acid level and start treatment with colchicine.",
+        "E. Obtain orthopedic consultation for possible Achilles tendon tear."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The complaint of morning foot pain, which is called \"first step pain,\" is typical of plantar fasciitis. Tenderness often elicited on pressure exerted on the plantar surface of the calcaneus. Trauma to the foot from prolonged walking, tight calf muscles, high arched foot with tight plantar fascia, and obesity are factors related to acquiring plantar fasciitis. A steroid injection of the calcaneal area is often helpful but is not the first line of treatment. With Achilles tendinitis/tear the pain is in the posterior heel and not the plantar surface. A stress fracture is more likely to occur in the metatarsal area and only very rarely occur in the calcaneus. (Biundo JJ. Regional Rheumatic Pain Syndromes, Primer on the Rheumatic Diseases, 13th ed. New York: Springer; 2006.)",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 32-year-old woman presents with 3 weeks of symmetrical swelling and stiffness in her PIPs and MCPs. The most helpful laboratory test result in establishing a diagnosis of RA in this patient would be:",
+      "options": [
+        "A. ESR of 65 mm/hour.",
+        "B. RF of 120 IU (normal <40).",
+        "C. Anti-CCP of 87 (normal <20).",
+        "D. Positive ANA."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The presence of anti-CCP antibodies in a patient with an inflammatory arthritis is 99% specific for the diagnosis of RA even when it is only of short duration as in this patient with only 3 weeks of disease. This is critically important because it allows very early institution of DMARD therapy. The presence of a positive ANA, an elevated RF, or elevated ESR would not be particularly helpful-all are nonspecific.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 40-year-old attorney is diagnosed with RF- and CCP-positive rheumatoid arthritis. His mortality risk is increased, and he is most likely to die from which of the following?",
+      "options": [
+        "A. Lymphoma",
+        "B. Pulmonary fibrosis from RA",
+        "C. Infections related to RA and its therapies",
+        "D. Coronary artery disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Heart disease is by far the biggest killer of patients with RA. Rheumatologists should do everything possible to get disease activity under control, and PCPs should do everything possible to control other risk factors, including ideal management of BP and cholesterol. RA patients have at least a two-fold increased risk for lymphoma, have increased risk for infections (particularly when treated with steroids or biologic agents), and can get pulmonary fibrosis, but these all have a small impact compared to that of heart disease.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 28-year-old accountant with RA is considering another pregnancy. Reasons for concerns for conception and the health of her fetus during the first trimester include which of the following?",
+      "options": [
+        "A. She is currently on 5 mg of prednisone.",
+        "B. She is currently taking sulfasalazine.",
+        "C. She has a history of treatment with leflunomide.",
+        "D. She is taking Naprosyn 500 mg."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Leflunomide is a significant teratogen and has a half-life that is extremely prolonged. Any potential mother who has ever taken it needs to have blood levels drawn before conception. Leflunomide can be rapidly eliminated from the body by treatment with cholestyramine. Prednisone is considered safe in pregnancy; significant data suggest that sulfasalazine is well tolerated by both mother and child and NSAIDs are safe until the last trimester.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 52-year-old woman with RA treated with methotrexate and adalimumab presents to the ER with fevers, cough, and increasing shortness of breath. A chest x-ray film shows diffuse patchy infiltrates. You would:",
+      "options": [
+        "A. Admit, stop her adalimumab, and give her broad-spectrum antibiotics.",
+        "B. Admit, stop both her adalimumab and methotrexate, and aggressively pursue work-up for infectious and inflammatory etiologies.",
+        "C. Treat her for community-acquired pneumonia.",
+        "D. Admit, stop adalimumab, and aggressively pursue work-up for infectious etiology."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All TNF inhibitors have a black box warning for fatal opportunistic infections. Tuberculosis, histoplasmosis, coccidioidomycosis, pneumocystis, legionellosis, and others have all been reported. The key to patient survival is aggressive diagnosis so appropriate treatment can be started rapidly. Methotrexate can be associated with unusual infections rarely, but the biggest concern here is that the patient may have methotrexate pneumonitis. This can be fatal if the methotrexate is not stopped. It usually presents with low-grade fevers, nonproductive cough, increasing dyspnea, and patchy infiltrates on chest x-ray films. Treatment of methotrexate pneumonitis after stopping methotrexate is usually supportive, but occasionally high-dose steroids may be indicated.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 55-year-old carpenter is newly diagnosed with RA. His medical history includes type II diabetes for 15 years. CBC shows low-grade anemia with normal red cell indices, Hgb A\u2091c is 7, creatinine is 2.1, and urinalysis shows 3+ proteinuria. Laboratory studies are otherwise unremarkable. Appropriate initial DMARD therapy would be:",
+      "options": [
+        "A. Cyclosporine.",
+        "B. Hydroxychloroquine.",
+        "C. Methotrexate.",
+        "D. Sulfasalazine."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although methotrexate at the doses used to treat RA rarely affects the kidney, well-functioning kidneys are important for the clearance of methotrexate. Methotrexate, if used, should be used with extreme caution and close monitoring in this situation. Cyclosporine, although effective in some cases of RA, also has renal toxicity and is not a good choice. Hydroxychloroquine is the best choice here-in addition to being effective against RA, it has been shown to lower blood sugar, particularly in type II diabetes. Additionally, patients with RA who are on hydroxychloroquine have a 60% reduction in their risk for incident diabetes. Finally, sulfasalazine would be a possible choice but not as good as hydroxychloroquine.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 28-year-old man presents with a 2-year history of low back pain and intermittent arthritis in the lower extremity. Physical examination demonstrates bilateral Achilles tendonitis and tenderness to direct pressure over the sacroiliac joints. Which of the following would not support the diagnosis of spondyloarthritis (SpA)?",
+      "options": [
+        "A. Presence of HLA-B27",
+        "B. History of anterior uveitis",
+        "C. Positive rheumatoid factor",
+        "D. Elevated CRP",
+        "E. History of inflammatory bowel disease"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The history and the other optional features would be entirely consistent with a diagnosis of SpA. HLA-B27 is strongly associated with SpA in general, and its strongest association is with ankylosing spondylitis (AS). Anterior uveitis occurs in approximately 30% of AS cases, and is itself associated with HLA-B27 even when AS is not present. Positive rheumatoid factor is characteristic of rheumatoid arthritis but not of SpA, so it would not be expected to be positive in such patients. Elevated C-reactive protein (CRP) is a nonspecific marker of inflammation and would be commonly seen in patients with active SpA. Inflammatory bowel disease occurs in approximately 10% of AS cases, and its presence strongly suggests that the underlying arthritis is part of the SpA spectrum.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 32-year-old man presents with pain and swelling of one ankle and one knee. The history reveals that he had just returned from a trip to South America and developed diarrhea that was now subsiding. He denied any eye inflammation or skin lesions. Physical examination confirmed tenderness and swelling of an ankle and a knee. The next appropriate diagnostic test would be which of the following?",
+      "options": [
+        "A. Aspiration of the knee swelling and culture of the synovial fluid",
+        "B. Initiate a course of broad-spectrum antibiotics.",
+        "C. X-rays of the lumbar and cervical spine",
+        "D. Check a blood test for the presence of antinuclear antibodies.",
+        "E. Initiate an empirical trial of methotrexate."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A patient with new-onset swelling in the joints, particularly when one or two joints are affected, should always raise the possibility of septic arthritis. When there has been a recent infection elsewhere in the body, it is possible the inciting infection could spread by a hematogenous route to seed the joint. Although the history is suggestive of reactive arthritis (ReA), it is important to rule out septic arthritis with certainty before entertaining that diagnosis. Culture of synovial fluid is the definitive test to rule out septic arthritis. Empirical use of broad-spectrum antibiotics rarely has a place in the management of new-onset arthritis. The first step is to make a diagnosis. X-rays of the spine are important in the evaluation of inflammatory back pain, but in this case there is only peripheral joint involvement. If the course of the arthritis becomes chronic or back pain develops over time, x-rays at that point would be appropriate. Antinuclear antibodies in the serum are the hallmark of many autoimmune rheumatic diseases in particular, lupus. But with the clinical presentation in this case, there are no features to implicate lupus or related conditions, and it would not be appropriate to search for antinuclear antibodies. The immediate priority is to rule out septic arthritis. It would be inappropriate to institute methotrexate before that is resolved.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 30-year-old man presents with worsening back pain. The history reveals that this has been present for the past 3 years and is increasing in severity. It is characterized by early-morning stiffness, nocturnal pain, and modest improvement with exercise. He initially noted an improvement with an NSAID, but subsequently that effect was lost, and he has tried two other NSAIDs without effect. Physical examination reveals limitation in forward flexion of the lumbar spine. An AP x-ray of the pelvis reveals bilateral erosive changes in the sacroiliac joints. A lateral x-ray of the lumbar spine reveals squaring of several vertebral bodies. The next step in pharmacologic treatment of this condition is which of the following?",
+      "options": [
+        "A. Methotrexate",
+        "B. Leflunomide",
+        "C. Sulfasalazine",
+        "D. TNF inhibitor biologic agents",
+        "E. Azathioprine"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The patient meets the diagnostic criteria for ankylosing spondylitis (AS). He has long-standing back pain that has features of inflammatory back pain and has limitation in spinal mobility. The presence of bilateral erosive sacroiliitis provides imaging support for the diagnosis of AS. He has had an adequate trial of NSAIDs, and his back pain has not responded adequately to these agents. The classical DMARDs used in rheumatoid arthritis-methotrexate, leflunomide, sulfasalazine, and azathioprine-have proved ineffective in controlling the spinal inflammation seen in AS. On the other hand, the TNF inhibitors (infliximab, etanercept, adalimumab, golimumab) have established efficacy in controlling the signs and symptoms of AS.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 35-year-old woman is under your care for ankylosing spondylitis (AS). She is HLA-B27 positive and has no extra-articular features accompanying her back pain. Her symptoms have been controlled with NSAIDs in combination with physiotherapy and exercises. She has an 8-year-old son, and she is inquiring about his current and future health prospects. Which of the following would be advisable in this circumstance?",
+      "options": [
+        "A. The son should be checked for HLA-B27 status.",
+        "B. The mother should be advised that the likelihood of her son developing AS is less than 10%.",
+        "C. The son should be advised to avoid sports and physical activities.",
+        "D. Preventive low-dose NSAIDs should be instituted for the son.",
+        "E. The son should be advised to avoid foreign travel in order to avoid food-borne pathogens."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "There is a 50% chance that any particular child of a B27-positive patient will be B27 positive, but there is only a 20% chance of a B27-positive individual with a positive family history developing AS. So the likelihood of a child developing AS when he has a B27-positive parent with AS is maximally 10%. It would not be advisable to test an asymptomatic child for HLA-B27, because it has low predictive value (as discussed earlier) and could introduce chronic anxiety about future disease, which is unwarranted. There is no reason to limit the sports and recreation of the child. Maintaining general fitness and muscle strength and posture is sound advice even if there is a greater chance of later arthritis than in the general population. There is no evidence that sports-related injuries trigger AS. There is no evidence that NSAIDs prevent the subsequent development of SpA in individuals who are genetically predisposed to SpA. Chronic NSAID therapy carries its own risks and would not be justified in an asymptomatic individual. There is a theoretical concern that being B27 positive could increase the risk of reactive arthritis after a food-borne pathogen illness. This might lead to advising a patient with prior diagnosis of ReA to minimize exposure to food-borne pathogens, but it would be inappropriate to restrict travel for anyone who has never had an episode of ReA.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 19-year-old female patient has developed a painful swollen knee over the course of 7 days. There is no history of trauma and no associated skin lesions or ocular complaints. The patient relates a history that she has just returned from a trip abroad with the family and had a transient diarrheal episode while traveling. Further questioning reveals that she has had two prior episodes of diarrhea in the past year, each associated with crampy abdominal pain, but on each occasion the diarrhea was self-limited and she did not seek medical attention. Which of the following would not be an appropriate next step in the management of this patient?",
+      "options": [
+        "A. Referral to a gastroenterologist for ileocolonoscopy",
+        "B. Culture of a stool sample",
+        "C. Aspiration of the knee and culture of synovial fluid",
+        "D. Check hemoglobin and ESR.",
+        "E. Institute a 2-week course of ciprofloxacin."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient has developed arthritis in the setting of a recurrent diarrheal course. The key differential is between reactive arthritis (ReA) and enteropathic arthritis (EA) as part of inflammatory bowel disease (IBD). In either case, it would be inappropriate to institute an empirical course of antibiotics before a diagnosis is made. In neither postdysenteric ReA nor in IBD- associated arthritis is there evidence that antibiotics alter the course of the arthritis. It would be appropriate in this case to determine whether the recurrent diarrhea could be a manifestation of Crohn disease or ulcerative colitis, and ileocolonoscopy would be indicated to address that question. Recurrent diarrhea might reflect an infectious agent such as Salmonella. Stool cultures would be an appropriate test to address that. Culture of synovial fluid is the definitive test to rule out septic arthritis. Both Salmonella and Yersinia can cause a septic arthritis, so it is appropriate to exclude an infection in the joint before proceeding to other management decisions. Anemia of chronic disease might raise the suspicion that a chronic process, such as IBD, has been present for some time. Elevation in CRP or ESR is appropriate in the work-up of this patient, although this would not differentiate ReA from IBD-related arthritis. These acute phase reactants can serve as useful surrogate markers to monitor response to treatment.",
+      "questionNumber": 33
+    },
+    {
+      "question": "Data from genome-wide association studies identify gene variants encoding the following protein as associated with a diagnosis of systemic lupus erythematosus (SLE):",
+      "options": [
+        "A. CD40",
+        "B. Interferon regulatory factor 5 (IRF5)",
+        "C. Interferon-y",
+        "D. Interleukin-17",
+        "E. Adiponectin"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Polymorphisms in IRF5 are associated with SLE. IRF5 is a transcription factor that is activated following cell triggering through endosomal toll-like receptors and induces transcription of type I interferon and other proinflammatory mediators. CD40 is a cell surface molecule expressed on B cells, monocytes, and dendritic cells that interacts with CD40 ligand on activated T cells. Genetic variants in the gene encoding CD40 have not been reported in SLE. Interferon-y and interleukin-17 are T-cell products that may be implicated in lupus pathogenesis, but significant genetic polymorphisms in their genes have not been associated with SLE. Adiponectin is a product of adipocytes and has not been described as having a role in lupus susceptibility.",
+      "questionNumber": 34
+    },
+    {
+      "question": "Environmental factors can trigger initiation or exacerbation of SLE. One mechanism by which drug-induced lupus can be triggered is through:",
+      "options": [
+        "A. Induction of regulatory T cells",
+        "B. Damage to renal podocytes",
+        "C. DNA demethylation",
+        "D. Increased proteinuria",
+        "E. Hemolysis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Procainamide is an antihypertensive agent that has been associated with induction of lupus. This drug affects gene expression and cell function through demethylation of DNA, resulting in self-reactive T cells. Regulatory T cells contribute to protection from autoimmune disease rather than induction of autoimmune disease. Damage to podocytes might be one mechanism of renal damage but has not been associated with drug-induced lupus. Increased proteinuria and hemolysis are clinical manifestations of lupus but do not represent mechanisms that account for drug-induced lupus.",
+      "questionNumber": 35
+    },
+    {
+      "question": "Clinical manifestations of lupus can include:",
+      "options": [
+        "A. Seizures",
+        "B. Renal failure",
+        "C. Myocardial infarction",
+        "D. Pericarditis",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical manifestations of lupus are protean and can affect any organ system. It should be noted that premature atherosclerotic cardiovascular disease is frequent among lupus patients and can contribute to increased mortality.",
+      "questionNumber": 36
+    },
+    {
+      "question": "Autoantibodies specific for the following antigen are specific for SLE:",
+      "options": [
+        "A. Ro",
+        "B. Centromere",
+        "C. Ribonucleoprotein (RNP)",
+        "D. Scl70",
+        "E. Smith (Sm)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Autoantibodies associated with a diagnosis of SLE include those targeting protein components of ribonucleoprotein particles, such as Ro, which is also associated with Sj\u00f6gren syndrome and rheumatoid arthritis. Anti-RNP antibodies can be seen in patients with SLE or mixed connective tissue disease. Anticentromere and anti-Scl70 antibodies are associated with systemic sclerosis. Anti-Sm antibodies are nearly exclusive to patients with SLE.",
+      "questionNumber": 37
+    },
+    {
+      "question": "Which therapeutic agent is appropriate for both induction and maintenance therapy for class III or IV lupus nephritis?",
+      "options": [
+        "A. Intravenous pulse glucocorticoid therapy",
+        "B. Azathioprine",
+        "C. Cyclophosphamide",
+        "D. Mycophenolate mofetil",
+        "E. Rituximab"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Induction therapy for lupus nephritis is often conducted with cyclophosphamide, along with IV pulse glucocorticoid therapy. However, recent data indicate that mycophenolate mofetil (MMF) can be as effective as cyclophosphamide. In addition, MMF has shown efficacy as a maintenance therapy. Intravenous pulse glucocorticoid therapy and cyclophosphamide are appropriate for induction therapy but should not be used as a chronic maintenance therapy for lupus nephritis. Azathioprine is appropriate as a maintenance therapy but is inferior to other options as induction therapy. Rituximab has not shown efficacy in randomized controlled clinical trials for lupus nephritis but nonetheless is sometimes used in that clinical setting if other therapies are not successful.",
+      "questionNumber": 38
+    },
+    {
+      "question": "Which of the following does not contribute to the pathogenesis of systemic sclerosis (SSc)?",
+      "options": [
+        "A. Vascular wall remodeling",
+        "B. Tissue fibrosis",
+        "C. Vasculitis",
+        "D. T cells",
+        "E. Hypoxia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Vasculitis does not typically occur in SSc. Vascular remodeling leading to hypoxia, inflammation, and fibrosis are the hallmarks of the disease.",
+      "questionNumber": 39
+    },
+    {
+      "question": "Which is a characteristic autoantibody seen in SSc patients?",
+      "options": [
+        "A. Anticentromere",
+        "B. Anti-CCP",
+        "C. Antihistone",
+        "D. Antiphospholipid",
+        "E. Anti-Smith"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Anticentromere is a hallmark SSc-associated autoantibody, whereas the other autoantibodies are seen in rheumatoid arthritis (B), lupus (C, E), and the antiphospholipid syndrome (D).",
+      "questionNumber": 40
+    },
+    {
+      "question": "Which is a major factor in SSc morbidity?",
+      "options": [
+        "A. Glomerulonephritis",
+        "B. Episcleritis",
+        "C. Amyloidosis",
+        "D. Pulmonary hypertension",
+        "E. Bowel infarction"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Pulmonary hypertension develops in up to 15% of SSc patients and is a major cause of morbidity and mortality. The other clinical features are uncommon in SSc and indicate other autoimmune or rheumatic diseases.",
+      "questionNumber": 41
+    },
+    {
+      "question": "In patients with SSc-associated lung disease, lung biopsy may show:",
+      "options": [
+        "A. Honeycombing",
+        "B. Interstitial fibrosis",
+        "C. Plasma cell accumulation",
+        "D. Intimal proliferation in the small vessels",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "All of the listed pathologic features can be noted in lung biopsies from patients with SSc-associated interstitial lung disease.",
+      "questionNumber": 42
+    },
+    {
+      "question": "Which of the following drugs may contribute to scleroderma renal crisis?",
+      "options": [
+        "A. NSAIDs",
+        "B. Glucocorticoids",
+        "C. Mycophenolate",
+        "D. Rituximab",
+        "E. Penicillamine"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The use of glucocorticoids has been shown to increase the risk of new-onset scleroderma renal crisis in patients with SSc.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 59-year-old woman is referred to your office because of dry mouth, grittiness of eyes, and a rash on both legs. Physical examination discloses unilateral parotid enlargement and a purpuric rash of the lower extremities. Past medical history is unremarkable to date. Among the following diagnostic tests, which one is the most useful to establish the diagnosis of Sj\u00f6gren syndrome?",
+      "options": [
+        "A. Complement levels",
+        "B. Cryoglobulins",
+        "C. Serum protein electrophoresis",
+        "D. Salivary flow",
+        "E. Anti-Ro/SSA antibodies"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Anti-Ro/SSA positivity is one of the two required 2002 European/ American classification criteria for Sj\u00f6gren syndrome (SS) and one out of the three 2012 preliminary ACR/SICCA 2012 criteria. Low complement levels, especially C4, and cryoglobulinemia have been designated as adverse prognostic factors for lymphoma development and mortality among SS patients. However, they are not included in the classification criteria. Hypergammaglobulinemia and monoclonal gammopathy are likewise not included in the classification criteria of SS. Salivary flow rate of less than 1.5 mL/15 minutes is an objective criterion of oral dryness, included in the 2002 European/ American classification SS criteria but not in the 2012 preliminary ACR/ SICCA criteria. It is not as specific as anti-Ro/SSA antibodies.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 55-year-old woman presents with mild pain affecting her hands as well as ocular and mouth dryness for 10 years. Her examination reveals positive ocular staining for both eyes, revealing keratoconjunctivitis sicca, positive anti-Ro/SSA antibodies, and negative hepatitis C virus and HIV serology. Additional testing included complete blood count, revealing lymphopenia with normal hemoglobin levels and platelet counts. Mixed monoclonal cryoglobulinemia and low C4 levels were also detected. Which of the following statements is true?",
+      "options": [
+        "A. The patient fulfills both the 2002 American/European Consensus Group (AECG) criteria and the 2012 preliminary ACR/SICCA criteria for primary SS (pSS).",
+        "B. The patient fulfills only the 2002 AECG criteria for pSS.",
+        "C. A minor salivary gland biopsy is mandatory to classify the patient as having SS according to 2002 AECG group criteria for pSS.",
+        "D. A minor salivary gland biopsy is mandatory to classify the patient as having SS according to 2012 preliminary ACR/SICCA criteria for pSS.",
+        "E. The patient suffers from sicca asthenia polyalgia syndrome."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Two out of three 2012 preliminary ACR/SICCA criteria are fulfilled as well as four out of six 2002 AECG criteria. Because anti-Ro/SSA antibodies are present, no histopathologic confirmation is required for the classification of pSS according to 2002 AECG criteria in the presence of subjective and objective symptoms and signs of salivary and lacrimal gland involvement. Sicca asthenia polyalgia syndrome is a diagnosis of exclusion and refers to the presence of fibromyalgia-like features in association with sicca symptomatology.",
+      "questionNumber": 45
+    },
+    {
+      "question": "Which of the following is the best option for improving a patient's ocular dryness?",
+      "options": [
+        "A. Methotrexate",
+        "B. Pilocarpine",
+        "C. Hydroxychloroquine",
+        "D. Ocular cyclosporine drops",
+        "E. Infliximab"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ocular cyclosporine drops have proved useful in the treatment of dry eye. The efficacy of methotrexate on ocular dryness has never been demonstrated. Ocular dryness is less frequently improved than salivary dryness with secretagogues (i.e., pilocarpine). The efficacy of hydroxychloroquine on dryness has not been demonstrated. No efficacy of infliximab has been demonstrated in primary Sj\u00f6gren syndrome.",
+      "questionNumber": 46
+    },
+    {
+      "question": "Which of the following features is not considered an adverse predictor for lymphoma development in Sj\u00f6gren syndrome?",
+      "options": [
+        "A. Presence of splenomegaly",
+        "B. Presence of purpura",
+        "C. Salivary flow rate less than 1 mL/15 minutes",
+        "D. Presence of persistent parotid gland enlargement",
+        "E. Presence of CD4 lymphopenia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "All the other items are predictive factors of lymphoma. An association has not been reported between salivary flow rate and risk for lymphoma development.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 55-year-old woman is referred to your department for polysynovitis and palpable purpura. She fulfills the AECG 2002 criteria for Sj\u00f6gren syndrome. Which of the following treatments would you recommend to treat these systemic manifestations?",
+      "options": [
+        "A. Infliximab",
+        "B. Intravenous immunoglobulin (IVIG)",
+        "C. Pilocarpine",
+        "D. Rituximab",
+        "E. Cyclophosphamide"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Three randomized controlled trials (RCTs) and one registry study suggested possible efficacy of rituximab in primary Sj\u00f6gren syndrome, at least in some systemic manifestations. Two RCTs did not demonstrate any efficacy of tumor necrosis factor blockers (i.e., infliximab) in primary Sj\u00f6gren syndrome. IVIG has been proposed in open studies in the treatment of Sj\u00f6gren syndrome-associated neuropathies without vasculitis but never has demonstrated any efficacy in other systemic manifestations. The secretagogue pilocarpine has no effect on systemic manifestations. The systemic manifestation presented by the patient is not severe enough to propose cyclophosphamide.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 65-year-old man developed slowly progressive difficulty arising from a chair and experienced buckling of the knees while walking, resulting in several falls. Muscle biopsy showed endomysial inflammation and rimmed vacuoles. The correct diagnosis is:",
+      "options": [
+        "A. Polymyositis",
+        "B. Dermatomyositis",
+        "C. Inclusion body myositis",
+        "D. Immune-mediated necrotizing myopathy",
+        "E. Overlap syndrome"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Inclusion body myositis (IBM). IBM is a later-onset, slowly progressive disease presenting with prominent quadriceps or finger flexion weakness. In this case the knee buckling indicates quadriceps weakness. Endomysial inflammation can be seen in either polymyositis or IBM, but rimmed vacuoles confirm IBM as the correct diagnosis.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 35-year-old woman developed proximal weakness and a purplish papular rash over the dorsum of the hands. A skin biopsy might be expected to show what feature and lead to which diagnosis?",
+      "options": [
+        "A. Lymphocytoclastic vasculitis AND polymyositis",
+        "B. Interface dermatitis AND dermatomyositis",
+        "C. Granulomas AND granulomatous myositis",
+        "D. Necrotic cells AND necrotizing myopathy",
+        "E. Necrotic cells AND dermatomyositis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has Gottron papules (see Fig. 253-2A), virtually pathognomonic for dermatomyositis. Skin biopsy in dermatomyositis shows an interface dermatitis, with pathology of the basal layer of keratinocytes lying at the border (interface) between the epidermis and the dermis.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 60-year-old man with proximal weakness and mildly elevated serum creatine kinase (CK) is diagnosed with polymyositis and treated with high-dose prednisone 80 mg/day for several months, before slow taper of prednisone to 30 mg/day by month 6. His serum CK improves, but no improvement in strength is present, and he appears mildly weaker. Which statement is most likely true?",
+      "options": [
+        "A. He has refractory polymyositis and needs more aggressive therapy.",
+        "B. He has developed steroid myopathy in addition to his polymyositis.",
+        "C. The diagnosis of polymyositis should be reconsidered, and he could undergo a second muscle biopsy or blood diagnostic testing for anti-CN1A autoantibodies as the next step.",
+        "D. The diagnosis of polymyositis should be reconsidered; he may have inclusion body myositis or a limb-girdle muscular dystrophy.",
+        "E. C and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Patients with IBM in particular, and sometimes limb-girdle muscular dystrophy, are often misdiagnosed as having polymyositis. Serum CK, modestly elevated in IBM, may lower with prednisone treatment, but patients rarely have improved strength.",
+      "questionNumber": 51
+    },
+    {
+      "question": "Which syndrome can be paraneoplastic and should prompt thorough investigation for an underlying malignancy?",
+      "options": [
+        "A. Dermatomyositis",
+        "B. Polymyositis",
+        "C. Inclusion body myositis",
+        "D. Granulomatous myositis",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Dermatomyositis. A new diagnosis of dermatomyositis should prompt a thorough investigation for an underlying malignancy, with reported rates estimated at 15 to 23%. The types of malignancy found in patients with dermatomyositis generally reflect those found in age-, sex-, and population-matched persons without dermatomyositis. Therefore breast, lung, and colorectal cancer are the three most common cancers from Western country cohorts, whereas nasopharyngeal carcinoma is the most common dermatomyositis-associated cancer in Asian studies. This finding further supports the role of dermatomyositis as a paraneoplastic process that can occur with virtually any kind of cancer. (Ungprasert P, Bethina NK, Jones CH. Malignancy and idiopathic inflammatory myopathies. N Am J Med Sci. 2013;5:569-572.)",
+      "questionNumber": 52
+    },
+    {
+      "question": "Normal serum CK in a patient with proximal muscle weakness excludes the diagnosis of:",
+      "options": [
+        "A. Dermatomyositis",
+        "B. Inclusion body myositis",
+        "C. Muscular dystrophy",
+        "D. Granulomatous myositis",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "None of the above. Serum CK is a helpful indicator of muscle disease when elevated, but normal CK does not exclude muscle disease. In particular, patients with very active dermatomyositis frequently have normal serum CK.",
+      "questionNumber": 53
+    },
+    {
+      "question": "Immunosuppressive therapy is known to be futile for which disease associated with vascular inflammation?",
+      "options": [
+        "A. Buerger disease (thromboangiitis obliterans)",
+        "B. Granulomatosis with polyangiitis (formerly Wegener granulomatosis)",
+        "C. IgA vasculitis (Henoch-Sch\u00f6nlein purpura)",
+        "D. Giant cell arteritis",
+        "E. Mixed cryoglobulinemia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The only effective intervention known for Buerger disease is smoking cessation. Neither immunosuppression nor anticoagulation is of any demonstrable benefit in relieving the severe digital ischemia associated with this disease.",
+      "questionNumber": 54
+    },
+    {
+      "question": "Which form of systemic vasculitis is most likely to present with an orbital pseudotumor?",
+      "options": [
+        "A. Takayasu arteritis",
+        "B. Granulomatosis with polyangiitis (formerly Wegener granulomatosis)",
+        "C. Microscopic polyangiitis",
+        "D. Polyarteritis nodosa",
+        "E. Beh\u00e7et syndrome"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Two common ocular manifestations of granulomatosis with polyangiitis are scleritis and orbital pseudotumor. The latter can lead to proptosis and vision loss if blood circulation to the eye is compromised by the retrobulbar mass.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 24-year-old man from Lebanon presents with multiple aphthous ulcers, bilateral ocular erythema, tender erythematous nodules over his anterior legs, and a deep venous thrombosis. An ophthalmologic examination reveals severe bilateral uveitis affecting both the anterior and posterior compartments of the eye. In addition to anticoagulation and the institution of glucocorticoid therapy, what is the most appropriate approach to treating his disease at this time?",
+      "options": [
+        "A. Intravenous cyclophosphamide",
+        "B. Azathioprine",
+        "C. Intravenous immunoglobulin",
+        "D. Tumor necrosis factor inhibition",
+        "E. B-cell depletion"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Tumor necrosis factor inhibition is highly effective in Beh\u00e7et disease and is employed in the presence of severe disease manifestations such as posterior uveitis or central nervous system (CNS) disease.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 32-year-old woman presents with the rapid onset of the worst headache of her life 1 day after giving birth to a healthy baby boy. The delivery followed an uneventful pregnancy. The patient has no history of migraine headaches, and her past medical history is unremarkable. The patient's blood pressure is 140/90 mm Hg, and although her neurologic examination is nonfocal, the severity of the headache prompts a computed tomographic (CT) scan of the brain. This is negative for an intracranial bleed, and the headache resolves after approximately 24 hours, during which time it was profoundly disabling. Approximately 18 hours later, the headache returns, again rising to a crescendo within several minutes of onset. A repeat head CT is negative and a lumbar puncture is also performed, revealing a normal opening pressure, 1 white blood cell/ml (100% lymphocytes), and a cerebrospinal fluid protein of 40 mg/dL (normal 30 to 50 mg/dL) The headache improves following round-the-clock narcotic treatment but then worsens again on the third postpartum day. A magnetic resonance imaging study is negative for hemorrhage, cerebral infarctions, and masses, but a four-vessel cerebral angiogram shows alternating areas of vascular narrowing and dilation (beading) in multiple vascular distributions. What is the most appropriate intervention for this patient now?",
+      "options": [
+        "A. Tighter blood pressure control, with transfer to the intensive care unit for sodium nitroprusside therapy",
+        "B. Addition of a baby aspirin to her anticoagulation with low-molecular-weight heparin",
+        "C. Pulse methylprednisolone (1000 mg/day for 3 days) followed by prednisone 60 mg/day and cyclophosphamide 100 mg/day",
+        "D. Nifedipine 30 mg three times daily",
+        "E. Proceed to brain biopsy"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Nifedipine. This patient has a history that is classic for reversible cerebral vasoconstriction syndrome (RCVS), an entity that mimics CNS vasculitis but is not an inflammatory condition. The features suggesting RCVS in this patient are the presence of a \"thunderclap\" headache, the nonfocal neurological examination, the normal cross-sectional imaging and lumbar puncture, and the diffuse beading on angiography. This beading represents vasospasm, which is the essential pathophysiology of RCVS. Calcium-channel blockers are often used in therapy, but prolonged courses of immunosuppression are not indicated. Brain biopsy can be diagnostic in primary angiitis of the CNS, but would not be indicated in a patient like this who has typical clinical and radiographic features of RCVS.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 4-year-old boy presents with 3 days of a febrile illness with temperatures to nearly 105\u00b0 Fahrenheit. Physical examination revealed an erythematous \"strawberry\" tongue, swollen lips, and a pink macular rash on the trunk. There is also tender cervical and axillary lymphadenopathy and diffuse swelling of the distal upper and lower extremities. Which treatment is indicated immediately to prevent the occurrence of coronary aneurysms?",
+      "options": [
+        "A. Intravenous immunoglobulin",
+        "B. High-dose aspirin therapy",
+        "C. Pulse methylprednisolone",
+        "D. Plasma exchange",
+        "E. Anticoagulation with heparin"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This child has Kawasaki disease, and the most feared complication of this disorder is formation of coronary aneurysms, which can lead to myocardial infarction. If administered in a timely manner, intravenous immunoglobulin prevents the occurrence of such aneurysms.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 74-year-old gentleman presents with a 7-week history of increasing generalized shoulder and hip pain, morning stiffness, low-grade fevers, and a dry cough. He was found to be anemic with a hemoglobin of 9.7 and had a thrombocytosis with a platelet count of 642 and an elevated sedimentation rate of 114. A search for infection and neoplasia has been unrevealing, including a bone marrow biopsy, which did not suggest a myeloproliferative neoplasm. He denies headaches, visual symptoms, or jaw claudication. The patient has reluctance regarding any further interventional procedures. Which of the following would be the best option to establish his diagnosis?",
+      "options": [
+        "A. A computed tomographic (CT) angiogram with imaging of the aortic arch and its major branches",
+        "B. A conventional angiogram",
+        "C. Duplex ultrasound of his temporal arteries and axillae",
+        "D. A positron emission tomography (PET) scan",
+        "E. Bilateral temporal artery biopsies"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient likely has GCA. Although PET scanning, duplex ultrasound of temporal arteries, and CT angiography may be helpful in some patients, a temporal artery biopsy remains the gold standard and is the most specific if the biopsy can be established. Duplex sonography has yet to be proved reliably accurate. PET scanning and angiography, although potentially helpful, can provide false-positive results in patients with severe atherosclerosis and false-negative results in patients without clear evidence of large vessel disease. Polymyalgia rheumatica (PMR) may be a possibility here (and this patient indeed has PMR), but the presence of dry cough and degree of inflammatory response makes concurrent GCA a pressing concern.",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 77-year-old woman with a history of diabetes, osteoporosis, and modest alcohol use presents with 3 weeks of headaches and feeling systemically unwell and then loss of vision in her left eye 2 days ago. She is found to be anemic with a markedly elevated sedimentation rate, and a temporal artery biopsy confirms the diagnosis of GCA. She is started on 60 mg of daily prednisone. Which of the following would be an appropriate additional intervention at this point?",
+      "options": [
+        "A. Add Infliximab 5 mg/kg monthly as a steroid-sparing intervention.",
+        "B. Add methotrexate 10 mg weekly with the hope of titrating that to 15 mg weekly to afford a steroid-sparing benefit.",
+        "C. Change her corticosteroid regimen to 120 mg on alternate days and plan an alternate day taper from there.",
+        "D. Add low-dose aspirin daily to her regimen.",
+        "E. Initiate treatment with tocilizumab 162 mg subcutaneously weekly, and discontinue corticosteroid therapy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Patients with GCA often struggle with comorbidities that raise concerns regarding prolonged exposure to corticosteroids. There is at this time, however, no proven steroid-sparing intervention that can decrease the risk for cranial ischemic complications. Tocilizumab has been demonstrated to afford a corticosteroid sparing benefit, and may be appropriate as initial therapy for GCA in such patients, but has been used in conjunction with corticosteroids in the trials which have demonstrated efficacy. Encouragingly, relatively brief courses of corticosteroids (6 months) were used without resultant ischemic complications in the largest clinical trial. Low-dose aspirin has been shown in two retrospective studies to be likely protective against cranial ischemic complications, so if there is no contraindication, that would be an appropriate intervention. Methotrexate has been shown in one trial in one individual meta-analysis to have a corticosteroid benefit in terms of cumulative steroid dose and also reduced risk for flares, but in the largest multicenter study addressing its efficacy, it was not shown to be superior to placebo. Moreover, in this patient with comorbidities including diabetes and alcohol use, methotrexate could be morbid, so this would not seem an appropriate intervention at this point. Infliximab has been shown in a randomized, double-blinded, placebo-controlled trial not to be helpful in the treatment of GCA and can increase risk for infection in this patient already on high doses of corticosteroids with underlying diabetes. Alternate-day corticosteroid therapy has been shown to increase the risk for later flare and is not generally employed in GCA, particularly early in the course of treatment.",
+      "questionNumber": 60
+    },
+    {
+      "question": "A 72-year-old man presents with a 2-month history of morning stiffness, mild synovitis in his knees, puffiness in his hands in the early morning hours, and severe shoulder and thigh girdle myalgias. He is mildly anemic with hemoglobin of 11.6 and has a markedly elevated sedimentation rate at 82. He is seronegative for rheumatoid factor, citric citrullinated peptide (CCP), and antineutrophil cytoplasmic antibodies. He has no evidence of peripheral joint erosions on plain radiographs. Which of the following would be the most appropriate therapeutic intervention at this point?",
+      "options": [
+        "A. Begin naproxen 500 mg twice daily.",
+        "B. Begin methotrexate 10 mg weekly with the hope of bringing that dose up to 15 mg weekly in the next few weeks.",
+        "C. Begin methylprednisolone 12 mg daily.",
+        "D. Begin hydroxychloroquine 200 mg twice daily.",
+        "E. Begin methylprednisolone 12 mg daily along with methotrexate 10 mg weekly with a plan to taper the corticosteroids to off over the next 4 weeks."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient described has PMR but presents with some peripheral synovitis, which can be seen in up to 10 to 15% of patients with PMR. The patient clinically is unlikely to have rheumatoid arthritis in the absence of seropositivity for rheumatoid factor and CCP, has typical shoulder and thigh girdle myalgias and morning stiffness, and does not have evidence of erosive disease radiographically. An initial trial of methylprednisolone 12 mg daily would have both therapeutic and likely diagnostic value because if his response is spectacular, that would strongly argue for PMR and continuing that approach to therapy. Although methotrexate and hydroxychloroquine have been agents of interest in polymyalgia rheumatica, their use has not been well established in double-blinded, placebo-controlled trials. One study suggesting a benefit to methotrexate in PMR did not demonstrate a benefit in terms of reducing numbers of corticosteroid-related adverse events, and at longer term follow-up, the initial benefits seen by the addition of methotrexate did not seem to persist. Naproxen would be unlikely to afford adequate relief to this patient and, given his comorbidities, would likely be as problematic if not more problematic than a trial of corticosteroids.",
+      "questionNumber": 61
+    },
+    {
+      "question": "An 80-year-old gentleman with a prior history of GCA successfully treated 7 years earlier presents with searing chest pain. His past medical history is otherwise only notable for borderline hypertension. He was successfully treated with a 1-year course of steroids but has been free of corticosteroids for 3 years. He has been feeling systemically well until recently. He had not seen a physician in 2 years. Which of the following explanations for his chest pain is of primary concern?",
+      "options": [
+        "A. Dissecting thoracic aneurysm",
+        "B. Acute pericarditis",
+        "C. A myocardial infarction related to his increased risk for atherosclerosis given his prior history of GCA",
+        "D. Costochondritis related to a flare of PMR",
+        "E. Rib fracture"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Patients with a prior history of GCA are at increased risk for thoracic aortic aneurysms, even several years after completing therapy without evidence of residual active disease. The searing quality of his pain and his prior history of treated GCA make this a concern that should not be missed. The quality of his pain did not sound suggestive of a myocardial infarction, and patients with GCA have not been demonstrated to be at increased risk for atherosclerotic heart disease, although the possibility of that association has been of interest. Patients with GCA are not particularly at a higher risk for pericarditis. Although PMR can arise even years after successfully treated GCA (or even years after successfully treated PMR), the quality of his pain does not sound suggestive thereof, and costochondritis would not typically be a feature of PMR. The quality of the pain described did not sound suggestive of a rib fracture, but moreover that would be a diagnosis that could be overlooked at least initially without putting the patient at increased risk for a serious cardiovascular compromise.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 72-year-old woman had presented with an 8-week history of progressively increasing morning stiffness, shoulder and thigh girdle myalgias and arthralgias, and fatigue. An extensive search for underlying infection and age-appropriate screening for underlying neoplasm were unrevealing. A serum immunofixation did not reveal a monoclonal gammopathy. She was found to be anemic with a hemoglobin of 10.7 and had a sedimentation rate of 108. She denied any headaches, scalp sensitivity, jaw claudication, or visual symptoms. She admitted to low-grade fevers but not greater than 100\u00b0F PMR was suspected, and she was treated with methylprednisolone 12 mg daily in divided doses. Three days later, she called to report no significant improvement in her symptoms. It was suggested that her dose be raised to 16 mg daily in divided doses. She comes in for evaluation still complaining of similar myalgias and arthralgias, and her sedimentation rate remains elevated at 62, although her hemoglobin improved slightly to 10.9. Which of the following would be an appropriate next intervention?",
+      "options": [
+        "A. Add methotrexate as a disease-controlling/steroid-sparing intervention.",
+        "B. Add infliximab to help achieve disease control.",
+        "C. Refer her for a bone marrow biopsy to exclude underlying myeloproliferative or lymphoproliferative disease.",
+        "D. Add hydroxychloroquine 400 mg daily.",
+        "E. Refer her for a temporal artery biopsy and raise the methylprednisolone to 32 mg daily."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient presented with fairly typical PMR symptoms but in addition had low-grade fevers, which can be seen but are not as common as they are in GCA. Moreover, she was somewhat anemic. Her lack of response to 12 mg and then even 16 mg of daily methylprednisolone makes PMR unlikely unless in the context of a more substantial inflammatory disease such as GCA. GCA is found in approximately 10% of patients with \"pure\" PMR, and conversely, up to 50% of patients with GCA can present with PMR-like symptoms.",
+      "questionNumber": 63
+    },
+    {
+      "question": "A 55-year-old man with a history of diabetes has had a chronic ulcer over the fifth metatarsal head with some swelling and pain for the past 5 weeks, following what he though was a minor trauma. On examination, bone can be palpated with a probe. Which of the following are likely?",
+      "options": [
+        "A. The white blood cell count is likely elevated.",
+        "B. There is a high likelihood that the patient has osteomyelitis.",
+        "C. The best imaging test to define the cause of the pain is a gallium scan.",
+        "D. The most likely cause of a possible infection is Fusobacterium sp."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The ability to palpate bone by probing the overlying ulcer is highly suggestive of osteomyelitis. Patients with contiguous chronic osteomyelitis often have normal white blood cell counts and are often afebrile. Magnetic resonance imaging is the best radiographic technique for demonstrating bone damage consistent with osteomyelitis. Overall, Staphylococcus aureus is the most common cause of osteomyelitis, but in patients with diabetic foot bone osteomyelitis the infection is often polymicrobial (see Table 256-1).",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 32-year-old carpet layer presents with a 3-day history of swelling of the right knee. The father and grandfather of the patient developed gout as young men. The patient had a single episode of right toe pain and swelling 3 months earlier, which he attributed to \"kicking carpet into place.\" He has a temperature of 38.7\u00b0 C. Examination of the right knee reveals erythema and swelling, most prominently over the anterior aspect of the knee, but extending around the soft tissues about the knee. With some pain, he is able to extend the knee completely, although he cannot comfortably flex it beyond 80 degrees. The prepatellar bursa is aspirated. The white blood cell count is 750. Which of the following is correct?",
+      "options": [
+        "A. The knee joint should also be aspirated and joint fluid sent for culture and sensitivity.",
+        "B. The low white blood cell count in the bursal fluid makes it unlikely that the bursa is infected.",
+        "C. Gram stain examination of the bursal fluid will almost always guide therapy.",
+        "D. Urate crystals will not be found on microscopic examination."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has prepatellar bursitis, which is usually due to direct tissue invasion, in this case likely related to local tissue invasion in the setting of chronic soft tissue trauma associated with kneeling and local friction of the overlying skin. Bursal fluid is often unobtainable, but if it can be obtained, the white blood cell count in the aspirated bursal fluid in the setting of septic bursitis is generally low compared with the white blood cell count in septic arthritis, on average 13,500 cells in the bursal fluid. Gram stain is positive in only about 15% of cases of septic bursitis. Urate crystals may be seen in cases of gouty bursitis, which can occur concomitantly, but should not distract from the possibility of septic bursitis.",
+      "questionNumber": 65
+    },
+    {
+      "question": "Which of the following are true regarding septic arthritis?",
+      "options": [
+        "A. Most cases are due to direct inoculation of the joint from trauma or surgical procedures such as arthrocentesis.",
+        "B. Gonococcal arthritis is the most common form of septic arthritis \u00een persons aged 20 to 40 years.",
+        "C. Hematogenous spread of tuberculosis is the most common cause of septic arthritis in persons from the developing world immigrating to Western countries of Europe, North America, and Australia.",
+        "D. Blood cultures are frequently positive in septic arthritis.",
+        "E. Intravenous vancomycin and daptomycin are the mainstays of treatment for most cases of septic arthritis in the immunocompetent host in the current era of bacterial organism multiple antibiotic resistance."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "About 75% of cases of septic arthritis are due to hematogenous spread, including surgical instrumentation. While gonococcal arthritis must be considered in sexually active patients, 50 to 70% of cases of septic arthritis are due to Staphylococcus aureus. Although almost all cases of septic tuberculous arthritis in Western countries occur in immigrants from the developing world, most cases of septic arthritis in these patients are also due to nontuberculous bacteria. Blood cultures should always be obtained in persons with septic arthritis. They are positive in up to 50% of cases, even in cases when the joint aspirate fails to reveal the causative organism. Even though multiple antimicrobial resistance is a serious problem, most cases of uncomplicated septic arthritis in the otherwise healthy host can be managed with an oral antistaphylococcal penicillin or first-generation cephalosporins. In cases where community-acquired methicillin-resistant S. aureus (MRSA) is suspected, cotrimoxazole or minocycline may be added (see Table 256-1).",
+      "questionNumber": 66
+    },
+    {
+      "question": "A 76-year-old man with a history of osteoarthritis and total joint replacement of the right hip at the age of 70 presents with a 2-day history of right groin pain and temperature to 39.5\u00b0 C 3 days after finishing 1 week of levofloxacin for an infected ingrown toenail. He is allergic to penicillins. Empirical antibiotic therapy with vancomycin for presumed staphylococcal prosthetic joint infection is started. The synovial fluid aspirate from the prosthetic right hip is negative, but blood cultures reveal S. aureus, methicillin resistant. His prosthesis was not loose on plain-film examination. Which of the following is true regarding prosthetic infections in this patient?",
+      "options": [
+        "A. A biofilm with polymicrobial bacterial colony forming units is frequently present, complicating eradication of the organism. Explantation of the prosthesis is always needed in such cases.",
+        "B. The most appropriate antimicrobial therapy in this case would be linezolid 600 mg given orally or intravenously every 12 hours.",
+        "C. Risk factors for prosthetic joint infection include wound healing complications, prior superficial surgical site infection, prior infection of the joint, previous surgery on the joint, osteoarthritis, advanced age, obesity, smoking, cancer, diabetes mellitus, and infection occurring elsewhere in the body that can hematogenously seed the prosthesis.",
+        "D. Because of the occurrence of prosthetic infection in this patient following hematogenous spread of the causative bacterium, the best course of action would be explantation of the prosthesis at this time, followed by 4 to 6 weeks of antibiotic therapy without reimplantation.",
+        "E. The best course of action would be to attempt salvage of the prosthesis with d\u00e9bridement and retention with 2 to 6 weeks of effective intravenous antibiotic therapy and rifampin based on the recently published IDSA PJI guidelines, followed by chronic suppressive therapy with oral antimicrobial agents."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Biofilms are often found in explanted infected prostheses and complicate successful antimicrobial therapy. These biofilms are polymicrobial in about 20% of cases. Risk factors for prosthesis infection include rheumatoid arthritis but not osteoarthritis. In most cases of acute infection, management efforts are directed toward treating the infection and attempting to salvage the prosthesis. When resection arthroplasty is needed, 4 to 6 weeks of pathogen- directed intravenous therapy is typical before an attempt at reimplantation several weeks later (see Table 256-1).",
+      "questionNumber": 67
+    },
+    {
+      "question": "A 68-year-old woman with a history of chronic atrial fibrillation and diabetic neuropathy presents with a 5-day history of subacute swelling and pain in the left ankle. She reports that she \"turned\" her ankle while gardening about a week ago. Her temperature is 36.7\u00b0 C. Inspection of the ankle reveals moderate erythema and swelling. The skin is intact; sensation to touch is diminished in both feet. The remainder of the history and physical examination are unrevealing, including examination of the oral cavity. The sedimentation rate is 42 mm/hr; white blood cell count is 9800 \u03bcL, and international normalized ratio (INR) is 3.2. Which of the following strategies should be pursued in management of this patient?",
+      "options": [
+        "A. Blood cultures, empirical therapy with vancomycin 15 mg/kg every 12 hours or daptomycin 6 mg/kg given intravenously (IV) every 24 hours for presumed methicillin-resistant S. aureus (MRSA). Avoid arthrocentesis because of the elevated INR and risk for worsening joint damage due to hemarthrosis and the danger of hematogenous spread of the infection.",
+        "B. Blood cultures, empirical therapy with vancomycin 15 mg/kg every 12 hours or daptomycin 6 mg/kg given IV every 24 hours for presumed MRSA; arthrocentesis for examination of synovial fluid Gram stain and culture.",
+        "C. Blood cultures, empirical therapy with aqueous crystalline penicillin G 20\u00d710\u2076 U/24 hr IV either continuously or in six equally divided daily doses or ampicillin sodium 12 g/24 hr IV either continuously or in six equally divided daily doses. Avoid arthrocentesis because of the elevated INR and risk for worsening joint damage due to hemarthrosis and the danger of hematogenous spread of the infection.",
+        "D. Blood cultures, empirical therapy with aqueous crystalline penicillin G 20\u00d710\u2076 U/24 hr IV either continuously or in six equally divided daily doses or ampicillin sodium 12 g/24 hr IV either continuously or in six equally divided daily doses. Arthrocentesis for examination of synovial fluid Gram stain and culture."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A source of infection was not identified in this patient, who has risk factors for septic arthritis of diabetes mellitus and diabetic neuropathy. Because even in these cases the most common cause of septic arthritis is gram-positive cocci, particularly S. aureus, initial treatment directed at this organism is appropriate. It is not unreasonable to initiate therapy with an MRSA-appropriate regimen. Arthrocentesis should always be performed if there is suspicion of septic arthritis; bleeding complications, even in patients on anticoagulation, are rare, and the information potentially gained generally justifies the risk of the procedure.",
+      "questionNumber": 68
+    },
+    {
+      "question": "The prevalence of hyperuricemia in the United States has been rising dramatically over the past three decades because of all of the following except which one?",
+      "options": [
+        "A. Increased longevity of the population",
+        "B. Increased use of low-dose aspirin and thiazide diuretics",
+        "C. Greater consumption of low-fat dairy products",
+        "D. Greater consumption of high-fructose corn syrup",
+        "E. Increased prevalence of the metabolic syndrome"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The aging population, the increasing prevalence of the metabolic syndrome, and increased consumption of medications and diets that increase blood uric acid levels by either inhibiting its excretion (low-dose aspirin and thiazide diuretics) or increasing its production (high-fructose corn syrup) are all factors leading to the increased prevalence of hyperuricemia and gout in the United States. Increased consumption of low-fat dairy products does not cause hyperuricemia.",
+      "questionNumber": 69
+    },
+    {
+      "question": "Which one of the following is true regarding renal clearance of uric acid?",
+      "options": [
+        "A. Comparable in gouty and nongouty subjects",
+        "B. Reduced in gouty subjects by 70%",
+        "C. Proportional to the serum urate levels in both gouty and nongouty subjects",
+        "D. Controlled by components of the \"transportasome\" in the distal nephron",
+        "E. Reduced by the angiotensin II receptor blocker losartan"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Gouty subjects have reduced renal clearance of uric acid, and their excretion of uric acid is reduced by only 30% (not 70%). The renal tubular transporters (collectively called the transportasome) that are responsible for determining how much of the filtered uric acid is actually excreted are located in the proximal convoluted tubules, not the distal nephron. Renal clearance of uric acid is not reduced by losartan.",
+      "questionNumber": 70
+    },
+    {
+      "question": "Factors that may provoke flares of gout include all of the following except which one?",
+      "options": [
+        "A. Initiation of allopurinol",
+        "B. Overindulgence in shellfish",
+        "C. Starvation",
+        "D. Initiation of colchicine",
+        "E. Surgery"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Initiation of colchicine can actually block flares of gout. In contrast, allopurinol or any other drug or factor that alters blood uric acid levels (either up or down) can provoke an acute gouty attack.",
+      "questionNumber": 71
+    },
+    {
+      "question": "According to the American College of Rheumatology (ACR) 2012 treatment guidelines for urate-lowering therapy, which one of the following is true?",
+      "options": [
+        "A. Prophylactic anti-inflammatory therapy should be initiated before starting allopurinol or febuxostat.",
+        "B. Patients with chronic kidney disease should not be treated with more than 300 mg of allopurinol daily.",
+        "C. Serum urate levels should be reduced to less than 5 mg/dL in all patients with gout.",
+        "D. The initial starting dose of allopurinol is 300 mg daily in most patients.",
+        "E. Probenecid is first-line therapy for patients with chronic kidney disease stage 3 or 4."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Prophylactic anti-inflammatory drugs should be initiated before starting allopurinol or febuxostat because any acute change in uric acid levels (including acute changes that actually reduce the levels, as these drugs would do, as well as increase the levels) can precipitate an acute gout attack. The ACR guidelines recommend starting allopurinol at doses of 100 mg daily in those without kidney disease or 50 mg daily in those who do have advanced chronic kidney disease, followed by dose escalations of 100 mg or 50 mg in these situations, respectively. ACR guidelines recommend a target serum uric acid of less than 6 mg/dL, except in those with advanced gout, whose levels should be lowered to less than 5 mg/dL. The uricosuric agent, probenecid, is recommended only as addition to a first-line xanthine oxidase inhibitor if target urate levels cannot be attained with maximum doses of the latter.",
+      "questionNumber": 72
+    },
+    {
+      "question": "The laboratory investigation for underlying metabolic causes of calcium pyrophosphate dehydrate (CPPD) deposition disease would include all of the following, except which one?",
+      "options": [
+        "A. Serum ferritin",
+        "B. Serum calcium and phosphate",
+        "C. Serum alkaline phosphatase",
+        "D. Serum magnesium",
+        "E. Serum lead"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Metabolic diseases that predispose to CPPD crystal deposition disease include hemochromatosis, hyperparathyroidism, hypomagnesemia states, and hypophosphatasia. Saturnine gout is the term used to describe gout (not CPPD crystal deposition disease) caused by chronic lead exposure (e.g., by occupational exposure or drinking \"moonshine\" whiskey).",
+      "questionNumber": 73
+    },
+    {
+      "question": "The basic calcium crystal arthropathy referred to as Milwaukee shoulder is characterized by which one of the following?",
+      "options": [
+        "A. Bilateral involvement in men",
+        "B. Destruction of the glenohumeral joint",
+        "C. Markedly inflammatory synovial fluid",
+        "D. Birefringent crystals in the synovial fluid",
+        "E. Slow progression"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The form of basic calcium crystal arthropathy known as Milwaukee shoulder has a predilection for elderly women, is usually unilateral but can involve the knees, and has noninflammatory synovial fluid (white blood cells <1000/\u03bcL) that is usually bloody in appearance. Despite noninflammatory fluid, the condition can be rapidly destructive.",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 30-year-old man complains of a several-months history of joint pain involving his hands, wrists, knees, and ankles. He reports chronic swelling but no acute attacks of synovitis. He has been taking up to eight acetaminophen tablets a day to control the pain. He denies rashes, nodules, pleuritic chest pain, or dyspnea. He reports no family history of arthritis. His father died of liver cancer. Physical examination is remarkable for synovial thickening over his metacarpophalangeal joints (MCPs), wrists, and ankles. He has small effusions in both knees. His skin examination shows darkened skin but no nodules. Radiographs show joint space narrowing, sclerosis, and osteophytes of his MCPs and radiocarpal joints. Which one of the following tests is most likely to support this patient's diagnosis?",
+      "options": [
+        "A. Iron studies",
+        "B. Anti-cyclic citrullinated peptide (CCP) antibodies",
+        "C. Liver-associated enzymes",
+        "D. Urine homogentisic acid",
+        "E. Morning serum cortisol"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient has hemochromatotic arthropathy, which would be supported by abnormal iron studies (elevated iron, % transferrin saturation, and ferritin). Up to 33% of patients with hemochromatosis present with arthritis as their initial manifestation. Osteoarthritic involvement of MCPs, wrists, and ankles, coupled with dark skin demonstrating a grayish hue, are characteristic. The osteoarthritic changes on radiographs excludes rheumatoid arthritis, so an anti-CCP antibody would not be helpful. Although liver-associated enzymes may be elevated, other stigmata of liver disease are absent early in the course of hemochromatosis. However, the early diagnosis and treatment of this patient and affected family members will help prevent cirrhosis and possible liver cancer, which developed in his father. A urinary homogentisic acid level will be normal. Ochronosis can cause dark skin, but the arthritis presents in the lumbar spine with osteoarthritis and calcified vertebral discs. Addison disease (primary adrenal insufficiency) likewise causes hyperpigmentation, but it is not typically associated with rheumatic manifestations.",
+      "questionNumber": 75
+    },
+    {
+      "question": "A 32-year-old woman complains of painful lower extremity nodules and bilateral ankle arthritis over the past 5 days. She denies fever, sore throat, cough, chest or abdominal pain, or dysuria. Past history is significant for two urinary tract infections and one episode of pelvic inflammatory disease. She has a family history of a mother who died with ovarian cancer. Her only medication is birth control pills. Physical examination shows normal vital signs. She has bilateral swelling and tenderness of her ankles. Several 2- to 3-cm erythematous, tender nodules are on the extensor surfaces of both lower legs. The remainder of the examination is unremarkable. Which one of the following tests should be ordered now to support this patient's clinical diagnosis?",
+      "options": [
+        "A. Nodule biopsy",
+        "B. Ankle joint synovial fluid analysis",
+        "C. Cervical culture for Neisseria gonorrhoeae",
+        "D. Chest radiograph"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has a presentation consistent with acute sarcoidosis manifested by erythema nodosum and bilateral ankle arthritis (Sweiss NJ, Patterson K, Sawaqed R, et al. Rheumatologic manifestations of sarcoidosis. Semin Respir Crit Care Med. 2010;31:463-473). A person with bilateral ankle arthritis should always be investigated for possible sarcoidosis. Despite negative pulmonary symptoms, a chest radiograph will show bilateral hilar adenopathy supporting the clinical diagnosis of L\u00f6fgren syndrome. A nodule biopsy would show a septal panniculitis consistent with erythema nodosum, which could be from a cause other than sarcoidosis, such as birth control pills. Synovial fluid aspiration is usually unsuccessful and always nondiagnostic in a patient with an acute sarcoidosis presentation. A cervical culture in an asymptomatic patient is unlikely to be useful, and disseminated gonococcemia typically presents with fever, arthritis, and a vesiculopustular rash, but not nodules.",
+      "questionNumber": 76
+    },
+    {
+      "question": "A 72-year-old woman complains of a 3-week history of bilateral progressive hand pain unresponsive to naproxen, prednisone, and oxycodone. She denies fever, rash, or Raynaud phenomenon. She has had a 10-pound weight loss and lower abdominal pain that she attributes to constipation and lack of appetite owing to taking narcotics. Physical examination shows normal vital signs. She has bilateral metacarpophalangeal and proximal interphalangeal joint swelling and tenderness. She has diffuse swelling, erythema, and tenderness that follow the track of the flexor tendons of the digits. Straightening the fingers causes intense pain. Shoulder examination shows decreased internal rotation bilaterally. The remainder of the joint, heart, and lung examinations were normal. Tests obtained in the emergency department last week showed normal hand radiographs except for soft tissue swelling and chondrocalcinosis of the wrists. Rheumatoid factor and antinuclear antibody were negative. Which one of the following tests would be most important to obtain next?",
+      "options": [
+        "A. Magnetic resonance imaging (MRI) of the hands",
+        "B. Anti-cyclic citrullinated peptide (CCP) antibody",
+        "C. Bimanual pelvis examination",
+        "D. Synovial fluid aspiration and crystal examination"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient is presenting with the palmar fasciitis and polyarthritis syndrome (PFPAS). This presentation is highly associated with ovarian cancer when it occurs in an elderly woman (Shah A, Jack A, Liu H, Hopkins RS. Neoplastic/paraneoplastic dermatitis, fasciitis, and panniculitis. Rheum Dis Clin North Am. 2011;37:573-592). Therefore, a bimanual pelvic examination would be the most important test to obtain. MRI of the hands will show palmar fasciitis, which was diagnosed on the clinical examination. Although rheumatoid arthritis can have an acute onset, the lack of response to nonsteroidal anti-inflammatory drugs (NSAIDs) and prednisone makes this diagnosis unlikely. In addition, the rheumatoid factor was negative, so an anti-CCP antibody is unlikely to be positive. Chondrocalcinosis is a common incidental radiographic finding in elderly patients. The multijoint presentation and lack of response to prednisone make acute pseudogout unlikely, and therefore putting the patient through a difficult aspiration of a finger joint looking for crystals is not indicated.",
+      "questionNumber": 77
+    },
+    {
+      "question": "A 52-year-old man is admitted to the hospital for joint pain, diarrhea, and weight loss. He reports a 3-year history of palindromic, inflammatory polyarthritis that tends to affect large joints, including the knees, ankles, and wrists. He also has increased lower back pain that is worse at the end of the day. Previous evaluation showed a negative rheumatoid factor, negative antinuclear antibody, and normal hand and wrist radiographs. He states the arthritis lasts several weeks before resolving. NSAIDs, hydroxychloroquine, and methotrexate have been ineffective in reducing the frequency of attacks that occur every few months. Over the past 6 months, he has noted diarrhea and a 20-pound weight loss. He has had mild abdominal discomfort and a decreased appetite. Evaluation showed a normal colonoscopy 4 months ago. An abdominal computed tomography scan showed hepatomegaly and several enlarged periaortic lymph nodes. A 24-hour stool collection revealed steatorrhea. An antitransglutaminase antibody was negative. Physical examination shows a thin male with normal vital signs except a pulse of 100 beats per minute. He has mild hepatomegaly. He has a few enlarged axillary lymph nodes. His right wrist and left knee are swollen. Synovial fluid aspiration from his knee yesterday showed a cell count of 22,100/\u03bcL with 80% neutrophils. Gram stain and crystal examinations were negative. Laboratory evaluation included complete blood count: hematocrit 33%, white blood cell count 7800/\u03bcL, platelets normal; chemistries normal; albumin 2.7 g/dL; aspartate transaminase 51 U/L (normal, 0 to 40); urinalysis normal; erythrocyte sedimentation rate 48 mm/ hr. Which one of the following tests is most likely to confirm your clinical diagnosis?",
+      "options": [
+        "A. Hepatitis C serologies",
+        "B. Esophagogastroduodenoscopy with small bowel biopsy",
+        "C. Anti-Saccharomyces cerevisiae antibody",
+        "D. HLA-B27 and sacroiliac joint radiograph",
+        "E. Blood culture"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has Whipple disease, which would be diagnosed by a small bowel biopsy (Puechal X. Whipple's disease. Ann Rheum Dis. 2013;72:797-803). Patients with Whipple disease frequently have an intermittent inflammatory arthritis that precedes other manifestations of Whipple disease by a few years. The patient's more recent weight loss, diarrhea with steatorrhea, hepatomegaly, and lymphadenopathy are other manifestations of Whipple disease. The small bowel biopsy showing periodic acid-Schiff-positive macrophages and immunohistochemical staining with antisera specific for Tropheryma whipplei will confirm the diagnosis. A lymph node or synovial biopsy would show similar diagnostic findings. The recent normal colonoscopy rules out inflammatory bowel disease, so an anti-S. cerevisiae antibody will not be helpful. Despite an enlarged liver and mild transaminitis, which are also seen in Whipple disease, hepatitis C would not explain his steatorrhea. The patient's back pain is mechanical because it is worse at the end of the day. Therefore, an HLA-B27 test and sacroiliac joint radiographs will not confirm his diagnosis, nor will these tests explain his diarrhea. Although the patient has an inflammatory synovial fluid, septic arthritis would not follow this clinical course.",
+      "questionNumber": 78
+    },
+    {
+      "question": "You are asked to consult on a 64-year-old man hospitalized for aortitis. He was emergently admitted 3 days ago with chest pain from a 6-cm descending thoracic aortic aneurysm and dissection. Pathologic examination of the surgically removed diseased aorta revealed a nongranulomatous aortitis with fibrosis. His past history includes diet-controlled diabetes mellitus and hypertension controlled with lisinopril. One year ago, he had an orbital pseudotumor successfully treated with 3 months of prednisone. He denies fever, headaches, or visual problems. Physical examination was limited because of his recent surgery. Temporal artery pulses were normal. He had atelectatic crackles in both bases. He has 1+ pedal edema. No abdominal bruits or masses. Preoperative laboratories include complete blood count: hematocrit 35%; white blood cell count 10,400/\u00b5L, platelets 280,000; chemistries normal; rapid plasma reagin negative. Aorta histology showed lymphoplasmacytic infiltrate without granulomas or giant cells. Adventitial phlebitis and fibrosis were present. Stains for spirochetes and fungal elements were negative. Which one of the following is most likely to help confirm this patient's diagnosis?",
+      "options": [
+        "A. Genetic testing for transforming growth factor-B (TGF-B) receptor mutations",
+        "B. Antineutrophil cytoplasmic antibody",
+        "C. Immunohistochemical staining of tissue for immunoglobulin G4 (IgG4)- positive plasma cells",
+        "D. Temporal artery biopsy"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient has IgG4-related disease (Stone JH, Zen Y, Deshpande V. IgG4-related disease. N Engl J Med. 2012;366:539-551). The nongranulomatous, lymphoplasmacytic infiltrate in the aorta is consistent with this. The past history of an orbital pseudotumor is also compatible with this condition. Serum IgG4 level is typically elevated. Immunohistochemical studies would show that the aortic infiltrate was primarily IgG4-producing plasma cells. Genetic testing for TGF-B receptor mutations would not be helpful because this is not the histology seen in patients with Loeys-Dietz syndrome. Anti- neutrophil cytoplasmic antibody-related vasculitis does not cause aortitis. A temporal artery biopsy would offer no further information not already shown by the aortic histology.",
+      "questionNumber": 79
+    },
+    {
+      "question": "A 47-year-old man presents with groin pain of 2 years' duration. The pain is worse with weight-bearing activity, such as standing or walking. On physical examination, the hip demonstrates evidence of limited flexion and internal rotation. He has tried nonsurgical measures, such as oral nonsteroidal anti-inflammatory drugs, physical therapy, and rest; none has provided any lasting relief. Radiographs demonstrate complete loss of the cartilage space in the hip joint. His bone structure and quality appear to be good. The patient feels extremely debilitated at this point because of his inability to perform activities of daily living (ADLs). In addition to ADLs, the patient would like to have the ability to run, in the future. Which of the following is the most appropriate recommendation?",
+      "options": [
+        "A. Hip arthroscopy",
+        "B. Hip resurfacing",
+        "C. Total hip replacement",
+        "D. Fusion of the hip",
+        "E. Bracing of the hip"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hip resurfacing is appropriate in this category of patient: a male patient younger than the 65 years. Hip arthroscopy is not likely to alleviate the symptoms in this patient because of full-thickness cartilage loss. Total hip replacement is an option, but the preservation of bone is desirable in younger patients, and impact sports are not advisable after a total hip replacement. Fusion of the hip has essentially become a historical operation because few surgeons perform this anymore owing to the superior function of a hip replacement. Bracing of the hip would not be expected to help in situations of complete cartilage loss.",
+      "questionNumber": 80
+    }
+  ]
+}

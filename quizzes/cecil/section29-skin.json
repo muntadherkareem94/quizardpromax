@@ -1,0 +1,409 @@
+{
+  "questions": [
+    {
+      "question": "A clean ulcer that needs to granulate and re-epithelialize should be treated by:",
+      "imageUrl": "",
+      "options": [
+        "A. Moist wound healing with a topical ointment and dressing",
+        "B. Wet-to-dry dressing with dry gauze and no ointment",
+        "C. Being left open to heal",
+        "D. Oral antibiotics",
+        "E. Oral steroids"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Moist wound healing is the standard for chronic wound management. Moist wounds heal two to three times faster than dry wounds. The primary purpose of wet-to-dry dressings is the mechanical débridement of necrotic tissue. Dried tissue is more prone to infection and pain, and it heals more slowly than if kept moist. A moist wound environment physiologically favors cell migration and matrix formation, while accelerating healing of wounds by promoting autolytic débridement. [cite: 1944-1948]",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "The combination clotrimazole and betamethasone dipropionate topical therapy (lotrisone):",
+      "imageUrl": "",
+      "options": [
+        "A. Is more effective for fungal infections than clotrimazole alone",
+        "B. Is safe for use in the groin and face",
+        "C. Is approved for use in children younger than 12 years of age",
+        "D. Should be used sparingly because of risks for thinning the skin and striae",
+        "E. Is effective against bacteria"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Fluorinated topical steroids are potent and cause thinning of the skin and striae. As a result, they should not be used in areas where the skin is thin, such as the face, or where the area is occluded and increases absorption in the skin, such as the groin. It is preferable to treat fungal infections with an antifungal agent, and if a topical anti-inflammatory steroid is also desired, a separate treatment with a mild lower class steroid may be used. [cite: 1955-1957]",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "Use of a topical antibiotic as a solitary agent for acne for more than 3 months is not recommended because:",
+      "imageUrl": "",
+      "options": [
+        "A. It increases risk of drug toxicity.",
+        "B. Of higher incidence of bacterial resistance after that time",
+        "C. Of effects on thinning of skin",
+        "D. It should not be combined with other therapies.",
+        "E. It causes photosensitivity."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "When topical antibiotics are used in combination with benzoyl peroxide, there is reduced emergence of resistant strains of Propionibacterium acnes. [cite: 1964]",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "People starting a TNF blocker or other biologic therapy should be tested to exclude:",
+      "imageUrl": "",
+      "options": [
+        "A. Heart disease",
+        "B. Underlying malignancy",
+        "C. Lung disease",
+        "D. Atherosclerosis",
+        "E. Tuberculosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The biologics are immunosuppressants that facilitate reactivation of tuberculosis, which can then disseminate. Unless a person has a history of a positive test followed by appropriate treatment, routine tuberculosis testing is recommended, either by purified protein derivative (PPD) or quantiferon gold testing. [cite: 1971-1972]",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 16-year-old young man presented with pruritic, lichenified plaques on her antecubital and popliteal fossa and dryness of skin. The first-line treatment is:",
+      "imageUrl": "",
+      "options": [
+        "A. Cyclosporine 100 mg twice daily",
+        "B. Narrow-band ultraviolet light B (UVB) therapy",
+        "C. Oral prednisone 40 mg/day",
+        "D. Psoralen and UVA (PUVA) photochemotherapy",
+        "E. Triamcinolone ointment 0.1% twice daily"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This is a case of atopic dermatitis, for which topical corticosteroids are first-line therapy. The next steps in the therapeutic ladder are narrowband UVB phototherapy (a benign treatment, but the patient needs to go to phototherapy center two to three times per week) and PUVA (potential photocarcinogenesis with long-term treatment is a drawback, especially for a 16-year-old patient). Cyclosporine and oral prednisone should be reserved for recalcitrant cases because of their side effects. Newer options include crisaborole 2% ointment and subcutaneous dupilumab. [cite: 1983-1986]",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 23-year-old otherwise healthy African American woman sees you 2 days after she spent a week in Hawaii. A few days after she arrived in Hawaii, she developed minimally pruritic 1 to 2-mm papules on her extensor forearm and on the dorsum of her hands. The most likely diagnosis is:",
+      "imageUrl": "",
+      "options": [
+        "A. Chronic actinic dermatitis",
+        "B. Drug-induced phototoxicity",
+        "C. Erythropoietic protoporphyria",
+        "D. Polymorphic light eruption",
+        "E. Porphyria cutanea tarda"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Pinhead popular eruption is the typical morphology of polymorphic light eruption in dark-skinned individuals. Chronic actinic dermatitis presents with chronic photosensitivity and lichenification on sun-exposed areas. Drug-induced phototoxicity can be excluded by the history. Erythropoietic protoporphyria is a chronic photosensitivity, which typically starts in childhood. Porphyria cutanea tarda manifests with skin fragility, blisters, and erosions on a sun-exposed area. [cite: 1993-1996]",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 55-year-old man with a long history of psoriasis presents with a 2-week history of worsening skin lesions and generalized erythroderma. The single most appropriate treatment is:",
+      "imageUrl": "",
+      "options": [
+        "A. Calcipotriene cream 0.005% twice daily",
+        "B. Cyclosporine 100 mg twice daily",
+        "C. Tazarotene cream 0.1% twice daily",
+        "D. Triamcinolone ointment 0.1% daily",
+        "E. Prednisone 60 mg/day"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Topical treatments (calcipotriene cream, tazarotene cream, triamcinolone ointment) are not sufficient to suppress active disease in rapidly progressing, erythrodermic psoriasis. Oral cyclosporine is a fast-acting medication with a well-documented efficacy for this condition. Oral prednisone should not be used because psoriasis can flare significantly when it is tapered. [cite: 2004-2006]",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "An otherwise healthy 38-year-old man presents with a 1-month history of generalized erythroderma with salmon-colored and fine scaling, several areas of sparing on his abdomen and upper back, ectropion, and keratoderma of palms and soles. The most likely diagnosis is:",
+      "imageUrl": "",
+      "options": [
+        "A. Erythrodermic mycosis fungoides",
+        "B. Pityriasis lichenoides chronica",
+        "C. Pityriasis rosea",
+        "D. Pityriasis rubra pilaris",
+        "E. Erythrodermic psoriasis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Salmon-colored erythroderma, \"islands of sparing,\" and keratoderma of the palms and soles are the characteristic morphology of pityriasis rubra pilaris. Erythrodermic mycosis fungoides manifests with reddish-to-violaceous erythroderma; it does not typically have islands of sparing. Pityriasis lichenoides chronica manifests as scattered erythematous papules and plaques; it does not manifest as generalized erythroderma. Pityriasis rosea manifests with minimally erythematous patches with fine scales. Patients with erythrodermic psoriasis usually have areas of typical psoriasis (papules and plaques with micaceous scales on elbows, knees, scalp); they do not have islands of sparing. [cite: 2011-2016]",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 66-year-old man presents with a 1-year history of several asymptomatic patches, 5 to 6 cm in diameter, epidermal atrophy on his buttocks, and several semicircular erythematous plaques with no scales on his arms and thighs. Biopsy of a plaque on his thigh will most like show:",
+      "imageUrl": "",
+      "options": [
+        "A. Atypical mononuclear cells in the epidermis, with a CD4 predominant infiltrate",
+        "B. Dense infiltrate of lymphocytes at dermal-epidermal junction (lichenoid infiltrate)",
+        "C. Dermal-epidermal separation",
+        "D. Edema in the epidermis (spongiosis) and in the dermis",
+        "E. Necrotic keratinocytes in the epidermis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The other biopsy findings are typical of lichen planus (B), blistering skin diseases (C), dyshidrosis (D), and erythema multiforme (E). [cite: 2023-2024]",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "Which autoimmune blistering disorder is characterized by intraepidermal antibody deposition and vesicles and erosions of the skin and oral mucosa?",
+      "imageUrl": "",
+      "options": [
+        "A. Bullous pemphigoid",
+        "B. Mucous membrane pemphigoid",
+        "C. Linear IgA bullous dermatosis",
+        "D. Pemphigus foliaceus",
+        "E. Pemphigus vulgaris"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Bullous pemphigoid, mucous membrane pemphigoid, and linear IgA bullous dermatosis are subepidermal blistering processes. Pemphigus foliaceus is a subcorneal blistering disorder that produces erythema, scaling, and crusting on the scalp, face, and upper torso. Pemphigus vulgaris is the only option that involves intraepidermal antibody deposition that leads to skin and mucosal lesions. [cite: 2034-2036]",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "Microscopic polyangiitis is not associated with which of the following:",
+      "imageUrl": "",
+      "options": [
+        "A. Pauci-immune, crescentic, necrotizing glomerulonephritis",
+        "B. Cardiomyopathy",
+        "C. Pulmonary hemorrhage",
+        "D. Small- and medium-vessel vasculitis of the skin",
+        "E. Peripheral neuropathy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Microscopic polyangiitis frequently results in kidney disease, and it also can cause pulmonary capillaritis, peripheral neuropathy, and mononeuritis multiplex. However, it is not associated with cardiac disease. By comparison, both granulomatosis with polyangiitis and eosinophilic granulomatosis with polyangiitis can result in cardiac complications such as pericarditis or cardiomyopathy. [cite: 2042-2043]",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "Gluten-sensitive enteropathy, pruritic, grouped papulovesicles, and diabetes are associated with:",
+      "imageUrl": "",
+      "options": [
+        "A. Dermatitis herpetiformis",
+        "B. Linear IgA bullous dermatosis",
+        "C. IgA vasculitis",
+        "D. Bullous diabeticorum",
+        "E. Hidradenitis suppurativa"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Dermatitis herpetiformis, which is a skin eruption associated with gluten-sensitivity, results in an itchy eruption of papules and papulovesicles commonly grouped on the elbows, knees, and buttocks of adults. It can be associated with other autoimmune conditions such as diabetes and thyroid disease. Linear IgA bullous dermatosis, which is most commonly associated with vancomycin exposure in adults, presents with tense bulla favoring skin folds. IgA vasculitis can be seen following staphylococcal or streptococcal infections in adults and presents with palpable purpura. Bullous diabeticorum presents with vesicles or bullae on the lower extremities in individuals with diabetes. Hidradenitis presents with nodules, abscesses, and fistulas in intertriginous sites; it has been associated with inflammatory bowel disease. [cite: 2050-2055]",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "All of the following are commonly associated with acute generalized exanthematous pustulosis except:",
+      "imageUrl": "",
+      "options": [
+        "A. Macrolides",
+        "B. B-lactams",
+        "C. Allopurinol",
+        "D. Calcium-channel blockers",
+        "E. Hydroxychloroquine"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Macrolide and B-lactam antibiotics, calcium-channel blockers, and hydroxychloroquine are all common triggers of acute generalized exanthematous pustulosis. Allopurinol can cause morbilliform drug eruptions and is associated with the development of more severe drug reactions such as Stevens-Johnson syndrome and toxic epidermal necrolysis. [cite: 2062-2063]",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "The most common condition associated with Sweet syndrome in adults is:",
+      "imageUrl": "",
+      "options": [
+        "A. Streptococcal pharyngitis",
+        "B. Chronic variable immunodeficiency",
+        "C. Vaccination",
+        "D. Acute myelogenous leukemia",
+        "E. Use of granulocyte colony-stimulating factor"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although infection, medication exposure, vaccination, and immunodeficiency have all been reported as causes of acute febrile neutrophilic dermatosis (Sweets syndrome), the most common association in adults is hematologic malignancy, with acute myelogenous leukemia being the most common. [cite: 2070]",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 45-year-old man with a history of atopic dermatitis in childhood presents with faint pink, slightly raised lesions for the past 10 weeks. He complains of epigastric pain and burning in his chest, typically occurring after eating a meal, for the past 3 months. He reports that the lesions come and go and do not persist for more than 24 hours. On physical examination, he has urticaria that blanches with pressure on his chest, back, and upper and lower extremities. What is the next step in management?",
+      "imageUrl": "",
+      "options": [
+        "A. Skin biopsy",
+        "B. Begin intravenous (IV) methylprednisolone.",
+        "C. Begin cyclosporine.",
+        "D. Allergy testing",
+        "E. Helicobacter pylori infection testing"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The lesions described above are classic for urticaria and would be considered chronic given the duration of more than 6 weeks. Chronic urticaria can be triggered by occult infections, such as H. pylori, so H. pylori infection should be evaluated first in this case. The patient's complaints of epigastric pain and burning suggest the possibility of gastroesophageal reflux disorder. He should be evaluated for H. pylori infection. Skin biopsy should be performed if urticarial lesions present for more than 24 hours to evaluate him for urticarial vasculitis. IV corticosteroids can be considered if the urticaria is severe or if it is associated with anaphylaxis or wheezing. If the history is not suggestive of a trigger, allergy testing is recommended. [cite: 2084-2089]",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 25-year-old white woman with seizures presents to her primary care physician with a generalized symmetrical rash that started 1 week ago. She had her first seizure 6 weeks ago, at which time she was started on carbamazepine, which controlled her seizures. Vital signs reveal blood pressure, 119/60; heart rate, 105 beats/min; respiratory rate, 14 breaths/min; temperature, 100.9° F; and oxygen saturation, 99% on room air. Physical examination reveals normal conjunctivae and oropharynx, but she has erythroderma, and pustules present diffusely. Laboratory data include the following: white blood cell count, 9600/µL; hemoglobin, 14.2 g/dL; hematocrit, 43%; platelets, 300,000/µL; neutrophils, 35%; lymphocytes, 25%; monocytes, 8%; eosinophils, 12%; basophils, 0%. What is the initial step in management?",
+      "imageUrl": "",
+      "options": [
+        "A. Discontinue carbamazepine.",
+        "B. Begin intravenous vancomycin.",
+        "C. Begin prednisone.",
+        "D. Perform a skin biopsy.",
+        "E. Begin intravenous immunoglobulin (IVIG) therapy."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This young woman is febrile, has eosinophilia, and has a rash that developed 6 weeks after starting carbamazepine. This clinical presentation is suggestive of drug rash with eosinophilia and systemic symptoms (DRESS). The next step in management is to remove the offending agent. Carbamazepine is a commonly reported medication that causes DRESS. Because the patient is febrile, an infectious etiology should be excluded. However, antibiotics are not indicated at this time. Systemic corticosteroids are recommended as part of the treatment of DRESS, but removal of the offending agent is crucial. In patients who do not respond to systemic steroids, IVIG can be considered. Skin biopsy of these lesions shows perivascular lymphocytic infiltrate in the papillary dermis with eosinophils. Although a skin biopsy would be helpful in the diagnosis of DRESS, the first step should be to discontinue carbamazepine, since the clinical presentation is highly suggestive of DRESS. [cite: 2101-2109]",
+      "explanationImageUrl": "",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 34-year-old Asian woman presented to her primary care physician with dysuria and hematuria 2 weeks ago. She was treated with trimethoprim-sulfamethoxazole for 3 days for a urinary tract infection. She then presented to the emergency department this morning with fever, oral pain, and a rash. On physical examination, she has oral erosions with hemorrhage, as well as purpura on her lower extremities. With gentle pressure, she has sloughing of the skin. What is the next step in management?",
+      "imageUrl": "",
+      "options": [
+        "A. Provide supportive care.",
+        "B. Begin vancomycin and piperacillin-tazobactam.",
+        "C. Initiate intravenous immunoglobulin (IVIG) therapy.",
+        "D. Begin infliximab.",
+        "E. Begin corticosteroids."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This young woman has clinical findings suggestive of Stevens-Johnson syndrome. Sloughing of the skin with gentle pressure is known as Nikolsky sign. The next step in management is supportive care, which includes transfer to a burn unit, fluid and electrolyte repletion, and ophthalmologic evaluation. She is at increased risk for bacterial superinfections, but antibiotics are not indicated for prevention of a secondary infection. The use of IVIG remains controversial, and randomized controlled trials have not been done yet. Tumor necrosis factor- inhibitors, including infliximab, have been shown to decrease the time to reepithelialization, but starting infliximab would not be the next step in management. Corticosteroids have been frequently used as part of the management, but no randomized controlled trials have evaluated corticosteroid use in Stevens-Johnson syndrome. [cite: 2119-2126]",
+      "explanationImageUrl": "",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 35-year-old woman noted a new onset of multiple pink papules that appeared suddenly and looked like mosquito bites. Three months later, most of these lesions had resolved, but new ones appeared. On examination, there are pink to red papules, some with ulceration and some with scarring. Biopsy of a papule shows a CD30 lymphoproliferative disorder. All of the following are acceptable treatment options except:",
+      "imageUrl": "",
+      "options": [
+        "A. Oral low-dose methotrexate",
+        "B. Systemic evaluation for lymphoma",
+        "C. Multidrug chemotherapy",
+        "D. Topical clobetasol",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "These crops of pink papules that regress spontaneously are typical of lymphomatoid papulosis. Patients with lymphomatoid papulosis can also get mycosis fungoides or anaplastic large T-cell lymphoma. Oral low-dose methotrexate and topical corticosteroids, including clobetasol, are acceptable treatment options for lymphomatoid papulosis. Systemic evaluation for lymphoma should also be considered. It is important not to treat this patient too aggressively. [cite: 2136-2140]",
+      "explanationImageUrl": "",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 56-year-old white man with well-controlled Crohn disease on oral mesalamine presents with an ulcer on his left lower extremity for the past 2 months. He denies any associated fevers or chills. Vital signs are blood pressure, 125/72 mm Hg; heart rate, 75 beats/min; respiratory rate, 14 beats/min; and temperature, 98.4° F. Physical examination reveals warm lower extremities with good hair growth, palpable distal pulses, and no edema bilaterally. Pinprick and vibratory sensation are intact on the plantar aspects of both feet. There is a deep ulcer with a violaceous border. Laboratory data include the following: white blood cell count, 7600/µL; hemoglobin, 13.5 g/dL; hematocrit, 46%; platelets, 250,000/µL; neutrophils, 57%; lymphocytes, 37%; monocytes, 5%; eosinophils, 2%; basophils, 0%; hemoglobin A1c 5.9%. What is the next step in management?",
+      "imageUrl": "",
+      "options": [
+        "A. Débridement",
+        "B. Begin intravenous vancomycin therapy.",
+        "C. Ankle-brachial index testing",
+        "D. Begin oral prednisone.",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The description of the ulcer and the patient's history of Crohn disease are suggestive of pyoderma gangrenosum. Oral prednisone is one of the initial therapies for pyoderma gangrenosum. A wound culture of the ulcer should be obtained to exclude an infectious etiology, but antibiotics are not indicated at this time. Débridement is contraindicated and can result in a larger wound. Because his pulses are palpable, ankle-brachial index testing is not indicated. [cite: 2150-2155]",
+      "explanationImageUrl": "",
+      "questionNumber": 19
+    },
+    {
+      "question": "Acute lipodermatosclerosis is most commonly misdiagnosed as which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Allergic contact dermatitis",
+        "B. Irritant contact dermatitis",
+        "C. Cellulitis",
+        "D. A spider bite",
+        "E. Tinea pedis with extension on the ankle"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Acute lipodermatosclerosis is a form of panniculitis (inflammation of the subcutaneous fat) that manifests as tender, warm, erythematous plaques in patients with venous hypertension. The most common initial location is the lower extremity, superior to the medial malleolus. Because of its clinical presentation, acute lipodermatosclerosis is often misdiagnosed as cellulitis, but there is no fever or leukocytosis. Dermatitis has overlying scale or crust and is usually pruritic, whereas tinea has an active border with scale. [cite: 2165-2168]",
+      "explanationImageUrl": "",
+      "questionNumber": 20
+    },
+    {
+      "question": "Disseminated gonococcal infection most commonly presents as tenosynovitis plus which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Vesiculopustules on an erythematous base, scattered acrally",
+        "B. Large areas of erythema studded with pustules on the trunk",
+        "C. Retiform purpura with central necrosis on the distal extremities",
+        "D. Morbilliform eruption on the trunk and extremities",
+        "E. Multiple erythematous subcutaneous nodules on the shins"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The other descriptions are of (B) acute generalized exanthematous pustulosis, also referred to as a pustular drug eruption; (C) disseminated intravascular coagulation that can occur in the setting of several infections, including acute meningococcemia; (D) viral exanthem or the most common form of drug eruption; and (E) erythema nodosum. [cite: 2172-2174]",
+      "explanationImageUrl": "",
+      "questionNumber": 21
+    },
+    {
+      "question": "Of the following entities, which is seen more commonly in African Americans than in Asians or whites?",
+      "imageUrl": "",
+      "options": [
+        "A. Atopic dermatitis involving the antecubital and popliteal fossae",
+        "B. Psoriasis of the elbows and knees",
+        "C. Scabies infestation",
+        "D. Pseudofolliculitis barbae",
+        "E. Tinea (pityriasis) versicolor"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Entities that are seen more commonly in African Americans are outlined in Table 412-3. [cite: 2181]",
+      "explanationImageUrl": "",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 60-year-old woman presents with an area of reticulated hyperpigmentation overlying the lumbosacral spine. She states that she has been suffering from chronic lower back pain. What is the most likely diagnosis?",
+      "imageUrl": "",
+      "options": [
+        "A. Dyskeratosis congenita",
+        "B. Melasma",
+        "C. Erythema ab igne",
+        "D. Hyperpigmentation due to cupping and moxibustion",
+        "E. Fixed drug eruption secondary to nonsteroidal anti-inflammatory drugs"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Erythema ab igne is seen at sites of repeated heat exposure, such as from heating pads and computer batteries. Hyperpigmentation due to cupping and moxibustion (traditional Chinese medicine) or a fixed drug eruption is circular in shape, not reticulated. Melasma can affect extrafacial sites, but they are primarily the extensor forearms and upper chest, and the lesions are circumscribed, not reticulated. Patients with the genodermatosis dyskeratosis congenita have reticulated pigmentation and pancytopenia, but lesions would not be limited to the lower back. [cite: 2189-2192]",
+      "explanationImageUrl": "",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 57-year-old woman complains of progressive hair loss involving the frontotemporal scalp and the eyebrows. She states that her hairline has been receding. Clinical examination shows a band of scarring alopecia on the frontotemporal scalp, as well as alopecia of the eyebrows. Perifollicular scaling is evident around the terminal follicles at the hairline, and dermoscopy shows perifollicular casts. A scalp biopsy shows loss of follicles and a perifollicular, lichenoid lymphocytic infiltrate with fibrosis. Which of the following is the most appropriate diagnosis?",
+      "imageUrl": "",
+      "options": [
+        "A. Traction alopecia",
+        "B. Alopecia areata",
+        "C. Androgenetic alopecia (female pattern hair loss)",
+        "D. Frontal fibrosing alopecia",
+        "E. Trichotillomania"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has frontal fibrosing alopecia, which is a variant of lichen planopilaris and typically affects the frontal hairline of postmenopausal women with a bandlike scarring alopecia. It often is associated with marked decrease or complete loss of the eyebrows. Other common features include facial papules and lichen pigmentosum in patients with dark phototypes. Frontal fibrosing alopecia is a relatively newly defined condition that is becoming increasingly recognized worldwide. The cause of this condition is unknown. Possible treatments include intralesional or systemic steroids, 50-reductase inhibitors, systemic antimalarial agents, topical tacrolimus, and excimer laser therapy. [cite: 2206-2210]",
+      "explanationImageUrl": "",
+      "questionNumber": 24
+    },
+    {
+      "question": "An 18-year-old man complains of alopecia involving his entire scalp, eyelashes, and eyebrows since the age of 14. Family history is positive for a sister with type I diabetes. Dermoscopy shows yellow dots corresponding to empty follicular openings. Diagnosis of alopecia areata universalis is established. The patient is otherwise healthy and is seeking a rapidly effective treatment. Which of the following is the most appropriate treatment regimen?",
+      "imageUrl": "",
+      "options": [
+        "A. High-dose pulse corticosteroid therapy",
+        "B. Intralesional steroid injections",
+        "C. Oral tofacitinib 5 mg twice a day",
+        "D. Topical minoxidil 5% twice per day",
+        "E. Topical immunotherapy with diphenylcyclopropenone"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "High-dose pulse steroids are effective in patients with acute hair shedding but not in long-standing alopecia universalis, and intralesional steroids are an option only in circumscribed disease. Topical immunotherapy can be effective, but regrowth usually is not observed for 12 to 18 months. Topical minoxidil is not effective. Although not FDA approved, oral tofacitinib has been shown to be very effective in inducing hair regrowth in patients with severe alopecia areata. The required dose might be higher than 10 mg a day. Unfortunately, the disease often relapses a few weeks after drug treatment is discontinued. [cite: 2219-2223]",
+      "explanationImageUrl": "",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 32-year-old man complains of progressive thickening and yellow discoloration of his big toenails. Clinical examination shows dryness and desquamation of the plantar skin, subungual hyperkeratosis with onycholysis, and longitudinal yellow streaks of the first toenail bilaterally. Which of the following is the most appropriate recommendation?",
+      "imageUrl": "",
+      "options": [
+        "A. Start terbinafine 250 mg/day for 3 months.",
+        "B. Start terbinafine 250 mg/day for 6 weeks.",
+        "C. Take a nail clipping for KOH testing or culture.",
+        "D. Start itraconazole 200 mg/day for 3 months.",
+        "E. Start fluconazole 150 mg/week for 9 months."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The diagnosis of onychomycosis always requires laboratory confirmation. Numerous common nail diseases, including psoriasis and trauma, can appear very similar to onychomycosis on clinical examination. In this patient, culture isolated T. rubrum. Terbinafine 250 mg/day is started if laboratory testing confirms normal baseline liver enzymes. [cite: 2230-2232]",
+      "explanationImageUrl": "",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 64-year-old woman complains of progressive pigmentation of her left thumbnail over the past 2 years. Clinical examination shows a 5-mm large band of longitudinal melanonychia associated with pigmentation of the proximal nail fold. Which of the following is the most appropriate recommendation?",
+      "imageUrl": "",
+      "options": [
+        "A. Take a punch biopsy of the band.",
+        "B. Follow up after 6 months.",
+        "C. Take a nail clipping for pathologic examination.",
+        "D. Refer for a nail matrix biopsy.",
+        "E. Reassure her."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Longitudinal melanonychia with periungual pigmentation is highly suspicious for nail melanoma. Failure to diagnose nail melanoma can have fatal consequences for the patient. Diagnosis requires a nail matrix biopsy. A biopsy from the band is not appropriate for diagnosis because it will sample the nail bed, which is not the site of the tumor. [cite: 2239-2241]",
+      "explanationImageUrl": "",
+      "questionNumber": 27
+    }
+  ]
+}

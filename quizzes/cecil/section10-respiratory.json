@@ -14,7 +14,7 @@
       "questionNumber": 1
     },
     {
-      "question": "A 53-year-old woman returns for reevaluation of cough of one year in duration. The cough is not productive, occurs during the day and night, and is triggered by talking, laughing, and cold air. Her pulmonary function tests are normal. The cough has not responded to appropriate therapy for asthma with inhaled corticosteroids and short-acting \u03b2-agonists. She has a history of hypertension, hyperlipidemia, cigarette smoking (10 pack years, currently smokes half a pack per day). She denies any history of lung disease, atopy, rhinitis, gastroesophageal reflux disease, dysphagia, or obstructive sleep apnea. The physical examination reveals bibasilar crackles and trace pedal edema. Her cardiac and abdominal examinations were unremarkable. Further evaluation including esophageal impedance and manometry was unrevealing. What is the appropriate next step in this patient's management?",
+      "question": "A 53-year-old woman returns for reevaluation of cough of one year in duration. The cough is not productive, occurs during the day and night, and is triggered by talking, laughing, and cold air. Her pulmonary function tests are normal. The cough has not responded to appropriate therapy for asthma with inhaled corticosteroids and short-acting Beta-agonists. She has a history of hypertension, hyperlipidemia, cigarette smoking (10 pack years, currently smokes half a pack per day). She denies any history of lung disease, atopy, rhinitis, gastroesophageal reflux disease, dysphagia, or obstructive sleep apnea. The physical examination reveals bibasilar crackles and trace pedal edema. Her cardiac and abdominal examinations were unremarkable. Further evaluation including esophageal impedance and manometry was unrevealing. What is the appropriate next step in this patient's management?",
       "options": [
         "A. High-resolution computed tomography of the chest",
         "B. Computed tomography of the sinuses",
@@ -27,7 +27,7 @@
       "questionNumber": 2
     },
     {
-      "question": "A 60-year-old man presents with dyspnea on exertion beginning approximately 2 months ago. He denies chest pain, cough, and wheezing but does admit to occasional chest tightness, particularly at night. He has no history of cardiovascular disease, lung disease or diabetes. He has a 30 pack-year history of cigarette smoking but quit five years ago. He takes medication daily for hypertension and gastroesophageal reflux disease. He does not exercise regularly. His BMI is 36 kg/m\u00b2. On physical examination his blood pressure is 140/88 and his other vital signs and examination are normal. Pulmonary function tests reveal a reduced FEV1 and preserved FVC, with an FEV1/FVC ratio of 65%, consistent with airflow limitation. Chest radiograph, complete blood count, electrocardiogram, and brain natriuretic peptide levels are normal. What is the next appropriate step in this patient's evaluation?",
+      "question": "A 60-year-old man presents with dyspnea on exertion beginning approximately 2 months ago. He denies chest pain, cough, and wheezing but does admit to occasional chest tightness, particularly at night. He has no history of cardiovascular disease, lung disease or diabetes. He has a 30 pack-year history of cigarette smoking but quit five years ago. He takes medication daily for hypertension and gastroesophageal reflux disease. He does not exercise regularly. His BMI is 36 kg/m2. On physical examination his blood pressure is 140/88 and his other vital signs and examination are normal. Pulmonary function tests reveal a reduced FEV1 and preserved FVC, with an FEV1/FVC ratio of 65%, consistent with airflow limitation. Chest radiograph, complete blood count, electrocardiogram, and brain natriuretic peptide levels are normal. What is the next appropriate step in this patient's evaluation?",
       "options": [
         "A. Echocardiogram",
         "B. Pulse oximetry with ambulation (6-minute walk test)",
@@ -40,7 +40,7 @@
       "questionNumber": 3
     },
     {
-      "question": "A 17-year-old woman with a history of atopy with allergic rhinitis presents with wheezing of 3 months duration. The wheezing occurs primarily during the day while playing soccer, is triggered by cold air and exercise, and has not responded to a 6-week course of an inhaled corticosteroid and short-acting \u03b2-agonist. She denies chest tightness, chest pain, or a history of lung or cardiovascular disease. Her history is notable for allergies to dust, multiple weeds, grasses, and animal dander. She has persistent rhinitis for which she performs nasal saline rinses and uses intranasal corticosteroids daily. Her physical examination reveals normal vital signs and erythema of the upper airway without nasal polyps. The remainder of her physical examination is normal without wheezing. Pulmonary function tests, chest radiograph, and methacholine challenge testing are normal. What is the next step in this patient's evaluation?",
+      "question": "A 17-year-old woman with a history of atopy with allergic rhinitis presents with wheezing of 3 months duration. The wheezing occurs primarily during the day while playing soccer, is triggered by cold air and exercise, and has not responded to a 6-week course of an inhaled corticosteroid and short-acting Beta-agonist. She denies chest tightness, chest pain, or a history of lung or cardiovascular disease. Her history is notable for allergies to dust, multiple weeds, grasses, and animal dander. She has persistent rhinitis for which she performs nasal saline rinses and uses intranasal corticosteroids daily. Her physical examination reveals normal vital signs and erythema of the upper airway without nasal polyps. The remainder of her physical examination is normal without wheezing. Pulmonary function tests, chest radiograph, and methacholine challenge testing are normal. What is the next step in this patient's evaluation?",
       "options": [
         "A. Sinus computed tomography",
         "B. High-resolution chest computed tomography",
@@ -348,11 +348,11 @@
         "A. Albuterol MDI 2 puffs as needed for wheezing, not to exceed 12 puffs per day",
         "B. Albuterol MDI 2 puffs four times a day plus as needed for wheezing, not to exceed 12 puffs per day",
         "C. Oral montelukast 10 mg each morning for two weeks. If her symptoms do not abate, advance her treatment to a beclomethasone MDI 2 puffs twice a day. An albuterol inhaler to be used as needed for shortness of breath.",
-        "D. A long-acting \u03b2-agonist 2 puffs twice a day and an albuterol inhaler to be used as needed for shortness of breath",
-        "E. A combination inhaler containing a long-acting \u03b2-agonist and an inhaled glucocorticoid 2 puffs twice a day and an albuterol inhaler to be used as needed for shortness of breath."
+        "D. A long-acting Beta-agonist 2 puffs twice a day and an albuterol inhaler to be used as needed for shortness of breath",
+        "E. A combination inhaler containing a long-acting Beta-agonist and an inhaled glucocorticoid 2 puffs twice a day and an albuterol inhaler to be used as needed for shortness of breath."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "The patient has moderate persistent asthma and requires both controller and rescue treatment. Although many physicians will go immediately to an inhaled glucocorticoid, about one third of patients will have asthma that comes into control with a leukotriene receptor antagonist and will not require treatment with an inhaled glucocorticoid. Giving the patient sequential prescriptions to fill allows you to determine this without need for a second visit. Answer D is incorrect because long-acting \u03b2-agonists should never be used in patients with asthma without accompanying treatment with an inhaled glucocorticoid.",
+      "explanation": "The patient has moderate persistent asthma and requires both controller and rescue treatment. Although many physicians will go immediately to an inhaled glucocorticoid, about one third of patients will have asthma that comes into control with a leukotriene receptor antagonist and will not require treatment with an inhaled glucocorticoid. Giving the patient sequential prescriptions to fill allows you to determine this without need for a second visit. Answer D is incorrect because long-acting Beta-agonists should never be used in patients with asthma without accompanying treatment with an inhaled glucocorticoid.",
       "questionNumber": 27
     },
     {
@@ -365,7 +365,7 @@
         "E. Inhaled magnesium sulfate"
       ],
       "correctAnswerIndex": 0,
-      "explanation": "The patient has severe, uncontrolled adult-onset nonallergic asthma. In adults with uncontrolled asthma, inhaled tiotropium (18 \u00b5g every morning) added to an inhaled glucocorticoid is more effective than a double dose of glucocorticoids and similar in effect to salmeterol. In addition, studies have shown that inhaled tiotropium reduces asthma exacerbations in patients who have severe, uncontrolled asthma who are already on treatment with inhaled glucocorticoids and long-acting \u03b2-2-agonists.",
+      "explanation": "The patient has severe, uncontrolled adult-onset nonallergic asthma. In adults with uncontrolled asthma, inhaled tiotropium (18 ug every morning) added to an inhaled glucocorticoid is more effective than a double dose of glucocorticoids and similar in effect to salmeterol. In addition, studies have shown that inhaled tiotropium reduces asthma exacerbations in patients who have severe, uncontrolled asthma who are already on treatment with inhaled glucocorticoids and long-acting Beta-2-agonists.",
       "questionNumber": 28
     },
     {
@@ -373,7 +373,7 @@
       "options": [
         "A. FEV1 values between 40 and 60% of predicted",
         "B. More than 20% diurnal variability in peak expiratory flow (PEF) values",
-        "C. Blood eosinophils >400 cells/\u00b5L",
+        "C. Blood eosinophils >400 cells/uL",
         "D. Serum IgE levels >100 IU/L",
         "E. All of the above"
       ],
@@ -385,7 +385,7 @@
       "question": "Which of the following interventions has been demonstrated to reduce the risk of exacerbations of chronic obstructive pulmonary disease?",
       "options": [
         "A. Supplemental oxygen",
-        "B. Pharmacotherapy (e.g., long-acting \u03b2-agonists, long-acting muscarinic antagonists, inhaled corticosteroids)",
+        "B. Pharmacotherapy (e.g., long-acting Beta-agonists, long-acting muscarinic antagonists, inhaled corticosteroids)",
         "C. Pneumococcal vaccine",
         "D. Switching to \"low tar\" cigarettes",
         "E. Chronic low-dose corticosteroid therapy"
@@ -398,14 +398,14 @@
     {
       "question": "Which of the following diseases may cause bronchiectasis?",
       "options": [
-        "A. \u03b11 Antitrypsin deficiency",
+        "A. Alpha1 Antitrypsin deficiency",
         "B. Chronic pulmonary thromboembolic disease",
         "C. Adenocarcinoma of the lung",
-        "D. Birt-Hogg-Dub\u00e9 syndrome",
+        "D. Birt-Hogg-Dube syndrome",
         "E. None of the above"
       ],
       "correctAnswerIndex": 0,
-      "explanation": "\u03b11-Antitrypsin deficiency, though commonly associated with emphysema, may also cause bronchiectasis.",
+      "explanation": "Alpha1-Antitrypsin deficiency, though commonly associated with emphysema, may also cause bronchiectasis.",
       "questionNumber": 31
     },
     {
@@ -439,7 +439,7 @@
       "options": [
         "A. Therapeutic bronchoscopy",
         "B. Early mobilization",
-        "C. Nebulized \u03b22-agonist therapy",
+        "C. Nebulized Beta2-agonist therapy",
         "D. Inhaled N-acetylcysteine",
         "E. Noninvasive ventilation"
       ],
@@ -765,11 +765,11 @@
         "A. Methotrexate",
         "B. Hydroxychloroquine",
         "C. Cytoxan",
-        "D. TNF-\u03b1 blockers",
+        "D. TNF-Alpha blockers",
         "E. Erthromycin"
       ],
       "correctAnswerIndex": 3,
-      "explanation": "Although TNF-\u03b1 blockers are used to treat sarcoidosis, they have also been reported to cause sarcoidosis when used to treat a variety of autoimmune diseases.",
+      "explanation": "Although TNF-Alpha blockers are used to treat sarcoidosis, they have also been reported to cause sarcoidosis when used to treat a variety of autoimmune diseases.",
       "questionNumber": 59
     },
     {

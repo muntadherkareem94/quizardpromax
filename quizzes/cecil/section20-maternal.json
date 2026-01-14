@@ -1,0 +1,256 @@
+{
+  "questions": [
+    {
+      "question": "Which of the following is the reason to consider teratogenicity of medication in 30-year-old women who are not currently pregnant?",
+      "options": [
+        "A. Half of all pregnancies in the United States are unplanned, putting the fetus at risk.",
+        "B. Many medications have long half-lives and can affect the fetus even if stopped at the time of conception.",
+        "C. Almost all medications are known to be unsafe in the first trimester.",
+        "D. Women in their 30s are less likely than younger women to identify that they are pregnant in the first weeks of pregnancy."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Half of all pregnancies in the United States are unplanned, including those in women in their 30s and 40s. Most women will not begin prenatal care until 12 weeks' gestation, after which major organogenesis has occurred. It is therefore incumbent on the prescribing physician to consider the impact of the medications prescribed to any patient of childbearing potential.",
+      "questionNumber": 1
+    },
+    {
+      "question": "The decision to undergo screening mammography in women aged 40 to 49 years should be shared decision making because of all except which of the following?",
+      "options": [
+        "A. Breast cancer is less common than lung cancer in this age group.",
+        "B. Overdiagnosis of breast cancer may result in detecting cancers that would not require treatment.",
+        "C. Women in their 40s have a higher false-positive rate of screening studies than women older than 50 years.",
+        "D. Women tend to overestimate their breast cancer risk and benefit from education and discussion of risks and benefits."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "U.S. Preventive Services Task Force guidelines recommend shared decision making for women of average risk aged 40 to 49 years for screening mammography, given the potential harms of both a higher false-positive rate and overdiagnosis. Several studies indicate that normal-risk women in this age group tend to overestimate their personal breast cancer risk.",
+      "questionNumber": 2
+    },
+    {
+      "question": "Management of a non-ST elevation acute coronary syndrome (ACS) in women should differ from men in which of the following ways?",
+      "options": [
+        "A. Medical management is preferred over revascularization in women but not in men.",
+        "B. Noninvasive testing is not recommended in women.",
+        "C. Aspirin is not indicated for emergent treatment of ACS because of bleeding risk.",
+        "D. \u03b2-Blockers should be avoided because of increased risk for congestive heart failure.",
+        "E. Lipid management goals are low-density lipoprotein cholesterol levels of less than 120 mg/dL"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Medical management of ACS and non-ST elevation myocardial infarction is the same for men and women, with aspirin, \u03b2-blocker, thrombolytic therapy, noninvasive testing, and cardiovascular rehabilitation. Randomized trials suggest that medical management has better outcomes than early revascularization in women with non-ST elevation myocardial infarction (MI) only, but not in men, one place where gender differences in guidelines exist. Early revascularization is recommended for women and men with ST elevation MI.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A woman taking fluoxetine for depression is now planning pregnancy. In counseling her, you would advise which of the following?",
+      "options": [
+        "A. If possible, she should switch to sertraline.",
+        "B. She should wait until the pregnancy test is positive, then stop the medication.",
+        "C. An increase in dose should be considered if depressive symptoms increase in pregnancy.",
+        "D. To avoid fetal abnormalities, she should stop the medication before attempting conception."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Although several studies have suggested a possible association between selective serotonin re-uptake inhibitor (SSRI) use in pregnancy and fetal anomalies, these associations usually disappear in studies that are able to control for other causes of fetal abnormalities such as smoking, and in those that are able to ascertain that the SSRI is the only prescription used. Fluoxetine appears to have fewer concerns than sertraline in the available studies. Because of drug distribution in pregnancy, increased doses in pregnancy may be required. The benefits of treated depression and the risks for depression to the woman and her child, including evidence of some developmental delays, must be weighed against any small increased risk for fetal anomalies.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Screening for problem alcohol use in women should consider all except which of the following?",
+      "options": [
+        "A. Binge alcohol drinking is common in women.",
+        "B. Younger women have an alcohol threshold (amount and duration) for complications that is lower than men.",
+        "C. Women develop complications from alcohol abuse with lower intake for shorter time periods.",
+        "D. Rates of alcohol dependence in women are about 5%."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although women have lower rates of alcohol dependence (5%) compared with men (10%), they develop complications with lower amounts of alcohol and with short length of abuse. Binge drinking is common not only among young adults but also among those older than 30 years, and it puts women at risk for violence and poor choices, including sexually transmitted diseases and sexual assault.",
+      "questionNumber": 5
+    },
+    {
+      "question": "The evidence-based regimen for medical abortion:",
+      "options": [
+        "A. Is approved for use up to 49 days gestation.",
+        "B. Is contraindicated in asthma patients.",
+        "C. Includes a single oral dose of 200 mg of mifepristone, followed by 800 \u03bcg of misoprostol buccally 24 to 72 hours later.",
+        "D. Has a success rate of 85 to 90%."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The evidence-based regimen is approved up to 63 days of gestation (counting from date of last menstrual cycle) and has a 94 to 98% success rate. Although the initial use suggested a contraindication for women with asthma, due to bronchospasm with some prostaglandins, misoprostol does not cause bronchospasm.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 34-year-old nulliparous woman requesting contraception is found to have a blood pressure of 165/90 mm Hg. Otherwise, her screening for medical contraindications is negative. Which contraceptive methods would not be appropriate for her?",
+      "options": [
+        "A. Progestin-only pills (POPs)",
+        "B. Combined oral contraceptives (COCs)",
+        "C. Copper-containing IUD",
+        "D. Etonogestrel subdermal implant",
+        "E. Levonorgestrel-IUS"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "According to the Medical Eligibility Criteria, this level of hypertension is considered a category 4 contraindication for COCs. Hypertension is considered category 2 for POPs and implants, and it is category 1 for the copper IUD. Nulliparity is considered a category 2 condition for the copper IUD.",
+      "questionNumber": 7
+    },
+    {
+      "question": "What would you advise a woman who comes seeking protection from one act of unprotected intercourse 60 hours before her visit?",
+      "options": [
+        "A. Counsel about having a copper IUD inserted.",
+        "B. Counsel about a regular method of contraception.",
+        "C. Counsel about taking ulipristal emergency contraception (EC).",
+        "D. Counsel about taking levonorgestrel emergency contraception if other alternatives are not readily available to her.",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinician should give the woman the choice of how to proceed after explaining the options and their advantages and disadvantages. The IUD works as emergency contraception in this time frame, but there is no large series of data on use of the progestin-containing device as opposed to the copper IUD, largely because it was not available when the earlier studies were done. The time period after exposure is associated with a diminution of efficacy for LNG EC pills, but there is probably still some effect, and they are easy to obtain. Ulipristal works in this time frame, but it must be supplied by prescription and is costly in the United States unless it is covered by insurance. Women who find themselves in need of EC should review their usual contraceptive practices and try to find an effective method that suits them for regular use.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A woman calls your office saying that she took her last combined oral contraceptive (COC) pill 3 days ago in the third week of her pack. She was traveling and lost her pill pack, and she has now returned home. She had sex yesterday and the day before, both times using a male condom, but she thinks the condom broke yesterday. What would you advise her?",
+      "options": [
+        "A. Start taking a new pack of COC pills immediately.",
+        "B. Take two pills today and tomorrow.",
+        "C. Use condoms for the next 7 days.",
+        "D. Take emergency contraception.",
+        "E. A, C, and D"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "For any scenario with missed pills, women should take a pill as soon as it noticed to be late, and then continue taking one at the usual time. At the most, this would require taking two pills once; repeated days of double- dosing of pills is not recommended. Condoms must be used until the woman is back on COCs for 7 days. Because there is the possibility that the condom broke and she had unprotected sex within the last 24 hours, she should consider taking emergency contraception.",
+      "questionNumber": 9
+    },
+    {
+      "question": "What contraceptive method would you recommend for a woman seeking protection from sexually transmitted infection (STI) and pregnancy who wishes to use only one method?",
+      "options": [
+        "A. Combined oral contraceptives",
+        "B. Progestin-containing IUD",
+        "C. Female condom",
+        "D. Male condom",
+        "E. Spermicides"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hormonal contraception does not protect against the acquisition of infection. Spermicides, although toxic to infectious organisms in vitro, do not seem to provide protection against STIs in vivo, and the irritation of the genital tract caused by these compounds may create a portal of entry for pathogens. The female condom is not considered a proven method to protect against HIV and other sexually transmitted pathogens, but there is a suggestion that it may reduce risk. The only well-studied method that clearly prevents both pregnancy and STI transmission is the male condom.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A woman had a copper IUD inserted 3 weeks ago and complains that she cannot feel the strings in her vagina. On speculum examination, the strings are not visible. On pelvic ultrasound, a bright echogenic linear structure is noted within the uterine cavity. Her vital signs and examination are otherwise normal. What is the appropriate diagnosis and next step?",
+      "options": [
+        "A. The IUD is correctly placed, but the strings have withdrawn into the uterine cavity. Reassure her that the IUD will be effective; no further action is necessary.",
+        "B. The IUD has perforated the uterus. The patient must be scheduled for laparoscopic removal of the misplaced IUD.",
+        "C. The IUD is misplaced. It must be removed and replaced in order to be effective."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The ultrasound confirms that the IUD is correctly placed within the uterus. Even though the strings are not visible, the IUD will be effective. At the time of removal, small forceps may be used to grasp the strings, which are likely in the endocervical canal or lower portion of the uterus. There is no evidence of perforation in this case.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 30-year-old G1P0 at 36 weeks' gestation presents with a complaint of right upper quadrant pain. She denies nausea, vomiting, change in color of urine or stool, or change in the pain with eating. She does state that she has had a dull headache and \"floaters\" in her vision. Laboratory testing reveals an aspartate aminotransferase level of 82 (upper reference limit = 40), hemoglobin level of 14.3, creatinine concentration of 1.0, and platelet count of 100,000. What is her most likely diagnosis?",
+      "options": [
+        "A. Cholelithiasis",
+        "B. Acute hepatitis",
+        "C. Cholestasis of pregnancy",
+        "D. Preeclampsia",
+        "E. Migraine syndrome"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient is a primigravida who presents in her third trimester with symptoms of preeclampsia, hemoconcentration, elevated creatinine for pregnancy, and thrombocytopenia, all most suggestive of preeclampsia.",
+      "questionNumber": 12
+    },
+    {
+      "question": "You are caring for a 36-year-old patient with a 6-year history of type 2 diabetes. She has been erratically controlled with metformin, 500 mg daily, and basal insulin. She has never been pregnant but is considering starting a family. What is the single most important advice you can give her?",
+      "options": [
+        "A. She is really too old to begin a family.",
+        "B. She needs to achieve normoglycemia and normalize her hemoglobin A1c level before conception.",
+        "C. She will need to be tightly controlled during pregnancy, so she needs to call you as soon as she has a positive pregnancy test result.",
+        "D. She needs an eye examination before pregnancy.",
+        "E. She should see a nephrologist to screen her kidney function before pregnancy."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient is in an ideal circumstance for preconception counseling. Normalization of her glucose concentration and hemoglobin A1c level before conception will lower her risk for fetal congenital anomalies and spontaneous abortion to background risk levels.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 24-year-old G2P1 woman whom you observe for asthma comes in at 14 weeks' gestation. She has had increasing problems with her asthma, needing a rescue inhaler two or three times a day, and has had nocturnal awakening. She denies chest pain, recent upper respiratory infection, gastroesophageal reflux, or new exposures. What is the most likely cause of her asthma exacerbation?",
+      "options": [
+        "A. The normal effects of pregnancy",
+        "B. The increased work load and oxygen consumption associated with pregnancy",
+        "C. She has discontinued her steroid inhaler and controller medication because of concern about the drug's effect on the fetus.",
+        "D. She has decreased her exercise.",
+        "E. The stress of work, pregnancy, and sleep deprivation"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most frequent cause of asthma exacerbation in pregnancy is the patient's or physician's discontinuation of controller medication because of the concern about fetal effects. Both maternal and fetal outcomes are optimized by good control of her asthma, and there are no data of adverse effects on the fetus associated with her controller medications.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 28-year-old woman currently at 8 weeks' gestation in a first pregnancy presents with left leg pain. She was seen in a local emergency department, having recently returned from a car trip from Boston to Florida. She was advised to use nonsteroidal anti-inflammatory drugs and to elevate her leg. She has had extensive nausea and vomiting during her pregnancy. The findings of your examination are benign, with minimal swelling in the left calf. What should your recommendation be?",
+      "options": [
+        "A. Radiograph of left knee to ankle",
+        "B. Doppler ultrasound of left leg to rule out deep vein thrombosis (DVT)",
+        "C. Decrease exercise, especially aerobic classes",
+        "D. Examine her for probable restless leg syndrome associated with pregnancy",
+        "E. Encourage oral rehydration for her dehydration"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pregnant patients are at an increased risk for thrombosis, beginning early in gestation. The hormonal effects leading to venodilation and stasis as well as pregnancy-related increase in coagulation activation are already present in this patient. Her dehydration further increases her hypercoagulability. In addition, more than 90% of DVT during pregnancy and the postpartum period occurs on the left side, so her pretest probability of this being DVT is higher than at baseline.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 32-year-old woman in otherwise good health whom you have followed for chronic hypertension tells you she is planning on starting a family as soon as possible. She has been well controlled on an angiotensin-converting enzyme (ACE) inhibitor, she has no end-organ damage, and her blood pressure (BP) today is 116/80 mm Hg. She would like to know what you recommend for treatment of her hypertension during pregnancy.",
+      "options": [
+        "A. Maintain current regimen.",
+        "B. Discontinue medications now in anticipation of pregnancy.",
+        "C. Continue current medication until diagnosis of pregnancy, discontinue and monitor BP. If an antihypertensive is required, substitute with labetalol.",
+        "D. Advise her that her risk for preeclampsia is so high that you would recommend against pregnancy.",
+        "E. Switch medication now to a safer medication for pregnancy."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Because pregnancy can be diagnosed as soon as she misses a period, it is safe to stop her ACE at that time. You can then take advantage of the normal physiologic fall in BP during pregnancy and observe her until her BP starts to rise to her prepregnant levels. At that time, you start her on a medication such as labetalol, which has better pregnancy data.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 25-year-old woman comes to the emergency department with a bruise to her left eye. She is accompanied by a female whom she refers to as a friend. The patient explains that she was hit in the eye while playing baseball. The friend insists on remaining with the patient while the initial history is taken by the nurse. Which of the following is the most appropriate recommendation?",
+      "options": [
+        "A. The friend should politely be asked to leave during the history taking, which should include exploration about the possibility of intimate partner violence.",
+        "B. The patient should first be asked if she wants her friend to stay, and if she agrees, the patient can be asked about intimate partner violence.",
+        "C. The patient should be asked if the friend is a partner; if not, it is acceptable to proceed with exploration of intimate partner violence in the presence of the friend.",
+        "D. Since the patient is accompanied by a friend, it is important not to inquire about exposure to intimate partner violence due to confidentiality.",
+        "E. Since the patient has given a plausible explanation for the bruise to her eye, and there is no evidence for universal screening, she should not be asked about exposure to IPV."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient has an injury that is suggestive of exposure to IPV. It is important that she be asked privately about the nature of the injury. Such inquiry is a form of case finding; it is not universal screening.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 17-year-old pregnant woman comes to the family physician's office to discuss her plans for the pregnancy. During the visit, she discloses that her 20-year-old boyfriend has twice threatened to hit her before she became pregnant. Which of the following is the most appropriate approach by the family physician?",
+      "options": [
+        "A. Ask the patient whether she has ever experienced any physical injury from her boyfriend; if not, advise her that they should attend couple counseling together.",
+        "B. Advise the patient that the risk will likely escalate during the pregnancy and she should leave the partner.",
+        "C. Give the patient the opportunity to discuss her concerns at a pace that is comfortable for her.",
+        "D. Advise the patient that this creates significant risk for her infant in the future, and it is not safe for her to remain in the relationship.",
+        "E. Explain to the patient that it is best to return another day when the appointment can be set aside to discuss the issue in more detail."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient needs to be given the opportunity to discuss her concerns at a pace that his comfortable for her. The other responses could either put the patient at risk (A) or are too directive (B and D) or not sufficiently responsive to the patient's needs (E).",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 56-year-old woman is a new patient in a family medicine practice. In her first consultation, she presents with a 16-year history of recurrent depression. In taking a comprehensive history the family physician asks about any experience of abuse. She discloses that she has been frightened of her husband for years. He is extremely controlling and occasionally physically violent. What is the most appropriate initial response from the physician to this disclosure?",
+      "options": [
+        "A. \"Have you ever thought about packing your bags and leaving him?\"",
+        "B. \"Have you ever thought about going to couples counseling?\"",
+        "C. \"Is there something you could do differently so that he becomes less angry?\"",
+        "D. \"That must be very difficult for you; I can help you find support.\"",
+        "E. \"That sounds frightening; do you want me to have a word with him?\""
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The priority must be initial validation, empathizing with the patient and signaling that support is available. The other responses are either too directive (A) or could increase risk to the patient (B and E) or are victim blaming (C).",
+      "questionNumber": 19
+    },
+    {
+      "question": "A clinical team is developing a policy on IPV. It should include:",
+      "options": [
+        "A. A protocol for annual screening of every female patient for current abuse",
+        "B. A mandatory reporting requirement ensuring that the police are informed in all cases of serious assault",
+        "C. Recording of abuse in the medical record of the victim and the perpetrator",
+        "D. A training program on IPV for all clinical staff that includes a referral pathway to IPV advocacy support"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Training of clinicians is a prerequisite for an appropriate response to patients experiencing IPV, and a referral pathway to advocacy removes one of the barriers to clinicians asking about abuse. The other responses are either not based on evidence of effectiveness (A) or could increase the risk to the patient (B and C), also reducing the likelihood of disclosure to health care providers.",
+      "questionNumber": 20
+    }
+  ]
+}
