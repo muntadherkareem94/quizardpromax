@@ -1,0 +1,745 @@
+{
+  "questions": [
+    {
+      "question": "An 80-year-old man presents with several months of epigastric pain, weight loss, fatigue, and dyspnea. The patient was diagnosed with pernicious anemia 5 years ago and has been receiving regular vitamin B12 injections. At that time, he had a colonoscopy, which was notable for extensive sigmoid diverticulosis. His complete blood count (CBC) today reveals a hematocrit of 24% and a mean cell volume (MCV) of 75 fL. What malignancy is most likely responsible for his symptoms?",
+      "imageUrl": "",
+      "options": [
+        "A. Myelodysplastic syndrome",
+        "B. Gastric cancer",
+        "C. Colon cancer",
+        "D. Mucosa-associated lymphoid tissue (MALT) lymphoma",
+        "E. Pancreatic cancer"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pernicious anemia is an autoimmune disorder that is characterized by autoantibodies against intrinsic factor, destruction of gastric parietal cells, vitamin B12 deficiency, and gastric achlorhydria. Over time, the condition progresses to chronic atrophic gastritis, intestinal metaplasia, dysplasia, and ultimately gastric adenocarcinoma. The patient described here has developed occult upper gastrointestinal (GI) bleeding from gastric cancer, stemming from long-standing pernicious anemia and atrophic gastritis. Myelodysplastic syndrome has not been associated with pernicious anemia, nor is it associated with iron deficiency. Although the patient likely has iron-deficiency anemia, pernicious anemia is also not associated with colon cancer. Additionally, an advanced colon cancer would be unlikely, given the patient's colonoscopy findings 5 years previously. MALT lymphoma is highly linked to Helicobacter pylori infection, not pernicious anemia. Although some reports indicate an increased risk of pancreatic cancer associated with pernicious anemia, pancreatic cancer would not cause iron-deficiency anemia.",
+      "explanationImageUrl": "",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 45-year-old man presents with back pain, jaundice, and weight loss of 20 pounds. A CT scan of the abdomen reveals a large mass in the pancreatic head. His cancer antigen (CA) 19-9 is elevated at 496 U/mL The patient's family history is notable for the following. His father was diagnosed with colon cancer at age 72. His mother is an only child and was diagnosed with breast cancer at age 51. His maternal grandfather died of pancreatic cancer at age 55. His sister was diagnosed with ovarian cancer at 52 and is currently in remission. The patient is most likely to have which of the following hereditary cancer syndromes?",
+      "imageUrl": "",
+      "options": [
+        "A. Lynch syndrome",
+        "B. BRCA2 mutation",
+        "C. CDKN2A mutation",
+        "D. Li-Fraumeni syndrome",
+        "E. CDH1 mutation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient presents with a likely diagnosis of pancreatic adenocarcinoma. In addition to his young age, his family history raises concern for a possible hereditary cancer syndrome. The patient's maternal family history, including early breast cancer, ovarian cancer, and pancreatic cancer, is highly suggestive of BRCA mutation. Both BRCA1 and BRCA2 mutations are associated with increased risk of pancreatic cancer, but BRCA2 is much more strongly associated. BRCA2 mutation is thought to be responsible for approximately 15% of familial pancreatic cancer. Although Lynch syndrome (hereditary nonpolyposis colorectal cancer [HNPCC]) is associated with a modestly increased risk of pancreatic cancer, his father's diagnosis of colon cancer at age 72 is not highly suggestive of Lynch syndrome. Li-Fraumeni syndrome results from a mutation in the p53 tumor suppressor gene, and it is most notably associated with early diagnosis of sarcoma, brain tumors, breast cancer, and leukemia, but not pancreatic cancer. Mutations in CDKN2A result in the familial atypical multiple-mole melanoma syndrome, which is associated with markedly increased risk of melanoma and pancreatic cancer. Germline mutations in CDH1 (E-cadherin) are associated with a very high risk of diffuse gastric cancer and breast cancer, but not pancreatic cancer.",
+      "explanationImageUrl": "",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 60-year-old healthy woman undergoes a CT scan of the abdomen for signs and symptoms of nephrolithiasis. The scan confirms a small right kidney stone but also reveals a 2-cm cystic lesion involving the main pancreatic duct. After spontaneously passing the kidney stone, the patient follows up in your clinic stating that she feels entirely well. She denies jaundice, abdominal or back pain, weight loss, or any other symptoms. Her CA 19-9 is drawn and found to be normal. You refer the patient for magnetic resonance cholangiopancreatography (MRCP), which confirms a 1.9-cm mucinous lesion involving the main pancreatic duct, with classic features of an intraductal papillary mucinous neoplasm of the pancreas (IPMN). What is the proper next step in management?",
+      "imageUrl": "",
+      "options": [
+        "A. Follow-up CT scan in 6 months",
+        "B. Follow-up MRCP in 6 months",
+        "C. Referral to a pancreatic surgeon for resection",
+        "D. See the patient in 6-12 months to assess symptoms, but obtain no further imaging studies.",
+        "E. This is a benign finding; no specific follow-up is required."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient was incidentally found on an imaging study to have a main duct IPMN. IPMNs are premalignant lesions of the pancreatic ductal epithelium, which have the potential to progress to pancreatic adenocarcinoma. IPMNs involving the side branches of the pancreatic ductal system (so-called branch duct IPMNs) carry an approximate 10%-20% risk of progressing to pancreatic cancer. For patients with branch duct IPMNs who do not wish to have surgery, active surveillance with serial MRI or pancreas protocol CT is considered an acceptable option. This patient has an IPMN of the main pancreatic duct, which carries approximately a 70% risk of progression to pancreatic adenocarcinoma. For this reason, all patients diagnosed with a main duct IPMN, without significant contraindications to surgery, should be referred to an experienced pancreatic surgeon for consideration of resection. Tanaka M, Fernández-del Castillo C, Adsay V, et al. International consensus guidelines 2012 for the management of IPMN and MCN of the pancreas. Pancreatology. 2012;12(3):183-197.",
+      "explanationImageUrl": "",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 35-year-old woman originally from the Dominican Republic comes to the clinic for her first visit. She has no significant medical problems and has had two children. After the birth of her second child 3 years ago, she was told to take iron tablets twice daily. Aside from an oral contraceptive, this is her only medication. Results of her laboratory studies are shown in Table 2.1.\n\nTable 2.1:\nWhite blood cell count: 4600/mm³ (4000-10,000)\nHematocrit: 35% (36-48)\nMean cell volume: 66 fL (80-95)\nRed blood cell count: 6.0 (4.2-5.6)\nPlatelets: 256,000/mm³ (150,000-450,000)\nIron: 150 µg/dL (40-159)\nTotal iron-binding capacity: 275 µg/dL (250-400)\n\nWhat is the most appropriate management?",
+      "imageUrl": "",
+      "options": [
+        "A. Phlebotomy for hemochromatosis",
+        "B. Continue current iron therapy and initiate workup for chronic inflammatory process.",
+        "C. Switch therapy from oral iron sulfate to iron dextran.",
+        "D. Discontinue iron therapy; send for ferritin and hemoglobin electrophoresis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This young woman has a microcytic anemia despite 3 years of oral iron therapy. Because patients are frequently noncompliant with oral iron, one must always consider that the patient has not taken the medication. Although the best measure of iron stores would be to check serum ferritin, her iron and total iron-binding capacity (TIBC) show an iron saturation of over 50%, so it seems unlikely that she remains iron deficient. A ferritin level will allow you to determine if she is iron replete or iron overloaded. The profound microcytosis in the face of a near-normal hematocrit, mildly elevated RBC count, and presumed adequate iron stores should lead one to consider a diagnosis of thalassemia minor. Indeed, an MCV this low is extremely rare in iron deficiency and would never occur in the absence of profound anemia. Beta-thalassemia minor can be diagnosed by hemoglobin electrophoresis, and it is established by the demonstration of an elevated hemoglobin A2 (>4%). Given the minimal anemia, it is even more likely that this represents alpha-thalassemia, which can be diagnosed only by DNA studies, because it does not result in an abnormal hemoglobin electrophoresis. Peters M, Heijboer H, Smiers F, Giordano PC. Diagnosis and management of thalassaemia. BMJ. 2012;344:e228.",
+      "explanationImageUrl": "",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 74-year-old man with diabetes mellitus controlled with an oral agent presents for routine follow-up. His other medical problems include hypertension, for which he takes an angiotensin-converting enzyme (ACE) inhibitor, and benign prostatic hypertrophy. On review of his records, you note that his hematocrit has been gradually declining over the past 3 years. Results of his laboratory studies are shown in Table 2.2.\n\nTable 2.2:\nWhite blood cell count: 7000/mm³ (4000-10,000)\nHematocrit: 28% (36-48)\nMean cell volume: 84 fL (80-95)\nRed blood cell distribution width: 15 (10-14.5)\nPlatelets: 340,000/mm³ (150,000-450,000)\nBlood urea nitrogen: 35 mg/dL (9-25)\nCreatinine: 1.9 mg/dL (0.7-1.3)\nLactate dehydrogenase: 230 U/L (107-231)\n\nWhat is the most likely etiology of his anemia?",
+      "imageUrl": "",
+      "options": [
+        "A. Combined iron and vitamin B12 deficiency",
+        "B. Medication effect from the ACE inhibitor",
+        "C. Erythropoietin deficiency",
+        "D. Anemia due to marrow replacement by metastatic prostate cancer"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient has a normochromic, normocytic anemia. The most likely reason for the gradual decrement in his hematocrit is that he has had a gradual decline in his erythropoietin level coincident with his moderate renal insufficiency. This can be readily assessed by checking an erythropoietin level, which should be several hundred with a hemoglobin/hematocrit in this range. Although this could be a result of combined iron and vitamin B12 deficiency, one would expect the red blood cell distribution width (RDW) to be abnormally high. Furthermore, vitamin B12 deficiency (which can be a complication of metformin) should also depress the white blood cell count and the platelet count. ACE inhibitors are not typically associated with anemia. In a patient with benign prostatic hypertrophy, the sudden development of prostate cancer leading to marrow infiltration and anemia with a normal white count and platelet count and a normal lactate dehydrogenase (LDH) would seem highly unlikely.",
+      "explanationImageUrl": "",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 50-year-old man presents complaining of dyspnea on exertion. He was in a car accident 5 years ago with multiple abdominal injuries, resulting in a splenectomy and a resection of several feet of his terminal ileum. After a prolonged recovery, he returned to work and his normal activities. For the last 4-6 months, he has had trouble climbing the stairs to his bedroom without stopping to catch his breath. He is on no medications, has not lost weight, and has a well-balanced diet (see Table 2.3 for CBC).\n\nTable 2.3:\nHemoglobin: 5.6 g/dL\nHematocrit: 17%\nMean cell volume: 123 fL\nWhite blood cell count: 3500/mm³\nPlatelets: 70,000/µL\nBilirubin: 2.3 mg/dL\n\nPeripheral smear showed macrocytic erythrocytes, hypersegmented neutrophils, and decreased platelets. What is the most likely diagnosis?",
+      "imageUrl": "",
+      "options": [
+        "A. Myelodysplastic syndrome",
+        "B. Vitamin B12 deficiency",
+        "C. Sideroblastic anemia",
+        "D. Hemolytic anemia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has megaloblastic anemia secondary to malabsorption of vitamin B12, which is absorbed in the terminal ileum. Because people with a good diet usually have substantial body stores of vitamin B12 patients typically do not develop vitamin B12 deficiency until several years following failure of vitamin B12 absorption. Megaloblastic anemia causes pancytopenia because the failure of DNA synthesis affects all rapidly dividing cells. Patients may also have mouth ulcers, symptoms of malabsorption, smooth tongue, and neurologic abnormalities. Sideroblastic anemia typically presents with a microcytic anemia. Hemolytic anemia should not cause leukopenia or thrombocytopenia. Although myelodysplasia can be associated with macrocytosis, it rarely causes an MCV over 100-110 fL. Furthermore, although you may see pseudo Pelger-Huët anomaly (bilobed neutrophils) in the neutrophils in patients with myelodysplastic syndrome, hypersegmented polys are seen only in megaloblastic anemia. Stabler SP. Vitamin B12 deficiency. N Engl J Med. 2013; 368(21):149-160.",
+      "explanationImageUrl": "",
+      "questionNumber": 6
+    },
+    {
+      "question": "An 18-year-old woman is referred for the evaluation of mild jaundice. She thinks she has had it intermittently for years. She thinks that she has always tired more easily than her friends, and she has been told several times that she is anemic. She has been treated on several occasions with iron pills, but not in the past 2 years. Her physical examination reveals that she has scleral icterus and a spleen tip palpable below the left costal margin (Table 2.4).\n\nTable 2.4:\nHemoglobin: 11.6 g/dL\nHematocrit: 31%\nMean cell volume: 83 fL\nReticulocytes: 7.0%\nPlatelets: 220,000/mm³\nWhite blood cell count: 6500/mm³\nBlood smear: Spherocytes, increased reticulocytes\nCoombs test: Negative\n\nThe patient is most likely to respond to which of the following?",
+      "imageUrl": "",
+      "options": [
+        "A. Corticosteroids",
+        "B. Intravenous iron",
+        "C. Splenectomy",
+        "D. Eculizumab"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient has anemia with increased reticulocytes, and spherocytes are seen on the peripheral smear. The diagnostic distinction to be made is between a congenital hemolytic anemia and an immune hemolytic anemia. The patient's long history of jaundice and the relatively well-compensated hemolysis is most suggestive of hereditary spherocytosis. Hereditary spherocytosis, if severe enough to require therapy, responds very well to splenectomy. The negative Coombs test makes autoimmune hemolytic anemia (AIHA) unlikely, although about 10% of patients with AIHA may have a negative Coombs test. Steroids are the preferred first-line therapy for AIHA. The reticulocytosis makes iron deficiency extremely unlikely. Although hemolysis is the hallmark of paroxysmal nocturnal hemoglobinuria (PNH), patients with PNH have intravascular hemolysis secondary to surface activation of complement and therefore do not present with spherocytes in the peripheral blood.",
+      "explanationImageUrl": "",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 39-year-old man with sickle cell anemia is admitted for management of pneumonia. He presented with a 2-day history of a dry, nonproductive cough and fever to 101°F, and he was found to have a right lower lobe infiltrate. On admission, his oxygen saturation was 94% on room air, and he was not short of breath. He is placed on cefuroxime and given intravenous hydration (Table 2.5).\n\nTable 2.5:\nWhite blood cell count: 18,000/mm³ (4000-10,000)\nHematocrit: 21% (36-48)\nPlatelets: 247,000/mm³ (150,000-450,000)\n\nOne day later, he complains of increasing shortness of breath and is found to have an oxygen saturation of 86% on room air. Chest radiography reveals bilateral lower lobe opacities. What are the best next steps?",
+      "imageUrl": "",
+      "options": [
+        "A. Continue current antibiotic coverage and administer supplemental O2.",
+        "B. Continue current antibiotic coverage, administer supplemental O2, and obtain a V/Q scan.",
+        "C. Continue current antibiotic coverage, administer supplemental O2, and transfuse packed red blood cells (PRBCs).",
+        "D. Add coverage for atypical organisms and administer supplemental O2.",
+        "E. Add coverage for atypical organisms, administer supplemental O2 and exchange transfuse."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The patient presented with a clearly defined right lower lobar pneumonia that progressed to acute chest syndrome (ACS). ACS is an acute illness characterized by a constellation of fever, chest pain, shortness of breath, hypoxia, and a new infiltrate(s) on chest radiograph. ACS is a life-threatening complication of sickle cell disease often caused by atypical organisms such as Mycoplasma pneumoniae. It is not uncommon for adults with sickle cell disease to present with a pain crisis or pneumonia and deteriorate in the hospital to ACS. The treatment for ACS is antibiotic coverage for typical and atypical organisms, red blood cell exchange transfusion to a goal hemoglobin S (sickle) <30% and other supportive care. While simple transfusion can be very helpful to increase the oxygen-carrying capacity of blood and blood volume itself, it does not rapidly decrease the percentage of circulating sickle cells. Thus in situations such as ACS where sickling of RBCs is the chief problem, exchange transfusion is the preferred treatment. A pulmonary embolus would not explain this patient's new pulmonary infiltrates. Vichinsky EP, Neumayr LD, Earles AN, et al. Causes and outcomes of the acute chest syndrome in sickle cell disease. N Engl J Med. 2000;342(25):1855-1865.",
+      "explanationImageUrl": "",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 54-year-old African American man with sickle cell anemia presents to the emergency room with a 2-day history of fatigue and pain in his back and lower extremities. He scores his pain at 5 out of 10. He has had episodes of pain in the past and is well known to the emergency department staff. His temperature is 99°F, heart rate is 108 beats per minute, blood pressure is 120/70 mm Hg, and oxygen saturation on room air is 96% (see Table 2.6).\n\nTable 2.6:\nWhite blood cell count: 14,000/mm³ (4000-10,000)\nHematocrit: 20% (36-48)\nPlatelets: 317,000/mm³ (150,000-450,000)\nReticulocyte count: 0.3% (0.6-2.8)\nTotal bilirubin: 1.8 mg/dL (0.2-1.2)\nDirect bilirubin: 0.3 mg/dL (0.0-0.3)\nLactate dehydrogenase: 240 U/L (135-225)\n\nHe is started on intravenous (IV) normal saline and morphine. What is the best next step?",
+      "imageUrl": "",
+      "options": [
+        "A. Admit to the hospital and start broad-spectrum antibiotics.",
+        "B. Admit to the hospital and transfuse packed red blood cells (PRBCs).",
+        "C. Admit to the hospital and arrange for emergent RBC exchange transfusion.",
+        "D. Manage pain aggressively and discharge home with close hematology follow-up.",
+        "E. Manage pain aggressively and discharge home on oral antibiotics."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Vasoocclusive pain crises are the hallmark of sickle cell disease, and patients may be admitted to the hospital very frequently for pain control. However, not all presentations of individuals with sickle cell disease are for a pain crisis. A significant finding in this presentation is anemia accompanied by reticulocytopenia. This patient has transient red cell aplasia (TRCA) due to parvovirus B19. His anemia is likely to worsen because of the shortened lifespan of sickled red blood cells (about 20 days) and the inability of his bone marrow to produce reticulocytes. Reticulocytopenia begins about 5 days postexposure and continues for 7 to 10 days. Recovery is spontaneous, but support with RBC transfusions is necessary. The two indications for RBC exchange transfusion are stroke/TIA and acute chest syndrome. This patient has no indication for broad-spectrum antibiotics. Serjeant BE, Hambleton IR, Kerr S, et al. Haematological response to parvovirus B19 infection in homozygous sickle-cell disease. Lancet. 2001;358(9295):1779-1780.",
+      "explanationImageUrl": "",
+      "questionNumber": 9
+    },
+    {
+      "question": "In which of the following patients should yearly screening with low-dose computed tomography for lung cancer not be considered?",
+      "imageUrl": "",
+      "options": [
+        "A. A 47-year-old woman with a 2-pack-per-day active tobacco use habit and a history of lung cancer in both her mother and father",
+        "B. A 57-year-old woman with a history of a 1-pack-per-day tobacco use habit from ages 15 to 50",
+        "C. A 70-year-old man with a history of asbestos exposure and 50-pack-year history of cigarette smoking who quit smoking 12 years ago",
+        "D. A 75-year-old woman who has smoked a half-pack of cigarettes per day since age 30",
+        "E. A 60-year-old man with a 50-pack-year history of cigarette smoking whose last cigarette was after a heart attack at age 50"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Low-dose CT screening in high-risk patient populations has been associated with the potential for a significant reduction in lung cancer mortality. The National Lung Screening Trial (NLST) compared annual low-dose chest CT to chest x-ray for 3 years in high-risk populations, which demonstrated a statistically significant decrease in lung cancer deaths in the CT-screened group (lung cancer mortality reduction of 20% [CI 3.8-26.7], all-cause mortality reduction of 6.7% [CI 1.2-13.6]). Several other screening studies are underway or under analysis. Additionally, there are multiple guidelines as to appropriate populations in which to consider screening. The broadest guidelines include individuals with all the following characteristics: Aged 55-79, At least a 30-pack-year smoking history, Active tobacco use within the past 15 years. The duration of screening is unclear, but all guidelines recommend yearly screening for a minimum of 3 years and a maximum recommendation of yearly screening until patients no longer meet high-risk criteria. There are no data at this time to suggest a mortality benefit in screening patients under age 50. National Lung Screening Trial Research Team. Reduced lung-cancer mortality with low-dose computed tomographic screening. N Engl J Med. 2011;365(5):395-409.",
+      "explanationImageUrl": "",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 47-year-old woman required emergency craniotomy and repair of an aneurysm. On postoperative day 2, she develops left calf pain and is found to have thrombus in the popliteal vessel. Intravenous (IV) unfractionated heparin is started given her recent neurosurgery. Two days later, warfarin is started. On postoperative day 7, she is found to have right leg swelling and dyspnea. Evaluation reveals pulmonary emboli and thrombus in the right common femoral vein. Her platelet count is noted to be 87,000/µL, down from 320,000/µL at the time of surgery. Next steps in her management include:",
+      "imageUrl": "",
+      "options": [
+        "A. Immediately stop all heparin exposure, including IV line flush.",
+        "B. Start IV direct thrombin inhibitor such as argatroban or bivalirudin.",
+        "C. Give 10 mg IV vitamin K to reverse warfarin.",
+        "D. Test for heparin-platelet factor 4 antibodies.",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient has a clinical diagnosis of heparin-induced thrombocytopenia (HIT) with development of new clots while on heparin for 5 days, and with a platelet count decrease greater than 50% of initial count. Despite recent neurosurgery, lifesaving treatment requires doing A, B, and C immediately. Although testing should be sent to confirm diagnosis, waiting for results before starting treatment is contraindicated and can lead to poor outcome, including death. Greinacher A. Heparin-induced thrombocytopenia. N Engl J Med. 2015; 373(3):252-261.",
+      "explanationImageUrl": "",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 32-year-old woman 8 weeks postpartum is seen by her obstetrician for fevers, fatigue, and bruising. In addition to elevated temperature as well as some bruises and petechiae on examination, she is found to have a hematocrit of 21%, platelet count of 23,000/µL, and creatinine of 2.4 mg/dL. Values at time of delivery were normal. While waiting to get more laboratory serum tests, she develops right arm weakness and confusion. She is sent directly to the emergency room and admitted to the intensive care unit. What should your immediate next step be?",
+      "imageUrl": "",
+      "options": [
+        "A. Request neurology consult for electroencephalogram (EEG).",
+        "B. Transfuse with platelets.",
+        "C. Give IV fluids for dehydration.",
+        "D. Check peripheral smear and find schistocytes; initiate plasmapheresis.",
+        "E. Send for ADAMTS13 level and wait for results before treating."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has the classic pentad of findings associated with thrombotic thrombocytopenic purpura (TTP). Although disseminated intravascular coagulation (DIC) from retained products of conception could result in microangiopathic changes and thrombocytopenia, DIC is not usually associated with renal failure or focal neurologic findings. Risk factors for TTP include pregnancy, HIV infection, autoimmune disorders, and others. Rapid initiation of plasmapheresis is critical, even if confirmatory laboratory test results are not available. George JN, Nester CM. Syndromes of thrombotic microangiopathy. N Engl J Med 2014;371(7):654-666.",
+      "explanationImageUrl": "",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 39-year-old man is seen by a new primary care physician. \"von Willebrand disease (vWD)\" is listed in his past medical history, but the patient does not know many details of this. He had an episode of gastrointestinal (GI) bleeding in college requiring hospitalization and RBC transfusion when taking nonsteroidal antiinflammatory drugs (NSAIDs). He was told he has vWD and to avoid aspirin and NSAIDs. Review of systems is negative for recent episodes of bleeding, bruising, or epistaxis. His father has had some bleeding episodes in the past. What tests do you send to evaluate for vWD?",
+      "imageUrl": "",
+      "options": [
+        "A. Factor VIII activity",
+        "B. vWF antigen level",
+        "C. Ristocetin cofactor",
+        "D. vWF multimer gel electrophoretic analysis",
+        "E. All of the above"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This patient gives a good history for vWD, with mucosal bleeding in the setting of impaired platelet function due to NSAIDs that was severe enough to require red cell transfusion. All of the tests listed above are required to make a diagnosis of vWD and determine the type (I, II, or extremely unlikely III). vWF antigen level measures the actual vWF protein level, but vWF also functions to carry FVIII and prolong its plasma half-life as well as bind to platelets-hence the need to measure factor VIII activity and ristocetin cofactor activity, a functional surrogate assay for patient vWF platelet binding. vWF multimer gel electrophoresis determines vWF multimer size, which is needed in order to classify vWD type II subtypes. Leebeek FWG, Eikenboom JCJ. Von Willebrand's disease. N Engl J Med. 2016;375(21):2067-2080.",
+      "explanationImageUrl": "",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 43-year-old woman undergoes elective cholecystectomy for gallstones. Her past medical history is unremarkable, and she is on no medications. On postoperative day 4, she develops left lower-extremity calf pain and is found to have popliteal vein thrombus by compression ultrasound (US). She has no past history of thrombosis. She weighs 68 kg and has normal renal function. Which is the best treatment option?",
+      "imageUrl": "",
+      "options": [
+        "A. Compression stockings",
+        "B. Aspirin 325 mg once daily",
+        "C. Low-molecular-weight heparin overlapping with warfarin targeting international normalized ratio 1.5-2.0",
+        "D. Rivaroxaban 15 mg twice daily x 3 weeks, then 20 mg once daily",
+        "E. Intravenous unfractionated heparin (IV UFH)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient is an ideal candidate for treatment of acute deep vein thrombosis (DVT) with rivaroxaban she is young, has no significant health problems or medications, and has limited duration of therapy for provoked venous thromboembolism (VTE). This dose (15 mg twice daily for 3 weeks followed by 20 mg once daily) is the treatment dose for acute DVT or pulmonary embolism. Aspirin or compression stockings are inadequate treatment for acute VTE. A target INR of 1.5-2.0 is too low for acute VTE treatment. Although IV UFH could be considered, at 96 hours postoperatively, she should have adequate hemostasis to allow oral anticoagulant therapy with a short-acting new oral anticoagulant.",
+      "explanationImageUrl": "",
+      "questionNumber": 14
+    },
+    {
+      "question": "The patient in Question 14 has no past history of thrombosis, despite two pregnancies. Her father had a deep vein thrombosis (DVT) at age 43, and his father had a pulmonary embolism in his 60s. She has two daughters, ages 12 and 15. She should be tested for thrombophilia:",
+      "imageUrl": "",
+      "options": [
+        "A. True",
+        "B. False"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Although she has had a provoked DVT, her father had a DVT at a young age and she has two daughters who might consider oral contraceptive pill (OCP) use. Finding an inherited thrombophilia in this patient would not change current management or duration of anticoagulation treatment for provoked DVT (3 months), but if present, it would prompt testing of her daughters prior to OCP use. Additionally, results could affect management of potential future pregnancies of her daughters.",
+      "explanationImageUrl": "",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 32-year-old woman undergoes laparoscopic resection of a benign complex ovarian cyst by her gynecologist. One week later she presents complaining of increasing lower back and abdominal pain. On examination, she has a 7-cm x 4-cm subfascial hematoma from the umbilicus to the right lower quadrant and a 6-cm x 3-cm suprapubic ecchymosis. Her prothrombin time (PT) is 12.3 seconds (normal 11.2-13.4 seconds), and her activated partial thromboplastin time (aPTT) is 72.4 seconds (normal 23.8-36.6 seconds). Repeat testing reveals PT 12.8 seconds and aPTT 81.5 seconds. What is the next test to evaluate an isolated elevated aPTT?",
+      "imageUrl": "",
+      "options": [
+        "A. Factor XIII level",
+        "B. Fibrinogen",
+        "C. Mixing study",
+        "D. Platelet aggregation studies",
+        "E. D-Dimer"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A mixing study should be done next to determine if the aPTT is prolonged due to the absence of a coagulation factor in the intrinsic coagulation pathway or to the presence of a circulating inhibitor. A mixing study is performed by mixing patient plasma with normal pooled plasma in a 1:1 ratio. The normal plasma supplies enough of the coagulation factors to correct a congenital deficiency and normalize the aPTT. If an inhibitor is present, such as an acquired FVIII inhibitor, lupus anticoagulant, or even drugs such as unfractionated heparin or bivalirudin, the addition of plasma will not correct the aPTT, because the factors in the normal plasma will be affected. If the mixing study corrects the aPTT, then individual factor levels can be performed to determine which is deficient (XII, XI, IX, VIII). If the aPTT does not correct, tests for inhibitors need to be performed. Factor XIII activity is not measured by the aPTT. Because the PT is normal, fibrinogen levels should be normal. Platelets have no impact on the aPTT. D-Dimer results would not be of help in determining the etiology of prolonged aPTT in this postoperative patient with normal PT.",
+      "explanationImageUrl": "",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 63-year-old man with type 2 diabetes mellitus and hypertension presents with recurrent painless hematuria. He undergoes a CT scan of the abdomen and pelvis, which shows an enhancing 6.3-cm left kidney mass highly suspicious for a renal cell carcinoma. There were multiple retroperitoneal enlarged lymph nodes, and the lung bases showed four or five pulmonary nodules, with the largest measuring 1.1 cm. The patient has a good performance status. His CBC and comprehensive metabolic panel (CMP) results were within normal limits, except for a hemoglobin of 11.5 g/dL. The next steps would include all except:",
+      "imageUrl": "",
+      "options": [
+        "A. Biopsy of the kidney mass",
+        "B. Biopsy of the lung lesions",
+        "C. Chest CT, brain magnetic resonance imaging (MRI), bone scan",
+        "D. Initiating sunitinib or pazopanib",
+        "E. Proceed with cytoreductive nephrectomy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "It is mandatory to have tissue diagnosis prior to initiating systemic therapies. Although renal cell carcinoma (RCC) is statistically by far the most likely diagnosis, transitional cell cancer (TCC) of the renal pelvis is a consideration. In that case, removal of the primary would not be indicated, and the patient would proceed with a different systemic therapy.",
+      "explanationImageUrl": "",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 72-year-old man who is an active smoker presents with dysuria and vague abdominal/pelvic pain. His urinalysis reveals 10-20 RBCs/high-power field. He undergoes an abdominal ultrasound that is unremarkable except for potential thickening of the bladder wall on the left side. Cystoscopy shows a 5-cm bladder mass. The patient undergoes transurethral resection of bladder tumor (TURBT), which reveals high-grade urothelial cancer with focal invasion into the lamina propria. No muscle is available in the specimen. The next step would be:",
+      "imageUrl": "",
+      "options": [
+        "A. Radical cystectomy",
+        "B. Partial cystectomy (left bladder wall)",
+        "C. Proceed with bacille Calmette-Guérin (BCG) immunotherapy.",
+        "D. Repeat TURBT",
+        "E. Chemoradiation to the bladder mass"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "It is very important to have muscle present on the biopsy report to document whether muscle invasion is present for appropriate staging and to guide therapy. Superficial disease: BCG for high-risk superficial disease. Muscle-invasive disease: neoadjuvant chemotherapy + cystectomy.",
+      "explanationImageUrl": "",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 51-year-old woman presents with recurrent urinary tract infections (UTIs) for the past 6 months and pelvic pain for 6 weeks. A CT scan of her pelvis shows a large bladder mass. Cystoscopy followed by TURBT shows a poorly differentiated urothelial carcinoma. Tumor is invading into the muscularis propria. Chest and abdominal CT do not show distant metastases or enlarged lymph nodes. Her serum creatinine is 0.75 mg/dL. Her bone scan is normal. The patient has an excellent performance status. Which is the correct statement?",
+      "imageUrl": "",
+      "options": [
+        "A. Neoadjuvant cisplatin-based chemotherapy is indicated based on a 15% absolute reduction in death.",
+        "B. Adjuvant cisplatin-based chemotherapy is indicated based on a 15% absolute reduction in death.",
+        "C. Neoadjuvant cisplatin-based chemotherapy is indicated based on a 5% absolute reduction in death.",
+        "D. Adjuvant cisplatin-based chemotherapy is indicated based on a 5% absolute reduction in death.",
+        "E. Proceed with radical cystectomy."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In patients with good performance status and good kidney function, neoadjuvant cisplatin-based chemotherapy is standard. It is associated with a 5% absolute reduction in death and 15% relative reduction in death. Data for adjuvant therapy are limited, although in practice it is frequently considered in patients who did not receive neoadjuvant therapy. The preferred approach in this healthy patient with normal renal function is neoadjuvant cisplatin-based chemotherapy followed by radical cystectomy. Bellmunt J, Orsola A, Leow JJ, et al. Bladder cancer: ESMO Practice Guidelines for diagnosis, treatment and follow-up. Ann Oncol. 2014 25(suppl 3):iii40-iii48.",
+      "explanationImageUrl": "",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 59-year-old man, previously healthy and taking only one 81-mg aspirin per day, was referred for prostate biopsy after a screening showed a serum prostate-specific antigen (PSA) of 4.8 ng/ml and unremarkable digital rectal examination (DRE). A 12-core needle biopsy was performed, revealing two cores on the left with Gleason 3+3 adenocarcinoma involving up to 20% of each core. All other cores showed no evidence of disease. The patient asks you about imaging to complete his diagnostic workup. What would you advise?",
+      "imageUrl": "",
+      "options": [
+        "A. Endorectal coil MRI only",
+        "B. CT scan of the abdomen/pelvis only",
+        "C. Bone scan only",
+        "D. CT scan of the abdomen/pelvis and bone scan",
+        "E. No further workup necessary"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The most common sites of prostate cancer metastases are bone and lymph nodes. For patients with low-risk disease (Tlc [normal DRE] or T2a [tumor involving one-half or less of one lobe] and PSA <10 ng/mL and Gleason score <7), the likelihood of spread of disease visible by imaging is exceedingly low. Further workup is not recommended for these patients. CT of the abdomen/pelvis and bone scan are recommended for men with serum PSA >20 ng/mL, or serum PSA >10 ng/mL with a positive DRE, or a Gleason >=8 tumor, or evidence of tumor extension through the prostate capsule. Several institutions use endorectal coil MRI as part of the initial workup, but the clinical utility of this modality is not yet clear. Mohler JL, Armstrong AJ, Bahnson RR, et al. Prostate cancer, version 1.2016. J Natl Compr Canc Netu. 2016;14(1):19-30.",
+      "explanationImageUrl": "",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 61-year-old man presents with a history of hypertension and hyperlipidemia, and he is taking aspirin, hydrochlorothiazide, and simvastatin daily. He has been undergoing PSA screening. His digital rectal examination has been normal, but a recent PSA of 5.4 ng/mL prompted a prostate biopsy. Biopsy demonstrated 1 of 12 cores positive for Gleason 4+3 prostate cancer involving 15% of the core. His urologist ordered an endorectal coil MRI that showed a 1.6-cm left-sided lesion suspicious for tumor. There was no evidence of extracapsular extension, seminal vesicle involvement, or enlarged lymph nodes. A bone scan was also ordered, but it showed no evidence of metastases. The patient is anxious about the side effects associated with prostate cancer treatment and asks for your guidance. Which of the following is not a recommended option for primary management of this patient's prostate cancer?",
+      "imageUrl": "",
+      "options": [
+        "A. Active surveillance",
+        "B. Radical prostatectomy",
+        "C. External beam radiation therapy",
+        "D. Interstitial brachytherapy",
+        "E. All of the options above are acceptable."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Given the long natural history of prostate cancer, the frequency of indolent disease in a high percentage of patients, and significant morbidity associated with local treatment, active surveillance is increasingly recommended by urologists and medical oncologists. Prospective series clearly demonstrate that active surveillance (serial PSAs and physical examinations ever 3-4 months along with repeat biopsies every 1-2 years) can safely be used to manage certain patients, avoiding (or at the very least forestalling) life-altering therapies. However, not all patients are good candidates for active surveillance. For patients <70 years old, criteria for entry into most active surveillance series include early-stage disease, Gleason score <=6, and serum PSA <=10 ng/mL. There are data suggesting that low-volume Gleason 3+4 disease can be managed successfully by active surveillance, particularly for patients older than age 70. However, a diagnosis of localized Gleason 4+3 disease in a patient with life expectancy >10 years, as in the case above, warrants definitive treatment. Mohler JL, Armstrong AJ, Bahnson RR, et al. Prostate cancer, version 1.2016. J Natl Compr Canc Netw 2016;14(1):19-30.",
+      "explanationImageUrl": "",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 66-year-old man presented with hip pain and was ultimately diagnosed with prostate cancer that had metastasized to the ribs and pelvic bones. His PSA at the time of diagnosis was 180 ng/ml. He was started on androgen deprivation therapy with leuprolide, a gonadotropin-releasing hormone (GnRH) agonist. After 6 months on treatment, his pain resolved and his PSA has decreased to 0.8 ng/mL. He presents to the clinic to discuss side effects of his therapy. Which of the following is not a risk associated with androgen deprivation therapy?",
+      "imageUrl": "",
+      "options": [
+        "A. Osteoporosis and bone fracture",
+        "B. Prolactinoma",
+        "C. Hot flashes",
+        "D. Anemia",
+        "E. Increase in subcutaneous adipose tissue"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Androgen deprivation therapy (ADT) is the first-line treatment for advanced prostate cancer and is used as neoadjuvant treatment along with radiation therapy for intermediate- and high-risk localized disease. After about 1 week on ADT, GnRH receptors in the pituitary are downregulated, and LH and FSH production are diminished. This results in a profound reduction in testosterone production by the testicles and induces tumor responses in 80%-90% of patients. Castrate testosterone levels are associated with several common side effects: loss of libido, osteopenia/osteoporosis, hot flashes, decrease in lean body mass, increase in subcutaneous adipose tissue, thinning of body hair, decrease in penile and testicular size, gynecomastia, anemia, and mild fatigue. More rarely, treatment may be associated with cognitive decline or depression. Some studies have observed an increased incidence of cardiovascular events in those receiving ADT; others have found no convincing association. Associations between ADT and development of colorectal cancer have also been reported, but a true causal relationship has not been firmly established. There is no known association with other cancers.",
+      "explanationImageUrl": "",
+      "questionNumber": 22
+    },
+    {
+      "question": "Immune therapy with programmed death receptor 1 (PD-1) inhibition can be effective and is often well tolerated in patients with a variety of advanced malignancies. In which of the following patients should immune therapy with PD-1 inhibition not be considered?",
+      "imageUrl": "",
+      "options": [
+        "A. A patient with metastatic squamous cell carcinoma of the epiglottis that recurs after platinum-based therapy and unknown tumor programmed death receptor ligand 1 (PD-L1) expression",
+        "B. A patient with newly diagnosed metastatic non-small cell lung cancer, poor performance status, and 10% tumor PD-L1 expression",
+        "C. A patient with metastatic nonsmall cell lung cancer refractory to platinum-based chemotherapy and 0% tumor PD-L1 expression",
+        "D. A 30-year-old patient with recurrent classic Hodgkin lymphoma after autologous transplant and brentuximab vedotin",
+        "E. An elderly patient with metastatic melanoma and heart disease"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Immune therapy with PD-1 inhibition is currently approved in several malignancy types and settings, with many more indications under study. PD-1 is a checkpoint protein expressed on T cells, and activation of PD-1 leads to downregulation of the immune response. PD-L1 is expressed on some tumor cells and can bind to PD-1 on T cells, one strategy for tumor evasion of the immune response. Blockade of PD-1 with pharmaceutical inhibitors (currently approved agents: nivolumab, pembrolizumab) can result in increased immune recognition and killing of tumor cells. PD-1 inhibition is currently approved in all of the settings in this question with the exception of up-front therapy for stage IV lung cancer where tumor PD-L1 expression is less than 50%. In most instances, quantification of tumor PD-L1 expression is not required for initiation of therapy, although response rates appear to be higher in many cases in tumors with increased PD-L1 expression. The exception is frontline therapy for metastatic lung cancer, where >50% PD-L1 expression is required. Studies of frontline platinum doublet chemotherapy versus PD-1 inhibition failed to demonstrate improved outcomes for immune therapy in patients with tumors with lower or no PD-L1 expression and thus are not recommended in this setting. Giroux Leprieur E, Dumenil C, Julie C, et al. Immunotherapy revolutionises non-small-cell lung cancer therapy: results, perspectives and new challenges. Eur J Cancer. 2017 Apr 10:78:16-23.",
+      "explanationImageUrl": "",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 76-year-old woman with stage IV nonsmall cell lung cancer has been receiving nivolumab for the past 3 months after her disease recurred following chemotherapy with carboplatin and pemetrexed. She was feeling quite well, but a few days after her last infusion she calls to report rapidly progressive shortness of breath and dry cough over the past 24 hours. On evaluation, she has no fever, she is tachycardic to the 110s, her blood pressure is mildly elevated at 155/90 mm Hg, and she her respiratory rate is 22 breaths per minute. Her lungs are clear to auscultation bilaterally, and she is able to speak in full sentences easily, although she becomes dyspneic walking briskly across the room. She is referred to the ER, where her chest radiograph is unremarkable and electrocardiogram shows only tachycardia. Pulmonary embolism (PE)-protocol CT is without visualized clot but is notable for diffuse ground-glass opacities and areas of mildly increased interstitial markings. Which of the following interventions is indicated?",
+      "imageUrl": "",
+      "options": [
+        "A. A course of antibiotics for suspected pneumonia",
+        "B. Enoxaparin for suspected small-vessel PE",
+        "C. Prednisone at least 1 mg/kg or equivalent",
+        "D. A and C",
+        "E. A course of antibiotics and inhaled corticosteroids"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "PD-1 and PD-L1 inhibition, though often well tolerated, are associated with a wide variety of autoimmune toxicities. Among the most common are endocrine dysfunction (hyper- or hypothyroid, pituitary dysfunction), colitis, pneumonitis, and rash. Less common toxicities include pancreatitis, nephritis, hepatitis, diabetes, and myocarditis. Pneumonitis and colitis are the most frequently cited causes of life-threatening or even fatal toxicities. The mainstay of therapy for severe reactions is permanent cessation of drug and immediate initiation of immune suppression with corticosteroids. Milder toxicities can often be managed with temporary cessation of drug plus or minus courses of oral corticosteroids. The optimal dose and corticosteroid type for severe reactions is unknown, but the equivalent of at least 1 mg/kg of prednisone is a widely accepted minimum. In this patient with cough, dyspnea, absence of fever, and the listed CT findings, nivolumab-induced pneumonitis is highly likely. Pneumonitis is a diagnosis of exclusion, however, and other etiologies must be considered and evaluated. Because atypical pneumonia could have a similar presentation, it is prudent to treat this patient for both infection and pneumonitis. Maughan BL, Bailey E, Gill DM, Agarwal N. Incidence of immune-related adverse events with program death receptor-1- and program death receptor-1 ligand-directed therapies in genitourinary cancers. Front Oncol. 2017;7:56.",
+      "explanationImageUrl": "",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 40-year-old woman with a strong family history of breast cancer is considering taking tamoxifen for chemoprevention. She calls to discuss potential side effects of the medication. She reports she does not want to experience premature menopause, weight gain, or depression. What do you advise her?",
+      "imageUrl": "",
+      "options": [
+        "A. Tamoxifen causes none of these side effects.",
+        "B. She should take raloxifene instead.",
+        "C. She should take exemestane instead.",
+        "D. Tamoxifen may cause weight gain and depression, but not premature menopause.",
+        "E. She should wait until after menopause to start tamoxifen."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In placebo-controlled, randomized trials of tamoxifen for breast cancer prevention among patients without a personal history of breast cancer, there was no increased risk of premature menopause, weight gain, or depression. Both raloxifene and exemestane have data only for postmenopausal women.",
+      "explanationImageUrl": "",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 68-year-old man with a 40-pack-year smoking history and chronic obstructive pulmonary disease (COPD) presented to his local emergency room after falling on his bathroom rug and hitting his head and right ribs. A noncontrast head CT scan did not show evidence of bleeding. A chest radiograph did not show any broken ribs, but it did incidentally show a spiculated right upper lobe lung mass measuring 3.6 x 2.4 cm. A subsequent biopsy confirms nonsmall cell lung cancer. Which of the following radiographic studies is not recommended as part of a subsequent staging evaluation?",
+      "imageUrl": "",
+      "options": [
+        "A. Brain MRI with gadolinium",
+        "B. Chest CT with IV contrast",
+        "C. Positron emission tomography (PET)-CT",
+        "D. Skeletal survey with plain films"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In the case of lung cancer, the most common sites of involvement are the mediastinum and contralateral lung, liver, bone, brain, and adrenal glands. The appropriate radiographic staging workup of lung cancer should include imaging of all of those sites. Brain imaging is required for all patients with small cell lung cancer, patients with nonsmall cell lung cancer of stage IB or greater, or any patient with lung cancer with any neurologic symptom. In this case, the unexplained fall in the setting of new lung cancer warrants dedicated brain imaging. MRI is preferred over CT for brain imaging, though CT with contrast is a reasonable alternative. Regardless of modality, IV contrast (gadolinium for MRI, iodinated contrast for CT) is required for sufficient detection of brain metastases. The prior noncontrast head CT is insufficient. A chest CT with IV contrast that is performed specifically for lung cancer staging should be expanded to include the liver and adrenal glands. The administration of IV contrast enhances the ability to detect hepatic metastases. Furthermore, by delineating the mediastinal vasculature with IV contrast, the clinician can better assess the size and extent of mediastinal lymph nodes. PET/CT or bone scan is the best modality to look for bone metastases in lung cancer. PET/CT is the preferred modality. A plain film skeletal survey is not sensitive enough to detect occult bone metastases in lung cancer. Ettinger DS. Wood DE, Aisner DL, et al. Non-small cell lung cancer, version 5.2017, NCCN Clinical Practice Guidelines in Oncology. J Natl Compr Canc Netu 2017;15(4):504-535.",
+      "explanationImageUrl": "",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 63-year-old woman who had smoked two packs of cigarettes daily for 30 years presents with several weeks of increasing cough and dyspnea with exertion, followed over the last few days with lethargy and swelling of her face and arms. Initial evaluation in the emergency room reveals a serum sodium of 120 mEq/L blood urea nitrogen (BUN) 17 mg/dL, and creatinine 0.8 mg/dL. Chest CT with IV contrast is negative for pulmonary embolus but demonstrates a 5.5-cm right hilar mass with associated mediastinal adenopathy and compression of the superior vena cava; furthermore, there appear to be multiple osseous and hepatic metastases. What is the most likely diagnosis?",
+      "imageUrl": "",
+      "options": [
+        "A. Breast cancer",
+        "B. Bronchial carcinoid tumor",
+        "C. Non-Hodgkin lymphoma",
+        "D. Small cell lung cancer",
+        "E. Thymoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The findings of a large hilar mass with superior vena cava (SVC) syndrome, hepatic and bony metastases, and hyponatremia in a 63-year-old woman with a significant smoking history are most consistent with a small cell lung cancer (SCLC). SCLC is the tumor type most closely associated with smoking: About 95% of patients with SCLC have a smoking history. SCLC tends to occur in the central chest, so SVC syndrome or tracheal compression can be presenting symptoms. In fact, SCLC is the most common cause of SVC syndrome. SCLC tends to be aggressive in its course, with metastatic disease found at the time of initial diagnosis in 60%-70% of patients with SCLC. SCLC can also be associated with a number of paraneoplastic syndromes. The most common of these is hyponatremia due to the syndrome of inappropriate antidiuretic hormone secretion (SIADH).",
+      "explanationImageUrl": "",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 70-year-old man with a history of kidney stones and a 20-pack-year smoking history underwent CT of the abdomen as part of an evaluation for flank pain. CT demonstrated recurrence of nephrolithiasis but also demonstrated an incidental, peripheral, 5-mm left lower lobe (LLL) lung nodule. Chest CT was performed and again showed the small LLL nodule but did not demonstrate other nodules or mediastinal or hilar adenopathy. What is the most appropriate next step for follow-up of the lung nodule?",
+      "imageUrl": "",
+      "options": [
+        "A. Repeat chest CT in 3 months",
+        "B. Repeat chest CT in 6 months",
+        "C. Repeat chest CT in 2 years",
+        "D. PET/CT now",
+        "E. Referral for CT-guided biopsy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The Fleischner Society has published guidelines for the follow-up and management of nodules <8 mm detected incidentally at nonscreening CT. These guidelines make a distinction between low- and high-risk patients, and nodule sizes <=4 mm, 4-6 mm, >6-8 mm, and >8 mm. High-risk patients are defined as those with a history of smoking or other known risk factors. In this case, a 5-mm nodule in a patient with a 20-pack-year smoking history merits a follow-up CT in 6-12 months. For a nodule that small, it would be difficult to reliably perform a CT-guided biopsy, and it may be below the size threshold for fluorodeoxyglucose avidity on PET/CT (Table 2.7).",
+      "explanationImageUrl": "images/books-images/brigham/ch2/a/2.28.png",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 58-year-old woman with minimal prior medical history and with good performance status is found to have a new 2.2-cm peripheral right lower lobe mass. Complete staging evaluation demonstrates only the solitary lung mass, with no other sites of disease in the mediastinum or distantly. CT-guided biopsy confirms a diagnosis of nonsmall cell lung cancer, adenocarcinoma histology. What is the most appropriate next step in management?",
+      "imageUrl": "",
+      "options": [
+        "A. Chemotherapy",
+        "B. Cryoablation",
+        "C. Repeat CT scan in 6 months",
+        "D. Stereotactic radiation",
+        "E. Surgical resection"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The gold standard therapy for newly diagnosed early-stage lung cancer is anatomic resection. In patients with good performance status and adequate lung function, the goal is anatomic resection (i.e., resection of the mass and its associated lymphatic drainage). This is classically achieved via lobectomy, though segmentectomy (resection of an anatomic segment of a lung lobe) may be adequate for some tumors that are small enough and in the right location. For patients who are poor operative candidates, stereotactic body radiation therapy (SBRT) can be considered. The potential use of stereotactic radiation for early-stage lung cancer may be limited by tumor size and location. In general, tumors >4 cm are not generally amenable to definitive control with stereotactic radiation. Furthermore, there have been concerns about stereotactic radiation to central tumors because early trials of this modality raised concerns about collapse of adjacent airways. Chemotherapy is not considered a curative modality in lung cancer, and it has not been shown to be an appropriate up-front therapy for potentially resectable early-stage nonsmall cell lung cancer. Modalities such as cryoablation and radiofrequency ablation continue to be investigated in lung cancers but are not currently considered a standard curative treatment option in early-stage lung cancer. More recent data suggest that this may be achieved by segmentectomy, depending on a tumor's size and location. For patients who are poor operative candidates, consider stereotactic radiation. Ettinger DS, Wood DE, Aisner DL, et al. Non-small cell lung cancer, version 5.2017, NCCN Clinical Practice Guidelines in Oncology. J Natl Compr Canc Netu: 2017;15(4):504-535.",
+      "explanationImageUrl": "",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 25-year-old woman presents with a dry cough, intermittent drenching night sweats, and diffuse pruritus without identifiable rash. On physical examination, she appears tired. Her vital signs are notable for a temperature of 99.9°F, heart rate of 110 beats per minute, blood pressure of 100/80 mm Hg, respiratory rate of 18 breaths per minute, and oxygen saturation of 98% on room air. Her physical examination is notable for the absence of peripheral lymphadenopathy. Her chest is clear to auscultation bilaterally. Cardiac examination reveals tachycardia with a soft systolic ejection murmur. She had no splenomegaly. Her lower extremities are notable for linear excoriations. Laboratory studies reveal a white blood cell count of 14,300/µL with 80% neutrophils and 5% lymphocytes, 10% eosinophils, and 5% monocytes. Her basic metabolic panel is normal. What is the next most appropriate step in her management?",
+      "imageUrl": "",
+      "options": [
+        "A. Obtain a lactate dehydrogenase (LDH) level.",
+        "B. Order a PET/CT scan.",
+        "C. Refer to dermatology for evaluation.",
+        "D. Obtain a chest x-ray.",
+        "E. Send for Epstein-Barr virus (EBV) serologies."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This young woman presents with signs and symptoms worrisome for lymphoma, particularly Hodgkin lymphoma (HL). Although pruritus is a frequent symptom in patients with HL, intense pruritus without a rash is quite rare. On the other hand, B symptoms (fevers, drenching night sweats, and unexplained weight loss) are common in this disease. In addition, she is a young adult at the median age of presentation of HL. Finally, the leukocytosis with lymphopenia and elevated eosinophils may be seen with HL. Given that she does not have peripheral lymphadenopathy, the next most logical step in her management is to obtain a chest x-ray to look for a mediastinal mass. LDH is rarely elevated in HL. A PET/CT scan is done as part of staging once a diagnosis has been established. She does not have symptoms typical for EBV infection.",
+      "explanationImageUrl": "",
+      "questionNumber": 30
+    }
+    ,
+    {
+      "question": "A 70-year-old man presents to the emergency department for evaluation of upper respiratory symptoms with low-grade fevers. He appears clinically well. His physical examination is notable for a 1-cm palpable lymph nodes in the bilateral neck and axilla. His spleen tip is palpable just below the left costal margin. Laboratory studies reveal a white blood cell count of $18,000/\\mu L$ with 75% lymphocytes, with smudge cells, 15% neutrophils, and 5% monocytes. His chemistries are normal, including LDH. What is the next most appropriate step?",
+      "imageUrl": "",
+      "options": [
+        "A. Obtain peripheral blood flow cytometry.",
+        "B. Refer for excisional lymph node biopsy.",
+        "C. Order a PET/CT to evaluate the best node for biopsy.",
+        "D. Perform a bone marrow aspiration and biopsy.",
+        "E. Treat with antibiotics and recheck CBC in 1 month."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient presents with the classic findings of a patient with CLL with diffuse lymphadenopathy and splenomegaly with a lymphocytosis and smudge cells on a peripheral smear. The diagnosis of CLL may be established using peripheral blood flow cytometry. Excisional lymph node biopsy and bone marrow biopsy are not necessary, given that the diagnosis may be established using flow cytometry. PET/CT is not necessary in the evaluation of CLL. CT scans may be obtained in patients with adverse cytogenetics, such as 11q and 17p deletion, but they are not necessary at this time. The patient's symptoms are suggestive of a viral infection, and antibiotics are not indicated.",
+      "explanationImageUrl": "",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 65-year-old woman presents complaining of a mass in the left neck without fevers, night sweats, weight loss, or localizing symptoms. On examination, she has normal vital signs and is found to have a 2.5-cm left anterior cervical node, a 2-cm left axillary node, and a 3-cm right inguinal node. Her examination is otherwise normal. Laboratory studies, including a CBC with differential, basic metabolic panel, and LDH, are normal. What is the next most appropriate step in her management?",
+      "imageUrl": "",
+      "options": [
+        "A. Refer to interventional radiology for a needle biopsy of the most easily accessible lymph node.",
+        "B. Refer to otolaryngology for fine-needle aspiration of the neck mass.",
+        "C. Refer to a surgeon for an excisional lymph node biopsy.",
+        "D. Obtain a PET/CT scan.",
+        "E. Send for peripheral blood flow cytometry."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient presents with diffuse, asymptomatic lymphadenopathy suggestive of involvement by an indolent lymphoma. To establish the diagnosis, an adequate tissue biopsy is critical. Given that she has palpable peripheral lymphadenopathy, referral to a surgeon for an excisional lymph node biopsy is the most appropriate way to obtain adequate diagnostic tissue. Needle biopsies lack adequate tissue to evaluate for architecture. Peripheral blood flow cytometry is unlikely to yield a diagnosis in the setting of a normal white blood cell count and differential. PET/CT scan is indicated for staging in aggressive lymphomas and Hodgkin lymphoma after a diagnosis has been established.",
+      "explanationImageUrl": "",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 66-year-old postmenopausal woman with hypertension and hypothyroid is diagnosed with stage IA ER/PR-positive, HER2/neu-negative invasive ductal carcinoma. She undergoes lumpectomy followed by radiation, and chemotherapy is deferred based on a low risk of recurrence and low likelihood of benefit. She is started on an aromatase inhibitor (AI). For which of the following is she now at significantly increased risk due to her aromatase inhibitor?",
+      "imageUrl": "",
+      "options": [
+        "A. DVT/PE",
+        "B. Hypothyroid",
+        "C. Osteoporosis",
+        "D. Endometrial cancer",
+        "E. Glucose intolerance"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Aromatase inhibitors are associated with estrogen deficiency-induced bone loss. Patients starting an Al should undergo baseline bone density testing, and testing should continue periodically for the duration of the course of therapy. Although formal guidelines do not exist, many experts recommend testing every 2 years while a patient is on Al therapy. If identified, osteopenia and osteoporosis should be managed aggressively and according to expert guidelines. Additionally, all women should be counseled regarding lifestyle optimization for bone health, including physical activity, smoking cessation, and adequate calcium and vitamin D intake. Increased risk for DVT/PE and endometrial cancer (Answers A and D) are associated with tamoxifen. Hypothyroid and glucose intolerance are not known adverse effects of hormonal therapy for breast cancer. Patel S. Disruption of aromatase homeostasis as the cause of a multiplicity of ailments: a comprehensive review. J Steroid Biochem Mol Biol. 2017:168:19-25.",
+      "explanationImageUrl": "",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 35-year-old woman with a history of regular menses presents with complaints of bilateral galactorrhea. She notes that her menses have been more irregular over the last year and that her last menstrual period was approximately 6 weeks ago. She reports occasional headaches but otherwise feels well. She does not take any medication or herbal supplements. Laboratory testing reveals a negative pregnancy test, thyroid-stimulating hormone (TSH) of $2.2~mIU/L$ and prolactin of $360~ng/mL.$ You suspect a prolactinoma and order a pituitary MRI, which reveals a 10-mm x 12-mm pituitary lesion. There is no cavernous sinus invasion or compression of the optic nerves by the pituitary tumor. You advise the patient that the initial treatment of choice is:",
+      "imageUrl": "",
+      "options": [
+        "A. Medical therapy with a somatostatin analogue",
+        "B. Observation only",
+        "C. Transsphenoidal pituitary tumor resection",
+        "D. Medical therapy with a dopamine agonist",
+        "E. Radiation therapy to the pituitary"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Medical therapy with a dopamine agonist is considered the first-line initial therapy for symptomatic prolactinomas. Dopamine agonists have both antiproliferative and antisecretory effects on prolactin-producing pituitary cells and typically result in both decreased prolactin secretion and tumor shrinkage. Cabergoline is preferred over bromocriptine for most patients due to its increased efficacy and tolerability. Somatostatin analogues are used in the treatment of acromegaly. Transsphenoidal surgery is reserved for patients who do not tolerate or are not responsive to the dopamine agonists. Radiation would be considered only in very rare cases of advanced or progressive prolactinomas that have failed medical or surgical interventions. Observation alone would not be the preferred approach in a patient with a macroadenoma (size >10 mm), because control of tumor growth would be desired.",
+      "explanationImageUrl": "",
+      "questionNumber": 34
+    },
+    {
+      "question": "Which of the following antidepressants is preferred in women taking tamoxifen for hormone receptor-positive breast cancer?",
+      "imageUrl": "",
+      "options": [
+        "A. Paroxetine",
+        "B. Fluoxetine",
+        "C. Venlafaxine",
+        "D. Bupropion",
+        "E. Duloxetine"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "There are multiple drug interactions between tamoxifen and antidepressants based on the potential for CYP2D6 inhibition by many antidepressants. CYP2D6 converts tamoxifen to endoxifen, its active form. Venlafaxine has the least effect on CYP2D6 of the commonly used antidepressants. Paroxetine, fluoxetine, and bupropion are strong inhibitors and should be avoided if possible. Duloxetine and sertraline are moderate inhibitors. Citalopram and escitalopram are mild inhibitors. Desvenlafaxine and mirtazapine likely have minimal effect on tamoxifen/endoxifen, but direct studies are lacking.",
+      "explanationImageUrl": "",
+      "questionNumber": 35
+    },
+    {
+      "question": "Which of the following patients would be a good candidate for novel oral anticoagulant (NOAC) therapy?",
+      "imageUrl": "",
+      "options": [
+        "A. A 65-year-old woman with rheumatic heart disease and a metal prosthetic mitral valve",
+        "B. A 35-year-old woman with a newly diagnosed PE, history of multiple second-trimester pregnancy losses, and positive antiphospholipid antibodies",
+        "C. A 60-year-old man with new-onset nonvalvular atrial fibrillation and a history of a diverticular bleed 5 years ago",
+        "D. A 60-year-old man with a newly diagnosed PE and metastatic nonsmall cell lung cancer",
+        "E. A 60-year-old man with newly diagnosed DVT and renal insufficiency"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "NOACs (rivaroxaban, edoxaban, apixaban, dabigatran) are approved in nonvalvular atrial fibrillation and DVT/PE. Current contraindications include patients with active malignancies (studies underway), metallic heart valves, the antiphospholipid antibody syndrome (studies underway), and renal insufficiency (glomerular filtration rate [GFR] $<15~mL/min$ for edoxaban and apixaban, and GFR $<30~mL/min$ for rivaroxaban and dabigatran). Data are insufficient regarding safety in pregnant or lactating women. Prior GI bleeding is not an absolute contraindication to NOAC use. Steinberg BA. How I use anticoagulation in atrial fibrillation. Blood. 2016;128(25):2891-2898.",
+      "explanationImageUrl": "",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 64-year-old woman presents with abdominal bloating, early satiety, and constipation. On bimanual exam, an enlarged right ovary is noted. Ultrasound demonstrates a complex $10-cm\\times8$-cm mass highly concerning for malignancy as well as a moderate amount of free fluid in the pelvis. Which of the following is not potentially indicated?",
+      "imageUrl": "",
+      "options": [
+        "A. Abdominal/pelvic CT",
+        "B. Laboratory testing for cancer antigen 125 (CA-125)",
+        "C. Colonoscopy",
+        "D. Referral to gynecologic oncology for consideration of surgery",
+        "E. Referral to interventional radiology for needle-guided biopsy of the adnexal mass"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "If clinical suspicion of ovarian malignancy is high, any of the above evaluations is reasonable (although only referral to gynecologic oncology is required), with the exception of needle biopsy due to the potential risk for malignant seeding of the needle tract. Colonoscopy should be considered in women who are found to have mucinous histology at surgical resection, or for women in whom colorectal cancer is clinically suspected at presentation.",
+      "explanationImageUrl": "",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 22-year-old man presents with headache and peripheral vision loss. Brain imaging reveals a large sellar mass with both solid and cystic components that is compressing the optic chiasm. Humphrey visual field testing demonstrates bitemporal hemianopsia. He has no previous medical history, his body mass index (BMI) is $20~kg/m^{2}$, and he is taking no medications. His initial pituitary functional evaluation revealed central hypogonadism and central hypothyroidism. His adrenal function was normal. MRI characteristics suggested the mass was a craniopharyngioma. He was taken to surgery to remove the pituitary mass in attempts to decompress the optic chiasm and restore his vision. He did well in the immediate postoperative period, but within 24 hours, he began to develop polyuria. His urine output increased to $400~mL/h$ and was very dilute with a urine specific gravity of less than 1.001. He complained of extreme thirst. His serum sodium increased to $148~mEq/L$ and his fasting glucose was elevated at $106~mg/dL$ What diagnosis are you suspecting in this patient?",
+      "imageUrl": "",
+      "options": [
+        "A. Syndrome of inappropriate antidiuretic hormone secretion (SIADH)",
+        "B. Diabetes mellitus, type 2",
+        "C. Central diabetes insipidus",
+        "D. Nephrogenic diabetes insipidus",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The symptoms and presentation in this case are most concerning for the development of postoperative central diabetes insipidus. Diabetes insipidus is a syndrome of hypotonic polyuria and is due to either a deficiency of arginine vasopressin, also known as antidiuretic hormone (ADH), or an inadequate renal response to ADH. Patients with diabetes insipidus often complain of extreme thirst and will excrete large amounts of very dilute urine. Without this hormone, individuals cannot adequately concentrate their urine and, if not allowed access to liquids, may develop severe, life-threatening hypernatremia. Central diabetes insipidus is due to deficiency, either partial or complete, of ADH. Central diabetes insipidus can occur after any pituitary surgery. It can be transient or permanent and is seen more frequently in patients with larger tumors or tumors that tend to invade the pituitary stalk, such as craniopharyngiomas. The diagnosis is not likely SIADH, because this condition is typically associated with hyponatremia. Type 2 diabetes mellitus would also not be a likely cause of this patient's acute severe polyuria and polydipsia, because his BMI is normal and his fasting glucose is only mildly elevated. Given the clinical presentation of a pituitary lesion, his diabetes insipidus would be much more likely be central than nephrogenic. Lobatto DJ. de Vries F, Zamanipoor Najafabadi AH, et al. Preoperative risk factors for postoperative complications in endoscopic pituitary surgery: a systematic review. Pituitary. 2017 Sep 15. [Epub ahead of print] Prete A, Corsello SM, Salvatori R. Current best practice in the management of patients after pituitary surgery. Ther Adv Endocrinol Metab. 2017;8(3):33-48.",
+      "explanationImageUrl": "",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 55-year-old woman was involved in a motor vehicle accident as an unrestrained driver. Although she did not lose consciousness, she sustained a significant head trauma and was brought by ambulance to the emergency department. She was evaluated and found to have a normal neurologic examination, but due to the mechanism of her accident, brain imaging by noncontrast CT scan was performed. She was incidentally found to have a large sellar lesion, estimated at approximately 2 cm in greatest diameter. No acute intracranial hemorrhage was identified. She had a laceration on her forehead that was repaired, and because she was otherwise clinically stable, she was discharged with a plan to follow up with her primary care provider for further evaluation of this pituitary mass. In evaluating a patient with a newly discovered pituitary mass, what are the important initial clinical considerations?",
+      "imageUrl": "",
+      "options": [
+        "A. Evaluation for mass effects (headaches, visual loss, cranial nerve abnormalities)",
+        "B. Evaluation for pituitary hormonal hypersecretion",
+        "C. Evaluation for pituitary hormonal hypofunction",
+        "D. All of the above",
+        "E. None of the above"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient was found to have an incidental pituitary lesion. All three of the answer choices are important for the initial evaluation of the patient. A thorough history must be obtained to elicit symptoms of mass effects and pituitary dysfunction (both hypersecretion and hypofunction). Having a complete understanding of pituitary physiology will help guide the questions related to determining the function of each hormonal axis. The clinician should look for both signs and symptoms to suggest hormonal hypersecretion (i.e., hyperprolactinemia, growth hormone excess, or hypercortisolism) or hormonal hypofunction (i.e., central adrenal insufficiency, central hypothyroidism, central hypogonadism, GH deficiency, diabetes insipidus). Laboratory evaluation should be performed to assess pituitary hormonal function. MRI should be performed to better characterize the structure of the mass. Taken together, both laboratory and imaging studies will help guide further evaluation and treatment of the patient presenting with a pituitary mass.",
+      "explanationImageUrl": "",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 22-year-old college student notes increasing fatigue over the past few weeks that she attributes to staying up late studying for final examinations. Over the past 2-3 days she has noted several new bruises on her upper and lower extremities. She does not recall antecedent trauma leading to the bruising. This morning she developed a bloody nose lasting 20 minutes. She presents to Student Health for evaluation. Her physical examination is notable for scattered, quarter-sized bruises on her upper arms and thighs. Laboratory studies are notable for a white blood cell count of $500/\\mu L$, hemoglobin of $7~g/dL$, and platelets of $50,000/\\mu L$. A peripheral smear is notable for 80% large atypical cells with folded, bilobed, kidney-shaped nucleoli and elongated, bluish-red rods within the cytoplasm. What translocation is the defining feature of this disease?",
+      "imageUrl": "",
+      "options": [
+        "A. t(11;14)",
+        "B. t(15;17)",
+        "C. t(9;22)",
+        "D. t(8;14)",
+        "E. t(14;18)"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The age distribution of patients with acute promyelocytic leukemia (APL) differs from other forms of acute myeloid leukemia (AML). APL is uncommon in the first decade of life; its incidence increases during the second decade, reaches a plateau during early adulthood, and then remains constant until it decreases after age 60 years. The median age is 40 years old, thus considerably lower than for other myeloid leukemias. APL is a medical emergency defined by the presence of a reciprocal translocation between the long arms of chromosomes 15 and 17, with the creation of a fusion gene, PML-RARA, which links the retinoic acid receptor alpha (RARA) gene on chromosome 17 with the promyelocytic leukemia (PML) gene on chromosome 15. A key component of therapy is the use of all-trans retinoic acid (ATRA), which promotes the terminal differentiation of malignant promyelocytes to mature neutrophils. Coagulopathy is a common presenting feature and should be corrected with blood products as needed (platelets, fresh frozen plasma, cryoprecipitate) in addition to the administration of ATRA as soon as it is available. Correction of coagulopathy and administration of ATRA should be performed immediately with suspicion of APL and should not be deferred until a firm diagnosis is available. t(11;14): Overexpression of cyclin D1 in mantle cell lymphomas (MCLs) is strongly associated with the $t(11;14)(q13;q32)$, a translocation between the cyclin D1 locus and the immunoglobulin heavy chain (IgH) locus. Approximately 50% to 65% of MCLs will show the t(11;14) by cytogenetics, but by fluorescence in situ hybridization (FISH), a much higher fraction of cases with cyclin D1 overexpression contain BCL-1/IgH fusion genes. t(9;22): The vast majority of patients (90%-95%) demonstrate the $t(9;22)(q34;q11.2)$ reciprocal translocation that results in the Ph chromosome-BCR-ABL1 fusion gene or its product, the BCR-ABLI fusion mRNA. The BCR-ABL1 fusion gene is the target of therapies such as dasatanib, nilotinib, and imatinib. t(8;14): Burkitt lymphoma is associated with a translocation between the long arm of chromosome 8, the site of the c-MYC oncogene (8q24), and one of three locations on immunoglobulin (Ig) genes. The most common translocation is with the Ig heavy chain gene on chromosome 14 (approximately 80%). t(14;18): Approximately 85% of patients with follicular lymphoma have t(14;18), which results in the overexpression of B-cell leukemia/lymphoma 2 (BCL2), an oncogene that blocks programmed cell death (apoptosis), leading to prolonged cell survival. DeAngelo DJ. Tailored approaches to induction therapy for acute promyelocytic leukemia. J Clin Oncol. 2017;35(6):583-586. Adams J, Nassiri M. Acute promyelocytic leukemia: a review and discussion of variant translocations. Arch Pathol Lab Med. 2015;139(10):1308-131",
+      "explanationImageUrl": "",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 65-year-old man with past medical history of hypertension presents to his primary care physician (PCP) with several weeks of fatigue and dyspnea on exertion (DOE). He notes feeling more winded during his 3-mile walks. His vital signs are stable. His blood pressure is 120/60 mm Hg, and his $O_{2}$ saturation is 97% on room air. He had no hepatosplenomegaly. His complete blood count is notable for white blood cell count of $4000/\\mu L$ with 60% neutrophils, hemoglobin of $9~g/dL$, and platelets of $110,000/\\mu L$. The laboratory findings are notable for a vitamin B12 of $700~pg/mol$, folate of $20~ng/mL$ TSH of $[.2~mIU/mL,$ testosterone of $400~ng/dL,$ and erythropoietin of 90 U/L. A bone marrow biopsy is done and is remarkable for dysplastic erythroid precursors and megakaryocytes with 1% blasts. Cytogenetics are normal. He has 2 points-1 for Hgb of $9~g/dL$ and 1 for normal cytogenetics-based on his Revised International Prognostic Scoring System (IPSS-R) score. What would be the most appropriate recommendation for therapy for his myelodysplastic syndrome?",
+      "imageUrl": "",
+      "options": [
+        "A. Allogeneic stem cell transplant",
+        "B. Induction chemotherapy with an anthracycline + cytarabine",
+        "C. Lenalidomide",
+        "D. Erythropoiesis-stimulating agent (ESA)",
+        "E. No treatment necessary"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The International Prognostic Scoring System (IPSS) is the most widely used prognostic classification system for myelodysplastic syndrome (MDS). The Revised IPSS (IPSS-R) incorporates a larger number of cytogenetic abnormalities, divided into five prognostic categories, a lower cutoff for absolute neutrophil count $(<800/\\mu L$ vs. $<1800/\\mu L)$, and different weights for the clinical parameters to better predict outcomes in newly diagnosed patients. Patients with a low IPSS-R (1.5 to 3) have a median survival of 5.3 years and risk to 25% AML transformation of 10.8 years. The main goals of therapy are to control symptoms due to cytopenias, improve quality of life, and minimize the toxicity of therapy. There is no evidence that the treatment of asymptomatic patients improves long-term survival. Immediate treatment is indicated for patients with symptomatic anemia or thrombocytopenia or recurrent infections in the setting of neutropenia. This patient is developing worsening dyspnea on exertion as a result of his anemia, so therapy could be considered. Approximately 15%-25% of unselected patients with MDS have an improvement in hemoglobin when treated with recombinant human erythropoietin. The Nordic MDS Group developed a predictive model for epoetin use in MDS: patients requiring 2 U of PRBCs or more per month and those with serum epoetin level >100 U/L (especially >500 U/L) are less likely to respond. Allogeneic transplant is the only curative treatment for MDS. Transplant at the time of diagnosis is shown to have the greatest benefit in patients in more advanced IPSS risk groups: intermediate-2 and high risk. Because this patient has low-risk disease, strategies to reduce the need for transfusions is recommended with allogeneic transplant at the time of disease progression. As is the case with allogeneic hematopoietic stem cell transplant, high-intensity chemotherapy regimens are generally reserved for patients with intermediate-2 or high-risk IPSS scores. This allows for the avoidance of treatment-related morbidity and mortality in most patients with a relatively good prognosis. Lenalidomide improves anemia in some patients with MDS and a normal marrow karyotype, but this agent is particularly effective in MDS with an interstitial deletion of chromosome 5q. In studies, it has been associated with transfusion independence in 67% of transfusion-dependent patients. Greenberg PL, Tuechler H, Schanz J, et al. Revised international prognostic scoring system for myelodysplastic syndromes. Blood. 2012;120(12):454-465.",
+      "explanationImageUrl": "",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 35-year-old woman presents to her PCP for her annual visit. She has been feeling well. She denies fevers, night sweats, and weight loss. She denies GI symptoms, including nausea, vomiting, abdominal pain, and early satiety. She denies easy bleeding, bruising, or history of clots. On examination, her spleen is palpable two fingerbreadths below the costal margin. A complete blood count is notable for a white blood cell count of 60,000/µL, hemoglobin of 10 g/dL, and platelets of 600,000/µL. Review of the peripheral smear is notable for a large percentage of basophils and eosinophils, along with myelocytes and metamyelocytes. JAK2 V617F mutation is negative. What is the most appropriate next step in management?",
+      "imageUrl": "",
+      "options": [
+        "A. Start hydroxyurea.",
+        "B. Check blood cultures and start empiric antibiotics for possible infection.",
+        "C. Start high-dose aspirin (325 mg twice daily).",
+        "D. Send peripheral blood for cytogenetics to evaluate for the t(9;22) chromosome translocation.",
+        "E. Determine a leukocyte alkaline phosphatase (LAP) score."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Chronic myelogenous leukemia (CML) accounts for approximately 15%-20% of leukemias in adults. It has an annual incidence of 1-2 cases per 100,000, with a slight male predominance. The clinical presentation with splenomegaly, immature myeloid forms, and basophilia and eosinophilia is suggestive of CML or another myeloproliferative disorder. The lack of JAK2 and normal Hgb level makes polycythemia vera less likely. Approximately 15%-30% of patients with CML have platelet counts $>600,000/\\mu L$. The diagnosis of CML is confirmed by the demonstration of the Philadelphia chromosome t(9;22) $(q34;q11.2)$, the BCR-ABL1 fusion gene, or the BCR-ABL1 fusion mRNA by conventional cytogenetics, fluorescence in situ hybridization (FISH) analysis, or reverse transcription-polymerase chain reaction (RT-PCR). Hydroxyurea can be used to reduce white blood cell counts while awaiting confirmation of a suspected diagnosis of CML in a patient with significant leukocytosis (e.g., $>80\\times10^{9}$ white cells/L). This patient's WBC count is only $60\\times10^{9}$ white cells/L, and she is asymptomatic from her disease, so waiting for a diagnosis is appropriate. This patient is afebrile and has no other symptoms of infection. The relative basophilia is also less consistent with an infectious cause, thus starting empiric antibiotics for a presumed reactive leukocytosis is not needed. While essential thrombocythemia (ET) is still in the differential diagnosis because 50% of patients with ET do not have the JAK2 mutation, starting high-dose aspirin in this patient is not recommended. Higher doses of aspirin $(900~mg/d)$ have been associated with increased gastrointestinal hemorrhage as compared with low-dose aspirin $(75-325~mg/d)$. Although morphologically normal, the neutrophils in CML are cytochemically abnormal. Leukocyte alkaline phosphatase (LAP) is typically low in CML. The low LAP score is useful in excluding a reactive leukocytosis, typically due to infection, in which the score is typically elevated or normal, or polycythemia vera, which is also associated with an increased LAP activity. Although the LAP score may provide useful supportive data, it is neither sensitive nor specific for CML.",
+      "explanationImageUrl": "",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 60-year-old woman with past medical history of hypertension and COPD is brought to the emergency room by her daughter. She is lethargic and is having difficulty walking. She has noted increasing difficulty breathing over the past few hours. Her physical examination is notable for temperature of 100.7°F, blood pressure of 150/70 mm Hg, respiratory rate of 24 breaths per minute, and $O_{2}$ saturation of 88% on room air. She has difficulty with finger-to-nose and rapid alternating movements. She has fine crackles bilaterally. A complete blood count is notable for a white blood cell count of $110\\times10^{6}$, hemoglobin of 8, and platelets of $75,000/\\mu L$ A chest x-ray shows bilateral infiltrates. What would be the appropriate next step in management of this patient?",
+      "imageUrl": "",
+      "options": [
+        "A. Give a unit of PRBCs.",
+        "B. Start antibiotics for possible pneumonia and follow for symptom improvement before initiating more invasive procedures.",
+        "C. Start steroids and antibiotics for COPD flare.",
+        "D. Start leukapheresis while establishing diagnosis.",
+        "E. Establish diagnosis and start appropriate therapy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This patient has a WBC count $>100,000/\\mu L$ with anemia and thrombocytopenia. She has a likely diagnosis of leukemia with an elevated WBC count leading to hyperleukocytosis and leukostasis. Hyperleukocytosis occurs in 10%-20% of patients with AML and more commonly in the monocytic and myelomonocytic variants. Leukostasis results from increased blood viscosity as a direct complication of the presence of large leukemic blasts and the interaction of the blasts with the endothelium to form aggregates, leading to thrombi in the microcirculation. Patients are usually symptomatic when the WBC count reaches levels >100,000. If left untreated, the 1-week mortality rate is approximately 20% to 40%. In the setting of her WBC count and chest x-ray findings, it is likely that she has pulmonary evidence of leukostasis, presenting with dyspnea, tachypnea, and hypoxemia. Respiratory acidosis and cor pulmonale may also occur. Chest x-ray can show diffuse bilateral infiltrates. Approximately 80% of patients with leukostasis are febrile, usually as a result of associated inflammation. Although starting empiric antibiotics is reasonable, waiting to see if the patient improves would waste valuable time during which the patient can undergo leukapheresis. Transfusions would increase blood viscosity and increase the risk of worsening the respiratory compromise and intracranial hemorrhage. Leukapheresis should be initiated while establishing a diagnosis in patients who have symptomatic leukostasis. It is a temporizing measure, thus a diagnosis needs to be made promptly and definitive therapy should be started. Therapy such as hydroxyurea reduces the WBC count by 50% to 80% within 24 to 48 hours and should be used as the sole therapy only in patients with hyperleukocytosis without symptoms of leukostasis. While induction chemotherapy serves to both rapidly decrease the circulating WBC count and target the leukemia cells in the bone marrow, reducing the WBC count within 24 hours of initiation, the patient is rapidly worsening, and it will take time to make the diagnosis.",
+      "explanationImageUrl": "",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 32-year-old woman presents in active labor on a Friday evening. She tells the admitting obstetrician who is covering for a group practice that she has a history of heavy periods and mucosal bleeding and was told she has von Willebrand disease. She uses a nasal inhaler at the start of her periods, and it reduces bleeding. Her mother and sister have similar bleeding histories. You find laboratory values done prior to her pregnancy showing vWF antigen of 42%, vWF activity of 38%, and factor VIII of 49%. All of these are below the lower limits of normal. There is a note stating that the values are compatible with type I von Willebrand disease. Which of the following statements is/are true?",
+      "imageUrl": "",
+      "options": [
+        "A. von Willebrand factor levels go down during pregnancy.",
+        "B. Placement of an epidural catheter is contraindicated in a patient with von Willebrand disease.",
+        "C. The correct treatment would be infusion of recombinant coagulation factor VIla (NovoSeven).",
+        "D. von Willebrand factor levels become normal during pregnancy in patients with type I disease.",
+        "E. Despite normal vWF levels, pregnant women with vWD have increased risk of bleeding during delivery and should be treated prophylactically with Humate-P."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Approximately 85% of patients with von Willebrand disease (vWD) have type I disease where there is a decrease in the vWF level with no abnormality in vWF function. For reasons that are not well understood, during pregnancy, the vWF levels in type I vWD patients normalize. Thus, it is safe to use an epidural catheter for anesthesia. After delivery of the baby and the placenta, the vWF level returns to the prepregnancy level. Thus, about 25% of women with type I vWD require treatment with DDAVP 2-3 days after delivery but are not at risk for excess bleeding during labor and delivery. Leebeek FWG, Eikenboom JCJ. Von Willebrand's disease. N Engl J Med. 2016;375(21):2067-2080.",
+      "explanationImageUrl": "",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 68-year-old lifelong-nonsmoking woman in excellent general health is brought to the ER after seizure-like activity was observed by her family during dinner. She is somnolent on arrival but within 30 minutes is alert and oriented and without focal neurologic findings. Noncontrast head CT shows no bleed, and brain MRI with and without contrast demonstrates three foci of enhancement measuring up to 2 cm and located in the right parietal, occipital, and left frontal lobes. There is surrounding vasogenic edema, particularly of the largest lesion in the left frontal cortex. However, there is no mass effect or shift. CT of the chest, abdomen, and pelvis demonstrate a spiculated left upper lobe lung mass and multiple bony lesions. Biopsy of the left upper lobe mass demonstrates poorly differentiated adenocarcinoma consistent with lung primary. Which step would not be included in the management of this patient?",
+      "imageUrl": "",
+      "options": [
+        "A. Radiation oncology consultation for consideration of urgent whole-brain radiotherapy (WBRT)",
+        "B. Intravenous dexamethasone",
+        "C. Initiation of levetiracetam",
+        "D. Radiation oncology consultation for consideration of stereotactic radiosurgery (SRS)",
+        "E. Molecular testing of tumor specimen for targetable mutations"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "WBRT is a reasonable option for patients with multiple brain lesions not amenable to SRS and/or poor performance status. In patients with good performance status and limited metastatic lesions, SRS is preferred. Although precise guidelines as to size and number of lesions are not agreed upon, most studies consider SRS for one to three lesions (and occasionally more) measuring 3 cm or less per lesion. Although there is a decreased risk of intracranial progression at 1 year with WBRT following SRS, there is no survival benefit. WBRT is associated with potential long-term cognitive impairment, especially in memory and learning. In this patient with good performance status and a limited number of lesions, SRS is the preferred initial approach for management of brain metastases. Because she has had a seizure, both corticosteroids and anticonvulsant therapy are indicated. In asymptomatic patients with edema, corticosteroids should be considered cautiously. If primary CNS lymphoma is suspected, corticosteroids should be avoided unless clinically necessary. There is no proven role for prophylactic anticonvulsant therapy, but because this patient has had a seizure, treatment should be initiated. All patients with lung cancer should have their tumors tested for targetable mutations, particularly epidermal growth factor receptor (EGFR) and ALK. More comprehensive testing may identify additional therapeutic targets as well. However, treatment of symptomatic brain lesions should not be deferred while awaiting molecular testing results.",
+      "explanationImageUrl": "",
+      "questionNumber": 45
+    },
+    {
+      "question": "In which of the following patients would you be most concerned about initiating therapy with ibrutinib for symptomatic chronic lymphocytic leukemia (CLL)?",
+      "imageUrl": "",
+      "options": [
+        "A. A patient with bulky nodal disease and anemia",
+        "B. A patient with a p53 mutation and rapid disease recurrence after fludarabine, cyclophosphamide, and rituximab",
+        "C. A patient with a history of pneumocystis pneumonia and recurrent varicella zoster virus infections",
+        "D. A patient with poorly controlled atrial fibrillation and platelets of 20,000/μL",
+        "E. A patient with a history of immune colitis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ibrutinib is a highly effective and generally well-tolerated agent in CLL. It is a potent and irreversible inhibitor of Bruton tyrosine kinase (BTK), which is important in B-cell signaling pathways. BTK inhibition with ibrutinib can lead to decreased proliferation and survival of malignant B cells. Key potential adverse effects include increased risk of atrial fibrillation and bleeding, likely due to ibrutinib-induced platelet dysfunction. In the patient with thrombocytopenia and poorly controlled AF, ibrutinib would be more likely to cause serious adverse events than in the other patients described in the vignette. Ibrutinib is effective in bulky disease, and anemia is not a contraindication. Unlike FCR, ibrutinib is nearly as effective in patients who harbor p53 mutations as compared with those who do not. Ibrutinib is not associated with a significantly increased risk of opportunistic infections or colitis. Idelalisib, an oral kinase inhibitor also used in CLL, is associated with these potential adverse events. Leong DP, Caron F, Hillis C, et al. The risk of atrial fibrillation with ibrutinib use: a systematic review and meta-analysis. Blood 2016;128(1):138-140.",
+      "explanationImageUrl": "",
+      "questionNumber": 46
+    },
+    {
+      "question": "Your patient is a 56-year-old schoolteacher who presented with about 2 months history of intermittent blood in the toilet bowl with bowel movements. A colonoscopy is performed that demonstrates a mass in the midsigmoid, and biopsy confirms adenocarcinoma. He undergoes laparoscopic hemicolectomy, and final pathology reveals a 3-cm, moderately differentiated adenocarcinoma invading through the muscle layer into the serosa with two of nine lymph nodes positive. What would be the next step?",
+      "imageUrl": "",
+      "options": [
+        "A. Reoperate for more complete lymph node dissection.",
+        "B. Referral to medical oncologist for consideration of chemotherapy",
+        "C. Follow-up colonoscopy in 1 year",
+        "D. Referral to radiation oncologist for postoperative radiation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient has stage III colon cancer. Although proper pathology staging recommends sampling and analysis of at least 12 lymph nodes for ideal staging, it is not going to impact the patient's current management to have more lymph nodes sampled, because the two positive nodes make the patient stage III and guidelines recommend adjuvant chemotherapy. A follow-up colonoscopy in 1 year would be recommended as part of surveillance for this patient, though it is not the next step. Radiation is rarely used in colon cancer, because local recurrence rates are very low; radiation is considered for stages II and III rectal cancer. Benson AB 3rd, Venook AP, Cederquist L, et al. Colon cancer, version 1.2017, NCCN Clinical Practice Guidelines in Oncology. J Natl Compr Canc Netw. 2017;15(3):370-398.",
+      "explanationImageUrl": "",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 42-year-old man newly diagnosed with Burkitt lymphoma presents to the emergency room 3 days after beginning chemotherapy. He complains of decreased urine output. Laboratory data show serum potassium of $6.5~mg/dL$, BUN of $48~mg/dL$, serum creatinine of $2.4~mg/dL$ uric acid of $10.9~mg/dL$ and phosphorus of $6.4~mg/dL$, with uric acid crystals on his urinalysis. He is already on allopurinol. What treatment is least likely to be effective at this point?",
+      "imageUrl": "",
+      "options": [
+        "A. Hydration and furosemide, monitoring urine output and weight to maintain euvolemia",
+        "B. Acute management of hyperkalemia with calcium gluconate and insulin and dextrose",
+        "C. Initiation of hemodialysis if diuresis does not occur",
+        "D. A recombinant uricase, such as rasburicase",
+        "E. Increase in dose of allopurinol"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Tumor lysis syndrome (TLS) is acute cell lysis caused by chemotherapy and radiation therapy. The release of intracellular products (e.g., uric acid, phosphates, calcium, potassium) overwhelms the body's homeostasis mechanism. TLS is more common with hematologic malignancies or cancers with readily growing tumors, particularly acute leukemias and high-grade lymphomas such as Burkitt lymphoma (BL). Patients with BL are at high risk of TLS and uric acid nephropathy, especially during chemotherapy. Prophylactic allopurinol and aggressive hydration should be administered. TLS usually presents with acute kidney injury and metabolic derangements such as hyperphosphatemia, hyperkalemia, and hypocalcemia. Treatment includes inpatient monitoring, vigorous fluid resuscitation, allopurinol or urate oxidase (uricase) therapy to lower uric acid levels, and hemodialysis if renal failure develops. Because the patient is already on allopurinol, it is unlikely that further adjustment of allopurinol dosing will be effective, at least acutely. Howard SC, Jones DP, Pui CH. The tumor lysis syndrome. N Engl J Med. 2011; 364(19):1844-1854.",
+      "explanationImageUrl": "",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 69-year-old man with prostate cancer and widespread bone metastases complains of worsening lumbosacral back pain for 2 weeks. His physical examination is normal except for localized tenderness over L4, with no neurologic deficits. What is the best next step?",
+      "imageUrl": "",
+      "options": [
+        "A. Increase his scheduled pain medications and see him for follow-up in 1 month.",
+        "B. Arrange for an urgent MRI of the spine to evaluate for possible cord compression.",
+        "C. Arrange for radiation therapy within 24 hours for probable cord compression.",
+        "D. Emergency neurosurgical evaluation for suspected spinal cord compression"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This patient likely has epidural spinal cord compression caused by a tumor compressing the dural sac. This can cause permanent neurologic impairment even if treatment is delayed for only a few hours, and therefore it requires attention and treatment with some urgency. Epidural spinal cord compression is associated with renal, prostate, and most commonly breast and lung cancers. The thoracic spine is most often frequently affected, accounting for 70% of patients with the condition. One should suspect an epidural metastasis if the patient complains of new pain that worsens when the patient is lying down or with palpation of vertebral bodies, which is characteristic of this condition. Late neurologic signs such as incontinence and loss of sensory function are associated with permanent paraplegia. MRI has surpassed myelography as the imaging study of choice. If neurologic symptoms are present, the patient should be treated with steroids. This treatment should not be delayed while awaiting diagnostic study results. Use of high-dose dexamethasone (up to 100 mg) is controversial; clinical trials have shown that it has unclear benefits and significantly more serious side effects at higher doses. Most patients with epidural and spinal cord compression need radiation treatment (up to 3000 Gy) or surgery.",
+      "explanationImageUrl": "",
+      "questionNumber": 49
+    },
+    {
+      "question": "Which one of the following statements is true regarding superior vena cava (SVC) syndrome?",
+      "imageUrl": "",
+      "options": [
+        "A. Establishing a tissue diagnosis is the most important step in management of most patients with SVC syndrome.",
+        "B. SVC syndrome should be treated with IV thrombolytics and stenting of the vena cava.",
+        "C. Diagnosis is usually established by chest x-ray, then venography if needed.",
+        "D. Breast cancer and germ cell tumors are the most common malignant causes of SVC syndrome."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The SVC syndrome is caused by the gradual compression of the superior vena cava, leading to edema and retrograde flow. Lung cancer is the most common malignant cause, although lymphoma, metastatic mediastinal tumors, and indwelling catheters also can cause SVC syndrome. Symptoms may include cough; dyspnea; dysphagia; and swelling or discoloration of the neck, face, or upper extremities. Often, collateral venous circulation causes distention of the superficial veins in the chest wall. Tissue diagnosis (i.e., sputum cytology, thoracentesis, bronchoscopy, or needle aspiration) often is necessary to direct treatment decisions.",
+      "explanationImageUrl": "",
+      "questionNumber": 50
+    }
+  ],
+  "title": "Hematology and Oncology"
+}
