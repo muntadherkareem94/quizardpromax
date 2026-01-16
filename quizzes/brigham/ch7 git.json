@@ -1,4 +1,4 @@
-[
+{ "questions": [
   {
     "questionNumber": 1,
     "question": "A 54-year-old man with a long history of gastroesophageal relux disease but no other medical conditions    undergoes an esophagogastroduodenoscopy (EGD),    which reveals a 6-cm-long segment of salmon-colored    mucosa extending proximally from the gastroesophageal junction. Biopsies demonstrate the presence of    Barrett esophagus (intestinal metaplasia of the esophagus), but no dysplasia is noted. Surveillance biopsies    obtained 1 year later reveal no dysplasia.   What is the current recommended surveillance    guideline for this patient?",
@@ -16,7 +16,7 @@
   },
   {
     "questionNumber": 2,
-    "question": "A 24-year-old woman with a long history of nonbloody diarrhea and bloating, but with no systemic    symptoms such as weight loss, is seen in your oice    for further management. Her quality of life has been    adversely afected by these symptoms. Prior evaluation including stool and laboratory tests, imaging, and    colonoscopic biopsies as well as inspection of the terminal ileum have been unrevealing.   Which of the following treatment options is most    likely to result in signiicant improvement of symptoms?",
+    "question": "A 24-year-old woman with a long history of nonbloody diarrhea and bloating, but with no systemic    symptoms such as weight loss, is seen in your office    for further management. Her quality of life has been    adversely afected by these symptoms. Prior evaluation including stool and laboratory tests, imaging, and    colonoscopic biopsies as well as inspection of the terminal ileum have been unrevealing.   Which of the following treatment options is most    likely to result in signiicant improvement of symptoms?",
     "imageUrl": "",
     "options": [
       "A. Hyoscyamine",
@@ -163,7 +163,7 @@
   },
   {
     "questionNumber": 12,
-    "question": "A 33-year-old woman is seen in your oice for evaluation of fatigue, malaise, and mild right upper quadrant discomfort, ongoing for the past 1 month. Her    medical history is notable for hypothyroidism, and    her only medication is levothyroxine. Her examination result is notable only for mildly tender hepatomegaly. On further questioning, she reports no       risk factors for viral hepatitis. She does not consume    alcohol or illicit drugs, nor does she take herbs or    supplements. Her mother has lupus, and a maternal    aunt has rheumatoid arthritis. Laboratory test results    are notable for ALT 480 U/L, AST 211 U/L, total    bilirubin 0.4 mg/dL, alkaline phosphatase 89 U/L,    total protein 9.1 g/dL, albumin 4.1 g/dL, and TSH    2.1 µIU/mL. Her antismooth muscle antibody titer    is 1:320.   Which of the following statements about her likely    diagnosis is true?",
+    "question": "A 33-year-old woman is seen in your office for evaluation of fatigue, malaise, and mild right upper quadrant discomfort, ongoing for the past 1 month. Her    medical history is notable for hypothyroidism, and    her only medication is levothyroxine. Her examination result is notable only for mildly tender hepatomegaly. On further questioning, she reports no       risk factors for viral hepatitis. She does not consume    alcohol or illicit drugs, nor does she take herbs or    supplements. Her mother has lupus, and a maternal    aunt has rheumatoid arthritis. Laboratory test results    are notable for ALT 480 U/L, AST 211 U/L, total    bilirubin 0.4 mg/dL, alkaline phosphatase 89 U/L,    total protein 9.1 g/dL, albumin 4.1 g/dL, and TSH    2.1 µIU/mL. Her antismooth muscle antibody titer    is 1:320.   Which of the following statements about her likely    diagnosis is true?",
     "imageUrl": "",
     "options": [
       "A. his condition most often occurs in men.",
@@ -299,7 +299,7 @@
   },
   {
     "questionNumber": 21,
-    "question": "A 23-year-old woman with anorexia nervosa is seen    in your oice for evaluation of a rash. Her examination is notable for a symmetric erythematous, pruritic,    blistering rash on exposed skin resembling a sunburn,    even though it is late winter. She reports intermittent    diarrhea, and her parents have noted that she appears    disoriented at times. She denies use of laxatives, illicit    drugs, or over-the-counter medications. Her food    intake has been very poor over the past few months.   What vitamin deiciency is she likely to have?",
+    "question": "A 23-year-old woman with anorexia nervosa is seen    in your office for evaluation of a rash. Her examination is notable for a symmetric erythematous, pruritic,    blistering rash on exposed skin resembling a sunburn,    even though it is late winter. She reports intermittent    diarrhea, and her parents have noted that she appears    disoriented at times. She denies use of laxatives, illicit    drugs, or over-the-counter medications. Her food    intake has been very poor over the past few months.   What vitamin deiciency is she likely to have?",
     "imageUrl": "",
     "options": [
       "A. Vitamin C deiciency",
@@ -373,7 +373,7 @@
   },
   {
     "questionNumber": 26,
-    "question": "A 29-year-old woman with a history of several episodes of severe acute abdominal pain lasting several    days is seen in your oice for further evaluation.    Review of laboratory test results during episodes    of pain is notable for elevated lipase (greater than    three times the upper limit of normal), but her liver    biochemical test results and triglyceride level are    normal. Results of toxic screens, including tests for    alcohol, are negative. Ultrasound imaging during at    least one episode of pain reveals a normal gallbladder without stones or sludge, as well as a normal    bile duct size. She does not smoke or drink alcohol, and she has no family history of pancreatitis.    She is referred for consideration of Oddi sphincter    manometry.   Which of the following medications may reduce    the risk of postendoscopic retrograde cholangiopancreatography (post-ERCP) pancreatitis?",
+    "question": "A 29-year-old woman with a history of several episodes of severe acute abdominal pain lasting several    days is seen in your office for further evaluation.    Review of laboratory test results during episodes    of pain is notable for elevated lipase (greater than    three times the upper limit of normal), but her liver    biochemical test results and triglyceride level are    normal. Results of toxic screens, including tests for    alcohol, are negative. Ultrasound imaging during at    least one episode of pain reveals a normal gallbladder without stones or sludge, as well as a normal    bile duct size. She does not smoke or drink alcohol, and she has no family history of pancreatitis.    She is referred for consideration of Oddi sphincter    manometry.   Which of the following medications may reduce    the risk of postendoscopic retrograde cholangiopancreatography (post-ERCP) pancreatitis?",
     "imageUrl": "",
     "options": [
       "A. N-acetylcysteine",
@@ -388,7 +388,7 @@
   },
   {
     "questionNumber": 27,
-    "question": "A 23-year-old medical student with frequent heartburn since starting medical school 2 years ago is    seen in your oice for further management. His    symptoms are mostly nocturnal, and he reports    frequently eating fast food at night shortly before    going to bed.   Which statement regarding gastroesophageal relux    disease (GERD) is true?",
+    "question": "A 23-year-old medical student with frequent heartburn since starting medical school 2 years ago is    seen in your office for further management. His    symptoms are mostly nocturnal, and he reports    frequently eating fast food at night shortly before    going to bed.   Which statement regarding gastroesophageal relux    disease (GERD) is true?",
     "imageUrl": "",
     "options": [
       "A. Surgical therapy should be considered in patients    who do not respond to proton pump inhibitor    (PPI) therapy.",
@@ -582,7 +582,7 @@
   },
   {
     "questionNumber": 40,
-    "question": "A 32-year-old woman with ulcerative colitis comes to    your oice for evaluation of symptoms. She was diagnosed with mild to moderate pancolitis last year. She    initially responded well to induction and maintenance    therapy with mesalamine. However, 2 months ago, she    developed bloody diarrhea occurring six times per day,    as well as lower abdominal cramping. Treatment with    prednisone 40 mg daily resulted in improved symptoms, but symptoms recurred when the prednisone    dose was tapered to 10 mg daily. A physical examination reveals her vital signs are normal, and she has    minimal left lower quadrant tenderness. Laboratory    studies reveal a white blood cell count of 11,000/µL    and hematocrit of 34.5%, and the result of stool testing for Clostridium diicile is negative.   Which of the following is the most appropriate    next step in treating this patient?",
+    "question": "A 32-year-old woman with ulcerative colitis comes to    your office for evaluation of symptoms. She was diagnosed with mild to moderate pancolitis last year. She    initially responded well to induction and maintenance    therapy with mesalamine. However, 2 months ago, she    developed bloody diarrhea occurring six times per day,    as well as lower abdominal cramping. Treatment with    prednisone 40 mg daily resulted in improved symptoms, but symptoms recurred when the prednisone    dose was tapered to 10 mg daily. A physical examination reveals her vital signs are normal, and she has    minimal left lower quadrant tenderness. Laboratory    studies reveal a white blood cell count of 11,000/µL    and hematocrit of 34.5%, and the result of stool testing for Clostridium diicile is negative.   Which of the following is the most appropriate    next step in treating this patient?",
     "imageUrl": "",
     "options": [
       "A. Switch to balsalazide.",
@@ -746,3 +746,4 @@
     "explanationImageUrl": ""
   }
 ]
+}

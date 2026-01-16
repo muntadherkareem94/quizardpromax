@@ -1,4 +1,4 @@
-[
+{ "questions":[
   {
     "questionNumber": 1,
     "question": "A 55-year-old African American man comes for his irst   primary care oice visit. He is without complaints but   presents because his father had a myocardial infarction   recently at age 75, and his mother is healthy at 74. He   does not smoke. His blood pressure is 120/71 mm Hg   on hydrochlorothiazide. His total cholesterol is 200   mg/dL, and his high-density lipoprotein (HDL) is 25   mg/dL. His 10-year risk for developing atherosclerotic   cardiovascular disease, according to Pooled Cohort   Equations, is 11.9%.  Which of the following is the most appropriate   management?",
@@ -456,7 +456,7 @@
   },
   {
     "questionNumber": 32,
-    "question": "A 92-year-old community-dwelling senior comes to   your oice for follow-up of a fall. She was fortunate,   and all that was actually wounded was her pride. You   review her history. he fall occurred at home when   she got up from a chair and headed for the bathroom.   She lives alone, does not drive, and ignores her walker.   She takes multiple medications, including atenolol,   HCTZ, lisinopril, insulin, and metformin. At night,   she takes amitriptyline for her diabetic neuropathy.   She also drinks 6-8 oz of hard liquor daily, though she   repeatedly denies this, and you have learned it only   because her daughter told you.  Of the one-third of elderly people who fall every   year, what percentage of them have multiple falls?",
+    "question": "A 92-year-old community-dwelling senior comes to   your office for follow-up of a fall. She was fortunate,   and all that was actually wounded was her pride. You   review her history. he fall occurred at home when   she got up from a chair and headed for the bathroom.   She lives alone, does not drive, and ignores her walker.   She takes multiple medications, including atenolol,   HCTZ, lisinopril, insulin, and metformin. At night,   she takes amitriptyline for her diabetic neuropathy.   She also drinks 6-8 oz of hard liquor daily, though she   repeatedly denies this, and you have learned it only   because her daughter told you.  Of the one-third of elderly people who fall every   year, what percentage of them have multiple falls?",
     "imageUrl": "",
     "options": [
       "A. 20%",
@@ -588,7 +588,7 @@
   },
   {
     "questionNumber": 41,
-    "question": "A 36-year-old man calls your oice with a complaint   that he woke up and cannot hear out of his left ear   very well. He has no history of ear problems and no   recent infections. He did travel recently on an airplane   and wonders if the plane trip is the cause. Your astute   triage nurse had him hum, and the hum sound did not   lateralize. He has no vertigo, but he has tinnitus and a   little bit of ear pain.  What should be your next step?",
+    "question": "A 36-year-old man calls your office with a complaint   that he woke up and cannot hear out of his left ear   very well. He has no history of ear problems and no   recent infections. He did travel recently on an airplane   and wonders if the plane trip is the cause. Your astute   triage nurse had him hum, and the hum sound did not   lateralize. He has no vertigo, but he has tinnitus and a   little bit of ear pain.  What should be your next step?",
     "imageUrl": "",
     "options": [
       "A. Don’t worry. It’s the plane; take a decongestant,   and let me know if not better.",
@@ -662,7 +662,7 @@
   },
   {
     "questionNumber": 46,
-    "question": "A 37-year-old nurse presents to your oice because   a tuberculin skin test (TST) that was done before he   could start a job at a new hospital was reactive. He was   born in Portugal and thinks he was given the BCG   vaccine during childhood. He grew up in New York   City and most recently worked in a hospital with a   large immigrant population. He does not recall taking   care of anyone with tuberculosis (TB). He currently   takes no medications. He is anxious about starting a   long course of treatment. You look at the red patch on   his arm but carefully measure the induration, inding   that it is 22 mm across. A chest x-ray shows no abnormalities.  What do you advise him to do?",
+    "question": "A 37-year-old nurse presents to your office because   a tuberculin skin test (TST) that was done before he   could start a job at a new hospital was reactive. He was   born in Portugal and thinks he was given the BCG   vaccine during childhood. He grew up in New York   City and most recently worked in a hospital with a   large immigrant population. He does not recall taking   care of anyone with tuberculosis (TB). He currently   takes no medications. He is anxious about starting a   long course of treatment. You look at the red patch on   his arm but carefully measure the induration, inding   that it is 22 mm across. A chest x-ray shows no abnormalities.  What do you advise him to do?",
     "imageUrl": "",
     "options": [
       "A. He does not need to be treated, because the TST   result is positive due to his BCG vaccine.",
@@ -734,3 +734,4 @@
     "explanationImageUrl": ""
   }
 ]
+}

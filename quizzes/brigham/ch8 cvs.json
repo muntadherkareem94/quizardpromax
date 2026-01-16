@@ -1,4 +1,4 @@
-[
+{ "questions": [
   {
     "questionNumber": 1,
     "question": "A 32-year-old woman presents for evaluation of palpitations. She notes the intermittent sensation of her  heart “lip-lopping” in her chest for the past month.  Review of systems is notable for fatigue and subjectively decreased energy. On physical examination, she  is well appearing. Her jugular venous pressure is 5  cm H2O. She has a parasternal lift and a grade 2 of 6  midpeaking systolic murmur at the left upper sternal  border. he second heart sound is widely split without  respiratory variation, and the pulmonic component of  the second heart sound is prominent. he extremities  are warm without edema. An electrocardiogram demonstrates a rightward axis, narrow QRS complex, and  incomplete right bundle branch block. What is the most likely diagnosis?",
@@ -706,7 +706,7 @@
   },
   {
     "questionNumber": 48,
-    "question": "A 70-year-old woman presents to your oice for an  annual health examination. She has no known cardiovascular risk factors or history of cardiovascular disease.  She has never smoked and drinks alcohol socially. She  leads an active lifestyle and is asymptomatic. Her physical examination is notable for a heart rate of 70 beats  per minute and a blood pressure of 124/84 mm Hg.  he rest of her physical examination is unremarkable. Her EKG is normal. She has a total cholesterol  of 180 mg/dL and an HDL cholesterol of 50 mg/dL.  Her Framingham risk score for cardiovascular disease is  8.6%. Her pooled cardiovascular risk score is 8.8%. Which of the following is the most appropriate test?",
+    "question": "A 70-year-old woman presents to your office for an  annual health examination. She has no known cardiovascular risk factors or history of cardiovascular disease.  She has never smoked and drinks alcohol socially. She  leads an active lifestyle and is asymptomatic. Her physical examination is notable for a heart rate of 70 beats  per minute and a blood pressure of 124/84 mm Hg.  he rest of her physical examination is unremarkable. Her EKG is normal. She has a total cholesterol  of 180 mg/dL and an HDL cholesterol of 50 mg/dL.  Her Framingham risk score for cardiovascular disease is  8.6%. Her pooled cardiovascular risk score is 8.8%. Which of the following is the most appropriate test?",
     "imageUrl": "",
     "options": [
       "A. Exercise stress test",
@@ -734,4 +734,306 @@
     "explanation": "Renal artery Doppler study In a young patient with severe hypertension, one  must evaluate secondary causes of hypertension. he  most likely etiology in a young woman is ibromuscular dysplasia. Initial screening with renal Doppler can  reveal increased velocities, and the next step would be  evaluation with computed tomographic angiography  or abdominal magnetic resonance angiography. Polysomnography can lead to the detection of obstructive  sleep apnea, which can be a cause of hypertension, but  this patient does not give a history that is consistent  with obstructive sleep apnea. Pheochromocytoma  is unlikely, given the lack of lushing, palpitations,  or diaphoresis. Hyperaldosteronism is also unlikely,  given normal electrolytes. A transthoracic echocardiogram may show left ventricular hypertrophy, but she  is unlikely to have coarctation of the aorta, given the  lack of a murmur and no delayed pulse in the lower  extremities. Vongpatanasin W. Resistant hypertension: a review of diagnosis  and management. JAMA. 2014:311(21):2216-2224. Acknowledgment he author and editors gratefully acknowledge the contributions of the previous authors-homas S. Metkus Jr.,  Patrick O’Gara, and Donna M. Polk.",
     "explanationImageUrl": ""
   }
+  ,
+  {
+            "question": "A 57-year-old female presents to the clinic for a followup visit after an acute myocardial infarction (MI) suffered 2 months ago for which she underwent primary coronary intervention of an occluded proximal left anterior descending (LAD) artery with placement of a drug-eluting stent. She notes intermittent sharp chest pain that is worsened at night without radiation. Pain is diferent in quality from 2 months ago. She denies dyspnea or palpitations. She stopped smoking at the time of her MI. On physical examination, her blood pressure (BP) was 152/94 mm Hg, heart rate (HR) was 70 beats per minute, and respiratory rate was 16 breaths per minute. he examination was notable for a III/VI holosystolic murmur at the apex with a diffuse apical impulse, clear lungs, and no jugular venous distension (JVD). EKG revealed NSR and Q waves in V1-V4, which is unchanged from prior tracing. Laboratory results include sodium 142 mmol/L, blood urea nitrogen 12 mg/dL, creatinine 0.8 mg/dL, erythrocyte sedimentation rate 24 mm/h, white blood cell 8.2 K/uL, and hematocrit 41%. What is the most likely diagnosis?",
+            "imageUrl": "",
+            "options": [
+                "A. Recurrent anterior wall MI",
+                "B. Pericarditis",
+                "C. Acute mitral regurgitation",
+                "D. Ventricular aneurysm",
+                "E. Pulmonary hypertension"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "his is not an uncommon problem faced by the clinician. Patients may develop delayed pericarditis from an acute MI (Dudzinski DM, Mak GS, Hung JW. Pericardial diseases. Curr Prob Cardiol. 2012;37:75–118). Chronic pericarditis is more commonly seen in women following acute MI and can be debilitating. Pericarditis is often associated with pleuritic chest pain often radiating to the ridge of the trapezius, and the EKG often has difuse PR depression and ST elevation, although one can see regional pericarditis in situations such as post bypass surgery. he pain can occur between 1 day and 6 weeks postMI and can be diicult to distinguish from recurrent angina. Diagnosis can often be conirmed with cardiac MRI. An acute anterior wall MI is less likely given the stable clinical presentation in the outpatient clinic and atypical (and positional) nature of chest pain, although silent injury may occur in some patient populations. Pulmonary hypertension may occur as a consequence of heart failure post infarct. his is likely too early. Although chest pain is possible, it typically occurs with exertion. he lack of JVD, ascites, peripheral edema, and right ventricular heave decreases the likelihood of pulmonary hypertension. Acute mitral regurgitation typically presents with acute cardiogenic shock and/or heart failure post infarct. Persistent ST elevation after an acute MI is classically described in patients with a LV aneurysm, although it can be the result of a large infarct as well. LV aneurysms more commonly occur after an occluded vessel in which there was not adequate collateral blood supply. It is not typically a cause of pleuritic chest pain. Management of pericarditis is challenging in the setting of need for dual antiplatelet therapy. Colchicine has been used as an alternative for managing chronic pericarditis.",
+            "explanationImageUrl": "",
+            "questionNumber": 50
+        },
+        {
+            "question": "A 49-year-old man presents to the ED with progressive dyspnea, palpitations, and dizziness. He was healthy until 4 years ago when he required a permanent pacemaker for progressive atrioventricular (AV) block. He denies chest pain, easy bruisability, or hoarseness. Examination reveals mild JVD, soft apical S3 gallop, and I/VI holosystolic murmur at apex. Echocardiogram demonstrates left ventricular ejection fraction (LVEF) of 25% with mild-to-moderate mitral regurgitation. Coronary angiography revealed no epicardial coronary artery disease (CAD). here is no evidence of lupus, and Lyme titers are negative. In addition to starting guideline-directed medical therapy, what is the next best step?",
+            "imageUrl": "",
+            "options": [
+                "A. Electrophysiology (EP) study to rule out ventricular tachycardia",
+                "B. Place an implantable cardioverter deibrillator (AICD)",
+                "C. Endomyocardial biopsy",
+                "D. Bone marrow biopsy",
+                "E. Fluorodeoxyglucose positron emission tomography (FDG PET) scan"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "his patient has sarcoid cardiomyopathy. A young patient with AV conduction disease, sinus node disease, or atrial or ventricular arrhythmias should be considered for cardiac involvement of sarcoidosis. his diagnosis is rarely made in part because of inadequate vigilance when patients present with early signs of conduction disease. An EP study would not be indicated as irst-line therapy in the absence of signs of malignant arrhythmias; the sensitivity and speciicity of an EP study are lower in patients with nonischemic cardiomyopathy, making the negative predictive value too low to feel comfortable with management being driven by the indings. An AICD for primary prevention of sudden cardiac death would not be indicated until the LVEF remains low after 3 months of treatment with guideline-directed medical therapy. Although an endomyocardial biopsy may be required to deinitively diagnose cardiac sarcoid, the lesions are patchy and can be missed on a biopsy. A bone marrow biopsy would be helpful to evaluate cardiac amyloid; however, the clinical presentation is not consistent with this inding. An FDG PET scan can be helpful in identifying active sarcoid (Patel AR. Detection of cardiac sarcoidosis: a balancing act between symptoms and imaging indings. JACC Cardiovasc Imaging 2017. [Epub ahead of print]). A typical pattern is uptake in the basal septum. his imaging modality can be useful in following response to therapy. Cardiac MRI would be an alternative imaging; however, the pacemaker would preclude this option if it is not MRI compatible. Treatment of cardiac sarcoid is typically with prednisone or methotrexate. However, when the LVEF is severely reduced, there is less likelihood of recovery of LV function and one may consider need for heart transplantation if disease progresses.",
+            "explanationImageUrl": "",
+            "questionNumber": 51
+        },
+        {
+            "question": "A 66-year-old female with a history of lymphoma received radiation therapy in addition to chemotherapy with doxorubicin 9 years ago. She now presents to her primary care office with worsening dyspnea and right-sided heart failure signs. She has no traditional cardiac risk factors. Examination reveals a BP of 100/75 mm Hg, HR of 85 beats per minute, prominent X descent with venous distension, nonpalpable impulse, ascites, and 3+ edema. Echocardiogram reveals EF of 55% with septal bounce with no regional wall motion abnormalities. Which of the following statements is not true?",
+            "imageUrl": "",
+            "options": [
+                "A. Radiation therapy can cause valvular disease.",
+                "B. Cardiac MRI can be helpful in characterizing this disease.",
+                "C. he patient is not at signiicant risk for CAD. 934 SECTION 8 Cardiovascular Disease",
+                "D. Kussmaul sign can be present in both conditions.",
+                "E. Ventricular interdependence is both sensitive and speciic for constrictive pericarditis."
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "his patient is at risk for a cardiomyopathy caused by doxorubicin exposure, and there can be a delay in the development of LV dysfunction, especially in younger patients. Echocardiography excludes this etiology. Radiation exposure places her at risk for CAD, constrictive pericarditis, restrictive cardiomyopathy, and valvular disease. Classically, patients develop CAD ∼10 years postradiation exposure and have a unique pattern with stenosis in the ostia of the major coronary arteries, possibly caused by more intense radiation exposure in these areas. Her right-sided heart failure symptoms suggest restrictive versus constrictive physiology. Cardiac MRI can be helpful, as well as echocardiography with Doppler interrogation, chest CT to evaluate pericardial thickness, and cardiac catheterization (gold standard).",
+            "explanationImageUrl": "",
+            "questionNumber": 52
+        },
+        {
+            "question": "A 53-year-old woman with a 32-pack-year history of smoking (stopped 2 years ago), hypertension, and diabetes mellitus (DM) presents to your oice for a routine visit. Fasting lipid proile reveals total cholesterol 206, high-density lipoprotein (HDL) 33, low-density lipoprotein (LDL) 128, and triglycerides 152. In addition to diet modiications, routine exercise, and BP control, what would you do to manage this patient?",
+            "imageUrl": "",
+            "options": [
+                "A. Refer for exercise test, and start statin if positive.",
+                "B. Start simvastatin 10 mg nightly.",
+                "C. Start proprotein convertase subtilisin/kexin type 9 (PCSK-9) inhibitor.",
+                "D. Start atorvastatin 80 mg nightly.",
+                "E. Start niacin 1 g daily with aspirin."
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "he management of hyperlipidemia has been somewhat controversial given the recent guidelines published in 2014 (Stone NJ, Robinson JG, Lichtenstein AH, et al. 2013 ACC/AHA guideline on the treatment of blood cholesterol to reduce atherosclerotic cardiovascular risk in adults: a report of the American College of Cardiology/American Heart Association task force on practice guidelines. Circulation. 2014;129:S1–45). Given her DM, she is at high risk and thus her LDL and total cholesterol levels are not at target. For all patients with hypercholesterolemia, it is recommended to exercise and modify diet to improve lipid proile. However, there are some patient populations that should receive pharmacologic therapy. he ATP III LDL-C guidelines take into consideration the risk of the patient to establish target goals and interventions. Patients with established coronary heart disease (CHD) or who have a CHD risk equivalent (i.e., DM, peripheral arterial disease, abdominal aortic aneurysm, carotid disease, ≥2 risk factors with 10-year risk of >20%) are considered high risk. Risk factors include smoking, hypertension, HDL <40 mg/dL, family history of early CAD, and older age (males age ≥45 years, females age ≥55 years). Based on the PROVE-IT trial, patients with an acute MI could be treated with atorvastatin 80 mg nightly. Generic drugs are available for other secondary prevention as well as primary prevention patients. PCSK-9 inhibitors are a class of drugs that inhibit a proprotein convertase involved in the degradation of LDL receptors in the liver by the use of a monoclonal antibody and thus increase the clearance of LDL cholesterol. Niacin is good to raise HDL. However, there are no data that it improves outcomes. Exercise testing is not required to decide on use of a statin.",
+            "explanationImageUrl": "",
+            "questionNumber": 53
+        },
+        {
+            "question": "A 78-year-old woman with a permanent pacemaker presents to your oice with 1 week of intermittent palpitations without associated symptoms. EKG reveals normal sinus rhythm at 76 beats per minute with occasional atrial premature beats. Interrogation of her pacemaker suggests three episodes of “mode switching” since last interrogation, each lasting approximately 3 to 4 minutes suggestive of atrial ibrillation. Vital signs revealed HR of 82 beats per minute and BP of 128/84 mm Hg with an otherwise unremarkable physical examination. She has moderate-to-severe aortic stenosis (calculated aortic valve area 1.2 cm2) on echocardiogram. Which is the best management strategy?",
+            "imageUrl": "",
+            "options": [
+                "A. Start dofetilide to maintain normal sinus rhythm.",
+                "B. Schedule 24-hour Holter monitor and start anticoagulation if it reveals atrial ibrillation.",
+                "C. Start warfarin and target international normalized ratio (INR) 2 to 3.",
+                "D. Start dabigatran or apixaban.",
+                "E. Start aspirin and clopidogrel."
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Patients with evidence of transient atrial ibrillation on interrogation of a pacemaker or deibrillator are at higher risk for stroke even in the absence of conirmed atrial ibrillation. hus patients should be assessed for thromboembolic risk using CHADS2 VASc score after this inding without further diagnostic testing. She is at high risk for thromboembolic events given her age and sex. he decision regarding aspirin versus warfarin is based on risk of thromboembolic complications risk, bleeding risk, and potential contraindications for therapy (e.g., recurrent falls). he ACTIVE study was recently stopped early because of worse outcomes in patients with atrial ibrillation randomized to aspirin + clopidogrel compared with warfarin (ACTIVE Investigators, Connolly SJ, Pogue J, et al. Efect of clopidogrel added to aspirin in patients with atrial ibrillation. N Engl J Med. 2009;360:2066–2078). Warfarin should be used for (1) patients with mechanical heart valves; (2) patients at high risk of stroke (prior stroke, transient ischemic attack, systemic embolism, or history of rheumatic mitral stenosis); and (3) patients with more than one moderate risk factor (i.e., age ≥75 years, hypertension, heart failure, LVEF ≤35% or fractional shortening ≤25%, and DM). Aspirin (81–325 mg daily) is recommended as an alternative to vitamin K antagonists in low-risk patients or in those with contraindications to oral anticoagulation. Several studies have demonstrated eicacy of newer oral anticoagulants, including apixaban and dabigatran. However, patients with concomitant valvular disease should not use these agents; her aortic stenosis would exclude her. It is not recommended to start dofetilide to maintain normal sinus rhythm because she is mostly in sinus rhythm. An antiarrhythmic agent can be considered if her atrial ibrillation is symptomatic, associated with clinical deterioration or poor rate control, or becoming more persistent. She would require an admission to the hospital to monitor the QTc if this were initiated. A 24-hour Holter monitor would not be required for her given the pacemaker that demonstrates transient atrial ibrillation.",
+            "explanationImageUrl": "",
+            "questionNumber": 54
+        },
+        {
+            "question": "A 39-year-old woman who is 31 weeks pregnant presents to the ED with mild dyspnea on exertion. Examination reveals BP 110/70 mm Hg, HR 95 beats per minute, clear chest, jugular venous pressure 7 cm water, and III/VI holosystolic murmur at apex. Echocardiography conirms moderate mitral regurgitation. She has no evidence of pulmonary hypertension. Management options include which of the following?",
+            "imageUrl": "",
+            "options": [
+                "A. Start low-dose furosemide.",
+                "B. Arrange for emergent delivery of fetus.",
+                "C. Plan mitral valve repair before delivery.",
+                "D. Left and right heart catheterization",
+                "E. Proceed with pregnancy with close follow-up."
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "his patient is near term and does not have a load-bearing valvular lesion. Valvular heart lesions associated with high maternal and/or fetal risk during pregnancy include severe aortic stenosis with or without symptoms, aortic insuiciency with New York Heart Association (NYHA) functional class III–IV symptoms, mitral stenosis with NYHA functional class II–IV symptoms, severe mitral regurgitation with NYHA functional class III–IV symptoms, aortic and/or mitral valve disease resulting in severe pulmonary hypertension (pulmonary pressure >75% of systemic systolic BP), aortic and/ or mitral valve disease with severe LV dysfunction (LVEF <40%), mechanical prosthetic valve requiring anticoagulation, and aortic insuiciency in Marfan syndrome.",
+            "explanationImageUrl": "",
+            "questionNumber": 55
+        },
+        {
+            "question": "A 61-year-old man presents to the ED with palpitations without associated symptoms. He has a history of MI 3 years ago. Echocardiogram reveals normal left ventricular (LV) size, LVEF 55%, mild tricuspid, and mild regurgitation. EKG reveals atrial ibrillation with ventricular rate of 110 beats per minute and nonspeciic T-wave changes. Which of the following is a irstline therapy for rhythm control?",
+            "imageUrl": "",
+            "options": [
+                "A. Amiodarone",
+                "B. Atrial ibrillation ablation",
+                "C. AV nodal ablation and permanent pacemaker placement",
+                "D. Propafenone",
+                "E. Sotalol"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "he choice of strategy for managing atrial ibrillation is based on the presence or absence of structural heart disease (Al-Khatib SM, Arshad A, Balk EM, et al. Risk stratiication for arrhythmic events in patients with asymptomatic pre-excitation: a systematic review 938 SECTION 8 Cardiovascular Disease for the 2015 ACC/AHA/HRS guideline for the management of adult patients with supraventricular tachycardia: a report of the American College of Cardiology/American Heart Association task force on clinical practice guidelines and the heart rhythm society. Circulation. 2016;133:e575–586). his patient has known CAD, and thus the irst-line agents should be either dofetilide, dronedarone, or sotalol. Sotalol is thus the best choice listed. Amiodarone is a secondline agent for this patient if the three other agents fail or if they cannot be safely used. his is driven mostly by the side-efect proile of amiodarone. In patients with heart failure, dronedarone should be avoided given the excess risk of death and/or heart failure progression. Sotalol can be used but is often not tolerated with beta-blockers, a mainstay of therapy. hus dofetilide may be used as well. For patients without structural heart disease, propafenone and lecainide can be used in addition to other therapies. hese agents should not be used in patients with CAD. Catheter ablation should only be used as irst line for paroxysmal atrial ibrillation (class IIa indication). Catheter ablation can be used as second-line therapy. AV nodal ablation should only be used when a rate control or rhythm control strategy cannot maintain stability of the patient with persistent fast heart rates or in patients who are not candidates for other traditional therapies.",
+            "explanationImageUrl": "",
+            "questionNumber": 56
+        },
+        {
+            "question": "A 72-year-old man presents to the ED following a motor vehicle accident in which he was wearing a seatbelt. He describes the onset of palpitations while driving and awakens inding himself on the side of the road. Medical history is notable for MI 6 years ago and hypertension. Physical examination is remarkable for mild facial lacerations. What is the most likely cause of this event?",
+            "imageUrl": "",
+            "options": [
+                "A. Ventricular tachycardia",
+                "B. Epilepsy",
+                "C. High-degree AV block",
+                "D. Neurocardiogenic syncope",
+                "E. Hysterical fainting"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Given the prior MI, this patient is at risk for scar formation, and ventricular tachycardia is the most likely cause of syncope. Syncope is a common presentation caused by diverse problems. he patient’s history can be helpful in understanding likely causes of syncope. Cardiac syncope is manifested by rapid onset without aura, clear sensorium afterward, and a history of CAD and/or LV dysfunction. Bradyarrhythmias should be considered in patients with a history of conduction disease or heart transplant. Neurologic syncope is often preceded by aura and has a clouded sensorium with incontinence, tongue biting, and/or seizure activity. Hysterical fainting is not accompanied by change in pulse, BP, or skin color. hese patients experience paresthesias of hands/face, hyperventilation, dyspnea, and signs of anxiety. Neurocardiogenic syncope is the underlying etiology of approximately 50% of cases. Precipitants include emotional distress, fear, decreased venous response, and pain.",
+            "explanationImageUrl": "",
+            "questionNumber": 57
+        },
+        {
+            "question": "A 66-year-old man with history of hypertension and DM presents to the ED with left leg pain and mild chest pain after returning from a trip to Italy. Examination reveals a positive Homans sign in the left leg. A femoral deep venous thrombosis (DVT) was conirmed by lower extremity noninvasive studies. CT angiography was normal. What is the best management strategy?",
+            "imageUrl": "",
+            "options": [
+                "A. Initiate low-molecular-weight heparin, and maintain for 2 days before unopposed warfarin.",
+                "B. Start warfarin, and send home overlapping with apixaban.",
+                "C. Maintain warfarin for 6 months.",
+                "D. Start rivaroxaban.",
+                "E. Consider V/Q scan to exclude acute pulmonary embolism (PE)."
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "his patient has a DVT that is likely provoked by his recent airplane travel. Despite the chest pain, there is no evidence of an acute PE, an often-fatal consequence of DVT progression. he clinical presentation can be variable. However, a properly conducted CT angiography has an excellent negative predictive value, and thus a V/Q scan is not necessary. he initial treatment for DVT typically requires unfractionated heparin, low-molecular-weight heparin, or a novel oral anticoagulant (NOAC), such as rivaroxaban (Jaf MR, McMurtry MS, Archer SL, et al. Management of massive and submassive pulmonary embolism, iliofemoral deep vein thrombosis, and chronic thromboembolic pulmonary hypertension: a scientiic statement from the American Heart Association. Circulation. 2011;123:1788-1830). In the presence of heparin-induced thrombocytopenia, a direct thrombin inhibitor should be used initially. Chronic management requires warfarin that is overlapped with a minimum of 5 days of anticoagulation (excluding NOAC) and INR >2. If the initial treatment is an NOAC, then there is no bridge required; however, warfarin should not be used simultaneously.",
+            "explanationImageUrl": "",
+            "questionNumber": 58
+        },
+        {
+            "question": "A 58-year-old woman with a history of ischemic dilated cardiomyopathy with LVEF 25% presents to your oice with increasing fatigue. She was started on carvedilol 3 weeks ago, and it was titrated upward. She denies chest pain, palpitations, or orthopnea but noted worsening dyspnea without a change in her weight. Medications include lisinopril 40 mg daily, carvedilol 25 mg twice daily (maximal doses), and furosemide 20 mg daily. Vital signs include BP of 110/76 mm Hg, pulse of 66 beats per minute, and respirations of 16 breaths per minute. Physical examination demonstrated no JVD at 45 degrees with clear chest examination, no audible S3 or S4 gallop, and no peripheral edema. EKG revealed normal sinus rhythm with nonspeciic ST-T wave changes and interventricular conduction delay with QRS duration of 110 ms. Brain natriuretic peptide (BNP) is 700 pg/mL. What is the next best step?",
+            "imageUrl": "",
+            "options": [
+                "A. Refer for cardiac resynchronization therapy.",
+                "B. Refer for cardiac transplantation.",
+                "C. Increase furosemide.",
+                "D. Reduce dose of carvedilol.",
+                "E. Start digitalis."
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "his patient likely did not tolerate such a rapid uptitration of beta-blockade and likely had a decreased cardiac output. Beta-blockers are a recommended therapy for chronic heart failure patients and should be initiated in those who can tolerate them, even during a hospitalization, if there is no evidence of congestion; however, this class should be initiated at low doses and increased slowly. Cardiac output, and even LVEF, may decrease in the early course of treatment with beta-blockers. Other acute complications include bradycardia, fatigue, bronchospasm, luid retention/decompensated heart failure, hypotension, and dizziness. Over the next 3 months, patients often have improved symptoms, less fatigue, improved LVEF, and better drug tolerance. here are no signs of luid retention on physical examination. An isolated BNP is of limited clinical utility because many patients have persistently elevated BNP values, and this does not necessarily mean volume overload. If the BNP increased over 2 weeks from 80 to 700 pg/mL, this would support volume retention. here is no deinitive data for the routine use of BNP-guided therapy. Digitalis should not be initiated until the patient remains symptomatic despite multiple classes of medicines with known survival beneit. Cardiac transplantation may be considered, but it is preferable to wait until therapy is optimized. he QRS duration is not prolonged enough to warrant cardiac resynchronization.",
+            "explanationImageUrl": "",
+            "questionNumber": 59
+        },
+        {
+            "question": "A 59-year-old black woman presents for a routine clinical visit for a physical. Her examination is notable for a BP of 154/70 mm Hg, HR of 77 beats per minute, physiological splitting of the second heart sound, and no S3 gallop. She has no other comorbid conditions. In addition to lifestyle changes and dietary sodium restriction, which of the following is the best approach for management?",
+            "imageUrl": "",
+            "options": [
+                "A. Initiate angiotensin-converting enzyme (ACE) inhibitor.",
+                "B. Initiate spironolactone.",
+                "C. Initiate thiazide diuretic.",
+                "D. Initiate hydralazine.",
+                "E. Use any antihypertensive to achieve a systolic BP <120 mm Hg."
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "his is a question that discusses this strategy for hypertension control. In general, reducing the systolic BP to <140 mm Hg and diastolic BP <90 mm Hg with any antihypertensive agent is the appropriate target for pharmacologic intervention. In self-described African-American patients, the ALLHAT study demonstrated that a thiazide-type diuretic was more efective in improving composite cardiovascular outcome, heart failure, and stroke in comparison with an ACE inhibitor (Wright JT, Jr., Dunn JK, Cutler JA, et al. Outcomes in hypertensive black and nonblack patients treated with chlorthalidone, amlodipine, and lisinopril. JAMA. 2005;293:1595–1608). Calcium channel blockers had some beneit as well but were not listed as an answer. he Eighth Joint National Committee guidelines published in 2014 recommended an antihypertensive regimen that included either a thiazide diuretic or a calcium channel blocker for AfricanAmerican patients with hypertension (James PA, Oparil S, Carter BL, et al. 2014 evidence-based guideline for the management of high blood pressure in adults: report from the panel members appointed to the eighth joint national committee (JNC8). JAMA. 2014;311:507–520). ACE inhibitors can be used as irst-line therapy for patients with chronic kidney disease, proteinuria, heart failure, and vascular disease. Spironolactone may be an option for patients with documented hypertension caused by hyperaldosteronism. Hydralazine is a great antihypertensive drug that has been used for hypertensive crisis in the past. Compliance with a three-times-a-day drug must be considered as well. For nonblack patients, the general approach for controlling hypertension has been recommended without speciic recommendations on the class of antihypertensive.",
+            "explanationImageUrl": "",
+            "questionNumber": 60
+        },
+        {
+            "question": "A 59-year-old man presents to the ED with systolic BP of 224 mm Hg and diastolic BP of 110 mm Hg. Which of the following indings are not characteristics of a hypertensive crisis?",
+            "imageUrl": "",
+            "options": [
+                "A. Retinal hemorrhages",
+                "B. Microangiopathic hemolytic anemia",
+                "C. Azotemia and proteinuria",
+                "D. Normal mental status",
+                "E. All are characteristics of hypertensive crisis."
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Normal mental status can be present during a hypertensive crisis. Hypertensive encephalopathy can be associated with confusion, irritability, headaches, stupor, neurologic deicits, seizures, and coma. It is caused by a sudden rise in BP, which results in acute damage to blood vessels but is not always present with malignant hypertension. It could also be caused by failure of cerebral autoregulation causing excess cerebral blood low and damage to the wall leading to increased vascular permeability. Clinical features include renal insuiciency with proteinuria, hematuria, azotemia, microangiopathic hemolytic anemia, heart failure, nausea, and vomiting.",
+            "explanationImageUrl": "",
+            "questionNumber": 61
+        },
+        {
+            "question": "A 36-year-old woman with a history of rheumatoid arthritis presents to the hospital with acute chest pain, which worsens in the supine position, with associated low-grade fever. Physical examination revealed a friction rub but was otherwise unremarkable. EKG reveals difuse ST elevations and PR depression, and an echocardiogram revealed a small pericardial efusion without tamponade physiology. What is the best approach for management of her acute pericarditis?",
+            "imageUrl": "",
+            "options": [
+                "A. Ibuprofen 800 mg 3 times a day",
+                "B. Nonsteroidal antiinlammatory drug (NSAID) + colchicine",
+                "C. Prednisone 60 mg daily",
+                "D. Colchicine 1 mg daily",
+                "E. Pericardiocentesis"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Pericarditis is typically idiopathic in 85% of patients (Dudzinski DM, Mak GS, Hung JW. Pericardial diseases. Curr Prob Cardiol. 2012;37:75–118). he most common clinical scenario is acute MI in 5% to 20% of cases and advanced renal disease in 5% to 13% caused by uremia or dialysis. Autoimmune processes including lupus, rheumatic fever, and scleroderma are not uncommon. he treatment of acute pericarditis usually requires nonsteroidal antiinlammatory medicines for 1 to 3 days, and this can include ibuprofen 800 mg every 8 hours, aspirin 2 to 4 g/d, and indomethacin 75 to 225 mg/d. Colchicine has been used for chronic or recurrent pericarditis with or without NSAIDs or aspirin. he colchicine dose typically is 1 to 2 mg on day one followed by 0.5 to 1 mg/d for up to 3 months. Treating the underlying cause is important as well. Prednisone may be used for some autoimmune processes, but it would not be irst-line therapy for acute pericarditis. In the absence of cardiac tamponade, pericardiocentesis should not be performed and may be risky. If there is a concern for infectious (bacterial) pericarditis, a diagnostic pericardiocentesis may be performed.",
+            "explanationImageUrl": "",
+            "questionNumber": 62
+        },
+        {
+            "question": "A 64-year-old man underwent a heart transplantation 2 years ago and has posttransplant hypertension, diabetes, and weight gain. A biopsy in the recent past was negative for cellular rejection, and he has no CAD documented at last angiogram 4 months ago. here have been no changes in his background medicines, which includes triple immunosuppression therapy, diltiazem, lisinopril, and pravastatin. He presents today with acute kidney injury, noting an elevation of the serum creatinine from 1.2 mg/dL 2 months ago to 2.3 mg/dL today. Which of the following is the most likely cause of his kidney injury?",
+            "imageUrl": "",
+            "options": [
+                "A. Tacrolimus",
+                "B. Contrast nephropathy from angiogram",
+                "C. Mycophenolate mofetil",
+                "D. ACE inhibitor",
+                "E. Azathioprine"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Acute kidney injury and chronic kidney disease are common post heart transplantation. Dialysis occurs in approximately 6% of patients, and the most common risk factor is the use of a calcineurin inhibitor, such as tacrolimus. Additional predictors of chronic kidney disease after heart transplantation include older recipient age, pretransplant renal disease, DM, and human leukocyte antigen hypersensitization. Contrast nephropathy typically occurs within a few days after exposure and thus is unlikely in this case. he dose of ACE inhibitor has remained stable, and it is unlikely that it is the cause of the acute kidney injury. Mycophenolate mofetil and azathioprine do not typically cause renal failure; they are more commonly associated with leukopenia. In addition, mycophenolate mofetil has been associated with diarrhea caused by drug-induced colitis, which can be conirmed by colonoscopy and biopsy.",
+            "explanationImageUrl": "",
+            "questionNumber": 63
+        },
+        {
+            "question": "A 28-year-old woman presents to the ED with longstanding intravenous drug abuse and new fever, rigors, loud holosystolic murmur at apex, and clear lungs. EKG reveals type 2 second-degree AV block, and echocardiogram reveals moderate mitral regurgitation with a vegetation approximately 5 mm in size on the anterior lealet with signiicant mobility. Blood cultures grew Staphylococcus aureus within 12 hours. here is no decompensated heart failure. What is the most likely reason for urgent surgical intervention?",
+            "imageUrl": "",
+            "options": [
+                "A. New heart block",
+                "B. Rapid positivity of blood cultures with S. aureus",
+                "C. Mobile vegetation that is 5 mm in size",
+                "D. Moderate mitral regurgitation",
+                "E. Prevention of embolic event"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "his patient has acute bacterial endocarditis, likely in the setting of intravenous drug use. he presence of new heart block is suggestive of perivalvular extension of the endocarditis and is one of the many indications for potential urgent surgical intervention. his would be the best answer among the choices. Additional indications include persistent vegetation after systemic embolization, vegetation of the anterior mitral lealet is >10 mm in size, >1 embolic event during the irst 2 weeks of antibacterial therapy, and increased vegetation size despite appropriate antimicrobial therapy. Acute aortic or mitral insuiciency with signs of ventricular failure, heart failure unresponsive to medical therapy, valve perforation or rupture, valvular dehiscence rupture or istula, and large abscess or extension of the abscess despite appropriate therapy are additional reasons for surgical intervention. he best approach is careful monitoring with initiation of antibiotics in most cases of endocarditis without these concerning indings.",
+            "explanationImageUrl": "",
+            "questionNumber": 64
+        },
+        {
+            "question": "A 63-year-old male who had not seen a doctor in 7 years presents to the ED with acute chest pain for the past 2.5 hours with diaphoresis, nausea, and dyspnea. EKG reveals ST elevations in leads V1 through V6 and 1 and aVL. Cardiac troponin I is 0.04 (upper limit of normal 0.03). Urgent cardiac catheterization reveals an occluded proximal LAD stenosis, and he underwent successful angioplasty with the placement of a drug-eluting stent. An echocardiogram demonstrates LVEF 35% with mild mitral regurgitation. Which drug is not appropriate for initiation of his care?",
+            "imageUrl": "",
+            "options": [
+                "A. Carvedilol 25 mg twice daily",
+                "B. Spironolactone 25 mg daily",
+                "C. Clopidogrel 75 mg daily",
+                "D. Atorvastatin 80 mg nightly",
+                "E. Fondaparinux 7.5 mg daily"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Fondaparinux should not be used as anticoagulation in patients who undergo primary coronary intervention in the setting of an ST elevation MI (Levine GN, Bates ER, Bittl JA, et al. 2016 ACC/AHA guideline focused update on duration of dual antiplatelet therapy in patients with coronary artery disease: a report of the American College of Cardiology/American Heart Association Task Force on clinical practice guidelines: an update of the 2011 ACCF/AHA/SCAI guideline for percutaneous coronary intervention, 2011 ACCF/ AHA guideline for coronary artery bypass graft surgery, 2012 ACC/AHA/ACP/AATS/PCNA/SCAI/ STS guideline for the diagnosis and management of patients with stable ischemic heart disease, 2013 ACCF/AHA guideline for the management of STelevation myocardial infarction, 2014 AHA/ACC guideline for the management of patients with nonST-elevation acute coronary syndromes, and 2014 ACC/AHA guideline on perioperative cardiovascular 940 SECTION 8 Cardiovascular Disease evaluation and management of patients undergoing noncardiac surgery. Circulation. 2016;134:e123– 155). Unfractionated heparin or bivalirudin can be used with or without a IIb/IIIa receptor antagonist. A high-dose statin is beneicial post-MI, and patients should be started on either clopidogrel, prasugrel, or ticagrelor for at least 1 year due to the placement of a drug-eluting stent. Given the presence of a low ejection fraction in the setting of an acute MI, the patient should be on a mineralocorticoid receptor antagonist, ACE inhibitor or angiotensin-receptor blocker, and a beta-blocker.",
+            "explanationImageUrl": "",
+            "questionNumber": 65
+        },
+        {
+            "question": "A 57-year-old male with a history of hypertension presents to the ED with acute chest pain radiating to his back with hypotension and a new, large left efusion on chest x-ray (CXR). Systolic BP is diferent in the two arms. Appropriate steps in management include:",
+            "imageUrl": "",
+            "options": [
+                "A. Treat with sodium nitroprusside.",
+                "B. Start a loop diuretic.",
+                "C. Surgical repair for proximal dissection",
+                "D. Surgical repair for distal dissection",
+                "E. Narcotics for pain relief 936 SECTION 8 Cardiovascular Disease"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "he pleural indings and diferential BP suggest a proximal dissection of the thoracic aorta. Surgical repair for proximal dissection is the best option given the high mortality rate with this condition. Stabilization and pain relief can be done as a bridge to surgery but should not be the sole option. he combination of sodium nitroprusside and beta-blockers is good to reduce BP and wall stress, but sodium nitroprusside should not be used in isolation. Distal dissections are often seen in older patients with CAD and do not require urgent surgery. A loop diuretic should not be used because the patients may be preload dependent if there is pericardial efusion from the dissection.",
+            "explanationImageUrl": "",
+            "questionNumber": 66
+        },
+        {
+            "question": "Which of the following is not a contributing factor to the development of essential hypertension?",
+            "imageUrl": "",
+            "options": [
+                "A. Obesity",
+                "B. Alcohol consumption",
+                "C. Salt intake",
+                "D. Cigarette smoking",
+                "E. Lack of exercise"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Cigarette smoking is a recognized risk factor for vascular disease. Inhalation causes an acute rise in systemic BP and can cause vasoconstriction. However, it is not a contributor to chronic hypertension. Four major contributors to essential hypertension include obesity, excessive salt intake, excessive alcohol intake, and lack of exercise.",
+            "explanationImageUrl": "",
+            "questionNumber": 67
+        },
+        {
+            "question": "A 71-year-old woman with long-standing hypertension, diabetes, and hyperlipidemia presents to you with dyspnea. Laboratory results were checked and were notable for an elevated N-terminal pro B-type natriuretic peptide (NT-proBNP) at 1500 pg/mL. Acute heart failure was excluded by examination, echocardiogram, and CXR. What is the least likely cause of her elevated NT-proBNP?",
+            "imageUrl": "",
+            "options": [
+                "A. Older age",
+                "B. Body mass index (BMI) of 35",
+                "C. Pulmonary embolism",
+                "D. Estimated glomerular iltration rate of 30 mL/ min/1.73 m2",
+                "E. Pulmonary hypertension"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Natriuretic peptides are released from the ventricle and respond to increased wall stress. Anything that afects the left or right ventricular wall stress could result in increased levels of NT-proBNP or BNP (Yancy CW, Jessup M, Bozkurt B, et al. 2013 ACCF/AHA guideline for the management of heart failure: a report of the American College of Cardiology Foundation/American Heart Association Task Force on practice guidelines. J Am Coll Cardiol. 2013;62:e147–239). Elevation of these biomarkers is associated with worse prognosis and a variety of syndromes beyond heart failure. Obesity is associated with a low BNP, even in the presence of acute heart failure, and therefore the BMI that exceeds 35 is the best answer. Cardiac causes of elevated natriuretic peptides include acute coronary syndrome, iniltrative and pericardial processes, valvular heart disease, myocarditis, cardiac surgery, and cardioversion. Noncardiac causes include advancing age, renal failure, chronic obstructive pulmonary disease, pneumonia, pulmonary hypertension, sepsis and critical illness, toxic-metabolic insults, and anemia.",
+            "explanationImageUrl": "",
+            "questionNumber": 68
+        },
+        {
+            "question": "A 54-year-old man is scheduled for right hip replacement. He presents to your clinic for preoperative assessment. He has a past medical history of hypercholesterolemia, hypertension, benign prostate enlargement, and CAD with a stent placement in the LAD artery 2 years ago because of angina with single vessel disease. He exercises daily by walking 2 miles without limitations or symptoms. What is the best option for preoperative management?",
+            "imageUrl": "",
+            "options": [
+                "A. Perform a stress test (Standard Bruce Protocol) without imaging to risk stratify before surgery.",
+                "B. Proceed to surgery without further testing.",
+                "C. Perform a pharmacologic stress test with imaging to risk stratify before surgery.",
+                "D. Perform a stress test (Standard Bruce Protocol) with echocardiography to risk stratify before surgery.",
+                "E. Repeat coronary angiography."
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "his is a common scenario on board examinations. Given the patient’s excellent exercise capacity and asymptomatic status, there is no need for further risk stratiication. Treatment of single vessel disease with angioplasty/stents is not indicated in an asymptomatic patient; thus repeat angiography is not necessary. Pharmacologic stress tests should be performed in patients who are unable to exercise, and imaging is not required for patients with interpretable EKGs.",
+            "explanationImageUrl": "",
+            "questionNumber": 69
+        }
 ]
+}
