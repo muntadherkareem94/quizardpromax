@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -124,10 +125,50 @@
             </div>
 
             <h2 id="dashboardTitle" class="text-3xl font-extrabold text-white text-center mb-8"></h2>
-           <div id="disciplinesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
-            <div id="booksGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
-            <div id="videosGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+          
+           <div id="booksGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="book-skeleton bg-white rounded-2xl shadow-md p-6 animate-pulse">
+        <div class="h-64 bg-gray-200 rounded-xl mb-4"></div>
+        <div class="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
+        <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+    </div>
+    <div class="book-skeleton bg-white rounded-2xl shadow-md p-6 animate-pulse hidden sm:block">
+        <div class="h-64 bg-gray-200 rounded-xl mb-4"></div>
+        <div class="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
+        <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+    </div>
+    <div class="book-skeleton bg-white rounded-2xl shadow-md p-6 animate-pulse hidden lg:block">
+        <div class="h-64 bg-gray-200 rounded-xl mb-4"></div>
+        <div class="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
+        <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+    </div>
+</div>
+            <div id="videosGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="video-skeleton bg-white rounded-2xl shadow-md p-6 animate-pulse">
+        <div class="h-48 bg-gray-200 rounded-xl mb-4"></div> <div class="h-6 bg-gray-200 rounded w-3/4 mb-3"></div> <div class="h-4 bg-gray-200 rounded w-full mb-2"></div> <div class="h-4 bg-gray-200 rounded w-2/3 mb-6"></div> <div class="h-10 bg-gray-200 rounded-lg w-full"></div> </div>
+    
+    <div class="video-skeleton bg-white rounded-2xl shadow-md p-6 animate-pulse hidden sm:block">
+        <div class="h-48 bg-gray-200 rounded-xl mb-4"></div>
+        <div class="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
+        <div class="h-4 bg-gray-200 rounded w-full mb-2"></div>
+        <div class="h-4 bg-gray-200 rounded w-2/3 mb-6"></div>
+        <div class="h-10 bg-gray-200 rounded-lg w-full"></div>
+    </div>
+
+    <div class="video-skeleton bg-white rounded-2xl shadow-md p-6 animate-pulse hidden lg:block">
+        <div class="h-48 bg-gray-200 rounded-xl mb-4"></div>
+        <div class="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
+        <div class="h-4 bg-gray-200 rounded w-full mb-2"></div>
+        <div class="h-4 bg-gray-200 rounded w-2/3 mb-6"></div>
+        <div class="h-10 bg-gray-200 rounded-lg w-full"></div>
+    </div>
+</div>
             
+       <section id="disciplinesSection" class="mb-8">
+
+        <div id="disciplinesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+            </div>
+    </section>
             <div id="searchResultsContainer" class="hidden space-y-4 max-w-4xl mx-auto"></div>
 
             <div id="customQuizBtnContainer" class="text-center mb-8 border-t border-white/20 pt-8 mt-8 hidden">
@@ -137,7 +178,7 @@
             </div>
         </div>
 
-        <div id="loadingState" class="text-center text-white py-10 text-xl">Loading content...</div>
+
     </main>
 
    <div id="quizModeModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
@@ -697,9 +738,16 @@ function switchView(view) {
             view === 'books' ? 'Browse by Book' : 'My Video Courses';
     }
 
+   // Toggle the grids
     dom.disciplinesGrid.classList.toggle('hidden', view !== 'disciplines');
     dom.booksGrid.classList.toggle('hidden', view !== 'books');
     dom.videosGrid.classList.toggle('hidden', view !== 'videos');
+
+    // FIX: Also toggle the Discipline Section container (to hide the Title)
+    const discSection = document.getElementById('disciplinesSection');
+    if (discSection) {
+        discSection.classList.toggle('hidden', view !== 'disciplines');
+    }
 
     dom.showDisciplinesBtn.classList.toggle('active', view === 'disciplines');
     dom.showBooksBtn.classList.toggle('active', view === 'books');
@@ -721,12 +769,11 @@ function switchView(view) {
 function renderVideoCourses(coursesToRender, userData, purchasedCourseIds = new Set()) {
     dom.videosGrid.innerHTML = '';
 
-    // Step 1: Filter out purchasable courses that the user has NOT bought.
     const coursesToShow = coursesToRender.filter(course => {
         if (course.access_level === 'purchasable') {
-            return purchasedCourseIds.has(course.id); // Only show if purchased
+            return purchasedCourseIds.has(course.id);
         }
-        return true; // Keep all other types (free, premium)
+        return true;
     });
 
     if (coursesToShow.length === 0) {
@@ -734,114 +781,286 @@ function renderVideoCourses(coursesToRender, userData, purchasedCourseIds = new 
         return;
     }
 
-    // Step 2: Loop through the filtered list and apply the correct lock logic.
     coursesToShow.forEach(course => {
         const hasPurchased = purchasedCourseIds.has(course.id);
         let isLocked = false;
         
-        // A course is now ONLY locked if it's premium, the user is free, and they haven't bought it.
         if (course.access_level === 'premium' && userData.account_type === 'free' && !hasPurchased) {
             isLocked = true;
         }
 
         const card = document.createElement('div');
-        // ... (The rest of your card rendering HTML is correct and does not need to be changed)
-        card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col relative';
+        // Added 'group' for hover effects and conditional grayscale for locked items
+        card.className = `bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col relative ${isLocked ? 'opacity-80 grayscale-[0.5] group' : ''}`;
+        
         card.innerHTML = `
+          ${isLocked ? `
+                <div class="absolute inset-0 flex items-center justify-center z-20">
+                    <a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </a>
+                </div>
+            ` : ''}
+
             <div class="p-6 flex flex-col flex-grow">
                 <div class="relative h-48 overflow-hidden bg-gray-200 flex items-center justify-center mb-4 rounded-lg">
-                    <img src="${course.thumbnail_url || 'images/placeholder.png'}" alt="${course.title}" class="w-full h-full object-contain">
+                    <img src="${course.thumbnail_url || 'images/placeholder.png'}" alt="${course.title}" class="w-full h-full object-contain transition-transform duration-500 ${!isLocked ? 'group-hover:scale-105' : ''}">
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">${course.title}</h3>
-                <p class="text-gray-600 text-sm flex-grow mb-4">${course.description}</p>
+                <p class="text-gray-600 text-sm flex-grow mb-4 line-clamp-3">${course.description}</p>
             </div>
-            ${isLocked
-                ? `<div class="absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col items-center justify-center p-4 rounded-2xl"><img src="images/shopping-cart-white.png" alt="Premium Content" class="w-12 h-12 mb-4"><button onclick="window.location.href='store.html'" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">Upgrade to Access</button></div>`
-                : `<a href="view_course.html?id=${course.id}" class="mt-auto text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg">Watch Course</a>`
-            }
+            
+            <div class="p-6 pt-0">
+                ${isLocked 
+                    ? `<button onclick="window.location.href='store.html'" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg">Unlock in Store</button>`
+                    : `<a href="view_course.html?id=${course.id}" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg">Watch Course</a>`
+                }
+            </div>
         `;
         dom.videosGrid.appendChild(card);
     });
 }
 // In dashboard.html
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
 
-function renderDisciplines(disciplinesToRender, userData) {
-    dom.disciplinesGrid.innerHTML = '';
-    if (disciplinesToRender.length === 0) {
-        dom.disciplinesGrid.innerHTML = '<p class="text-white text-center col-span-full">No disciplines available for your specialty.</p>';
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// --- CUSTOM FANCY TOOLTIP LOGIC ---
+// Global tracker for book charts
+window.bookCharts = window.bookCharts || [];
+
+// --- CUSTOM SUMMARY TOOLTIP LOGIC ---
+const getOrCreateTooltip = (chart) => {
+    let tooltipEl = document.getElementById('chartjs-tooltip');
+
+    if (!tooltipEl) {
+        tooltipEl = document.createElement('div');
+        tooltipEl.id = 'chartjs-tooltip';
+        tooltipEl.style.opacity = 0;
+        tooltipEl.style.position = 'absolute';
+        tooltipEl.style.pointerEvents = 'none'; // Let mouse pass through
+        tooltipEl.style.zIndex = 9999; // Always on top
+        tooltipEl.className = "bg-slate-800 text-white text-xs rounded-lg shadow-xl p-3 transition-opacity duration-200 border border-slate-700 backdrop-blur-sm transform -translate-x-1/2 mt-2 min-w-[120px]";
+        document.body.appendChild(tooltipEl);
+    }
+
+    return tooltipEl;
+};
+
+const externalTooltipHandler = (context) => {
+    // Tooltip Element
+    const { chart, tooltip } = context;
+    const tooltipEl = getOrCreateTooltip(chart);
+
+    // Hide if no tooltip
+    if (tooltip.opacity === 0) {
+        tooltipEl.style.opacity = 0;
         return;
     }
+
+    // --- NEW LOGIC: SHOW ALL STATS ALWAYS ---
+    const dataset = chart.data.datasets[0];
+    const dataValues = dataset.data; // [Correct, Wrong, Unanswered]
+    const correct = dataValues[0];
+    const wrong = dataValues[1];
+    const unanswered = dataValues[2];
+    const total = correct + wrong + unanswered;
+
+    // Calculate Percentages
+    const correctPct = total > 0 ? Math.round((correct / total) * 100) : 0;
+    const wrongPct = total > 0 ? Math.round((wrong / total) * 100) : 0;
+    // FIX: Calculate Unanswered Percentage
+    const unansweredPct = total > 0 ? Math.round((unanswered / total) * 100) : 0;
     
-    disciplinesToRender.forEach(disc => {
-        const card = document.createElement('div');
+    // Build HTML with color dots
+    const html = `
+        <div class="flex items-center justify-between mb-1">
+            <div class="flex items-center"><span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>Correct</div>
+            <span class="font-bold ml-2">${correct} <span class="text-slate-400 text-[10px]">(${correctPct}%)</span></span>
+        </div>
+        <div class="flex items-center justify-between mb-1">
+            <div class="flex items-center"><span class="w-2 h-2 rounded-full bg-red-500 mr-2"></span>Wrong</div>
+            <span class="font-bold ml-2">${wrong} <span class="text-slate-400 text-[10px]">(${wrongPct}%)</span></span>
+        </div>
+        <div class="flex items-center justify-between">
+            <div class="flex items-center"><span class="w-2 h-2 rounded-full bg-gray-300 mr-2"></span>unanswered</div>
+            <span class="font-bold ml-2">${unanswered} <span class="text-slate-400 text-[10px]">(${unansweredPct}%)</span></span>
+        </div>
+    `;
+
+    tooltipEl.innerHTML = html;
+
+    // Position Logic
+    const rect = chart.canvas.getBoundingClientRect();
+    tooltipEl.style.opacity = 1;
+    tooltipEl.style.left = rect.left + window.scrollX + (rect.width / 2) + 'px'; 
+    tooltipEl.style.top = rect.bottom + window.scrollY + 'px';
+};
+// ----------------------------------
 
 
-        // Added 'relative' to allow the overlay to position correctly
-        card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center p-6 text-center transition-all duration-300 relative';
-        
-
-        card.dataset.id = disc.id;
-        card.dataset.name = disc.name;
-
-        // The card's HTML now includes a conditional block for the overlay
-      // Replace it with this, which has no locking logic
-card.innerHTML = `
-    <img src="${disc.imageUrl || 'images/default-discipline.svg'}" alt="${disc.name}" class="w-24 h-24 object-contain mb-4">
-    <h3 class="text-xl font-bold text-gray-800">${disc.name}</h3>
-`;
-        dom.disciplinesGrid.appendChild(card);
-    });
-}
-
-// In dashboard.html
-
-function renderBooks(booksToRender, userData, purchasedBookIds = new Set()) {
-  
-    
+function renderBooks(booksToRender, userData, bookStats = {}) {
     dom.booksGrid.innerHTML = '';
     
-    // The initial filter is no longer needed because the backend handles it.
+    // Cleanup old charts
+    if (window.bookCharts.length > 0) {
+        window.bookCharts.forEach(chart => chart.destroy());
+        window.bookCharts = [];
+    }
 
     if (!booksToRender || booksToRender.length === 0) {
-        dom.booksGrid.innerHTML = '<p class="text-white text-center col-span-full">No books available for your specialty.</p>';
+        dom.booksGrid.innerHTML = '<p class="text-gray-500 text-center col-span-full">No books available for your specialty.</p>';
         return;
     }
 
     booksToRender.forEach(item => {
-         console.log("--- DEBUG: Processing item in renderBooks loop ---", item);
         const book = item.book_data;
         const hasAccess = item.has_access;
         if (!book) return;
 
-        // The lock logic is now simple: just obey the flag from the backend.
+        // Get Stats
+        const stats = bookStats[book.id] || { total: 0, correct: 0, wrong: 0 };
+        const unanswered = stats.total - (stats.correct + stats.wrong);
+
+        // Lock Logic
         const isLocked = !hasAccess;
-
+        
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 relative';
-        if (!isLocked) { card.classList.add('hover:shadow-xl', 'hover:scale-105'); }
-        card.dataset.id = book.id;
+        card.className = 'bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative group cursor-pointer border border-gray-100 h-full';
+        
+        if (isLocked) {
+            card.classList.add('opacity-80', 'grayscale-[0.5]');
+        }
 
-      card.innerHTML = `
-            <div class="card-content-area flex flex-col flex-grow ${isLocked ? 'cursor-not-allowed' : 'cursor-pointer'}">
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="h-48 overflow-hidden bg-gray-200 flex items-center justify-center mb-4 rounded-lg">
-                        <img src="${book.image}" alt="${book.title}" class="w-full h-full object-contain">
+        const imgSrc = book.image || 'https://via.placeholder.com/300x400?text=No+Cover';
+        
+    const lockOverlay = isLocked ? `
+            <div class="absolute inset-0 flex items-center justify-center z-20">
+                <a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </a>
+            </div>
+        ` : '';
+
+        card.innerHTML = `
+            ${lockOverlay}
+            
+            <div class="h-64 bg-gray-50 flex items-center justify-center p-4 relative border-b border-gray-100 rounded-t-2xl overflow-hidden">
+                <img src="${imgSrc}" 
+                     alt="${book.title}" 
+                     class="h-full w-auto object-contain drop-shadow-md transition-transform duration-500 group-hover:scale-105">
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow rounded-b-2xl">
+                <div class="mb-3">
+                     <h3 class="font-bold text-gray-800 text-xl leading-tight mb-1 line-clamp-2" title="${book.title}">
+                        ${book.title}
+                     </h3>
+                     <p class="text-sm text-green-600 font-semibold">${book.speciality || 'General Medicine'}</p>
+                </div>
+
+                <div class="flex-grow mb-4">
+                    <p class="text-sm text-gray-500 line-clamp-3 leading-relaxed">
+                        ${book.description || 'Comprehensive medical resource covering key topics and clinical guidelines.'}
+                    </p>
+                </div>
+
+                <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold mb-0.5">Progress</p>
+                        <p class="text-xs font-bold text-gray-700">${stats.total} Questions</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">${book.title}</h3>
-                    <p class="text-gray-600 text-sm flex-grow">${book.description}</p>
+
+                    <div class="w-12 h-12 relative flex-shrink-0">
+                        <canvas id="book-chart-${book.id}"></canvas>
+                    </div>
                 </div>
             </div>
-            ${isLocked
-                ? `<div class="absolute inset-0 bg-gray-800 bg-opacity-70 flex flex-col items-center justify-center p-4 rounded-2xl"><img src="images/shopping-cart-white.png" alt="Premium Content" class="w-12 h-12 mb-4"><button onclick="window.location.href='store.html'" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">Upgrade to Access</button></div>`
-                : book.isVirtual // If the book is not locked, check if it's a virtual book
-                    ? `<div class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-4 text-center cursor-pointer start-quiz-btn">Start Quiz</div>` // If yes, show the "Start Quiz" button
-                    : '' // Otherwise (it's a regular book), show nothing.
-            }
         `;
+
+        card.addEventListener('click', (e) => {
+            if (isLocked) {
+                const alertModal = document.getElementById('customAlertModal');
+                if (alertModal) {
+                    document.getElementById('customAlertTitle').textContent = 'Access Restricted';
+                    document.getElementById('customAlertMessage').textContent = 'This book is locked. Please purchase to unlock.';
+                    alertModal.classList.remove('hidden');
+                } else {
+                    alert("This book is locked.");
+                }
+                return;
+            }
+            if(e.target.tagName === 'CANVAS') return;
+            window.location.href = `book_chapters.html?bookId=${book.id}&title=${encodeURIComponent(book.title)}`;
+        });
+
         dom.booksGrid.appendChild(card);
+
+        // --- RENDER CHART ---
+        const ctx = document.getElementById(`book-chart-${book.id}`).getContext('2d');
+        const chartData = stats.total === 0 ? [0, 0, 1] : [stats.correct, stats.wrong, unanswered];
+        const chartColors = stats.total === 0 ? ['#f3f4f6', '#f3f4f6', '#f3f4f6'] : ['#22c55e', '#ef4444', '#e5e7eb'];
+        
+        const newChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Correct', 'Wrong', 'Unanswered'],
+                datasets: [{
+                    data: chartData,
+                    backgroundColor: chartColors,
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%', 
+                animation: false,
+                plugins: { 
+                    legend: { display: false }, 
+                    tooltip: { 
+                        enabled: false, // Default OFF
+                        external: externalTooltipHandler // Custom logic ON
+                    }
+                }
+            }
+        });
+        window.bookCharts.push(newChart);
     });
 }
-
 // In dashboard.html
 
 dom.booksGrid.addEventListener('click', (e) => {
@@ -1387,14 +1606,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (isSessionValid) {
             // If the session is valid, proceed to load the dashboard.
             currentUser = session.user;
-
+loadDisciplines();
+loadBooksAndVideos();
             // Fetch user data from the 'users' table to check for premium status
             const { data: userData } = await supabase.from('users').select('account_type').eq('id', session.user.id).single();
             
             // Pass both user and userData to the function
             updateUserProfileIcon(session.user, userData);
 
-            await loadAllData(session.user);
+     
             await initializeCustomQuizBuilder();
             await fetchAndDisplayNotifications(); 
 
@@ -1407,6 +1627,34 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else {
         // No user is signed in, redirect to login.
         window.location.href = 'index.html';
+    }
+});
+
+
+
+// --- ROBUST REFRESH LOGIC ---
+// This ensures the dashboard updates whenever you return to it (Back button, Tab switch, etc.)
+
+async function refreshDashboard() {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) {
+        console.log("Refreshing dashboard data...");
+        await loadDisciplines();
+    }
+}
+
+// 1. Handle "Back" button (Run even if cache wasn't used)
+window.addEventListener('pageshow', (event) => {
+    // We check if the page is being restored from history
+    if (event.persisted || performance.navigation.type === 2) { 
+        refreshDashboard();
+    }
+});
+
+// 2. Handle Tab Switching (e.g. if you took the quiz in a new tab)
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        refreshDashboard();
     }
 });
 
@@ -2055,14 +2303,331 @@ dom.customAlertCloseBtn.addEventListener('click', () => {
 
         dom.searchInput.addEventListener('input', handleSearch);
 
-     dom.searchResultsContainer.addEventListener('click', (e) => {
-    const resultItem = e.target.closest('[data-type="discipline"]');
-    if (resultItem) {
-        const { id, name } = resultItem.dataset;
-        // NEW: Navigate to the new page from search results
-        window.location.href = `disciplines_chapters.html?disciplineId=${id}&name=${encodeURIComponent(name)}`;
+  dom.searchResultsContainer.addEventListener('click', (e) => {
+        const resultItem = e.target.closest('[data-type="discipline"]');
+        if (resultItem) {
+            const { id, name } = resultItem.dataset;
+            window.location.href = `disciplines_chapters.html?disciplineId=${id}&name=${encodeURIComponent(name)}`;
+        }
+    });
+
+ // Global tracker for charts to prevent duplication
+window.disciplineCharts = window.disciplineCharts || [];
+
+// Global tracker for charts to prevent duplication
+window.disciplineCharts = window.disciplineCharts || [];
+
+// Global tracker for charts to prevent duplication
+window.disciplineCharts = window.disciplineCharts || [];
+
+// Global tracker for charts to prevent duplication
+window.disciplineCharts = window.disciplineCharts || [];
+
+// Global tracker for charts to prevent duplication
+window.disciplineCharts = window.disciplineCharts || [];
+
+// Global tracker for charts to prevent duplication
+window.disciplineCharts = window.disciplineCharts || [];
+
+// Global tracker for charts to prevent duplication
+window.disciplineCharts = window.disciplineCharts || [];
+
+// --- CORRECTED DISCIPLINES LOADER (Fixing Column Name 400 Error) ---
+// --- DEBUG VERSION: DISCIPLINES LOADER ---
+// --- CORRECTED DISCIPLINES LOADER (Strictly 'discipline_id') ---
+async function loadDisciplines() {
+    console.log("--- STARTING LOAD DISCIPLINES (FINAL FIX) ---");
+    
+    const grid = document.getElementById('disciplinesGrid');
+    if (!grid) return;
+
+    if (window.disciplineCharts && window.disciplineCharts.length > 0) {
+        window.disciplineCharts.forEach(chart => chart.destroy());
+        window.disciplineCharts = [];
+    } else {
+        window.disciplineCharts = [];
     }
-});
+
+    try {
+        // 1. Skeleton Loader
+        if (window.disciplineCharts.length === 0) {
+            grid.innerHTML = Array(6).fill(0).map(() => `
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden animate-pulse h-40 flex flex-col">
+                    <div class="h-28 bg-gray-200 w-full"></div>
+                    <div class="p-4 flex justify-between items-end flex-grow">
+                        <div class="space-y-2 w-2/3">
+                            <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                            <div class="h-3 bg-gray-200 rounded w-1/2"></div>
+                        </div>
+                        <div class="h-12 w-12 bg-gray-200 rounded-full"></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+
+        // 2. Fetch Disciplines
+        const { data: disciplines } = await supabase.from('disciplines').select('*').order('name');
+        console.log(`Step A: Fetched ${disciplines.length} disciplines.`);
+
+        // 3. Fetch All Questions
+        let allQuestions = [];
+        let from = 0;
+        const limit = 1000;
+        let keepFetching = true;
+        
+        console.log("Step B: Starting Question Fetch Loop...");
+        
+        while(keepFetching) {
+            // FIX: Request ONLY 'discipline_id'. Removing 'disciplineId' prevents the 400 error.
+            const { data, error } = await supabase
+                .from('questions')
+                .select('id, discipline_id') 
+                .range(from, from + limit - 1);
+            
+            if (error) { 
+                console.error("Error fetching questions:", error); 
+                break; 
+            }
+            if (data && data.length > 0) {
+                allQuestions = allQuestions.concat(data);
+                if (data.length < limit) keepFetching = false;
+            } else { 
+                keepFetching = false; 
+            }
+            from += limit;
+        }
+        console.log(`Step B Complete: Fetched ${allQuestions.length} total questions.`);
+
+        // 4. Fetch User History
+        let userHistory = [];
+        from = 0;
+        keepFetching = true;
+        while(keepFetching) {
+            const { data, error } = await supabase
+                .from('userQuestionHistory')
+                .select('questionId, lastResult')
+                .eq('userId', user.id)
+                .range(from, from + limit - 1);
+
+            if (error) { console.error(error); break; }
+            if (data && data.length > 0) {
+                userHistory = userHistory.concat(data);
+                if (data.length < limit) keepFetching = false;
+            } else { keepFetching = false; }
+            from += limit;
+        }
+        console.log(`Step C: Fetched ${userHistory.length} history items.`);
+
+        // 5. Calculate Stats
+        const historyMap = new Map();
+        userHistory.forEach(h => {
+            const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
+            historyMap.set(h.questionId, isCorrect);
+        });
+
+        const discStats = {};
+        disciplines.forEach(d => { 
+            discStats[d.id] = { total: 0, correct: 0, wrong: 0 }; 
+        });
+
+        allQuestions.forEach(q => {
+            // FIX: Access only the valid column
+            const dId = q.discipline_id; 
+            
+            if (dId && discStats[dId]) {
+                const s = discStats[dId];
+                s.total++;
+                
+                if (historyMap.has(q.id)) {
+                    if (historyMap.get(q.id)) s.correct++;
+                    else s.wrong++;
+                }
+            }
+        });
+
+        // 6. Render Cards
+        grid.innerHTML = ''; 
+
+        disciplines.forEach(discipline => {
+            const stats = discStats[discipline.id] || { total: 0, correct: 0, wrong: 0 };
+            const unanswered = stats.total - (stats.correct + stats.wrong);
+
+            const card = document.createElement('div');
+            card.className = "bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden cursor-pointer border border-gray-100 flex flex-col h-full";
+            card.setAttribute('data-id', discipline.id);
+            card.setAttribute('data-name', discipline.name);
+
+            card.innerHTML = `
+                <div class="h-32 sm:h-40 bg-white relative group overflow-hidden border-b border-gray-100 flex items-center justify-center p-2">
+                    <img src="${discipline.imageUrl || 'https://via.placeholder.com/400x200?text=' + discipline.name}" 
+                         alt="${discipline.name}" 
+                         class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                </div>
+                
+                <div class="p-3 sm:p-4 flex items-end justify-between flex-grow gap-2 sm:gap-3">
+                    <div class="flex-1 min-w-0"> 
+                        <h3 class="font-bold text-gray-800 text-sm sm:text-lg mb-1 leading-snug line-clamp-2" title="${discipline.name}">
+                            ${discipline.name}
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-500 truncate">${discipline.speciality || 'General'}</p>
+                        <p class="text-[10px] sm:text-xs text-gray-400 mt-1 font-medium">${stats.total} Questions</p>
+                    </div>
+                    
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 relative">
+                        <canvas id="chart-${discipline.id}"></canvas>
+                    </div>
+                </div>
+            `;
+
+            card.addEventListener('click', (e) => {
+                if(e.target.tagName === 'CANVAS') return;
+                window.location.href = `disciplines_chapters.html?disciplineId=${discipline.id}&name=${encodeURIComponent(discipline.name)}`;
+            });
+
+            grid.appendChild(card);
+
+            const ctx = document.getElementById(`chart-${discipline.id}`).getContext('2d');
+            
+            const chartData = stats.total === 0 ? [0, 0, 1] : [stats.correct, stats.wrong, unanswered];
+            const chartColors = stats.total === 0 ? ['#f3f4f6', '#f3f4f6', '#f3f4f6'] : ['#22c55e', '#ef4444', '#d1d5db'];
+
+            const newChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Correct', 'Wrong', 'Unanswered'],
+                    datasets: [{
+                        data: chartData,
+                        backgroundColor: chartColors,
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    animation: false,
+                    plugins: { 
+                        legend: { display: false }, 
+                        tooltip: { 
+                            enabled: false, 
+                            external: externalTooltipHandler 
+                        } 
+                    }
+                }
+            });
+            window.disciplineCharts.push(newChart);
+        });
+
+    } catch (error) {
+        console.error("Error loading disciplines:", error);
+        grid.innerHTML = `<p class="text-red-500 p-4 col-span-full text-center">Error loading data. Please refresh.</p>`;
+    }
+}
+
+
+// --- NEW FUNCTION: RESTORE BOOKS AND VIDEOS ---
+// --- UPDATED: Load Books, Videos & ADMIN BUTTON ---
+async function loadBooksAndVideos() {
+    try {
+        console.log("Loading Books and Videos with Stats...");
+        
+        // 1. Get Current User & Profile
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+
+        const { data: userData } = await supabase
+            .from('users')
+            .select('*')
+            .eq('id', user.id)
+            .single();
+
+        // --- NEW: ADMIN BUTTON CHECK ---
+        // If the user is an admin, unhide the button immediately
+        if (userData && userData.role === 'admin') {
+            const adminBtn = document.getElementById('adminDashboardButton');
+            if (adminBtn) adminBtn.classList.remove('hidden');
+        }
+        // -------------------------------
+
+        // --- 2. FETCH BOOKS (RPC) ---
+        const { data: booksData, error: bError } = await supabase.rpc('get_dashboard_books');
+        if (bError) console.error("Error loading books:", bError);
+
+        // --- 3. FETCH BOOK STATS ---
+        // Helper to fetch all rows (Chunking)
+        async function fetchAll(tableName, selectQuery, userFilter = false) {
+            let allRows = [];
+            let from = 0;
+            const limit = 1000;
+            let keepFetching = true;
+            while (keepFetching) {
+                let query = supabase.from(tableName).select(selectQuery).range(from, from + limit - 1);
+                if (userFilter) query = query.eq('userId', user.id);
+                const { data } = await query;
+                if (!data || data.length < limit) keepFetching = false;
+                if (data) allRows = allRows.concat(data);
+                from += limit;
+            }
+            return allRows;
+        }
+
+        // Fetch Questions (book_id) & User History
+        const allQuestions = await fetchAll('questions', 'id, book_id');
+        const userHistory = await fetchAll('userQuestionHistory', 'questionId, lastResult', true);
+
+        // Create History Map
+        const historyMap = new Map();
+        userHistory.forEach(h => {
+            if (h.questionId) {
+                const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
+                historyMap.set(String(h.questionId).toLowerCase(), isCorrect);
+            }
+        });
+
+        // Calculate Stats Per Book
+        const bookStats = {};
+        if (booksData) {
+            booksData.forEach(item => {
+                const bookId = item.book_data.id;
+                bookStats[bookId] = { total: 0, correct: 0, wrong: 0 };
+            });
+
+            allQuestions.forEach(q => {
+                // Ensure we use the correct column name (book_id)
+                if (q.book_id && bookStats[q.book_id]) {
+                    const stats = bookStats[q.book_id];
+                    stats.total++;
+                    
+                    const qId = String(q.id).toLowerCase();
+                    if (historyMap.has(qId)) {
+                        if (historyMap.get(qId)) stats.correct++;
+                        else stats.wrong++;
+                    }
+                }
+            });
+        }
+
+        // --- 4. RENDER BOOKS ---
+        if (typeof renderBooks === 'function' && booksData) {
+            renderBooks(booksData, userData, bookStats); 
+        }
+
+        // --- 5. FETCH & RENDER VIDEOS ---
+        const { data: videosData, error: vError } = await supabase.rpc('get_dashboard_video_courses');
+        if (vError) console.error("Error loading videos:", vError);
+        else {
+            if (typeof renderVideos === 'function') renderVideos(videosData, userData);
+            else if (typeof renderVideoCourses === 'function') renderVideoCourses(videosData, userData);
+        }
+
+    } catch (err) {
+        console.error("Error in loadBooksAndVideos:", err);
+    }
+}
     </script>
 </body>
 </html>

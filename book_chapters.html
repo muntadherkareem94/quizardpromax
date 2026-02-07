@@ -6,6 +6,7 @@
     <title>Quizard - Chapters</title>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main-styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
@@ -133,6 +134,51 @@
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
     const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// --- GLOBAL CHARTS & HELPERS ---
+window.chapterCharts = [];
+
+// 1. Tooltip for Donut Charts
+const getOrCreateTooltip = (chart) => {
+    let tooltipEl = document.getElementById('chartjs-tooltip');
+    if (!tooltipEl) {
+        tooltipEl = document.createElement('div');
+        tooltipEl.id = 'chartjs-tooltip';
+        tooltipEl.className = "bg-slate-800 text-white text-xs rounded-lg shadow-xl p-3 transition-opacity duration-200 border border-slate-700 backdrop-blur-sm transform -translate-x-1/2 mt-2 min-w-[120px] pointer-events-none absolute z-[9999]";
+        document.body.appendChild(tooltipEl);
+    }
+    return tooltipEl;
+};
+
+const externalTooltipHandler = (context) => {
+    const { chart, tooltip } = context;
+    const tooltipEl = getOrCreateTooltip(chart);
+    if (tooltip.opacity === 0) { tooltipEl.style.opacity = 0; return; }
+
+    const dataset = chart.data.datasets[0];
+    const [correct, wrong, unanswered] = dataset.data;
+    const total = correct + wrong + unanswered;
+    const pct = (val) => total > 0 ? Math.round((val / total) * 100) + '%' : '0%';
+
+    tooltipEl.innerHTML = `
+        <div class="flex justify-between mb-1"><div class="flex items-center"><span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>Correct</div><span class="font-bold ml-2">${correct} <span class="text-slate-400 text-[10px]">(${pct(correct)})</span></span></div>
+        <div class="flex justify-between mb-1"><div class="flex items-center"><span class="w-2 h-2 rounded-full bg-red-500 mr-2"></span>Wrong</div><span class="font-bold ml-2">${wrong} <span class="text-slate-400 text-[10px]">(${pct(wrong)})</span></span></div>
+        <div class="flex justify-between"><div class="flex items-center"><span class="w-2 h-2 rounded-full bg-gray-300 mr-2"></span>Left</div><span class="font-bold ml-2">${unanswered} <span class="text-slate-400 text-[10px]">(${pct(unanswered)})</span></span></div>
+    `;
+
+    const rect = chart.canvas.getBoundingClientRect();
+    tooltipEl.style.opacity = 1;
+    tooltipEl.style.left = rect.left + window.scrollX + (rect.width / 2) + 'px';
+    tooltipEl.style.top = rect.bottom + window.scrollY + 'px';
+};
+
+// 2. Navigation Helper (Fixes the "Stuck" bug)
+window.launchChapterQuiz = (chapterId) => {
+    const params = new URLSearchParams(window.location.search);
+    const bookId = params.get('bookId');
+    
+    // We send 'from=book' so the quiz knows to come back here
+    window.location.href = `quiz_page.html?mode=chapter&chapterId=${chapterId}&from=book&bookId=${bookId}`;
+};
     // --- DOM Element References ---
     const dom = {
         logoutButton: document.getElementById('logoutButton'),
@@ -323,76 +369,192 @@ dom.customQuizForm.addEventListener('change', (e) => {
 });
 
     // --- END: Added code for Sequential Flow UI ---
+// --- UPDATED LOADER: Fetches Data, Calc Stats, Renders Donuts ---
 async function loadBookAndChapters() {
     if (!bookId || !currentUser) {
         dom.bookTitle.textContent = "Book Not Found or User Not Logged In";
         return;
     }
     try {
+        console.log("Loading Book Data...");
+
+        // 1. Fetch Basic Book Info
         const { data: bookData, error: bookError } = await supabase.from('books').select('title').eq('id', bookId).single();
         if (bookError) throw bookError;
         dom.bookTitle.textContent = bookData.title;
 
+        // 2. Fetch Chapters (With Access Logic)
         const { data: chaptersWithAccess, error: rpcError } = await supabase
             .rpc('get_chapters_for_book_with_access', { p_book_id: bookId });
         if (rpcError) throw rpcError;
 
-        const sortedChapters = chaptersWithAccess.sort((a, b) => (a.chapter_data.chapterNumber || 0) - (b.chapter_data.chapterNumber || 0));
-        currentBookChapters = sortedChapters;
+        currentBookChapters = chaptersWithAccess || [];
+        
+      // 3. Fetch ALL Questions for this Book (Robust Pagination)
+        let allQuestionsInBook = [];
+        let qFrom = 0;
+        const qLimit = 1000;
+        let qKeepFetching = true;
+
+        console.log("Starting Book Question Fetch Loop...");
+
+        while (qKeepFetching) {
+            const { data: qData, error: qError } = await supabase
+                .from('questions')
+                .select('id, chapter_id') // Keeping it lightweight
+                .eq('book_id', bookId)
+                .range(qFrom, qFrom + qLimit - 1);
+
+            if (qError) {
+                console.error("Error fetching book question chunk:", qError);
+                break;
+            }
+
+            if (qData && qData.length > 0) {
+                allQuestionsInBook = allQuestionsInBook.concat(qData);
+                if (qData.length < qLimit) qKeepFetching = false;
+            } else {
+                qKeepFetching = false;
+            }
+            qFrom += qLimit;
+        }
+        
+        const questions = allQuestionsInBook;
+        console.log(`Total Book Questions Found: ${questions.length}`);
+
+        // 4. Fetch History (Loop for 1000+ items)
+        let allHistory = [];
+        let from = 0;
+        let keepFetching = true;
+        while (keepFetching) {
+            const { data: hData, error: hError } = await supabase
+                .from('userQuestionHistory')
+                .select('questionId, lastResult')
+                .eq('userId', currentUser.id)
+                .range(from, from + 999);
+            
+            if (hError || !hData || hData.length === 0) {
+                keepFetching = false;
+            } else {
+                allHistory = allHistory.concat(hData);
+                if (hData.length < 1000) keepFetching = false;
+                from += 1000;
+            }
+        }
+
+        // 5. Process Stats Maps
+        const questionPool = questions || [];
+        const historyMap = new Map();
+        allHistory.forEach(h => {
+             const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
+             historyMap.set(h.questionId, isCorrect);
+        });
+
+        // 6. RENDER THE UI
+        const listEl = dom.chaptersList;
+        listEl.innerHTML = '';
+        listEl.className = "grid grid-cols-1 gap-3 max-w-4xl mx-auto"; // Grid layout
 
         if (currentBookChapters.length === 0) {
-            dom.chaptersList.innerHTML = '<p class="text-white text-center bg-white/10 p-4 rounded-lg">No chapters found for this book.</p>';
+            listEl.innerHTML = '<p class="text-white text-center bg-white/10 p-4 rounded-lg">No chapters found.</p>';
             dom.bookQuizButton.style.display = 'none';
             return;
         }
 
-        const instructionNote = document.createElement('p');
-        instructionNote.className = 'text-sm text-white/80 mb-4 text-center';
-        instructionNote.textContent = "Drag and drop to set chapter priority for the sequential quiz mode.";
-        dom.chaptersList.innerHTML = '';
-        dom.chaptersList.appendChild(instructionNote);
+        // Sort Chapters
+        currentBookChapters.sort((a, b) => (a.chapter_data.chapterNumber || 0) - (b.chapter_data.chapterNumber || 0));
 
-        const sortableList = document.createElement('ul');
-        sortableList.id = 'sortable-chapter-list';
-        sortableList.className = 'space-y-4';
-        dom.chaptersList.appendChild(sortableList);
+        // Cleanup old charts
+        if (window.chapterCharts.length > 0) {
+            window.chapterCharts.forEach(c => c.destroy());
+            window.chapterCharts = [];
+        }
 
-        currentBookChapters.forEach((item, index) => {
-            // This FIX handles both nested and flat data structures.
-            const chapter = item.chapter_data || item;
-            if (!chapter) return;
-
-            const listItem = document.createElement('li');
-            listItem.dataset.chapterId = chapter.id;
+        // Render Cards
+        currentBookChapters.forEach((item) => {
+            const chapter = item.chapter_data;
             const isLocked = !item.has_access;
 
+            // Stats for this chapter
+            const chQuestions = questionPool.filter(q => q.chapter_id === chapter.id);
+            const total = chQuestions.length;
+            let correct = 0, wrong = 0;
+            chQuestions.forEach(q => {
+                if (historyMap.has(q.id)) {
+                    if (historyMap.get(q.id)) correct++; else wrong++;
+                }
+            });
+            const unanswered = total - (correct + wrong);
+
+            const card = document.createElement('div');
+            card.dataset.chapterId = chapter.id; // For drag sort
+            
+            // CARD HTML
             if (isLocked) {
-                listItem.className = 'bg-gray-200 p-4 rounded-lg shadow flex items-center opacity-70';
-                listItem.innerHTML = `
-                    <span class="priority-number font-bold text-gray-500 w-8 text-center">${index + 1}.</span>
-                    <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    <div class="flex-grow">
-                         <h3 class="text-xl font-semibold text-gray-600">🔒 ${chapter.name}</h3>
-                         <p class="text-gray-500 text-sm">${chapter.description || ''}</p>
+                // LOCKED DESIGN
+                card.className = 'bg-gray-100 p-4 rounded-lg shadow-inner border border-gray-200 flex items-center justify-between opacity-75';
+                card.innerHTML = `
+                    <div class="flex items-center gap-4 min-w-0">
+                        <span class="w-8 h-8 flex items-center justify-center bg-gray-300 text-gray-600 font-bold rounded-full text-xs">${chapter.chapterNumber}</span>
+                        <div>
+                            <h3 class="font-bold text-gray-500 text-lg flex items-center gap-2">
+                                🔒 ${chapter.name}
+                            </h3>
+                            <p class="text-xs text-gray-400">Locked Content</p>
+                        </div>
                     </div>
-                    <button class="ml-4 bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg text-sm" onclick="window.location.href='store.html'">Upgrade</button>
+                    <button class="bg-gray-400 text-white text-xs font-bold py-2 px-4 rounded cursor-not-allowed">Locked</button>
                 `;
             } else {
-                listItem.className = 'bg-white p-4 rounded-lg shadow flex items-center';
-                listItem.innerHTML = `
-                    <span class="priority-number font-bold text-purple-700 w-8 text-center">${index + 1}.</span>
-                    <svg class="w-5 h-5 text-gray-400 mr-3 cursor-grab" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    <div class="flex-grow">
-                         <h3 class="text-xl font-semibold text-gray-800">${chapter.name}</h3>
-                         <p class="text-gray-600 text-sm">${chapter.description || ''}</p>
+                // ACTIVE DESIGN (Donut + Hand Cursor)
+                card.className = 'bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex items-center justify-between gap-4 group';
+                card.innerHTML = `
+                    <div class="flex items-center gap-4 min-w-0 flex-1">
+                        <div class="drag-handle cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 p-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
+                        </div>
+                        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-base font-bold rounded-full">${chapter.chapterNumber}</span>
+                        <div class="min-w-0">
+                            <h3 class="text-xl font-extrabold text-gray-900 truncate pr-2 group-hover:text-indigo-700 transition-colors leading-tight">${chapter.name}</h3>
+                            <p class="text-xs text-gray-500 font-medium mt-0.5">${total} Questions</p>
+                        </div>
                     </div>
-                    <a href="quiz_page.html?bookId=${bookId}&chapterId=${chapter.id}" class="start-quiz-button ml-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">Start Quiz</a>
+                    
+                    <div class="flex items-center gap-5 flex-shrink-0">
+                        <div class="w-10 h-10 relative hidden sm:block">
+                            <canvas id="ch-chart-${chapter.id}"></canvas>
+                        </div>
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold py-2.5 px-6 rounded-md shadow-sm transition-colors whitespace-nowrap"
+                            onclick="window.launchChapterQuiz('${chapter.id}')">
+                            Start
+                        </button>
+                    </div>
                 `;
             }
-            sortableList.appendChild(listItem);
+            listEl.appendChild(card);
+
+            // Init Chart (Only for unlocked)
+            if (!isLocked) {
+                const ctx = document.getElementById(`ch-chart-${chapter.id}`).getContext('2d');
+                const chartData = total === 0 ? [0,0,1] : [correct, wrong, unanswered];
+                const chartColors = total === 0 ? ['#f3f4f6','#f3f4f6','#f3f4f6'] : ['#22c55e', '#ef4444', '#e5e7eb'];
+
+                window.chapterCharts.push(new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Correct', 'Wrong', 'Unanswered'],
+                        datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false, cutout: '75%', animation: false,
+                        plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltipHandler } }
+                    }
+                }));
+            }
         });
 
-        new Sortable(sortableList, { animation: 150, handle: 'svg' });
+        // Init Drag & Drop
+        new Sortable(listEl, { animation: 150, handle: '.drag-handle', ghostClass: 'bg-indigo-50' });
 
     } catch (error) {
         console.error("Error loading book data:", error);

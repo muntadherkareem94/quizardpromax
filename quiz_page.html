@@ -1463,29 +1463,39 @@ document.addEventListener('DOMContentLoaded', async () => {
         dom.restartQuizButton.addEventListener('click', resetQuiz);
 // In quiz_page.html
 
+// --- DEBUG VERSION: BACK BUTTON URL ---
 const backButtonUrl = () => {
-    // Get all relevant parameters from the current URL
-    const from = urlParams.get('from');
-    const disciplineId = urlParams.get('disciplineId');
-    const disciplineName = urlParams.get('disciplineName');
-
-    // --- NEW LOGIC ---
-    // If the quiz was started from a discipline page (either chapter or custom),
-    // we must return to that specific discipline page.
-    if (from === 'disciplines' || (quizType === 'advanced_custom' && disciplineId && disciplineName)) {
-        return `disciplines_chapters.html?disciplineId=${disciplineId}&name=${encodeURIComponent(disciplineName)}`;
-    }
-
-    // --- OLD LOGIC (for other paths) ---
-    if (from === 'virtual') {
-        return 'dashboard.html'; // Or wherever virtual books originate
-    }
+    console.log("--- DEBUG: CALCULATING BACK BUTTON URL ---");
     
-    if (quizType === 'book' || (quizType === 'chapter' && from !== 'disciplines')) {
-        return `book_chapters.html?bookId=${bookId}`;
+    // Log ALL params currently in the URL
+    const params = new URLSearchParams(window.location.search);
+    console.log("Current URL Parameters:");
+    for (const [key, value] of params.entries()) {
+        console.log(`  ${key}: ${value}`);
     }
 
-    // Default fallback to the main dashboard
+    const from = params.get('from');
+    const disciplineId = params.get('disciplineId');
+    const disciplineName = params.get('disciplineName');
+
+    console.log("Extracted -> From:", from, "DiscID:", disciplineId, "DiscName:", disciplineName);
+
+    // --- LOGIC ---
+    if (from === 'disciplines') {
+        const url = `disciplines_chapters.html?disciplineId=${disciplineId}&name=${encodeURIComponent(disciplineName || '')}`;
+        console.log("DECISION: Returning to Discipline Chapters ->", url);
+        return url;
+    }
+
+    if (quizType === 'book' || (quizType === 'chapter' && from !== 'disciplines')) {
+        // Fallback for books
+        const bookId = params.get('bookId') || 'null';
+        const url = `book_chapters.html?bookId=${bookId}`;
+        console.log("DECISION: Returning to Book Chapters ->", url);
+        return url;
+    }
+
+    console.log("DECISION: Defaulting to Dashboard");
     return 'dashboard.html';
 };
         dom.submitAnswerButton.addEventListener('click', handleSubmitAnswer);

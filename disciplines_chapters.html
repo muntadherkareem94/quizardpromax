@@ -8,7 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
@@ -432,29 +433,129 @@ document.addEventListener('click', () => {
 }
 
     // --- Data Loading and Rendering ---
-    async function loadAllData(user) {
-        try {
-            const [booksRes, chaptersRes, userDataRes] = await Promise.all([
-                supabase.rpc('get_dashboard_books'),
-                supabase.from('chapters').select('*'),
-                supabase.from('users').select('account_type').eq('id', user.id).single()
-            ]);
-            if (booksRes.error) throw booksRes.error;
-            if (chaptersRes.error) throw chaptersRes.error;
-            if (userDataRes.error) throw userDataRes.error;
+// --- UPDATED DATA LOADER (Fixes 1000-Row Limit) ---
+async function loadAllData(user) {
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const disciplineId = urlParams.get('disciplineId');
+        const disciplineName = urlParams.get('name');
 
-            allBooks = booksRes.data || [];
-            allChapters = chaptersRes.data || [];
-            currentUserData = userDataRes.data;
-
-            const accessibleBookIds = new Set(allBooks.filter(item => item.has_access === true).map(item => item.book_data.id));
-            accessibleContent.chapters = allChapters.filter(chapter => accessibleBookIds.has(chapter.book_id));
-
-        } catch (error) {
-            console.error("Error loading essential data:", error);
-            dom.loadingState.textContent = `Error: ${error.message}`;
+        if (dom.disciplineTitle && disciplineName) {
+            dom.disciplineTitle.textContent = disciplineName;
+            dom.disciplineTitle.dataset.id = disciplineId;
         }
+
+        console.log("--- DEBUG: STARTING ROBUST DATA FETCH ---");
+
+        // 1. Fetch Questions for this Discipline
+        // (We don't need a loop here unless a single discipline has >1000 questions, which is rare)
+      // 1. Fetch ALL Questions for this Discipline (Robust Pagination)
+        let allQuestionsInDiscipline = [];
+        let qFrom = 0;
+        const qLimit = 1000;
+        let qKeepFetching = true;
+
+        console.log("Starting Discipline Question Fetch Loop...");
+
+        while (qKeepFetching) {
+            const { data: qData, error: qError } = await supabase
+                .from('questions')
+                .select('*')
+                .eq('discipline_id', disciplineId)
+                .range(qFrom, qFrom + qLimit - 1);
+
+            if (qError) {
+                console.error("Error fetching discipline question chunk:", qError);
+                break;
+            }
+
+            if (qData && qData.length > 0) {
+                allQuestionsInDiscipline = allQuestionsInDiscipline.concat(qData);
+                if (qData.length < qLimit) qKeepFetching = false;
+            } else {
+                qKeepFetching = false;
+            }
+            qFrom += qLimit;
+        }
+        
+        const questions = allQuestionsInDiscipline;
+        console.log(`Total Discipline Questions Found: ${questions.length}`);
+
+        // 2. Fetch History (WITH PAGINATION LOOP)
+        // This ensures we get ALL history, even if you have 5000+ answers
+        let allHistory = [];
+        let from = 0;
+        const limit = 1000;
+        let keepFetching = true;
+
+        console.log("Starting History Fetch Loop...");
+        
+        while (keepFetching) {
+            const { data, error } = await supabase
+                .from('userQuestionHistory')
+                .select('questionId, lastResult') // Fetch only what we need to save memory
+                .eq('userId', user.id)
+                .range(from, from + limit - 1);
+
+            if (error) {
+                console.error("Error fetching history chunk:", error);
+                break;
+            }
+
+            if (data && data.length > 0) {
+                allHistory = allHistory.concat(data);
+                // If we got fewer rows than the limit, we are at the end
+                if (data.length < limit) keepFetching = false;
+            } else {
+                keepFetching = false;
+            }
+            from += limit;
+        }
+        console.log(`Total History Items Fetched: ${allHistory.length}`);
+
+        // 3. Process Data
+        window.pageQuestions = questions;
+        window.pageHistoryMap = new Map();
+        
+        allHistory.forEach(h => {
+            const qId = h.questionId || h.question_id;
+            const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
+            if (qId) window.pageHistoryMap.set(qId, isCorrect);
+        });
+
+        // 4. Load Layout Data (Books/Chapters)
+     const [booksRes, chaptersRes, userDataRes] = await Promise.all([
+            supabase.rpc('get_dashboard_books'),
+            // Updated to fetch the book title alongside the chapter
+            supabase.from('chapters').select('*, books(title)'), 
+            supabase.from('users').select('account_type').eq('id', user.id).single()
+        ]);
+
+        allBooks = booksRes.data || [];
+        allChapters = chaptersRes.data || [];
+        currentUserData = userDataRes.data || {};
+
+        const accessibleBookIds = new Set(allBooks.filter(item => item.has_access === true).map(item => item.book_data.id));
+        accessibleContent.chapters = allChapters.filter(chapter => accessibleBookIds.has(chapter.book_id));
+
+        // 5. Trigger Render
+        if (disciplineId) {
+            const disciplineChapters = accessibleContent.chapters.filter(c => c.discipline_id === disciplineId);
+            const container = document.getElementById('chaptersGrid') || document.getElementById('chaptersByDisciplineContainer');
+            
+            if (container) {
+                container.classList.remove('hidden');
+                renderChaptersByDiscipline(disciplineChapters, container);
+            }
+        }
+
+        if (dom.loadingState) dom.loadingState.classList.add('hidden');
+
+    } catch (error) {
+        console.error("Error loading data:", error);
+        if (dom.loadingState) dom.loadingState.textContent = `Error: ${error.message}`;
     }
+}
 
    
 
@@ -719,38 +820,23 @@ dom.customQuizForm.addEventListener('change', (e) => {
             }
         });
     }
+// --- INITIALIZATION (Clean & Fixes the Error) ---
 document.addEventListener('DOMContentLoaded', async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (session) {
-        currentUser = session.user;
-        
-        // --- THIS IS THE CRITICAL FIX ---
-        // 1. Fetch user data from the 'users' table FIRST.
-        const { data: userDataResponse } = await supabase.from('users').select('account_type').eq('id', currentUser.id).single();
-        currentUserData = userDataResponse;
-
-        // 2. NOW, call the functions that need that data.
-        updateUserProfileIcon(currentUser, currentUserData);
-        await fetchAndDisplayNotifications();
-        // --- END OF FIX ---
-
-        await loadAllData(currentUser);
-        
-        const urlParams = new URLSearchParams(window.location.search);
-        const disciplineId = urlParams.get('disciplineId');
-        const disciplineName = urlParams.get('name');
-
-        if (!disciplineId || !disciplineName) {
-            dom.loadingState.textContent = "Error: Discipline information missing from URL.";
-            return;
-        }
-
-        await renderChaptersByDiscipline(disciplineId, disciplineName);
-        await initializeCustomQuizBuilder();
-
-        dom.loadingState.classList.add('hidden');
-        dom.chaptersByDisciplineContainer.classList.remove('hidden');
-        
+    console.log("Initializing Discipline Chapters Page...");
+    
+    // 1. Setup DOM Elements
+    window.dom = window.dom || {};
+    dom.loadingState = document.getElementById('loadingState');
+    dom.disciplineTitle = document.getElementById('disciplineTitle');
+    
+    // 2. Check Auth
+    const { data: { user } } = await supabase.auth.getUser();
+    
+    if (user) {
+        // 3. Load Data
+        // We ONLY call this function. It handles fetching AND rendering correctly.
+        // We do NOT call renderChaptersByDiscipline here manually.
+        await loadAllData(user); 
     } else {
         window.location.href = 'index.html';
     }
@@ -777,56 +863,176 @@ document.addEventListener('DOMContentLoaded', async () => {
     dom.customAlertCloseBtn.addEventListener('click', () => dom.customAlertModal.classList.add('hidden'));
 
 
-    async function renderChaptersByDiscipline(disciplineId, disciplineName) {
-        dom.disciplineTitle.textContent = disciplineName;
-        dom.disciplineTitle.dataset.id = disciplineId;
-        dom.chapterList.innerHTML = '';
-
-        let chaptersInDiscipline = allChapters.filter(chapter => chapter.discipline_id === disciplineId);
-
-        let accessibleChapters = chaptersInDiscipline.filter(chapter => {
-            const parentBookItem = allBooks.find(item => item.book_data && item.book_data.id === chapter.book_id);
-            return parentBookItem && parentBookItem.has_access === true;
-        });
-
-        accessibleChapters.sort((a, b) => (a.chapterNumber || 0) - (b.chapterNumber || 0));
-
-        if (accessibleChapters.length === 0) {
-            dom.chapterList.innerHTML = '<p class="text-white text-center bg-white/10 p-4 rounded-lg">No accessible chapters found for this discipline.</p>';
-        } else {
-            const instructionNote = document.createElement('p');
-            instructionNote.className = 'text-sm text-white/80 mb-4 text-center';
-            instructionNote.textContent = "Drag and move chapters to set the priority for the sequential quiz mode.";
-            dom.chapterList.appendChild(instructionNote);
-
-            const sortableList = document.createElement('ul');
-            sortableList.id = 'sortable-chapter-list';
-            sortableList.className = 'space-y-4';
-
-            accessibleChapters.forEach((chapter, index) => {
-                const book = allBooks.find(b => b.book_data.id === chapter.book_id)?.book_data;
-                const listItem = document.createElement('li');
-                listItem.dataset.chapterId = chapter.id;
-                listItem.className = 'bg-white p-4 rounded-lg shadow flex items-center';
-
-                listItem.innerHTML = `
-                    <span class="priority-number font-bold text-purple-700 w-8 text-center">${index + 1}.</span>
-                    <svg class="w-5 h-5 text-gray-400 mr-3 cursor-grab" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    <div class="flex-grow">
-                        <h4 class="text-lg font-bold text-gray-800">${chapter.name}</h4>
-                        <p class="text-sm text-gray-600">From: <span class="font-semibold">${book ? book.title : 'Unknown Book'}</span></p>
-                    </div>
-                    <a href="quiz_page.html?bookId=${chapter.book_id}&chapterId=${chapter.id}&from=disciplines&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}" class="ml-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">
-                       Start Chapter Quiz
-                    </a>
-                `;
-                sortableList.appendChild(listItem);
-            });
-
-            dom.chapterList.appendChild(sortableList);
-            new Sortable(sortableList, { animation: 150, handle: 'svg' });
-        }
+   // --- TOOLTIP HELPERS ---
+const getOrCreateTooltip = (chart) => {
+    let tooltipEl = document.getElementById('chartjs-tooltip');
+    if (!tooltipEl) {
+        tooltipEl = document.createElement('div');
+        tooltipEl.id = 'chartjs-tooltip';
+        tooltipEl.className = "bg-slate-800 text-white text-xs rounded-lg shadow-xl p-3 transition-opacity duration-200 border border-slate-700 backdrop-blur-sm transform -translate-x-1/2 mt-2 min-w-[120px] pointer-events-none absolute z-[9999]";
+        document.body.appendChild(tooltipEl);
     }
+    return tooltipEl;
+};
+
+const externalTooltipHandler = (context) => {
+    const { chart, tooltip } = context;
+    const tooltipEl = getOrCreateTooltip(chart);
+    if (tooltip.opacity === 0) { tooltipEl.style.opacity = 0; return; }
+
+    const dataset = chart.data.datasets[0];
+    const [correct, wrong, unanswered] = dataset.data;
+    const total = correct + wrong + unanswered;
+    const pct = (val) => total > 0 ? Math.round((val / total) * 100) + '%' : '0%';
+
+    tooltipEl.innerHTML = `
+        <div class="flex justify-between mb-1"><div class="flex items-center"><span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>Correct</div><span class="font-bold ml-2">${correct} <span class="text-slate-400 text-[10px]">(${pct(correct)})</span></span></div>
+        <div class="flex justify-between mb-1"><div class="flex items-center"><span class="w-2 h-2 rounded-full bg-red-500 mr-2"></span>Wrong</div><span class="font-bold ml-2">${wrong} <span class="text-slate-400 text-[10px]">(${pct(wrong)})</span></span></div>
+        <div class="flex justify-between"><div class="flex items-center"><span class="w-2 h-2 rounded-full bg-gray-300 mr-2"></span>Left</div><span class="font-bold ml-2">${unanswered} <span class="text-slate-400 text-[10px]">(${pct(unanswered)})</span></span></div>
+    `;
+
+    const rect = chart.canvas.getBoundingClientRect();
+    tooltipEl.style.opacity = 1;
+    tooltipEl.style.left = rect.left + window.scrollX + (rect.width / 2) + 'px';
+    tooltipEl.style.top = rect.bottom + window.scrollY + 'px';
+};
+
+// --- UPDATED RENDER FUNCTION ---
+window.chapterCharts = [];
+
+// --- RENDERER (Updated with new function name) ---
+function renderChaptersByDiscipline(chapters, container) {
+    container.innerHTML = '';
+    
+    // Cleanup
+    if (window.chapterCharts && window.chapterCharts.length > 0) {
+        window.chapterCharts.forEach(chart => chart.destroy());
+        window.chapterCharts = [];
+    }
+    if (container._sortable) {
+        container._sortable.destroy();
+    }
+
+    if (!chapters || chapters.length === 0) {
+        container.innerHTML = '<p class="text-gray-500 text-center py-8">No chapters available.</p>';
+        return;
+    }
+
+    // Sort
+    chapters.sort((a, b) => (a.chapterNumber || 0) - (b.chapterNumber || 0));
+
+    const questions = window.pageQuestions || [];
+    const historyMap = window.pageHistoryMap || new Map();
+
+    container.className = "grid grid-cols-1 gap-3 max-w-4xl mx-auto";
+
+    chapters.forEach(chapter => {
+        // Calculate Stats
+        const chQuestions = questions.filter(q => (q.chapterId === chapter.id || q.chapter_id === chapter.id));
+        const total = chQuestions.length;
+        let correct = 0, wrong = 0;
+        chQuestions.forEach(q => {
+            if (historyMap.has(q.id)) {
+                if (historyMap.get(q.id)) correct++; else wrong++;
+            }
+        });
+        const unanswered = total - (correct + wrong);
+
+        // Build Card
+        const card = document.createElement('div');
+        card.setAttribute('data-id', chapter.id); 
+        card.className = "bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex items-center justify-between gap-4 group";
+        
+        card.innerHTML = `
+            <div class="flex items-center gap-4 min-w-0 flex-1">
+                <div class="drag-handle cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 transition-colors p-2 rounded hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+                    </svg>
+                </div>
+                <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-base font-bold rounded-full">
+                    ${chapter.chapterNumber || '#'}
+                </span>
+              <div class="min-w-0">
+                    <h3 class="text-xl font-extrabold text-gray-900 truncate pr-2 group-hover:text-indigo-700 transition-colors leading-tight">
+                        ${chapter.name}
+                    </h3>
+                    <div class="flex items-center text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18 18.247 18.477 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        Source: ${chapter.books?.title || 'General Resource'}
+                    </div>
+                    <p class="text-xs text-gray-500 font-medium mt-0.5">${total} Questions</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-5 flex-shrink-0">
+                <div class="w-10 h-10 relative hidden sm:block">
+                    <canvas id="ch-chart-${chapter.id}"></canvas>
+                </div>
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold py-2.5 px-6 rounded-md shadow-sm transition-colors whitespace-nowrap"
+                    onclick="window.launchChapterQuiz('${chapter.id}')">
+                    Start
+                </button>
+            </div>
+        `;
+        container.appendChild(card);
+
+        // Draw Chart
+        const ctx = document.getElementById(`ch-chart-${chapter.id}`).getContext('2d');
+        const chartData = total === 0 ? [0,0,1] : [correct, wrong, unanswered];
+        const chartColors = total === 0 ? ['#f3f4f6','#f3f4f6','#f3f4f6'] : ['#22c55e', '#ef4444', '#e5e7eb'];
+
+        window.chapterCharts.push(new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Correct', 'Wrong', 'Unanswered'],
+                datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false, cutout: '75%', animation: false,
+                plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltipHandler } }
+            }
+        }));
+    });
+
+    if (typeof Sortable !== 'undefined') {
+        container._sortable = new Sortable(container, { animation: 150, handle: '.drag-handle', ghostClass: 'bg-indigo-50' });
+    }
+}
+// Global start helper
+// --- DEBUG VERSION: START QUIZ ---
+window.startQuizForChapter = (chapterId) => {
+    console.log("--- DEBUG: START QUIZ CLICKED ---");
+    console.log("Chapter ID:", chapterId);
+
+    // 1. Get current discipline info
+    const urlParams = new URLSearchParams(window.location.search);
+    const disciplineId = urlParams.get('disciplineId');
+    const disciplineName = urlParams.get('name'); // Check if your URL uses 'name' or 'disciplineName'
+    
+    console.log("Current Page Params -> DiscID:", disciplineId, "Name:", disciplineName);
+
+    // 2. Build URL
+    let targetUrl = `quiz_page.html?mode=chapter&chapterId=${chapterId}`;
+    
+    // 3. Attach Return Info
+    if (disciplineId) {
+        targetUrl += `&from=disciplines&disciplineId=${disciplineId}`;
+    }
+    if (disciplineName) {
+        targetUrl += `&disciplineName=${encodeURIComponent(disciplineName)}`;
+    }
+
+    console.log("TARGET URL GENERATED:", targetUrl);
+    
+    // 4. Go there
+    window.location.href = targetUrl;
+};
+
+// Map the new name to the old one just in case your HTML onclick uses the other name
+window.launchChapterQuiz = window.startQuizForChapter;
 
  
     function getFilterFunctions() {
