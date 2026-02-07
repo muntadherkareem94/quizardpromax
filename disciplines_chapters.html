@@ -953,18 +953,17 @@ function renderChaptersByDiscipline(chapters, container) {
                 <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-base font-bold rounded-full">
                     ${chapter.chapterNumber || '#'}
                 </span>
-              <div class="min-w-0">
-                    <h3 class="text-xl font-extrabold text-gray-900 truncate pr-2 group-hover:text-indigo-700 transition-colors leading-tight">
-                        ${chapter.name}
-                    </h3>
-                    <div class="flex items-center text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-0.5">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18 18.247 18.477 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        Source: ${chapter.books?.title || 'General Resource'}
-                    </div>
-                    <p class="text-xs text-gray-500 font-medium mt-0.5">${total} Questions</p>
-                </div>
+             <div class="min-w-0 flex-1">
+ <h3 class="text-lg md:text-xl font-extrabold text-gray-900 text-balance tracking-tight pr-2 group-hover:text-indigo-700 transition-colors leading-tight">
+    ${chapter.name}
+</h3>
+    
+<div class="text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-1 truncate">
+    ${chapter.books?.title || 'General Resource'}
+</div>
+    
+    <p class="text-xs text-gray-500 font-medium mt-1">${total} Questions</p>
+</div>
             </div>
             
             <div class="flex items-center gap-5 flex-shrink-0">
