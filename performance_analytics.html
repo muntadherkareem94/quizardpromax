@@ -229,37 +229,59 @@ document.addEventListener('click', () => {
         let allQuizResults = [], allQuestionHistory = [], allDisciplines = [], allBooks = [], allChapters = [];
         let trendChart, disciplineChart, bookChart, drilldownChart;
 
-       async function fetchAllData(userId) {
+async function fetchAllData(userId) {
     try {
-        // Fetch all data from Supabase in parallel
-        const [quizResultsRes, questionHistoryRes, disciplinesRes, booksRes, chaptersRes] = await Promise.all([
-            supabase.from('quizResults').select('*').eq('userId', userId),
-            supabase.from('userQuestionHistory').select('*').eq('userId', userId),
+        // Fetch small tables in parallel
+        const [disciplinesRes, booksRes, chaptersRes] = await Promise.all([
             supabase.from('disciplines').select('*'),
             supabase.from('books').select('*'),
             supabase.from('chapters').select('*')
         ]);
 
-        // Check for errors in each query
-        if (quizResultsRes.error) throw quizResultsRes.error;
-        if (questionHistoryRes.error) throw questionHistoryRes.error;
         if (disciplinesRes.error) throw disciplinesRes.error;
         if (booksRes.error) throw booksRes.error;
         if (chaptersRes.error) throw chaptersRes.error;
 
-        // Assign data to global variables
-        allQuizResults = quizResultsRes.data;
-        allQuestionHistory = questionHistoryRes.data;
-        allDisciplines = disciplinesRes.data;
-        allBooks = booksRes.data;
-        allChapters = chaptersRes.data;
+        allDisciplines = disciplinesRes.data || [];
+        allBooks = booksRes.data || [];
+        allChapters = chaptersRes.data || [];
+
+        // Paginated fetch for quizResults (bypass 1000 limit)
+        allQuizResults = [];
+        let rFrom = 0; const rLimit = 1000; let rKeep = true;
+        while(rKeep) {
+            const {data, error} = await supabase.from('quizResults').select('*').eq('userId', userId).range(rFrom, rFrom + rLimit - 1);
+            if (error) throw error;
+            if (data && data.length > 0) { 
+                allQuizResults = allQuizResults.concat(data); 
+                if(data.length < rLimit) rKeep = false; 
+            } else {
+                rKeep = false;
+            }
+            rFrom += rLimit;
+        }
+
+        // Paginated fetch for userQuestionHistory (bypass 1000 limit)
+        allQuestionHistory = [];
+        let hFrom = 0; const hLimit = 1000; let hKeep = true;
+        while(hKeep) {
+            const {data, error} = await supabase.from('userQuestionHistory').select('*').eq('userId', userId).range(hFrom, hFrom + hLimit - 1);
+            if (error) throw error;
+            if (data && data.length > 0) { 
+                allQuestionHistory = allQuestionHistory.concat(data); 
+                if(data.length < hLimit) hKeep = false; 
+            } else {
+                hKeep = false;
+            }
+            hFrom += hLimit;
+        }
 
         if (allQuizResults.length === 0) {
             dom.loadingState.innerHTML = '<p class="text-xl">No quiz data found. Complete a quiz to see your analytics!</p>';
             return;
         }
         
-        processAndRenderAnalytics('all'); // Your original function to build the charts
+        processAndRenderAnalytics('all');
         dom.loadingState.classList.add('hidden');
         dom.analyticsContainer.classList.remove('hidden');
 
@@ -268,93 +290,96 @@ document.addEventListener('click', () => {
         dom.loadingState.textContent = 'Could not load your analytics data.';
     }
 }
-        function processAndRenderAnalytics(filterDays) {
-            const now = new Date();
-            const filterDate = new Date();
-            if (filterDays !== 'all') {
-                filterDate.setDate(now.getDate() - filterDays);
-            }
+      
 
-            const filteredResults = filterDays === 'all' ? allQuizResults : allQuizResults.filter(r => r.completedAt.toDate() >= filterDate);
-            const filteredHistory = filterDays === 'all' ? allQuestionHistory : allQuestionHistory.filter(h => h.lastAttemptDate && h.lastAttemptDate.toDate() >= filterDate);
+function processAndRenderAnalytics(filterDays) {
+    const now = new Date();
+    const filterDate = new Date();
+    if (filterDays !== 'all') {
+        filterDate.setDate(now.getDate() - filterDays);
+    }
 
-            if (filteredResults.length === 0) {
-                // Handle empty state for the selected filter
-                dom.avgScore.textContent = 'N/A';
-                dom.completedQuizzes.textContent = '0';
-                dom.totalQuestions.textContent = '0';
-                if(trendChart) trendChart.destroy();
-                if(disciplineChart) disciplineChart.destroy();
-                if(bookChart) bookChart.destroy();
-                dom.strengthsList.innerHTML = '<li class="text-gray-500">No data for this period.</li>';
-                dom.weaknessesList.innerHTML = '<li class="text-gray-500">No data for this period.</li>';
-                return;
-            }
-            
-            // --- Process Data ---
-            const totalScore = filteredResults.reduce((sum, result) => sum + result.score, 0);
-            const avgScore = totalScore / filteredResults.length;
-            const totalQuestionsAnswered = filteredHistory.reduce((sum, h) => sum + (h.attempts || 0), 0);
-            
-            dom.avgScore.textContent = `${avgScore.toFixed(0)}%`;
-            dom.completedQuizzes.textContent = filteredResults.length;
-            dom.totalQuestions.textContent = totalQuestionsAnswered;
+    const filteredResults = filterDays === 'all' ? allQuizResults : allQuizResults.filter(r => new Date(r.completedAt) >= filterDate);
+    const filteredHistory = filterDays === 'all' ? allQuestionHistory : allQuestionHistory.filter(h => h.lastAttemptDate && new Date(h.lastAttemptDate) >= filterDate);
 
-            const trendLabels = filteredResults.map((_, index) => `Quiz ${index + 1}`);
-            const trendData = filteredResults.map(result => result.score);
+    if (filteredResults.length === 0) {
+        dom.avgScore.textContent = 'N/A';
+        dom.completedQuizzes.textContent = '0';
+        dom.totalQuestions.textContent = '0';
+        if(trendChart) trendChart.destroy();
+        if(disciplineChart) disciplineChart.destroy();
+        if(bookChart) bookChart.destroy();
+        dom.strengthsList.innerHTML = '<li class="text-gray-500">No data for this period.</li>';
+        dom.weaknessesList.innerHTML = '<li class="text-gray-500">No data for this period.</li>';
+        return;
+    }
+    
+    // --- Process Data ---
+    const totalScore = filteredResults.reduce((sum, result) => sum + result.score, 0);
+    const avgScore = totalScore / filteredResults.length;
+    const totalQuestionsAnswered = filteredHistory.reduce((sum, h) => sum + (h.attempts || 0), 0);
+    
+    dom.avgScore.textContent = `${avgScore.toFixed(0)}%`;
+    dom.completedQuizzes.textContent = filteredResults.length;
+    dom.totalQuestions.textContent = totalQuestionsAnswered;
 
-            const performance = {};
-            filteredHistory.forEach(h => {
-                const key_d = `d_${h.disciplineId}`;
-                const key_b = `b_${h.bookId}`;
-                if (h.disciplineId) {
-                    if (!performance[key_d]) performance[key_d] = { correct: 0, wrong: 0, name: allDisciplines.find(d => d.id === h.disciplineId)?.name || 'Unknown' };
-                    performance[key_d].correct += h.timesCorrect || 0;
-                    performance[key_d].wrong += h.timesWrong || 0;
-                }
-                if (h.bookId) {
-                    if (!performance[key_b]) performance[key_b] = { correct: 0, wrong: 0, name: allBooks.find(b => b.id === h.bookId)?.title || 'Unknown' };
-                    performance[key_b].correct += h.timesCorrect || 0;
-                    performance[key_b].wrong += h.timesWrong || 0;
-                }
-            });
+    const trendLabels = filteredResults.map((_, index) => `Quiz ${index + 1}`);
+    const trendData = filteredResults.map(result => result.score);
 
-            const topicPerformance = [];
-            for (const key in performance) {
-                const stats = performance[key];
-                const total = stats.correct + stats.wrong;
-                if (total > 0) {
-                    topicPerformance.push({
-                        id: key,
-                        name: stats.name,
-                        percentage: (stats.correct / total) * 100
-                    });
-                }
-            }
-            topicPerformance.sort((a, b) => b.percentage - a.percentage);
+    const performance = {};
+    filteredHistory.forEach(h => {
+        const discipline = allDisciplines.find(d => d.id === h.disciplineId);
+        const book = allBooks.find(b => b.id === h.bookId);
 
-            renderStrengthsAndWeaknesses(topicPerformance);
-
-            const disciplineData = { labels: [], data: [], ids: [] };
-            const bookData = { labels: [], data: [], ids: [] };
-            topicPerformance.forEach(topic => {
-                if (topic.id.startsWith('d_')) {
-                    disciplineData.labels.push(topic.name);
-                    disciplineData.data.push(topic.percentage);
-                    disciplineData.ids.push(topic.id.substring(2));
-                } else if (topic.id.startsWith('b_')) {
-                    bookData.labels.push(topic.name);
-                    bookData.data.push(topic.percentage);
-                    bookData.ids.push(topic.id.substring(2));
-                }
-            });
-
-            // --- Render Charts ---
-            renderTrendChart(trendLabels, trendData);
-            renderBarChart('disciplinePerformanceChart', disciplineData, 'Discipline');
-            renderBarChart('bookPerformanceChart', bookData, 'Book');
+        if (discipline) {
+            const key_d = `d_${discipline.id}`;
+            if (!performance[key_d]) performance[key_d] = { correct: 0, wrong: 0, name: discipline.name };
+            performance[key_d].correct += h.timesCorrect || 0;
+            performance[key_d].wrong += h.timesWrong || 0;
         }
+        if (book) {
+            const key_b = `b_${book.id}`;
+            if (!performance[key_b]) performance[key_b] = { correct: 0, wrong: 0, name: book.title };
+            performance[key_b].correct += h.timesCorrect || 0;
+            performance[key_b].wrong += h.timesWrong || 0;
+        }
+    });
 
+    const topicPerformance = [];
+    for (const key in performance) {
+        const stats = performance[key];
+        const total = stats.correct + stats.wrong;
+        if (total > 0) {
+            topicPerformance.push({
+                id: key,
+                name: stats.name,
+                percentage: (stats.correct / total) * 100
+            });
+        }
+    }
+    topicPerformance.sort((a, b) => b.percentage - a.percentage);
+
+    renderStrengthsAndWeaknesses(topicPerformance);
+
+    const disciplineData = { labels: [], data: [], ids: [] };
+    const bookData = { labels: [], data: [], ids: [] };
+    topicPerformance.forEach(topic => {
+        if (topic.id.startsWith('d_')) {
+            disciplineData.labels.push(topic.name);
+            disciplineData.data.push(topic.percentage);
+            disciplineData.ids.push(topic.id.substring(2));
+        } else if (topic.id.startsWith('b_')) {
+            bookData.labels.push(topic.name);
+            bookData.data.push(topic.percentage);
+            bookData.ids.push(topic.id.substring(2));
+        }
+    });
+
+    // --- Render Charts ---
+    renderTrendChart(trendLabels, trendData);
+    renderBarChart('disciplinePerformanceChart', disciplineData, 'Discipline');
+    renderBarChart('bookPerformanceChart', bookData, 'Book');
+}
 
 
         // --- In performance_analytics.html, add these functions ---
@@ -477,40 +502,41 @@ async function validateAndEnforceSession(user) {
             if (canvasId.includes('discipline')) disciplineChart = newChart;
             else bookChart = newChart;
         }
-
-        function handleChartClick(e, elements, chart, chartData, type) {
-            if (elements.length === 0) return;
-            const index = elements[0].index;
-            const parentId = chartData.ids[index];
-            const parentName = chartData.labels[index];
-            
-            const subTopics = {}; // { 'chapter_id': { correct: 10, wrong: 5, name: 'Chapter 1' } }
-            allQuestionHistory.forEach(h => {
-                const parentMatch = (type === 'Discipline' && h.disciplineId === parentId) || (type === 'Book' && h.bookId === parentId);
-                if (parentMatch && h.chapterId) {
-                    if (!subTopics[h.chapterId]) {
-                        const chapter = allChapters.find(c => c.id === h.chapterId);
-                        subTopics[h.chapterId] = { correct: 0, wrong: 0, name: chapter ? `Ch. ${chapter.chapterNumber} - ${chapter.name}` : 'Unknown Chapter' };
-                    }
-                    subTopics[h.chapterId].correct += h.timesCorrect || 0;
-                    subTopics[h.chapterId].wrong += h.timesWrong || 0;
+function handleChartClick(e, elements, chart, chartData, type) {
+    if (elements.length === 0) return;
+    const index = elements[0].index;
+    const parentId = chartData.ids[index];
+    const parentName = chartData.labels[index];
+    
+    const subTopics = {};
+    allQuestionHistory.forEach(h => {
+        const parentMatch = (type === 'Discipline' && h.disciplineId === parentId) || (type === 'Book' && h.bookId === parentId);
+        if (parentMatch && h.chapterId) {
+            const chapter = allChapters.find(c => c.id === h.chapterId);
+            if (chapter) {
+                if (!subTopics[h.chapterId]) {
+                    subTopics[h.chapterId] = { correct: 0, wrong: 0, name: `Ch. ${chapter.chapterNumber} - ${chapter.name}` };
                 }
-            });
-
-            const drilldownLabels = [], drilldownData = [];
-            for (const id in subTopics) {
-                const stats = subTopics[id];
-                const total = stats.correct + stats.wrong;
-                if (total > 0) {
-                    drilldownLabels.push(stats.name);
-                    drilldownData.push((stats.correct / total) * 100);
-                }
+                subTopics[h.chapterId].correct += h.timesCorrect || 0;
+                subTopics[h.chapterId].wrong += h.timesWrong || 0;
             }
-            
-            dom.drilldownTitle.textContent = `Performance within: ${parentName}`;
-            renderDrilldownChart(drilldownLabels, drilldownData);
-            dom.drilldownModal.classList.remove('hidden');
         }
+    });
+
+    const drilldownLabels = [], drilldownData = [];
+    for (const id in subTopics) {
+        const stats = subTopics[id];
+        const total = stats.correct + stats.wrong;
+        if (total > 0) {
+            drilldownLabels.push(stats.name);
+            drilldownData.push((stats.correct / total) * 100);
+        }
+    }
+    
+    dom.drilldownTitle.textContent = `Performance within: ${parentName}`;
+    renderDrilldownChart(drilldownLabels, drilldownData);
+    dom.drilldownModal.classList.remove('hidden');
+}
 
         function renderDrilldownChart(labels, data) {
             const ctx = document.getElementById('drilldownChart').getContext('2d');
