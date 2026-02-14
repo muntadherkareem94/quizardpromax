@@ -363,14 +363,8 @@
 
 
        // --- Supabase SDK Import ---
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.48.0/+esm';
+import { supabase } from './supabaseClient.js';
 
-// --- Supabase Configuration ---
-const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
-
-// --- Initialize Supabase ---
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 
 
@@ -1253,10 +1247,10 @@ async function populateHierarchicalSliders(questionPool) {
         `);
     });
 
-    const updateAllUI = () => {
+   const updateAllUI = () => {
         let grandTotal = 0;
         
-        // First Pass: Calculate totals for each parent and update child labels.
+        // Pass 1: Sum parent totals and update child labels
         document.querySelectorAll('.parent-slider-group').forEach(groupEl => {
             let parentTotal = 0;
             groupEl.querySelectorAll('.child-slider').forEach(childSlider => {
@@ -1275,16 +1269,32 @@ async function populateHierarchicalSliders(questionPool) {
             });
         });
 
-        // Second Pass: Now that we have the grandTotal, update the parent labels.
+        // Pass 2: Update parent percentage labels
         document.querySelectorAll('.parent-slider-group').forEach(groupEl => {
             const parentTotal = parseInt(groupEl.querySelector('.parent-slider').value, 10);
             const percentage = grandTotal > 0 ? Math.round((parentTotal / grandTotal) * 100) : 0;
-            // This is the updated line that adds the percentage.
             groupEl.querySelector('.parent-label').textContent = `${percentage}% (${parentTotal} Questions)`;
         });
 
-        totalCountInput.value = grandTotal;
-        dom.buildStatus.textContent = `${grandTotal} questions selected.`;
+        // --- CONSOLIDATED SYNC & LIVE UPDATE ---
+        const currentMode = dom.customQuizForm.questionCountMode.value;
+        const poolSize = parseInt(dom.buildStatus.textContent) || 0;
+
+        if (currentMode === 'from_sources') {
+            // Prevent the sliders from resetting the UI to a lower number 
+            // until they have actually finished "leveling up" to the pool total.
+            if (grandTotal >= poolSize || grandTotal === 0) {
+                totalCountInput.value = grandTotal;
+                dom.buildStatus.textContent = `${grandTotal} questions selected.`;
+                console.log(`--- DEBUG: UI Updated to ${grandTotal} ---`);
+            } else {
+                // Keep the input synced to the pool so the redistribution loop continues
+                totalCountInput.value = poolSize;
+                console.log(`--- DEBUG: Waiting for sliders to catch up to ${poolSize} ---`);
+            }
+        } else {
+            totalCountInput.value = poolSize;
+        }
     };
 
     document.querySelectorAll('.child-slider').forEach(slider => {
@@ -1335,26 +1345,26 @@ async function handleLogout() {
 }
   
         
-// In dashboard.html
-      function openAdvancedBuilder(sourceData) {
-    // This is the new, single function to open the builder.
-    // It takes the source data as an argument, making it reusable.
-    
-    // *** THE FIX: Clear the history cache to get the latest data ***
+async function openAdvancedBuilder(sourceData) {
     userHistoryCache.clear();
-
     sourcesSelector.setData(sourceData);
-    
-    // Reset the form to a clean, default state every time it's opened.
     dom.customQuizForm.reset();
+
+    // Reset UI visibility
+    document.getElementById('sourceTypeFieldset').classList.add('hidden');
+    document.getElementById('questionSourcesFieldset').classList.add('hidden');
     document.getElementById('percentageBuilderContainer').classList.add('hidden');
     document.getElementById('sequenceBuilderContainer').classList.add('hidden');
 
-    // Trigger the initial UI setup and question calculation.
-    handleQuizBuilderState();
-    
-    // Show the modal.
     dom.customQuizModal.classList.remove('hidden');
+
+    // Wait for any pending data loads to stabilize
+    setTimeout(async () => {
+        console.log("--- DEBUG: Modal Open - Forcing Calculation with current data ---");
+        handleQuizBuilderState(); 
+        await recalculateAvailableQuestionsAndUpdateUI();
+        updateFlowControlUI();
+    }, 100); 
 }
 
 
@@ -1397,19 +1407,27 @@ async function handleLogout() {
                 options: group.options.map(option => ({ ...option, disabled: toDisable.has(option.value) }))
             }));
 
-        setTimeout(async () => {
+setTimeout(async () => {
     sourcesSelector.setData(newData);
-    // Update the dropdown to show the final, correct selections
     sourcesSelector.setSelected(finalSelectedValues, false); 
+    
+    // This finds the 46 questions
     await recalculateAvailableQuestionsAndUpdateUI();
 
-    // FIX: This call ensures the sequential flow list updates automatically.
+    const totalCountInput = document.getElementById('customQuestionCount');
+    const poolSize = parseInt(dom.buildStatus.textContent) || 0;
+    
+    if (poolSize > 0) {
+        console.log(`--- DEBUG: Snap sliders to new Max: ${poolSize} ---`);
+        totalCountInput.value = poolSize;
+        // This triggers the loop that pushes sliders to 100%
+        totalCountInput.dispatchEvent(new Event('input'));
+    }
     updateFlowControlUI();
 }, 0);
         }
 function handleQuizBuilderState() {
     const form = dom.customQuizForm;
-    // This is now reliable because the direct event listener ensures this function runs AFTER the click.
     const mode = form.questionCountMode.value;
 
     const sourceTypeFieldset = document.getElementById('sourceTypeFieldset');
@@ -1419,23 +1437,13 @@ function handleQuizBuilderState() {
     const helpText = document.getElementById('recalculateHelpText');
     
     const sourcesVisible = (mode === 'from_sources' || mode === 'set_number');
-
     sourceTypeFieldset.classList.toggle('hidden', !sourcesVisible);
     questionSourcesFieldset.classList.toggle('hidden', !sourcesVisible);
 
-    if (!sourcesVisible) {
-        const sourceTypes = form.querySelectorAll('input[name="sourceType"]');
-        sourceTypes.forEach(radio => radio.checked = false);
-        if (sourcesSelector) {
-            sourcesSelector.setData([]);
-            sourcesSelector.setSelected([], false);
-        }
-    }
-    
     countInput.disabled = (mode !== 'set_number');
     percentageContainer.classList.toggle('hidden', mode !== 'set_number');
-    helpText.classList.toggle('hidden', mode === 'all_available');
     
+    // This call forces the "Number of Questions" calculation to run immediately
     recalculateAvailableQuestionsAndUpdateUI();
     updateFlowControlUI();
 }
@@ -1537,60 +1545,52 @@ function handleQuizBuilderState() {
         }
 // This is the new, corrected recalculateAvailableQuestionsAndUpdateUI function
 async function recalculateAvailableQuestionsAndUpdateUI() {
+    console.log("--- DEBUG: Starting Recalculation ---");
     dom.buildStatus.textContent = 'Calculating...';
-    await getUserHistory(currentUser.id); // Ensure user history is fresh
-
-    let questionPool = await getQuestionsForSourceAndFilters();
-    const totalAvailable = questionPool.length;
-
-    const form = dom.customQuizForm;
-    const mode = form.questionCountMode.value;
-    const countInput = document.getElementById('customQuestionCount');
-    countInput.max = totalAvailable;
-
-    let finalQuestionCount = 0;
-
-    if (mode === 'all_available') {
-        finalQuestionCount = totalAvailable;
-        countInput.value = finalQuestionCount;
-    } else if (mode === 'from_sources') {
-        const selectedSources = sourcesSelector.getSelected();
-        if (selectedSources.length > 0) {
-            const sourceIds = new Set();
-            selectedSources.forEach(s => {
-                const [type, id] = s.split('_');
-                if (type === 'chapter') {
-                    sourceIds.add(id);
-                } else { // It's a parent (book or discipline)
-                    accessibleContent.chapters.forEach(c => {
-                        if ((type === 'book' && c.book_id === id) || (type === 'discipline' && c.discipline_id === id)) {
-                            sourceIds.add(c.id);
-                        }
-                    });
-                }
-            });
-            finalQuestionCount = questionPool.filter(q => sourceIds.has(q.chapter_id)).length;
-        } else {
-            finalQuestionCount = 0;
-        }
-        countInput.value = finalQuestionCount;
-    } else { // mode === 'set_number'
-        if (!countInput.value || parseInt(countInput.value, 10) > totalAvailable) {
-            countInput.value = totalAvailable;
-        }
-        finalQuestionCount = parseInt(countInput.value, 10);
-    }
     
-    if (mode === 'set_number') {
-        // This line now calls the correct hierarchical function
-        await populateHierarchicalSliders(questionPool);
-    } else {
-        document.getElementById('percentageBuilderContainer').classList.add('hidden');
+    const mode = dom.customQuizForm.questionCountMode.value;
+    
+    if (mode !== 'all_available' && !sourcesSelector) {
+        dom.buildStatus.textContent = 'Select a Source Type to begin.';
+        return;
     }
 
-    dom.buildStatus.textContent = `${finalQuestionCount} questions selected.`;
-}
+    try {
+        await getUserHistory(currentUser.id); 
+        
+        // 1. Fetch the combined pool for ALL selected chapters
+        const questionPool = await getQuestionsForSourceAndFilters();
+        
+        // 2. GRAND TOTAL: Derived from the combined pooled array
+        const totalCount = questionPool.length;
+        
+        // --- ADDED DEBUG LINES ---
+        console.log(`--- DEBUG UI SYNC ---`);
+        console.log(`Pool Array Length: ${questionPool.length}`);
+        console.log(`Calculated totalCount: ${totalCount}`);
+        // -------------------------
 
+        // 3. UI UPDATE: This is the line that MUST overwrite the old text
+        if (totalCount === 0) {
+            dom.buildStatus.textContent = '0 Questions found (Check filters/sources)';
+            dom.startCustomQuizBtn.disabled = true;
+        } else {
+            // We use totalCount here to ensure the SUM is displayed
+            dom.buildStatus.textContent = `${totalCount} questions selected.`;
+            console.log(`DOM buildStatus updated to: ${dom.buildStatus.textContent}`);
+            dom.startCustomQuizBtn.disabled = false;
+        }
+
+        // 4. Update the source sliders
+        if (mode === 'from_sources') {
+            await populateHierarchicalSliders(questionPool);
+        }
+
+    } catch (error) {
+        console.error("Calculation Error:", error);
+        dom.buildStatus.textContent = 'Error calculating questions.';
+    }
+}
 // In dashboard.html
 
 
@@ -1660,6 +1660,7 @@ document.addEventListener('visibilitychange', () => {
 
 async function loadAllData(user) {
     try {
+        console.log("--- DEBUG: FORCING BUILDER SYNC START ---");
         const [
             userDataRes, booksRes, disciplinesRes, chaptersRes,
             bookPurchasesRes, videoCoursesRes, videoPurchasesRes
@@ -1675,66 +1676,57 @@ async function loadAllData(user) {
 
         if (userDataRes.error) throw userDataRes.error;
         if (booksRes.error) throw booksRes.error;
-        if (videoCoursesRes.error) throw videoCoursesRes.error;
         
         currentUserData = userDataRes.data;
-        
-        const booksFromRpc = booksRes.data || [];
-        // THIS IS THE CRITICAL FIX:
-        // We now correctly populate 'allBooks' with the simple, flat list of book objects.
-       allBooks = booksFromRpc; // Keep the full structure with the has_access flag
-
-        allDisciplines = disciplinesRes.data;
-        allChapters = chaptersRes.data;
+        allBooks = booksRes.data || []; 
+        allDisciplines = disciplinesRes.data || [];
+        allChapters = chaptersRes.data || [];
         
         if (currentUserData.role === 'admin') {
             dom.adminDashboardButton.classList.remove('hidden');
         }
 
         const purchasedBookIds = new Set((bookPurchasesRes.data || []).map(p => p.book_id));
-        purchasedCourseIds = new Set((videoPurchasesRes.data || []).map(p => p.course_id));
-        
-        const booksForDashboard = booksFromRpc;
+        const purchasedCourseIds = new Set((videoPurchasesRes.data || []).map(p => p.course_id));
         videoCoursesForDashboard = videoCoursesRes.data || [];
 
-    // --- CORRECTED DISCIPLINE DERIVATION LOGIC ---
+        // 1. Identify Accessible Books
+        const accessibleBookIds = new Set(
+            allBooks
+                .filter(item => item.has_access === true && item.book_data)
+                .map(item => item.book_data.id)
+        );
 
-        // 1. First, create a set of book IDs that the user truly has access to.
-    // -- REPLACE WITH THIS CORRECTED CODE --
-
-// 1. Get the IDs of books the user can ACTUALLY access.
-const accessibleBookIds = new Set(
-    allBooks
-        .filter(item => item.has_access === true) // The key check
-        .map(item => item.book_data.id)
-);
-
-// 2. Find chapters that belong ONLY to those accessible books.
-const chaptersForDashboardDisciplines = allChapters.filter(chapter =>
-    accessibleBookIds.has(chapter.book_id)
-);
-
-// 3. Derive the disciplines from that safe list of chapters.
-const dashboardDisciplineIds = new Set(chaptersForDashboardDisciplines.map(c => c.discipline_id));
-const disciplinesForDashboard = allDisciplines.filter(d => dashboardDisciplineIds.has(d.id));
-        
-       renderDisciplines(disciplinesForDashboard, currentUserData);
-        renderBooks(booksForDashboard, currentUserData, purchasedBookIds);
-        renderVideoCourses(videoCoursesForDashboard, currentUserData, purchasedCourseIds);
-        
-        // --- START: NEW CODE TO POPULATE THE QUIZ BUILDER ---
-        // This ensures the quiz builder knows which content is available.
-        accessibleContent.books = allBooks
-            .filter(item => item.has_access === true)
-            .map(item => item.book_data);
-        accessibleContent.disciplines = disciplinesForDashboard;
-        accessibleContent.chapters = allChapters.filter(chapter => 
+        // 2. Filter Chapters for the Dashboard
+        const chaptersForDashboardDisciplines = allChapters.filter(chapter =>
             accessibleBookIds.has(chapter.book_id)
         );
-        // --- END: NEW CODE ---
+
+        // 3. Derive Disciplines
+        const dashboardDisciplineIds = new Set(chaptersForDashboardDisciplines.map(c => c.discipline_id));
+        const disciplinesForDashboard = allDisciplines.filter(d => dashboardDisciplineIds.has(d.id));
+        
+        // 4. Render Main Dashboard
+        renderDisciplines(disciplinesForDashboard, currentUserData);
+        renderBooks(allBooks, currentUserData, purchasedBookIds);
+        renderVideoCourses(videoCoursesForDashboard, currentUserData, purchasedCourseIds);
+
+        // --- THE CRITICAL SYNC: POPULATE ACCESSIBLECONTENT FOR THE BUILDER ---
+        // This is what makes the dropdowns "see" the data
+        accessibleContent.books = allBooks
+            .filter(item => accessibleBookIds.has(item.book_data?.id))
+            .map(item => item.book_data);
+
+        accessibleContent.disciplines = disciplinesForDashboard;
+
+        accessibleContent.chapters = allChapters.filter(chapter => 
+            chapter.book_id && accessibleBookIds.has(chapter.book_id)
+        );
+
+        console.log(`--- DEBUG: SYNC COMPLETE. Builder now has ${accessibleContent.chapters.length} chapters ---`);
+        // ---------------------------------------------------------------------
 
         dom.loadingState.classList.add('hidden');
-     
 
     } catch (error) {
         console.error("Error loading dashboard content:", error);
@@ -1888,6 +1880,7 @@ if (!dom.customQuizForm.dataset.listenerAttached) {
                 dom.startCustomQuizBtn.addEventListener('click', handleStartCustomQuiz);
                 dom.startCustomQuizBtn.dataset.listenerAttached = 'true';
             }
+            handleQuizBuilderState();
         }
 
        function getQuestionSortKey(q) {
@@ -1909,8 +1902,12 @@ async function handleStartCustomQuiz(e) {
 
     const form = dom.startCustomQuizBtn.closest('form');
     const questionCountMode = form.questionCountMode.value;
-    const selectedSources = sourcesSelector.getSelected();
+    
+    // THE FIX: Use optional chaining (?.) and default to an empty array 
+    // if the selector doesn't exist (which happens in "All Available" mode).
+    const selectedSources = sourcesSelector?.getSelected() || [];
 
+    // Validation check for source-based modes
     if ((questionCountMode === 'from_sources' || questionCountMode === 'set_number') && selectedSources.length === 0) {
         dom.customAlertMessage.textContent = "Please select at least one question source to build your quiz.";
         dom.customAlertModal.classList.remove('hidden');
@@ -1929,6 +1926,7 @@ async function handleStartCustomQuiz(e) {
             sequenceType: form.sequenceType.value
         };
 
+        // This function already correctly handles the "All Available" mode internally
         let finalQuestions = await getQuestionsForSourceAndFilters(settings.sources);
 
         if (settings.flowMode === 'sequential') {
@@ -2039,47 +2037,48 @@ async function handleStartCustomQuiz(e) {
         }
        
 // WITH this new, robust version in dashboard.html
-// In dashboard.html
+async function getQuestionsForSourceAndFilters(sources) {
+    const currentMode = dom.customQuizForm.questionCountMode.value;
+    let sourcesToUse = [];
 
-      async function getQuestionsForSourceAndFilters(sources) {
-            await getUserHistory(currentUser.id);
-            const currentMode = dom.customQuizForm.questionCountMode.value;
-            let sourcesToUse = [];
-
-            // This is the corrected logic block
-            if (currentMode === 'all_available') {
-                // In this mode, we do NOT use the dropdown.
-                // We build the source list directly from our secure, accessible content arrays.
-                accessibleContent.chapters.forEach(c => sourcesToUse.push(`chapter_${c.id}`));
-            } else {
-                // For other modes, we safely check if the selector exists before using it.
-                if (sourcesSelector) {
-                    sourcesToUse = sources || sourcesSelector.getSelected();
-                }
-            }
-
-            let questionPool = await getBaseQuestionPool(sourcesToUse);
-
-            const activeFilterKeys = Array.from(document.querySelectorAll('.filter-checkbox:checked')).map(cb => cb.dataset.filterKey);
-            
-            if (activeFilterKeys.length > 0) {
-                const filterFunctions = await getFilterFunctions();
-                questionPool = questionPool.filter(q => {
-                    for (const key of activeFilterKeys) {
-                        if (filterFunctions[key] && filterFunctions[key](q)) {
-                            return true;
-                        }
-                    }
-                    return false;
-                });
-            }
-            
-            return questionPool;
+    if (currentMode === 'all_available') {
+        accessibleContent.chapters.forEach(c => {
+            if (c.id) sourcesToUse.push(`chapter_${c.id}`);
+        });
+    } else {
+        if (sourcesSelector) {
+            sourcesToUse = sources || sourcesSelector.getSelected();
         }
+    }
+
+    // 1. Get the raw pool of questions based on selected chapters
+ let questions = await getBaseQuestionPool(sourcesToUse);
+
+    const activeFilters = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
+                               .map(cb => cb.dataset.filterKey);
+    
+    if (activeFilters.length > 0) {
+        console.log(`--- DEBUG: Applying Filters: ${activeFilters.join(', ')} ---`);
+        const filterFunctions = await getFilterFunctions();
+        
+        // THE FIX: Use .some() instead of .every() to additively combine categories
+        questions = questions.filter(q => {
+            return activeFilters.some(filterKey => {
+                const filterFn = filterFunctions[filterKey];
+                return filterFn ? filterFn(q) : false;
+            });
+        });
+        // Filtering this way automatically prevents duplicates because the 
+        // original array only contains unique question objects.
+    }
+
+    return questions;
+}
 // In dashboard.html
 async function getBaseQuestionPool(sources) {
     const chapterIdsToFetch = new Set();
-    const sourceList = sources || sourcesSelector.getSelected();
+    // Safety check for sourceList
+    const sourceList = sources || (sourcesSelector ? sourcesSelector.getSelected() : []);
 
     if (sourceList.length > 0) {
         sourceList.forEach(source => {
@@ -2087,69 +2086,106 @@ async function getBaseQuestionPool(sources) {
             if (type === 'chapter') {
                 chapterIdsToFetch.add(id);
             } else if (type === 'book') {
-                // ***THE FIX: Use the secure accessibleContent.chapters list***
                 accessibleContent.chapters.forEach(c => { if (c.book_id === id) chapterIdsToFetch.add(c.id); });
             } else if (type === 'discipline') {
-                // ***THE FIX: Use the secure accessibleContent.chapters list***
                 accessibleContent.chapters.forEach(c => { if (c.discipline_id === id) chapterIdsToFetch.add(c.id); });
             }
         });
-    } else {
-                // This fallback is for when a user has not selected any specific source
-                // in modes like "From Selected Sources".
-                return [];
-            }
-            
-            if (chapterIdsToFetch.size === 0) return [];
+    }
 
-            const { data, error } = await supabase
-                .from('questions')
-                .select('*')
-                .in('chapter_id', Array.from(chapterIdsToFetch));
+    console.log(`--- DEBUG: Fetching questions for ${chapterIdsToFetch.size} chapters ---`);
+    if (chapterIdsToFetch.size === 0) return [];
 
-            if (error) {
-                console.error("Error fetching base question pool:", error);
-                return [];
-            }
-            return data;
+    // ROBUST PAGINATION LOOP (To bypass 1000-row limit)
+    let allQuestions = [];
+    let from = 0;
+    const limit = 1000;
+    let keepFetching = true;
+    const chapterArray = Array.from(chapterIdsToFetch);
+
+    while (keepFetching) {
+        const { data, error } = await supabase
+            .from('questions')
+            .select('*')
+            .in('chapter_id', chapterArray)
+            .range(from, from + limit - 1);
+
+        if (error) {
+            console.error("--- DEBUG: Supabase Fetch Error:", error);
+            break;
         }
 
-
-async function getFilterFunctions() {
-            const standardFilters = {
-                'unanswered': q => !userHistoryCache.has(q.id),
-                'previously-wrong': q => userHistoryCache.get(q.id)?.lastResult === 'wrong',
-                'initial-wrong': q => userHistoryCache.get(q.id)?.firstAttemptResult === 'wrong',
-                'review': q => userHistoryCache.get(q.id)?.isForReview === true,
-                'note': q => userHistoryCache.get(q.id)?.hasNote === true,
-
-                // CORRECTED: Now checks for 'userDifficulty' in the user's history for the question.
-                'very-difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Difficult',
-                'difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Difficult',
-                'moderate': q => userHistoryCache.get(q.id)?.userDifficulty === 'Moderate',
-                'easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Easy',
-                'very-easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Easy',
-            };
-            return standardFilters;
+        if (data && data.length > 0) {
+            allQuestions = allQuestions.concat(data);
+            if (data.length < limit) keepFetching = false;
+        } else {
+            keepFetching = false;
         }
-
-    async function getUserHistory(userId) {
-    if (userHistoryCache.size > 0) return userHistoryCache;
-    
-    const { data, error } = await supabase
-        .from('userQuestionHistory')
-        .select('*')
-        .eq('userId', userId);
-        
-    if (error) {
-        console.error("Error fetching user history:", error);
-        return new Map();
+        from += limit;
     }
     
-    const historyMap = new Map(data.map(item => [item.questionId, item]));
-    userHistoryCache = historyMap;
-    return userHistoryCache;
-}     
+    console.log(`--- DEBUG: Successfully fetched ${allQuestions.length} questions ---`);
+    return allQuestions;
+}
+
+
+function getFilterFunctions() {
+        return {
+            'unanswered': q => !userHistoryCache.has(q.id),
+            
+            // FIX: "Previously wrong" means they have gotten it wrong at least once EVER, 
+            // even if they got it right 50 times later.
+            'previously-wrong': q => {
+                const history = userHistoryCache.get(q.id);
+                return history && (history.timesWrong > 0);
+            },
+            
+            // FIX: "Initially wrong" means the very first time they took it, they failed.
+            'initial-wrong': q => {
+                const history = userHistoryCache.get(q.id);
+                return history && (history.firstAttemptResult === 'wrong');
+            },
+            
+            'review': q => userHistoryCache.get(q.id)?.isForReview === true,
+            'note': q => userHistoryCache.get(q.id)?.hasNote === true,
+            'very-difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Difficult',
+            'difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Difficult',
+            'moderate': q => userHistoryCache.get(q.id)?.userDifficulty === 'Moderate',
+            'easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Easy',
+            'very-easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Easy',
+        };
+    }
+
+async function getUserHistory(userId) {
+        // If we already loaded it, don't fetch again
+        if (userHistoryCache.size > 0) return; 
+        
+        let from = 0;
+        const limit = 1000;
+        let keepFetching = true;
+
+        // Fetch ALL history records in chunks to bypass the 1000 row limit
+        while (keepFetching) {
+            const { data, error } = await supabase
+                .from('userQuestionHistory')
+                .select('*') // We need '*' here to get timesWrong and firstAttemptResult
+                .eq('userId', userId)
+                .range(from, from + limit - 1);
+
+            if (error) {
+                console.error("Error fetching user history for builder:", error);
+                break;
+            }
+
+            if (data && data.length > 0) {
+                data.forEach(item => userHistoryCache.set(item.questionId, item));
+                if (data.length < limit) keepFetching = false;
+            } else {
+                keepFetching = false;
+            }
+            from += limit;
+        }
+    }  
         // --- General Event Listeners ---
 // Update the event listener to pass the current user to the function
 dom.logoutButton.addEventListener('click', () => {
@@ -2421,28 +2457,40 @@ async function loadDisciplines() {
         }
         console.log(`Step C: Fetched ${userHistory.length} history items.`);
 
-        // 5. Calculate Stats
-        const historyMap = new Map();
-        userHistory.forEach(h => {
-            const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
-            historyMap.set(h.questionId, isCorrect);
-        });
+      
 
+        // 5. Calculate Stats
+// 1. Initialize historyMap correctly once
+       const historyMap = new Map();
+userHistory.forEach(h => {
+    const qId = String(h.questionId);
+    
+    // THE FIX: Only treat as "Answered" if lastResult is explicitly 'correct' or 'wrong'
+    // This prevents flags/notes from counting as an attempt.
+    const result = String(h.lastResult || "").toLowerCase();
+    const isActuallyAnswered = result === 'correct' || result === 'wrong';
+
+    if (isActuallyAnswered) {
+        historyMap.set(qId, result === 'correct');
+    }
+});
+
+        // 2. Initialize discStats (Fixes the ReferenceError)
         const discStats = {};
         disciplines.forEach(d => { 
             discStats[d.id] = { total: 0, correct: 0, wrong: 0 }; 
         });
 
+        // 3. Calculate Stats with String ID matching
         allQuestions.forEach(q => {
-            // FIX: Access only the valid column
             const dId = q.discipline_id; 
-            
             if (dId && discStats[dId]) {
                 const s = discStats[dId];
                 s.total++;
                 
-                if (historyMap.has(q.id)) {
-                    if (historyMap.get(q.id)) s.correct++;
+                const qId = String(q.id);
+                if (historyMap.has(qId)) {
+                    if (historyMap.get(qId)) s.correct++;
                     else s.wrong++;
                 }
             }
@@ -2530,104 +2578,112 @@ async function loadDisciplines() {
 
 
 // --- NEW FUNCTION: RESTORE BOOKS AND VIDEOS ---
-// --- UPDATED: Load Books, Videos & ADMIN BUTTON ---
 async function loadBooksAndVideos() {
     try {
         console.log("Loading Books and Videos with Stats...");
         
-        // 1. Get Current User & Profile
         const { data: { user } } = await supabase.auth.getUser();
         if (!user) return;
 
-        const { data: userData } = await supabase
-            .from('users')
-            .select('*')
-            .eq('id', user.id)
-            .single();
-
-        // --- NEW: ADMIN BUTTON CHECK ---
-        // If the user is an admin, unhide the button immediately
+        const { data: userData } = await supabase.from('users').select('*').eq('id', user.id).single();
         if (userData && userData.role === 'admin') {
-            const adminBtn = document.getElementById('adminDashboardButton');
-            if (adminBtn) adminBtn.classList.remove('hidden');
+            document.getElementById('adminDashboardButton')?.classList.remove('hidden');
         }
-        // -------------------------------
 
-        // --- 2. FETCH BOOKS (RPC) ---
-        const { data: booksData, error: bError } = await supabase.rpc('get_dashboard_books');
-        if (bError) console.error("Error loading books:", bError);
+        // --- 1. FETCH BASE DATA ---
+        const { data: booksData } = await supabase.rpc('get_dashboard_books');
+        allBooks = booksData || []; 
+        allDisciplines = (await supabase.from('disciplines').select('*')).data || [];
+        allChapters = (await supabase.from('chapters').select('*')).data || [];
 
-        // --- 3. FETCH BOOK STATS ---
-        // Helper to fetch all rows (Chunking)
-        async function fetchAll(tableName, selectQuery, userFilter = false) {
-            let allRows = [];
-            let from = 0;
-            const limit = 1000;
-            let keepFetching = true;
-            while (keepFetching) {
-                let query = supabase.from(tableName).select(selectQuery).range(from, from + limit - 1);
-                if (userFilter) query = query.eq('userId', user.id);
-                const { data } = await query;
-                if (!data || data.length < limit) keepFetching = false;
-                if (data) allRows = allRows.concat(data);
-                from += limit;
+        // --- 2. FETCH ALL QUESTIONS (book_id) ---
+        const allQuestions = await (async () => {
+            let rows = []; let from = 0; let keep = true;
+            while (keep) {
+                const { data } = await supabase.from('questions').select('id, book_id').range(from, from + 999);
+                if (!data || data.length < 1000) keep = false;
+                if (data) rows = rows.concat(data);
+                from += 1000;
             }
-            return allRows;
-        }
+            return rows;
+        })();
 
-        // Fetch Questions (book_id) & User History
-        const allQuestions = await fetchAll('questions', 'id, book_id');
-        const userHistory = await fetchAll('userQuestionHistory', 'questionId, lastResult', true);
+        // --- 3. FETCH USER HISTORY (The Missing Piece) ---
+        const userHistory = await (async () => {
+            let rows = []; let from = 0; let keep = true;
+            while (keep) {
+                const { data } = await supabase.from('userQuestionHistory')
+                    .select('questionId, lastResult')
+                    .eq('userId', user.id)
+                    .range(from, from + 999);
+                if (!data || data.length < 1000) keep = false;
+                if (data) rows = rows.concat(data);
+                from += 1000;
+            }
+            return rows;
+        })();
 
-        // Create History Map
-        const historyMap = new Map();
-        userHistory.forEach(h => {
-            if (h.questionId) {
-                const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
-                historyMap.set(String(h.questionId).toLowerCase(), isCorrect);
+        // Create the history map for calculations
+      const historyMap = new Map();
+userHistory.forEach(h => {
+    const qId = String(h.questionId);
+    
+    // THE FIX: Only treat as "Answered" if lastResult is explicitly 'correct' or 'wrong'
+    // This prevents flags/notes from counting as an attempt.
+    const result = String(h.lastResult || "").toLowerCase();
+    const isActuallyAnswered = result === 'correct' || result === 'wrong';
+
+    if (isActuallyAnswered) {
+        historyMap.set(qId, result === 'correct');
+    }
+});
+
+        // --- 4. CALCULATE STATS ---
+        const bookStats = {};
+        allBooks.forEach(item => { 
+            bookStats[item.book_data.id] = { total: 0, correct: 0, wrong: 0 }; 
+        });
+
+        allQuestions.forEach(q => {
+            if (q.book_id && bookStats[q.book_id]) {
+                const stats = bookStats[q.book_id];
+                stats.total++;
+                
+                const qId = String(q.id); // Match historyMap key format
+                if (historyMap.has(qId)) {
+                    if (historyMap.get(qId)) stats.correct++;
+                    else stats.wrong++;
+                }
             }
         });
 
-        // Calculate Stats Per Book
-        const bookStats = {};
-        if (booksData) {
-            booksData.forEach(item => {
-                const bookId = item.book_data.id;
-                bookStats[bookId] = { total: 0, correct: 0, wrong: 0 };
-            });
+        // --- 5. RENDER UI ---
+        if (typeof renderBooks === 'function') renderBooks(allBooks, userData, bookStats);
 
-            allQuestions.forEach(q => {
-                // Ensure we use the correct column name (book_id)
-                if (q.book_id && bookStats[q.book_id]) {
-                    const stats = bookStats[q.book_id];
-                    stats.total++;
-                    
-                    const qId = String(q.id).toLowerCase();
-                    if (historyMap.has(qId)) {
-                        if (historyMap.get(qId)) stats.correct++;
-                        else stats.wrong++;
-                    }
-                }
-            });
+        const { data: videosData } = await supabase.rpc('get_dashboard_video_courses');
+        if (typeof renderVideoCourses === 'function') renderVideoCourses(videosData, userData);
+
+        // --- 6. FINAL BUILDER SYNC ---
+        console.log("--- DEBUG: FORCING BUILDER SYNC (DATA POPULATED) ---");
+        const builderAccessibleBookIds = new Set(
+            allBooks.filter(item => item.has_access === true && item.book_data).map(item => item.book_data.id)
+        );
+        accessibleContent.books = allBooks.filter(item => builderAccessibleBookIds.has(item.book_data?.id)).map(item => item.book_data);
+        accessibleContent.disciplines = allDisciplines;
+        accessibleContent.chapters = allChapters.filter(chapter => chapter.book_id && builderAccessibleBookIds.has(chapter.book_id));
+
+console.log(`--- DEBUG: SYNC COMPLETE. Builder now has ${accessibleContent.chapters.length} chapters ---`);
+
+        // THE FIX: Now that chapters are actually available (86), 
+        // trigger a refresh of the builder UI if it's currently being initialized.
+        if (typeof recalculateAvailableQuestionsAndUpdateUI === 'function') {
+            recalculateAvailableQuestionsAndUpdateUI();
         }
-
-        // --- 4. RENDER BOOKS ---
-        if (typeof renderBooks === 'function' && booksData) {
-            renderBooks(booksData, userData, bookStats); 
-        }
-
-        // --- 5. FETCH & RENDER VIDEOS ---
-        const { data: videosData, error: vError } = await supabase.rpc('get_dashboard_video_courses');
-        if (vError) console.error("Error loading videos:", vError);
-        else {
-            if (typeof renderVideos === 'function') renderVideos(videosData, userData);
-            else if (typeof renderVideoCourses === 'function') renderVideoCourses(videosData, userData);
-        }
-
+        
     } catch (err) {
         console.error("Error in loadBooksAndVideos:", err);
     }
-}
+}// This is the final closing brace for the function
     </script>
 </body>
 </html>

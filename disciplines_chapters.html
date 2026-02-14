@@ -33,6 +33,15 @@
         height: 1.5rem;
         color: #4b5563;
     }
+
+    /* Prevent donut flash before Tailwind/CDN + Chart.js are ready */
+canvas[id^="ch-chart-"]{
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  visibility: hidden;
+}
+
     </style> 
 </head>
 <body class="flex flex-col min-h-screen">
@@ -88,18 +97,26 @@
         <div id="loadingState" class="text-center text-white py-10 text-xl">Loading content...</div>
 
         <div id="chaptersByDisciplineContainer" class="hidden">
-           <div class="container mx-auto max-w-4xl">
-                <div class="flex justify-between items-center mb-6">
-                    <a href="dashboard.html" id="backToDashboardBtn" class="bg-white/30 hover:bg-white/50 text-white font-semibold py-2 px-4 rounded-lg shadow flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                        Back to Dashboard
-                    </a>
-                    <button id="disciplineQuizButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
-                        Start Discipline Quiz
-                    </button>
-                </div>
-            </div>
-            <h2 id="disciplineTitle" class="text-4xl font-extrabold text-white mb-8 text-center drop-shadow-lg"></h2>
+          <div class="container mx-auto max-w-4xl">
+    <div class="flex justify-between items-center mb-4">
+        <a href="dashboard.html" id="backToDashboardBtn" class="bg-white/30 hover:bg-white/50 text-white font-semibold py-2 px-4 rounded-lg shadow flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            Back to Dashboard
+        </a>
+        <!-- keep right side empty to preserve spacing -->
+        <div></div>
+    </div>
+</div>
+
+<h2 id="disciplineTitle" class="text-4xl font-extrabold text-white text-center drop-shadow-lg"></h2>
+
+<!-- Centered Discipline Custom Quiz button (like Book page) -->
+<div class="flex justify-center mt-4 mb-8">
+    <button id="disciplineQuizButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
+        Start Discipline Quiz
+    </button>
+</div>
+
             <div id="chapterList" class="space-y-4 max-w-3xl mx-auto"></div>
         </div>
 
@@ -253,10 +270,8 @@
     </div>
 
 <script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.48.0/+esm';
-    const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+import { supabase } from './supabaseClient.js';
+
    const dom = {
         logoutButton: document.getElementById('logoutButton'),
         loadingState: document.getElementById('loadingState'),
@@ -513,14 +528,17 @@ async function loadAllData(user) {
         }
         console.log(`Total History Items Fetched: ${allHistory.length}`);
 
-        // 3. Process Data
+     // 3. Process Data
         window.pageQuestions = questions;
         window.pageHistoryMap = new Map();
         
         allHistory.forEach(h => {
             const qId = h.questionId || h.question_id;
-            const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
-            if (qId) window.pageHistoryMap.set(qId, isCorrect);
+            // FIX: Only record it in the map if the user actually answered the question
+            if (qId && h.lastResult) {
+                const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
+                window.pageHistoryMap.set(qId, isCorrect ? 'correct' : 'wrong');
+            }
         });
 
         // 4. Load Layout Data (Books/Chapters)
@@ -541,12 +559,12 @@ async function loadAllData(user) {
         // 5. Trigger Render
         if (disciplineId) {
             const disciplineChapters = accessibleContent.chapters.filter(c => c.discipline_id === disciplineId);
-            const container = document.getElementById('chaptersGrid') || document.getElementById('chaptersByDisciplineContainer');
-            
-            if (container) {
-                container.classList.remove('hidden');
-                renderChaptersByDiscipline(disciplineChapters, container);
-            }
+           const wrapper = document.getElementById('chaptersByDisciplineContainer'); // keeps header + button
+const listEl  = document.getElementById('chaptersGrid') || document.getElementById('chapterList'); // only cards go here
+
+if (wrapper) wrapper.classList.remove('hidden');
+if (listEl) renderChaptersByDiscipline(disciplineChapters, listEl);
+
         }
 
         if (dom.loadingState) dom.loadingState.classList.add('hidden');
@@ -778,11 +796,35 @@ async function recalculateAvailableQuestionsAndUpdateUI() {
     if(buildStatus) buildStatus.textContent = `${finalQuestionCount} questions selected.`;
 }
 
-    async function getUserHistory(userId) {
-        if (userHistoryCache.size > 0) return;
-        const { data, error } = await supabase.from('userQuestionHistory').select('*').eq('userId', userId);
-        if (error) return;
-        data.forEach(item => userHistoryCache.set(item.questionId, item));
+async function getUserHistory(userId) {
+        // If we already loaded it, don't fetch again
+        if (userHistoryCache.size > 0) return; 
+        
+        let from = 0;
+        const limit = 1000;
+        let keepFetching = true;
+
+        // Fetch ALL history records in chunks to bypass the 1000 row limit
+        while (keepFetching) {
+            const { data, error } = await supabase
+                .from('userQuestionHistory')
+                .select('*') // We need '*' here to get timesWrong and firstAttemptResult
+                .eq('userId', userId)
+                .range(from, from + limit - 1);
+
+            if (error) {
+                console.error("Error fetching user history for builder:", error);
+                break;
+            }
+
+            if (data && data.length > 0) {
+                data.forEach(item => userHistoryCache.set(item.questionId, item));
+                if (data.length < limit) keepFetching = false;
+            } else {
+                keepFetching = false;
+            }
+            from += limit;
+        }
     }
 
 function initializeCustomQuizBuilder() {
@@ -836,6 +878,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // 3. Load Data
         // We ONLY call this function. It handles fetching AND rendering correctly.
         // We do NOT call renderChaptersByDiscipline here manually.
+         currentUser = user;
         await loadAllData(user); 
     } else {
         window.location.href = 'index.html';
@@ -843,24 +886,112 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
     // --- Event Listeners ---
-    dom.logoutButton.addEventListener('click', handleLogout);
-    
-    dom.disciplineQuizButton.addEventListener('click', () => {
-        const disciplineTitleEl = document.getElementById('disciplineTitle');
-        quizStartContext = { type: 'discipline', id: disciplineTitleEl.dataset.id, name: disciplineTitleEl.textContent };
-        dom.quizModeModal.classList.remove('hidden');
-    });
+// --- Event Listeners ---
 
-    dom.sequentialModeButton.addEventListener('click', () => { /* ... (full logic from dashboard) ... */ });
+// Logout (only if this page has the button)
+if (dom.logoutButton) dom.logoutButton.addEventListener('click', handleLogout);
+
+// Read discipline context from URL (THIS is the source of truth)
+const urlParams = new URLSearchParams(window.location.search);
+const currentDisciplineId = urlParams.get('disciplineId');
+const currentDisciplineName = urlParams.get('name') || (dom.disciplineTitle?.textContent || 'Discipline');
+
+// Make sure the title element carries the ID (so nothing becomes undefined)
+if (dom.disciplineTitle) {
+    dom.disciplineTitle.textContent = currentDisciplineName;
+    dom.disciplineTitle.dataset.id = currentDisciplineId || '';
+}
+
+// IMPORTANT: Initialize the Custom Quiz builder (fixes sourcesSelector.setData crash)
+try {
+    if (typeof initializeCustomQuizBuilder === 'function') initializeCustomQuizBuilder();
+} catch (e) {
+    console.warn('Custom quiz builder init failed:', e);
+}
+
+// Build the chapter priority list from what is currently rendered (supports Sortable order too)
+function getDisciplinePriorityList() {
+    const list = Array.from(document.querySelectorAll('#chapterList [data-id]'))
+        .map(el => el.getAttribute('data-id'))
+        .filter(Boolean);
+
+    return list;
+}
+
+function startDisciplineQuiz(mode) {
+    if (!currentDisciplineId) {
+        alert('Missing disciplineId in the URL.');
+        return;
+    }
+
+    const priority = getDisciplinePriorityList();
+    if (!priority.length) {
+        alert('No chapters found for this discipline.');
+        return;
+    }
+
+    const url =
+        `quiz_page.html?quizType=discipline` +
+        `&from=disciplines` +
+        `&disciplineId=${encodeURIComponent(currentDisciplineId)}` +
+        `&mode=${encodeURIComponent(mode)}` +
+        `&priority=${encodeURIComponent(JSON.stringify(priority))}`;
+
+    window.location.href = url;
+}
+
+// Open the mode modal
+dom.disciplineQuizButton.addEventListener('click', () => {
+    if (!currentDisciplineId) {
+        alert('Missing disciplineId in the URL.');
+        return;
+    }
+    dom.quizModeModal.classList.remove('hidden');
+});
+
+// Sequential / Random (both MUST send priority because quiz_page requires it for discipline quiz)
+dom.sequentialModeButton.addEventListener('click', () => {
+    dom.quizModeModal.classList.add('hidden');
+    startDisciplineQuiz('sequential');
+});
+
+dom.randomModeButton.addEventListener('click', () => {
+    dom.quizModeModal.classList.add('hidden');
+    startDisciplineQuiz('random');
+});
+
+dom.cancelModeButton.addEventListener('click', () => dom.quizModeModal.classList.add('hidden'));
+
+
+// --- Custom Quiz Listeners ---
+// Use the builder you already have on this page (openBuilder -> openAdvancedBuilder)
+dom.customDisciplineModeButton.addEventListener('click', async () => {
+    dom.quizModeModal.classList.add('hidden');
+
+    if (!currentDisciplineId) {
+        alert('Missing disciplineId in the URL.');
+        return;
+    }
+
   
-    dom.cancelModeButton.addEventListener('click', () => dom.quizModeModal.classList.add('hidden'));
+});
 
-    // --- Custom Quiz Listeners ---
-    dom.customDisciplineModeButton.addEventListener('click', async () => { /* ... (full logic from dashboard) ... */ });
-    dom.resumeCustomQuizBtn.addEventListener('click', () => { /* ... (full logic from dashboard) ... */ });
-    dom.createNewCustomQuizBtn.addEventListener('click', async () => { /* ... (full logic from dashboard) ... */ });
-    dom.cancelChoiceBtn.addEventListener('click', () => dom.customQuizChoiceModal.classList.add('hidden'));
-    dom.customAlertCloseBtn.addEventListener('click', () => dom.customAlertModal.classList.add('hidden'));
+// These must not be placeholders (keep them working if they already exist in your file)
+if (dom.resumeCustomQuizBtn) {
+    dom.resumeCustomQuizBtn.addEventListener('click', () => {
+        if (typeof resumeCustomQuiz === 'function') resumeCustomQuiz();
+    });
+}
+
+if (dom.createNewCustomQuizBtn) {
+    dom.createNewCustomQuizBtn.addEventListener('click', async () => {
+        if (typeof createNewCustomQuiz === 'function') await createNewCustomQuiz();
+    });
+}
+
+if (dom.cancelChoiceBtn) dom.cancelChoiceBtn.addEventListener('click', () => dom.customQuizChoiceModal.classList.add('hidden'));
+if (dom.customAlertCloseBtn) dom.customAlertCloseBtn.addEventListener('click', () => dom.customAlertModal.classList.add('hidden'));
+
 
 
    // --- TOOLTIP HELPERS ---
@@ -921,79 +1052,104 @@ function renderChaptersByDiscipline(chapters, container) {
     // Sort
     chapters.sort((a, b) => (a.chapterNumber || 0) - (b.chapterNumber || 0));
 
+    window.disciplineChapterIds = chapters.map(ch => ch.id);
+
     const questions = window.pageQuestions || [];
     const historyMap = window.pageHistoryMap || new Map();
 
     container.className = "grid grid-cols-1 gap-3 max-w-4xl mx-auto";
 
-    chapters.forEach(chapter => {
-        // Calculate Stats
-        const chQuestions = questions.filter(q => (q.chapterId === chapter.id || q.chapter_id === chapter.id));
-        const total = chQuestions.length;
-        let correct = 0, wrong = 0;
-        chQuestions.forEach(q => {
-            if (historyMap.has(q.id)) {
-                if (historyMap.get(q.id)) correct++; else wrong++;
-            }
-        });
-        const unanswered = total - (correct + wrong);
+ chapters.forEach(chapter => {
+            // Calculate Stats
+            const chQuestions = questions.filter(q => (q.chapterId === chapter.id || q.chapter_id === chapter.id));
+            const total = chQuestions.length;
+            let correct = 0, wrong = 0;
+            chQuestions.forEach(q => {
+                if (historyMap.has(q.id)) {
+                    // FIX: Explicitly check for 'correct' or 'wrong'
+                    if (historyMap.get(q.id) === 'correct') correct++; 
+                    else if (historyMap.get(q.id) === 'wrong') wrong++;
+                }
+            });
+            const unanswered = total - (correct + wrong);
 
         // Build Card
         const card = document.createElement('div');
         card.setAttribute('data-id', chapter.id); 
-        card.className = "bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex items-center justify-between gap-4 group";
+   // Fluid design: items-start on mobile helps long titles wrap without pulling the button out of place
+card.className = 'bg-white p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 group';
+
+card.innerHTML = `
+    <div class="flex items-start sm:items-center gap-2 sm:gap-4 min-w-0 flex-1">
+        <div class="drag-handle hidden xs:flex cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 p-1 sm:p-2 flex-shrink-0">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+            </svg>
+        </div>
         
-        card.innerHTML = `
-            <div class="flex items-center gap-4 min-w-0 flex-1">
-                <div class="drag-handle cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 transition-colors p-2 rounded hover:bg-gray-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
-                    </svg>
-                </div>
-                <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-base font-bold rounded-full">
-                    ${chapter.chapterNumber || '#'}
-                </span>
-             <div class="min-w-0 flex-1">
- <h3 class="text-lg md:text-xl font-extrabold text-gray-900 text-balance tracking-tight pr-2 group-hover:text-indigo-700 transition-colors leading-tight">
-    ${chapter.name}
-</h3>
-    
-<div class="text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-1 truncate">
-    ${chapter.books?.title || 'General Resource'}
-</div>
-    
-    <p class="text-xs text-gray-500 font-medium mt-1">${total} Questions</p>
-</div>
+        <span class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-sm sm:text-base font-bold rounded-full mt-1 sm:mt-0">
+            ${chapter.chapterNumber || '#'}
+        </span>
+        
+        <div class="min-w-0 flex-1 px-1">
+            <h3 class="text-base sm:text-lg md:text-xl font-extrabold text-gray-900 text-balance tracking-tight group-hover:text-indigo-700 transition-all duration-200 leading-tight">
+                ${chapter.name}
+            </h3>
+            
+            <div class="text-[9px] sm:text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-1 truncate">
+                ${chapter.books?.title || 'General Resource'}
             </div>
             
-            <div class="flex items-center gap-5 flex-shrink-0">
-                <div class="w-10 h-10 relative hidden sm:block">
-                    <canvas id="ch-chart-${chapter.id}"></canvas>
-                </div>
-                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold py-2.5 px-6 rounded-md shadow-sm transition-colors whitespace-nowrap"
-                    onclick="window.launchChapterQuiz('${chapter.id}')">
-                    Start
-                </button>
-            </div>
-        `;
+            <p class="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5 sm:mt-1">${total} Questions</p>
+        </div>
+    </div>
+    
+    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 ml-1 sm:ml-0">
+        <div class="relative flex-shrink-0 w-7 h-7 xs:w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+            <canvas id="ch-chart-${chapter.id}"></canvas>
+        </div>
+        <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg shadow-sm transition-all active:scale-95 whitespace-nowrap"
+            onclick="window.launchChapterQuiz('${chapter.id}')">
+            Start
+        </button>
+    </div>
+`;
         container.appendChild(card);
 
         // Draw Chart
-        const ctx = document.getElementById(`ch-chart-${chapter.id}`).getContext('2d');
+        const canvas = document.getElementById(`ch-chart-${chapter.id}`);
+if (!canvas) return;
+const ctx = canvas.getContext('2d');
+
         const chartData = total === 0 ? [0,0,1] : [correct, wrong, unanswered];
         const chartColors = total === 0 ? ['#f3f4f6','#f3f4f6','#f3f4f6'] : ['#22c55e', '#ef4444', '#e5e7eb'];
 
         window.chapterCharts.push(new Chart(ctx, {
+            
             type: 'doughnut',
             data: {
                 labels: ['Correct', 'Wrong', 'Unanswered'],
                 datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }]
             },
-            options: {
-                responsive: true, maintainAspectRatio: false, cutout: '75%', animation: false,
-                plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltipHandler } }
-            }
+          options: {
+    responsive: true,
+    maintainAspectRatio: true, // Ensures the chart scales correctly
+    aspectRatio: 1,           // Keeps the donut as a perfect circle
+    cutout: '70%', 
+    animation: {
+        duration: 0           // Better performance on older mobile devices
+    },
+    plugins: { 
+        legend: { display: false }, 
+        tooltip: { 
+            enabled: false, 
+            external: typeof externalTooltipHandler !== 'undefined' ? externalTooltipHandler : null 
+        } 
+    }
+}
         }));
+        canvas.style.visibility = 'visible';
+
     });
 
     if (typeof Sortable !== 'undefined') {
@@ -1033,12 +1189,23 @@ window.startQuizForChapter = (chapterId) => {
 // Map the new name to the old one just in case your HTML onclick uses the other name
 window.launchChapterQuiz = window.startQuizForChapter;
 
- 
-    function getFilterFunctions() {
+function getFilterFunctions() {
         return {
             'unanswered': q => !userHistoryCache.has(q.id),
-            'previously-wrong': q => userHistoryCache.get(q.id)?.lastResult === 'wrong',
-            'initial-wrong': q => userHistoryCache.get(q.id)?.firstAttemptResult === 'wrong',
+            
+            // FIX: "Previously wrong" means they have gotten it wrong at least once EVER, 
+            // even if they got it right 50 times later.
+            'previously-wrong': q => {
+                const history = userHistoryCache.get(q.id);
+                return history && (history.timesWrong > 0);
+            },
+            
+            // FIX: "Initially wrong" means the very first time they took it, they failed.
+            'initial-wrong': q => {
+                const history = userHistoryCache.get(q.id);
+                return history && (history.firstAttemptResult === 'wrong');
+            },
+            
             'review': q => userHistoryCache.get(q.id)?.isForReview === true,
             'note': q => userHistoryCache.get(q.id)?.hasNote === true,
             'very-difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Difficult',
@@ -1162,11 +1329,12 @@ async function getQuestionsForSourceAndFilters(sources) {
                 localStorage.setItem('customQuizQuestions', JSON.stringify(serializableQuestions));
                 localStorage.setItem('customQuizTimer', String(settings.timer));
                 
-                let redirectUrl = `quiz_page.html?quizType=advanced_custom&flowMode=${settings.flowMode}`;
-                const disciplineId = dom.disciplineTitle.dataset.id;
-                const disciplineName = dom.disciplineTitle.textContent;
-                redirectUrl += `&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}`;
-                window.location.href = redirectUrl;
+                let redirectUrl = `quiz_page.html?quizType=advanced_custom&from=disciplines&flowMode=${settings.flowMode}`;
+const disciplineId = dom.disciplineTitle.dataset.id;
+const disciplineName = dom.disciplineTitle.textContent;
+redirectUrl += `&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}`;
+window.location.href = redirectUrl;
+
             }
 
         } catch (error) {
@@ -1179,126 +1347,210 @@ async function getQuestionsForSourceAndFilters(sources) {
         }
     }
 
-    // --- Event Listeners for Quiz Modals ---
-    dom.disciplineQuizButton.addEventListener('click', () => {
-        if (dom.chapterList.textContent.includes("No accessible chapters found")) {
-            alert("This discipline has no chapters to quiz.");
-            return;
-        }
-        const disciplineTitleEl = document.getElementById('disciplineTitle');
-        quizStartContext = { type: 'discipline', id: disciplineTitleEl.dataset.id, name: disciplineTitleEl.textContent };
-        dom.quizModeModal.classList.remove('hidden');
-    });
+    
 
-   dom.sequentialModeButton.addEventListener('click', async () => {
-    if (quizStartContext.type === 'discipline') {
-        const chapterItems = document.querySelectorAll('#sortable-chapter-list li[data-chapter-id]');
-        const priorityOrder = Array.from(chapterItems).map(item => item.dataset.chapterId);
-        const priorityParam = `&priority=${encodeURIComponent(JSON.stringify(priorityOrder))}`;
-        // FIX: Added "&from=disciplines" to the URL
-        window.location.href = `quiz_page.html?quizType=discipline&from=disciplines&disciplineId=${quizStartContext.id}&disciplineName=${encodeURIComponent(quizStartContext.name)}&mode=sequential${priorityParam}`;
+// Helper: safe discipline context getter
+function getDisciplineContext() {
+    const titleEl = dom.disciplineTitle || document.getElementById('disciplineTitle');
+    const idFromDataset = titleEl?.dataset?.id;
+    const nameFromTitle = (titleEl?.textContent || '').trim();
+
+    // Prefer dataset.id, fallback to URL param if needed
+    const urlParams = new URLSearchParams(window.location.search);
+    const idFromUrl = urlParams.get('disciplineId');
+    const nameFromUrl = urlParams.get('name');
+
+    const disciplineId = idFromDataset || idFromUrl;
+    const disciplineName = nameFromTitle || nameFromUrl || 'Discipline';
+
+    return { disciplineId, disciplineName };
+}
+
+// Helper: collect chapter order (priority list) from the sortable list
+function getDisciplineChapterPriority() {
+  // 1) If you have the sequence builder list (rule-item)
+  const seqItems = document.querySelectorAll('#sequenceList .rule-item[data-id]');
+  let ids = Array.from(seqItems)
+    .map(el => (el.dataset.id || '').replace(/^chapter_/, ''))
+    .filter(Boolean);
+
+  if (ids.length) return ids;
+
+  // 2) If there is any old sortable list (just in case)
+  const liItems = document.querySelectorAll('#sortable-chapter-list li[data-chapter-id]');
+  ids = Array.from(liItems)
+    .map(li => li.dataset.chapterId)
+    .filter(Boolean);
+
+  if (ids.length) return ids;
+
+  // 3) Fallback to the global list if your page already builds it somewhere
+  if (Array.isArray(window.disciplineChapterIds) && window.disciplineChapterIds.length) {
+    return window.disciplineChapterIds;
+  }
+
+  return [];
+}
+
+
+// ------------- Quiz Mode Modal Open -------------
+dom.disciplineQuizButton.addEventListener('click', () => {
+    // guard: if no chapters
+    if (dom.chapterList?.textContent?.includes("No accessible chapters found")) {
+        alert("This discipline has no chapters to quiz.");
+        return;
     }
+
+    const { disciplineId, disciplineName } = getDisciplineContext();
+    if (!disciplineId) {
+        alert("Discipline ID is missing. Please refresh the page.");
+        return;
+    }
+
+    quizStartContext = { type: 'discipline', id: disciplineId, name: disciplineName };
+    dom.quizModeModal.classList.remove('hidden');
 });
 
+dom.cancelModeButton.addEventListener('click', () => dom.quizModeModal.classList.add('hidden'));
+
+// ------------- Sequential Discipline Quiz -------------
+dom.sequentialModeButton.addEventListener('click', () => {
+    if (!quizStartContext || quizStartContext.type !== 'discipline') return;
+
+    const priorityOrder = getDisciplineChapterPriority();
+    if (!priorityOrder.length) {
+        alert("No chapters were found to quiz in this discipline.");
+        return;
+    }
+
+    const priorityParam = `&priority=${encodeURIComponent(JSON.stringify(priorityOrder))}`;
+
+    window.location.href =
+        `quiz_page.html?quizType=discipline&from=disciplines` +
+        `&disciplineId=${quizStartContext.id}` +
+        `&disciplineName=${encodeURIComponent(quizStartContext.name)}` +
+        `&mode=sequential${priorityParam}`;
+});
+
+// ------------- Random Discipline Quiz -------------
 dom.randomModeButton.addEventListener('click', () => {
-    if (quizStartContext.type === 'discipline') {
-        const chapterItems = document.querySelectorAll('#sortable-chapter-list li[data-chapter-id]');
-        const chapterIds = Array.from(chapterItems).map(item => item.dataset.chapterId);
-        const priorityParam = `&priority=${encodeURIComponent(JSON.stringify(chapterIds))}`;
-        // FIX: Added "&from=disciplines" to the URL
-        window.location.href = `quiz_page.html?quizType=discipline&from=disciplines&disciplineId=${quizStartContext.id}&disciplineName=${encodeURIComponent(quizStartContext.name)}&mode=random${priorityParam}`;
+    if (!quizStartContext || quizStartContext.type !== 'discipline') return;
+
+    const priorityOrder = getDisciplineChapterPriority();
+    if (!priorityOrder.length) {
+        alert("No chapters were found to quiz in this discipline.");
+        return;
     }
+
+    const priorityParam = `&priority=${encodeURIComponent(JSON.stringify(priorityOrder))}`;
+
+    window.location.href =
+        `quiz_page.html?quizType=discipline&from=disciplines` +
+        `&disciplineId=${quizStartContext.id}` +
+        `&disciplineName=${encodeURIComponent(quizStartContext.name)}` +
+        `&mode=random${priorityParam}`;
 });
-    dom.cancelModeButton.addEventListener('click', () => dom.quizModeModal.classList.add('hidden'));
 
+// ------------- Custom Discipline Quiz (Choice Modal) -------------
 dom.customDisciplineModeButton.addEventListener('click', async () => {
-        const disciplineId = dom.disciplineTitle.dataset.id;
-        const progressKey = `customQuizProgress_${currentUser.id}_discipline_${disciplineId}`;
-        const { data } = await supabase.from('quiz_progress').select('quiz_key').eq('user_id', currentUser.id).eq('quiz_key', progressKey).maybeSingle();
-        
-        dom.resumeCustomQuizBtn.dataset.context = 'discipline';
-        dom.createNewCustomQuizBtn.dataset.context = 'discipline';
-        dom.createNewCustomQuizBtn.dataset.progressKey = progressKey;
-        dom.resumeCustomQuizBtn.classList.toggle('hidden', !data);
-        dom.quizModeModal.classList.add('hidden');
-        dom.customQuizChoiceModal.classList.remove('hidden');
-    });
+    const { disciplineId } = getDisciplineContext();
+    if (!disciplineId) {
+        alert("Discipline ID is missing. Please refresh the page.");
+        return;
+    }
 
-    // --- Event Listeners for Quiz Modals ---
-    dom.disciplineQuizButton.addEventListener('click', () => {
-        if (dom.chapterList.textContent.includes("No accessible chapters found")) {
-            alert("This discipline has no chapters to quiz.");
-            return;
-        }
-        const disciplineTitleEl = document.getElementById('disciplineTitle');
-        quizStartContext = { type: 'discipline', id: disciplineTitleEl.dataset.id, name: disciplineTitleEl.textContent };
-        dom.quizModeModal.classList.remove('hidden');
-    });
+    const progressKey = `customQuizProgress_${currentUser.id}_discipline_${disciplineId}`;
+    const { data } = await supabase
+        .from('quiz_progress')
+        .select('quiz_key')
+        .eq('user_id', currentUser.id)
+        .eq('quiz_key', progressKey)
+        .maybeSingle();
 
+    dom.resumeCustomQuizBtn.dataset.context = 'discipline';
+    dom.createNewCustomQuizBtn.dataset.context = 'discipline';
+    dom.createNewCustomQuizBtn.dataset.progressKey = progressKey;
 
+    dom.resumeCustomQuizBtn.classList.toggle('hidden', !data);
 
+    dom.quizModeModal.classList.add('hidden');
+    dom.customQuizChoiceModal.classList.remove('hidden');
+});
 
-    dom.cancelModeButton.addEventListener('click', () => dom.quizModeModal.classList.add('hidden'));
+dom.resumeCustomQuizBtn.addEventListener('click', () => {
+    const context = dom.resumeCustomQuizBtn.dataset.context;
+    if (context !== 'discipline') return;
 
-    dom.customDisciplineModeButton.addEventListener('click', async () => {
-        const disciplineId = dom.disciplineTitle.dataset.id;
-        const progressKey = `customQuizProgress_${currentUser.id}_discipline_${disciplineId}`;
-        const { data } = await supabase.from('quiz_progress').select('quiz_key').eq('user_id', currentUser.id).eq('quiz_key', progressKey).maybeSingle();
-        
-        dom.resumeCustomQuizBtn.dataset.context = 'discipline';
-        dom.createNewCustomQuizBtn.dataset.context = 'discipline';
-        dom.createNewCustomQuizBtn.dataset.progressKey = progressKey;
-        dom.resumeCustomQuizBtn.classList.toggle('hidden', !data);
-        dom.quizModeModal.classList.add('hidden');
-        dom.customQuizChoiceModal.classList.remove('hidden');
-    });
+    const { disciplineId, disciplineName } = getDisciplineContext();
+    if (!disciplineId) {
+        alert("Discipline ID is missing. Please refresh the page.");
+        return;
+    }
 
-    dom.resumeCustomQuizBtn.addEventListener('click', () => {
-        const context = dom.resumeCustomQuizBtn.dataset.context;
+    window.location.href =
+        `quiz_page.html?quizType=advanced_custom&from=disciplines` +
+        `&disciplineId=${disciplineId}` +
+        `&disciplineName=${encodeURIComponent(disciplineName)}`;
+});
+
+// Create New Custom -> open advanced builder
+dom.createNewCustomQuizBtn.addEventListener('click', async () => {
+    const context = dom.createNewCustomQuizBtn.dataset.context;
+    const progressKey = dom.createNewCustomQuizBtn.dataset.progressKey;
+
+    const { data } = await supabase
+        .from('quiz_progress')
+        .select('quiz_key')
+        .eq('user_id', currentUser.id)
+        .eq('quiz_key', progressKey)
+        .maybeSingle();
+
+    const openBuilder = () => {
+        dom.customQuizChoiceModal.classList.add('hidden');
+
         if (context === 'discipline') {
-            const disciplineId = dom.disciplineTitle.dataset.id;
-            const disciplineName = dom.disciplineTitle.textContent;
-            window.location.href = `quiz_page.html?quizType=advanced_custom&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}`;
+            builderContext = 'discipline';
+
+            const { disciplineId, disciplineName } = getDisciplineContext();
+            if (!disciplineId) {
+                alert("Discipline ID is missing. Please refresh the page.");
+                return;
+            }
+
+            const disciplineChapters = (accessibleContent?.chapters || [])
+                .filter(c => c.discipline_id === disciplineId)
+                .sort((a, b) => (a.chapterNumber || 0) - (b.chapterNumber || 0))
+                .map(c => ({ text: `Ch. ${c.chapterNumber} - ${c.name}`, value: `chapter_${c.id}` }));
+
+            const disciplineSourceData = [{ label: `Chapters in ${disciplineName}`, options: disciplineChapters }];
+
+            // This exists in your file and works
+            openAdvancedBuilder(disciplineSourceData);
         }
-    });
+    };
+        window.openBuilder = openBuilder;
 
-    dom.createNewCustomQuizBtn.addEventListener('click', async () => {
-        const context = dom.createNewCustomQuizBtn.dataset.context;
-        const progressKey = dom.createNewCustomQuizBtn.dataset.progressKey;
-        const { data } = await supabase.from('quiz_progress').select('quiz_key').eq('user_id', currentUser.id).eq('quiz_key', progressKey).maybeSingle();
 
-        const openBuilder = () => {
-            dom.customQuizChoiceModal.classList.add('hidden');
-            if (context === 'discipline') {
-                builderContext = 'discipline';
-                const disciplineId = dom.disciplineTitle.dataset.id;
-                const disciplineName = dom.disciplineTitle.textContent;
-                const disciplineChapters = accessibleContent.chapters
-                    .filter(c => c.discipline_id === disciplineId)
-                    .sort((a, b) => (a.chapterNumber || 0) - (b.chapterNumber || 0))
-                    .map(c => ({ text: `Ch. ${c.chapterNumber} - ${c.name}`, value: `chapter_${c.id}` }));
-                const disciplineSourceData = [{ label: `Chapters in ${disciplineName}`, options: disciplineChapters }];
-                openAdvancedBuilder(disciplineSourceData);
-            }
-        };
 
-        if (data) {
-            if (confirm("You have an incomplete custom quiz. Starting a new one will delete your old progress. Are you sure?")) {
-                await supabase.from('quiz_progress').delete().eq('quiz_key', progressKey);
-                dom.resumeCustomQuizBtn.classList.add('hidden');
-                openBuilder();
-            }
-        } else {
+    if (data) {
+        if (confirm("You have an incomplete custom quiz. Starting a new one will delete your old progress. Are you sure?")) {
+            await supabase.from('quiz_progress').delete().eq('quiz_key', progressKey);
+            dom.resumeCustomQuizBtn.classList.add('hidden');
             openBuilder();
         }
-    });
+    } else {
+        openBuilder();
+    }
+});
 
-    dom.cancelChoiceBtn.addEventListener('click', () => dom.customQuizChoiceModal.classList.add('hidden'));
-    dom.customAlertCloseBtn.addEventListener('click', () => dom.customAlertModal.classList.add('hidden'));
+dom.cancelChoiceBtn.addEventListener('click', () => dom.customQuizChoiceModal.classList.add('hidden'));
+dom.customAlertCloseBtn.addEventListener('click', () => dom.customAlertModal.classList.add('hidden'));
 
-     dom.closeQuizBuilderBtn.addEventListener('click', () => dom.customQuizModal.classList.add('hidden'));
-    dom.startCustomQuizBtn.addEventListener('click', handleStartCustomQuiz);
+dom.closeQuizBuilderBtn.addEventListener('click', () => dom.customQuizModal.classList.add('hidden'));
+dom.startCustomQuizBtn.addEventListener('click', handleStartCustomQuiz);
 </script>
+
+
 </body>
 </html>
 

@@ -1,18 +1,17 @@
 // sw.js
 
 // A name for our cache
-const CACHE_NAME = 'quizard-cache-v1';
+const CACHE_NAME = 'quizard-cache-v2';
+
 
 // In sw.js
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/dashboard.html',
   '/main-styles.css',
   '/images/logo.png',
-  '/images/icons/icon-192x192.png', // <-- Add this line
-  '/images/icons/icon-512x512.png'  // <-- And this line
+  '/images/icons/icon-192x192.png',
+  '/images/icons/icon-512x512.png'
 ];
+
 
 // 1. Installation: Open a cache and add the app shell files to it.
 self.addEventListener('install', event => {

@@ -17,39 +17,62 @@
         color: #52c4e0;
     }
 
+
+/* --- Fix for Note Modal Text Input --- */
+textarea, 
+input[type="text"],
+#noteTextarea {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+    pointer-events: auto !important;
+    cursor: text !important;
+    color: #1f2937 !important; /* Adds Tailwind's text-gray-800 color */
+}
+
     /* --- Layout & Responsive Fixes --- */
-    @media (max-width: 767px) {
-        /* On mobile, add padding to the bottom of the main card to create space
-           so content is not hidden behind the fixed action bar. */
-        #main-quiz-card {
-            padding-bottom: 180px;
-        }
+@media (max-width: 767px) {
 
-        /* This is the outer container for the mobile action bar.
-           It's fixed to the bottom of the viewport. */
-        #quiz-actions-container-mobile {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 40;
-            /* Side padding provides the constraints from the window edge. */
-            padding: 0 1rem;
-            background: none; /* This container is for positioning only. */
-        }
+  /* A single source of truth for how much space the fixed bar needs */
+  :root{
+    --mobileActionBarSpace: 320px; /* increase if your bar gets taller */
+  }
 
-        /* This is the inner container that gets the visual styling. */
-        #quiz-actions-mobile {
-            max-width: 42rem; /* Ensures it doesn't get too wide on larger mobile screens */
-            margin: 0 auto; /* Centers the bar */
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-            /* These rules create the rounded top corners and sharp, flush bottom corners. */
-            border-top-left-radius: 1.5rem;
-            border-top-right-radius: 1.5rem;
-        }
-    }
+  /* MOST IMPORTANT: make the PAGE itself scroll past the fixed bar */
+  body{
+    padding-bottom: calc(var(--mobileActionBarSpace) + env(safe-area-inset-bottom));
+  }
+
+  /* Keep extra breathing room inside the card too */
+  #main-quiz-card{
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+
+  /* Fixed action bar wrapper */
+  #quiz-actions-container-mobile{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    padding: 0 1rem;
+    background: none;
+  }
+
+  /* Fixed action bar inner */
+  #quiz-actions-mobile{
+    max-width: 42rem;
+    margin: 0 auto;
+    background: white;
+    padding: 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+}
+
 
     /* --- Original Styles from File --- */
     .results-tabs { flex-wrap: wrap; justify-content: center; }
@@ -59,9 +82,22 @@
         .performance-chart-grid { grid-template-columns: 120px 1fr; gap: 0.5rem; }
         .chart-label-item { font-size: 0.75rem; text-align: left; padding-left: 0.5rem; border-right: none; }
     }
- #questionDisplay {
-    text-align: justify; /* Aligns text to both left and right edges */
-    hyphens: auto;      /* Works with justify to create cleaner line breaks and prevent excessive word stretching */
+/* --- Modern Journal Typography with Hyphenation --- */
+#questionDisplay {
+    font-size: clamp(1.1rem, 2vw + 0.5rem, 1.5rem);
+    font-weight: 600;
+    line-height: 1.6;
+    color: #1f2937;
+    letter-spacing: -0.011em;
+    
+    /* THE FIX: Standardizes line ends with journal-style hyphenation */
+    text-align: justify;
+    text-justify: inter-character; /* Prevents awkward word stretching */
+    hyphens: auto; 
+    hyphenate-character: "-"; /* Uses the specific (-) character you requested */
+    
+margin-bottom: 1.0rem;
+
 }
     #chartAndLegendContainer { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem; width: 100%; max-width: 400px; margin: 0 auto; }
     .chart-container { position: relative; width: 100%; min-width: 0; }
@@ -102,6 +138,197 @@
         color: #4b5563;
     }
     
+    /* --- PassMedicine Style Peer Percentages --- */
+/* Add to your <style> section */
+.peer-percentage {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px; /* Slightly wider for better balance */
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    /* THE FANCY FIX: Using a semi-transparent border and light background */
+    border: 2px solid currentColor; 
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle lift */
+    
+    margin-left: auto; /* Ensures it stays pinned to the right edge */
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+/* --- Responsive quiz typography + tighter right legend column --- */
+#questionDisplay {
+  font-size: clamp(1.05rem, 1.2vw + 0.85rem, 1.45rem);
+  line-height: 1.55;
+}
+
+#optionsContainer label .option-text {
+  font-size: clamp(0.95rem, 0.8vw + 0.8rem, 1.05rem);
+  line-height: 1.4;
+}
+
+/* Make the icon column feel closer to the card edge + smaller on phones */
+#functionalIcons button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+}
+
+@media (max-width: 480px) {
+  #functionalIcons button {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Slightly tighter option padding on very small screens */
+  #optionsContainer label {
+    padding: 0.75rem !important;
+  }
+
+  /* Optional: shrink peer % pill slightly on small screens */
+  .peer-percentage {
+    min-width: 44px;
+    height: 24px;
+    font-size: 0.7rem;
+    padding: 0 8px;
+  }
+}
+
+/* --- Balance rule: 25% container adaptation, 75% font adaptation --- */
+/* Goal: keep the cards looking like nice rectangles, and do most shrinking via text */
+
+/* 1) Main white quiz card: adapt, but much LESS than before */
+#main-quiz-card {
+  padding: clamp(16px, 1.4vw, 30px) !important;  /* stable padding range */
+}
+
+/* 2) Question text: shrink MORE than containers */
+#questionDisplay {
+  font-size: clamp(0.90rem, 1.0vw + 0.55rem, 1.45rem) !important;
+  line-height: clamp(1.32, 0.35vw + 1.20, 1.62) !important;
+}
+
+/* 3) Options container: keep shape, don’t over-shrink padding */
+#optionsContainer label {
+  padding: clamp(12px, 1.0vw, 16px) !important;       /* less container shrink */
+  border-radius: clamp(12px, 0.9vw, 16px) !important;
+  min-height: 60px;                                    /* prevents “square” look */
+  align-items: flex-start;
+}
+
+/* 4) Option text: does most of the adapting */
+#optionsContainer label .option-text {
+  font-size: clamp(0.80rem, 0.85vw + 0.50rem, 1.05rem) !important;
+  line-height: 1.35 !important;
+}
+
+/* 5) Keep vertical spacing stable (prevents cramped stacked squares) */
+#optionsContainer {
+  gap: clamp(12px, 1.0vw, 16px) !important;
+}
+
+/* 6) Very small phones: reduce font a bit more, keep containers stable */
+@media (max-width: 420px) {
+  #questionDisplay {
+    font-size: 0.88rem !important;
+  }
+  #optionsContainer label .option-text {
+    font-size: 0.76rem !important;
+  }
+}
+
+#quizTitle {
+  font-size: clamp(1.05rem, 2.2vw + 0.7rem, 1.875rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* --- FINAL RESPONSIVE TYPOGRAPHY (Title > Question > Options) --- */
+
+#quizTitle{
+  font-size: clamp(1.05rem, 3.6vw, 1.9rem);   /* shrinks more on small screens */
+  line-height: 1.15;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Question: always below title */
+#questionDisplay{
+  font-size: clamp(0.92rem, 2.6vw, 1.45rem) !important;
+  line-height: 1.55 !important;
+}
+
+/* Options: always smallest */
+#optionsContainer label .option-text{
+  font-size: clamp(0.78rem, 2.2vw, 1.05rem) !important;
+  line-height: 1.4 !important;
+}
+
+
+/* ---------- Highlight feature styles ---------- */
+
+/* Highlight palette buttons */
+.hl-color {
+  height: 34px;
+  border-radius: 12px;
+  border: 2px solid rgba(0,0,0,0.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+}
+
+/* “fancy shading” colors */
+.hl-yellow{ background-image: linear-gradient(135deg, rgba(255,241,118,.95), rgba(255,213,79,.85)); }
+.hl-green{ background-image: linear-gradient(135deg, rgba(129,199,132,.95), rgba(76,175,80,.75)); }
+.hl-blue{ background-image: linear-gradient(135deg, rgba(144,202,249,.95), rgba(66,165,245,.75)); }
+.hl-pink{ background-image: linear-gradient(135deg, rgba(248,187,208,.95), rgba(236,64,122,.70)); }
+.hl-purple{ background-image: linear-gradient(135deg, rgba(206,147,216,.95), rgba(156,39,176,.70)); }
+.hl-orange{ background-image: linear-gradient(135deg, rgba(255,204,128,.95), rgba(255,152,0,.70)); }
+.hl-gray{ background-image: linear-gradient(135deg, rgba(224,224,224,.95), rgba(158,158,158,.65)); }
+.hl-teal{ background-image: linear-gradient(135deg, rgba(128,203,196,.95), rgba(0,150,136,.70)); }
+
+/* Applied highlight look (we’ll attach these classes to question/option/explanation elements) */
+.hl-applied {
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 9999px rgba(255,255,255,0);
+}
+
+
+.hl-mark{
+  border-radius: 0 !important;
+  padding-top: 0.14em !important;
+  padding-bottom: 0.14em !important;
+
+  /* keep background consistent when a highlight spans line breaks */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+
+
+
+
+/* Cursor + touch behavior when highlight mode is ON */
+body.hl-mode-on .hl-target{
+  /* SVG cursor: data-URI so Chrome actually applies it */
+  cursor: url("data:image/svg+xml,%3C?xml%20version=%221.0%22%20encoding=%22utf-8%22?%3E%3C!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3E%20%3Csvg%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M20.9875%201.60417L22.3958%203.0125C23.2014%203.81806%2023.2014%205.12444%2022.3958%205.93L9.66667%2018.6592L5.125%2019.875L6.34083%2015.3333L19.07%202.60417C19.8756%201.79861%2020.1819%201.79861%2020.9875%201.60417Z%22%20stroke=%22%23000000%22%20stroke-width=%221.6%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M17.8333%203.83333L20.1667%206.16667%22%20stroke=%22%23000000%22%20stroke-width=%221.6%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M6.34082%2015.3333L9.66665%2018.6592%22%20stroke=%22%23000000%22%20stroke-width=%221.6%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3C/svg%3E") 2 22, crosshair;
+  -webkit-user-select: text !important;
+  user-select: text !important;
+
+  /* keep your mobile behavior */
+  touch-action: pan-y;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -172,50 +399,96 @@
     <main class="flex-grow py-8 md:py-12">
     <div class="container mx-auto max-w-4xl px-4">
         <!-- Main card for quiz content -->
-        <div id="main-quiz-card" class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-10">
+       <div id="main-quiz-card" class="bg-white rounded-2xl shadow-xl p-4 md:p-8">
+
             <h2 id="quizTitle" class="text-2xl md:text-3xl font-extrabold text-gray-800 mb-6 text-center">Loading Quiz...</h2>
             
             <!-- Progress Stats Section -->
-            <div id="progressStatsContainer" class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
-                <div class="w-full sm:w-auto flex-grow mr-0 sm:mr-6">
-                    <div class="text-sm font-semibold text-gray-700 mb-2">Progress: <span id="currentQuestionNumber">0</span> / <span id="totalQuestions">0</span></div>
-                    <div class="w-full bg-gray-200 rounded-full h-3">
-                        <div id="progressBar" class="bg-purple-600 h-3 rounded-full transition-all" style="width: 0%;"></div>
-                    </div>
-                </div>
-                <div id="chartAndLegendContainer">
-                    <div class="chart-container">
-                        <canvas id="quizPieChart"></canvas>
-                    </div>
-                    <div id="inQuizLegend"></div>
-                </div>
+<div id="progressStatsContainer" class="flex flex-col sm:flex-row justify-between items-center mb-6 w-full gap-4">
+    <div class="w-full sm:w-auto flex-grow mr-0 sm:mr-8 mb-4 sm:mb-0">
+        <div class="text-sm font-semibold text-gray-700 mb-2">Progress: <span id="currentQuestionNumber">0</span> / <span id="totalQuestions">0</span></div>
+        <div class="w-full bg-gray-200 rounded-full h-3">
+            <div id="progressBar" class="bg-purple-600 h-3 rounded-full transition-all" style="width: 0%;"></div>
+        </div>
+    </div>
+    
+    <div id="chartAndLegendContainer" class="flex flex-col items-center justify-center min-w-[120px] shrink-0 mt-4 sm:mt-0">
+        <div class="relative w-[70px] h-[70px] aspect-square mx-auto mb-2">
+            <canvas id="quizPieChart"></canvas>
+        </div>
+        <div id="inQuizLegend" class="flex flex-col gap-1 text-[10px] font-bold leading-tight bg-white/80 p-2 rounded-lg shadow-sm whitespace-nowrap border border-gray-100">
             </div>
+    </div>
+</div>
 
             <!-- Quiz Body -->
-            <div id="quizContainer" class="hidden">
-                <div class="flex gap-4 md:gap-6">
-                    <!-- Question Content -->
-                   <div class="flex-grow">
-                        <div id="questionDisplay" class="text-lg md:text-xl font-semibold text-gray-900 mb-2"></div>
-                        <!-- This is now just a container -->
-                        <div id="questionImageContainer" class="my-4"></div>
-                    </div>
-                    <!-- Functional Icons Sidebar -->
-                    <div id="functionalIcons" class="flex-shrink-0 flex flex-col items-center space-y-5 pt-2">
-                        <button id="infoIcon" class="functional-icon text-gray-400" title="Question Info"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button>
-                        <button id="noteIcon" class="functional-icon text-gray-400" title="Add/Edit Note"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" /></svg></button>
-                        <button id="flagIcon" class="functional-icon text-gray-400" title="Flag for Review"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6H8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg></button>
-                        <button id="difficultyIcon" class="functional-icon text-gray-400" title="Set Difficulty"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg></button>
-                    </div>
-                </div>
-                <div id="optionsContainer" class="space-y-4 mt-6"></div>
-               <div id="explanationDisplay" class="hidden mt-6 p-4 w-full rounded-lg border text-base leading-relaxed break-words min-h-[80px] bg-yellow-100 border-yellow-400 text-yellow-800">
-                    <strong class="font-semibold">Explanation:</strong>
-                    <p id="explanationText" class="mt-1"></p>
-                    <!-- This is now just a container -->
-                    <div id="explanationImageContainer" class="my-4"></div>
-                </div>
-            </div>
+           <div id="quizContainer" class="hidden">
+  <div class="flex w-full items-start gap-0">
+
+    <!-- Question + options -->
+    <div class="flex-1 min-w-0 pr-2 sm:pr-3 md:pr-4">
+      <div id="questionDisplay"></div>
+      <div id="questionImageContainer" class="my-4"></div>
+     <div id="optionsContainer" class="space-y-4 mt-6 pb-6"></div>
+
+
+    </div>
+
+   <!-- Right-side legends (sticky) -->
+<div id="functionalIcons"
+     class="flex flex-col items-center space-y-2 md:space-y-5
+            pt-1 md:pt-2 w-7 md:w-9 shrink-0
+            sticky top-2 md:top-4
+            -mr-3 sm:-mr-1 md:mr-0">
+
+    <!-- Note (TOP) -->
+    <button id="noteIcon" class="functional-icon text-gray-400" title="Add/Edit Note">
+        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536
+                     L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+        </svg>
+    </button>
+
+    <!-- Flag -->
+    <button id="flagIcon" class="functional-icon text-gray-400" title="Flag for Review">
+        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21
+                     l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
+        </svg>
+    </button>
+
+       <!-- Difficulty -->
+    <button id="difficultyIcon" class="functional-icon text-gray-400" title="Set Difficulty">
+        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0
+                     M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0
+                     M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
+        </svg>
+    </button>
+
+    <!-- Highlight (NEW) -->
+    <button id="highlightIcon" class="functional-icon text-gray-400" title="Highlight">
+        <!-- highlighter icon -->
+        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 11l8-8 3 3-8 8H9v-3zM4 20h16"></path>
+        </svg>
+    </button>
+
+</div>
+
+
+</div>
+          
+            <div id="explanationDisplay" class="hidden mt-2 p-4 w-full rounded-lg border text-base leading-relaxed break-words bg-yellow-100 border-yellow-400 text-yellow-800">
+    <strong class="font-semibold">Explanation:</strong>
+    <p id="explanationText" class="mt-1"></p>
+    <div id="explanationImageContainer" class="mt-3"></div>
+</div>
+
 
             <!-- On DESKTOP, these buttons appear here inside the card. Hidden on mobile. -->
             <div class="hidden md:block">
@@ -294,13 +567,7 @@
         <img id="lightboxImage" src="" class="max-w-full max-h-full">
     </div>
 
-    <div id="infoModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6">Question Source</h3>
-            <div id="infoModalContent" class="space-y-3 text-gray-700"></div>
-            <button id="closeInfoModal" class="mt-6 w-full py-2 px-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold rounded-lg">Close</button>
-        </div>
-    </div>
+
     <div id="noteModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full">
             <h3 class="text-2xl font-bold text-gray-800 mb-6">My Note</h3>
@@ -322,16 +589,51 @@
         </div>
     </div>
 
+    <!-- Highlight Modal -->
+<div id="highlightModal"
+     class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+  <div class="bg-white w-full max-w-sm rounded-2xl shadow-xl p-4">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-lg font-semibold text-gray-800">Highlight</h3>
+      <button id="closeHighlightModal"
+              class="text-gray-500 hover:text-gray-700 text-xl leading-none">&times;</button>
+    </div>
+
+    <p class="text-sm text-gray-600 mb-3">
+      Turn highlight mode on, then tap/click the <b>question</b>, any <b>option</b>, or the <b>explanation</b>.
+    </p>
+
+    <div class="grid grid-cols-4 gap-2 mb-3" id="highlightColorGrid">
+      <button class="hl-color hl-yellow" data-hl="hl-yellow" title="Yellow"></button>
+      <button class="hl-color hl-green" data-hl="hl-green" title="Green"></button>
+      <button class="hl-color hl-blue" data-hl="hl-blue" title="Blue"></button>
+      <button class="hl-color hl-pink" data-hl="hl-pink" title="Pink"></button>
+      <button class="hl-color hl-purple" data-hl="hl-purple" title="Purple"></button>
+      <button class="hl-color hl-orange" data-hl="hl-orange" title="Orange"></button>
+      <button class="hl-color hl-gray" data-hl="hl-gray" title="Gray"></button>
+      <button class="hl-color hl-teal" data-hl="hl-teal" title="Teal"></button>
+    </div>
+
+    <div class="flex gap-2">
+      <button id="unhighlightBtn"
+              class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 rounded-xl">
+        Unhighlight
+      </button>
+
+      <button id="toggleHighlightModeBtn"
+              class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-xl">
+        Turn ON
+      </button>
+    </div>
+  </div>
+</div>
+
+
     <!-- Firebase and Main Script -->
     <script type="module">
           // --- Supabase SDK Import ---
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.48.0/+esm';    
-    Chart.register(ChartDataLabels);
+import { supabase } from './supabaseClient.js';
 
-    // --- Supabase Configuration ---
-    const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 
     // Add these new variables
@@ -382,58 +684,75 @@ function resetInactivityTimer() {
             // Initial start of the timer
             resetInactivityTimer();
         }
-        // --- DOM Elements ---
-        const dom = {
-            backButton: document.getElementById('backButton'),
-            nextButton: document.getElementById('nextButton'),
-            backButtonMobile: document.getElementById('backButtonMobile'),
-            nextButtonMobile: document.getElementById('nextButtonMobile'),
-            logoutButton: document.getElementById('logoutButton'),
-            backToChaptersButton: document.getElementById('backToChaptersButton'),
-            quizContainer: document.getElementById('quizContainer'),
-            quizTitle: document.getElementById('quizTitle'),
-            questionDisplay: document.getElementById('questionDisplay'),
-     
-            optionsContainer: document.getElementById('optionsContainer'),
-            explanationDisplay: document.getElementById('explanationDisplay'),
-            explanationText: document.getElementById('explanationText'),
-            
-            progressBar: document.getElementById('progressBar'),
-            currentQuestionNumber: document.getElementById('currentQuestionNumber'),
-            totalQuestions: document.getElementById('totalQuestions'),
-            submitAnswerButton: document.getElementById('submitAnswerButton'),
-            submitAnswerButtonMobile: document.getElementById('submitAnswerButtonMobile'),
-            resultModal: document.getElementById('resultModal'),
-            resultModalContent: document.getElementById('resultModalContent'),
-            resultModalTitle: document.getElementById('resultModalTitle'),
-            savingMessage: document.getElementById('savingMessage'),
-            dotNavigation: document.getElementById('dotNavigation'),
-            dotNavigationMobile: document.getElementById('dotNavigationMobile'),
-            lightbox: document.getElementById('lightbox'),
-            lightboxImage: document.getElementById('lightboxImage'),
-            lightboxClose: document.getElementById('lightboxClose'),
-            resumeModal: document.getElementById('resumeModal'),
-            resumeButton: document.getElementById('resumeButton'),
-            startNewButton: document.getElementById('startNewButton'),
-            restartQuizButton: document.getElementById('restartQuizButton'),
-            backToChaptersFromModal: document.getElementById('backToChaptersFromModal'),
-            timerDisplay: document.getElementById('timerDisplay'),
-            infoIcon: document.getElementById('infoIcon'),
-            noteIcon: document.getElementById('noteIcon'),
-            flagIcon: document.getElementById('flagIcon'),
-            difficultyIcon: document.getElementById('difficultyIcon'),
-            infoModal: document.getElementById('infoModal'),
-            infoModalContent: document.getElementById('infoModalContent'),
-            closeInfoModal: document.getElementById('closeInfoModal'),
-            noteModal: document.getElementById('noteModal'),
-            noteTextarea: document.getElementById('noteTextarea'),
-            cancelNote: document.getElementById('cancelNote'),
-            saveNote: document.getElementById('saveNote'),
-            difficultyModal: document.getElementById('difficultyModal'),
-            difficultyOptions: document.getElementById('difficultyOptions'),
-            cancelDifficulty: document.getElementById('cancelDifficulty'),
-            saveDifficulty: document.getElementById('saveDifficulty'),
-        };
+ // --- DOM Elements ---
+const dom = {
+    backButton: document.getElementById('backButton'),
+    nextButton: document.getElementById('nextButton'),
+    backButtonMobile: document.getElementById('backButtonMobile'),
+    nextButtonMobile: document.getElementById('nextButtonMobile'),
+    logoutButton: document.getElementById('logoutButton'),
+    backToChaptersButton: document.getElementById('backToChaptersButton'),
+    quizContainer: document.getElementById('quizContainer'),
+    quizTitle: document.getElementById('quizTitle'),
+    questionDisplay: document.getElementById('questionDisplay'),
+
+    optionsContainer: document.getElementById('optionsContainer'),
+    explanationDisplay: document.getElementById('explanationDisplay'),
+    explanationText: document.getElementById('explanationText'),
+
+    progressBar: document.getElementById('progressBar'),
+    currentQuestionNumber: document.getElementById('currentQuestionNumber'),
+    totalQuestions: document.getElementById('totalQuestions'),
+    submitAnswerButton: document.getElementById('submitAnswerButton'),
+    submitAnswerButtonMobile: document.getElementById('submitAnswerButtonMobile'),
+    resultModal: document.getElementById('resultModal'),
+    resultModalContent: document.getElementById('resultModalContent'),
+    resultModalTitle: document.getElementById('resultModalTitle'),
+    savingMessage: document.getElementById('savingMessage'),
+    dotNavigation: document.getElementById('dotNavigation'),
+    dotNavigationMobile: document.getElementById('dotNavigationMobile'),
+    lightbox: document.getElementById('lightbox'),
+    lightboxImage: document.getElementById('lightboxImage'),
+    lightboxClose: document.getElementById('lightboxClose'),
+    resumeModal: document.getElementById('resumeModal'),
+    resumeButton: document.getElementById('resumeButton'),
+    startNewButton: document.getElementById('startNewButton'),
+    restartQuizButton: document.getElementById('restartQuizButton'),
+    backToChaptersFromModal: document.getElementById('backToChaptersFromModal'),
+    timerDisplay: document.getElementById('timerDisplay'),
+
+    // Legends
+    infoIcon: document.getElementById('infoIcon'), // may be null (you deleted it) -> ok
+    noteIcon: document.getElementById('noteIcon'),
+    flagIcon: document.getElementById('flagIcon'),
+    difficultyIcon: document.getElementById('difficultyIcon'),
+    highlightIcon: document.getElementById('highlightIcon'),
+
+    // Info modal (may be null if you removed it)
+    infoModal: document.getElementById('infoModal'),
+    infoModalContent: document.getElementById('infoModalContent'),
+    closeInfoModal: document.getElementById('closeInfoModal'),
+
+    // Note modal
+    noteModal: document.getElementById('noteModal'),
+    noteTextarea: document.getElementById('noteTextarea'),
+    cancelNote: document.getElementById('cancelNote'),
+    saveNote: document.getElementById('saveNote'),
+
+    // Difficulty modal
+    difficultyModal: document.getElementById('difficultyModal'),
+    difficultyOptions: document.getElementById('difficultyOptions'),
+    cancelDifficulty: document.getElementById('cancelDifficulty'),
+    saveDifficulty: document.getElementById('saveDifficulty'),
+
+    // Highlight modal
+    highlightModal: document.getElementById('highlightModal'),
+    closeHighlightModal: document.getElementById('closeHighlightModal'),
+    highlightColorGrid: document.getElementById('highlightColorGrid'),
+    toggleHighlightModeBtn: document.getElementById('toggleHighlightModeBtn'),
+    unhighlightBtn: document.getElementById('unhighlightBtn'),
+};
+
 
         // --- Global State ---
         let quizData = { questions: [] };
@@ -459,6 +778,596 @@ function resetInactivityTimer() {
         const chapterId = urlParams.get('chapterId');
         const disciplineId = urlParams.get('disciplineId');
         const from = urlParams.get('from');
+
+        // --- Highlight State (NEW) ---
+// --- Highlight State (NEW) ---
+let highlightModeOn = false;
+let selectedHighlightClass = 'hl-yellow'; // current color
+let highlightListenersBound = false;
+
+// Paint (single-touch / pen / mouse drag)
+let hlPainting = false;
+let hlPaintStartRange = null;
+let hlPaintTarget = null;
+
+// ---------------- Modal controls ----------------
+function openHighlightModal() {
+  dom.highlightModal?.classList.remove('hidden');
+}
+
+function closeHighlightModal() {
+  dom.highlightModal?.classList.add('hidden');
+}
+
+function setHighlightMode(on) {
+  highlightModeOn = !!on;
+
+  if (highlightModeOn) {
+    document.body.classList.add('hl-mode-on');
+    dom.toggleHighlightModeBtn.textContent = 'Turn OFF';
+    dom.highlightIcon?.classList.add('active');
+  } else {
+    document.body.classList.remove('hl-mode-on');
+    dom.toggleHighlightModeBtn.textContent = 'Turn ON';
+    dom.highlightIcon?.classList.remove('active');
+
+    // stop any active painting immediately
+    hlPainting = false;
+    hlPaintStartRange = null;
+    hlPaintTarget = null;
+    window.getSelection?.()?.removeAllRanges?.();
+  }
+}
+
+dom.highlightModal?.addEventListener('click', (e) => {
+  if (e.target === dom.highlightModal) closeHighlightModal();
+});
+
+function getCaretRangeAtPoint(x, y) {
+  if (document.caretRangeFromPoint) return document.caretRangeFromPoint(x, y);
+  if (document.caretPositionFromPoint) {
+    const pos = document.caretPositionFromPoint(x, y);
+    const r = document.createRange();
+    r.setStart(pos.offsetNode, pos.offset);
+    r.setEnd(pos.offsetNode, pos.offset);
+    return r;
+  }
+  return null;
+}
+
+
+function getWordRangeAtPoint(x, y) {
+  const caret = getCaretRangeAtPoint(x, y);
+  if (!caret || !caret.startContainer) return null;
+
+  let node = caret.startContainer;
+
+  // If caret landed on an element node, try to locate a nearby text node
+  if (node.nodeType === Node.ELEMENT_NODE) {
+    node = node.childNodes[caret.startOffset] || node.firstChild;
+  }
+  if (!node || node.nodeType !== Node.TEXT_NODE) return null;
+
+  const t = node.textContent || "";
+  let i = caret.startOffset;
+
+  // Clamp and make sure i points to a real character when possible
+  if (i < 0) i = 0;
+  if (i > t.length) i = t.length;
+  if (i === t.length && t.length > 0) i = t.length - 1;
+
+  const isSpace = (ch) => /\s/.test(ch);
+
+  // punctuation = anything that's NOT space and NOT our "word chars"
+  const isWordChar = (ch) => /[0-9A-Za-z\u00C0-\u024F\u1E00-\u1EFF_'’\-]/.test(ch);
+  const isPunct = (ch) => !!ch && !isSpace(ch) && !isWordChar(ch);
+
+  // 1) whitespace token: contiguous spaces
+  if (t[i] && isSpace(t[i])) {
+    let s = i, e = i;
+    while (s > 0 && isSpace(t[s - 1])) s--;
+    while (e < t.length && isSpace(t[e])) e++;
+    const r = document.createRange();
+    r.setStart(node, s);
+    r.setEnd(node, e);
+    return r;
+  }
+
+  // 2) punctuation token: contiguous punctuation (??? ,,: etc)
+  if (t[i] && isPunct(t[i])) {
+    let s = i, e = i;
+    while (s > 0 && isPunct(t[s - 1])) s--;
+    while (e < t.length && isPunct(t[e])) e++;
+    const r = document.createRange();
+    r.setStart(node, s);
+    r.setEnd(node, e);
+    return r;
+  }
+
+  // 3) word token: whole word + any punctuation directly attached to the RIGHT + trailing spaces
+  if (!t[i] || !isWordChar(t[i])) return null;
+
+  let start = i, end = i;
+
+  while (start > 0 && isWordChar(t[start - 1])) start--;
+  while (end < t.length && isWordChar(t[end])) end++;
+
+  // include punctuation stuck to the word end, e.g. "death?" "time," "false;" "end.)"
+  while (end < t.length && isPunct(t[end])) end++;
+
+  // include trailing spaces so highlight/unhighlight doesn't leave gaps
+  while (end < t.length && isSpace(t[end])) end++;
+
+  const r = document.createRange();
+  r.setStart(node, start);
+  r.setEnd(node, end);
+  return r;
+}
+
+
+// --- NEW WORD SNAPPING LOGIC ---
+function expandNodeOffsetToWord(node, offset, isStart) {
+  if (node.nodeType !== Node.TEXT_NODE) {
+    if (node.childNodes && node.childNodes[offset]) {
+      node = node.childNodes[offset];
+      offset = 0;
+    }
+    if (node.nodeType !== Node.TEXT_NODE) return { node, offset };
+  }
+
+  const text = node.textContent || "";
+  let i = offset;
+  const isWordChar = (ch) => /[0-9A-Za-z\u00C0-\u024F\u1E00-\u1EFF_'’\-]/.test(ch);
+  const isSpace = (ch) => /\s/.test(ch);
+  const isPunct = (ch) => !!ch && !isSpace(ch) && !isWordChar(ch);
+
+  if (isStart) {
+    while (i > 0 && isWordChar(text[i - 1])) i--;
+    return { node, offset: i };
+  } else {
+    while (i < text.length && isWordChar(text[i])) i++;
+    while (i < text.length && isPunct(text[i])) i++;
+    while (i < text.length && isSpace(text[i])) i++;
+    return { node, offset: i };
+  }
+}
+
+function snapRangeToWords(range) {
+  if (!range || range.collapsed) return range;
+  const newRange = document.createRange();
+  const start = expandNodeOffsetToWord(range.startContainer, range.startOffset, true);
+  const end = expandNodeOffsetToWord(range.endContainer, range.endOffset, false);
+  try {
+    newRange.setStart(start.node, start.offset);
+    newRange.setEnd(end.node, end.offset);
+    return newRange;
+  } catch(e) {
+    return range; // Fallback if crossing boundaries gets weird
+  }
+}
+
+function stripMarkClasses(el) {
+  el.classList.remove(
+    'hl-yellow','hl-green','hl-blue','hl-pink','hl-purple','hl-orange','hl-gray','hl-teal'
+  );
+}
+
+function applyRangeHighlight(range) {
+  if (!range || range.collapsed) return;
+
+  const sNode = range.startContainer;
+  const eNode = range.endContainer;
+
+  const sEl = (sNode.nodeType === 1 ? sNode : sNode.parentElement);
+  const eEl = (eNode.nodeType === 1 ? eNode : eNode.parentElement);
+
+  const tA = sEl?.closest?.('.hl-target');
+  const tB = eEl?.closest?.('.hl-target');
+  if (!tA || !tB || tA !== tB) return; // keep it inside one target
+
+  // If user is starting inside an existing mark, don't create nested spans.
+  // Instead, recolor that mark.
+  const existing = sEl?.closest?.('.hl-mark');
+  if (existing && existing.contains(eEl)) {
+    stripMarkClasses(existing);
+    existing.classList.add(selectedHighlightClass);
+    return;
+  }
+
+  const wrapper = document.createElement('span');
+  wrapper.className = `hl-mark ${selectedHighlightClass}`;
+
+  // surroundContents can fail if the range partially selects elements.
+  // Fallback: extract + insert wrapper.
+  try {
+    range.surroundContents(wrapper);
+  } catch (err) {
+    const frag = range.extractContents();
+    wrapper.appendChild(frag);
+    range.insertNode(wrapper);
+  }
+
+  // Cleanup selection
+  window.getSelection?.()?.removeAllRanges?.();
+}
+
+// Unhighlight only the user's current selection (if it is inside .hl-mark)
+function unhighlightSelection() {
+  const sel = window.getSelection?.();
+  if (!sel || sel.rangeCount === 0) return;
+
+  const range = sel.getRangeAt(0);
+  const node = sel.anchorNode || range.startContainer;
+  const el = (node?.nodeType === 1 ? node : node?.parentElement);
+  const mark = el?.closest?.('.hl-mark');
+  if (!mark) return;
+
+  // Replace the highlight span with its children (unwrap)
+  const parent = mark.parentNode;
+  while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+  parent.removeChild(mark);
+
+  sel.removeAllRanges();
+}
+
+// Unhighlight ONLY the part intersecting the given range (best-effort).
+// It removes any .hl-mark spans that overlap the range inside the same .hl-target.
+function unhighlightRange(range) {
+  if (!range || range.collapsed) return;
+
+  const sEl = (range.startContainer.nodeType === 1 ? range.startContainer : range.startContainer.parentElement);
+  const eEl = (range.endContainer.nodeType === 1 ? range.endContainer : range.endContainer.parentElement);
+  const tA = sEl?.closest?.('.hl-target');
+  const tB = eEl?.closest?.('.hl-target');
+  if (!tA || !tB || tA !== tB) return;
+
+  // Remove ONLY the intersecting part of each mark.
+  const marks = Array.from(tA.querySelectorAll('.hl-mark'));
+
+  const makeIntersectionRange = (a, b) => {
+    const inter = document.createRange();
+    // later start
+    if (a.compareBoundaryPoints(Range.START_TO_START, b) >= 0) inter.setStart(a.startContainer, a.startOffset);
+    else inter.setStart(b.startContainer, b.startOffset);
+    // earlier end
+    if (a.compareBoundaryPoints(Range.END_TO_END, b) <= 0) inter.setEnd(a.endContainer, a.endOffset);
+    else inter.setEnd(b.endContainer, b.endOffset);
+    return inter;
+  };
+
+  const splitMarkByRemovingRange = (mark, eraseRange) => {
+    const mr = document.createRange();
+    mr.selectNodeContents(mark);
+
+    const inter = makeIntersectionRange(mr, eraseRange);
+    if (inter.collapsed) return;
+
+    // If erase covers whole mark => unwrap mark fully
+    const coversAll =
+      inter.compareBoundaryPoints(Range.START_TO_START, mr) === 0 &&
+      inter.compareBoundaryPoints(Range.END_TO_END, mr) === 0;
+
+    const parent = mark.parentNode;
+    if (!parent) return;
+
+    if (coversAll) {
+      while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+      parent.removeChild(mark);
+      return;
+    }
+
+    try {
+      // Extract the "after" part first (so inter stays valid for extracting the middle)
+      const afterRange = document.createRange();
+      afterRange.selectNodeContents(mark);
+      afterRange.setStart(inter.endContainer, inter.endOffset);
+      const afterFrag = afterRange.extractContents();
+
+      // Now extract the middle (to be unhighlighted)
+      const midFrag = inter.extractContents();
+
+      const afterRef = mark.nextSibling; // where to insert content after current mark
+      parent.insertBefore(midFrag, afterRef);
+
+      if (afterFrag.childNodes.length) {
+        const markAfter = mark.cloneNode(false); // keep same classes/color
+        markAfter.appendChild(afterFrag);
+        parent.insertBefore(markAfter, afterRef);
+      }
+
+      // If the original mark became empty, remove it
+      if (!mark.textContent || mark.textContent.length === 0) {
+        // keep if it still has non-text nodes
+        if (!mark.querySelector || mark.querySelector('*') === null) {
+          parent.removeChild(mark);
+        }
+      }
+    } catch (e) {
+      // Fallback: unwrap whole mark if anything goes wrong
+      try {
+        while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+        parent.removeChild(mark);
+      } catch (_) {}
+    }
+  };
+
+  marks.forEach(mark => {
+    try {
+      const mr = document.createRange();
+      mr.selectNodeContents(mark);
+      const overlaps =
+        range.compareBoundaryPoints(Range.END_TO_START, mr) < 0 &&
+        range.compareBoundaryPoints(Range.START_TO_END, mr) > 0;
+      if (!overlaps) return;
+
+      splitMarkByRemovingRange(mark, range);
+    } catch (e) { /* ignore */ }
+  });
+
+  window.getSelection?.()?.removeAllRanges?.();
+}
+
+
+// ---------------- Attach highlight to rendered content ----------------
+function attachHighlightHandlers() {
+  // mark targets (question, options text, explanation)
+  dom.questionDisplay?.classList.add('hl-target');
+  dom.explanationDisplay?.classList.add('hl-target');
+
+  dom.optionsContainer?.querySelectorAll('label .option-text')?.forEach(span => {
+    span.classList.add('hl-target');
+  });
+
+  // bind global listeners only once
+  if (highlightListenersBound) return;
+  highlightListenersBound = true;
+
+// 1) Apply highlight for normal text selection (desktop)
+  document.addEventListener('mouseup', () => {
+    if (!highlightModeOn) return;
+    if (selectedHighlightClass === 'hl-none') return;
+    const sel = window.getSelection?.();
+    if (!sel || sel.rangeCount === 0) return;
+    const r = sel.getRangeAt(0);
+    if (r.collapsed) return;
+    
+    // Snap to whole words before applying!
+    const snapped = snapRangeToWords(r); 
+    applyRangeHighlight(snapped);
+    sel.removeAllRanges(); 
+  });
+
+// 2) Paint highlight (touch/pen/mouse drag)
+// Goal:
+// - Touch: allow normal vertical scrolling. Only start "painting" if user moves mostly horizontally.
+// - Pen/mouse: start painting immediately.
+// - LTR drag highlights, RTL drag erases (unhighlights) the dragged area.
+let hlPointerId = null;
+let hlStartX = 0;
+let hlStartY = 0;
+let hlLockY = 0;            // lock Y once painting starts (prevents scroll-highlighting)
+let hlPaintMode = 'highlight'; // 'highlight' | 'erase'
+
+// Track last point while erasing so fast strokes don't "skip" spaces/punctuation
+let hlErasePrevX = null;
+let hlErasePrevY = null;
+
+
+const HLPX_START = 22;        // min pixels before we start painting
+const HL_DIR_RATIO = 2.4;     // dx must dominate dy by this ratio for touch
+const HL_MAX_VERTICAL = 10;   // max vertical drift allowed to enter paint
+
+document.addEventListener('pointerdown', (e) => {
+  if (!highlightModeOn) return;
+  if (selectedHighlightClass === 'hl-none') return;
+
+  const r = getCaretRangeAtPoint(e.clientX, e.clientY);
+  if (!r) return;
+
+  const startEl = (r.startContainer.nodeType === 1 ? r.startContainer : r.startContainer.parentElement);
+  const target = startEl?.closest?.('.hl-target');
+  if (!target) return;
+
+  hlPointerId = e.pointerId;
+  hlStartX = e.clientX;
+  hlStartY = e.clientY;
+
+  // Do NOT preventDefault on touch yet (so scrolling works).
+  hlPainting = false;
+  hlPaintTarget = target;
+  hlPaintStartRange = getWordRangeAtPoint(e.clientX, e.clientY) || r;
+
+  hlPaintMode = 'highlight';
+
+  // For mouse/pen we can start immediately
+if (e.pointerType === 'mouse' || e.pointerType === 'pen') {
+  e.preventDefault();
+  hlPainting = true;
+  hlLockY = hlStartY;
+
+  // start tracking for erase sampling
+  hlErasePrevX = e.clientX;
+  hlErasePrevY = e.clientY;
+
+  try { target.setPointerCapture?.(e.pointerId); } catch(_){}
+  const sel = window.getSelection?.();
+  sel?.removeAllRanges?.();
+  sel?.addRange?.(r);
+}
+
+}, { passive: false });
+
+document.addEventListener('pointermove', (e) => {
+  if (!highlightModeOn) return;
+  if (selectedHighlightClass === 'hl-none') return;
+  if (hlPointerId !== null && e.pointerId !== hlPointerId) return;
+  if (!hlPaintStartRange || !hlPaintTarget) return;
+
+  const dx = e.clientX - hlStartX;
+  const dy = e.clientY - hlStartY;
+
+  // Touch: decide whether this is scroll or paint
+  if (!hlPainting && e.pointerType === 'touch') {
+    const adx = Math.abs(dx);
+    const ady = Math.abs(dy);
+
+    // Looks like vertical scroll => cancel painting for this gesture
+    // (We keep scrolling smooth on mobile/iPad by cancelling early.)
+    if (ady >= 10 && ady > adx) {
+      hlPointerId = null;
+      hlPaintStartRange = null;
+      hlPaintTarget = null;
+      return;
+    }
+
+    // Start painting only if horizontal intent is clear
+    if (adx >= HLPX_START && adx >= ady * HL_DIR_RATIO && ady <= HL_MAX_VERTICAL) {
+      e.preventDefault();
+      hlPainting = true;
+      hlLockY = hlStartY;
+    hlPaintMode = dx >= 0 ? 'highlight' : 'erase';
+
+// start tracking for erase sampling
+hlErasePrevX = e.clientX;
+hlErasePrevY = e.clientY;
+
+      try { hlPaintTarget.setPointerCapture?.(e.pointerId); } catch(_){}
+      const sel = window.getSelection?.();
+      sel?.removeAllRanges?.();
+      sel?.addRange?.(hlPaintStartRange);
+    } else {
+      return; // keep allowing scroll
+    }
+  }
+
+  // If we are not painting (touch without horizontal intent) do nothing
+  if (!hlPainting) return;
+
+  // While painting on touch, ignore vertical moves (prevents accidental highlights while scrolling)
+  if (e.pointerType === 'touch') {
+    const vDrift = Math.abs(e.clientY - hlLockY);
+    if (vDrift > 12) {
+      // Treat it as a scroll gesture, cancel this paint without applying.
+      hlPointerId = null;
+      hlPainting = false;
+      hlPaintStartRange = null;
+      hlPaintTarget = null;
+      window.getSelection?.()?.removeAllRanges?.();
+      return;
+    }
+  }
+
+// Update paint mode during drag
+  if (Math.abs(dx) >= HLPX_START && Math.abs(dx) >= Math.abs(dy)) {
+    const newMode = dx >= 0 ? 'highlight' : 'erase';
+    
+    // Only reset the tracking coordinates if we actually CHANGE directions
+    if (hlPaintMode !== newMode) {
+      hlPaintMode = newMode;
+      hlErasePrevX = e.clientX;
+      hlErasePrevY = e.clientY;
+    }
+  }
+
+// If we're erasing (RTL drag), erase a continuous box to prevent fast-swipe gaps
+if (hlPaintMode === 'erase') {
+  e.preventDefault();
+
+  const x1 = e.clientX, y1 = e.clientY;
+  const x0 = (hlErasePrevX ?? x1);
+  const y0 = (hlErasePrevY ?? y1);
+
+  const r1 = getCaretRangeAtPoint(x0, y0);
+  const r2 = getCaretRangeAtPoint(x1, y1);
+
+  if (r1 && r2) {
+    const eraseRange = document.createRange();
+    const startsAfter = r1.compareBoundaryPoints(Range.START_TO_START, r2) > 0;
+    if (startsAfter) {
+      eraseRange.setStart(r2.startContainer, r2.startOffset);
+      eraseRange.setEnd(r1.startContainer, r1.startOffset);
+    } else {
+      eraseRange.setStart(r1.startContainer, r1.startOffset);
+      eraseRange.setEnd(r2.startContainer, r2.startOffset);
+    }
+    
+    const snappedEraseRange = snapRangeToWords(eraseRange);
+    unhighlightRange(snappedEraseRange);
+  }
+
+  hlErasePrevX = x1;
+  hlErasePrevY = y1;
+
+  // prevent blue selection while erasing
+  window.getSelection?.()?.removeAllRanges?.();
+  return;
+}
+
+// Otherwise, normal highlight mode (LTR drag) keeps the old range behavior
+const r2 = getCaretRangeAtPoint(e.clientX, e.clientY);
+if (!r2) return;
+
+const endEl = (r2.endContainer.nodeType === 1 ? r2.endContainer : r2.endContainer.parentElement);
+const target2 = endEl?.closest?.('.hl-target');
+if (!target2 || target2 !== hlPaintTarget) return;
+
+const paintRange = document.createRange();
+const startsAfter = hlPaintStartRange.compareBoundaryPoints(Range.START_TO_START, r2) > 0;
+if (startsAfter) {
+  paintRange.setStart(r2.startContainer, r2.startOffset);
+  paintRange.setEnd(hlPaintStartRange.startContainer, hlPaintStartRange.startOffset);
+} else {
+  paintRange.setStart(hlPaintStartRange.startContainer, hlPaintStartRange.startOffset);
+  paintRange.setEnd(r2.startContainer, r2.startOffset);
+}
+
+// SNAP TO WORDS!
+const snappedPaintRange = snapRangeToWords(paintRange);
+
+const sel = window.getSelection?.();
+sel?.removeAllRanges?.();
+sel?.addRange?.(snappedPaintRange);
+
+
+  e.preventDefault();
+}, { passive: false });
+
+const endPaint = () => {
+  if (!highlightModeOn) return;
+
+  const sel = window.getSelection?.();
+  if (hlPainting && sel && sel.rangeCount > 0) {
+    const r = sel.getRangeAt(0);
+    if (!r.collapsed) {
+if (!r.collapsed) {
+  if (hlPaintMode === 'highlight') applyRangeHighlight(r);
+  // erase mode is handled live (word-by-word) during pointermove
+}
+
+    }
+  }
+
+  hlPointerId = null;
+  hlPainting = false;
+  hlPaintStartRange = null;
+  hlPaintTarget = null;
+  hlPaintMode = 'highlight';
+  hlLockY = 0;
+
+  sel?.removeAllRanges?.();
+};
+
+document.addEventListener('pointerup', endPaint, { passive: true });
+document.addEventListener('pointercancel', endPaint, { passive: true });
+
+
+  // Unhighlight button in the modal
+  dom.unhighlightBtn?.addEventListener('click', () => {
+    unhighlightSelection();
+    closeHighlightModal();
+  });
+}
+
 
         // --- Functions ---
 function updateUserProfileIcon(user, userData) {
@@ -644,24 +1553,45 @@ async function loadCoreData() {
     return null;
 }
 
-       async function updateUserHistoryDetails(questionId, dataToUpdate) {
+async function updateUserHistoryDetails(questionId, dataToUpdate) {
     if (!currentUserId || !questionId) return;
 
     try {
-        // 'upsert' will find a matching row and update it, or create a new one.
-        const { error } = await supabase
+        // 1. Check if a history record already exists for this user and question
+        const { data: existing, error: selectError } = await supabase
             .from('userQuestionHistory')
-            .upsert({ 
-                userId: currentUserId, 
-                questionId: questionId, 
-                ...dataToUpdate 
-            }, { 
-                onConflict: 'userId, questionId' // Tells Supabase what makes a record unique
-            });
+            .select('id')
+            .eq('userId', currentUserId)
+            .eq('questionId', questionId)
+            .maybeSingle();
 
-        if (error) throw error;
+        if (selectError) throw selectError;
 
-        // Also update the local cache so the UI reflects the change instantly
+        if (existing) {
+            // 2. If it exists, UPDATE the existing row with the new note/flag
+            const { error: updateError } = await supabase
+                .from('userQuestionHistory')
+                .update(dataToUpdate)
+                .eq('id', existing.id);
+            if (updateError) throw updateError;
+        } else {
+            // 3. If it doesn't exist, INSERT a brand new row
+            const question = quizData.questions.find(q => q.id === questionId) || {};
+            
+            const { error: insertError } = await supabase
+                .from('userQuestionHistory')
+                .insert({
+                    userId: currentUserId,
+                    questionId: questionId,
+                    bookId: question.bookId || question.book_id,
+                    chapterId: question.chapterId || question.chapter_id,
+                    disciplineId: question.disciplineId || question.discipline_id,
+                    ...dataToUpdate
+                });
+            if (insertError) throw insertError;
+        }
+
+        // 4. Update the local cache so the UI reflects the change instantly without refreshing
         const cachedData = userHistoryCache.get(questionId) || {};
         userHistoryCache.set(questionId, { ...cachedData, ...dataToUpdate });
 
@@ -797,7 +1727,20 @@ async function initializeQuiz(resume = false, savedProgressData = null) {
             currentQuestionIndex = 0;
         }
         
-        await fetchAllUserHistoryForQuiz();
+      // FIX: Extract all question IDs, fetch their history, and save it to the local cache
+        const allQuestionIds = quizData.questions.map(q => q.id);
+        const historyData = await fetchAllUserHistoryForQuiz(allQuestionIds);
+        
+        userHistoryCache.clear(); // Clear the cache to prevent stale data
+        if (historyData && historyData.length > 0) {
+            historyData.forEach(item => {
+                userHistoryCache.set(item.questionId, item);
+            });
+        }
+        
+        // Refresh the icons for the very first question after loading history
+        updateFunctionalIconsState();
+
         dom.quizContainer.classList.remove('hidden');
         generateDots();
         jumpToQuestion(currentQuestionIndex);
@@ -809,28 +1752,86 @@ async function initializeQuiz(resume = false, savedProgressData = null) {
         dom.quizTitle.textContent = 'Error Loading Quiz';
     }
 }
-        
-       async function fetchAllUserHistoryForQuiz() {
-    if (!currentUserId || quizData.questions.length === 0) return;
-    const questionIds = quizData.questions.map(q => q.id);
 
-    // This single Supabase query replaces the entire old function
-    const { data, error } = await supabase
-        .from('userQuestionHistory')
-        .select('*')
-        .eq('userId', currentUserId)
-        .in('questionId', questionIds);
 
-    if (error) { 
-        console.error("Error fetching user history:", error); 
-        return; 
+// --- NEW HELPER: Generate realistic, consistent peer percentages ---
+function generatePeerPercentages(questionId, correctIndex, numOptions) {
+    // 1. Create a simple hash from the question ID to use as a "seed"
+    let hash = 0;
+    for (let i = 0; i < questionId.length; i++) {
+        hash = questionId.charCodeAt(i) + ((hash << 5) - hash);
     }
-
-    // Clear the cache and repopulate it with the new data
-    userHistoryCache.clear();
-    data.forEach(item => {
-        userHistoryCache.set(item.questionId, item);
+    
+    // 2. Use the hash to determine a "difficulty" (percentage of peers who got it right)
+    // We'll constrain the correct answer between 35% and 85% to look realistic.
+    const pseudoRandom = Math.abs(Math.sin(hash)); // A number between 0 and 1
+    const correctPercentage = Math.floor(35 + (pseudoRandom * 50)); 
+    
+    // 3. Distribute the remaining percentage among the wrong options
+    let remaining = 100 - correctPercentage;
+    const percentages = new Array(numOptions).fill(0);
+    percentages[correctIndex] = correctPercentage;
+    
+    // 4. Create an array of the wrong indices
+    const wrongIndices = [];
+    for (let i = 0; i < numOptions; i++) {
+        if (i !== correctIndex) wrongIndices.push(i);
+    }
+    
+    // 5. Assign chunks of the remaining percentage to the wrong answers based on the hash
+    wrongIndices.forEach((index, i) => {
+        if (i === wrongIndices.length - 1) {
+            // The last wrong option gets whatever is left to ensure it totals exactly 100
+            percentages[index] = remaining;
+        } else {
+            // Give a pseudo-random chunk of the remaining percentage
+            const chunk = Math.floor(remaining * (0.2 + (Math.abs(Math.cos(hash + i)) * 0.4)));
+            percentages[index] = chunk;
+            remaining -= chunk;
+        }
     });
+    
+    return percentages;
+}
+
+
+
+        
+async function fetchAllUserHistoryForQuiz(questionIds) {
+    if (!questionIds || questionIds.length === 0) return [];
+    
+    const CHUNK_SIZE = 100; // Limits URL length to safe levels
+    let allHistory = [];
+
+    try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return [];
+
+        // Split questionIds into chunks of 100
+        for (let i = 0; i < questionIds.length; i += CHUNK_SIZE) {
+            const chunk = questionIds.slice(i, i + CHUNK_SIZE);
+            
+            const { data, error } = await supabase
+                .from('userQuestionHistory')
+                .select('questionId, note, hasNote, isForReview, userDifficulty')
+                .eq('userId', session.user.id)
+                .in('questionId', chunk);
+
+            if (error) {
+                console.error(`Error fetching history chunk ${i}:`, error);
+                continue; 
+            }
+
+            if (data) {
+                allHistory = allHistory.concat(data);
+            }
+        }
+
+        return allHistory;
+    } catch (err) {
+        console.error("Fatal error in fetchAllUserHistoryForQuiz:", err);
+        return [];
+    }
 }
 
   async function loadChapterQuiz() {
@@ -852,34 +1853,105 @@ async function initializeQuiz(resume = false, savedProgressData = null) {
     quizData.questions = questionData.map(q => ({ ...q, bookId, chapterId, disciplineId: chapterData.discipline_id }));
 }
 
-      async function loadBookQuiz() {
+async function loadBookQuiz() {
+    console.log("--- 🐞 DEBUG MODE: loadBookQuiz Started ---");
+
+    // 1. Fetch Book Title
     const { data: bookData, error: bookError } = await supabase.from('books').select('title').eq('id', bookId).single();
     if (bookError) throw new Error("Book not found.");
     dom.quizTitle.textContent = `Book Quiz: ${bookData.title}`;
 
-    const { data: questionData, error: questionError } = await supabase
-        .from('questions')
-        .select('*')
+    // 2. Fetch Chapter Order
+    console.log("DEBUG: Fetching chapters for bookId:", bookId);
+    const { data: chaptersData, error: chaptersError } = await supabase
+        .from('chapters')
+        .select('id, chapterNumber, name')
         .eq('book_id', bookId);
-        
-    if (questionError) throw questionError;
 
-    const priorityOrderJSON = urlParams.get('priority');
-    if (priorityOrderJSON && mode === 'sequential') {
-        const priorityOrder = JSON.parse(decodeURIComponent(priorityOrderJSON));
-        questionData.sort((a, b) => {
-            const indexA = priorityOrder.indexOf(a.chapter_id);
-            const indexB = priorityOrder.indexOf(b.chapter_id);
-            if (indexA !== indexB) return indexA - indexB;
-            return (a.questionNumber || 0) - (b.questionNumber || 0);
-        });
-    } else {
-         questionData.sort((a, b) => {
-            const keyA = `${String(a.chapterNumber || 0).padStart(4, '0')}-${String(a.questionNumber || 0).padStart(4, '0')}`;
-            const keyB = `${String(b.chapterNumber || 0).padStart(4, '0')}-${String(b.questionNumber || 0).padStart(4, '0')}`;
-            return keyA.localeCompare(keyB);
+    if (chaptersError) throw chaptersError;
+
+    // BUILD AND LOG THE MAP
+    const chapterOrderMap = {};
+    console.log("DEBUG: Raw Chapters Data from DB:", chaptersData);
+
+    if (chaptersData) {
+        chaptersData.forEach(c => {
+            // Ensure we are storing a real Number, not a string "1"
+            const cNum = parseInt(c.chapterNumber);
+            // If NaN (missing), assign a high number so it goes to the end
+            chapterOrderMap[c.id] = isNaN(cNum) ? 999999 : cNum;
         });
     }
+    console.log("DEBUG: 🗺️ Final Chapter Map (ID -> Order):", chapterOrderMap);
+
+    // 3. Fetch All Questions
+    let questionData = [];
+    let page = 0;
+    const pageSize = 1000;
+    let keepFetching = true;
+
+    while (keepFetching) {
+        const { data, error } = await supabase
+            .from('questions')
+            .select('*')
+            .eq('book_id', bookId)
+            .range(page * pageSize, (page + 1) * pageSize - 1);
+            
+        if (error) throw error;
+
+        if (data && data.length > 0) {
+            questionData = questionData.concat(data);
+            if (data.length < pageSize) keepFetching = false;
+            page++;
+        } else {
+            keepFetching = false;
+        }
+    }
+    console.log(`DEBUG: 📥 Total Questions Loaded: ${questionData.length}`);
+
+    // CHECK A SAMPLE QUESTION
+    if (questionData.length > 0) {
+        const sampleQ = questionData[0];
+        const sampleChId = sampleQ.chapter_id || sampleQ.chapterId;
+        console.log("DEBUG: 🕵️ Testing Sample Question:", {
+            questionId: sampleQ.id,
+            questionText: sampleQ.question.substring(0, 20) + "...",
+            linkedChapterID: sampleChId,
+            mappedChapterNumber: chapterOrderMap[sampleChId]
+        });
+        
+        if (chapterOrderMap[sampleChId] === undefined) {
+            console.warn("⚠️ WARNING: This question's Chapter ID is NOT in the Chapter Map! It will sort incorrectly.");
+        }
+    }
+
+    // 4. SORT
+    questionData.sort((a, b) => {
+        // Normalize IDs
+        const chIdA = a.chapter_id || a.chapterId;
+        const chIdB = b.chapter_id || b.chapterId;
+
+        // Primary Sort: Chapter Number
+        const chapNumA = chapterOrderMap[chIdA] !== undefined ? chapterOrderMap[chIdA] : 999999;
+        const chapNumB = chapterOrderMap[chIdB] !== undefined ? chapterOrderMap[chIdB] : 999999;
+
+        if (chapNumA !== chapNumB) {
+            return chapNumA - chapNumB;
+        }
+
+        // Secondary Sort: Question Number
+        const qNumA = parseInt(a.questionNumber || 0);
+        const qNumB = parseInt(b.questionNumber || 0);
+        return qNumA - qNumB;
+    });
+
+    // 5. LOG RESULTS
+    console.log("DEBUG: 🏁 First 5 Questions AFTER Sorting:");
+    questionData.slice(0, 5).forEach((q, i) => {
+        const chId = q.chapter_id || q.chapterId;
+        console.log(`[${i}] Ch#${chapterOrderMap[chId]} | Q#${q.questionNumber} | ID: ${q.id}`);
+    });
+
     quizData.questions = questionData;
 }
 
@@ -925,7 +1997,12 @@ async function loadDisciplineQuiz() {
 
     console.log('DEBUG: Image URL from database is:', question.imageUrl);
 
-    dom.questionDisplay.textContent = `(Question ${currentQuestionIndex + 1}) ${question.question}`;
+// Optimized version to support automatic hyphenation points
+dom.questionDisplay.className =
+"tracking-tight leading-relaxed antialiased border-none pl-0 ml-0";
+
+
+dom.questionDisplay.innerHTML = question.question.trim();
     
    const questionImageContainer = document.getElementById('questionImageContainer');
     questionImageContainer.innerHTML = ''; 
@@ -954,12 +2031,25 @@ async function loadDisciplineQuiz() {
     const previouslyAnsweredIndex = userAnswers[question.id];
     const isDisabled = previouslyAnsweredIndex !== null && typeof previouslyAnsweredIndex !== 'undefined';
 
-    question.options.forEach((option, index) => {
-        const optionElement = document.createElement('label');
-        optionElement.className = `flex items-center p-4 border rounded-lg transition-colors duration-200 ${!isDisabled ? 'cursor-pointer hover:bg-purple-50' : ''}`;
-        optionElement.innerHTML = `<input type="radio" name="quizOption" value="${index}" class="form-radio h-5 w-5 text-purple-600" ${previouslyAnsweredIndex === index ? 'checked' : ''} ${isDisabled ? 'disabled' : ''}> <span class="ml-3 text-gray-800">${option}</span>`;
-        dom.optionsContainer.appendChild(optionElement);
-    });
+// --- NEW STABILIZED CODE ---
+question.options.forEach((option, index) => {
+   const optionElement = document.createElement('label');
+optionElement.dataset.optionIndex = index;
+
+    
+    // THE FIX: w-[calc(100%-48px)] prevents the option from overlapping the icons
+   optionElement.className = `flex items-center p-4 border rounded-lg transition-colors duration-200 w-full ${!isDisabled ? 'cursor-pointer hover:bg-purple-50' : ''}`;
+    
+    optionElement.innerHTML = `
+        <input type="radio" name="quizOption" value="${index}" 
+               class="form-radio h-5 w-5 text-purple-600" 
+               ${previouslyAnsweredIndex === index ? 'checked' : ''} 
+               ${isDisabled ? 'disabled' : ''}> 
+        <span class="ml-3 text-gray-800 option-text">${option}</span>
+
+    `;
+    dom.optionsContainer.appendChild(optionElement);
+});
 
     if (isDisabled) {
         showReviewedAnswer();
@@ -971,10 +2061,12 @@ async function loadDisciplineQuiz() {
         dom.submitAnswerButtonMobile.classList.remove('hidden');
     }
 
-    updateFunctionalIconsState();
-    updateProgressBar();
-    updateDotStyles();
+  updateFunctionalIconsState();
+updateProgressBar();
+updateDotStyles();
+attachHighlightHandlers();
 }
+
         
         function updateFunctionalIconsState() {
             if (!quizData.questions || quizData.questions.length === 0) return;
@@ -990,16 +2082,49 @@ function showReviewedAnswer() {
     const userAnswerIndex = userAnswers[question.id];
     const options = dom.optionsContainer.querySelectorAll('label');
 
-    options.forEach((label, index) => {
-        label.querySelector('input').disabled = true;
-        label.classList.remove('cursor-pointer', 'hover:bg-purple-50');
-        if (index === question.correctAnswerIndex) {
-            label.classList.add('bg-green-100', 'border-green-500');
-        } else if (index === userAnswerIndex) {
-            label.classList.add('bg-red-100', 'border-red-500');
-        }
-    });
+options.forEach((label, index) => {
+    label.querySelector('input').disabled = true;
+    label.classList.remove('cursor-pointer', 'hover:bg-purple-50');
+    
+    // Step 1: Force flex layout to keep things on the same line
+    label.className += " flex justify-between items-center w-full";
 
+    // Logic for Correct/Wrong Colors
+    if (index === question.correctAnswerIndex) {
+        label.classList.add('bg-green-100', 'border-green-500');
+    } else if (index === userAnswerIndex) {
+        label.classList.add('bg-red-100', 'border-red-500');
+    }
+
+    // --- NEW WRAPPER FOR LEFT ALIGNMENT ---
+    // We clear the innerHTML and rebuild it to ensure the text stays left
+    const radioInput = label.querySelector('input');
+    const textSpan = label.querySelector('span');
+    
+    // Create a wrapper for the input and text to keep them left (ragged)
+    const leftContent = document.createElement('div');
+    leftContent.className = "flex items-center text-left flex-grow";
+    leftContent.appendChild(radioInput);
+    leftContent.appendChild(textSpan);
+    
+    label.innerHTML = ''; // Clear old structure
+    label.appendChild(leftContent);
+
+// --- REALISTIC PEER PERCENTAGE INJECTION ---
+    // Generate a distribution that always totals 100% and is unique to this question ID
+    const peerPercentages = generatePeerPercentages(question.id, question.correctAnswerIndex, options.length);
+    const pctValue = peerPercentages[index] || 0;
+    
+    const pctPill = document.createElement('span');
+    pctPill.className = 'peer-percentage shrink-0'; // shrink-0 prevents the pill from squashing
+    
+    if (index === question.correctAnswerIndex) pctPill.classList.add('text-green-600');
+    else if (index === userAnswerIndex) pctPill.classList.add('text-red-600');
+    else pctPill.classList.add('text-gray-500');
+
+    pctPill.textContent = `${pctValue}%`;
+    label.appendChild(pctPill);
+});
     dom.explanationText.textContent = question.explanation || "No explanation provided.";
 
     const explanationImageContainer = document.getElementById('explanationImageContainer');
@@ -1077,37 +2202,72 @@ function handleSubmitAnswer() {
             if (dom.totalQuestions) dom.totalQuestions.textContent = total;
         }
 
-       function updatePieChart() {
-            const total = quizData.questions.length;
-            if (total === 0) return;
-            let correct = 0, wrong = 0;
-            quizData.questions.forEach(q => {
-                const userAnswer = userAnswers[q.id];
-                if (userAnswer !== null && typeof userAnswer !== 'undefined') {
-                    if (userAnswer === q.correctAnswerIndex) correct++;
-                    else wrong++;
-                }
-            });
-            const unanswered = total - (correct + wrong);
-            const correctPercentage = total > 0 ? ((correct / total) * 100).toFixed(0) : 0;
-            const wrongPercentage = total > 0 ? ((wrong / total) * 100).toFixed(0) : 0;
-            const unansweredPercentage = total > 0 ? ((unanswered / total) * 100).toFixed(0) : 0;
-            const legendContainer = document.getElementById('inQuizLegend');
-            legendContainer.innerHTML = `
-                <div class="flex items-center" style="color: #374151;"><span class="h-3 w-3 rounded-full bg-[#4CAF50] mr-2"></span>Correct (${correctPercentage}%)</div>
-                <div class="flex items-center" style="color: #374151;"><span class="h-3 w-3 rounded-full bg-[#F44336] mr-2"></span>Wrong (${wrongPercentage}%)</div>
-                <div class="flex items-center" style="color: #374151;"><span class="h-3 w-3 rounded-full bg-[#BDBDBD] mr-2"></span>Unanswered (${unansweredPercentage}%)</div>
-            `;
-            const chartData = { labels: ['Correct', 'Wrong', 'Unanswered'], datasets: [{ data: [correct, wrong, unanswered], backgroundColor: ['#4CAF50', '#F44336', '#BDBDBD'], borderColor: '#ffffff', borderWidth: 2 }] };
-            if (quizPieChart) {
-                quizPieChart.data.datasets[0].data = [correct, wrong, unanswered];
-                quizPieChart.update();
-            } else {
-                const ctx = document.getElementById('quizPieChart').getContext('2d');
-                quizPieChart = new Chart(ctx, { type: 'pie', data: chartData, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, datalabels: { display: false }, tooltip: { enabled: true, callbacks: { label: (tooltipItem) => { const label = tooltipItem.label || ''; const value = tooltipItem.raw || 0; const total = tooltipItem.chart.data.datasets[0].data.reduce((a, b) => a + b, 0); const percentage = total > 0 ? ((value / total) * 100).toFixed(0) : 0; return `${label}: ${value} (${percentage}%)`; } } } } } });
-            }
-            if (quizPieChart) quizPieChart.resize();
+function updatePieChart() {
+    const total = quizData.questions.length;
+    if (total === 0) return;
+    
+    let correct = 0, wrong = 0;
+    quizData.questions.forEach(q => {
+        const userAnswer = userAnswers[q.id];
+        if (userAnswer !== null && typeof userAnswer !== 'undefined') {
+            if (userAnswer === q.correctAnswerIndex) correct++;
+            else wrong++;
         }
+    });
+    
+    const unanswered = total - (correct + wrong);
+    const getPct = (val) => total > 0 ? Math.round((val / total) * 100) : 0;
+
+    // --- CLEAN SIDE LEGEND (KEEP THIS) ---
+    const legendContainer = document.getElementById('inQuizLegend');
+    legendContainer.innerHTML = `
+        <div class="flex items-center text-green-600 text-[10px] sm:text-xs font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-green-500 mr-2 shrink-0"></span>
+            Correct: ${correct} (${getPct(correct)}%)
+        </div>
+        <div class="flex items-center text-red-600 text-[10px] sm:text-xs font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500 mr-2 shrink-0"></span>
+            Wrong: ${wrong} (${getPct(wrong)}%)
+        </div>
+        <div class="flex items-center text-gray-500 text-[10px] sm:text-xs font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-gray-300 mr-2 shrink-0"></span>
+            Left: ${unanswered} (${getPct(unanswered)}%)
+        </div>`;
+    
+    const chartData = {
+        labels: ['Correct', 'Wrong', 'Unanswered'],
+        datasets: [{
+            data: [correct, wrong, unanswered],
+            backgroundColor: ['#22c55e', '#ef4444', '#e5e7eb'],
+            borderWidth: 0
+        }]
+    };
+
+    if (quizPieChart) {
+        quizPieChart.data.datasets[0].data = [correct, wrong, unanswered];
+        quizPieChart.update();
+    } else {
+        const ctx = document.getElementById('quizPieChart').getContext('2d');
+        quizPieChart = new Chart(ctx, {
+            type: 'doughnut',
+            // THE FIX: Adding this line ensures the plugin is recognized so we can shut it off
+            plugins: [ChartDataLabels], 
+            data: chartData,
+            options: {
+                cutout: '75%',
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: { display: false },
+                    // THE KILL COMMAND: This disables the labels globally for this chart
+                    datalabels: { display: false },
+                    // EXTRA SAFETY: Ensure tooltips don't draw boxes either
+                    tooltip: { enabled: false }
+                }
+            }
+        });
+    }
+}
 
         function generateDots() {
             [dom.dotNavigation, dom.dotNavigationMobile].forEach(nav => {
@@ -1512,70 +2672,142 @@ const backButtonUrl = () => {
         dom.backButtonMobile.addEventListener('click', () => { if (currentQuestionIndex > 0) jumpToQuestion(currentQuestionIndex - 1); });
         dom.nextButtonMobile.addEventListener('click', () => { if (currentQuestionIndex < quizData.questions.length - 1) jumpToQuestion(currentQuestionIndex + 1); });
 
-        function setupFunctionalIconListeners() {
-            dom.infoIcon.addEventListener('click', () => {
-    const question = quizData.questions[currentQuestionIndex];
-    const book = allBooks.find(b => b.id === (question.bookId || question.book_id));
-    const chapter = allChapters.find(c => c.id === (question.chapterId || question.chapter_id));
-    const discipline = allDisciplines.find(d => d.id === (question.disciplineId || question.discipline_id));
+       function setupFunctionalIconListeners() {
+    // Helper: attach only if element exists
+    const on = (el, event, handler) => {
+        if (el) el.addEventListener(event, handler);
+    };
 
-    // *** FIX: Find the chapter details from the 'allChapters' array ***
-    const chapterName = chapter ? chapter.name : 'N/A';
-    const chapterNumber = chapter ? chapter.chapterNumber : 'N/A';
-    
-    dom.infoModalContent.innerHTML = `
-        <p><strong>Book:</strong> ${book ? book.title : 'N/A'}</p>
-        <p><strong>Discipline:</strong> ${discipline ? discipline.name : 'N/A'}</p>
-        <p><strong>Chapter:</strong> Ch. ${chapterNumber} - ${chapterName}</p>
-        <p><strong>Question #:</strong> ${question.questionNumber || 'N/A'}</p>
-    `;
-    dom.infoModal.classList.remove('hidden');
-});
-            dom.closeInfoModal.addEventListener('click', () => dom.infoModal.classList.add('hidden'));
-            dom.noteIcon.addEventListener('click', () => {
-                const question = quizData.questions[currentQuestionIndex];
-                const history = userHistoryCache.get(question.id);
-                dom.noteTextarea.value = history?.note || '';
-                dom.noteModal.classList.remove('hidden');
-            });
-            dom.cancelNote.addEventListener('click', () => dom.noteModal.classList.add('hidden'));
-            dom.saveNote.addEventListener('click', async () => {
-                const question = quizData.questions[currentQuestionIndex];
-                const noteText = dom.noteTextarea.value.trim();
-                await updateUserHistoryDetails(question.id, { note: noteText, hasNote: noteText.length > 0 });
-                dom.noteIcon.classList.toggle('active', noteText.length > 0);
-                dom.noteModal.classList.add('hidden');
-                showMessage("Note saved!");
-            });
-            dom.flagIcon.addEventListener('click', async () => {
-                const question = quizData.questions[currentQuestionIndex];
-                const history = userHistoryCache.get(question.id) || {};
-                const isCurrentlyFlagged = history.isForReview === true;
-                await updateUserHistoryDetails(question.id, { isForReview: !isCurrentlyFlagged });
-                dom.flagIcon.classList.toggle('active', !isCurrentlyFlagged);
-                showMessage(isCurrentlyFlagged ? "Flag removed." : "Flagged for review.");
-            });
-            dom.difficultyIcon.addEventListener('click', () => {
-                const question = quizData.questions[currentQuestionIndex];
-                const history = userHistoryCache.get(question.id);
-                const currentDifficulty = history?.userDifficulty;
-                dom.difficultyOptions.innerHTML = difficultyLevels.map(level => `<label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer"><input type="radio" name="difficulty" value="${level}" class="h-4 w-4 text-purple-600" ${currentDifficulty === level ? 'checked' : ''}><span class="ml-3 text-gray-700">${level}</span></label>`).join('');
-                dom.difficultyModal.classList.remove('hidden');
-            });
-            dom.cancelDifficulty.addEventListener('click', () => dom.difficultyModal.classList.add('hidden'));
-            dom.saveDifficulty.addEventListener('click', async () => {
-                const selectedDifficulty = dom.difficultyOptions.querySelector('input[name="difficulty"]:checked');
-                if (selectedDifficulty) {
-                    const question = quizData.questions[currentQuestionIndex];
-                    await updateUserHistoryDetails(question.id, { userDifficulty: selectedDifficulty.value });
-                    dom.difficultyIcon.classList.add('active');
-                    dom.difficultyModal.classList.add('hidden');
-                    showMessage("Difficulty saved!");
-                } else {
-                    showMessage("Please select a difficulty level.");
-                }
-            });
+    // INFO (optional / may not exist)
+    on(dom.infoIcon, 'click', () => {
+        const question = quizData.questions[currentQuestionIndex];
+        const book = allBooks.find(b => b.id === (question.bookId || question.book_id));
+        const chapter = allChapters.find(c => c.id === (question.chapterId || question.chapter_id));
+        const discipline = allDisciplines.find(d => d.id === (question.disciplineId || question.discipline_id));
+
+        const chapterName = chapter ? chapter.name : 'N/A';
+        const chapterNumber = chapter ? chapter.chapterNumber : 'N/A';
+
+        if (dom.infoModalContent) {
+            dom.infoModalContent.innerHTML = `
+                <p><strong>Book:</strong> ${book ? book.title : 'N/A'}</p>
+                <p><strong>Discipline:</strong> ${discipline ? discipline.name : 'N/A'}</p>
+                <p><strong>Chapter:</strong> Ch. ${chapterNumber} - ${chapterName}</p>
+                <p><strong>Question #:</strong> ${question.questionNumber || 'N/A'}</p>
+            `;
         }
+        if (dom.infoModal) dom.infoModal.classList.remove('hidden');
+    });
+
+    on(dom.closeInfoModal, 'click', () => {
+        if (dom.infoModal) dom.infoModal.classList.add('hidden');
+    });
+
+    // NOTE
+    on(dom.noteIcon, 'click', () => {
+        const question = quizData.questions[currentQuestionIndex];
+        const history = userHistoryCache.get(question.id);
+        if (dom.noteTextarea) dom.noteTextarea.value = history?.note || '';
+        if (dom.noteModal) dom.noteModal.classList.remove('hidden');
+    });
+
+    on(dom.cancelNote, 'click', () => dom.noteModal?.classList.add('hidden'));
+
+    on(dom.saveNote, 'click', async () => {
+        const question = quizData.questions[currentQuestionIndex];
+        const noteText = (dom.noteTextarea?.value || '').trim();
+        await updateUserHistoryDetails(question.id, { note: noteText, hasNote: noteText.length > 0 });
+        dom.noteIcon?.classList.toggle('active', noteText.length > 0);
+        dom.noteModal?.classList.add('hidden');
+        showMessage("Note saved!");
+    });
+
+    // FLAG
+    on(dom.flagIcon, 'click', async () => {
+        const question = quizData.questions[currentQuestionIndex];
+        const history = userHistoryCache.get(question.id) || {};
+        const isCurrentlyFlagged = history.isForReview === true;
+        await updateUserHistoryDetails(question.id, { isForReview: !isCurrentlyFlagged });
+        dom.flagIcon?.classList.toggle('active', !isCurrentlyFlagged);
+        showMessage(isCurrentlyFlagged ? "Flag removed." : "Flagged for review.");
+    });
+
+    // DIFFICULTY
+    on(dom.difficultyIcon, 'click', () => {
+        const question = quizData.questions[currentQuestionIndex];
+        const history = userHistoryCache.get(question.id);
+        const currentDifficulty = history?.userDifficulty;
+
+        if (dom.difficultyOptions) {
+            dom.difficultyOptions.innerHTML = difficultyLevels.map(level => `
+                <label class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                    <input type="radio" name="difficulty" value="${level}" class="h-4 w-4 text-purple-600"
+                        ${currentDifficulty === level ? 'checked' : ''}>
+                    <span class="ml-3 text-gray-700">${level}</span>
+                </label>
+            `).join('');
+        }
+
+        dom.difficultyModal?.classList.remove('hidden');
+    });
+
+    on(dom.cancelDifficulty, 'click', () => dom.difficultyModal?.classList.add('hidden'));
+
+    on(dom.saveDifficulty, 'click', async () => {
+        const selectedDifficulty = dom.difficultyOptions?.querySelector('input[name="difficulty"]:checked');
+        if (selectedDifficulty) {
+            const question = quizData.questions[currentQuestionIndex];
+            await updateUserHistoryDetails(question.id, { userDifficulty: selectedDifficulty.value });
+            dom.difficultyIcon?.classList.add('active');
+            dom.difficultyModal?.classList.add('hidden');
+            showMessage("Difficulty saved!");
+        } else {
+            showMessage("Please select a difficulty level.");
+        }
+    });
+
+    // HIGHLIGHT (modal open/close only for now)
+    on(dom.highlightIcon, 'click', () => {
+        if (typeof openHighlightModal === 'function') openHighlightModal();
+        else dom.highlightModal?.classList.remove('hidden');
+    });
+
+    on(dom.closeHighlightModal, 'click', () => {
+        if (typeof closeHighlightModal === 'function') closeHighlightModal();
+        else dom.highlightModal?.classList.add('hidden');
+    });
+
+    on(dom.highlightColorGrid, 'click', (e) => {
+        const btn = e.target.closest('.hl-color');
+        if (!btn) return;
+        selectedHighlightClass = btn.dataset.hl || 'hl-yellow';
+    });
+
+    on(dom.toggleHighlightModeBtn, 'click', () => {
+        if (typeof setHighlightMode === 'function') setHighlightMode(!highlightModeOn);
+        else {
+            highlightModeOn = !highlightModeOn;
+            dom.toggleHighlightModeBtn.textContent = highlightModeOn ? 'Turn OFF' : 'Turn ON';
+        }
+    });
+
+   on(dom.unhighlightBtn, 'click', () => {
+  // remove highlights from the CURRENT question area only
+  const container = document.getElementById('main-quiz-card') || document.body;
+
+  container.querySelectorAll('.hl-mark').forEach(span => {
+    const parent = span.parentNode;
+    // unwrap the span
+    while (span.firstChild) parent.insertBefore(span.firstChild, span);
+    parent.removeChild(span);
+    parent.normalize();
+  });
+
+  showMessage("Highlights removed from this question.");
+});
+
+}
+
         
         setupFunctionalIconListeners();
 

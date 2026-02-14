@@ -31,6 +31,15 @@
         height: 1.5rem;
         color: #4b5563;
     }
+
+    /* Prevent donut flash before Tailwind/CDN + Chart.js are ready */
+canvas[id^="ch-chart-"]{
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  visibility: hidden; /* hidden until chart is created */
+}
+
 </style>
 </head>
 <body class="flex flex-col min-h-screen" style="background-color: #3da0be;">
@@ -129,10 +138,8 @@
         </div>
 
 <script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.48.0/+esm';
-    const SUPABASE_URL = 'https://ftcttxpmuqhqtbcdwgtr.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0Y3R0eHBtdXFocXRiY2R3Z3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU4OTg5MDQsImV4cCI6MjA3MTQ3NDkwNH0.AR3qXatnIZZSwGu_E1tH7elEyPIXS-zTFrd0b-YKqjg';
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+ import { supabase } from './supabaseClient.js';
+
 
 // --- GLOBAL CHARTS & HELPERS ---
 window.chapterCharts = [];
@@ -391,33 +398,34 @@ async function loadBookAndChapters() {
         currentBookChapters = chaptersWithAccess || [];
         
       // 3. Fetch ALL Questions for this Book (Robust Pagination)
-        let allQuestionsInBook = [];
+        window.allQuestionsInBook = [];
         let qFrom = 0;
         const qLimit = 1000;
         let qKeepFetching = true;
 
         console.log("Starting Book Question Fetch Loop...");
 
-        while (qKeepFetching) {
-            const { data: qData, error: qError } = await supabase
-                .from('questions')
-                .select('id, chapter_id') // Keeping it lightweight
-                .eq('book_id', bookId)
-                .range(qFrom, qFrom + qLimit - 1);
+     // Optimized loop to fetch the full dataset (all 1246+ questions)
+while (qKeepFetching) {
+   const { data: qData, error: qError } = await supabase
+    .from('questions')
+    .select('id, question, options, correctAnswerIndex, explanation, imageUrl, explanationImageUrl, book_id, chapter_id, discipline_id, questionNumber')
+    .eq('book_id', bookId)
+    .range(qFrom, qFrom + qLimit - 1);
 
-            if (qError) {
-                console.error("Error fetching book question chunk:", qError);
-                break;
-            }
 
-            if (qData && qData.length > 0) {
-                allQuestionsInBook = allQuestionsInBook.concat(qData);
-                if (qData.length < qLimit) qKeepFetching = false;
-            } else {
-                qKeepFetching = false;
-            }
-            qFrom += qLimit;
-        }
+    if (qError) {
+        console.error("Error fetching book question chunk:", qError);
+        qKeepFetching = false; // Stop on error
+  } else if (qData && qData.length > 0) {
+    allQuestionsInBook = allQuestionsInBook.concat(qData);
+    // Continue fetching only if we received a full page of results (1000)
+    qKeepFetching = qData.length === qLimit;
+    qFrom += qLimit;
+}else {
+        qKeepFetching = false;
+    }
+}
         
         const questions = allQuestionsInBook;
         console.log(`Total Book Questions Found: ${questions.length}`);
@@ -442,12 +450,20 @@ async function loadBookAndChapters() {
             }
         }
 
-        // 5. Process Stats Maps
+      // 5. Process Stats Maps
         const questionPool = questions || [];
         const historyMap = new Map();
         allHistory.forEach(h => {
-             const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
-             historyMap.set(h.questionId, isCorrect);
+            const qId = String(h.questionId);
+            
+            // THE FIX: Only count as "Answered" if there is an actual correct/wrong result.
+            // This prevents flags, notes, and ratings from being counted as wrong attempts.
+            const result = String(h.lastResult || "").toLowerCase();
+            const isActuallyAnswered = result === 'correct' || result === 'wrong';
+
+            if (isActuallyAnswered) {
+                historyMap.set(qId, result === 'correct');
+            }
         });
 
         // 6. RENDER THE UI
@@ -471,87 +487,113 @@ async function loadBookAndChapters() {
         }
 
         // Render Cards
+// --- THE FIX: TWO-STEP RENDERING TO PREVENT PHANTOM FLICKER ---
+
+        // Step 1: Clear and Render all HTML Skeletons first
+        listEl.innerHTML = '';
         currentBookChapters.forEach((item) => {
             const chapter = item.chapter_data;
             const isLocked = !item.has_access;
-
-            // Stats for this chapter
             const chQuestions = questionPool.filter(q => q.chapter_id === chapter.id);
             const total = chQuestions.length;
-            let correct = 0, wrong = 0;
-            chQuestions.forEach(q => {
-                if (historyMap.has(q.id)) {
-                    if (historyMap.get(q.id)) correct++; else wrong++;
-                }
-            });
-            const unanswered = total - (correct + wrong);
 
             const card = document.createElement('div');
-            card.dataset.chapterId = chapter.id; // For drag sort
-            
-            // CARD HTML
+            card.dataset.chapterId = chapter.id;
+
             if (isLocked) {
-                // LOCKED DESIGN
                 card.className = 'bg-gray-100 p-4 rounded-lg shadow-inner border border-gray-200 flex items-center justify-between opacity-75';
                 card.innerHTML = `
                     <div class="flex items-center gap-4 min-w-0">
                         <span class="w-8 h-8 flex items-center justify-center bg-gray-300 text-gray-600 font-bold rounded-full text-xs">${chapter.chapterNumber}</span>
-                        <div>
-                            <h3 class="font-bold text-gray-500 text-lg flex items-center gap-2">
-                                🔒 ${chapter.name}
-                            </h3>
-                            <p class="text-xs text-gray-400">Locked Content</p>
-                        </div>
-                    </div>
-                    <button class="bg-gray-400 text-white text-xs font-bold py-2 px-4 rounded cursor-not-allowed">Locked</button>
-                `;
+                        <div><h3 class="font-bold text-gray-500 text-lg">🔒 ${chapter.name}</h3></div>
+                    </div>`;
             } else {
-                // ACTIVE DESIGN (Donut + Hand Cursor)
-                card.className = 'bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex items-center justify-between gap-4 group';
-                card.innerHTML = `
-                    <div class="flex items-center gap-4 min-w-0 flex-1">
-                        <div class="drag-handle cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 p-2">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
-                        </div>
-                        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-base font-bold rounded-full">${chapter.chapterNumber}</span>
-                     <div class="min-w-0 flex-1">
-   <h3 class="text-lg md:text-xl font-extrabold text-gray-900 text-balance tracking-tight group-hover:text-indigo-700 transition-colors leading-tight">
-    ${chapter.name}
-</h3>
-    <p class="text-xs text-gray-500 font-medium mt-1">${total} Questions</p>
-</div>
-                    </div>
-                    
-                    <div class="flex items-center gap-5 flex-shrink-0">
-                        <div class="w-10 h-10 relative hidden sm:block">
-                            <canvas id="ch-chart-${chapter.id}"></canvas>
-                        </div>
-                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold py-2.5 px-6 rounded-md shadow-sm transition-colors whitespace-nowrap"
-                            onclick="window.launchChapterQuiz('${chapter.id}')">
-                            Start
-                        </button>
-                    </div>
-                `;
-            }
+    // Match the fluid responsive design used in disciplines_chapters.html
+    card.className =
+        'bg-white p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 group';
+
+    card.innerHTML = `
+        <div class="flex items-start sm:items-center gap-2 sm:gap-4 min-w-0 flex-1">
+            <!-- Drag handle (optional) -->
+            <div class="drag-handle hidden sm:flex cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 p-1 sm:p-2 flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+                </svg>
+            </div>
+
+            <span class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-sm sm:text-base font-bold rounded-full mt-1 sm:mt-0">
+                ${chapter.chapterNumber || '#'}
+            </span>
+
+            <div class="min-w-0 flex-1 px-1">
+                <h3 class="text-base sm:text-lg md:text-xl font-extrabold text-gray-900 tracking-tight group-hover:text-indigo-700 transition-all duration-200 leading-tight break-words">
+                    ${chapter.name}
+                </h3>
+                <p class="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5 sm:mt-1">${total} Questions</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 ml-1 sm:ml-0">
+            <div class="relative flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                <canvas id="ch-chart-${chapter.id}"></canvas>
+            </div>
+            <button
+                class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg shadow-sm transition-all active:scale-95 whitespace-nowrap"
+                onclick="window.launchChapterQuiz('${chapter.id}')">
+                Start
+            </button>
+        </div>
+    `;
+}
+
             listEl.appendChild(card);
+        });
 
-            // Init Chart (Only for unlocked)
-            if (!isLocked) {
-                const ctx = document.getElementById(`ch-chart-${chapter.id}`).getContext('2d');
-                const chartData = total === 0 ? [0,0,1] : [correct, wrong, unanswered];
-                const chartColors = total === 0 ? ['#f3f4f6','#f3f4f6','#f3f4f6'] : ['#22c55e', '#ef4444', '#e5e7eb'];
-
-                window.chapterCharts.push(new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Correct', 'Wrong', 'Unanswered'],
-                        datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }]
-                    },
-                    options: {
-                        responsive: true, maintainAspectRatio: false, cutout: '75%', animation: false,
-                        plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltipHandler } }
+        // Step 2: Now that HTML is in the DOM, initialize Chart.js
+        currentBookChapters.forEach((item) => {
+            const chapter = item.chapter_data;
+            if (item.has_access) {
+                const chQuestions = questionPool.filter(q => q.chapter_id === chapter.id);
+                let correct = 0, wrong = 0;
+                chQuestions.forEach(q => {
+                    if (historyMap.has(q.id)) {
+                        if (historyMap.get(q.id)) correct++; else wrong++;
                     }
-                }));
+                });
+                const unanswered = chQuestions.length - (correct + wrong);
+
+             const canvas = document.getElementById(`ch-chart-${chapter.id}`);
+if (!canvas) return;
+
+const ctx = canvas.getContext('2d');
+
+window.chapterCharts.push(new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Correct', 'Wrong', 'Unanswered'],
+    datasets: [{
+      data: [correct, wrong, unanswered],
+      backgroundColor: ['#22c55e', '#ef4444', '#e5e7eb'],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    cutout: '70%',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        enabled: false,
+        external: externalTooltipHandler
+      }
+    }
+  }
+}));
+
+// show only after Chart.js painted it
+canvas.style.visibility = 'visible';
+
             }
         });
 
@@ -764,11 +806,11 @@ async function recalculateAvailableQuestionsAndUpdateUI() {
 
     let finalQuestionCount = 0;
 
-    // Now, determine the final displayed count based on the selected mode.
-    if (mode === 'all_available') {
-        finalQuestionCount = totalPossible;
-        countInput.value = finalQuestionCount;
-    } else if (mode === 'from_sources') {
+if (mode === 'all_available') {
+    // REMOVE THE Math.min(totalPossible, 1000)
+    finalQuestionCount = totalPossible; 
+    countInput.value = finalQuestionCount;
+}else if (mode === 'from_sources') {
         const selectedChapters = sourcesSelector.getSelected();
         if (selectedChapters.length > 0) {
             const selectedChapterIds = new Set(selectedChapters.map(s => s.split('_')[1]));
@@ -820,31 +862,73 @@ async function recalculateAvailableQuestionsAndUpdateUI() {
         return questionPool;
     }
 
-    async function getBaseQuestionPool() {
-        const { data, error } = await supabase.from('questions').select('*').eq('book_id', bookId);
-        if (error) {
-            console.error("Error fetching base questions:", error);
-            return [];
-        }
-        return data;
+  async function getBaseQuestionPool() {
+    // This uses the 1246 questions already fetched during page load
+    // so we don't get hit by Supabase's default 1000-row limit again.
+    if (window.allQuestionsInBook && window.allQuestionsInBook.length > 0) {
+        return window.allQuestionsInBook;
     }
+    
+    // Fallback if the global variable isn't set yet
+    const { data, error } = await supabase
+  .from('questions')
+  .select('*') 
+  .eq('book_id', bookId)
+  .limit(5000); // <--- THIS LINE FIXES THE 1000 LIMIT
+    return data || [];
+}
 
-    async function getUserHistory(userId) {
-        if (userHistoryCache.size > 0) return;
-        const { data, error } = await supabase.from('userQuestionHistory').select('*').eq('userId', userId);
-        if (error) return;
-        data.forEach(item => userHistoryCache.set(item.questionId, item));
+async function getUserHistory(userId) {
+    // If we already loaded it, don't fetch again
+    if (userHistoryCache.size > 0) return;
+    
+    let from = 0;
+    const limit = 1000;
+    let keepFetching = true;
+
+    // Fetch ALL history records in chunks to bypass the 1000 row limit
+    while (keepFetching) {
+        const { data, error } = await supabase
+            .from('userQuestionHistory')
+            .select('*') // We need '*' to ensure timesWrong and firstAttemptResult are loaded
+            .eq('userId', userId)
+            .range(from, from + limit - 1);
+
+        if (error) {
+            console.error("Error fetching user history for builder:", error);
+            break;
+        }
+
+        if (data && data.length > 0) {
+            data.forEach(item => userHistoryCache.set(item.questionId, item));
+            if (data.length < limit) keepFetching = false;
+        } else {
+            keepFetching = false;
+        }
+        from += limit;
     }
+}
 
 // In book_chapters.html
 
 function getFilterFunctions() {
     return {
         'unanswered': q => !userHistoryCache.has(q.id),
-        'previously-wrong': q => userHistoryCache.get(q.id)?.lastResult === 'wrong',
+        
+        // FIX: "Previously wrong" means they got it wrong at least once EVER
+        'previously-wrong': q => {
+            const history = userHistoryCache.get(q.id);
+            return history && (history.timesWrong > 0);
+        },
+        
+        // FIX: "Initially wrong" means their very first attempt was wrong
+        'initial-wrong': q => {
+            const history = userHistoryCache.get(q.id);
+            return history && (history.firstAttemptResult === 'wrong');
+        },
+        
         'review': q => userHistoryCache.get(q.id)?.isForReview === true,
         'note': q => userHistoryCache.get(q.id)?.hasNote === true,
-        // ADDED THE MISSING DIFFICULTY FILTERS
         'very-difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Difficult',
         'difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Difficult',
         'moderate': q => userHistoryCache.get(q.id)?.userDifficulty === 'Moderate',
