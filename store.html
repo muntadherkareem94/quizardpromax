@@ -151,12 +151,13 @@
     let allStoreItems = [];
 
     const medicalSpecialties = {
-        "Internal Medicine": ["Internal Medicine - General", "Cardiology", "Endocrinology", "Gastroenterology", "Hematology", "Infectious Disease", "Nephrology", "Oncology", "Pulmonology", "Rheumatology"],
-        "Surgery": ["General Surgery", "Cardiothoracic Surgery", "Neurosurgery", "Orthopedic Surgery", "Otolaryngology (ENT)", "Pediatric Surgery", "Plastic Surgery", "Urology", "Vascular Surgery"],
-        "Pediatrics": ["Pediatrics - General", "Neonatology", "Pediatric Cardiology", "Pediatric Endocrinology", "Pediatric Gastroenterology"],
-        "Obstetrics & Gynecology": ["Obstetrics & Gynecology - General", "Gynecologic Oncology", "Maternal-Fetal Medicine", "Reproductive Endocrinology and Infertility"],
-        "Other Major Specialties": ["Anesthesiology", "Dermatology", "Emergency Medicine", "Family Medicine", "Neurology", "Ophthalmology", "Pathology", "Psychiatry", "Radiology"]
-    };
+            "Internal Medicine": ["Internal Medicine - General", "Cardiology", "Endocrinology", "Gastroenterology", "Hematology", "Infectious Disease", "Nephrology", "Oncology", "Pulmonology", "Rheumatology"],
+            "Surgery": ["General Surgery", "Cardiothoracic Surgery", "Neurosurgery", "Orthopedic Surgery", "Otolaryngology (ENT)", "Pediatric Surgery", "Plastic Surgery", "Urology", "Vascular Surgery"],
+            "Pediatrics": ["Pediatrics - General", "Neonatology", "Pediatric Cardiology", "Pediatric Endocrinology", "Pediatric Gastroenterology"],
+            "Obstetrics & Gynecology": ["Obstetrics & Gynecology - General", "Gynecologic Oncology", "Maternal-Fetal Medicine", "Reproductive Endocrinology and Infertility"],
+            "Other Major Specialties": ["Anesthesiology", "Dermatology", "Emergency Medicine", "Family Medicine", "Neurology", "Ophthalmology", "Pathology", "Psychiatry", "Radiology"],
+            "Pharmacy": ["Clinical Pharmacy"]
+        };
 
     function populateSpecialtyFilter() {
         dom.specialtyFilter.innerHTML = '<option value="all">All Specialties</option>';
