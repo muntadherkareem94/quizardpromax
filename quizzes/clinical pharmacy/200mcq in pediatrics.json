@@ -1675,260 +1675,259 @@
       "questionNumber": 139
     },
     {
-      "question": "A 450-g boy who was born at 24 weeks gestational age received three doses of surfactant for respiratory distress syndrome (RDS). Because of his very low birth weight and severity of RDS, the medical team would like to initiate therapy to prevent progression to BPD. According to clinical trials, which is most likely to prevent BPD in premature neonates at highest risk?",
-      "options": [
-        "A. Azithromycin.",
-        "B. Indomethacin.",
-        "C. Inhaled nitric oxide.",
-        "D. Vitamin A."
-      ],
-      "correctAnswerIndex": 3,
-      "explanation": "There are several biologically plausible theories for the prevention of BPD by various drug therapies. Because Ureaplasma spp. have been isolated from the tracheal aspirates of neonates with BPD, it has been theorized that eliminating that organism will decrease the incidence of BPD. Clinical trials have not shown this benefit in all neonates at high risk of BPD (Answer A is incorrect). When examining a specific subset of neonates who were proved to be colonized with Ureaplasma, azithromycin initiated within 3 days of birth did reduce the incidence of BPD. A PDA with a left-to-right shunt increases pulmonary blood flow and is a risk factor for developing BPD; therefore, theoretically preventing a PDA would decrease the risk of BPD. This has not been shown to be true with indomethacin or ibuprofen prophylaxis or with PDA treatment (Answer B is incorrect). In animal models, inhaled nitric oxide has been shown to reduce lung inflammation and promote lung growth that would theoretically decrease the risk of BPD. Clinical trials of human neonates have not shown this benefit (Answer C is incorrect). Vitamin A has been shown to reduce the incidence of BPD in clinical trials. Although used in some NICUs, vitamin A has not become a standard of care within neonatology, given concerns about frequent intramuscular injections in extremely premature neonates as well as a lack of evidence showing a long-term benefit in improving neurodevelopmental outcomes.",
-      "questionNumber": 140
-    }
-    ,
-    {
-      "question": "A 3-day-old neonate born at 38 weeks' gestation presents to the emergency department with a fever of 39.1°C, poor feeding, and lethargy. A full sepsis evaluation is performed, including blood, urine, and cerebrospinal fluid (CSF) cultures. Which of the following is the most appropriate empiric antibiotic regimen for this patient?",
-      "options": [
-        "A. Ampicillin and ceftriaxone",
-        "B. Ampicillin and gentamicin",
-        "C. Vancomycin and cefotaxime",
-        "D. Ampicillin and vancomycin"
-      ],
-      "correctAnswerIndex": 1,
-      "explanation": "For neonates younger than 1 month, the most common pathogens for sepsis/meningitis are Group B Streptococcus (GBS), E. coli, and Listeria monocytogenes. The standard empiric regimen is ampicillin (to cover L. monocytogenes and GBS) plus an aminoglycoside like gentamicin (to cover gram-negative organisms like E. coli) or ampicillin plus cefotaxime. Ceftriaxone (Answer A) is contraindicated in neonates because it can displace bilirubin from albumin, increasing the risk of kernicterus, and can precipitate with intravenous calcium. Vancomycin (Answers C and D) is generally reserved for suspected late-onset sepsis in the NICU setting where MRSA or coagulase-negative staphylococci are concerns.",
-      "questionNumber": 141
-    },
-    {
-      "question": "A 2-month-old infant born prematurely at 30 weeks' gestation is being evaluated for respiratory syncytial virus (RSV) prophylaxis before the start of the RSV season. Which of the following is the best recommendation for this patient?",
-      "options": [
-        "A. Administer palivizumab 15 mg/kg intramuscularly once a month for up to 5 doses during the RSV season.",
-        "B. Administer RSV vaccine intramuscularly once.",
-        "C. Palivizumab is not indicated for this patient.",
-        "D. Administer ribavirin via inhalation daily during the RSV season."
-      ],
-      "correctAnswerIndex": 0,
-      "explanation": "According to the American Academy of Pediatrics (AAP) guidelines, palivizumab is recommended for premature infants born before 29 weeks, 0 days' gestation who are younger than 12 months at the start of the RSV season, as well as infants born before 32 weeks, 0 days' gestation who have chronic lung disease (CLD) of prematurity. Assuming this 30-week premature infant has CLD or meets other specific criteria (such as congenital heart disease), palivizumab at 15 mg/kg IM monthly for up to 5 doses is the standard prophylactic regimen. (Note: Updated guidelines also consider nirsevimab, a long-acting monoclonal antibody, as a single dose option if available). The traditional RSV vaccine is for older adults or pregnant women, not directly for infants. Ribavirin is a treatment for severe RSV, not prophylaxis.",
-      "questionNumber": 142
-    },
-    {
-      "question": "A 2-year-old boy is brought to the urgent care clinic with a harsh, barking cough, inspiratory stridor at rest, and mild retractions. He is diagnosed with moderate croup. Which of the following is the most appropriate initial treatment?",
-      "options": [
-        "A. Albuterol nebulized solution",
-        "B. Dexamethasone 0.6 mg/kg orally x 1 dose",
-        "C. Amoxicillin 90 mg/kg/day orally for 5 days",
-        "D. Fluticasone inhaled 2 puffs twice daily"
-      ],
-      "correctAnswerIndex": 1,
-      "explanation": "Croup (laryngotracheobronchitis) is usually viral and is characterized by a barking cough and stridor. The mainstay of therapy for mild-to-moderate croup is a single dose of systemic corticosteroids, specifically dexamethasone 0.6 mg/kg (up to a max of 16 mg) given orally, intramuscularly, or intravenously, which decreases airway edema. Racemic epinephrine via nebulizer is also indicated for moderate-to-severe croup with stridor at rest, but dexamethasone is the core anti-inflammatory treatment. Albuterol (Answer A) is not effective for upper airway edema. Antibiotics (Answer C) are not indicated for a viral infection. Inhaled corticosteroids (Answer D) do not act quickly enough for acute croup.",
-      "questionNumber": 143
-    },
-    {
-      "question": "A 4-year-old girl presents with left ear pain, a bulging tympanic membrane, and a fever of 39°C. She has not received any antibiotics in the past month and has no known drug allergies. She is diagnosed with acute otitis media (AOM). Which of the following is the most appropriate first-line therapy?",
-      "options": [
-        "A. Amoxicillin 90 mg/kg/day divided twice daily",
-        "B. Amoxicillin/clavulanate 90 mg/kg/day divided twice daily",
-        "C. Azithromycin 10 mg/kg on day 1, then 5 mg/kg on days 2-5",
-        "D. Cefdinir 14 mg/kg/day divided twice daily"
-      ],
-      "correctAnswerIndex": 0,
-      "explanation": "The AAP guidelines for AOM recommend high-dose amoxicillin (80-90 mg/kg/day) as the first-line therapy for children who have not received amoxicillin in the past 30 days, do not have concurrent purulent conjunctivitis, and are not allergic to penicillin. High-dose amoxicillin is necessary to overcome potential resistance from Streptococcus pneumoniae. Amoxicillin/clavulanate (Answer B) is reserved for patients who have received amoxicillin in the past 30 days, have concurrent conjunctivitis (suggesting H. influenzae), or have failed initial amoxicillin therapy. Macrolides (Answer C) and cephalosporins (Answer D) are alternative agents for patients with penicillin allergies.",
-      "questionNumber": 144
-    },
-    {
-      "question": "A 5-year-old boy needs treatment for acute otitis media (AOM). He has a documented history of a non-severe, delayed maculopapular rash to amoxicillin. Which of the following is the most appropriate antibiotic choice for this patient?",
-      "options": [
-        "A. Cefdinir",
-        "B. Trimethoprim/sulfamethoxazole",
-        "C. Clindamycin",
-        "D. Levofloxacin"
-      ],
-      "correctAnswerIndex": 0,
-      "explanation": "For a patient with a non-severe, non-IgE-mediated allergy to penicillin (such as a delayed maculopapular rash), the AAP recommends the use of an oral second- or third-generation cephalosporin, such as cefdinir, cefuroxime, or cefpodoxime. Trimethoprim/sulfamethoxazole and macrolides have high rates of resistance among S. pneumoniae and H. influenzae isolates. Clindamycin lacks activity against gram-negative pathogens like H. influenzae and M. catarrhalis. Fluoroquinolones are not considered first-line alternatives for AOM in pediatrics unless there are no other options due to multidrug resistance.",
-      "questionNumber": 145
-    },
-    {
-      "question": "An 8-year-old boy is diagnosed with Attention-Deficit/Hyperactivity Disorder (ADHD), combined type. His parents and teachers report significant academic and behavioral difficulties. He has no past medical history and normal vital signs. Which of the following is the most appropriate first-line pharmacologic treatment?",
-      "options": [
-        "A. Atomoxetine",
-        "B. Clonidine",
-        "C. Methylphenidate",
-        "D. Guanfacine"
-      ],
-      "correctAnswerIndex": 2,
-      "explanation": "Stimulant medications, including methylphenidate and amphetamine derivatives, are considered the most effective first-line pharmacologic treatments for ADHD in school-aged children (ages 6 and older). They have the largest effect size for improving core ADHD symptoms. Atomoxetine (Answer A) is a non-stimulant selective norepinephrine reuptake inhibitor and is considered a second-line option or a first-line option if there is a strong family history of substance abuse or severe tics. Alpha-2 agonists like clonidine (Answer B) and guanfacine (Answer D) are generally considered second- or third-line agents or adjuncts to stimulants.",
-      "questionNumber": 146
-    },
-    {
-      "question": "A 7-year-old girl is brought to the neurologist because her teacher noticed she frequently \"stares off into space\" for 10-15 seconds at a time, several times a day, and does not respond to her name during these episodes. An EEG shows a classic 3-Hz spike-and-wave pattern. She is diagnosed with childhood absence epilepsy. Which of the following is the preferred first-line therapy?",
-      "options": [
-        "A. Phenytoin",
-        "B. Ethosuximide",
-        "C. Carbamazepine",
-        "D. Phenobarbital"
-      ],
-      "correctAnswerIndex": 1,
-      "explanation": "Ethosuximide is the drug of choice for the treatment of uncomplicated childhood absence epilepsy. It specifically targets T-type calcium channels in the thalamus, which are responsible for the 3-Hz spike-and-wave discharges. Valproic acid is an alternative first-line agent, especially if the child also experiences generalized tonic-clonic seizures. Phenytoin, carbamazepine, and phenobarbital are not effective for absence seizures and can actually exacerbate them.",
-      "questionNumber": 147
-    },
-    {
-      "question": "A 4-year-old boy is actively seizing in the emergency department. The seizure has been generalized and continuous for the past 10 minutes without him regaining consciousness. Intravenous access has just been established. Which of the following is the most appropriate initial medication to administer for this status epilepticus?",
-      "options": [
-        "A. Levetiracetam",
-        "B. Fosphenytoin",
-        "C. Lorazepam",
-        "D. Valproic acid"
-      ],
-      "correctAnswerIndex": 2,
-      "explanation": "The initial treatment (first 5-10 minutes) for status epilepticus is a benzodiazepine due to its rapid onset of action. Intravenous lorazepam is often the preferred agent in the hospital setting because it has a slightly longer duration of action in the central nervous system compared to diazepam. If IV access is not available, intramuscular midazolam or rectal diazepam are appropriate alternatives. Levetiracetam, fosphenytoin, and valproic acid are second-line (urgent) medications used to prevent seizure recurrence after the initial benzodiazepine has been given or if the seizure does not stop with the benzodiazepine.",
-      "questionNumber": 148
-    },
-    {
-      "question": "A 10-year-old girl is newly diagnosed with Type 1 Diabetes Mellitus. She is medically stable, not in diabetic ketoacidosis (DKA), and is beginning a basal-bolus insulin regimen. Her weight is 35 kg. If her total daily dose (TDD) of insulin is calculated at 0.5 units/kg/day, which of the following is the most appropriate initial regimen using insulin glargine and insulin lispro?",
-      "options": [
-        "A. 17 units of glargine at bedtime and 0 units of lispro",
-        "B. 8.5 units of glargine at bedtime and approximately 3 units of lispro before each of three meals",
-        "C. 12 units of glargine at bedtime and 5 units of lispro before breakfast",
-        "D. 8.5 units of lispro at bedtime and 3 units of glargine before each of three meals"
-      ],
-      "correctAnswerIndex": 1,
-      "explanation": "The calculated total daily dose (TDD) of insulin is 0.5 units/kg x 35 kg = 17.5 units/day. In a standard basal-bolus regimen, 50% of the TDD is given as basal insulin (e.g., insulin glargine) and 50% is given as prandial/bolus insulin (e.g., insulin lispro) divided among the meals. Basal: 50% of 17.5 = 8.75 units (round to 8.5 or 9 units) of glargine daily. Bolus: 50% of 17.5 = 8.75 units, divided by 3 meals = approximately 3 units of lispro before each meal. Answer B accurately reflects this distribution.",
-      "questionNumber": 149
-    },
-    {
-      "question": "A 12-year-old boy presents to the emergency department in diabetic ketoacidosis (DKA). His blood glucose is 450 mg/dL, pH is 7.15, and he is moderately dehydrated. After initial fluid resuscitation with 0.9% NaCl, an intravenous regular insulin infusion is ordered. Which of the following is the most appropriate initial rate for the insulin infusion in pediatric DKA?",
-      "options": [
-        "A. 0.01 units/kg/hour",
-        "B. 0.1 units/kg/hour",
-        "C. 0.5 units/kg/hour",
-        "D. 1.0 units/kg/hour"
-      ],
-      "correctAnswerIndex": 1,
-      "explanation": "The standard of care for the management of pediatric diabetic ketoacidosis (DKA) is a continuous intravenous infusion of regular insulin at a rate of 0.1 units/kg/hour. This rate provides a steady decline in serum glucose and allows for the resolution of ketosis and acidosis. A bolus of insulin is generally not recommended in pediatric DKA due to the increased risk of rapid fluid shifts and cerebral edema. Rates of 0.5 or 1.0 units/kg/hour are excessively high and dangerous.",
-      "questionNumber": 150
-    },
-    {
-      "question": "A 3-year-old boy presents with a 6-day history of high fever, bilateral conjunctival injection, cracked red lips, \"strawberry tongue,\" and swelling of the hands and feet. He is diagnosed with Kawasaki disease. Which of the following is the most appropriate initial therapy to prevent coronary artery aneurysms?",
-      "options": [
-        "A. High-dose oral corticosteroids",
-        "B. Intravenous immunoglobulin (IVIG) and high-dose aspirin",
-        "C. Intravenous antibiotics and low-dose aspirin",
-        "D. Infliximab and methotrexate"
-      ],
-      "correctAnswerIndex": 1,
-      "explanation": "The standard first-line treatment for Kawasaki disease is a single infusion of intravenous immunoglobulin (IVIG) at 2 g/kg combined with high-dose aspirin (80-100 mg/kg/day divided every 6 hours). This combination, when administered within the first 10 days of illness, significantly reduces the incidence of coronary artery abnormalities. Once the patient is afebrile for 48 hours, the aspirin is reduced to a low, antiplatelet dose (3-5 mg/kg/day) for 6-8 weeks. Corticosteroids or biologics like infliximab are typically reserved for patients who are refractory to initial IVIG therapy.",
-      "questionNumber": 151
-    },
-    {
-      "question": "A 9-year-old girl with homozygous sickle cell disease (HbSS) presents to the emergency department with severe pain in her back and legs, consistent with a vaso-occlusive crisis. She rates her pain as a 9/10. Which of the following is the most appropriate pharmacologic management for her severe pain?",
-      "options": [
-        "A. Oral ibuprofen and acetaminophen",
-        "B. Intravenous ketorolac alone",
-        "C. Intravenous morphine or hydromorphone",
-        "D. Oral codeine"
-      ],
-      "correctAnswerIndex": 2,
-      "explanation": "For a severe vaso-occlusive pain crisis in sickle cell disease, prompt administration of parenteral opioids is the standard of care. Intravenous morphine or hydromorphone should be administered rapidly and titrated to effect. Nonsteroidal anti-inflammatory drugs (NSAIDs) like ibuprofen or ketorolac can be used as adjuncts to opioids for their bone-sparing and anti-inflammatory effects, but they are insufficient alone for severe pain. Codeine is contraindicated in pediatric patients due to genetic variability in metabolism (CYP2D6 polymorphism), which can lead to lack of efficacy or fatal toxicity.",
-      "questionNumber": 152
-    },
-    {
-      "question": "A 2-month-old infant is diagnosed with homozygous sickle cell disease (HbSS) via newborn screening. To prevent life-threatening infections, which of the following prophylactic medications should be initiated at this age?",
-      "options": [
-        "A. Oral penicillin V potassium",
-        "B. Oral hydroxyurea",
-        "C. Oral trimethoprim/sulfamethoxazole",
-        "D. Folic acid supplementation alone"
-      ],
-      "correctAnswerIndex": 0,
-      "explanation": "Children with sickle cell disease experience functional asplenia early in life, placing them at high risk for overwhelming sepsis from encapsulated organisms, particularly Streptococcus pneumoniae. The standard of care is to initiate prophylactic oral penicillin V potassium (125 mg twice daily) by 2 months of age and continue it until at least 5 years of age. Hydroxyurea is a disease-modifying agent usually started around 9 months of age to reduce the frequency of crises, not an infectious prophylactic. Trimethoprim/sulfamethoxazole is not the preferred agent for pneumococcal prophylaxis.",
-      "questionNumber": 153
-    },
-    {
-      "question": "A 2-year-old girl who consumes 32 ounces of whole cow's milk per day is found to have a hemoglobin of 8.5 g/dL and a low mean corpuscular volume (MCV). She is diagnosed with iron deficiency anemia. Which of the following is the appropriate therapeutic dose of oral elemental iron for this patient?",
-      "options": [
-        "A. 1-2 mg/kg/day",
-        "B. 3-6 mg/kg/day",
-        "C. 10-15 mg/kg/day",
-        "D. 20-25 mg/kg/day"
-      ],
-      "correctAnswerIndex": 1,
-      "explanation": "The recommended therapeutic dose of oral elemental iron for the treatment of iron deficiency anemia in children is 3 to 6 mg/kg/day, typically divided into 1 to 3 doses. This should be continued for several months to replenish iron stores after the hemoglobin level has normalized. A dose of 1-2 mg/kg/day is generally used for prophylaxis in high-risk infants, not for treatment. Doses above 6 mg/kg/day increase the risk of gastrointestinal side effects (constipation, nausea) without significantly improving absorption rates.",
-      "questionNumber": 154
-    },
-    {
-      "question": "A 4-month-old infant \"spits up\" small amounts of formula after almost every feeding. The infant is gaining weight appropriately along the 50th percentile, has no respiratory symptoms, and appears happy and comfortable. Which of the following is the most appropriate initial management?",
-      "options": [
-        "A. Initiate oral ranitidine or famotidine",
-        "B. Initiate oral omeprazole",
-        "C. Reassurance, smaller/more frequent feedings, and upright positioning after meals",
-        "D. Switch to an elemental formula immediately"
-      ],
-      "correctAnswerIndex": 2,
-      "explanation": "This infant is presenting with uncomplicated physiologic gastroesophageal reflux (GER), often referred to as a \"happy spitter.\" Because there are no warning signs (poor weight gain, irritability, respiratory issues), the initial management is conservative. This includes parental reassurance, lifestyle modifications such as smaller and more frequent feedings, thickening of feeds, and keeping the infant upright for 20-30 minutes after eating. Acid-suppressing medications (H2RAs or PPIs) are not indicated for physiologic GER and should be reserved for Gastroesophageal Reflux Disease (GERD) where there are complications like esophagitis or failure to thrive.",
-      "questionNumber": 155
-    },
-    {
-      "question": "A 4-year-old boy has a 2-month history of passing hard, painful stools twice a week. Physical examination is unremarkable. He is diagnosed with functional constipation. Which of the following medications is the preferred first-line agent for maintenance therapy?",
-      "options": [
-        "A. Mineral oil",
-        "B. Docusate sodium",
-        "C. Polyethylene glycol (PEG) 3350 without electrolytes",
-        "D. Bisacodyl suppositories"
-      ],
-      "correctAnswerIndex": 2,
-      "explanation": "Polyethylene glycol (PEG) 3350 (Miralax) is considered the first-line pharmacologic treatment for maintenance therapy of functional constipation in children due to its efficacy, safety profile, and ease of administration (it is tasteless and can be mixed in any liquid). It is an osmotic laxative. Mineral oil is effective but carries a risk of lipoid pneumonia if aspirated. Docusate is a stool softener but is generally less effective than osmotic laxatives. Bisacodyl is a stimulant laxative usually reserved for short-term rescue therapy or clean-outs, not first-line maintenance.",
-      "questionNumber": 156
-    },
-    {
-      "question": "A neonate is born with hydrocephalus, chorioretinitis, and intracranial calcifications. Serological testing confirms a diagnosis of congenital toxoplasmosis. Which of the following is the recommended pharmacologic treatment regimen?",
-      "options": [
-        "A. Pyrimethamine, sulfadiazine, and leucovorin for 12 months",
-        "B. Intravenous acyclovir for 21 days",
-        "C. Oral ganciclovir for 6 months",
-        "D. Spiramycin monotherapy for 6 months"
-      ],
-      "correctAnswerIndex": 0,
-      "explanation": "The standard treatment for symptomatic or asymptomatic congenital toxoplasmosis involves a combination of pyrimethamine, sulfadiazine, and folinic acid (leucovorin) for a duration of 1 year. Pyrimethamine and sulfadiazine act synergistically against Toxoplasma gondii. Leucovorin is added to prevent bone marrow suppression caused by pyrimethamine. Spiramycin is used in pregnant women to prevent transmission to the fetus but is not the drug of choice for treating the infected infant. Acyclovir is for HSV, and ganciclovir is for congenital CMV.",
-      "questionNumber": 157
-    },
-    {
-      "question": "A neonate is evaluated for congenital syphilis because the mother had untreated syphilis during pregnancy. The neonate's physical examination reveals a maculopapular rash, snuffles, and hepatosplenomegaly. CSF analysis is abnormal. Which of the following is the treatment of choice?",
-      "options": [
-        "A. A single intramuscular dose of benzathine penicillin G",
-        "B. Intravenous aqueous crystalline penicillin G for 10 days",
-        "C. Oral amoxicillin for 14 days",
-        "D. Intravenous ceftriaxone for 14 days"
-      ],
-      "correctAnswerIndex": 1,
-      "explanation": "For a neonate with proven or highly probable congenital syphilis (especially with abnormal CSF or clinical signs), the CDC recommends treatment with aqueous crystalline penicillin G administered intravenously every 12 hours for the first 7 days of life, and every 8 hours thereafter for a total of 10 days. An alternative is procaine penicillin G intramuscularly daily for 10 days. A single dose of benzathine penicillin G is only appropriate for asymptomatic infants with a normal evaluation born to adequately treated mothers, or in very specific low-risk scenarios. Amoxicillin and ceftriaxone are not standard therapies for congenital syphilis.",
-      "questionNumber": 158
-    },
-    {
-      "question": "A 6-year-old girl is admitted with a severe asthma exacerbation. She has received multiple albuterol nebulizer treatments and systemic corticosteroids, but she remains hypoxic and tachypneic. The physician decides to order intravenous magnesium sulfate. What is the mechanism of action of magnesium in an asthma exacerbation?",
-      "options": [
-        "A. Inhibition of leukotriene synthesis",
-        "B. Direct antagonism of histamine receptors",
-        "C. Smooth muscle relaxation via interference with calcium uptake",
-        "D. Reduction of airway mucosal edema"
-      ],
-      "correctAnswerIndex": 2,
-      "explanation": "Intravenous magnesium sulfate is used as an adjunct in severe, life-threatening asthma exacerbations that do not respond to initial standard therapies. Its primary mechanism of action in this setting is thought to be smooth muscle relaxation. Magnesium acts as a calcium antagonist, interfering with calcium uptake in bronchial smooth muscle cells, which leads to bronchodilation. It does not inhibit leukotrienes (like montelukast), antagonize histamine, or primarily reduce edema (like corticosteroids).",
-      "questionNumber": 159
-    },
-    {
-      "question": "An infant is born at 28 weeks' gestation and develops apnea of prematurity at day 3 of life. Which of the following pharmacologic agents is the standard of care for the treatment of apnea of prematurity?",
-      "options": [
-        "A. Caffeine citrate",
-        "B. Theophylline",
-        "C. Doxapram",
-        "D. Albuterol"
-      ],
-      "correctAnswerIndex": 0,
-      "explanation": "Caffeine citrate is the drug of choice for the treatment and prevention of apnea of prematurity. It acts as a central nervous system stimulant, primarily by antagonizing adenosine receptors, which increases the respiratory drive and improves diaphragmatic contractility. While theophylline is also a methylxanthine and can be used, caffeine is preferred because it has a wider therapeutic index, a longer half-life (allowing for once-daily dosing), and fewer adverse effects (less tachycardia and feeding intolerance).",
-      "questionNumber": 160
-    }
-    ,
-    {
+    "questionNumber": 140,
+    "question": "A 450-g boy who was born at 24 weeks’ gestational age received two doses of surfactant for respiratory distress syndrome (RDS). Because of his very low birth weight and severity of RDS, the medical team would like to initiate therapy to prevent progression to BPD. According to clinical trials, which is most likely to prevent BPD in premature neonates at highest risk?",
+    "options": [
+      "A. Azithromycin.",
+      "B. Indomethacin.",
+      "C. Inhaled nitric oxide.",
+      "D. Vitamin A."
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "There are several biologically plausible theories for the prevention of BPD by various drug therapies. Because Ureaplasma spp. have been isolated from the tracheal aspirates of neonates with BPD, it has been theorized that eliminating that organism will decrease the incidence of BPD. Clinical trials have not shown this benefit in all neonates at high risk of BPD (Answer A is incorrect). When examining a specific subset of neonates who were proved to be colonized with Urea plasma, azithromycin initiated within 3 days of birth did reduce the incidence of BPD. A PDA with a left-to-right shunt increases pulmonary blood flow and is a risk factor for developing BPD; therefore, theoretically preventing a PDA would decrease the risk of BPD. This has not been shown to be true with indomethacin or ibuprofen prophylaxis or with PDA treatment (Answer B is incorrect). In animal models, inhaled nitric oxide has been shown to reduce lung inflammation and promote lung growth that would theoretically decrease the risk of BPD. Clinical trials of human neonates have not shown this benefit (Answer C is incorrect). Vitamin A has been shown to reduce the incidence of BPD in clinical trials. Although used in some NICUs, vitamin A has not become a standard of care within neonatology, given concerns about frequent intramuscular injections in extremely premature neonates as well as a lack of evidence showing a long-term benefit in improving neurodevelopmental outcomes."
+  },
+  {
+    "questionNumber": 141,
+    "question": "When benchmarking against similar NICUs, your unit finds a higher than average rate of necrotizing enterocolitis (NEC). The medical team would like to develop a protocol to standardize care of neonates at highest risk of developing NEC. Which intervention is most likely to be beneficial in reducing the incidence of NEC in high-risk neonates?",
+    "options": [
+      "A. Initiate trophic feeding at 7 days of age.",
+      "B. Administer oral probiotics until 34 weeks’ postmenstrual age is reached.",
+      "C. Administer oral antibiotics until full enteral feeding is achieved.",
+      "D. Administer histamine-2 receptor antagonists until enteral feeds are initiated."
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Although oral probiotics are not considered the standard of care for preventing NEC, many studies show their efficacy of doing so. The optimal duration is unknown, but a recent study showed a benefit in neonates receiving oral probiotics until 34 weeks’ postmenstrual age. Other positive studies continued this intervention until the neonate reached term corrected age or until hospital discharge. Delaying enteral feeding has been theorized to reduce the incidence of NEC because it allows for the maturation of the GI tract, and cases of NEC rarely occur in neonates who have not been fed enterally. Overall, clinical studies have not shown this benefit (Answer A is incorrect). Administration of oral antibiotics has been shown to reduce NEC, but the benefit of this intervention is outweighed by the risk of colonization with resistant organisms, which is an outcome that has occurred in clinical trials (Answer C is incorrect). Administration of histamine-2 receptor antagonists has been associated with an increased incidence of NEC. Increasing the pH of the GI tract allows the overgrowth of bacteria, so this intervention should be avoided (Answer D is incorrect)."
+  },
+  {
+    "questionNumber": 142,
+    "question": "A 39 weeks’ gestational age boy was born to a mother with a history of sickle cell disease treated with chronic hydrocodone plus acetaminophen. He is admitted to the NICU for monitoring for withdrawal symptoms. In the past 12 hours, his Finnegan scores are 10, 8, 9, and 11 (evaluated every 3 hours). Which recommendation would be best for managing this neonate?",
+    "options": [
+      "A. Initiate clonidine.",
+      "B. Initiate morphine.",
+      "C. Initiate phenobarbital.",
+      "D. Treatment is not indicated because withdrawal symptoms are not severe enough."
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Three consecutive scores using the Finnegan tool of 8 or higher or two consecutive scores of 12 or higher are indicative of the need for pharmacologic management of withdrawal (Answer D is incorrect). An opioid agent (e.g., morphine, methadone) is the treatment of choice for managing withdrawal symptoms from hydrocodone exposure. Clonidine is generally reserved for adjunctive therapy with morphine (Answer A is incorrect). Phenobarbital monotherapy is not as effective as morphine or methadone for managing opioid withdrawal because it does not treat the GI symptoms or seizures (Answer C is incorrect). Phenobarbital is often used as first-line monotherapy for withdrawal from non-opioid agents."
+  },
+  {
+    "questionNumber": 143,
+    "question": "A new drug for the treatment of hypertension was shown to be teratogenic in rat models, but there are no reports of its use in pregnant women. Which characteristic is most likely to allow the drug to cross the placental barrier into the fetal circulation?",
+    "options": [
+      "A. High molecular weight (greater than 500 Da).",
+      "B. Hydrophilicity.",
+      "C. Low protein binding.",
+      "D. Long half-life."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Drug characteristics associated with transport across the placenta include low molecular weight (less than 500 Da), lipophilicity, and low protein binding (Answers A and B are incorrect). A prolonged half-life may increase the time during which the drug can cross the placenta but, without the other characteristics, does not alone promote drug transport across the placenta (Answer D is incorrect). Although transfer across the placenta does not necessarily predict a drug’s teratogenicity, it is required for the drug to cause fetal harm."
+  },
+  {
+    "questionNumber": 144,
+    "question": "You are working with the neonatologists in your unit to develop a treatment protocol for NEC. Which organism is it most important to cover with your recommended empiric antibiotic regimen?",
+    "options": [
+      "A. Candida albicans.",
+      "B. Escherichia coli.",
+      "C. Group B Streptococcus.",
+      "D. Listeria monocytogenes."
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Group B Streptococcus, E. coli, and Listeria are all common pathogens causing early neonatal sepsis (Answers C and D are incorrect). C. albicans can cause late-onset neonatal sepsis, especially in neonates with specific risk factors (e.g., history of abdominal surgery, long-term total parenteral nutrition, Candida colonization of several sites) (Answer A is incorrect)."
+  },
+  {
+    "questionNumber": 145,
+    "question": "A breastfeeding mother presents with newly diagnosed hypertension. The medical team asks you to suggest ways to minimize neonatal risks and exposure from the treatment while still allowing the mother to breastfeed. Which recommendation is most likely to achieve this goal?",
+    "options": [
+      "A. Choose a drug with a relatively long half-life.",
+      "B. Choose a drug that is not highly protein bound.",
+      "C. Advise the mother to feed when her serum concentrations of the drug are likely to be lowest during the day.",
+      "D. Select the lowest effective treatment dose."
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "The safest medications during lactation are those with low oral bioavailability, high protein binding, low lipid solubility, and a short half-life (Answers A and B are incorrect). Dosing just after breastfeeding can allow a longer time for clearance before the next feeding and reduce transfer to the infant, but this option is dependent on the medication and the feeding schedule (Answer C is incorrect). Choosing the lowest effective maternal dose is recommended to minimize exposure to the infant."
+  },
+  {
+    "questionNumber": 146,
+    "question": "A 660-g boy born by vaginal delivery at 24 weeks’ gestational age had a poor respiratory effort, grunting, and retractions at birth and required intubation with 100% oxygen in the delivery room. Apgar scores were 4 at 1 minute, 5 at 5 minutes, and 8 at 10 minutes. Maternal obstetric history was significant for preterm labor, tobacco smoking, and no prenatal care. Because of the lack of prenatal care and a precipitous delivery, no antenatal steroids were administered. An initial blood gas showed pH 7.1, Pco2 73, Po2 71, and base deficit 11. Ampicillin and gentamicin are ordered for possible early sepsis. A chest radiography is ordered, and the result is pending. After transfer to the NICU at 15 minutes of life, he continues to require 100% oxygen and high peak inspiratory pressures to maintain adequate oxygen saturations. Which is the best recommendation regarding surfactant therapy for this patient?",
+    "options": [
+      "A. Surfactant therapy should be withheld pending radiographic findings confirming RDS.",
+      "B. Prophylactic surfactant therapy should be administered because this neonate is at high risk of developing RDS.",
+      "C. Early surfactant rescue therapy should be administered because this neonate’s presentation is consistent with RDS.",
+      "D. Surfactant rescue therapy should be delayed to avoid overtreatment of the neonate, whose symptoms of RDS may resolve spontaneously."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Surfactant rescue therapy should be administered early in this case because this neonate’s presentation is consistent with RDS. Withholding surfactant until radiographic confirmation may delay effective treatment (Answer A is incorrect). Prophylactic surfactant therapy is administered in the delivery room before symptoms develop; this neonate already has severe respiratory failure requiring high oxygen and pressures (Answer B is incorrect). Delaying rescue therapy is not recommended in severe cases because it can worsen outcomes (Answer D is incorrect)."
+  },
+  {
+    "questionNumber": 147,
+    "question": "The patient in case 1 had a modest response after two doses of surfactant, but he remains intubated and mechanically ventilated, requiring 30% oxygen 24 hours after birth. Because of his prematurity and continued need for invasive respiratory support, the medical team would like to initiate a therapy to prevent the development of BPD. Which medication would be best to recommend?",
+    "options": [
+      "A. Azithromycin.",
+      "B. Caffeine.",
+      "C. Dexamethasone.",
+      "D. Poractant."
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Caffeine use in premature infants has been shown to reduce the risk of BPD. In addition, this patient has several risk factors for BPD, including prematurity and continued need for respiratory support, and caffeine has other beneficial effects (e.g., treatment of apnea of prematurity). Dexamethasone can reduce BPD but has potential adverse neurodevelopmental outcomes and is generally reserved for severe cases when extubation is not possible (Answer C is incorrect). Azithromycin may reduce BPD only in a subset of neonates colonized with Ureaplasma (Answer A is incorrect). Poractant is a surfactant preparation and is not used for prevention of BPD at this stage (Answer D is incorrect)."
+  },
+  {
+    "questionNumber": 148,
+    "question": "The patient from cases 1 and 2 is now 36 weeks’ postmenstrual age. During his NICU stay, he was treated for RDS and Klebsiella sepsis. He has had several failed extubation attempts and remains intubated, requiring 30%–40% oxygen to maintain adequate oxygenation and prevent frequent desaturations. His chest radiograph reveals diffuse haziness with lung hyperinflation consistent with chronic lung disease. Which is the best treatment to recommend for his severe BPD?",
+    "options": [
+      "A. Albuterol 2 puffs by endotracheal tube every 6 hours.",
+      "B. Aldactazide 3 mg/kg/day by mouth divided every 12 hours.",
+      "C. Fluticasone 2 puffs by endotracheal tube every 12 hours.",
+      "D. Furosemide 1 mg/kg/dose intravenously as needed for signs of pulmonary fluid overload."
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "In severe BPD, diuretic therapy can improve pulmonary mechanics in infants with pulmonary edema or fluid overload; furosemide is often used for this purpose (Answer D is correct). Routine use of bronchodilators (Answer A) and inhaled corticosteroids (Answer C) has not consistently shown benefit for all infants with BPD, and they are generally reserved for selected patients. Chronic thiazide/spironolactone therapy (Answer B) may be used in some cases but is not the best immediate recommendation in this scenario."
+  },
+  {
+    "questionNumber": 149,
+    "question": "The patient in cases 1–3 is now 37-3/7 weeks’ postmenstrual age. After prolonged intubation and mechanical ventilation, he was extubated 10 days ago to nasal CPAP with 21% oxygen. He has received caffeine since shortly after birth but has had no apneic spells since extubation. Which is the best recommendation regarding his methylxanthine therapy?",
+    "options": [
+      "A. Discontinue caffeine, and monitor the patient for apnea recurrence.",
+      "B. Taper the caffeine dose over the next 2 weeks, and discontinue it if no apnea occurs during the taper.",
+      "C. Switch to theophylline because its shorter half-life will allow for a faster wean off therapy.",
+      "D. Continue caffeine until discharge, and then plan to taper over several weeks as an outpatient."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Caffeine is typically discontinued when apnea of prematurity has resolved and the infant has been free of apneic events for an appropriate observation period. In this case, the patient has had no apneic spells since extubation; discontinuing caffeine and monitoring is appropriate (Answer A is correct). Tapering is not necessary because caffeine can be stopped without taper (Answer B is incorrect). Switching to theophylline is not recommended (Answer C is incorrect). Continuing caffeine until discharge is unnecessary if apnea has resolved (Answer D is incorrect)."
+  },
+  {
+    "questionNumber": 150,
+    "question": "A 750-g girl was delivered prematurely at 26 weeks’ gestational age secondary to maternal chorioamnionitis. Soon after birth, she had symptoms of RDS and subsequently received two doses of surfactant. Despite some improvement in her symptoms, she remained intubated and mechanically ventilated. Caffeine was initiated. She also received three doses of indomethacin according to the NICU’s IVH prophylaxis protocol. At 12 days of age, she became tachycardic and had a widened pulse pressure; also, a systolic murmur was heard. She became hypotensive, so a dopamine continuous infusion was initiated, and the dose was titrated to 20 mcg/kg/minute. Her total daily fluid intake was 120 mL/kg/day. Her chest radiograph revealed pulmonary edema, and her ventilator support had to be increased. An echocardiogram (ECHO) was ordered and showed a moderate PDA with left-to-right shunting. Which is the best therapy to recommend for the management of this patient’s PDA?",
+    "options": [
+      "A. Acetaminophen 15 mg/kg/dose intravenously every 6 hours x 3 days because indomethacin failed.",
+      "B. Furosemide 1 mg/kg/dose intravenously every 12 hours until pulmonary edema is resolved; then recheck ECHO.",
+      "C. Indomethacin 0.2 mg/kg/dose x 1 dose; then 0.25 mg/kg/dose every 12 hours x 2 doses for late symptomatic treatment.",
+      "D. Restrict fluid intake to 100 mL/kg/day, and recheck ECHO in 2 days."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "This infant has a symptomatic PDA with pulmonary edema and need for increased ventilator support. Indomethacin is used for PDA closure; late symptomatic treatment dosing is appropriate here (Answer C is correct). Acetaminophen may be used when indomethacin fails, but this patient received indomethacin for IVH prophylaxis, not for PDA closure (Answer A is incorrect). Diuretics and fluid restriction may help symptoms but are not definitive therapy for PDA closure (Answers B and D are incorrect)."
+  },
+  {
+    "questionNumber": 151,
+    "question": "The patient in case 150 who was born at 26 weeks’ gestational age was treated for a PDA with indomethacin at 12 days of age; a repeat ECHO confirmed closure. Trophic enteral feedings were discontinued when the PDA was diagnosed. Feedings were resumed at 14 days of age with 2 mL every 3 hours (20 mL/kg/day) of preterm formula at 24 kcal/oz. Feedings were advanced by 20 mL/kg every day. At 20 days of age, she developed abdominal distension, bloody stools, and temperature instability. Her feedings were discontinued. An urgent abdominal radiograph was ordered, which revealed dilated loops of bowel and pneumatosis intestinalis with no evidence of free air. Which is the best antibiotic regimen to recommend?",
+    "options": [
+      "A. Ampicillin plus gentamicin.",
+      "B. Ampicillin plus metronidazole.",
+      "C. Piperacillin/tazobactam plus metronidazole.",
+      "D. Vancomycin plus imipenem."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Initial empiric antibiotic therapy for NEC typically includes coverage for gram-negative and anaerobic organisms; however, many standard regimens include ampicillin plus gentamicin, with anaerobic coverage added based on severity and local protocols. In this scenario, ampicillin plus gentamicin is the recommended regimen (Answer A is correct). The other regimens are broader or include additional anaerobic coverage and are not first-line in all cases (Answers B–D are incorrect)."
+  },
+  {
+    "questionNumber": 152,
+    "question": "A 4200-g girl is born by cesarean section at 39 weeks’ gestational age to a mother with a history of genital HSV infection and visible genital lesions at delivery. The neonate appears well and begins feeding within a few hours after birth. Surface cultures for HSV are sent at 24 hours of age and are subsequently reported as positive. Intravenous acyclovir is initiated. Cerebrospinal fluid for HSV PCR and serum ALT are sent. The neonate remains asymptomatic. The HSV PCR is negative, and the ALT is within normal limits. Which is the best recommendation regarding this patient's management?",
+    "options": [
+      "A. Discontinue acyclovir.",
+      "B. Continue acyclovir 60 mg/kg/day intravenously in three divided doses to complete 10 days of treatment.",
+      "C. Continue acyclovir 60 mg/kg/day intravenously in three divided doses to complete 14 days of treatment.",
+      "D. Switch to oral acyclovir 300 mg/m2/dose every 8 hours to complete 10 days of treatment."
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "This neonate has positive surface cultures but no evidence of disseminated disease or CNS disease (negative HSV PCR and normal ALT). A 10-day course of intravenous acyclovir is recommended for preemptive therapy without proven disease (Answer B is correct). Shorter courses are not recommended (Answer A is incorrect). A 14-day course is recommended for SEM disease, and 21 days for CNS or disseminated disease (Answer C is incorrect). Oral acyclovir is not recommended for this initial treatment (Answer D is incorrect)."
+  },
+  {
+    "questionNumber": 153,
+    "question": "A 3900-g boy was born at 38 weeks’ gestational age to a mother with a history of syphilis that was adequately treated 3 months before delivery. The mother has shown no signs of relapse or recurrence since treatment. Maternal syphilis rapid plasma reagin (RPR) is 1:16. In the delivery room, the neonate had some grunting and retractions. He was transferred to the NICU and initiated on ampicillin 100 mg/kg/dose intravenously every 8 hours and gentamicin 5 mg/kg/dose intravenously every 24 hours to rule out sepsis/pneumonia. Syphilis RPR was sent for the neonate, and the result was 1:64. The neonate’s symptoms resolved within 6 hours after birth, and blood cultures remained negative at 48 hours. Which is the best recommendation regarding this patient’s management?",
+    "options": [
+      "A. Discontinue ampicillin and gentamicin. No treatment is indicated for congenital syphilis.",
+      "B. Discontinue gentamicin and continue ampicillin to complete 10 days for congenital syphilis.",
+      "C. Discontinue ampicillin and gentamicin. Give benzathine penicillin G 50,000 units/kg intramuscularly x 1 dose for congenital syphilis.",
+      "D. Discontinue ampicillin and gentamicin. Give aqueous penicillin G 50,000 units/kg/dose intravenously every 12 hours x 10 days for congenital syphilis."
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "In this case, maternal treatment for syphilis is unknown (Answer B is incorrect). Benzathine penicillin G is the recommended treatment for neonates born to mothers treated with penicillin more than 4 weeks before delivery but during the pregnancy AND the neonate has a normal physical examination and an RPR/VDRL titer less than 4-fold higher than the mother’s titer (Answer C is incorrect). In this case, the neonate’s initial respiratory symptoms most likely occurred because of transient tachypnea of the newborn rather than sepsis or pneumonia because they resolved quickly; this, in conjunction with blood cultures that are negative at 48 hours, makes it reasonable to discontinue ampicillin and gentamicin."
+  },
+  {
+    "questionNumber": 154,
+    "question": "A 2600-g girl was born at 36 weeks’ gestational age to a mother in a methadone treatment program for her heroin addiction. The mother has received methadone 80 mg daily for the past 7 months and has been adherent. The neonate is admitted to the NICU for initial respiratory distress in the delivery room and for monitoring of withdrawal symptoms. Finnegan scores have been assessed every 4 hours since birth. Scores for the first 24 hours are 4, 6, 5, 8, 7, and 8. Which is the best recommendation for the management of this neonate at risk of abstinence syndrome?",
+    "options": [
+      "A. No pharmacologic intervention for withdrawal is currently indicated.",
+      "B. Start clonidine.",
+      "C. Start methadone.",
+      "D. Start phenobarbital"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "This infant is at high risk of developing NAS because of in utero exposure to methadone. When using the Finnegan Scoring Tool to assess neonates at risk of withdrawal, three consecutive scores of 8 or higher or two consecutive scores of 12 or higher indicate the need for pharmacologic management of withdrawal. Lower scores may indicate mild withdrawal symptoms that should be managed with non-pharmacologic interventions (e.g., swaddling; minimal handling; reduced environmental noise; subdued lighting; frequent, small feedings). Although this neonate is not currently showing severe signs of withdrawal requiring pharmacologic intervention, she should continue to be monitored because withdrawal from methadone typically manifests on days 2–6 of age (Answer B, C, and D are incorrect). If severe withdrawal does occur, an opioid agent (e.g., morphine, methadone) is the treatment of choice. Clonidine is an effective adjunctive therapy with morphine. Phenobarbital is not as effective for monotherapy as is an opioid agent because phenobarbital does not treat the GI symptoms or seizures."
+  },
+  {
+    "questionNumber": 155,
+    "question": "A 2-month-old boy who was born at term and has no significant medical history is being breastfed. His mother is prescribed tobramycin ophthalmic solution 2 drops in both eyes every 4 hours for 10 days for a severe conjunctivitis. Which is the best recommendation regarding breastfeeding during this mother’s treatment?",
+    "options": [
+      "A. Therapy should be switched to an agent with a higher molecular weight.",
+      "B. Tobramycin ophthalmic can be used, but breast milk should be discarded during therapy (i.e., “pump and dump”) and formula used.",
+      "C. Tobramycin ophthalmic can be used, and breastfeeding can continue without modifications.",
+      "D. Tobramycin ophthalmic can be used, breastfeeding can continue, and the infant should receive probiotics."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "When assessing whether a drug is safe for administration during lactation, several factors must be considered the molecular weight, protein binding, half-life, and oral bioavailability of the drug can affect the transfer of the drug into the breast milk and the subsequent oral absorption by the infant; the maternal serum concentration can affect the concentration in the breast milk; potential adverse effects of the drug in the infant; and the risk-benefit of continuing breastfeeding during the therapy. The likelihood of significant maternal serum concentrations of tobramycin after ophthalmic administration is very low. Similarly, tobramycin’s oral bioavailability is very low; therefore, the amount of drug available to the infant and the extent to which it is absorbed will not lead to a significant exposure (Answer A is incorrect). Because tobramycin exposure is likely to be low from breastfeeding, GI flora should not be altered; therefore, probiotics would not be of benefit (Answer D is incorrect). “Pumping and dumping,” which eliminates all the benefits of breastfeeding, is generally not recommended (Answer B is incorrect)."
+  },
+  {
+    "questionNumber": 156,
+    "question": "R.H. is a 15-year-old female adolescent who presents to the emergency department (ED) with a headache. She describes her headache as a throbbing, pulsing pain in the front of her head. Bright lights seem to make it worse. She has been nauseated since the onset of the headache and has vomited twice in the past hour. Which medication is best, given R.H.’s symptoms?",
+    "options": [
+      "A. Almotriptan oral tablet.",
+      "B. Hydrocodone/acetaminophen oral tablet.",
+      "C. Hydromorphone intravenous injection.",
+      "D. Sumatriptan nasal spray."
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Although almotriptan is the only FDA label-approved medication for the acute treatment of migraines in adolescents, this patient has nausea and vomiting (Answer A is incorrect). An alternative dosing form is recommended in this case; therefore, sumatriptan would be the best option (Answer D is correct). Narcotics are not recommended for migraines and should be avoided, if possible (Answers B and C are incorrect)."
+  },
+  {
+    "questionNumber": 157,
+    "question": "S.K. is a 5-year-old girl (weight 20 kg) with focal (partial onset) seizures. She was placed on carbamazepine 2 months ago. For the first month after the dose was titrated to 200 mg twice daily, she had no seizures. After the first month, however, the seizures recurred. A therapeutic level was drawn, which was 3.5 mg/mL (normal range 4–12 mg/mL). Which is the most likely reason for the low level?",
+    "options": [
+      "A. Carbamazepine binds to protein binding.",
+      "B. Carbamazepine has displacement of the freefraction.",
+      "C. Carbamazepine is an autoinducer.",
+      "D. Carbamazepine has multi-phasal distribution."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The most likely reason for the patient’s low therapeutic level of carbamazepine is that carbamazepine is an autoinducer (Answer C is correct). After 1 month of treatment, carbamazepine would have reduced itself. The other three choices of protein binding, displacement of the free fraction, and multi-phasal distribution do not explain the patient’s decreasing carbamazepine level (Answers A, B, and D are incorrect)."
+  },
+  {
+    "questionNumber": 158,
+    "question": "C.F. is a 12-year-old boy (weight 45 kg) who has been having difficulty in school. He has been described as staring off into space and not paying attention. He seems to do this many times a day, but each episode lasts for only a few seconds. Which is the best medication for C.F.?",
+    "options": [
+      "A. Ethosuximide.",
+      "B. Topiramate.",
+      "C. Phenobarbital.",
+      "D. Phenytoin."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Of the possible choices, only ethosuximide is indicated for absence seizures (Answer A is correct). The other three agents are useful for generalized tonic-clonic seizures (Answers B–D are incorrect)."
+  },
+  {
+    "questionNumber": 159,
+    "question": "M.M. is an 8-year-old boy with cerebral palsy. His primary symptoms are muscle tightness in his arm, a scissored gait, grimacing in his face, and an intermittent tremor. His mother brings a prescription for baclofen 5 mg every 8 hours. Which best reflects the target symptom in M.M. for which baclofen has been prescribed?",
+    "options": [
+      "A. Ataxia.",
+      "B. Athetoid movements",
+      "C. Dyskinesia movements.",
+      "D. Spasticity."
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Baclofen is a muscle relaxer indicated for spasticity (Answer D is correct). Although the other three choices are the classic symptoms of cerebral palsy, baclofen is not indicated for these symptoms and may not be helpful in relieving these symptoms (Answers A–C are incorrect)."
+  },
+  {
+    "questionNumber": 160,
+    "question": "M.P. is an 11-year-old boy with autism disorder. His current symptoms include inability to communicate verbally, inability to follow directions, irritability, self-injurious behavior, flat affect, and aggression. He often gets upset, and if his routine is disrupted, he will start rocking back and forth. Aripiprazole is prescribed. Which of his symptoms is aripiprazole most likely to improve?",
+    "options": [
+      "A. Poor verbal communication.",
+      "B. Irritability.",
+      "C. Flat affect.",
+      "D. Inability to follow directions."
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Aripiprazole is indicated for irritability, aggression, and other tantrum-like behaviors (Answer B is correct). Aripiprazole does not improve communication skills such as following directions and verbal ability (Answers A and D are incorrect). Flat affect is also not an indication for aripiprazole and can be an adverse effect of some antipsychotics (Answer C is incorrect)."
+  },
+
+   {
       "question": "Questions 161 and 162 pertain to the following case: T.E. is a 15-year-old female adolescent with bipolar disorder. She presents wi an expansive mood, grandiosity, and flight of ideas. She has not slept for the than 2 hours for at least 1 week.\n\n161. Which would be the most appropriate medication for T.E.?",
       "options": [
         "A. Olanzapine.",
@@ -1937,7 +1936,7 @@
         "D. Methylphenidate."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Olanzapine is an atypical antipsychotic indicated for the treatment of acute manic or mixed episodes associated with bipolar I disorder in adolescents. Lamotrigine is used for maintenance therapy, not acute mania. Fluoxetine and methylphenidate can exacerbate manic symptoms.",
+      "explanation": "of the choices, only olanzapine is indicated for the acute mania phase of bipolar disorder in adolescents (Answer A is correct)[cite: 25]. Lamotrigine may be helpful for maintenance treatment or the depression phase (Answer B is incorrect)[cite: 26]. Fluoxetine is an antidepressant and is not effective for mania (Answer C is incorrect)[cite: 27]. Methylphenidate, a stimulant, is indicated for ADHD; as such, it could exacerbate this patient's manic symptoms (Answer D is incorrect)[cite: 28].",
       "questionNumber": 161
     },
     {
@@ -1949,7 +1948,7 @@
         "D. Early jitteriness and anxiety."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Lithium therapy is often initiated at lower doses and gradually titrated to minimize dose-related adverse effects, particularly gastrointestinal side effects such as nausea and vomiting, as well as neurologic side effects like a fine tremor.",
+      "explanation": "The most common adverse effect related to initial dosing with lithium is nausea and vomiting as well as other GI problems (Answer B is correct)[cite: 29]. Leukocytosis is a potential problem with the long-term use of lithium (Answer A is incorrect)[cite: 30]. Pancreatitis and liver enzyme elevation are more likely to occur with valproic acid use (Answer C is incorrect)[cite: 31]. Early jitteriness and anxiety are common with SSRIs (Answer D is incorrect)[cite: 32].",
       "questionNumber": 162
     },
     {
@@ -1961,7 +1960,7 @@
         "D. Methylphenidate."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "Methylphenidate is a central nervous system stimulant. At higher doses or with rapid dose escalations, stimulants can induce psychotic symptoms such as hallucinations, paranoia, and aggression. The other options are non-stimulant medications that are much less likely to cause these symptoms.",
+      "explanation": "because methylphenidate increases dopamine in the synaptic cleft, it can cause psychotic symptoms; including hallucinations and paranoia (Answer D is correct)[cite: 33, 34]. Clonidine and guanfacine indirectly affect dopamine and are therefore less likely to cause psychotic symptoms (Answers B and C are incorrect)[cite: 34]. Atomoxetine weakly affects dopamine and is therefore less likely to cause psychotic symptoms (Answer A is incorrect)[cite: 35].",
       "questionNumber": 163
     },
     {
@@ -1973,7 +1972,7 @@
         "D. Methylphenidate SR."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Methylphenidate OROS utilizes an osmotic controlled-release oral delivery system that allows for a prolonged duration of action of 10 to 12 hours, making it the most appropriate choice for a patient requiring coverage for at least 10 hours.",
+      "explanation": "The methylphenidate OROS formulation has a duration of action of about 12 hours (Answer C is correct)[cite: 36]. The other three long-acting formulations have a duration of action of 6-8 hours (Answers A, B, and D are incorrect)[cite: 37].",
       "questionNumber": 164
     },
     {
@@ -1985,7 +1984,7 @@
         "D. Sertraline."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Fluoxetine is the only medication currently approved by the U.S. Food and Drug Administration (FDA) for the treatment of bulimia nervosa. It has been shown to decrease the frequency of binge-eating and vomiting episodes.",
+      "explanation": "Fluoxetine, an SSRI, is the only medication that is FDA label approved for bulimia in adults (Answer A is correct)[cite: 38]. However, fluoxetine is not indicated in children for bulimia, although it is approved for other anxiety disorders and depression in children[cite: 39]. The other three medications are also SSRIs and are indicated for other types of anxiety disorders in children and adolescents, but not for bulimia nervosa (Answers B-D are incorrect)[cite: 40].",
       "questionNumber": 165
     },
     {
@@ -1997,7 +1996,7 @@
         "D. Disulfiram."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "The first-line treatment for adolescents with alcohol and other substance use disorders is psychosocial intervention, such as behavior therapy. Pharmacotherapy is generally off-label and reserved for adolescents who fail to respond to comprehensive behavioral and family-based therapies.",
+      "explanation": "Although medications have been studied in adults that show a reduction in alcohol use, binge drinking, and cravings (naltrexone, acamprosate, and disulfiram) (Answers B-D are incorrect), none is indicated inchildren and adolescents (Answer A is correct)[cite: 41, 46]. Different types of behavior therapy, including family therapy, are recommended[cite: 47].",
       "questionNumber": 166
     },
     {
@@ -2009,7 +2008,7 @@
         "D. Amitriptyline."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Escitalopram and fluoxetine are the only two antidepressants approved by the FDA for the treatment of major depressive disorder in adolescents. The other options are not approved as first-line agents for this age group.",
+      "explanation": "Escitalopram and fluoxetine are the only two antidepressants indicated for adolescent depression (Answer C is correct)[cite: 48]. Venlafaxine, duloxetine, and mirtazapine are not indicated for childhood and adolescent depression, and studies comparing these medications with placebo did not show a significant difference (Answers A, B, and D are incorrect)[cite: 49].",
       "questionNumber": 167
     },
     {
@@ -2021,7 +2020,7 @@
         "D. Topiramate orally."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "For the acute treatment of migraine in children and adolescents, NSAIDs such as ibuprofen are considered first-line therapy. Triptans like sumatriptan are generally reserved for moderate to severe migraines that do not respond to NSAIDs or acetaminophen.",
+      "explanation": "Of the choices, ibuprofen is the only one with clinical trials showing efficacy for acute treatment (Answer A is correct)[cite: 50]. Efficacy evidence for sumatriptan is available for the nasal spray and subcutaneous formulations but not for the oral formulation (Answer C is incorrect)[cite: 51]. Prochlorperazine may be beneficial even without nausea and vomiting present, but there is more evidence for ibuprofen (Answer B is incorrect)[cite: 52]. Topiramate is useful for prophylaxis but not for acute treatment (Answer D is incorrect)[cite: 53].",
       "questionNumber": 168
     },
     {
@@ -2033,7 +2032,7 @@
         "D. Topiramate orally."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "Topiramate is FDA-approved for migraine prophylaxis in adolescents 12 years of age and older. Ibuprofen and sumatriptan are used for acute abortive therapy, not scheduled prophylaxis.",
+      "explanation": "Topiramate is the only agent useful for prophylaxis (Answer D is correct)[cite: 54]. The other three agents are for acute treatment (Answers A and B are incorrect)[cite: 55]. Sumatriptan orally lacks sufficient evidence to support its use in adolescents (Answer C is incorrect)[cite: 56].",
       "questionNumber": 169
     },
     {
@@ -2045,7 +2044,7 @@
         "D. Valproic acid orally."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "In a young child presenting with a severe migraine accompanied by significant nausea and vomiting, an intranasal triptan like sumatriptan is an appropriate abortive choice because it avoids the oral route, ensuring absorption despite the vomiting.",
+      "explanation": "Because the patient is vomiting, a non-oral formulation is recommended (Answer B is incorrect)[cite: 57]. Sumatriptan nasal spray is the only choice with evidence of efficacy in a non-oral formulation (Answer C is correct)[cite: 58]. Valproic acid is for prophylaxis (Answer D is incorrect)[cite: 59]. Opioids should be avoided (Answer A is incorrect)[cite: 59].",
       "questionNumber": 170
     },
     {
@@ -2056,8 +2055,8 @@
         "C. 1800 mg.",
         "D. 2400 mg."
       ],
-      "correctAnswerIndex": 3,
-      "explanation": "For an adolescent weighing more than 39 kg, adult dosing can be utilized. The maximum recommended daily maintenance dose for oxcarbazepine in this weight category is up to 2400 mg/day.",
+      "correctAnswerIndex": 2,
+      "explanation": "The max dosing recommendation according to the manufacturer for a 55-kg child is 1800 mg (Answer C is correct)[cite: 60]. The other doses are either below or above the recommendation (Answers A, B, and D are incorrect)[cite: 61].",
       "questionNumber": 171
     },
     {
@@ -2069,7 +2068,7 @@
         "D. Renal failure."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Oxcarbazepine is well known to cause clinically significant hyponatremia. Patients and families should be educated on the signs and symptoms of low sodium levels. Gingival hyperplasia and hirsutism are side effects more classically associated with phenytoin.",
+      "explanation": "Gingival hyperplasia and hirsutism are both common adverse effects of phenytoin (Answers A and B are incorrect)[cite: 62]. Oxcarbazepine, which is hepatically cleared, does not affect renal function (Answer D is incorrect)[cite: 63, 68]. Hyponatremia is more common with oxcarbazepine than with carbamazepine (Answer C is correct)[cite: 69].",
       "questionNumber": 172
     },
     {
@@ -2081,7 +2080,7 @@
         "D. 50 mg daily."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Valproic acid is a potent inhibitor of lamotrigine metabolism, doubling its half-life. To reduce the risk of severe life-threatening rashes such as Stevens-Johnson syndrome, the starting dose of lamotrigine must be significantly reduced to 25 mg every other day when co-administered with valproic acid.",
+      "explanation": "The dosage recommendation according to the manufacturer is to initiate lamotrigine with an every-other-day schedule when used concurrently with valproic acid (Answer C is correct)[cite: 70]. A dose of 25 mg/day is for monotherapy (Answer A is incorrect)[cite: 71]. Initial 50 mg/day doses are used when lamotrigine is used concurrently with enzyme inducers (Answers B and D are incorrect)[cite: 72].",
       "questionNumber": 173
     },
     {
@@ -2093,7 +2092,7 @@
         "D. Thrombocytopenia."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "The risk of severe, potentially life-threatening rashes (such as Stevens-Johnson syndrome and toxic epidermal necrolysis) associated with lamotrigine is strongly correlated with rapid dose titration and co-administration with valproic acid.",
+      "explanation": "Rash is the main concern with the concomitant use of valproic acid (Answer A is correct)[cite: 73]. The other three types of adverse events are common with valproic acid (Answers B-D are incorrect)[cite: 74].",
       "questionNumber": 174
     },
     {
@@ -2105,7 +2104,7 @@
         "D. Memory/concentration difficulties."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "Topiramate frequently causes cognitive adverse effects, including memory impairment, psychomotor slowing, and difficulties with concentration and attention. It is also associated with weight loss rather than weight gain.",
+      "explanation": "Memory and concentration difficulties have been reported with topiramate (Answer D is correct)[cite: 75]. The other three adverse events are more common with other antiepileptics, including valproic acid, lamotrigine, phenytoin, and carbamazepine (Answers A-C are incorrect)[cite: 76].",
       "questionNumber": 175
     },
     {
@@ -2117,7 +2116,7 @@
         "D. Mania."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Tizanidine is a central alpha-2 adrenergic agonist. Its most common and prominent adverse effect is sedation, which is why it is frequently dosed at bedtime. It can also cause hypotension, not hypertension.",
+      "explanation": "One of the most common adverse effects of tizanidine is sedation (Answer B is correct)[cite: 77]. It is more likely to cause hypotension than hypertension (Answer A is incorrect)[cite: 78]. Renal dysfunction and mania are adverse effects of baclofen (Answers C and D are incorrect)[cite: 79].",
       "questionNumber": 176
     },
     {
@@ -2129,7 +2128,7 @@
         "D. Tardive dyskinesia."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Botulinum toxin A carries a black box warning regarding the potential for the distant spread of the toxin beyond the injection site. This can lead to systemic toxicity, causing life-threatening symptoms such as severe dysphagia and respiratory compromise.",
+      "explanation": "although rare, it is possible for the botulinum toxin to become systemic if it spreads from the injection site (Answer C is correct)[cite: 80]. It does not cause direct harm to either the liver or the kidney (Answers A and B are incorrect)[cite: 81]. Tardive dyskinesia is a long-term adverse effect associated with dopamine receptor blockers (Answer D is incorrect)[cite: 82].",
       "questionNumber": 177
     },
     {
@@ -2141,7 +2140,7 @@
         "D. Inadequate dose."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "The sudden onset of confusion, hyperthermia, extreme muscle rigidity, and rebound spasticity is characteristic of severe intrathecal baclofen withdrawal. This is a medical emergency that can occur due to pump failure, catheter malfunction, or abrupt discontinuation.",
+      "explanation": "This scenario probably suggests an abrupt discontinuation, and the family should make sure the pump is not empty (Answer C is correct)[cite: 84]. The symptoms may also reflect an infection but not the return of spasticity (Answer A is incorrect)[cite: 85]. Although an inadequate dose may explain the inadequate control of spasticity symptoms, it does not explain the change in the patient's mental status or temperature (Answer D is incorrect)[cite: 86, 91]. An overdose ofbaclofen may explain the mental status changes, but not the change in temperature or inadequate control of spasticity symptoms (Answer B is incorrect)[cite: 92].",
       "questionNumber": 178
     },
     {
@@ -2153,7 +2152,7 @@
         "D. Antipsychotic withdrawal symptoms like seizures."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Risperidone has a strong propensity to cause hyperprolactinemia due to its dopamine blockade in the tuberoinfundibular pathway. This can lead to gynecomastia (breast tenderness and enlargement) and galactorrhea, even in pediatric male patients.",
+      "explanation": "Risperidone can increase prolactin because of its dopamine receptor-blocking mechanism (Answer C is correct)[cite: 93]. Other second-generation antipsychotics may also increase prolactin, but not to the same extent as risperidone[cite: 94]. Olanzapine, quetiapine, and ziprasidone have rates of prolactinemia similar to each other, but less than risperidone[cite: 95]. Aripiprazole has the lower rate of prolactinemia[cite: 96]. Antipsychotics are more likely to cause weight gain than weight loss (Answer A is incorrect)[cite: 96]. Risperidone has the lower rate of anticholinergic adverse effects compared with other antipsychotics (Answer B is incorrect)[cite: 97]. Seizures are not a common withdrawal symptom of antipsychotics (Answer D is incorrect)[cite: 98].",
       "questionNumber": 179
     },
     {
@@ -2165,7 +2164,7 @@
         "D. Iloperidone."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Aripiprazole and risperidone are the two atypical antipsychotics specifically FDA-approved to treat irritability, aggression, and self-injurious behaviors associated with autism spectrum disorder in children and adolescents.",
+      "explanation": "Aripiprazole is the only other antipsychotic indicated for autism among the choices (Answer A is correct)[cite: 99]. Lurasidone, iloperidone, and asenapine have not been studied in this population (Answers B-D are incorrect)[cite: 100].",
       "questionNumber": 180
     }
     ,
@@ -2178,7 +2177,7 @@
         "D. Ziprasidone."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Risperidone (along with aripiprazole) is specifically FDA-approved for the treatment of irritability associated with autism spectrum disorder (ASD) in children and adolescents. The other options do not carry this specific indication.",
+      "explanation": "Of the choices, risperidone is the only antipsychotic indicated for this patient's symptoms (Answer B is correct)[cite: 101]. Olanzapine has been studied for this indication, but it lacks an FDA indication for these symptoms (Answer A is incorrect)[cite: 102]. Quetiapine and ziprasidone lack sufficient data for recommendation over risperidone and do not carry the indication for autism disorder (Answers C and D are incorrect)[cite: 103].",
       "questionNumber": 181
     },
     {
@@ -2190,7 +2189,7 @@
         "D. Valproic acid plus quetiapine."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "For an initial acute manic episode without psychotic features, monotherapy with a traditional mood stabilizer like lithium or a second-generation antipsychotic is generally recommended as a first-stage treatment. Combination therapies are typically reserved for severe symptoms, presence of psychosis, or when monotherapy fails.",
+      "explanation": "According to the treatment guidelines, monotherapy is recommended for the initial stage when treating mania without psychosis (Answer A is correct)[cite: 104]. Olanzapine may be added to lithium if a partial response occurs with lithium monotherapy (Answer B is incorrect)[cite: 105]. Valproic acid plus quetiapine may be tried after other treatment trials have failed (Answer D is incorrect)[cite: 106]. Regimens containing two antipsychotics are not recommended (Answer C is incorrect)[cite: 107].",
       "questionNumber": 182
     },
     {
@@ -2202,7 +2201,7 @@
         "D. 1.3-1.5 mEq/L."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "The target serum lithium level for the treatment of acute mania is typically between 0.8 and 1.2 mEq/L. Lower levels are often used for maintenance, while levels greater than 1.2 mEq/L increase the risk of toxicity.",
+      "explanation": "The recommended therapeutic range for treating mania is 0.8- 1.2 mEq/L (Answer C is correct)[cite: 112]. The therapeutic range of 0.6-0.8 mEq/L is recommended for maintenance therapy (Answer B is incorrect)[cite: 113]. The range of 0.2-0.5 mEq/L is too low for an effect to occur (Answer A is incorrect)[cite: 114]. Toxic symptoms start to occur when the level rises above 1.2 mEq/L (Answer D is incorrect)[cite: 115, 116].",
       "questionNumber": 183
     },
     {
@@ -2214,7 +2213,7 @@
         "D. Hyperactivity and hallucinations."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Nonsteroidal anti-inflammatory drugs (NSAIDs) like ibuprofen can significantly decrease the renal clearance of lithium, leading to lithium toxicity. Common neurologic signs of lithium toxicity include ataxia, a coarse tremor, confusion, and lethargy.",
+      "explanation": "Ataxia is a CNS symptom that can occur with moderate toxicity (Answer A is correct)[cite: 117]. Lithium is not metabolized and is therefore unlikely to cause liver or pancreatic problems (Answers B and C are incorrect)[cite: 118]. Hyperactivity is a symptom of mania (Answer D is incorrect)[cite: 119]. Toxic symptoms are more likely to be somnolence, syncope, seizures, and coma[cite: 120].",
       "questionNumber": 184
     },
     {
@@ -2226,7 +2225,7 @@
         "D. Carbamazepine."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Lamotrigine has demonstrated efficacy in the treatment of bipolar depression and is FDA-approved for the maintenance treatment of bipolar I disorder to delay the time to occurrence of mood episodes, particularly depressive episodes.",
+      "explanation": "Of these three mediations, lamotrigine is recommended for bipolar depression (Answer B is correct)[cite: 121]. The other three antiepileptics are recommended for mania or mixed episode symptoms (Answers A, C, and D are incorrect)[cite: 122].",
       "questionNumber": 185
     },
     {
@@ -2238,7 +2237,7 @@
         "D. Methylphenidate."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "For preschool-aged children (4-5 years old) with ADHD, the American Academy of Pediatrics (AAP) guidelines recommend evidence-based parent- and/or teacher-administered behavior therapy as the first line of treatment.",
+      "explanation": "According to the American Academy of Pediatrics (AAP) guidelines published in 2011, the first-line treatment for children 4-5 years of age is behavior therapy (Answer A is correct)[cite: 124]. Only methylphenidate is considered a second-line medication (Answer D is incorrect)[cite: 125]. The other agents are not recommended in this age group (Answers B and C are incorrect)[cite: 126].",
       "questionNumber": 186
     },
     {
@@ -2250,7 +2249,7 @@
         "D. Methylphenidate."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "For children and adolescents (ages 6-18) with ADHD, FDA-approved stimulant medications (such as methylphenidate) are strongly recommended as first-line pharmacologic therapy, ideally combined with behavioral therapy.",
+      "explanation": "According to the AAP guidelines published in 2011, the first- line treatment of 6 to 18-year-olds is methylphenidate or amphetamine products (Answer D is correct)[cite: 127]. Clonidine XR, guanfacine XR, and atomoxetine are second-line agents (Answers A-C are incorrect)[cite: 128].",
       "questionNumber": 187
     },
     {
@@ -2262,7 +2261,7 @@
         "D. Amphetamine/dextroamphetamine XR."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Lisdexamfetamine is a prodrug of dextroamphetamine. It is pharmacologically inactive until it is converted into its active form in the bloodstream, which is designed to reduce its abuse potential compared to other immediate-release stimulants.",
+      "explanation": "Lisdexamfetamine is a prodrug that converts to amphetamine (Answer C is correct)[cite: 129]. The other three medications are not prodrugs (Answers A, B, and D)[cite: 130].",
       "questionNumber": 188
     },
     {
@@ -2274,7 +2273,7 @@
         "D. Venlafaxine."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Bupropion is strictly contraindicated in patients with a diagnosis of bulimia nervosa or anorexia nervosa due to a significantly increased, dose-dependent risk of drug-induced seizures in this population.",
+      "explanation": "Bupropion is contraindicated in patients with bulimia nervosa and other eating disorders (Answer A is correct)[cite: 131]. In early studies when bupropion was studied for efficacy is this disorder, bupropion increased the risk of seizures[cite: 132, 137]. The other three agents are all appropriate for the treatment of depression, although none has the indication for treating eating disorders (Answers B-D are incorrect)[cite: 138].",
       "questionNumber": 189
     },
     {
@@ -2286,7 +2285,7 @@
         "D. Topiramate."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Cognitive behavioral therapy (CBT) is widely considered the most effective and first-line treatment for binge eating disorder (BED), addressing both the behavioral symptoms and underlying psychological factors.",
+      "explanation": "Nonpharmacologic treatment is considered first-line therapy (Answer A is correct)[cite: 139]. Although orlistat, atomoxetine, and topiramate have all been studied in adults for symptoms of BED, none has an indication for this disorder (Answers B-D) [cite: 140]; also, none of these medications has been studied in children[cite: 141].",
       "questionNumber": 190
     },
     {
@@ -2298,7 +2297,7 @@
         "D. Naltrexone 50 mg."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "The patient is currently presenting with signs of acute alcohol intoxication (slurred speech, ataxia), not withdrawal. Therefore, specific pharmacologic treatments for alcohol withdrawal (like benzodiazepines) are not indicated at this time. She requires observation and supportive care until she is sober.",
+      "explanation": "Adolescents are unlikely to need treatment for alcohol withdrawal because most do not experience severe withdrawal symptoms (Answer A is correct)[cite: 142]. Naltrexone, which is used for treatment of the disorder, may decrease future alcohol consumption (Answer D is incorrect)[cite: 143]. Benzodiazepines and supportive care may be used if the adolescent is in severe withdrawal (Answers B and C are incorrect)[cite: 144].",
       "questionNumber": 191
     },
     {
@@ -2310,7 +2309,7 @@
         "D. Acamprosate 666 mg three times daily."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "For adolescents with substance use disorders, psychosocial interventions like family-based therapy and CBT have the strongest evidence base and are recommended as first-line treatments over medications.",
+      "explanation": "Family-based therapy has the most evidence for treating adolescents (Answer B is correct)[cite: 145]. Although CBT may also be helpful, there is less evidence to support its use (Answer A is incorrect)[cite: 146]. Medications are not indicated in adolescents, and the long-term effects of these medications are unknown (Answers C and D are incorrect)[cite: 147].",
       "questionNumber": 192
     },
     {
@@ -2322,7 +2321,7 @@
         "D. Bupropion."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Fluoxetine is the most well-studied SSRI in pediatrics and is FDA-approved for the treatment of major depressive disorder in children starting at 8 years of age.",
+      "explanation": "Fluoxetine is the only FDA-indicated medication for depression in children younger than 12 (Answer B is correct)[cite: 148]. Sertraline has been studied in pediatric patients but does not have the FDA indication (Answer C is incorrect)[cite: 149]. Paroxetine was shown to be effective in only one of three studies (Answer A is incorrect)[cite: 150]. Bupropion has not been studied for depression (Answer D is incorrect)[cite: 151]. Because no other medications have been prescribed for this patient, it is reasonable to start with the antidepressant having the most evidence, which is fluoxetine[cite: 152].",
       "questionNumber": 193
     },
     {
@@ -2334,7 +2333,7 @@
         "D. Suicidal ideation."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "All antidepressants carry an FDA black box warning regarding an increased risk of suicidal ideation and behaviors in children, adolescents, and young adults. Close monitoring is essential.",
+      "explanation": "Suicidal ideation is the potential adverse effect that is listed as a black box warning (Answer D is correct)[cite: 153]. The other three, although serious adverse effects, are not associated with antidepressants (Answers A-C are incorrect)[cite: 154, 159].",
       "questionNumber": 194
     },
     {
@@ -2346,7 +2345,7 @@
         "D. Bupropion."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Although not officially FDA-approved for pediatric depression (it is approved for pediatric OCD), sertraline has demonstrated efficacy and safety in multiple clinical trials (such as the TADS study) and is frequently used off-label as a first-line or alternative option for depression in youths.",
+      "explanation": "although none of the choices is FDA indicated, sertraline has the most studies showing benefit over placebo (Answer C is correct)[cite: 160]. The other choices have either not shown positive results in studies (venlafaxine and mirtazapine) (Answers A and B are incorrect) or not been studied for depression in children (bupropion) (Answer D is incorrect)[cite: 161].",
       "questionNumber": 195
     },
     {
@@ -2358,7 +2357,7 @@
         "D. Septic shock."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "The patient meets the criteria for Systemic Inflammatory Response Syndrome (SIRS) due to the presence of abnormal temperature, tachycardia, and an elevated white blood cell count. Because a source of infection has not yet been identified, SIRS is the most accurate initial classification.",
+      "explanation": "This patient has a fever with a leukocytosis, classifying her as having SIRS (Answer A is correct)[cite: 162]. If there were laboratory abnormalities or the presence of an infection, she would be classified as having sepsis (Answer B is incorrect)[cite: 163]. Hypotension would indicate septic shock (Answer D is incorrect)[cite: 164]. Severe shock (Answer C) would be correct if there were other organ system dysfunction[cite: 164].",
       "questionNumber": 196
     },
     {
@@ -2370,7 +2369,7 @@
         "D. Septic shock."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "The patient now has a presumed source of infection (the infected cut), progressing the diagnosis from SIRS to sepsis. Furthermore, the presence of cardiovascular dysfunction as evidenced by severe hypotension (BP 60/40) classifies this as septic shock.",
+      "explanation": "The child's ankle has a warm area around it now, which appears to be an infection, placing her in sepsis[cite: 165]. She is also hypotensive now, which signifies decompensated septic shock (Answer D is correct)[cite: 166]. Because the patient is thought to have an infection, Answer A is incorrect[cite: 167]. Answer B is incorrect because she has cardiovascular dysfunction[cite: 168]. Answer C would be correct if there were other organ system dysfunction[cite: 168].",
       "questionNumber": 197
     },
     {
@@ -2382,7 +2381,7 @@
         "D. Initiate normal saline 10 mL/kg."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "The patient remains hypotensive with signs of \"cold shock\" (cold extremities) and is exhibiting signs of fluid overload (rales). Further fluid resuscitation is not indicated. Dopamine or epinephrine are generally indicated as first-line vasoactive agents for fluid-refractory cold shock.",
+      "explanation": "Proper treatment is three boluses of normal saline 20 mL/kg[cite: 169]. The team was able to do only three boluses when water began filling the patient's lungs[cite: 170]. The tank is now full[cite: 171]. Because further fluids would only worsen the pulmonary edema, this therapy is now contraindicated (Answer Dis incorrect)[cite: 171]. A vasopressor is the next treatment modality for her[cite: 172]. Milrinone is patient has decreased SVR, making milrinone incorrect (Answer B is incorrect)[cite: 172, 173]. The patient is in cold shock, making dopamine the drug of choice for her (Answer A is correct)[cite: 174]. Norepinephrine is used for warm shock (Answer Cis incorrect)[cite: 175].",
       "questionNumber": 198
     },
     {
@@ -2394,7 +2393,7 @@
         "D. Aspirin."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Unfractionated heparin given as a continuous infusion is the standard and most appropriate anticoagulant used during ECMO to prevent the clotting of the circuit, as it can be easily titrated and rapidly reversed.",
+      "explanation": "During ECMO, blood flow to the gastrointestinal tract is compromised, making the oral route of administration inappropriate for medications, which eliminates warfarin and aspirin as appropriate (Answers B and D are incorrect) [cite: 176, 181]; moreover, warfarin takes days to work, which is another reason not to use this agent in ECMO[cite: 182]. Because there is an extremely fine line between clotting and bleeding in ECMO, an agent that can be easily titrated is best[cite: 183]. Heparin is a continuous infusion that can be titrated easily, especially with bedside testing (Answer A is correct)[cite: 184]. Enoxaparin, which lasts for extensive periods, would not be appropriate in ECMO (Answer C is incorrect)[cite: 185].",
       "questionNumber": 199
     },
     {
@@ -2406,7 +2405,7 @@
         "D. No changes to fentanyl pharmacokinetics."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Fentanyl is highly lipophilic and significantly binds (adsorbs) to the plastic tubing and components of the ECMO circuit, which can lead to a decrease in the patient's serum concentration and necessitate higher dosing requirements.",
+      "explanation": "Fentanyl has an increased volume of distribution (Answer A is incorrect), can be adsorbed into the circuit by almost 80% (Answer B is correct), and has decreased clearance (Answer C is incorrect)[cite: 186]. Fortunately, because this is a continuous infusion and the patient is being monitored closely, bolus doses and increases in the drip rate can occur easily when more sedation is needed[cite: 187]. Answer D is incorrect since there are changes as described[cite: 188].",
       "questionNumber": 200
     }
   ]
