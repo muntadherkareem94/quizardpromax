@@ -601,7 +601,7 @@
     },
     {
       "question": "A 28-year-old nonsmoking graduate student presents with 1 week of wheezing, cough, and yellow sputum. He has had several prior episodes of \"bronchitis\" in the last 2 years. Examination is notable for oxygen saturation 90% on room air and scattered wheezing and rhonchi. Laboratory values are notable for leukocytosis and eosinophilia: WBC 14.4x10^3/μL (53 neutrophils, 20 lymphocytes, 15 eosinophils). Prior pulmonary function tests have shown a mild obstructive pattern. Small, scattered opacities are seen on chest x-ray (CXR), and the chest CT shown in Figs. 111.7 and 111.8 is obtained. What is the next appropriate step?",
-      "imageUrl": ["images/books-images/brighammcq/ch10/q/10.47a.png", "images/books-images/brighammcq/ch10/q/10.47b.png" ],
+      "imageUrl": "images/books-images/brighammcq/ch10/q/10.47.png",
       "options": [
         "A. Bronchoscopy",
         "B. Skin prick test for reactivity to Aspergillus fumigatus",
@@ -738,7 +738,7 @@
     },
     {
       "question": "A 35-year-old store manager presents with arthralgias and the rash seen in Fig. 111.14. Her primary care physician ordered a chest radiograph, which is shown in Fig. 111.15. This constellation of symptoms is called:",
-      "imageUrl": ["images/books-images/brighammcq/ch10/q/10.57a.png", "images/books-images/brighammcq/ch10/q/10.57b.png" ],
+      "imageUrl": "images/books-images/brighammcq/ch10/q/10.57.png",
       "options": [
         "A. Löfgren syndrome",
         "B. Hamman-Rich syndrome",
@@ -899,6 +899,7 @@
     },
     {
       "question": "Which of the following drugs may be associated with the electrocardiogram (EKG) tracing in Fig. 112.1?",
+      "imageUrl": "images/books-images/brighammcq/ch10/q/10.69.png",
       "options": [
         "A. Cephalosporins",
         "B. Citalopram",
