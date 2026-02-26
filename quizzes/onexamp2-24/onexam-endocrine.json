@@ -660,7 +660,8 @@
       "questionNumber": 50
     },
     {
-      "question": "Which of the following patients has results suggesting a diagnosis of SIADH?  Test | Patient 1 | Patient 2 | Patient 3 | Patient 4 | Patient 5 | Reference Range ---|---|---|---|---|---|--- Serum Na | 150 | 136 | 128 | 128 | 128 | 135-145~mmol/L Urine Na | 18 | 35 | 12 | 50 | 40 |  Serum osmolality | 305 | 275 | 260 | 258 | 266 | 280-290~mosm/kg Urine osmolality | 100 | 160 | 80 | 150 | 100 |  TSH | 2.0 | 12.5 | 4.2 | 2.0 | 3.5 | 1.0-4.5~mIU/L 9 AM cortisol | 300 | 450 | 290 | 485 | 120 | 270-650~nmol/L",
+      "question": "Which of the following patients has results suggesting a diagnosis of SIADH?",
+      "imageUrl": "images/books-images/onexamp2-24/endo/q/51.png",
       "options": [
         "A. Patient 2",
         "B. Patient 5",
