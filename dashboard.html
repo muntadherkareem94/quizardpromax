@@ -108,10 +108,11 @@
 </header>
     <main class="flex-grow container mx-auto px-4 py-8 md:py-12">
       <div id="viewContainer" class="hidden">
-            <div class="flex justify-center mb-8 bg-white/20 p-1 rounded-lg max-w-md mx-auto">
-    <button id="showDisciplinesBtn" class="view-toggle-btn w-1/3 py-2 px-4 rounded-md font-semibold text-white">MCQ Banks By Disciplines</button>
-    <button id="showBooksBtn" class="view-toggle-btn w-1/3 py-2 px-4 rounded-md font-semibold text-white">MCQ Banks By Books</button>
-    <button id="showVideosBtn" class="view-toggle-btn w-1/3 py-2 px-4 rounded-md font-semibold text-white">My Video Courses</button>
+    <div class="grid grid-cols-2 sm:flex sm:flex-row justify-center mb-8 bg-white/20 p-1 rounded-lg w-full max-w-2xl mx-auto gap-1 sm:gap-0">
+    <button id="showDisciplinesBtn" class="view-toggle-btn flex-1 py-2 px-1 sm:px-4 rounded-md font-semibold text-white text-[11px] sm:text-sm leading-tight text-center flex items-center justify-center transition-all">MCQ Banks By Disciplines</button>
+    <button id="showBooksBtn" class="view-toggle-btn flex-1 py-2 px-1 sm:px-4 rounded-md font-semibold text-white text-[11px] sm:text-sm leading-tight text-center flex items-center justify-center transition-all">MCQ Banks By Books</button>
+    <button id="showVideosBtn" class="view-toggle-btn flex-1 py-2 px-1 sm:px-4 rounded-md font-semibold text-white text-[11px] sm:text-sm leading-tight text-center flex items-center justify-center transition-all">My Video Courses</button>
+    <button id="showFlashcardsBtn" class="view-toggle-btn flex-1 py-2 px-1 sm:px-4 rounded-md font-semibold text-white text-[11px] sm:text-sm leading-tight text-center flex items-center justify-center transition-all">My FlashCards</button>
 </div>
             <div class="mb-8 max-w-2xl mx-auto">
                 <div class="relative">
@@ -171,7 +172,22 @@
     </section>
             <div id="searchResultsContainer" class="hidden space-y-4 max-w-4xl mx-auto"></div>
 
-            <div id="customQuizBtnContainer" class="text-center mb-8 border-t border-white/20 pt-8 mt-8 hidden">
+        <section id="flashcardsSection" class="mb-8 hidden">
+            <div class="flex justify-center mb-6 bg-white/10 p-1 rounded-lg max-w-sm mx-auto">
+                <button id="flashcardSubDiscBtn" class="view-toggle-btn active flex-1 py-2 px-2 rounded-md font-semibold text-white text-xs sm:text-sm leading-tight text-center transition-all">By Disciplines</button>
+                <button id="flashcardSubBookBtn" class="view-toggle-btn flex-1 py-2 px-2 rounded-md font-semibold text-white text-xs sm:text-sm leading-tight text-center transition-all">By Books</button>
+            </div>
+            
+            <div id="flashcardsDisciplinesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+                <p class="text-white text-center col-span-full opacity-80 mt-4">Flashcards by discipline coming soon...</p>
+            </div>
+            
+            <div id="flashcardsBooksGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 hidden">
+                <p class="text-white text-center col-span-full opacity-80 mt-4">Flashcards by book coming soon...</p>
+            </div>
+        </section>
+
+        <div id="customQuizBtnContainer" class="text-center mb-8 border-t border-white/20 pt-8 mt-8 hidden">
                 <button id="openCustomQuizMenuBtn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg">
                     Custom Quiz
                 </button>
@@ -310,8 +326,9 @@
                     
                     <div class="mb-6">
                         <p class="text-sm font-semibold text-gray-700 mb-2">Available Filters</p>
-                         <div id="filterList" class="space-y-2 border rounded-lg p-3 bg-gray-50 max-h-60 overflow-y-auto">
+                      <div id="filterList" class="space-y-2 border rounded-lg p-3 bg-gray-50 max-h-60 overflow-y-auto">
                             <div id="filter-unanswered" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="unanswered" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Un-answered questions</span></label></div>
+                            <div id="filter-lastly-wrong" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="lastly-wrong" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Lastly Answered Wrong</span></label></div>
                             <div id="filter-initial-wrong" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="initial-wrong" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Answered Initially Wrong</span></label></div>
                             <div id="filter-previously-wrong" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="previously-wrong" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Answered previously wrong</span></label></div>
                             <div id="filter-review" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="review" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Questions labelled for review</span></label></div>
@@ -542,7 +559,6 @@ const notificationList = document.getElementById('notificationList');
 const notificationBadge = document.getElementById('notificationBadge');
 const notificationPlaceholder = document.getElementById('notification-placeholder');
 
-// Replace your existing function with this clean version
 async function fetchAndDisplayNotifications() {
     if (!currentUser) return;
 
@@ -550,12 +566,10 @@ async function fetchAndDisplayNotifications() {
         .from('user_notifications')
         .select(`id, is_read, notifications (content, type, link_url, created_at)`)
         .eq('recipient_id', currentUser.id)
-        .eq('is_read', false)
-        .order('created_at', { foreignTable: 'notifications', ascending: false });
+        .eq('is_read', false);
     
     if (error) {
         console.error("Error fetching notifications:", error);
-        notificationPlaceholder.textContent = `Error: ${error.message}`;
         return;
     }
 
@@ -567,10 +581,21 @@ async function fetchAndDisplayNotifications() {
     
     notificationList.innerHTML = '';
 
+    // FIX 1: Safely create and append the empty state placeholder
     if (userNotifications.length === 0) {
-        notificationList.appendChild(notificationPlaceholder);
+        const placeholder = document.createElement('p');
+        placeholder.className = 'p-4 text-sm text-gray-500 text-center';
+        placeholder.textContent = 'You have no new notifications.';
+        notificationList.appendChild(placeholder);
         return;
     }
+
+    // FIX 2: Force sort the notifications so the newest dates are at the top
+    userNotifications.sort((a, b) => {
+        const dateA = a.notifications ? new Date(a.notifications.created_at).getTime() : 0;
+        const dateB = b.notifications ? new Date(b.notifications.created_at).getTime() : 0;
+        return dateB - dateA;
+    });
 
     userNotifications.forEach(item => {
         const notification = item.notifications; 
@@ -646,7 +671,7 @@ document.addEventListener('click', (e) => {
 // --- END OF NOTIFICATION LOGIC BLOCK ---
 
     // --- DOM Element References ---
-        const dom = {
+       const dom = {
             logoutButton: document.getElementById('logoutButton'),
             adminDashboardButton: document.getElementById('adminDashboardButton'),
             dashboardTitle: document.getElementById('dashboardTitle'),
@@ -654,10 +679,16 @@ document.addEventListener('click', (e) => {
             viewContainer: document.getElementById('viewContainer'),
             showDisciplinesBtn: document.getElementById('showDisciplinesBtn'),
             showBooksBtn: document.getElementById('showBooksBtn'),
-            disciplinesGrid: document.getElementById('disciplinesGrid'),
             showVideosBtn: document.getElementById('showVideosBtn'),
+            showFlashcardsBtn: document.getElementById('showFlashcardsBtn'), // NEW
+            disciplinesGrid: document.getElementById('disciplinesGrid'),
             videosGrid: document.getElementById('videosGrid'),
             booksGrid: document.getElementById('booksGrid'),
+            flashcardsSection: document.getElementById('flashcardsSection'), // NEW
+            flashcardSubDiscBtn: document.getElementById('flashcardSubDiscBtn'), // NEW
+            flashcardSubBookBtn: document.getElementById('flashcardSubBookBtn'), // NEW
+            flashcardsDisciplinesGrid: document.getElementById('flashcardsDisciplinesGrid'), // NEW
+            flashcardsBooksGrid: document.getElementById('flashcardsBooksGrid'), // NEW
             openCustomQuizMenuBtn: document.getElementById('openCustomQuizMenuBtn'),
             customQuizChoiceModal: document.getElementById('customQuizChoiceModal'),
             resumeCustomQuizBtn: document.getElementById('resumeCustomQuizBtn'),
@@ -729,35 +760,51 @@ function switchView(view) {
     if (dom.dashboardTitle) {
         dom.dashboardTitle.textContent =
             view === 'disciplines' ? 'Browse by Discipline' :
-            view === 'books' ? 'Browse by Book' : 'My Video Courses';
+            view === 'books' ? 'Browse by Book' : 
+            view === 'flashcards' ? 'My FlashCards' : 'My Video Courses';
     }
 
    // Toggle the grids
     dom.disciplinesGrid.classList.toggle('hidden', view !== 'disciplines');
     dom.booksGrid.classList.toggle('hidden', view !== 'books');
     dom.videosGrid.classList.toggle('hidden', view !== 'videos');
+    dom.flashcardsSection.classList.toggle('hidden', view !== 'flashcards');
 
-    // FIX: Also toggle the Discipline Section container (to hide the Title)
+    // Toggle the Discipline Section container
     const discSection = document.getElementById('disciplinesSection');
     if (discSection) {
         discSection.classList.toggle('hidden', view !== 'disciplines');
     }
 
+    // Toggle button active states
     dom.showDisciplinesBtn.classList.toggle('active', view === 'disciplines');
     dom.showBooksBtn.classList.toggle('active', view === 'books');
     dom.showVideosBtn.classList.toggle('active', view === 'videos');
+    dom.showFlashcardsBtn.classList.toggle('active', view === 'flashcards');
 
-    // This logic now correctly shows the search bar on ALL views.
-    const isSearchViewVisible = view === 'disciplines' || view === 'books' || view === 'videos';
+    // Search bar visibility
+    const isSearchViewVisible = view === 'disciplines' || view === 'books' || view === 'videos' || view === 'flashcards';
     dom.searchInput.parentElement.parentElement.classList.toggle('hidden', !isSearchViewVisible);
 
-    // This logic correctly hides the custom quiz button on the video view.
+    // Custom Quiz visibility
     const isQuizView = view === 'disciplines' || view === 'books';
     dom.customQuizBtnContainer.classList.toggle('hidden', !isQuizView);
 
     if (dom.viewContainer) dom.viewContainer.classList.remove('hidden');
 }
-        dom.showVideosBtn.addEventListener('click', () => switchView('videos'));
+
+// Flashcard Sub-View Toggler
+function switchFlashcardView(subView) {
+    dom.flashcardsDisciplinesGrid.classList.toggle('hidden', subView !== 'disciplines');
+    dom.flashcardsBooksGrid.classList.toggle('hidden', subView !== 'books');
+    dom.flashcardSubDiscBtn.classList.toggle('active', subView === 'disciplines');
+    dom.flashcardSubBookBtn.classList.toggle('active', subView === 'books');
+}
+
+dom.showVideosBtn.addEventListener('click', () => switchView('videos'));
+dom.showFlashcardsBtn.addEventListener('click', () => switchView('flashcards'));
+dom.flashcardSubDiscBtn.addEventListener('click', () => switchFlashcardView('disciplines'));
+dom.flashcardSubBookBtn.addEventListener('click', () => switchFlashcardView('books'));
 
 
 function renderVideoCourses(coursesToRender, userData, purchasedCourseIds = new Set()) {
@@ -1969,15 +2016,23 @@ async function handleStartCustomQuiz(e) {
             return;
         }
         
-        const serializableQuestions = finalQuestions.map(q => ({
-            id: q.id, question: q.question, options: q.options, 
-            correctAnswerIndex: q.correctAnswerIndex, explanation: q.explanation, 
-            imageUrl: q.imageUrl || null, explanationImageUrl: q.explanationImageUrl || null, 
-            bookId: q.bookId, chapterId: q.chapterId, disciplineId: q.disciplineId,
-            chapterNumber: q.chapterNumber, questionNumber: q.questionNumber
-        }));
+// HYBRID APPROACH: Byte-Size Calculator (Limit is 4.5 Megabytes)
+        const payloadString = JSON.stringify(finalQuestions);
+        const byteSize = new Blob([payloadString]).size;
+        
+        let dataToSave;
+        if (byteSize > 4718592) {
+            // Massive quiz (> 4.5MB): Send IDs only to activate the Sliding Window
+            console.log(`Quiz is ${byteSize} bytes. Activating Sliding Window.`);
+            dataToSave = finalQuestions.map(q => q.id);
+        } else {
+            // Small/Medium quiz: Send full questions for instant RAM loading
+            console.log(`Quiz is ${byteSize} bytes. Loading instantly into RAM.`);
+            dataToSave = finalQuestions;
+        }
 
-        localStorage.setItem('customQuizQuestions', JSON.stringify(serializableQuestions));
+        localStorage.setItem('customQuizQuestions', JSON.stringify(dataToSave));
+        localStorage.setItem('customQuizTotalCount', finalQuestions.length.toString());
         localStorage.setItem('customQuizTimer', String(settings.timer));
 
         // --- THIS IS THE CRITICAL UPDATE ---
@@ -2132,6 +2187,12 @@ async function getBaseQuestionPool(sources) {
 function getFilterFunctions() {
         return {
             'unanswered': q => !userHistoryCache.has(q.id),
+            
+            // "Lastly wrong" strictly checks the very last attempt. If they got it right last time, it ignores it.
+            'lastly-wrong': q => {
+                const history = userHistoryCache.get(q.id);
+                return history && (history.lastResult === 'wrong');
+            },
             
             // FIX: "Previously wrong" means they have gotten it wrong at least once EVER, 
             // even if they got it right 50 times later.
@@ -2371,6 +2432,110 @@ window.disciplineCharts = window.disciplineCharts || [];
 // --- CORRECTED DISCIPLINES LOADER (Fixing Column Name 400 Error) ---
 // --- DEBUG VERSION: DISCIPLINES LOADER ---
 // --- CORRECTED DISCIPLINES LOADER (Strictly 'discipline_id') ---
+// --- FLASHCARD RENDERING FUNCTIONS ---
+function renderFlashcardDisciplines(disciplinesToRender) {
+    dom.flashcardsDisciplinesGrid.innerHTML = '';
+    if (!disciplinesToRender || disciplinesToRender.length === 0) {
+        dom.flashcardsDisciplinesGrid.innerHTML = '<p class="text-white text-center col-span-full">No disciplines available.</p>';
+        return;
+    }
+
+    disciplinesToRender.forEach(discipline => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden cursor-pointer border border-gray-100 flex flex-col h-full";
+        
+        card.innerHTML = `
+            <div class="h-32 sm:h-40 bg-white relative group overflow-hidden border-b border-gray-100 flex items-center justify-center p-2">
+                <img src="${discipline.imageUrl || 'https://via.placeholder.com/400x200?text=' + discipline.name}" alt="${discipline.name}" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-3 sm:p-4 flex items-end justify-between flex-grow gap-2 sm:gap-3">
+                <div class="flex-1 min-w-0"> 
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-lg mb-1 leading-snug line-clamp-2" title="${discipline.name}">${discipline.name}</h3>
+                    <p class="text-xs sm:text-sm text-gray-500 truncate">${discipline.speciality || 'General'}</p>
+                </div>
+                <div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                </div>
+            </div>
+        `;
+
+        // Notice the "&target=flashcards" added to the URL!
+        card.addEventListener('click', () => {
+            window.location.href = `disciplines_chapters.html?disciplineId=${discipline.id}&name=${encodeURIComponent(discipline.name)}&target=flashcards`;
+        });
+
+        dom.flashcardsDisciplinesGrid.appendChild(card);
+    });
+}
+
+function renderFlashcardBooks(booksToRender, userData) {
+    dom.flashcardsBooksGrid.innerHTML = '';
+    if (!booksToRender || booksToRender.length === 0) {
+        dom.flashcardsBooksGrid.innerHTML = '<p class="text-gray-500 text-center col-span-full">No books available.</p>';
+        return;
+    }
+
+    booksToRender.forEach(item => {
+        const book = item.book_data;
+        const hasAccess = item.has_access;
+        if (!book) return;
+
+        const isLocked = !hasAccess;
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative group cursor-pointer border border-gray-100 h-full';
+        
+        if (isLocked) card.classList.add('opacity-80', 'grayscale-[0.5]');
+
+        const imgSrc = book.image || 'https://via.placeholder.com/300x400?text=No+Cover';
+        
+        const lockOverlay = isLocked ? `
+            <div class="absolute inset-0 flex items-center justify-center z-20">
+                <a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </a>
+            </div>
+        ` : '';
+
+        card.innerHTML = `
+            ${lockOverlay}
+            <div class="h-64 bg-gray-50 flex items-center justify-center p-4 relative border-b border-gray-100 rounded-t-2xl overflow-hidden">
+                <img src="${imgSrc}" alt="${book.title}" class="h-full w-auto object-contain drop-shadow-md transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="p-5 flex flex-col flex-grow rounded-b-2xl">
+                <div class="mb-3">
+                     <h3 class="font-bold text-gray-800 text-xl leading-tight mb-1 line-clamp-2" title="${book.title}">${book.title}</h3>
+                     <p class="text-sm text-green-600 font-semibold">${book.speciality || 'General Medicine'}</p>
+                </div>
+                <div class="flex-grow mb-4">
+                    <p class="text-sm text-gray-500 line-clamp-3 leading-relaxed">${book.description || 'Comprehensive medical resource.'}</p>
+                </div>
+                <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                    <span class="text-sm font-bold text-blue-600 flex items-center">
+                        Study Deck 
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </span>
+                    <div class="w-8 h-8 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Notice the "&target=flashcards" added to the URL!
+        card.addEventListener('click', (e) => {
+            if (isLocked) return; // Prevents routing if locked (store link in overlay handles click)
+            window.location.href = `book_chapters.html?bookId=${book.id}&title=${encodeURIComponent(book.title)}&target=flashcards`;
+        });
+
+        dom.flashcardsBooksGrid.appendChild(card);
+    });
+}
+
+
 async function loadDisciplines() {
     console.log("--- STARTING LOAD DISCIPLINES (FINAL FIX) ---");
     
@@ -2401,11 +2566,19 @@ async function loadDisciplines() {
             `).join('');
         }
 
-        const { data: { user } } = await supabase.auth.getUser();
+   const { data: { user } } = await supabase.auth.getUser();
         if (!user) return;
 
-        // 2. Fetch Disciplines
-        const { data: disciplines } = await supabase.from('disciplines').select('*').order('name');
+        // 2. Fetch User Specialty and Filter Disciplines
+        const { data: userData } = await supabase.from('users').select('speciality').eq('id', user.id).single();
+        const userSpecialty = userData ? userData.speciality : null;
+
+        const { data: rawDisciplines } = await supabase.from('disciplines').select('*').order('name');
+        
+        const disciplines = userSpecialty 
+            ? rawDisciplines.filter(d => d.speciality === userSpecialty)
+            : rawDisciplines;
+
         console.log(`Step A: Fetched ${disciplines.length} disciplines.`);
 
         // 3. Fetch All Questions
@@ -2567,8 +2740,11 @@ userHistory.forEach(h => {
                     }
                 }
             });
-            window.disciplineCharts.push(newChart);
+        window.disciplineCharts.push(newChart);
         });
+
+        // NEW: Render the Flashcard Disciplines
+        renderFlashcardDisciplines(disciplines);
 
     } catch (error) {
         console.error("Error loading disciplines:", error);
@@ -2593,7 +2769,12 @@ async function loadBooksAndVideos() {
         // --- 1. FETCH BASE DATA ---
         const { data: booksData } = await supabase.rpc('get_dashboard_books');
         allBooks = booksData || []; 
-        allDisciplines = (await supabase.from('disciplines').select('*')).data || [];
+        
+        const rawDisciplines = (await supabase.from('disciplines').select('*')).data || [];
+        allDisciplines = userData && userData.speciality 
+            ? rawDisciplines.filter(d => d.speciality === userData.speciality) 
+            : rawDisciplines;
+            
         allChapters = (await supabase.from('chapters').select('*')).data || [];
 
         // --- 2. FETCH ALL QUESTIONS (book_id) ---
@@ -2657,11 +2838,14 @@ userHistory.forEach(h => {
             }
         });
 
-        // --- 5. RENDER UI ---
+      // --- 5. RENDER UI ---
         if (typeof renderBooks === 'function') renderBooks(allBooks, userData, bookStats);
 
         const { data: videosData } = await supabase.rpc('get_dashboard_video_courses');
         if (typeof renderVideoCourses === 'function') renderVideoCourses(videosData, userData);
+
+        // NEW: Render the Flashcard Books
+        renderFlashcardBooks(allBooks, userData);
 
         // --- 6. FINAL BUILDER SYNC ---
         console.log("--- DEBUG: FORCING BUILDER SYNC (DATA POPULATED) ---");

@@ -43,10 +43,14 @@
     </div>
         
         <!-- Discipline Management Section -->
-        <div>
-            <div class="flex justify-between items-center mb-8">
+   <div>
+            <div class="flex justify-between items-center mb-4">
                 <h2 class="text-3xl font-extrabold text-gray-800">Discipline Management</h2>
                 <button id="addDisciplineButton" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow">Add New Discipline</button>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                <input type="text" id="searchDiscipline" placeholder="Search disciplines..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none">
+                <select id="filterDisciplineSpecialty" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none bg-white min-w-[200px]"></select>
             </div>
             <div class="bg-white rounded-lg shadow overflow-hidden">
                 <div class="overflow-x-auto">
@@ -58,43 +62,72 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="disciplineList" class="bg-white divide-y divide-gray-200">
-                            <!-- Rows will be added by JS -->
-                        </tbody>
+                        <tbody id="disciplineList" class="bg-white divide-y divide-gray-200"></tbody>
                     </table>
                 </div>
             </div>
         </div>
 
-        <!-- User Management Section (RESTORED) -->
         <div>
-            <h2 class="text-3xl font-extrabold text-gray-800 mb-8">User Management</h2>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-3xl font-extrabold text-gray-800">User Management</h2>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                <input type="text" id="searchUser" placeholder="Search by username or email..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none">
+                <select id="filterUserSpecialty" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none bg-white min-w-[200px]"></select>
+            </div>
             <div class="bg-white rounded-lg shadow overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
-    <tr>
-        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Username</th>
-        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
-        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
-        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Account Type</th>
-        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-    </tr>
-</thead>
-                        <tbody id="userList" class="bg-white divide-y divide-gray-200">
-                           <!-- Rows will be added by JS -->
-                        </tbody>
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Username</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Account Type</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userList" class="bg-white divide-y divide-gray-200"></tbody>
                     </table>
                 </div>
             </div>
         </div>
 
-        <!-- Book Management Section -->
         <div>
-            <div class="flex justify-between items-center mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-3xl font-extrabold text-gray-800">Active Sessions Management</h2>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                <input type="text" id="searchSession" placeholder="Search by username or email..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none">
+            </div>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Active Devices</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Session Expiry</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sessionList" class="bg-white divide-y divide-gray-200"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="flex justify-between items-center mb-4">
                 <h2 class="text-3xl font-extrabold text-gray-800">Book Management</h2>
                 <button id="addBookButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow">Add New Book</button>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                <input type="text" id="searchBook" placeholder="Search books by title or description..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none">
+                <select id="filterBookSpecialty" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none bg-white min-w-[200px]"></select>
             </div>
             <div class="bg-white rounded-lg shadow overflow-hidden">
                 <div class="overflow-x-auto">
@@ -107,35 +140,42 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="bookList" class="bg-white divide-y divide-gray-200">
-                            <!-- Rows will be added by JS -->
-                        </tbody>
+                        <tbody id="bookList" class="bg-white divide-y divide-gray-200"></tbody>
                     </table>
                 </div>
             </div>
         </div>
+
         <div>
-    <div class="flex justify-between items-center mb-8">
-        <h2 class="text-3xl font-extrabold text-gray-800">Video Course Management</h2>
-        <button id="addVideoCourseButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow">Add New Video Course</button>
-    </div>
-    <div class="bg-white rounded-lg shadow overflow-hidden">
-        <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Access Level</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="videoCourseList" class="bg-white divide-y divide-gray-200">
-                    </tbody>
-            </table>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-3xl font-extrabold text-gray-800">Video Course Management</h2>
+                <button id="addVideoCourseButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow">Add New Video Course</button>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                <input type="text" id="searchVideo" placeholder="Search video courses..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none">
+                <select id="filterVideoSpecialty" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:outline-none bg-white min-w-[200px]"></select>
+            </div>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specialty</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Access Level</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="videoCourseList" class="bg-white divide-y divide-gray-200"></tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+
+      
+
+
+
 <div id="managePurchaseModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
     <div class="bg-white rounded-lg shadow-2xl p-8 max-w-4xl w-full flex flex-col" style="height: 90vh; max-height: 800px;">
         <h3 id="manageModalTitle" class="text-2xl font-bold text-gray-800 mb-6 flex-shrink-0">Manage Purchases</h3>
@@ -548,6 +588,54 @@ async function validateAndEnforceSession(user) {
             }
         }
 
+
+        // --- NEW: Table Search & Filter Logic ---
+        function populateFilterSpecialtyDropdown(selectElement) {
+            if (!selectElement) return;
+            selectElement.innerHTML = '<option value="all">All Specialties</option>';
+            for (const group in medicalSpecialties) {
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = group;
+                medicalSpecialties[group].forEach(specialty => {
+                    const option = document.createElement('option');
+                    option.value = specialty;
+                    option.textContent = specialty;
+                    optgroup.appendChild(option);
+                });
+                selectElement.appendChild(optgroup);
+            }
+        }
+
+      function setupTableFilter(searchInputId, specialtySelectId, tableBodyId) {
+            const searchInput = document.getElementById(searchInputId);
+            const specialtySelect = specialtySelectId ? document.getElementById(specialtySelectId) : null;
+            const tableBody = document.getElementById(tableBodyId);
+
+            if (!searchInput || !tableBody) return;
+
+            function filterRows() {
+                const query = searchInput.value.toLowerCase().trim();
+                const specialty = specialtySelect ? specialtySelect.value : 'all';
+                const rows = tableBody.querySelectorAll('tr[data-id]');
+
+                rows.forEach(row => {
+                    const searchText = (row.getAttribute('data-search') || '');
+                    const rowSpecialty = row.getAttribute('data-specialty') || '';
+                    
+                    const matchesSearch = query === '' || searchText.includes(query);
+                    const matchesSpecialty = specialty === 'all' || rowSpecialty === specialty;
+
+                    if (matchesSearch && matchesSpecialty) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            searchInput.addEventListener('input', filterRows);
+            if (specialtySelect) specialtySelect.addEventListener('change', filterRows);
+        }
         populateSpecialtyDropdown(document.getElementById('disciplineSpecialty'));
         populateSpecialtyDropdown(document.getElementById('bookSpecialty'));
         populateSpecialtyDropdown(document.getElementById('videoCourseSpecialty')); // <-- Add this line
@@ -581,7 +669,7 @@ let linkedSpecialtiesSelector; // To hold the SlimSelect instance
         
         disciplines.forEach((data) => {
             const row = `
-                <tr data-id="${data.id}">
+                <tr data-id="${data.id}" data-specialty="${data.speciality || ''}" data-search="${(data.name || '').replace(/"/g, '&quot;').toLowerCase()}">
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${data.name}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.speciality || 'N/A'}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
@@ -619,7 +707,7 @@ let linkedSpecialtiesSelector; // To hold the SlimSelect instance
         // Just make sure it uses the 'allBooks' array we fetched from Supabase.
         allBooks.forEach((bookData) => {
             const bookRow = `
-                <tr data-id="${bookData.id}">
+                <tr data-id="${bookData.id}" data-specialty="${bookData.speciality || ''}" data-search="${(bookData.title || '').replace(/"/g, '&quot;').toLowerCase()}">
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${bookData.title}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${bookData.speciality}</td>
                     <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate">${bookData.description}</td>
@@ -656,7 +744,7 @@ async function loadVideoCourses() {
 
         courses.forEach((course) => {
          const courseRow = `
-    <tr data-id="${course.id}">
+    <tr data-id="${course.id}" data-specialty="${course.speciality || ''}" data-search="${(course.title || '').replace(/"/g, '&quot;').toLowerCase()}">
         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${course.title}</td>
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${course.speciality}</td>
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${course.access_level}</td>
@@ -862,7 +950,7 @@ async function loadUsers() {
             const isPremium = userData.account_type === 'premium';
 
             const userRow = `
-                <tr data-id="${userData.id}" data-current-type="${userData.account_type}">
+               <tr data-id="${userData.id}" data-current-type="${userData.account_type}" data-specialty="${userData.speciality || ''}" data-search="${(userData.username || '').replace(/"/g, '&quot;').toLowerCase()} ${(userData.email || '').toLowerCase()}">
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${userData.username}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${userData.email || 'N/A'}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${userData.speciality}</td>
@@ -890,6 +978,97 @@ async function loadUsers() {
         userList.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-red-500">Error loading users.</td></tr>`;
     }
 }
+
+// --- NEW: Active Sessions Management Logic ---
+async function loadActiveSessions() {
+    const sessionList = document.getElementById('sessionList');
+    try {
+        // 1. Get all users (we use this to match names and emails)
+        const { data: users, error: usersError } = await supabase.rpc('get_all_users_with_details');
+        if (usersError) throw usersError;
+
+        // 2. Get all currently active sessions from the database
+        const { data: sessions, error: sessionsError } = await supabase.from('active_sessions').select('*');
+        if (sessionsError) throw sessionsError;
+
+        const now = new Date();
+        const userSessionsMap = {};
+
+        // Group the valid, non-expired sessions by user_id
+        sessions.forEach(session => {
+            const expiry = new Date(session.expires_at);
+            if (expiry > now) { 
+                if (!userSessionsMap[session.user_id]) userSessionsMap[session.user_id] = [];
+                userSessionsMap[session.user_id].push(session);
+            }
+        });
+
+        sessionList.innerHTML = '';
+
+        if (Object.keys(userSessionsMap).length === 0) {
+            sessionList.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-gray-500">No active sessions currently running.</td></tr>`;
+            return;
+        }
+
+        // 3. Render the UI for every user that has active devices
+        users.forEach(user => {
+            const userSessions = userSessionsMap[user.id];
+            if (!userSessions || userSessions.length === 0) return; // Skip users who are offline
+
+            const deviceCount = userSessions.length;
+            
+            // Find the furthest expiry date to show how long they are logged in for
+            const latestExpiry = new Date(Math.max(...userSessions.map(s => new Date(s.expires_at))));
+
+            const row = `
+                <tr data-id="${user.id}" data-search="${(user.username || '').replace(/"/g, '&quot;').toLowerCase()} ${(user.email || '').toLowerCase()}">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-bold text-gray-900">${user.username}</div>
+                        <div class="text-xs text-gray-500">${user.email || 'N/A'}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-extrabold">${deviceCount}</span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-mono">
+                        ${latestExpiry.toLocaleString()}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            Online
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button class="force-logout-btn bg-red-50 text-red-600 hover:bg-red-600 hover:text-white transition-colors border border-red-200 px-3 py-1.5 rounded-lg shadow-sm" data-user-id="${user.id}">
+                            Force Logout All Devices
+                        </button>
+                    </td>
+                </tr>`;
+            sessionList.innerHTML += row;
+        });
+
+    } catch (error) {
+        console.error("Error loading active sessions:", error);
+        sessionList.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-red-500">Error loading active sessions.</td></tr>`;
+    }
+}
+
+// Add the listener for the Force Logout button
+document.getElementById('sessionList').addEventListener('click', async (e) => {
+    if (e.target.classList.contains('force-logout-btn')) {
+        const userId = e.target.dataset.userId;
+        if (confirm("Are you sure you want to log this user out of all devices? They will be immediately disconnected.")) {
+            try {
+                // Delete all rows in active_sessions for this user
+                const { error } = await supabase.from('active_sessions').delete().eq('user_id', userId);
+                if (error) throw error;
+                alert("User successfully logged out of all devices.");
+                loadActiveSessions(); // Refresh the table
+            } catch (err) {
+                alert("Error forcing logout: " + err.message);
+            }
+        }
+    }
+});
 
         function openModal(modal) {
             modal.classList.remove('hidden');
@@ -1224,8 +1403,21 @@ document.addEventListener('DOMContentLoaded', async () => {
                 loadDisciplines(),
                 loadUsers(),
                 loadBooks(),
-                loadVideoCourses() // <-- Add this line
+                loadVideoCourses(), // <-- Add this line
+                loadActiveSessions() // <-- NEW
+                
             ]);
+            // Initialize Filters
+            populateFilterSpecialtyDropdown(document.getElementById('filterDisciplineSpecialty'));
+            populateFilterSpecialtyDropdown(document.getElementById('filterUserSpecialty'));
+            populateFilterSpecialtyDropdown(document.getElementById('filterBookSpecialty'));
+            populateFilterSpecialtyDropdown(document.getElementById('filterVideoSpecialty'));
+
+            setupTableFilter('searchDiscipline', 'filterDisciplineSpecialty', 'disciplineList');
+            setupTableFilter('searchUser', 'filterUserSpecialty', 'userList');
+            setupTableFilter('searchBook', 'filterBookSpecialty', 'bookList');
+            setupTableFilter('searchVideo', 'filterVideoSpecialty', 'videoCourseList');
+            setupTableFilter('searchSession', null, 'sessionList');
         }
     } else {
         // If no session, send them to the login page

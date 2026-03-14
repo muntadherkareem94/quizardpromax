@@ -43,6 +43,15 @@ canvas[id^="ch-chart-"]{
 }
 
     </style> 
+
+    <script>
+        if (window.location.search.includes('target=flashcards')) {
+            document.write('<style>#disciplineQuizButton { display: none !important; } #disciplineFlashcardsButton { display: inline-block !important; }</style>');
+        } else {
+            document.write('<style>#disciplineFlashcardsButton { display: none !important; }</style>');
+        }
+    </script>
+</head>
 </head>
 <body class="flex flex-col min-h-screen">
 <header class="container mx-auto max-w-4xl mt-8 bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
@@ -111,9 +120,12 @@ canvas[id^="ch-chart-"]{
 <h2 id="disciplineTitle" class="text-4xl font-extrabold text-white text-center drop-shadow-lg"></h2>
 
 <!-- Centered Discipline Custom Quiz button (like Book page) -->
-<div class="flex justify-center mt-4 mb-8">
+<div id="quizBtnWrapper" class="flex justify-center mt-4 mb-8 space-x-4">
     <button id="disciplineQuizButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
         Start Discipline Quiz
+    </button>
+    <button id="disciplineFlashcardsButton" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105 hidden">
+        Study All Discipline Flashcards
     </button>
 </div>
 
@@ -185,8 +197,9 @@ canvas[id^="ch-chart-"]{
                 <legend class="text-lg font-semibold text-gray-700 mb-2">Filters & Question Flow</legend>
                 <div class="mb-6">
                     <p class="text-sm font-semibold text-gray-700 mb-2">Available Filters</p>
-                     <div id="filterList" class="space-y-2 border rounded-lg p-3 bg-gray-50 max-h-60 overflow-y-auto">
+                    <div id="filterList" class="space-y-2 border rounded-lg p-3 bg-gray-50 max-h-60 overflow-y-auto">
                         <div id="filter-unanswered" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="unanswered" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Un-answered questions</span></label></div>
+                        <div id="filter-lastly-wrong" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="lastly-wrong" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Lastly Answered Wrong</span></label></div>
                         <div id="filter-initial-wrong" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="initial-wrong" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Answered Initially Wrong</span></label></div>
                         <div id="filter-previously-wrong" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="previously-wrong" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Answered previously wrong</span></label></div>
                         <div id="filter-review" class="rule-item flex items-center p-2 bg-white rounded-md shadow-sm border"><label class="flex items-center w-full cursor-pointer"><input type="checkbox" data-filter-key="review" class="filter-checkbox h-4 w-4 text-purple-600 rounded"> <span class="ml-3 text-sm">Questions labelled for review</span></label></div>
@@ -240,7 +253,16 @@ canvas[id^="ch-chart-"]{
             </div>
         </div>
     </div>
-
+<div id="flashcardModeModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center">
+        <h3 class="text-2xl font-bold text-gray-800 mb-6">Flashcard Order</h3>
+        <div class="flex flex-col gap-4">
+            <button id="fcSequentialBtn" class="w-full py-3 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg shadow-md transition-all active:scale-95">Sequential</button>
+            <button id="fcRandomBtn" class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition-all active:scale-95">Random</button>
+            <button id="fcCancelBtn" class="mt-4 w-full py-2 px-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold rounded-lg">Cancel</button>
+        </div>
+    </div>
+</div>
     <div id="customQuizChoiceModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[60]">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center">
             <h3 class="text-2xl font-bold text-gray-800 mb-6">Custom Quiz</h3>
@@ -341,9 +363,16 @@ async function fetchAndDisplayNotifications() {
         return;
     }
 
+    // --- FIX: Force sort the notifications so the newest dates are at the top ---
+    userNotifications.sort((a, b) => {
+        const dateA = a.notifications ? new Date(a.notifications.created_at).getTime() : 0;
+        const dateB = b.notifications ? new Date(b.notifications.created_at).getTime() : 0;
+        return dateB - dateA; // Subtracting A from B forces descending order (Newest first)
+    });
+
     userNotifications.forEach(item => {
         const notification = item.notifications; 
-        if (!notification) return; 
+        if (!notification) return;
 
         const notifElement = document.createElement('a');
         notifElement.href = notification.link_url || '#';
@@ -455,9 +484,15 @@ async function loadAllData(user) {
         const disciplineId = urlParams.get('disciplineId');
         const disciplineName = urlParams.get('name');
 
-        if (dom.disciplineTitle && disciplineName) {
-            dom.disciplineTitle.textContent = disciplineName;
+     if (dom.disciplineTitle && disciplineName) {
+            const targetMode = urlParams.get('target') || 'quiz';
+            
+            dom.disciplineTitle.textContent = targetMode === 'flashcards' ? `Flashcards: ${disciplineName}` : disciplineName;
             dom.disciplineTitle.dataset.id = disciplineId;
+            
+            if (targetMode === 'flashcards' && dom.disciplineQuizButton) {
+                dom.disciplineQuizButton.classList.add('hidden'); // Hide the Custom Quiz button
+            }
         }
 
         console.log("--- DEBUG: STARTING ROBUST DATA FETCH ---");
@@ -1032,8 +1067,12 @@ const externalTooltipHandler = (context) => {
 window.chapterCharts = [];
 
 // --- RENDERER (Updated with new function name) ---
+// --- RENDERER (Updated with new function name) ---
 function renderChaptersByDiscipline(chapters, container) {
     container.innerHTML = '';
+    
+    // THE FIX: Define targetMode here so the cards know if they are flashcards!
+    const targetMode = new URLSearchParams(window.location.search).get('target') || 'quiz';
     
     // Cleanup
     if (window.chapterCharts && window.chapterCharts.length > 0) {
@@ -1104,13 +1143,13 @@ card.innerHTML = `
         </div>
     </div>
     
-    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 ml-1 sm:ml-0">
-        <div class="relative flex-shrink-0 w-7 h-7 xs:w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+ <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 ml-1 sm:ml-0">
+        <div class="relative flex-shrink-0 w-7 h-7 xs:w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${targetMode === 'flashcards' ? 'hidden' : ''}">
             <canvas id="ch-chart-${chapter.id}"></canvas>
         </div>
         <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg shadow-sm transition-all active:scale-95 whitespace-nowrap"
             onclick="window.launchChapterQuiz('${chapter.id}')">
-            Start
+            ${targetMode === 'flashcards' ? 'Study Deck' : 'Start'}
         </button>
     </div>
 `;
@@ -1159,18 +1198,15 @@ const ctx = canvas.getContext('2d');
 // Global start helper
 // --- DEBUG VERSION: START QUIZ ---
 window.startQuizForChapter = (chapterId) => {
-    console.log("--- DEBUG: START QUIZ CLICKED ---");
-    console.log("Chapter ID:", chapterId);
-
-    // 1. Get current discipline info
     const urlParams = new URLSearchParams(window.location.search);
     const disciplineId = urlParams.get('disciplineId');
-    const disciplineName = urlParams.get('name'); // Check if your URL uses 'name' or 'disciplineName'
-    
-    console.log("Current Page Params -> DiscID:", disciplineId, "Name:", disciplineName);
+    const disciplineName = urlParams.get('name');
+    const targetMode = urlParams.get('target') || 'quiz'; // Check mode
 
-    // 2. Build URL
-    let targetUrl = `quiz_page.html?mode=chapter&chapterId=${chapterId}`;
+    // 2. Build URL depending on mode
+    let targetUrl = targetMode === 'flashcards'
+        ? `flashcard_display.html?mode=chapter&chapterId=${chapterId}`
+        : `quiz_page.html?mode=chapter&chapterId=${chapterId}`;
     
     // 3. Attach Return Info
     if (disciplineId) {
@@ -1179,8 +1215,6 @@ window.startQuizForChapter = (chapterId) => {
     if (disciplineName) {
         targetUrl += `&disciplineName=${encodeURIComponent(disciplineName)}`;
     }
-
-    console.log("TARGET URL GENERATED:", targetUrl);
     
     // 4. Go there
     window.location.href = targetUrl;
@@ -1192,6 +1226,11 @@ window.launchChapterQuiz = window.startQuizForChapter;
 function getFilterFunctions() {
         return {
             'unanswered': q => !userHistoryCache.has(q.id),
+            
+            'lastly-wrong': q => {
+                const history = userHistoryCache.get(q.id);
+                return history && (history.lastResult === 'wrong');
+            },
             
             // FIX: "Previously wrong" means they have gotten it wrong at least once EVER, 
             // even if they got it right 50 times later.
@@ -1548,8 +1587,41 @@ dom.customAlertCloseBtn.addEventListener('click', () => dom.customAlertModal.cla
 
 dom.closeQuizBuilderBtn.addEventListener('click', () => dom.customQuizModal.classList.add('hidden'));
 dom.startCustomQuizBtn.addEventListener('click', handleStartCustomQuiz);
-</script>
 
+// --- FLASHCARD GLOBAL DECK ROUTING ---
+const disciplineFlashcardsButton = document.getElementById('disciplineFlashcardsButton');
+const flashcardModeModal = document.getElementById('flashcardModeModal');
+const fcSequentialBtn = document.getElementById('fcSequentialBtn');
+const fcRandomBtn = document.getElementById('fcRandomBtn');
+const fcCancelBtn = document.getElementById('fcCancelBtn');
+
+if (disciplineFlashcardsButton) {
+    disciplineFlashcardsButton.addEventListener('click', () => {
+        const priority = getDisciplinePriorityList();
+        if (!priority || priority.length === 0) {
+            alert("No chapters found in this discipline.");
+            return;
+        }
+        flashcardModeModal.classList.remove('hidden');
+    });
+}
+
+if (fcCancelBtn) fcCancelBtn.addEventListener('click', () => flashcardModeModal.classList.add('hidden'));
+
+if (fcSequentialBtn) {
+    fcSequentialBtn.addEventListener('click', () => {
+        const { disciplineId, disciplineName } = getDisciplineContext();
+        window.location.href = `flashcard_display.html?disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}&from=disciplines&flowMode=sequential`;
+    });
+}
+
+if (fcRandomBtn) {
+    fcRandomBtn.addEventListener('click', () => {
+        const { disciplineId, disciplineName } = getDisciplineContext();
+        window.location.href = `flashcard_display.html?disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}&from=disciplines&flowMode=random`;
+    });
+}
+</script>
 
 </body>
 </html>

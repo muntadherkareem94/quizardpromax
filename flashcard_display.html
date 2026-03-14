@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizard - Custom Flashcards</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main-styles.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #3da0be;
+            color: #52c4e0;
+        }
+
+        /* --- 3D Flip Card CSS --- */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        
+        .flip-card-inner {
+            transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            top: 0; left: 0;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .card-text {
+            font-size: clamp(1.2rem, 2.5vw + 0.5rem, 1.75rem);
+            line-height: 1.5;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="container mx-auto max-w-4xl mt-8 bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
+        <div class="flex-1">
+            <button id="backButton" class="text-gray-600 hover:text-purple-600 transition-colors flex items-center font-semibold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                <span class="hidden sm:inline">Back to Decks</span>
+            </button>
+        </div>
+        <div class="flex-shrink-0">
+            <img src="images/logo.png" alt="Quizard Logo" class="h-12 sm:h-16">
+        </div>
+        <div class="flex-1 flex justify-end items-center space-x-3">
+            <button id="openAddCardBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-sm flex items-center text-sm transition-all active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                <span class="hidden sm:inline">Add Card</span>
+            </button>
+            <div id="cardCounterBadge" class="hidden text-sm font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-lg border border-gray-200">
+                <span id="currentCardNum" class="text-indigo-600">0</span> / <span id="totalCardNum">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center justify-center">
+        
+        <div id="loadingState" class="text-center text-white text-xl font-bold animate-pulse">
+            Loading your deck...
+        </div>
+
+        <div id="emptyState" class="hidden text-center flex flex-col items-center justify-center max-w-lg p-8 bg-white/10 rounded-3xl backdrop-blur-sm border border-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white opacity-50 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            <h2 class="text-2xl font-bold text-white mb-2">This deck is empty!</h2>
+            <p class="text-white/80 mb-6">You haven't created any flashcards for this topic yet. Start building your custom study deck now.</p>
+            <button id="emptyAddCardBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-all active:scale-95 text-lg">
+                Create First Flashcard
+            </button>
+        </div>
+
+<div id="flashcardContainer" class="hidden w-full max-w-3xl flex flex-col items-center">
+            
+            <div class="flex justify-between items-center w-full mb-4 px-2 sm:px-6">
+                <h2 id="deckTitle" class="text-white text-lg sm:text-xl font-bold opacity-90 drop-shadow-md truncate pr-4"></h2>
+                <div class="flex gap-2 shrink-0">
+                    <button id="editCardBtn" class="bg-white/20 hover:bg-white/30 text-white p-2 rounded-lg transition-colors" title="Edit Card">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    </button>
+                    <button id="deleteCardBtn" class="bg-red-500/80 hover:bg-red-600 text-white p-2 rounded-lg transition-colors" title="Delete Card">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+<div id="flashcard" class="flip-card perspective-1000 w-full h-[55vh] min-h-[350px] cursor-pointer group">
+                <div class="flip-card-inner shadow-2xl rounded-3xl">
+                    
+                    <div class="flip-card-front bg-white rounded-3xl p-6 sm:p-10 flex flex-col overflow-y-auto border-4 border-indigo-50">
+                        <div class="mb-4 flex justify-between items-center opacity-50 border-b pb-2">
+                            <span class="uppercase tracking-widest text-xs font-bold text-gray-500">Front</span>
+                            <svg class="w-5 h-5 text-gray-400 group-hover:text-indigo-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        </div>
+                        <div id="cardFrontText" class="card-text flex-grow flex items-center justify-center text-center font-bold"></div>
+                        <div id="displayFrontImage" class="mt-4 flex justify-center w-full"></div>
+                    </div>
+
+                    <div class="flip-card-back bg-indigo-50 rounded-3xl p-6 sm:p-10 flex flex-col overflow-y-auto border-4 border-indigo-200">
+                        <div class="mb-4 flex justify-between items-center opacity-50 border-b border-indigo-200 pb-2">
+                            <span class="uppercase tracking-widest text-xs font-bold text-indigo-800">Back</span>
+                            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div id="cardBackText" class="card-text flex-grow flex items-center justify-center text-center text-indigo-900 font-semibold whitespace-pre-wrap"></div>
+                        <div id="displayBackImage" class="mt-4 flex justify-center w-full"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="mt-8 flex items-center gap-4 sm:gap-8 w-full max-w-md justify-center">
+                <button id="prevBtn" class="bg-white/20 hover:bg-white/40 text-white rounded-full p-4 transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                
+                <button id="flipBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-all active:scale-95 uppercase tracking-widest text-sm flex-grow">
+                    Flip Card (Space)
+                </button>
+                
+                <button id="nextBtn" class="bg-white/20 hover:bg-white/40 text-white rounded-full p-4 transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div id="addCardModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full text-gray-800">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Create Flashcard</h3>
+                <button id="closeAddCardModal" class="text-gray-400 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+           <div class="space-y-4">
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Front (Question / Prompt)</label>
+                    <textarea id="newCardFront" rows="2" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none resize-none mb-2" placeholder="e.g. What is the most common cause of..."></textarea>
+                    
+                    <label class="flex items-center gap-2 cursor-pointer text-sm text-indigo-600 hover:text-indigo-800 font-semibold w-fit">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Attach Image to Front
+                        <input type="file" id="frontImageInput" accept="image/*" class="hidden">
+                    </label>
+                    <div id="frontImagePreview" class="hidden mt-2 relative w-fit">
+                        <img src="" class="h-20 rounded shadow-sm border border-gray-300">
+                        <button type="button" id="removeFrontImageBtn" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600">&times;</button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Back (Answer)</label>
+                    <textarea id="newCardBack" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none resize-none mb-2" placeholder="e.g. The correct answer is..."></textarea>
+                    
+                    <label class="flex items-center gap-2 cursor-pointer text-sm text-indigo-600 hover:text-indigo-800 font-semibold w-fit">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Attach Image to Back
+                        <input type="file" id="backImageInput" accept="image/*" class="hidden">
+                    </label>
+                    <div id="backImagePreview" class="hidden mt-2 relative w-fit">
+                        <img src="" class="h-20 rounded shadow-sm border border-gray-300">
+                        <button type="button" id="removeBackImageBtn" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600">&times;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-end gap-3">
+                <button id="cancelAddCardBtn" class="py-2 px-6 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors">Cancel</button>
+                <button id="saveCardBtn" class="py-2 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow transition-colors flex items-center">
+                    Save Card
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { supabase } from './supabaseClient.js';
+
+        // --- DOM Elements ---
+        const dom = {
+            loadingState: document.getElementById('loadingState'),
+            emptyState: document.getElementById('emptyState'),
+            flashcardContainer: document.getElementById('flashcardContainer'),
+            flashcard: document.getElementById('flashcard'),
+            deckTitle: document.getElementById('deckTitle'),
+            editCardBtn: document.getElementById('editCardBtn'), // NEW
+            deleteCardBtn: document.getElementById('deleteCardBtn'), // NEW
+            cardFrontText: document.getElementById('cardFrontText'),
+            cardBackText: document.getElementById('cardBackText'),
+            currentCardNum: document.getElementById('currentCardNum'),
+            totalCardNum: document.getElementById('totalCardNum'),
+            cardCounterBadge: document.getElementById('cardCounterBadge'),
+            prevBtn: document.getElementById('prevBtn'),
+            nextBtn: document.getElementById('nextBtn'),
+            flipBtn: document.getElementById('flipBtn'),
+            backButton: document.getElementById('backButton'),
+            
+            // Modal Elements
+            openAddCardBtn: document.getElementById('openAddCardBtn'),
+            emptyAddCardBtn: document.getElementById('emptyAddCardBtn'),
+            addCardModal: document.getElementById('addCardModal'),
+            closeAddCardModal: document.getElementById('closeAddCardModal'),
+            cancelAddCardBtn: document.getElementById('cancelAddCardBtn'),
+            saveCardBtn: document.getElementById('saveCardBtn'),
+            newCardFront: document.getElementById('newCardFront'),
+            newCardBack: document.getElementById('newCardBack'), 
+            frontImageInput: document.getElementById('frontImageInput'),
+            frontImagePreview: document.getElementById('frontImagePreview'),
+            removeFrontImageBtn: document.getElementById('removeFrontImageBtn'),
+            backImageInput: document.getElementById('backImageInput'),
+            backImagePreview: document.getElementById('backImagePreview'),
+            removeBackImageBtn: document.getElementById('removeBackImageBtn'),
+            displayFrontImage: document.getElementById('displayFrontImage'),
+            displayBackImage: document.getElementById('displayBackImage')
+        };
+
+        // --- State ---
+        let flashcards = [];
+        let currentIndex = 0;
+        let isFlipped = false;
+        let currentUserId = null;
+        let editingCardId = null; // Tracks if we are editing an existing card
+        
+  const urlParams = new URLSearchParams(window.location.search);
+        const chapterId = urlParams.get('chapterId');
+
+        // --- Initialization ---
+        const bookId = urlParams.get('bookId'); 
+        const disciplineId = urlParams.get('disciplineId'); // FIX: Capture disciplineId
+        const flowMode = urlParams.get('flowMode') || 'random'; 
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const { data: { user } } = await supabase.auth.getUser();
+            if (!user) { window.location.href = 'index.html'; return; }
+            currentUserId = user.id;
+
+            if (!chapterId && !bookId && !disciplineId) {
+                dom.loadingState.textContent = "Error: No deck selected.";
+                return;
+            }
+
+            // Hide the 'Add Card' button if we are in a Global Book View 
+            // (because we wouldn't know which chapter to save the new card into)
+            if (!chapterId) {
+                dom.openAddCardBtn.classList.add('hidden');
+            }
+
+            const from = urlParams.get('from');
+            const titleContext = from === 'book' ? 'Book Deck' : urlParams.get('disciplineName') || 'Discipline Deck';
+            dom.deckTitle.textContent = `My Cards: ${titleContext}`;
+
+            await loadFlashcards();
+        });
+
+        // --- Load Data ---
+        async function loadFlashcards() {
+            dom.loadingState.classList.remove('hidden');
+            dom.flashcardContainer.classList.add('hidden');
+            dom.emptyState.classList.add('hidden');
+            dom.cardCounterBadge.classList.add('hidden');
+
+            try {
+                let data = [];
+                let error = null;
+
+                if (chapterId) {
+                    // Fetch for a SINGLE chapter
+                    const response = await supabase
+                        .from('user_flashcards')
+                        .select('*')
+                        .eq('chapter_id', chapterId)
+                        .eq('user_id', currentUserId)
+                        .order('created_at', { ascending: true }); // Base order is Sequential
+                    data = response.data;
+                    error = response.error;
+                } else if (bookId) {
+                    // Fetch ALL chapters for this book first
+                    const { data: chapters, error: chError } = await supabase
+                        .from('chapters')
+                        .select('id')
+                        .eq('book_id', bookId);
+                    
+                    if (chError) throw chError;
+                    
+                    if (chapters && chapters.length > 0) {
+                        const chapterIds = chapters.map(c => c.id);
+                        const response = await supabase
+                            .from('user_flashcards')
+                            .select('*')
+                            .in('chapter_id', chapterIds)
+                            .eq('user_id', currentUserId)
+                            .order('created_at', { ascending: true });
+                        data = response.data;
+                        error = response.error;
+                    }
+                } else if (disciplineId) {
+                    // Fetch ALL chapters for this discipline first
+                    const { data: chapters, error: chError } = await supabase
+                        .from('chapters')
+                        .select('id')
+                        .eq('discipline_id', disciplineId);
+                    
+                    if (chError) throw chError;
+                    
+                    if (chapters && chapters.length > 0) {
+                        const chapterIds = chapters.map(c => c.id);
+                        const response = await supabase
+                            .from('user_flashcards')
+                            .select('*')
+                            .in('chapter_id', chapterIds)
+                            .eq('user_id', currentUserId)
+                            .order('created_at', { ascending: true });
+                        data = response.data;
+                        error = response.error;
+                    }
+                }
+
+                if (error) throw error;
+                flashcards = data || [];
+                dom.loadingState.classList.add('hidden');
+
+                if (flashcards.length === 0) {
+                    dom.emptyState.classList.remove('hidden');
+                    // Change text if there's no chapter context
+                    if (!chapterId) {
+                        dom.emptyState.querySelector('p').textContent = "You haven't created any flashcards for this book yet. Go to a specific chapter to add cards!";
+                        dom.emptyAddCardBtn.classList.add('hidden');
+                    }
+                } else {
+                    // Handle the Sorting!
+                    if (flowMode === 'random') {
+                        flashcards.sort(() => Math.random() - 0.5);
+                    }
+                    // (If sequential, it is already ordered by 'created_at' from the database!)
+
+                    dom.totalCardNum.textContent = flashcards.length;
+                    dom.cardCounterBadge.classList.remove('hidden');
+                    dom.flashcardContainer.classList.remove('hidden');
+                    currentIndex = 0;
+                    renderCard();
+                }
+            } catch (err) {
+                console.error("Error loading flashcards:", err);
+                dom.loadingState.textContent = "Failed to load deck.";
+            }
+        }
+
+
+        // --- Render Logic ---
+     function renderCard() {
+            const card = flashcards[currentIndex];
+            if (!card) return;
+
+            isFlipped = false;
+            dom.flashcard.classList.remove('flipped');
+
+            dom.currentCardNum.textContent = currentIndex + 1;
+            dom.prevBtn.disabled = currentIndex === 0;
+            dom.nextBtn.disabled = currentIndex === flashcards.length - 1;
+
+            dom.cardFrontText.textContent = card.front_text;
+            dom.cardBackText.textContent = card.back_text;
+
+            // Render Front Image
+            if (card.front_image_url) {
+                dom.displayFrontImage.innerHTML = `<img src="${card.front_image_url}" class="max-h-48 rounded-lg shadow-sm border border-gray-200 object-contain cursor-pointer">`;
+            } else {
+                dom.displayFrontImage.innerHTML = '';
+            }
+
+            // Render Back Image
+            if (card.back_image_url) {
+                dom.displayBackImage.innerHTML = `<img src="${card.back_image_url}" class="max-h-48 rounded-lg shadow-sm border border-indigo-200 object-contain cursor-pointer">`;
+            } else {
+                dom.displayBackImage.innerHTML = '';
+            }
+            
+            dom.flashcard.querySelector('.flip-card-front').scrollTop = 0;
+            dom.flashcard.querySelector('.flip-card-back').scrollTop = 0;
+        }
+
+        // --- Interactions ---
+        function toggleFlip() {
+            isFlipped = !isFlipped;
+            dom.flashcard.classList.toggle('flipped', isFlipped);
+        }
+
+        function nextCard() {
+            if (currentIndex < flashcards.length - 1) {
+                currentIndex++;
+                renderCard();
+            }
+        }
+
+        function prevCard() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderCard();
+            }
+        }
+
+        dom.flashcard.addEventListener('click', toggleFlip);
+        dom.flipBtn.addEventListener('click', toggleFlip);
+        dom.nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextCard(); });
+        dom.prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevCard(); });
+
+        // Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (dom.flashcardContainer.classList.contains('hidden') || !dom.addCardModal.classList.contains('hidden')) return;
+            
+            if (e.code === 'Space') {
+                e.preventDefault(); 
+                toggleFlip();
+            } else if (e.code === 'ArrowRight') {
+                nextCard();
+            } else if (e.code === 'ArrowLeft') {
+                prevCard();
+            }
+        });
+
+        // --- ADD CARD LOGIC ---
+       // --- ADD & EDIT CARD LOGIC ---
+// --- IMAGE UPLOAD HELPER ---
+        async function uploadImageToStorage(file) {
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${currentUserId}_${Date.now()}.${fileExt}`; // Unique name
+            
+            const { data, error } = await supabase.storage
+                .from('flashcard_images')
+                .upload(fileName, file);
+                
+            if (error) throw error;
+            
+            const { data: publicUrlData } = supabase.storage.from('flashcard_images').getPublicUrl(fileName);
+            return publicUrlData.publicUrl;
+        }
+
+        // --- PREVIEW UI HELPERS ---
+        // --- PREVIEW UI HELPERS ---
+        let currentFrontImageUrl = null;
+        let currentBackImageUrl = null;
+
+        dom.frontImageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                dom.frontImagePreview.querySelector('img').src = URL.createObjectURL(file);
+                dom.frontImagePreview.classList.remove('hidden');
+            }
+        });
+
+        dom.backImageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                dom.backImagePreview.querySelector('img').src = URL.createObjectURL(file);
+                dom.backImagePreview.classList.remove('hidden');
+            }
+        });
+
+        dom.removeFrontImageBtn.addEventListener('click', () => {
+            dom.frontImageInput.value = '';
+            currentFrontImageUrl = null;
+            dom.frontImagePreview.classList.add('hidden');
+        });
+
+        dom.removeBackImageBtn.addEventListener('click', () => {
+            dom.backImageInput.value = '';
+            currentBackImageUrl = null;
+            dom.backImagePreview.classList.add('hidden');
+        });
+
+        // --- NEW: CLIPBOARD PASTE LOGIC ---
+        function handleImagePaste(e, targetInput) {
+            const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                if (item.type.indexOf('image') !== -1) {
+                    e.preventDefault(); // Stop the image from pasting as text
+                    const file = item.getAsFile();
+                    
+                    // Create a pseudo-FileList and assign it to the hidden input
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    targetInput.files = dataTransfer.files;
+                    
+                    // Manually trigger the 'change' event so the preview updates
+                    targetInput.dispatchEvent(new Event('change'));
+                    break; // Only handle the first image pasted
+                }
+            }
+        }
+
+        // Listen for Ctrl+V / Paste in the textareas
+        dom.newCardFront.addEventListener('paste', (e) => handleImagePaste(e, dom.frontImageInput));
+        dom.newCardBack.addEventListener('paste', (e) => handleImagePaste(e, dom.backImageInput));
+
+        // --- ADD & EDIT CARD LOGIC ---
+        function openModal(isEdit = false) {
+            const modalTitle = dom.addCardModal.querySelector('h3');
+            
+            // Clear file inputs
+            dom.frontImageInput.value = '';
+            dom.backImageInput.value = '';
+            dom.frontImagePreview.classList.add('hidden');
+            dom.backImagePreview.classList.add('hidden');
+            
+            if (isEdit) {
+                const card = flashcards[currentIndex];
+                editingCardId = card.id;
+                dom.newCardFront.value = card.front_text;
+                dom.newCardBack.value = card.back_text;
+                
+                currentFrontImageUrl = card.front_image_url || null;
+                if (currentFrontImageUrl) {
+                    dom.frontImagePreview.querySelector('img').src = currentFrontImageUrl;
+                    dom.frontImagePreview.classList.remove('hidden');
+                }
+
+                currentBackImageUrl = card.back_image_url || null;
+                if (currentBackImageUrl) {
+                    dom.backImagePreview.querySelector('img').src = currentBackImageUrl;
+                    dom.backImagePreview.classList.remove('hidden');
+                }
+
+                modalTitle.textContent = 'Edit Flashcard';
+                dom.saveCardBtn.textContent = 'Update Card';
+            } else {
+                editingCardId = null;
+                currentFrontImageUrl = null;
+                currentBackImageUrl = null;
+                dom.newCardFront.value = '';
+                dom.newCardBack.value = '';
+                modalTitle.textContent = 'Create Flashcard';
+                dom.saveCardBtn.textContent = 'Save Card';
+            }
+            
+            dom.addCardModal.classList.remove('hidden');
+            dom.newCardFront.focus();
+        }
+
+        function closeModal() {
+            dom.addCardModal.classList.add('hidden');
+        }
+
+        dom.openAddCardBtn.addEventListener('click', () => openModal(false));
+        dom.emptyAddCardBtn.addEventListener('click', () => openModal(false));
+        dom.editCardBtn.addEventListener('click', () => openModal(true));
+        
+        dom.closeAddCardModal.addEventListener('click', closeModal);
+        dom.cancelAddCardBtn.addEventListener('click', closeModal);
+
+        // Delete Card
+        dom.deleteCardBtn.addEventListener('click', async () => {
+            const card = flashcards[currentIndex];
+            if (!card) return;
+            if (!confirm("Are you sure you want to delete this flashcard?")) return;
+
+            try {
+                const { error } = await supabase.from('user_flashcards').delete().eq('id', card.id);
+                if (error) throw error;
+                
+                flashcards.splice(currentIndex, 1);
+                
+                if (flashcards.length === 0) {
+                    dom.flashcardContainer.classList.add('hidden');
+                    dom.emptyState.classList.remove('hidden');
+                    dom.cardCounterBadge.classList.add('hidden');
+                } else {
+                    if (currentIndex >= flashcards.length) currentIndex = flashcards.length - 1;
+                    dom.totalCardNum.textContent = flashcards.length;
+                    renderCard();
+                }
+            } catch (err) {
+                console.error("Error deleting flashcard:", err);
+                alert("Failed to delete card.");
+            }
+        });
+
+        // Save / Update Card
+        dom.saveCardBtn.addEventListener('click', async () => {
+            const front = dom.newCardFront.value.trim();
+            const back = dom.newCardBack.value.trim();
+
+            if (!front || !back) {
+                alert("Please fill out both sides of the flashcard.");
+                return;
+            }
+
+            dom.saveCardBtn.disabled = true;
+            dom.saveCardBtn.textContent = 'Uploading & Saving...';
+
+            try {
+                // 1. Handle Images
+                let finalFrontUrl = currentFrontImageUrl;
+                if (dom.frontImageInput.files.length > 0) {
+                    finalFrontUrl = await uploadImageToStorage(dom.frontImageInput.files[0]);
+                }
+
+                let finalBackUrl = currentBackImageUrl;
+                if (dom.backImageInput.files.length > 0) {
+                    finalBackUrl = await uploadImageToStorage(dom.backImageInput.files[0]);
+                }
+
+                // 2. Save to Database
+                const payload = {
+                    front_text: front,
+                    back_text: back,
+                    front_image_url: finalFrontUrl,
+                    back_image_url: finalBackUrl
+                };
+
+                if (editingCardId) {
+                    const { error } = await supabase.from('user_flashcards').update(payload).eq('id', editingCardId);
+                    if (error) throw error;
+                    
+                    flashcards[currentIndex] = { ...flashcards[currentIndex], ...payload };
+                    renderCard();
+                    closeModal();
+                } else {
+                    payload.user_id = currentUserId;
+                    payload.chapter_id = chapterId;
+                    
+                    const { error } = await supabase.from('user_flashcards').insert(payload);
+                    if (error) throw error;
+                    
+                    closeModal();
+                    await loadFlashcards(); 
+                }
+
+            } catch (err) {
+                console.error("Error saving flashcard:", err);
+                alert("Failed to save flashcard.");
+            } finally {
+                dom.saveCardBtn.disabled = false;
+                dom.saveCardBtn.textContent = editingCardId ? 'Update Card' : 'Save Card';
+            }
+        });
+
+        // --- Back Button Router ---
+        dom.backButton.addEventListener('click', () => {
+            const params = new URLSearchParams(window.location.search);
+            const from = params.get('from');
+            
+            if (from === 'disciplines') {
+                const dId = params.get('disciplineId');
+                const dName = params.get('disciplineName') || '';
+                window.location.href = `disciplines_chapters.html?disciplineId=${dId}&name=${encodeURIComponent(dName)}&target=flashcards`;
+            } else {
+                const bId = params.get('bookId');
+                window.location.href = `book_chapters.html?bookId=${bId}&target=flashcards`;
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -470,11 +470,16 @@ body.hl-mode-on .hl-target{
     </button>
 
     <!-- Highlight (NEW) -->
-    <button id="highlightIcon" class="functional-icon text-gray-400" title="Highlight">
-        <!-- highlighter icon -->
+  <button id="highlightIcon" class="functional-icon text-gray-400" title="Highlight">
         <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M9 11l8-8 3 3-8 8H9v-3zM4 20h16"></path>
+        </svg>
+    </button>
+
+    <button id="createFlashcardBtn" class="functional-icon text-gray-400" title="Create Flashcard for this Chapter">
+        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
         </svg>
     </button>
 
@@ -567,7 +572,59 @@ body.hl-mode-on .hl-target{
         <img id="lightboxImage" src="" class="max-w-full max-h-full">
     </div>
 
+<div id="quizFlashcardModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center p-4 z-[100]">
+        <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full text-gray-800">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Create Flashcard</h3>
+                <button id="closeQuizFlashcardBtn" class="text-gray-400 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+        <div class="space-y-4">
+                <div class="bg-indigo-50 p-3 rounded-lg border border-indigo-100 mb-2">
+                    <p class="text-xs text-indigo-800 font-semibold">This card will be saved to the flashcard deck for the current question's chapter.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Front (Question / Prompt)</label>
+                    <textarea id="quizFlashcardFront" rows="2" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none resize-none mb-2" placeholder="Type or paste (Ctrl+V) an image here..."></textarea>
+                    
+                    <label class="flex items-center gap-2 cursor-pointer text-sm text-indigo-600 hover:text-indigo-800 font-semibold w-fit">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Attach Image to Front
+                        <input type="file" id="quizFrontImageInput" accept="image/*" class="hidden">
+                    </label>
+                    <div id="quizFrontImagePreview" class="hidden mt-2 relative w-fit">
+                        <img src="" class="h-20 rounded shadow-sm border border-gray-300">
+                        <button type="button" id="removeQuizFrontImageBtn" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600">&times;</button>
+                    </div>
+                </div>
 
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">Back (Answer)</label>
+                    <textarea id="quizFlashcardBack" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none resize-none mb-2" placeholder="Type or paste (Ctrl+V) an image here..."></textarea>
+                    
+                    <label class="flex items-center gap-2 cursor-pointer text-sm text-indigo-600 hover:text-indigo-800 font-semibold w-fit">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Attach Image to Back
+                        <input type="file" id="quizBackImageInput" accept="image/*" class="hidden">
+                    </label>
+                    <div id="quizBackImagePreview" class="hidden mt-2 relative w-fit">
+                        <img src="" class="h-20 rounded shadow-sm border border-gray-300">
+                        <button type="button" id="removeQuizBackImageBtn" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600">&times;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-end gap-3">
+                <button id="cancelQuizFlashcardBtn" class="py-2 px-6 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors">Cancel</button>
+                <button id="saveQuizFlashcardBtn" class="py-2 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow transition-colors flex items-center">
+                    Save Card
+                </button>
+            </div>
+        </div>
+    </div>
     <div id="noteModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full">
             <h3 class="text-2xl font-bold text-gray-800 mb-6">My Note</h3>
@@ -745,12 +802,29 @@ const dom = {
     cancelDifficulty: document.getElementById('cancelDifficulty'),
     saveDifficulty: document.getElementById('saveDifficulty'),
 
-    // Highlight modal
+// Highlight modal
     highlightModal: document.getElementById('highlightModal'),
     closeHighlightModal: document.getElementById('closeHighlightModal'),
     highlightColorGrid: document.getElementById('highlightColorGrid'),
     toggleHighlightModeBtn: document.getElementById('toggleHighlightModeBtn'),
     unhighlightBtn: document.getElementById('unhighlightBtn'),
+
+// Flashcard modal
+    createFlashcardBtn: document.getElementById('createFlashcardBtn'),
+    quizFlashcardModal: document.getElementById('quizFlashcardModal'),
+    closeQuizFlashcardBtn: document.getElementById('closeQuizFlashcardBtn'),
+    cancelQuizFlashcardBtn: document.getElementById('cancelQuizFlashcardBtn'),
+    saveQuizFlashcardBtn: document.getElementById('saveQuizFlashcardBtn'),
+    quizFlashcardFront: document.getElementById('quizFlashcardFront'),
+    quizFlashcardBack: document.getElementById('quizFlashcardBack'),
+    
+    // New Image Elements
+    quizFrontImageInput: document.getElementById('quizFrontImageInput'),
+    quizFrontImagePreview: document.getElementById('quizFrontImagePreview'),
+    removeQuizFrontImageBtn: document.getElementById('removeQuizFrontImageBtn'),
+    quizBackImageInput: document.getElementById('quizBackImageInput'),
+    quizBackImagePreview: document.getElementById('quizBackImagePreview'),
+    removeQuizBackImageBtn: document.getElementById('removeQuizBackImageBtn'),
 };
 
 
@@ -1524,7 +1598,7 @@ async function loadCoreData() {
             allDisciplines = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         }
         
-      function getQuizProgressKey() {
+function getQuizProgressKey() {
     if (!currentUserId) return null;
 
     // This is the new, more specific logic for custom quizzes.
@@ -1546,7 +1620,10 @@ async function loadCoreData() {
 
     // Standard (non-custom) quiz keys remain the same.
     if (quizType === 'discipline') return `quizProgress_${currentUserId}_discipline_${disciplineId}`;
-    if (quizType === 'chapter') return `quizProgress_${currentUserId}_chapter_${bookId}_${chapterId}`;
+    
+    // THE FIX: Remove bookId from this key so progress is globally synced for this chapter!
+    if (quizType === 'chapter') return `quizProgress_${currentUserId}_chapter_${chapterId}`;
+    
     if (quizType === 'book') return `quizProgress_${currentUserId}_book_${bookId}`;
 
     // Fallback for any unknown quiz types.
@@ -1684,15 +1761,21 @@ async function initializeQuiz(resume = false, savedProgressData = null) {
         
         } else {
             // If starting a NEW quiz, load questions based on quizType.
-            if (quizType === 'advanced_custom') {
+       if (quizType === 'advanced_custom') {
                 const questionsJSON = localStorage.getItem('customQuizQuestions');
                 if (questionsJSON) {
-                    quizData.questions = JSON.parse(questionsJSON);
+                    const parsedData = JSON.parse(questionsJSON);
+                    
+                    // Smart Check: Are these just IDs or full question objects?
+                    if (parsedData.length > 0 && typeof parsedData[0] === 'string') {
+                        quizData.questions = parsedData.map(id => ({ id: id }));
+                    } else {
+                        quizData.questions = parsedData;
+                    }
                     localStorage.removeItem('customQuizQuestions');
                 }
-                // Set a proper title for a new custom quiz
                 dom.quizTitle.textContent = "Custom Quiz";
-            } else if (quizType === 'chapter') {
+            }else if (quizType === 'chapter') {
                 await loadChapterQuiz();
             } else if (quizType === 'book') {
                 await loadBookQuiz();
@@ -1727,23 +1810,27 @@ async function initializeQuiz(resume = false, savedProgressData = null) {
             currentQuestionIndex = 0;
         }
         
-      // FIX: Extract all question IDs, fetch their history, and save it to the local cache
-        const allQuestionIds = quizData.questions.map(q => q.id);
-        const historyData = await fetchAllUserHistoryForQuiz(allQuestionIds);
+userHistoryCache.clear(); 
         
-        userHistoryCache.clear(); // Clear the cache to prevent stale data
-        if (historyData && historyData.length > 0) {
-            historyData.forEach(item => {
-                userHistoryCache.set(item.questionId, item);
-            });
-        }
-        
-        // Refresh the icons for the very first question after loading history
-        updateFunctionalIconsState();
+        // SMART DETECTOR: Look at the first question to see if we are in lazy mode
+        const isLazyLoaded = quizData.questions.length > 0 && !quizData.questions[0].question;
 
+        if (!isLazyLoaded) {
+            // Instant RAM Mode: Load all history at once
+            const allQuestionIds = quizData.questions.map(q => q.id);
+            const historyData = await fetchAllUserHistoryForQuiz(allQuestionIds);
+            if (historyData && historyData.length > 0) {
+                historyData.forEach(item => { userHistoryCache.set(item.questionId, item); });
+            }
+        } else {
+            // Sliding Window Mode: Pre-load the first 100-question block
+            await ensureSlidingWindow(currentQuestionIndex);
+        }
+
+        updateFunctionalIconsState();
         dom.quizContainer.classList.remove('hidden');
         generateDots();
-        jumpToQuestion(currentQuestionIndex);
+        await jumpToQuestion(currentQuestionIndex);
         updateProgressBar();
         updatePieChart();
 
@@ -1884,7 +1971,11 @@ async function loadBookQuiz() {
     }
     console.log("DEBUG: 🗺️ Final Chapter Map (ID -> Order):", chapterOrderMap);
 
-    // 3. Fetch All Questions
+// 3. Fetch All Questions (HYBRID APPROACH)
+    const { count } = await supabase.from('questions').select('*', { count: 'exact', head: true }).eq('book_id', bookId);
+    
+  // If >200, only grab the routing IDs to save RAM. If <=200, grab everything.
+  const selectFields = (count > 3500) ? 'id, book_id, chapter_id, questionNumber' : '*';
     let questionData = [];
     let page = 0;
     const pageSize = 1000;
@@ -1893,7 +1984,7 @@ async function loadBookQuiz() {
     while (keepFetching) {
         const { data, error } = await supabase
             .from('questions')
-            .select('*')
+            .select(selectFields)
             .eq('book_id', bookId)
             .range(page * pageSize, (page + 1) * pageSize - 1);
             
@@ -1967,16 +2058,35 @@ async function loadDisciplineQuiz() {
         throw new Error("No chapters were selected for this discipline quiz.");
     }
 
-    // 2. Fetch questions ONLY from the chapters in our priority list
-    const { data: questionData, error: questionError } = await supabase
-        .from('questions')
-        .select('*')
-        .in('chapter_id', chapterIdsInOrder);
+    // 2. Fetch questions ONLY from the chapters in our priority list (HYBRID APPROACH)
+    const { count } = await supabase.from('questions').select('*', { count: 'exact', head: true }).in('chapter_id', chapterIdsInOrder);
+  const selectFields = (count > 3500) ? 'id, chapter_id, questionNumber' : '*';
 
-    if (questionError) throw questionError;
+    // SUPABASE 1000-ROW LIMIT BYPASS LOOP
+    let questionData = [];
+    let page = 0;
+    const pageSize = 1000;
+    let keepFetching = true;
+
+    while (keepFetching) {
+        const { data, error } = await supabase
+            .from('questions')
+            .select(selectFields)
+            .in('chapter_id', chapterIdsInOrder)
+            .range(page * pageSize, (page + 1) * pageSize - 1);
+            
+        if (error) throw error;
+
+        if (data && data.length > 0) {
+            questionData = questionData.concat(data);
+            if (data.length < pageSize) keepFetching = false;
+            page++;
+        } else {
+            keepFetching = false;
+        }
+    }
     
     // 3. Sort the fetched questions correctly
-    // First by the chapter's position in your drag-and-drop list, then by question number
     questionData.sort((a, b) => {
         const indexA = chapterIdsInOrder.indexOf(a.chapter_id);
         const indexB = chapterIdsInOrder.indexOf(b.chapter_id);
@@ -2110,10 +2220,23 @@ options.forEach((label, index) => {
     label.innerHTML = ''; // Clear old structure
     label.appendChild(leftContent);
 
-// --- REALISTIC PEER PERCENTAGE INJECTION ---
-    // Generate a distribution that always totals 100% and is unique to this question ID
-    const peerPercentages = generatePeerPercentages(question.id, question.correctAnswerIndex, options.length);
-    const pctValue = peerPercentages[index] || 0;
+// --- REAL LIVE PEER PERCENTAGE CALCULATION ---
+    const peerData = question.peer_responses || {};
+    const localTally = { ...peerData };
+    
+    // We artificially add the user's current vote to the local UI so it instantly 
+    // reflects their choice without waiting for the database to refresh.
+    localTally[userAnswerIndex] = (parseInt(localTally[userAnswerIndex]) || 0) + 1;
+
+    let totalVotes = 0;
+    for (let i = 0; i < options.length; i++) {
+        totalVotes += (parseInt(localTally[i]) || 0);
+    }
+
+    let pctValue = 0;
+    if (totalVotes > 0) {
+        pctValue = Math.round(((parseInt(localTally[index]) || 0) / totalVotes) * 100);
+    }
     
     const pctPill = document.createElement('span');
     pctPill.className = 'peer-percentage shrink-0'; // shrink-0 prevents the pill from squashing
@@ -2160,14 +2283,20 @@ function handleSubmitAnswer() {
     }
     const answerIndex = parseInt(selectedOption.value);
     const question = quizData.questions[currentQuestionIndex];
-    const isCorrect = answerIndex === question.correctAnswerIndex;
-    updateUserQuestionHistory(question, isCorrect);
-    userAnswers[question.id] = answerIndex;
+   const isCorrect = answerIndex === question.correctAnswerIndex;
+        updateUserQuestionHistory(question, isCorrect);
+        userAnswers[question.id] = answerIndex;
 
-    
+    // --- NEW: Send this exact answer to the global peer stats tally silently ---
+        supabase.rpc('increment_peer_response', { 
+            p_question_id: question.id, 
+            p_option_index: answerIndex 
+        }).then(({ error }) => {
+            if (error) console.error("Stats update failed:", error);
+        });
 
-    saveProgressToDatabase(); 
-    updatePieChart();
+        saveProgressToDatabase(); 
+        updatePieChart();
     showReviewedAnswer();
     updateDotStyles();
 
@@ -2179,17 +2308,121 @@ function handleSubmitAnswer() {
     }
 }
         
-        function jumpToQuestion(index) {
+const CHUNK_SIZE = 5; // Load 5 questions at a time to keep it lightning fast
+
+        async function loadQuestionChunk(startIndex) {
+            if (!quizData.questions || quizData.questions.length === 0) return;
+            const endIndex = Math.min(startIndex + CHUNK_SIZE, quizData.questions.length);
+            const missingIds = [];
+
+            // Find questions in this 5-question chunk that haven't been downloaded from Supabase yet
+            for (let i = startIndex; i < endIndex; i++) {
+                if (!quizData.questions[i].question) { 
+                    missingIds.push(quizData.questions[i].id);
+                }
+            }
+
+            if (missingIds.length === 0) return; // All loaded!
+
+            try {
+                // 1. Fetch Question Data
+                const { data: qData, error } = await supabase.from('questions').select('*').in('id', missingIds);
+                if (error) throw error;
+
+                // 2. Fetch History Data for these specific 5 questions
+                const hData = await fetchAllUserHistoryForQuiz(missingIds);
+                if (hData) hData.forEach(item => userHistoryCache.set(item.questionId, item));
+
+                // 3. Merge seamlessly into the active quiz
+                if (qData) {
+                    qData.forEach(q => {
+                        const idx = quizData.questions.findIndex(stub => stub.id === q.id);
+                        if (idx !== -1) quizData.questions[idx] = { ...quizData.questions[idx], ...q };
+                    });
+                }
+            } catch (error) {
+                console.error("Error fetching chunk:", error);
+            }
+        }
+
+   const WINDOW_BEHIND = 50;
+        const WINDOW_AHEAD = 50;
+
+        async function ensureSlidingWindow(currentIndex) {
+            if (!quizData.questions || quizData.questions.length === 0) return;
+            
+            // SMART SENSOR: If everything is loaded in RAM already, skip the window!
+            const isLazyLoaded = quizData.questions.some(q => !q.question);
+            if (!isLazyLoaded) return; 
+
+            // Calculate the bi-directional window bounds
+            const startIndex = Math.max(0, currentIndex - WINDOW_BEHIND);
+            const endIndex = Math.min(currentIndex + WINDOW_AHEAD, quizData.questions.length - 1);
+            
+            const missingIds = [];
+
+            // 1. Identify what needs to be fetched inside our 100-question bubble
+            for (let i = startIndex; i <= endIndex; i++) {
+                if (!quizData.questions[i].question) missingIds.push(quizData.questions[i].id);
+            }
+
+            // 2. DROP questions outside the bubble to free RAM!
+            for (let i = 0; i < quizData.questions.length; i++) {
+                if (i < startIndex || i > endIndex) {
+                    if (quizData.questions[i].question) {
+                        quizData.questions[i] = { 
+                            id: quizData.questions[i].id,
+                            bookId: quizData.questions[i].bookId || quizData.questions[i].book_id,
+                            chapterId: quizData.questions[i].chapterId || quizData.questions[i].chapter_id,
+                            disciplineId: quizData.questions[i].disciplineId || quizData.questions[i].discipline_id
+                        };
+                    }
+                }
+            }
+
+            // 3. Fetch missing questions from Supabase
+            if (missingIds.length > 0) {
+                try {
+                    const { data: qData, error } = await supabase.from('questions').select('*').in('id', missingIds);
+                    if (error) throw error;
+
+                    const hData = await fetchAllUserHistoryForQuiz(missingIds);
+                    if (hData) hData.forEach(item => userHistoryCache.set(item.questionId, item));
+
+                    if (qData) {
+                        qData.forEach(q => {
+                            const idx = quizData.questions.findIndex(stub => stub.id === q.id);
+                            if (idx !== -1) quizData.questions[idx] = { ...quizData.questions[idx], ...q };
+                        });
+                    }
+                } catch (error) {
+                    console.error("Error fetching sliding window:", error);
+                }
+            }
+        }
+
+        async function jumpToQuestion(index) {
             if (index >= 0 && index < quizData.questions.length) {
                 currentQuestionIndex = index;
+                
+                // If it's a massive quiz and the question isn't loaded yet, show a loader
+                if (!quizData.questions[index].question) {
+                    dom.questionDisplay.innerHTML = '<div class="animate-pulse text-purple-600 font-bold p-4 text-center">Loading question data...</div>';
+                    await ensureSlidingWindow(index);
+                }
+
                 displayQuestion();
                 updateProgressBar();
+                
                 const isFirst = currentQuestionIndex === 0;
                 const isLast = currentQuestionIndex === quizData.questions.length - 1;
                 dom.backButton.disabled = isFirst;
                 dom.backButtonMobile.disabled = isFirst;
                 dom.nextButton.disabled = isLast;
                 dom.nextButtonMobile.disabled = isLast;
+
+                // Silently maintain the sliding window in the background
+                ensureSlidingWindow(index);
             }
         }
 
@@ -2316,12 +2549,17 @@ function updatePieChart() {
 async function saveProgressToDatabase() {
     const progressKey = getQuizProgressKey();
     if (progressKey && currentUserId) {
-        // THIS IS THE NEW PART: We add the bookId to the data being saved.
+        // HYBRID SAVING: Save only IDs if it's lazy-loaded or massive (>3500) to protect database limits
+        const isLazyLoaded = quizData.questions.some(q => !q.question);
+        const lightQuestions = (isLazyLoaded || quizData.questions.length > 3500) 
+            ? quizData.questions.map(q => ({ id: q.id, bookId: q.bookId || q.book_id, chapterId: q.chapterId || q.chapter_id, disciplineId: q.disciplineId || q.discipline_id })) 
+            : quizData.questions;
+
         const dataToSave = {
-            questions: quizData.questions,
+            questions: lightQuestions,
             currentQuestionIndex,
             userAnswers,
-            bookId: bookId // <-- ADD THIS LINE
+            bookId: bookId 
         };
 
         const { error } = await supabase
@@ -2791,7 +3029,7 @@ const backButtonUrl = () => {
         }
     });
 
-   on(dom.unhighlightBtn, 'click', () => {
+on(dom.unhighlightBtn, 'click', () => {
   // remove highlights from the CURRENT question area only
   const container = document.getElementById('main-quiz-card') || document.body;
 
@@ -2805,6 +3043,150 @@ const backButtonUrl = () => {
 
   showMessage("Highlights removed from this question.");
 });
+
+// --- FLASHCARD IMAGE HELPER ---
+    async function uploadImageToStorage(file) {
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${currentUserId}_${Date.now()}.${fileExt}`;
+        const { data, error } = await supabase.storage.from('flashcard_images').upload(fileName, file);
+        if (error) throw error;
+        const { data: publicUrlData } = supabase.storage.from('flashcard_images').getPublicUrl(fileName);
+        return publicUrlData.publicUrl;
+    }
+
+    // --- FLASHCARD PREVIEW & PASTE LOGIC ---
+    on(dom.quizFrontImageInput, 'change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            dom.quizFrontImagePreview.querySelector('img').src = URL.createObjectURL(file);
+            dom.quizFrontImagePreview.classList.remove('hidden');
+        }
+    });
+    
+    on(dom.quizBackImageInput, 'change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            dom.quizBackImagePreview.querySelector('img').src = URL.createObjectURL(file);
+            dom.quizBackImagePreview.classList.remove('hidden');
+        }
+    });
+    
+    on(dom.removeQuizFrontImageBtn, 'click', () => {
+        dom.quizFrontImageInput.value = '';
+        dom.quizFrontImagePreview.classList.add('hidden');
+    });
+    
+    on(dom.removeQuizBackImageBtn, 'click', () => {
+        dom.quizBackImageInput.value = '';
+        dom.quizBackImagePreview.classList.add('hidden');
+    });
+
+    function handleImagePaste(e, targetInput) {
+        const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            if (item.type.indexOf('image') !== -1) {
+                e.preventDefault();
+                const file = item.getAsFile();
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                targetInput.files = dataTransfer.files;
+                targetInput.dispatchEvent(new Event('change'));
+                break;
+            }
+        }
+    }
+    on(dom.quizFlashcardFront, 'paste', (e) => handleImagePaste(e, dom.quizFrontImageInput));
+    on(dom.quizFlashcardBack, 'paste', (e) => handleImagePaste(e, dom.quizBackImageInput));
+
+    // --- CREATE FLASHCARD ---
+    on(dom.createFlashcardBtn, 'click', () => {
+        dom.quizFlashcardFront.value = '';
+        dom.quizFlashcardBack.value = '';
+        dom.quizFrontImageInput.value = '';
+        dom.quizBackImageInput.value = '';
+        dom.quizFrontImagePreview.classList.add('hidden');
+        dom.quizBackImagePreview.classList.add('hidden');
+        
+        dom.quizFlashcardModal.classList.remove('hidden');
+        dom.quizFlashcardFront.focus();
+    });
+
+    const closeFlashcardModal = () => {
+        dom.quizFlashcardModal?.classList.add('hidden');
+        // Clear out old data so it doesn't bleed into the next card
+        dom.quizFlashcardFront.value = '';
+        dom.quizFlashcardBack.value = '';
+        dom.quizFrontImageInput.value = '';
+        dom.quizBackImageInput.value = '';
+        dom.quizFrontImagePreview.classList.add('hidden');
+        dom.quizBackImagePreview.classList.add('hidden');
+    };
+    
+    on(dom.closeQuizFlashcardBtn, 'click', closeFlashcardModal);
+    on(dom.cancelQuizFlashcardBtn, 'click', closeFlashcardModal);
+
+    on(dom.saveQuizFlashcardBtn, 'click', async () => {
+        const front = dom.quizFlashcardFront.value.trim();
+        const back = dom.quizFlashcardBack.value.trim();
+        
+        if (!front || !back) {
+            alert("Please fill out both sides of the flashcard.");
+            return;
+        }
+
+        const currentQ = quizData.questions[currentQuestionIndex];
+        const currentChapterId = currentQ.chapterId || currentQ.chapter_id;
+
+        if (!currentChapterId) {
+            alert("Error: Could not identify the chapter for this question.");
+            return;
+        }
+
+        dom.saveQuizFlashcardBtn.disabled = true;
+        dom.saveQuizFlashcardBtn.textContent = 'Uploading & Saving...';
+
+        try {
+            let finalFrontUrl = null;
+            if (dom.quizFrontImageInput.files.length > 0) {
+                finalFrontUrl = await uploadImageToStorage(dom.quizFrontImageInput.files[0]);
+            }
+
+            let finalBackUrl = null;
+            if (dom.quizBackImageInput.files.length > 0) {
+                finalBackUrl = await uploadImageToStorage(dom.quizBackImageInput.files[0]);
+            }
+
+            const { error } = await supabase
+                .from('user_flashcards')
+                .insert({
+                    user_id: currentUserId,
+                    chapter_id: currentChapterId,
+                    front_text: front,
+                    back_text: back,
+                    front_image_url: finalFrontUrl,
+                    back_image_url: finalBackUrl
+                });
+
+            if (error) throw error;
+            
+            dom.saveQuizFlashcardBtn.textContent = 'Saved!';
+            dom.saveQuizFlashcardBtn.classList.replace('bg-indigo-600', 'bg-green-600');
+            
+            setTimeout(() => {
+                closeFlashcardModal();
+                dom.saveQuizFlashcardBtn.disabled = false;
+                dom.saveQuizFlashcardBtn.textContent = 'Save Card';
+                dom.saveQuizFlashcardBtn.classList.replace('bg-green-600', 'bg-indigo-600');
+            }, 1000);
+
+        } catch (err) {
+            console.error("Error saving flashcard:", err);
+            alert("Failed to save flashcard.");
+            dom.saveQuizFlashcardBtn.disabled = false;
+            dom.saveQuizFlashcardBtn.textContent = 'Save Card';
+        }
+    });
 
 }
 

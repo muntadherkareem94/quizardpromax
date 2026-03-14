@@ -141,23 +141,34 @@
         }
 
         // --- MIGRATED Supabase Data Functions ---
-        async function fetchDisciplines() {
-            try {
-                const { data, error } = await supabase.from('disciplines').select('*');
-                if (error) throw error;
-                disciplines = data;
-                
-                dom.disciplineDropdown.innerHTML = '<option value="">Select a discipline...</option>';
-                disciplines.forEach(disc => {
-                    const option = document.createElement('option');
-                    option.value = disc.id;
-                    option.textContent = disc.name;
-                    dom.disciplineDropdown.appendChild(option);
-                });
-            } catch (error) {
-                showMessage("Could not load disciplines.", true);
-            }
-        }
+      async function fetchDisciplines() {
+            try {
+                // 1. Get the current book's specialty
+                const { data: bookData } = await supabase.from('books').select('speciality').eq('id', bookId).single();
+                const bookSpecialty = bookData ? bookData.speciality : null;
+
+                // 2. Fetch all disciplines (needed for displaying names on the cards)
+                const { data, error } = await supabase.from('disciplines').select('*');
+                if (error) throw error;
+                disciplines = data;
+                
+                // 3. Filter disciplines to only match the book's specialty
+                const filteredDisciplines = bookSpecialty 
+                    ? disciplines.filter(disc => disc.speciality === bookSpecialty)
+                    : disciplines;
+
+                // 4. Populate the dropdown with ONLY the filtered disciplines
+                dom.disciplineDropdown.innerHTML = '<option value="">Select a discipline...</option>';
+                filteredDisciplines.forEach(disc => {
+                    const option = document.createElement('option');
+                    option.value = disc.id;
+                    option.textContent = disc.name;
+                    dom.disciplineDropdown.appendChild(option);
+                });
+            } catch (error) {
+                showMessage("Could not load disciplines.", true);
+            }
+        }
 
       // This is the new code that saves the book data for later use.
 async function loadBookAndChapters() {
