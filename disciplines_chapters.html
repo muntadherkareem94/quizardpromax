@@ -907,14 +907,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     dom.disciplineTitle = document.getElementById('disciplineTitle');
     
     // 2. Check Auth
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { session } } = await supabase.auth.getSession();
     
-    if (user) {
-        // 3. Load Data
-        // We ONLY call this function. It handles fetching AND rendering correctly.
-        // We do NOT call renderChaptersByDiscipline here manually.
-         currentUser = user;
-        await loadAllData(user); 
+    if (session) {
+        const isSessionValid = await validateAndEnforceSession(session.user);
+        
+        if (isSessionValid) {
+            // 3. Load Data
+            currentUser = session.user;
+            await loadAllData(currentUser); 
+            
+            // --- NEW: THE HEARTBEAT CHECKER ---
+            setInterval(async () => {
+                await validateAndEnforceSession(session.user);
+            }, 30000); 
+            // ----------------------------------
+        }
     } else {
         window.location.href = 'index.html';
     }

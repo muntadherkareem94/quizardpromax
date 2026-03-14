@@ -88,7 +88,7 @@
         "E. 70%"
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Left ventricular ejection fraction (EF) is calculated as stroke volume (end-diastolic volume [EDV] minus end-systolic volume [ESV]) divided by end-diastolic volume multiplied by 100%. In this case: EF = (120 - 60)/120 * 100% = 50%. [cite: 65, 66, 67]",
+      "explanation": "Left ventricular ejection fraction (EF) is calculated as stroke volume (end-diastolic volume [EDV] minus end-systolic volume [ESV]) divided by end-diastolic volume multiplied by 100%. In this case: EF = (120 - 60)/120 * 100% = 50%.",
       "questionNumber": 7
     },
     {
@@ -101,7 +101,7 @@
         "E. Continuous-wave Doppler."
       ],
       "correctAnswerIndex": 4,
-      "explanation": "Valve obstruction with reduced systolic opening of the aortic valve results in an increased velocity across the valve. Velocity is a direct measure of the severity of the stenosis and predicts clinical outcome. The velocity (v) across a stenotic valve is related to the pressure gradient (ΔP) as stated in the Bernoulli equation, ΔP = 4v². Measurement of high velocities requires continuous-wave Doppler ultrasound, which typically is not available on point-of-care ultrasound systems. Three-dimensional imaging allows more accurate identification of the number of valve leaflets and may show the degree of valve opening, but it is not accurate for measuring the severity of stenosis. Pulsed Doppler velocity measurements are accurate only at low velocities. Tissue Doppler measures the velocity of myocardial motion, which reflects left ventricular systolic and diastolic function, not the severity of stenosis. Color Doppler flow imaging is useful for visualizing the location of intracardiac flow disturbances but cannot measure high-flow velocities. [cite: 75, 76, 77, 78, 79, 80, 81]",
+      "explanation": "Valve obstruction with reduced systolic opening of the aortic valve results in an increased velocity across the valve. Velocity is a direct measure of the severity of the stenosis and predicts clinical outcome. The velocity (v) across a stenotic valve is related to the pressure gradient (ΔP) as stated in the Bernoulli equation, ΔP = 4v². Measurement of high velocities requires continuous-wave Doppler ultrasound, which typically is not available on point-of-care ultrasound systems. Three-dimensional imaging allows more accurate identification of the number of valve leaflets and may show the degree of valve opening, but it is not accurate for measuring the severity of stenosis. Pulsed Doppler velocity measurements are accurate only at low velocities. Tissue Doppler measures the velocity of myocardial motion, which reflects left ventricular systolic and diastolic function, not the severity of stenosis. Color Doppler flow imaging is useful for visualizing the location of intracardiac flow disturbances but cannot measure high-flow velocities.",
       "questionNumber": 8
     },
     {
@@ -114,7 +114,7 @@
         "E. No testing is needed."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "In patients being considered for cardioversion for atrial fibrillation, clinical approaches to avoiding systemic embolization with restoration of normal sinus rhythm include effective anticoagulation for several weeks before cardioversion or exclusion of a left atrial thrombus by visualizing the left atrial appendage. Left atrial thrombi cannot be accurately diagnosed by transthoracic or point-of-care echocardiography because atrial thrombi occur most often in the atrial appendage, which is distant from the transducer and difficult to visualize. Transesophageal echocardiography provides superior images of the left atrial appendage and is reliable for exclusion of atrial thrombus when images are obtained in at least two orthogonal views with use of zoom mode and a high-frequency transducer. Intracardiac echocardiography also may provide images of the left atrial appendage and may be used during an electrophysiologic or interventional cardiology procedure. However, intracardiac echocardiography is not used as a stand-alone diagnostic test. [cite: 89, 90, 91, 92, 93]",
+      "explanation": "In patients being considered for cardioversion for atrial fibrillation, clinical approaches to avoiding systemic embolization with restoration of normal sinus rhythm include effective anticoagulation for several weeks before cardioversion or exclusion of a left atrial thrombus by visualizing the left atrial appendage. Left atrial thrombi cannot be accurately diagnosed by transthoracic or point-of-care echocardiography because atrial thrombi occur most often in the atrial appendage, which is distant from the transducer and difficult to visualize. Transesophageal echocardiography provides superior images of the left atrial appendage and is reliable for exclusion of atrial thrombus when images are obtained in at least two orthogonal views with use of zoom mode and a high-frequency transducer. Intracardiac echocardiography also may provide images of the left atrial appendage and may be used during an electrophysiologic or interventional cardiology procedure. However, intracardiac echocardiography is not used as a stand-alone diagnostic test.",
       "questionNumber": 9
     },
     {
@@ -127,7 +127,7 @@
         "E. Coronary angiography."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "Coronary artery disease may explain symptoms in this patient, so stress testing is appropriate for diagnosis and risk stratification. Electrocardiographic stress testing will not be diagnostic because her abnormal baseline electrocardiogram limits the accuracy of changes in ST segments with exercise for diagnosis of coronary disease. This patient also has significant lower extremity arthritis, which limits her ability to exercise. Diagnostic accuracy with an exercise test (either treadmill or bicycle) requires that the patient reach 85% of the maximum predicted heart rate for age. Exercise testing is likely to be nondiagnostic in this patient with lower extremity arthritis. Pharmacologic stress testing, either dobutamine stress echocardiography or pharmacologic nuclear perfusion imaging, is the most appropriate test choice. Coronary angiography would be appropriate only if stress testing suggests high-risk coronary disease that might benefit from revascularization. [cite: 102, 103, 104, 105, 106, 107, 108]",
+      "explanation": "Coronary artery disease may explain symptoms in this patient, so stress testing is appropriate for diagnosis and risk stratification. Electrocardiographic stress testing will not be diagnostic because her abnormal baseline electrocardiogram limits the accuracy of changes in ST segments with exercise for diagnosis of coronary disease. This patient also has significant lower extremity arthritis, which limits her ability to exercise. Diagnostic accuracy with an exercise test (either treadmill or bicycle) requires that the patient reach 85% of the maximum predicted heart rate for age. Exercise testing is likely to be nondiagnostic in this patient with lower extremity arthritis. Pharmacologic stress testing, either dobutamine stress echocardiography or pharmacologic nuclear perfusion imaging, is the most appropriate test choice. Coronary angiography would be appropriate only if stress testing suggests high-risk coronary disease that might benefit from revascularization.",
       "questionNumber": 10
     },
     {
@@ -140,7 +140,7 @@
         "E. Pericardial effusion."
       ],
       "correctAnswerIndex": 4,
-      "explanation": "All of these diseases can be accurately diagnosed by a complete transthoracic or transesophageal echocardiographic study under the supervision of a cardiologist. Point-of-care ultrasound systems typically have fewer features and limited image quality compared with complete diagnostic ultrasound systems. In addition, point-of-care ultrasound is performed and interpreted by physicians with limited training in this modality. The recommended scope of practice for point-of-care ultrasound studies includes diagnosis of pericardial effusion and evaluation of global left ventricular systolic function. In contrast, diagnosis of aortic dissection requires transesophageal echocardiographic or computed tomographic or magnetic resonance imaging. Diagnosis of aortic valve stenosis requires continuous-wave Doppler recording of the transvalvular velocity by an experienced sonographer. Acute anterior myocardial infarction results in hypokinesis or akinesis of the anterior wall, which can be visualized by echocardiography, but evaluation of regional myocardial dysfunction is challenging and requires additional training and experience. Papillary muscle rupture might be diagnosed on transthoracic imaging, but transesophageal imaging often is required. Papillary muscle rupture is likely to be missed with current point-of-care ultrasound systems or by less experienced clinicians. [cite: 112, 113, 114, 115, 116, 117, 118, 119, 120]",
+      "explanation": "All of these diseases can be accurately diagnosed by a complete transthoracic or transesophageal echocardiographic study under the supervision of a cardiologist. Point-of-care ultrasound systems typically have fewer features and limited image quality compared with complete diagnostic ultrasound systems. In addition, point-of-care ultrasound is performed and interpreted by physicians with limited training in this modality. The recommended scope of practice for point-of-care ultrasound studies includes diagnosis of pericardial effusion and evaluation of global left ventricular systolic function. In contrast, diagnosis of aortic dissection requires transesophageal echocardiographic or computed tomographic or magnetic resonance imaging. Diagnosis of aortic valve stenosis requires continuous-wave Doppler recording of the transvalvular velocity by an experienced sonographer. Acute anterior myocardial infarction results in hypokinesis or akinesis of the anterior wall, which can be visualized by echocardiography, but evaluation of regional myocardial dysfunction is challenging and requires additional training and experience. Papillary muscle rupture might be diagnosed on transthoracic imaging, but transesophageal imaging often is required. Papillary muscle rupture is likely to be missed with current point-of-care ultrasound systems or by less experienced clinicians.",
       "questionNumber": 11
     },
     {
@@ -153,7 +153,7 @@
         "E. All of the above"
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Although echocardiography and the other cross-sectional imaging modalities have replaced chest radiography for the diagnosis of most cardiac diseases, the value of chest radiography is its ability to monitor the progression of cardiac disease and its response to treatment rapidly and inexpensively. The diagnosis of congenital cardiac disorders is made with echocardiography, cardiac catheterization, and cardiac magnetic resonance imaging and computed tomography. Despite the ready availability of echocardiography, the chest radiograph is valuable for rapid evaluation of changes in heart size and pulmonary vascularity, as well as signs of heart failure. The radiograph shows the position of a device on a two-dimensional image, but assessment of the exact position may require cross-sectional imaging. [cite: 130, 131, 132, 133]",
+      "explanation": "Although echocardiography and the other cross-sectional imaging modalities have replaced chest radiography for the diagnosis of most cardiac diseases, the value of chest radiography is its ability to monitor the progression of cardiac disease and its response to treatment rapidly and inexpensively. The diagnosis of congenital cardiac disorders is made with echocardiography, cardiac catheterization, and cardiac magnetic resonance imaging and computed tomography. Despite the ready availability of echocardiography, the chest radiograph is valuable for rapid evaluation of changes in heart size and pulmonary vascularity, as well as signs of heart failure. The radiograph shows the position of a device on a two-dimensional image, but assessment of the exact position may require cross-sectional imaging.",
       "questionNumber": 12
     },
     {
@@ -166,7 +166,7 @@
         "E. Low-risk Framingham score"
       ],
       "correctAnswerIndex": 3,
-      "explanation": "In patients at intermediate risk, knowing the coronary artery calcium score might change management in terms of aggressive lipid lowering. High-risk patients should already be receiving aggressive therapy, and no additional therapy is needed in low-risk patients. In patients with previously revascularized coronary artery disease (coronary artery bypass surgery or stenting), calcium scoring is not useful as a risk stratification tool. [cite: 140, 141, 142]",
+      "explanation": "In patients at intermediate risk, knowing the coronary artery calcium score might change management in terms of aggressive lipid lowering. High-risk patients should already be receiving aggressive therapy, and no additional therapy is needed in low-risk patients. In patients with previously revascularized coronary artery disease (coronary artery bypass surgery or stenting), calcium scoring is not useful as a risk stratification tool.",
       "questionNumber": 13
     },
     {
@@ -179,7 +179,7 @@
         "E. All of the above"
       ],
       "correctAnswerIndex": 3,
-      "explanation": "Randomized trials have demonstrated the utility of CTA compared with standard evaluation in the emergency department. Native vessels are difficult to image post-CABG because they tend to shrink and calcify. Imaging within stents remains a challenge. Coronary CTA is not appropriate as a screening test in asymptomatic individuals. [cite: 148, 149, 150]",
+      "explanation": "Randomized trials have demonstrated the utility of CTA compared with standard evaluation in the emergency department. Native vessels are difficult to image post-CABG because they tend to shrink and calcify. Imaging within stents remains a challenge. Coronary CTA is not appropriate as a screening test in asymptomatic individuals.",
       "questionNumber": 14
     },
     {
@@ -192,7 +192,7 @@
         "E. According to guidelines, he should be started on statin therapy."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "He does not have a nonischemic cardiomyopathy. His SPECT scan shows transient ischemic cavity dilation of the left ventricle in association with diffuse left ventricular hypokinesis. The reason he has no perfusion defects is because of balanced ischemia in the supply regions of all 3 major coronary vessels. No focal defects will be observed if the reduction in perfusion is rather homogeneous in the myocardium. He has an intermediate-high pretest likelihood of coronary disease by clinical criteria. His blood pressure is adequately controlled. Diets such as the Mediterranean diet have been shown to reduce the risk of coronary disease. Due to the high likelihood of coronary disease, he should be started on statin therapy and is a good candidate for coronary arteriography because of likely multivessel disease with a reduced ejection fraction. [cite: 169, 170, 171, 172, 173, 174, 175]",
+      "explanation": "He does not have a nonischemic cardiomyopathy. His SPECT scan shows transient ischemic cavity dilation of the left ventricle in association with diffuse left ventricular hypokinesis. The reason he has no perfusion defects is because of balanced ischemia in the supply regions of all 3 major coronary vessels. No focal defects will be observed if the reduction in perfusion is rather homogeneous in the myocardium. He has an intermediate-high pretest likelihood of coronary disease by clinical criteria. His blood pressure is adequately controlled. Diets such as the Mediterranean diet have been shown to reduce the risk of coronary disease. Due to the high likelihood of coronary disease, he should be started on statin therapy and is a good candidate for coronary arteriography because of likely multivessel disease with a reduced ejection fraction.",
       "questionNumber": 15
     },
     {
@@ -204,7 +204,7 @@
         "D. Myocarditis"
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Iron overload diseases of the myocardium are identified by T2* imaging with a T2* value of less than 20 defining iron deposition in the heart. A T2* less than 10 generally is associated with LV dysfunction and clinical heart failure. Amyloidosis can be identified by either very elevated native T1 values or by difficult nulling of the myocardium post-contrast or by characteristic LGE findings with diffuse subendocardial enhancement. Focal regions of LGE in a noncoronary distribution are characteristic of cardiac sarcoidosis. Myocarditis can be identified by identification of myocardial edema/inflammation using T1 or T2 mapping and by characteristic subepicardial or midwall LGE in patients with the appropriate clinical presentation. [cite: 180, 181]",
+      "explanation": "Iron overload diseases of the myocardium are identified by T2* imaging with a T2* value of less than 20 defining iron deposition in the heart. A T2* less than 10 generally is associated with LV dysfunction and clinical heart failure. Amyloidosis can be identified by either very elevated native T1 values or by difficult nulling of the myocardium post-contrast or by characteristic LGE findings with diffuse subendocardial enhancement. Focal regions of LGE in a noncoronary distribution are characteristic of cardiac sarcoidosis. Myocarditis can be identified by identification of myocardial edema/inflammation using T1 or T2 mapping and by characteristic subepicardial or midwall LGE in patients with the appropriate clinical presentation.",
       "questionNumber": 16
     },
     {
@@ -217,7 +217,7 @@
         "E. A 53-year-old man with palpitations, hypertension with β-blockers and aspirin, and reversible defect on stress perfusion imaging"
       ],
       "correctAnswerIndex": 4,
-      "explanation": "Indications for cardiac catheterization and coronary angiography according to guidelines recommend invasive angiography for patients with objective evidence of myocardial ischemia after treatment with medical therapy. Patient A has no ischemia and likely has gastrointestinal symptoms. Patient B is asymptomatic and is not in need of angiography. Patient C needs an echocardiogram before consideration of invasive assessment. Patient D has palpitations of unknown cause and could be evaluated with an echocardiogram, ambulatory arrhythmia monitoring, or a stress test, but cardiac catheterization is not indicated unless an ischemic origin is demonstrated for his palpitations. [cite: 190, 191, 192, 193, 194]",
+      "explanation": "Indications for cardiac catheterization and coronary angiography according to guidelines recommend invasive angiography for patients with objective evidence of myocardial ischemia after treatment with medical therapy. Patient A has no ischemia and likely has gastrointestinal symptoms. Patient B is asymptomatic and is not in need of angiography. Patient C needs an echocardiogram before consideration of invasive assessment. Patient D has palpitations of unknown cause and could be evaluated with an echocardiogram, ambulatory arrhythmia monitoring, or a stress test, but cardiac catheterization is not indicated unless an ischemic origin is demonstrated for his palpitations.",
       "questionNumber": 17
     },
     {
@@ -230,7 +230,7 @@
         "E. A 40-year-old woman with a history of syncope"
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Cardiac catheterization requires administration of radiocontrast media, which can impair renal function. In patients with preexisting renal failure, worsening renal failure is likely. Measures to prevent contrast-induced renal failure include preprocedural hydration to increase urine output. [cite: 200, 201, 202]",
+      "explanation": "Cardiac catheterization requires administration of radiocontrast media, which can impair renal function. In patients with preexisting renal failure, worsening renal failure is likely. Measures to prevent contrast-induced renal failure include preprocedural hydration to increase urine output.",
       "questionNumber": 18
     },
     {
@@ -243,7 +243,7 @@
         "E. Severe three-vessel coronary artery disease"
       ],
       "correctAnswerIndex": 4,
-      "explanation": "Right-sided heart catheterization is not routine for coronary artery disease but is mandatory for valvular heart disease and routine for heart failure, right ventricular dysfunction, pericardial disease, cardiomyopathy, intracardiac shunts, and congenital abnormalities. [cite: 209]",
+      "explanation": "Right-sided heart catheterization is not routine for coronary artery disease but is mandatory for valvular heart disease and routine for heart failure, right ventricular dysfunction, pericardial disease, cardiomyopathy, intracardiac shunts, and congenital abnormalities.",
       "questionNumber": 19
     },
     {
@@ -256,7 +256,7 @@
         "E. Creatinine concentration of 2.4 mg/dL"
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Absolute contraindications to catheterization include inadequate facilities and patient refusal. Relative contraindications include severe uncontrolled hypertension, ventricular arrhythmias, recent acute stroke, severe anemia, active gastrointestinal bleeding, allergy to radiographic contrast material, acute renal failure, uncompensated heart failure such that the patient cannot lie flat, unexplained febrile illness or untreated active infection, electrolyte abnormalities (e.g., hypokalemia), severe coagulopathy, pregnancy, uncontrolled arrhythmias or hypertension, and an uncooperative patient. [cite: 216, 217]",
+      "explanation": "Absolute contraindications to catheterization include inadequate facilities and patient refusal. Relative contraindications include severe uncontrolled hypertension, ventricular arrhythmias, recent acute stroke, severe anemia, active gastrointestinal bleeding, allergy to radiographic contrast material, acute renal failure, uncompensated heart failure such that the patient cannot lie flat, unexplained febrile illness or untreated active infection, electrolyte abnormalities (e.g., hypokalemia), severe coagulopathy, pregnancy, uncontrolled arrhythmias or hypertension, and an uncooperative patient.",
       "questionNumber": 20
     },
     {
@@ -269,7 +269,7 @@
         "E. A circumflex coronary artery that arises from the right coronary cusp and traverses behind the aorta"
       ],
       "correctAnswerIndex": 2,
-      "explanation": "The most critical coronary anomaly is when the left main coronary artery arises from the right cusp and traverses a course between the aorta and pulmonary artery. The artery's initial course through the aortic wall creates a narrow oval opening; when the aorta stretches during exercise, coronary blood flow is limited. [cite: 222, 223, 224]",
+      "explanation": "The most critical coronary anomaly is when the left main coronary artery arises from the right cusp and traverses a course between the aorta and pulmonary artery. The artery's initial course through the aortic wall creates a narrow oval opening; when the aorta stretches during exercise, coronary blood flow is limited.",
       "questionNumber": 21
     },
     {
@@ -282,7 +282,7 @@
         "E. The absolute mortality rate following the diagnosis of heart failure is approximately 25% at 5 years."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Black patients are at an increased risk for developing heart failure and have an increased risk for heart failure rehospitalization compared with white patients. Median survival is lower in women than men. Heart failure with preserved ejection fraction represents approximately half of heart failure cases. The absolute mortality rate following heart failure diagnosis is approximately 50% at 5 years. [cite: 234, 235, 236]",
+      "explanation": "Black patients are at an increased risk for developing heart failure and have an increased risk for heart failure rehospitalization compared with white patients. Median survival is lower in women than men. Heart failure with preserved ejection fraction represents approximately half of heart failure cases. The absolute mortality rate following heart failure diagnosis is approximately 50% at 5 years.",
       "questionNumber": 22
     },
     {
@@ -295,7 +295,7 @@
         "E. On cardiopulmonary exercise testing, a peak oxygen uptake (peak VO2) greater than 20 mL/kg/min is associated with a relatively poor prognosis."
       ],
       "correctAnswerIndex": 1,
-      "explanation": "Routine repeat measurements of left ventricular function in the absence of a clinical status change or treatment intervention should not be performed. An echocardiogram should be performed during the initial evaluation of patients with heart failure to assess ventricular function and valve function. Measurement of natriuretic peptides is recommended to support the diagnosis of heart failure in ambulatory patients with dyspnea as well as those with possible acute heart failure. Routine or periodic invasive hemodynamic measurements in the management of heart failure are not recommended. Guidelines indicate that endomyocardial biopsy should not be performed in the routine evaluation of patients with heart failure. However, endomyocardial biopsy may be useful in patients presenting with heart failure when a specific diagnosis is suspected that would influence therapy. A peak oxygen uptake (peak VO2) less than 14 mL/kg/min is associated with a relatively poor prognosis. [cite: 243, 244, 245, 246, 247, 248, 249]",
+      "explanation": "Routine repeat measurements of left ventricular function in the absence of a clinical status change or treatment intervention should not be performed. An echocardiogram should be performed during the initial evaluation of patients with heart failure to assess ventricular function and valve function. Measurement of natriuretic peptides is recommended to support the diagnosis of heart failure in ambulatory patients with dyspnea as well as those with possible acute heart failure. Routine or periodic invasive hemodynamic measurements in the management of heart failure are not recommended. Guidelines indicate that endomyocardial biopsy should not be performed in the routine evaluation of patients with heart failure. However, endomyocardial biopsy may be useful in patients presenting with heart failure when a specific diagnosis is suspected that would influence therapy. A peak oxygen uptake (peak VO2) less than 14 mL/kg/min is associated with a relatively poor prognosis.",
       "questionNumber": 23
     },
     {
@@ -308,7 +308,7 @@
         "E. The blood pressure is most commonly low (systolic blood pressure <90 mm Hg) in chronic heart failure patients."
       ],
       "correctAnswerIndex": 3,
-      "explanation": "An apical S3 gallop is a strong indicator of left ventricular systolic dysfunction and elevated left ventricular filling pressures. Sleep disordered breathing is prevalent in heart failure patients and is associated with increased morbidity and mortality. Upward of 70% of heart failure patients have sleep disordered breathing. The majority of patients with heart failure have a normal pulmonary examination. Despite having an elevation in left ventricular filling pressures that is transmitted back into the left atrium and pulmonary vasculature, most patients with compensated heart failure do not have evidence of pulmonary congestion. In heart failure patients, the blood pressure is most commonly normal or high, but it may be low (systolic blood pressure <90 mm Hg) in advanced low-output heart failure. Orthopnea (not lower extremity edema) is a relatively specific sign of heart failure. [cite: 256, 257, 258, 259, 260, 261, 262]",
+      "explanation": "An apical S3 gallop is a strong indicator of left ventricular systolic dysfunction and elevated left ventricular filling pressures. Sleep disordered breathing is prevalent in heart failure patients and is associated with increased morbidity and mortality. Upward of 70% of heart failure patients have sleep disordered breathing. The majority of patients with heart failure have a normal pulmonary examination. Despite having an elevation in left ventricular filling pressures that is transmitted back into the left atrium and pulmonary vasculature, most patients with compensated heart failure do not have evidence of pulmonary congestion. In heart failure patients, the blood pressure is most commonly normal or high, but it may be low (systolic blood pressure <90 mm Hg) in advanced low-output heart failure. Orthopnea (not lower extremity edema) is a relatively specific sign of heart failure.",
       "questionNumber": 24
     },
     {
@@ -321,7 +321,7 @@
         "E. Refer to a geneticist for mutation analysis."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "A clinical presentation with unexplained conduction disease and left ventricular dysfunction usually results in a diagnosis of dilated cardiomyopathy (in Europe) or nonischemic cardiomyopathy (in the United States). When conduction disease is part of the early presentation of a dilated or nonischemic cardiomyopathy, it is a \"red flag\" for an arrhythmic form of dilated cardiomyopathy. A family history focusing on relatives who required pacemakers, had ventricular arrhythmias, died suddenly, or had associated phenotypes (e.g., skeletal myopathy, retinitis pigmentosa, sensory neural deafness) may provide clues to the ultimate diagnosis, requirements for genetic testing, and potential need for an implantable cardioverter-defibrillator. [cite: 275, 276, 277]",
+      "explanation": "A clinical presentation with unexplained conduction disease and left ventricular dysfunction usually results in a diagnosis of dilated cardiomyopathy (in Europe) or nonischemic cardiomyopathy (in the United States). When conduction disease is part of the early presentation of a dilated or nonischemic cardiomyopathy, it is a \"red flag\" for an arrhythmic form of dilated cardiomyopathy. A family history focusing on relatives who required pacemakers, had ventricular arrhythmias, died suddenly, or had associated phenotypes (e.g., skeletal myopathy, retinitis pigmentosa, sensory neural deafness) may provide clues to the ultimate diagnosis, requirements for genetic testing, and potential need for an implantable cardioverter-defibrillator.",
       "questionNumber": 25
     },
     {
@@ -334,7 +334,7 @@
         "E. No interventions are warranted in the patient, his son, or his grandson, but serial evaluations should continue to assess risk of atrial fibrillation, emboli, and serious ventricular arrhythmia with a view to early introduction of prophylactic therapy."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Nonsustained ventricular tachycardia recorded during ambulatory ECG monitoring is usually asymptomatic, brief, and at rates of 140 to 160 beats per minute. It is, however, associated with increased risk of sudden death, particularly in the young, in whom it carries a relative risk of approximately 5 and an absolute 5-year sudden cardiac death event rate of 5 to 6% in a 20-year-old compared with a relative risk of 2 or 3 and absolute 5-year risk of 4% in a 70-year-old. Ultimately, the decision to implant an implantable cardioverter-defibrillator is individualized on the basis of the physician's assessment of the level of risk and the level of risk acceptable to the patient. The estimated events risks quoted here are excessive in an adolescent but only mildly increased in someone in the seventh to eighth decade. [cite: 288, 289, 290, 291]",
+      "explanation": "Nonsustained ventricular tachycardia recorded during ambulatory ECG monitoring is usually asymptomatic, brief, and at rates of 140 to 160 beats per minute. It is, however, associated with increased risk of sudden death, particularly in the young, in whom it carries a relative risk of approximately 5 and an absolute 5-year sudden cardiac death event rate of 5 to 6% in a 20-year-old compared with a relative risk of 2 or 3 and absolute 5-year risk of 4% in a 70-year-old. Ultimately, the decision to implant an implantable cardioverter-defibrillator is individualized on the basis of the physician's assessment of the level of risk and the level of risk acceptable to the patient. The estimated events risks quoted here are excessive in an adolescent but only mildly increased in someone in the seventh to eighth decade.",
       "questionNumber": 26
     },
     {
@@ -347,7 +347,7 @@
         "E. A biphasic T wave in V2 and V3 is a recognized normal variant in African American athletes."
       ],
       "correctAnswerIndex": 0,
-      "explanation": "Electrocardiographic abnormalities in heart muscle disease are rarely diagnostic but are often the earliest manifestation of disease and warrant further diagnostic evaluation. Inverted or biphasic T waves in V1 to V3 are seen in African American athletes, but changes that extend to V4 or beyond are usually associated with myocardial disease. New-onset conduction disease and ventricular arrhythmia are common presenting features of Chagas disease and cardiac sarcoidosis, whereas conduction disease is rarely seen early in arrhythmogenic right ventricular cardiomyopathy or hypertrophic cardiomyopathy. Demonstration of left ventricular hypertrophy with echocardiographic or cardiac magnetic resonance imaging is usually diagnostic of hypertrophic cardiomyopathy, but concern should be raised about the accuracy of the measurements when the ECG recording is normal. Imaging abnormalities often provide the definitive diagnosis but are late manifestations of arrhythmogenic right ventricular cardiomyopathy because they reflect myocyte cell death with replacement scar. The onset of dilated cardiomyopathy in adults is usually insidious, with slow progression of left ventricular dilation and impaired contraction. The implantable cardioverter-defibrillator may be life-saving, but it is associated with lifelong consequences and should not be recommended without a diagnosis and clear estimate of sudden death risk. [cite: 300, 301, 302, 303, 304, 305, 306]",
+      "explanation": "Electrocardiographic abnormalities in heart muscle disease are rarely diagnostic but are often the earliest manifestation of disease and warrant further diagnostic evaluation. Inverted or biphasic T waves in V1 to V3 are seen in African American athletes, but changes that extend to V4 or beyond are usually associated with myocardial disease. New-onset conduction disease and ventricular arrhythmia are common presenting features of Chagas disease and cardiac sarcoidosis, whereas conduction disease is rarely seen early in arrhythmogenic right ventricular cardiomyopathy or hypertrophic cardiomyopathy. Demonstration of left ventricular hypertrophy with echocardiographic or cardiac magnetic resonance imaging is usually diagnostic of hypertrophic cardiomyopathy, but concern should be raised about the accuracy of the measurements when the ECG recording is normal. Imaging abnormalities often provide the definitive diagnosis but are late manifestations of arrhythmogenic right ventricular cardiomyopathy because they reflect myocyte cell death with replacement scar. The onset of dilated cardiomyopathy in adults is usually insidious, with slow progression of left ventricular dilation and impaired contraction. The implantable cardioverter-defibrillator may be life-saving, but it is associated with lifelong consequences and should not be recommended without a diagnosis and clear estimate of sudden death risk.",
       "questionNumber": 27
     },
     {
@@ -360,7 +360,7 @@
         "E. Responsiveness to Valsalva maneuvers"
       ],
       "correctAnswerIndex": 0,
-      "explanation": "See Clinical Manifestations. In general, the most important factor determining the prognosis of arrhythmias is whether they occur in the setting of underlying heart disease. Specifically, patients with heart failure, prior myocardial infarction, aortic stenosis, and hypertrophic cardiomyopathy have a much higher likelihood of having ventricular tachycardia or ventricular fibrillation that may lead to a cardiac arrest than do patients with a normal heart. In addition, other nonlethal arrhythmias, such as atrial fibrillation, also are more prevalent in these patients. Evaluation and treatment of symptoms of a suspected arrhythmia are therefore different in patients with and without structural heart disease. [cite: 316, 317, 318, 319]",
+      "explanation": "See Clinical Manifestations. In general, the most important factor determining the prognosis of arrhythmias is whether they occur in the setting of underlying heart disease. Specifically, patients with heart failure, prior myocardial infarction, aortic stenosis, and hypertrophic cardiomyopathy have a much higher likelihood of having ventricular tachycardia or ventricular fibrillation that may lead to a cardiac arrest than do patients with a normal heart. In addition, other nonlethal arrhythmias, such as atrial fibrillation, also are more prevalent in these patients. Evaluation and treatment of symptoms of a suspected arrhythmia are therefore different in patients with and without structural heart disease.",
       "questionNumber": 28
     },
     {
@@ -373,7 +373,7 @@
         "E. A complete blood count and electrolyte panel"
       ],
       "correctAnswerIndex": 2,
-      "explanation": "See Diagnostic Tests: Electrocardiography. Even though the patient is not having palpitations at this time, there may be clues on the ECG to indicate their cause and to guide further evaluation. For example, ventricular preexcitation makes supraventricular tachycardia (SVT) and Wolff-Parkinson-White syndrome the likely diagnosis. In addition, other syndromes such as the long QT syndrome, hypertrophic cardiomyopathy, or other abnormalities may be seen on a baseline ECG. The evaluation would not end with an ECG and would likely require further ambulatory monitoring. However, because the symptoms do not occur every day, a 24-hour Holter monitor is unlikely to capture the rhythm during his symptoms. [cite: 328, 329, 330, 331, 332]",
+      "explanation": "See Diagnostic Tests: Electrocardiography. Even though the patient is not having palpitations at this time, there may be clues on the ECG to indicate their cause and to guide further evaluation. For example, ventricular preexcitation makes supraventricular tachycardia (SVT) and Wolff-Parkinson-White syndrome the likely diagnosis. In addition, other syndromes such as the long QT syndrome, hypertrophic cardiomyopathy, or other abnormalities may be seen on a baseline ECG. The evaluation would not end with an ECG and would likely require further ambulatory monitoring. However, because the symptoms do not occur every day, a 24-hour Holter monitor is unlikely to capture the rhythm during his symptoms.",
       "questionNumber": 29
     },
     {
@@ -386,7 +386,7 @@
         "E. A wearable defibrillator vest"
       ],
       "correctAnswerIndex": 3,
-      "explanation": "See Diagnostic Tests: Ambulatory Monitoring. Because the symptoms occur less frequently than daily, it is very unlikely that a 24- or 48-hour Holter monitor will detect an event. A wearable event monitor, which can be worn for 3 to 4 weeks, is likely to capture an event. Although an implantable loop recorder would likely capture an event, it is inappropriate in this setting because of its expense and invasive nature. An ambulatory blood pressure monitor is unable to detect an arrhythmia. A wearable defibrillator vest is not necessary because the patient has not had a cardiac arrest. Assuming a baseline ECG was obtained as part of the initial evaluation (see previous question), an ECG following an episode when the patient is asymptomatic is unlikely to be helpful. [cite: 339, 340, 341, 342, 343, 344]",
+      "explanation": "See Diagnostic Tests: Ambulatory Monitoring. Because the symptoms occur less frequently than daily, it is very unlikely that a 24- or 48-hour Holter monitor will detect an event. A wearable event monitor, which can be worn for 3 to 4 weeks, is likely to capture an event. Although an implantable loop recorder would likely capture an event, it is inappropriate in this setting because of its expense and invasive nature. An ambulatory blood pressure monitor is unable to detect an arrhythmia. A wearable defibrillator vest is not necessary because the patient has not had a cardiac arrest. Assuming a baseline ECG was obtained as part of the initial evaluation (see previous question), an ECG following an episode when the patient is asymptomatic is unlikely to be helpful.",
       "questionNumber": 30
     }
     ,

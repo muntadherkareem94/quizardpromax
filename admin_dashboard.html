@@ -987,8 +987,8 @@ async function loadActiveSessions() {
         const { data: users, error: usersError } = await supabase.rpc('get_all_users_with_details');
         if (usersError) throw usersError;
 
-        // 2. Get all currently active sessions from the database
-        const { data: sessions, error: sessionsError } = await supabase.from('active_sessions').select('*');
+       // 2. Get all currently active sessions using our Admin Override function
+        const { data: sessions, error: sessionsError } = await supabase.rpc('admin_get_all_sessions');
         if (sessionsError) throw sessionsError;
 
         const now = new Date();
@@ -1053,13 +1053,14 @@ async function loadActiveSessions() {
 }
 
 // Add the listener for the Force Logout button
+// Add the listener for the Force Logout button
 document.getElementById('sessionList').addEventListener('click', async (e) => {
     if (e.target.classList.contains('force-logout-btn')) {
         const userId = e.target.dataset.userId;
         if (confirm("Are you sure you want to log this user out of all devices? They will be immediately disconnected.")) {
             try {
-                // Delete all rows in active_sessions for this user
-                const { error } = await supabase.from('active_sessions').delete().eq('user_id', userId);
+                // FIX: Use our new secure RPC function to bypass database security blocks
+                const { error } = await supabase.rpc('admin_force_logout', { target_user_id: userId });
                 if (error) throw error;
                 alert("User successfully logged out of all devices.");
                 loadActiveSessions(); // Refresh the table

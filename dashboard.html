@@ -1666,9 +1666,18 @@ loadBooksAndVideos();
             await fetchAndDisplayNotifications(); 
 
            // --- REPLACE the old handleUrlHash(); line with THIS BLOCK ---
-          // If the URL hash didn't specify a view, show the default one.
+         // If the URL hash didn't specify a view, show the default one.
             switchView('books');
             // --- END OF NEW BLOCK ---
+
+            // --- NEW: THE HEARTBEAT CHECKER ---
+            // Checks the database every 30 seconds. If an admin deletes their session, 
+            // they will be instantly kicked back to the login screen.
+            setInterval(async () => {
+                await validateAndEnforceSession(session.user);
+            }, 30000); 
+            // ----------------------------------
+
         }
         
     } else {

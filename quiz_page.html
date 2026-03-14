@@ -2812,7 +2812,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             updateUserProfileIcon(session.user, userData);
             await loadCoreData();
             
-            if (savedProgress) {
+  if (savedProgress) {
                 // THIS IS THE MODIFIED BLOCK
                 dom.resumeModal.classList.remove('hidden');
                 dom.resumeButton.onclick = () => {
@@ -2831,6 +2831,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 initializeQuiz(false);
             }
             setupActivityListeners();
+            
+            // --- NEW: THE HEARTBEAT CHECKER ---
+            // Checks the database every 30 seconds.
+            setInterval(async () => {
+                await validateAndEnforceSession(session.user);
+            }, 30000); 
+            // ----------------------------------
         }
     } else {
         window.location.href = 'index.html';
