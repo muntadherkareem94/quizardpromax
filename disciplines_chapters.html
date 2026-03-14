@@ -52,12 +52,12 @@ canvas[id^="ch-chart-"]{
         }
     </script>
 </head>
-</head>
+
 <body class="flex flex-col min-h-screen">
 <header class="container mx-auto max-w-4xl mt-8 bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
     <div class="flex-1">
         <a href="dashboard.html" class="text-gray-600 hover:text-purple-600" title="Back to Dashboard">
-            <svg xmlns="http://www.w.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
         </a>
     </div>
     <div class="flex-shrink-0">
@@ -453,27 +453,50 @@ document.addEventListener('click', () => {
         return true;
     }
     
-   function updateUserProfileIcon(user, userData) {
-    const photoURL = user.user_metadata.photoURL;
-    const username = user.user_metadata.username || user.email;
+function updateUserProfileIcon(user, userData) {
+    const photoURL =
+        user?.user_metadata?.photoURL ||
+        user?.user_metadata?.avatar_url ||
+        user?.user_metadata?.picture ||
+        userData?.profile_image_url ||
+        userData?.avatar_url ||
+        null;
+
+    const username =
+        user?.user_metadata?.username ||
+        userData?.username ||
+        user?.email ||
+        'User';
 
     const profileHTML = photoURL
         ? `<img src="${photoURL}" alt="My Profile" class="w-full h-full object-cover">`
         : `<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-gray-500 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>`;
 
-    // --- THIS IS THE FIX ---
-    // We now correctly reference the elements through the 'dom' object
-    dom.profileDropdownButton.innerHTML = profileHTML;
-    dom.dropdownProfileImage.innerHTML = profileHTML;
+    if (dom.profileDropdownButton) {
+        dom.profileDropdownButton.innerHTML = profileHTML;
+    }
+
+    if (dom.dropdownProfileImage) {
+        dom.dropdownProfileImage.innerHTML = profileHTML;
+    }
 
     let usernameHTML = `<p id="dropdownUsername" class="font-semibold text-gray-800 break-all">${username}</p>`;
+
     if (userData && userData.account_type === 'premium') {
-        usernameHTML = `<div class="flex items-center gap-x-2"><p id="dropdownUsername" class="font-semibold text-gray-800 break-all">${username}</p><span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5 rounded-full flex items-center gap-1"><img src="./images/general/crown.png" alt="Premium" class="w-3 h-3 object-contain"> Premium</span></div>`;
+        usernameHTML = `
+            <div class="flex items-center gap-x-2">
+                <p id="dropdownUsername" class="font-semibold text-gray-800 break-all">${username}</p>
+                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <img src="./images/general/crown.png" alt="Premium" class="w-3 h-3 object-contain">
+                    Premium
+                </span>
+            </div>
+        `;
     }
-    
-    // Also corrected this part to use the 'dom' object
-    const usernameContainer = dom.dropdownUsername.parentNode;
-    usernameContainer.innerHTML = usernameHTML + '<p class="text-sm text-gray-500">View your profile</p>';
+
+    if (dom.dropdownUsername && dom.dropdownUsername.parentNode) {
+        dom.dropdownUsername.parentNode.innerHTML = usernameHTML + '<p class="text-sm text-gray-500">View your profile</p>';
+    }
 }
 
     // --- Data Loading and Rendering ---
@@ -585,11 +608,14 @@ async function loadAllData(user) {
         ]);
 
         allBooks = booksRes.data || [];
-        allChapters = chaptersRes.data || [];
-        currentUserData = userDataRes.data || {};
+allChapters = chaptersRes.data || [];
+currentUserData = userDataRes.data || {};
 
-        const accessibleBookIds = new Set(allBooks.filter(item => item.has_access === true).map(item => item.book_data.id));
-        accessibleContent.chapters = allChapters.filter(chapter => accessibleBookIds.has(chapter.book_id));
+// Render profile image + username in header
+updateUserProfileIcon(user, currentUserData);
+
+const accessibleBookIds = new Set(allBooks.filter(item => item.has_access === true).map(item => item.book_data.id));
+accessibleContent.chapters = allChapters.filter(chapter => accessibleBookIds.has(chapter.book_id));
 
         // 5. Trigger Render
         if (disciplineId) {

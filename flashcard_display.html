@@ -44,11 +44,81 @@
             transform: rotateY(180deg);
         }
 
-        .card-text {
+      .card-text {
             font-size: clamp(1.2rem, 2.5vw + 0.5rem, 1.75rem);
             line-height: 1.5;
             color: #1f2937;
         }
+
+/* --- FULLSCREEN OVERRIDES --- */
+
+/* Main fullscreen container */
+#flashcardContainer:-webkit-full-screen,
+#flashcardContainer:fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    background-color: #3da0be;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding: 1.25rem 2rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Top title/action row */
+#flashcardContainer:-webkit-full-screen > div:first-child,
+#flashcardContainer:fullscreen > div:first-child {
+    width: 100% !important;
+    max-width: none !important;
+    margin-bottom: 1rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Flashcard area */
+#flashcardContainer:-webkit-full-screen > #flashcard,
+#flashcardContainer:fullscreen > #flashcard {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: calc(100vh - 180px) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+}
+
+/* Flip internals */
+#flashcardContainer:-webkit-full-screen .flip-card-inner,
+#flashcardContainer:fullscreen .flip-card-inner,
+#flashcardContainer:-webkit-full-screen .flip-card-front,
+#flashcardContainer:-webkit-full-screen .flip-card-back,
+#flashcardContainer:fullscreen .flip-card-front,
+#flashcardContainer:fullscreen .flip-card-back {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+/* Bottom navigation controls */
+#flashcardContainer:-webkit-full-screen > div.mt-8,
+#flashcardContainer:fullscreen > div.mt-8 {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#displayFrontImage img,
+#displayBackImage img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -94,6 +164,9 @@
             <div class="flex justify-between items-center w-full mb-4 px-2 sm:px-6">
                 <h2 id="deckTitle" class="text-white text-lg sm:text-xl font-bold opacity-90 drop-shadow-md truncate pr-4"></h2>
                 <div class="flex gap-2 shrink-0">
+                    <button id="fullscreenBtn" class="bg-white/20 hover:bg-white/30 text-white p-2 rounded-lg transition-colors" title="Toggle Fullscreen">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 1v4m0 0h-4m4 0l-5-5"></path></svg>
+                    </button>
                     <button id="editCardBtn" class="bg-white/20 hover:bg-white/30 text-white p-2 rounded-lg transition-colors" title="Edit Card">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                     </button>
@@ -102,7 +175,7 @@
                     </button>
                 </div>
             </div>
-<div id="flashcard" class="flip-card perspective-1000 w-full h-[55vh] min-h-[350px] cursor-pointer group">
+<div id="flashcard" class="flip-card perspective-1000 w-full h-[55vh] min-h-[350px] cursor-pointer group overflow-hidden">
                 <div class="flip-card-inner shadow-2xl rounded-3xl">
                     
                     <div class="flip-card-front bg-white rounded-3xl p-6 sm:p-10 flex flex-col overflow-y-auto border-4 border-indigo-50">
@@ -110,8 +183,8 @@
                             <span class="uppercase tracking-widest text-xs font-bold text-gray-500">Front</span>
                             <svg class="w-5 h-5 text-gray-400 group-hover:text-indigo-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
                         </div>
-                        <div id="cardFrontText" class="card-text flex-grow flex items-center justify-center text-center font-bold"></div>
-                        <div id="displayFrontImage" class="mt-4 flex justify-center w-full"></div>
+                        <div id="cardFrontText" class="card-text flex items-center justify-center text-center font-bold"></div>
+<div id="displayFrontImage" class="mt-4 flex items-center justify-center w-full flex-1 min-h-0 overflow-hidden"></div>
                     </div>
 
                     <div class="flip-card-back bg-indigo-50 rounded-3xl p-6 sm:p-10 flex flex-col overflow-y-auto border-4 border-indigo-200">
@@ -119,20 +192,20 @@
                             <span class="uppercase tracking-widest text-xs font-bold text-indigo-800">Back</span>
                             <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <div id="cardBackText" class="card-text flex-grow flex items-center justify-center text-center text-indigo-900 font-semibold whitespace-pre-wrap"></div>
-                        <div id="displayBackImage" class="mt-4 flex justify-center w-full"></div>
+                        <div id="cardBackText" class="card-text flex items-center justify-center text-center text-indigo-900 font-semibold whitespace-pre-wrap"></div>
+<div id="displayBackImage" class="mt-4 flex items-center justify-center w-full flex-1 min-h-0 overflow-hidden"></div>
                     </div>
 
                 </div>
             </div>
-            <div class="mt-8 flex items-center gap-4 sm:gap-8 w-full max-w-md justify-center">
+            <div class="mt-8 flex items-center justify-center gap-4 sm:gap-8 w-full max-w-2xl mx-auto">
                 <button id="prevBtn" class="bg-white/20 hover:bg-white/40 text-white rounded-full p-4 transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
                 
-                <button id="flipBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-all active:scale-95 uppercase tracking-widest text-sm flex-grow">
-                    Flip Card (Space)
-                </button>
+               <button id="flipBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all active:scale-95 uppercase tracking-widest text-sm w-auto min-w-[220px]">
+    Flip Card (Space)
+</button>
                 
                 <button id="nextBtn" class="bg-white/20 hover:bg-white/40 text-white rounded-full p-4 transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
@@ -201,6 +274,7 @@
             flashcardContainer: document.getElementById('flashcardContainer'),
             flashcard: document.getElementById('flashcard'),
             deckTitle: document.getElementById('deckTitle'),
+            fullscreenBtn: document.getElementById('fullscreenBtn'), // NEW FULLSCREEN
             editCardBtn: document.getElementById('editCardBtn'), // NEW
             deleteCardBtn: document.getElementById('deleteCardBtn'), // NEW
             cardFrontText: document.getElementById('cardFrontText'),
@@ -380,18 +454,43 @@
             dom.cardBackText.textContent = card.back_text;
 
             // Render Front Image
-            if (card.front_image_url) {
-                dom.displayFrontImage.innerHTML = `<img src="${card.front_image_url}" class="max-h-48 rounded-lg shadow-sm border border-gray-200 object-contain cursor-pointer">`;
-            } else {
-                dom.displayFrontImage.innerHTML = '';
-            }
+            // Render Front Image
+if (card.front_image_url) {
+    const hasFrontText = !!card.front_text?.trim();
 
-            // Render Back Image
-            if (card.back_image_url) {
-                dom.displayBackImage.innerHTML = `<img src="${card.back_image_url}" class="max-h-48 rounded-lg shadow-sm border border-indigo-200 object-contain cursor-pointer">`;
-            } else {
-                dom.displayBackImage.innerHTML = '';
-            }
+    dom.displayFrontImage.innerHTML = `
+        <img
+            src="${card.front_image_url}"
+            class="
+                rounded-xl shadow-sm border border-gray-200 cursor-pointer
+                w-full h-full
+                ${hasFrontText ? 'max-h-[55%]' : 'max-h-[85%]'}
+                object-contain
+            "
+        >
+    `;
+} else {
+    dom.displayFrontImage.innerHTML = '';
+}
+
+// Render Back Image
+if (card.back_image_url) {
+    const hasBackText = !!card.back_text?.trim();
+
+    dom.displayBackImage.innerHTML = `
+        <img
+            src="${card.back_image_url}"
+            class="
+                rounded-xl shadow-sm border border-indigo-200 cursor-pointer
+                w-full h-full
+                ${hasBackText ? 'max-h-[55%]' : 'max-h-[85%]'}
+                object-contain
+            "
+        >
+    `;
+} else {
+    dom.displayBackImage.innerHTML = '';
+}
             
             dom.flashcard.querySelector('.flip-card-front').scrollTop = 0;
             dom.flashcard.querySelector('.flip-card-back').scrollTop = 0;
@@ -421,6 +520,19 @@
         dom.flipBtn.addEventListener('click', toggleFlip);
         dom.nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextCard(); });
         dom.prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevCard(); });
+
+        // --- FULLSCREEN LOGIC ---
+        if (dom.fullscreenBtn) {
+            dom.fullscreenBtn.addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    dom.flashcardContainer.requestFullscreen().catch(err => {
+                        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                    });
+                } else {
+                    document.exitFullscreen();
+                }
+            });
+        }
 
         // Keyboard Shortcuts
         document.addEventListener('keydown', (e) => {
@@ -593,13 +705,20 @@
             }
         });
 
-        // Save / Update Card
+    // Save / Update Card
         dom.saveCardBtn.addEventListener('click', async () => {
             const front = dom.newCardFront.value.trim();
             const back = dom.newCardBack.value.trim();
 
-            if (!front || !back) {
-                alert("Please fill out both sides of the flashcard.");
+            // Bulletproof check: Looks at text, attached files, OR if the image preview is currently visible
+            const isFrontImagePresent = dom.frontImageInput.files.length > 0 || !dom.frontImagePreview.classList.contains('hidden') || currentFrontImageUrl;
+            const isBackImagePresent = dom.backImageInput.files.length > 0 || !dom.backImagePreview.classList.contains('hidden') || currentBackImageUrl;
+
+            const hasFrontContent = front !== '' || isFrontImagePresent;
+            const hasBackContent = back !== '' || isBackImagePresent;
+
+            if (!hasFrontContent || !hasBackContent) {
+                alert("Almost there! You must provide either text OR an image for BOTH the Front AND the Back of the card.");
                 return;
             }
 

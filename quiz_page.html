@@ -3137,8 +3137,15 @@ on(dom.unhighlightBtn, 'click', () => {
         const front = dom.quizFlashcardFront.value.trim();
         const back = dom.quizFlashcardBack.value.trim();
         
-        if (!front || !back) {
-            alert("Please fill out both sides of the flashcard.");
+        // Bulletproof check: Looks at text, attached files, OR if the image preview is currently visible
+        const isFrontImagePresent = dom.quizFrontImageInput.files.length > 0 || !dom.quizFrontImagePreview.classList.contains('hidden');
+        const isBackImagePresent = dom.quizBackImageInput.files.length > 0 || !dom.quizBackImagePreview.classList.contains('hidden');
+
+        const hasFrontContent = front !== '' || isFrontImagePresent;
+        const hasBackContent = back !== '' || isBackImagePresent;
+
+        if (!hasFrontContent || !hasBackContent) {
+            alert("Almost there! You must provide either text OR an image for BOTH the Front AND the Back of the card.");
             return;
         }
 

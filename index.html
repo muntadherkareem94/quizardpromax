@@ -216,16 +216,31 @@ async function manageActiveSession(user) {
             // 3. If everything is successful, redirect to the dashboard
             window.location.href = 'dashboard.html';
 
-        } catch (error) {
-            console.error("Login Error:", error);
-            let friendlyMessage = error.message || 'An unexpected error occurred.';
-            if (friendlyMessage.toLowerCase().includes('invalid login credentials')) {
-                friendlyMessage = 'Invalid credentials. Please check your email and password.';
-            }
-            showMessage(friendlyMessage);
-            submitButton.disabled = false;
-            submitButton.textContent = 'Log In';
-        }
+       } catch (error) {
+    console.error("Login Error:", error);
+
+    let friendlyMessage = error.message || 'An unexpected error occurred.';
+
+    // Wrong password/email
+    if (friendlyMessage.toLowerCase().includes('invalid login credentials')) {
+        friendlyMessage = 'Invalid email or password. Please try again.';
+    }
+
+    // Device limit reached
+    if (
+        friendlyMessage.toLowerCase().includes('device') ||
+        friendlyMessage.toLowerCase().includes('session') ||
+        friendlyMessage.toLowerCase().includes('limit') ||
+        friendlyMessage.toLowerCase().includes('non-2xx')
+    ) {
+        friendlyMessage = 'Device limit reached. Please log out from one of your other devices before signing in here.';
+    }
+
+    showMessage(friendlyMessage);
+
+    submitButton.disabled = false;
+    submitButton.textContent = 'Log In';
+}
     });
 
     // --- Forgot Password Logic ---
