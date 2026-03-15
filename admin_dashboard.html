@@ -333,10 +333,10 @@
                 <label for="videoCourseThumbnailUrl" class="block text-sm font-medium text-gray-700">Thumbnail URL</label>
                 <input type="text" id="videoCourseThumbnailUrl" placeholder="e.g., images/thumbnails/course.jpg" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
             </div>
-             <div>
-                <label for="videoCourseVideoUrl" class="block text-sm font-medium text-gray-700">Video URL</label>
-                <input type="text" id="videoCourseVideoUrl" placeholder="e.g., https://youtube.com/watch?v=..." required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
-            </div>
+           <div>
+    <label for="videoCourseVideoUrl" class="block text-sm font-medium text-gray-700">Video URL (Optional for single-video courses)</label>
+    <input type="text" id="videoCourseVideoUrl" placeholder="Leave empty for multi-video courses managed through lessons" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
+</div>
             <div>
                 <label for="videoCourseAccessLevel" class="block text-sm font-medium text-gray-700">Access Level</label>
                 <select id="videoCourseAccessLevel" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm">
@@ -1119,14 +1119,16 @@ document.getElementById('sessionList').addEventListener('click', async (e) => {
 document.getElementById('videoCourseForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const id = document.getElementById('videoCourseId').value;
-    const data = {
-        title: document.getElementById('videoCourseTitle').value,
-        description: document.getElementById('videoCourseDescription').value,
-        speciality: document.getElementById('videoCourseSpecialty').value,
-        thumbnail_url: document.getElementById('videoCourseThumbnailUrl').value,
-        video_url: document.getElementById('videoCourseVideoUrl').value,
-        access_level: document.getElementById('videoCourseAccessLevel').value
-    };
+  const rawVideoUrl = document.getElementById('videoCourseVideoUrl').value.trim();
+
+const data = {
+    title: document.getElementById('videoCourseTitle').value,
+    description: document.getElementById('videoCourseDescription').value,
+    speciality: document.getElementById('videoCourseSpecialty').value,
+    thumbnail_url: document.getElementById('videoCourseThumbnailUrl').value,
+    video_url: rawVideoUrl === '' ? null : rawVideoUrl,
+    access_level: document.getElementById('videoCourseAccessLevel').value
+};
 
     try {
         let error;
