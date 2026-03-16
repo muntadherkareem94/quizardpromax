@@ -223,9 +223,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (typeFromHash === 'recovery') {
             // Show the new password modal
             document.getElementById('newPasswordModal').classList.remove('hidden');
-            // Remove the hash from the URL so it doesn't trigger again on refresh
-            history.replaceState({}, document.title, window.location.pathname);
-            return; // Stop here so we don't redirect to the dashboard yet!
+            // We removed the code that clears the URL here so Supabase can read the token!
+            return; 
         }
 
         // Normal Login Check
@@ -329,6 +328,9 @@ showMessage("Could not send reset link. Please check the email address.");
             
             document.getElementById('newPasswordModal').classList.add('hidden');
             showMessage('Password updated successfully! You can now log in.', false);
+            
+            // Now it is safe to clean up the URL!
+            history.replaceState({}, document.title, window.location.pathname);
             
         } catch (error) {
             console.error("Update Password Error:", error);
