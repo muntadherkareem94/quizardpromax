@@ -87,10 +87,14 @@
                     </select>
                 </div>
                 <div>
-                    <label for="explanation" class="block text-sm font-medium text-gray-700">Explanation</label>
-                    <textarea id="explanation" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
+                    <label for="explanation" class="block text-sm font-medium text-gray-700">Explanation</label>
+                    <textarea id="explanation" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
+                </div>
+                <div>
+                    <label for="explanationImageUrl" class="block text-sm font-medium text-gray-700">Explanation Image URL (Optional)</label>
+                    <input type="text" id="explanationImageUrl" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
                 </div>
-                <div class="flex justify-end pt-4">
+                <div class="flex justify-end pt-4">
                     <button type="button" id="cancelButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
                     <button type="submit" id="saveButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg">Save Question</button>
                 </div>
@@ -268,16 +272,17 @@ import { supabase } from './supabaseClient.js';
                 if (chapterError) throw chapterError;
 
                 const questionData = {
-                    questionNumber: Number(document.getElementById('questionNumber').value),
-                    question: document.getElementById('questionText').value,
-                    imageUrl: document.getElementById('questionImageUrl').value,
-                    options: options.filter(Boolean),
-                    correctAnswerIndex: Number(document.getElementById('correctAnswer').value),
-                    explanation: document.getElementById('explanation').value,
-                    book_id: bookId,
-                    chapter_id: chapterId,
-                    discipline_id: chapterInfo.discipline_id
-                };
+                    questionNumber: Number(document.getElementById('questionNumber').value),
+                    question: document.getElementById('questionText').value,
+                    imageUrl: document.getElementById('questionImageUrl').value,
+                    options: options.filter(Boolean),
+                    correctAnswerIndex: Number(document.getElementById('correctAnswer').value),
+                    explanation: document.getElementById('explanation').value,
+                    explanationImageUrl: document.getElementById('explanationImageUrl').value,
+                    book_id: bookId,
+                    chapter_id: chapterId,
+                    discipline_id: chapterInfo.discipline_id
+                };
 
                 let error;
                 if (id) {
@@ -391,10 +396,11 @@ import { supabase } from './supabaseClient.js';
                 document.getElementById('optionB').value = data.options[1] || '';
                 document.getElementById('optionC').value = data.options[2] || '';
                 document.getElementById('optionD').value = data.options[3] || '';
-                document.getElementById('optionE').value = data.options[4] || '';
-                document.getElementById('correctAnswer').value = data.correctAnswerIndex;
-                document.getElementById('explanation').value = data.explanation;
-                modalTitle.textContent = "Edit Question";
+                document.getElementById('optionE').value = data.options[4] || '';
+                document.getElementById('correctAnswer').value = data.correctAnswerIndex;
+                document.getElementById('explanation').value = data.explanation;
+                document.getElementById('explanationImageUrl').value = data.explanationImageUrl || '';
+                modalTitle.textContent = "Edit Question";
                 openModal(questionModal);
             }
         });
