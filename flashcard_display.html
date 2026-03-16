@@ -44,11 +44,52 @@
             transform: rotateY(180deg);
         }
 
-      .card-text {
-            font-size: clamp(1.2rem, 2.5vw + 0.5rem, 1.75rem);
-            line-height: 1.5;
-            color: #1f2937;
-        }
+.card-text {
+    font-size: clamp(1rem, 2vw + 0.45rem, 1.75rem);
+    line-height: 1.45;
+    color: #1f2937;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.flashcard-text-content {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    text-align: left;
+    align-self: stretch;
+}
+
+/* Card transition animation */
+.flashcard-animate-next {
+    animation: flashcardSlideNext 0.24s ease;
+}
+
+.flashcard-animate-prev {
+    animation: flashcardSlidePrev 0.24s ease;
+}
+
+@keyframes flashcardSlideNext {
+    0% {
+        opacity: 0.35;
+        transform: translateX(28px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes flashcardSlidePrev {
+    0% {
+        opacity: 0.35;
+        transform: translateX(-28px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 /* --- FULLSCREEN OVERRIDES --- */
 
@@ -149,6 +190,110 @@
     transform: scale(1.15);
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.18);
 }
+
+/* --- VIDEO-LIKE FULLSCREEN MODE --- */
+
+#flashcardContainer:-webkit-full-screen,
+#flashcardContainer:fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    background-color: #3da0be;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Hide normal title bar in fullscreen */
+#flashcardContainer:-webkit-full-screen #flashcardTopBar,
+#flashcardContainer:fullscreen #flashcardTopBar {
+    display: none !important;
+}
+
+/* Hide edit/delete/fullscreen row in fullscreen because top bar is hidden */
+#flashcardContainer:-webkit-full-screen #editCardBtn,
+#flashcardContainer:-webkit-full-screen #deleteCardBtn,
+#flashcardContainer:fullscreen #editCardBtn,
+#flashcardContainer:fullscreen #deleteCardBtn {
+    display: none !important;
+}
+
+/* Flashcard gets more space */
+#flashcardContainer:-webkit-full-screen > #flashcard,
+#flashcardContainer:fullscreen > #flashcard {
+    width: min(96vw, 1500px) !important;
+    height: min(78vh, 1000px) !important;
+    max-width: none !important;
+    min-height: 300px !important;
+    margin: 0 auto !important;
+}
+
+/* Fullscreen floating minimize button */
+#flashcardContainer:-webkit-full-screen #fullscreenOverlayControls,
+#flashcardContainer:fullscreen #fullscreenOverlayControls {
+    display: flex !important;
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 40 !important;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+}
+
+/* Bottom controls overlay */
+#flashcardContainer:-webkit-full-screen #flashcardBottomControls,
+#flashcardContainer:fullscreen #flashcardBottomControls {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 18px !important;
+    transform: translateX(-50%) !important;
+    width: min(92vw, 1400px) !important;
+    max-width: none !important;
+    margin: 0 !important;
+    z-index: 35 !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.28), rgba(0,0,0,0.08), transparent);
+    padding: 20px 20px 16px !important;
+    border-radius: 24px !important;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+}
+
+/* Smaller fullscreen flip button */
+#flashcardContainer:-webkit-full-screen #flipBtn,
+#flashcardContainer:fullscreen #flipBtn {
+    min-width: 160px !important;
+    padding: 0.75rem 1.1rem !important;
+    font-size: 0.95rem !important;
+}
+
+/* Auto-hide controls in fullscreen */
+#flashcardContainer.fullscreen-ui-hidden #flashcardBottomControls,
+#flashcardContainer.fullscreen-ui-hidden #fullscreenOverlayControls {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Dots and arrows stay visually clean */
+#flashcardContainer:-webkit-full-screen #flashcardDotsNav,
+#flashcardContainer:fullscreen #flashcardDotsNav {
+    justify-content: center !important;
+}
+
+#flashcardContainer:-webkit-full-screen .flashcard-dot,
+#flashcardContainer:fullscreen .flashcard-dot {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#flashcardContainer:-webkit-full-screen .flashcard-dot.active,
+#flashcardContainer:fullscreen .flashcard-dot.active {
+    background-color: white;
+}
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -191,7 +336,7 @@
 
 <div id="flashcardContainer" class="hidden w-full max-w-3xl flex flex-col items-center">
             
-            <div class="flex justify-between items-center w-full mb-4 px-2 sm:px-6">
+            <div id="flashcardTopBar" class="flex justify-between items-center w-full mb-4 px-2 sm:px-6">
                 <h2 id="deckTitle" class="text-white text-lg sm:text-xl font-bold opacity-90 drop-shadow-md truncate pr-4"></h2>
                 <div class="flex gap-2 shrink-0">
                     <button id="fullscreenBtn" class="bg-white/20 hover:bg-white/30 text-white p-2 rounded-lg transition-colors" title="Toggle Fullscreen">
@@ -205,7 +350,55 @@
                     </button>
                 </div>
             </div>
-<div id="flashcard" class="flip-card perspective-1000 w-full h-[55vh] min-h-[350px] cursor-pointer group overflow-hidden">
+
+            <div id="mobileGestureTutorial" class="hidden absolute inset-0 z-50 items-center justify-center bg-black/45 backdrop-blur-[2px] px-6">
+    <div class="bg-white/95 rounded-3xl shadow-2xl max-w-sm w-full p-6 text-center">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Flashcard Gestures</h3>
+
+        <div class="space-y-4 text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 text-xl animate-pulse">↔</div>
+                <div>
+                    <div class="font-semibold text-gray-800">Swipe left / right</div>
+                    <div class="text-sm text-gray-600">Move between cards</div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 text-xl animate-pulse">☝</div>
+                <div>
+                    <div class="font-semibold text-gray-800">Tap once</div>
+                    <div class="text-sm text-gray-600">Flip the flashcard</div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 text-xl animate-pulse">✌</div>
+                <div>
+                    <div class="font-semibold text-gray-800">Double tap</div>
+                    <div class="text-sm text-gray-600">Show controls and exit fullscreen</div>
+                </div>
+            </div>
+        </div>
+
+        <button id="closeMobileGestureTutorialBtn" class="mt-6 w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl">
+            Got it
+        </button>
+    </div>
+</div>
+
+<div id="mobileGestureToast" class="hidden absolute left-1/2 -translate-x-1/2 bottom-24 z-50 bg-black/65 text-white px-4 py-3 rounded-2xl text-sm font-medium shadow-xl">
+    Swipe ↔ navigate • Tap flip • Double tap exit
+</div>
+<div id="fullscreenOverlayControls" class="hidden">
+    <button id="fullscreenMinimizeBtn" class="bg-black/40 hover:bg-black/60 text-white p-3 rounded-xl transition-colors" title="Exit Fullscreen">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9V4H4m0 0l6 6m4 5v5h5m0 0l-6-6M15 9h5V4m0 0l-6 6M9 15H4v5m0 0l6-6"></path>
+        </svg>
+    </button>
+</div>
+
+<div id="flashcard" class="flip-card perspective-1000 w-full max-w-4xl h-[52vh] min-h-[350px] max-h-[700px] cursor-pointer group overflow-hidden mx-auto">
                 <div class="flip-card-inner shadow-2xl rounded-3xl">
                     
                     <div class="flip-card-front bg-white rounded-3xl p-6 sm:p-10 flex flex-col overflow-y-auto border-4 border-indigo-50">
@@ -213,7 +406,7 @@
                             <span class="uppercase tracking-widest text-xs font-bold text-gray-500">Front</span>
                             <svg class="w-5 h-5 text-gray-400 group-hover:text-indigo-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
                         </div>
-                        <div id="cardFrontText" class="card-text flex items-center justify-center text-center font-bold"></div>
+                       <div id="cardFrontText" class="card-text flashcard-text-content flex items-start justify-start text-left font-bold whitespace-pre-wrap w-full"></div>
 <div id="displayFrontImage" class="mt-4 flex items-center justify-center w-full flex-1 min-h-0 overflow-hidden"></div>
                     </div>
 
@@ -222,14 +415,14 @@
                             <span class="uppercase tracking-widest text-xs font-bold text-indigo-800">Back</span>
                             <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <div id="cardBackText" class="card-text flex items-center justify-center text-center text-indigo-900 font-semibold whitespace-pre-wrap"></div>
+                      <div id="cardBackText" class="card-text flashcard-text-content flex items-start justify-start text-left text-indigo-900 font-semibold whitespace-pre-wrap w-full"></div>
 <div id="displayBackImage" class="mt-4 flex items-center justify-center w-full flex-1 min-h-0 overflow-hidden"></div>
                     </div>
 
                 </div>
             </div>
-            <div class="mt-8 w-full max-w-4xl mx-auto flex flex-col items-center gap-4">
-    <button id="flipBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all active:scale-95 uppercase tracking-widest text-sm w-auto min-w-[220px]">
+<div id="flashcardBottomControls" class="mt-8 w-full max-w-4xl mx-auto flex flex-col items-center gap-4">
+    <button id="flipBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-5 rounded-xl shadow-lg transition-all active:scale-95 uppercase tracking-widest text-sm w-auto min-w-[180px]">
         Flip Card (Space)
     </button>
 
@@ -362,7 +555,13 @@ flashcardDotsNav: document.getElementById('flashcardDotsNav'),
     backImagePreview: document.getElementById('backImagePreview'),
     removeBackImageBtn: document.getElementById('removeBackImageBtn'),
     displayFrontImage: document.getElementById('displayFrontImage'),
-    displayBackImage: document.getElementById('displayBackImage')
+    displayBackImage: document.getElementById('displayBackImage'),
+    flashcardTopBar: document.getElementById('flashcardTopBar'),
+flashcardBottomControls: document.getElementById('flashcardBottomControls'),
+fullscreenMinimizeBtn: document.getElementById('fullscreenMinimizeBtn'),
+mobileGestureTutorial: document.getElementById('mobileGestureTutorial'),
+mobileGestureToast: document.getElementById('mobileGestureToast'),
+closeMobileGestureTutorialBtn: document.getElementById('closeMobileGestureTutorialBtn'),
 };
 
      let flashcards = [];
@@ -371,7 +570,16 @@ let isFlipped = false;
 let currentUserId = null;
 let editingCardId = null;
 let flashcardStudyProgressKey = null;
-        
+let fullscreenUiHideTimer = null;
+let mobileGestureToastTimer = null;
+let mobileGestureTutorialTimer = null;
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+let lastTapTime = 0;
+const MOBILE_SWIPE_THRESHOLD = 50;
+const MOBILE_VERTICAL_TOLERANCE = 80;     
   const urlParams = new URLSearchParams(window.location.search);
         const chapterId = urlParams.get('chapterId');
 
@@ -442,7 +650,14 @@ flashcardStudyProgressKey = buildFlashcardStudyProgressKey();
             const titleContext = from === 'book' ? 'Book Deck' : urlParams.get('disciplineName') || 'Discipline Deck';
             dom.deckTitle.textContent = `My Cards: ${titleContext}`;
 
-            await loadFlashcards();
+await loadFlashcards();
+setupFullscreenInteractionHandlers();
+
+if (dom.closeMobileGestureTutorialBtn) {
+    dom.closeMobileGestureTutorialBtn.addEventListener('click', () => {
+        hideMobileGestureTutorial();
+    });
+}
         });
 
         // --- Load Data ---
@@ -620,13 +835,53 @@ if (card.back_image_url) {
     dom.displayBackImage.innerHTML = '';
 }
             
-            dom.flashcard.querySelector('.flip-card-front').scrollTop = 0;
+dom.flashcard.querySelector('.flip-card-front').scrollTop = 0;
 dom.flashcard.querySelector('.flip-card-back').scrollTop = 0;
+
+requestAnimationFrame(() => {
+    fitFlashcardText();
+});
+
 renderFlashcardDots();
 saveFlashcardStudyProgress();
         }
 
 
+        function fitTextToContainer(textEl, sideEl) {
+    if (!textEl || !sideEl) return;
+
+    // Reset first
+    textEl.style.fontSize = '';
+    textEl.style.lineHeight = '';
+
+    const hasText = textEl.textContent.trim() !== '';
+    if (!hasText) return;
+
+    let fontSize = isFlashcardFullscreen()
+        ? (isMobileLikeDevice() ? 30 : 38)
+        : (isMobileLikeDevice() ? 24 : 32);
+
+    const minFontSize = isMobileLikeDevice() ? 14 : 16;
+
+    textEl.style.fontSize = `${fontSize}px`;
+    textEl.style.lineHeight = '1.35';
+
+    while (
+        fontSize > minFontSize &&
+        (sideEl.scrollHeight > sideEl.clientHeight || textEl.scrollWidth > textEl.clientWidth)
+    ) {
+        fontSize -= 1;
+        textEl.style.fontSize = `${fontSize}px`;
+    }
+}
+
+function fitFlashcardText() {
+    const frontSide = dom.flashcard.querySelector('.flip-card-front');
+    const backSide = dom.flashcard.querySelector('.flip-card-back');
+
+    fitTextToContainer(dom.cardFrontText, frontSide);
+    fitTextToContainer(dom.cardBackText, backSide);
+}
         function renderFlashcardDots() {
     if (!dom.flashcardDotsNav) return;
 
@@ -669,17 +924,184 @@ function scrollActiveDotIntoView() {
         behavior: 'smooth'
     });
 }
+
+
+
+
+function isFlashcardFullscreen() {
+    return document.fullscreenElement === dom.flashcardContainer;
+}
+
+function isMobileLikeDevice() {
+    return window.matchMedia('(pointer: coarse)').matches || window.innerWidth <= 768;
+}
+
+function getMobileGestureHintKey() {
+    return `flashcardMobileGestureHint_${currentUserId || 'guest'}`;
+}
+
+function getMobileGestureHintCount() {
+    const raw = localStorage.getItem(getMobileGestureHintKey());
+    const count = parseInt(raw || '0', 10);
+    return Number.isNaN(count) ? 0 : count;
+}
+
+function setMobileGestureHintCount(count) {
+    localStorage.setItem(getMobileGestureHintKey(), String(count));
+}
+
+function hideMobileGestureTutorial() {
+    if (mobileGestureTutorialTimer) {
+        clearTimeout(mobileGestureTutorialTimer);
+        mobileGestureTutorialTimer = null;
+    }
+    dom.mobileGestureTutorial.classList.add('hidden');
+    dom.mobileGestureTutorial.classList.remove('flex');
+}
+
+function hideMobileGestureToast() {
+    if (mobileGestureToastTimer) {
+        clearTimeout(mobileGestureToastTimer);
+        mobileGestureToastTimer = null;
+    }
+    dom.mobileGestureToast.classList.add('hidden');
+}
+
+function showMobileGestureTutorialIfNeeded() {
+    if (!isMobileLikeDevice() || !isFlashcardFullscreen()) return;
+
+    const currentCount = getMobileGestureHintCount();
+
+    // First time: full overlay, stays until user dismisses it
+    if (currentCount === 0) {
+        dom.mobileGestureTutorial.classList.remove('hidden');
+        dom.mobileGestureTutorial.classList.add('flex');
+        setMobileGestureHintCount(1);
+        return;
+    }
+
+    // Second time: compact toast
+    if (currentCount === 1) {
+        dom.mobileGestureToast.classList.remove('hidden');
+
+        mobileGestureToastTimer = setTimeout(() => {
+            hideMobileGestureToast();
+        }, 2600);
+
+        setMobileGestureHintCount(2);
+    }
+}
+function showFullscreenUiTemporarily() {
+    if (!isFlashcardFullscreen()) return;
+
+    dom.flashcardContainer.classList.remove('fullscreen-ui-hidden');
+
+    if (fullscreenUiHideTimer) {
+        clearTimeout(fullscreenUiHideTimer);
+    }
+
+    fullscreenUiHideTimer = setTimeout(() => {
+        if (isFlashcardFullscreen()) {
+            dom.flashcardContainer.classList.add('fullscreen-ui-hidden');
+        }
+    }, 2200);
+}
+
+function setupFullscreenInteractionHandlers() {
+    // Desktop behavior
+    ['mousemove'].forEach(eventName => {
+        dom.flashcardContainer.addEventListener(eventName, () => {
+            if (!isMobileLikeDevice() && isFlashcardFullscreen()) {
+                showFullscreenUiTemporarily();
+            }
+        });
+    });
+
+    // Mobile fullscreen gesture behavior
+    dom.flashcard.addEventListener('touchstart', handleFlashcardTouchStart, { passive: true });
+    dom.flashcard.addEventListener('touchend', handleFlashcardTouchEnd, { passive: false });
+}
         // --- Interactions ---
-        function toggleFlip() {
-            isFlipped = !isFlipped;
-            dom.flashcard.classList.toggle('flipped', isFlipped);
+function handleFlashcardTouchStart(e) {
+    if (!isFlashcardFullscreen() || !isMobileLikeDevice()) return;
+
+    const touch = e.changedTouches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+}
+
+function handleFlashcardTouchEnd(e) {
+    if (!isFlashcardFullscreen() || !isMobileLikeDevice()) return;
+
+    const touch = e.changedTouches[0];
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+    const now = Date.now();
+    const isDoubleTap = now - lastTapTime < 280;
+
+    // DOUBLE TAP: show controls and exit fullscreen
+    if (absX < 20 && absY < 20 && isDoubleTap) {
+        lastTapTime = 0;
+        showFullscreenUiTemporarily();
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+        return;
+    }
+
+    // HORIZONTAL SWIPE: navigate cards
+    if (absX > MOBILE_SWIPE_THRESHOLD && absY < MOBILE_VERTICAL_TOLERANCE) {
+        e.preventDefault();
+
+        if (deltaX < 0) {
+            nextCard();   // swipe left
+        } else {
+            prevCard();   // swipe right
         }
 
-        function nextCard() {
+        lastTapTime = 0;
+        return;
+    }
+
+    // SINGLE TAP: flip card
+    if (absX < 20 && absY < 20) {
+        lastTapTime = now;
+
+        setTimeout(() => {
+            if (Date.now() - lastTapTime >= 280) {
+                toggleFlip();
+            }
+        }, 280);
+    }
+}
+
+
+
+function toggleFlip() {
+    isFlipped = !isFlipped;
+    dom.flashcard.classList.toggle('flipped', isFlipped);
+}
+
+function animateCardTransition(direction) {
+    dom.flashcard.classList.remove('flashcard-animate-next', 'flashcard-animate-prev');
+
+    // force reflow so repeated animations still trigger
+    void dom.flashcard.offsetWidth;
+
+    dom.flashcard.classList.add(direction === 'next' ? 'flashcard-animate-next' : 'flashcard-animate-prev');
+}
+
+function nextCard() {
     if (currentIndex < flashcards.length - 1) {
         currentIndex++;
         saveFlashcardStudyProgress();
         renderCard();
+        animateCardTransition('next');
     }
 }
 
@@ -688,26 +1110,40 @@ function prevCard() {
         currentIndex--;
         saveFlashcardStudyProgress();
         renderCard();
+        animateCardTransition('prev');
     }
 }
 
-        dom.flashcard.addEventListener('click', toggleFlip);
+       dom.flashcard.addEventListener('click', (e) => {
+    if (isFlashcardFullscreen() && isMobileLikeDevice()) return;
+    toggleFlip();
+});
         dom.flipBtn.addEventListener('click', toggleFlip);
         dom.nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextCard(); });
         dom.prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevCard(); });
 
         // --- FULLSCREEN LOGIC ---
-        if (dom.fullscreenBtn) {
-            dom.fullscreenBtn.addEventListener('click', () => {
-                if (!document.fullscreenElement) {
-                    dom.flashcardContainer.requestFullscreen().catch(err => {
-                        console.error(`Error attempting to enable fullscreen: ${err.message}`);
-                    });
-                } else {
-                    document.exitFullscreen();
-                }
+      if (dom.fullscreenBtn) {
+    dom.fullscreenBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            dom.flashcardContainer.requestFullscreen().then(() => {
+                showFullscreenUiTemporarily();
+            }).catch(err => {
+                console.error(`Error attempting to enable fullscreen: ${err.message}`);
             });
+        } else {
+            document.exitFullscreen();
         }
+    });
+}
+
+if (dom.fullscreenMinimizeBtn) {
+    dom.fullscreenMinimizeBtn.addEventListener('click', () => {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+    });
+}
 
         // Keyboard Shortcuts
         document.addEventListener('keydown', (e) => {
@@ -723,6 +1159,30 @@ function prevCard() {
             }
         });
 
+document.addEventListener('fullscreenchange', () => {
+    if (isFlashcardFullscreen()) {
+        if (isMobileLikeDevice()) {
+            dom.flashcardContainer.classList.add('fullscreen-ui-hidden');
+            showMobileGestureTutorialIfNeeded();
+        } else {
+            showFullscreenUiTemporarily();
+        }
+    } else {
+        dom.flashcardContainer.classList.remove('fullscreen-ui-hidden');
+
+        if (fullscreenUiHideTimer) {
+            clearTimeout(fullscreenUiHideTimer);
+            fullscreenUiHideTimer = null;
+        }
+
+        hideMobileGestureTutorial();
+        hideMobileGestureToast();
+    }
+
+    requestAnimationFrame(() => {
+        fitFlashcardText();
+    });
+});
         // --- ADD CARD LOGIC ---
        // --- ADD & EDIT CARD LOGIC ---
 // --- IMAGE UPLOAD HELPER ---

@@ -178,14 +178,25 @@
         }
 
         try {
+            const userRole = (email.toLowerCase() === 'muntadherkareem@gmail.com') ? 'admin' : 'user';
+
             // Step 1: Create the user in Supabase Authentication
+            // The SQL trigger will automatically create the matching row in public.users
             const { data: authData, error: authError } = await supabase.auth.signUp({
                 email: email,
                 password: password,
+                options: {
+                    emailRedirectTo: 'https://quizardpromax.netlify.app/',
+                    data: {
+                        username: username,
+                        speciality: speciality,
+                        role: userRole,
+                        account_type: 'free'
+                    }
+                }
             });
 
             if (authError) {
-                // This will throw an error and be caught by the catch block
                 throw authError;
             }
 
@@ -194,33 +205,10 @@
             }
             
             console.log('User created in Supabase Auth:', authData.user.id);
+            console.log('User profile will be created automatically by SQL trigger.');
 
-            // Step 2: Save the user's profile data to your 'users' table
-            const userRole = (email.toLowerCase() === 'muntadherkareem@gmail.com') ? 'admin' : 'user';
-
-            const { error: profileError } = await supabase
-                .from('users') // The table you just created
-                .insert([
-                    { 
-                        id: authData.user.id, // This links the profile to the authenticated user
-                        username: username,
-                        speciality: speciality,
-                        role: userRole,
-                         account_type: 'free' // <-- ADD THIS LINE
-                        // email is not needed here as it's in the auth table
-                    }
-                ]);
-
-            if (profileError) {
-                // This will throw an error and be caught by the catch block
-                throw profileError;
-            }
-
-            console.log('User data saved to Supabase table.');
-            
             showMessage('Account created successfully! Please check your email to confirm your account, then you can log in.', false);
             
-            // We don't redirect here anymore. The user needs to confirm their email first.
             submitButton.disabled = false;
             submitButton.textContent = 'Sign Up';
 
