@@ -87,9 +87,23 @@
                         <button type="submit" class="py-2 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">Send Link</button>
                     </div>
                 </form>
+</div>
+</div>
+
+        <div id="newPasswordModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Set New Password</h3>
+                <p class="text-gray-600 mb-6">Please enter your new password below.</p>
+                <form id="newPasswordForm">
+                    <input type="password" id="newPasswordInput" placeholder="New password" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500">
+                    <div class="flex justify-end mt-6">
+                        <button type="submit" class="py-2 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">Update Password</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </main>
+
+</main>
     
     <footer class="text-center py-6" style="background-color: #3da0be;">
         <div class="container mx-auto px-4">
@@ -195,15 +209,26 @@ async function manageActiveSession(user) {
 
     // --- AUTHENTICATION FLOW ---
 
-      document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
         const hashParams = new URLSearchParams(window.location.hash.substring(1));
         const typeFromHash = hashParams.get('type');
 
+        // Handle Signup Verification
         if (typeFromHash === 'signup' && verificationMessage) {
             verificationMessage.classList.remove('hidden');
             history.replaceState({}, document.title, window.location.pathname);
         }
 
+        // Handle Password Recovery
+        if (typeFromHash === 'recovery') {
+            // Show the new password modal
+            document.getElementById('newPasswordModal').classList.remove('hidden');
+            // Remove the hash from the URL so it doesn't trigger again on refresh
+            history.replaceState({}, document.title, window.location.pathname);
+            return; // Stop here so we don't redirect to the dashboard yet!
+        }
+
+        // Normal Login Check
         const { data: { session } } = await supabase.auth.getSession();
         if (session) {
             window.location.href = 'dashboard.html';
@@ -285,7 +310,29 @@ async function manageActiveSession(user) {
             showMessage('Password reset link sent! Please check your email.', false);
         } catch (error) {
             console.error("Password Reset Error:", error);
-            showMessage("Could not send reset link. Please check the email address.");
+showMessage("Could not send reset link. Please check the email address.");
+        }
+    });
+
+    // --- Update Password Logic (After clicking email link) ---
+    document.getElementById('newPasswordForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const newPassword = document.getElementById('newPasswordInput').value;
+        
+        try {
+            // Supabase uses updateUser to change the password for the currently recovering session
+            const { error } = await supabase.auth.updateUser({ 
+                password: newPassword 
+            });
+            
+            if (error) throw error;
+            
+            document.getElementById('newPasswordModal').classList.add('hidden');
+            showMessage('Password updated successfully! You can now log in.', false);
+            
+        } catch (error) {
+            console.error("Update Password Error:", error);
+            showMessage("Failed to update password: " + error.message);
         }
     });
 </script>
