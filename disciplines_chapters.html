@@ -1289,21 +1289,26 @@ function getFilterFunctions() {
         };
     }
 
-    async function getBaseQuestionPool() {
+  async function getBaseQuestionPool() {
         const urlParams = new URLSearchParams(window.location.search);
         const disciplineId = urlParams.get('disciplineId');
+        
+        // Find which chapters in this discipline the user actually has access to
         const chapterIdsInDiscipline = accessibleContent.chapters
             .filter(c => c.discipline_id === disciplineId)
             .map(c => c.id);
         
         if (chapterIdsInDiscipline.length === 0) return [];
 
-        const { data, error } = await supabase.from('questions').select('*').in('chapter_id', chapterIdsInDiscipline);
-        if (error) {
-            console.error("Error fetching base questions for discipline:", error);
-            return [];
+        // FIX: Instead of making a new Supabase query that hits the 1000-row limit,
+        // use the fully paginated question list we already loaded in loadAllData()
+        if (window.pageQuestions && window.pageQuestions.length > 0) {
+            const chapterIdsSet = new Set(chapterIdsInDiscipline);
+            // Filter the memory bank to only include questions the user has access to
+            return window.pageQuestions.filter(q => chapterIdsSet.has(q.chapter_id));
         }
-        return data;
+
+        return [];
     }
 async function getQuestionsForSourceAndFilters(sources) {
         // Ensure the latest user history is loaded before filtering
