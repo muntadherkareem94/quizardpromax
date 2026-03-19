@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizard - JSON Duplicate Comparer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 flex justify-between items-center z-10 sticky top-0">
+        <div class="flex items-center">
+            <h1 class="text-2xl font-bold text-gray-800">JSON Duplicate Comparer</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="admin_dashboard.html" class="text-gray-600 hover:text-purple-600 font-medium transition duration-200">Back to Admin</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl flex-grow">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">1. Import Chapter A</h2>
+                <input type="file" id="fileA" accept=".json" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 mb-4">
+                <div id="statusA" class="text-sm font-medium text-gray-600">Waiting for JSON file...</div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-blue-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">2. Import Chapter B</h2>
+                <input type="file" id="fileB" accept=".json" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 mb-4">
+                <div id="statusB" class="text-sm font-medium text-gray-600">Waiting for JSON file...</div>
+            </div>
+        </div>
+
+        <div class="text-center mb-8">
+            <button id="scanButton" disabled class="bg-gray-400 text-white font-bold py-3 px-8 rounded-full shadow-lg text-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                Scan for Duplicates Between Chapters
+            </button>
+        </div>
+
+        <div id="globalActions" class="hidden flex flex-col sm:flex-row justify-center gap-4 mb-6">
+            <button id="deleteAllFromA" class="bg-red-100 text-red-700 border border-red-300 hover:bg-red-600 hover:text-white font-semibold py-2 px-6 rounded-lg transition">
+                Delete ALL Duplicates from Chapter A
+            </button>
+            <button id="deleteAllFromB" class="bg-red-100 text-red-700 border border-red-300 hover:bg-red-600 hover:text-white font-semibold py-2 px-6 rounded-lg transition">
+                Delete ALL Duplicates from Chapter B
+            </button>
+        </div>
+
+        <div id="resultsContainer" class="space-y-4 mb-8"></div>
+
+        <div id="approvalSection" class="hidden text-center mb-8">
+            <button id="approveResultsBtn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg text-lg transition duration-300">
+                Approve & Proceed to Download
+            </button>
+        </div>
+
+        <div id="downloadSection" class="hidden p-8 bg-white rounded-xl shadow-lg border-t-4 border-green-500 text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Final Step: Download Cleaned Files</h2>
+            <p class="text-gray-600 mb-6">Once you have resolved the duplicates above, download your freshly cleaned JSON files so you can import them into Quizard.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button id="downloadA" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow transition">
+                    Download Cleaned Chapter A
+                </button>
+                <button id="downloadB" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow transition">
+                    Download Cleaned Chapter B
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let dataA = null;
+        let dataB = null;
+        let duplicatePairs = []; // Stores indices of duplicates
+
+        const fileAInput = document.getElementById('fileA');
+        const fileBInput = document.getElementById('fileB');
+        const statusA = document.getElementById('statusA');
+        const statusB = document.getElementById('statusB');
+        const scanButton = document.getElementById('scanButton');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const globalActions = document.getElementById('globalActions');
+        const approvalSection = document.getElementById('approvalSection');
+        const approveResultsBtn = document.getElementById('approveResultsBtn');
+        const downloadSection = document.getElementById('downloadSection');
+        const downloadABtn = document.getElementById('downloadA');
+        const downloadBBtn = document.getElementById('downloadB');
+
+        // Normalization function (removes spaces, punctuation, makes lowercase)
+        const normalizeText = (text) => text ? text.toLowerCase().replace(/[\W_]+/g, '') : '';
+
+        // --- File Upload Handlers ---
+        function handleFileUpload(event, label, statusEl) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if (!parsed.questions || !Array.isArray(parsed.questions)) {
+                        throw new Error('Invalid format: Missing "questions" array.');
+                    }
+                    
+                    // Attach original index so we can delete them later safely
+                    parsed.questions.forEach((q, idx) => { if(q) q._originalIndex = idx; });
+                    
+                    if (label === 'A') {
+                        dataA = parsed;
+                        statusEl.innerHTML = `<span class="text-green-600 font-bold">✓ Loaded ${dataA.questions.length} questions.</span>`;
+                    } else {
+                        dataB = parsed;
+                        statusEl.innerHTML = `<span class="text-green-600 font-bold">✓ Loaded ${dataB.questions.length} questions.</span>`;
+                    }
+                    checkReady();
+                } catch (err) {
+                    statusEl.innerHTML = `<span class="text-red-600 font-bold">Error: ${err.message}</span>`;
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        fileAInput.addEventListener('change', (e) => handleFileUpload(e, 'A', statusA));
+        fileBInput.addEventListener('change', (e) => handleFileUpload(e, 'B', statusB));
+
+        function checkReady() {
+            if (dataA && dataB) {
+                scanButton.disabled = false;
+                scanButton.classList.replace('bg-gray-400', 'bg-green-600');
+                scanButton.classList.add('hover:bg-green-700');
+            }
+        }
+
+        // --- Scanning Logic ---
+        scanButton.addEventListener('click', () => {
+            if (!dataA || !dataB) return;
+            resultsContainer.innerHTML = '';
+            duplicatePairs = [];
+
+            // Create a map for Chapter B to easily look up normalized text
+            const mapB = new Map();
+            dataB.questions.forEach((q, idx) => {
+                if(q) mapB.set(normalizeText(q.question), idx);
+            });
+
+            // Check Chapter A against Chapter B's map
+            dataA.questions.forEach((qA, idxA) => {
+                if(!qA) return;
+                const normA = normalizeText(qA.question);
+                if (mapB.has(normA)) {
+                    duplicatePairs.push({
+                        idxA: idxA,
+                        idxB: mapB.get(normA),
+                        text: qA.question
+                    });
+                }
+            });
+
+            downloadSection.classList.add('hidden'); // Hide download initially
+            approvalSection.classList.add('hidden'); // Hide approval initially
+            updateDownloadButtonText();
+            renderResults();
+        });
+
+        // --- Render Logic ---
+        function renderResults() {
+            resultsContainer.innerHTML = '';
+            
+            if (duplicatePairs.length === 0) {
+                globalActions.classList.add('hidden');
+                approvalSection.classList.add('hidden');
+                downloadSection.classList.remove('hidden'); // Auto-reveal downloads if 100% clean
+                resultsContainer.innerHTML = `<div class="bg-green-100 text-green-800 p-6 rounded-xl text-center font-bold text-xl border border-green-300">No duplicates found! Your files are clean and ready.</div>`;
+                return;
+            }
+
+            globalActions.classList.remove('hidden');
+            approvalSection.classList.remove('hidden'); // Show approval button
+            downloadSection.classList.add('hidden'); // Keep downloads hidden
+            
+            const header = document.createElement('h3');
+            header.className = "text-xl font-bold text-gray-800 mb-4";
+            header.textContent = `Found ${duplicatePairs.length} conflicting questions:`;
+            resultsContainer.appendChild(header);
+
+            duplicatePairs.forEach((pair, arrayIndex) => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-6 rounded-xl shadow border border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 transition-all duration-300";
+                
+                card.innerHTML = `
+                    <div class="flex-1">
+                        <p class="text-gray-800 font-medium">"${pair.text}"</p>
+                    </div>
+                    <div class="flex shrink-0 gap-2">
+                        <button class="delete-individual bg-purple-100 hover:bg-purple-600 text-purple-700 hover:text-white px-4 py-2 rounded font-semibold transition" data-side="A" data-index="${pair.idxA}" data-pair-id="${arrayIndex}">
+                            Remove from A
+                        </button>
+                        <button class="delete-individual bg-blue-100 hover:bg-blue-600 text-blue-700 hover:text-white px-4 py-2 rounded font-semibold transition" data-side="B" data-index="${pair.idxB}" data-pair-id="${arrayIndex}">
+                            Remove from B
+                        </button>
+                    </div>
+                `;
+                resultsContainer.appendChild(card);
+            });
+
+            attachDeleteListeners();
+        }
+
+        // --- Deletion Logic ---
+        function updateDownloadButtonText() {
+            if (dataA) downloadABtn.textContent = `Download Cleaned Chapter A (${dataA.questions.filter(q=>q!==null).length} Qs)`;
+            if (dataB) downloadBBtn.textContent = `Download Cleaned Chapter B (${dataB.questions.filter(q=>q!==null).length} Qs)`;
+        }
+
+        function deleteQuestion(side, originalIndex) {
+            if (side === 'A') {
+                dataA.questions[originalIndex] = null; // Mark as deleted safely
+                statusA.innerHTML = `<span class="text-green-600 font-bold">✓ Ready (${dataA.questions.filter(q=>q!==null).length} questions left)</span>`;
+            } else {
+                dataB.questions[originalIndex] = null;
+                statusB.innerHTML = `<span class="text-green-600 font-bold">✓ Ready (${dataB.questions.filter(q=>q!==null).length} questions left)</span>`;
+            }
+            updateDownloadButtonText();
+        }
+
+        function attachDeleteListeners() {
+            document.querySelectorAll('.delete-individual').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const side = e.target.dataset.side;
+                    const index = parseInt(e.target.dataset.index);
+                    
+                    deleteQuestion(side, index);
+                    
+                    // Visually remove the card
+                    const card = e.target.closest('.bg-white');
+                    card.style.opacity = '0';
+                    setTimeout(() => card.remove(), 300);
+
+                    // Remove from our tracker array
+                    duplicatePairs = duplicatePairs.filter(p => p.idxA !== index && p.idxB !== index);
+                    if(duplicatePairs.length === 0) renderResults();
+                });
+            });
+        }
+
+        // Global Delete Handlers
+        document.getElementById('deleteAllFromA').addEventListener('click', () => {
+            if(!confirm("Are you sure you want to delete ALL duplicates from Chapter A?")) return;
+            duplicatePairs.forEach(pair => deleteQuestion('A', pair.idxA));
+            duplicatePairs = [];
+            renderResults();
+        });
+
+        document.getElementById('deleteAllFromB').addEventListener('click', () => {
+            if(!confirm("Are you sure you want to delete ALL duplicates from Chapter B?")) return;
+            duplicatePairs.forEach(pair => deleteQuestion('B', pair.idxB));
+            duplicatePairs = [];
+            renderResults();
+        });
+
+        // --- Approval Logic ---
+        approveResultsBtn.addEventListener('click', () => {
+            approvalSection.classList.add('hidden');
+            downloadSection.classList.remove('hidden');
+            downloadSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // --- Export / Download Logic ---
+        function downloadJSON(dataObj, fileName) {
+            if (!dataObj) return;
+            
+            // Filter out the nulls (deleted questions) and internal tracking ID
+            const cleanedQuestions = dataObj.questions
+                .filter(q => q !== null)
+                .map(q => {
+                    const cleanQ = { ...q };
+                    delete cleanQ._originalIndex;
+                    return cleanQ;
+                });
+                
+            const exportData = { questions: cleanedQuestions };
+            
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        downloadABtn.addEventListener('click', () => downloadJSON(dataA, 'Chapter_A_Cleaned.json'));
+        downloadBBtn.addEventListener('click', () => downloadJSON(dataB, 'Chapter_B_Cleaned.json'));
+
+    </script>
+</body>
+</html>
