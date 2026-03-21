@@ -1,6 +1,6 @@
 
 // Version 6: Forces a clean slate and uses relative paths
-const CACHE_NAME = 'quizard-app-shell-v6';
+const CACHE_NAME = 'quizard-app-shell-v8';
 
 // The "App Shell" - Using strict relative paths
 const APP_SHELL = [
@@ -54,16 +54,19 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  const isHTMLRequest = request.mode === 'navigate' || (request.headers.get('accept') || '').includes('text/html');
+ const isHTMLRequest = request.mode === 'navigate' || (request.headers.get('accept') || '').includes('text/html');
   if (isHTMLRequest) {
     event.respondWith(
-      fetch(request)
-        .then((networkResponse) => {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
+      caches.match(request).then((cachedResponse) => {
+        // Fetch fresh version in the background to keep the cache updated
+        const fetchPromise = fetch(request).then((networkResponse) => {
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, networkResponse.clone()));
           return networkResponse;
-        })
-        .catch(() => caches.match(request))
+        }).catch(() => {});
+        
+        // Return the 0ms cached version immediately to trigger smooth animations
+        return cachedResponse || fetchPromise;
+      })
     );
     return;
   }

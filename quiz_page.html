@@ -2593,15 +2593,18 @@ async function showResults(resultsData = null) {
         dom.resultModalTitle.textContent = 'Quiz Completed!';
         dom.restartQuizButton.textContent = 'Retake Quiz';
         dom.restartQuizButton.onclick = resetQuiz;
-        dom.backToChaptersFromModal.onclick = () => window.location.href = backButtonUrl();
+        // FIX: Remove the conflicting navigation push. 
+        // handleSmartBack will safely trigger automatically via its event listener.
+        dom.backToChaptersFromModal.onclick = null; 
     } else {
         dom.resultModalTitle.textContent = 'Incomplete Quiz Results';
         dom.restartQuizButton.textContent = 'Start New Quiz';
         dom.restartQuizButton.onclick = () => { window.location.reload(); };
         dom.backToChaptersFromModal.onclick = () => {
+            // Clear progress, but do NOT navigate here.
+            // handleSmartBack will handle the navigation smoothly and safely.
             const progressKey = getQuizProgressKey();
             if (progressKey) localStorage.removeItem(progressKey);
-            window.location.href = backButtonUrl();
         };
     }
 
