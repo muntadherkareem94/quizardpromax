@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Quizard - Dashboard</title>
     
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
@@ -38,10 +39,36 @@
 
 
 </style> 
-
-<link rel="manifest" href="/manifest.json">
-<link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+<script>
+    // ANTI-FLICKER ENGINE: Read memory and set the view state BEFORE the screen paints
+    const savedView = localStorage.getItem('dashboardActiveTab') || 'books';
+    document.documentElement.setAttribute('data-active-view', savedView);
+</script>
+<style>
+    /* CSS Routing: Instantly hide inactive tabs on cold loads so they don't flash */
+    html[data-active-view="books"] #disciplinesSection,
+    html[data-active-view="books"] #videosGrid,
+    html[data-active-view="books"] #flashcardsSection { display: none !important; }
+    
+    html[data-active-view="disciplines"] #booksGrid,
+    html[data-active-view="disciplines"] #videosGrid,
+    html[data-active-view="disciplines"] #flashcardsSection { display: none !important; }
+    
+    html[data-active-view="videos"] #booksGrid,
+    html[data-active-view="videos"] #disciplinesSection,
+    html[data-active-view="videos"] #flashcardsSection { display: none !important; }
+    
+    html[data-active-view="flashcards"] #booksGrid,
+    html[data-active-view="flashcards"] #disciplinesSection,
+    html[data-active-view="flashcards"] #videosGrid { display: none !important; }
+</style>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 <meta name="theme-color" content="#3da0be">
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Quizard">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
 <body class="flex flex-col min-h-screen">
 <header class="container mx-auto max-w-4xl mt-8 bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
@@ -107,7 +134,7 @@
     </div>
 </header>
     <main class="flex-grow container mx-auto px-4 py-8 md:py-12">
-      <div id="viewContainer" class="hidden">
+      <div id="viewContainer">
     <div class="grid grid-cols-2 sm:flex sm:flex-row justify-center mb-8 bg-white/20 p-1 rounded-lg w-full max-w-2xl mx-auto gap-1 sm:gap-0">
     <button id="showDisciplinesBtn" class="view-toggle-btn flex-1 py-2 px-1 sm:px-4 rounded-md font-semibold text-white text-[11px] sm:text-sm leading-tight text-center flex items-center justify-center transition-all">MCQ Banks By Disciplines</button>
     <button id="showBooksBtn" class="view-toggle-btn flex-1 py-2 px-1 sm:px-4 rounded-md font-semibold text-white text-[11px] sm:text-sm leading-tight text-center flex items-center justify-center transition-all">MCQ Banks By Books</button>
@@ -397,7 +424,7 @@ let inactivityTimer;
 // --- Register Service Worker ---
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('sw.js')
       .then(registration => {
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
       })
@@ -757,6 +784,7 @@ function hasVideoAccess(course) {
 }
 // --- END: New Helper Function ---
 function switchView(view) {
+    document.documentElement.setAttribute('data-active-view', view);
     if (dom.dashboardTitle) {
         dom.dashboardTitle.textContent =
             view === 'disciplines' ? 'Browse by Discipline' :
@@ -801,10 +829,33 @@ function switchFlashcardView(subView) {
     dom.flashcardSubBookBtn.classList.toggle('active', subView === 'books');
 }
 
-dom.showVideosBtn.addEventListener('click', () => switchView('videos'));
-dom.showFlashcardsBtn.addEventListener('click', () => switchView('flashcards'));
-dom.flashcardSubDiscBtn.addEventListener('click', () => switchFlashcardView('disciplines'));
-dom.flashcardSubBookBtn.addEventListener('click', () => switchFlashcardView('books'));
+// --- Save State to Memory when clicking tabs ---
+dom.showDisciplinesBtn.addEventListener('click', () => { 
+    localStorage.setItem('dashboardActiveTab', 'disciplines'); 
+    switchView('disciplines'); 
+});
+dom.showBooksBtn.addEventListener('click', () => { 
+    localStorage.setItem('dashboardActiveTab', 'books'); 
+    switchView('books'); 
+});
+dom.showVideosBtn.addEventListener('click', () => { 
+    localStorage.setItem('dashboardActiveTab', 'videos'); 
+    switchView('videos'); 
+});
+dom.showFlashcardsBtn.addEventListener('click', () => { 
+    localStorage.setItem('dashboardActiveTab', 'flashcards'); 
+    switchView('flashcards'); 
+});
+
+dom.flashcardSubDiscBtn.addEventListener('click', () => {
+    localStorage.setItem('flashcardActiveSubTab', 'disciplines');
+    switchFlashcardView('disciplines');
+});
+dom.flashcardSubBookBtn.addEventListener('click', () => {
+    localStorage.setItem('flashcardActiveSubTab', 'books');
+    switchFlashcardView('books');
+});
+// -----------------------------------------------
 
 
 function renderVideoCourses(coursesToRender, userData, purchasedCourseIds = new Set()) {
@@ -855,7 +906,7 @@ function renderVideoCourses(coursesToRender, userData, purchasedCourseIds = new 
             
             <div class="p-6 pt-0">
                 ${isLocked 
-                    ? `<button onclick="window.location.href='store.html'" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg">Unlock in Store</button>`
+                    ? `<a href="store.html" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg">Unlock in Store</a>`
                     : `<a href="view_course.html?id=${course.id}" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg">Watch Course</a>`
                 }
             </div>
@@ -1662,13 +1713,35 @@ loadBooksAndVideos();
             updateUserProfileIcon(session.user, userData);
 
      
-            await initializeCustomQuizBuilder();
+           await initializeCustomQuizBuilder();
             await fetchAndDisplayNotifications(); 
 
-           // --- REPLACE the old handleUrlHash(); line with THIS BLOCK ---
-         // If the URL hash didn't specify a view, show the default one.
-            switchView('books');
-            // --- END OF NEW BLOCK ---
+            // --- SMART TAB RESTORATION ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const requestedView = urlParams.get('view');
+            const savedView = localStorage.getItem('dashboardActiveTab') || 'books'; // default to books
+            const savedFlashcardSubView = localStorage.getItem('flashcardActiveSubTab') || 'disciplines';
+
+            // 1. Determine which main tab to open
+            const viewToOpen = requestedView || savedView;
+            
+            // 2. Click the corresponding button to trigger all UI updates correctly
+            if (viewToOpen === 'disciplines') {
+                dom.showDisciplinesBtn.click();
+            } else if (viewToOpen === 'videos') {
+                dom.showVideosBtn.click();
+            } else if (viewToOpen === 'flashcards') {
+                dom.showFlashcardsBtn.click();
+                // Also restore the flashcard sub-tab
+                if (savedFlashcardSubView === 'books') {
+                    dom.flashcardSubBookBtn.click();
+                } else {
+                    dom.flashcardSubDiscBtn.click();
+                }
+            } else {
+                dom.showBooksBtn.click(); // Default
+            }
+            // --- END SMART TAB RESTORATION ---
 
             // --- NEW: THE HEARTBEAT CHECKER ---
             // Checks the database every 30 seconds. If an admin deletes their session, 
@@ -2545,131 +2618,41 @@ function renderFlashcardBooks(booksToRender, userData) {
 }
 
 
+// --- CACHE-FIRST LOADER: DISCIPLINES (0ms Instant Render) ---
 async function loadDisciplines() {
-    console.log("--- STARTING LOAD DISCIPLINES (FINAL FIX) ---");
-    
     const grid = document.getElementById('disciplinesGrid');
     if (!grid) return;
 
-    if (window.disciplineCharts && window.disciplineCharts.length > 0) {
-        window.disciplineCharts.forEach(chart => chart.destroy());
-        window.disciplineCharts = [];
-    } else {
-        window.disciplineCharts = [];
-    }
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) return;
+    const user = session.user;
 
-    try {
-        // 1. Skeleton Loader
-        if (window.disciplineCharts.length === 0) {
-            grid.innerHTML = Array(6).fill(0).map(() => `
-                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden animate-pulse h-40 flex flex-col">
-                    <div class="h-28 bg-gray-200 w-full"></div>
-                    <div class="p-4 flex justify-between items-end flex-grow">
-                        <div class="space-y-2 w-2/3">
-                            <div class="h-4 bg-gray-200 rounded w-3/4"></div>
-                            <div class="h-3 bg-gray-200 rounded w-1/2"></div>
-                        </div>
-                        <div class="h-12 w-12 bg-gray-200 rounded-full"></div>
-                    </div>
-                </div>
-            `).join('');
-        }
+    // Helper function to process data and paint the UI
+    // Helper function to process data and paint the UI
+    const paintDisciplines = (userData, rawDisciplines, questions, history) => {
+        const userSpecialty = userData.speciality;
+        let disciplines = userSpecialty ? rawDisciplines.filter(d => d.speciality === userSpecialty) : rawDisciplines;
 
-   const { data: { user } } = await supabase.auth.getUser();
-        if (!user) return;
+        // --- BULLETPROOF MOBILE ALPHABETICAL SORT ---
+        // Forces strict A-Z order regardless of how the database or cache returns it
+        disciplines.sort((a, b) => a.name.localeCompare(b.name));
+        // --------------------------------------------
 
-        // 2. Fetch User Specialty and Filter Disciplines
-        const { data: userData } = await supabase.from('users').select('speciality').eq('id', user.id).single();
-        const userSpecialty = userData ? userData.speciality : null;
-
-        const { data: rawDisciplines } = await supabase.from('disciplines').select('*').order('name');
-        
-        const disciplines = userSpecialty 
-            ? rawDisciplines.filter(d => d.speciality === userSpecialty)
-            : rawDisciplines;
-
-        console.log(`Step A: Fetched ${disciplines.length} disciplines.`);
-
-        // 3. Fetch All Questions
-        let allQuestions = [];
-        let from = 0;
-        const limit = 1000;
-        let keepFetching = true;
-        
-        console.log("Step B: Starting Question Fetch Loop...");
-        
-        while(keepFetching) {
-            // FIX: Request ONLY 'discipline_id'. Removing 'disciplineId' prevents the 400 error.
-            const { data, error } = await supabase
-                .from('questions')
-                .select('id, discipline_id') 
-                .range(from, from + limit - 1);
-            
-            if (error) { 
-                console.error("Error fetching questions:", error); 
-                break; 
-            }
-            if (data && data.length > 0) {
-                allQuestions = allQuestions.concat(data);
-                if (data.length < limit) keepFetching = false;
-            } else { 
-                keepFetching = false; 
-            }
-            from += limit;
-        }
-        console.log(`Step B Complete: Fetched ${allQuestions.length} total questions.`);
-
-        // 4. Fetch User History
-        let userHistory = [];
-        from = 0;
-        keepFetching = true;
-        while(keepFetching) {
-            const { data, error } = await supabase
-                .from('userQuestionHistory')
-                .select('questionId, lastResult')
-                .eq('userId', user.id)
-                .range(from, from + limit - 1);
-
-            if (error) { console.error(error); break; }
-            if (data && data.length > 0) {
-                userHistory = userHistory.concat(data);
-                if (data.length < limit) keepFetching = false;
-            } else { keepFetching = false; }
-            from += limit;
-        }
-        console.log(`Step C: Fetched ${userHistory.length} history items.`);
-
-      
-
-        // 5. Calculate Stats
-// 1. Initialize historyMap correctly once
-       const historyMap = new Map();
-userHistory.forEach(h => {
-    const qId = String(h.questionId);
-    
-    // THE FIX: Only treat as "Answered" if lastResult is explicitly 'correct' or 'wrong'
-    // This prevents flags/notes from counting as an attempt.
-    const result = String(h.lastResult || "").toLowerCase();
-    const isActuallyAnswered = result === 'correct' || result === 'wrong';
-
-    if (isActuallyAnswered) {
-        historyMap.set(qId, result === 'correct');
-    }
-});
-
-        // 2. Initialize discStats (Fixes the ReferenceError)
-        const discStats = {};
-        disciplines.forEach(d => { 
-            discStats[d.id] = { total: 0, correct: 0, wrong: 0 }; 
+        const historyMap = new Map();
+        history.forEach(h => {
+            const qId = String(h.questionId);
+            const result = String(h.lastResult || "").toLowerCase();
+            if (result === 'correct' || result === 'wrong') historyMap.set(qId, result === 'correct');
         });
 
-        // 3. Calculate Stats with String ID matching
-        allQuestions.forEach(q => {
+        const discStats = {};
+        disciplines.forEach(d => { discStats[d.id] = { total: 0, correct: 0, wrong: 0 }; });
+
+        questions.forEach(q => {
             const dId = q.discipline_id; 
             if (dId && discStats[dId]) {
                 const s = discStats[dId];
                 s.total++;
-                
                 const qId = String(q.id);
                 if (historyMap.has(qId)) {
                     if (historyMap.get(qId)) s.correct++;
@@ -2678,205 +2661,221 @@ userHistory.forEach(h => {
             }
         });
 
-        // 6. Render Cards
-        grid.innerHTML = ''; 
+        if (window.disciplineCharts && window.disciplineCharts.length > 0) {
+            window.disciplineCharts.forEach(chart => chart.destroy());
+        }
+        window.disciplineCharts = [];
 
+        grid.innerHTML = ''; 
         disciplines.forEach(discipline => {
             const stats = discStats[discipline.id] || { total: 0, correct: 0, wrong: 0 };
             const unanswered = stats.total - (stats.correct + stats.wrong);
 
             const card = document.createElement('div');
             card.className = "bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden cursor-pointer border border-gray-100 flex flex-col h-full";
-            card.setAttribute('data-id', discipline.id);
-            card.setAttribute('data-name', discipline.name);
+            card.dataset.id = discipline.id; card.dataset.name = discipline.name;
 
             card.innerHTML = `
                 <div class="h-32 sm:h-40 bg-white relative group overflow-hidden border-b border-gray-100 flex items-center justify-center p-2">
-                    <img src="${discipline.imageUrl || 'https://via.placeholder.com/400x200?text=' + discipline.name}" 
-                         alt="${discipline.name}" 
-                         class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                    <img src="${discipline.imageUrl || 'https://via.placeholder.com/400x200?text=' + discipline.name}" alt="${discipline.name}" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
                 </div>
-                
                 <div class="p-3 sm:p-4 flex items-end justify-between flex-grow gap-2 sm:gap-3">
                     <div class="flex-1 min-w-0"> 
-                        <h3 class="font-bold text-gray-800 text-sm sm:text-lg mb-1 leading-snug line-clamp-2" title="${discipline.name}">
-                            ${discipline.name}
-                        </h3>
+                        <h3 class="font-bold text-gray-800 text-sm sm:text-lg mb-1 leading-snug line-clamp-2" title="${discipline.name}">${discipline.name}</h3>
                         <p class="text-xs sm:text-sm text-gray-500 truncate">${discipline.speciality || 'General'}</p>
                         <p class="text-[10px] sm:text-xs text-gray-400 mt-1 font-medium">${stats.total} Questions</p>
                     </div>
-                    
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 relative">
-                        <canvas id="chart-${discipline.id}"></canvas>
-                    </div>
-                </div>
-            `;
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 relative"><canvas id="chart-${discipline.id}"></canvas></div>
+                </div>`;
 
             card.addEventListener('click', (e) => {
                 if(e.target.tagName === 'CANVAS') return;
                 window.location.href = `disciplines_chapters.html?disciplineId=${discipline.id}&name=${encodeURIComponent(discipline.name)}`;
             });
-
             grid.appendChild(card);
 
             const ctx = document.getElementById(`chart-${discipline.id}`).getContext('2d');
-            
             const chartData = stats.total === 0 ? [0, 0, 1] : [stats.correct, stats.wrong, unanswered];
             const chartColors = stats.total === 0 ? ['#f3f4f6', '#f3f4f6', '#f3f4f6'] : ['#22c55e', '#ef4444', '#d1d5db'];
-
-            const newChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Correct', 'Wrong', 'Unanswered'],
-                    datasets: [{
-                        data: chartData,
-                        backgroundColor: chartColors,
-                        borderWidth: 0,
-                        hoverOffset: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '70%',
-                    animation: false,
-                    plugins: { 
-                        legend: { display: false }, 
-                        tooltip: { 
-                            enabled: false, 
-                            external: externalTooltipHandler 
-                        } 
-                    }
-                }
-            });
-        window.disciplineCharts.push(newChart);
+            window.disciplineCharts.push(new Chart(ctx, {
+                type: 'doughnut', data: { labels: ['Correct', 'Wrong', 'Unanswered'], datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '70%', animation: false, plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltipHandler } } }
+            }));
         });
-
-        // NEW: Render the Flashcard Disciplines
         renderFlashcardDisciplines(disciplines);
+    };
 
-    } catch (error) {
-        console.error("Error loading disciplines:", error);
-        grid.innerHTML = `<p class="text-red-500 p-4 col-span-full text-center">Error loading data. Please refresh.</p>`;
+    // 1. INSTANT RENDER FROM CACHE (0ms delay)
+    const cUserData = JSON.parse(localStorage.getItem('offline_userData'));
+    const cRawDisc = JSON.parse(localStorage.getItem('offline_rawDisciplines'));
+    const cQuestions = JSON.parse(localStorage.getItem('offline_discQuestions')) || [];
+    const cHistory = JSON.parse(localStorage.getItem('offline_discHistory')) || [];
+
+    if (cUserData && cRawDisc && cRawDisc.length > 0) {
+        paintDisciplines(cUserData, cRawDisc, cQuestions, cHistory);
+    } else {
+        // Only show skeleton if cache is empty (first load ever)
+        grid.innerHTML = Array(6).fill(0).map(() => `<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden animate-pulse h-40 flex flex-col"><div class="h-28 bg-gray-200 w-full"></div><div class="p-4 flex justify-between items-end flex-grow"><div class="space-y-2 w-2/3"><div class="h-4 bg-gray-200 rounded w-3/4"></div><div class="h-3 bg-gray-200 rounded w-1/2"></div></div><div class="h-12 w-12 bg-gray-200 rounded-full"></div></div></div>`).join('');
     }
+
+    // 2. BACKGROUND SYNC (Updates cache silently without blocking UI)
+    setTimeout(async () => {
+        try {
+            const { data: ud } = await supabase.from('users').select('*').eq('id', user.id).single();
+            const { data: rd } = await supabase.from('disciplines').select('*').order('name');
+            let qData = [], hData = [], from = 0; let keep = true;
+            while(keep) { const { data } = await supabase.from('questions').select('id, discipline_id').range(from, from+999); if(data&&data.length>0){ qData=qData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
+            from = 0; keep = true;
+            while(keep) { const { data } = await supabase.from('userQuestionHistory').select('questionId, lastResult').eq('userId', user.id).range(from, from+999); if(data&&data.length>0){ hData=hData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
+
+            localStorage.setItem('offline_userData', JSON.stringify(ud || {speciality: null}));
+            localStorage.setItem('offline_rawDisciplines', JSON.stringify(rd || []));
+            localStorage.setItem('offline_discQuestions', JSON.stringify(qData));
+            localStorage.setItem('offline_discHistory', JSON.stringify(hData));
+            
+            // Re-paint just in case data changed on another device
+            paintDisciplines(ud || {speciality: null}, rd || [], qData, hData);
+        } catch (e) { console.warn("Background sync failed. Continuing with cached disciplines."); }
+    }, 100);
 }
 
-
-// --- NEW FUNCTION: RESTORE BOOKS AND VIDEOS ---
+// --- CACHE-FIRST LOADER: BOOKS AND VIDEOS (0ms Instant Render) ---
 async function loadBooksAndVideos() {
-    try {
-        console.log("Loading Books and Videos with Stats...");
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) return;
+    const user = session.user;
+
+    const paintBooksAndVideos = (userData, booksData, rawDisciplines, chaptersData, videosData, questions, history) => {
+        if (userData.role === 'admin') document.getElementById('adminDashboardButton')?.classList.remove('hidden');
         
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) return;
-
-        const { data: userData } = await supabase.from('users').select('*').eq('id', user.id).single();
-        if (userData && userData.role === 'admin') {
-            document.getElementById('adminDashboardButton')?.classList.remove('hidden');
-        }
-
-        // --- 1. FETCH BASE DATA ---
-        const { data: booksData } = await supabase.rpc('get_dashboard_books');
-        allBooks = booksData || []; 
+        allBooks = booksData;
         
-        const rawDisciplines = (await supabase.from('disciplines').select('*')).data || [];
-        allDisciplines = userData && userData.speciality 
-            ? rawDisciplines.filter(d => d.speciality === userData.speciality) 
-            : rawDisciplines;
-            
-        allChapters = (await supabase.from('chapters').select('*')).data || [];
+        // --- BULLETPROOF MOBILE ALPHABETICAL SORT ---
+        let sortedDisciplines = userData.speciality ? rawDisciplines.filter(d => d.speciality === userData.speciality) : rawDisciplines;
+        sortedDisciplines.sort((a, b) => a.name.localeCompare(b.name));
+        allDisciplines = sortedDisciplines;
+        // --------------------------------------------
+        
+        allChapters = chaptersData;
 
-        // --- 2. FETCH ALL QUESTIONS (book_id) ---
-        const allQuestions = await (async () => {
-            let rows = []; let from = 0; let keep = true;
-            while (keep) {
-                const { data } = await supabase.from('questions').select('id, book_id').range(from, from + 999);
-                if (!data || data.length < 1000) keep = false;
-                if (data) rows = rows.concat(data);
-                from += 1000;
-            }
-            return rows;
-        })();
-
-        // --- 3. FETCH USER HISTORY (The Missing Piece) ---
-        const userHistory = await (async () => {
-            let rows = []; let from = 0; let keep = true;
-            while (keep) {
-                const { data } = await supabase.from('userQuestionHistory')
-                    .select('questionId, lastResult')
-                    .eq('userId', user.id)
-                    .range(from, from + 999);
-                if (!data || data.length < 1000) keep = false;
-                if (data) rows = rows.concat(data);
-                from += 1000;
-            }
-            return rows;
-        })();
-
-        // Create the history map for calculations
-      const historyMap = new Map();
-userHistory.forEach(h => {
-    const qId = String(h.questionId);
-    
-    // THE FIX: Only treat as "Answered" if lastResult is explicitly 'correct' or 'wrong'
-    // This prevents flags/notes from counting as an attempt.
-    const result = String(h.lastResult || "").toLowerCase();
-    const isActuallyAnswered = result === 'correct' || result === 'wrong';
-
-    if (isActuallyAnswered) {
-        historyMap.set(qId, result === 'correct');
-    }
-});
-
-        // --- 4. CALCULATE STATS ---
-        const bookStats = {};
-        allBooks.forEach(item => { 
-            bookStats[item.book_data.id] = { total: 0, correct: 0, wrong: 0 }; 
+        const historyMap = new Map();
+        history.forEach(h => {
+            const qId = String(h.questionId); const result = String(h.lastResult || "").toLowerCase();
+            if (result === 'correct' || result === 'wrong') historyMap.set(qId, result === 'correct');
         });
 
-        allQuestions.forEach(q => {
+        const bookStats = {};
+        allBooks.forEach(item => { bookStats[item.book_data.id] = { total: 0, correct: 0, wrong: 0 }; });
+
+        questions.forEach(q => {
             if (q.book_id && bookStats[q.book_id]) {
                 const stats = bookStats[q.book_id];
                 stats.total++;
-                
-                const qId = String(q.id); // Match historyMap key format
-                if (historyMap.has(qId)) {
-                    if (historyMap.get(qId)) stats.correct++;
-                    else stats.wrong++;
-                }
+                const qId = String(q.id);
+                if (historyMap.has(qId)) { if (historyMap.get(qId)) stats.correct++; else stats.wrong++; }
             }
         });
 
-      // --- 5. RENDER UI ---
         if (typeof renderBooks === 'function') renderBooks(allBooks, userData, bookStats);
-
-        const { data: videosData } = await supabase.rpc('get_dashboard_video_courses');
         if (typeof renderVideoCourses === 'function') renderVideoCourses(videosData, userData);
-
-        // NEW: Render the Flashcard Books
         renderFlashcardBooks(allBooks, userData);
 
-        // --- 6. FINAL BUILDER SYNC ---
-        console.log("--- DEBUG: FORCING BUILDER SYNC (DATA POPULATED) ---");
-        const builderAccessibleBookIds = new Set(
-            allBooks.filter(item => item.has_access === true && item.book_data).map(item => item.book_data.id)
-        );
+        // Builder Sync
+        const builderAccessibleBookIds = new Set(allBooks.filter(item => item.has_access === true && item.book_data).map(item => item.book_data.id));
         accessibleContent.books = allBooks.filter(item => builderAccessibleBookIds.has(item.book_data?.id)).map(item => item.book_data);
         accessibleContent.disciplines = allDisciplines;
         accessibleContent.chapters = allChapters.filter(chapter => chapter.book_id && builderAccessibleBookIds.has(chapter.book_id));
 
-console.log(`--- DEBUG: SYNC COMPLETE. Builder now has ${accessibleContent.chapters.length} chapters ---`);
+        if (typeof recalculateAvailableQuestionsAndUpdateUI === 'function') recalculateAvailableQuestionsAndUpdateUI();
+    };
 
-        // THE FIX: Now that chapters are actually available (86), 
-        // trigger a refresh of the builder UI if it's currently being initialized.
-        if (typeof recalculateAvailableQuestionsAndUpdateUI === 'function') {
-            recalculateAvailableQuestionsAndUpdateUI();
-        }
-        
-    } catch (err) {
-        console.error("Error in loadBooksAndVideos:", err);
+    // 1. INSTANT RENDER FROM CACHE (0ms delay)
+    const cUserData = JSON.parse(localStorage.getItem('offline_userData'));
+    const cBooks = JSON.parse(localStorage.getItem('offline_books'));
+    const cRawDisc = JSON.parse(localStorage.getItem('offline_rawDisciplines'));
+    const cChapters = JSON.parse(localStorage.getItem('offline_chapters'));
+    const cVideos = JSON.parse(localStorage.getItem('offline_videos')) || [];
+    const cQuestions = JSON.parse(localStorage.getItem('offline_bookQuestions')) || [];
+    const cHistory = JSON.parse(localStorage.getItem('offline_bookHistory')) || [];
+
+    if (cUserData && cBooks && cChapters) {
+        paintBooksAndVideos(cUserData, cBooks, cRawDisc || [], cChapters, cVideos, cQuestions, cHistory);
     }
-}// This is the final closing brace for the function
+
+    // 2. BACKGROUND SYNC
+    setTimeout(async () => {
+        try {
+            const { data: ud } = await supabase.from('users').select('*').eq('id', user.id).single();
+            const { data: bd } = await supabase.rpc('get_dashboard_books');
+            const { data: rd } = await supabase.from('disciplines').select('*').order('name');
+            const { data: cd } = await supabase.from('chapters').select('*');
+            const { data: vd } = await supabase.rpc('get_dashboard_video_courses');
+
+            let qData = [], hData = [], from = 0; let keep = true;
+            while (keep) { const { data } = await supabase.from('questions').select('id, book_id').range(from, from+999); if(data&&data.length>0){ qData=qData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
+            from = 0; keep = true;
+            while (keep) { const { data } = await supabase.from('userQuestionHistory').select('questionId, lastResult').eq('userId', user.id).range(from, from+999); if(data&&data.length>0){ hData=hData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
+
+            localStorage.setItem('offline_userData', JSON.stringify(ud || cUserData));
+            localStorage.setItem('offline_books', JSON.stringify(bd || []));
+            localStorage.setItem('offline_rawDisciplines', JSON.stringify(rd || []));
+            localStorage.setItem('offline_chapters', JSON.stringify(cd || []));
+            localStorage.setItem('offline_videos', JSON.stringify(vd || []));
+            localStorage.setItem('offline_bookQuestions', JSON.stringify(qData));
+            localStorage.setItem('offline_bookHistory', JSON.stringify(hData));
+
+            paintBooksAndVideos(ud || cUserData, bd || [], rd || [], cd || [], vd || [], qData, hData);
+        } catch (err) { console.warn("Background sync failed. Using cache."); }
+    }, 100);
+}
+
+// --- PWA Custom Install Logic ---
+let deferredPrompt;
+const installAppBtn = document.getElementById('installAppBtn');
+
+// 1. Catch the install prompt from Chrome
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent Chrome's default mini-infobar from appearing
+    e.preventDefault();
+    
+    // Save the event so we can trigger it later
+    deferredPrompt = e;
+    
+    // Un-hide our custom install button
+    if (installAppBtn) {
+        installAppBtn.classList.remove('hidden');
+    }
+});
+
+// 2. Handle the click on our custom button
+if (installAppBtn) {
+    installAppBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            // Show the native Android/Chrome install prompt
+            deferredPrompt.prompt();
+            
+            // Wait for the user to click "Install" or "Cancel"
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`User response to install prompt: ${outcome}`);
+            
+            // We can only use the prompt once, so clear it
+            deferredPrompt = null;
+            
+            // Hide the button since they made a choice
+            installAppBtn.classList.add('hidden');
+        }
+    });
+}
+
+// 3. Listen for a successful installation and hide the button permanently
+window.addEventListener('appinstalled', () => {
+    if (installAppBtn) installAppBtn.classList.add('hidden');
+    console.log('Quizard was successfully installed!');
+});
+// --------------------------------
+
+
+
     </script>
 </body>
 </html>

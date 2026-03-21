@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Quizard - Store</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,6 +18,10 @@
         .video-thumbnail .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:4rem;height:4rem;background-color:rgba(0,0,0,0.5);border-radius:9999px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
         .video-thumbnail:hover .play-icon{opacity:1}
     </style> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Quizard">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
 <body class="flex flex-col min-h-screen" style="background-color: #3da0be;">
 
@@ -194,78 +199,69 @@ function handleFilterAndSearch() {
 }
     
 async function loadStoreContent(user, userData) {
-    try {
-        console.log("--- STARTING STORE DEBUG ---");
-
-        const [booksRes, coursesRes, bookPurchasesRes, videoPurchasesRes] = await Promise.all([
-            supabase.from('books').select('*').in('access_level', ['premium', 'purchasable', 'free']),
-            supabase.from('video_courses').select('*').in('access_level', ['premium', 'purchasable', 'free']),
-            supabase.from('user_purchases').select('book_id').eq('user_id', user.id).or('expires_at.is.null,expires_at.gt.now()'),
-            supabase.from('user_video_purchases').select('course_id').eq('user_id', user.id).or('expires_at.is.null,expires_at.gt.now()')
-        ]);
-
-        if (booksRes.error) throw booksRes.error;
-        if (coursesRes.error) throw coursesRes.error;
-        
-        console.log("1. Raw books fetched from DB:", booksRes.data);
-        console.log("2. Current User Data:", userData);
-
-        const allBooks = booksRes.data.map(item => ({ ...item, type: 'book' }));
-        const allCourses = coursesRes.data.map(item => ({ ...item, type: 'video_course' }));
-        const allItems = [...allBooks, ...allCourses];
-
-        const purchasedBookIds = new Set((bookPurchasesRes.data || []).map(p => p.book_id));
-        const purchasedCourseIds = new Set((videoPurchasesRes.data || []).map(p => p.course_id));
-
-        console.log("3. Starting to filter items. Total items to check:", allItems.length);
-        
-       const itemsToDisplay = allItems.filter(item => {
-            // Get the user's specialty for cleaner code
-            const userSpecialty = userData.speciality.trim();
-
-            // First, determine if the book matches the user's specialty (either primary or linked)
-            const matchesPrimarySpecialty = item.speciality ? item.speciality.trim() === userSpecialty : false;
-            const matchesLinkedSpecialty = item.linked_specialties && item.linked_specialties.includes(userSpecialty);
-            const userHasSpecialtyAccess = matchesPrimarySpecialty || matchesLinkedSpecialty;
-
-            // --- Now, check all reasons to HIDE an item from the store ---
-
-            // Reason 1: The user explicitly owns it (via purchase).
-            const isOwned = item.type === 'book' ? purchasedBookIds.has(item.id) : purchasedCourseIds.has(item.id);
-            if (isOwned) {
-                return false;
-            }
-
-            // Reason 2: User is Premium, the book is Premium, AND it's in their specialty (primary OR linked).
-            const isPremiumUserWithAccess = userData.account_type === 'premium' && item.access_level === 'premium' && userHasSpecialtyAccess;
-            if (isPremiumUserWithAccess) {
-                return false;
-            }
-
-            // Reason 3: The book is Free AND it's in their specialty (primary OR linked).
-            const isFreeContentInSpecialty = item.access_level === 'free' && userHasSpecialtyAccess;
-            if (isFreeContentInSpecialty) {
-                return false;
-            }
-
-            // If none of the above rules hide the item, SHOW it in the store.
-            return true;
-        });
-        
-        console.log("4. Filtering complete. Total items to display:", itemsToDisplay.length);
-        console.log("--- ENDING STORE DEBUG ---");
-
-        allStoreItems = itemsToDisplay;
-        renderStoreItems(allStoreItems, userData);
-
-    } catch (error) {
-        // This will now display the specific error in the console
-        console.error("Error loading store content:", error);
-        dom.loadingState.textContent = 'Could not load store items. Check console for details.';
-    } finally {
+    // --- 1. 0ms INSTANT CACHE RENDER ---
+    const cachedStoreItems = JSON.parse(localStorage.getItem('offline_store_items'));
+    if (cachedStoreItems && cachedStoreItems.length > 0) {
+        allStoreItems = cachedStoreItems;
         dom.loadingState.classList.add('hidden');
         dom.storeGrid.classList.remove('hidden');
+        renderStoreItems(allStoreItems, userData);
     }
+
+    // --- 2. SURGICAL BACKGROUND SYNC ---
+    setTimeout(async () => {
+        try {
+            const [booksRes, coursesRes, bookPurchasesRes, videoPurchasesRes] = await Promise.all([
+                supabase.from('books').select('*').in('access_level', ['premium', 'purchasable', 'free']),
+                supabase.from('video_courses').select('*').in('access_level', ['premium', 'purchasable', 'free']),
+                supabase.from('user_purchases').select('book_id').eq('user_id', user.id).or('expires_at.is.null,expires_at.gt.now()'),
+                supabase.from('user_video_purchases').select('course_id').eq('user_id', user.id).or('expires_at.is.null,expires_at.gt.now()')
+            ]);
+
+            if (booksRes.error) throw booksRes.error;
+            if (coursesRes.error) throw coursesRes.error;
+
+            const allBooks = booksRes.data.map(item => ({ ...item, type: 'book' }));
+            const allCourses = coursesRes.data.map(item => ({ ...item, type: 'video_course' }));
+            const allItems = [...allBooks, ...allCourses];
+
+            const purchasedBookIds = new Set((bookPurchasesRes.data || []).map(p => p.book_id));
+            const purchasedCourseIds = new Set((videoPurchasesRes.data || []).map(p => p.course_id));
+
+           const itemsToDisplay = allItems.filter(item => {
+                const userSpecialty = userData.speciality.trim();
+                const matchesPrimarySpecialty = item.speciality ? item.speciality.trim() === userSpecialty : false;
+                const matchesLinkedSpecialty = item.linked_specialties && item.linked_specialties.includes(userSpecialty);
+                const userHasSpecialtyAccess = matchesPrimarySpecialty || matchesLinkedSpecialty;
+
+                const isOwned = item.type === 'book' ? purchasedBookIds.has(item.id) : purchasedCourseIds.has(item.id);
+                if (isOwned) return false;
+
+                const isPremiumUserWithAccess = userData.account_type === 'premium' && item.access_level === 'premium' && userHasSpecialtyAccess;
+                if (isPremiumUserWithAccess) return false;
+
+                const isFreeContentInSpecialty = item.access_level === 'free' && userHasSpecialtyAccess;
+                if (isFreeContentInSpecialty) return false;
+
+                return true;
+            });
+
+            allStoreItems = itemsToDisplay;
+            
+            // Save to memory for instant loading next time
+            localStorage.setItem('offline_store_items', JSON.stringify(allStoreItems));
+
+            dom.loadingState.classList.add('hidden');
+            dom.storeGrid.classList.remove('hidden');
+            
+            // Repaint with fresh data silently
+            renderStoreItems(allStoreItems, userData);
+
+        } catch (error) {
+            console.error("Error loading store content:", error);
+            if (!cachedStoreItems) dom.loadingState.textContent = 'Could not load store items. Check console for details.';
+        }
+    }, 100); // Tiny delay to ensure browser paints transition first
 }
 // In store.html
 
@@ -316,32 +312,56 @@ function renderStoreItems(itemsToRender, userData) {
 }
 
 
-let currentUserData = null; // Add this line globally within the script tag
+let currentUserData = null;
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (session) {
-        populateSpecialtyFilter();
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. NON-BLOCKING CACHE RENDER 
+    const cachedStoreItems = JSON.parse(localStorage.getItem('offline_store_items'));
+    const cachedUserData = JSON.parse(localStorage.getItem('offline_userData'));
+    
+    if (cachedStoreItems && cachedStoreItems.length > 0) {
+        allStoreItems = cachedStoreItems;
         
-        // Fetch role, account_type, AND speciality
-        const { data: userDataResponse } = await supabase.from('users').select('role, account_type, speciality').eq('id', session.user.id).single();
-        currentUserData = userDataResponse; // Store user data globally for access in other functions
+        // Hide loader instantly, but postpone drawing cards
+        dom.loadingState.classList.add('hidden');
+        dom.storeGrid.classList.remove('hidden');
         
-        updateUserProfileIcon(session.user, currentUserData);
-
-        if (currentUserData && currentUserData.role === 'admin') {
-            dom.adminUploadBtn.classList.remove('hidden');
-        }
-
-        await loadStoreContent(session.user, currentUserData);
-
-        dom.searchInput.addEventListener('input', handleFilterAndSearch);
-        dom.specialtyFilter.addEventListener('change', handleFilterAndSearch);
-    } else {
-        window.location.href = 'index.html';
+        // Tiny delay yields the main thread back to the mobile GPU
+        setTimeout(() => {
+            renderStoreItems(allStoreItems, cachedUserData || { account_type: 'free', speciality: '' });
+        }, 1); 
     }
-});
 
+    // 2. YIELD TO THE BROWSER'S ANIMATION ENGINE
+    requestAnimationFrame(async () => {
+        try {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                populateSpecialtyFilter();
+                
+                // Fetch role, account_type, AND speciality
+                const { data: userDataResponse } = await supabase.from('users').select('role, account_type, speciality').eq('id', session.user.id).single();
+                currentUserData = userDataResponse; 
+                localStorage.setItem('offline_userData', JSON.stringify(currentUserData)); // Update cache
+                
+                updateUserProfileIcon(session.user, currentUserData);
+
+                if (currentUserData && currentUserData.role === 'admin') {
+                    dom.adminUploadBtn.classList.remove('hidden');
+                }
+
+                await loadStoreContent(session.user, currentUserData);
+
+                dom.searchInput.addEventListener('input', handleFilterAndSearch);
+                dom.specialtyFilter.addEventListener('change', handleFilterAndSearch);
+            } else {
+                window.location.href = 'index.html';
+            }
+        } catch (error) {
+            console.error("Auth error:", error);
+        }
+    });
+});
 
 async function handleAddFreeItem(itemId, itemType, buttonElement) {
     buttonElement.disabled = true;

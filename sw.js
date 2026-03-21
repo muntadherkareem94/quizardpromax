@@ -1,66 +1,66 @@
-const CACHE_NAME = 'quizard-static-v3';
 
-const STATIC_ASSETS = [
-  '/main-styles.css',
-  '/images/logo.png',
-  '/images/icons/icon-192x192.png',
-  '/images/icons/icon-512x512.png'
+// Version 6: Forces a clean slate and uses relative paths
+const CACHE_NAME = 'quizard-app-shell-v6';
+
+// The "App Shell" - Using strict relative paths
+const APP_SHELL = [
+  './',
+  './index.html',
+  './dashboard.html',
+  './performance_analytics.html',
+  './store.html',
+  './user_profile.html',
+  './main-styles.css',
+  './supabaseClient.js',
+  './manifest.json',
+  './images/logo.png',
+  './images/icons/icon-192x192.png',
+  './images/icons/icon-512x512.png'
 ];
 
-// Install new service worker and activate it immediately
 self.addEventListener('install', (event) => {
   self.skipWaiting();
-
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
+      console.log('[Service Worker] Caching App Shell');
+      return cache.addAll(APP_SHELL);
     })
   );
 });
 
-// Remove old caches and take control immediately
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     Promise.all([
-      caches.keys().then((keys) =>
-        Promise.all(
-          keys.map((key) => {
-            if (key !== CACHE_NAME) {
-              return caches.delete(key);
+      caches.keys().then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (cacheName !== CACHE_NAME) {
+              console.log('[Service Worker] Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
             }
           })
-        )
-      ),
+        );
+      }),
       self.clients.claim()
     ])
   );
 });
 
-// Fetch strategy
 self.addEventListener('fetch', (event) => {
   const request = event.request;
-
-  // Only handle GET requests
-  if (request.method !== 'GET') return;
-
   const url = new URL(request.url);
 
-  // Never cache browser extension requests or non-http(s)
-  if (!url.protocol.startsWith('http')) return;
+  if (!url.protocol.startsWith('http') || url.hostname.includes('supabase.co') || request.method !== 'GET') {
+    return;
+  }
 
-  // 1) HTML pages: network first, fallback to cache
-  const isHTMLRequest =
-    request.mode === 'navigate' ||
-    (request.headers.get('accept') || '').includes('text/html');
-
+  const isHTMLRequest = request.mode === 'navigate' || (request.headers.get('accept') || '').includes('text/html');
   if (isHTMLRequest) {
     event.respondWith(
       fetch(request)
         .then((networkResponse) => {
           const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(request, responseClone);
-          });
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
           return networkResponse;
         })
         .catch(() => caches.match(request))
@@ -68,38 +68,25 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 2) CSS / JS / images: cache first, then update in background
-  const isStaticAsset =
-    url.pathname.endsWith('.css') ||
-    url.pathname.endsWith('.js') ||
-    url.pathname.endsWith('.png') ||
-    url.pathname.endsWith('.jpg') ||
-    url.pathname.endsWith('.jpeg') ||
-    url.pathname.endsWith('.svg') ||
-    url.pathname.endsWith('.webp') ||
-    url.pathname.endsWith('.gif') ||
-    url.pathname.endsWith('.ico');
-
+  const isStaticAsset = url.pathname.match(/\.(css|js|png|jpg|jpeg|svg|webp|gif|ico|json)$/);
   if (isStaticAsset) {
     event.respondWith(
       caches.match(request).then((cachedResponse) => {
         const networkFetch = fetch(request)
           .then((networkResponse) => {
             const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, responseClone);
-            });
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
             return networkResponse;
           })
-          .catch(() => cachedResponse);
-
+          .catch(() => {
+              console.log('[Service Worker] Network failed, using fallback.');
+          });
         return cachedResponse || networkFetch;
       })
     );
     return;
   }
 
-  // 3) Everything else: network only
   event.respondWith(fetch(request));
 });
 

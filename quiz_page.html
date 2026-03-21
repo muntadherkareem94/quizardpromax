@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Quizard - Quiz</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
@@ -328,8 +329,20 @@ body.hl-mode-on .hl-target{
 }
 
 
+/* --- Smooth Quiz Reveal Animation --- */
+    @keyframes smoothReveal {
+        0% { opacity: 0; transform: translateY(15px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .quiz-ready-animate {
+        animation: smoothReveal 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
 
     </style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Quizard">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
 <body>
     <!-- Header -->
@@ -399,7 +412,7 @@ body.hl-mode-on .hl-target{
     <main class="flex-grow py-8 md:py-12">
     <div class="container mx-auto max-w-4xl px-4">
         <!-- Main card for quiz content -->
-       <div id="main-quiz-card" class="bg-white rounded-2xl shadow-xl p-4 md:p-8">
+       <div id="main-quiz-card" class="bg-white rounded-2xl shadow-xl p-4 md:p-8 min-h-[70vh] flex flex-col">
 
             <h2 id="quizTitle" class="text-2xl md:text-3xl font-extrabold text-gray-800 mb-6 text-center">Loading Quiz...</h2>
             
@@ -1829,6 +1842,7 @@ userHistoryCache.clear();
 
         updateFunctionalIconsState();
         dom.quizContainer.classList.remove('hidden');
+        dom.quizContainer.classList.add('quiz-ready-animate'); // Triggers the buttery fade-in
         generateDots();
         await jumpToQuestion(currentQuestionIndex);
         updateProgressBar();
@@ -1921,185 +1935,152 @@ async function fetchAllUserHistoryForQuiz(questionIds) {
     }
 }
 
-  async function loadChapterQuiz() {
-    // This part fetches the chapter title and is already correct for Supabase
-    const { data: chapterData, error: chapterError } = await supabase.from('chapters').select('*').eq('id', chapterId).single();
-    if (chapterError) throw new Error("Chapter not found.");
-    dom.quizTitle.textContent = `Quiz for: Ch. ${chapterData.chapterNumber} - ${chapterData.name}`;
+async function loadChapterQuiz() {
+    try {
+        const { data: chapterData, error: chapterError } = await supabase.from('chapters').select('*').eq('id', chapterId).single();
+        if (chapterError) throw new Error("Chapter not found.");
+        dom.quizTitle.textContent = `Quiz for: Ch. ${chapterData.chapterNumber} - ${chapterData.name}`;
 
-    // This part now correctly fetches and orders questions using Supabase
-    const { data: questionData, error: questionError } = await supabase
-        .from('questions')
-        .select('*')
-        .eq('chapter_id', chapterId)
-        .order('questionNumber', { ascending: true }); // Use .order() instead of query()
+        const { data: questionData, error: questionError } = await supabase
+            .from('questions')
+            .select('*')
+            .eq('chapter_id', chapterId)
+            .order('questionNumber', { ascending: true });
+            
+        if (questionError) throw questionError;
+        quizData.questions = questionData.map(q => ({ ...q, bookId, chapterId, disciplineId: chapterData.discipline_id }));
+    } catch (networkError) {
+        console.warn("Network offline. Attempting to load chapter from local cache...", networkError);
         
-    if (questionError) throw questionError;
-    
-    // This part correctly prepares the questions for the quiz
-    quizData.questions = questionData.map(q => ({ ...q, bookId, chapterId, disciplineId: chapterData.discipline_id }));
+        // Try to pull from the book's cached questions
+        const cachedQuestions = JSON.parse(localStorage.getItem(`offline_book_${bookId}_questions`)) || [];
+        const chapterQuestions = cachedQuestions.filter(q => q.chapter_id === chapterId || q.chapterId === chapterId);
+        
+        if (chapterQuestions.length > 0) {
+            dom.quizTitle.textContent = `Offline Quiz (Chapter)`;
+            // Sort by question number to ensure correct order
+            chapterQuestions.sort((a, b) => (parseInt(a.questionNumber) || 0) - (parseInt(b.questionNumber) || 0));
+            quizData.questions = chapterQuestions;
+        } else {
+            throw new Error("Could not load chapter quiz. No offline data found.");
+        }
+    }
 }
 
 async function loadBookQuiz() {
     console.log("--- 🐞 DEBUG MODE: loadBookQuiz Started ---");
+    try {
+        const { data: bookData, error: bookError } = await supabase.from('books').select('title').eq('id', bookId).single();
+        if (bookError) throw new Error("Book not found.");
+        dom.quizTitle.textContent = `Book Quiz: ${bookData.title}`;
 
-    // 1. Fetch Book Title
-    const { data: bookData, error: bookError } = await supabase.from('books').select('title').eq('id', bookId).single();
-    if (bookError) throw new Error("Book not found.");
-    dom.quizTitle.textContent = `Book Quiz: ${bookData.title}`;
+        const { data: chaptersData, error: chaptersError } = await supabase.from('chapters').select('id, chapterNumber, name').eq('book_id', bookId);
+        if (chaptersError) throw chaptersError;
 
-    // 2. Fetch Chapter Order
-    console.log("DEBUG: Fetching chapters for bookId:", bookId);
-    const { data: chaptersData, error: chaptersError } = await supabase
-        .from('chapters')
-        .select('id, chapterNumber, name')
-        .eq('book_id', bookId);
-
-    if (chaptersError) throw chaptersError;
-
-    // BUILD AND LOG THE MAP
-    const chapterOrderMap = {};
-    console.log("DEBUG: Raw Chapters Data from DB:", chaptersData);
-
-    if (chaptersData) {
-        chaptersData.forEach(c => {
-            // Ensure we are storing a real Number, not a string "1"
-            const cNum = parseInt(c.chapterNumber);
-            // If NaN (missing), assign a high number so it goes to the end
-            chapterOrderMap[c.id] = isNaN(cNum) ? 999999 : cNum;
-        });
-    }
-    console.log("DEBUG: 🗺️ Final Chapter Map (ID -> Order):", chapterOrderMap);
-
-// 3. Fetch All Questions (HYBRID APPROACH)
-    const { count } = await supabase.from('questions').select('*', { count: 'exact', head: true }).eq('book_id', bookId);
-    
-  // If >200, only grab the routing IDs to save RAM. If <=200, grab everything.
-  const selectFields = (count > 3500) ? 'id, book_id, chapter_id, questionNumber' : '*';
-    let questionData = [];
-    let page = 0;
-    const pageSize = 1000;
-    let keepFetching = true;
-
-    while (keepFetching) {
-        const { data, error } = await supabase
-            .from('questions')
-            .select(selectFields)
-            .eq('book_id', bookId)
-            .range(page * pageSize, (page + 1) * pageSize - 1);
-            
-        if (error) throw error;
-
-        if (data && data.length > 0) {
-            questionData = questionData.concat(data);
-            if (data.length < pageSize) keepFetching = false;
-            page++;
-        } else {
-            keepFetching = false;
+        const chapterOrderMap = {};
+        if (chaptersData) {
+            chaptersData.forEach(c => {
+                const cNum = parseInt(c.chapterNumber);
+                chapterOrderMap[c.id] = isNaN(cNum) ? 999999 : cNum;
+            });
         }
-    }
-    console.log(`DEBUG: 📥 Total Questions Loaded: ${questionData.length}`);
 
-    // CHECK A SAMPLE QUESTION
-    if (questionData.length > 0) {
-        const sampleQ = questionData[0];
-        const sampleChId = sampleQ.chapter_id || sampleQ.chapterId;
-        console.log("DEBUG: 🕵️ Testing Sample Question:", {
-            questionId: sampleQ.id,
-            questionText: sampleQ.question.substring(0, 20) + "...",
-            linkedChapterID: sampleChId,
-            mappedChapterNumber: chapterOrderMap[sampleChId]
+        const { count } = await supabase.from('questions').select('*', { count: 'exact', head: true }).eq('book_id', bookId);
+        const selectFields = (count > 3500) ? 'id, book_id, chapter_id, questionNumber' : '*';
+        let questionData = [];
+        let page = 0; const pageSize = 1000; let keepFetching = true;
+
+        while (keepFetching) {
+            const { data, error } = await supabase.from('questions').select(selectFields).eq('book_id', bookId).range(page * pageSize, (page + 1) * pageSize - 1);
+            if (error) throw error;
+            if (data && data.length > 0) {
+                questionData = questionData.concat(data);
+                if (data.length < pageSize) keepFetching = false;
+                page++;
+            } else { keepFetching = false; }
+        }
+
+        questionData.sort((a, b) => {
+            const chIdA = a.chapter_id || a.chapterId;
+            const chIdB = b.chapter_id || b.chapterId;
+            const chapNumA = chapterOrderMap[chIdA] !== undefined ? chapterOrderMap[chIdA] : 999999;
+            const chapNumB = chapterOrderMap[chIdB] !== undefined ? chapterOrderMap[chIdB] : 999999;
+            if (chapNumA !== chapNumB) return chapNumA - chapNumB;
+            return parseInt(a.questionNumber || 0) - parseInt(b.questionNumber || 0);
         });
+
+        quizData.questions = questionData;
+
+    } catch (networkError) {
+        console.warn("Network offline. Attempting to load book from local cache...", networkError);
+        const cachedBook = JSON.parse(localStorage.getItem(`offline_book_${bookId}_data`)) || { title: 'Offline Book' };
+        dom.quizTitle.textContent = `Offline Book Quiz: ${cachedBook.title}`;
         
-        if (chapterOrderMap[sampleChId] === undefined) {
-            console.warn("⚠️ WARNING: This question's Chapter ID is NOT in the Chapter Map! It will sort incorrectly.");
+        const cachedQuestions = JSON.parse(localStorage.getItem(`offline_book_${bookId}_questions`)) || [];
+        if (cachedQuestions.length > 0) {
+            quizData.questions = cachedQuestions;
+        } else {
+            throw new Error("Could not load book quiz. No offline data found.");
         }
     }
-
-    // 4. SORT
-    questionData.sort((a, b) => {
-        // Normalize IDs
-        const chIdA = a.chapter_id || a.chapterId;
-        const chIdB = b.chapter_id || b.chapterId;
-
-        // Primary Sort: Chapter Number
-        const chapNumA = chapterOrderMap[chIdA] !== undefined ? chapterOrderMap[chIdA] : 999999;
-        const chapNumB = chapterOrderMap[chIdB] !== undefined ? chapterOrderMap[chIdB] : 999999;
-
-        if (chapNumA !== chapNumB) {
-            return chapNumA - chapNumB;
-        }
-
-        // Secondary Sort: Question Number
-        const qNumA = parseInt(a.questionNumber || 0);
-        const qNumB = parseInt(b.questionNumber || 0);
-        return qNumA - qNumB;
-    });
-
-    // 5. LOG RESULTS
-    console.log("DEBUG: 🏁 First 5 Questions AFTER Sorting:");
-    questionData.slice(0, 5).forEach((q, i) => {
-        const chId = q.chapter_id || q.chapterId;
-        console.log(`[${i}] Ch#${chapterOrderMap[chId]} | Q#${q.questionNumber} | ID: ${q.id}`);
-    });
-
-    quizData.questions = questionData;
 }
-
 async function loadDisciplineQuiz() {
     const disciplineName = urlParams.get('disciplineName');
     dom.quizTitle.textContent = `Discipline Quiz: ${disciplineName}`;
 
-    // 1. Get the exact chapter order from the URL
     const priorityOrderJSON = urlParams.get('priority');
     const chapterIdsInOrder = priorityOrderJSON ? JSON.parse(decodeURIComponent(priorityOrderJSON)) : [];
 
-    if (chapterIdsInOrder.length === 0) {
-        throw new Error("No chapters were selected for this discipline quiz.");
-    }
+    if (chapterIdsInOrder.length === 0) throw new Error("No chapters were selected for this discipline quiz.");
 
-    // 2. Fetch questions ONLY from the chapters in our priority list (HYBRID APPROACH)
-    const { count } = await supabase.from('questions').select('*', { count: 'exact', head: true }).in('chapter_id', chapterIdsInOrder);
-  const selectFields = (count > 3500) ? 'id, chapter_id, questionNumber' : '*';
+    try {
+        const { count } = await supabase.from('questions').select('*', { count: 'exact', head: true }).in('chapter_id', chapterIdsInOrder);
+        const selectFields = (count > 3500) ? 'id, chapter_id, questionNumber' : '*';
 
-    // SUPABASE 1000-ROW LIMIT BYPASS LOOP
-    let questionData = [];
-    let page = 0;
-    const pageSize = 1000;
-    let keepFetching = true;
+        let questionData = [];
+        let page = 0; const pageSize = 1000; let keepFetching = true;
 
-    while (keepFetching) {
-        const { data, error } = await supabase
-            .from('questions')
-            .select(selectFields)
-            .in('chapter_id', chapterIdsInOrder)
-            .range(page * pageSize, (page + 1) * pageSize - 1);
-            
-        if (error) throw error;
-
-        if (data && data.length > 0) {
-            questionData = questionData.concat(data);
-            if (data.length < pageSize) keepFetching = false;
-            page++;
-        } else {
-            keepFetching = false;
-        }
-    }
-    
-    // 3. Sort the fetched questions correctly
-    questionData.sort((a, b) => {
-        const indexA = chapterIdsInOrder.indexOf(a.chapter_id);
-        const indexB = chapterIdsInOrder.indexOf(b.chapter_id);
-
-        if (indexA !== indexB) {
-            return indexA - indexB; // Sort by chapter order first
+        while (keepFetching) {
+            const { data, error } = await supabase.from('questions').select(selectFields).in('chapter_id', chapterIdsInOrder).range(page * pageSize, (page + 1) * pageSize - 1);
+            if (error) throw error;
+            if (data && data.length > 0) {
+                questionData = questionData.concat(data);
+                if (data.length < pageSize) keepFetching = false;
+                page++;
+            } else { keepFetching = false; }
         }
         
-        // If chapters are the same, sort by question number
-        return (a.questionNumber || 0) - (b.questionNumber || 0);
-    });
+        questionData.sort((a, b) => {
+            const indexA = chapterIdsInOrder.indexOf(a.chapter_id);
+            const indexB = chapterIdsInOrder.indexOf(b.chapter_id);
+            if (indexA !== indexB) return indexA - indexB; 
+            return (a.questionNumber || 0) - (b.questionNumber || 0);
+        });
 
-    quizData.questions = questionData;
+        quizData.questions = questionData;
+
+    } catch (networkError) {
+        console.warn("Network offline. Attempting to load discipline from local cache...", networkError);
+        // Fallback to the globally cached discipline questions we saved on the dashboard
+        const allCachedQuestions = JSON.parse(localStorage.getItem('offline_discQuestions')) || [];
+        const disciplineQuestions = allCachedQuestions.filter(q => chapterIdsInOrder.includes(q.chapter_id));
+
+        if (disciplineQuestions.length > 0) {
+            dom.quizTitle.textContent = `Offline Discipline: ${disciplineName}`;
+            
+            // Sort by priority order
+            disciplineQuestions.sort((a, b) => {
+                const indexA = chapterIdsInOrder.indexOf(a.chapter_id);
+                const indexB = chapterIdsInOrder.indexOf(b.chapter_id);
+                if (indexA !== indexB) return indexA - indexB; 
+                return (a.questionNumber || 0) - (b.questionNumber || 0);
+            });
+
+            quizData.questions = disciplineQuestions;
+        } else {
+            throw new Error("Could not load discipline quiz. No offline data found.");
+        }
+    }
 }
       function displayQuestion() {
     if (!quizData.questions || quizData.questions.length === 0) return;
@@ -2548,20 +2529,26 @@ function updatePieChart() {
 
 async function saveProgressToDatabase() {
     const progressKey = getQuizProgressKey();
-    if (progressKey && currentUserId) {
-        // HYBRID SAVING: Save only IDs if it's lazy-loaded or massive (>3500) to protect database limits
-        const isLazyLoaded = quizData.questions.some(q => !q.question);
-        const lightQuestions = (isLazyLoaded || quizData.questions.length > 3500) 
-            ? quizData.questions.map(q => ({ id: q.id, bookId: q.bookId || q.book_id, chapterId: q.chapterId || q.chapter_id, disciplineId: q.disciplineId || q.discipline_id })) 
-            : quizData.questions;
+    if (!progressKey || !currentUserId) return;
 
-        const dataToSave = {
-            questions: lightQuestions,
-            currentQuestionIndex,
-            userAnswers,
-            bookId: bookId 
-        };
+    // HYBRID SAVING: Save only IDs if it's lazy-loaded or massive (>3500)
+    const isLazyLoaded = quizData.questions.some(q => !q.question);
+    const lightQuestions = (isLazyLoaded || quizData.questions.length > 3500) 
+        ? quizData.questions.map(q => ({ id: q.id, bookId: q.bookId || q.book_id, chapterId: q.chapterId || q.chapter_id, disciplineId: q.disciplineId || q.discipline_id })) 
+        : quizData.questions;
 
+    const dataToSave = {
+        questions: lightQuestions,
+        currentQuestionIndex,
+        userAnswers,
+        bookId: bookId 
+    };
+
+    // 1. ALWAYS SAVE LOCALLY FIRST (The Offline Queue)
+    localStorage.setItem(progressKey, JSON.stringify(dataToSave));
+
+    // 2. ATTEMPT TO SYNC WITH SUPABASE
+    try {
         const { error } = await supabase
             .from('quiz_progress')
             .upsert({
@@ -2569,13 +2556,14 @@ async function saveProgressToDatabase() {
                 quiz_key: progressKey,
                 progress_data: dataToSave,
                 updated_at: new Date().toISOString()
-            }, {
-                onConflict: 'user_id, quiz_key'
-            });
+            }, { onConflict: 'user_id, quiz_key' });
 
-        if (error) {
-            console.error("Error saving progress to database:", error);
-        }
+        if (error) throw error;
+        
+        // If sync succeeds, we can optionally clear the local queue flag if you implement a sync manager later
+    } catch (networkError) {
+        // If it fails, we silently catch it. The data is already safe in localStorage!
+        console.warn("Network offline. Progress saved locally and will sync later.", networkError);
     }
 }
 
@@ -2905,8 +2893,23 @@ const backButtonUrl = () => {
 };
         dom.submitAnswerButton.addEventListener('click', handleSubmitAnswer);
         dom.submitAnswerButtonMobile.addEventListener('click', handleSubmitAnswer);
-        dom.backToChaptersButton.addEventListener('click', () => { if (quizTimerInterval) clearInterval(quizTimerInterval); window.location.href = backButtonUrl(); });
-        dom.backToChaptersFromModal.addEventListener('click', () => window.location.href = backButtonUrl());
+       // --- SMART BACK NAVIGATION (Guaranteed Smooth Mobile Transition) ---
+        const handleSmartBack = (e) => {
+            if (e) e.preventDefault();
+            if (quizTimerInterval) clearInterval(quizTimerInterval);
+            
+            // By strictly using history.back(), we preserve the memory stack perfectly
+            // This ensures that when you eventually return to the Dashboard, the animation is flawless.
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.replace(backButtonUrl()); // Safe fallback
+            }
+        };
+
+        dom.backToChaptersButton.addEventListener('click', handleSmartBack);
+        dom.backToChaptersFromModal.addEventListener('click', handleSmartBack);
+        // -------------------------------------
         dom.logoutButton.addEventListener('click', handleLogout);
         
         

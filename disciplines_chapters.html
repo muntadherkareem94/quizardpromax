@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Quizard - Discipline Chapters</title>
     
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -51,14 +52,18 @@ canvas[id^="ch-chart-"]{
             document.write('<style>#disciplineFlashcardsButton { display: none !important; }</style>');
         }
     </script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Quizard">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
 
 <body class="flex flex-col min-h-screen">
 <header class="container mx-auto max-w-4xl mt-8 bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
     <div class="flex-1">
-        <a href="dashboard.html" class="text-gray-600 hover:text-purple-600" title="Back to Dashboard">
+        <button id="headerBackBtn" class="text-gray-600 hover:text-purple-600" title="Back to Dashboard">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-        </a>
+        </button>
     </div>
     <div class="flex-shrink-0">
         <a href="dashboard.html"><img src="images/logo.png" alt="Quizard Logo" class="h-16"></a>
@@ -106,18 +111,9 @@ canvas[id^="ch-chart-"]{
         <div id="loadingState" class="text-center text-white py-10 text-xl">Loading content...</div>
 
         <div id="chaptersByDisciplineContainer" class="hidden">
-          <div class="container mx-auto max-w-4xl">
-    <div class="flex justify-between items-center mb-4">
-        <a href="dashboard.html" id="backToDashboardBtn" class="bg-white/30 hover:bg-white/50 text-white font-semibold py-2 px-4 rounded-lg shadow flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-            Back to Dashboard
-        </a>
-        <!-- keep right side empty to preserve spacing -->
-        <div></div>
-    </div>
-</div>
+    
 
-<h2 id="disciplineTitle" class="text-4xl font-extrabold text-white text-center drop-shadow-lg"></h2>
+<h2 id="disciplineTitle" class="font-extrabold text-white mb-6 md:mb-8 px-2 text-center drop-shadow-lg leading-tight tracking-tight" style="font-size: clamp(1.1rem, 5vw, 2.25rem); text-wrap: balance; word-break: break-word;"></h2>
 
 <!-- Centered Discipline Custom Quiz button (like Book page) -->
 <div id="quizBtnWrapper" class="flex justify-center mt-4 mb-8 space-x-4">
@@ -500,140 +496,155 @@ function updateUserProfileIcon(user, userData) {
 }
 
     // --- Data Loading and Rendering ---
-// --- UPDATED DATA LOADER (Fixes 1000-Row Limit) ---
+// --- CACHE-FIRST LOADER (0ms Instant Render & Surgical Sync) ---
 async function loadAllData(user) {
-    try {
-        const urlParams = new URLSearchParams(window.location.search);
-        const disciplineId = urlParams.get('disciplineId');
-        const disciplineName = urlParams.get('name');
+    const urlParams = new URLSearchParams(window.location.search);
+    const disciplineId = urlParams.get('disciplineId');
+    const disciplineName = urlParams.get('name');
 
-     if (dom.disciplineTitle && disciplineName) {
-            const targetMode = urlParams.get('target') || 'quiz';
-            
-            dom.disciplineTitle.textContent = targetMode === 'flashcards' ? `Flashcards: ${disciplineName}` : disciplineName;
-            dom.disciplineTitle.dataset.id = disciplineId;
-            
-            if (targetMode === 'flashcards' && dom.disciplineQuizButton) {
-                dom.disciplineQuizButton.classList.add('hidden'); // Hide the Custom Quiz button
-            }
+    if (dom.disciplineTitle && disciplineName) {
+        const targetMode = urlParams.get('target') || 'quiz';
+        dom.disciplineTitle.textContent = targetMode === 'flashcards' ? `Flashcards: ${disciplineName}` : disciplineName;
+        dom.disciplineTitle.dataset.id = disciplineId;
+        if (targetMode === 'flashcards' && dom.disciplineQuizButton) {
+            dom.disciplineQuizButton.classList.add('hidden');
         }
+    }
 
-        console.log("--- DEBUG: STARTING ROBUST DATA FETCH ---");
+    const wrapper = document.getElementById('chaptersByDisciplineContainer');
+    const listEl  = document.getElementById('chapterList'); // Targets the correct ID
 
-        // 1. Fetch Questions for this Discipline
-        // (We don't need a loop here unless a single discipline has >1000 questions, which is rare)
-      // 1. Fetch ALL Questions for this Discipline (Robust Pagination)
-        let allQuestionsInDiscipline = [];
-        let qFrom = 0;
-        const qLimit = 1000;
-        let qKeepFetching = true;
-
-        console.log("Starting Discipline Question Fetch Loop...");
-
-        while (qKeepFetching) {
-            const { data: qData, error: qError } = await supabase
-                .from('questions')
-                .select('*')
-                .eq('discipline_id', disciplineId)
-                .range(qFrom, qFrom + qLimit - 1);
-
-            if (qError) {
-                console.error("Error fetching discipline question chunk:", qError);
-                break;
-            }
-
-            if (qData && qData.length > 0) {
-                allQuestionsInDiscipline = allQuestionsInDiscipline.concat(qData);
-                if (qData.length < qLimit) qKeepFetching = false;
-            } else {
-                qKeepFetching = false;
-            }
-            qFrom += qLimit;
-        }
-        
-        const questions = allQuestionsInDiscipline;
-        console.log(`Total Discipline Questions Found: ${questions.length}`);
-
-        // 2. Fetch History (WITH PAGINATION LOOP)
-        // This ensures we get ALL history, even if you have 5000+ answers
-        let allHistory = [];
-        let from = 0;
-        const limit = 1000;
-        let keepFetching = true;
-
-        console.log("Starting History Fetch Loop...");
-        
-        while (keepFetching) {
-            const { data, error } = await supabase
-                .from('userQuestionHistory')
-                .select('questionId, lastResult') // Fetch only what we need to save memory
-                .eq('userId', user.id)
-                .range(from, from + limit - 1);
-
-            if (error) {
-                console.error("Error fetching history chunk:", error);
-                break;
-            }
-
-            if (data && data.length > 0) {
-                allHistory = allHistory.concat(data);
-                // If we got fewer rows than the limit, we are at the end
-                if (data.length < limit) keepFetching = false;
-            } else {
-                keepFetching = false;
-            }
-            from += limit;
-        }
-        console.log(`Total History Items Fetched: ${allHistory.length}`);
-
-     // 3. Process Data
+    // Helper to paint the UI
+    const paintData = (questions, history, books, chapters, userData) => {
         window.pageQuestions = questions;
         window.pageHistoryMap = new Map();
         
-        allHistory.forEach(h => {
+        history.forEach(h => {
             const qId = h.questionId || h.question_id;
-            // FIX: Only record it in the map if the user actually answered the question
             if (qId && h.lastResult) {
                 const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
-                window.pageHistoryMap.set(qId, isCorrect ? 'correct' : 'wrong');
+                window.pageHistoryMap.set(String(qId), isCorrect ? 'correct' : 'wrong');
             }
         });
 
-        // 4. Load Layout Data (Books/Chapters)
-     const [booksRes, chaptersRes, userDataRes] = await Promise.all([
-            supabase.rpc('get_dashboard_books'),
-            // Updated to fetch the book title alongside the chapter
-            supabase.from('chapters').select('*, books(title)'), 
-            supabase.from('users').select('account_type').eq('id', user.id).single()
-        ]);
+        allBooks = books || [];
+        allChapters = chapters || [];
+        currentUserData = userData || {};
 
-        allBooks = booksRes.data || [];
-allChapters = chaptersRes.data || [];
-currentUserData = userDataRes.data || {};
+        updateUserProfileIcon(user, currentUserData);
 
-// Render profile image + username in header
-updateUserProfileIcon(user, currentUserData);
+        // Ensure we handle both book_data format (from RPC) and direct id format safely
+        const accessibleBookIds = new Set(allBooks.filter(item => item.has_access === true).map(item => item.book_data ? item.book_data.id : item.id));
+        accessibleContent.chapters = allChapters.filter(chapter => accessibleBookIds.has(chapter.book_id));
 
-const accessibleBookIds = new Set(allBooks.filter(item => item.has_access === true).map(item => item.book_data.id));
-accessibleContent.chapters = allChapters.filter(chapter => accessibleBookIds.has(chapter.book_id));
-
-        // 5. Trigger Render
         if (disciplineId) {
             const disciplineChapters = accessibleContent.chapters.filter(c => c.discipline_id === disciplineId);
-           const wrapper = document.getElementById('chaptersByDisciplineContainer'); // keeps header + button
-const listEl  = document.getElementById('chaptersGrid') || document.getElementById('chapterList'); // only cards go here
-
-if (wrapper) wrapper.classList.remove('hidden');
-if (listEl) renderChaptersByDiscipline(disciplineChapters, listEl);
-
+            if (wrapper) wrapper.classList.remove('hidden');
+            if (listEl) renderChaptersByDiscipline(disciplineChapters, listEl);
         }
-
         if (dom.loadingState) dom.loadingState.classList.add('hidden');
+    };
 
-    } catch (error) {
-        console.error("Error loading data:", error);
-        if (dom.loadingState) dom.loadingState.textContent = `Error: ${error.message}`;
+    // 1. INSTANT LOAD FROM GLOBAL CACHE (Books, Chapters, User are handled by Dashboard)
+    const cBooks = JSON.parse(localStorage.getItem('offline_books')) || [];
+    const cChapters = JSON.parse(localStorage.getItem('offline_chapters')) || [];
+    const cUserData = JSON.parse(localStorage.getItem('offline_userData')) || {};
+
+    // 2. CHECK SPECIFIC DISCIPLINE CACHE
+    const questionsCacheStr = localStorage.getItem(`offline_disc_${disciplineId}_questions`);
+    const historyCacheStr = localStorage.getItem(`offline_disc_${disciplineId}_history`);
+
+    if (questionsCacheStr !== null && historyCacheStr !== null && cChapters.length > 0) {
+        // We have the data for this specific discipline. Instant render!
+        paintData(JSON.parse(questionsCacheStr), JSON.parse(historyCacheStr), cBooks, cChapters, cUserData);
+    } else {
+        // We don't have the questions for THIS discipline yet. Show skeletons.
+        if (listEl) {
+            if (wrapper) wrapper.classList.remove('hidden');
+            listEl.className = "grid grid-cols-1 gap-3 max-w-4xl mx-auto";
+            listEl.innerHTML = Array(6).fill(0).map(() => `<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between opacity-50 mb-3 animate-pulse"><div class="flex items-center gap-4 w-1/2"><div class="w-10 h-10 bg-gray-200 rounded-full"></div><div class="h-5 bg-gray-200 rounded w-full"></div></div><div class="w-12 h-12 bg-gray-200 rounded-full"></div></div>`).join('');
+        }
     }
+
+    // 3. SURGICAL BACKGROUND SYNC (Only fetch questions & history for THIS discipline)
+    setTimeout(async () => {
+        try {
+            let qData = [], qFrom = 0, qKeep = true;
+            while (qKeep) {
+                const { data } = await supabase.from('questions').select('id, discipline_id, chapter_id').eq('discipline_id', disciplineId).range(qFrom, qFrom + 999);
+                if (data && data.length > 0) { qData = qData.concat(data); qKeep = data.length === 1000; qFrom += 1000; } else qKeep = false;
+            }
+
+            let hData = [], hFrom = 0, hKeep = true;
+            while (hKeep) {
+                const { data } = await supabase.from('userQuestionHistory').select('questionId, lastResult').eq('userId', user.id).range(hFrom, hFrom + 999);
+                if (data && data.length > 0) { hData = hData.concat(data); hKeep = data.length === 1000; hFrom += 1000; } else hKeep = false;
+            }
+
+            // --- SMART CACHE MANAGEMENT (LRU Eviction) ---
+            const saveWithEviction = (key, data) => {
+                const dataString = JSON.stringify(data);
+                try {
+                    localStorage.setItem(key, dataString);
+                } catch (e) {
+                    if (e.name === 'QuotaExceededError') {
+                        console.warn("Local Storage full! Evicting old data to make room...");
+                        // 1. Gather all keys related to disciplines and books
+                        const keysToRemove = [];
+                        for (let i = 0; i < localStorage.length; i++) {
+                            const k = localStorage.key(i);
+                            // Target cached questions/history, but KEEP core app data safe
+                            if (k && (k.startsWith('offline_disc_') || k.startsWith('offline_book_')) && !k.endsWith('_data') && !k.endsWith('_chapters')) {
+                                keysToRemove.push(k);
+                            }
+                        }
+                        
+                        // 2. We don't have timestamps, so we just clear the oldest half of the cached keys
+                        // to free up a massive chunk of space immediately.
+                        const numToClear = Math.ceil(keysToRemove.length / 2);
+                        for (let i = 0; i < numToClear; i++) {
+                            localStorage.removeItem(keysToRemove[i]);
+                        }
+                        
+                        // 3. Try saving again!
+                        try {
+                            localStorage.setItem(key, dataString);
+                            console.log("Successfully saved after eviction.");
+                        } catch (retryError) {
+                            console.error("Still out of space after eviction! Cannot cache this discipline.", retryError);
+                        }
+                    } else {
+                        throw e; // Throw if it's some other random error
+                    }
+                }
+            };
+
+            saveWithEviction(`offline_disc_${disciplineId}_questions`, qData);
+            saveWithEviction(`offline_disc_${disciplineId}_history`, hData);
+            // ---------------------------------------------
+
+            if (listEl && listEl.innerHTML.includes('animate-pulse')) {
+                console.log("Surgical Sync complete. Replacing skeletons.");
+                paintData(qData, hData, cBooks, cChapters, cUserData);
+            } else {
+                // Silent memory update (prevents UI flashing)
+                window.pageQuestions = qData;
+                window.pageHistoryMap = new Map();
+                hData.forEach(h => {
+                    const qId = h.questionId || h.question_id;
+                    if (qId && h.lastResult) {
+                        const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
+                        window.pageHistoryMap.set(String(qId), isCorrect ? 'correct' : 'wrong');
+                    }
+                });
+            }
+        } catch (err) {
+            console.warn("Discipline background sync failed.", err);
+        } finally {
+            // Absolute failsafe: Always kill the loader, even if sync errors out
+            if (dom.loadingState) dom.loadingState.classList.add('hidden');
+        }
+    }, 100);
 }
 
    
@@ -924,6 +935,7 @@ dom.customQuizForm.addEventListener('change', (e) => {
         });
     }
 // --- INITIALIZATION (Clean & Fixes the Error) ---
+// --- INITIALIZATION (Clean & Fixes the Error) ---
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("Initializing Discipline Chapters Page...");
     
@@ -931,6 +943,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.dom = window.dom || {};
     dom.loadingState = document.getElementById('loadingState');
     dom.disciplineTitle = document.getElementById('disciplineTitle');
+    
+    // Safety check: Hide loader after a timeout regardless of state to prevent infinite hangs
+    setTimeout(() => {
+        if (dom.loadingState && !dom.loadingState.classList.contains('hidden')) {
+            console.warn("Loader timeout reached. Forcing UI reveal.");
+            dom.loadingState.classList.add('hidden');
+            const wrapper = document.getElementById('chaptersByDisciplineContainer');
+            if (wrapper) wrapper.classList.remove('hidden');
+        }
+    }, 2500);
     
     // 2. Check Auth
     const { data: { session } } = await supabase.auth.getSession();
@@ -954,9 +976,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-    // --- Event Listeners ---
-// --- Event Listeners ---
+// --- NEW: Handle BFCache Restoration ---
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        console.log("Page restored from BFCache. Ensuring UI is visible.");
+        if (dom.loadingState) dom.loadingState.classList.add('hidden');
+        const wrapper = document.getElementById('chaptersByDisciplineContainer');
+        if (wrapper) wrapper.classList.remove('hidden');
+    }
+});
 
+
+// --- Event Listeners ---
+// --- Native Back Button (Guaranteed Smooth Mobile Transition) ---
+const headerBackBtn = document.getElementById('headerBackBtn');
+if (headerBackBtn) {
+    headerBackBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.history.length > 1 && document.referrer) {
+            window.history.back();
+        } else {
+            // Tell the dashboard exactly which tab to open!
+            window.location.replace('dashboard.html?view=disciplines'); 
+        }
+    });
+}
 // Logout (only if this page has the button)
 if (dom.logoutButton) dom.logoutButton.addEventListener('click', handleLogout);
 
@@ -1101,133 +1145,154 @@ const externalTooltipHandler = (context) => {
 window.chapterCharts = [];
 
 // --- RENDERER (Updated with new function name) ---
-// --- RENDERER (Updated with new function name) ---
+// --- BLAZING FAST RENDERER: PROGRESSIVE + DOCUMENT FRAGMENTS ---
 function renderChaptersByDiscipline(chapters, container) {
+    // --- NEW: MEMORY LEAK KILL SWITCH ---
+    if (window.chartRenderFrameId) {
+        cancelAnimationFrame(window.chartRenderFrameId);
+    }
+    window.isRenderingCharts = false; // Tell old ghost loops to die
+
     container.innerHTML = '';
-    
-    // THE FIX: Define targetMode here so the cards know if they are flashcards!
     const targetMode = new URLSearchParams(window.location.search).get('target') || 'quiz';
     
-    // Cleanup
+    // Cleanup old charts to free up RAM
     if (window.chapterCharts && window.chapterCharts.length > 0) {
         window.chapterCharts.forEach(chart => chart.destroy());
         window.chapterCharts = [];
     }
-    if (container._sortable) {
-        container._sortable.destroy();
-    }
+    if (container._sortable) container._sortable.destroy();
 
     if (!chapters || chapters.length === 0) {
         container.innerHTML = '<p class="text-gray-500 text-center py-8">No chapters available.</p>';
         return;
     }
 
-    // Sort
     chapters.sort((a, b) => (a.chapterNumber || 0) - (b.chapterNumber || 0));
-
     window.disciplineChapterIds = chapters.map(ch => ch.id);
 
     const questions = window.pageQuestions || [];
     const historyMap = window.pageHistoryMap || new Map();
-
     container.className = "grid grid-cols-1 gap-3 max-w-4xl mx-auto";
 
- chapters.forEach(chapter => {
-            // Calculate Stats
-            const chQuestions = questions.filter(q => (q.chapterId === chapter.id || q.chapter_id === chapter.id));
-            const total = chQuestions.length;
-            let correct = 0, wrong = 0;
-            chQuestions.forEach(q => {
-                if (historyMap.has(q.id)) {
-                    // FIX: Explicitly check for 'correct' or 'wrong'
-                    if (historyMap.get(q.id) === 'correct') correct++; 
-                    else if (historyMap.get(q.id) === 'wrong') wrong++;
-                }
-            });
-            const unanswered = total - (correct + wrong);
+    // 1. FAST DOM INSERTION
+    const fragment = document.createDocumentFragment();
+
+    chapters.forEach(chapter => {
+        // Calculate Stats
+        const chQuestions = questions.filter(q => (q.chapterId === chapter.id || q.chapter_id === chapter.id));
+        const total = chQuestions.length;
+        let correct = 0, wrong = 0;
+        chQuestions.forEach(q => {
+            if (historyMap.has(q.id)) {
+                // FIX: Explicitly check for 'correct' or 'wrong'
+                if (historyMap.get(q.id) === 'correct') correct++; 
+                else if (historyMap.get(q.id) === 'wrong') wrong++;
+            }
+        });
+        const unanswered = total - (correct + wrong);
 
         // Build Card
         const card = document.createElement('div');
         card.setAttribute('data-id', chapter.id); 
-   // Fluid design: items-start on mobile helps long titles wrap without pulling the button out of place
-card.className = 'bg-white p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 group';
+        // Fluid design: items-start on mobile helps long titles wrap without pulling the button out of place
+        card.className = 'bg-white p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 group';
 
-card.innerHTML = `
-    <div class="flex items-start sm:items-center gap-2 sm:gap-4 min-w-0 flex-1">
-        <div class="drag-handle hidden xs:flex cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 p-1 sm:p-2 flex-shrink-0">
-            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
-            </svg>
-        </div>
-        
-        <span class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-sm sm:text-base font-bold rounded-full mt-1 sm:mt-0">
-            ${chapter.chapterNumber || '#'}
-        </span>
-        
-        <div class="min-w-0 flex-1 px-1">
-            <h3 class="text-base sm:text-lg md:text-xl font-extrabold text-gray-900 text-balance tracking-tight group-hover:text-indigo-700 transition-all duration-200 leading-tight">
-                ${chapter.name}
-            </h3>
-            
-            <div class="text-[9px] sm:text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-1 truncate">
-                ${chapter.books?.title || 'General Resource'}
+        // --- NEW: Safely lookup the book title from the global array ---
+        // (This MUST be outside the HTML backticks)
+        const parentBook = allBooks.find(b => b.book_data && b.book_data.id === chapter.book_id);
+        const bookTitle = parentBook ? parentBook.book_data.title : (chapter.books?.title || 'General Resource');
+
+        card.innerHTML = `
+            <div class="flex items-start sm:items-center gap-2 sm:gap-4 min-w-0 flex-1">
+                <div class="drag-handle hidden xs:flex cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 p-1 sm:p-2 flex-shrink-0">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+                    </svg>
+                </div>
+                
+                <span class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-sm sm:text-base font-bold rounded-full mt-1 sm:mt-0">
+                    ${chapter.chapterNumber || '#'}
+                </span>
+                
+                <div class="min-w-0 flex-1 px-1">
+                    <h3 class="text-base sm:text-lg md:text-xl font-extrabold text-gray-900 text-balance tracking-tight group-hover:text-indigo-700 transition-all duration-200 leading-tight">
+                        ${chapter.name}
+                    </h3>
+                    
+                    <div class="text-[9px] sm:text-[10px] font-bold text-purple-600 uppercase tracking-widest mt-1 truncate">
+                        ${bookTitle}
+                    </div>
+                    
+                    <p class="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5 sm:mt-1">${total} Questions</p>
+                </div>
             </div>
             
-            <p class="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5 sm:mt-1">${total} Questions</p>
-        </div>
-    </div>
-    
- <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 ml-1 sm:ml-0">
-        <div class="relative flex-shrink-0 w-7 h-7 xs:w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${targetMode === 'flashcards' ? 'hidden' : ''}">
-            <canvas id="ch-chart-${chapter.id}"></canvas>
-        </div>
-        <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg shadow-sm transition-all active:scale-95 whitespace-nowrap"
-            onclick="window.launchChapterQuiz('${chapter.id}')">
-            ${targetMode === 'flashcards' ? 'Study Deck' : 'Start'}
-        </button>
-    </div>
-`;
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 ml-1 sm:ml-0">
+                <div class="relative flex-shrink-0 w-7 h-7 xs:w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${targetMode === 'flashcards' ? 'hidden' : ''}">
+                    <canvas id="ch-chart-${chapter.id}"></canvas>
+                </div>
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg shadow-sm transition-all active:scale-95 whitespace-nowrap"
+                    onclick="window.launchChapterQuiz('${chapter.id}')">
+                    ${targetMode === 'flashcards' ? 'Study Deck' : 'Start'}
+                </button>
+            </div>
+        `;
         container.appendChild(card);
-
-        // Draw Chart
-        const canvas = document.getElementById(`ch-chart-${chapter.id}`);
-if (!canvas) return;
-const ctx = canvas.getContext('2d');
-
-        const chartData = total === 0 ? [0,0,1] : [correct, wrong, unanswered];
-        const chartColors = total === 0 ? ['#f3f4f6','#f3f4f6','#f3f4f6'] : ['#22c55e', '#ef4444', '#e5e7eb'];
-
-        window.chapterCharts.push(new Chart(ctx, {
-            
-            type: 'doughnut',
-            data: {
-                labels: ['Correct', 'Wrong', 'Unanswered'],
-                datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }]
-            },
-          options: {
-    responsive: true,
-    maintainAspectRatio: true, // Ensures the chart scales correctly
-    aspectRatio: 1,           // Keeps the donut as a perfect circle
-    cutout: '70%', 
-    animation: {
-        duration: 0           // Better performance on older mobile devices
-    },
-    plugins: { 
-        legend: { display: false }, 
-        tooltip: { 
-            enabled: false, 
-            external: typeof externalTooltipHandler !== 'undefined' ? externalTooltipHandler : null 
-        } 
-    }
-}
-        }));
-        canvas.style.visibility = 'visible';
-
     });
 
-    if (typeof Sortable !== 'undefined') {
-        container._sortable = new Sortable(container, { animation: 150, handle: '.drag-handle', ghostClass: 'bg-indigo-50' });
-    }
+    container.appendChild(fragment);
+
+// 2. PROGRESSIVE CHART RENDERING (The Jank Killer - Memory Safe)
+    let chartIndex = 0;
+    const renderChartsBatch = () => {
+        if (!window.isRenderingCharts) return; // Kill switch! Stop drawing.
+
+        const batchSize = 5;
+        const end = Math.min(chartIndex + batchSize, chapters.length);
+
+        for (; chartIndex < end; chartIndex++) {
+            const chapter = chapters[chartIndex];
+            const chQuestions = questions.filter(q => (q.chapterId === chapter.id || q.chapter_id === chapter.id));
+            const total = chQuestions.length;
+            let correct = 0, wrong = 0;
+            
+            chQuestions.forEach(q => {
+                if (historyMap.has(String(q.id))) {
+                    if (historyMap.get(String(q.id)) === 'correct') correct++; 
+                    else if (historyMap.get(String(q.id)) === 'wrong') wrong++;
+                }
+            });
+            const unanswered = total - (correct + wrong);
+
+            const canvas = document.getElementById(`ch-chart-${chapter.id}`);
+            if (!canvas) continue;
+            const ctx = canvas.getContext('2d');
+
+            const chartData = total === 0 ? [0,0,1] : [correct, wrong, unanswered];
+            const chartColors = total === 0 ? ['#f3f4f6','#f3f4f6','#f3f4f6'] : ['#22c55e', '#ef4444', '#e5e7eb'];
+
+            window.chapterCharts.push(new Chart(ctx, {
+                type: 'doughnut',
+                data: { labels: ['Correct', 'Wrong', 'Unanswered'], datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }] },
+                options: { responsive: true, maintainAspectRatio: true, aspectRatio: 1, cutout: '70%', animation: { duration: 0 }, plugins: { legend: { display: false }, tooltip: { enabled: false, external: typeof externalTooltipHandler !== 'undefined' ? externalTooltipHandler : null } } }
+            }));
+            canvas.style.visibility = 'visible';
+        }
+
+        if (chartIndex < chapters.length) {
+            window.chartRenderFrameId = requestAnimationFrame(renderChartsBatch);
+        } else {
+            window.isRenderingCharts = false;
+            // Only initialize Sortable after all heavy DOM updates are complete
+            if (typeof Sortable !== 'undefined') {
+                container._sortable = new Sortable(container, { animation: 150, handle: '.drag-handle', ghostClass: 'bg-indigo-50' });
+            }
+        }
+    };
+
+    window.isRenderingCharts = true;
+    window.chartRenderFrameId = requestAnimationFrame(renderChartsBatch);
 }
 // Global start helper
 // --- DEBUG VERSION: START QUIZ ---

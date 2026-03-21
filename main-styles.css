@@ -1,11 +1,29 @@
 /* ---- This is the full and correct code for main-styles.css ---- */
 
-/* Global styles for the entire page */
-body {
+/* Global styles for the entire page & Native App Lockdown */
+
+/* Enable Native Page Transitions */
+@view-transition {
+    navigation: auto;
+}
+
+html, body {
     background-color: #3da0be; /* Dark slate background */
     color: #52c4e0;           /* Light default text color */
     font-family: 'Inter', sans-serif;
     margin: 0;
+    
+    /* --- NATIVE APP LOCKDOWN RULES --- */
+    overscroll-behavior-y: none; /* Kills pull-to-refresh */
+    -webkit-tap-highlight-color: transparent; /* Kills blue flash on tap */
+    -webkit-touch-callout: none; /* Kills iOS tap-and-hold popup */
+    user-select: none; /* Kills accidental text selection */
+    padding-bottom: env(safe-area-inset-bottom); /* iOS notch/swipe bar safe area */
+}
+
+/* Ensure users can still type in text inputs and search bars */
+input, textarea {
+    user-select: auto; 
 }
 
 /* Style for main content cards */

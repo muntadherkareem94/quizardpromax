@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Quizard - Chapters</title>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,14 +50,22 @@ canvas[id^="ch-chart-"]{
             document.write('<style>#bookFlashcardsButton { display: none !important; }</style>');
         }
     </script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Quizard">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Quizard">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
 <body class="flex flex-col min-h-screen" style="background-color: #3da0be;">
 <header class="container mx-auto max-w-4xl mt-8 bg-white shadow-md py-2 px-6 flex items-center justify-between z-20 rounded-xl">
     <div class="flex-1">
-        <a href="dashboard.html" class="text-gray-600 hover:text-purple-600" title="Back to Dashboard">
+        <button id="headerBackBtn" class="text-gray-600 hover:text-purple-600" title="Back to Dashboard">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-        </a>
+        </button>
     </div>
 
     <div class="flex-shrink-0">
@@ -111,7 +120,7 @@ canvas[id^="ch-chart-"]{
 </header>
 
     <main class="flex-grow container mx-auto px-4 py-8 md:py-12">
-        <h2 id="bookTitle" class="text-4xl font-extrabold text-white mb-8 text-center drop-shadow-lg">Loading Chapters...</h2>
+      <h2 id="bookTitle" class="font-extrabold text-white mb-6 md:mb-8 px-2 text-center drop-shadow-lg leading-tight tracking-tight" style="font-size: clamp(1.1rem, 5vw, 2.25rem); text-wrap: balance; word-break: break-word;">Loading Chapters...</h2>
   <div id="quizBtnWrapper" class="text-center mb-8">
             <button id="bookQuizButton" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
                 Start Book Quiz
@@ -403,241 +412,233 @@ dom.customQuizForm.addEventListener('change', (e) => {
 });
 
     // --- END: Added code for Sequential Flow UI ---
-// --- UPDATED LOADER: Fetches Data, Calc Stats, Renders Donuts ---
+// --- BLAZING FAST LOADER: PROGRESSIVE RENDERING + CACHE FIRST ---
 async function loadBookAndChapters() {
     if (!bookId || !currentUser) {
         dom.bookTitle.textContent = "Book Not Found or User Not Logged In";
         return;
     }
-    try {
-        console.log("Loading Book Data...");
 
-     // 1. Fetch Basic Book Info
-        const { data: bookData, error: bookError } = await supabase.from('books').select('title').eq('id', bookId).single();
-        if (bookError) throw bookError;
-        
-        const targetMode = new URLSearchParams(window.location.search).get('target') || 'quiz';
+    const targetMode = new URLSearchParams(window.location.search).get('target') || 'quiz';
+    const listEl = dom.chaptersList;
+
+    // Helper function to paint the UI efficiently
+    const paintChapters = (bookData, chaptersWithAccess, questions, allHistory) => {
+        // Set Titles
         if (targetMode === 'flashcards') {
             dom.bookTitle.textContent = `Flashcards: ${bookData.title}`;
-            if (dom.bookQuizButton) dom.bookQuizButton.classList.add('hidden'); // Hide the Custom Quiz button
+            if (dom.bookQuizButton) dom.bookQuizButton.classList.add('hidden');
         } else {
             dom.bookTitle.textContent = bookData.title;
         }
 
-        // 2. Fetch Chapters (With Access Logic)
-        const { data: chaptersWithAccess, error: rpcError } = await supabase
-            .rpc('get_chapters_for_book_with_access', { p_book_id: bookId });
-        if (rpcError) throw rpcError;
-
         currentBookChapters = chaptersWithAccess || [];
-        
-      // 3. Fetch ALL Questions for this Book (Robust Pagination)
-        window.allQuestionsInBook = [];
-        let qFrom = 0;
-        const qLimit = 1000;
-        let qKeepFetching = true;
-
-        console.log("Starting Book Question Fetch Loop...");
-
-     // Optimized loop to fetch the full dataset (all 1246+ questions)
-while (qKeepFetching) {
-   const { data: qData, error: qError } = await supabase
-    .from('questions')
-    .select('id, question, options, correctAnswerIndex, explanation, imageUrl, explanationImageUrl, book_id, chapter_id, discipline_id, questionNumber')
-    .eq('book_id', bookId)
-    .range(qFrom, qFrom + qLimit - 1);
-
-
-    if (qError) {
-        console.error("Error fetching book question chunk:", qError);
-        qKeepFetching = false; // Stop on error
-  } else if (qData && qData.length > 0) {
-    allQuestionsInBook = allQuestionsInBook.concat(qData);
-    // Continue fetching only if we received a full page of results (1000)
-    qKeepFetching = qData.length === qLimit;
-    qFrom += qLimit;
-}else {
-        qKeepFetching = false;
-    }
-}
-        
-        const questions = allQuestionsInBook;
-        console.log(`Total Book Questions Found: ${questions.length}`);
-
-        // 4. Fetch History (Loop for 1000+ items)
-        let allHistory = [];
-        let from = 0;
-        let keepFetching = true;
-        while (keepFetching) {
-            const { data: hData, error: hError } = await supabase
-                .from('userQuestionHistory')
-                .select('questionId, lastResult')
-                .eq('userId', currentUser.id)
-                .range(from, from + 999);
-            
-            if (hError || !hData || hData.length === 0) {
-                keepFetching = false;
-            } else {
-                allHistory = allHistory.concat(hData);
-                if (hData.length < 1000) keepFetching = false;
-                from += 1000;
-            }
-        }
-
-      // 5. Process Stats Maps
-        const questionPool = questions || [];
-        const historyMap = new Map();
-        allHistory.forEach(h => {
-            const qId = String(h.questionId);
-            
-            // THE FIX: Only count as "Answered" if there is an actual correct/wrong result.
-            // This prevents flags, notes, and ratings from being counted as wrong attempts.
-            const result = String(h.lastResult || "").toLowerCase();
-            const isActuallyAnswered = result === 'correct' || result === 'wrong';
-
-            if (isActuallyAnswered) {
-                historyMap.set(qId, result === 'correct');
-            }
-        });
-
-        // 6. RENDER THE UI
-        const listEl = dom.chaptersList;
-        listEl.innerHTML = '';
-        listEl.className = "grid grid-cols-1 gap-3 max-w-4xl mx-auto"; // Grid layout
+        window.allQuestionsInBook = questions || [];
 
         if (currentBookChapters.length === 0) {
             listEl.innerHTML = '<p class="text-white text-center bg-white/10 p-4 rounded-lg">No chapters found.</p>';
-            dom.bookQuizButton.style.display = 'none';
+            if (dom.bookQuizButton) dom.bookQuizButton.style.display = 'none';
             return;
         }
 
-        // Sort Chapters
+        // Map History
+        const historyMap = new Map();
+        allHistory.forEach(h => {
+            const qId = String(h.questionId);
+            const result = String(h.lastResult || "").toLowerCase();
+            if (result === 'correct' || result === 'wrong') historyMap.set(qId, result === 'correct');
+        });
+
+        // Sort chapters
         currentBookChapters.sort((a, b) => (a.chapter_data.chapterNumber || 0) - (b.chapter_data.chapterNumber || 0));
 
-        // Cleanup old charts
-        if (window.chapterCharts.length > 0) {
-            window.chapterCharts.forEach(c => c.destroy());
-            window.chapterCharts = [];
+        // --- NEW: MEMORY LEAK KILL SWITCH ---
+        if (window.chartRenderFrameId) {
+            cancelAnimationFrame(window.chartRenderFrameId);
         }
+        window.isRenderingCharts = false; // Tell old loops to die
 
-        // Render Cards
-// --- THE FIX: TWO-STEP RENDERING TO PREVENT PHANTOM FLICKER ---
-
-        // Step 1: Clear and Render all HTML Skeletons first
+        // Clean old charts
+        if (window.chapterCharts && window.chapterCharts.length > 0) {
+            window.chapterCharts.forEach(c => c.destroy());
+        }
+        window.chapterCharts = [];
         listEl.innerHTML = '';
+
+        // 1. BLAZING FAST DOM INSERTION using a DocumentFragment
+        const fragment = document.createDocumentFragment();
+
         currentBookChapters.forEach((item) => {
             const chapter = item.chapter_data;
             const isLocked = !item.has_access;
-            const chQuestions = questionPool.filter(q => q.chapter_id === chapter.id);
+            const chQuestions = questions.filter(q => q.chapter_id === chapter.id || q.chapterId === chapter.id);
             const total = chQuestions.length;
 
             const card = document.createElement('div');
             card.dataset.chapterId = chapter.id;
 
             if (isLocked) {
-                card.className = 'bg-gray-100 p-4 rounded-lg shadow-inner border border-gray-200 flex items-center justify-between opacity-75';
+                card.className = 'bg-gray-100 p-4 rounded-lg shadow-inner border border-gray-200 flex items-center justify-between opacity-75 mb-3';
                 card.innerHTML = `
                     <div class="flex items-center gap-4 min-w-0">
                         <span class="w-8 h-8 flex items-center justify-center bg-gray-300 text-gray-600 font-bold rounded-full text-xs">${chapter.chapterNumber}</span>
                         <div><h3 class="font-bold text-gray-500 text-lg">🔒 ${chapter.name}</h3></div>
                     </div>`;
             } else {
-    // Match the fluid responsive design used in disciplines_chapters.html
-    card.className =
-        'bg-white p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 group';
-
-    card.innerHTML = `
-        <div class="flex items-start sm:items-center gap-2 sm:gap-4 min-w-0 flex-1">
-            <!-- Drag handle (optional) -->
-            <div class="drag-handle hidden sm:flex cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 p-1 sm:p-2 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
-                </svg>
-            </div>
-
-            <span class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-sm sm:text-base font-bold rounded-full mt-1 sm:mt-0">
-                ${chapter.chapterNumber || '#'}
-            </span>
-
-            <div class="min-w-0 flex-1 px-1">
-                <h3 class="text-base sm:text-lg md:text-xl font-extrabold text-gray-900 tracking-tight group-hover:text-indigo-700 transition-all duration-200 leading-tight break-words">
-                    ${chapter.name}
-                </h3>
-                <p class="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5 sm:mt-1">${total} Questions</p>
-            </div>
-        </div>
-
-      <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 ml-1 sm:ml-0">
-            <div class="relative flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 ${targetMode === 'flashcards' ? 'hidden' : ''}">
-                <canvas id="ch-chart-${chapter.id}"></canvas>
-            </div>
-            <button
-                class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg shadow-sm transition-all active:scale-95 whitespace-nowrap"
-                onclick="window.launchChapterQuiz('${chapter.id}')">
-                ${targetMode === 'flashcards' ? 'Study Deck' : 'Start'}
-            </button>
-        </div>
-    `;
-}
-
-            listEl.appendChild(card);
+                card.className = 'bg-white p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 group mb-3';
+                card.innerHTML = `
+                    <div class="flex items-start sm:items-center gap-2 sm:gap-4 min-w-0 flex-1">
+                        <div class="drag-handle hidden sm:flex cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 p-1 sm:p-2 flex-shrink-0">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
+                        </div>
+                        <span class="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-indigo-50 text-indigo-700 text-sm sm:text-base font-bold rounded-full mt-1 sm:mt-0">
+                            ${chapter.chapterNumber || '#'}
+                        </span>
+                        <div class="min-w-0 flex-1 px-1">
+                            <h3 class="text-base sm:text-lg md:text-xl font-extrabold text-gray-900 tracking-tight group-hover:text-indigo-700 transition-all duration-200 leading-tight break-words">
+                                ${chapter.name}
+                            </h3>
+                            <p class="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5 sm:mt-1">${total} Questions</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 ml-1 sm:ml-0">
+                        <div class="relative flex-shrink-0 w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 ${targetMode === 'flashcards' ? 'hidden' : ''}">
+                            <canvas id="ch-chart-${chapter.id}"></canvas>
+                        </div>
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-lg shadow-sm transition-all active:scale-95 whitespace-nowrap" onclick="window.launchChapterQuiz('${chapter.id}')">
+                            ${targetMode === 'flashcards' ? 'Study Deck' : 'Start'}
+                        </button>
+                    </div>
+                `;
+            }
+            fragment.appendChild(card);
         });
 
-        // Step 2: Now that HTML is in the DOM, initialize Chart.js
-        currentBookChapters.forEach((item) => {
-            const chapter = item.chapter_data;
-            if (item.has_access) {
-                const chQuestions = questionPool.filter(q => q.chapter_id === chapter.id);
+        // Insert everything in exactly one operation
+        listEl.appendChild(fragment);
+
+        // 2. PROGRESSIVE CHART RENDERING (Now with Memory Safety)
+        let chartIndex = 0;
+        const renderChartsBatch = () => {
+            if (!window.isRenderingCharts) return; // Kill switch triggered! Stop drawing.
+
+            const batchSize = 5; 
+            const end = Math.min(chartIndex + batchSize, currentBookChapters.length);
+
+            for (; chartIndex < end; chartIndex++) {
+                const item = currentBookChapters[chartIndex];
+                if (!item.has_access) continue;
+
+                const chapter = item.chapter_data;
+                const chQuestions = questions.filter(q => q.chapter_id === chapter.id || q.chapterId === chapter.id);
                 let correct = 0, wrong = 0;
                 chQuestions.forEach(q => {
-                    if (historyMap.has(q.id)) {
-                        if (historyMap.get(q.id)) correct++; else wrong++;
+                    if (historyMap.has(String(q.id))) {
+                        if (historyMap.get(String(q.id))) correct++; else wrong++;
                     }
                 });
                 const unanswered = chQuestions.length - (correct + wrong);
 
-             const canvas = document.getElementById(`ch-chart-${chapter.id}`);
-if (!canvas) return;
+                const canvas = document.getElementById(`ch-chart-${chapter.id}`);
+                if (!canvas) continue;
 
-const ctx = canvas.getContext('2d');
-
-window.chapterCharts.push(new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ['Correct', 'Wrong', 'Unanswered'],
-    datasets: [{
-      data: [correct, wrong, unanswered],
-      backgroundColor: ['#22c55e', '#ef4444', '#e5e7eb'],
-      borderWidth: 0
-    }]
-  },
-  options: {
-    cutout: '70%',
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        enabled: false,
-        external: externalTooltipHandler
-      }
-    }
-  }
-}));
-
-// show only after Chart.js painted it
-canvas.style.visibility = 'visible';
-
+                const ctx = canvas.getContext('2d');
+                window.chapterCharts.push(new Chart(ctx, {
+                    type: 'doughnut',
+                    data: { labels: ['Correct', 'Wrong', 'Unanswered'], datasets: [{ data: [correct, wrong, unanswered], backgroundColor: ['#22c55e', '#ef4444', '#e5e7eb'], borderWidth: 0 }] },
+                    options: { cutout: '70%', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltipHandler } } }
+                }));
+                canvas.style.visibility = 'visible';
             }
-        });
 
-        // Init Drag & Drop
-        new Sortable(listEl, { animation: 150, handle: '.drag-handle', ghostClass: 'bg-indigo-50' });
+            if (chartIndex < currentBookChapters.length) {
+                // Save the ID so we can cancel it if needed
+                window.chartRenderFrameId = requestAnimationFrame(renderChartsBatch); 
+            } else {
+                window.isRenderingCharts = false; // Finished successfully
+                // Initialize Drag and Drop only after all visual heavy-lifting is done
+                if (typeof Sortable !== 'undefined') {
+                    new Sortable(listEl, { animation: 150, handle: '.drag-handle', ghostClass: 'bg-indigo-50' });
+                }
+            }
+        };
+        
+        window.isRenderingCharts = true; // Arm the engine
+        window.chartRenderFrameId = requestAnimationFrame(renderChartsBatch); // Ignite
+    };
 
-    } catch (error) {
-        console.error("Error loading book data:", error);
-        dom.bookTitle.textContent = "Error Loading Chapters";
+    // --- EXECUTION PIPELINE ---
+    // A) Load from Cache instantly
+    const cBookData = JSON.parse(localStorage.getItem(`offline_book_${bookId}_data`));
+    const cChapters = JSON.parse(localStorage.getItem(`offline_book_${bookId}_chapters`));
+    const cQuestions = JSON.parse(localStorage.getItem(`offline_book_${bookId}_questions`)) || [];
+    const cHistory = JSON.parse(localStorage.getItem(`offline_book_${bookId}_history`)) || [];
+
+    if (cBookData && cChapters && cChapters.length > 0) {
+        paintChapters(cBookData, cChapters, cQuestions, cHistory);
+    } else {
+        dom.bookTitle.textContent = "Loading Chapters...";
+        listEl.innerHTML = Array(8).fill(0).map(() => `<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between opacity-50 mb-3 animate-pulse"><div class="flex items-center gap-4 w-1/2"><div class="w-10 h-10 bg-gray-200 rounded-full"></div><div class="h-5 bg-gray-200 rounded w-full"></div></div><div class="w-12 h-12 bg-gray-200 rounded-full"></div></div>`).join('');
     }
+
+    // B) Silent Background Sync
+    setTimeout(async () => {
+        try {
+            const { data: bData } = await supabase.from('books').select('title').eq('id', bookId).single();
+            const { data: cData } = await supabase.rpc('get_chapters_for_book_with_access', { p_book_id: bookId });
+            
+            let qData = [], qFrom = 0, qKeep = true;
+            while (qKeep) { const { data } = await supabase.from('questions').select('id, book_id, chapter_id, discipline_id, questionNumber').eq('book_id', bookId).range(qFrom, qFrom + 999); if (data && data.length > 0) { qData = qData.concat(data); qKeep = data.length === 1000; qFrom += 1000; } else qKeep = false; }
+            
+            let hData = [], hFrom = 0, hKeep = true;
+            while (hKeep) { const { data } = await supabase.from('userQuestionHistory').select('questionId, lastResult').eq('userId', currentUser.id).range(hFrom, hFrom + 999); if (data && data.length > 0) { hData = hData.concat(data); hKeep = data.length === 1000; hFrom += 1000; } else hKeep = false; }
+
+            if (bData && cData) {
+                // Core data is small, save it directly
+                localStorage.setItem(`offline_book_${bookId}_data`, JSON.stringify(bData));
+                localStorage.setItem(`offline_book_${bookId}_chapters`, JSON.stringify(cData));
+                
+                // --- SMART CACHE MANAGEMENT (LRU Eviction) ---
+                const saveWithEviction = (key, data) => {
+                    const dataString = JSON.stringify(data);
+                    try {
+                        localStorage.setItem(key, dataString);
+                    } catch (e) {
+                        if (e.name === 'QuotaExceededError') {
+                            console.warn("Local Storage full! Evicting old data to make room...");
+                            const keysToRemove = [];
+                            for (let i = 0; i < localStorage.length; i++) {
+                                const k = localStorage.key(i);
+                                if (k && (k.startsWith('offline_disc_') || k.startsWith('offline_book_')) && !k.endsWith('_data') && !k.endsWith('_chapters')) {
+                                    keysToRemove.push(k);
+                                }
+                            }
+                            
+                            const numToClear = Math.ceil(keysToRemove.length / 2);
+                            for (let i = 0; i < numToClear; i++) {
+                                localStorage.removeItem(keysToRemove[i]);
+                            }
+                            
+                            try {
+                                localStorage.setItem(key, dataString);
+                            } catch (retryError) {
+                                console.error("Still out of space after eviction! Cannot cache this book.", retryError);
+                            }
+                        }
+                    }
+                };
+
+                saveWithEviction(`offline_book_${bookId}_questions`, qData);
+                saveWithEviction(`offline_book_${bookId}_history`, hData);
+                // ---------------------------------------------
+                
+                // Repaint UI with fresh data
+                paintChapters(bData, cData, qData, hData);
+            }
+        } catch (err) {
+            console.warn("Background sync failed for chapters. Using cache.");
+        }
+    }, 100);
 }
     // --- Quiz Builder Logic ---
     async function initializeCustomQuizBuilder() {
@@ -1100,9 +1101,23 @@ async function validateAndEnforceSession(user) {
     // This session is valid.
     return true;
 }
-// -- REPLACE your entire 'Event Listeners' section with this --
 
-// --- Event Listeners ---
+// --- Native Back Button (Guaranteed Smooth Transition) ---
+// --- Native Back Button (Guaranteed Smooth Mobile Transition) ---
+const headerBackBtn = document.getElementById('headerBackBtn');
+if (headerBackBtn) {
+    headerBackBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Force the browser to step backward in memory to trigger native mobile animations
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.replace('dashboard.html'); // Safe fallback
+        }
+    });
+}
+
+
 dom.logoutButton.addEventListener('click', handleLogout);
 dom.bookQuizButton.addEventListener('click', () => dom.quizModeModal.classList.remove('hidden'));
 dom.cancelModeButton.addEventListener('click', () => dom.quizModeModal.classList.add('hidden'));

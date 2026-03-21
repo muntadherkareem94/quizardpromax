@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Quizard - Custom Flashcards</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -295,6 +296,10 @@
     background-color: white;
 }
     </style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Quizard">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
 <body class="flex flex-col min-h-screen">
 
@@ -1408,18 +1413,27 @@ document.addEventListener('fullscreenchange', () => {
             }
         });
 
-        // --- Back Button Router ---
-        dom.backButton.addEventListener('click', () => {
-            const params = new URLSearchParams(window.location.search);
-            const from = params.get('from');
+       // --- SMART BACK NAVIGATION (Guaranteed Smooth Mobile Transition) ---
+        dom.backButton.addEventListener('click', (e) => {
+            e.preventDefault();
             
-            if (from === 'disciplines') {
-                const dId = params.get('disciplineId');
-                const dName = params.get('disciplineName') || '';
-                window.location.href = `disciplines_chapters.html?disciplineId=${dId}&name=${encodeURIComponent(dName)}&target=flashcards`;
+            // By strictly using history.back(), we preserve the memory stack perfectly.
+            // This ensures when you return to the Dashboard, it doesn't trap you in a loop.
+            if (window.history.length > 1 && document.referrer) {
+                window.history.back();
             } else {
-                const bId = params.get('bookId');
-                window.location.href = `book_chapters.html?bookId=${bId}&target=flashcards`;
+                // Safe fallback just in case they opened the link directly
+                const params = new URLSearchParams(window.location.search);
+                const from = params.get('from');
+                
+                if (from === 'disciplines') {
+                    const dId = params.get('disciplineId');
+                    const dName = params.get('disciplineName') || '';
+                    window.location.replace(`disciplines_chapters.html?disciplineId=${dId}&name=${encodeURIComponent(dName)}&target=flashcards`);
+                } else {
+                    const bId = params.get('bookId');
+                    window.location.replace(`book_chapters.html?bookId=${bId}&target=flashcards`);
+                }
             }
         });
 
