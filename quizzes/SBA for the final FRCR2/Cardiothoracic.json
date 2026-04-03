@@ -1,0 +1,989 @@
+{
+  "title": "Cardiothoracic and Vascular",
+  "questions": [
+    {
+      "question": "A 33-year-old driver is severely injured in a motor vehicle accident. He develops increasing dyspnoea and hypoxia, and requires intubation. A chest x-ray (CXR) was normal on admission and his pulmonary capillary wedge pressure is normal. A repeat CXR performed at over 24 hours after the trauma is not normal. He is re-imaged during his intensive care unit (ICU) stay and at one point undergoes a computed tomography pulmonary angiography (CTPA), which is negative for pulmonary embolism (PE).The clinical team suspect acute respiratory distress syndrome (ARDS). Which of the following radiographic features is inconsistent with this diagnosis?",
+      "options": [
+        "A. Bronchial dilatation on computed tomography (CT).",
+        "B. Bilateral heterogenous air-space opacities.",
+        "C. Diffuse reticular changes.",
+        "D. Pneumothorax.",
+        "E. Bilateral pleural effusions."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The underlying diagnosis is ARDS. The causes may be direct lung injury (e.g. pneumonia, toxic gas inhalation, aspiration) or indirect lung injury (e.g. trauma, sepsis, pancreatitis). Diagnostic guidelines require a partial pressure of arterial O2 /fraction of inspired O 2 (PaO2 /FiO2 ) < 200 mmHg and no evidence of left heart failure, and thus the presence of a pleural effusion casts doubt on the diagnosis; the appearance of ARDS can otherwise mimic pulmonary oedema.  Bronchial dilatation is frequently seen on CT. The alveolar changes are heterogenous, showing a density gradient in both the cranio-caudal and antero-posterior directions (the dorsal/dependent and lower lobes are denser than the ventral/non-dependent and upper lobes). Radiographic changes tend to be absent for the ﬁrst 24 hours (with the exception of direct lung injury), then increase to remain static for days or weeks, and then begin to resolve. Pneumothorax can occur secondary to ventilation. Reticular changes, with a predilection for non-dependent lung, may be secondary to the underlying process or to barotrauma (seen in 85% of survivors in one study; the mortality of ARDS is approximately 50%).\n\nDesai SR. Acute respiratory distress syndrome: imaging of the injured lung. Clinical Radiology 2002; 57: 8–17.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A previously well 42-year-old man is admitted with acute left-sided pleuritic chest pain. His SaO 2 is recorded as 92%. D-Dimer assay is elevated. His mother had died suddenly at the age of 58 years. He is further investigated via CTPA, which is negative for PE. Based on his presenting symptoms, the referring consultant continues to be concerned that the patient has a PE. What advice do you offer regarding this patient’s management?",
+      "options": [
+        "A. Refer for V/Q scanning.",
+        "B. Refer for catheter pulmonary angiography.",
+        "C. Commence anticoagulation for 3 months given clinical suspicion.",
+        "D. Commence anticoagulation for 6 months given clinical suspicion.",
+        "E. No further investigation or anticoagulation required.",
+        "F. Repeat CTPA."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In the setting of a low probability clinical assessment and positive D-dimer assay, a negative CTPA has a negative predictive value of 96% and further investigation and treatment are therefore not warranted. A repeat CTPA may be indicated if the images are of poor quality. The Prospective Investigation of Pulmonary Embolism Diagnosis (PIOPED) II investigators recommend that in the setting of a high pre-test probability, a negative CTPA should be followed with either venous ultrasound or MR venography.\n\nStein PD, Woodard PK, Weg JG, Wakeﬁeld TW, Tapson VF, Sostman HD et al. Diagnostic pathways in acute pulmonary embolism: recommendations of the PIOPED II investigators. Radiology 2007; 242: 15–21.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 45-year-old male smoker has a 6-month history of gradually increasing shortness of breath and cough. CXR shows a mild increase in interstitial markings in the mid and upper zones. An high-resolution CT (HRCT) of chest is requested for clariﬁcation and this demonstrates ill-deﬁned centrilobular ground-glass nodules, more pronounced in the mid and upper zones.There is no traction bronchiectasis or honeycombing. What is the most likely diagnosis?",
+      "options": [
+        "A. Desquamative interstitial pneumonia (DIP).",
+        "B. Usual interstitial pneumonia (UIP).",
+        "C. Respiratory bronchiolitis interstitial lung disease (RBILD).",
+        "D. Non-speciﬁc interstitial pneumonia (NSIP).",
+        "E. Cryptogenic organizing pneumonia (COP)."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "RBILD is a disease of smokers and the centrilobular nodules reﬂect chronic inﬂammation in the respiratory bronchioles.  GGO may occur and is typically multifocal and upper lobe predominant. Reticulation is uncommon and ﬁbrosis is not a typical feature.\n\nThe typical features of UIP are reticulation, honeycombing, and traction bronchiectasis, with a basal and subpleural predominance. NSIP has overlapping features with UIP, but GGO is more common and honeycombing less common. There is a similar basal and subpleural predominance on HRCT.\n\nDIP is a rare disease and, like RBILD, associated with smoking. The cardinal feature is GGO, with a basal and peripheral predominance. Sometimes small cystic areas can be seen within the areas of GGO. Progression to ﬁbrosis/honeycombing is rare.\n\nCOP was formerly known as bronchiolitis obliterans organizing pneumonia (BOOP). The main ﬁnding on HRCT is consolidation, which is usually multifocal and bilateral. It typically has a lower zone and peripheral predominance, but can affect any lobe. Dilated airways are often seen on HRCT with air bronchograms mimicking acute pneumonia. There may also be GGO and reticulation, but lung volumes are usually maintained.\n\nDixon S and Benamore R. The idiopathic interstitial pneumonias: understanding key radiological features. Clinical Radiology 2010; 65: 823–831.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 25-year-old with a history of cystic ﬁbrosis presents with massive haemoptysis. Bronchial artery embolization is requested. Which of the following statements regarding bronchial artery embolization is false?",
+      "options": [
+        "A. A descending thoracic aortogram is performed prior to selective bronchial angiography.",
+        "B. Bronchial angiography is performed with manual injection of contrast medium.",
+        "C. The abnormal bronchial artery is embolized at its origin.",
+        "D. Polyvinyl alcohol particles (diameter of 350–500 μm) may be used as the embolic material.",
+        "E. Chest pain is the most common complication."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Bronchial artery embolization (BAE) is an established procedure in the management of massive haemoptysis. Knowledge of the bronchial artery anatomy and its variations is essential in carrying out the procedure safely. A preliminary descending thoracic aortogram is performed to identify the number and site of origin of the bronchial arteries. Abnormal bronchial arteries are visualized on the preliminary thoracic aortogram in the majority of affected patients. Selective bronchial angiography is performed with manual injection of contrast. Selective bronchial artery catheterization and safe positioning distal to the origin of spinal cord branches is essential to avoid spinal cord ischaemia/infarction. Polyvinyl alcohol particles (350–500 μm diameter) are the most frequently used embolic agent. Smaller particles can freely ﬂow via the intrapulmonary shunts, causing pulmonary or systemic infarcts. Chest pain is the most common complication (24–91%). Other complications include dysphagia (due to embolization of oesophageal branches), dissection of the bronchial artery or aorta (usually self-limited), and spinal cord ischaemia.\n\nYoon W, Kim JK, Kim YH, Chung TW, and Kang HK. Bronchial and nonbronchial systemic artery embolisation for life-threatening hemoptysis: a comprehensive review. RadioGraphics 2002; 22: 1395–1409.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 73-year-old patient is involved in a road trafﬁc accident (RTA) and sustains a head injury. He is intubated at the scene due to a low Glasgow Coma Scale (GCS).The patient is transferred for a CT chest as he is hypoxic. On reviewing the CT scan you note widespread emphysema, consistent with the history of smoking. He has a narrowing of the trachea, immediately inferior to the distal margin of the endotracheal (ET) tube.This narrowing is caused by an endoluminal mass associated with a circumferential area of soft tissue that extends into the paratracheal space.There is no pneumomediastinum and no other lung injury is seen. What is the most likely cause?",
+      "options": [
+        "A. Post-intubation stenosis.",
+        "B. Tracheal papilloma.",
+        "C. Non small cell lung cancer.",
+        "D. Adenoid cystic carcinoma.",
+        "E. Squamous cell carcinoma."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Tracheal malignancies make up 1–2% of all adult intrathoracic tumours and as such are uncommon. Malignant lesions make up 90% of all tracheal malignancies. Of these, squamous cell carcinomas are the most common, presenting in elderly patients with a history of smoking.  Adenoid cystic carcinoma is the next most common, presenting in a younger age group and associated with a better prognosis. Benign lesions account for less than 10%. Non small cell lung cancer (NSCLC) would be the leading differential diagnosis if this lesion was found endobronchially, but not in the trachea. NSCLC can cause tracheal narrowing, but as an extrinsic lesion. The history is too brief for post-intubation stenosis to be considered and this is not associated with a soft tissue mass.\n\nMarom E, Goodman P, and McAdams H. Focal abnormalities of the trachea and main bronchi. American Journal of Roentgenology 2001; 176(3): 707–711.\nAdam A and Dixon A. Grainger and Allison’s Diagnostic Radiology. A textbook of medical imaging, Vol 1, 5th edn, Churchill Livingstone, 2008. Ch 16.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A patient is admitted with a comminuted femoral fracture. Initially he is quite well, but goes to theatre for internal ﬁxation of the fracture. His clinical condition deteriorates after 24 hours and he develops fever, hypoxia, and confusion.The clinical team have noted a rash and at the same time as requesting a CT chest, request a CT brain ‘?meningitis secondary to epidural’.The CT chest reveals widespread peripheral areas of ground-glass opaciﬁcation (GGO) and air-space consolidation.There are no septal lines or pleural effusions. A follow-up radiograph 10 days later reveals complete resolution. What is the most likely diagnosis?",
+      "options": [
+        "A. Multiple pulmonary contusions.",
+        "B. Pulmonary oedema secondary to anaesthetic medication.",
+        "C. Fat embolism.",
+        "D. ARDS.",
+        "E. Pneumococcal meningitis."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is an infrequent complication of long bone fracture, occurring in 1–3% of patients with simple tibial or femoral fractures, but in up to 20% of those with more severe trauma.  Less commonly it can be caused by major burns, pancreatitis, haemoglobinopathy, tumours and liposuction. A complication of pulmonary, cerebral, and cutaneous symptoms (petechiae secondary to coagulopathy), it typically occurs within 12–24 hours after the traumatic event. The time lapse between the traumatic event and the radiographic abnormalities is usually 1–2 days, which allows differentiation from traumatic contusion. The radiographic ﬁndings resemble ARDS, although a peripheral distribution of consolidation is described. V/Q scanning will reveal multiple peripheral perfusion defects. In practice it is the clinical features such as the rash, confusion, and coagulopathy, as well as the presence of a fracture, which raise the suspicion of fat embolism.\n\nHan D, Lee KS, Franquet T, Müller NL, Kim TS, Kim H et al. Thrombotic and nonthrombotic pulmonary arterial embolism: spectrum of imaging ﬁndings. RadioGraphics 2003; 23: 1521–1539.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 50-year-old woman presents with gradually increasing shortness of breath. A CXR and HRCT of chest show subpleural reticulation, more marked in the lower zones. Which of the following further ﬁndings on HRCT is most likely to support the diagnosis of NSIP?",
+      "options": [
+        "A. Centrilobular nodules.",
+        "B. Air-trapping.",
+        "C. GGO.",
+        "D. Cystic changes.",
+        "E. Pleural effusions."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a salient feature of NSIP and is seen in almost all cases. Diffuse nodules are very infrequent in NSIP. If centrilobular nodules are present, one should think of other forms of diffuse lung disease such as respiratory bronchiolitis interstitial lung disease (RBILD) or hypersensitivity pneumonitis.\n\nIf multiple cysts are present, again other diffuse lung disease should be considered, such as lymphocytic interstitial pneumonia (LIP), DIP, lymphangioleiomyomatosis, and pulmonary Langerhans cell histiocytosis.\n\nAreas of air-trapping would be a more typical ﬁnding in hypersensitivity pneumonitis, rather than NSIP. Pleural effusions are not a typical ﬁnding in NSIP.\n\nKligerman SJ, Groshong S, Brown K, and Lynch DA. Non-speciﬁc interstitial pneumonia: radiological, clinical and pathologic considerations. RadioGraphics 2009; 29: 73–87.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 60-year-old man presents with a history of headache, vertigo, ataxia, and intermittent pain and weakness in his left arm initiated by using the left arm for daily activities. On examination, the left radial pulse is weak and the systolic blood pressure on the left side is reduced by 30 mmHg. Doppler ultrasound reveals reversal of ﬂow in the left vertebral artery. What is the likely underlying pathology?",
+      "options": [
+        "A. Critical stenosis of right middle cerebral artery (MCA).",
+        "B. Critical stenosis of left MCA.",
+        "C. Critical stenosis of third part of left subclavian artery.",
+        "D. Critical stenosis of left vertebral artery.",
+        "E. Critical stenosis of the origin of left subclavian artery."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The vertebral artery arises from the ﬁrst part of the subclavian artery. Stenosis/obstruction of the subclavian artery at its origin (i.e. proximal to the origin of the vertebral artery) leads to reversal of ﬂow in the vertebral artery to maintain circulation to the ipsilateral upper limb.  This effectively ‘steals’ blood from the posterior cerebral circulation, resulting in symptoms of vertebro-basilar insufﬁciency. Exercising the ipsilateral extremity triggers the symptoms of vertebro-basilar and/or brachial insufﬁciency. Atherosclerosis is the most common (94%) acquired cause of subclavian steal syndrome. It is more common in males and on the left side, with a ratio of 3:1. Additional lesions of extracranial arteries are often seen (up to 81%) when symptoms of vertebro-basilar insufﬁciency are present. However, the underlying pathology for this syndrome is stenosis/occlusion of the origin of the subclavian artery.\n\nReversal of vertebral artery ﬂow can be demonstrated by colour Doppler imaging, augmented by arm exercise/blood pressure cuff inﬂation above systolic pressure for 5 minutes. Aortic arch angiography/MR angiography may be performed to demonstrate the subclavian stenosis/ occlusion. Percutaneous angioplasty and surgical bypass are the treatment options.\n\nHuang BY and Castillo M. Radiological reasoning: extracranial causes of unilateral decreased brain perfusion. American Journal of Roentgenology 2007; 189: S49–S54.",
+      "questionNumber": 8
+    },
+    {
+      "question": "You are carrying out a CT chest scan on a patient who is under the joint care of the respiratory physicians and the rheumatologists.The patient reports slowly progressing stridor.The patient has already been assessed by ear, nose and throat (ENT) due to collapse of the nasal turbinates, but this is felt to be unconnected to his stridor. His inﬂammatory markers are elevated. A nasal biopsy showed an inﬂammatory inﬁltrate in the cartilage causing dissolution, but no granuloma formation or vasculitis.The CT shows smooth thickening of the anterior trachea, with early calcium deposition, with relative sparing of the posterior trachea.This pattern is most marked in the subglottic region.There is narrowing of the airway.This pattern is unaffected on the expiratory scan as compared to the inspiratory scan.The transverse diameter of the trachea is 60% of the sagittal diameter. What is the likely cause?",
+      "options": [
+        "A. Wegener’s granulomatosis.",
+        "B. Amyloidosis.",
+        "C. Relapsing polychondritis.",
+        "D. Mounier–Kuhn disease.",
+        "E. Tracheobronchomalacia."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Wegener’s granulomatosis and amyloidosis can both give a similar appearance to that described. Amyloid can occur as an isolated condition or as a part of systemic amyloidosis. It gives smooth narrowing, but can also give multifocal stenoses or plaques, and is frequently associated with calciﬁcation. Wegener’s commonly affects the subglottic region, giving an identical appearance, although it can cause a more irregular pattern of thickening and ulcer formation. Similarly Wegener’s commonly affects the cartilage in the nose. However, histologically, Wegener’s causes vasculitis and granuloma formation. Mounier–Kuhn disease is also known as tracheobronchomegaly. It can be associated with tracheobronchomalacia, which may give a similar CT appearance to that described. The key difference is that this condition is characterized by a reduction in calibre of >50% of the airway lumen during expiration, as compared to inspiration.  Relapsing polychondritis is a systemic condition also affecting the cartilage of the nose, ears, and joints.\n\nAdam A and Dixon A. Grainger and Allison’s Diagnostic Radiology. A textbook of medical imaging, Vol 1, 5th edn, Churchill and Livingstone, 2008. Ch 16.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 56-year-old man is admitted via the accident and emergency (A&E) department. He has a past medical history of mitral valve disease. He is complaining of shortness of breath and the clinical team believe he has pulmonary oedema, but ask for your opinion on his CXR to rule out infection.The presence of which of the follow features could not be attributed to cardiac failure and would make you doubt the diagnosis?",
+      "options": [
+        "A. Perihilar alveolar opacities.",
+        "B. Sparing of the lung periphery.",
+        "C. A unilateral pleural effusion.",
+        "D. Unilateral regional oligaemia.",
+        "E. Right upper lobe opaciﬁcation."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This represents Westermark’s sign and is associated with PE, not pulmonary oedema.  The other features are consistent with cardiac failure. In particular, focal right upper lobe oedema is associated with mitral regurgitation, where the regurgitant jet produces locally increased pressures in the right upper lobe pulmonary veins with a focal increase in oedema in that region. This can mimic consolidation on plain ﬁlm, but will be seen to resolve after diuresis. Pleural effusions may be unilateral in cardiac failure.\n\nMiller WT. Diagnostic Thoracic Imaging. McGraw Hill, 2006. pp. 3–6.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 62-year-old man undergoes lung scintigraphy for investigation of PE.There is no prior history of PE. Which of the following scan patterns would be in keeping with a low probability for PE?",
+      "options": [
+        "A. Triple matched defect in the lower lung zone.",
+        "B. Single moderate matched V/Q defect with a normal CXR.",
+        "C. Perfusion defect with a rim of surrounding normally perfused lung.",
+        "D. No defects present on perfusion scan.",
+        "E. Four moderate segmental defects."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Multiple bilateral perfusion defects with a normal ventilation scan are the classic diagnostic ﬁndings in PE. Occluding pulmonary emboli produce segmental perfusion defects that extend to the pleural surface. As other conditions may also produce perfusion defects, the ventilation scan improves speciﬁcity. Non-embolic lung disease will typically have both perfusion and ventilation abnormalities, resulting in matched defects. V/Q scans are categorized as normal, low, intermediate, or high probability. A perfusion defect that matches ventilation and CXR abnormalities in size and location is a triple matched defect. A triple matched defect in the middle or upper lung zones is in keeping with low probability, but rises to intermediate probability when in the lower zones. A single moderate matched V/Q defect, but with a normal CXR, is also of intermediate probability. No perfusion defect is in keeping with a normal scan and four moderate segmental defects is a high probability scan. A perfusion defect with a rim of surrounding normally perfused lung is known as the stripe sign and corresponds to low probability for PE, as PE perfusion defects should extend to the pleural surface and have no overlying stripe of perfused lung. \n\nBrant WE and Helms CA. Fundamentals of Diagnostic Radiology, 3rd edn, Lippincott Williams & Wilkins, 2007. pp. 1376–1383.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 65-year-old man has kept pigeons for over 20 years. He is complaining of gradually worsening shortness of breath. A CXR shows increased interstitial markings, with reduction in lung volumes. A subsequent HRCT of chest shows quite marked pulmonary ﬁbrosis with areas of honeycomb formation. Which part of the lung is likely to be relatively spared by the ﬁbrotic process?",
+      "options": [
+        "A. Upper zones.",
+        "B. Mid zones.",
+        "C. Posterior costophrenic sulci.",
+        "D. Central peribronchovascular regions.",
+        "E. Subpleural lung."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The question is leading to chronic hypersensitivity pneumonitis as the most likely underlying diagnosis.  The ﬁbrotic process, in advanced stages, affects both the subpleural lung and the peribronchovascular interstitium. There may be honeycomb formation at the lung bases, but unlike usual interstitial pneumonia/idiopathic pulmonary ﬁbrosis, the honeycombing typically spares the most extreme posterior costophrenic sulci. Classically, the ﬁbrotic process is more pronounced in the mid and upper lung zones.\n\nHirschmann JV, Pipavath SNJ, and Godwin JD. Hypersensitivity pneumonitis: a historical, clinical and radiologic review. RadioGraphics 2009; 29: 1921–1938.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 70-year-old male undergoes endovascular stent graft repair of an infrarenal abdominal aortic aneurysm. A follow-up CT at 1 year demonstrates increasing aneurysm sac diameter without any evidence of endoleak. What is the diagnosis?",
+      "options": [
+        "A. Type I endoleak.",
+        "B. Type II endoleak.",
+        "C. Type III endoleak.",
+        "D. Type IV endoleak.",
+        "E. Type V endoleak."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The main aim of endovascular or surgical treatment of abdominal aortic aneurysm (AAA) is exclusion of the aneurysm sac from the systemic high-pressure circulation. Ongoing leakage of blood into the excluded aneurysm sac after endovascular repair is termed ‘endoleak’. Identiﬁcation of the type of endoleak and its effect on the aneurysm sac is important for further management.\n\nType I endoleak: Contrast/blood leak at the proximal or distal landing zones of the stent graft is described as type I endoleak. This is due to poor proximal or distal graft apposition, exposing the sac to systemic pressures with signiﬁcant risk of aneurysm rupture. This type is further subdivided into type IA (proximal aortic attachment) and type IB (distal iliac attachment). These are most commonly seen at the time of the procedure or may develop subsequently due to graft migration. They require urgent treatment.\n\nType II endoleak: This is due to retrograde ﬂow into the aneurysm sac via the inferior mesenteric artery (type IIA) or lumbar arteries (type IIB). Many of these close spontaneously and are managed expectantly. Further treatment is indicated if the sac enlarges or the patient develops symptoms of sac pressurization.\n\nType III endoleak: Leakage of blood through the body of the stent graft due to either poor apposition of graft components or a tear in the graft material is type III endoleak. This requires urgent management due to sac pressurization.\n\nType IV endoleak: Aneurysm sac opaciﬁcation without an identiﬁable source intraprocedurally is described as type IV endoleak. These are transient and usually resolve after withdrawal of anticoagulation.\n\nType V endoleak: Continued growth of the sac without radiological evidence of a leak is termed type V endoleak or endotension.  Continued growth of the aneurysm sac will require surgical repair due to risk of rupture.\n\nBashir MR, Ferral H, Jacobs C, McCarthy W, and Goldin M. Endoleaks after endovascular abdominal aortic aneurysm repair: management strategies according to CT ﬁndings. American Journal of Roentgenology 2009; 192: W178–W186.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A patient is referred to radiology with a mass in the lung which is adjacent to, but not overtly invading, the pleura.The clinical team need a tissue type to decide on treatment.There is a history of colorectal carcinoma.You are undecided as to whether to carry out a core biopsy with a coaxial system or a ﬁne needle aspiration (FNA). Which of these factors should have the greatest inﬂuence on your decision?",
+      "options": [
+        "A. Pneumothorax risk.",
+        "B. Availability of a cytopathologist.",
+        "C. Tumour seeding risk.",
+        "D. Suspected cell type of the lesion.",
+        "E. Risk of air embolism."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Contrary to expectations, core biopsy is not associated with a higher rate of pneumothorax as compared to FNA, especially when used to sample peripheral lesions. Overall complication rates for the two procedures are similar. The chance of tumour seeding is low and is postulated to be lower when coaxial systems are used. Air embolism is also rare, although it is more common in core biopsies and when a central lesion is being sampled. The main drawback of FNA is inadequate sampling, which frequently occurs, requiring a repeat procedure. Thus the availability of a cytopathologist to review the sample at the time, to ensure an adequate number of cells have been obtained, is essential to this being a cost-effective procedure.\n\nTomiyama N and Yasuhara Y, Nakajima Y, Adachi S, Arai Y, Kusumoto M et al. CT-guided needle biopsy of lung lesions: a survey of severe complications based on 9783 biopsies in Japan. European Journal of Radiology 2006; 59(1): 60–64.\nAnderson J, Murchison J, and Patel D. CT guided lung biopsy: factors inﬂuencing diagnostic yield and complication rate. Clinical Radiology 2003; 58: 791–797.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 28-year-old man is being investigated for haemoptysis. He has a history of sinusitis. Full blood picture is normal. He is referred for a CT of chest during which intravenous (IV) contrast was withheld by the radiographer due to a reduction in estimated glomerular ﬁltration rate (eGFR). It reveals bilateral nodules in a peribronchovascular distribution, some of which show cavitation.There are peripheral wedge-shaped areas of consolidation.There are also areas of bronchial stenosis and thickening. No mediastinal or hilar adenopathy is present. What is the most likely diagnosis?",
+      "options": [
+        "A. Goodpasture’s syndrome.",
+        "B. Sarcoidosis.",
+        "C. Churg–Strauss syndrome.",
+        "D. Wegener’s granulomatosis.",
+        "E. Pulmonary tuberculosis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The history of sinusitis, pulmonary haemorrhage, and renal involvement (reduced eGFR) point towards Wegener’s granulomatosis.  This is a systemic autoimmune disease characterized by granulomatous vasculitis of the upper and lower respiratory tracts, glomerulonephritis, and small vessel vasculitis. It predominantly affects male patients. There is pulmonary involvement in most patients. The most common radiographic appearance is lung nodules or irregularly marginated masses with no zonal predilection. The nodules are solitary in up to 25% and cavitating in 50% of cases. The cavities usually have a thick, irregular wall. With treatment they may resolve or result in a scar. Peripheral areas of wedge-shaped consolidation representing infarction may occur. Pleural effusions occur in less than 10% and mediastinal/hilar adenopathy is uncommon. Tracheal and bronchial thickening can be smooth or nodular. Haemorrhage can result in focal areas of dense consolidation, patchy bilateral areas of consolidation, or diffuse consolidation (these may be difﬁcult to distinguish from infection).\n\nThe main differential diagnosis would be Churg–Strauss syndrome, which involves asthma, eosinophilia (which would be noticed in the full blood picture), and less severe renal and sinus disease. Patchy transient consolidation, which may be peripheral, is the norm and nodules may occur, although cavitation is rare. Wegener’s granulomatosis is associated with c-ANCA and Churg–Strauss with p-ANCA. Goodpasture’s syndrome is associated with glomerulonephritis and pulmonary haemorrhage, but the ﬁndings are initially extensive perihilar and basal consolidation with sparing of the apices, which is subsequently replaced by an interstitial pattern. Cavitating nodules are not a feature. Haemoptysis is uncommon in sarcoidosis and cavitating nodules rare; one would typically expect perilymphatic nodules and in classic cases adenopathy. TB can produce cavitating nodules and haemoptysis, but the other features are more consistent with Wegener’s granulomatosis.\n\nMayberry JP, Primack SL, and Müller NL. Thoracic manifestations of systemic autoimmune diseases: radiographic and high resolution CT ﬁndings. RadioGraphics 2000; 20: 1623–1635.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 50-year-old woman presents with progressive exertional dyspnoea, fatigue and atypical chest pain. Her jugular venous pressure (JVP) is elevated on examination. Her CXR reveals prominence of the right side of the heart with asymmetric enlargement of the central pulmonary arteries. Patchy oligaemic vascularity is also evident. What is the most likely diagnosis?",
+      "options": [
+        "A. Atrial septal defect.",
+        "B. Primary pulmonary hypertension.",
+        "C. Chronic thromboembolic pulmonary hypertension.",
+        "D. Cardiopulmonary schistosomiasis.",
+        "E. Pulmonary veno-occlusive disease."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Pulmonary hypertension is the haemodynamic consequence of vascular changes within the precapillary (arterial) or postcapillary (venous) pulmonary circulation. The diagnosis of primary (idiopathic) pulmonary hypertension (PPH) can only be made after exclusion of known secondary causes. The classical ﬁndings in advanced disease include prominent central pulmonary arteries with sharply tapering peripheral vessels and right ventricular enlargement. It typically affects younger women of childbearing age. The radiographic features of pulmonary hypertension caused by chronic shunting are similar to PPH, although a normal sized cardiac silhouette may reﬂect diminished shunting due to a markedly elevated pulmonary vascular resistance. Most congenital cardiac lesions that may eventually cause pulmonary hypertension are now repaired at an early age. Chronic thromboembolic pulmonary hypertension may mimic PPH clinically, making diagnosis difﬁcult.  Radiographic ﬁndings are more likely to be asymmetrical. A triangular opacity representing pulmonary infarction may also been seen. Schistosomiasis will demonstrate the radiographic features of pulmonary hypertension and may also exhibit tiny nodular granulomas. It is endemic in the Middle East, Africa, and the Atlantic coast of South America. Pulmonary veno-occlusive disease is the post-capillary counterpart of PPH. It is suggested radiographically when the features of pulmonary arterial hypertension are accompanied by evidence of diffuse pulmonary oedema and a normal sized left atrium.\n\nFrazier AA, Galvin JR, Franks TJ, and Christenson ML. Pulmonary vasculature: hypertension and infarction. RadioGraphics 2000; 20: 491–524.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 34-year-old woman presents with a 4-month history of gradually increasing dyspnoea and cough. A CXR and subsequent CT scan show multiple cavitating lung lesions. On the CT scan, some of these lesions are noted to have surrounding ground-glass attenuation. No other abnormality is seen. Which of the following diagnoses are the ﬁndings most compatible with?",
+      "options": [
+        "A. Rheumatoid lung.",
+        "B. Lung abscesses.",
+        "C. Eosinophilic granuloma.",
+        "D. Churg–Strauss syndrome.",
+        "E. Melanoma metastases."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The GGO surrounding a nodule is known as the ‘halo’ sign and represents perilesional haemorrhage.  The differential diagnosis given rests on the presence of this feature and cavitation. Melanoma metastases can both cavitate and produce perilesional haemorrhage. The halo sign may also be seen in other conditions with perilesional haemorrhage or cellular inﬁltration and is usually best seen on HRCT. These diagnoses include bronchoalveolar carcinoma, haemorrhagic metastases, Wegener’s granulomatosis, and angio-invasive infections, such as invasive aspergillosis. Alternative correct answers would be Wegener’s granulomatosis, lymphoma, bronchoalveolar carcinoma, and squamous cell carcinoma as these can produce both cavitating nodules and the halo sign. Rheumatoid lung, eosinophilic granuloma, and lung abscesses are associated with cavitating nodules but not the halo sign. Churg–Strauss syndrome is not associated with the halo sign and cavitation is rare.\n\nLeeYR, Choi YW, Lee KJ, Jeon SC, Park CK, and Heo J-N. CT halo sign: the spectrum of pulmonary diseases. British Journal of Radiology 2005; 78: 862–865.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 45-year-old woman presents with signiﬁcant ongoing melaena, tachycardia and hypotension. Multidetector CT mesenteric angiography (MDCTA) is requested prior to consideration of mesenteric embolization. Which of the following statements regarding gastrointestinal (GI) bleeding and MDCTA is true?",
+      "options": [
+        "A. Oral contrast should be administered to identify the causative lesion.",
+        "B. Scans are usually performed in the arterial phase only from diaphragm to ischial tuberosity.",
+        "C. Acute GI bleeding can be intermittent. Failure to demonstrate active bleeding does not prove cessation of bleeding.",
+        "D. Suture material, dense foreign bodies or faecolith can be easily distinguished from contrast extravasation.",
+        "E. The lowest detectable bleeding rate with MDCTA is 2 ml/min."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Acute GI bleeding is a medical emergency associated with high mortality and morbidity, especially in those presenting with haemodynamic instability. The majority (75%) of GI bleeds cease spontaneously, but it can recur in 25% of cases. Accurate early diagnosis of the bleeding source is crucial. Endoscopy is commonly used to identify and treat the source of bleeding. However, it is of limited value in massive haemorrhage (due to difﬁculty in visualizing the bleeding point) and in assessing the distal duodenum and most of the small bowel.\n\nMDCTA is a rapid and accurate diagnostic method used to identify the site and in some cases the cause of active GI bleeding. However, acute GI bleeds (even when massive) are intermittent and failure to demonstrate active bleeding does not imply cessation of bleeding. The reported lowest detectable rate of bleeding with MDCTA, in animal and in vitro studies, is 0.35ml/min.\n\nSuture material, clips, foreign bodies, and faecoliths may lead to false–positive results. An unenhanced scan is therefore essential. A portal venous phase scan is useful in identifying venous bleeds, therefore the protocol should include unenhanced and post-intravenous contrast arterial and portal venous phase scans.\n\nGeffroy Y, Rodallec MH, Boulay-Coletta I, Julles MC, Ridereau-Zins C, and Zins M. Multidetector CT angiography in acute gastrointestinal bleeding: why, when and how. RadioGraphics 2011; 31: E1–E12.",
+      "questionNumber": 18
+    },
+    {
+      "question": "You are taking the respiratory multidisciplinary team meeting. A respiratory physician has asked you to present two patients, both with incidentally detected solitary pulmonary nodules. Patient A is a 64-year-old male patient. He is a non-smoker.The lesion is 7 mm in diameter and smooth. Patient B is also a 64-year-old male, who smokes 30 cigarettes per day. His lesion is 5 mm in diameter. What follow-up would you recommend for these patients?",
+      "options": [
+        "A. Urgent positron emission tomography (PET) scan for both. Reassess with result.",
+        "B. CT within 6 months for Patient A. If unchanged repeat within 12 months. PET scan for Patient B and reassess with result.",
+        "C. CT scan within 12 months for Patient A. If unchanged further CT within a further 12 months. Serial 6 monthly CT scans for Patient B for 2 years.",
+        "D. CT scan within 12 months for both. If unchanged, both need a follow-up CT within a further 12 months.",
+        "E. Follow-up CT at 12 months for both. If unchanged, no further follow-up."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Due to the rapid rise in the detection of solitary pulmonary nodules (SPNs) on CT, the Fleischner Society released guidelines on the follow-up of SPNs. For SPNs below 1 cm in diameter, PET is less reliable due to the small volume of tissue being examined. These guidelines simply use the size of the lesion and knowledge of the patient’s relative risk (smoker versus nonsmoker) to guide follow-up. Whilst Patient B’s lesion is smaller, it requires the same follow-up as the larger lesion found in Patient A because of his increased risk. Lesions less than 4mm in lowrisk patients do not require any follow-up; these lesions require a single CT within 12 months in high-risk patients.\n\nMacMahon H, Austin J, Gamsu G, Herold C, Jett J, Naidich D, Edward F, Patz E, and Swensen S. Guidelines for Management of Small Pulmonary Nodules Detected on CT Scans: a statement from the Fleischner Society. Radiology 2005; 237: 395–400.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 64-year-old smoker is referred by his GP for persisting consolidation which has failed to resolve despite multiple antibiotic therapies. Of note he has been apyrexic and inﬂammatory markers have not been particularly raised.The respiratory team request a CT of chest, which shows GGO and consolidation of almost the entire left lower lobe, delineated by the major ﬁssure, which is not displaced. Air bronchograms are present, but there is no signiﬁcant loss of volume or expansion of the lobe and no mediastinal or hilar adenopathy. No mass obstructing the left lower lobe bronchus (either endoluminal or extrinsic) is demonstrated and the bronchoscopy ﬁndings corroborate this (results from washings not yet available). A PET-CT is normal. What is the most likely pathology?",
+      "options": [
+        "A. Carcinoid tumour.",
+        "B. Bronchioloalveolar carcinoma.",
+        "C. Small cell carcinoma.",
+        "D. Tuberculosis (TB).",
+        "E. Klebsiella pneumonia."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In this disease, the tumour spreads along the alveolar septa without invading alveolar walls. The air in the alveoli is replaced by tumour cells, producing consolidation and GGO.  Mediastinal lymphadenopathy is rare; pleural effusion is common. Diagnosis is made by sputum/bronchial washing cytology or lung biopsy. It mimics other causes of air-space opaciﬁcation such as pneumonia, haemorrhage, oedema etc. Disseminated adenocarcinoma, choriocarcinoma, or lymphoma might produce identical CT ﬁndings.\n\nPET-CT is often negative in the case of both bronchioloalveolar carcinoma and carcinoid tumours of the lung. Carcinoid is in the form of a focal mass, not diffuse consolidation. Klebsiella pneumonia classically produces enlargement of the involved lobe, bulging of the ﬁssures with the propensity for cavitation, and abscess formation. One would expect pyrexia and raised inﬂammatory markers, and consolidation usually produces some abnormality on PET-CT. Small cell carcinoma is usually positive on PET-CT. TB is usually PET positive and has a predilection for the upper lobes, or apical segments of the lower lobes if the latter are involved.\n\nVerschakelen JA and De Wever W. Computed Tomography of the Lung: A Pattern Approach, Springer, 2007. pp. 112–116.\nDavies S (ed.). Aids to Radiological Differential Diagnosis, 5th edn, Saunders, 2009. p. 73.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 34-year-old woman with a preceding history of chronic cough, weight loss and intermittent chest tightness presents with acute shortness of breath. CTPA reveals a large ﬁlling defect within the left pulmonary artery. Which radiological feature would most suggest a diagnosis of pulmonary artery sarcoma as opposed to pulmonary embolism?",
+      "options": [
+        "A. Mosaic lung perfusion.",
+        "B. Peripheral ﬁlling defect forming acute angle with arterial wall.",
+        "C. Peripheral ﬁlling defect forming obtuse angle with arterial wall.",
+        "D. Low attenuation ﬁlling defect occupying and expanding the entire luminal diameter.",
+        "E. Partial ﬁlling defect surrounded by areas of intravascular contrast enhancement."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Pulmonary artery sarcoma is a rare malignancy arising from the intima of the pulmonary artery.  It is frequently misdiagnosed as PE, although there are features that help differentiation. Findings that favour pulmonary artery sarcoma include a low attenuation ﬁlling defect occupying the entire luminal diameter of the proximal or main pulmonary artery, expansion of the involved arteries and extraluminal tumour extension. A ﬁlling defect forming an acute angle with the arterial wall is seen in acute PE, whereas a ﬁlling defect forming an obtuse angle indicates organizing thrombus in chronic PE. A partial ﬁlling defect surrounded by areas of contrast enhancement is a feature of embolus ﬂoating freely within the lumen.\n\nYi CA, Lee KS, Choe YH, Han D, Kwon OJ, and Kim S. Computed tomography in pulmonary artery sarcoma: distinguishing features from pulmonary embolic disease. Journal of Computer Assisted Tomography 2004; 28: 34–39.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 45-year-old male smoker has a history of fatigue and mild shortness of breath. He also keeps pigeons. A CXR shows mildly increased interstitial markings in the upper zones. An HRCT of chest demonstrates multiple small pulmonary nodules and reticulation, more marked in the upper lungs. What location of the nodularity is more likely to suggest a diagnosis of subacute extrinsic alveolitis or respiratory bronchiolitis interstitial lung disease as opposed to sarcoidosis?",
+      "options": [
+        "A. Bronchovascular bundle.",
+        "B. Centrilobular region.",
+        "C. Fissural.",
+        "D. Subpleural region.",
+        "E. Interlobular septa."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In sarcoid, the granulomatous nodules are typically distributed along the lymphatics and are therefore seen along the bronchovascular bundles, interlobular septa, major ﬁssures, and subpleural regions. The centrilobular region of the secondary pulmonary lobule contains the bronchiole and therefore conditions that cause peribronchiolar inﬂammation, such as subacute extrinsic allergic alveolitis (EAA) and respiratory bronchiolitis interstitial lung disease (RBILD), more often cause centrilobular nodules. These are often ground glass in attenuation and illdeﬁned, unlike the more solid appearing granulomatous nodules of sarcoid. Rarely sarcoid can cause centrilobular nodules because of the presence of peribronchiolar granulomas, but the other mentioned locations are much more typical.\n\nHawtin KE, Roddie ME, Mauri FA, and Copley SJ. Pulmonary sarcoidosis: the ‘Great Pretender’. Clinical Radiology 2010; 65: 642–650.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 40-year-old male presents with a history of severe epigastric pain and raised amylase. CT demonstrates acute pancreatitis complicated by a 2.5cm pseudoaneurysm of the gastroduodenal artery (GDA). Embolization of the GDA is requested. What is the accepted method of embolization?",
+      "options": [
+        "A. Coil embolization proximal to the pseudoaneurysm.",
+        "B. Coil embolization distal and proximal to the pseudoaneurysm.",
+        "C. Embolization with polyvinyl alcohol (PVA) particles.",
+        "D. Amplatzer plug occlusion of common hepatic artery.",
+        "E. Embolization with gelfoam."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Coil occlusion is the commonly used method for embolization of GDA. GDA territory is a classic example for the concept of occluding ‘front door’ and ‘back door’. If only proximal occlusion is carried out then retrograde ﬂow via the pancreatico-duodenal arcade will re-perfuse the pseudoaneurysm. It is therefore essential to embolize GDA proximal (inﬂow) and distal (outﬂow) to the pseudoaneurysm.\n\nGelfoam is a temporary embolic agent and is not used in GDA embolization. Particles are not used in this territory. For aneurysms of smaller arteries, branch vessel occlusion may be carried out with particles, followed by coil embolization of the proximal parent artery.\n\nNosher JL, Chung J, Brevetti LS, Graham AM, and Siegel RL. Visceral and renal artery aneurysms: a pictorial essay on endovascular therapy. RadioGraphics 2006; 26: 1687–1704.\nKessel DO and Ray CE. Transcatheter embolisation and therapy, Springer-Verlag, London, 2010. pp. 5–6.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 72-year-old former ship builder has presented with increasing shortness of breath to the respiratory physicians. A CXR reveals a pleural mass.You carry out a CT scan, which shows a 1cm diameter area of pleural thickening extending along the lateral chest wall inferiorly to the diaphragm. On coronal reconstructions the diaphragm appears smooth.There are a number of >1-cm nodes noted in the ipsilateral hilum as well as a solitary 1.2-cm node noted in the contralateral hilum. Following discussion with thoracic surgery a core biopsy is done, which conﬁrms the diagnosis of malignant mesothelioma. A magnetic resonance imaging (MRI) scan is carried out.The lesion is increased signal on T2 weighted imaging (T2WI). The enlarged nodes are also identiﬁed. On post-gadolinium coronal fat saturation sequences a focus of high signal is noted to extend from the parietal pleura through the diaphragm to involve the peritoneum. A single focus of chest wall invasion is also noted. PET-CT shows high uptake in the lesion with a standard uptake value maximum (SUV max) of 25. All nodes with the exception of the contralateral node demonstrate uptake. Which of these factors means this tumour is inoperable?",
+      "options": [
+        "A. The contralateral enlarged node noted on CT and MRI.",
+        "B. The tissue diagnosis of malignant mesothelioma.",
+        "C. The high SUV max.",
+        "D. The chest wall disease noted on MRI.",
+        "E. The diaphragmatic disease noted on MRI."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The ﬁnding of peritoneal disease upstages this tumour to Stage 4, which is inoperable. CT is the main imaging modality in malignant mesothelioma, which is sufﬁcient in a lot of cases that are obviously inoperable on this modality alone. MRI has been shown to be superior to CT in the detection of local invasion, hence the normal CT appearance in this case, where peritoneal disease was noted on MRI. PET or PET-CT are better at detecting nodal disease than either CT or MRI. As such, in some cases all three modalities are necessary to stage disease. As MM does not respond well to radiotherapy or chemotherapy, the key therapeutic decision is whether or not the lesion is suitable for surgery. Even then, surgery alone has poor results and combination surgery, radiotherapy, and chemotherapy are required. T3 tumours and lower are all surgically resectable. Nodal disease extending to the contralateral mediastinum or internal mammary regions, or any supraclavicular nodal disease, denotes N3 disease. N3 disease is also unresectable, as are distant metastases.\n\nWang Z, Reddy G, Gotway M, Higgins C, Jablons D, Ramaswamy M, Hawkins R, and Webb W. Malignant pleural mesothelioma: evaluation with CT, PET and MRI. RadioGraphics 2004; 24: 105–119.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 61-year-old man has a history of chronic myeloid leukaemia. He presents with mild dyspnoea and dry cough. A CXR shows symmetrical, perihilar reticulo-nodular opacities with relative sparing of the apices and costophrenic angles, without cardiomegaly or pleural effusion. An HRCT reveals smoothly thickened septal lines with intervening GGO and sharply marginated areas of geographic sparing. Bronchoalveolar lavage (BAL) is negative for organisms. What is the most likely diagnosis?",
+      "options": [
+        "A. Pulmonary haemorrhage.",
+        "B. Left ventricular failure.",
+        "C. Pulmonary alveolar proteinosis.",
+        "D. Pneumocystis pneumonia.",
+        "E. Radiation ﬁbrosis."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is rare, but most commonly develops in a primary idiopathic form (90%), chieﬂy in middleaged smokers, with a male predominance. It can also occur secondary to industrial dust exposure, immunodeﬁciency disorders (HIV and iatrogenic causes), and, as in the question, secondary to underlying haematological malignancies. There is also a congenital form.\n\nThe typical plain ﬁlm appearance is that described in the question, but less commonly there can be multifocal asymmetric opacities or extensive diffuse consolidation. The radiological ﬁndings are often out of proportion with the disease severity. The HRCT ﬁndings described are those of ‘crazy-paving’.  There is a wide differential diagnosis for this, including pulmonary oedema, pneumocystis pneumonia, haemorrhage, bronchoalveolar carcinoma, ARDS, lymphangitis carcinomatosis, radiation or drug-induced pneumonitis, hypersensitivity pneumonitis, and pulmonary veno-occlusive disease. The distinguishing factor in our case is the history of leukaemia; this would also predispose to infection, but the BAL has ruled pneumocystis out. In alveolar proteinosis, BAL or lung biopsy reveals intra-alveolar deposits of proteinaceous material, dissolved cholesterol, or eosinophilic globules. Symptomatic treatment includes whole lung lavage and multiple procedures may be required.",
+      "questionNumber": 25
+    }
+  
+
+
+  ,
+    {
+      "question": "A 28-year-old Asian male immigrant presents with low-grade fever, weight loss and productive cough.There is no history of immunosuppression. Which of the following CXR ﬁndings is most in keeping with post-primary TB?",
+      "options": [
+        "A. Unilateral hilar lymphadenopathy.",
+        "B. Cavitating parenchymal opacity.",
+        "C. Pleural effusion.",
+        "D. Multiple bilateral non-calciﬁed nodules <3 mm diameter.",
+        "E. Right lower lobe atelectasis."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": " In persons with normal immune function, radiologic manifestations can be categorized into the two distinct forms of primary and post-primary disease that develop in individuals without and with prior exposure and acquired speciﬁc immunity. Lymphadenopathy is the radiologic hallmark of primary TB, although the prevalence decreases with increasing age. Parenchymal involvement in primary TB commonly appears as an area of homogenous consolidation. Obstructive atelectasis may occur from compression by adjacent enlarged lymph nodes. Pleural effusion occurs in approximately 30% of adults with primary TB. The characteristic manifestation of postprimary disease is an apical parenchymal opacity associated with cavitation. Other manifestations of post-primary TB are ill-deﬁned opacities and tuberculomas. Lymphadenopathy is uncommon and pleural effusion is seen more frequently with primary disease. Multiple non-calciﬁed nodules <3mm in diameter are characteristic of military TB.\n\nLeung AN. Pulmonary tuberculosis: the essentials. Radiology 1999; 210: 307–322.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 65-year-old man has a history of liver cirrhosis. He presents with increasing dyspnoea. A CXR shows some basal reticulo-nodular opacities. An HRCT of chest demonstrates distal vascular dilatation and subpleural telangiectasia.You suspect he may have hepato-pulmonary syndrome. Which of the following nuclear medicine techniques is most likely to prove the presence of right-to-left shunting?",
+      "options": [
+        "A. 99m Tc-labelled sulphur colloid scan.",
+        "B. 99m Tc-labelled red blood cell scan.",
+        "C. 99m Tc-labelled pertechnetate scan.",
+        "D. 99m Tc-labelled HMPAO scan.",
+        "E. 99m Tc-labelled macro-aggregated albumin scan."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": " Whole-body imaging obtained after intravenous injection of 99m Tc-labelled macro-aggregated albumin (MAA) shows activity in organs other than the lungs, for example the brain, liver, and spleen, ﬁndings that are consistent with an intrapulmonary right-to-left shunt. Normally only about 3% of activity is seen outside the lungs, as the MAA particles are usually efﬁciently trapped by the pulmonary capillaries, unless there is an intrapulmonary right-to-left shunt.\n\nOther imaging ﬁndings suggesting hepato-pulmonary syndrome may be seen on conventional and CT angiography. These ﬁndings include multiple slightly dilated subpleural vessels that do not taper normally and thus extend to the pleural surface (subpleural telangiectasia). Alternatively, there may be the presence of individual arteriovenous malformations on angiograms and nodular dilatation of peripheral pulmonary vessels on CT scans.\n\n99m Tc-labelled sulphur colloid is usually used in splenic imaging.99m Tc-labelled red blood cells are typically used to try and identify the location of GI bleeding.99m Tc-labelled pertechnetate is used in thyroid imaging and in the identiﬁcation of a Meckel’s diverticulum (due to the presence within the diverticulum of ectopic gastric mucosa).99m Tc-labelled hexamethylpropylene amine oxime (HMPAO) is used in brain imaging in an attempt to differentiate different causal pathologies in dementia.\n\nKim YK, Kim Y, and Shim SS. Thoracic complications of liver cirrhosis: radiological ﬁndings. RadioGraphics 2009; 29: 825–837.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 55-year-old man with a recent diagnosis of multifocal hepatocellular carcinoma is referred for transarterial chemoembolisation. Which of the following statements regarding hepatic arterial anatomy is true?",
+      "options": [
+        "A. The classic hepatic arterial anatomy, with the proper and hepatic artery dividing into the right and left hepatic arteries, is seen in approximately 80% of the population.",
+        "B. Accessory left hepatic artery from left gastric artery is seen in 25% of cases.",
+        "C. Replaced right hepatic artery commonly arises from the gastroduodenal artery.",
+        "D. Replaced left hepatic artery commonly arises from the left gastric artery.",
+        "E. The common hepatic artery is a branch of the superior mesenteric artery."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": " The classic hepatic arterial anatomy, with the proper and hepatic artery dividing into the right and left hepatic arteries, is seen in approximately 55% of the population. Variations in hepatic arterial anatomy are common. A replaced right hepatic artery from the superior mesenteric artery is seen in 11%. A replaced left hepatic artery arising from the left gastric artery is seen in 10%. The entire hepatic trunk may be replaced, which may arise from the superior mesenteric artery (4.5%) or left gastric artery (0.5%). The common hepatic artery is a branch of the coeliac axis.\n\nCatalan OA, Singh AH, Uppot RN, Hahn PF, Ferrone CR, and Sahani DV. Vascular and biliary variants in the liver: implications for liver surgery. RadioGraphics 2008; 28: 359–378.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 72-year-old female patient presents with a diagnosis lung malignancy obtained from bronchial washings.The CT shows a 4cm lesion in the right upper lobe with ipsilateral hilar and mediastinal lymphadenopathy in the 4R station.There is no chest wall invasion and the lung lesion is surrounded on all sides by lung parenchyma.There is currently no evidence of infradiaphragmatic disease. What is the TNM stage of this small cell lung cancer?",
+      "options": [
+        "A. T2a N1 M0.",
+        "B. T2b N1 M0.",
+        "C. T1b N2 M0.",
+        "D. T2a N2 M0.",
+        "E. None of these."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The TNM staging of lung cancer is not commonly used for staging small cell lung cancer. This cell type is particularly aggressive and often has occult metastases at the time of malignancy. The mainstay of treatment is with chemoradiotherapy, with imaging only used to stage disease as intrathoracic (limited or extensive) or extrathoracic.\n\nAdam A and Dixon A. Grainger and Allison’s Diagnostic Radiology. A textbook of medical imaging, Vol 1, 5th edn, Churchill Livingstone, 2008. Ch 18.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 43-year-old patient presents with cough, shortness of breath and fever which has lasted a month. An HRCT reveals bilateral areas of consolidation, predominantly in a peripheral distribution.There are also areas of GGO, predominantly in the middle and upper zones, with band-like subpleural attenuation.The plain ﬁlm ﬁndings have remained unchanged for days. What is the most likely diagnosis?",
+      "options": [
+        "A. Chronic eosinophilic pneumonia.",
+        "B. Allergic bronchopulmonary aspergillosis (ABPA).",
+        "C. Acute eosinophilic pneumonia.",
+        "D. Löfﬂer’s syndrome.",
+        "E. Eosinophilic granuloma."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": " This has been described as the radiological ‘photographic negative’ of pulmonary oedema. It is a disease of middle age and affects females more commonly than males. The history is that described, with a common history of atopy. The predominant histologic ﬁnding is ﬁlling of the alveolar airspaces with an inﬂammatory inﬁltrate containing a high proportion of eosinophils. There is usually also a cellular inﬁltration of the interstitium and peripheral blood eosinophilia. There is a dramatic response to steroid therapy within days.\n\nABPA and acute eosinophilic pneumonia do produce blood eosinophilia, but the former is characterized by bronchiectasis and mucus plugging with the possibility of mosaic perfusion in addition to peripheral consolidation, while the latter is characterized by diffuse GGO, deﬁned nodules, smooth interlobular septal thickening, and often the presence of pleural effusion. Löfﬂer’s syndrome (simple pulmonary eosinophilia) refers to predominantly peripheral transient parenchymal consolidation accompanied by eosinophilia. There are minimal or no pulmonary symptoms, the plain ﬁlm appearances change within one to several days and spontaneous resolution occurs within one month. Eosinophilic granuloma is nodular/cystic, a pulmonary form of Langerhan’s cell histiocytosis, and should not be confused with the eosinophilic pneumonias.\n\nJohkoh T, Müller NL, Akira M, Ichikado K, Suga M, Ando M et al. Eosinophilic lung diseases: diagnostic accuracy of thin-section CT in 111 patients. Radiology 2000; 216: 773–780.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 30-year-old caucasian man, recently treated with bone marrow transplantation for acute myeloid leukaemia, presents with fever and cough. HRCT chest demonstrates multiple, small centrilobular nodules of soft tissue attenuation connected to linear branching opacities. What is the most likely cause of this ﬁnding?",
+      "options": [
+        "A. Endobronchial tuberculosis.",
+        "B. Primary pulmonary lymphoma.",
+        "C. Invasive aspergillosis.",
+        "D. Obliterative bronchiolitis.",
+        "E. Diffuse panbronchiolitis."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": " The CT ﬁndings describe the ‘tree-in-bud’ pattern, which results from centrilobular bronchiolar dilatation and ﬁlling by mucus, pus, or ﬂuid that resembles a budding tree. It is usually most pronounced in the lung periphery. All of the options provided are differentials for ‘tree-in-bud’, although infective causes are most common, classically endobronchial spread of active TB. The patient in this case is also at risk of invasive aspergillosis, although typically the ‘tree-in-bud’ pattern occurs in combination with consolidation accompanied by a halo of GGO. Obliterative bronchiolitis occurs in bone marrow transplantation in the setting of chronic graft-versus-host disease. The most sensitive CT ﬁnding in this condition is air-trapping on expiratory CT. Diffuse panbronchiolitis is of unknown cause, but occurs almost exclusively in Eastern Asia. Primary pulmonary lymphoma is also a rare cause of ‘tree-in-bud’. Other potential differentials of this pattern include cytomegalovirus infection, cystic ﬁbrosis, aspiration, connective tissue disease, and tumour emboli.\n\nGosset N, Bankier AA, and Eisenberg RL. Tree-in-bud pattern. American Journal of Roentgenology 2009; 193: W472–W477.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 56-year-old woman with a history of Sjogren’s syndrome complains of gradually increasing shortness of breath. A CXR has identiﬁed a mild generalized interstitial pattern, with maintained lung volumes. A subsequent HRCT of chest demonstrates a few scattered well-deﬁned, regular lung cysts. Within the lung parenchyma there is also noted patchy groundglass change and mild centrilobular nodularity. Mild mediastinal and hilar lymphadenopathy is present. What is the most likely diagnosis?",
+      "options": [
+        "A. Langerhans cell histiocytosis.",
+        "B. Desquamative interstitial pneumonia.",
+        "C. Lymphangioleiomyomatosis.",
+        "D. Lymphocytic interstitial pneumonia.",
+        "E. Birt–Hogg–Dube syndrome."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": " The key to this question, in addition to the described imaging features, is the history of Sjogren’s syndrome, which has an association with LIP.\n\nLIP is a benign lymphoproliferative disorder that is also associated with AIDS, autoimmune thyroid disease, and Castleman’s syndrome. Lymphomas may arise in some cases. On HRCT, thin-walled cysts are seen in two-thirds and are randomly distributed, occupying less than 10% of the lung parenchyma. Other features include GGO, centrilobular/subpleural nodules, and septal thickening. Eventually larger nodules (>2 cm), consolidation, and architectural distortion may develop. The presence of mediastinal and hilar lymphadenopathy (two-thirds) and septal thickening help distinguish from Langerhans cell histiocytosis. The presence of centrilobular nodules assist in the differentiation from lymphangioleiomyomatosis.\n\nBirt–Hogg–Dube syndrome is a rare autosomal dominant condition characterized by facial ﬁbrofolliculomas, malignant renal tumours, and the development of thin-walled pulmonary cysts and spontaneous pneumothorax.\n\nGrant LA, Babar J, and Grifﬁn N. Pictorial review. Cysts, cavities and honeycombing in multisystem disorder: differential diagnosis and ﬁndings on thin section CT. Clinical Radiology 2009; 64: 439–448.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 70-year-old man undergoes a trans-femoral angiogram as a day procedure. Haemostasis is achieved by manual compression to the puncture site for 15 minutes.The next day he returns to A&E with a history of pain and swelling in the groin. On examination a tender, pulsatile swelling is noted in the groin at the site of femoral puncture. Doppler ultrasound conﬁrms a femoral artery pseudo-aneurysm. Which of the following statements regarding iatrogenic femoral artery pseudoaneurysm is false?",
+      "options": [
+        "A. It is contained only by the haematoma and surrounding tissues.",
+        "B. Patients undergoing haemodialysis are at increased risk of developing pseudoaneurysm.",
+        "C. Low femoral puncture is associated with a higher risk of developing pseudoaneurysm.",
+        "D. Ultrasound is the diagnostic method of choice.",
+        "E. Ultrasound-guided compression is the treatment of choice."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": " Femoral artery pseudoaneurysm has been reported to occur in 0.2% of diagnostic and 8% of interventional procedures. Femoral pseudoaneursym is contained only by the haematoma and the pressure of the surrounding tissues. It is therefore at a high risk of rupture.\n\nA number of risk factors for pseudoaneurysm formation have been identiﬁed. Patient factors include obesity, anticoagulation, haemodialysis, and calciﬁed arteries. Procedural factors include low femoral punctures, superﬁcial femoral or profunda punctures, and inadequate compression post procedure. Doppler ultrasound is the diagnostic method of choice. A ﬂuid collection adjacent to femoral artery puncture site with ‘yin yang’ internal ﬂow is diagnostic. Ultrasound guided thrombin injection is the treatment method of choice.\n\nAhmad, F, Turner SA, Torrie P, and Gibson M. Iatrogenic femoral artery pseudoaneurysms—A review of current methods of diagnosis and treatment. Clinical Radiology 2008; 63: 1310–1316.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 68-year-old patient has a CXR carried out due to a recurrent chest infection.The patient is a smoker.The CXR shows a solitary pulmonary nodule. A CT is carried out which demonstrates a 2.8-cm lesion in the right lower lobe as noted on CXR.This lesion is spiculated.There is a second lesion noted in the right lower lobe that is 1.2 cm in size and was not visible on the CXR.There is a 0.8-cm ipsilateral peribronchial lymph node identiﬁed.There are no evident metastases. A PET-CT is carried out which shows an SUV max of 8 in both pulmonary lesions.There is no uptake in the lymph node. No metastases are identiﬁed. A biopsy conﬁrms non-small cell lung cancer. Based on the available imaging, what is the stage of this lesion?",
+      "options": [
+        "A. Stage 1A.",
+        "B. Stage 1B.",
+        "C. Stage 2A.",
+        "D. Stage 2B.",
+        "E. Stage 3A."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The TNM deﬁnitions, on which the staging system is based, were recently updated in 2010. In this update, the nodal classiﬁcations were not changed, but the T staging was updated, as was M staging. Sub-classiﬁcations were added to T1, with lesions <2 cm being T1a and lesions between 2 and 3 cm being T1b. Lesions between 3 and 5 cm are T2a and between 5 and 7 cm are T2b. Lesions over 7 cm are T3, as are synchronous lesions within the primary lobe, as in this case. Multiple lesions within the primary lobe were formerly T4. In this question, the lymph node is not enlarged by size criteria and is not FDG avid on PET. While this may yet still be involved, on imaging ﬁndings alone, this lesion should be classed as N0. The absence of metastases is obviously M0. Thus this patient is T3 N0 M0, which corresponds to stage 2b. T2b N1 tumours are also in this stage. Stage 2a lesions are T2a N1 or T2b N0. Stage 3a lesions are T3 or less with N2 disease or T3 N1 lesions.\n\nGoldstraw P, Crowley J, Chansky K, Giroux DJ, Groome PA, Rami-Porta R et al. The IASLC lung cancer staging project: proposals for the revision of the TNM stage groupings in the forthcoming (seventh) edition of the TNM classiﬁcation of malignant tumours. Journal of Thoracic Oncology 2007; 2(8): 706–714.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A specialty trainee from the medical ward shows you a CXR of a breathless patient.You observe splaying of the carina and a ’double right heart border’. What is the most likely underlying diagnosis?",
+      "options": [
+        "A. Mitral stenosis.",
+        "B. Aortic stenosis.",
+        "C. Tricuspid incompetence.",
+        "D. Left ventricular aneurysm.",
+        "E. Coarctation of the aorta."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": " The ﬁndings describe left atrial enlargement, which is caused by mitral valve disease (stenosis or incompetence), venticular septal defect (VSD), patent ductus arteriosus (PDA), atrial septal defect (ASD) with shunt reversal, and left atrial myxoma. Aortic stenosis produces left ventricular hypertrophy and eventually dilatation, the latter producing a prominent left heart border with inferior displacement of the cardiac apex. A left ventricular aneurysm produces a prominent bulge of the left heart border. Tricuspid incompetence produces an enlarged right atrium and thus a prominent right heart border on plain ﬁlm. Coarctation produces left ventricular enlargement and inferior rib notching of the fourth to eighth ribs bilaterally if conventional and a ‘reverse ﬁgure 3’ sign: a prominent ascending aorta/arch and a small descending aorta, with an intervening notch.\n\nChapman S and Nakielny R. Aids to Radiological Differential Diagnosis. 4th edn, Elsevier, 2003. pp. 53, 197–200.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 64-year-old man with a history of alcoholism presents with acute onset fever and productive cough. What feature on his admission CXR would be in keeping with Klebsiella pneumonia as opposed to pneumococcal pneumonia?",
+      "options": [
+        "A. Lobar consolidation.",
+        "B. Parapneumonic effusion.",
+        "C. Reticulonodular opacity.",
+        "D. Bulging interlobar ﬁssure.",
+        "E. Spherical opacity."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": " Klebsiella (Gram-negative) pneumonia occurs predominantly in older alcoholic men and debilitated hospitalized patients. On the CXR it appears as a lobar opaciﬁcation with air bronchograms. A bulging interlobar ﬁssure is secondary to inﬂammatory exudate, increasing the volume of the involved lobe. This sign, however, is not speciﬁc and is also seen with Haemophilus inﬂuenzae and Staphylococcus aureus. Pneumococcal (Streptococcus) pneumonia typically presents as lobar consolidation. Parapneumonic effusions are seen in up to 50%. Reticulonodular opacity is a recognized atypical presentation. In children it typically presents as a spherical opacity (round pneumonia).\n\nBrant WE and Helms CA. Fundamentals of Diagnostic Radiology, 3rd edn, Lippincott Williams & Wilkins, 2007. pp. 461–463.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 67-year-old man who was previously a manual worker presents with chest pain, which subsequently turns out to be due to myocardial ischaemia. He has a CXR performed which shows numerous small nodular densities and you suspect he has an occupational lung disease, as these densities are unchanged from previous radiographs. A subsequent HRCT of chest shows no evidence of linear interstitial change or ﬁbrosis. Pulmonary function tests are normal. Which of the following possible causes is least likely to result in functional lung impairment?",
+      "options": [
+        "A. Coal workers’ pneumoconiosis.",
+        "B. Silicosis.",
+        "C. Berylliosis.",
+        "D. Siderosis.",
+        "E. Asbestosis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": " Siderosis is due to the inhalation of iron oxide particles and usually occurs in welders. It causes mutiple small centrilobular nodules, but is not usually associated with any symptoms or ﬁbrosis. If combined with silica dust it can cause silicosiderosis, which can be associated with ﬁbrosis.\n\nSilicosis and coal workers pneumoconiosis, secondary to inhalation of silica dust and washed coal dust, respectively, show similar features on CT. This is usually the presence of 2–5 mm nodules, mainly involving the upper and posterior lung zones. Large opacities (>1 cm) indicate progressive massive ﬁbrosis. Calciﬁcation in lymph nodes can occur and egg shell calciﬁcation is more typical in silicosis.\n\nBerylliosis is a chronic granulomatous lung disease caused by exposure to beryllium dust or fumes. CT ﬁndings are similar to other granulomatous lung diseases, such as sarcoid. Fibrosis may therefore occur.\n\nAsbestosis is pulmonary ﬁbrosis secondary to inhalation of asbestos ﬁbres.\n\nChong S, Lee KS, Chung MJ, Han J, Kwon OJ, and Kim TS. Pneumoconiosis: comparison of imaging and pathologic ﬁndings. RadioGraphics 2006; 26: 59–77.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 35-year-old male smoker presents with a history of progressive dyspnoea and rapidly deteriorating lung function. CXR shows hyperinﬂated lungs and decreased pulmonary vascular markings. High-resolution CT of chest shows well-deﬁned foci of reduced lung attenuation without deﬁnable wall, decreased pulmonary vascular markings and bullae with basilar predominance. What is the likely diagnosis?",
+      "options": [
+        "A. Centrilobular emphysema.",
+        "B. Paraseptal emphysema.",
+        "C. Alpha-1 antitrypsin deﬁciency.",
+        "D. Congenital lobar emphysema.",
+        "E. Chronic obstructive pulmonary disease (COPD)."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": " This is a rare autosomal recessive disorder. Alpha-1 antitrypsin is a glycoprotein synthesized in the hepatocytes, which acts as a proteolytic inhibitor. In the absence of alpha-1 antitrypsin, the enzyme elastase released by neutrophils and alveolar macrophages acts unopposed and digests the basement membrane. There is rapid progressive deterioration of lung function due to severe pan-acinar emphysema, which shows basilar predominance (due to gravitational distribution of pulmonary blood ﬂow). The alveolar destruction is accelerated in smokers. Cirrhosis of the liver is a complication.\n\nMeyer CA, White CS, and Sherman, KE. Disease of the hepato-pulmonary axis. RadioGraphics 2000; 20: 687–698.",
+      "questionNumber": 38
+    },
+    {
+      "question": "You are attending a lecture on lung cancer, but unfortunately you arrive late so you have missed the introduction.The lecturer is describing a subtype of lung cancer.The description is of a tumour that comprises 30% of all lung cancers. It typically occurs peripherally, but can be central.This tumour can cavitate, but this occurs in only 4% of cases. Hilar and/or mediastinal involvement is seen in over half of cases on plain ﬁlm radiography. What subtype of lung cancer is being described?",
+      "options": [
+        "A. Adenocarcinoma.",
+        "B. Bronchoalveolar carcinoma.",
+        "C. Squamous cell carcinoma.",
+        "D. Small cell carcinoma.",
+        "E. Giant cell carcinoma."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": " These are all classical features of adenocarcinoma. Bronchoalveolar carcinoma is a subtype of adenocarcinoma. This comprises 2–10% of lung cancers. There are three subtypes: a solitary nodule (41%), multifocal nodules (36%), and peripheral consolidation (23%). Squamous cell carcinoma is only slightly less prevalent than adenocarcinoma. It cavitates in 86% of cases and typically occurs centrally. Small cell carcinoma comprises 18% of lung cancers. It usually presents on plain ﬁlm radiography as hilar and/or mediastinal adenopathy. CT often detects lung opacities. Giant cell carcinoma is a poorly differentiated subtype of NSCLC that is capable of rapid growth and early metastasis.\n\nHollings N and Shaw P. Diagnostic imaging of lung cancer. European Respiratory Journal 2002; 19: 722–742.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 63-year-old male has a complex past medical history including testicular carcinoma, cardiac disease, rheumatoid arthritis (RA) and diabetes mellitus. He presents with shortness of breath and is referred for a CT chest.\n\nThis reveals multiple areas of ground-glass attenuation, crazy-paving and consolidation in both lungs.You also notice that the spleen and liver are of increased attenuation. What is the most likely explanation for these ﬁndings?",
+      "options": [
+        "A. RA-related lung disease.",
+        "B. Cardiac failure.",
+        "C. Amiodarone.",
+        "D. Bleomycin.",
+        "E. Methotrexate."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": " The pulmonary ﬁndings could equally be caused by NSIP and cardiac failure, among other causes. However, the high attenuation of the liver and spleen is due to deposition of amiodarone, which contains iodine.\n\nAmiodarone, methotrexate, and bleomycin all may cause pulmonary toxicity. Pulmonary toxicity occurs in 5–10% of patients on amiodarone, usually within months of starting therapy. The prognosis is good, with most patients improving after discontinuation of therapy. NSIP is the most common manifestation of amiodarone-induced lung disease. Pleural inﬂammation is an accompanying feature and can manifest as pleural effusion. COP is less common and typically occurs in association with NSIP. A distinctive feature of amiodarone toxicity is the occurrence of focal, homogenous pulmonary opacities. They are typically peripheral in location and of high attenuation at CT, due to the incorporation of amiodarone into the type II pneumocytes. The combination of high attenuation within the lung, liver, and spleen is characteristic of amiodarone toxicity.\n\nRA can produce many pulmonary sequelae: pulmonary nodules, pleural effusion, ﬁbrosis, obliterative bronciolitis, and COP. Methotrexate can be used to treat RA and psoriasis, and as chemotherapy for various cancers. NSIP is most common and COP is seen less frequently.\n\nBleomycin is a chemotherapy agent used in the treatment of testicular carcinoma, among others. Diffuse alveolar damage (DAD) is its most common manifestation, with NSIP and COP being less common. The prognosis is poor, with most patients dying of respiratory failure within 3 months of the onset of symptoms.\n\nRossi SE, Erasmus JJ, McAdams HP, Sporn T, and Goodman P. Pulmonary drug toxicity: radiologic and pathologic manifestations. RadioGraphics 2000; 20: 1249–1259.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 28-year-old HIV-positive IV drug user presents with progressive exertional dyspnoea, fever and non-productive cough. CXR demonstrates bilateral parahilar ﬁne reticular opacities.There is no appreciable lymphadenopathy. What is the most likely diagnosis?",
+      "options": [
+        "A. Mycobacterium avium-intracellulare.",
+        "B. Pneumocystis jirovecii (formerly P. carinii).",
+        "C. Toxoplasmosis.",
+        "D. Coccidioidomycosis.",
+        "E. Candidiasis."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": " This is most common in AIDS patients, usually when CD4 <200 cells/mm3 . Despite highly active antiretroviral therapy (HAART) and prophylaxis, it remains the most common AIDS-deﬁning opportunistic infection. The CXR may be normal initially, but eventually a ﬁne parahilar reticular or ground-glass pattern develops. Pleural effusions and lymphadenopathy are uncommon. Mycobacterium avium-intracellulare primarily affects the GI tract, but chest involvement in disseminated disease typically manifests as lymphadenopathy. Diffuse reticular opacities and hilar lymphadenopathy are a feature of toxoplasmosis. Diffuse miliary nodules are seen in coccidioidomycosis. Candida pneumonia demonstrates diffuse, bilateral nonsegmental airspace opacities.\n\nBrant WE and Helms CA. Fundamentals of Diagnostic Radiology, 3rd edn, Lippincott Williams & Wilkins, 2007. pp. 472–477.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 50-year-old man has developed graft v host disease following a bone marrow transplant. He develops some breathlessness and has pulmonary function tests showing irreversible obstruction. Constrictive (obliterative) bronchiolitis is suspected. Which of the following ﬁndings on HRCT is likely to be most helpful in making this diagnosis?",
+      "options": [
+        "A. ‘Tree in bud’ opacities.",
+        "B. Bronchiolectasis.",
+        "C. Air-trapping.",
+        "D. Centrilobular nodules.",
+        "E. Cystic change."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": " All of the answers, apart from cystic change, are recognized HRCT features of small airways disease. Air-trapping is an indirect ﬁnding of small airway narrowing/obliteration and is the most common and identifying imaging feature of constrictive bronchiolitis. Air-trapping is accentuated on expiratory scans.\n\nConstrictive or obliterative bronchiolitis is a category of disorders recognized by a pattern of peribronchiolar ﬁbrosis resulting in complete cicatrization of the bronchiolar lumen. Although most commonly idiopathic, other known causes include infections, toxic fume inhalation (oxides of nitrogen, chlorine), autoimmune disorders, including RA, graft-versus-host disease, lung transplantation, inﬂammatory bowel disease, and drug reactions, e.g. D-penicillamine.\n\nPipavath SNJ and Stern EJ. Imaging of small airway disease. Radiological Clinics of North America 2009; 47: 307–316.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 50-year-old female is found to have a solitary pulmonary nodule on imaging. Which of the following features suggests that it is benign?",
+      "options": [
+        "A. Irregular, spiculated margin.",
+        "B. Central ‘popcorn’ calciﬁcation.",
+        "C. Doubling time of 180 days.",
+        "D. Contrast enhancement of 25 Hounsﬁeld units(HU).",
+        "E. SUV of 8 on PET-CT."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": " Irregular or spiculated margin, eccentric or stippled calciﬁcation, doubling time of 20–400 days, contrast enhancement of more than 15 HU, and high uptake (SUV > 2.5) on PET-CT are all features associated with a malignant lesion.\n\nDiffuse, central nodular, and popcorn-like calciﬁcation, doubling time of more than 400 days, contrast enhancement of less than 15 HU, and low uptake (SUV < 2.5) on PET-CT are associated with benign lesions.\n\nGirvin F and Ko JP. Pulmonary nodules: detection, assessment, and CAD. American Journal of Roentgenology 2008; 191: 1057–1069.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 47-year-old male patient is referred to the respiratory physicians with a 1-year history of wheeze. He is a non-smoker. A CXR reveals subtle narrowing of the bronchus intermedius. A CT scan reveals a lesion with an endobronchial component, which narrows the airway signiﬁcantly.The lesion also has an extraluminal component, which is 2 cm in diameter and has smooth margins.The lesion displays stippled calciﬁcation and no cavitation. Following contrast enhancement, the lesion enhances avidly in the arterial phase.You formulate a differential diagnosis based on these imaging features.The patient is not keen for intervention. Based on your suspicions, what would be the least invasive means of follow-up imaging to help achieve a diagnosis?",
+      "options": [
+        "A. PET-CT.",
+        "B. Bronchoscopy and biopsy.",
+        "C. Indium-111 octreotide single photon emission computed tomography (SPECT) CT.",
+        "D. MRI using T2WI and short tau inversion recovery (STIR) coronal imaging.",
+        "E. Bronchial angiography."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": " The imaging features allude to the diagnosis of bronchial carcinoid. This tends to occur in younger patients than bronchogenic carcinoma does, and is not associated with smoking. Whilst carcinoid tumours can present as a peripheral nodule, they are more typically central, hilar, perihilar, or endobronchial, as in this case. Classical features are of a smooth nodule, narrowing or compressing the bronchus, or of an endobronchial lesion. Both commonly have stippled calciﬁcation and demonstrate avid enhancement. Carcinoid tumours in this location are classed as either typical or atypical based on pathology. All the imaging options are valid. The degree of enhancement can simulate a pulmonary vascular malformation, which can be assessed with angiography, although MR angiography would be less invasive in this case. The deﬁnitive tissue diagnosis is commonly reached with bronchoscopy, but this can be associated with massive haemorrhage because of the vascular nature of this tumour. As such radiolabelled imaging, which is sensitive in 86% of patients, is a less invasive option. FDG PET is often negative in cases of carcinoid because of the low metabolic activity of this tumour. MRI characteristics of bronchial carcinoid have been well described, but will be unlikely to signiﬁcantly progress the diagnostic pathway in this case.\n\nJeung M, Gasser B, Gangi A, Charneau D, Ducroq X, Kessler R, Quoix E, and Roy C. Bronchial carcinoid tumors of the thorax: spectrum of radiologic ﬁndings. RadioGraphics 2002; 22: 351–365.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 45-year-old male presents with a 3-month history of a non-productive cough and dyspnoea, which was preceded by a ﬂu-like illness. Pulmonary function tests reveal a restrictive pattern and a CXR shows multifocal bilateral consolidation. HRCT of chest reveals bilateral peripheral subpleural well-deﬁned areas of consolidation, some of which are surrounded by ground-glass opacity and some of which show an air bronchogram.There is also a focal area of GGO, which is surrounded by a smooth-walled ring of consolidation. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Sarcoidosis.",
+        "B. TB.",
+        "C. Cryptococcosis.",
+        "D. Obliterative bronchiolitis.",
+        "E. Cryptogenic organizing pneumonia."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": " An area of GGO surrounded by a ring of consolidation describes the ‘ring halo’ sign. This is not speciﬁc to COP, but has been described in tuberculosis, active sarcoidosis, cryptococcosis, and blastomycosis. However it has been found that granulomatous infectious diseases and sarcoidosis, which cause the ‘ring halo’ sign, result in a nodular ring, whereas COP results in a smooth-walled ring. COP is rapidly responsive to steroids, but the latter can have deleterious effects in infectious diseases. Thus it has been suggest that a nodular ring can be used as a discriminator.\n\nCOP (also known as idiopathic BOOP) is a patchy organizing pneumonia caused by bronchiolar obstruction by plugs of loose organizing connective tissue that may wax and wane. The main ﬁnding of COP is consolidation, seen in 90% and usually multifocal and bilateral. In 50% the consolidation is subpleural or peribronchovascular. It has a lower zone predominance, but can affect any lobe. Dilated airways are often seen on CT and air bronchograms give the appearance of acute pneumonia. GGO is a prominent pattern in 60%. Linear opacities occur in isolation or in association with multifocal areas of consolidation. Nodules are seen in 30–50% and lung volumes are preserved in 75%. COP is a clinical–pathological entity and is diagnosed when the correct clinical picture and radiological ﬁndings are present. If these features are uncertain, lung biopsy is required.\n\nOrganizing pneumonia can be idiopathic (COP) or secondary to viral infection, toxic fume inhalation, RA, systemic lupus erythematosis (SLE), organ transplantation, drug reaction, or chronic aspiration.\n\nThe hallmark of obliterative bronchiolitis is air-trapping and hyperinﬂation. It has many causes, including RA and other connective tissue diseases.\n\nMarchiori E, Zanetti G, Hochhegger B, and Irion KL. Re: Reversed halo sign: nodular wall as criterion for differentiation between cryptogenic organising pneumonia and active granulomatous diseases. Clinical Radiology 2010; 65: 770–771.\n\nDixon S and Benamore R. The idiopathic interstitial pneumonias: understanding key radiological features. Clinical Radiology 2010; 65: 823–831.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 24-year-old serviceman presents with insidious onset of fever, headache and worsening non-productive cough. His white cell count and erythrocyte sedimentation rate (ESR) are elevated and serum cold agglutination is positive. He had failed to improve with initial antibiotic therapy. HRCT of chest demonstrates areas of ground-glass opacity, air-space consolidation, centrilobular nodules and thickening of bronchovascular bundles. What is the most likely diagnosis?",
+      "options": [
+        "A. Chlamydia pneumonia.",
+        "B. Mycoplasma pneumonia.",
+        "C. Pneumococcal pneumonia.",
+        "D. Legionella pneumonia.",
+        "E. Staphylococcal pneumonia."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": " The given clinical history is classical of mycoplasma pneumonia, which usually affects younger adults in closed populations such as prisons or the military. It is one of the most common causes of community acquired pneumonia in otherwise healthy individuals. Serum cold agglutination is positive in up to 70%. On HRCT areas of ground-glass attenuation tend to be around areas of consolidation. Centrilobular nodules and peribronchovascular thickening are common associated ﬁndings.\n\nReittner P, Muller NL, Heyneman L, Johkoh T, Park JS, Lee KS et al. Mycoplasma pneumoniae pneumonia. American Journal of Roentgenology 2000; 174: 37–41.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 51-year-old woman has a past history of a prolonged ICU admission following a subarachnoid haemorrhage 2 years previously. Despite the stormy course in ICU, she made a good neurological recovery, but has had persistent breathlessness on exertion since discharge. Her imaging shows interstitial ﬁbrosis. Which part of the lung is likely to be relatively spared by the interstitial process?",
+      "options": [
+        "A. Posterior aspect of the lungs.",
+        "B. Anterior aspect of the lungs.",
+        "C. Periphery of the lungs.",
+        "D. Lower zones of the lungs.",
+        "E. Mid-zones of the lungs."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": " The stem of the question is pointing towards ARDS during the ICU admission, resulting in pulmonary ﬁbrosis. Classically HRCT shows relative sparing of the posterior aspect of the lungs. This pattern of sparing is unusual in other causes of peripheral ﬁbrosis and is an important clue to the aetiology. During the acute and subacute phases of ARDS in the supine patient, the dependent portions of the lungs usually demonstrate extensive consolidation and atelectasis. It is postulated that these areas may be protected from the long-term effects of barotrauma and high oxygen exposure as they are essentially non-aerated during the acute and subacute phases.\n\nMurray K, Anderson M, Berger G, and Bachman E. Distribution of lung disease. Seminars in ultrasound, CT and MRI 2002; 23(4): 352–377.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 30-year-old male smoker presents with a history of acute dyspnoea. CXR shows bilateral reticulo-nodular interstitial changes, predominantly in the upper and mid zones, with preservation of lung volume.There is a rightsided apical pneumothorax and a small right pleural effusion. HRCT of chest shows complex thin- and thick-walled cysts and irregular centrilobular nodules in a similar distribution with sparing of the bases.The intervening lung appears normal. What is the diagnosis?",
+      "options": [
+        "A. Lymphangioleiomyomatosis.",
+        "B. Bronchiectasis.",
+        "C. Metastases.",
+        "D. Pulmonary Langerhans cell histiocytosis.",
+        "E. Idiopathic pulmonary ﬁbrosis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": " This is a rare isolated form of Langerhans cell histiocytosis that primarily affects young adult smokers. Most patients are symptomatic and the most frequent symptoms are non-productive cough (50–70% of cases) and dyspnoea (35–87%). Less common symptoms include fatigue, weight loss, pleuritic chest pain, and fever. The most common ﬁnding on CXR is small irregular nodules, usually bilaterally symmetric, with upper lobe predominance and sparing of the costo-phrenic angles. Coarse reticular and reticulo-nodular pattern is seen in later stages. Pneumothorax occurs in up to 25% (may be recurrent). Pleural effusion is uncommon, but may occur with pneumothorax. Lung volumes are normal or increased in most patients. HRCT of chest demonstrates the cysts and nodules in a characteristic distribution with normal intervening lung. Interstitial ﬁbrosis and honeycombing are seen in advanced stages. Treatment consists of smoking cessation; steroids may be useful in selected patients. Chemotherapeutic agents and lung transplantation may be offered in advanced disease. The prognosis is variable. Stable disease is seen in up to 50%. Spontaneous regression is reported in up to 25%. A variably progressive, deteriorating course is seen in up to 25%.\n\nAbbott GF, Rosado-de-Christenson ML, Franks TJ, Frazier AA, and Galvin JR. Pulmonary Langerhans cell histiocytosis. RadioGraphics 2004; 24: 821–841.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 55-year-old male patient with a history of dilated cardiomyopathy has undergone a cardiac transplantation. Now 3 months post-op, the patient presents to his cardiologists with acute lethargy, dyspnoea and productive cough. A CXR is carried out, which shows a diffuse right-sided airspace inﬁltrate, with an ill-deﬁned density noted in the right upper lobe. A CT scan is carried out, which shows patchy areas of air-space consolidation with surrounding ground-glass change in the right hemi thorax.There is an area of cavitation in the right upper lobe that has a surrounding halo of ground-glass change.The interstitial markings are not thickened.There is low attenuation noted around the heart, which has an attenuation value of –10 HU.There is a calibre change between the donor and recipient aorta. Based on the most likely pathology, as indicated by these features, what is the most appropriate ﬁrst-line treatment?",
+      "options": [
+        "A. Systemic amphotericin.",
+        "B. Frusemide infusion.",
+        "C. Systemic ganciclovir.",
+        "D. High-dose steroid and OKT3.",
+        "E. CT guided biopsy of lesion."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": " There are two parts to this question. Firstly, identifying the pathology based on imaging features. Secondly, knowledge of the treatment required. There are numerous complications that can occur post transplantation. These can be broken down into complications of the surgery, complications of monitoring, and post-operative non-surgical complications. This question obviously involves the latter group—non-surgical complications. These are largely related to immunosuppression post transplantation and include infections, rejection, accelerated atherosclerosis of the graft, and post-transplant malignancy. In the latter group, the most commonly noted malignancies are skin carcinoma, adenocarcinoma of the lung or GI tract, Kaposi sarcoma, leukaemia, and lymphoma. Post-transplant lymphoproliferative disorder occurs in 6%. The most common cause of death, however, is infection, particularly respiratory infection. One of the most common infections, and the infection with the highest mortality, is aspergillus infection. Invasive aspergillosis is demonstrated in this case with the hallmark features of cavitary necrosis and a surrounding halo of ground-glass change representing haemorrhage. This requires urgent antifungal therapy, but still has a mortality rate of over 50%. Cytomegalovirus (CMV) pneumonitis is also common, but usually displays diffuse pulmonary air-space change. This responds better to therapy, with a mortality rate of 14%. Bacterial pneumonias tend to occur earlier in the post-operative course. Acute allograft rejection gives a radiographic appearance not dissimilar to pulmonary oedema. It is usually diagnosed on endomyocardial biopsy.\n\nKnisely B, Mastey L, Collins J, and Kuhlman J. Imaging of cardiac transplantation complications. RadioGraphics 1999; 19: 321–341.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 42-year-old male presents with chest pain, dyspnoea and palpitations. He undergoes cardiac MRI, which reveals extensive scattered delayed enhancement in the anterior, lateral and inferior wall and apex of the left ventricle.This enhancement occurs in the midwall with relative sparing of the subendocardial region.T2WI is unremarkable. What is the most likely diagnosis?",
+      "options": [
+        "A. Acute myocardial infarction.",
+        "B. Sarcoidosis.",
+        "C. Myocarditis.",
+        "D. Hypertrophic cardiomyopathy.",
+        "E. Amyloidosis."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": " This is deﬁned as inﬂammation of the heart muscle. A large variety of infections, systemic diseases, drugs, and toxins have been associated with this condition. The diagnosis is based on a combination of clinical and imaging features. The presence of focal delayed enhancement on cardiac MRI in a non-coronary artery distribution, together with wall motion abnormalities, correlates strongly with myocarditis in the correct clinical setting. Many patients present with a non-speciﬁc illness characterized by fatigue, dyspnoea, and myalgia. An antecedent viral syndrome is present in more than 50% of patients. Myocarditis lesions occur typically in the lateral free wall and originate from the epicardial quartile of the ventricular wall. The subendocardial area is spared, a pattern that is otherwise typical for myocardial infarction (in the latter case the lesion would also correspond to a coronary artery territory). In myocarditis the enhancement pattern has been described as becoming less intense and more diffuse over weeks and months.\n\nIn acute myocardial sarcoidosis, increased focal signal intensity can be observed on T2WI (secondary to oedema due to inﬂammation) and both early and delayed post-contrast T1 weighted imaging (T1WI). Focal myocardial thickening is often seen due to the oedema and can mimic hypertrophic cardiomyopathy (HCM).\n\nHCM will reveal marked hypertrophy of the interventricular septum and left ventricular wall, with associated transmural delayed enhancement in the hypertrophied areas. The latter ﬁnding corresponds to the scattered ﬁbrosis present and the amount of enhancement will inversely correlate with regional contractivity.\n\nCardiac amyloidosis leads to a restrictive cardimyopathy. MR imaging shows functional impairment, biventricular hypertrophy, and non-speciﬁc inhomogenous gadolinium enhancement.\n\nVogel-Claussen J, Rochitte CE, Wu KC, Kamel IR, Foo TK, Lima JA et al. Delayed enhancement MR imaging: utility in myocardial assessment. RadioGraphics 2006; 26: 795–810.",
+      "questionNumber": 50
+    }
+  
+,
+
+    {
+      "question": "A 28-year-old woman presents with fever, myalgia and cough. Due to a current community outbreak, the clinical team suspect that she has H1N1 inﬂuenza (swine ﬂu). Which ﬁnding on her admission CXR is most strongly predictive of an adverse outcome?",
+      "options": [
+        "A. Upper lobe consolidation.",
+        "B. Bilateral central opacity.",
+        "C. Multizonal peripheral opacity.",
+        "D. Air bronchogram.",
+        "E. Pleural effusion."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The majority of H1N1 inﬂuenza cases have been mild, but the 2009 strain can cause severe illness, including in young previously healthy persons.  Radiological ﬁndings in four or more lung zones distributed bilaterally and peripherally, are signiﬁcantly more often seen on the CXR obtained at admission in patients with poor outcome (requiring mechanical ventilation) compared to those with good clinical outcome. Central GGO is the most common radiographic abnormality, but is not signiﬁcantly associated with poor outcome. Pleural effusions are uncommon, although bilateral effusions are an independent predictor of short-term mortality in community acquired pneumonia. It should be noted that an initial normal CXR does predict against a poor outcome.\n\nAviram G, Bar-Shai A, Sosna J, Rogowski O, Rosen G, Weinstein I et al. H1N1 Inﬂuenza: initial chest radiographic ﬁndings in helping predict patient outcome. Radiology 2010; 255: 252–259.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 56-year-old man presents with shortness of breath. He subsequently has an HRCT of chest performed.This shows a mosaic attenuation pattern throughout the lung parenchyma, but you are having some difﬁculty determining if the more lucent areas are normal or abnormal. Which of the following ﬁndings is most likely to be helpful in conﬁrming that the lucent areas are the abnormal areas and you are not dealing with multifocal GGO?",
+      "options": [
+        "A. Increased calibre of vessels in denser areas.",
+        "B. Decreased calibre of vessels in denser areas.",
+        "C. Increased calibre of vessels in lucent areas.",
+        "D. Decreased caliber of vessels in lucent areas.",
+        "E. Calibre of vessels is unhelpful and expiratory scans must be used."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "When mosaic lung attenuation is observed, it often is in an extensive, but patchy, distribution and it is important to determine if it is the lucent or denser areas of lung that are abnormal.  If the blood vessels in the lucent areas are smaller, then the lucent areas are probably abnormal. The paucity of vessels in these regions may be secondary to focal air-trapping or poor ventilation and subsequent reﬂex vasoconstriction. If areas of lucency are exaggerated on expiratory scans (airtrapping), then this is the hallmark of small airways disease.\n\nAlternatively, if the areas of lucency do not become more prominent on the expiratory scans, small airways disease is not the likely cause. In this situation, the inhomogeneous lung attenuation is probably secondary to changes in vessel calibre, and secondary to pulmonary hypertension, including chronic PE, emphysema, or inﬂammatory vasculopathies.\n\nIf the blood vessels in the regions of relative lucency are equal in size to vessels in surrounding areas, the regions of relative opacity are most likely abnormal, e.g. areas of GGO.\n\nMurray K, Anderson M, Berger G, and Bachman E. Distribution of lung disease. Seminars in ultrasound, CT and MRI 2002; 23(4): 352–377.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 60-year-old male awaiting cardiac bypass surgery undergoes Doppler assessment of leg veins to check suitability for a vein graft. On ultrasound, incidental note is made of 1.8-cm popliteal artery aneurysm with mural thrombus. Which of the following statements regarding popliteal artery aneurysm is false?",
+      "options": [
+        "A. It is bilateral in 50–70% of cases.",
+        "B. It is associated with abdominal aortic aneurysm in 30–50% of cases.",
+        "C. Symptomatic patients present with effects of distal embolization.",
+        "D. It may be missed on conventional angiography.",
+        "E. It should be treated only when symptomatic."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Popliteal artery aneurysm (>0.7 cm in diameter) is the most common peripheral artery aneurysm.  It is commonly associated with aneurysms in other locations—abdominal aortic aneurysm in 30–50% and contralateral popliteal aneurysm in 50–70% of cases.\n\nThey are more common in men (10:1 to 30:1) in their sixth and seventh decades. It is important to diagnose popliteal artery aneurysms due to signiﬁcant associated risk of limb-threatening thrombo-embolic complications. Due to the high risk of complications, it is recommended that popliteal aneurysms should be repaired regardless of the symptoms or size, unless the patient is high risk for surgery due to associated co-morbidity.\n\nWright LB, Matchett WJ, Cruz CP, James CA, Culp WC, Eidt JF et al. Popliteal artery disease: diagnosis and treatment. RadioGraphics 2004; 24: 467–479.",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 55-year-old female patient presents to the neurology service with features of myasthenia gravis. As part of the routine work-up a CXR is requested which demonstrates an anterior mediastinal mass. A CT scan is requested.This reveals a 5cm mass located centrally within the anterior mediastinum.This mass has poorly deﬁned margins, resulting in obliteration of the mediastinal fat plane.There are areas of low attenuation within this lesion which have an attenuation value of 3 HU.There are stippled areas of calciﬁcation noted.There is also a right-sided pleural effusion.There is no evidence of disease elsewhere in the mediastinum, or invasion of the great vessels.You plan to carry out a CT guided biopsy, but at this stage what is the most likely diagnosis?",
+      "options": [
+        "A. Benign thymoma.",
+        "B. Atypical thymoma.",
+        "C. Thymic carcinoma.",
+        "D. Thymic lymphoma.",
+        "E. Malignant thymic germ cell tumour."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Whilst the ultimate differentiation between these lesions is pathological, there are a number of clinical and imaging features that can help limit the differential if present.  Whilst benign thymoma, atypical thymoma, and thymic carcinoma can all present as focal mass lesions in the thymus, benign thymoma would not demonstrate the locally aggressive features found on this patient’s scan. Atypical thymoma is a locally aggressive lesion with benign features on pathology; it has a better prognosis than thymic carcinoma. Atypical thymoma, thymic carcinoma, thymic lymphoma, and malignant thymic germ cell tumours can all be locally aggressive. The presence of mediastinal lymphadenopathy, invasion of the great vessels, or distant metastases are uncommon for atypical thymoma, but are features of the other three tumours; none of these were present in this case. The ﬁnal key differentiating feature in this case to indicate atypical thymoma over the other differentials is the presence of myasthenia gravis. As thymic lymphoma and malignant germ cell tumours are not of thymic origin, they would not cause this. It is rarely a feature of thymic carcinoma.\n\nJung K, Lee K, Han J, Kim J, Kim T, and Kim E. Malignant thymic epithelial tumours: CT-pathologic correlation. American Journal of Roentgenology 2001; 176(2): 433–439.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 34-year-old man presents with chest pain and palpitations. An electrocardiogram (ECG) reveals a ventricular tachycardia with left bundle branch block (LBBB). A T1WI sequence shows transmural high signal and thinning of the myocardium of the right ventricle, with dilatation of the right ventricle and right ventricular outﬂow tract. What is the most likely diagnosis?",
+      "options": [
+        "A. Tricuspid stenosis.",
+        "B. Uhl’s anomaly.",
+        "C. Pericardial effusion.",
+        "D. Arrhythmogenic right ventricular dysplasia.",
+        "E. Melanoma metastasis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is part of the group of cardiomyopathies and is characterized by ﬁbro-fatty replacement of the right ventricular myocardium and clinically by right ventricular arrhythmias of the LBBB pattern.  It has a variety of clinical presentations, including mechanical dysfunctions and ventricular arrhythmia, and is a cause of sudden cardiac death in young adults. Pathogenesis is not yet understood. Diagnosis is based on structural, histologic, electrocardiographic, and genetic factors. There are major and minor criteria for diagnosis. Angiography and echocardiography lack sensitivity and speciﬁcity. MRI provides the most important morphological, anatomic, and functional criteria for the diagnosis of ARVD with one investigation.\n\nFindings can include fatty or ﬁbro-fatty replacement of the right ventricular free wall myocardium (hence the high T1WI signal), dilatation of the right ventricle or right ventricular outﬂow tract, right ventricular aneurysms, and segmental hypokinesia. Positive MRI ﬁndings should be used as important additional criteria in the diagnosis of ARVD, but the absence of MRI ﬁndings does not exclude the diagnosis.\n\nUhl’s anomaly is very rare (less than 100 reported cases in the 20th century) and consists of a paper-thin right ventricle, with complete absence of any musculature. It can be distinguished from ARVD as it has no gender predisposition or familial occurrence (ARVD is more common in males).\n\nTricuspid stenosis produces dilatation of the right atrium. A pericardial effusion will result in high T2WI and low T1WI signal (unless the effusion is proteinaceous) within the pericardium. Melanoma metastases may well be high signal on T1WI, but they are rare to the heart and would not be expected to cause myocardial thinning.\n\nKayser HW, van der Wall EE, Sivananthan MU, Plein S, Bloomer TN, and de Roos A. Diagnosis of arrhythmogenic right ventricular dysplasia: a review. RadioGraphics 2002; 22: 639–648.",
+      "questionNumber": 55
+    },
+    {
+      "question": "An 18-year-old woman with Poland syndrome is being assessed by plastic surgery for reconstruction. As part of her pre-operative work-up a CT chest is requested. What is the classic ﬁnding in this disorder?",
+      "options": [
+        "A. Absence of the sternal head of pectoralis major.",
+        "B. Hypoplastic clavicles.",
+        "C. Anterior protrusion of the ribs.",
+        "D. Bilateral breast aplasia.",
+        "E. Anterior protrusion of the sternum."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Poland syndrome is an uncommon congenital unilateral chest wall deformity characterized by partial or total absence of the greater pectoral muscle and ipsilateral syndactyly.  Associated anomalies include ipsilateral breast aplasia and atrophy of the second to ﬁfth ribs. Hypoplastic clavicles are a feature of cleidocranial dysostosis. Anterior protrusion of the ribs gives rise to pectus excavatum, whereas anterior protrusion of the sternum is seen in pectus carinatum.\n\nJeung MY, Gangi A, Gasser B, Vasilescu C, Massard G, and Wihlm JM. Imaging of chest wall disorders. RadioGraphics 1999; 19: 617–637.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 65-year-old man presents to the A&E department with acute shortness of breath. He has a CXR performed and this demonstrates a ‘bat-wing’ pattern of pulmonary oedema. Which of the following is the most likely cause?",
+      "options": [
+        "A. Fat embolism.",
+        "B. Diffuse alveolar damage.",
+        "C. Adult respiratory distress syndrome.",
+        "D. Acute mitral valve insufﬁciency.",
+        "E. Left ventricular failure."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "‘Bat-wing’ oedema refers to a central, non-gravitational alveolar oedema, which is seen in less than 10% of cases of pulmonary oedema.  It generally occurs with rapidly developing severe cardiac failure, such as that seen with acute mitral valve insufﬁciency or renal failure. It develops so rapidly that it is initially observed as an alveolar inﬁltrate and the preceding interstitial phase of pulmonary oedema goes undetected radiologically.\n\nARDS and diffuse alveolar damage may overlap pathophysiologically, and along with fat embolism show radiographic changes of a non-cardiogenic pulmonary oedema. These are similar to the standard radiographic features of cardiogenic pulmonary oedema affecting the lung parenchyma, except that GGO tends to be more conﬂuent and consolidative, the changes tend to be less dependent, and subﬁssural thickening/septal lines are uncommon.\n\nNowers K, Rasband JD, Berges G, and Gosselin M. Approach to ground glass opaciﬁcation of the lung. Seminars in Ultrasound, CT and MRI 2002; 23(4): 302–323.\n\nGluecker T, Capasso P, Schnyder P, Gudinchet F, Schaller MD, Revelly JP, Chiotero R, Vock P, and Wicky S. Clinical and radiologic features of pulmonary oedema. RadioGraphics 1999; 19: 1507–1531.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 25-year-old baseball player presents with a history of worsening pain, diffuse oedema and discolouration of the right upper limb following a game. Doppler ultrasound demonstrates occlusion of the axillary and subclavian veins. He undergoes catheter-directed thrombolysis successfully. Check venogram demonstrates external compression from scalenus muscle. What is the diagnosis?",
+      "options": [
+        "A. May–Thurner syndrome.",
+        "B. Nutcracker syndrome.",
+        "C. Paget–Schroetter syndrome.",
+        "D. Trousseau syndrome.",
+        "E. Virchow syndrome."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is also known as ‘effort’ syndrome and is the name given to thrombosis of the axillary and subclavian veins usually due to anatomic compression in the costoclavicular space of the thoracic outlet.  It is commonly seen in young healthy adults who are involved in activities with repetitive shoulder–arm movements.\n\nDoppler ultrasound and MR venogram are useful in diagnosis. Pharmaco-mechanical or catheter-directed thrombolysis, followed by surgical decompression of the thoracic outlet is recommended for optimal treatment.\n\nStepansky F, Hecht EM, Rivera R, Hirsch LE, Taouli B, Kaur M et al. Dynamic MR angiography of upper extremity vascular disease: pictorial review. RadioGraphics 2008; 28: e28.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 45-year-old male patient is referred by his GP for a CXR due to a history of dyspnoea and cough.The CXR shows a convex appearance to the hila with a right paratracheal stripe that measures 1.5 cm.You are arranging follow-up and the respiratory team ask you for your top differential. What do you say?",
+      "options": [
+        "A. TB.",
+        "B. Lymphoma.",
+        "C. Sarcoid.",
+        "D. Castleman’s disease.",
+        "E. Silicosis."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "There are numerous causes of bilateral hilar lymphadenopathy (BHL) and in the absence of further clinical information, sarcoid would always feature high in the list of differentials.  However, the ﬁnding of BHL in association with paratracheal adenopathy is classical for this disease.\n\nAdam A and Dixon A. Grainger and Allison’s Diagnostic Radiology. A textbook of medical imaging, Vol 1, 5th edn, Churchill Livingstone, 2008. Ch 17.\n\nMillar W. Diagnostic Thoracic Imaging, McGraw-Hill, 2006. Ch 12.",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 58-year-old smoker with a history of hypertension and diabetes presents with chest pain typical of angina and is referred for CT coronary angiography.This reveals soft plaque in the proximal left anterior descending (LAD) artery, which is causing a 40% stenosis by area and calciﬁed plaque in the right coronary artery (RCA), which is causing a 50% stenosis by area. Which of the following is the most appropriate next step?",
+      "options": [
+        "A. Percutaneous coronary intervention (PCI) to the LAD.",
+        "B. PCI to the RCA.",
+        "C. PCI to both vessels.",
+        "D. Exercise stress testing.",
+        "E. Lifestyle and risk factor modiﬁcation."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A stenosis is suitable for PCI when it is greater than 75% and may be suitable when it lies between 50 and 75%, depending on the minimal luminal area (MLA) and functional signiﬁcance. Those stenoses less than 50% are not generally suitable for intervention and require medical management only (however, the minimal luminal area of the LMS and proximal main vessels are also taken into account by some authors). Unfortunately the blooming artefact caused by calcium will cause overestimation of the size of a calciﬁed plaque on CT coronary angiography and this remains a great limitation of the technique. In some cases this will make a vessel appear completely occluded by calcium when it is not and an alternative investigation, e.g. catheter angiography, is required.\n\nIn this question, the calciﬁed plaque will appear to cause a 50% stenosis, when in fact the stenosis is much smaller, certainly less than 50%. The LAD stenosis is too small to require treatment (assuming the vessel is of adequate size). Exercise stress testing is not of any particular use, as we have shown no need for revascularization and it would not alter management, which should be aggressive treatment of hypertension, hyperlipidaemia, diabetes, and lifestyle modiﬁcation.\n\nNakanishi T, Kayashima Y, Inoue R, Sumii K, and Gomyo Y. Pitfalls in 16-detector row CT of the coronary arteries. RadioGraphics 2005; 25: 425–440.\n\nBudoff MJ and Shinbane JS (eds). Handbook of Cardiovascular CT: Essentials for Clinical Practice, Springer, 2008. pp. 39–44.",
+      "questionNumber": 60
+    },
+    {
+      "question": "A junior doctor requests your opinion on a postero-anterior (PA) CXR of a 21-year-old man admitted with chest pain. She suspects that the patient has right middle lobe consolidation. What feature on the patient’s radiograph allows you to reassure her that the imaging appearances are secondary to pectus excavatum?",
+      "options": [
+        "A. Rightward displacement of the heart.",
+        "B. ‘Sevens’ appearance to ribs.",
+        "C. Indistinct right heart border.",
+        "D. Bilateral hilar enlargement.",
+        "E. Steeply angulated posterior ribs."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pectus excavatum is a relatively common thoracic skeletal anomaly.  The majority of cases are isolated, although it is associated with Marfan’s syndrome and congenital heart disease. The majority of patients are asymptomatic. On the PA CXR, the heart is shifted to the left. The right heart border is indistinct (suggesting right middle lobe consolidation). The posterior ribs appear horizontal and the anterior ribs are angulated steeply, giving rise to the ‘sevens’ appearance.\n\nPlanner A, Uthappa M, and Misra R. A–Z of Chest Radiology, Cambridge University Press, 2007. pp. 152–153.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A 30-year-old male mechanic presents with digital ischaemia. Catheter angiogram demonstrates occlusion of the distal ulnar artery and abrupt occlusion of some of the digital arteries.The radial artery is patent and there is ﬁlling of the superﬁcial palmar arch via deep palmar arch collaterals. What is the diagnosis?",
+      "options": [
+        "A. Hypothenar hammer syndrome.",
+        "B. Peripheral embolic disease.",
+        "C. Raynaud’s disease.",
+        "D. Thoracic outlet syndrome.",
+        "E. Takayasu arteritis."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is a post-traumatic vascular insufﬁciency of the hand. Any form of repetitive blunt trauma to the hypothenar eminence may result in intimal injury to the terminal ulnar artery or proximal superﬁcial palmar arch, leading to thrombotic occlusion, aneurysms, and distal thromboembolism. \n\nThe symptoms may be similar to Raynaud phenomenon or other causes of embolic occlusion, but the location of the abnormality on imaging is speciﬁc for hypothenar hammer syndrome. Angiography may demonstrate a ‘corkscrew’ appearance in the symptomatic and in the asymptomatic contralateral hand. Distal occlusion due to embolic phenomenon is seen in 50% of cases. Takayasu arteritis affects the proximal aortic branch vessels.\n\nStepansky F, Hecht EM, Rivera R Hirsch LE, Taouli B, Kaur M et al. Dynamic MR angiography of upper extremity vascular disease: pictorial review. RadioGraphics 2008; 28: e28.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 57-year-old patient has a CXR carried out.This shows a mass in the left apex, adjacent to the spine. Numerous soft tissue densities are noted projected across the lungs. A lateral radiograph is carried out which projects the mass over the vertebral bodies and indicates that the smaller densities are cutaneous.You request additional information from the referring clinician.This patient has a complex history. He has type 1 neuroﬁbromatosis, but has also recently been diagnosed with myeloﬁbrosis. You perform a CT scan, which shows widening of the neural foramen on the left side, which is in continuity with the left apex mass.This mass measures 2 cm in diameter and has an attenuation value of 4 HU. What is the most likely diagnosis?",
+      "options": [
+        "A. Neuroblastoma.",
+        "B. Neuroﬁbroma.",
+        "C. Extramedullary haematopoesis.",
+        "D. Lateral meningocele.",
+        "E. Neuro-enteric cyst."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Neuroblastoma is a tumour of childhood and would be extremely rare in a 57-year-old. Whilst the history of neuroﬁbromatosis type 1 (NF-1) would raise the possibility of this lesion being a neuroﬁbroma, the CT ﬁndings of a cyst discount this. Extramedullary haematopoesis is a rare feature of myeloﬁbrosis and commonly gives bilateral soft tissue masses. Lateral meningoceles are herniations of CSF through a dilated neural foramen, most commonly in patients with a history of NF-1.  As they contain cerebrospinal ﬂuid (CSF), the attenuation value would be comparable to water. A neuro-enteric cyst can have a similar appearance. These are often symptomatic and detected in childhood, unlike lateral meningoceles, which are asymptomatic. They are associated with congenital spinal abnormalities rather than widening of the neural exit foramen as described in this case.\n\nMillar W. Diagnostic Thoracic Imaging, McGraw-Hill, 2006. Ch 13.",
+      "questionNumber": 63
+    },
+    {
+      "question": "A 45-year-old woman presents with chest pain, typical of angina. Her ECG and troponin are normal. She is a non-smoker and does not have hypertension or diabetes. Her resting heart rate is 56 beats per minute (bpm).To best assess her further, what do you decide to perform next?",
+      "options": [
+        "A. CT calcium score.",
+        "B. Exercise stress testing.",
+        "C. Contrast enhanced cardiac MRI.",
+        "D. Retrospectively ECG-gated CT coronary angiography.",
+        "E. Prospectively ECG-gated CT coronary angiography."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The NICE guidelines on chest pain of recent onset were published in March 2010. Given the history typical of angina, but lack of risk factors and her age, this lady will fall into the 10–29% estimated likelihood of coronary artery disease (CAD) category (i.e. 10–29% pretest probability of CAD). NICE recommends that these patients should ﬁrst undergo CT calcium scoring. If the calcium score is 0, other causes of chest pain should be investigated. If the score lies between 1 and 400, they should proceed to CT coronary angiography, in which case, because of her low resting heart rate, a prospective study is possible and would provide a signiﬁcantly smaller radiation dose than a retrospective one. If the score is greater than 400, she should be treated as for 61–90% CAD risk: catheter angiography if revascularization is appropriate. It remains to be seen in practice whether clinicians will proceed to catheter angiography on the basis of the calcium score if CT coronary angiography is available to select those who will actually require intervention.\n\nFor those with uncertain results from invasive or CT coronary angiography, or a pretest probability of CAD of 30–59%, functional imaging (e.g. myocardial perfusion imaging with SPECT, stress echo, MR perfusion, or MRI to assess for stress-induced wall motion abnormalities) is advised. If the pre-test probability is >90% with typical features of angina, treatment as angina is recommended (with regard to the NICE guidelines on stable angina, to be published in 2011).\n\nIf the pre-test probability is <10%, alternative causes of pain should initially be explored. The guidelines only mention standard exercise stress testing with respect to patients with known CAD, where it is uncertain if the pain is caused by myocardial ischaemia.\n\nNICE. Chest pain of recent onset: assessment and diagnosis of recent onset chest pain or discomfort of suspected cardiac origin. NICE guideline 95, National Institute of Clinical Excellence, 2010. Available online at: http://guidance.nice.org.uk/CG95.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 64-year-old woman presents with a 3-week history of dry cough. A CXR is performed and shows multifocal bilateral peripheral areas of consolidation. An HRCT of chest is recommended and this demonstrates bilateral peripheral areas of consolidation and GGO.There is no ﬁbrosis.There is peripheral eosinophilia detected on routine blood tests. A careful drug history is obtained. Which of the following medications is the patient most likely to be on?",
+      "options": [
+        "A. Nitrofurantoin.",
+        "B. Amiodarone.",
+        "C. Methotrexate.",
+        "D. Bleomycin.",
+        "E. Cyclophosphamide."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The ﬁndings described on the CXR and HRCT scan are those of pulmonary eosinophilia.  Drugs known to cause pulmonary eosinophilia include nitrofurantoin, penicillamine, sulphasalazine, nonsteroidal anti-inﬂammatory drugs, and para-aminosalicylic acid.\n\nBleomycin and cyclophosphamide are more commonly associated with DAD. Other drugs that can cause this type of lung injury include busulphan, carmustine, gold salts, and mitomycin. In early DAD, HRCT typically shows scattered or diffuse areas of GGO. Fibrosis typically develops within 1 week and if progressive can cause marked architectural distortion and honeycombing.\n\nAmiodarone and methotrexate are associated with an NSIP pattern on HRCT. Carmustine and chlorambucil can also cause this appearance. With early disease, HRCT scans may show only scattered or diffuse areas of GGO. Later, ﬁndings of ﬁbrosis (traction bronchiectasis, honeycombing) predominate in a basal distribution.\n\nOther recognized patterns of drug-induced lung injury include a COP pattern and diffuse pulmonary haemorrhage.\n\nRossi SE, Erasmus JJ, McAdams HP, Sporn TA, and Goodman PC. Pulmonary drug toxicity: radiologic and pathologic manifestations. RadioGraphics 2000; 20: 1245–1259.",
+      "questionNumber": 65
+    },
+    {
+      "question": "A 50-year-old chronic alcoholic and smoker presents with chronic cough.\n\nCXR shows bilateral upper lobe consolidation with nodular opacities and cavitation.These changes are slowly progressive over serial x-rays. A bronchoscopy is arranged and washouts from the upper lobes are negative for mycobacterial infection. Aspergillus titres are positive. How is the disease process best described?",
+      "options": [
+        "A. Allergic bronchopulmonary aspergillosis.",
+        "B. Bilateral aspergillomas with background COPD.",
+        "C. Semi-invasive aspergillosis.",
+        "D. Invasive aspergillosis.",
+        "E. Chronic aspiration pneumonia (aspergillus titres irrelevant)."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is also known as chronic necrotising aspergillosis and typically runs a more indolent, but slowly progressive, course than angio-invasive aspergillosis and occurs in patients with mildly impaired immunity (e.g. chronic alcoholism).  The radiographic ﬁndings consist of upper lobe consolidation, multiple nodules, and cavitatory disease. The gold standard for diagnosis of semi-invasive aspergillosis is the histological demonstration of tissue invasion by the fungus and growth of aspergillus on culture. However, in practice this is difﬁcult to achieve and therefore the combination of the characteristic clinical and radiological features and either positive serological results for aspergillus or the isolation of aspergillus from respiratory samples is highly indicative of semi-invasive aspergillosis.\n\nAngio-invasive aspergillosis occurs in more severely immuno-compromised patients (e.g. AIDS patients). Rapidly progressive nodular opacities occur to form single or multiple homogeneous consolidations. The lesions show a characteristic halo sign on CT, reﬂecting an area of alveolar haemorrhage around a central nodule.\n\nABPA is a hypersensitivity reaction to aspergillus fumigatus that occurs in patients with asthma or cystic ﬁbrosis. It is characterized by inspissated mucus plugs containing aspergillus organisms and eosinophils, resulting in chronic inﬂammation in the airway and bronchial ectasia. The most common CT ﬁnding is central bronchiectasis with upper lobe predominance and mucus impaction.\n\nAspergilloma is a mycetoma (fungus ball), which typically occurs in ectatic airways or parenchymal cavities (e.g. old TB, chronic sarcoid). CT characteristically shows an intracavitatory mass with a surrounding air crescent, more commonly in the upper lobes.\n\nAl-Alawi A, Ryan CF, Flint JD, and Muller N. Aspergillus-related lung disease. Canadian Respiratory Journal 2005; 12(7): 377–387.",
+      "questionNumber": 66
+    },
+    {
+      "question": "A 70-year-old man presents with a 6-month history of cramping pain in the left calf brought on by walking and settling with rest. For the past 3 weeks he has been experiencing pain at rest, which is relieved by dependency of the foot. On examination, the popliteal and tibial pulses are absent.There is no ulceration or gangrene. What is the diagnosis?",
+      "options": [
+        "A. Intermittent claudication.",
+        "B. Critical limb ischaemia.",
+        "C. Acute limb ischaemia.",
+        "D. Nerve root compression.",
+        "E. Diabetic neuropathy."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Muscle pain or discomfort in the lower limb brought on by exercise and relieved by rest within 10 minutes is termed intermittent claudication. This is secondary to reduced perfusion, which may be enough during periods of rest, but on exercise is insufﬁcient to meet the metabolic demand of the muscles.\n\nWith progression of disease, these symptoms may be noticed at rest. Typical ischaemic rest pain is relieved by dependency of the foot secondary to gravity-aided blood ﬂow.\n\nCritical limb ischaemia is the presence of rest pain or tissue loss with ulcers or gangrene. This should be distinguished from acute limb ischaemia. The term ‘critical limb ischaemia’ implies chronicity with symptoms being present for at least 2 weeks.\n\nDiabetic neuropathy is associated with burning or shooting pain in the feet, which may sometimes be difﬁcult to differentiate from atypical ischaemic rest pain. Distinguishing features include bilateral symmetric distribution, cutaneous hypersensitivity, and failure to relieve by dependency of the foot. Reduced vibration sensation and reﬂexes are also seen in diabetic neuropathy.\n\nNerve root compression may sometimes result in continuous pain but it has a dermatomal distribution and is associated with backache.\n\nNogren L, Hiatt WR, Dormandy JA, Nehler MR, Harris KA, and Fowkes FG. Inter-society consensus for the management of peripheral arterial disease. Journal of Vascular Surgery 2007; 45 (1): S5–S67.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A 4-year-old with a history of asthma is admitted with an acute exacerbation. A post-admission CXR shows evidence of pneumomediastinum. Which one of the following is a recognized sign of pneumomediastinum?",
+      "options": [
+        "A. Spinnaker/thymic sail sign.",
+        "B. Air-crescent sign.",
+        "C. Deep sulcus sign.",
+        "D. Inverted V sign.",
+        "E. Outline of the medial diaphragm inferior to the cardiac silhouette."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is due to mediastinal air outlining the thymus in children.  Other features of pneumomediastinum are streaky lucencies in the thoracic inlet, air outlining the major arteries (tubular artery sign), and the continuous diaphragm sign, where air in the posterior mediastinum outlines the diaphragm. This is different to air outlining the medial diaphragm under the cardiac silhouette, which is the earliest sign of a pneumothorax in a supine patient. The deep sulcus sign is also a sign of a pneumothorax in a supine patient. The air-crescent sign is a feature to note in cavitating lung lesions and mycetomas. The inverted V sign is an indicator of pneumoperitoneum.\n\nDahnert W. Radiology Review Manual, 5th edn, Lippincott Williams & Wilkins, 2003. p. 429.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A 25-year-old man presents with chest pain on exertion. He is referred for CT coronary angiography. Which of the following ﬁndings is most signiﬁcant?",
+      "options": [
+        "A. The RCA arises from the left coronary sinus and passes between the aorta and pulmonary artery.",
+        "B. Separate ostia of the LAD and left circumﬂex (LCx) coronary arteries arise from the left coronary sinus.",
+        "C. The left main stem (LMS) arises from the right coronary cusp and passes anterior to the pulmonary artery.",
+        "D. The RCA arises from the right coronary cusp and passes into the right atrioventricular (AV) groove.",
+        "E. The LMS arises from the left coronary cusp and trifurcates into an LAD, LCx and ramus intermedius branch."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Coronary artery anomalies are rare, but can be a cause of chest pain and sudden cardiac death. Diagnosis can be difﬁcult via conventional catheter angiography due to both difﬁculty in locating the abnormal ostia and correct interpretation of the vessel course. Cardiac CT is superior in this regard. \n\nThe anomalies can be malignant or non-malignant depending on the site of origin and course. Option D gives the normal path of the RCA and option E is a common normal variant of the LMS; a bifurcation into LAD and LCx being more usual. In option A the RCA has an anomalous origin from the left coronary cusp and takes a malignant, ‘interarterial’ course, passing between the aorta and pulmonary artery. It is thought that when dilatation of the aorta occurs during exercise, the abnormal slit-like ostium of the RCA becomes narrower, reducing RCA perfusion and causing myocardial infarction. This variant can be associated with sudden cardiac death in 30% of patients.\n\nIn option C the LMS has an anomalous origin and path, but it is benign as it passes anterior to the pulmonary artery. The multiple ostia in option B are benign and may be beneﬁcial, as disease in one vessel proximally would not compromise the other, as would normally occur in LMS disease.\n\nA further malignant coronary anomaly is anomalous origin of the coronary artery from the pulmonary artery (ALCAPA), which is usually symptomatic in childhood. Myocardial bridging, in which a length of coronary artery (usually mid LAD) takes an intramyocardial course and may cause ischaemia, infarction, arrhythmia, and even death, commonly causes no symptoms.\n\nKim SY, Seo JB, Do KH, Heo JN, Lee JS, Song JW et al. Coronary artery anomalies: classiﬁcation and ECG-gated multi-detector row CT ﬁndings with angiographic correlation. RadioGraphics 2006; 26: 317–334.",
+      "questionNumber": 69
+    },
+    {
+      "question": "A patient is being investigated by his GP due to a history of dysphagia and occasional stridor. A CXR has been requested, which is reported as showing possible tracheal abnormality. A lateral CXR is requested and this shows an abnormality in the retro-tracheal space (Raider triangle). Using your knowledge of the anatomy of this space and the diseases that may affect it, which of the following statements correctly describes an abnormality in this area and the effect it will have radiologically on the retro-tracheal space?",
+      "options": [
+        "A. A thickened tracheo-oesophageal stripe of 11mm will displace the trachea posteriorly.",
+        "B. An enlarged aorta bulges into the inferior aspect of the retro-tracheal space.",
+        "C. A subclavian artery aneurysm will be noted posterior to the tracheo-oesophageal stripe and will displace this anteriorly.",
+        "D. Mediastinal extension of a retropharyngeal abscess will widen the tracheo-oesophageal stripe superiorly.",
+        "E. A thyroid goitre extending retrosternally will displace the trachea posteriorly."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Whilst lateral CXRs are seldom requested, when they are requested it is often the retro-tracheal space that requires assessment and thus knowledge of its borders and pathological conditions is relevant.  The retro-tracheal space is bounded anteriorly by the posterior border of the trachea and posteriorly by the vertebrae. The inferior margin is the aortic arch. The space is of low density, being created by the lung posterior to the trachea. The posterior tracheal line is usually 2.5 mm thick, but can be 5.5 mm thick if the anterior wall of the oesophagus lies adjacent to the posterior wall of the trachea (the tracheo-oesophageal line (TOL)). Thus an enlarged aorta would be noted inferiorly. Extension of retro-pharyngeal abscesses usually occurs along the prevertebral space, posteriorly in the retro-tracheal space, thus not affecting the TOL. A normal retro-sternal goitre extending anterior to the trachea is not located in the retro-tracheal space. A normal subclavian artery is not present in the retro-tracheal space, but an aberrant left or right subclavian artery may be identiﬁed in the position described.\n\nFranquet T, Erasmus J, Gimenez A, Rossi S, and Prats R. The retro-tracheal space: normal anatomic and pathologic appearances. RadioGraphics 2002; 22(Special): S231–S246.",
+      "questionNumber": 70
+    },
+    {
+      "question": "A 50-year-old male smoker presents with a history of right-sided calf claudication.The symptoms are not settling with best medical therapy. The magnetic resonance angiogram (MRA) shows occlusion of the right common and external iliac arteries. He is otherwise well and has normal calf veins. What is the recommended treatment for this type of lesion?",
+      "options": [
+        "A. Symptomatic relief.",
+        "B. Continue modiﬁcation of risk factors and exercise therapy.",
+        "C. Percutaneous angioplasty.",
+        "D. Percutaneous stenting.",
+        "E. Surgical bypass."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "According to the trans-Atlantic intersociety consensus (TASC) for management of peripheral arterial disease, aorto-iliac lesions are classiﬁed into four groups: A, B, C, and D. For full details of TASC classiﬁcation please refer to the article below.\n\nThe MR angiography ﬁndings in this case fall into group D. For TASC A lesions (generally short stenosis) endovascular therapy is the treatment of choice and for TASC D lesions (complex/long occlusions) surgical bypass is the treatment of choice. For TASC B and C lesions, the patient’s co-morbidities, patient preference, and local operator’s long-term success rates should be considered. TASC recommends endovascular treatment for type B lesions and surgery for goodrisk patients with type C lesions.\n\nNogren L, Hiatt WR, Dormandy JA, Nehler MR, , Harris KA, and Fowkes FG. Inter-society consensus for the management of peripheral arterial disease. Journal of Vascular Surgery 2007; 45(1): S5–S67.",
+      "questionNumber": 71
+    },
+    {
+      "question": "You notice a mass within the heart on a CT thorax of a 45-year-old patient.\n\nThere is contrast enhancement of the mass. Without further assessment, what is this mass most likely to be?",
+      "options": [
+        "A. Myxoma.",
+        "B. Angiosarcoma.",
+        "C. Metastasis.",
+        "D. Rhabdomyosarcoma.",
+        "E. Primary cardiac lymphoma."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "With the exception of thrombus, metastasis is the most common cardiac mass, being 100–1000 times more common than primary tumour.  Melanoma has the highest propensity for cardiac involvement. Other tumours which commonly metastasize to the heart are sarcomas, lymphoma, and bronchogenic and breast carcinoma. Primary cardiac tumours are rare and 75% are benign. The most common benign primary cardiac tumour is myxoma. The most common malignant primary cardiac tumour is angiosarcoma, followed by rhabdomyosarcoma/primary lymphoma. Primary cardiac lymphoma is much less frequent than secondary involvement and most commonly occurs in immunocompromised patients.\n\nThrombus is by far the most common cardiac mass and most frequent mimic of a cardiac tumour, but it does not enhance. Most thrombi occur in predictable locations, e.g. within the left atrial appendage in the setting of atrial ﬁbrillation (AF), within the left ventricle underlying a dyskinetic segment, or in the right atrium adjacent to central venous lines.\n\nHoey ETD, Mankad K, Puppala S, Gopalan D, and Sivanathan MU. MRI and CT appearances of cardiac tumours in adults. Clinical Radiology 2009; 64: 1214–1230.",
+      "questionNumber": 72
+    },
+    {
+      "question": "A 28-year-old patient is admitted from the dermatology clinic where she is being treated for basal cell carcinoma. She suffered an episode of ventricular tachycardia and imaging is requested secondary to the results of echocardiography. CXR reveals biﬁd ribs. Cardiac MRI reveals a wellcircumscribed abnormality, which is low signal on both T1WI and T2WI and shows delayed enhancement, within the myocardium of the left ventricular free wall. CT reveals a soft-tissue attenuation mass with calciﬁcation. What is the most likely diagnosis?",
+      "options": [
+        "A. Myxoma.",
+        "B. Paraganglioma.",
+        "C. Fibroma.",
+        "D. Fibroelastoma.",
+        "E. Lipoma."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This patient has Gorlin’s syndrome (nevoid basal cell carcinoma syndrome, NBCCS). This may result in abnormalities of the skin (basal cell carcinoma), skeletal (jaw odontogenic keratocysts, biﬁd, fused, or markedly splayed ribs), and genitourinary (ovarian ﬁbromas) systems, as well as cardiac ﬁbroma (relatively rare) and calciﬁcation of the falx. Medulloblastoma is a relatively less common manifestation.\n\nThe imaging characteristics of cardiac ﬁbromas reﬂect their ﬁbrous nature: low signal on T1WI and T2WI with delayed enhancement on MRI.  Most are well circumscribed with a surrounding rim of compressed myocardium. On CT they manifest as mildly enhancing soft tissue attenuation masses. Foci of calciﬁcation are present in up to 50% of cases. Although benign they may cause ventricular arrhythmias and even sudden death secondary to interference with conduction pathways.\n\nAtrial myxomas are of mixed signal on T1WI and T2WI sequences. They are most commonly found within the left atrium (80%), with 15% in the right atrium. On CT a low attenuation intracavitary mass with a smooth or slightly villous surface is seen.\n\nCardiac paragangliomas are well encapsulated, hypervascular (intensely enhancing), and 3–8cm in size. They are isointense to myocardium on T1WI and markedly hyperintense on T2WI. Presentation is with symptoms of catecholamine excess. They are found in the posterior wall of the left atrium, atrioventricular groove, and root of the great vessels.\n\nFibroelastomas arise from endocardial surfaces, most commonly the aortic and mitral valves. They are a recognized cause of sudden death and immediate resection is warranted. Trans-oesophageal echocardiography is the optimal means of visualization due to their small size and highly mobile nature. Cardiac lipomas have characteristic imaging features consistent with fat on MRI and CT.\n\nHoey ETD, Mankad K, Puppala S, Gopalan D, and Sivanathan MU. MRI and CT appearances of cardiac tumours in adults. Clinical Radiology 2009; 64: 1214–1230.",
+      "questionNumber": 73
+    },
+    {
+      "question": "A patient is referred for cardiac MRI. Which of the following is a deﬁnite contraindication?",
+      "options": [
+        "A. Cardiac pacemaker.",
+        "B. Loop recorder.",
+        "C. Coronary artery bypass grafting 2 months ago.",
+        "D. Cardiac stenting 2 months ago.",
+        "E. None of the above."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The presence of cardiac pacemakers used to be an absolute contraindication to MRI scanning. However, with the introduction of MR-conditional pacemakers, scanning is safe under certain conditions. Among these conditions is that only a 1.5 T (Tesla) magnet can be used, and that the appropriate pacing leads for the MRI-conditional pacemaker must be in situ. The pacemaker and leads even have a distinctive ‘wiggly’ line which is projected on chest radiographs and can be used for their recognition.\n\nModern loop recorders are MRI compatible, although they should be interrogated in advance of the scan or information may potentially be lost. Modern metallic grafts, stents etc. are nonferromagnetic and are generally regarded as having undergone adequate ﬁbrosis/neo-intimal hyperplasia to become ﬁxed within the body 6 weeks after the date of insertion. MRI is generally contraindicated in cases of cochlear implants (although there may be exceptions where the internal magnet has been surgically removed or is easily removed, or at ﬁeld strengths of 0.2 T). The compatibility of any device can be veriﬁed by consulting www.mrisafety.com, but it is another matter whether the presence of a compatible device will still result in such artefact as to render the images non-diagnostic.\n\nWilkoff BL, Bello D, Taborsky M, Vymazal J, Kanal E, Heuer H et al. Magnetic resonance imaging in patients with a pacemaker system designed for the MR environment. Heart Rhythm 2011; 8(1): 65–73.",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 24-year-old woman who is 28 weeks pregnant is admitted with suspected pulmonary embolism. As the on-call radiologist, her obstetrician contacts you seeking advice regarding further management. An admission CXR is normal. What investigation do you advise initially?",
+      "options": [
+        "A. Venous ultrasound.",
+        "B. Low-dose CTPA.",
+        "C. Reduced dose lung scintigraphy.",
+        "D. MRA.",
+        "E. Catheter pulmonary angiography."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "For pregnant patients, venous ultrasound is recommended before imaging tests with ionizing radiation are performed. Up to 29% of pregnant patients with PE will have a positive venous ultrasound, obviating the need for further imaging. The majority of the PIOPED II investigators currently recommend V/Q scanning over CTPA in the evaluation of PE in pregnant patients. The foetal dose with V/Q is similar to that with CTPA, although the effective dose per breast is much greater with CTPA. MRI requires further evaluation and gadolinium-based contrast agents have not been proven to be safe in pregnancy. The role of catheter angiography is probably limited to those patients requiring mechanical thrombectomy. It should be noted that even a combination of CXR, lung scintigraphy, CTPA, and pulmonary angiography exposes the foetus to approximately 1.5mGy of radiation, which is well below the accepted limit of 50 mGy for the induction of deterministic effects in the foetus.\n\nStein PD, Woodard PK, Weg JG, Wakeﬁeld TW, Tapson VF, Sostman HD et al. Diagnostic pathways in acute pulmonary embolism: recommendations of the PIOPED II investigators. Radiology 2007; 242: 15–21.\n\nPahade JK, Litmanovich D, Pedrosa I, Romero J, Bankier AA, and Boiselle PM. Imaging pregnant patients with suspected pulmonary embolism: what the radiologist needs to know. RadioGraphics 2009; 29: 639–654.",
+      "questionNumber": 75
+    }
+  ]
+}
+  

@@ -1,0 +1,1047 @@
+
+{
+  "title": "Genitourinary, Adrenal, Obstetric & Gynaecology and Breast",
+  "questions": [
+    {
+      "question": "A 48-year-old man presents with a painless swelling in the right scrotum. He has a past medical history of bilateral undescended testes and subsequent orchidopexy. On examination, there is a firm right testicular lump but no inguinal lymphadenopathy. On ultrasound, a well-defined, homogeneous hyporeflective mass was found within the right testicle. The right epididymis and contralateral testicle appeared normal. What is the most likely diagnosis?",
+      "options": [
+        "A. Leukaemic testicular infiltrate",
+        "B. Testicular epidermoid cyst",
+        "C. Testicular metastasis",
+        "D. Testicular seminoma",
+        "E. Testicular teratoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The clinical history and ultrasound appearances are highly suggestive of testicular seminoma. Reference: Grainger & Allison's 5e, pp 939-941.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 65-year-old man with transitional cell carcinoma of the bladder undergoes a pelvic MRI. On Tlw sequences, there is a 2-cm papillary bladder wall growth that returns signal intensity higher than that of the surrounding urine and extends into the bladder wall. On T2w sequences, an uninterrupted low signal intensity line clearly separates the tumour from the surrounding perivesical fat. No perivesical stranding is seen. Which one of the following options best describes the staging of the tumour?",
+      "options": [
+        "A. T2a",
+        "B. T2b",
+        "C. T3a",
+        "D. T3b",
+        "E. T4a"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "MRI is the most accurate imaging modality to differentiate T3a from T3b carcinoma. On T2w sequences, an uninterrupted low signal intensity bladder wall seen between the tumour and the surrounding fat excludes extension into the perivesical fat, limiting the tumour to stage T3a. Reference: Grainger & Allison's 5e, pp 892-893.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 65-year-old man is referred to the urology outpatient clinic with a painless right testicular lump. On ultrasound, there is a 3-cm heterogeneous mass within the right testicle that has concentric rings of alternating hypo- and hyperechogenicity, giving the mass a ‘whorled’ appearance. A subsequent MRI shows this mass to have alternating low and high signal intensity layers on T2w sequences. What is the most likely diagnosis?",
+      "options": [
+        "A. Melanoma metastases",
+        "B. Orchitis",
+        "C. Testicular abscess",
+        "D. Testicular epidermoid cyst",
+        "E. Testicular microlithiasis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The Clinical Radiology pictorial review on the ultrasound appearances of testicular epidermoid cysts provides an excellent supplement to GdrA. References: Grainger & Allison's 5e, pp 940—941. Acchley JTM, Dewbury KC. Ultrasound appearances of testicular epidermoid cysts: pictorial review. Clin Radiol 2000;55(7):493-502.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 13-year-old boy presents to the Emergency Department with sudden onset of left scrotal pain, fever and vomiting. The referring clinician suspects left testicular torsion and requests an urgent ultrasound prior to surgical exploration. Which of the following radiological findings would suggest that the left testis is still viable?",
+      "options": [
+        "A. A diffusely enlarged hypoechoic left testis",
+        "B. A normal echogenicity testis on grey-scale imaging",
+        "C. A small shrunken left testis with a surrounding hydrocoele and scrotal wall thickening",
+        "D. Absent blood flow within the left testis on colour flow Doppler but good flow within the tunica vaginalis",
+        "E. An enlarged heterogeneous left testis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The section on testicular torsion within the comprehensive review by Fiitterer et al provides useful additional information. References: Grainger & Allison's 5e, p 946. Fiitterer JJ, Heijmink SW, Spermon JR. Imaging the male reproductive tract: current trends and future directions. Radiol Clin North Am 2008;46(1):133-147.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 25-year-old man presents with a tender right scrotum. Which one of the following statements best describes the expected ultrasound findings in acute, uncomplicated epididymo-orchitis?",
+      "options": [
+        "A. A small atrophic right testis",
+        "B. A well-defined testicular mass of mixed echogenicity that has a whorled appearance and reduced flow on colour Doppler",
+        "C. Multiple small (approx. 1 mm) echogenic foci scattered throughout the",
+        "D. Patchy areas of increased echogenicity within the testis with reduced flow on colour Doppler",
+        "E. Well-defined, patchy areas of decreased echogenicity within the right"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In the early phase of acute orchitis, there is oedema of the testis leading to swelling and diffuse low reflectivity on ultrasound. The ultrasound appearances then evolve to increasingly well-defined areas of patchy low reflectivity. Colour Doppler flow is typically increased within these areas of low reflectivity. Reference: Cook JL, Dewbury K. The changes seen on high-resolution ultrasound in orchitis. Clin Rad 2000;55:13-18.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 35-year-old man is discovered to have a right testicular mass on ultrasound. Which additional ultrasound finding would suggest a diagnosis of teratoma rather than seminoma?",
+      "options": [
+        "A. A testicular mass that contains areas of calcification",
+        "B. A testicular mass that demonstrates increased colour Doppler flow",
+        "C. A testicular mass that is homogeneously anechoic with posterior acoustic enhancement",
+        "D. A testicular mass that is hypoechoic compared with the surrounding testicular parenchyma",
+        "E. A testicular mass that has well-defined margins"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Reference: Grainger & Allison’s 5e, p 939.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 32-year-old man received a cadaveric renal transplant 3 days ago. He now presents with increasing right iliac fossa pain and deteriorating renal function. On ultrasound, there is mild dilatation of the pelvicalyceal system with prominent renal pyramids. On Doppler ultrasound, colour Doppler flow is present within the renal artery and the interlobar arteries. The interlobar arterial waveform has tall systolic peaks with diastolic flow below the baseline. What is the most likely diagnosis?",
+      "options": [
+        "A. Acute tubular necrosis",
+        "B. Acute rejection",
+        "C. Arteriovenous fistula",
+        "D. Renal artery stenosis at the site of anastomosis",
+        "E. Renal vein thrombosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Diastolic flow reversal in the renal arcuate arteries on spectral Doppler ultrasound is a feature of renal vein thrombosis. Acute tubular necrosis (ATN) and acute rejection are difficult to distinguish on a single Doppler examination because they both cause an increase in the resistive index (> 0.8). Renal artery stenosis does not cause diastolic flow reversal and classically produces a slow rising parvus et tardus waveform. An arteriovenous fistula is usually the result of renal biopsies and presents as an area of turbulent high flow within the renal parenchyma. Reference: Baxter GM. Ultrasound of renal transplantation. Clin Radiol 2001;56(10):802—818.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A full-term neonate has a palpable left-sided abdominal mass. On ultrasound, the right kidney appears normal whilst the left kidney is grossly enlarged, containing multiple anechoic cysts of varying sizes which do not communicate with each other. A subsequent MAG3 scintigram confirms normal function within the right kidney and no evidence of isotope uptake on the left. What is the most likely underlying diagnosis?",
+      "options": [
+        "A. Autosomal dominant polycystic kidney disease (ADPKD)",
+        "B. Autosomal recessive polycystic kidney disease (ARPKD)",
+        "C. Hydronephrosis",
+        "D. Infantile form of medullary sponge kidney (IMSK)",
+        "E. Multicystic dysplastic kidney disease (MCKD)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "MCKD is unilateral; if bilateral it is not compatible with life. Reference: Grainger & Allison's 5e, pp 1555—1558 (Table 66.4 provides a concise summary).",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 40-year-old male diabetic patient has an intravenous urogram (IVU) for left-sided renal colic. On the IVU, the left kidney shows papillary and calyceal abnormalities that give an 'egg in a cup’ appearance at some calyces and ‘tracks and horns’ at other calyces. The affected left kidney has preserved renal cortical thickness despite the calyceal/papillary abnormalities. The contralateral kidney appears normal. What is the most likely diagnosis?",
+      "options": [
+        "A. Acute pyelonephritis",
+        "B. Amyloidosis",
+        "C. Reflux nephropathy",
+        "D. Renal papillary necrosis",
+        "E. Xanthogranulomatous pyelonephritis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In papillary necrosis, there is no focal cortical loss, despite papillary/calyceal abnormalities. Reference: Grainger & Allison's 5e, pp 836-837.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 40-year-old female diabetic patient has right loin pain, vomiting and a fever. An ultrasound examination is requested to exclude urinary obstruction. This demonstrates no evidence of upper tract dilatation, but features of acute pyelonephritis are present. What are the most likely sonographic findings within the right kidney?",
+      "options": [
+        "A. Focal areas of reduced reflectivity in the renal parenchyma",
+        "B. Focal atrophy of segments of the right kidney",
+        "C. Increased echogenicity of the renal calyces",
+        "D. Enlarged right kidney and diffusely hyperechoic parenchyma",
+        "E. Shrunken right kidney and diffusely hyperechoic parenchyma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Reference: Grainger & Allison's 5e, pp 835-836.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 43-year-old female diabetic patient with right-sided renal colic has a CT urogram (CTU). This demonstrates a calculus within the right renal pelvis and the right renal cortex is almost entirely replaced by a heterogeneous ill-defined mass that extends to involve Gerota's fascia. This right renal mass contains rounded areas of low attenuation (—15 to —20 HU) which don't enhance postcontrast. On a subsequent MRI, the right renal mass appears heterogeneous with rounded areas of high signal on Tlw and low signal on STIR images. What is the most likely diagnosis?",
+      "options": [
+        "A. Emphysematous pyelonephritis",
+        "B. Renal angiomyolipoma",
+        "C. Renal cell carcinoma",
+        "D. Staghorn calculus with coexistent malakoplakia",
+        "E. Xanthogranulomatous pyelonephritis."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Xanthogranulomatous pyelonephritis (XGP) is a rare form of low-grade chronic renal infection, characterised by progressive destruction of the renal parenchyma. The histological hallmark is replacement of the renal parenchyma by lipid-laden foamy histiocytes. Women are predominantly affected (in a 3:1 ratio), usually in mid-life (50—60 years) and after a long history of recurrent urinary tract infection or urinary stones. Involvement of both kidneys is exceedingly rare. XGP is diffuse in 90% of cases, but focal XGP can simulate a renal tumour. References: Grainger & Allison’s 5e, p 839. Loffroy R, Guiu B, Watfa ], et al. Xanthogranulomatous pyelonephritis in adults: clinical and radiological findings in diffiise and focal forms. Clin Radiol 2007;62(9):884-890.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 58-year-old woman suffers a left ureteric injury during a total abdominal hysterectomy. Postoperatively, she develops left loin pain and a fever, and ultrasound demonstrates a moderate left hydronephrosis. The clinical team are concerned that she has an infected, obstructed left kidney and request a nephrostomy. Which one of the following statements is correct regarding percutaneous nephrostomy?",
+      "options": [
+        "A. A 4 French nephrostomy catheter is adequate to drain an infected collecting system likely to contain pus.",
+        "B. If the renal pelvis is punctured with the wire during a successful procedure, the patient will always require surgical repair.",
+        "C. It is best to dilate the tract 1 French size bigger than the size of the intended nephrostomy catheter (eg 8F for a 7F catheter).",
+        "D. It is best to directly puncture the renal pelvis.",
+        "E. It is usually best to aim to puncture an upper pole calyx."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Puncture of posterior calyces in the mid- and lower poles is optimal. Upper pole puncture increases the risk of pneumothorax whilst direct puncture of the pelvis increases the risk of major vascular injury and persistent urinaty leak. If the renal pelvis is inadvertently punctured with the guidewire, once adequate drainage is obtained, this usually settles with observation. Reference: Kessel & Robertson. Interventional Radiology: A Survival Guide, 2nd edition (Edinburgh: Churchill Livingstone, 2005).",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 55-year-old HIV-positive man presents with macroscopic haematuria and right-sided renal colic. An IVU does not demonstrate any renal tract calcification, but there is a dense right nephrogram with no excretion of contrast on a delayed film. The urologist performs a retrograde ureteroscopy and retrieves a 9-mm right ureteric calculus. What is the likely composition of the calculus?",
+      "options": [
+        "A. Calcium oxalate",
+        "B. Cysteine",
+        "C. Indinavir phosphate",
+        "D. Struvite",
+        "E. Uric acid"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Reference: Grainger & Allison's 5e, pp 878-879.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 58-year-old man recently migrated to the UK from Kenya. He has been experiencing haematuria, weight loss and dysuria for several months. A series of imaging investigations are requested by the urologists and reveal evidence of renal tract TB. Which one of the following statements best describes the likely radiological findings in renal tract tuberculosis?",
+      "options": [
+        "A. A chest radiograph is normal in 75—80% of cases.",
+        "B. Bladder calcification is more commonly seen than renal or ureteric calcification.",
+        "C. Free vesicoureteric reflux into a widely dilated upper renal tract is frequently seen.",
+        "D. Tramline calcification is seen within the seminal vesicles.",
+        "E. Findings usually present as bilateral renal tract disease."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Reference: Grainger & Allison's 5e, pp 837-839.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 29-year-old man has an IVU performed following an episode of haematuria. This demonstrates complete right-sided ureteric duplication. Which one of the following statements is true?",
+      "options": [
+        "A. If present, an ectopic ureterocoele is usually related to the lower moiety",
+        "B. The lower moiety ureter usually obstructs at the vesicoureteric junction.",
+        "C. The upper moiety calyces are prone to vesicoureteric reflux.",
+        "D. The upper moiety ureter is prone to ureteric obstruction.",
+        "E. The upper moiety ureter usually inserts into the bladder superior to the lower moiety ureter."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Reference: Grainger dr Allison's 5e, pp 819 -820.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A patient with normal renal function and suspected right renal artery stenosis undergoes a dynamic angiotensin converting enzyme inhibitor (ACE1) MAG3 renogram. Which one of the following statements best describes the findings of the ACEI renogram in right renal artery stenosis?",
+      "options": [
+        "A. After administration of the ACEI, there is increased blood flow to the right kidney.",
+        "B. On a time activity graph, the mean transit time of the right kidney is reduced following ACEI.",
+        "C. On a time activity graph, the time to peak of the right kidney is increased following ACEI.",
+        "D. The ACEI renogram will be normal because the renal function is preserved.",
+        "E. The ACEI renogram will show an increase in total and relative renal function of the right kidney when compared with the left kidney."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Reference: Grainger & Allison's 5e, pp 843-844 (Figure 39.15 provides a clear summary of the findings).",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 27-year-old man with membranous glomerulonephritis presents with a 1-day history of right-sided flank pain and haematuria. An abdominal radiograph did not reveal any renal calcification but his renal function has significantly deteriorated over the past 24 hours. On ultrasound there is a large, oedematous right kidney with loss of the corticomedullary differentiation. On a subsequent IVU, there is a faint nephrogram with absent pelvicalyceal filling after 15 minutes. What is the most likely diagnosis?",
+      "options": [
+        "A. Acute hydronephrosis",
+        "B. Acute pyelonephritis",
+        "C. Acute renal infarction",
+        "D. Acute renal vein thrombosis",
+        "E. Chronic pyelonephritis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Reference: Grainger & Allison's 5e. p 849.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 37-year-old man presents with right flank pain, fever and tenderness. On a contrast-enhanced CT abdomen, there is a ring-enhancing mass just anterior to Gerota's fascia but posterior to the parietal peritoneum on the right. In which fascial compartment does the abnormality lie?",
+      "options": [
+        "A. Anterior pararenal space",
+        "B. Anterior perinephric space",
+        "C. Anterior subcapsular space",
+        "D. Posterior pararenal space",
+        "E. Posterior perinephric space"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The anterior pararenal space lies between the posterior parietal peritoneum anteriorly and Gerota's fascia posteriorly. This space is only partially closed; medially by fusion of the fascial planes along the aorta and IVC and laterally by the lateroconal fascia. Reference: Grainger & Allison's 5e, pp 817-819.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 57-year-old diabetic man with a 6-week history of pyrexia of unknown origin has a contrast-enhanced CT abdomen. There is an upper pole renal mass that has a thick irregular enhancing wall with a central area of fluid attenuation with other areas of very low attenuation (—1000 HU). Which one of the following is the likely diagnosis?",
+      "options": [
+        "A. Metastatic disease",
+        "B. Renal abscess",
+        "C. Renal cyst with haemorrhage",
+        "D. Renal infarction",
+        "E. Renal lymphoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The presence of gas within a lesion is virtually diagnostic of an abscess but very rarely seen. Immunocompromised patients and those with diabetes are more prone to renal abscess. Reference: Grainger & Allison's 5e. pp 861-862.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 74-year-old woman undergoes a follow-up CT for gastric carcinoma. She has previously received palliative chemotherapy, but has recently deteriorated with marked loss of weight. The CT demonstrates progressive disease with new lung and liver metastases and there are new abnormalities in both kidneys. Which one of the following statements best describes the CT findings of haematogenous metastases to the kidneys?",
+      "options": [
+        "A. Curvilinear (arc)-like calcification is a characteristic feature.",
+        "B. Metastases to the kidney are usually < 3 cm in size and limited to the",
+        "C. Multiple lesions involving the medulla are a feature of haematogenous metastases.",
+        "D. If renal vein invasion is not present, renal metastases are highly unlikely.",
+        "E. Renal metastases are usually hypovascular on contrast-enhanced CT."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Reference: Grainger & Allison's 5e, pp 866-867.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 41-year-old woman is diagnosed with significant right renal arteiy stenosis and referred for angioplasty. Regarding this procedure, which one of the following statements is correct?",
+      "options": [
+        "A. Angioplasty of ostial lesions has a poorer prognosis than angioplasty of more distal lesions.",
+        "B. Intra-arterial GTN to treat vasospasm is contraindicated during the procedure.",
+        "C. Stenoses due to fibromuscular dysplasia don't respond well to angioplasty",
+        "D. Stenoses due to fibromuscular dysplasia tend to involve the renal artery",
+        "E. The majority of renal artery stenoses are due to fibromuscular dysplasia."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Ostial and proximal lesions are usually due to atherosclerotic disease. Ostial stenoses are due to aortic wall atheroma and are prone to elastic recoil; therefore they have poor results with angioplasty alone. As a result, many radiologists will opt for angioplasty and primary stenting in patients with ostial stenoses. Fibromuscular dysplasia typically affects the mid-distal renal artery and responds well to angioplasty alone. Reference: Kessel & Robertson, Interventional Radiology: A Survival Guide.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 63-year-old nulliparous, obese female patient presents with postmenopausal bleeding. On a transvaginal ultrasound examination the endometrium is 8 mm thick. The radiology SpR suspects endometrial carcinoma and suggests an MRI for further evaluation. What MRI findings would support a diagnosis of endometrial carcinoma?",
+      "options": [
+        "A. On post-gadolinium Tlw images, the thickened endometrium enhances less than the adjacent myometrium.",
+        "B. On Tlw sequences, the thickened abnormal endometrium appears hypointense to the adjacent myometrium.",
+        "C. Post-gadolinium fat-suppressed Tlw sequences show enhancement of the thickened endometrium.",
+        "D. Tlw sequences show the junctional zone as a low signal band sandwiched between the high signal endometrium and the intermediate signal peripheral myometrium.",
+        "E. T2w sequences show the junctional zone as a high signal band."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "References: Grainger & Allison’s 5e, pp 1219, 1227-1229. Barwick TD, Rockall AG, Barton DP, et al. Imaging of endometrial carcinoma. Clin Radiol 2006;61:545-555.",
+      "questionNumber": 22
+    },
+    {
+      "question": "An 81-year-old woman presents to the Emergency Department with sepsis and left iliac fossa pain. She has grossly elevated inflammatory markers and serum creatinine = 212jlmo!/L. A contrast-enhanced CT is requested for suspected acute diverticulitis, but the on-call radiology SpR is concerned about the possibility of contrast-mediated nephrotoxicity (CMN). Which one of the following statements is true regarding CMN?",
+      "options": [
+        "A. Atrial fibrillation is an independent risk factor for developing CMN.",
+        "B. CMN is defined as renal impairment (an increase in serum creatinine by more than 50% or by 44 pmol/L above baseline) within 24 hours of contrast injection.",
+        "C. Low osmolar contrast media is more nephrotoxic than high osmolar contrast media, in patients with pre-existing renal impairment.",
+        "D. Pre-hydration with 1 mL/kg body weight/h of 0.9% NaCl for 4 hours prior to the contrast injection may increase the incidence of CMN.",
+        "E. Prophylactic haemodialysis in patients with renal impairment does not reduce the risk of CMN."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "CMN is defined as an increase in serum creatinine by more than 25% or by 44[lmol/L above baseline within 3 days of contrast administration. Prophylactic haemodialysis does not reduce the incidence of CMN but haemofiltration does. Reference: Morcos SK. Prevention of contrast media nephrotoxicity—the story so far. Clin Radiol 2004;59:381-389.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 64-year-old man presents with right renal colic and a kidney ureter bladder plain radiograph (CT KUB) is performed. This demonstrates an incidental 2-cm solid right adrenal mass. On the unenhanced CT, the mass is homogeneous and has an average density of 7 HU. What is the most likely diagnosis?",
+      "options": [
+        "A. Adrenal adenoma",
+        "B. Adrenal hyperplasia",
+        "C. Adrenal metastasis",
+        "D. Focal adrenal haemorrhage",
+        "E. Primary adrenal malignancy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The 10-HU threshold is now the standard by which radiologists differentiate lipid-rich adenomas from most other adrenal lesions on unenhanced CT. The presence of substantial amounts of intracellular fat is critical in malting the specific diagnosis of adenoma. Up to 30% of adenomas, however, do not have abundant intracellular fat and, thus, show attenuation values greater than 10 HU on unenhanced CT. Lesions above 10 HU on an unenhanced CT are considered indeterminate and other investigations may be required. Reference: Blake MA, Holalkere N, Boland GW. Imaging techniques for adrenal lesion characterization. Radiol Clin North Am 2008;46:65-78.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 62-year-old man has an MRI pelvis for biopsy-proven prostate cancer. Following thorough review of the examination, tire reporting radiologist concludes that the patient's disease stage is T3N0M0. Which one of the following findings was likely to have been present on MRI?",
+      "options": [
+        "A. The prostatic capsule is breached with seminal vesicle invasion.",
+        "B. Regional nodes > 10 mm in size.",
+        "C. Tumour extends into both lobes of the prostate.",
+        "D. Tumour involves only one lobe.",
+        "E. Tumour invades the bladder neck."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Stage T3 implies tumour extension through the prostate capsule with/without invasion of the seminal vesicles. Reference: Grainger & Allison's 5e, pp 904-907.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 36-year-old woman undergoes a pelvic MRI following the discovery of a left ovarian mass on ultrasound. The reporting radiologist identifies a 3-cm mass in the left ovaiy and believes this to be an ovarian fibroma. Which one of the following statements best describes the likely MRI findings?",
+      "options": [
+        "A. A left ovarian mass of high signal on Tlw and low signal on T2w images",
+        "B. A left ovarian mass of high signal on Tlw, showing loss of signal on STIR images",
+        "C. A left ovarian mass of high signal on T2w but low signal on Tlw images",
+        "D. A left ovarian mass yielding low signal on both Tlw and T2w images",
+        "E. Compared with in-phase images, the 3-cm ovarian mass shows signal loss in out-of-phase Tlw sequences"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ovarian fibromas have characteristic low signal on both Tlw and T2w sequences, due to the presence of densely packed connective tissue. References: Grainger dr Allison's 5e, p 1236. Oh SN, Rha SE, Byun JY, et al. MRI features of ovarian fibromas: emphasis on their relationship to the ovary. Clin Radiol 2008;63(5):529-535.",
+      "questionNumber": 26
+    },
+    {
+      "question": "Dynamic contrast-enhanced CT may be used to characterise adrenal lesions. Which one of the following statements best describes the imaging characteristics of a primary adrenal carcinoma on portal venous phase (70 s) and subsequent delayed phase (15 min) contrast-enhanced CT images?",
+      "options": [
+        "A. Early washout on delayed images",
+        "B. No measurable enhancement in either phase",
+        "C. Poor early enhancement, with an increase in enhancement on delayed images",
+        "D. Washout by greater than 80%, compared with the early postcontrast",
+        "E. Washout of less than 40% on delayed images, compared with the portal venous phase images"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Malignant lesions have abnormally high vascular density leading to slower flow and'increased microvascular permeability. This translates to longer transit times for intravenous contrast within malignant adrenal lesions, compared with simple adenomas. Reference: Blake MA, Holalkere N, Boland GW. Imaging techniques for adrenal lesion characterization. Radiol Clin North Am 2008;46:65-78.",
+      "questionNumber": 27
+    },
+    {
+      "question": "You are the radiology SpR consenting a 70-year-old man for a transrectal ultrasound (TRUS) prostate biopsy. Which one of the following is not a recognised complication of this procedure?",
+      "options": [
+        "A. Haematuria",
+        "B. Haematospermia",
+        "C. Perirectal bleeding",
+        "D. Pneumoperitoneum",
+        "E. Pain/discomfort post-procedure"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Almost all patients complain of pain/discomfort afterwards and up to 80% will experience either haematuria or haematospermia. Perirectal bleeding (up to 37%), infection, vasovagal attack, urinary retention and epididymitis are other recognised complications. Pneumoperitoneum should not occur because the prostate lies well below the peritoneal reflection. Reference: Uppot RN, Gervais DA, Mueller PR. Interventional uroradiology. Radiol Clin North Am 2008;46:45-64.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 35-year-old patient received a cadaveric renal transplant 5 days ago and now presents with worsening renal function and decreasing urine output. Which one of the following findings on a Tc-99m DTPA radionuclide scan would favour a diagnosis of acute tubular necrosis (ATN) over acute rejection?",
+      "options": [
+        "A. Delayed renal excretion",
+        "B. Elevated resistive index greater than 0.7",
+        "C. Increased renal perfusion after administration of an ACEI (eg Captopril)",
+        "D. Poor/impaired graft perfusion",
+        "E. Preserved renal transplant perfusion"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "ATN is an early complication in cadaveric allografts and frequently resolves spontaneously in 1—3 weeks. The radionuclide imaging findings of ATN are of preserved perfusion but poor renal function and urine excretion. In acute rejection however, there is both impaired renal function and reduced perfusion on radionuclide imaging. Reference: He W, Fischman AJ. Nuclear imaging in the genitourinary tract: recent advances and fitture directions. Radiol Clin North Am 2008;46:25-43.",
+      "questionNumber": 29
+    },
+    {
+      "question": "Which one of the following radiological findings is a recognised feature of Von Hippel Lindau (VHL) disease?",
+      "options": [
+        "A. Bilateral adrenal masses that yield a high signal on T2w sequences",
+        "B. Cerebral aneurysms on CT angiography",
+        "C. Evidence of calcified subependymal nodules on CT head",
+        "D. Polymicrogyria and corpus callosum agenesis on MRI brain",
+        "E. Unenhanced CT head demonstrating a midline, hyperdense vermian mass abutting the roof of the 4th ventricle"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Phaeochromocytomas are hyperintense on T2w sequences and iso- or hypointense to the liver on Tlw sequences. Reference: Torreggiani WC, Keogh C, Al-Ismail K. et al. Von Hippel-Lindau disease: a radiological essay. Clin Radiol 2002;57:670-680.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 34-year-old man is knocked off his bicycle by a car and presents to the Emergency Department with bruising over the right flank and gross haematuria. The A&E SpR suspects renal injury and requests a CT abdomen. Which one of the following findings is most likely to be seen in uncomplicated renal contusion (Grade 1 renal injury)?",
+      "options": [
+        "A. Ill-defined areas of low attenuation with irregular margins",
+        "B. Subcapsular high attenuation collection",
+        "C. Wedge-shaped areas of high attenuation, typically involving the renal",
+        "D. Well-defined areas of low attenuation within the renal parenchyma",
+        "E. Urinoma formation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Reference: Grainger & Allison's 5e, p 921.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 24-year-old motorcyclist involved in a traffic accident presents to the Emergency Department with a broken leg and bruising over his left flank. He is found to have microscopic haematuria and fractures of the left 8th and 9th ribs. The patient is haemodynamically stable and clinicians suspect a left renal injury. Which one of the following imaging investigations is the most appropriate?",
+      "options": [
+        "A. Abdominal ultrasound",
+        "B. Contrast-enhanced CT abdomen and pelvis",
+        "C. Emergency catheter renal angiography",
+        "D. Gadolinium-enhanced renal MRI",
+        "E. IVU"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In the setting of a haemodynamically stable patient with a history of major blunt trauma, CT is the most appropriate imaging investigation. Reference: Grainger & Allison's 5e, p 920 (Table 43.1).",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 22-year-old woman is kicked in the abdomen during an attempted robbery. She presents with haematuria and a triple-phase CT abdomen (arterial, portal venous and delayed phases) shows a left ureteric injury. What level is the ureteric injury most likely to be at?",
+      "options": [
+        "A. At the level of the ischial spines",
+        "B. Lower third of the ureter",
+        "C. Middle third of the ureter",
+        "D. Pelviureteric junction",
+        "E. Vesicoureteric junction"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ureteric injury associated with blunt trauma typically occurs at the pelviureteric junction. Hyperextension with overstretching of the ureter or compression of the ureter against the lumbar transverse processes is the likely mechanism. Reference: Grainger dr Allison's 5e, p 928.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 68-year-old man is involved in a traffic accident and sustains a pelvic fracture, head and limb injuries. Attempted urethral catheterisation in the Emergency Department is unsuccessful and a cystourethrogram is requested to exclude urethral injuries. Regarding urethral injuries, which one of the following statements is correct?",
+      "options": [
+        "A. Anterior urethral injury is more commonly due to iatrogenic or penetrating trauma than to blunt traiima.",
+        "B. Cystography should precede a retrograde urethrogram in a patient with suspected urethral injury.",
+        "C. In men, on digital rectal examination the prostate is lower than normal in patients with urethral trauma.",
+        "D. Urethral injuries occur in 50% of major pelvic fractures.",
+        "E. Urethral injury due to blunt trauma more commonly affects the penile urethra."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Reference: Grainger & Allison's 5e, p 932.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 24-year-old motorcyclist is involved in a high-speed accident and is brought to the Emergency Department. He has abdominal guarding and is haemodynamically unstable. An ultrasound abdomen performed in the Emergency Department demonstrates free peritoneal fluid and a laparotomy is performed. In addition to liver and splenic lacerations, the surgeon finds a left retroperitoneal haematoma. Postoperatively, the on-call urologist requests a CT abdomen to assess the left renal injury. Which one of the following findings would indicate a Grade 4 renal laceration?",
+      "options": [
+        "A. Extravasation of contrast from the pelvicalyceal system on delayed phase (5 min) images",
+        "B. Large (2-cm) subcapsular haematoma",
+        "C. Perinephric haematoma that extends into the pararenal spaces",
+        "D. Ill-defined low attenuation change in the lower pole renal cortex",
+        "E. Segmental renal infarction"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A deep renal laceration that extends into the collecting system is indicative of a grade 4 injury. Reference: Grainger & Allison's 5e, pp 919-928.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 54-year-old man attends the Radiology Department for an ascending urethrogram. He has a past histoiy of previous urethral stricture and urethroplasty at a different hospital and has now developed recurrent lower urinary tract symptoms. Which one of the following statements regarding urethral strictures is true?",
+      "options": [
+        "A. Inflammatory strictures most commonly occur within the penile urethra, the site of the periurethral glands.",
+        "B. Most inflammatory strictures occur in the prostatic urethra.",
+        "C. The urethral strictures due to transurethral retrograde prostatectomy (TURP) are typically long segment, irregular strictures.",
+        "D. Traumatic strictures usually take longer to develop than inflammatory strictures.",
+        "E. Ultrasound is more accurate than conventional urethrography in the assessment of urethral strictures."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Reference: Grainger & Allison's 5e, p 914.",
+      "questionNumber": 36
+    },
+    {
+      "question": "Which one of the following statements best describes the radiological appearances of a parapelvic renal cyst?",
+      "options": [
+        "A. It does not opacify during IVU.",
+        "B. If hydronephrosis is present, a parapelvic cyst can be excluded.",
+        "C. It shows delayed (10 min) filling on IVU.",
+        "D. It may have similar appearances to calyceal diverticula on IVU.",
+        "E. The majority arise from the lower renal pole."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A parapelvic cyst is located near the renal hilum, does not communicate with the renal pelvis (unlike calyceal diverticula) and therefore does not opacify during IVU. It compresses the pelvis and may cause hydronephrosis. Reference: Chapman S, Naldelny R. Aids to Radiological Differential Diagnosis, 5th edition (Edinburgh: Saunders, 2003), pp 203-204.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 64-year-old man has an abdominal MRI to further characterise a welldefined 2.5-cm solid renal mass at the left upper pole. The lesion was hyperechoic on ultrasound. Which one of the following MRI findings would favour a diagnosis of angiomyolipoma?",
+      "options": [
+        "A. High signal on Tlw and low signal on T2w sequences",
+        "B. High signal on Tlw and STIR sequences",
+        "C. High signal on Tlw and T2w sequences",
+        "D. High signal on T2w and low signal on proton density sequences",
+        "E. Low signal on both T2w and proton density sequences"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Angiomyolipomas appear high signal on both Tlw and T2w sequences due to their high fat content. Reference: Chapman & Nakielny, Aids to Radiological Differential Diagnosis, pp 205, 207.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 42-year-old man is referred for investigation of painless microscopic haematuria. An IVU is performed and demonstrates bilateral small areas of calcification within the kidneys on the control image. On the 5-min postcontrast IVU film, the calcification appears to lie within the collecting system. On ultrasound, there are numerous small hyperechoic rounded areas within the medullary pyramids, many of which cast an acoustic shadow. What is the most likely diagnosis?",
+      "options": [
+        "A. Adult polycystic kidney disease",
+        "B. Hyperparathyroidism",
+        "C. Medullary sponge kidney",
+        "D. Primary hyperoxaluria",
+        "E. Sarcoidosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In medullary sponge kidney the kidneys contain numerous medullary cysts which communicate with the tubules and therefore opacify during excretion urography. The cysts contain small calculi giving a ‘bunch of grapes appearance’. References: Grainger dr Allison's 5e, p 882. Chapman & Nakielny, Aids to Radiological Differential Diagnosis, pp 201- 202.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 36-year-old woman presents with primary infertility. A transabdominal ultrasound shows a normal anteverted uterus and bilateral adnexal masses. A subsequent MRI shows bilateral high signal ovarian masses on both Tlw and T2w sequences. On fat-suppressed Tlw images, the lesions remain high signal. What is the most likely diagnosis?",
+      "options": [
+        "A. Bilateral dermoid cysts",
+        "B. Bilateral endometriomas",
+        "C. Bilateral ovarian fibromas",
+        "D. Bilateral theca lutein cysts",
+        "E. Polycystic ovaries"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Theca lutein cysts contain straw-coloured fluid which is low signal on Tlw and high signal on T2w images. Reference: Grainger & Allison’s 5e, pp 1232-1236.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 32-year-old man involved in a high-speed traffic accident is found to have blood at the urethral meatus and a high riding prostate during the secondary clinical survey. The examining doctor suspects a urethral injury. Which part of the urethra is most likely to be involved?",
+      "options": [
+        "A. Bulbar urethra",
+        "B. Membranous urethra",
+        "C. Penile urethra",
+        "D. Penoscrotal urethra",
+        "E. Prostatic urethra"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Reference: Grainger dr Allison's 5e, p 914.",
+      "questionNumber": 41
+    },
+    {
+      "question": "You are the radiologist reviewing the mammograms of a 56-year-old woman. When compared with her previous mammograms, areas of calcification previously seen within the left upper outer quadrant have now disappeared. Which of the following is not a possible explanation?",
+      "options": [
+        "A. Breast surgery",
+        "B. Chemotherapy",
+        "C. Postmenopausal changes",
+        "D. Radiotherapy",
+        "E. Spontaneous resolution"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Reference: Chapman & Nakielny, Aids to Radiological Differential Diagnosis, p 242.",
+      "questionNumber": 42
+    },
+    {
+      "question": "Which one of the following statements best describes the CT appearances of a renal oncocytoma (tubular adenoma)?",
+      "options": [
+        "A. It appears as a small, ill-defined renal mass in the majority of cases.",
+        "B. It is bilateral in 60-80% of cases.",
+        "C. It characteristically consists of multiple renal lesions.",
+        "D. CT shows punctuate calcification in the majority of patients.",
+        "E. Low attenuation (—100 to —50 HU) areas within a large lesion are consistent with an oncocytoma."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Large lesions can extend into and engulf the perinephric fat, and can therefore be mistaken for angiomyolipomas (due to fat content). Reference: Grainger & Allison's 5e, pp 863-864.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 45-year-old woman presents with a 1-year history of menorrhagia. On physical examination, her GP palpates a mass arising from the pelvis and suspects uterine fibroids. The GP refers her for imaging to confirm the diagnosis of uterine fibroids. Which one of the following radiological findings would support this diagnosis?",
+      "options": [
+        "A. On T2w images, a well-circumscribed myometrial mass that is of lower signal than the surrounding myometrium",
+        "B. On ultrasound, multiple theca lutein cysts and an enlarged uterus that contains multiple cystic areas",
+        "C. On Tlw images, a well-circumscribed high signal intensity mass arising from the myometrium",
+        "D. On postcontrast Tlw images, a well-circumscribed, uniformly enhancing myometrial mass that is of higher signal than the surrounding myometrium",
+        "E. Widened junctional zone on Tlw images of the uterus."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Reference: Grainger & Allison's 5e, p 1224.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A transvaginal ultrasound is performed on a 36-year-old woman with dysfunctional uterine bleeding. This demonstrates an enlarged globular uterus with a heterogeneous appearance of the myometrium. The myometrium contains diffuse echogenic nodules, subendometrial echogenic linear striations and 2- to 6-mm subendometrial cysts. Colour Doppler demonstrates a speckled pattern of increased vascularity within the heterogeneous area of myometrium. What is the most likely diagnosis?",
+      "options": [
+        "A. Adenomyosis",
+        "B. Endometrial polyposis",
+        "C. Gestational trophoblastic.disease (GTD)",
+        "D. Stage 1A endometrial cancer",
+        "E. Uterine fibroid"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Reference: Grainger & Allison's 5e, p 1225.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 52-year-old postmenopausal woman presents for her first screening mammogram. Within the right upper outer quadrant, there is a 2-cm well-defined, oval mass that has dense ‘popcorn’ calcification within it and is surrounded by a thin radiolucent rim. On ultrasound, the mass is well defined and hyperechoic with areas of acoustic shadowing due to contained calcification. What is the most likely diagnosis?",
+      "options": [
+        "A. Fat necrosis",
+        "B. Fibroadenoma",
+        "C. Hamartoma",
+        "D. Oil cyst",
+        "E. Papilloma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Fibroadenomas may become calcified, particularly after menopause. Classically the calcifications have a coarse ‘popcorn’ appearance; however, they may also appear small and punctate. An oil cyst typically demonstrates eggshell calcification and is the result of fat necrosis. Reference: Grainger dr Allison’s 5e, pp 1180-1181.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 54-year-old man has an abdominal ultrasound that shows a 3-cm hyperechoic lesion at the upper pole of the left kidney. An unenhanced CT abdomen is subsequently performed and demonstrates a left upper pole heterogeneous renal mass with central areas of low attenuation (5—10 HU). After intravenous contrast is administered, this mass enhances by more than 30 HU. What is the most likely diagnosis?",
+      "options": [
+        "A. Angiomyolipoma",
+        "B. Oncocytoma",
+        "C. Renal abscess",
+        "D. Renal cell carcinoma",
+        "E. Unilocular renal cyst"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Angiomyolipomas are benign, fat-containing lesions which do not enhance by more than 15 HU and contain low attenuation (—15 to —20HU) fatty areas. Postcontrast enhancement of greater than 20 HU of a solid renal mass is highly suggestive of malignancy. Reference: Grainger & Allison's 5e, p 864.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 60-year-old nulliparous woman presents with postmenopausal bleeding. On transvaginal ultrasound, her endometrium is 8 mm thick and the endomyometrial junction appeared indistinct. The radiologist suspects invasive endometrial cancer and refers her for an MRI examination. What are the likely findings on MRI?",
+      "options": [
+        "A. On unenhanced Tlw images the endometrial cancer appears of high signal intensity compared to the surrounding myometrium.",
+        "B. On contrast-enhanced Tlw images, endometrial cancer shows avid enhancement compared with surrounding myometrium.",
+        "C. On T2w images the normally high signal junctional zone is disrupted.",
+        "D. Tlw fat-saturated sequences are best used to assess the junctional zone.",
+        "E. The endometrial cancer demonstrates delayed/little enhancement compared to the normal surrounding myometrium on postcontrast Tlw images."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Reference: Grainger & Allison's 5e, p 1228.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 56-year-old woman is found to have a screen-detected breast cancer on her second screening mammogram. Two breast radiologists both agree that there is no evidence of malignancy on the previous mammograms, even in retrospect. Which one of the following statement best describes this interval cancer?",
+      "options": [
+        "A. An interval cancer has a better prognosis, when compared with other screen detected cancers.",
+        "B. This is known as a Type 1 interval cancer.",
+        "C. This is known as a Type 2a interval cancer.",
+        "D. This is known as a Type 2b interval cancer.",
+        "E. This is known as a Type 3 interval cancer."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Reference: Grainger dr Allison's 5c, p 1194.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 42-year-old man with known Wegener's granulomatosis develops haematuria. He has an abdominal ultrasound which reveals small, smooth kidneys with diffuse thinning of the renal parenchyma. The pelvicalyceai systems appear normal but there is an increased amount of renal sinus fat. What is the most likely diagnosis?",
+      "options": [
+        "A. Bilateral vesicoureteric reflux",
+        "B. Chronic glomerulonephritis",
+        "C. Medullary sponge kidney",
+        "D. Pyelonephritis",
+        "E. Renal tuberculosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Reference: Grainger & Allison's 5e, p 834.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 22-year-old pregnant woman (30 weeks' gestation) presents with right flank pain. She has an abdominal ultrasound which shows dilatation of the right pelvicalyceai system. Which one of the following additional findings would suggest a diagnosis of mechanical ureteric obstruction rather than pregnancy-related dilatation?",
+      "options": [
+        "A. An elevated resistive index (RI)",
+        "B. Decreased corticomedullary differentiation",
+        "C. Hyperechoic renal parenchyma",
+        "D. Renal parenchymal thinning",
+        "E. Ureteric and pelvicalyceai dilatation"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Mechanical obstruction is associated with elevation of the RI. Reference: Grainger & Allison's 5e, p 872.",
+      "questionNumber": 51
+    },
+    {
+      "question": "On a T2w MRI pelvis of a normal patient, the wall of the urinary bladder has an apparent dark band along its lateral wall on one side, with a bright band on the opposing lateral wall. Which one of the following accounts for this radiological appearance?",
+      "options": [
+        "A. A large flip angle",
+        "B. Beam hardening artefact",
+        "C. Chemical shift artefact",
+        "D. Movement artefact in the phase-encoding direction",
+        "E. Movement artefact in the slice select gradient"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "On T2w sequences, the normal bladder wall is of low signal intensity compared with high signal urine. Chemical shift artefact—which in this case is due to the difference in resonant frequencies of the hydrogen nuclei in fat and urine—appears as a dark band on one side wall and a bright band on the opposing wall. Reference: Grainger & Allison's 5e, p 886.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 29-year-old man presents with a 4-hour history of sudden onset right loin pain, radiating to the right groin. The clinicians request an emergency IVU for suspected acute urinary obstruction. Which one of the following IVU features would be most consistent with acute urinary obstruction?",
+      "options": [
+        "A. Absent right nephrogram and no evidence of contrast excretion on the right",
+        "B. An increasingly dense right nephrogram that remains present after 6 hours",
+        "C. An initially dense right nephrogram, which then resolves within 30 minutes",
+        "D. The right kidney being 10% longer than the left kidney",
+        "E. The right kidney being small with an irregular cortical surface"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Reference: Grainger & Allison's 5e, pp 871-872 (Table 41.1 provides a concise summary).",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 35-year-old woman presents with a painless lump in the outer upper quadrant of her left breast. She is referred for an ultrasound examination of the left breast. Which of the following ultrasound findings would suggest a malignant rather than a benign breast mass?",
+      "options": [
+        "A. A larger transverse than anterior-to-posterior diameter",
+        "B. Ill-defined echogenic halo around the lesion",
+        "C. Less than 1 cm in greatest diameter",
+        "D. Posterior acoustic enhancement",
+        "E. Uniform hyperechogenicity"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "On ultrasound, breast carcinomas are generally ill-defined, hypoechoic masses which can have a surrounding echogenic halo. They also tend to have larger anterior-to-posterior than transverse diameter. Reference: Grainger & Allison's 5e, p 1184.",
+      "questionNumber": 54
+    },
+    {
+      "question": "Which one of the following statements best describes the course of the normal ureter within the pelvis?",
+      "options": [
+        "A. Anterior to the inferior pubic ramus, the ureter runs posteromedially to enter the urinary bladder.",
+        "B. In females, the ureter lies within the broad ligament where it is intraperitoneal for a short portion of its length and runs inferomedially to enter the urinary bladder.",
+        "C. In males, the ureter runs anterior to the cremasteric artery and turns medially to enter the urinary bladder.",
+        "D. In the region of the ischial spine, the ureter turns medially, anteriorly and inferiorly to enter the bladder.",
+        "E. The ureter enters the pelvis by crossing the bifurcation of the common iliac artery and runs medially to enter the urinary bladder."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Reference: Grainger & Allison's 5e, p 819.",
+      "questionNumber": 55
+    },
+    {
+      "question": "An immunosuppressed 24-year-old man presents with left renal colic. He is referred for an IVU. The control film shows a gas containing, round lamellated mass within the urinary bladder. Postcontrast, there are multiple filling defects within the urinary bladder. What is the most likely cause of these appearances?",
+      "options": [
+        "A. Blood clot",
+        "B. Bladder calculi",
+        "C. Cystitis",
+        "D. Fungal ball",
+        "E. Schistosomiasis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Reference: Grainger & Allison's 5 e, pp 887-888.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 67-year-old man with a history of transitional cell carcinoma of the bladder now presents with several episodes of haematuria. A cystoscopy and biopsies performed 4 weeks ago were negative and he now attends for an MRI pelvis. On sagittal T2w images, there is an area of thickening in the bladder wall with low signal change in the surrounding perivesical fat. Which one of the following findings would suggest a diagnosis of postbiopsy change, rather than recurrent transitional cell carcinoma?",
+      "options": [
+        "A. On dynamic contrast-enhanced Tlw images, the area of low signal shows early and avid contrast enhancement.",
+        "B. On fat-suppressed proton density sequences, this area returns a high signal.",
+        "C. On post-gadolinium Tlw images, inflammatory change avidly enhances whilst transitional cell carcinoma does not.",
+        "D. The area shows delayed enhancement on Tlw post-gadolinium images.",
+        "E. There is signal loss on gradient echo images, due to tissue inhomogeneity."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "On dynamic contrast-enhanced MRI, bladder cancer shows earlier enhancement than post-biopsy/surgical tissue and is therefore helpful in distinguishing between bladder cancer and post biopsy change. Reference: Grainger & Allison's 5e, p 893.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 53-year-old woman is recalled to the screening breast outpatient clinic as her initial mammograms have revealed an area of suspected microcalcification. Compared with the standard mammographic projections, which one of the following statements best describes the technique needed to provide magnification views?",
+      "options": [
+        "A. A double-coated film is necessary to avoid parallax and crossover.",
+        "B. A molybdenum target is used because it provides a low energy spectrum.",
+        "C. A smaller focal spot of 0.1 mm is used.",
+        "D. An air gap is avoided as it reduces signal to noise ratio.",
+        "E. Tube current should be as high as possible to keep exposure times short."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "To provide magnification views, a focal spot of 0.1 mm should be used (smaller than the 0.3 mm focal spot used for standard mammographic projections) with an air gap of 1 5—30 cm. Options D & E are correct regarding mammography in general and hold true for both standard and magnification views. References: Grainger & Allisons 5e, pp 1173-1175. Farr RJ, Allisy-Roberts PJ. Physics for Medical Imaging (Bailliere Tindall, 1996), p 76.",
+      "questionNumber": 58
+    },
+    {
+      "question": "Which of the following best describes the radiological findings of urinary tract malakoplakia?",
+      "options": [
+        "A. Intramural bladder wall gas",
+        "B. Multiple filling defects in the pelvicalyceal systems and proximal ureters on IVU, with sparing of the urinary bladder",
+        "C. Multiple small oval filling defects at the bladder base",
+        "D. Plaque-like thickening of the pelvicalyceal urothelium",
+        "E. Tram-track calcification within the bladder wall"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Malakoplakia is a benign, inflammatory condition that predominantly affects the bladder and lower urinary tract. Reference: Grainger & Allison's 5e, pp 862, 888.",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 70-year-old man with prostate cancer has an MRI examination to locally stage the disease. In which part of the prostate gland is a carcinoma most likely",
+      "options": [
+        "A. Central zone",
+        "B. Peripheral zone",
+        "C. Peri-urethral zone",
+        "D. Transitional zone",
+        "E. Within the verumontanum"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Seventy per cent of prostate cancers arise from the peripheral zone. Reference: Grainger & Allison's 5e, p 903.",
+      "questionNumber": 60
+    },
+    {
+      "question": "A 53-year-old woman is invited to attend a mobile breast screening unit for routine screening mammograms. Which one of the following statements is correct regarding the standard mammographic projections (the mediolateral oblique (MLO) and craniocaudal (CC) views)?",
+      "options": [
+        "A. A well-positioned CC view usually contains all the breast tissue.",
+        "B. A well-positioned MLO view rarely shows the nipple in profile because of the oblique compression.",
+        "C. On a well-positioned MLO the nipple should be at the lower border of the pectoralis minor.",
+        "D. The MLO view is taken with the radiograph beam directed from superomedial to inferolateral.",
+        "E. The pectoralis major muscle is demonstrated at the posterior border of a CC view in approximately 70% of individuals."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Reference: Grainger & Allison's 5e, p 1174.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A 24-year-old man presents to his GP with increased urinary frequency. Physical examination is normal and he is referred for ultrasound. Transabdominal ultrasound demonstrates a cystic structure posterior to the urinary bladder and a TRUS is performed for further evaluation. TRUS reveals a midline anechoic structure in the posterior portion of the prostate gland, superior to the verumontanum. It does not communicate with either the bladder or the seminal vesicles. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Bladder diverticulum",
+        "B. External iliac artery aneurysm",
+        "C. Mullerian duct cyst",
+        "D. Seminal vesicle cyst",
+        "E. Urethral cyst"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is the typical description of a Mullerian duct cyst. A seminal vesicle cyst is an important differential; however, they are not usually seen in the midline. Reference: Grainger & Allison's 5e, p 900.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 53-year-old man has an MRI of his pelvis as a staging investigation for bladder cancer. The request card also states that the prostate is mildly enlarged on digital rectal examination and the serum prostate specific antigen (PSA) level is borderline elevated. The reporting radiologist reviews the prostate in detail. Which one of the following statements best describes the MRI findings of a normal prostate gland?",
+      "options": [
+        "A. On Tlw images, the central zone is of higher signal intensity than the peripheral zone.",
+        "B. On Tlw images, the central zone is of lower signal intensity than the peripheral zone.",
+        "C. On T2w images, the peripheral zone is of lower signal intensity than the central and transitional zones",
+        "D. The peripheral zone is of higher signal intensity than the central zone on T2w images.",
+        "E. The seminal vesicles are hypointense on T2w images."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Zonal anatomy of the prostate is best demonstrated on T2w sequences. Reference: Grainger & Allison's 5e, p 899.",
+      "questionNumber": 63
+    },
+    {
+      "question": "Regarding the radiological anatomy of the normal prostate gland, which of the following statements is correct?",
+      "options": [
+        "A. The anterior fibromuscular band separates the prostate from the rectum,",
+        "B. The central zone atrophies with advancing age.",
+        "C. The neurovascular bundles lie anterolateral to the prostate gland.",
+        "D. The prostate gland is a flattened conical structure with its apex pointed superiorly.",
+        "E. The zonal anatomy of the adult prostate gland is seen on transabdominal ultrasound."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The central zone atrophies with age whilst the transitional zone enlarges by developing benign prostatic hypertrophy (BPH). Reference: Grainger & Allison's 5e, p 897.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 34-year-old man has recently completed his third cycle of chemotherapy for testicular cancer. He now presents with fever, chills and dysuria. Unenhanced CT of the pelvis shows two well-defined areas of low attenuation within the prostatic parenchyma. Following intravenous contrast, the normal prostate gland enhances whilst the low attenuation areas remain unchanged. In addition, there is some stranding within the periprostatic fat. What is the most likely diagnosis?",
+      "options": [
+        "A. Corpora amylacea",
+        "B. Prostatic abscess",
+        "C. Prostatic calculi",
+        "D. Prostatic cancer",
+        "E. Prostatic cysts"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Prostatic abscess is a localised process which usually begins in the peripheral zone of the gland but may spread to other areas. The incidence is increased in diabetic or immunocompromised patients. Reference: Grainger dr AUison's 5e, pp 900-901.",
+      "questionNumber": 65
+    },
+    {
+      "question": "A 62-year-old patient with transitional cell bladder carcinoma has an MRI scan to locally stage the disease. Which of the following MRI findings would indicate invasion of the seminal vesicles?",
+      "options": [
+        "A. Decreased signal of the seminal vesicles on Tlw images",
+        "B. Increased signal of the seminal vesicles on Tlw images",
+        "C. Increased signal of the seminal vesicles on T2w images",
+        "D. Obliteration of the angle between the seminal vesicles and the posterior bladder wall",
+        "E. Reduction in size of the seminal vesicles"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Invasion of the seminal vesicles is demonstrated by an increase in size of the gland, decrease in signal intensity on T2w images and obliteration of the angle between the seminal vesicles and the posterior bladder wall. Reference: Grainger & Allison's 5e, p 893.",
+      "questionNumber": 66
+    },
+    {
+      "question": "A 64-year-old woman with bladder cancer is discussed in the urology multidisciplinary meeting. A recent CT suggested the possibility of tumour extension into the perivesical fat and the urologists request an MRI pelvis to assess whether the bladder wall is breached (as this would upstage the tumour). Which one of the following MRI sequences is best for assessing bladder wall integrity?",
+      "options": [
+        "A. Gradient echo sequences with a long flip angle",
+        "B. Postcontrast STIR",
+        "C. Proton density fat saturation",
+        "D. Tlw (precontrast)",
+        "E. T2w"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Postcontrast STIR sequences are pointless as gadolinium shortens T1 and STIR removes signal from tissue with a short Tl. Reference: Grainger & Allison's 5 e, pp 892-893.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A final year medical student attends a breast screening outpatient clinic as part of her clinical attachment. She wishes to know more about the UK NHS Breast Screening programme and asks several questions of the radiology SpR in the breast clinic. Which one of the following statements is true?",
+      "options": [
+        "A. Double reading of all screening mammograms must be performed.",
+        "B. Incident screens may be performed using only the MLO view.",
+        "C. The acceptance rate of women invited to breast screening is over 90%.",
+        "D. Up to 20% of women are recalled from screening for further-assessment.",
+        "E. Women over 70 years of age may stay in the Breast Screening Programme by choice."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Women between the ages of 50 and 70 are invited for screening every 3 years. Women over 70 are encouraged to attend by self-referral but are not invited. Reference: Grainger & Allison's 5e, pp 1191-1195.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A 22-year-old woman presents to her GP with irregular menstrual periods. She is overweight with a body mass index of 32 and has excess body hair. Her LH/FSH ratio is elevated and her GP refers her for a pelvic ultrasound. Which one of the following findings are most likely to be present on ultrasound?",
+      "options": [
+        "A. Enlarged, oedematous ovaries with multiple packed follicles and pelvicfree fluid",
+        "B. Enlarged ovaries with multiple peripheral cysts",
+        "C. Normal appearances of the ovaries",
+        "D. Ovarian mass with mixed cystic and solid components",
+        "E. Ovaries replaced by multiple large cysts"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In polycystic ovarian syndrome, the ovaries are enlarged with an echogenic central stroma and more than ten peripherally placed cysts (each less than 9 mm in diameter). Option A describes ovarian hyperstimulation syndrome. Reference: Grainger & Allison's 5e, pp 1202, 1233.",
+      "questionNumber": 69
+    },
+    {
+      "question": "A 33-year-old man presents with left renal colic. An abdominal radiograph is normal but a subsequent CT urogram demonstrates an obstructing, opaque 10-mm distal left ureteric calculus. What is the renal calculus most likely to be composed of?",
+      "options": [
+        "A. Calcium oxalate",
+        "B. Calcium phosphate",
+        "C. Cysteine",
+        "D. Pure matrix",
+        "E. Uric acid"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Uric acid stones are not visible on plain radiographs but are seen on CT. Reference: Grainger & Allison's 5e, p 879.",
+      "questionNumber": 70
+    },
+    {
+      "question": "A 74-year-old man with increased urinary frequency and hesitancy is found to have an enlarged prostate on digital rectal examination. He is referred for a TRUS and biopsy. Which one of the following statements best describes the TRUS findings of benign prostatic hypertrophy (BPH)?",
+      "options": [
+        "A. Dense echogenic foci are seen at the margin of the peripheral and transitional zones.",
+        "B. The central zone is enlarged.",
+        "C. The peripheral zone is enlarged and appears homogeneously hypoechoic.",
+        "D. The peripheral zone is enlarged and is of mixed echogenicity.",
+        "E. The transitional zone is enlarged."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The central zone atrophies with age while the transitional zone increases in size as it develops BPH. Peripheral zone enlargement is not a feature of BPH. Reference: Grainger & Allison’s 5c, pp 897-898.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 24-year-old man sustains blunt trauma to the lower abdomen during a traffic accident. After initial resuscitation, he is haemodynamically stable but there is clinical suspicion of urinary bladder rupture. Which one of the following radiological findings on a retrograde cystogram would support intraperitoneal rather than extraperitoneal bladder rupture?",
+      "options": [
+        "A. Contrast extravasation which spreads out in a streaky, irregular manner",
+        "B. Elliptical extravasation adjacent to the bladder neck",
+        "C. Gas within the bladder",
+        "D. Pelvic fracture",
+        "E. Tear at the bladder dome"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Intraperitoneal bladder rupture tends to be due to a tear at the bladder dome. Cystography shows accumulation of contrast at the dome with extravasation laterally outlining bowel loops. Reference: Grainger & Allison's 5e, pp 889-890.",
+      "questionNumber": 72
+    },
+    {
+      "question": "A 64-year-old woman presents with bloating and vague pelvic pain and is referred for a pelvic ultrasound. On transabdominal ultrasound, she is found to have a large right adnexal mass. Which one of the following sonographic findings would indicate that this mass is more likely to be malignant than benign?",
+      "options": [
+        "A. Doppler waveform with a high resistive index (> 0.8)",
+        "B. Homogeneously hypoechoic mass with posterior acoustic enhancement",
+        "C. Multiple septations that are approximately 1 mm thick",
+        "D. Papillary projections",
+        "E. Size > 4 cm"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Reference: Grainger & Allison's 5e, p 1238.",
+      "questionNumber": 73
+    },
+    {
+      "question": "A 31-year-old woman has a hysterosalpingogram (HSG) as part of a series of investigations for primary infertility. The HSG shows a single vagina, single cervix but two separate uterine cavities leading to separate uterine horns. What is the most likely diagnosis?",
+      "options": [
+        "A. Arcuate uterus",
+        "B. Bicornuate uterus",
+        "C. Didelphus uterus",
+        "D. Septate uterus",
+        "E. Bicornis bicollis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Reference: Grainger dr Allison's 5e, p 1203 (Figure 53.2).",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 67-year-old man attends the Emergency Department with acute abdmina! pain. A CT abdomen is performed and demonstrates an uncomplicated acute appendicitis. The reporting radiologist notes an incidental finding of a bulky prostate gland. On axial CT images, which one of the following CT findings is an unequivocal feature of prostatic enlargement?",
+      "options": [
+        "A. The diaphragmatic urethra is dilated. (Dilatation)",
+        "B. The prostate is identified 1 cm above the symphysis pubis.",
+        "C. The prostate is identified 1 cm or less below the symphysis pubis.",
+        "D. The prostate is identified 2—3 cm above the symphysis pubis.",
+        "E. The prostate is identified less than 2 cm from the posterior aspect of the symphysis pubis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "On CT, as a general rule, the prostate is not considered to be enlarged if an image obtained 1 cm above the symphysis does not include the prostate. Unequivocal enlargement of the prostate is diagnosed if the prostate is seen in images 2—3 cm or more above the symphysis pubis. Reference: Grainger & Allison's 5e, pp 902-903.",
+      "questionNumber": 75
+    },
+    {
+      "question": "A 65-year-old man is referred by his GP ro the urologists for investigation of chronic macroscopic haematuria. The patient is a teacher and has recently returned to the UI< after 15 years working in Malawi. He suffered an episode of dysuria and haematuria several years ago and a local doctor diagnosed schistosomiasis. You are asked to supervise and report a CT urogram for this patient. Which one of the following statements is true regarding the radiological features of schistosomiasis?",
+      "options": [
+        "A. Cortical nephrocalcinosis is characteristic.",
+        "B. In late stage disease, a 1- to 3-mm band of calcification surrounding the bladder wall is seen.",
+        "C. In the late stage, the bladder is dilated, thin walled and calcified, giving an egg-shell appearance.",
+        "D. Narrowed ‘pipe-stem’ ureters are evident.",
+        "E. ‘Tram-line’ calcification within the seminal vesicles is found in the majority of cases."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In schistosomiasis, the ureters become grossly dilated and tortuous and may have multiple filling defects due to either granulomata or ureteritis cystica. The urinary bladder becomes small and fibrosed. Reference: Grainger & Allison's 5e, pp 839, 888.",
+      "questionNumber": 76
+    },
+    {
+      "question": "A 25-year-old man is seen in the Emergency Department following a fall from a height of 20 feet. Plain radiographs reveal a fractured pelvis and a cystogram is performed by the on-call radiology SpR. This demonstrates contrast extravasation from the urinary bladder in an irregular streaky fashion. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "A. Bladder wall contusion",
+        "B. Extraperitoneal bladder rupture",
+        "C. Intraperitoneal bladder rupture",
+        "D. Mixed intra- and extraperitoneal bladder rupture",
+        "E. Subserosal bladder rupture"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Extraperitoneal bladder rupture is more common (50—85%) than either intraperitoneal (15—45%) or mixed intra- and extraperitoneal bladder rupture (0—12%). Extraperitoneal bladder rupture is frequently associated (89—100%) with pelvic fractures. Reference: Grainger & Allison's 5e, pp 889-890.",
+      "questionNumber": 77
+    },
+    {
+      "question": "A 70-year-old man with urinary frequency and urge incontinence is referred to the urology outpatient clinic. On digital rectal examination, his prostate is enlarged and the serum prostate specific antigen (PSA) level is elevated. What is the most likely finding on IVU?",
+      "options": [
+        "A. A beaded appearance of the distal urethra",
+        "B. A smooth rounded filling defect at the dome of the bladder",
+        "C. J-shaped (‘fish-hook’) appearance of the distal ureters",
+        "D. Inferior displacement of the ureters by the prostate",
+        "E. Narrowing of the distal ureters"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "When the prostate enlarges, it pushes up into the base of the urinary bladder. As a result the trigone is elevated which pushes up the distal ureters (giving a characteristic ‘fish-hook’ appearance). Reference: Grainger & Allison's 5e, pp 902-903.",
+      "questionNumber": 78
+    },
+    {
+      "question": "A 28-year-old woman has a strong family history of breast cancer and is referred for an MRI examination of the breasts. Regarding MRI of the breast, which one of the following statements is correct?",
+      "options": [
+        "A. Breast MRI shotdd be performed during the middle of the menstrual cycle to improve sensitivity.",
+        "B. Malignant lesions tend to show poor enhancement following intravenous contrast, compared with surrounding breast tissue.",
+        "C. MRI has a high sensitivity and specificity for the detection of invasive breast cancer.",
+        "D. Post radiotherapy, abnormal enhancement patterns return to normal within 3—6 months.",
+        "E. The patient is imaged in a supine position with the breasts placed in a dedicated breast coil to improve signal to noise ratio."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Malignant breast lesions enhance postcontrast; however, normal hormonally active breast tissue can also enhance, particularly during the middle of the menstrual cycle (6th—17th days). In younger patients it may be helpful to repeat the scan earlier or later in the menstrual cycle to improve specificity. Reference: Grainger & Allison's 5e, pp 1189-1190.",
+      "questionNumber": 79
+    },
+    {
+      "question": "Which one of the following statements best describes the characteristic radiological features of retroperitoneal fibrosis?",
+      "options": [
+        "A. A plaque-like mass that encases the aorta and displaces it laterally, most commonly to the left",
+        "B. A plaque-like mass that displaces the kidneys and ureters laterally at the Ll-2 level",
+        "C. A plaque-like mass that displaces the aorta and iliac arteries anteriorly",
+        "D. A plaque-like mass that narrows and displaces the ureters laterally at the L4-5 level",
+        "E. A plaque-like mass that narrows and medially displaces the ureters at the L4-5 level"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": " ",
+      "questionNumber": 80
+    }
+  ]
+}
+

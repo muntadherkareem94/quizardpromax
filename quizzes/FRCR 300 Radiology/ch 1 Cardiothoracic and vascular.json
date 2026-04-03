@@ -1,0 +1,655 @@
+{
+  "title": "Cardiothoracic and vascular system - Chapter 1",
+  "questions": [
+    {
+      "question": "A 70-year-old male presents to his GP with cough. The chest radiograph shows bilateral egg shell calcifications in the hilar regions. Which of the following is the least likely diagnosis?",
+      "options": [
+        "A. Silicosis",
+        "B. Asbestosis",
+        "C. Coal workers pneumoconiosis",
+        "D. Sarcoidosis",
+        "E. Histoplasmosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All the other given options are known to cause egg shell calcification of the hilar lymph nodes.",
+      "questionNumber": 1
+    },
+    {
+      "question": "In a case of anaphylaxis, the proper dose of intramuscular adrenaline injection is?",
+      "options": [
+        "A. 1 mL of 1:1000 adrenaline",
+        "B. 0.5 mL of 1:1000 adrenaline",
+        "C. 1 mL of 1:10,000 adrenaline",
+        "D. 1 mL of 1:10,000 adrenaline",
+        "E. 10 mL of 1:1000 adrenaline"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is the recommended dose in cases of anaphylactic contrast reaction as recommended by the Royal College of Radiologists.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A chest radiograph shows diffuse lung disease with fibrotic changes predominantly affecting the upper lobes. What is the most unlikely diagnosis?",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Cystic fibrosis",
+        "C. Allergic bronchopulmonary aspergillosis",
+        "D. Langerhans cell granulomatosis",
+        "E. Scleroderma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Other conditions cause predominantly upper zone disease.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 25-year-old man of African origin presents with dry cough. The chest radiograph shows bilateral lobulated hilar shadows. HRCT shows bilateral hilar and paratracheal lymphadenopathy with irregular and nodular septal thickening and traction bronchiectasis. Blood tests show elevated serum angiotensin-converting enzyme. The most likely diagnosis is?",
+      "options": [
+        "A. Lymphoma",
+        "B. Sarcoidosis",
+        "C. Malignant lymphangitis",
+        "D. Tuberculosis",
+        "E. Sjögren’s syndrome"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Garland’s triad, seen in sarcoidosis, involves bilateral hilar nodes and paratracheal lymph nodes. Seventy per cent of cases of sarcoidosis have elevated serum levels of angiotensin-converting enzyme.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 50-year-old man with recently diagnosed pancreatic cancer presents with acute onset of chest pain and dyspnoea. The chest radiograph is normal. A V/Q scan is performed. Perfusion images show multiple segmental filling defects and the ventilation images show normal ventilation in equilibrium and washout images. The most likely diagnosis is?",
+      "options": [
+        "A. Pulmonary embolism",
+        "B. Emphysema",
+        "C. Chest infection",
+        "D. Congestive heart failure",
+        "E. Pulmonary artery stenosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is the most likely diagnosis. If multiple ventilation-perfusion defects are seen in areas where there are no corresponding chest radiographic abnormalities, pulmonary embolism is highly probable. Rarely, vasculitis can produce such appearance, but the patient’s clinical history and presentation should allow accurate diagnosis.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 40-year-old female non-smoker presents with shortness of breath and reduced exercise tolerance. The chest radiograph shows marked lucency in both lower zones with superiorly displaced right horizontal fissure and flattened hemidiaphragm. The upper zones show normal vascularity and lung shadows. The most likely diagnosis is?",
+      "options": [
+        "A. Centrilobular emphysema",
+        "B. Alpha-1-antitrypsin deficiency",
+        "C. Lymphoma",
+        "D. Hypersensitivity pneumonitis",
+        "E. Sarcoidosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Patients with this condition develop severe panacinar emphysema with basilar predominance due to gravitational distribution of pulmonary blood flow. On CT, the margins of cysts are poorly visualised due to involvement of the entire secondary lobule. This pattern is significantly different from chronic smoker’s emphysema, which tends to develop centrilobular emphysema with upper zone predominance and cysts with well-defined margins.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 38-year-old man presents with gradually progressive dyspnoea over 2 years. The chest radiograph shows reduced lung volumes with reticular interstitial changes in both lower zones. HRCT show peripheral and basilar reticular opacities with honeycombing and traction bronchiectasis. The most likely diagnosis is?",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Systemic lupus erythematosus",
+        "C. Chronic hypersensitivity pneumonitis",
+        "D. Idiopathic pulmonary fibrosis",
+        "E. Rheumatoid arthritis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "These are typical radiographic and HRCT features of idiopathic pulmonary fibrosis.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 40-year-old man presents shortness of breath after mild smoke inhalation. The chest radiograph shows a right paratracheal soft tissue shadow. The lungs and hila are clear. CT shows a right paratracheal mass in the mediastinum which contains fluid of 10 Hounsfield units. This has well-defined margins and conforms to the shape of surrounding structures without compressing them. No contrast enhancement is seen. The most likely diagnosis is?",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Lymphoma",
+        "C. Metastases from unknown primary",
+        "D. Bronchogenic cyst",
+        "E. Pericardial cyst"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "These are developmental cysts that are a part of bronchopulmonary foregut malformations. These often have a fibrous capsule and filled with fluid attenuation mucoid material. They do not cause any mass effect and conforms to the shape of surrounding mediastinal structures. On MRI, they are bright on T2 but due to protein content, the signal on T1 is variable. No contrast enhancement is seen.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 48-year-old female non-smoker presents to the Accident & Emergency Department with acute dyspnoea and chest pain. The chest radiograph shows bilateral basal airspace shadowing. Chest CT shows disuse basal consolidation and air-bronchograms within a background of ground-glass opacity. There is septal thickening and bilateral pleural effusions. The most likely diagnosis is?",
+      "options": [
+        "A. Desquamative interstitial pneumonitis",
+        "B. Lymphocytic interstitial pneumonitis",
+        "C. Acute interstitial pneumonia",
+        "D. Usual interstitial pneumonitis",
+        "E. Cryptogenic organising pneumonia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This clinically presents as adult respiratory distress syndrome and has high mortality. It has a fulminant course leading to respiratory failure and requiring mechanical ventilation with a mortality of > 50%. CT findings are non-specific but include bilateral, diffuse ground-glass opacity with consolidation and air bronchograms. Honeycombing and traction bronchiectasis may be seen in advanced cases after recovery.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 70-year-old retired miner presents with shortness of breath for several months. There is no other significant medical history. The chest radiograph shows calcified pleural plaques at both lung bases and bi-basilar interstitial shadowing. CT shows extensive pleural thickening and calcified pleural plaques with bi-basal, peripheral, interstitial shadows and honeycombing. No lymphadenopathy seen. The most likely diagnosis is?",
+      "options": [
+        "A. Tuberculosis",
+        "B. Asbestosis",
+        "C. Silicosis",
+        "D. Empyema",
+        "E. Sarcoidosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is defined as interstitial pulmonary fibrosis in association with asbestos exposure (pleural plaques and calcification). Disease progression is from bases to apices and honeycombing is seen later in the disease. Lymphadenopathy is usually absent, and its presence should suggest alternate diagnosis",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 60-year-old man presents with history of chronic cough. The chest radiograph shows a 5 cm subpleural mass in the right lower lobe. There is a curvilinear opacity from the lower pole of the mass and the mass courses towards the hilum. CT confirms the mass lesion and demonstrates the bronchovascular bundles converging into the mass in a curvilinear fashion. In addition, there are multiple pleural plaques but no lymphadenopathy. The most likely diagnosis is?",
+      "options": [
+        "A. Bronchogenic carcinoma",
+        "B. Rounded atelectasis",
+        "C. Large parenchymal metastasis",
+        "D. Lymphoma",
+        "E. Arteriovenous malformation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Also called ‘folded lung’ or ‘asbestos pseudotumour’. The lesion forms acute angles with the pleura indicating its parenchymal location. Pleural thickening is usually an associated finding. It usually affects the lower lobes and there is volume loss. The characteristic sign of round atelectasis is the ‘comet tail‘ sign. As the lung collapses, the bronchovascular bundle is pulled into the region. As they reach the mass they diverge and arch around the surface to merge with the inferior pole of the mass. This is typically well demonstrated on CT.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 45-year-old woman presents with recurrent episodes of acute exacerbations of dyspnoea. The chest radiograph shows a left hydropneumothorax with large volume lungs and reticular pattern of interstitial opacities. HRCT shows extensive thin-walled cysts throughout the lung parenchyma. The most likely diagnosis is?",
+      "options": [
+        "A. Emphysema",
+        "B. Langerhans cell histiocytosis",
+        "C. Lymphangioleiomyomatosis",
+        "D. Idiopathic pulmonary fibrosis",
+        "E. Neurofibromatosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Exclusively seen in women of childbearing age, characterised by large lungs, coarse interstitial pattern, extensive lung cysts and recurrent pneumo- or chylopneumothorax. In histiocytosis, cysts are seen in the upper two-thirds of the lung with sparing of the costophrenic angle, cysts are variable in thickness, and there is septal thickening. Idiopathic pulmonary fibrosis show irregular thick-walled peripheral cysts and honeycombing. Neurofibromatosis has cysts in apical location. Emphysema shows imperceptible cyst walls; cysts show segmental distribution, lobular architecture preserved with the bronchovascular bundle in a central position.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 42-year-old female non-smoker presents with recurrent episodes of epistaxis, dyspnoea and occasional haemoptysis. The chest radiograph shows a 3 cm serpiginous nodule in the right mid zone with an apparent draining vessel from the hilum. The most likely diagnosis is?",
+      "options": [
+        "A. Neurilemmoma",
+        "B. Hamartoma",
+        "C. Pulmonary arteriovenous malformation",
+        "D. Adenocarcinoma",
+        "E. Post-primary tuberculosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "70% of pulmonary arteriovenous malformations are associated with Osler–Weber–Rendu syndrome also called hereditary hemorrhagic telangiectasia (HHT) which is associated with multiorgan arteriovenous malformations. A patient with HHT may present with epistaxis, GI bleeding, skin telangiectasia etc. Chest radiography shows a sharply demarcated mass, typically round or oval, and feeding vessels can be seen from the hilum. Contrast-enhanced CT chest confirms abnormal communication between pulmonary arteries and pulmonary veins.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 35-year-old pet shop owner presents with shortness of breath. The chest radiograph is normal. HRCT shows diffuse ground-glass centrilobular opacities involving both lungs. No lymphadenopathy is seen. The most likely diagnosis is:",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Pneumoconiosis",
+        "C. Hypersensitivity pneumonitis",
+        "D. Cystic fibrosis",
+        "E. Lymphangioleiomyomatosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "HRCT appearances are typical of subacute hypersensitivity pneumonitis. This is caused by inhalation of antigenic organic particles. The subacute phase is characterised by intermittent exposure to antigens with symptoms arising over weeks to months. The chronic phase is characterised by the presence of fibrosis.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 20-year-old woman is brought to the Accident & Emergency Department by ambulance after being found unresponsive on the street. Examination shows pinpoint pupils and induration in the right groin. The chest radiograph shows bilateral patchy diffuse air space shadowing predominantly in the middle and upper zones with central peribronchial cuffing. No pleural effusion or pneumothorax seen. The most likely diagnosis is?",
+      "options": [
+        "A. Pulmonary oedema secondary to opiate overdose",
+        "B. Acute respiratory distress syndrome",
+        "C. Lung contusion",
+        "D. Renal failure",
+        "E. Fat embolism"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Pin point pupils and right groin infection suggests intravenous drug abuser. Radiographic findings of non-cardiogenic pulmonary oedema are non-central, extensive, patchy, bilateral airspace shadowing with indistinct vessels and peribronchial cuffing. Cardiogenic oedema is characterised by cardiac enlargement, pleural effusions, upper lobe venous diversion, Kerley-B lines and peribronchial cuffing.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 20-year-old woman was admitted with pleuritic chest pain, cough and high fever with a history of intravenous drug abuse. The chest radiograph shows bilateral, multiple lung cavities with both thin and thick walls. Moderate left pleural effusion seen. What is the most likely diagnosis?",
+      "options": [
+        "A. Metastatic disease",
+        "B. Septic pulmonary emboli",
+        "C. Eosinophilic pneumonia",
+        "D. Rheumatoid lung",
+        "E. Bronchitis obliterans organising pneumonia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Given the history of intravenous drug abuse, multiple lung cavities are likely to be secondary to septic pulmonary emboli. Eosinophilic pneumonia and bronchitis obliterans organising pneumonia are unlikely to cause cavitation.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 37-year-old homosexual man who recently tested positive for HIV presents with cough and shortness of breath. The chest radiograph shows bilateral, thin walled upper lobe cavities and perihilar parenchymal opacities. There is a small right pneumothorax. What is the most likely diagnosis?",
+      "options": [
+        "A. Wegener’s granulomatosis",
+        "B. Pneumocystis jirovecii infection",
+        "C. Metastases",
+        "D. Bronchiectasis",
+        "E. Bacterial pneumonia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pneumocystis jirovecii pneumonia (previously called Pneumocystis carinii pneumonia) is seen in HIV positive individuals. Pneumatocoeles are seen in 10% of cases and some may progress to develop a pneumothorax.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 65-year-old foundry worker presents with cough and progressive shortness of breath. The chest radiograph shows bilateral upper lobe opacities with multiple hilar lymph nodes showing ‘egg shell’ calcification. What is the most likely diagnosis?",
+      "options": [
+        "A. Silicosis",
+        "B. Sarcoidosis",
+        "C. Tuberculosis",
+        "D. Lymphoma",
+        "E. Metastases"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This appearance can be seen in both silicosis and sarcoidosis; however, given the occupational history, silicosis is the favoured diagnosis. Treated lymphoma can also give egg shell calcification.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 45-year-old woman with a facial skin discoloration presents with a left-sided hemiparesis. The chest radiograph shows a 2 cm round mass in the left lower lobe. CT confirms the lung mass and shows an enlarged feeding artery and draining vein. No other chest abnormality is seen. What is the most likely diagnosis?",
+      "options": [
+        "A. Small cell lung cancer",
+        "B. Metastasis",
+        "C. Arteriovenous malformation",
+        "D. Tuberculoma",
+        "E. Rheumatoid nodule"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Patients with AVM present with cough, haemoptysis or occasionally with cerebral embolism. Fifty per cent of pulmonary AVMs are associated with Osler–Weber–Rendu disease (many have AVMs elsewhere, including the skin, mucous membranes and other organs).",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 60-year-old patient under treatment for lymphoma presents with chest pain. The chest radiograph and blood results are normal. A V/Q scan shows normal perfusion and patchy areas of ventilation defects in the lungs. Which of the following is the unlikely diagnosis?",
+      "options": [
+        "A. Asthma",
+        "B. Chronic obstructive pulmonary disease",
+        "C. Acute bronchitis",
+        "D. Sarcoidosis",
+        "E. Pulmonary embolism"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Pulmonary embolism will demonstrate abnormal perfusion defects with or without ventilation defects",
+      "questionNumber": 20
+    },
+    {
+      "question": "A recently diagnosed HIV-positive man presents with fever and cough. The chest radiograph shows bilateral perihilar interstitial infiltrates and apical ground-glass shadowing. The most likely causative microorganism is? What is the most likely diagnosis?",
+      "options": [
+        "A. Cryptococcus neoformans",
+        "B. Mycobacterium tuberculosis",
+        "C. Pneumocystis jirovecii",
+        "D. Candida albicans",
+        "E. Toxoplasmosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This organism is the commonest cause of chest infection in patients with AIDS. It usually has an insidious onset with bilateral perihilar infiltrates. There may also be diffuse bilateral alveolar infiltrates and ground-glass shadowing. Patients on prophylactic aerosolized pentamidine may show an apical predominance.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 55-year-old woman presents with left-sided ptosis and shoulder pain. The chest radiograph shows a mass in the left lung apex. CT confirms a large superior sulcus tumour eroding through the posterior chest wall and rib. What is the most likely diagnosis?",
+      "options": [
+        "A. Adenocarcinoma",
+        "B. Squamous cell carcinoma",
+        "C. Small cell undifferentiated carcinoma",
+        "D. Undifferentiated large cell carcinoma",
+        "E. Scar carcinoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Superior sulcal tumours are frequently squamous cell carcinomas. They may lead to atrophy of muscles secondary to brachial plexus involvement or/and Horner’s syndrome secondary to involvement of sympathetic chain and stellate ganglion.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 64-year-old non-smoker presents with right chest pain and cough. CT shows a 3 cm spiculated mass in the right upper lobe, abutting the lateral chest wall. The likely histology is expected to be?",
+      "options": [
+        "A. Adenocarcinoma",
+        "B. Squamous cell carcinoma",
+        "C. Small cell undifferentiated carcinoma",
+        "D. Undifferentiated large cell carcinoma",
+        "E. Oat cell cancer"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Adenocarcinoma is the most common type associated with non-smokers and is usually seen in the periphery. Squamous cell carcinoma, small cell undifferentiated type and undifferentiated large cell cancers are strongly associated with smoking.",
+      "questionNumber": 23
+    },
+    {
+      "question": "An 18-year-old man presents with a history of recurrent chest infections. The chest radiograph shows a left paraspinal soft tissue density behind the heart. Contrast-enhanced CT shows a 6 cm lobulated, multicystic lesion in the left lower lobe containing solid and cystic components. There is a feeding artery from the thoracic aorta into the lesion. What is the most likely diagnosis?",
+      "options": [
+        "A. Extralobar sequestration",
+        "B. Intralobar sequestration",
+        "C. Congenital cystic adenomatoid malformation",
+        "D. Abscess",
+        "E. Lipoid pneumonia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "These are the typical features of an intralobar sequestration. Extralobar sequestration often is seen usually before 6 months age and associated with other congenital anomalies. The other causes listed do not have any feeding vessels.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 60-year-old man presents in the accident and emergency department with acute back pain and chest pain. The chest radiograph shows a widened superior mediastinum. CT shows an intimal flap in the ascending aorta with contrast filling on either side of the flap. The arch and descending aorta appear normal. What is the most likely diagnosis?",
+      "options": [
+        "A. Aortic aneurysm",
+        "B. Stanford type B dissection of aorta",
+        "C. DeBakey type I dissection of aorta",
+        "D. DeBakey type II dissection of aorta",
+        "E. DeBakey type III dissection of aorta"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This type involves only the ascending thoracic aorta and is surgically repaired.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 25-year-old man presents with persistent cough. The chest radiograph shows a smoothly marginated opacity in the right cardiophrenic recess. CT shows a 4 cm lesion abutting the pericardium and a small pericardial effusion. The lesion shows no contrast enhancement and contents have Hounsfield units of < 10. On MRI, the abnormality returns uniform high signal intensity on T2-weighted images. What is the most likely diagnosis?",
+      "options": [
+        "A. Pericardial fat pad",
+        "B. Enlarged pericardial lymph nodes",
+        "C. Pericardial cyst",
+        "D. Haematoma",
+        "E. Thymolipoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "These are usually incidental finding and contain fluid. A level of < 10 Hounsfield units is typical. Pericardial fat pad and thymolipoma would show fat on CT with lower Hounsfield units.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 65-year-old man with history of stroke presents with chest pain. The chest radiograph shows a thin curvilinear area of calcification in the lower part of left heart border. What is the likely site of calcification?",
+      "options": [
+        "A. Left atrium",
+        "B. Left ventricle",
+        "C. Right atrium",
+        "D. Left descending coronary artery",
+        "E. Mitral valve"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is the typical site for left ventricular calcifications. Valvular calcifications are located within the heart. Coronary artery calcifications are seen along the upper part of left heart border and have a ‘tram-track’ appearance.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 56-year-old patient with history of cardiac valve replacement presents with acute-onset chest pain. A frontal chest radiograph shows an enlarged heart with laterally displaced left cardiac apex and a metallic ring shadow is seen to be overlapping the spine and horizontally positioned. Which cardiac valve is this likely to be?",
+      "options": [
+        "A. Aortic",
+        "B. Mitral",
+        "C. Tricuspid",
+        "D. Pulmonary",
+        "E. Mitral or aortic"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The aortic and mitral valves are seen adjacent to the spine and can be difficult to separate. However, the aortic valve is usually seen horizontally situated while the mitral valve is generally situated vertically. On a lateral projection, if a line is drawn from the carina to the anterior costophrenic angle, the aortic valve lies above this line and the mitral valve below it.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 58-year-old man recently had a cardiac pacemaker. On frontal chest radiograph, the tip of the electrode lies 3 cm medial to the cardiac apex. What is the most likely site of the electrode tip?",
+      "options": [
+        "A. Left atrial appendage",
+        "B. Right atrial appendage",
+        "C. Left ventricle",
+        "D. Right ventricle",
+        "E. Coronary sinus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The tip of the ventricular lead is seen at the apex of right ventricle.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 46-year-old man presents with fever and cough. A frontal chest radiograph shows loss of the lower part of the left heart border with hazy shadowing in the region. The most likely site of infection in the lung is?",
+      "options": [
+        "A. Lingula",
+        "B. Apicoposterior segment of left upper lobe",
+        "C. Apical segment of left upper lobe",
+        "D. Medial basal segment of left lower lobe",
+        "E. Lateral basal segment of left lower lobe"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The lingular segment in the left lung lies adjacent to the heart and collapse/consolidation in this segment leads to loss of the lower part of left heart border.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A right-sided subclavian line was inserted in a patient on chemotherapy. On a frontal chest radiograph, the acceptable position of the tip of the line would be?",
+      "options": [
+        "A. Right distal internal jugular vein",
+        "B. Lower part of right heart border",
+        "C. Just above the level of right anterior first intercostal space",
+        "D. Upper part of right heart border, at the level of right hilum",
+        "E. Distal part of right subclavian vein"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The tip of the subclavian line must be distal to the valves and in the superior vena cava. The last valves in the subclavian and internal jugular veins are 2.0–2.5 cm proximal to their union. The brachiocephalic vein and superior vena cava do not contain valves. The superior vena cava commences at the level of right first intercostal space and tip of lines above this lie in the distal internal jugular vein. A catheter tip in right atrium or right ventricle may cause arrhythmias.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 35-year-old male smoker with cough shows a 3 cm mass in the right upper lobe. CT confirms the well-defined lesion with smooth margins and calcification and identifies few non-specific lymph nodes in mediastinum. PET–CT shows minimal uptake with SUV < 1.5. What is the most likely diagnosis?",
+      "options": [
+        "A. Hamartoma",
+        "B. Consolidation",
+        "C. Bronchogenic carcinoma",
+        "D. Metastasis",
+        "E. Scarring"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is the most common benign tumour of the lung. It commonly contains calcification and fat (diagnostic). On a PET scan, hamartomas usually show poor uptake while the other listed conditions may show high uptake on PET.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 42-year-old woman with a history of stroke presents with bilateral peripheral oedema. The chest radiograph is normal. Contrast-enhanced CT chest shows an ovoid filling defect in the left atrium and appears to be attached to the atrial septum. On MRI, the lesion appears hypointense on T1 and hyperintense on T2. What is the most likely diagnosis?",
+      "options": [
+        "A. Cardiac metastasis",
+        "B. Cardiac lipoma",
+        "C. Left atrial myxoma",
+        "D. Wegener’s granulomatosis",
+        "E. Sarcoidosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Embolisation may lead to strokes in patients with left atrial myxoma. Wegener’s and sarcoidosis in the heart are very rare. Lipoma shows fat density and signal on imaging.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 58-year-old man was found to have an incidental lesion measuring 5 cm in the anterior mediastinum. The lesion shows heterogenous enhancement on CT with punctate calcifications. On MRI, the lesion is isointense to muscle, with cystic components and hyperintense on T2. What is the most likely diagnosis?",
+      "options": [
+        "A. Thymolipoma",
+        "B. Thymoma",
+        "C. Lymphoma",
+        "D. Thymic carcinoma",
+        "E. Metastasis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Thymolipoma are rare, predominantly fat-containing neoplasms. Lymphoma presents with extensive lymph node masses in the mediastinum.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 55-year-old man had a left pneumonectomy for bronchogenic carcinoma. 10 days later, a chest radiograph shows that approximately 50% of the pneumonectomy space is filled with fluid and there is an air-fluid level. What is the most likely diagnosis?",
+      "options": [
+        "A. Bronchopleural fistula",
+        "B. Empyema",
+        "C. Normal evolution of pneumonectomy space",
+        "D. Chylothorax",
+        "E. Post-pneumonectomy syndrome"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "After 7–10 days, approximately half to two-thirds of the pneumonectomy space fills up with fluid. Complete filling with fluid is seen in 2–4 months. A small amount of air may be seen indefinitely. Post-pneumonectomy syndrome is seen after 1 year. Bronchopleural fistula should be considered if there is persistent pneumothorax or if the air–fluid level drops by > 2 cm or there is reappearance of air in a previously opacified pneumonectomy space.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 62-year-old smoker presents with haemoptysis. The chest radiograph shows a mass in right paracardiac region with loss of right heart border. The lesion is most likely to be in?",
+      "options": [
+        "A. Right middle lobe",
+        "B. Apical segment of right lower lobe",
+        "C. Posterior segment of right upper lobe",
+        "D. Medial basal segment of right lower lobe",
+        "E. Anterior basal segment of right lower lobe"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The right middle lobe lies adjacent to the right heart border and disease of the right middle lobe (e.g. collapse/consolidation) results in loss of normal sharp outline of the right heart order.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 46-year-old woman with a history of breast cancer presents with persistent cough. The chest radiograph shows reticular shadowing in the left lower zone. HRCT shows diffuse septal thickening and nodularity in the left lower lobe. What is the most likely diagnosis?",
+      "options": [
+        "A. Heart failure",
+        "B. Lymphangitic carcinomatosis",
+        "C. Sarcoidosis",
+        "D. Amyloidosis",
+        "E. Respiratory bronchiolitis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Given the history of malignancy, septal thickening with septal nodularity is suggestive/suspicious of lymphangitic carcinomatosis.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 62-year-old man with history of stroke and swallowing difficulties presents with persistent cough. HRCT shows patchy areas of bilateral ‘tree-in-bud’ pattern in the lower lobes. What is the most likely diagnosis?",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Miliary tuberculosis",
+        "C. Chronic aspiration",
+        "D. Hypersensitivity pneumonitis",
+        "E. Langerhans cell granulomatosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Given the history of swallowing difficulties and stroke, the patient is likely to have aspiration pneumonitis presenting as a result of severe bronchiolar impaction with clubbing of the distal bronchioles.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 32-year-old man presents with cough. The chest radiographs shows a 4 cm paraspinal mass lesion. CT chest demonstrates a smooth, well-defined dumbbell shaped mass in the left paravertebral region. The lesion expands the neural foramen and extends into the spinal canal. What is the most likely diagnosis?",
+      "options": [
+        "A. Neuroblastoma",
+        "B. Neurofibroma",
+        "C. Bronchogenic carcinoma",
+        "D. Lymphoma",
+        "E. Extramedullary haematopoiesis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Neurofibromas are typically dumbbell shaped and extend into the spinal canal with expansion of the neural foramen. Neuroblastoma is seen usually in children, are heterogenous tumours and show calcification. Bronchogenic carcinoma causes bony destruction and lymphoma rarely has isolated posterior mediastinal mass.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 60-year-old recently retired postman presents with chronic cough. The chest radiograph shows soft tissue opacity extending from the right hilum to the lateral chest wall, with loss of the right heart border. There is loss of right lung volume and the right costophrenic angle is seen. Bronchoscopy demonstrates a large endobronchial mass. What is the most likely bronchus involved?",
+      "options": [
+        "A. Right upper lobe bronchus",
+        "B. Right middle lobe bronchus",
+        "C. Right lower lobe bronchus",
+        "D. Bronchus intermedius",
+        "E. Right lower lobe apical segment bronchus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The chest radiograph findings are suggestive of combined right middle lobe and right lower lobe collapse secondary to tumour obstructing the bronchus intermedius.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 40-year-old man with a history of intravenous drug abuse presents with back pain. CT shows an infrarenal aortic aneurysm and left psoas abscess. What is the most likely finding on CT?",
+      "options": [
+        "A. Lobulated, saccular aneurysm",
+        "B. Fusiform aneurysm",
+        "C. Pseudoaneurysm",
+        "D. Periaortic gas",
+        "E. Extensive mural thrombus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient is likely to have a mycotic aortic aneurysm. Mycotic aneurysms are commonly saccular and lobulated and less commonly fusiform. They may be associated with psoas abscess, discitis or osteomyelitis.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 64-year-old man presents with a history of chronic cough and chest pain. The chest radiograph shows a 2 cm soft tissue lesion in the left upper zone with a crescent shaped gas collection around. CT shows a dependent 2 cm round mass in a cavity. What is the most likely diagnosis?",
+      "options": [
+        "A. Wegener’s granulomatosis",
+        "B. Aspergilloma",
+        "C. Lung abscess",
+        "D. Rheumatoid nodule",
+        "E. Metastasis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "CT halo sign is characteristic for aspergilloma where a dependent, rounded nodule is seen in a cavity or a cyst. Prone and supine CT demonstrates mobility of mycetoma in the cavity.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 62-year-old man with known primary malignancy presents with haemoptysis. Chest radiograph shows a cavitating lesion in the left mid zone. Which is the least likely diagnosis?",
+      "options": [
+        "A. Carcinoma of the colon",
+        "B. Melanoma",
+        "C. Transitional cell carcinoma of the bladder",
+        "D. Carcinoma of the prostate",
+        "E. Squamous cell carcinoma of the lung"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The rest of the tumours are all common causes of cavitating metastatic lesions.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 36-year-old man presents with cough and haemoptysis. The chest radiograph demonstrates a 4 cm mass lesion in right upper lobe with calcifications. CT-guided biopsy shows that the lesion is malignant. What is the most unlikely primary?",
+      "options": [
+        "A. Osteosarcoma femur",
+        "B. Thyroid carcinoma",
+        "C. Testicular primary",
+        "D. Carcinoma colon",
+        "E. Lymphoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Lymphoma lesions do not usually show calcifications unless there is a history of treatment with radiation. The rest of the tumours listed can present with calcifying lung metastatic deposits.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 64-year-old woman known to have chronic rheumatoid arthritis presents with shortness of breath. The most common feature seen on the chest radiograph is?",
+      "options": [
+        "A. Pleural effusion",
+        "B. Rheumatoid nodule",
+        "C. Diffuse interstitial fibrosis",
+        "D. Bronchiectasis",
+        "E. Pericardial effusion"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is the most common finding on a chest radiograph in patients with chronic rheumatoid arthritis, seen in more than 90% cases.",
+      "questionNumber": 45
+    },
+    {
+      "question": "An 18-year-old man was brought to the Accident & Emergency Department. The patient was the driver of a car involved in a road traffic accident. What is the most common/expected abnormality on chest CT?",
+      "options": [
+        "A. Pneumothorax",
+        "B. Flail chest",
+        "C. Clavicle fracture",
+        "D. Diaphragmatic injury",
+        "E. Oesophageal rupture"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Pneumothorax, lung contusions and rib fractures are the most common expected abnormalities in blunt trauma to chest, seen in more than two-thirds of cases. Other abnormalities are far less common.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 45-year-old woman had allogenic bone marrow transplant for treatment of leukaemia. Two weeks later she developed cough and shortness of breath. CT demonstrates bilateral ground-glass shadowing, thickened interstitial lines and bilateral pleural effusion. What is the most likely diagnosis?",
+      "options": [
+        "A. Bronchiolitis obliterans",
+        "B. Drug toxicity",
+        "C. Pulmonary oedema",
+        "D. Diffuse alveolar haemorrhage",
+        "E. Bronchiolitis obliterans organising pneumonia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is usually secondary to fluid overload and associated renal dysfunction. Bronchiolitis obliterans and bronchiolitis obliterans organising pneumonia are late complications seen after 3 months. Drug toxicity and alveolar haemorrhages may present with ground-glass shadowing but do not show pleural effusions or interstitial involvement.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 68-year-old man presents with a history of chronic cough. The chest radiograph shows a diffuse reticular nodular pattern with mid-lower zone predominance. HRCT shows a symmetrical reticular pattern with sub-pleural honeycombing and traction bronchiectasis. What is the most likely diagnosis?",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Hypersensitivity pneumonitis",
+        "C. Idiopathic pulmonary fibrosis",
+        "D. Asbestosis",
+        "E. Silicosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "These radiographic and HRCT appearances are typically a feature of idiopathic pulmonary fibrosis. Sarcoidosis affects upper zones predominantly. Hypersensitivity pneumonitis usually spares extreme bases but sometimes may be difficult to separate from idiopathic pulmonary fibrosis. Asbestosis also may show peripheral honeycombing but is associated with pleural plaques.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 35-year-old man presents with cough. Chest radiograph shows a low volume right lung and a gently curving tubular shadow coursing from the lower part of right inferior pulmonary artery towards the right costovertebral angle. The shadow widens as it descends towards the diaphragm. What is the most likely diagnosis?",
+      "options": [
+        "A. Pulmonary sequestration",
+        "B. Scimitar syndrome",
+        "C. Wandering vein",
+        "D. Swyer–James syndrome",
+        "E. Chronic pulmonary thromboembolism"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Also called congenital pulmonary venolobar syndrome. There is congenital hypoplasia of the right lung with anomalous pulmonary venous drainage into the inferior vena cava. The anomalous vein seen best on radiographs and CT reconstructions, is shaped like a Turkish sword (scimitar sign). The right lung is almost exclusively involved.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 38-year-old bird keeper presents with recurrent episodes of flu-like symptoms. The chest radiograph is normal. HRCT shows extensive bilateral symmetrical, small ill-defined centrilobular nodules. What is the most likely diagnosis?",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Idiopathic pulmonary fibrosis",
+        "C. Scleroderma",
+        "D. Hypersensitivity pneumonitis",
+        "E. Respiratory bronchiolitis–interstitial lung disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Given the history of bird keeping, and diffuse centrilobular shadowing in the lungs, the diagnosis is likely to be hypersensitivity pneumonitis.",
+      "questionNumber": 50
+    }
+  ]
+}

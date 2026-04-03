@@ -1,0 +1,982 @@
+
+{
+  "title": "Cardiothoracic and Vascular Mock Paper",
+  "questions": [
+    {
+      "question": "A 36 year old man has returned from a long adventure holiday in South-Eastern USA. He had an episode of fever, dry cough and polyarthralgia. He still has dyspnoea and on examination is noted to have erythema nodosum on his shins. CXR shows diffuse bilateral tiny calcific nodules, some with central calcification, and hilar and mediastinal 'popcorn' calcified lymphadenopathy. What is the most likely diagnosis?",
+      "options": [
+        "A. Acute sarcoidosis",
+        "B. Histoplasmosis",
+        "C. Langerhans Cell Histiocytosis",
+        "D. TB",
+        "E. Varicella pneumonia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Histoplasmosis is endemic in certain areas of the USA, particularly Ohio, Mississippi, and the St Lawrence river valley. Acute infection produces flu-like symptoms (polyarthralgia, fever). Acute CXR findings may be non-specific, but include diffuse subsegmental opacities, +/- lymphadenopathy. Sub-acute infection results in small calcific nodules and there may be hilar or mediastinal LNs which can display popcorn calcification. The 'target lesion' with central calcification is said to be pathognomonic. Ref: Fundamentals of Diagnostic Radiology, 2nd Ed, p. 468-9 & Radiology Review Manual, 6th Ed, p. 234.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 35 year old Japanese man with a long history of mouth ulceration and a recent diagnosis of posterior uveitis presents to the emergency department with breathlessness. A CTPA is performed which demonstrates bilateral pulmonary emboli. What is the most likely diagnosis?",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Systemic Lupus Erythematosus",
+        "C. Behcet's disease",
+        "D. Polyarteritis nodosa",
+        "E. Amyloidosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Behcet's disease is an autoimmune condition that is characterised by oro-genital ulceration and uveitis. There are numerous systemic complications which include vasculitis, arterial and venous thrombosis, pulmonary artery aneurysms and pulmonary haemorrhage. Ref: e-medicine: Behcet's disease.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 27 year old woman is under investigation for renovascular hypertension. Selective angiograms of the renal arteries show bilateral stenoses of the mid main renal artery with further focal stenoses more distally and multiple aneurysmal dilations of the arteries. What is the most likely sub-type of fibromuscular dysplasia in this patient?",
+      "options": [
+        "A. Adventitial fibroplasias",
+        "B. Intima fibroplasia",
+        "C. Medial dissection",
+        "D. Medial fibroplasia",
+        "E. Medial hyperplasia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "FMD involves the renal artery in 60% of cases and extracranial carotid artery in 30%, there are 6 sub-types. FMD accounts for 35% of cases of RAS and 25% of all cases of renovascular hypertension (most common cause in those < 30 years; 3x more common in females). Medial fibroplasia is the commonest type of FMD accounting for 60-85% of cases and gives the classic 'string of beads' appearance (alternating areas of stenoses and aneurysms) which is typically bilateral and affects mid and distal renal artery and branches. Ref: Radiology Review Manual, 6th Ed, p. 957.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Regarding lung transplantation, which of the following conditions would not be suitable for a single lung transplant, and would necessitate a double-lung transplantation?",
+      "options": [
+        "A. Bronchiectasis",
+        "B. Emphysema",
+        "C. Idiopathic pulmonary fibrosis",
+        "D. Primary pulmonary hypertension",
+        "E. Sarcoid"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Suppurative lung disease, such as cystic fibrosis and bronchiectasis, necessitates double lung transplant to prevent the spread of infection from native lung to the graft. The other conditions can be treated with single lung transplantation, although patients with PPH or emphysema may also be offered double lung transplantation. Ref: R-ITI 1b_059. Thoracic Imaging in Heart and Lung Transplantation.",
+      "questionNumber": 4
+    },
+    {
+      "question": "You are asked to report the CXR of a 58 year old man. The request form simply states 'shortness of breath', there are no previous films available for comparison. There is bibasal atelectasis and pleural calcification is seen within the right hemithorax. What is the least likely of the following diagnoses?",
+      "options": [
+        "A. Berylliosis",
+        "B. Prior haemothorax",
+        "C. Radiation therapy",
+        "D. Talcosis",
+        "E. Tuberculosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Pleural calcification can be due to infection (TB, healed empyema), trauma (healed haemothorax), radiation therapy, pneumoconioses (asbestosis), talcosis, hyperparathyroidism. Berylliosis rarely involves the pleura. Ref: Radiology Review Manual, 6th Ed, p. 440.",
+      "questionNumber": 5
+    },
+    {
+      "question": "Which of the following is not an accepted indication to choose CO2 angiography?",
+      "options": [
+        "A. EVAR stent procedure",
+        "B. Fluoroscopic angiography where DSA unavailable",
+        "C. IVC filter placement",
+        "D. Previous anaphlaxis post-IVU",
+        "E. Serum creatinine of 190 µmol/L"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The main advantages of CO2-angiography is its use in patients where iodinated agents are contraindicated, e.g. renal failure or previous contrast reaction, or for long procedures in order to limit contrast burden (e.g. EVAR placement). CO2 is not diluted by blood thus can opacify central veins more readily from a peripheral approach, which is advantageous when placing IVC filters. The overall quality of CO2 images is reduced as there is decreased density compared to Iodine, thus DSA is essential. Additionally, multiple injections are usually required, thus radiation exposure may be increased. Ref: Clin Rad (2005); 60(3): 123-5.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 64 year old woman presents with dyspnoea. CXR shows reticulonodular opacities and coarsened bronchovascular marking only within the right lower zone. HRCT shows focal RLL thickening of peribronchovascular interstitium, interlobular septa and fissures with preservation of normal parenchymal architecture. What is the most likely underlying cancer?",
+      "options": [
+        "A. Bronchogenic",
+        "B. Cervical",
+        "C. Gastric",
+        "D. Ovarian",
+        "E. Thyroid"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The findings described are consistent with lymphangitis carcinomatosis. Although the appearance of LC on HRCT scans is nonspecific, the features in a symptomatic patient with history of malignancy is highly suggestive. A number of primary tumours are associated with this finding within the lung, including cervix, colon, stomach, breast, pancreatic, thyroid and larynx. Focal, unilateral disease is particularly associated with underlying bronchogenic carcinoma (breast cancer can also produce this pattern). Ref: Khan AN (2008) e-medicine article: Lymphangitic carcinomatosis Imaging.",
+      "questionNumber": 7
+    },
+    {
+      "question": "After squamous cell carcinoma, which is the next most common tumour of the trachea?",
+      "options": [
+        "A. Adenoid cystic carcinoma",
+        "B. Muco-epidermoid tumour",
+        "C. Carcinoid",
+        "D. Squamous cell papilloma",
+        "E. Lymphoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "More than 90% of tracheal neoplasms are malignant, with adenoid cystic carcinomas second most common. Squamous cell papillomas, related to human papilloma virus infection, are the most common benign lesions. Ref: R-ITI. 1 b 037. Tracheal and bronchial stenoses.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 45 year old man is referred from chest clinic with a cough and intermittent breathlessness. A CT of his thorax demonstrates ill-defined centrilobular nodules and a mosaic attenuation pattern, exacerbated on expiratory phase imaging. What is the most likely diagnosis?",
+      "options": [
+        "A. Respiratory bronchiolitis-interstitial lung disease",
+        "B. Chronic pulmonary thrombo-embolism",
+        "C. Sarcoidosis",
+        "D. Extrinsic allergic alveolitis",
+        "E. Lymphocytic interstitial pneumonitis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The clinical features are non-specific, but many patients with EAA (also known as hypersensitivity pneumonitis) have exacerbation of symptoms on exposure to the antigen, e.g. returning to the workplace. EAA has acute, sub acute and chronic phases which may progress to widespread pulmonary fibrosis. The mosaic attenuation with gas trapping described here is a characteristic finding. Ref: R-ITI 1b_018. Hypersensitivity pneumonitis.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A diagnostic lower limb angiogram is to be performed. Which of the following guidewires is appropriate in order to site the pigtail catheter in the aorta following a standard retrograde common femoral artery puncture?",
+      "options": [
+        "A. Amplatz",
+        "B. J-wire",
+        "C. Mandrel",
+        "D. Straight wire",
+        "E. Terumo"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Guidewires have a central stiff steel core with a 'floppy' end; most are coated with Teflon to reduce friction. Wires are sized according to their outer diameter, measured in 1/1000 of an inch (typical measurements are 0.018 - 0.035). 'J' wires are often described in terms of the radius of the curve they form (e.g. 3 mm) and are routinely used for access. The other wires vary in their properties and are useful in different situations. Ref: Interventional Radiology: A Survival Guide, 2nd Ed, p. 63-5.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 67 year old lady presents with chest pain and shortness of breath ten days after hip replacement surgery. She is known to have COPD. A CT-pulmonary angiogram is requested. Which of the following factors is more likely to increase the risk of a severe idiosyncratic reaction to iodinated contrast medium?",
+      "options": [
+        "A. Asthma",
+        "B. Creatinine > 133 µmol/L",
+        "C. Metformin",
+        "D. NSAIDs",
+        "E. Type-2 diabetes mellitus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Factors that increase the risk of an idiosyncratic contrast reaction include: Atopy, asthma, B-blockers (all increase x3), cardiac disease (x5), age >50 years (x2) and previous allergic reaction to iodine or shellfish (x10). The other listed answers will increase the chance of contrast-related nephrotoxicity rather than allergic reaction. Ref: Interventional Radiology: A Survival Guide, 2nd Ed, p. 12-4.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 32 year old man presents to his GP with increasing shortness of breath. He has never smoked. The initial bloods show a normal full blood count, but abnormal liver function. A CXR is requested and shows emphysematous change within both lower zones only. A subsequent CT is requested. What sub-type of emphysema is likely to be seen?",
+      "options": [
+        "A. Centriacinar emphysema",
+        "B. Centrilobular emphysema",
+        "C. Panacinar emphysema",
+        "D. Paracicatricial emphysema",
+        "E. Paraseptal emphysema"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "a1-anti-trypsin deficiency is a genetically inherited disorder. In individuals with the PiZZ phenotype there is insufficient a1AT to protect the lungs from neutrophil elastase. Even non-smokers develop emphysema in the lower zones which involves the pulmonary acinus diffusely (another cause is i.v. methylphenidate abuse). Liver fibrosis/cirrhosis can also occur in this condition. Centriacinar emphysema (centrilobular and focal subtypes) occurs in smokers. Paracicatricial emphysema is often seen in scar tissue (e.g. in pulmonary fibrosis). Ref: R-ITI module: 1b_038 - Emphysema.",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which of the following drugs used in treating patients with haematological malignancy is not associated with pulmonary haemorrhage?",
+      "options": [
+        "A. Bleomycin",
+        "B. Cytarabine",
+        "C. Amphotericin B",
+        "D. Rituximab",
+        "E. Cyclophosphamide"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Bleomycin may result in one of two conditions: an organising pneumonia with multiple foci of consolidation or tree-in-bud opacification, or diffuse alveolar damage which gives appearances akin to ARDS. Ref: Clin Rad (2009); In press. doi:10.1016/j.crad.(2009).04.006",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 63 year old smoker presents with pain in the right arm. On examination there is wasting of the small muscles in the right hand, ptosis and miosis of the right eye. CXR shows right apical pleural thickening and an associated mass. What is the most likely tumour type?",
+      "options": [
+        "A. Large cell",
+        "B. Mesothelioma",
+        "C. Oat cell",
+        "D. Reed-Sternberg cell",
+        "E. Squamous cell"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The lesion described is that of a Pancoast tumour. This is a superior sulcus tumour that is most commonly due to a primary lung tumour, but can result from breast cancer, myeloma, mesothelioma, lymphoma, or metastases. Overall 3% of bronchogenic cancers present this way, the commonest being squamous cell; adenocarcinoma is the second commonest. Symptoms result from local involvement of the brachial plexus (arm pain, hand muscle wasting) and the sympathetic chain (Horner's syndrome: ipsilateral enophthalmos, ptosis, miosis and anhidrosis). Ref: Radiology Review Manual, 6th Ed, p. 476.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A man with a long smoking history is found to have a subpleural 2.5 cm lesion in the left lower lobe. His FEV-1 is 1.5 L and clotting is normal. He is consented for a CT-guided biopsy of the lesion. What is the commonest occurring complication from this procedure?",
+      "options": [
+        "A. Air embolism",
+        "B. Haemoptysis",
+        "C. Infection",
+        "D. Pneumothorax",
+        "E. Tumour seeding"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Published complication rates vary widely, and technique and practice differs according to the centre. The below study showed that small pneumothoraces are common but rarely require treatment (overall rate 16.4%); the number requiring chest drain was only 2.4%. Haemoptysis occurred in 4.8%, but major haemoptysis requiring blood transfusion was only 0.15%. Further rare complications include death (0.15%), air embolism (0.02%) and tumour seeding (0.02%). Ref: BJR (2002); 75:731-735.",
+      "questionNumber": 15
+    },
+    {
+      "question": "Which of the following CT signs is the most specific for a diagnosis of pulmonary hypertension?",
+      "options": [
+        "A. Aorta:pulmonary artery ratio > 1.0",
+        "B. Main pulmonary artery diameter >= 2.9 cm",
+        "C. Mosaic perfusion pattern",
+        "D. Reflux of contrast into IVC",
+        "E. Segmental artery:bronchus ratio > 1.0 in >= 3 lobes"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "There is a good correlation between a main PA >= 2.9 cm and right heart catheter studies in demonstrating PHT. Some argue that the PA diameter is affected by body habitus, thus the ratio of aorta to main PA is more specific (note this is a PA : aorta ratio > 1 ). Segmental artery : bronchus ratio >1 in 3 of 4 lobes (RUL, RLL, LUL and LLL) has been used by some authors, however, this ratio may exceed 1 in normal individuals and, rarely, a ratio of >= 1.25 can be within normal limits. Mosaic perfusion is indicated of small vessel disease which can lead to PHT but is not specific, and reflux of contrast into the IVC is indicative of tricuspid regurgitation which may be secondary to PHT, but is not specific. A combination of 2 or more features greatly increases specificity. Ref: Clin Rad (2009); 64: 751-60.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 25 year old woman has a CXR for insurance purposes. There is a 2 cm well-circumscribed lesion in the periphery of the RLL. The subsequent CT demonstrates fat and calcification within the lesion; no other lesions are identified. What two further conditions, if present, would make the diagnosis part of Carney's triad?",
+      "options": [
+        "A. Atrial myxoma and extra-adrenal paraganglioma",
+        "B. Atrial myxoma and pituitary adenoma",
+        "C. Breast fibroadenoma and pituitary adenoma",
+        "D. Gastric leiomyosarcoma and breast fibroadenoma",
+        "E. Gastric leiomyosarcoma and extra-adrenal paraganglioma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Pulmonary hamartomas, gastric leiomyosarcomas (GISTs) and functioning extra-adrenal paragangliomas make up this rare triad. Almost all patients are female (80%) aged 10-30 years. Pituitary adenomas, cardiac myxomas, along with myxoid fibroadenomas of the breast and testicular tumours are associated with the autosomal dominant Carney complex. Ref: Radiology Review Manual, 6th Ed, p. 850.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 2 day old neonate presents with difficulty in breathing. On examination there are widespread crepitations. The CXR shows florid pulmonary oedema. Which of the following congenital heart anomalies would be the most likely cause of these appearances?",
+      "options": [
+        "A. Atrial septal defect",
+        "B. Hypoplastic Left Heart Syndrome",
+        "C. Pulmonary atresia",
+        "D. Tetralogy of Fallot",
+        "E. Ventricular septal defect"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The overall incidence of CHD is 1 %, the most common are structural defects bicuspid aortic valve and MVP. The most common types of CHD presenting in the first month of life are: hypoplastic left heart syndrome (35%), TGA (25%), coarctation (20%), multiple defects (15%), pulmonary atresia/stenosis (10%), severe Tetralogy of Fallot's (10%). HLHS describes underdevelopment of LA, LV, MV, AV and aorta, survival requires a large ASD and PDA to allow admixing of the left and right circulations. CXR shows marked pulmonary oedema and right heart enlargement. HLHS and the '5 Ts' present at 0-2 days, but HLHS is more common and more likely to produce marked CCF. Coarctation and AS present at 7-14 days; VSD and PDA presents in infancy and ASD in adulthood. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 140-1 & 154.",
+      "questionNumber": 18
+    },
+    {
+      "question": "An adolescent male patient presents with dyspnoea, cough, and complains of feeling increasingly tired. The subsequent CXR shows a mass located within the anterior mediastinum. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Bochdalek hernia",
+        "B. Bronchopulmonary foregut malformation",
+        "C. Extramedullary haemopoeisis",
+        "D. Germ cell tumour",
+        "E. Neuroblastoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The other options are either exclusively or typically found within the posterior mediastinum. The anterior mediastinum is the third most common site of primary germ cell tumour, after gonadal and sacrococcygeal location. Ref: Radiology Review Manual, 6th Ed, p. 534-5.",
+      "questionNumber": 19
+    },
+    {
+      "question": "With regard to cardiac MRI, which of the following is not true?",
+      "options": [
+        "A. In balanced-steady state free precession images stationary blood is bright",
+        "B. Gradient echo sequences are not flow-sensitive",
+        "C. In balanced-steady state free precession images flowing blood is bright",
+        "D. Triple inversion recovery sequences are sensitive for myocardial oedema",
+        "E. T1-weighted spin-echo sequences show blood as black"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cardiac MRI demands rapid and complex sequences which are evolving continually. Gradient echo sequences are flow sensitive and may be used to show jets or regurgitation. Ref: R-ITI 1a_002. Cardiac MRI anatomy and MRA.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 58 year old patient has a chest CT 6 months after resection of a primary lung tumour. There are noted to be new ipsilateral superior mediastinal and supraclavicular lymph nodes measuring 6-8 mm. An 18FDG-PET/CT is requested for further evaluation. Which of the following is not a routine part of the pre-scan preparation?",
+      "options": [
+        "A. Inject FDG tracer 15 minutes prior to imaging",
+        "B. Check blood glucose level prior to tracer injection",
+        "C. No food for 6 hours prior to imaging",
+        "D. No talking for 30 minutes prior to imaging",
+        "E. No jogging for 24-48 hours prior to imaging"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Imaging should not be performed until at least 30 minutes, and more typically 60 minutes after tracer administration to allow clearance from the background blood pool. Patient preparation is key in order to minimise artefacts from physiological uptake. Muscle uptake is reduced by keeping serum insulin levels low, thus patients are fasted for 6 hours prior to the study. It is important to check blood glucose prior to the study as elevated blood glucose competes with FDG for transport, increasing background activity; above a certain level (often quoted as 13 mmol/ml) the procedure may have to be postponed. For imaging in the head/neck region it is advisable to avoid talking for 30-60 minutes prior in order to minimise muscle uptake in this region, similarly strenuous exercise should be avoided 24-48 hours prior to reduce whole-body muscle uptake. Additional avoidance of caffeine is recommended in cardiac/chest imaging as it will increase heart rate, hence increasing heart size and myocardial uptake. Ref: Clin Rad (2007); 62(2): 97-108.",
+      "questionNumber": 21
+    },
+    {
+      "question": "Regarding coronary artery fistulas, which of the following statements is true?",
+      "options": [
+        "A. They are seen in 1 % of cases undergoing coronary angiography",
+        "B. They account for 5% of congenital cardiac abnormalities",
+        "C. They are seen more commonly in men",
+        "D. They are most commonly congenital",
+        "E. They most commonly drain in to the right atrium"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "CAF have a prevalence of 0.0002% in the population, are seen in <0.25% patients undergoing angiography and account for approximately 0.3% of congenital cardiac abnormalities. Approximately 50% arise from the RCA, 42% from the LCA, 5% from both; drainage is almost always into a low pressure venous structure, most commonly right ventricle (41%) and right atrium (26%) and the vast majority are single. There is no predilection for race or sex. Ref: Radiographics (2009); 29:781-9.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 53 year old man presents with right calf swelling. He had a previous right leg DVT treated 5 years previously at another hospital and describes the current symptoms as being similar. US shows echoic material extending 5 cm within the mid right SFV. What feature most strongly supports a diagnosis of acute DVT over chronic changes from his previous DVT?",
+      "options": [
+        "A. Enlarged vein diameter",
+        "B. Hyperechoic material in the vein",
+        "C. Non-compressible vein",
+        "D. Presence of collateral veins",
+        "E. Vein wall thickening"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "It may be difficult to distinguish acute from chronic DVT, and previous imaging if available can be helpful. Signs more in keeping with chronic DVT include wall thickening, collateral vessels, and echogenic material of the same or increased echoreflectivity as compared to surrounding tissue; vein diameter is often reduced. Acute thrombus is of lucent-to-intermediate echogenicity as compared to surrounding tissues, is seen to expand the vein, is often 'free-floating' within the lumen in the first week, and may be compressible in the early stages. Ref: Radiol Clin North Am (2007); 45(3):525-47.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A patient undergoing induction chemotherapy for the treatment of acute myeloid leukaemia undergoes a chest CT. This shows several foci of consolidation with a halo of ground glass opacification. What is the most likely diagnosis?",
+      "options": [
+        "A. Leukaemic infiltrate",
+        "B. Mycobacterium avium infection",
+        "C. Klebsiella spp. infection",
+        "D. Pulmonary thromboembolic disease",
+        "E. Angioinvasive aspergillosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This group of patients are severely immuno-suppressed and are particularly prone to fungal chest infections, which need to be recognised early and treated aggressively. Ref: Eur J Radiol (2006); 59:371-83.",
+      "questionNumber": 24
+    },
+    {
+      "question": "With regard to coronary artery calcium scoring, which of the following is not true?",
+      "options": [
+        "A. The absence of calcification makes atherosclerotic disease very unlikely",
+        "B. Calcification is highly specific for atherosclerotic disease",
+        "C. Calcium is expressed as the Hounsfield score",
+        "D. Calcification may progress at up to 25% per year",
+        "E. Lipid lowering drugs may stop progression of calcification"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Coronary artery calcification is expressed as the Agatston score. The greater the degree of calcification, the greater the risk of a cardiac event. Ref: R-ITI 1a_006. Normal cardiac CT",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 64 year old man undergoes nephrectomy for a right renal tumour. A year later he presents with haemoptysis. CT of the chest shows 3 lesions in the right hemithorax measuring 20 x 10 mm, 20 x 12 mm and 10 x 10 mm. Biopsy confirms these are metastases. After a course of chemotherapy, the lesions measure 18 x 8 mm, 17 x 10 mm and 10 x 8 mm. By RECIST criteria the status of the disease is?",
+      "options": [
+        "A. Stable disease",
+        "B. Partial response",
+        "C. Good response",
+        "D. Excellent response",
+        "E. No response"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Baseline is defined as the sum of the long diameters of the target lesions where up 2 target lesions per organ and 5 overall can be used. Partial response involves a decrease of 30% or more in the sum of the long diameters. Complete response implies the disappearance of all lesions. Disease progression involves an increase in the sum of the long diameters of 20%. Good response, no response and excellent response are not part of the RECIST criteria. Ref: EJC (2009); 45:228-47.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 68 year old man presents with a lower GI haemorrhage. He is fluid resuscitated and an angiogram is performed to localise the site of bleeding. Initial selective angiogram of the IMA shows a distal bleeding point within the pelvis. Which of the following arteries is the more likely source of the bleed?",
+      "options": [
+        "A. Median sacral",
+        "B. Middle rectal",
+        "C. Sigmoid",
+        "D. Inferior epigastric",
+        "E. Internal pudendal"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Branches of the IMA include left colic, sigmoidal branches, superior rectal, and marginal arteries. Medial sacral comes directly off the aorta; middle rectal and internal pudendal arteries are branches of the IIA; the inferior epigastric arteries are branches of the EIA. Ref: Radiology Review Manual, 6th Ed, p. 791.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A routine CXR in a 30 year old man demonstrates bilateral inferior rib notching. Which of the following is least likely to cause this?",
+      "options": [
+        "A. Normal variation",
+        "B. Coarctation of the aorta",
+        "C. Hyperparathyroidism",
+        "D. Neurofibromatosis type 2",
+        "E. Thalassaemia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The causes can be divided into arterial, venous (including SVC obstruction), neurogenic (including polio, paraplegia, Neurofibromatosis type 1) and osseous. Neurofibromatosis type 2 is not a recognised cause. Ref: Radiology Review Manual, 6th Ed, p. 19.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 62 year old otherwise well woman presents with chronic and progressive dysponea. CXR reveals fine reticular opacification in the upper zones bilaterally with volume loss. Which of the following is the likeliest diagnosis?",
+      "options": [
+        "A. Tuberous sclerosis",
+        "B. Extrinsic allegic alveolitis",
+        "C. Sarcoidosis",
+        "D. Usual interstitial pneumonitis",
+        "E. Ankylosing spondylitis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Tuberous sclerosis and UIP typically affect the lower zones. Lung volumes are preserved in EAA. Ankylosing spondylitis is a possibility but is much less common than sarcoid. Ref: Radiology Review Manual, 6th Ed, p. 417.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 24 year old lady, 27 weeks pregnant, presents with chest pain and you are contacted for imaging advice. Which of the following is not a risk factor/ indicator of pulmonary embolism?",
+      "options": [
+        "A. Raised D-dimer",
+        "B. Gestational diabetes",
+        "C. Thrombophilia",
+        "D. Obesity",
+        "E. Multiparity"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In addition, increasing age, prolonged bed rest, familial disposition, previous venous thromboembolism, varicose veins and smoking are all risk factors. D-dimer is often elevated in pregnancy and the test is not indicated in this situation. Ref: Clin Rad (2006); 61:1-12.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 55 year old man undergoes a CT to assess pleural thickening previously noted on a chest radiograph. Which of the following features is not an indicator of malignancy?",
+      "options": [
+        "A. Involves mediastinal pleural surface",
+        "B. Depth greater than 1 cm",
+        "C. Volume loss",
+        "D. Nodularity",
+        "E. Pleural effusion"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Pleural effusions are seen in both benign and malignant pleural disease. In addition to the other signs, encasement of the lung by pleural disease is a feature of malignancy. Ref: R-ITI 1b_072-Malignant mesothelioma.",
+      "questionNumber": 31
+    },
+    {
+      "question": "Plain radiographic signs seen more commonly in patients with acute pulmonary embolism include all but which of the following?",
+      "options": [
+        "A. Cardiomegaly",
+        "B. Decreased vascularity",
+        "C. Pulmonary oedema",
+        "D. Pleural opacity",
+        "E. Atelectasis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Pulmonary oedema is seen in patients with PE rarely (4% vs 13% in patients without PE). Other signs include pleural effusion. Ref: Radiology Review Manual, 6th Ed, p. 524.",
+      "questionNumber": 32
+    },
+    {
+      "question": "An 18 year old woman with proven hydatid disease of the liver presents with chest pain and fever. She has a CXR which shows an 8 cm cystic lesion in the right lung. Which of the following features would be least expected in lung echinococcosis?",
+      "options": [
+        "A. Calcification of the cyst wall",
+        "B. Water lily sign",
+        "C. An air/fluid level within cyst",
+        "D. Ground glass change around the cyst",
+        "E. The size of the lesion"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Lung involvement occurs in 15-25% of hydatid cases with a lower lobe preponderance. The cystic lesion is solitary in up to 75% of cases. It has a sharply defined ovoid/ spherical appearance and can measure up to 20 cm. It is characterised by varying degrees of collapse of the endocystic membrane leading to the so called 'water lily', 'serpent' and 'cumbo' signs. Rib and vertebral erosion is rarely seen. Ref: Radiology Review Manual, 6th Ed, p. 500.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 50 year old woman with a history of scleroderma and a 30 pack per year smoking history presents with a cough. CXR shows a 1.2 cm peripheral nodule in the right lower lobe. CT confirms the nodule is solitary and is of mixed attenuation with a ground glass appearance. There is no mediastinal lymphadenopathy. Repeat interval CT at 6 weeks, after treatment with antibiotics, shows the lesion has remained stable in size but there is some evidence of cavitation. 18FDG-PET is performed and found to be negative. The likeliest diagnosis is?",
+      "options": [
+        "A. Bronchoalveolar carcinoma",
+        "B. Squamous cell carcinoma",
+        "C. Atypical infection",
+        "D. Carcinoid",
+        "E. Adenocarcinoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "BAC is a slow growing peripheral tumour associated with chronic lung disease and ground glass appearance on HRCT. It can cavitate and is PET negative in 55%. Ref: Radiology Review Manual, 6th Ed, p. 474.",
+      "questionNumber": 34
+    },
+    {
+      "question": "Which of the following is considered an absolute indication for an IVC filter?",
+      "options": [
+        "A. DVT/PE and limited cardiopulmonary reserve",
+        "B. Iliocaval DVT",
+        "C. High risk of DVT/PE in peri-operative setting",
+        "D. High risk of DVT/PE following trauma",
+        "E. PE/DVT and complication of anticoagulation"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The Society of Interventional Radiology consensus statement indications for IVC filter insertion classify the indications as being prophylactic, answers (c) and (d), absolute, or relative. Other absolute indications include a contraindication to anticoagulation, inability to achieve/maintain therapeutic anti-coagulation or recurrent DVT /PE despite anti-coagulation. Relative indications include answers (a) and (b), also free-floating proximal DVT, massive PE/ileocaval DVT treated with thrombolysis/thrombectomy, high risk of complications from anticoagulation, or likely poor compliance with anti-coagulation. Ref: Clin Rad (2009); 64(5): 502-10.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 58 year old man undergoes an uncomplicated pneumonectomy for lung cancer. Which of the following signs on CXR is considered abnormal?",
+      "options": [
+        "A. Opacification of 1/3 of the pneumonectomy hemithorax within 24 hours",
+        "B. Depression of the hemidiaphragm on the pneumonectomy side",
+        "C. Apical herniation of the unaffected lung to the pneumonectomy side",
+        "D. Shift of the mediastinum to the pneumonectomy side",
+        "E. Opacification of 2/3 of the hemithorax on the pneumonectomy side within 7 days"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Ipsilateral mediastinal shift and elevation of the hemidiaphragm are normally seen after pneumonectomy. Depressions of the hemidiaphragm or contralateral mediastinal shift are abnormal and may indicate haemorrhage, empyema or a bronchopleural fistula. Ref: Radiology Review Manual, 6th Ed, p. 520.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 3 year old boy who has recently arrived in the UK presents to A&E. His mother explains that he has suffered repeated respiratory infections from the neonatal period. CXR shows bilateral lower zone bronchiectasis and dextrocardia. What is the likeliest diagnosis?",
+      "options": [
+        "A. Cystic fibrosis",
+        "B. Kartagener's syndrome",
+        "C. Yellow nail syndrome",
+        "D. Pulmonary sequestration",
+        "E. Tuberculosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Kartagener's syndrome is due to abnormal ciliary motility. There is a high familial incidence and in addition to the above, is associated with chronic sinusitis, conductive deafness and other congenital abnormalities such as pyloric stenosis. Ref: Radiology Review Manual, 6th Ed, p. 504.",
+      "questionNumber": 37
+    },
+    {
+      "question": "Regarding catheters used for interventional angiography. Which of the following catheters is inappropriate for imaging the respective artery?",
+      "options": [
+        "A. Bernstein - superior mesenteric artery",
+        "B. Cobra - renal artery",
+        "C. Pigtail - abdominal aorta",
+        "D. Sidewinder (Simmons) - coeliac axis",
+        "E. Straight catheter - iliac artery"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Catheters are sized using the French system: the circumference in mm (diameter is roughly this measurement divided by 3, i.e. 6 Fr has approximately 2 mm diameter). Sheaths are sized in French measurement of their internal diameter (i.e. a 4Fr sheath can hold a 4 Fr catheter). Bernstein catheters are upwards pointed, thus they are ideal for accessing branches of the aortic arch. Access to the downwardly orientated mesenteric vessels would be technically very challenging with a Bernstein catheter - the downward facing sidewinder, or even the side-facing cobra catheters can be used. Ref: Interventional Radiology: A Survival Guide, 2nd Ed, p. 52-6.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 74 year old man presents with progressive dyspnoea. CXR shows bilateral, lower zone, peripheral subpleural reticulation. Which of the following is least likely?",
+      "options": [
+        "A. Amiodarone toxicity",
+        "B. Usual interstitial pneumonitis",
+        "C. Asbestosis",
+        "D. Rheumatoid arthritis",
+        "E. Chronic extrinsic allergic alveolitis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The acute and subacute forms of EAA can cause lower zone reticular change but the chronic form typically has an upper lobe distribution. Other drugs that can cause lower zone reticulation include bleomycin, methotrexate and nitrofurantoin. Asbestosis refers specifically to interstitial fibrosis in the context of asbestos exposure rather than the benign pleural asbestos related diseases. UIP is the commonest histological type of pattern found in idiopathic pulmonary fibrosis. Ref: RITI module 1 b -23 Chest x-ray: reticular patterns (differential).",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 50 year old man is found to have a 3.5 cm round, well-defined, right lower lobe nodule on CXR. CT examination shows the lesion is solitary and contains areas of fat. The likeliest diagnosis is?",
+      "options": [
+        "A. Carcinoid",
+        "B. Bronchoalveolar carcinoma",
+        "C. Pulmonary teratoma",
+        "D. Pulmonary hamartoma",
+        "E. Pulmonary lipoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Fat in a round well defined pulmonary lesion measuring up to 4 cm is virtually diagnostic of pulmonary hamartoma. Calcification, classically in a \"popcorn\" distribution, is seen in 15-20%. Ref: Radiology Review Manual, 6th Ed, p. 497.",
+      "questionNumber": 40
+    },
+    {
+      "question": "Which of the following is not a risk factor for developing radiation pneumonitis?",
+      "options": [
+        "A. Withdrawal of steroids",
+        "B. Increasing interval between radiotherapy fractions",
+        "C. Concomitant chemotherapy",
+        "D. Pulmonary fibrosis",
+        "E. Smoking"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Giving higher doses (>2Gy), more frequent fractions, or a total dose in excess of 10 Gy to the lung are also treatment-specific risk factors. Patient-specific risk factors are increasing age and decreasing performance status. Ref: R-ITI. 1b_048 - Acute and chronic radiation changes.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 67 year old male non-smoker presents with cough, dyspnoea and weight loss. The CXR shows a large right-sided pleural effusion which occupies three quarters of the hemithorax. There is no mediastinal shift. The film is otherwise normal. What is the most likely diagnosis?",
+      "options": [
+        "A. Congestive cardiac failure",
+        "B. Bronchogenic carcinoma",
+        "C. Meig's syndrome",
+        "D. Mesothelioma",
+        "E. Pancreatitis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Mesothelioma more typically produces a unilateral pleural effusion (only 10% of effusions will be bilateral) which is exudative and may be haemorrhagic. There is classically no mediastinal shift ('frozen' hemithorax) due to fixation by the pleural rind of neoplastic tissue. 5-10% of workers exposed to asbestos will develop mesothelioma (30x increased risk), with a latency period of 35 years; an occupational exposure history is not always present. Crocidolite is the most carcinogenic of the asbestos fibres (> amosite, > chrysotile). Ref: Radiology Review Manual, 6th Ed, p. 513-4.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A tall, thin 18 year old man with no medical history presents with acute pleuritic chest pain and shortness of breath. On examination there is reduced air entry on the right side, with hyper-resonant percussion. Which of the following signs would you not expect?",
+      "options": [
+        "A. Continuous diaphragm sign",
+        "B. Deep sulcus sign",
+        "C. Increased sharpness of the cardiomediastinal border",
+        "D. Double diaphragm sign",
+        "E. Ipsilateral hypochondrial transradiancy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In the erect film, a pneumothorax can be easily diagnosed when the visceral pleural can be seen separated from the chest wall by a transradiant zone devoid of vessels. In supine films, more subtle signs may be present, including 'deep sulcus sign', due to pleural air tracking anterior to the hemidiaphragm into the costophrenic angle, 'double-diaphragm' sign describes air outlining the anterior costophrenic angle combined with aerated lung outlining the diaphragmatic dome. There may also be a relative hyper-lucency in the ipsilateral hemithorax/hypochondrial region or increased sharpness of the cardiomediastinal border due to anteromedial collection of air. The continuous diaphragm sign is due to pneumomediastinum or pneumopericardium. Ref: Ellis S, Riti module-1b_061-Signs of pneumothorax and Pleural Effusions & Diagnostic Radiology, 5th Ed, p. 228-9.",
+      "questionNumber": 43
+    },
+    {
+      "question": "Which of the following conditions is not associated with Raynaud's phenomenon?",
+      "options": [
+        "A. Atherosclerosis",
+        "B. Rheumatoid arthritis",
+        "C. Sarcoid",
+        "D. Takayasu disease",
+        "E. Trauma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Raynaud's disease is the primary form of vasospasm induced digital ischaemia following cold or emotional stimuli. The colour changes typically seen are pallor, cyanosis, then eventually redness with re-perfusion. Raynaud's phenomenon is secondary vasospasm with obstruction, causes include atherosclerosis (most frequent; either in situ or due to emboli), arterial trauma, Buerger's, Takayasu's, drugs (ergot), and collagen vascular diseases (RhA, scleroderma, SLE). Radiological investigations include angiograms performed at ambient temperatures, followed by 'stress angiogram' performed after immersing the hand in ice water for 20 seconds. Sarcoidosis is not associated. Ref: Radiology Review Manual, 6th Ed, p. 653.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 28 year old man has a Barium swallow to investigate dysphagia. The RAO views show a 'reverse 3' indentation in the mid oesophagus. Which of the following features would make the diagnosis of true coarctation more likely than pseudocoarctation?",
+      "options": [
+        "A. Ejection systolic murmur",
+        "B. His lack of symptoms",
+        "C. Inferior rib notching",
+        "D. No gradient on pressure studies",
+        "E. Widening of the superior mediastinum"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Pseudocoarctation is an acute kink/ anterior buckling just distal to the left SCA origin. Patients are asymptomatic and there is no pressure gradient (hence collateral vessels with subsequent rib-notching are not seen). There is an ESM on auscultation and the superior mediastinum appears widened due to elongated, redundant ascending aorta and elongated aortic arch. Both true and pseudocoarctation produce the 'figure 3' sign on angiogram ('reverse 3' on RAO projections at Barium swallow) due to notching at the ligamentum arteriosum. Ref: Radiology Review Manual, 6th Ed, p. 651.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 36 year old man presents with cough, shortness of breath, fever and night sweats. The eosinophil count is 1.3 x 10^9/l. The CXR shows bilateral interstitial infiltrates. Subsequent CT chest shows diffuse ground-glass opacities and interlobular septal thickening. Which of the following is the least likely underlying diagnosis?",
+      "options": [
+        "A. Allergic broncho-pulmonary aspergillosis",
+        "B. Churg-Strauss syndrome",
+        "C. Lofgren's syndrome",
+        "D. Schistosomiasis",
+        "E. Wegener's granulomatosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Eosinophilia is defined as a peripheral eosinophil count > 0.44 x 10^9/l. Causes of eosinophilia and pneumonia include acute eosinophilic pneumonia (Loeffler's syndrome), drugs (nitrofurantoin, sulfonamides), parasitic (ascariasis, schistosomiasis), fungal (ABPA), and those associated with angiitis/granulomatosis (WG, Churg-Strauss, RhA, scleroderma, Sjogren's). Lofgren's syndrome is acute sarcoidosis, and has a triad of erythema nodosum, bilateral hilar adenopathy and arthritis and is associated with a good prognosis. Ref: Radiology Review Manual, 6th Ed, p. 493-4.",
+      "questionNumber": 46
+    },
+    {
+      "question": "Which of the following is the earliest radiological feature of asbestos-related lung disease?",
+      "options": [
+        "A. Pleural thickening",
+        "B. Asbestosis",
+        "C. Pleural effusion",
+        "D. Folded lung",
+        "E. Pleural calcification"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A pleural effusion develops in up to 3% of workers, often occurring between 10 and 20 years after the initial exposure; effusions can be unilateral or bilateral. The effusion is usually small, with the fluid serous or mildly blood stained. The effusion persists up to 6 months, and recurs in up to of 30% cases. Some workers are left with blunting of the costo-phrenic angle, diffuse pleural thickening or round atelectasis. Mesothelioma appears to be unrelated to benign pleural effusions. Ref: R-ITI. 1b_014 - Benign Asbestos Related Disease.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 20 year man has recently completed chemotherapy for NHL. A follow-up PET-CT scan is arranged. There is increased uptake within the region of the thymus. Subsequent MRI shows intermediate signal within the thymus on T1 and T2-weighting and signal drop out on in/out of phase imaging. What is the most likely diagnosis?",
+      "options": [
+        "A. Lymphomatous infiltration",
+        "B. Thymic carcinoma",
+        "C. Thymic hyperplasia",
+        "D. Thymic lipoma",
+        "E. Thymoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Rebound hyperplasia is seen in recovery from illness, after chemotherapy or radiotherapy. PET may be positive in all the given options. MRI chemical shift ratio can be used to distinguish thymic hyperplasia and thymoma, as the latter contains no fat. Thymic lipoma would also show this but would have high (not intermediate) signal on T1 W and T2W. Thymoma typically appears asymmetrical with a lobulated contour. Ref: Radiology (2007); 243:869-876.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A CT examination in a 56 year old patient shows bronchial dilatation due to retained secretions and appearing as V- or Y-shaped tubular or branching structures. What term should be used to describe this appearance?",
+      "options": [
+        "A. Bronchiectasis",
+        "B. Bronchiolectasis",
+        "C. Tree-in-bud",
+        "D. Traction bronchiectasis",
+        "E. Bronchocoele"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This mucoid impaction is usually due to proximal obstruction by congenital (e.g. bronchial atresia) or acquired (e.g. carcinoma) abnormalities. Bronchiectasis and Bronchiolectasis are abnormal, irreversibly dilated bronchi or bronchioles. Traction bronchiectasis is dilatation due to adjacent fibrosis. Tree-in-bud pattern is seen in a spectrum of endo- and peribronchiolar disorders; airway dilatation is not a feature. Ref: Radiology (2008); 246:697-722.",
+      "questionNumber": 49
+    },
+    {
+      "question": "Which of the following is not a feature of amyloidosis?",
+      "options": [
+        "A. Tracheobronchial strictures",
+        "B. Recurrent pneumothoraces",
+        "C. Calcified parenchymal nodules",
+        "D. Septal thickening",
+        "E. Lymphadenopathy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Amyloidosis is an uncommon condition in which there is deposition of amyloid protein in the tissues. Its manifestations are manifold and may be localised or diffuse. Ref: Imaging of diseases of the chest, 3rd Ed. p. 609-615.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 35 year old lady undergoes a screening CXR. This shows unilateral transradiancy with reduced vessel markings on the affected side. A subsequent CT of the thorax reveals the changes are bilateral but asymmetrical, with areas of bronchiectasis. What is the most likely diagnosis?",
+      "options": [
+        "A. Bronchial atresia",
+        "B. Congenital lobar emphysema",
+        "C. Panacinar emphysema",
+        "D. Swyer-James (Mcleod) syndrome",
+        "E. Primary ciliary dyskinesia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "These are the typical features of Swyer-James (McLeod's) syndrome, a form of obliterative bronchiolitis that follows an insult (most commonly viral) to the developing lung. The CT findings are often more extensive than the plain film, with bilateral changes common. Ref: Imaging of diseases of the chest, 3rd Ed, p. 917-9.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 29 year old women presents with pain in her left forearm. She has previous been investigated for hypertension, arthralgias, and weight loss. The arm BPs are unequal. Aortic angiogram reveals long-segment smooth stenoses at the origin of the left subclavian artery, within the abdominal aorta and in the right renal artery. What is the most likely diagnosis?",
+      "options": [
+        "A. Buerger's disease",
+        "B. Giant cell arteritis",
+        "C. Polyarteritis nodosum",
+        "D. Syphilitic aortitis",
+        "E. Takayasu disease"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Takayasu ('pulseless') disease is a granulomatous inflammation of unknown aetiology affecting mainly elastic arteries, i.e. aorta and its major branches and the pulmonary arteries causing stenoses and occasionally aneurysms. It is more common in female patients (x 8) and presents at a young age (90% < 30 years). In up to 50% the early phase is marked by systemic symptoms such as fever, weight loss, night sweats, arthralgia; mean time from disease development to diagnosis is 8 years. Ref: Radiology Review Manual, 6th Ed, p. 655-6.",
+      "questionNumber": 52
+    },
+    {
+      "question": "Which of the following causes of pneumoconiosis is considered a fibrogenic dust?",
+      "options": [
+        "A. Silver",
+        "B. Coal dust",
+        "C. Tin",
+        "D. Silica",
+        "E. Iron oxide"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Silica and Beryllium are considered fibrogenic dusts, i.e. they elicit a fibrogenic response in the lung parenchyma. The remaining dusts are inert within the lung parenchyma and cause very few clinical symptoms even though the radiographs may appear quite dramatic. Ref: R-ITI. 1 b 015. Pneumoconiosis.",
+      "questionNumber": 53
+    },
+    {
+      "question": "During a CT-guided lung biopsy the patient becomes acutely dyspnoeic with a 'gasp' reflex and retrosternal chest pain; the ECG monitor shows dysrythymias. An air embolism is suspected. Which position should the patient be placed in immediately for treatment?",
+      "options": [
+        "A. Erect",
+        "B. Left lateral decubitus",
+        "C. Prone",
+        "D. Right lateral decubitus",
+        "E. Supine"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "VAE is a rare complication of lung biopsy. VAE can only occur if there is direct communication between air and the circulation and a pressure gradient favouring passage into the circulation. 'Gasp' reflex is described as a gasp induced when a bolus of air enters the pulmonary circulation causing acute hypoxia. Treatment is to place the patient in the left lateral decubitus (Durant manoeuvre) and Trendelenburg (head down) positions, which helps prevent air travelling through the right heart into the pulmonary arteries, which can lead to right ventricular outflow obstruction (air lock). 100% O2 is also given to try and reduce the size by decreasing the nitrogen content of the air bubble. Ref: Natal BL (2009) e-medicine article: Venous air embolism.",
+      "questionNumber": 54
+    },
+    {
+      "question": "What is the most common cause of eosinophilic lung disease in developed countries?",
+      "options": [
+        "A. Allergic bronchopulmonary aspergillosis",
+        "B. Drug-induced disease",
+        "C. Churg-Strauss syndrome",
+        "D. Hypereosinophilic syndrome",
+        "E. Rheumatoid disease"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This accounted for 78% of cases in one large series. The importance of this condition is that repeated episodes lead to progressive lung damage that may be controlled by corticosteroids. Ref: Imaging of diseases of the chest, 3rd Ed, p. 590-6.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 37 year old lady with Sjogren's syndrome presents with a 2 year history of progressive breathlessness, low-grade fever and malaise. A CT of the thorax demonstrates diffuse ground glass opacification and a number of discrete thin-walled cysts within the lungs. The CT is otherwise normal. What is the most likely diagnosis?",
+      "options": [
+        "A. Pneumocystis infection",
+        "B. Non-specific interstitial pneumonitis",
+        "C. Cryptogenic organising pneumonia",
+        "D. Desquamative interstitial pneumonitis",
+        "E. Lymphocytic interstitial pneumonitis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Histopathologically characterised by a lymphocytic infiltrate in the lung parenchyma, LIP has an insidious onset and is often diagnosed many months after onset of non-specific symptoms. LIP is also seen in HIV patients, presumably as a consequence of impaired immune function. Ref: R-ITI 1b_016. Idiopathic interstitial pneumonias.",
+      "questionNumber": 56
+    },
+    {
+      "question": "What is the most common thoracic complication of HIV worldwide?",
+      "options": [
+        "A. Bacterial pneumonia",
+        "B. Kaposi's sarcoma",
+        "C. Pneumocystis infection",
+        "D. Lymphoma",
+        "E. Tuberculosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Tuberculosis co-infection is the commonest complication worldwide. In the UK, bacterial infection is commonest, with unusual organisms seen more commonly than in the general population. Ref: R-ITI 1 057. HIV AIDS in the thorax.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 36 year old man has recurrent episodes of haemoptysis. Investigations reveal a solitary pulmonary AVM in the right lower lobe. An elective embolisation procedure is planned. What is the most appropriate embolisation agent to use?",
+      "options": [
+        "A. Autologous blood clot",
+        "B. Coils",
+        "C. Ethyl alcohol",
+        "D. Gelfoam",
+        "E. Polyvinyl alcohol"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pulmonary AVMs may be multiple if associated with Osler-Weber-Rendu syndrome, and they are more common in the lower lobes (70%). Symptoms are rare, but they are an indication for treatment, and include epistaxis, dyspnoea, and cyanosis. There is a theoretical risk of embolisation material particles passing into the systemic circulation, thus large materials such as coils or detachable balloons are used when embolisation is attempted (NB: in the USA only coils are licensed by the FDA, balloons are yet to gain approval). Ref: Primer of Diagnostic Imaging, 4th Ed, p. 668 & p. 712-3.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 35 year old female is under investigation for known sarcoidosis. Her most recent CXR and HRCT show widespread mid and upper zone reticular opacification with multiple small nodules and no mediastinal or hilar lymphadenopathy. What is the stage of her disease?",
+      "options": [
+        "A. 0",
+        "B. I",
+        "C. II",
+        "D. III",
+        "E. IV"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "There is a normal CXR in stage 0. Stage I shows hilar and mediastinal lymphadenopathy only. Stage II shows lymphadenopathy and parenchymal disease. Stage III shows parenchymal disease only. Stage IV is characterized by pulmonary fibrosis.",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 57 year old man with biopsy proven lung cancer attends for a PET-CT study. This demonstrates a 4 cm tumour in the left lower lobe, not abutting the pleural surface. There are enlarged, PET positive nodes in the left hilar, sub-carinal and cervical nodes. How would you stage this tumour?",
+      "options": [
+        "A. T3 N3 M0",
+        "B. T2 N2 M0",
+        "C. T2 N3 M0",
+        "D. T2 N2 M1",
+        "E. T2 N3 M1"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "T2 lesions are those greater than 3 cm not invading the parietal pleura and more than 2 cm away from the carina. N1 nodes are hilar, N2 nodes include ipsilateral mediastinum and sub-carinal, N3 nodes are supraclavicular and contralateral mediastinum. Nodes outside these regions are considered to be M1. Ref: TNM Atlas, 5th Ed, p. 158-168.",
+      "questionNumber": 60
+    },
+    {
+      "question": "Which of the following statements regarding MUGA studies is not true?",
+      "options": [
+        "A. Acquisition requires a minimum of 16 frames per cardiac cycle",
+        "B. It is a more accurate measure of ejection fraction than echocardiography",
+        "C. Images are acquired in the LAO position",
+        "D. Images are gated to the r-wave of the cardiac cycle",
+        "E. Attenuation correction is applied to reduce errors"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Attenuation correction is not used in MUGA imaging. MUGA images sum all the data from points on a cardiac cycle and these may be viewed as a cine loop. Ref: R-ITI. 7c_003. Basics of cardiac radionuclide imaging.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A 72 year old woman with a history of recent surgery presents with shortness of breath and pleuritic chest pain. On examination there is a slight swelling of the right leg compared to the left. The D-dimer level is raised. Which imaging investigation should be performed next?",
+      "options": [
+        "A. Chest X-ray",
+        "B. CTPA",
+        "C. Pulmonary angiogram",
+        "D. Ultrasound bilateral lower leg veins",
+        "E. V/Q scan"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient is at high risk for a PE. The CXR is less likely to be diagnostic, but may provide a differential diagnosis in some cases (e.g. spontaneous pneumothorax) and forms an important part of the diagnostic flow chart. A normal CXR means a V/Q scan would be the next appropriate investigation, abnormal CXR requires CTPA. The right leg swelling may be post-operative rather than due to a DVT, but regardless, it is important to diagnose a PE over a DVT as most clinicians recommend a longer treatment period for the former. Pulmonary angiography is invasive and is now rarely used in the context of PE diagnosis. Ref: Radiology Review Manual, 6th Ed, p. 523-6.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 48 year old man undergoing a CT of the abdomen has an anaphylactoid reaction to i.v. contrast medium, with bronchospasm and hypotension. You need to administer adrenalin. What dose and via which route should this be done?",
+      "options": [
+        "A. 0.15 mg 1:1,000 (0.15 mls) intravenously",
+        "B. 0.15 mg 1:10,000 (0.15 mls) intramuscularly",
+        "C. 0.15 mg of 1:10,000 (0.15 mls) subcutaneously",
+        "D. 0.5 mg of 1:1,000 (0.5 mls) intramuscularly",
+        "E. 0.5 mg of 1:10,000 (0.5 mls) intravenously"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Intramuscular adrenaline is the treatment of choice for patients having an anaphylactic reaction. Adrenaline i.v. must only be given in certain situations and by those skilled and experienced in its use. The recommended intramuscular dose is 0.5 mg of 1 :1,000 (0.5 mls) for those > 12 years, 0.3 mg for those 6-12 years and 0.15 mg for those < 6 years. Ref: www.resus.org.uk",
+      "questionNumber": 63
+    },
+    {
+      "question": "Which of the following statements is most accurate regarding IVC filters?",
+      "options": [
+        "A. Bilateral iliac vein thrombosis is a contraindication",
+        "B. Cannot be placed above the renal veins",
+        "C. Filter migration is common",
+        "D. Post-procedural anti-coagulation is required for 6 weeks",
+        "E. Retrieval is performed via the SVC"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Retrieval is performed via the SVC (left or ideally right IJV approach) to snare the retrieval hook at the top of the filter. IVC filters should be sited below the renal veins to reduce the chance of renal vein thrombosis, however, they can be sited supra-renally if the DVT extends above the renal veins. Filter migration is very rare (0.2% of patients in the below study). Post-procedural anticoagulation is not necessary as the filter is expecting to be effective immediately. Bilateral iliac vein thrombosis is a contraindication to a femoral approach for filter placement, but they can still be placed in the IVC via a superior approach (IJV and SVC). Ref: Clin Rad (2009); 64(5): 502-10.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 37 year old man presents with non-specific symptoms of malaise. A whole body CT demonstrates a mass of soft tissue density within the right atrium. No other abnormality is seen. What is the most likely diagnosis?",
+      "options": [
+        "A. Myxoma",
+        "B. Rhabdomyosarcoma",
+        "C. Thrombus",
+        "D. Metastasis",
+        "E. Lymphoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Myxomas are by far the commonest cardiac tumours, typically arising on a pedicle from the interatrial septum. They may prolapse in to the ventricle and obstruct the mitral or tricuspid valves. Ref: R-ITI 1a_024. Cardiac tumours.",
+      "questionNumber": 65
+    },
+    {
+      "question": "Regarding a trans-jugular intrahepatic porto-systemic shunt procedure. Which of the following is incorrect?",
+      "options": [
+        "A. A 10 mm x 6 cm stent is appropriate",
+        "B. A cobra catheter is used to select the hepatic vein",
+        "C. CO2 angiography is an accepted technique to outline the portal vein",
+        "D. Portal vein patency should be demonstrated before the procedure",
+        "E. The preferred route is via the left hepatic vein"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Access is ideally via the right IJV to the right (or middle) hepatic vein, with the shunt running from the RHV to the right portal vein; this may not be possible in conditions such as Budd-Chiari syndrome where the RHV may be thrombosed. Stents are typically of 8-12 mm diameter, length 6 cm. Portal vein patency should be confirmed pre-procedure by US, CT or angiography. Portal vein position and patency can be demonstrated during the procedure, CO2 may be used for this, as its lower viscosity allows for easier diffusion (and reduces iodinated contrast burden). Ref: Interventional Radiology: A Survival Guide, 2nd Ed, p. 222-6 & Clin Rad (2009); 64(7): 664-74.",
+      "questionNumber": 66
+    },
+    {
+      "question": "After a prolonged stay on ITU for pancreatitis, a 53 year old patient develops bilateral pleural effusions along with sepsis of unknown origin. Which of the following US features suggests a transudate rather than an exudate?",
+      "options": [
+        "A. Homogeneously hyperechoic material",
+        "B. Anechoic material",
+        "C. Complex septated material",
+        "D. Complex non-septated material",
+        "E. Parenchymal hyperechogenicity"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hyperechoic effusions can be difficult to discriminate from normal lung but can be differentiated by observing movement with respiration. Ref: R-ITI module 1 b - 71 Ultrasound scan to diagnose empyema.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A 54 year old man presents with a cough and breathlessness 1 year after bone marrow transplantation. A CT study demonstrates bronchial wall thickening and dilatation, with gas trapping on expiratory phase images. What is the most likely diagnosis?",
+      "options": [
+        "A. Organising pneumonia",
+        "B. Non-specific interstitial pneumonitis",
+        "C. Extrinsic allergic alveolitis",
+        "D. Obliterative bronchiolitis",
+        "E. Engraftment syndrome"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "These are the typical features of OB, which is a late complication (>100 days) after BMT. Organising pneumonia typically has patchy peribronchovascular consolidation and may be secondary to drugs or infection. Engraftment syndrome is an early complication which manifests as diffuse lung injury. Ref: R-ITI. 1b_058 - Pulmonary complications following bone marrow transplantation.",
+      "questionNumber": 68
+    },
+    {
+      "question": "Which of the following is not a cause of a mismatch on V/Q imaging?",
+      "options": [
+        "A. Acute pulmonary embolism",
+        "B. Pulmonary hypertension",
+        "C. Bronchial carcinoma",
+        "D. Pneumothorax",
+        "E. Idiopathic pulmonary fibrosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A pneumothorax will be neither ventilated nor perfused and thus would give a matched defect. Ref: Imaging of diseases of the chest, 3rd Ed, p. 409-420.",
+      "questionNumber": 69
+    },
+    {
+      "question": "At a multidisciplinary team meeting, the pathologist shows a surgical specimen with destroyed and fibrotic tissue. It contains numerous cystic airspaces with thick fibrous walls and complete loss of acinar architecture. How might you best describe this at CT?",
+      "options": [
+        "A. Interlobular septal thickening",
+        "B. Idiopathic pulmonary fibrosis",
+        "C. Honeycombing",
+        "D. Panacinar emphysema",
+        "E. Non-specific interstitial pneumonitis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is the pathological correlate of honeycombing, a descriptive term only, which is seen in end-stage fibrosis from a number of causes. It is an important criterion for IPF, but is not exclusive to it, and it is not a dominant feature of NSIP. Ref: Radiology (2008); 246:697-722.",
+      "questionNumber": 70
+    },
+    {
+      "question": "Which of the following is not a feature of high kV chest radiographs?",
+      "options": [
+        "A. Greater detail of the airways",
+        "B. Sharper outline of pulmonary structures",
+        "C. Increased focus-to-film distance with an air gap",
+        "D. Reduced obscuration of lung by skeletal structures",
+        "E. Better delineation of calcified pleural plaques"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "High kV radiographs penetrate the skeleton and mediastinum better, enabling improved lung images; a shorter exposure time gives sharper images. Low kV images allow better appreciation of calcified nodules or pleural plaques. Ref: Imaging of diseases of the chest, 3rd Ed, p. 1-2.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 23 year old patient presents with acute dyspnoea and pleuritic chest pain. The CXR shows a right-sided pneumothorax and multiple bilateral cystic changes. Following successful treatment, a CT chest is requested. Which feature favours a diagnosis of lymphangioleiomyomatosis over Langerhans cell histiocytosis?",
+      "options": [
+        "A. Chylous pleural effusion",
+        "B. Pulmonary nodules",
+        "C. Smoking history",
+        "D. Thin-walled cysts > 1 cm",
+        "E. Upper lobe predominance"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "LAM occurs in young women and is a forme fruste of tuberous sclerosis. There is a proliferation of smooth muscle cells along the lymphatics (which may also result in chylothorax). The cysts are < 5-10 mm, thin-walled and surrounded by normal lung. Abdominal and pelvic LAM is associated and renal angiomyolipomas may be present. LCH occurs in young heavy-smoking men, there is an evolution from pulmonary nodules through to thin-walled small, then large cysts, often with a bizarre shape. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 37-8.",
+      "questionNumber": 72
+    },
+    {
+      "question": "In the assessment of a thoracic CT, which of the following features is least supportive of a diagnosis of non-specific interstitial pneumonitis?",
+      "options": [
+        "A. Traction bronchiectasis",
+        "B. Volume loss",
+        "C. Ground glass opacification",
+        "D. Thin-walled cysts",
+        "E. Reticular abnormality"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Thin-walled cysts are not a feature of NSIP but should raise the possibility of LIP. The remaining features are typical. Consolidation, honeycombing and nodules are variably reported in the literature as being present or absent. Ref: Radiographics (2009); 29:73-87.",
+      "questionNumber": 73
+    },
+    {
+      "question": "A follow-up CT is performed in a patient 12 months after an endovascular aneurysm repair (EVAR) stenting for an enlarged AAA. There is enlargement of the aneurysm sac, with retrograde blood flow entering the sac via lumbar arteries, but with a complete seal around the graft attachment zones. What sub-type of endoleak does this represent?",
+      "options": [
+        "A. Type I",
+        "B. Type II",
+        "C. Type III",
+        "D. Type IV",
+        "E. Type V"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "There are 4 types of endoleak. Type II is also termed 'retrograde' or 'non-graft related' endoleak. Type I is due to inadequate or ineffective seal at the graft ends. Type III is due to a defect in the graft fabric (mechanical graft failure). Type IV is a minor blush of contrast due to contrast diffusion across the pores of the graft fabric; it is usually an inherent part of the graft design. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 693-4.",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 63 year old man previously treated for lung cancer presents with a gradual onset of dyspnoea, headache and facial swelling with prominent veins over the preceding weeks. A CT is requested. Which of the following collateral veins are least likely to be enlarged?",
+      "options": [
+        "A. Azygous vein",
+        "B. Hemiazygous veins",
+        "C. Internal thoracic veins",
+        "D. Lateral thoracic veins",
+        "E. Pericardial veins"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The extent and location of collateral opacification in SVCO at CT depends on the location/ degree of obstruction and the site/ timing of contrast injection. Major collateral pathways include the azygous, hemiazygous, internal thoracic, lateral thoracic veins, and the thoraco-acromioclavicular venous complex. Minor collateral pathways include the anterior jugular, the pericardial and umbilical veins; the parascapular, pericardial superficial, thoraco-abdominal and epigastric veins may also be opacified. Ref: R-ITI 1b_094 - Superior Vena Cava Obstruction - CT Imaging Findings of Pathology and Anatomy.",
+      "questionNumber": 75
+    }
+  ]
+}
+

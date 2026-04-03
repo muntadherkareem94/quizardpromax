@@ -1,0 +1,982 @@
+
+{
+  "title": "Central Nervous System and Head & Neck Mock Paper",
+  "questions": [
+    {
+      "question": "A young man presents with a thunderclap headache. A CT examination is performed. Sub-arachnoid blood is seen with a localised clot which has a maximum thickness of 2 mm. No intraventricular nor parenchymal blood is seen. What is the Fisher Grade?",
+      "options": [
+        "A. Grade 0",
+        "B. Grade I",
+        "C. Grade II",
+        "D. Grade III",
+        "E. Grade IV"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The Fisher scale is useful in communicating the description of SAH. Grade 1: no haemorrhage evident, grade 2: SAH < 1 mm, grade 3: SAH > 1 mm, grade 4: associated intra-ventricular haemorrhage or parenchymal extension. Ref: RITI 6b_093 SAH: Acute investigation, treatment and prevention.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A middle aged man with progressive lower-extremity weakness undergoes an MRI examination of the spine. T2W images demonstrate multiple small vessel flow voids on the cord pial surface, but no flow voids within the cord. The cord is enlarged, with oedema sparing the periphery. Which type of spinal cord arteriovenous malformation does this represent?",
+      "options": [
+        "A. Type I",
+        "B. Type II",
+        "C. Type III",
+        "D. Type IV",
+        "E. Type V"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is a spinal dural AV fistula (type I), the fistula is present within the dura, producing distended draining veins on the pial surface and cord oedema secondary to venous hypertension. Ref: RITI 6b_ 105 Spinal Vascular Anomalies.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A neonate presents with unilateral leukocoria and microphthalmia. An US reveals a hyperechoic band within the globe. CT demonstrates a hyperdense vitreous, fluid-fluid levels and an absence of calcification. No focal mass is seen. What is the most likely diagnosis?",
+      "options": [
+        "A. Coat's disease",
+        "B. Persistent hyperplastic primary vitreous",
+        "C. Retinal dysplasia",
+        "D. Retinoblastoma",
+        "E. Toxocariasis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Persistent hyperplastic primary vitreous is caused by the persistence of the embryonic hyaloid vascular system. Its features are microphthalmia, a vitreous body remnant of the hyaloid artery, retinal detachment and leukocoria, a hyperdense vitreous from previous haemorrhage, fluid-fluid levels from the degradation of haemorrhage, and an absence of calcification. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 381.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 30 year old man presents with a progressive neurological deficit. A CT head demonstrates strongly enhancing, serpiginous structures. Catheter angiography subsequently visualises the lesion. What is the most likely diagnosis?",
+      "options": [
+        "A. Brain arteriovenous malformation",
+        "B. Dural arteriovenous fistula",
+        "C. Cavernous angioma",
+        "D. Venous angioma",
+        "E. Telangiectasia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Brain AVMs are the most common symptomatic vascular malformation. They typically present in 20-40 year olds with ictus from intracranial haemorrhage, progressive neurological deficit or headaches. Imaging features include: at CT: serpiginous, densely enhancing vessels without mass effect or oedema; at MR: a nidus of flow voids on T2W and PD sequences, at catheter angiography: grossly dilated vessels like a 'bag of worms'. CT imaging of a dural AVM is typically normal unless haemorrhage has occurred. Catheter angiography of a cavernous angioma is either normal or demonstrates only a faint vascular stain. Venous angiomata and telangiectasia are typically asymptomatic. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 408-410.",
+      "questionNumber": 4
+    },
+    {
+      "question": "Which of the following is not a standard radiographic projection of the skull?",
+      "options": [
+        "A. 30 degree fronto-occipital",
+        "B. 20 degree occipito-frontal",
+        "C. Occipito-mental",
+        "D. 20 degree occipito-mental",
+        "E. Posterior-anterior"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ref: RITI 6b_008 Plain Skull Radiography.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A patient presents with an enlarged, palpable cervical lymph node. Thyroid carcinoma is suspected, and an US is performed. What imaging feature would make a malignant node more likely?",
+      "options": [
+        "A. Short axis to long axis ratio (S/L) of 0.25",
+        "B. Echogenic hilum",
+        "C. Punctate calcification",
+        "D. Central hilar flow pattern on colour doppler imaging",
+        "E. Absence of visible subcapsular flow on colour doppler imaging"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A number of features are suggestive of nodal metastases: a round, rather than elliptical shape (S/L axis ratio > 0.5), the absence of an echogenic hilum, a cystic area suggestive of necrosis, an ill-defined border, peripheral colour flow with regions of relative avascularity and subcapsular vessels, and punctate calcification (seen in metastases from papillary thyroid carcinoma). Ref: RITI 6a_058 Ultrasound of the Thyroid and Parathyroid Glands.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 30 year old man with learning difficulties presents to A&E after suffering facial injuries. An orthopantomogram is performed and demonstrates a multi-locular radio-lucent lesion in the angle of the mandible. He suffered from multiple carcinomatous lesions of the skin in childhood. What is the most likely diagnosis?",
+      "options": [
+        "A. Odontogenic keratocyst",
+        "B. Dentigerous cyst",
+        "C. Inflammatory odontogenic cyst",
+        "D. Ameloblastoma",
+        "E. Multiple myeloma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient suffers from Gorlin-Goltz/ basal cell naevus syndrome, associated with multiple cutaneous basal cell carcinomas during childhood, odontogenic keratocysts, ectopic calcifications, and multiple skeletal anomalies. Mental retardation is another recognised association. All of the above answers above can present as cystic lesions of the jaw. Ref: RITI 6b_048 Dental Pathology.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A neck lump is found on clinical examination. Axial MR images of the neck demonstrate a mass displacing the parapharyngeal space posteromedially and the styloid musculature posteriorly. In which fascial space is the mass most likely to be located?",
+      "options": [
+        "A. Masticator space",
+        "B. Carotid space",
+        "C. Pharyngeal mucosal space",
+        "D. Parotid space",
+        "E. Retropharyngeal space"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The displacement of the parapharyngeal space and styloid musculature can help localise neck lesions: Fascial space Displacement of parapharyngeal space Displacement of styloid musculature Masticator space Posteromedial Posterior Carotid space Anterior Anterior Pharyngeal mucosal Posterolateral Posterior space Parotid space Anteromedial Posterior Retropharyngeal space Anterolateral Anterior Ref: RITI 6b_053 Imaging Neck Masses in Adults & Neuroradiology: the requisites, 2nd Ed, p. 698.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A plain radiograph is performed on a male child. Unilateral, premature fusion of both the coronal and lambdoid sutures is evident. What is the most appropriate description?",
+      "options": [
+        "A. Scaphocephaly",
+        "B. Brachycephaly",
+        "C. Plagiocephaly",
+        "D. Trigonocephaly",
+        "E. Oxycephaly"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The common craniosynostoses include: Craniosynostosis type Sutures prematurely fused Scaphocephaly Brachycephaly Plagiocephaly Trigonocephaly Oxycephaly Cloverleaf Sagittal Coronal or lambdoid (but not both; can be bilateral) Coronal and lambdoid Metopic Sagittal, coronal and lambdoid Multiple paired sutures to produce a 'trilobar skull' Ref: Radiology Review Manuel, 6th Ed, p. 178 & Aids to Radiological Differential Diagnosis, 4th Ed, p. 487.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A skull radiograph is performed on a patient who presented with a possible head injury. There is a solitary skull vault lucency, with a surrounding area of sclerosis. What is the most likely diagnosis?",
+      "options": [
+        "A. Pacchionian granulation",
+        "B. Multiple myeloma",
+        "C. Hyperparathyroidism",
+        "D. Langerhans cell histiocytosis",
+        "E. Osteoporosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although all the above conditions can result in skull vault lucencies, LCH is the only one that is also associated with surrounding sclerosis. In this case, the sclerotic border indicates the healing phase of LCH. Other conditions that can produce a lucency with sclerosis include: epidermoid, encephalocoele, haemangioma, chronic osteomyelitis, and frontal sinus mucocoele. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 481.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A patient presents with sensorineural hearing loss. A cerebellopontine angle mass is demonstrated on MR imaging. Which of the following features support a diagnosis of schwannoma over menigioma?",
+      "options": [
+        "A. High signal intensity relative to grey matter on T2W imaging",
+        "B. Enhancement with i.v. gadolinium",
+        "C. Calcification",
+        "D. Unilateral lesion",
+        "E. Durally based lesion"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Schwannomas are the most common CPA mass. The epicentre of the lesion is typically in the epicentre of the internal auditory canal, typically causing a >2 mm difference in canal diameter on the effected side. Extension into the CPA causes an 'ice cream cone' appearance. On MR imaging, the lesion is iso-intense on T1W, hyper-intense on T2W and has dense enhancement (however, meningiomas also typically enhance). Calcification is not typical. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 544.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A patient develops dissociated anaesthesia of the legs. An MRI brain demonstrates herniation of the cerebellar tonsils. Which of the following is not associated with Chiari type I malformation?",
+      "options": [
+        "A. Hydrocephalus",
+        "B. Syringohydromelia",
+        "C. Platyblasia",
+        "D. Incomplete ossification of the C1 ring",
+        "E. Myelomenigocoele"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Chiari I is herniation of the cerebellar tonsils below a line connecting the basion and opisthion. Unlike Chiari II, III and IV, Chiari I is not associated with myelomeningocoeles. Indeed, the condition is frequently isolated without supratentorial anomalies. As well as the listed associations, Chiari I occurs with: basiliar impression, craniovertebral fusion, and Klippel-Feil anomaly. Ref: Radiology Review Manuel, 6th Ed, p. 275.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A middle-aged man presents with an acute onset facial nerve palsy and has MR imaging with the i.v. administration of gadolinium. Which of the following features would support the diagnosis of a Bell's palsy?",
+      "options": [
+        "A. Enhancement of the tympanic portion of the facial nerve",
+        "B. Enhancement of the intracanalicular portion of the facial nerve",
+        "C. Enhancement of the mastoid portion of the facial nerve",
+        "D. Continuing symptoms at 9 months",
+        "E. Demineralisation of the petrous apex"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although non-specific, enhancement of the intracanalicular and labyrinthine portion occurs in Bell's palsy (other inflammatory and neoplastic conditions should also be considered). Enhancement of the tympanic and mastoid portions of the facial nerve is a normal variant. Demineralisation does not occur. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 612.",
+      "questionNumber": 13
+    },
+    {
+      "question": "Which of the following structures does not typically calcify in normal individuals?",
+      "options": [
+        "A. Parasellar ligaments",
+        "B. Dentate nucleus",
+        "C. Pineal gland",
+        "D. Choroid plexus",
+        "E. Perimesencephalic grey matter"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 428.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A patient presents with multiple relapsing focal neurological deficits. Which MR imaging feature would be unusual in multiple sclerosis?",
+      "options": [
+        "A. Cortical central atrophy",
+        "B. Atrophy of the corpus callosum",
+        "C. Hypointense thalamus on T2W",
+        "D. Hypointense plaques on T2W",
+        "E. Spinal cord involvement"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "MS plaques are typically of high-signal intensity on T2W and Proton density imaging. The hypointense thalamus (and putamen) are due to increased ferritin. Ref: Radiology Review Manuel, 6th Ed, p. 311.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A patient with a known intracerebral neoplasm suddenly deteriorates. A CT head demonstrates enlargement of the left CPA cistern and new areas of high attenuation in the anterior midbrain. Which type of cerebral herniation is most likely?",
+      "options": [
+        "A. Subfalcine",
+        "B. Transtentorial",
+        "C. Transcalvarial",
+        "D. Tonsillar",
+        "E. Transalar"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Descending transtentorial (or uncal) herniation is associated with: effacement of the ipsilateral suprasellar cistern, enlargement of the ipsilateral CPA cistern, Duret haemorrhages in the midbrain (which would feature as regions of high attenuation), and PCA ischemia. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 531.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A patient presents with a lump thought to be arising from the thyroid gland. An US is arranged for further evaluation which confirms the solid lesion is thyroid in origin. Which imaging feature would be most suggestive of a malignant lesion?",
+      "options": [
+        "A. Cystic nature",
+        "B. Complete low-echogenicity halo",
+        "C. Comet tail artefact",
+        "D. Coarse calcification",
+        "E. Hypoechoic"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A number of features are suggestive of a benign, rather than malignant, lesion. Cystic lesions are usually benign; a comet tail artefact usually indicates a (benign) colloid cyst; a complete low-echogenicity 'halo' increases the odds of a benign lesion 12 times. The overall echogenicity is another indicator: 96% of hyperechoic lesions are benign, compared to 74% of isoechoic and 39% of hypoechoic lesions. Ref: RITI 6b_058 Ultrasound of the Thyroid and Parathyroid Glands.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A young patient presents with dissociated sensory loss. MRI demonstrates spinal cord enlargement with an intra-medullary lesion. Which of the following features would favour the diagnosis of astrocytoma, rather than ependymoma?",
+      "options": [
+        "A. Syrinx",
+        "B. Haemorrhage",
+        "C. Adult patient",
+        "D. Ill-defined enhancement",
+        "E. Bone remodelling"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ependymoma Astrocytoma Age Bone remodelling T1W signal Enhancement Syrinx Haemorrhage Adult More common Low Well defined, strong More common More common Children Less common Low/intermediate Ill defined Less common Less common Ref: RITI 6b_ 123 Primary tumours of the spinal cord.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A patient is seen in the neurology clinic, referred by his GP with a chronic headache. Which of the following features would not be an indication for imaging?",
+      "options": [
+        "A. Increasingly severe headache",
+        "B. Recurrent episodes of headache in the early morning",
+        "C. Constant headache for 2 years",
+        "D. Blurring of vision for 1 month",
+        "E. Early papilloedema"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "'Red flags' for potentially serious headache include: precipitation with valsalva manoeuvre, age over 50, new abnormal neurological signs, progressive headache, onset in early morning, associated fever or systemic symptoms, change in character of headache. Ref: RITI 6b_ 160 Acute and Chronic headaches.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A patient presents with gradual onset of sensory symptoms affecting the right hand. CT reveals a superficial mass within the fronto-parietal region. Which imaging feature would not support the diagnosis of menigioma?",
+      "options": [
+        "A. Inward bulging of the grey-white junction",
+        "B. Surrounding oedema",
+        "C. Hyperdense on unenhanced images",
+        "D. Enhancement with intravenous contrast medium",
+        "E. Intralesional haemorrhage"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Only 1 % of meningiomas are associated with internal haemorrhage. Regarding the other characteristics: the inward bulging of the grey-white junction is suggestive of an extra-axial lesion, such as a meningioma; 60% of meningiomas are associated with oedema; meningiomas are typically hyperdense on unenhanced CT imaging and are seen to enhance with i.v. contrast medium. Ref: RITI 6b_ 116 Characteristic appearances and differential diagnosis of meningiomas.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 45 year old female presents with facial pain and abnormal eye movements. A cerebellopontine angle lesion is identified on MR imaging. Which feature would not be consistent with an epidermoid tumour?",
+      "options": [
+        "A. Iso-intense to CSF on T1W Imaging",
+        "B. Low signal on DWI",
+        "C. Heterogeneous signal on FLAIR",
+        "D. Lack of Enhancement",
+        "E. Low signal on balanced sequence/ true FISP"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Epidermoid tumours are typically iso-intense to CSF on T1 and T2W imaging, with high signal on diffusion weighted sequences and heterogeneous signal on FLAIR imaging. They do not typically enhance. Ref: RITI 6b 118 Acoustic Schwannomas.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A young man suffers a subarachnoid haemorrhage. A CT angiogram fails to demonstrate an aneurysm, and a cerebral angiogram is performed. Which of the following is not a recognised complication of cerebral angiography?",
+      "options": [
+        "A. Hydrocephalus",
+        "B. Stroke",
+        "C. Migraine",
+        "D. Memory loss",
+        "E. Contrast neurotoxicity"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In older patients with significant atheroma, there is a 1-2% risk of neurological deficit. This is reduced to < 0.5% in younger patients. Ref: RITI 6b_034 Intra-arterial cerebral angiography: implications, technique and complications.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A man referred from the memory clinic has a 99mTc-HMPAO cerebral SPECT. Temporo-parietal hypoperfusion is found. What is the most likely diagnosis?",
+      "options": [
+        "A. Pick's disease",
+        "B. Chronic alcoholism",
+        "C. Aids-related dementia",
+        "D. Lewy-body disease",
+        "E. Multi-infarct dementia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Temporo-parietal hypoperfusion is typically caused by Alzheimer's type dementia or Lewy body disease. Two other patterns to consider include: firstly fronto-temporal hypoperfusion, caused by Pick's disease, fronto-temporal dementia, chronic alcoholism and schizophrenia; and secondly patchy/ multiple perfusion defects, caused by AIDS-related dementia, schizophrenia and multi-infarct dementia. Ref: RITI 7n 005 HMPAO 2.",
+      "questionNumber": 23
+    },
+    {
+      "question": "An MR reveals a lesion within the globus pallidus. Which of the following is incorrect?",
+      "options": [
+        "A. The lesion is within the corpus striatum",
+        "B. The lesion is within the lentiform nucleus",
+        "C. The lesion is within the diencephalon",
+        "D. The lesion is within the striatum",
+        "E. The lesion is within the lenticular nucleus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The striatum comprises the caudate nucleus and putamen; the corpus striatum also includes the globus pallidus. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 500.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 30 year old pregnant patient is found unconscious and neurological examination reveals bilateral Babinski's sign. CT and MR imaging is suggestive of cerebral infarction. Which of the following imaging features would support an arterial rather than a venous infarct?",
+      "options": [
+        "A. A hyperdense superior sagittal sinus on unenhanced CT imaging",
+        "B. Bilateral areas of increased T2W signal",
+        "C. Prominent haemorrhage",
+        "D. Maximal brain swelling at 4 days",
+        "E. Intense dural enhancement"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Venous occlusion progresses to infarction in approximately 50% of cases. These infarcts do not conform to arterial territories: occlusion of the midline veins may result in bilateral infarction (low attenuation on CT and increased T2W signal on MRI). Acute thrombus is hyperdense on pre-contrast CT imaging; however, i.v. contrast medium results in more intense enhancement of the walls of the sinuses than of their contents (the 'delta sign'). Haemorrhage is common. Brain swelling is prominent early in the clinical course; this is in contradistinction to arterial infarcts, where swelling is maximal at 3-5 days. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 400.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A female patient is seen in the endocrine clinic and a pituitary microadenoma is suspected. Regarding the imaging of the pituitary gland, which of the following is an abnormal appearance?",
+      "options": [
+        "A. High signal in the posterior pituitary on T1W",
+        "B. Intermediate signal intensity in the posterior pituitary on T2W",
+        "C. Enhancement of the posterior pituitary on T1W after gadolinium administration",
+        "D. Convex superior margin of the pituitary gland in pregnant subjects",
+        "E. High signal in the anterior pituitary on T2W"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "On T1W imaging, the anterior pituitary is typically iso-intense and the posterior pituitary hyperintense; on T2W imaging, both the anterior and posterior pituitary are typically iso-intense. The gland is normally flat or concave superiorly, but may be convex in pregnancy. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 580.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A patient with known HIV develops neurological symptoms and a CT head examination is performed. Multiple ring-enhancing lesions are seen. What imaging features would support the diagnosis of toxoplasmosis rather than lymphoma?",
+      "options": [
+        "A. Hyperdense on unenhanced CT imaging",
+        "B. Eccentric enhancing nodule",
+        "C. Callosal involvement",
+        "D. Subependymal spread",
+        "E. Periventricular location"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "An eccentric enhancing nodule may be seen in cases of toxoplasmosis, but is rare in lymphoma. Callosal involvement, ependymal spread and high attenuation on unenhanced CT imaging are typical features of lymphoma. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 549.",
+      "questionNumber": 27
+    },
+    {
+      "question": "Thickening of the extra-ocular muscles is seen on MR imaging. What features would support the diagnosis of pseudotumour rather than thyroid ophthalmopathy?",
+      "options": [
+        "A. Bilaterality",
+        "B. Ocular muscle tendon involvement",
+        "C. Atrophy of the lacrimal gland",
+        "D. Minimal response to steroids",
+        "E. Painless proptosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Orbital pseudotumour tends to: be unilateral (85%), involve the tendons, cause stranding of the intra-orbital fat, enlarge the lacrimal gland, be painful, and have a good response to steroids. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 624.",
+      "questionNumber": 28
+    },
+    {
+      "question": "An MRI brain is performed and a lesion is seen in the suprasellar region. Which of the following imaging characteristics is not typical?",
+      "options": [
+        "A. Craniopharyngioma - calcification and nodular enhancement",
+        "B. Epidermoid - isointense to CSF on T1W and T2W",
+        "C. Tuber cinereum - isointense to grey matter on T1W",
+        "D. Schwannoma - T1W hypointensity and marked enhancement with i.v. gadolinium",
+        "E. Rathke's cleft cyst - T1W hypointensity and lack of enhancement with i.v. gadolinium"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A Rathke's cleft cyst is typically hyperintense on T1W, and has smooth peripheral enhancement with intravenous contrast medium. Ref: Diagnostic Radiology, 5th Ed, p. 564.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A teenager presents with a small midline neck lump. On examination, the lump is noted to move superiorly upon protrusion of the tongue. Which of the following statements is incorrect regarding such lesions?",
+      "options": [
+        "A. They are characteristically suprahyoid",
+        "B. Presentation with a painless midline mass is common",
+        "C. Can appear anechoic by US imaging",
+        "D. Can appear uniformly echogenic by US imaging",
+        "E. Can appear heterogeneous by US imaging"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A thyroglossal duct cyst is described. Many are infrahyoid (25-60%), the US appearances can be extremely variable. Ref: Clin Rad (2008); 63:613-622.",
+      "questionNumber": 30
+    },
+    {
+      "question": "An adolescent undergoes MR imaging and an incidental suprasellar mass is found. What feature would suggest a diagnosis of craniopharyngioma rather than a Rathke cleft cyst?",
+      "options": [
+        "A. Absence of calcification",
+        "B. Predominantly high signal on T1W imaging",
+        "C. Smooth contour",
+        "D. Homogeneous signal intensity",
+        "E. Nodular enhancement"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A craniopharyngioma would typically be seen as a cyst with a mural nodule. Calcification is present in 90% of cases in the younger age group. Both craniopharyngiomas and Rathke cleft cysts have variable signal intensities on MR imaging, but most commonly craniopharyngiomas have a low signal on T1W imaging. The enhancement pattern is typically 'solid' or 'nodular', as opposed to the 'rim-like' pattern seen in Rathke cleft cysts. Ref: Neuroradiology: the requisites, 2nd Ed, p. 542-547.",
+      "questionNumber": 31
+    },
+    {
+      "question": "An elderly gentleman has an episode of amaurosis fugax and undergoes Doppler ultrasound assessment of his carotid arteries. Which of the following features is not an indication of either internal carotid artery or common carotid artery stenosis?",
+      "options": [
+        "A. Peak systolic velocity of 160 cm/s",
+        "B. Significant quantities of visible plaque",
+        "C. End diastolic velocity of 120 cm/s",
+        "D. Spectral broadening",
+        "E. ICA/ CCA peak systolic velocity ratio of 1.5"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A consensus panel has recently defined the US criteria for gauging carotid artery stenosis. Quantitative criteria include: Stenosis Normal < 50% 50-69% > 70% Total occlusion ICA PSV (cm/s) < 125 < 125 125 - 230 > 230 undetectable ICA/CCA PSV ratio < 2.0 < 2.0 2.0 - 4.0 > 4.0 N/A ICA EDV (cm/s) < 40 < 40 40 - 100 > 100 N/A Ref: Radiology (2003); 229:340-346.",
+      "questionNumber": 32
+    },
+    {
+      "question": "An elderly gentleman presents with a hemiplegia. Both MR diffusion and perfusion-weighted imaging are performed. Which of the following would suggest the presence of an ischaemic penumbra?",
+      "options": [
+        "A. A lesion which appears the same size on diffusion and perfusion weighted imaging",
+        "B. A lesion which appears larger on perfusion-weighted than diffusion weighted imaging",
+        "C. Visualisation of a lesion on perfusion-weighted imaging",
+        "D. Changes in the perfusion parameters over time",
+        "E. A lesion which appears larger on diffusion-weighted than perfusion weighted imaging"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A region that shows both diffusion and perfusion abnormalities represents irreversibly infarcted tissue, while a region that shows only perfusion abnormalities and has normal diffusion represents viable but ischaemic tissue: a 'penumbra'. Ref: Radiographics (2006); 26:S75-95.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 55 year old patient presents with head trauma. A CT head is performed and bilateral calcification of his basal ganglia is noted. Which of the following is not a recognised cause?",
+      "options": [
+        "A. Sturge-Weber-Dimitri syndrome",
+        "B. Fahr's disease",
+        "C. Hypoparathyroidism",
+        "D. Pseudo-pseudohypoparathyroidism",
+        "E. Hypoxia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Sturge-Weber syndrome is associated with calcification of the cortical gyri, rather than the basal ganglia. The cause of basal ganglia calcification can be divided into: physiologic, endocrine, (e.g. hypothyroidism, hypoparathyroidism, pseudo- and pseudopseudohypoparathyroidism), metabolic (e.g. Fahr's disease and mitochondrial cytopathies), congenital/ developmental (e.g. Cockayne's syndrome), infection (e.g. TORCH, cystercercosis, tuberculosis), toxic (e.g. CO poisoning, hypoxia, lead), and chemotherapy/ radiotherapy. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 430.",
+      "questionNumber": 34
+    },
+    {
+      "question": "An elderly, hypertensive man is found collapsed. MR imaging demonstrates a large intracerebral haematoma, with intermediate signal intensity on T1W and high signal intensity on T2W. How old is the haematoma likely to be?",
+      "options": [
+        "A. 0-12 hours",
+        "B. 12-72 hours",
+        "C. 4-7 days",
+        "D. 8-30 days",
+        "E. More than 1 month"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Time T1WI Signal T2WI Signal 0-12 hours (hyperacute) Intermediate High 12-72 hours (acute) Intermediate Low 4-7 days (early subacute) High Low 8-30 days (late subacute) High High more than 1 month Low High Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 404.",
+      "questionNumber": 35
+    },
+    {
+      "question": "An elderly lady has an MRI brain examination as part of a research study. A number of lesions are noted in the basal ganglia, most prominently around the atria. They are hypointense to brain parenchyma on T1W, hyperintense to brain parenchyma on T2W and isointense to CSF on FLAIR. What is the most likely diagnosis?",
+      "options": [
+        "A. Lacunar infarction",
+        "B. Virchow-Robin spaces",
+        "C. Lyme disease",
+        "D. Periventricular leukomalacia",
+        "E. Multiple sclerosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Virchow-Robin spaces are invaginations of the sub-arachnoid space into the brain parenchyma. They are seen with increasing frequency with age. The signal intensity is identical to CSF: in the case above, none of the other causes would appear isointense to CSF on FLAIR imaging. Ref: Radiographics (2007); 27:1071-81.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A lateral skull x-ray in a short male child demonstrates multiple wormian bones and a small, receding jaw, with an obtuse angle to the mandible. What syndrome could explain these findings?",
+      "options": [
+        "A. Menke's (Kinky hair) syndrome",
+        "B. Crouzon syndrome",
+        "C. Down's syndrome",
+        "D. Clediocranial dysostosis",
+        "E. Pyknodysostosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Pycnodyostosis is an autosomal recessive inherited disease featuring dwarfism, learning difficulties, nail dystrophy, receding jaw, wide cranial sutures, and multiple wormian bones. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 486.",
+      "questionNumber": 37
+    },
+    {
+      "question": "An elderly, hypertensive man was found collapsed. MR imaging reveals a large infarct, with low signal intensity on T1W, high signal intensity on T2W, high signal on DWI and low signal on the ADC map. How old is the infarct likely to be?",
+      "options": [
+        "A. 0-6 hours",
+        "B. 6 hours to 4 days",
+        "C. 4-14 days",
+        "D. 14-30 days",
+        "E. More than 1 month"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Time T1WI Signal T2WI Signal DWI ADC 0-6 hours (hyperacute) Isointense Isointense High Low 6 hours to 4 days (acute) Low High High Low 4-14 days (subacute) Low High T2 shine through Pseudonormalization more than 14 days (chronic) Low (encephalomalacia) High T2 shine through High Ref: Neuroradiology: the requisites, 2nd Ed, p. 194.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A young man suffers a severe head injury and a CT head identifies a significant haematoma. Which feature would be more suggestive of an extra-dural, rather than sub-dural haematoma?",
+      "options": [
+        "A. High attenuation",
+        "B. Absence of skull fracture",
+        "C. Peripheral enhancement",
+        "D. Mixed density",
+        "E. Crosses the tentorium cerebelli"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The ability to cross dural reflections, such as the falx and tentorium cerebelli, places the haematoma in the extra-dural, rather than sub-dural space. Ref: Neuroradiology: the requisites, 2nd Ed, p. 247.",
+      "questionNumber": 39
+    },
+    {
+      "question": "MR imaging demonstrates bilateral acoustic neuromas. Which of the following is not a recognised association?",
+      "options": [
+        "A. Optic pathway gliomas",
+        "B. Parasagittal meningiomas",
+        "C. Paraspinal neurofibromas",
+        "D. Facial nerve schwannomas",
+        "E. Meningiomatosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient fulfils the diagnostic criteria for Neurofibromatosis type 2. Unlike NF-1, there is no association with Lisch nodules, skeletal dysplasia, optic pathway gliomas or vascular dysplasia. Ref: Radiology Review Manual, 6th Ed, p. 319.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A neonate presents with a soft, painless mass in the posterior triangle of the neck. MR imaging demonstrates a multi-loculated, insinuating mass of intermediate signal on T1W and high signal on T2W. What is the most likely diagnosis?",
+      "options": [
+        "A. Epidermoid cyst",
+        "B. Dermoid cyst",
+        "C. Lipoma",
+        "D. Cystic hygroma",
+        "E. Laryngocoele"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The commonest 'soft' neck masses in infants and children are lipomas, haemangiomas and cystic hygromas. The latter have low-to-intermediate signal intensity on T1W and high signal on T2W. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 394.",
+      "questionNumber": 41
+    },
+    {
+      "question": "Which two cranial nerves are most commonly affected by skull base injury?",
+      "options": [
+        "A. I and II",
+        "B. III and IV",
+        "C. V and VI",
+        "D. VII and VIII",
+        "E. IX and X"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The olfactory (I) and optic (II) nerves are most often affected by skull base injury. Ref: RITI 6b _ 062 Brain Complications of Injury",
+      "questionNumber": 42
+    },
+    {
+      "question": "Which of the following imaging features would not support the diagnosis of diffuse axonal injury?",
+      "options": [
+        "A. Multiple ovoid lesions ranging in size from 5-15 mm",
+        "B. Involvement at the grey-white interface",
+        "C. Lesions seen more prominently on CT than MR imaging",
+        "D. On CT imaging, lesions demonstrate a low attenuation margin",
+        "E. Sparing of grey matter"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The typical lesions of diffuse axonal injury are seen more prominently on MR than CT imaging. Ref: RITI 6b_ 060 Diffuse Brain Injury.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A male adolescent suffers from recurrent epistaxis and the subsequent imaging investigations reveal a likely juvenile angiofibroma. Regarding this condition, which of the following statements is incorrect?",
+      "options": [
+        "A. The majority extend within the sphenoid sinus",
+        "B. The majority extend within the pterygopalatine fossa",
+        "C. Embolisation may be undertaken via the maxillary artery",
+        "D. Biopsy should be performed prior to therapy to confirm the diagnosis",
+        "E. The lesion may recur following treatment"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The vascular nature of the tumour contraindicates biopsy. Ref: Radiology Review Manual, 6th Ed, p. 387.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A smoker suffers from a hoarse voice and is found to have a glottic laryngeal carcinoma. The tumour is seen to have supra-glottic extension and fixes the cords. What is the tumour stage?",
+      "options": [
+        "A. T1",
+        "B. T2",
+        "C. T3",
+        "D. T4",
+        "E. T5"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The staging is: T1: tumour confined to vocal cord. T2: supra/ subglottic extension with or without impaired mobility. T3: fixation of true vocal cord. T4: destruction of thyroid cartilage/ extension outside larynx. There is no T5. Ref: Radiology Review Manual, 6th Ed, p. 387.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 61 year old, known hypertensive man has an episode of expressive dysphasia which lasts a total of 90 minutes and resolves spontaneously in the A&E department. He is currently asymptomatic with no focal neurology. What is the most appropriate management step?",
+      "options": [
+        "A. Carotid imaging within 48 hours, with a view to endarterectomy within 1 week",
+        "B. Discharge with routine GP follow-up",
+        "C. Give 300 mg Aspirin",
+        "D. Urgent CT (with CT angiogram/ perfusion if available)",
+        "E. Urgent MRI, including DWI"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient has had a transient ischaemic attack (TIA). The Rothwell classification counts a score of >=4 counts as a high risk TIA; the risk of a stroke within 4 weeks is up to 20%. 1 point is scored for each of: age (>= 60), hypertension (>=140/90), diabetes, symptom duration of 10-60 minutes and speech disturbance alone; 2 points for symptoms of >60 minutes or a unilateral weakness. The described patient scores 5 and is therefore high risk, however, recent NICE guidelines state the following management plan for high risk TIAs: 300 mg aspirin should be started immediately, specialist assessment and investigation should be undertaken within 24 hours of onset of symptoms (7 days for low risk patients), and that measures for secondary prevention should be introduced. MR imaging (with DWI) should only be performed if there is uncertainty over the diagnosis or the vascular territory involved. The guidelines also advocate carotid imaging within 7 days with a view to endarterectomy (if appropriate) within 2 weeks. Ref: Lancet (2005); 366: 29-36 & NICE guideline CG068 (published July 2008).",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 40 year old man presents with a seizure and a CT head reveals an intracranial lesion. An oligodendroglioma is suspected. Which feature would be least expected with this diagnosis?",
+      "options": [
+        "A. Ill-defined enhancement",
+        "B. Cystic degeneration",
+        "C. Absence of oedema",
+        "D. Calcification",
+        "E. Hyperdense on unenhanced imaging"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Oligodendrogliomas are slowly growing gliomas, most commonly located in the frontal lobes. Large nodular calcification is present in approximately 90% of cases. Cystic degeneration, ill-defined enhancement and a lack of oedema are all common. Over 80% are either hypo- or iso- dense on unenhanced CT imaging. Ref: RITI 6_ 108 Primary tumours Gliomas - astros, oligos.",
+      "questionNumber": 47
+    },
+    {
+      "question": "Which of the following is not involved in a Le Fort type II fracture?",
+      "options": [
+        "A. Pterygoid plates",
+        "B. Orbital floor",
+        "C. Anterior wall of the maxillary sinus",
+        "D. Posterio-lateral wall of the maxillary sinus",
+        "E. Medial wall of the maxillary sinus"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The medial wall of the maxillary sinus is spared in a type II fracture. The pterygoid plates are involved in all Le Fort fractures. Ref: RITI 6a_ 024 Trauma of the face, orbit and mandible.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A young man is involved in an RTA and arrives in hospital with a markedly reduced GCS. CT imaging reveals a fracture of the temporal bone. Which of the following features would be more typical of a transverse, rather than longitudinal fracture of the temporal bone?",
+      "options": [
+        "A. Facial nerve palsy",
+        "B. Involvement of the ossicles",
+        "C. Bleeding from the external auditory canal",
+        "D. Sparing of the labyrinth",
+        "E. Involvement of the tympanic membrane"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Longitudinal fractures are parallel to the axis of the petrous pyramid and predominantly affect the middle ear (including the ossicles and tympanic membrane). Transverse fractures are perpendicular to the axis of the petrous pyramid and affect the labyrinth. Facial nerve palsy occurs in 50% of transverse fractures, but only 20% of longitudinal fractures. Ref: Radiology Review Manual, 6th Ed, p. 208.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A neonate is noted to have cataracts, microcephaly, basal ganglia calcification and a patent ductus arterious. Which of the following in utero infections could explain all of these features?",
+      "options": [
+        "A. Toxoplasmosis",
+        "B. Rubella",
+        "C. Cytomegalovirus",
+        "D. Herpes simplex",
+        "E. HIV"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In addition, rubella is associated with hearing loss, autism, pigmentary retinopathy, vasculopathy, pulmonic stenosis, and hepatosplenomegaly. Ref: Neuroradiology: the requisites, 2nd Ed, p. 443.",
+      "questionNumber": 50
+    },
+    {
+      "question": "MR imaging of a neonatal brain reveals an absent septum pellucidum, corpus callosum, third ventricle, and interhemispheric fissure. The thalami are fused. Which variant of holoprosencephaly does this most likely represent?",
+      "options": [
+        "A. Alobar",
+        "B. Bilobar",
+        "C. Septo-optic dysplasia",
+        "D. Lobar",
+        "E. Semilobar"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is the most profound form of holoprosencephaly, where there is almost no separation of the cerebral hemispheres or ventricles. There is a 'horseshoe' configuration of neural tissue with a single crescent-shaped ventricle. There is no 'bilobar' form of holoprosencephaly. Septo-optic dysplasia can be considered part of the holoprosencephaly spectrum. Ref: Neuroradiology: the requisites, 2nd Ed, p. 421.",
+      "questionNumber": 51
+    },
+    {
+      "question": "After review of a CT head examination, i.v. contrast medium is administered. The enhancement follows the gyral/ sulcal pattern and involves the meninges around the basal cisterns. Which of the following conditions can give rise to this enhancement pattern?",
+      "options": [
+        "A. CSF leak",
+        "B. Pachymeningitis",
+        "C. Spontaneous intracranial hypotension",
+        "D. An intraventricular shunt",
+        "E. Sarcoid"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This is a leptomeningeal pattern of enhancement. This can be seen in acute stroke, leptomeningeal meningitis, inflammatory diseases such as sarcoid, and metastasis. Ref: Neuroradiology: the requisites, 2nd Ed, p. 281.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A patient has a glioma resected and the post-surgical tumour bed is examined by CT imaging. Images are acquired both before and after the administration of i.v. contrast medium. Which of the following features would lead one to suspect that there is residual tumour?",
+      "options": [
+        "A. Linear enhancement around the pre-operative tumour bed",
+        "B. Enhancement within the pre-operative tumour bed, 1 day after surgery",
+        "C. Enhancement within the pre-operative tumour bed, 4 days after surgery",
+        "D. Evidence of haemorrhage",
+        "E. Dural enhancement"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Within the first 2 days, enhancement within the pre-operative tumour bed should be regarded as suspicious of incomplete resection. After this time, it is common for enhancing granulation tissue to develop. Dural enhancement is a normal post-operative finding. Ref: Neuroradiology: the requisites, 2nd Ed, p. 167.",
+      "questionNumber": 53
+    },
+    {
+      "question": "An adolescent undergoes MR imaging after having a number of seizures. A mass is demonstrated within the periphery of the right temporal lobe. The lesion contains a number of cysts. There is no surrounding oedema and the mass does not enhance after the adminstration of i.v. gadolinium. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Desmoplastic infantile ganglioglioma",
+        "B. Tanycytic ependymoma",
+        "C. Oligodendroglioma",
+        "D. High grade astrocytoma",
+        "E. Dysembroplastic neuroepithelial tumour"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "DNETs are benign tumours arising from cortical gray matter, most commonly found in the temporal lobes. They are characterised by the presence of multiple cysts and a lack of surrounding oedema. Desmoplastic infantile gangliogliomas typically occur before the 2nd birthday; Oligodendrogliomas typically occur in 30-60 year olds. Ref: Neuroradiology: the requisites, 2nd Ed, p. 167.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A patient presents with a focal neurological deficit. CT imaging reveals multiple haemorrhagic foci. Which of the following features would be more consistent with haemorrhagic metastases, rather than haemorrhagic cerebrovascular malformations?",
+      "options": [
+        "A. Incomplete haemosiderin ring",
+        "B. Surrounding oedema within the first week from symptom onset",
+        "C. Central enhancement",
+        "D. Calcification",
+        "E. Lack of enhancement with i.v. contrast medium"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Haemorrhagic metastases typically have an incomplete or absent haemosiderin ring. Calcification is rare. Most commonly, there is either nodular, eccentric or ring enhancement. This contrasts with haemorrhagic cerebrovascular malformations, which typically show minimal or central enhancement. Surrounding oedema is present in both the acute/ subacute phase. Ref: Neuroradiology: the requisites, 2nd Ed, p. 135.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A patient presents with left sided proptosis. A CT reveals a low-density mass causing expansion of the frontal sinus. There is focal thinning of the bony walls, dehiscence of the orbital roof and mass effect on the globe. There is no enhancement with i.v. contrast medium. What is the most likely diagnosis?",
+      "options": [
+        "A. Rhinosinusitis",
+        "B. Allergic fungal sinusitis",
+        "C. Sinonasal polyposis",
+        "D. Mucocoele",
+        "E. Nasopharyngeal carcinoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A mucocoele is the accumulation of mucous secretions behind an obstructed ostium. This causes expansion of the sinus cavity and bone remodelling. Differentiation from carcinoma can be difficult. Ref: Diagnostic Imaging: Head and Neck, 1st Ed, p. 11-2-57.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A patient with chronic alcoholic liver disease is admitted with confusion. MR imaging of the brain is performed. Which of the following imaging features is not associated with alcohol intake?",
+      "options": [
+        "A. Enlargement of the mammillary bodies",
+        "B. Periventricular demyelination",
+        "C. Hyperintense foci within the corpus callosum on T2W",
+        "D. Atrophy of the corpus callosum",
+        "E. Hyperintense lesions within the pons on T2W"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Wernicke's encephalopathy is associated with necrosis of the mammillary bodies and periventricular demyelination. Marchifava-Bignami disease is associated with hyperintense foci within the corpus callosum on T2W; pontine myelinosis is associated with hyperintense lesions within the pons. Atrophy of the corpus callosum is a recognised feature.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A child with fever and otalgia has a CT examination performed. There is opacification of both the middle ear and mastoid. Fluid levels can be seen. There is bony resorption of the mastoid and haziness of the air cell walls. What is the most appropriate description?",
+      "options": [
+        "A. Acute mastoiditis",
+        "B. Coalescent mastoiditis",
+        "C. Bezold's abscess",
+        "D. Osteomyelitis",
+        "E. Subperiosteal abscess"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is a description of coalescent mastoiditis. A Bezold's abscess represents extension of infection down into the tissues of the neck. Ref: RITI 6a_ 017b Petrous temporal bone: infection, cholesteatoma and glomus tumour.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A patient presents with pulsatile tinnitus. CT reveals a mass in the left temporal bone and there is focal uptake with 111In octreotide imaging. Which of the following is least likely?",
+      "options": [
+        "A. Glomus tympanicum",
+        "B. Meningioma",
+        "C. Carcinoid metastasis",
+        "D. Small cell cancer metastasis",
+        "E. Metastasis of papillary carcinoma of the thyroid"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Octreotide is a somatostatin analogue, and uptake is seen where somatostain receptors are expressed, such as neuroendrocine tumours (e.g., glomus tympanicum), and other malignancies (e.g., small cell lung cancer, lymphoma, and breast cancer). There is also uptake in a few tumours that do not express the receptor (e.g., meningioma, astrocytoma). Ref: Nuclear Medicine -The Requisites, 2nd Ed, p. 223-5.",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 5 year old child presents with headache, vomiting and ataxia. On CT imaging, a high attenuation posterior fossa mass is seen to arise from the midline of the roof of the 4th ventricle. Given the most likely diagnosis, which of the following is incorrect?",
+      "options": [
+        "A. There is hydrocephalus in the majority",
+        "B. The mass tends to be hyperintense on T1W",
+        "C. There is an association between enhancing pial nodules and seizures",
+        "D. In children older than 3 years, the mass tends to be resected",
+        "E. Recurrence is common"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The mass is most likely a medulloblastoma. These tend to be iso-to-hypo intense on T1W. Leptomeningeal metastases, seen as enhancing nodules, can cause seizures. Hydrocephalus is present in 90% of cases. Ref: RITI 6b_ 110 Medulloblastoma.",
+      "questionNumber": 60
+    },
+    {
+      "question": "You are reporting an MR of the nasal sinuses, and you notice a mass within the right maxillary sinus. The request card reads: '?squamous cell carcinoma ?mucocoele/secretions.' Which of the following features would be more supportive of a diagnosis of benign disease, rather than squamous cell carcinoma?",
+      "options": [
+        "A. Bony destruction",
+        "B. Low T2W signal",
+        "C. Peripheral enhancement",
+        "D. Heterogeneous MR signal intensity",
+        "E. Occupational exposure to nickel"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Squamous cell carcinoma is usually of heterogeneous, low T2W signal, with a solid enhancement pattern. Bony destruction is seen in approximately 80% of sinonasal SCCs at first presentation. Occupational exposure to nickel, chrome pigment and the use of Bantu snuff are recognised risk factors. Ref: Neuroradiology: the requisites, 2nd Ed, p. 634.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A 50 year old patient presents with headache and visual disturbances. MR imaging is performed, and a mass is seen within the clivus. A chordoma is suspected. Which of the following features would be unusual for this diagnosis?",
+      "options": [
+        "A. Isointense to brain parenchyma on T1W",
+        "B. Calcification",
+        "C. Lack of tracer uptake on a 99mTc-MDP bone scintigram",
+        "D. Lack of enhancement with i.v. gadolinium",
+        "E. Some regions of low signal on T1W"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Chordomas originate from the remnants of the embryonic notochord, and may occur at any point along the neural axis. The clivus is the second most frequently affected site. The tumour is locally aggressive, calcified in approximately 50% (giving rise to areas of low T1W signal) and enhances. They are typically isointense to brain parenchyma on T1W. Ref: Neuroradiology: the requisites, 2nd Ed, p. 560.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A patient presents with seizures. An MR of the brain reveals an apparent area of linear meningeal thickening adjacent to an intracranial tumour. Which of the following would make the description of this thickening as a 'dural tail' less appropriate?",
+      "options": [
+        "A. The adjacent tumour is an extra-axial",
+        "B. The area of thickening does not enhance",
+        "C. The thickening is only present on two contiguous 5 mm sections",
+        "D. The adjacent tumour is intra-axial",
+        "E. There is adjacent hyperostosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The 3 main criteria for the definition of a dural tail are: presence on at least two contiguous 5 mm sections through the tumour (although now sections tend to be less than 5 mm thick); the greatest thickness being adjacent to the tumour; and enhancement being greater than the tumour itself. Dural tails have classically been described in association with meningiomas, but can occur with other extra-axial and even intra-axial tumours. Ref: Clin Rad (2005); 60:171-188.",
+      "questionNumber": 63
+    },
+    {
+      "question": "A patient presents with a cranial nerve palsy, and a CT head reveals a mass in the region of the jugular foramen. Given this location, which of the following structures is least likely to be involved?",
+      "options": [
+        "A. The spinal accessory nerve",
+        "B. The vagus nerve",
+        "C. The middle meningeal artery",
+        "D. The inferior pertrosal sinus",
+        "E. The glossopharyngeal nerve"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The contents of the jugular foramen include: cranial nerves IX, X and XI, the inferior petrosal sinus, the internal jugular vein, and the posterior meningeal artery. The middle meningeal artery runs within the foramen spinosum. Ref: Netter's Concise Neuroanatomy, 1st Ed, p. 13.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A middle aged man has acute, profound loss of a visual hemi-field. MR imaging reveals an acute infarct of the left occipital pole and inferior temporal lobe. To which arterial territory does this correspond?",
+      "options": [
+        "A. Anterior cerebral artery",
+        "B. Middle cerebral artery",
+        "C. Posterior cerebral artery",
+        "D. Posterior inferior cerebellar artery",
+        "E. Superior cerebellar artery"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The posterior cerebral artery supplies the mesial inferior temporal pole, occipital lobe, and perforators to the thalamus and midbrain. Ref: Netter's Concise Neuroanatomy, 1st Ed, p. 65.",
+      "questionNumber": 65
+    },
+    {
+      "question": "An immuno-compromised patient presents with symptoms of encephalitis. MR imaging is performed and primary CNS lymphoma is considered likely. Which of the following features would be unusual for this diagnosis?",
+      "options": [
+        "A. Supratentorial location",
+        "B. A large, discrete solitary lesion",
+        "C. Ring enhancement with i.v. gadolinium",
+        "D. A peripheral rim of high signal on T2WI",
+        "E. Decreased uptake of thallium-201 on SPECT imaging"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "CNS lymphoma has increased uptake of thallium-201 on SPECT imaging.",
+      "questionNumber": 66
+    },
+    {
+      "question": "A patient presents with a neurocutaneous disorder. Which of the following is not a recognised association?",
+      "options": [
+        "A. Neurofibromatosis-1 and plexiform neurofibromas",
+        "B. Osler-Weber-Rendu syndrome and cavernomas",
+        "C. Von Hippel Lindau disease and pheochromocytomas",
+        "D. Tuberous sclerosis and pial enhancement",
+        "E. Sturge-Weber syndrome and cerebral atrophy"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Tuberous sclerosis is associated with, amongst other features: cortical tubers, subependymal nodules, giant cell astrocytomas, white matter lesions, retinal phakomas and vascular abnormalities. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 450.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A patient presents with a sudden onset headache and a CT head is performed. No intravenous contrast medium was administered. An arbitrary region of interest is drawn, and the attenuation is found to be 25 HU. What tissue type is this likely to represent?",
+      "options": [
+        "A. Bone",
+        "B. Congealed blood",
+        "C. Grey matter",
+        "D. White matter",
+        "E. Cerebrospinal fluid"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The typical attenuation values for commonly encountered tissue types are: bone, 400-1000 HU; congealed blood, 56-76 HU; grey matter, 36-46 HU; white matter, 22-32 HU; water (CSF), 0. Ref: A Textbook of Radiology and Imaging, 5th Ed, p. 1724.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A child undergoes MR imaging of their spine. A review of the lower lumbar levels reveals that the dorsal dura is incomplete and the subarachnoid space lies ventral to a neural placode, which is directly continuous with the skin. The ventral subarachnoid space does not appear to be dilated. What would be the most appropriate term to describe this spinal dysraphism?",
+      "options": [
+        "A. Myelocoele",
+        "B. Myelomeningocoele",
+        "C. Lipomyelocoele",
+        "D. Lipomyelomeningocoele",
+        "E. Spinal lipoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In the case above, if the ventral subarachnoid space were dilated, this would be more appropriately termed a myelomeningocoele. If the dorsal placode were continuous with a lipoma, continuous with the subcutaneous tissues, this would represent a lipomyelocoele. Ref: Fundamentals of Diagnostic Radiology, 2nd Ed, p. 312.",
+      "questionNumber": 69
+    },
+    {
+      "question": "A middle aged man has an acute onset headache and subarachnoid blood is seen on a CT head. An MR angiogram is considered. Regarding cerebral MRA, which of the following is incorrect?",
+      "options": [
+        "A. MRA should be avoided following the endovascular 'coiling' of aneurysms",
+        "B. Giant aneurysms are better visualised on CT angiography rather than 3D time of flight MRA",
+        "C. Aneurysms smaller than 3 mm are more difficult to detect by MRA imaging",
+        "D. Recent subarachnoid haemorrhage may degrade time of flight MRA imaging",
+        "E. MRA may show aneurysms missed on a digital subtraction angiogram"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "MRA is often used to follow 'coiled' aneurysms. Giant aneurysms are rarely visualised to their full extent on 3D time-of-flight MRA because of flow in their nidus. Time-of-flight MRA images may be degraded by the T1-effects of blood degradation products. Ref: Diagnostic Radiology, 5th Ed, p. 1313.",
+      "questionNumber": 70
+    },
+    {
+      "question": "A child presents with a lump in the neck, and a branchial cleft cyst is suspected. Which of the following features would be unusual for this diagnosis?",
+      "options": [
+        "A. Attenuation of 10 HU on unenhanced CT",
+        "B. High signal on T2W MR imaging",
+        "C. Located deep to a sternomastoid muscle",
+        "D. Lack of rim enhancement on CT",
+        "E. Present in the posterior triangle of the neck"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Branchial cleft cysts are derived from the 1st or (more commonly) the 2nd cervical pouch. These are usually anterior triangle lesions and of water CT attenuation ( < 20 HU). Rim enhancement is seen in infected cysts. Ref: Diagnostic Radiology, 5th Ed, p. 1455.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 42 year old woman presents with weakness in her hands. On examination she is noted to have wasting of the small muscles of the hand, burns and cuts to her fingers. There are reduced biceps reflexes, increased tone in the legs and upgoing plantars. An MRI brain and spine are requested. What is the most likely unifying diagnosis?",
+      "options": [
+        "A. Cervical spondylosis",
+        "B. Chiari II malformation",
+        "C. Motor neurone disease",
+        "D. Multiple sclerosis",
+        "E. Rheumatoid arthritis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The patient has lower motor neurone signs in the upper limbs and upper motor neurone signs in the lower limbs. The most likely diagnosis is a syrinx (syringohydromyelia) within the cervical cord. A Chiari II malformation is usually accompanied by a myelomeningocele, abnormal development of the cerebellar vermis and hydrocephalus. The herniated cerebellum blocks CSF circulation and leads to the formation of a syrinx within the spinal cord.",
+      "questionNumber": 72
+    },
+    {
+      "question": "You are shown a set of paediatric MR and CT head images in a teaching session. There is a well defined, lobulated mass within a dilated left lateral ventricle. There is hydrocephalus. It is hyperdense on CT and returns moderately high signal on T2W. There is intense contrast enhancement. What is the most likely diagnosis?",
+      "options": [
+        "A. Colloid cyst",
+        "B. Meningioma",
+        "C. Choroid plexus papilloma",
+        "D. Ependymoma",
+        "E. Giant cell astrocytoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The imaging characteristics are those of a choroid plexus papilloma. Meningiomas are rarely intraventricular and most frequently occur in middle aged women. Colloid cysts occur within the third ventricle. Ependymomas typically arise from the floor of the fourth ventricle. Ref: Clinical Imaging: An Atlas of Differential Diagnosis, 4th Ed, p. 1124.",
+      "questionNumber": 73
+    },
+    {
+      "question": "You are reporting plain radiographs. You note a suture line posterior and inferior to the occipitomastoid suture on a lateral skull radiograph of an infant. What is this suture most likely to be?",
+      "options": [
+        "A. Innominate",
+        "B. Mendosal",
+        "C. Squamosal",
+        "D. Coronal",
+        "E. Sagittal"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The innominate suture is present in all neonates and can be seen posterior to the occipitomastoid suture. It rarely persists in adulthood. Ref: Accident and Emergency Radiology, 2nd Ed, p. 37.",
+      "questionNumber": 74
+    },
+    {
+      "question": "You are asked to review an MRI brain, and note that there is a focal abnormality of the left globe. There is a localised outpouching of the vitreous near the site of the optic nerve attachment. What is the most likely diagnosis?",
+      "options": [
+        "A. Normal variant",
+        "B. Phthisis Bulbi",
+        "C. Buphthalmos",
+        "D. Staphyloma",
+        "E. Coloboma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "A coloboma represents incomplete closure of the foetal choroidal fissure, affecting the eyelid, retina, choroid and iris. It can be associated with microphthalmos and the morning glory anomaly (where the optic disk is enlarged and elevated). It is commonly bilateral. Ref: Radiology Review Manual, 6th Ed, p. 620.",
+      "questionNumber": 75
+    }
+  ]
+}
+

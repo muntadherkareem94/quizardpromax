@@ -1,0 +1,657 @@
+
+{
+  "title": "Musculoskeletal and Trauma Practice - SBA Questions",
+  "questions": [
+    {
+      "question": "A plain radiograph reveals a well-defined lucent lesion within the metaphysic and epiphysis of the distal femur. There is eccentric expansion and the cortex is thin but intact. It does not reach the articular surface. CT reveals fluid-fluid levels. Which of the following is the most likely cause?",
+      "options": [
+        "A. Giant cell tumour",
+        "B. Aneurysmal bone cyst",
+        "C. Enchondroma",
+        "D. Non-ossifying fibroma",
+        "E. Chondromyxoid fibroma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Of the conditions that typically cause lucent, eccentrically expanded lesions, only GCTs and ABCs have fluid-fluid levels on CT imaging. As GCTs do not reach the articular surface, this is most likely to be an ABC. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 62.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 35 year old man suffers a knee injury during a football match and presents with pain, swelling, knee locking and an inability to fully extend his knee. He undergoes an MRI examination. What is the most common site of injury?",
+      "options": [
+        "A. Anterior cruciate ligament",
+        "B. Posterior cruciate ligament",
+        "C. Anterior horn medial meniscus",
+        "D. Posterior horn medial meniscus",
+        "E. Anterior horn lateral meniscus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The symptoms described are more consistent with those of a meniscal injury, rather than a ligamentous tear. Such tears are commonest in the posterior horn of the medial meniscus. Ref: Radiology Review Manual 6th Ed, p. 117.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 78 year old woman has left hip pain following a fall. On examination the left hip is shortened and externally rotated. X-rays show a fracture of the left neck of femur. Which of the following fractures is at highest risk of avascular necrosis?",
+      "options": [
+        "A. Basi-cervical fracture",
+        "B. Inter-trochanteric fracture",
+        "C. Sub-capital fracture",
+        "D. Sub-trochanteric fracture",
+        "E. Trans-cervical fracture"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Proximal femoral fractures are divided in subcapsular and extracapsular. The joint capsule runs from the acetabulum to the inter-trochanteric line anteriorly and to the junction of the middle/distal third of the femoral neck posteriorly. Thus intracapsular fractures are those of the femoral neck: sub-capital, trans-cervical and basi-cervical fractures, and extracapsular include inter-trochanteric, sub-trochanteric and femoral shaft fractures. Intracapsular fractures are more susceptible to AVN because the main supply to the femoral head is from the circumflex femoral arteries, which enter via the capsule and are more likely to be disrupted by such fractures. Additional blood supply from the ligamentum teres artery via the acetabular fossa and the retinacular branches on the surface of the femoral neck, are usually insufficient to prevent AVN. Furthermore they may be compromised by the raised pressure secondary to blood within the joint capsule. The more proximal the subcapsular fracture, the greater the risk of vascular compromise, thus a sub-capital fracture has the greatest risk of AVN. Ref: Orthop Clin North Am (2002); 33(1): 97-111, viii.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A stress fracture in which of the following areas would be most indicative of a pseudofracture (Looser's zone) of osteomalacia?",
+      "options": [
+        "A. Axillary margin of the scapula",
+        "B. Distal 1/3 ulna",
+        "C. Greater trochanter of the femur",
+        "D. Lateral femoral neck",
+        "E. Proximal 1/3 radius"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Pseudofractures (Looser's zones) are insufficiency stress fractures with poor healing due to mineral deficiency. These are classically associated with osteomalacia, but can also be due to Paget's disease, osteogenesis imperfecta, or fibrous dysplasia. The fractures are typically bilateral and symmetrical and are at right angles to the cortical margin. Other common locations include distal 1/3 radius, proximal 1/3 ulna, lesser trochanter, medial femoral neck, ischial tuberosity, clavicle, long bones of the feet and hands. Ref: Radiology Review Manual, 6th Ed, p. 148.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A CXR is performed in a patient with increasing shortness of breath. The lungs are clear, but there is a bilateral symmetrical absence of the lateral end of the clavicles. Which is the least likely cause of these appearances?",
+      "options": [
+        "A. Cleidocranial dysplasia",
+        "B. Eosinophilic granuloma",
+        "C. Hyperparathyroidism",
+        "D. Pyknodysostosis",
+        "E. Rheumatoid arthritis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Other causes include trauma, infection, metastases and myeloma (but these are less likely to be bilaterally symmetrical). EG is a cause of destruction of the medial end of the clavicle, which can also be caused by metastases, infection, lymphoma and rheumatoid arthritis. Ref: Radiology Review Manual, 6th Ed, p. 19.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 45 year old man has an acute episode of shortness of breath. A CXR is requested; this shows concave scalloping of the undersurface of the right 2nd and 3rd ribs, there is a slight scoliosis of the inferior aspect of the thoracic spine, but the lung parenchyma is clear. Which of the following is the most likely cause of these appearances?",
+      "options": [
+        "A. Marfan's syndrome",
+        "B. Neurofibromatosis Type I",
+        "C. Rheumatoid arthritis",
+        "D. SLE",
+        "E. Scleroderma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The other listed diagnoses would be expected to cause superior rib notching. Superior notching is typically caused by connective tissue disorders, inferior notching is typically of vascular origin due to enlarged collateral vessels: coarctation, interrupted aortic arch, subclavian stenosis (Takayasu's), or SVC obstruction with venous collaterals, or AVMs. Hyperparathyroidism and NF-I can cause superior or inferior rib notching, the latter diagnosis is further suggested by the presence of scoliosis. Ref: Radiology Review Manual, 6th Ed, p. 18-9.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Which of the following forms of micromelic dwarfism is considered to be the most severe?",
+      "options": [
+        "A. Diastrophic dysplasia",
+        "B. Heterozygous achondroplasia",
+        "C. Nievergelt syndrome",
+        "D. Osteogenesis Imperfecta Type 1",
+        "E. Thanatophoric dysplasia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Thanatophoric dysplasia is the commonest type of lethal micromelic dwarfism. Features include clover-leaf skull (15%), limb bowing, narrow thorax, non-immune hydrops. Other lethal dwarfisms include camptomelic dysplasia, Ellis-van Creveld syndrome, Jeune's syndrome, achondrogenesis, hypophosphatasia, homozygous achondroplasia, OI Type 2, and chondrodysplasia punctata. Heterozygous achondroplasia, OI Types 1, 3 and 4, diastrophic dysplasia, and Nievergelt syndrome are non-lethal variants. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 883-5.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 12 year old boy falls and sustains a fracture to the proximal phalanx of his right index finger which extends from the articular surface to the epiphyseal plate but not extending to the metaphysis. What is the Salter-Harris classification of this injury?",
+      "options": [
+        "A. I",
+        "B. II",
+        "C. III",
+        "D. IV",
+        "E. V"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Type I (6-8%) is an epiphyseal slip. Type II (73-75%) extends through the physis separating a metaphyseal fragment. Type IV (10-12%) involves the metaphysic, physis and epiphysis. Type III (8-10%) is described. Type V (< 1 %) is a crush injury with damage to the vascular supply to the epiphysis. Common sites include the distal radius (28%), hand phalanges (26%), and distal tibia (10%). The prognosis gets worse as the grade increases, with type V injuries particularly associated with subsequent growth disturbance. Lower extremity injuries are also associated with a worse prognosis than upper limb injuries. Ref: Radiology Review Manual, 6th Ed, p. 84.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A young man sustains blunt trauma to the chest. There is suspicion of a pneumothorax. A supine chest radiograph is available. On this radiograph, which of the following would be the least supportive of this diagnosis?",
+      "options": [
+        "A. Presence of the 'deep sulcus sign'",
+        "B. A sharply outlined dome of the diaphragm",
+        "C. A hyperlucent right upper abdominal quadrant",
+        "D. A sharply defined anterior junctional line",
+        "E. A poorly defined anterior cardiophrenic sulcus"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "In the supine position, air may collect in the anterior cardiophrenic sulcus, which will therefore appear well defined against the inferior border of the heart. Ref: The Chest X-ray: A Survival Guide, 1st Ed, p. 96.",
+      "questionNumber": 9
+    },
+    {
+      "question": "In the evaluation of a splenic injury following trauma, which of the following features favours pseudoaneurysm over active extravasation?",
+      "options": [
+        "A. Less apparent on delayed imaging",
+        "B. Layering",
+        "C. Ill-defined",
+        "D. Increased size on delayed imaging",
+        "E. Jet of contrast medium"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Pseudoaneurysms are typically well-defined, rounded and may be seen to have a neck adjoining an adjacent vessel. They are more difficult to detect on delayed images and there is no change in the haematoma. Management may be by embolisation or surgery depending on the clinical condition of the patient. Ref: Radiographics (2008); 28: 1603-16.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 32 year old man presents with a painful elbow, having fallen off his bicycle. AP and lateral radiographs of the elbow are taken; an A&E doctor is unsure if an abnormality is present and phones to ask your advice. Which of the following indicates an underlying abnormality?",
+      "options": [
+        "A. A visible anterior fat pad",
+        "B. On the lateral view, a line drawn through the long axis of the proximal radius passes through the capitellum",
+        "C. The posterior fat pad is not visible",
+        "D. 'Hourglass' or 'figure 8' sign of the distal humerus on lateral film",
+        "E. The anterior humeral line passes through the anterior third of the capitellum"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "More than one third of the capitellum should lie anterior to the anterior humeral line - if not, a supracondylar fracture should be suspected. A visible posterior fat pad is always abnormal. Displacement of the anterior fat pat raises the possibility of a fracture. In a true lateral film the distal humerus appears to form an 'hourglass', loss of this or apparent asymmetry are indicators of a supracondylar fracture. Ref: Accident and Emergency Radiology, 2nd Ed, p. 106.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 27 year old undergoes a CXR as part of an occupational assessment. The CXR shows a solitary expansile right 5th posterior rib mass. CT confirms the mass is arising from the rib and that it shows no aggressive features. What is the likeliest diagnosis?",
+      "options": [
+        "A. Exostosis of the rib",
+        "B. Benign cortical defect",
+        "C. Langerhans cell histiocytosis",
+        "D. Fibrous dysplasia",
+        "E. Osteoblastoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Fibrous dysplasia is the commonest benign rib tumour. Second most common is osteochondroma/bony exostosis but this typically occurs at the costochondral junction. Other benign possibilities include GCT and aneurysmal bone cyst. Ref: Radiology Review Manual, 6th Ed, p. 18.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A calcified mass is seen on a plain radiograph of a young man's femur. The mass appears to be centred within the soft tissues of the thigh and the calcification is more prominent on the periphery of the mass. There is a radiolucent zone separating the lesion from the underlying bone, the cortex of which appears unaffected. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Myositis ossificans",
+        "B. Parosteal osteosarcoma",
+        "C. Juxtacortical chondroma",
+        "D. Osteochondroma",
+        "E. Rhabdomyosarcoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Myositis ossificans is a form of heterotopic bone formation within skeletal muscle, usually resulting from blunt trauma. Although parosteal osteosarcoma can have similar appearances, myositis ossificans typically has denser calcification in the periphery; osteosarcoma shows the reverse phenomenon, with denser calcification centrally. Juxtacortical chondroma typically scallops the underlying cortex. An osteochondroma is continuous with the underlying bone. Ref: Musculoskeletal Imaging: the Requisites, 3rd Ed, p. 524.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A patient presents with painful swelling of the limbs and joints, particularly the knees, ankles, wrists and elbows. Digital clubbing and joint effusions are noted. Plain radiographs show marked bilateral, smooth periosteal reactions affecting the radius, ulna, tibia and fibula. Which one of the following diseases is not associated with the most likely unifying condition?",
+      "options": [
+        "A. Gaucher's disease",
+        "B. Carcinoma of the bronchus",
+        "C. Undifferentiated nasopharyngeal carcinoma",
+        "D. Pleural fibroma",
+        "E. Ulcerative colitis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The patient is most likely to be suffering from hypertrophic osteoarthropathy. This is commonly secondary to disease within the chest but many extra-thoracic causes are also recognised. Possible thoracic causes include: Bronchogenic carcinoma, lymphoma, pulmonary metastasis, a benign tumour (e.g. pleural fibroma), and chronic inflammation/infection (e.g. an abscess, bronchiectasis). Extrathoracic causes include, amongst others: inflammatory bowel disease, whipple's disease, coeliac disease, cirrhosis, dysentery and undifferentiated nasopharyngeal carcinomas. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 37.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A lady suffers from long-standing rheumatoid arthritis. She is noted to have splenomegaly on a clinic visit. A diagnosis of Felty's syndrome is suspected clinically. Which of the following is not a recognised feature of Felty's syndrome?",
+      "options": [
+        "A. Ulceration",
+        "B. Neutropaenia",
+        "C. Skin pigmentation",
+        "D. Weight loss",
+        "E. Low titres of rheumatoid factor"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Felty's syndrome is characterised by the combination of longstanding rheumatoid arthritis, splenomegaly and neutropaenia. Associated features include weight loss, leg ulceration, and brown skin pigmentation. Almost all have high titres of rheumatoid factor. Ref: Musculoskeletal Imaging: the Requisites, 3rd Ed, p. 291.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A patient presents with back pain. He is found to be HLA-B27 positive and a diagnosis of ankylosing spondylitis is suspected. Plain films of the spine are requested. Which of the following would be the least supportive of this diagnosis?",
+      "options": [
+        "A. Calcification of the anterior longitudinal ligament",
+        "B. Osteitis",
+        "C. Syndesmophytes",
+        "D. Sclerosis of the costotransverse joints",
+        "E. Ankylosis of the costovertebral joints"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Ossification of the posterior, rather than anterior longitudinal ligament is typical of ankylosing spondylitis. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 383.",
+      "questionNumber": 16
+    },
+    {
+      "question": "You are asked to review a series of plain films of the cervical spine of an adult patient. Which of the following is abnormal?",
+      "options": [
+        "A. On the lateral view, the distance between the anterior arch of C1 and the anterior aspect of the odontoid peg is 2 mm",
+        "B. On the lateral view, the soft tissues anterior to C2 are 9 mm thick",
+        "C. Harris' white ring is incomplete in its inferior aspect",
+        "D. On the lateral view, the C4-5 interspinous distance is 30% greater than the CS-6 interspinous distance",
+        "E. On the lateral view, the soft tissues anterior to C6 are 20 mm thick"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The distance between the anterior arch of C1 and the anterior aspect of the odontoid peg should be no more than 3 mm in an adult. On the lateral view, the maximum width of the prevertebral soft tissues is: 7 mm at C1-4, 22 mm at C5-7. Harris' ring is often incomplete in its inferior aspect. On the long AP view, no single interspinous distance should be more than 50% wider than the one immediately above or below it. Ref: Accident and Emergency Radiology, 2nd Ed, p. 87.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A pregnant lady suffers from sudden, spontaneous hip pain, worsened by weight bearing. The range of movement is relatively well preserved. Plain radiographs and an MR examination are performed. Which of the following would be more suggestive of avascular necrosis rather than transient osteoporosis of the hip?",
+      "options": [
+        "A. Acetabular oedema on MR imaging",
+        "B. A 'double line' sign on MR imaging",
+        "C. Osteoporosis on plain radiographs",
+        "D. Increased uptake in the femoral head on 99mTc-MDP imaging",
+        "E. Preservation of the articular cartilage on MR imaging"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Transient osteoporosis of the hip is a sudden, painful but self limiting condition, first described in patients in the third trimester of pregnancy, but seen most frequently in middle-aged men. Radiographs show diffuse ostepaenia 4-8 weeks after symptom onset. MR imaging demonstrates diffuse oedema, without focal defects: oedema localised to the subchondral surface or a 'double-line' sign suggest AVN. 99mTc-MDP imaging shows homogeneously increased uptake in the femoral head and neck. Ref: Can J Surg (2003); 46(3): 187-192.",
+      "questionNumber": 18
+    },
+    {
+      "question": "An 8 year old child presents with a limp. Which of the following would favour a diagnosis of bacterial infection over Perthe's disease?",
+      "options": [
+        "A. A smaller femoral epiphysis than on the contralateral side",
+        "B. Joint space widening",
+        "C. Destruction of the articular cortex",
+        "D. Alteration of the periarticular soft tissue outline",
+        "E. Localised bone demineralization"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Articular cortex destruction is not seen in Perthe's disease, which classically demonstrates sclerosis of the femoral head along with the findings above in the early phase. Later changes include subchondral fractures, femoral head fragmentation, femoral neck cysts and loose body formation. Ref: Radiology Review Manual, 6th Ed, p. 51.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A young man is involved in an RTA and arrives in hospital with a markedly reduced GCS. Anterior tilt of the odontoid peg is noted and an oblique fracture line is seen through the upper portion of the dens. Which type of odontoid fracture is this?",
+      "options": [
+        "A. Type I",
+        "B. Type II",
+        "C. Type III",
+        "D. Type IV",
+        "E. Type V"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Type I: a fracture through the upper portion of the dens. Type II: a transverse fracture through the junction of the dens and the body of the axis. Type III: a fracture through the body of the axis. There is no type IV nor V. Ref: Neuroradiology: the requisites, 2nd Ed, p. 844.",
+      "questionNumber": 20
+    },
+    {
+      "question": "Following penetrating abdominal trauma, which organ is most frequently injured?",
+      "options": [
+        "A. Liver",
+        "B. Pancreas",
+        "C. Spleen",
+        "D. Kidney",
+        "E. Small bowel"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The spleen accounts for 40% of organ injuries following blunt abdominal trauma, with the liver accounting for 20%. If penetrating trauma is taken in to account as well, the liver is the most commonly injured organ. Ref: Radiographics (2007); 1: 109-125.",
+      "questionNumber": 21
+    },
+    {
+      "question": "With regards to the Ottawa rules for plain radiographs of the foot and ankle, which of the following is incorrect?",
+      "options": [
+        "A. An ankle X-ray is indicated if the patient cannot weight bear at the time of injury",
+        "B. An ankle X-ray is indicated if there is pain in the malleolar zone and bony tenderness over the base of the 5th metatarsal",
+        "C. A foot X-ray is indicated if there is pain in the midfoot zone and bony tenderness over the navicular",
+        "D. An ankle X-ray is indicated if the patient cannot weight bear in the department",
+        "E. An ankle X-ray is indicated if there is pain in the malleolar zone and bony tenderness over the posterior edge of the lateral malleolus"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A foot x-ray is indicated with bony tenderness over the base of the 5th metatarsal (and midfoot pain). Ref: JAMA (1994); 271(11): 271-82.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 7 year old boy is brought to the GP by his parents, having noticed soft, blue-coloured growths on his right hand. The hand X-ray reveals multiple enchondromas. Which of the following features would confirm Mafucci's syndrome as the diagnosis rather than Ollier's disease?",
+      "options": [
+        "A. A first degree relative also affected",
+        "B. Bilateral, predominantly symmetrical disease",
+        "C. A discrepancy in arm length",
+        "D. Sarcomatous degeneration",
+        "E. Soft tissue haemangiomas"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Both conditions describe multiple enchondromas affecting the hands and/or feet, and both tend to be unilateral; neither has a genetic component. Both conditions can lead to shortening of the involved arm/leg, resulting in length discrepancy. Malignant degeneration can be to osteosarcoma (young adults), or chondro/fibrosarcoma (older patients); it is more common in Mafucci's syndrome, but is still seen in 5-30% of cases of Ollier's disease. Maffucci's syndrome describes enchondromas with additional multiple soft tissue haemangiomas, if bilateral there is marked asymmetry. Ref: Diagnostic Radiology, 5th Ed, p. 1037-8.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 32 year old man falls on his outstretched right wrist whilst playing football. Wrist X-ray reveals a displaced, oblique intra-articular fracture of the dorsal lip of the distal radius. What is the fracture type described?",
+      "options": [
+        "A. Barton's",
+        "B. Chauffeur's",
+        "C. Colles'",
+        "D. Smith's",
+        "E. Salter Harris Type II"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A Barton's fracture refers to an intra-articular fracture through the distal radius. The conventional Barton fracture involves the dorsal rim of the radius, the reverse Barton involves the volar rim. Salter-Harris fractures involve the growth plate before closure; the other types described are not intra-articular. Colles' and Smith's are fractures of the distal radius with dorsal and volar displacement of the distal fragments, respectively. A chauffeur fracture is a triangular fracture of the radial styloid process.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 32 year old presents with acute abdominal pain. An AXR demonstrates calcification in the LUQ, with loops of bowel in this region, central depressions in the superior and inferior endplates of L3 and L4, and a mixed lysis/sclerosis appearance to the superior aspect of the left femoral head. What is the likely unifying diagnosis?",
+      "options": [
+        "A. Achondroplasia",
+        "B. Hyperparathyroidism",
+        "C. Lymphoma",
+        "D. Renal osteodystrophy",
+        "E. Sickle cell disease"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The described findings are of an H-shaped vertebrae (often better appreciated on lateral films), left femoral head AVN, and auto-infarction of the spleen. In SCD, the Hb deforms at low oxygen tension, and obstructs small blood vessels, leading to hypoxia/ anoxia (AVN), and splenic auto-infarction (on AXR: prominent bowel loops in the LUQ +/- calcification of the spleen). Other skeletal features include 'hair-on-end' appearance to the skull, secondary osteomyelitis (often due to Salmonella), and premature epiphyseal fusion. Cholelithiasis, cardiomegaly, PE, cerebral infarcts, and renal papillary necrosis are also associated. Ref: Diagnostic Radiology, 5th Ed, p. 1773-6.",
+      "questionNumber": 25
+    },
+    {
+      "question": "Which of the following statements regarding blunt thoracic trauma is not true?",
+      "options": [
+        "A. Pericardial injuries are usually left sided",
+        "B. The tricuspid valve is the most commonly injured valve",
+        "C. Cardiac herniation through the pericardium may result in cardiac dysfunction",
+        "D. The right ventricle is injured more frequently than the left",
+        "E. Blunt cardiac injuries are most commonly the result of road traffic accidents"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The aortic and mitral valves are more commonly affected. Ref: Radiographics (2009); 28: 1555-70.",
+      "questionNumber": 26
+    },
+    {
+      "question": "Axial MR imaging of the ankle is performed. You are asked to review a single image at the level of the tibio-talar joint. You note a tendon which is swollen and contains unusually high signal, located immediately posterior to the tendon of tibialis posterior. What is the likely diagnosis?",
+      "options": [
+        "A. Tendonitis of extensor hallucis longus",
+        "B. Tendonitis of extensor digitorum longus",
+        "C. Tendonitis of flexor hallucis longus",
+        "D. Tendonitis of flexor digitorum longus",
+        "E. Tendonitis of tibialis anterior"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The flexor tendons occur in the order (from anterior to posterior): tibialis posterior, flexor digitorum longus, flexor hallucis longus - the mnemonic 'Tom, Dick, and Harry' aids memory. Ref: Fundamentals of Skeletal Radiology, 3rd Ed, p. 209.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 14 year old boy is referred for a CT following blunt abdominal trauma. This demonstrates a transection of the distal pancreas with free fluid in the peri-pancreatic space. According to the American Association for the Surgery of Trauma (AAST), what grade is this injury?",
+      "options": [
+        "A. Grade I",
+        "B. Grade II",
+        "C. Grade III",
+        "D. Grade IV",
+        "E. Grade V"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Grade I injury is a minor contusion/superficial laceration. Grade II injury is a major contusion/laceration without duct injury. Grade III injury is a distal transection/injury involving the duct. Grade IV injury is a proximal transection or injury involving the ampulla or bile duct. Grade V injury is massive disruption of the pancreatic head. Ref: Radiographics (2009); 28: 1591-1601.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A man suffers a supination-abduction ankle injury. Plain films reveal an oblique fibular fracture through the tibiofibular syndesmosis. Which Weber category does this represent?",
+      "options": [
+        "A. A",
+        "B. B",
+        "C. C",
+        "D. D",
+        "E. E"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The Weber classification is based on the location of the distal fibular fracture relative to the tibiotalar joint. Type A is a transverse fracture distal to the ankle joint; type B is an oblique fracture at the level of the joint; type C is a fibular fracture proximal to the level of the joint. There is no type D or E. Ref: Musculoskeletal Imaging: the Requisites, 3rd Ed, p. 253.",
+      "questionNumber": 29
+    },
+    {
+      "question": "You are asked to review a hand x-ray of a 6 year old boy. The request simply states \"Please assess bone age\", there are no prior films available for comparison. There is osteopaenia and mild expansion of the medullary cavities of all the metacarpals and phalanges. There is additional atrophy of the trabeculae and cortical thinning. What is the likely diagnosis?",
+      "options": [
+        "A. Engelmann's disease",
+        "B. Hurler's syndrome",
+        "C. Ollier's disease",
+        "D. Pseudo-pseudohyperparathyroidism",
+        "E. Thalassaemia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The earliest changes of thalassaemia can be seen in the small bones of the hand and feet. The appearances described are due to marrow hyperplasia secondary to anaemia. The changes are typically symmetrical with osteopaenia/osteoporosis, atrophy and coarsening of the trabeculae, widening of the medullary spaces, and thinning of the cortices. Ref: Radiology Review Manual, 6th Ed, p. 168-70.",
+      "questionNumber": 30
+    },
+    {
+      "question": "Plain radiographs are taken of a 9 year old's elbow. Five ossification centres are seen. Which of the visible ossification centres would have been last to appear?",
+      "options": [
+        "A. Radial head",
+        "B. Lateral epicondyle",
+        "C. Medial epicondyle",
+        "D. Olecranon",
+        "E. Trochlea"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although there can be some variation in the order, the usual sequence of appearance is shown below: \nApproximate age at appearance (years): 1 = Capitellum, 3 = Radial head, 4-5 = Internal (medial) epicondyle, 7-8 = Trochlea, 8-10 = Olecranon, 9-13 = Lateral (external) epicondyle. Ref: Accident and Emergency Radiology, 2nd Ed, p. 100.",
+      "questionNumber": 31
+    },
+    {
+      "question": "Regarding idiopathic scoliosis. Which of the following statements is true?",
+      "options": [
+        "A. Adolescent idiopathic scoliosis is the commonest form",
+        "B. It affects males more than females",
+        "C. There is a worse prognosis with lumbar scoliosis",
+        "D. Scaphocephaly is associated with infantile idiopathic scoliosis",
+        "E. Subtle neurological abnormalities can be expected"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Scoliosis can be divided into three broad categories: congenital, idiopathic, and secondary. Idiopathic scoliosis is described as infantile (0-3 years), juvenile (4-10 years), adolescent (> 10 years), or adult onset. Adolescent idiopathic scoliosis accounts for 80% of cases, and rapid progression tends to occur during growth spurts. Prognosis is worse with a high thoracic scoliosis. Females are more commonly affected. The presence of neurological signs implies an underlying abnormality. Plagiocephaly is associated with infantile idiopathic scoliosis. Ref: RITI 2 018 Painful scoliosis & 5 115 Scoliosis.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A patient has injured his knee and is unable to weight bear. AP and lateral radiographs are taken. Which of the following is an abnormal finding?",
+      "options": [
+        "A. On the lateral view, the distance from the lower pole of the patella to the tibial tubercle is 1.5 times the length of the patella",
+        "B. There is irregularity of the tibial tubercle",
+        "C. On the AP view, a perpendicular line drawn from the lateral margin of the femoral condyle has 3 mm of the lateral margin of the tibal condyle outside of it",
+        "D. There is a corticated, calcified body in the lateral head of the gastrocnemius muscle",
+        "E. There is a multipartite patella"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "On the lateral view, the distance from the lower pole of the patella to the tibial tubercle should equal the length of the patella plus or minus 20%. If this rule is broken, a ruptured patellar ligament must be suspected. On the AP view a perpendicular line drawn from the lateral margin of the femoral condyle should have <= 5 mm of the lateral margin of the tibal condyle outside of it. The fabella is a common sesamoid bone within the lateral head of gastrocnemius. Ref: Accident and Emergency Radiology, 2nd Ed, p. 214.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A patient presents with foot and ankle tenderness after a sports injury. Plain radiographs of the ankle and foot are taken. Which of the following is an abnormal finding?",
+      "options": [
+        "A. Bohler's angle is 31 degrees",
+        "B. On an AP view of the midfoot, the medial margin of the second metatarsal aligns with the medial margin of the intermediate cuneiform",
+        "C. On an AP view of the midfoot, the medial margin of the third metatarsal aligns with the medial margin of the lateral cuneiform",
+        "D. The width of the space between the distal tibia and fibula at a point 1 cm from the articular surface is 8 mm",
+        "E. On the AP view of the midfoot, there is a lucent line through the base of the 5th metatarsal which runs parallel to the metatarsal shaft"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The width of the space between the distal tibia and fibula at a point 1 cm from the articular surface should be <= 6 mm. Bohler's angle is normally 30-40 degrees. In contradistinction to a fracture, the long axis of an unfused apophysis of the base of the 5th metatarsal runs parallel to the metatarsal shaft. On an AP view of the midfoot, the medial margin of the second metatarsal should align with the medial margin of the intermediate cuneiform. On an AP view of the midfoot, the medial margin of the third metatarsal aligns with the medial margin of the lateral cuneiform. Ref: Accident and Emergency Radiology, 2nd Ed, p. 234.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 50 year old man presents with knee pain. Plain radiographs show an 8 cm lytic lesion within the distal femoral metaphysis with endosteal scalloping and cortical thickening. CT shows matrix mineralisation. Which of the following features does not favour a diagnosis of chondrosarcoma over enchondroma?",
+      "options": [
+        "A. The patient's age",
+        "B. The patient's sex",
+        "C. The lesion size",
+        "D. The lesion site",
+        "E. The CT findings"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Enchondromas present in a slightly younger age group and are more common in females. They typically affect the bones of the hands and feet and are usually less than 5 cm in size. Although both lesions show matrix mineralisation, this feature is slightly commoner in enchondromas. Other features to favour chondrosarcoma over enchondroma include presentation with a mass, cortical destruction and the presence of a soft tissue mass. Ref: Radiology Review Manual 6th Ed, p. 59.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A patient has injured his right shoulder. An AP view demonstrates an acromio-clavicular distance of 12 mm and a coraco-clavicular distance of 10 mm. The clavicle is not otherwise grossly displaced. What is the grade of the acromio-clavicular joint injury?",
+      "options": [
+        "A. Grade I",
+        "B. Grade II",
+        "C. Grade III",
+        "D. Grade IV",
+        "E. Grade V"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Grade I: Normal radiograph. Grade II: AC distance > 8-10 mm; CC distance <= 13 mm. Grade III: AC distance > 8-10 mm; CC distance > 13 mm. Grade IV: Total dislocation, clavicle dislocated into trapezius. Grade V: Total dislocation, clavicle dislocated into neck. Grade VI: Total dislocation, clavicle dislocated inferiorly. Ref: Accident and Emergency Radiology, 2nd Ed, p. 87.",
+      "questionNumber": 36
+    },
+    {
+      "question": "An MRI examination of the lumbar spine demonstrates endplates with reduced signal intensity on T1W and increased signal intensity on T2W. What is the most appropriate diagnosis?",
+      "options": [
+        "A. Normal",
+        "B. Type I Modic change",
+        "C. Type II Modic change",
+        "D. Type III Modic change",
+        "E. Type IV Modic change"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Modic degenerative changes are bone marrow and endplate changes adjacent to degenerative lumbar intervertebral discs; they are commonest at the L4-L5 and L5-S 1 level. Modic II is more prevalent, but Modic I changes are more likely to be symptomatic. Type I changes have MRI appearances of fluid (low T 1, high T2), type II changes have the characteristics of fat due to red marrow replacement (high T1 and T2), and type III changes are due to sclerosis (low on T1 and T2). Ref: Radiology (2007); 245(1): 43-61.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A patient presents with tenderness in the anatomical snuffbox and a scaphoid series of plain radiographs are taken. There is a fracture across the proximal pole of the scaphoid. Which of the following is incorrect?",
+      "options": [
+        "A. Compared to other scaphoid fractures, those across the proximal pole have the highest risk of avascular necrosis",
+        "B. Most scaphoid fractures occur across the waist",
+        "C. Most scaphoid fractures are not displaced",
+        "D. Scaphoid waist fractures may take up to 2 years to heal",
+        "E. A vertical oblique fracture is considered more stable compared to a transverse fracture"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Fractures across the proximal pole and waist both carry a high risk of subsequent AVN. 80% of fractures occur across the waist, compared to 10% for each of the poles. Transverse/horizontal oblique fractures are relatively stable compared to vertical oblique fractures. Ref: Musculoskeletal Imaging: the Requisites, 3rd Ed, p. 144.",
+      "questionNumber": 38
+    },
+    {
+      "question": "Regarding giant cell tumours, which of the following statements is true?",
+      "options": [
+        "A. GCT usually regresses during pregnancy",
+        "B. It is a highly malignant lesion",
+        "C. Surgical resection is usually curative",
+        "D. The majority arise in the spine",
+        "E. Vertebral body involvement is more common than the posterior elements"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "GCTs are usually benign lesions. Malignancy occurs in 5-10% of cases and is usually secondary to previous radiation therapy. The majority of spinal lesions arise within the sacrum. Vertebral involvement accounts for only 7% of cases: thoracic spine is the most common location, followed by cervical and lumbar regions. They typically increase in size during pregnancy, thought to be due to hormonal influences. GCTs tend to be locally aggressive and complete surgical resection is uncommon; adjuvant radiotherapy is often administered. Recurrence occurs in 40-60%, and is suggested on plain film by the presence of new areas of osseous destruction. Ref: RITI 2 018 Painful scoliosis.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A patient presents with suspected transient patellar dislocation. MR imaging is performed. Which of the following MR imaging features would be least expected in this condition?",
+      "options": [
+        "A. Disruption of the medial retinaculum",
+        "B. Lateral patellar tilt",
+        "C. Elevation of the vastus medialis obliquus muscle",
+        "D. Bone contusion of the medial aspect of the medial femoral condyle",
+        "E. Bone contusion of the inferomedial aspect of the patella"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In transient patella dislocation, the patella dislocates laterally and then relocates. This causes impaction between the inferomedial aspect of the patella and the anterolateral aspect of the lateral femoral condyle, which results in bone contusions. In addition to the above signs, a haemarthrosis is also usually present. Ref: Radiology Review Manual, 6th Ed, p. 69.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A patient with joint pain has plain radiographs of the hands and spine. The differential diagnosis is considered to be between psoriatic arthropathy and rheumatoid arthritis. Which of the following features is more common in rheumatoid arthritis rather than psoriatic arthropathy?",
+      "options": [
+        "A. Phalangeal enthesophytes",
+        "B. Involvement of the distal interphalangeal joints",
+        "C. Fusiform soft tissue swelling of the digits",
+        "D. Asymmetric joint involvement",
+        "E. Involvement of the wrist joints"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The wrists are more commonly involved in rheumatoid arthritis. Ref: Musculoskeletal Imaging: the Requisites, 3rd Ed, p. 322.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A patient with Paget's disease has a series of plain radiographs. Which of the following is a feature of the active phase of the disease?",
+      "options": [
+        "A. Widened and coarsened trabeculation of the pelvic ring",
+        "B. 'Cotton wool' skull",
+        "C. 'Ivory vertebra'",
+        "D. Osteoporosis circumscripta",
+        "E. Splitting of the iliopectineal line"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The active phase is the osteolytic phase, also known as the 'hot' phase. Typical lesions include osteoporosis circumscripta of the skull (especially frontal and occipital bones) and well-defined, 'flame-shaped' radiolucencies of the long bones. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 590.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A CT is performed following major trauma. A Hangman's fracture is suspected. Which of the following features would be unusual with this diagnosis?",
+      "options": [
+        "A. Avulsion of the anteroinferior corner of C2",
+        "B. Posterior subluxation of C2 on C3",
+        "C. Bilateral pars fracture of C2",
+        "D. Prevertebral soft tissue swelling",
+        "E. Disruption of the C1-C2 spinolaminar line"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The Hangman's fracture is a traumatic bilateral neural arch fracture, most commonly of the pars, resulting from hyperextension. When subluxation occurs, it is more commonly an anterior, rather than posterior subluxation of C2 on C3. Ref: Musculoskeletal Imaging: the Requisites, 3rd Ed, p. 170.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 38 year old woman presents with a palpable lump in her thigh. Plain films show a lobulated ossified mass lying posterior to the femur with a connection to the cortex. The centre of the lesion is denser than the periphery. MRI shows a large associated soft tissue component. What is the likeliest diagnosis?",
+      "options": [
+        "A. Myositis ossificans",
+        "B. Osteochondroma",
+        "C. Parosteal osteosarcoma",
+        "D. Periosteal osteosarcoma",
+        "E. Extraosseous osteosarcoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Parosteal osteosarcomas have the best prognosis of all osteosarcomas. If no stalk can be clearly identified they can be distinguished from myositis ossificans by the relative density of the centre of the ossified part of the lesion. Ref: Radiology Review Manual, 6th Ed, p. 143.",
+      "questionNumber": 44
+    },
+    {
+      "question": "An MR arthrogram of the shoulder is performed in a patient with a known history of shoulder dislocation. Which of the following features would be more supportive of prior posterior, rather than anterior, glenohumeral dislocation?",
+      "options": [
+        "A. Hill-Sach's lesion",
+        "B. Anterior labral tear",
+        "C. Torn glenohumeral ligaments",
+        "D. Posterior capsule stripping",
+        "E. Bankart lesion"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Posterior dislocations produce posterior, rather than anterior, capsule stripping. Other evidence of a prior posterior dislocation include: a reverse Bankart lesion, a reverse Hill-Sach's lesions, or a posterior labral tear. Ref: Musculoskeletal Imaging: the Requisites, 3rd Ed, p. 99.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A child presents with bruising and a tibial fracture. The possibility of non accidental injury is raised. Which of the following statements with regards to NAI is incorrect?",
+      "options": [
+        "A. Metaphyseal 'corner' fractures are the commonest fracture type",
+        "B. Multiple fractures at different stages of healing is a highly specific sign",
+        "C. Skull fractures are seen in 20% of cases",
+        "D. Interhemispheric haemorrhage is the commonest site of intracranial haemorrhage",
+        "E. Exuberant callus formation is a feature"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Metaphyseal corner fractures are relatively specific for NAI, however overall they are less common than diaphyseal fractures. Subdural haemorrhage with an interhemispheric location is the commonest type of intracranial haemorrhage. Ref: Radiology Review Manual, 6th Ed, p. 52.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 40 year old man presents with heel pain. Lateral radiograph of the foot reveals a well defined 3 cm lesion located between the anterior and middle thirds of the calcaneus. The lesion is radiolucent with a thin rim of sclerosis and central calcification. What is the likely diagnosis?",
+      "options": [
+        "A. Desmoplastic fibroma",
+        "B. Giant cell tumour",
+        "C. Intraosseous lipoma",
+        "D. Osteoid osteoma",
+        "E. Unicameral bone cyst"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Intraosseous lipomas are rare bone tumours; they are often asymptomatic and present incidental, but can be associated with pain. The commonest locations are within the proximal femur (Ward's triangle) and in the area of the calcaneus described. In these areas there is a relative paucity of trabecular bone and it is thought that this leads to an 'overshoot' phenomenon during the transition of haematopoietic to fatty marrow, with the resultant formation of the lipoma. Central or ring calcification in a lucent lesion in this location of the calcaneus is said to be pathognomonic of an intraosseous lipoma and allows its distinction from a UBC. If clinical doubt persists MR imaging can be used for further clarification and to confirm the presence of fat. Ref: Radiographics (2004); 24: 1433-1466.",
+      "questionNumber": 47
+    },
+    {
+      "question": "Regarding osteoblastomas, which of the following is true?",
+      "options": [
+        "A. An expansile appearance on plain film implies malignancy",
+        "B. Matrix calcification is a common plain film feature",
+        "C. They result in scoliosis more commonly than osteoid osteoma",
+        "D. They rarely grow beyond 2 cm",
+        "E. They usually present in the 6th-7th decades"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Osteoblastomas are uncommon primary bone tumours (< 1 %). 90% occur in 2nd - 3rd decades, although cases have been documented up to 72 years. They are histologically similar to osteoid osteoma but less well organised and by definition larger (> 2 cm). The majority (30-40%) of cases occur in the spine, with a slight predominance for the posterior elements (55%). An expansile lesion in osteoblastoma is not typically associated with malignancy. Scoliosis can occur in both and is typically painful, but occurs more commonly in osteoid osteoma, where the scoliosis results from muscle spasm secondary to the inflammatory mediators produced. Osteoblastomas are not radiosensitive and surgical excision is performed in most cases, however, recurrence is seen in up to 50%. Ref: RITI 2 018 Painful scoliosis.",
+      "questionNumber": 48
+    },
+    {
+      "question": "The pelvic radiograph of a young woman reveals bilateral, symmetrical triangular areas of subchrondral sclerosis on the inferior aspect of the iliac side of the joint. The joint spaces are normal and the joint margin is well-defined. There is no evidence of bone or joint disease elsewhere. What is the most likely diagnosis?",
+      "options": [
+        "A. Osteitis condensans ilii",
+        "B. Infection",
+        "C. Osteoarthritis",
+        "D. Hyperparathyroidism",
+        "E. Alkaptonuria"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Osteitis condensans ilii produces this radiographic appearance, typically in young multiparous women. Possible differential diagnoses include: ankylosing spondylitis, rheumatoid arthritis (both would be associated with joint space changes) and Paget's disease. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 101.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 3 month old infant presents with tender, hard swellings over a number of bones. Radiographs reveal a cortical hyperostosis and marked, diffuse, symmetrical periosteal reaction of the clavicles, ribs and mandible. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Rickets",
+        "B. Caffey's disease",
+        "C. Hypothyroidism",
+        "D. Scurvy",
+        "E. Ulcerative colitis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The appearances are typical of Caffey's disease, also known as infantile cortical hyperostosis. Scurvy and rickets are unlikely to produce this picture in those < 6 months old. Ref: Aids to Radiological Differential Diagnosis, 4th Ed, p. 38.",
+      "questionNumber": 50
+    }
+  ]
+}
+

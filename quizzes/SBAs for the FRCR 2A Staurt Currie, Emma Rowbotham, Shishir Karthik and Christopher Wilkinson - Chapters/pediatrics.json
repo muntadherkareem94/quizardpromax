@@ -1,0 +1,788 @@
+
+{
+  "title": "Paediatric - Questions",
+  "questions": [
+    {
+      "question": "A ten year old boy complaining of generalised back pain is referred by his GP for a thoracic spine plain film which shows anterior vertebral body scalloping. Which of the following would be a cause of anterior vertebral body scalloping?",
+      "options": [
+        "a. Neurofibromatosis",
+        "b. Acromegaly",
+        "c. Achondroplasia",
+        "d. Ehlers–Danlos syndrome",
+        "e. Down’s syndrome"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Anterior vertebral body scalloping is seen in Down’s syndrome. Posterior scalloping is seen in syringomyelia, Marfan’s, Hurler’s, Morquio’s, osteogenesis imperfecta and communicating hydrocephalus. In Down’s syndrome there is also squaring of the vertebral bodies, and atlanto-axial subluxation occurs in approximately 25% of cases.\n\n(Ref: Dahnert p. 70)",
+      "questionNumber": 1
+    },
+    {
+      "question": "A ten day old baby is referred for a hip ultrasound as clinical examination has revealed a ‘clicky’ right hip. Which of the following parameters is reassuring for a normal hip joint?",
+      "options": [
+        "a. Alpha angle >60 ",
+        "b. Alpha angle <60 ",
+        "c. Beta angle >77 ",
+        "d. 25% coverage of the femoral head",
+        "e. Acetabular angle >30 "
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": ">60°AAlpha angle lpha angle should measure >60   in a normal hip. Acetabular angle >30   strongly suggests dysplasia. Beta angle should measure less than 77   . The alpha angle is the line between the straight edge of the ilium and the bony acetabular margin. The beta angle is the angle between the straight lateral edge of the ilium and the fibrocartilagenous acetabulum. Over 58% coverage of the femoral head is considered normal, 33–58% coverage is indeterminate and less than 33% is abnormal.\n\n(Ref: Dahnert p. 67)",
+      "questionNumber": 2
+    },
+    {
+      "question": "A two week old neonate presents with central cyanosis and respiratory distress. Plain chest radiograph reveals pulmonary plethora. Which is the most likely underlying congenital heart disease?",
+      "options": [
+        "a. VSD",
+        "b. Tetralogy of Fallot",
+        "c. PDA",
+        "d. Pulmonary stenosis",
+        "e. Total anomalous pulmonary venous return (TAPVC)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "VSD and PDA will both result in pulmonary plethora and distress, but are left-to-right shunts and acyanotic. Pulmonary stenosis results in pulmonary oligaemia and may or may not be cyanotic depending on the presence of an intracardiac defect with shunt reversal. Tetralogy of Fallot is a congenital cyanotic heart disease with pulmonary oligaemia unless associated with the development of aorto-pulmonary collaterals. Apart from TAPVC, the admixture lesions such as truncus arteriosus, tricuspid atresia, transposition of great vessels, single ventricle and common atrium are some other causes of cyanosis with pulmonary plethora.\n\n(Ref: Dahnert p. 613)",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 16 year old presents with recurrent pneumothoraces. Past history reveals the presence of a lytic lesion of the parietal bone with a tender soft-tissue mass. Which of the following features is most likely seen on HRCT?",
+      "options": [
+        "a. Evenly distributed smooth thin-walled cysts",
+        "b. Centrilobular nodules",
+        "c. Extensive paraseptal emphysema with bulla formation",
+        "d. Sparing of the apices",
+        "e. Cystic lesions along the course of the bronchial tree"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The patient had an eosinophilic granuloma and presented with recurrent pneumothoraces due to Langerhans’ cell histiocytosis, which is characterised by centrilobular nodules which cavitate, initially forming thick-walled and then thin-walled cysts. The fibrosis that follows typically involves the upper zones. Cystic lesions along the bronchial tree are a feature of cystic bronchiectasis.\n\n(Ref: Schmidt S et al. Extraosseous Langerhans cell histiocytosis in children. Radiographics 2008; 28: 707–726)",
+      "questionNumber": 4
+    },
+    {
+      "question": "A ten year old boy presents with a history of progressive gait abnormalities. Plain radiographs of the thoraco-lumbar spine show widening of the spinal canal at T8-L1. MRI demonstrates an eccentric, ill-defined, homogeneous intramedullary lesion which is hypointense to the cord on T1 and hyperintense on T2. There is patchy, irregular enhancement post-contrast. What is the most likely diagnosis?",
+      "options": [
+        "a. Lipoma",
+        "b. Ependymoma",
+        "c. Astrocytoma",
+        "d. Ganglioglioma",
+        "e. Haemangioblastoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Astrocytoma of the spinal cord is the most common intramedullary neoplasm in children. They most commonly occur in the thoracic region (thoracic 67%, cervical 49%, conus medullaris 3%). The most common presentation is with pain and sensory deficit but they can also present with motor and gait abnormalities. Plain radiographs may demonstrate scoliosis, bone erosion and widened interpedicular distance.\n\nOn MRI, the lesion is usually seen as an eccentric, homogeneous, extensive, ill-defined cord tumour that is iso- or hypointense to the cord on T1 and hyperintense in T2. There is patchy irregular gadolinium enhancement. Tumour cysts and syrinx are also common. Patients with low-grade astrocytomas have a 95% five-year survival.\n\nIt is often difficult to differentiate an astrocytoma from ependymoma of the spinal cord on imaging. In this case, the age of the patient, tumour location, tumour irregularity and eccentric position within the medullar favour astrocytoma.\n\n(Ref: Dahnert p. 213)",
+      "questionNumber": 5
+    },
+    {
+      "question": "A two year old girl presents with recurrent headaches, neck pain and vomiting. She is found to have kyphoscoliosis and café-au-lait spots. CT brain shows a mostly cystic mass within the right cerebellar hemisphere. There is some calcification. After contrast, there is enhancement of the cystic wall and strong enhancement of a mural nodule. The most likely diagnosis is:",
+      "options": [
+        "a. Haemangioblastoma",
+        "b. Medulloblastoma",
+        "c. Metastasis",
+        "d. Pilocytic astrocytoma",
+        "e. Arachnoid cyst"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Pilocytic astrocytoma is the most common paediatric glioma and accounts for approximately 85% of all cerebellar astrocytomas in children. Peak age is between birth and nine years old. (Over 80% of haemangioblastomas occur in adulthood.) They are associated with neurofibromatosis type 1 (café-au-lait spots and skeletal abnormalities).\n\nThe most common appearance is of a cyst with an intensely enhancing mural nodule (arachnoid cyst should be devoid of an enhancing nodule). They occasionally calcify (calcification is rare in haemangioblastomas).\n\nThey run a relatively benign clinical course and almost never recur following surgical excision. There is no malignant transformation to anaplastic form.\n\n(Ref: Dahnert p. 271)",
+      "questionNumber": 6
+    },
+    {
+      "question": "A neonate has an abdominal ultrasound following the finding of a palpable abdominal mass. The right kidney is normal. The left kidney is replaced by multiple cysts of varying size and shape. There is no communication between the cysts, which are separated by septae. Which of the following is the most likely diagnosis?",
+      "options": [
+        "a. Multilocular cystic renal tumour",
+        "b. Autosomal recessive polycystic kidney disease",
+        "c. Autosomal dominant polycystic kidney disease",
+        "d. Multicystic dysplastic kidney",
+        "e. Medullary sponge kidney"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "These features are highly suggestive of multicystic dysplastic kidney. The condition is invariably fatal if bilateral, but often asymptomatic if unilateral. It is the second commonest cause of a palpable abdominal mass in the neonate, second only to hydronephrosis. The key features are that no normal renal tissue is present, the cysts do not communicate with each other and they are separated by septae.\n\n(Ref: Dahnert p. 937)",
+      "questionNumber": 7
+    },
+    {
+      "question": "A three year old boy has an ultrasound and an abdominal CT scan following the discovery of a palpable abdominal mass. No other symptoms are present. A large abdominal mass measuring 9 cm in maximum cross-sectional dimensions is seen. Which one of the following features would favour a diagnosis of Wilms tumour rather than neuroblastoma?",
+      "options": [
+        "a. Calcification",
+        "b. Bone metastases",
+        "c. Lung metastases",
+        "d. Encasement of the major vessels",
+        "e. Displacement of the kidney"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Lung metastases are rare in neuroblastoma and are seen in only 10% of cases, whereas they are seen in 85% of metastatic Wilms tumours. Wilms tumours tend to displace rather than encase the vessels, and intrinsic mass effect, rather than displacement of the kidney, is seen. Calcification is seen in 90% of neuroblastomas but only 10% of Wilms tumours. Wilms tumours are the most common abdominal neoplasm in children between one and eight years of age. It typically presents with an asymptomatic abdominal mass but pain, haematuria and fever may be found. (Ref: Dahnert p. 940, p. 992)",
+      "questionNumber": 8
+    },
+    {
+      "question": "A ten year old boy presents with severe localised pain in the distal femur with an associated swelling. Blood films show a leucocytosis and anaemia. At the time of diagnosis he has both lung and bone metastases. The most likely diagnosis is:",
+      "options": [
+        "a. Osteosarcoma",
+        "b. Giant cell tumour",
+        "c. Lymphoma",
+        "d. Ewing’s sarcoma",
+        "e. Clear cell sarcoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ninety-five per cent present between 4 and 25 years of age. Sixty per cent occur in the long bones, mainly in the metadiaphysis and have a typical moth-eaten destructive appearance on plain film. Metastases to the lung, bone and regional lymph nodes are present in 11–30% of cases at the time of diagnosis.\n\n(Ref: Grainger & Allison pp. 1085–1086)",
+      "questionNumber": 9
+    },
+    {
+      "question": "A plain film taken of a five year old boy following a fall shows a fracture of the distal radius. The fracture runs through the physis and the metaphysis, but the epiphysis is not involved. The correct classification of this fracture is:",
+      "options": [
+        "a. Salter Harris I",
+        "b. Salter Harris II",
+        "c. Salter Harris III",
+        "d. Salter Harris IV",
+        "e. Greenstick fracture"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is the most common type of Salter Harris fracture. The Salter Harris classification is a widely accepted and useful classification system for describing epiphyseal plate injuries; these represent between 6 and 30% of all paediatric fractures. The most common site is the distal radius, followed by the phalanges of the hands and feet and the distal tibia.\n\n(Ref: Dahnert p. 84)",
+      "questionNumber": 10
+    },
+    {
+      "question": "A ten year old girl falls and injures her left elbow. No bony injury is demonstrated on plain radiographs. On interpretation of the plain radiographs, which one of the following ossification centres is the least likely to be present?",
+      "options": [
+        "a. Trochlear",
+        "b. Radial head",
+        "c. Medial epicondyle",
+        "d. Lateral epicondyle",
+        "e. Olecranon"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The lateral epicondyle is the last of the above structures around the elbow to ossify. The mean age for ossification of the lateral epicondyle is ten years. The sequential order of ossification starting with the earliest is capitellum, radial head, medial epicondyle, trochlear, olecranon and finally lateral epicondyle. The relevant ages are (in years) two, five, five, nine, nine and ten years respectively.\n\n(Ref: Cheng JC et al. A new look at the sequential development of elbow-ossification centers in children. J Pediatr Orthop 1998; 18: 161–167)",
+      "questionNumber": 11
+    },
+    {
+      "question": "A four year old girl presents with persistent left upper lobe pneumonia with a fingerlike opacity projecting from the hilum. The most likely diagnosis is:",
+      "options": [
+        "a. Bronchial atresia",
+        "b. Intralobar sequestration",
+        "c. Staphylococcal pneumonia",
+        "d. Congenital lobar emphysema",
+        "e. Bronchogenic cyst"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The site and features described are characteristic of bronchial atresia.\n\n(Refs: Dahnert p. 471; Yedururi S et al. Multimodality imaging of tracheobronchial disorders in children. Radiographics 2008; 28: e29)",
+      "questionNumber": 12
+    },
+    {
+      "question": "A five month old baby presents with failure to thrive and respiratory distress. Plain radiograph demonstrates a left basal homogenous opacity devoid of air bronchograms. Which of the following is least likely on further imaging?",
+      "options": [
+        "a. Radionuclide angiography does not demonstrate perfusion in the pulmonary phase",
+        "b. Invested in its own pleura",
+        "c. Co-existing anomalies are common",
+        "d. It is usually supplied by branches from the descending aorta",
+        "e. Commonly drains into the left atrium"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Extralobar sequestration is usually seen in early childhood and demonstrates all the above features, but the venous drainage is into the right atrium through systemic veins.\n\n(Ref: Konen E et al. Congenital pulmonary venolobar syndrome: spectrum of helical CT findings with emphasis on computerized reformatting. Radiographics 2003; 23: 1175–1184)",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 14 year old patient with Turner syndrome presents with severe headache. Clinical examination confirms upper limb hypertension and a murmur. Which of the following signs is likely on the plain films?",
+      "options": [
+        "a. Boot-shaped heart",
+        "b. Snowman sign",
+        "c. Figure-of-three sign",
+        "d. Egg-on-a-string sign",
+        "e. Scimitar sign"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The above mentioned are plain radiography signs of various congenital heart diseases. The condition described above is coarctation of the aorta. A boot-shaped heart is a feature of tetralogy of Fallot. Snowman sign or figure-of-eight sign is seen in supracardiac TAPVD. Scimitar sign is a feature of partial anomalous pulmonary venous return, and egg-on-astring sign is noted in TGA.\n\n(Ref: Ferguson EC et al. Classic imaging signs of congenital cardiovascular abnormalities. Radiographics 2007; 27: 1323–1334)",
+      "questionNumber": 14
+    },
+    {
+      "question": "An 11 year old boy undergoes investigation for a mass in his right orbit. CT shows a hypodense mass located in the upper temporal quadrant. The Hounsfield units are positive throughout the lesion. There is no calcification and the lesion does not enhance. There is adjacent scalloping of the lateral orbital wall. On MRI, the lesion is hypointense on T1 and hyperintense on T2, FLAIR and diffusion-weighted imaging. What is the most likely diagnosis?",
+      "options": [
+        "a. Orbital teratoma",
+        "b. Orbital pseudotumour",
+        "c. Conjunctival choristoma",
+        "d. Dermoid cyst",
+        "e. Epidermoid cyst"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Both epidermoid and dermoid cysts appear as unenhanced, well-circumscribed, low-density masses. Both can cause scalloping and sclerosis and even destruction of the adjacent bone. Epidermoids do not calcify and do not contain fat (negative Hounsfield units). The presence of calcification and/or fat is characteristic of dermoid cysts.\n\nDermoids and epidermoids have low signal on T1 (unless the former contains fat) and high signal on T2, FLAIR and diffusion-weighted imaging. Both may be found in several locations in the orbit, but most frequently superiorly and temporal. They are congenital cysts but many become evident in the second and third decades.\n\nTeratomas are evident at birth as grossly visible cystic orbital masses. They tend to affect girls, are unilateral and grow rapidly. Conjunctival choristomas (dermolipomas) are less dense than solid dermoids and contain more adipose tissue.\n\n(Ref: Som & Curtin p. 568)",
+      "questionNumber": 15
+    },
+    {
+      "question": "The mother of a three week old child notices a mass in her baby’s lower neck. The child is otherwise well. There is a history of normal pregnancy and the child was delivered by forceps. Ultrasound scan reveals homogeneous enlargement of the lower third of the right sternocleidomastoid muscle but no focal lesion is identified. T2-weighted MRI shows diffuse abnormal high signal intensity over the same area. The most likely diagnosis is:",
+      "options": [
+        "a. Haematoma",
+        "b. Branchial cleft cyst",
+        "c. Fibromatosis colli",
+        "d. Neuroblastoma",
+        "e. Cystic hygroma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a rare form of infantile fibromatosis that occurs solely within the sternocleidomastoid muscle. In the vast majority it is associated with birth trauma (e.g. forceps delivery). This is thought to lead to compartment syndrome, pressure necrosis and secondary fibrosis of the muscle. It usually locates to the lower third of the muscle, between the sternal and clavicular heads, and is usually unilateral.\n\nUltrasound may reveal a well- or ill-defined mass or may just show homogeneous muscle enlargement. In approximately two-thirds of individuals, the abnormality spontaneously regresses by the age of two. Expected ultrasonographic appearances of a haematoma include a heterogeneous mass of mixed cystic and solid components.\n\n(Ref: Dahnert p. 385)",
+      "questionNumber": 16
+    },
+    {
+      "question": "A three year old boy presents with headaches and drowsiness. Examination reveals papilloedema. CT brain shows hydrocephalus and a mildly hyperdense homogeneous mass at the trigone of the left lateral ventricle. There is intense homogeneous enhancement post-contrast. On MRI the lesion is slightly hyperintense on T1 and slightly hypointense on T2-weighted imaging relative to white matter. Gadolinium injection confirms an intraventricular enhancing tumour island. The most likely diagnosis is:",
+      "options": [
+        "a. Choroid plexus papilloma",
+        "b. Intraventricular meningioma",
+        "c. Ependymoma",
+        "d. Cavernous angioma",
+        "e. Pilocytic astrocytoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Eighty-six per cent of choroid plexus papillomas occur below the age of five years and they represent approximately 65% of choroid tumours. Large aggregation of choroid produces CSF at an abnormal rate. This CSF overproduction contributes to hydrocephalus.\n\nThe most common location in children is the trigone of the lateral ventricle, the third ventricle is unusual and the fourth ventricle and cerebellopontine angle are more common in adults.\n\nThe tumour shows a smooth lobulated border and small calcifications are common. There is intense homogeneous enhancement. Approximately 5% undergo malignant transformation to choroid plexus carcinoma.\n\nMeningiomas are the most common trigonal intraventricular mass in adulthood. They rarely occur under the age of 20.\n\nCavernous haemangiomas tend to occur in the third to sixth decades and are located in the subcortical cerebrum.\n\n(Ref: Dahnert p. 277)",
+      "questionNumber": 17
+    },
+    {
+      "question": "An eight month old girl is diagnosed with neuroblastoma following the finding of an abdominal mass. At CT the tumour is found to arise from the right suprarenal region and does not cross the midline. There are liver metastases, and bone marrow aspirates are positive for tumour. However, there is no evidence of skeletal metastases on plain films. What is the correct stage of the tumour?",
+      "options": [
+        "a. Stage I",
+        "b. Stage II",
+        "c. Stage III",
+        "d. Stage IV",
+        "e. Stage IVs"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The tumour should be staged as stage IVs. This stage refers specifically to patients less than one year of age with no crossing of the midline and disease confined to the liver, skin and bone marrow without radiographically evident skeletal metastases. It confers a good prognosis. Stage I is tumour confined to the organ of origin, stage II includes regional spread not crossing the midline, stage III is extension across the midline and stage IV includes metastatic disease. (Ref: Grainger & Allison p. 1648)",
+      "questionNumber": 18
+    },
+    {
+      "question": "A two year old boy presents with failure to thrive and a left-sided abdominal mass is found. An ultrasound scan reveals a left-sided hydronephrosis. The right kidney is normal. Which one of the following is most likely to be found as the underlying cause?",
+      "options": [
+        "a. Posterior urethral valve",
+        "b. Pelvic–ureteric junction obstruction",
+        "c. Urethral diverticulum",
+        "d. Ureteric calculus",
+        "e. Ureterocoele"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hydronephrosis is a common cause of a palpable abdominal mass in children. The most common cause of hydronephrosis is pelvic–ureteric junction obstruction, followed by posterior urethral valves and ectopic ureterocoele. Pelvic–ureteric junction obstruction is usually due to a functional abnormality of the ureteric musculature and is found more commonly on the left than the right.\n\n(Ref: Grainger & Allison p. 1541)",
+      "questionNumber": 19
+    },
+    {
+      "question": "A neonatal boy has a renal ultrasound performed for the investigation of urinary obstructive symptoms. The ultrasound shows a distended urinary bladder with bilateral hydronephrosis. Which one of the following is the most likely underlying pathology?",
+      "options": [
+        "a. Posterior urethral valve",
+        "b. Neurogenic bladder",
+        "c. Horseshoe kidney",
+        "d. Ectopic ureterocoeles",
+        "e. Urethral diverticulum"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Posterior urethral valve is a congenital disorder characterised by a thick mucosal fold located in the posterior urethra. It is the most common cause of bilateral urinary tract obstruction in boys. It is most commonly discovered in the neonatal period, but very occasionally may present into adulthood. Diagnosis is usually made with ultrasound and surgical treatment is indicated.\n\n(Ref: Dahnert p. 947)",
+      "questionNumber": 20
+    },
+    {
+      "question": "In a neonatal lumbar spine film showing a ‘bone-within-bone’ appearance, which of the following would NOT be a plausible explanation?",
+      "options": [
+        "a. Osteopetrosis",
+        "b. Normal variant",
+        "c. Congenital syphilis",
+        "d. Sickle cell anaemia",
+        "e. Achondroplasia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Achondroplasia does not cause a bone-within-bone appearance. This phenomenon can, however, be seen as a normal variant within the neonatal thoracic and lumbar spine. As well as the above conditions, a bone-within-bone appearance is also seen in thalassaemia, acromegaly, Paget’s disease, rickets, scurvy, hypothyroidism, hypoparathyroidism, Gaucher’s disease and post-radiation, amongst others.\n\n(Ref: Dahnert p. 187)",
+      "questionNumber": 21
+    },
+    {
+      "question": "A six year old boy presents to A&E with pain in the right hip and knee, limitation of movement and a limp. Plain radiographs show flattening of the capital femoral epiphysis and enlargement of the medial joint space. Blood tests are normal. Which of the following is the most likely diagnosis?",
+      "options": [
+        "a. Legg–Calve–Perthes disease",
+        "b. Transient synovitis",
+        "c. Osteomyelitis",
+        "d. Slipped upper femoral epiphysis",
+        "e. Developmental dysplasia of the hip"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "These features suggest Legg–Calve–Perthes disease; this is idiopathic avascular necrosis of the femoral head in children. The peak age group is between four and eight years. The earliest visible signs on plain film include small femoral epiphysis, sclerosis of the epiphysis and widening of the joint space due to thickening of the cartilage. A frog-leg lateral view is useful and may be the only view in which some of the findings are seen.\n\n(Ref: Dahnert p. 51)",
+      "questionNumber": 22
+    },
+    {
+      "question": "A two year old boy is brought to the A&E department with a history of falling down the stairs. There is some concern regarding the delay in presentation and the consistency of the history. Bruising is noted to various parts of the child’s body. A skeletal survey is performed as there is concern regarding non-accidental injury. Which of the following findings would be the most concerning for non-accidental injury?",
+      "options": [
+        "a. Salter Harris II fracture to the distal radius",
+        "b. Spiral fracture of the tibia",
+        "c. Scapula fracture",
+        "d. Linear parietal skull fracture",
+        "e. Avulsion of the medial epicondyle"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A scapula fracture implies a high-energy injury and would be concerning for non-accidental injury. Posterior rib fractures, particularly if of differing ages, are also specific for nonaccidental injury. Toddlers who are just beginning to mobilise independently may sustain a spiral fracture of the tibia, sometimes known as a ‘toddler’s fracture’. Salter Harris fractures are common in children and are most commonly seen at the distal radius and the phalanges of the hands and feet.\n\n(Ref: Carty et al. ch. 8)",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 12 year old girl with developmental delay undergoes a skeletal radiograph for assessment of bone age. Plain films of her hands show granular fragmented epiphyses, and bone age is calculated as 9.5 years. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Pseudohypoparathyroidism",
+        "b. Hypothyroidism",
+        "c. McCune–Albright syndrome",
+        "d. Hyperthyroidism",
+        "e. Acrodysostosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hypothyroidism causes markedly retarded skeletal maturation – often up to five or more standard deviations below the mean. Other common causes of delayed bone age include hypopituitarism, hypogonadism (Turner’s syndrome), Cushing’s disease, diabetes mellitus, rickets and malnutrition.\n\nThe remainder of the conditions listed cause acceleration of skeletal maturity. McCuneAlbright syndrome is characterised by polyostotic fibrous dysplasia and precocious puberty. (Ref: Chapman & Nakielny 2003 pp. 3–4)",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 14 year old with thalassaemia presents with mild breathlessness. The only abnormality on the chest radiograph is a well-rounded opacity without any air bronchograms. The likely location would be:",
+      "options": [
+        "a. Perihilar",
+        "b. Anterior mediastinal",
+        "c. Abutting the chest wall",
+        "d. Paravertebral",
+        "e. Apical"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Extramedullary haemopoiesis can present as uni/bilateral rounded masses in the lower paravertebral region commonly between T8 and T12.\n\n(Ref: Dahnert p. 76)",
+      "questionNumber": 25
+    },
+    {
+      "question": "A four year old child with a known malignancy presents with multiple pulmonary metastases. Which of the following is the most likely radiological description of the primary lesion?",
+      "options": [
+        "a. CT of the abdomen demonstrating a large mass in the left flank displacing the kidney inferiorly with stippled calcification",
+        "b. CT of the abdomen demonstrating a large low-attenuation hepatic mass pre-contrast which demonstrates early and avid enhancement post-contrast",
+        "c. CT of the abdomen demonstrating a low-attenuation hepatic mass with rim enhancement",
+        "d. Plain radiograph of the right femur revealing a moth-eaten permeative lesion",
+        "e. A well-circumscribed heterogeneous mass in the left kidney which enhances to a lesser degree than the kidney"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Neuroblastoma (a) presents earlier and is more likely to metastasise to the liver, whilst this is the right age for Wilms tumour (e) to metastasise to the lung. Haemangioendothelioma (b) presents in early infancy with heart failure. Hepatoblastoma (c) also presents earlier and is less common than Wilms tumour, although it does metastasise to the lung.\n\n(Ref: Dahnert p. 992)",
+      "questionNumber": 26
+    },
+    {
+      "question": "A neonate presents with respiratory distress a week after birth. Plain radiograph demonstrates a hazy opacity in the left upper zone. Follow-up radiograph a few days later demonstrates clearing up of the opacity noted previously and a hyperlucent underlying lung with evidence of a contralateral shift. Which of the following is not a likely cause for the findings?",
+      "options": [
+        "a. Bronchial dysplasia",
+        "b. Inspissated mucous",
+        "c. Patent ductus arteriosus",
+        "d. Anomalous origin of the right subclavian artery",
+        "e. Bronchial web"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The features described are those of congenital lobar emphysema, which may result from all the above apart from anomalous origin of the right subclavian artery, which usually does not result in tracheobronchial indentation.\n\n(Ref: Dahnert p. 478)",
+      "questionNumber": 27
+    },
+    {
+      "question": "A neonate presenting with respiratory distress and a scaphoid abdomen is diagnosed with congenital diaphragmatic hernia following imaging. Which of the following is true?",
+      "options": [
+        "a. Right-sided hernia is frequently fatal",
+        "b. The anterior hernias are larger",
+        "c. The stomach is the commonest viscera to herniate",
+        "d. Morgagni hernia present earlier",
+        "e. Early intrauterine diagnosis is associated with an improved prognosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Whilst congenital diaphragmatic hernias are commoner on the left, right-sided ones are frequently fatal. Anterior (Morgagni) hernia is usually smaller and presents in childhood, whilst posterior (Bochdalek) hernia is larger and presents early. Small bowel is the commonest viscera to herniate. Intrauterine diagnosis before 25 weeks is an indicator of poor outcome.\n\n(Ref: Dahnert p. 489)",
+      "questionNumber": 28
+    },
+    {
+      "question": "A two month old child is brought to hospital as his parents have noticed he has become more floppy over the preceding weeks. Examination reveals marked hypotonia, head lag and increased head circumference (>98th percentile). CT brain shows low-density white matter. T2-weighted MRI demonstrates diffuse, symmetric increased signal intensity throughout the white matter. There is relative sparing of the internal and external capsules and also the corpus callosum. Both globus pallidi show high signal intensity but there is relative sparing of the putamen and caudate nucleus. Which of the following would fail to confirm the diagnosis?",
+      "options": [
+        "a. Brain biopsy",
+        "b. Proton MR spectroscopy",
+        "c. Quantitative urine study",
+        "d. Fibroblast cultures",
+        "e. Diffusion-weighted MRI"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The history and MRI findings are suggestive of Canavan disease. This is an autosomal recessive disorder due to deficiency of the enzyme aspartoacylase. Accumulation of N-acetylaspartic acid (NAA) in the brain pursues and leads to leukodystrophy.\n\nHistology reveals soft and gelatinous white matter. Change is most prominent in the deeper cortex and subcortical white matter, with relative sparing of the deeper white matter and internal capsule.\n\nOn T2-weighted MRI, the globus pallidus is always of high signal intensity, with frequent involvement of the thalamus but with relative sparing of the caudate and putamen.\n\nThe main differential diagnosis on imaging is Alexander disease, a rare disorder which shows no pattern of inheritance. Both conditions are leukodystrophies with macrocrania. Brain biopsy can be used to differentiate.\n\nDiagnosis of Canavan disease is also possible with proton MR spectroscopy which shows a characteristic increase in the NAA peak. Levels of NAA are also abnormally high in urine and there will be a deficiency of aspartoacyclase in cultured skin fibroblasts. Aspartoacyclase is not present in plasma or blood cells. Diffusion-weighted MRI will add little to the information already obtained with T2-weighted imaging.\n\n(Ref: Atlas pp. 549–553)",
+      "questionNumber": 29
+    },
+    {
+      "question": "An 18 month old boy is investigated for hyperactivity and laughing fits. MRI demonstrates a lesion arising near the floor of the third ventricle, posterior to the pituitary infundibulum. It projects into the suprasellar cistern. The lesion is isointense to grey matter on T1- and T2-weighted imaging and does not enhance following gadolinium administration. The most likely diagnosis is:",
+      "options": [
+        "a. Germinoma",
+        "b. Pituitary adenoma",
+        "c. Hypothalamic hamartoma",
+        "d. Rathke’s cleft cyst",
+        "e. Langerhans’ cell histiocytosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hypothalamic hamartoma is not a true tumour by definition. It presents either with precocious puberty or with gelastic seizures (paroxysms of inappropriate emotional outbursts, usually laughing).\n\nThe lesion is well defined, arising from the floor of the third ventricle/around the tuber cinereum of the thalamus and extending inferiorly into the suprasellar cistern or interpeduncular cistern. The imaging characteristics described are typical. They do not enhance. (Ref: Grainger & Allison p. 1682)",
+      "questionNumber": 30
+    },
+    {
+      "question": "A ten year old girl attends the emergency department after a head injury. You are requested to perform an acute CT scan of her head. According to NICE guidelines for head injury, which one of the following criteria alone does not warrant an acute head CT scan?",
+      "options": [
+        "a. Retrograde amnesia lasting >5 minutes",
+        "b. Antegrade amnesia lasting >5 minutes",
+        "c. More than one episode of vomiting",
+        "d. CSF otorrhea",
+        "e. Abnormal drowsiness"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "NICE head injury guidelines for children (under 16) advocate CT head imaging if there are three or more discrete episodes of vomiting. All of the other criteria listed are requisites for acute CT head scanning. CSF otorrhoea implies basal skull fracture. Other criteria include:\n\n• When the head injury occurs as a result of a dangerous mechanism (high-speed road traffic accident either as a pedestrian, cyclist or vehicle occupant, fall from over three metres, high speed injury from a projectile or an object).\n\n• Age > one year; GCS <14 on assessment in the emergency department.\n\n• Age > one year: GCS (paediatric) <15 on assessment in the emergency department.\n\n(Ref: National Institute for Health and Clinical Excellence. Guidelines for the Management of Head Injury. September 2007. http://guidance.nice.org.uk/CG56)",
+      "questionNumber": 31
+    },
+    {
+      "question": "A three year old boy presents with seizures and headaches. CT head shows a hypoattenuating mass lying superior to the lateral ventricles, within the frontal region. It displays negative Hounsfield units and peripheral calcification but does not enhance. There is partial agenesis of the corpus callosum. MRI of the brain demonstrates a pericallosal tumour which is hyperintense on T1 and less hyperintense on T2-weighted imaging. What is the most likely diagnosis?",
+      "options": [
+        "a. Dermoid tumour",
+        "b. Lipoma",
+        "c. Teratoma",
+        "d. Neurocytoma",
+        "e. Ependymoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is a congenital tumour that results from abnormal differentiation of the meninx primitiva – that which eventually differentiates into pia, arachnoid and internal dura mater.\n\nThey account for less than 1% of brain tumours but are associated with congenital abnormalities, most commonly dysgenesis of the corpus callosum to some degree. This is particularly likely when the lipoma is located anteriorly rather than posteriorly.\n\nOn CT they are well-circumscribed masses with negative Hounsfield units and occasional calcification, and they do not enhance. Characteristically, they are T1 hyperintense and slightly less hyperintense on T2.\n\nDermoids and teratomas can show similar characteristics, with fat and calcium content. Teratomas may enhance, although dermoids do not. However, the lesion is much more likely to be a lipoma given its position (dermoids tend to be extra-axial (spinal canal); teratomas are much more commonly found around the pineal region, floor of the third ventricle, posterior fossa and spine) and given the association with corpus callosum abnormalities.\n\n(Ref: Dahnert p. 303)",
+      "questionNumber": 32
+    },
+    {
+      "question": "A neonate is found to have hypotonic abdominal wall musculature, and further investigations reveal bowel malrotation and cryptorchidism. Which of the following conditions is most likely?",
+      "options": [
+        "a. Prune belly syndrome",
+        "b. Zellweger syndrome",
+        "c. Wolman disease",
+        "d. Meckel–Gruber syndrome",
+        "e. Wunderlich syndrome"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Prune belly syndrome is a non-hereditary disorder occurring in males with a triad of abdominal wall muscular hypoplasia, bilateral cryptorchidism and distended nonobstructed ureters. Other associations include malrotation of the gastro-intestinal tract, intestinal atresia, cystic renal dysplasia, vesico–ureteric reflux, pulmonary hypoplasia and cardiac anomalies (including PDA, tetralogy of Fallot and VSD).\n\n(Ref: Dahnert p. 949)",
+      "questionNumber": 33
+    },
+    {
+      "question": "A two month old boy born prematurely has a CT abdomen following macroscopic haematuria and a palpable abdominal mass. A large intrarenal mass is seen, which replaces the majority of the renal parenchyma, involves the renal sinus and does not display any venous extension, collecting system involvement or calcification. Which one of the following diagnoses is most likely?",
+      "options": [
+        "a. Metanephric adenoma",
+        "b. Mesoblastic nephroma",
+        "c. Wilms tumour",
+        "d. Nephroblastomatosis",
+        "e. Neuroblastoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Mesoblastic nephroma is the most likely diagnosis. This is the most common solid renal neoplasm in the neonate. Although definitive diagnosis with CT or ultrasound is difficult, certain features make the diagnosis more likely; it displays infiltrative growth without involvement of the vascular structures or collecting system (differentiating it from Wilms tumour) and only very rarely calcifies (differentiating it from neuroblastoma).\n\n(Refs: Dahnert p. 936; Grainger & Allison p. 1560)",
+      "questionNumber": 34
+    },
+    {
+      "question": "A premature neonate presents with bilious vomiting in the first few days of life. A plain abdominal X-ray shows prominent gas-fluid levels in the duodenal bulb and in the gastric fundus. There is absence of gas in the remainder of the small and large bowel. Which one of the following diagnoses is most likely?",
+      "options": [
+        "a. Choledochal cyst",
+        "b. Annular pancreas",
+        "c. Duodenal atresia",
+        "d. Duodenal duplication cyst",
+        "e. Ladd bands"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Duodenal atresia typically presents in the first few days of life with bilious vomiting, and is caused by failure of recanalisation of the duodenal lumen in the fetus. It is associated with Down’s syndrome, congenital heart disease and other gastro-intestinal disorders such as malrotation, annular pancreas and biliary atresia. The characteristic feature on abdominal X-ray is the double-bubble sign with dilatation of the stomach and duodenal cap.\n\n(Ref: Grainger & Allison p. 1492)",
+      "questionNumber": 35
+    },
+    {
+      "question": "A young boy presents with abdominal pain and vomiting. Ultrasound of the abdomen confirms ileocolic intussusception. Which one of the following features is associated with a good chance of successful hydrostatic reduction?",
+      "options": [
+        "a. Symptom history of greater than 48 hours",
+        "b. Small bowel obstruction",
+        "c. Presence of blood flow within the intussusceptum",
+        "d. Passage of blood per rectum",
+        "e. Age less than three months"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The following criteria are associated with a lower rate of successful enema reduction: age less than three months or greater than five years, long duration of symptoms, passage of blood per rectum, significant dehydration, obstruction of the small intestine and visualisation of the dissection sign during enema therapy.\n\n(Ref: Del Pozo G et al. Intussusception in children: current concepts in diagnosis and enema reduction. Radiographics 1999; 19: 299–319)",
+      "questionNumber": 36
+    },
+    {
+      "question": "A seven year old boy presents to the minor injuries unit following a minor fall five weeks earlier. He complains of pain around the left elbow joint and has a limited range of movement. Blood tests are normal. Plain film of the elbow shows a small joint effusion and fragmentation of the capitellar epiphysis. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Osteochondrosis of the capitellum (Panner’s disease)",
+        "b. Osteomyelitis",
+        "c. Osteochondritis dessicans",
+        "d. Juvenile chronic arthritis",
+        "e. Osteochondral capitellum fracture"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The most likely cause is osteochondritis of the capitellum. The blood supply to the capitellum is relatively fragile and osteochondritis usually occurs following a minor injury. The condition usually resolves spontaneously with no long-term complications. Osteochondritis dessicans tends to occur in adolescents and often produces a loose body within the joint causing symptoms of locking.\n\n(Ref: Baumgarten TE et al. The arthroscopic classification and treatment of osteochondritis dissecans of the capitellum. Am J Sports Med 1998; 26: 520–523)",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 13 year old girl is noted to have a curvature to her spine. Plain radiographs confirm the presence of a scoliosis with a convexity to the right. The most likely cause of this would be:",
+      "options": [
+        "a. Neurofibromatosis",
+        "b. Idiopathic",
+        "c. Segmental abnormality",
+        "d. Osteoid osteoma",
+        "e. Infection"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The Scoliosis Research Society has defined scoliosis as a lateral curvature of the spine of greater than 10   . It is idiopathic in 70% of cases. The majority of children who present with idiopathic scoliosis do so in adolescence. There is a strong hereditary component to the idiopathic form. Congenital scoliosis is usually associated with vertebral anomalies such as block vertebrae or butterfly vertebrae. The magnitude of the curve is measured using the ‘Cobb’ angle, which can be determined on an AP plain film of the spine.\n\n(Ref: Grainger & Allison p. 1593)",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 12 year old boy attends A&E after falling off his bike. He complains of pain in the right hand. Plain radiographs show no bony injury. However, a small well-rounded lesion is seen in the proximal phalanx of the index finger. This has a ground glass appearance and contains dystrophic calcifications. There is no cortical breakthrough or periosteal reaction. The most likely cause of this lesion is:",
+      "options": [
+        "a. Simple bone cyst",
+        "b. Aneurysmal bone cyst",
+        "c. Enchondroma",
+        "d. Epidermoid inclusion cyst",
+        "e. Fibrous dysplasia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The most common location of these benign lesions is the tubular bones of the wrist and hands, and they are usually asymptomatic and therefore diagnosed incidentally. Of the other lesions mentioned, ABC, simple bone cyst and fibrous dysplasia are rare in the hands. An epidermoid inclusion cyst is most likely to occur at the distal phalanx.\n\n(Ref: Dahnert p. 73)",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 15 year old girl referred for a chest radiograph demonstrates a large well-rounded mediastinal mass. CT suggests a teratoma. Which of the following is true?",
+      "options": [
+        "a. They are often inseparable from the thymus",
+        "b. They are always anterior mediastinal",
+        "c. Rim enhancement indicates malignancy",
+        "d. A fat-fluid level is a common and specific sign",
+        "e. Homogenous soft-tissue density precludes a diagnosis of teratoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Mature teratoma can be seen in the posterior mediastinum and may demonstrate rim enhancement. A fat-fluid level is a specific sign but is uncommon. They may occasionally have a homogenous soft-tissue appearance and be indistinguishable from lymphoma. (Ref: Dahnert p. 534)",
+      "questionNumber": 40
+    },
+    {
+      "question": "A seven year old girl with repeated chest infections and chronic cough presents with another episode of acute exacerbation. She is known to have raised sodium and chloride in her sweat. Which of the following features is least likely on an HRCT of her chest?",
+      "options": [
+        "a. Cylindrical bronchiectasis",
+        "b. Centrilobular emphysema",
+        "c. Segmental/subsegmental atelectasis",
+        "d. Branching intrabronchial soft tissue",
+        "e. Hilar lymphadenopathy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All the features described are of cystic fibrosis except centrilobular emphysema. They usually develop paraseptal emphysema.\n\n(Ref: Dahnert p. 492)",
+      "questionNumber": 41
+    },
+    {
+      "question": "An abdominal CT in a neonate with major congenital abnormalities demonstrates a large central liver and absence of spleen. Which of the following features is likely on chest CT?",
+      "options": [
+        "a. Absence of the minor fissure on the right",
+        "b. Hyparterial bronchus on the right",
+        "c. Presence of three lobes on the left",
+        "d. Tubular appendages bilaterally",
+        "e. Absence of SVC"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The neonate has heterotaxy with right atrial isomerism, which is associated with bilateral trilobed lungs, and both atrial appendages are short and broad-based. It is also usually associated with bilateral SVC and bilateral eparterial bronchus.\n\n(Ref: Dahnert p. 638)",
+      "questionNumber": 42
+    },
+    {
+      "question": "A teenage boy with a history of nasal speech is investigated for recurrent severe epistaxis. The ear, nose and throat surgeon suggests the possibility of a juvenile angiofibroma. Which of the following CT findings would you consider typical for this lesion?",
+      "options": [
+        "a. A highly vascular nasal mass causing widening of the pterygopalatine fissure",
+        "b. A relatively avascular fibrous nasal mass centred over Little’s area",
+        "c. A vascular mass centred over the pterygopalatine fossa best demonstrated on delayed imaging",
+        "d. A fibrous mass extending posteriorly into the middle cranial fossa with relatively little bone erosion",
+        "e. A centrally located, highly vascular mass causing extensive septal destruction"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Juvenile angiofibromas are the most common benign nasopharyngeal tumour. They occur almost exclusively in teenage males. In most cases CT allows accurate diagnosis, although MRI may be used pre-operatively to assess soft-tissue involvement. The tumours typically start in the pterygopalatine fossa and cause local bone erosion. On CT, the presence of a nasal mass and a widened pterygopalatine fissure is pathognomonic of the condition. The tumour may invade the sphenoid sinus, the middle cranial fossa (via the superior orbital fissure), the orbit (via the inferior orbital fissure), the infratemporal fossa, or extend through the sphenopalatine foramen.\n\nThe tumour may be very fibrous but tends to be highly vascular such that it only enhances immediately after bolus injection. Biopsy is therefore contraindicated. Angiography is not required to obtain the diagnosis but may be utilised for pre-operative planning or during therapeutic embolisation.\n\n(Refs: Dahnert p. 387; Grainger & Allison p. 1419; Som & Curtin p. 1579)",
+      "questionNumber": 43
+    },
+    {
+      "question": "A nine month old presents with leukokoria. Which finding would favour a diagnosis of persistent hyperplastic primary vitreous (PHPV) rather than retinoblastoma (RB)?",
+      "options": [
+        "a. Calcification",
+        "b. Optic nerve enlargement",
+        "c. Retinal detachment",
+        "d. Microphthalmia",
+        "e. Dense vitreous on CT"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Primary vitreous normally involutes by the sixth fetal month, but occasionally persists and undergoes hyperplasia. It is the second most common cause of unilateral leukokoria behind retinoblastoma. It may be bilateral as a part of congenital syndromes such as Norrie disease.\n\nKey imaging findings are micropthalmia (small hypoplastic globe) with an enhancing central soft-tissue band extending from the lens (retrolental) through the vitreous body to the back of the orbit (i.e. following Cloquet’s canal). Calcifications are not a feature (cf retinoblastoma – the most common cause of orbital calcifications). Both may show a hyperechoic focus on ultrasound and a dense vitreous on CT.\n\nPHPV is associated with a small optic nerve whereas retinoblastoma may show optic nerve enlargement due to tumour extension and may also demonstrate macropthalmia.\n(Refs: Dahnert p. 350; Grainger & Allison p. 1394)",
+      "questionNumber": 44
+    },
+    {
+      "question": "A six year old boy is investigated for refractory complex partial seizures. CT demonstrates a well-defined, hypodense lesion located in the cortex of the temporal lobe. There is underlying bone remodelling but no calcification. On MRI the lesion demonstrates high signal on T2 and predominantly low signal on T1-weighted imaging. There is no surrounding oedema, minimal mass effect and no contrast enhancement. The most likely diagnosis is:",
+      "options": [
+        "a. Glioblastoma multiforme",
+        "b. Dysembryoblastic neuroepithelial tumour (DNET)",
+        "c. Primitive neuroectodermal tumour (PNET)",
+        "d. Cavernous haemangiomas",
+        "e. Ependymoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "DNETs are benign tumours of neuroepithelial origin which arise from the cortical/deep grey matter. They are preferentially located supratentorially (temporal 62%, frontal 31%).\n\nCT demonstrates a hypoattenuating mass and there may be thinning and remodelling of the underlying inner table reflecting the slow growth of the tumour.\n\nOn MRI they are hypointense on T1, hyperintense on T2 and small intratumoural cysts may be present to cause a characteristic ‘bubbly’ appearance. There is minimal mass effect and no associated vasogenic oedema. A third of lesions show calcification and most tumours do not enhance. If present, the enhancement is faint and patchy.\n\nGangliogliomas and cavernous haemangiomas are other tumours which may cause epilepsy in children. Cavernous haemangiomas are typically dense on CT and commonly calcify. PNETs have a tendency for necrosis, cyst formation and calcification. They also tend to be hyperdense on CT due to high nuclear to cytoplasmic ratio.\n\n(Refs: Dahnert p. 283; Grainger & Allison p. 1279, p. 1684)",
+      "questionNumber": 45
+    },
+    {
+      "question": "A three year old boy is referred for a Tc-99m pertechnetate scan following recurrent painless gastro-intestinal bleeds. A Meckel’s diverticulum is suspected. Which one of the following may give a false negative result?",
+      "options": [
+        "a. Recent barium investigation",
+        "b. Intussusception",
+        "c. Urinary tract obstruction",
+        "d. Acute appendicitis",
+        "e. Anterior myelomeningocoele"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Prior to adolescence a Tc-99m pertechnetate scan has a high pick-up rate for a Meckel’s diverticulum. This declines with increasing age as the test relies on the presence of ectopic gastric mucosa, which is less likely to be present in someone asymptomatic throughout childhood. A false negative result is most commonly due to insufficient mass of ectopic gastric mucosa within the Meckel’s diverticulum, but may also be seen with barium from recent investigation attenuating the gamma radiation, and dilution of intraluminal activity due to rapid bowel transit.\n\n(Ref: Thurley PD et al. Radiological features of Meckel’s diverticulum and its complications. Clin Radiol 2009; 64: 109–118)",
+      "questionNumber": 46
+    },
+    {
+      "question": "At a routine 20-week obstetric ultrasound scan, polyhydramnios with multiple foci of scattered calcifications are found throughout the fetal abdomen in between bowel loops. Which one of the following is most likely to be the underlying cause?",
+      "options": [
+        "a. Mesenteric ischaemia",
+        "b. Meconium peritonitis",
+        "c. Meconium plug syndrome",
+        "d. Necrotising enterocolitis",
+        "e. Gastroschisis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "These features are typical of meconium peritonitis. This is a chemical peritonitis secondary to bowel perforation in utero. The intraperitoneal meconium characteristically calcifies within 24 hours of perforation. Other features seen on ultrasound include fetal ascites, polyhydramnios and bowel dilatation.\n\n(Ref: Chapman & Nakielny 2003 p. 221; Grainger & Allison p. 1498)",
+      "questionNumber": 47
+    },
+    {
+      "question": "A neonate presents with abdominal distension, vomiting and failure to pass meconium. A water-soluble contrast enema is performed and shows a narrow rectum with a cone-shaped transition zone to a dilated, more proximal bowel. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Colonic atresia",
+        "b. Hirschsprung’s disease",
+        "c. Meconium ileus",
+        "d. Cystic fibrosis",
+        "e. Functional immaturity of the colon"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "These features are typical of Hirschsprung’s disease. This is caused by absence of parasympathetic ganglion cells in the bowel wall. Meconium ileus typically shows an empty microcolon on water-soluble enema and colonic atresia shows a distal microcolon with obstruction at the point of atresia. Functional immaturity of the colon typically shows microcolon distal to the splenic flexure with an abrupt transition to mildly dilated proximal colon.\n\n(Ref: Grainger & Allison p. 1495)",
+      "questionNumber": 48
+    },
+    {
+      "question": "The following constellation of findings in a ten year old girl suggests which of the following diagnoses? Absent radius and ulna, wormian bones within the skull vault, hypoplasia of the distal third of the clavicle and accessory epiphyses of the distal phalanges.",
+      "options": [
+        "a. Klippel–Feil syndrome",
+        "b. Cleidocranial dysostosis",
+        "c. Pyknodysostosis",
+        "d. Achondroplasia",
+        "e. Chondrodysplasia punctata"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cleidocranial dysostosis is an autosomal dominant condition. Features include multiple Wormian bones, delayed ossification of midline structures, hypoplasia or absence of the lateral portion of the clavicle (10%), elongated metacarpals and short distal phalanges of the hands. Pyknodysostosis is an autosomal recessive condition which also causes clavicular dysplasia.\n\n(Ref: Dahnert p. 60)",
+      "questionNumber": 49
+    },
+    {
+      "question": "A seven year old boy attends A&E following a road traffic accident in which he hit the kerb and came off his bike. He immediately complained of neck pain and was immobilised at the scene. Initial plain radiographs including a swimmer’s view fail to demonstrate the entire cervical spine adequately. There remains clinical concern regarding his cervical spine. The next step should be:",
+      "options": [
+        "a. Trauma oblique view",
+        "b. Flexion/extension radiographs",
+        "c. MRI C spine",
+        "d. CT C spine",
+        "e. Repeat swimmer’s view with traction on arms"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "MRI should be the next investigation in a child of this age group. A ligamentous injury is more likely and therefore CT of the C spine may be falsely reassuring. However, in some centres the availability of MRI may be limited and a CT will often be performed in the first instance. Flexion/extension views should not be done in the acute setting. A trauma oblique view is performed in some institutions instead of a swimmer’s view and may be used to clear the cervicothoracic junction in particular.\n\n(Ref: Mirvis & Shanmuganathan ch. 4)",
+      "questionNumber": 50
+    },
+    {
+      "question": "An 18 month old boy with ongoing irritability and swelling of the wrists and ankles is referred for a series of plain films. Initial images of his wrists show marked metaphyseal cupping of the distal radius and ulnar and increased thickness of the radial growth plate. The most likely diagnosis is:",
+      "options": [
+        "a. Rickets",
+        "b. Normal variant",
+        "c. Scurvy",
+        "d. Hypervitaminosis D",
+        "e. Congenital hypothyroidism"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The most common cause of metaphyseal cupping is Rickets. Other features include rachitic rosary seen on chest radiograph, widening and fraying of the metaphyses, coarse trabeculation and bowing of the long bones. The most common sites to be affected are the metaphyses of the long bones which are under stress – ankles, knees and wrists. Cupping of the distal ulnar may be a normal variant but none of the other signs will be present. Scurvy shows a radiolucent band; hypervitaminosis D and hypothyroidism cause a radiodense band.\n\n(Ref: Chapman S. RITI ELD 5 131 Paediatrics: Abnormal Metaphyses. London: Royal College of Radiologists, 2009; Dahnert p. 156)",
+      "questionNumber": 51
+    },
+    {
+      "question": "A four month old infant presents with cyanosis and repeated squatting episodes. Following an echocardiogram, a diagnosis is made. Which of the following is unlikely on a plain radiograph?",
+      "options": [
+        "a. Boot-shaped heart",
+        "b. Fullness in the pulmonary artery",
+        "c. Right-sided aortic arch",
+        "d. Pulmonary oligaemia",
+        "e. Enlarged aorta"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All the above are features of TOF except for fullness of the pulmonary artery, there is usually a prominent concavity in the region of the pulmonary artery.\n\n(Ref: Dahnert p. 584)",
+      "questionNumber": 52
+    },
+    {
+      "question": "A four year old boy presents with sudden severe right scrotal pain, nausea and vomiting. An ultrasound and colour Doppler examination scan are performed. Which of the following is true regarding a diagnosis of acute testicular torsion?",
+      "options": [
+        "a. Normal grey-scale appearances exclude torsion",
+        "b. Scrotal skin thickening indicates an infection",
+        "c. Testicular hyperaemia does not exclude torsion",
+        "d. A hydrocoele indicates a different diagnosis",
+        "e. Non-twisted spermatic cord excludes testicular torsion"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "An enlarged, diffusely hypoechoic avascular testis with an associated twisted cord is diagnostic of testicular torsion. The testicular echogenicity can be normal in the very early phase of torsion. A detorted testis often demonstrates hyperaemia. Scrotal skin oedema and hydrocoele can also be features of torsion.\n\n(Ref: Dahnert p. 974)",
+      "questionNumber": 53
+    },
+    {
+      "question": "A ten year old boy undergoes investigation for recurring morning headaches and visual disturbance. On examination he is noted to be short for his age. CT head shows a complex, partially cystic, strongly calcified inhomogeneous suprasellar mass. On MRI the mass is seen to fill the third ventricle and cause cranial deviation of the fornix. The mass is mostly hyperintense on T1 and markedly hyperintense on T2-weighted imaging. The solid components enhance heterogeneously. What is the most likely diagnosis?",
+      "options": [
+        "a. Germinoma",
+        "b. Pituitary adenoma",
+        "c. Supratentorial primitive neuroectodermal tumour (PNET)",
+        "d. Craniopharyngioma",
+        "e. Chiasmatic glioma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Craniopharyngiomas (CPs) are the most common sellar/suprasellar region mass in children. They are benign lesions that originate from epithelial remnants (Rathke pouch) of the adenohypophysis and show a bimodal age distribution with peaks at the first and second decades (75%) and in the fifth decade (25%). They are more common in males. If the tumour presses on the pituitary gland, the patient may present with features of diabetes insipidus. Similarly, compression on the hypothalamus may lead to growth disturbance, compression on the optic chiasm may cause bitemporal hemianopia, and compression of ventricular outflow may cause raised intracranial pressure from resulting hydrocephalus. Classically, CPs appear as calcified, mixed cystic and solid tumours with enhancement of the solid component. They may be T1-bright due to proteinaceous components. Long-term survival in children is good (>90%).\n\nGerminomas are typically non-cystic and non-calcified. PNETs frequently show haemorrhage, necrosis and calcification and may resemble the appearance described for CPs. However, they are rarely found in the suprasellar region and are much more common in the posterior fossa. Chiasmatic gliomas are usually iso/hypointense on T1 and imaging usually defines optic nerve involvement.\n\n(Ref: Grainger & Allison p. 1680)",
+      "questionNumber": 54
+    },
+    {
+      "question": "A four year old girl presents with nausea, vomiting and ataxia. CT shows a hyperdense mass in the region of the fourth ventricle. On T2-weighted MR imaging the mass is predominantly hypointense and contains areas of both low and high signal intensity. Contrast-enhanced T1-weighted imaging demonstrates a heterogeneously enhancing well-delineated mass that expands the fourth ventricle and causes elevation of the superior medullary velum. There is a moderate amount of surrounding oedema. What is the most likely diagnosis?",
+      "options": [
+        "a. Medulloblastoma",
+        "b. Ependymoma",
+        "c. Pilocytic astrocytoma",
+        "d. Metastasis",
+        "e. Subependymoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Medulloblastomas are highly malignant lesions that account for 30–40% of all posterior fossa tumours. They typically arise from the roof of the fourth ventricle and 75% of cases occur in the first decade of life.\n\nOn imaging, they are typically seen as hyperdense midline vermian masses which abut the roof of the fourth ventricle and cause hydrocephalus. There is usually mild to moderate perilesional oedema. Cystic change (high signal on T2), haemorrhage and calcification (low signal on T2) are frequently seen.\n\nThey are fast-growing tumours and approximately 20% of cases demonstrate CSF dissemination at the time of diagnosis. For this reason it is important to actively search for evidence of further cranial or spinal disease. Treatment is usually a combination of surgery and radiotherapy.\n\nSubependymomas typically occur in middle-aged or elderly patients. Pilocytic astrocytomas are typically cystic with an enhancing nodule. Metastases are generally multiple and occur in older patients. Ependymomas are usually hypo/isodense on CT.\n\n(Ref: Grainger & Allison p. 1677)",
+      "questionNumber": 55
+    },
+    {
+      "question": "A four year old boy presents with a painful subgaleal mass and painful right arm. Radiographs reveal a well-defined ovoid, lytic lesion in the right parietal bone and a further well-defined defect in the left temporal bone. There is also an ill-defined expansile lytic lesion in the shaft of the right humerus. The humeral lesion shows cortical erosion. T1-weighted post-contrast MRI shows that the parietal lesion is associated with an intensely enhancing soft-tissue mass. What is the most likely diagnosis?",
+      "options": [
+        "a. Leukaemia",
+        "b. Langerhans’ cell histiocytosis",
+        "c. Neuroblastoma metastases",
+        "d. Multifocal osteomyelitis",
+        "e. Fibrous dysplasia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The most common location for LCH is the skull, particularly the diploic space of the parietal bone. Lesions are typically round or ovoid and have a bevelled edge without marginal sclerosis, giving a punched-out appearance. (This is due to greater involvement of the inner table of the skull than the outer.) There may be an associated soft-tissue mass overlying the lytic process which is often palpable.\n\nLCH commonly occurs in children and they present with painful, tender bone lesions. Most bone involvement is monostotic (50–75%) and when occurring in long bones (humerus, femur, tibia), the diaphysis is the primary site.\n\nThe differential for multiple lytic lesions in a child include (‘FLEM MC’): Fibrous dysplasia; Langerhans’ cell histiocytosis/Leukaemia; Enchondromatosis; Metastatic Neuroblastoma; Multifocal osteomyelitis; and Cystic angiomatosis (the last two are rare).\n\n(Ref: Dahnert p. 110)",
+      "questionNumber": 56
+    },
+    {
+      "question": "A neonate presents with jaundice, pale stools and hepatomegaly. A Tc-99m DISIDA scan shows good hepatic uptake at 15 minutes, but on delayed imaging at six and 24 hours no activity can be demonstrated within the bowel. Which one of the following is most likely to represent the underlying cause?",
+      "options": [
+        "a. Congenital biliary atresia",
+        "b. Cystic fibrosis",
+        "c. Neonatal hepatitis",
+        "d. Spontaneous perforation of the bile ducts",
+        "e. Choledocoele"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Congenital biliary atresia is the most likely diagnosis. It has a slight female preponderance and typically presents in the neonatal period. Ultrasound features include a large coarse liver with increased periportal reflectivity. Biliary dilatation is not typical. In severe neonatal hepatitis, the features on Tc-99m DISIDA scan can appear similar to biliary atresia with reduced extraction and excretion. However, the more common picture is one of reduced hepatic uptake.\n\n(Ref: Grainger & Allison p. 1515)",
+      "questionNumber": 57
+    },
+    {
+      "question": "Antenatal ultrasound reveals a fetus with bowel loops seen outside the abdominal cavity and within the amniotic fluid. Which one of the following associated features would support a diagnosis of gastroschisis rather than exomphalos?",
+      "options": [
+        "a. Liver herniation through the defect",
+        "b. Fetal ascites",
+        "c. Defect situated to the right of the midline",
+        "d. Defect involving the whole length of the anterior abdominal wall",
+        "e. Associated cardiovascular anomalies"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Gastroschisis tends to be a small defect (often less than 2.5 cm in length) which occurs to the right of the midline. The herniated bowel does not have a peritoneal lining and floats freely within the amniotic fluid. Features suggesting exomphalos include the presence of other congenital anomalies, midline defect, fetal ascites, herniation of the liver, amnioperitoneal membrane covering the bowel and the defect covering a large extent of the anterior abdominal wall.\n\n(Ref: Dahnert p. 1044, p. 1051)",
+      "questionNumber": 58
+    },
+    {
+      "question": "A three year old boy is seen in the outpatient department following recurrent urinary tract infections. Which one of the following imaging modalities would be most appropriate to detect the extent of renal scarring?",
+      "options": [
+        "a. Tc-99m DTPA scintigraphy",
+        "b. Tc-99m DMSA scintigraphy",
+        "c. MAG-3 renogram",
+        "d. Micturating cystourethrography",
+        "e. I-131 OIH scintigraphy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "DMSA scan is static renal scintigraphy. There is uptake in the proximal convoluted tubules with 50% uptake within two hours and no significant excretion in this time. Excellent images of the cortex can therefore be gained, making it a good investigation for detection of renal scarring. DMSA and MAG-3 provide more functional information.\n\n(Ref: Dahnert p. 1121)",
+      "questionNumber": 59
+    },
+    {
+      "question": "An 18 month old child with anaemia presents with E. coli gastroenteritis, heart failure and acute renal failure necessitating dialysis. Blood screen also confirms thrombocytopaenia. Which of the following is the most likely diagnosis?",
+      "options": [
+        "a. Pelvic–ureteric junction obstruction",
+        "b. Medullary sponge kidney",
+        "c. Autosomal recessive polycystic disease",
+        "d. Haemolytic-uraemic syndrome",
+        "e. Medullary cystic disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Haemolytic-uraemic syndrome is the commonest cause of acute renal failure in children needing dialysis.",
+      "questionNumber": 60
+    }
+  ]
+}
+
+

@@ -1,0 +1,988 @@
+
+{
+  "title": "Genito-urinary, adrenal, obs and gynae, and breast",
+  "questions": [
+    {
+      "question": "E. coli, with or without an underlying diagnosis of diabetes mellitus, is the most common pathogen behind many urological conditions. All of the following conditions are most commonly due to E. coli infection except one, which one?",
+      "options": [
+        "A. Xanthogranulomatous pyelonephritis (XGP).",
+        "B. Emphysematous pyelonephritis.",
+        "C. Pyonephrosis.",
+        "D. Pyeloureteritis cystica.",
+        "E. Malakoplakia."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is most commonly secondary to proteus infection. XGP is discussed elsewhere in this chapter.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 45-year-old women presents with menorrhagia and dysmenorrhea. She has had three successful pregnancies and one therapeutic abortion in the past. She undergoes an MRI of the pelvis 14 days after the start of her last menstrual period. It reveals a junctional zone which measures 13 mm throughout, with hyperintense T2WI foci within it. With what conditions are these ﬁndings most consistent?",
+      "options": [
+        "A. Endometrial hyperplasia.",
+        "B. Endometrial carcinoma stage 1A.",
+        "C. Pseudothickening.",
+        "D. Adenomyosis.",
+        "E. Myometrial contraction."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This appears as focal or diffuse thickening of the junctional zone of 12 mm or greater. Thickening of 8–12 mm is indeterminate, while thickening less than 8 mm usually allows exclusion of the disease. The bright foci on T2WI correspond to islands of ectopic endometrial tissue and cystic dilatation of glands, and have been reported to be present in up to 50% of cases of adenomyosis. Occasionally haemorrhage within these areas of ectopic endometrial tissue can result in areas of high signal within the junctional zone on T1WI.\n\nPseudothickening of the junctional zone can mimic adenomyosis. It occurs in the menstrual phase (especially the ﬁrst 2 days) and thus scanning should not be performed at this time. Myometrial contractions can also mimic adenomyosis, but they result in focal, rather than diffuse, thickening of the junctional zone. The contractions are transient and thus will not persist on different sequences. They can therefore be more easily detected with multiphase–multisection imaging, rather than static fast SE. Neither pseudothickening nor myometrial contractions alone would result in high T2WI foci.\n\nThe appearances are not consistent with endometrial carcinoma or hyperplasia.\n\nTamai K, Togashi K, Ito T, Morisawa N, Fujiwara T, and Koyama T. MR imaging ﬁndings of adenomyosis: correlation with histopathologic features and diagnostic pitfalls. RadioGraphics 2005; 25: 21–40.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 50-year-old male patient on long-term analgesia presents with a history of macroscopic haematuria. An intravenous urogram is requested. The preliminary ﬁlm is unremarkable. Following intravenous contrast administration, there is a delay in excretion on the right side. Subsequent images demonstrate a ﬁlling defect in the distal ureter with proximal dilatation.The ureter immediately distal to the ﬁlling defect is also mildly dilated, but normal in calibre further down. What is the diagnosis?",
+      "options": [
+        "A. Non-radioopaque calculus.",
+        "B. Transitional cell carcinoma (TCC).",
+        "C. Blood clot.",
+        "D. Sloughed papilla.",
+        "E. Pyeloureteritis cystica."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The appearance of ureteral dilatation around and below an intraluminal ﬁlling defect is described as the ‘goblet’ sign. This sign indicates that the ﬁlling defect is caused by a chronic process, which allows dilatation of the ureter immediately below to accommodate the lesion. In addition to TCC, this appearance may rarely be seen with metastatic disease or endometriosis.\n\nChronic analgesic use is a risk factor for TCC.\n\nPyeloureteritis cystica appears as multiple small ﬁlling defects in the renal pelvis and ureter, typically seen in diabetics.\n\nBrowne RFJ, Meehan CP, Colville J, Power R, and Torreggiani WC. Transitional cell carcinoma of the upper urinary tract: spectrum of imaging ﬁndings. RadioGraphics 2005; 25: 1609–1627.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 60-year-old male with a history of prostate cancer is referred to the symptomatic breast clinic complaining of a palpable breast lump which has been present for several months. Clinical examination reveals a palpable ﬁrm mass towards the left subareolar region. A nodular, fan-shaped subareolar lesion is seen on mammography.The mass is hypoechoic on ultrasound and surrounded by normal fatty tissue. Hypervascular ﬂow within the mass is noted on Doppler ultrasound. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Invasive ductal carcinoma.",
+        "B. Lipoma.",
+        "C. Gynaecomastia.",
+        "D. Lymphoma.",
+        "E. Dermatoﬁbrosarcoma."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Most male breast lumps are benign, with breast cancer accounting for <1% of all breast lesions. Gynaecomastia is the most common benign condition of the male breast. The radiological description is in keeping with early nodular gynaecomastia. Lipomas are encapsulated fatty masses on mammography, which are mildly hyperechoic on ultrasound. Approximately 85% of male breast cancer is invasive ductal carcinoma. This is typically retroareolar and hyperdense on mammography with irregular margins. Secondary features such as nipple retraction and skin thickening are usually present. Ultrasound will show a non-parallel, hypoechoic mass. Posterior acoustic features and internal blood ﬂow are not useful for distinguishing benign versus malignant lesions. Lymphoma will exhibit multiple hyperdense lymph nodes on mammography. Dermatoﬁbrosarcoma is hyperechoic on ultrasound.\n\nChen L, Chantra PK, Larsen LH, Barton P, Rohitopakarn M, Zhu EQ et al. Imaging characteristics of malignant lesions of the male breast. RadioGraphics 2006; 26: 993–1006.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 62-year-old woman presents with recurrent urinary tract infections (UTIs) and a pelvic/renal tract ultrasound is performed.This demonstrates normal kidneys and bladder, but there is a 5-cm solid, hypoechoic mass seen arising from the right ovary.There is acoustic shadowing caused by the mass, but a subsequent CT scan does not show any calciﬁcation within the mass or any metastatic disease. What is the most likely cause of the ovarian mass?",
+      "options": [
+        "A. Sertoli–Leydig cell tumour of the ovary.",
+        "B. Cystadenocarcinoma of the ovary.",
+        "C. Fibrothecoma of the ovary.",
+        "D. Granulosa cell tumour of the ovary.",
+        "E. Embryonal cell carcinoma of the ovary."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Ovarian ﬁbroma is the most common sex-cord stromal neoplasm and is almost always benign. Occasionally there will be histologic features of both ﬁbroma and thecoma, giving rise to the term ‘ﬁbrothecoma’. These are typically solid lesions on ultrasound and have marked acoustic shadowing in 18–52% of cases. This shadowing is not secondary to calciﬁcation, but is related to marked attenuation of sound by the dense hypoechoic mass itself. This can be a useful sign for identifying ﬁbrothecoma on ultrasound.\n\nClassiﬁcation of ovarian neoplasms is based on histologic features and typically includes the general categories of epithelial, germ cell, sex cord-stromal, and metastatic neoplasms. Cystadenomas/adenocarcinomas belong to the epithelial group of malignancies and make up over 90% of primary ovarian malignancies.\n\nSertoli–Leydig cell tumours, granulosa cell tumours, and ﬁbrothecomas belong to the sex cordstromal group of neoplasms. Sertoli–Leydig cell tumours may be subtle on ultrasound, as many are small and solid. They can secrete androgens and cause virilization. Granulosa cell tumours often have a sponge-like consistency and may produce oestrogen and cause endometrial disease.\n\nDysgerminomas and embryonal cell carcinomas are very rare germ cell neoplasms. The most common germ cell neoplasm is of course a mature cystic teratoma (dermoid cyst). A hyperechoic area (not usually as intensely echogenic as calciﬁcation) with acoustic shadowing is highly predictive of this lesion. Hyperechoic lines and dots, sometimes known as the dermoid mesh, are also highly predictive of a mature teratoma. Less common associated signs include a ﬂuid–ﬂuid level and ﬂoating globules. Calciﬁcation can be seen, but is not speciﬁc to dermoids, as other ovarian neoplasms can calcify.\n\nBrown DL, Dudiak KM, and Laing FC. Adnexal masses: US characterisation and reporting. Radiology 2010; 254: 342–354.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 32-year-old male has been referred from urology for assessment.The patient was involved in an RTA 2 years ago, during which he sustained a urethral injury.The patient had failed to attend urology outpatients for follow-up in the interim, but has re-attended with recurrent UTIs. An attempted cystoscopy identiﬁed a tight proximal urethral stricture.The urologists have requested an ultrasound and voiding cystourethrogram (VCUG) to investigate the degree of bladder outlet obstruction.The ultrasound demonstrates a mild degree of renal pelvic dilatation bilaterally. The bladder has a residual volume of 500 ml on post-void imaging.The VCUG reveals reﬂux into the renal pelvis bilaterally with mild ureteric and pelvic dilatation, but no calyceal dilatation and preserved forniceal angles. What grade of reﬂux does this patient have?",
+      "options": [
+        "A. Grade 1.",
+        "B. Grade 2.",
+        "C. Grade 3.",
+        "D. Grade 4.",
+        "E. Grade 5."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Whilst most commonly associated with congenital reﬂux in children, acquired reﬂux is also seen, most commonly due to bladder outlet obstruction or recurrent cystitis. Grade 1 reﬂux demonstrates reﬂux into the ureter, grade 2 has reﬂux into the pelvicalyceal system, grade 3 as described, and grade 4 is as grade 3 but with increased pelviureteric dilatation and calyceal blunting, and with persisting papillary impressions. Grade 5 demonstrates a markedly dilated pelvis and tortuous ureter with obliteration of the forniceal angles and papillary impressions.\n\nDahnert W. Radiology Review Manual, 5th edn, Lippincott Williams & Wilkins, 2007, p. 983.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 43-year-old female presents with pelvic pain. On examination she is tender in the left iliac fossa and midline. Inﬂammatory markers are normal. A trans-abdominal ultrasound reveals a normal right ovary and uterus, but a 5.5-cm simple appearing cyst arising from the left ovary. As the reporting radiologist you:",
+      "options": [
+        "A. refer to gynaecology for clinical assessment and serum Ca-125 measurement.",
+        "B. recommend trans-vaginal ultrasound.",
+        "C. recommend a repeat trans-abdominal ultrasound in 6 weeks’ time.",
+        "D. recommend MRI of pelvis.",
+        "E. issue a report stating that a benign simple cyst is seen to arise from the left ovary."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "At ultrasound, a functional ovarian cyst is typically anechoic with a thin, smooth wall and posterior acoustic enhancement. Regardless of size, these cysts are unlikely to be malignant. A unilocular cyst greater than 3 cm in a premenopausal or greater than 5 cm in a postmenopausal female patient should be rescanned in approximately 6 weeks (which will usually be at a different stage of the menstrual cycle in the case of premenopausal patients). Premenopausally this is the case, even if there are some internal echoes (but not other ﬁndings raising the possibility of malignancy), as these quite often represent haemorrhage within a cyst. In the premenopausal patient, the follow-up scan is to ensure there is reduction in size or resolution of what is usually a benign ﬁnding and commonly merely a dominant follicle; in the postmenopausal patient, it is to ensure there is no interim enlargement.\n\nIf the cyst is smaller than the above dimensions (i.e. <3 cm pre and <5 cm post menopausal) then, in the absence of other sinister ﬁndings or history, it can be assumed that the cysts are benign. Sonographic ﬁndings which increase the likelihood of malignancy include wall thickening, solid elements, septations, blood ﬂow within solid elements, abnormal blood ﬂow, and ﬁndings of metastatic disease. If a cyst displays any of the latter features or increases in size on interval scanning, then options A, B, and D may be valid steps in management.\n\nAlty J, Hoey E, Wolstenhulme S, and Weston M. Practical Ultrasound: An Illustrated Guide, Royal Society of Medicine Press Ltd., 2006, p. 200.\n\nLevine D. Gynaecologic ultrasound. Clinical Radiology 1998; 53: 1–9.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 25-year-old female undergoes a hysterosalpingogram (HSG) that reveals a unicornuate uterus.This is conﬁrmed on MRI, which also demonstrates a non-functioning rudimentary contra-lateral horn. What further investigation is indicated?",
+      "options": [
+        "A. Laparoscopy.",
+        "B. Renal imaging.",
+        "C. Pelvic ultrasound.",
+        "D. Laparotomy and resection of rudimentary horn.",
+        "E. Speculum examination."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Mullerian duct anomalies are associated with renal tract anomalies in up to 30% of cases due to the close embryologic relationship between the Mullerian and mesonephric ducts. The most common renal tract abnormality is renal agenesis. Other associated anomalies include duplicated collecting system, renal duplication, horseshoe kidney, crossed renal ectopy. and cystic renal dysplasia. Renal imaging is therefore essential in all patients with Mullerian duct anomalies.\n\nSurgical intervention is not required in patients with a unicornuate uterus and a non-functioning rudimentary horn.\n\nJunqueira BLP, Allen LM, Spitzer RF, Lucco KL, Babyn PS, and Doria AS. Mullerian duct anomalies and mimics in children and adolescents: correlative intraoperative assessment with clinical imaging. RadioGraphics 2009; 29: 1085–1103.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 56-year-old asymptomatic woman undergoes routine screening mammography. Which of the following forms of calciﬁcation raises greatest suspicion of ductal carcinoma in situ (DCIS)?",
+      "options": [
+        "A. Egg-shell.",
+        "B. Sedimented.",
+        "C. Tubular.",
+        "D. Dot-dash.",
+        "E. Coarse."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Malignant calciﬁcations vary in shape and size. Pleomorphic calciﬁcations that are more linear or dot-dash in appearance are associated with intraductal carcinoma. DCIS is often detected as a result of such calciﬁcations. Egg-shell calciﬁcation is seen in the walls of an oil cyst. Sedimented calcium appears as curvilinear on the lateral projection and as smudged on the cranio-caudal view. This is a feature of benign cysts. Arterial calciﬁcation presents as tubular, parallel calciﬁcation. Fibroadenomas typically exhibit large, coarse, and irregular calciﬁcation.\n\nBrant WE and Helms CA. Fundamentals of Diagnostic Radiology, 3rd edn, Lippincott Williams & Wilkins, 2007, pp. 580–582.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 46-year-old woman has an incidentally discovered large mixed echogenicity mass in the left ﬂank on an ultrasound examination. A follow-up CT examination is performed and this shows a predominantly fatty lesion exophytic to the left kidney, measuring approximately 12 cm in maximum diameter. Which of the following ﬁndings would make the diagnosis of large renal angiomyolipoma more likely than a perirenal well-differentiated retroperitoneal liposarcoma?",
+      "options": [
+        "A. The presence of mass effect with displacement of the left kidney.",
+        "B. The presence of aneurysmal blood vessels within the lesion.",
+        "C. The presence of soft-tissue density areas within the lesion.",
+        "D. The presence of ill-deﬁned margins.",
+        "E. The presence of ﬂuid density components."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Both well-differentiated retroperitoneal liposarcomas and exophytic renal angiomyolipomas can be very large in size and thus size is not a discriminating factor. Both contain large amounts of mature lipid, thus signiﬁcant portions of the lesion will have negative Hounsﬁeld attenuation values on CT imaging.\n\nAneurysmal blood vessels are commonly seen in large angiomyolipomas, whereas welldifferentiated liposarcomas are generally rather hypovascular lesions. Both angiomyolipomas and retroperitoneal liposarcomas may contain areas of soft tissue density. Liposarcoma is probably more likely to have an irregular margin and may contain areas of ﬂuid density.\n\nIsrael GM and Bosniak MA. Pitfalls in renal mass evaluation and how to avoid them. RadioGraphics 2008; 28: 1325–1338.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 64-year-old female patient presents with a 3-month history of right-sided loin pain, microscopic haematuria, and low-grade pyrexia. Her GP had been treating the patient as a presumptive UTI, given the background history of diabetes, but is concerned that the symptoms are not resolving. On clinical examination the urologists have felt a right-sided ballotable loin mass.They have requested a CT scan of abdomen.This reveals a large irregular mass replacing most of the parenchyma of the right kidney, which measures 10 × 11 cm in axial diameter and does not demonstrate signiﬁcant enhancement. There are a number of focal masses noted within the dominant mass that have attenuation values of between –15 and –5 HU.The renal outline is poorly deﬁned, with involvement of the perirenal fascia. A large staghorn calculus is also present.There is no evidence of invasion of the renal vein. What is the primary diagnosis?",
+      "options": [
+        "A. Renal cell carcinoma.",
+        "B. Renal oncocytoma.",
+        "C. Renal lymphoma.",
+        "D. XGP.",
+        "E. Renal angiomyolipoma."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Whilst the patient presents with the classical renal cell carcinoma (RCC) triad of loin pain, haematuria, and a mass, this triad is actually only present in 30% of patients with RCC. These features are also typically found in XGP. The key ﬁnding in this case is of areas of fatty attenuation within the mass, in association with a staghorn calculus. Calculi are found in 80–90% of cases of XGP. The long history of symptoms is also typical of XGP, which can be present for up to 6 months prior to diagnosis. Lymphoma, RCC, and renal oncocytoma would not typically have areas of fatty tissue within them. Angiomyolipomas, in the absence of tuberous sclerosis, are typically solitary. They are usually well deﬁned, unlike in this case, and would rarely reach this size without having previously caused symptoms. XGP is typically found in diabetic patients and is due to proteus infection. Treatment is with nephrectomy.\n\nDahnert W. Radiology Review Manual, 5th edn, Lippincott Williams & Wilkins, 2007, p. 944.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 2-day-old male infant with cryptorchidism and an antenatal diagnosis of dilated bladder and ureters is referred for a micturating cystourethrogram (MCUG). MCUG reveals a dilated bladder, tortuous and dilated ureters, dilated posterior urethra, and renal cortical thinning. Note is also made of bulging ﬂanks. What is the diagnosis?",
+      "options": [
+        "A. Posterior urethral valve.",
+        "B. Congenital megacystis and megaureter.",
+        "C. Bilateral vesicoureteric reﬂex.",
+        "D. Eagle Barrett syndrome.",
+        "E. Meatal stenosis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Eagle Barrett syndrome or prune belly syndrome is classically deﬁned as a triad of partial or complete absence of abdominal musculature (resulting in bulging ﬂanks), cryptorchidism, and urinary abnormalities as described above. In addition a number of respiratory, GI, musculoskeletal, and cardiovascular anomalies are associated with this syndrome.\n\nIt occurs almost exclusively in males. The cause and embryogenesis remain controversial. Bladder outlet obstruction, mesodermal arrest, and dysgenesis of the yolk sac have been proposed as possible causes.\n\nBerrocal T, Lopez-Pereira P, Arjonilla A, and Gutierrez J. Anomalies of the distal ureter, bladder, and urethra in children: embryologic, radiologic and pathologic features. RadioGraphics 2002; 22: 1139–1164.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A previously well 70-year-old woman is investigated via CTPA for acute left-sided chest pain and hypoxia.The test is negative for PE, but an incidental 1.7 × 1.2 cm retro-areolar lesion is noted in the right breast by the reporting registrar. Which of the following features, if any, would be suggestive of breast malignancy?",
+      "options": [
+        "A. Ill-deﬁned margin.",
+        "B. Spiculated margin.",
+        "C. Calciﬁcation.",
+        "D. Multiple lesions.",
+        "E. CT is not reliably predictive of breast malignancy."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A recent study examining incidental breast lesions detected by CT found that spiculated breast lesions and axillary lymphadenopathy should raise concern for malignancy and be referred to the breast clinic. These features were signiﬁcantly more likely to be present in malignant breast lesions. Genuine mass lesions and spiculation are more easily appreciated in non-dense breasts. The mammographic features of ill-deﬁnition and calciﬁcation do not appear to be suggestive of malignancy on CT, probably due to poorer resolution, as normal breast glandular tissue appears ill-deﬁned on CT and malignant microcalciﬁcation is poorly demonstrated. Lesion size and location also do not differentiate between benign and malignant disease.\n\nPorter G, Steel J, Paisley K, Watkins R, and Holgate C. Incidental breast masses detected by computed tomography: are any imaging features predictive of malignancy? Clinical Radiology 2009; 64: 529–533.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 67-year-old male patient presents with an 8-week history of left loin pain. A renal CT is obtained and this shows a 6-cm enhancing left renal lesion that has a ﬁbrotic central scar. What is the most likely diagnosis?",
+      "options": [
+        "A. Renal leiomyoma.",
+        "B. Renal oncocytoma.",
+        "C. Renal metanephic adenoma.",
+        "D. Renal haemangioma (giant).",
+        "E. Renal juxta-glomerular cell neoplasm."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is a benign renal cell neoplasm responsible for about 5% of all adult primary renal epithelial neoplasms. It typically occurs in elderly men. They usually appear as solitary, well-demarcated, unencapsulated, fairly homogeneous renal cortical tumours. Bilateral, multicentric oncocytomas are seen in hereditary syndromes of renal oncocytosis and Birt–Hogg–Dubé syndrome. A central stellate scar is seen in approximately one-third. However, distinguishing them from RCC on imaging is not reliable. Leiomyoma of the kidney is a benign smooth muscle neoplasm. It appears as a well-circumscribed, homogeneous, exophytic solid mass that shows uniform enhancement on contrast-enhanced CT. It may occasionally be cystic.\n\nMetanephric adenoma is a benign renal neoplasm that is more common in middle-aged to elderly females. It is associated with polycythaemia in 10%. It typically appears as a well-deﬁned, unencapsulated, solitary mass that may be hyperattenuating on unenhanced CT. Calciﬁcation can be seen in up to 20%.\n\nHemangioma of the kidney occurs as an unencapsulated, solitary lesion that frequently arises from the renal pyramids or the pelvis. Contrast-enhanced CT or MRI may show early intense enhancement, with persistent enhancement on delayed images.\n\nJuxtaglomerular cell (JGC) neoplasm or reninoma is an extremely rare, benign renal neoplasm of myoendocrine cell origin, which is associated with a clinical triad of hypertension, hypokalaemia, and high plasma renin activity. It typically appears as a unilateral, well-circumscribed, cortical tumour and often measures less than 3 cm, but otherwise is indistinguishable from other cortical neoplasms.\n\nPrasad SR, Swabhi VR, Menias CO, Raut AA, and Chintapalli KN. Benign renal neoplasms: crosssectional imaging ﬁndings. American Journal of Roentgenology 2008; 190: 158–164.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 54-year-old female patient with diabetes presents with a history of left loin pain, pyrexia, and pyuria over the past 24 hours.The patient develops sepsis soon after admission and is brought for a CT scan following appropriate resuscitation.The CT shows a mildly dilated left renal pelvis, which contains small pockets of air extending into the calyces. A small wedge-shaped area of poor enhancement in the lower pole is the only parenchymal abnormality.The clinical diagnosis is of pyelonephritis, but what subtype of pyelonephritis is best represented by these imaging features?",
+      "options": [
+        "A. Acute pyelonephritis.",
+        "B. Emphysematous pyelitis.",
+        "C. Emphysematous pyelonephritis.",
+        "D. Acute pyonephrosis.",
+        "E. XGP."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The combination of these radiological ﬁndings in a septic diabetic patient indicates an infection with a gas-forming organism, usually E. coli. The gas is located entirely within the pelvicalyceal system, as opposed to the renal parenchyma, which would indicate a diagnosis of emphysematous pyelonephritis. The importance is in the urgency of treatment and prognosis. Emphysematous pyelonephritis carries a grave prognosis and often requires nephrectomy for life-saving treatment, whereas the prognosis with emphysematous pyelitis is not as grave and it often responds to antibiotics with possible urinary drainage procedures if necessary.\n\nDahnert W. Radiology Review Manual, 5th edn, Lippincott Williams & Wilkins, 2007, p. 944. Narlawar R, Raut A, Nagar A, Hira P, Hanchate V, and Asrani A. Imaging features and guided drainage in emphysematous pyelonephritis: a study of 11 cases. Clinical Radiology 2004; 59: 192–197.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 36-year-old woman undergoes MRI of the pelvis for assessment of pelvic pain. She had a previous hysterectomy due to post-partum haemorrhage and thus transvaginal ultrasound (TVUS) is not an option. Abdominal ultrasound is technically difﬁcult due to body habitus and the ovaries cannot be visualized. MRI reveals a 7-cm left adnexal lesion of predominantly intermediate and high signal on T2WI, but with low-signal components within. On T1WI, there is layering of low and high signal, with suppression of the high signal on the T1WI with fat saturation. What do you advise in your report?",
+      "options": [
+        "A. Referral for chemoradiotherapy.",
+        "B. Referral for laparoscopy for staging.",
+        "C. Follow up in 3 months’ time.",
+        "D. Referral for surgery.",
+        "E. No follow-up required."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The ﬁndings are consistent with a mature cystic teratoma or dermoid cyst. They are derived from all three germ cell layers and thus contain fat and may contain desquamated epithelium, skin, hair, and teeth. The classical ﬁnding is of high T1WI signal, which suppresses on fat saturation imaging. They can often have a fat–ﬂuid level. The low signal on T2WI may represent tooth or calciﬁcation. Soft-tissue protuberances represent Rokintansky nodules or ‘dermoid plugs’ of sebaceous material.\n\nIt is the most common ovarian tumour, accounting for 20% of all ovarian neoplasms. Dermoids can be bilateral in 8–25% of cases. The chance of malignant transformation is low but surgical resection is indicated, not just for relief of symptoms, but because of the risk of torsion (in 4–16% of cases) or rupture (the latter is rare but can lead to chemical peritonitis). Adjuvant treatment need not be considered unless the case is complicated by malignant transformation.\n\nIzumi I, Wada A, Kaji Y, Hayashi T, Hayashi M, and Matsuo M. Developing an MR imaging strategy for diagnosis of ovarian masses. RadioGraphics 2006; 26: 1431–1448.\n\nDahnert W. Radiology Review Manual, 5th edn, Lippincott Williams & Wilkins, 2003, pp. 1028–1029.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 40-year-old female with uterine ﬁbroids is referred for uterine artery embolization. Which of the following statements regarding the relevant arterial anatomy is incorrect?",
+      "options": [
+        "A. Uterine artery is the ﬁrst or second branch of the anterior division of internal iliac artery in 51% of cases.",
+        "B. The ipsilateral ovarian artery often replaces an absent uterine artery.",
+        "C. The ovarian artery has a characteristic corkscrew appearance on angiogram.",
+        "D. Utero-ovarian anastomosis is identiﬁed in less than 5% of cases.",
+        "E. Ovarian artery supply to ﬁbroids is more frequently found in women with a history of previous pelvic surgery."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Uterine arteries are the predominant source of blood supply to the ﬁbroids in most cases. There is considerable variation in the pelvic arterial anatomy, a thorough knowledge of which is essential to carry out uterine artery embolization safely and effectively.\n\nThe internal iliac artery bifurcates into anterior and posterior divisions in 57–77% of the general population. The uterine artery arises as the ﬁrst or second branch of the anterior division of internal iliac artery in 51% of cases. The internal iliac artery trifurcates into uterine artery, the anterior, and the posterior divisions in 15–40% of the general population. The uterine artery arises as the ﬁrst branch of the internal iliac artery in 6% of cases.\n\nThe uterine artery may be replaced by small branches or may be absent. The ipsilateral ovarian artery often replaces an absent uterine artery. Ovarian arterial supply to ﬁbroids is more common in those with previous history of pelvic surgery or tubo-ovarian disease and/or large fundal ﬁbroids. The extent of ovarian supply should be assessed with ﬂush pelvic aortography, preferably after uterine artery embolization.\n\nThe ovarian artery arises from the aorta just below the renal arteries in 80–90% of cases and has a characteristic corkscrew appearance. Normal ovarian arteries are not usually identiﬁed on angiography because of their small calibre.\n\nUtero-ovarian anastomosis is seen in 10–30% of cases and left-to-right uterine anastomosis in 10% of cases.\n\nPelage J-P, Cazejust J, Plout E, le Dref O, Laurent A, Spies JB et al. Uterine ﬁbroid vascularization and clinical relevance to uterine ﬁbroid embolisation. RadioGraphics 2005; 25: S99–S117.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 48-year-old woman who had bilateral breast augmentation with singlelumen silicone gel implants 20 years ago presents with pain in her left breast and distorted breast shape. Which of the following radiological ﬁndings on T2WI MRI are in keeping with intracapsular implant rupture?",
+      "options": [
+        "A. Thickened T2WI hypointense capsular margin.",
+        "B. T2WI hyperintense globules surrounding the implant.",
+        "C. Multiple curvilinear lines of low T2WI signal within the implant.",
+        "D. Inferior extension of the implant beyond the inframammary fold.",
+        "E. Marginal low T2WI signal radial folds within the implant."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Silicone gel implants are high signal on T2WI. Capsular contracture is caused by constriction of the ﬁbrous capsule that invariably forms to some degree around the implant as a reaction to the foreign object. This is seen on MRI as increased thickening of the T2WI hypointense margin surrounding the implant. Rupture of the prosthesis is the most common complication with breast implants, occurring in up to 10–20%, although many are not noticed clinically. With intracapsular ruptures, the silicone gel is contained by the capsule. Curvilinear strands of low T2 signal within the capsule may be seen, representing the collapsed implant shell. This ﬁnding is known as the ‘linguine’ sign. T2WI hyperintense globules surrounding the implant are indicative of an extracapsular rupture. Inferior extension beyond the inframammary fold implies implant migration, which is a relatively uncommon occurrence. Marginal T2WI hypointense radial folds within the implant are a normal ﬁnding.\n\nDeAngelis GA, de Lange EE, Miller LR, and Morgan RF. MR imaging of breast implants. RadioGraphics 1994; 14: 783–794.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 72-year-old man presents with a 4-month history of painless enlargement of the right testis. He undergoes scrotal ultrasound, which demonstrates a uniformly hypoechoic lesion that is enlarging and almost replacing all the normal parenchyma of the right testis. It has also caused enlargement of the right epididymis and adjacent spermatic cord. Review of the left testis shows a 2.5-cm hypoechoic lesion with normal spermatic cord and epididymis. What is the most likely diagnosis?",
+      "options": [
+        "A. Lymphoma.",
+        "B. Leukaemia.",
+        "C. Testicular metastases.",
+        "D. Bilateral seminoma.",
+        "E. Granulomatous epididymo-orchitis."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Clinically testicular lymphoma is distinct from other testicular neoplasms in that it occurs in a much older age group. It is the most common testicular neoplasm over the age of 60 years.\n\nIt is also the most common bilateral testicular neoplasm (up to 38% of cases). The epididymis and spermatic cord are commonly involved. The sonographic appearance is variable and indistinguishable from germ cell tumours. Typically they are discrete hypoechoic lesions that may completely inﬁltrate the testicle.\n\nPrimary leukaemia of the testis is rare, although it is a common site of leukaemia recurrence in children. The sonographic appearances are very variable, as the tumour may be unilateral or bilateral, focal or diffuse, hypoechoic or hyperechoic.\n\nTesticular metastases, other than those from lymphoma or leukaemia, are very rare. Primary sites reported include prostate and lung. They are generally seen in the setting of widespread disease and are rarely the presenting complaint.\n\nSeminoma is the most common germ cell tumour. The average age of presentation is approximately 40 years. It is typically uniformly hypoechoic on ultrasound and they are only rarely bilateral (2%).\n\nGranulomatous orchitis may manifest as a testicular mass, but this would be very unusual. Typically this process tends to involve the epididymis ﬁrst and to a much greater degree than the testis. Pathogens include TB, syphilis, fungi, and parasites.\n\nWoodward PJ, Sohaey R, O’Donoghue MJ, and Green DE. From the archive of the AFIP – tumor and tumorlike conditions of the testis: radiologic-pathologic correlation. RadioGraphics 2002; 22: 189–216.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 56-year-old female diabetic patient presents to urology with a history of microscopic haematuria.There is a past history of multiple UTIs.\n\nThe standard urology investigative process in your hospital consists of ultrasound, intravenous urogram (IVU) and cystoscopy. Ultrasound is normal. Cystoscopy has found a number of yellowish raised lesions in the bladder.You are reviewing the IVU with this information.The IVU shows multiple small ﬁlling defects in the distal left ureter and bladder which are 3–8 mm in size. What is the diagnosis?",
+      "options": [
+        "A. Malakoplakia.",
+        "B. Leukoplakia.",
+        "C. Pyeloureteritis cystica.",
+        "D. Multifocal TCC.",
+        "E. Cystitis with distal ureteric reﬂux."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is an inﬂammatory response to chronic E. coli infection. It is more common in females and in diabetic/immunocompromised patients. It most commonly occurs in the bladder and distal ureter and is multifocal in 75% of cases.\n\nDahnert W. Radiology Review Manual, 5th edn, Lippincott Williams & Wilkins, 2007, p. 924. Wasserman N. Inﬂammatory diseases of the ureter. Radiological Clinics of North America 1996; 34: 1131–1156.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 45-year-old male presents with severe epigastric pain radiating to the back. Blood tests reveal elevated serum amylase and calcium. A CT scan of abdomen demonstrates peripancreatic inﬂammatory stranding, renal medullary nephrocalcinosis, and sacro-iliac joint erosions. What further investigation(s) would you recommend?",
+      "options": [
+        "A. Serum parathyroid hormone assay and99m Tc sestamibi scan.",
+        "B. Serum parathyroid hormone assay and111 In pentetreotide scan.",
+        "C. Serum parathyroid hormone assay and meta-iodobenzyl-guanidine (MIBG) scan.",
+        "D. Serum parathyroid hormone and99m Tc pertechnetate scan.",
+        "E. Serum parathyroid hormone assay and201 Tl scan."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Clinical ﬁndings, blood tests, and CT of the abdomen are diagnostic of pancreatitis. The most common causes for pancreatitis are alcohol and choledocholithiasis. Rarely, it may be caused by hyperparathyroidism. The associated ﬁndings on CT are suggestive of hyperparathyroidism, therefore further assessment with serum parathyroid hormone assay and99m Tc sestamibi scintigraphy is indicated.99m Tc sestamibi washes out more rapidly from the thyroid gland than from hyperfunctioning parathyroid glands and therefore it can be used on its own.\n\nMIBG, a noradrenaline analogue, is used in the evaluation of neuroblastomas and paragangliomas.\n\n99m Tc pertechnetate is taken up by the thyroid gland only and is therefore not useful on its own in parathyroid imaging. However, it can be used in combination with201 Tl, which is taken up by both thyroid and parathyroid. Subtracting the two scintigrams allows parathyroid localization.\n\nEslamy HK and Zeissman HA. Parathyroid scintigraphy in patients with primary hyperparathyroidism:99m Tc sestamibi SPECT and SPECT/CT. RadioGraphics 2008; 28: 1461–1476.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 32-year-old asymptomatic woman who is BRCA1 positive undergoes breast cancer surveillance via MRI. A lesion within the left breast is identiﬁed. Which of the following MRI features is the most predictive for malignancy?",
+      "options": [
+        "A. Irregular margin.",
+        "B. T2WI signal hyperintensity.",
+        "C. Progressive enhancement curve on dynamic T1WI post contrast.",
+        "D. Plateau enhancement curve on dynamic T1WI post contrast.",
+        "E. Washout enhancement curve on dynamic T1WI post contrast."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A woman over the age of 30 years who is a BRCA1 or BRCA2 carrier should be offered MRI annually for breast cancer surveillance. The description of the margin of the mass is the most predictive feature of the breast MR image interpretation. Irregular or spiculated margins have a positive predictive value of 84–91%. T2W signal hyperintensity is suggestive of benign pathology, but not in the setting of an irregular or spiculated mass. There is overlap in enhancement kinetics between benign and malignant disease, and thus reliance on kinetic assessment alone is not recommended. Progressive enhancement (type I) is associated with benign pathology, whereas plateau (type II) and washout (type III) curves are suggestive of malignant disease. Due to the importance of lesion morphology, the MRI technique should focus on optimizing high spatial and temporal resolution.\n\nMacura KJ, Ouwerkerk R, Jacobs MA, and Bluemke DA. Patterns of enhancement on breast MR images: interpretation and imaging pitfalls. RadioGraphics 2006; 26: 1719–1734.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 72-year-old man presents with a palpable mass adjacent to the right testis. An ultrasound scan is performed and this demonstrates a large epididymal cyst. In addition there is an abnormal area within the posterolateral aspect of the right testis, which is rounded in shape on transverse scanning, but more elongated on longitudinal scanning. It is hypoechoic, with multiple small cystic areas giving a ‘sponge-like’ consistency.There is no ﬂow within this on colour Doppler imaging. What is the most likely cause of this?",
+      "options": [
+        "A. Thrombosed intra-testicular varicocele.",
+        "B. Cystic degeneration in a testicular infarct.",
+        "C. Chronic testicular abscess.",
+        "D. Tubular ectasia of the rete testis.",
+        "E. Epidermoid cyst."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is also known as cystic transformation of the rete testis and results from partial or complete obliteration of the efferent tubules, which causes ectasia and eventually cystic transformation.\n\nIt is frequently bilateral, but may be asymmetric. The site is in or adjacent to the mediastinum testis and there are often associated epididymal cysts or spermatoceles. The key to the correct identiﬁcation of this abnormality is the elongated shape that replaces the mediastinum.\n\nIntratesticular varicoceles can occur, but they are very rare. It would be even rarer for it to be thrombosed.\n\nTesticular abscess would not usually be multicystic, but would be more rounded with an irregular wall and low-level internal echoes.\n\nTesticular infarction usually manifests as a hypoechoic mass that is largely avascular. It is not usually cystic.\n\nEpidermoid cyst is a rare benign tumour of germ cell origin. It is usually rounded or oval in shape and classically has a target or ‘onion skin’ appearance of alternating layers of hyper- and hypo-echogenicity. The outer wall is typically hyperechoic and sometimes calciﬁed.\n\nDogra VS, Gottlieb RH, Rubens DJ, and Liao L. Benign intratesticular cystic lesions: US features. RadioGraphics 2001; 21: S273–S281.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 73-year-old male diabetic patient, with poorly controlled hypertension, is referred for renal Doppler ultrasound due to an episode of ﬂash pulmonary oedema. He has a history of stage 3 chronic kidney disease.The ultrasound shows a small left kidney, which measures 5 cm in bipolar diameter.The right kidney is also small, measuring 6 cm.The resistive indices measure 0.9 on both sides.The peak systolic velocity is 130 cm/s on the left and 150 cm/s on the right. Which interventional treatment would be recommended for this patient?",
+      "options": [
+        "A. Renal artery angioplasty on left side.",
+        "B. Renal artery stenting on left side.",
+        "C. Renal artery stenting on right side.",
+        "D. Bilateral renal artery stenting.",
+        "E. No intervention."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The factors described are all indicators of poor outcome following renal artery intervention. Reduced renal size bilaterally indicates advanced bilateral renal disease, unlikely to respond to intervention. The renal ultrasound Doppler patterns are also not suggestive of renal artery stenosis, which is indicated by a peak systolic velocity of greater than 180 cm/s. Resistive indices of greater than 0.7 indicate a likelihood of improvement after intervention.\n\nMorgan R and Waltzer E. Handbook of Angioplasty and Stenting Procedures. Springer, 2010, p. 152.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 23-year-old woman is referred for an MRI of pelvis because of dyspareunia and pelvic pain.The ovaries are normal, but a 6-mm rounded area of high signal on T1WI and T2WI sequences is demonstrated in the left posterolateral aspect of the distal vagina. What is the most likely diagnosis?",
+      "options": [
+        "A. Squamous cell carcinoma of the vagina.",
+        "B. Urethral diverticulum.",
+        "C. Nabothian cyst.",
+        "D. Bartholin’s gland cyst.",
+        "E. Vaginal septum."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Bartholin’s glands are located behind the labia minora and their ducts open onto the posterolateral vestibules on each side. The cysts are due to blockage of the ducts and retention of secretions. They are common in reproductive age and are usually cystic in appearance (high T2WI signal). Their T1WI signal is variable and can be high due to mucoid content. They are usually discovered as incidental ﬁndings on imaging for another cause, although they may be palpable or clinically visible. The radiologist should recognize them as a benign pathology.\n\nPrimary carcinoma of the vagina is rare, as 80–90% of tumours affecting the vagina are due to extension of primary bladder, cervical, vulval, or rectal tumours. Ninety per cent of primary carcinomas are squamous cell carcinoma. The majority occur in elderly women and the two most common presenting complaints are vaginal discharge and bleeding. Squamous cell carcinomas of the vagina are usually of low T1WI and intermediate T2WI signal. As for vulval and cervical squamous cell carcinoma, human papilloma virus (HPV) infection is a risk factor.\n\nUrethral divertcula are best seen on T2WI sequences as hyperintense lesions adjacent to or surrounding the urethra: a connection to the urethra is not always seen. They are usually of low signal on T1WI sequences. They predispose to stones (low signal on T2WI sequences) and carcinoma (enhancing on T1W fat saturation post gadolinium).\n\nNabothian cysts are found at the external os of the cervix. They are benign retention cysts that develop secondary to obstruction of endocervical glands. They have high T2WI signal and may have high T1WI signal due to mucinous content. They are usually multiple and measure less than 2 cm. They become clinically relevant when they are mistakenly diagnosed as adenoma malignum, a subtype of mucinous adenocarcinoma of the cervix.\n\nA vaginal septum is a low-signal T2WI band. If transverse, it may present in adolescence with primary amenorrhea and abdominal pain, and an abdominal mass if complete. A longitudinal septum is usually asymptomatic and is associated with duplication of the uterus, cervix, or vagina.",
+      "questionNumber": 25
+    }
+,
+    {
+      "question": "A 50-year-old male with thyroid swelling undergoes ultrasound of the thyroid that shows a solitary hypoechoic nodule with punctate calciﬁcation and increased vascularity. An ultrasound guided ﬁne needle aspiration is carried out and is reported as benign. What would you do next?",
+      "options": [
+        "A. Repeat ﬁne needle aspiration.",
+        "B. Follow-up ultrasound in 6 months.",
+        "C. No further follow-up.",
+        "D. Staging CT.",
+        "E. 99m Tc sestamibi scan."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The features suspicious for malignancy on ultrasound are calciﬁcation, irregularity, solid lesion, and irregular halo- and hypervascularity.  A repeat biopsy should be considered if there is discordance between imaging ﬁndings and cytology.\n\nIyer NG and Shaha AR. Management of thyroid nodules and surgery for differentiated thyroid cancer. Clinical Oncology 2010; 22: 405–412.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 50-year-old female colleague asks you for information and advice regarding breast screening. Which of the following statements regarding breast screening in the UK is correct?",
+      "options": [
+        "A. She will not be eligible for screening until she is 55.",
+        "B. Screening occurs every 2 years.",
+        "C. Compression is not required for screening mammography.",
+        "D. There is a 70% reduction in mortality from breast cancer among screened women.",
+        "E. Two lives are saved for every over-diagnosed case."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Over-diagnosis is deﬁned as the diagnosis of cancer as a result of screening that would not have been diagnosed in the woman’s lifetime had screening not taken place. Approximately 5.7–8.8 breast cancer deaths are prevented per 1000 women screened for 20 years starting at age 50 compared with 2.3–4.3 over-diagnosed cases per 1000 women screened for 20 years. The WHO International Agency for Research on Cancer determined that there is a 35% reduction in mortality from breast cancer among screened women aged 50–69.\n\nThe NHS Breast Screening Programme provides screening every 3 years for women between the ages of 50 and 70. After the age of 70, women are still screened, although they are not automatically called for. Expansion is planned to cover women from 47 to 73. A two-view (cranio-caudal and mediolateral oblique) mammogram is taken, performed with breast compression, which can be uncomfortable for the patient.\n\nwww.cancerscreening.nhs.uk/breastscreen Duffy SW, Tabar L, Olsen AH, Vitak B, Allgood PC, Chen THH et al. Absolute numbers of lives saved and overdiagnosis in breast cancer screening, from a randomized trial and from the breast screening programme in England. Journal of Medical Screening 2010; 17: 25–30.",
+      "questionNumber": 27
+    },
+    {
+      "question": "You are asked to perform an antenatal ultrasound examination and note that the placenta has an unusual morphology.You see an additional lobule, which is separate from the main bulk of the placenta. What is this variant of placental morphology known as?",
+      "options": [
+        "A. Circumvallate placenta.",
+        "B. Bilobed placenta.",
+        "C. Placenta membranacea.",
+        "D. Succenturiate placenta.",
+        "E. Placenta accreta."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is an additional lobule separate from the main bulk of the placenta. The signiﬁcance of this variant is the rupture of vessels connecting the two components or retention of the accessory lobe with resultant post-partum haemorrhage.\n\nCircumvallate placenta has a chorionic plate smaller than the basal plate, with associated rolled placental edges. There is known to be an increased risk of placental abruption and haemorrhage with this type of placenta.\n\nA bilobed placenta is a placenta with two evenly sized lobes connected by a thin bridge of placental tissue. This has no known increased risk of morbidity.\n\nPlacenta membranacea is a thin membranous structure circumferentially occupying the entire periphery of the chorion. There is an increased risk of placenta praevia, as a portion of the placenta completely covers the internal os.\n\nPlacenta acreta is not a variant of placental morphology. It occurs when there is superﬁcial invasion of the chorionic villi of the placenta into the basalis layer of the uterine wall. Deeper invasion of the myometrium is termed ‘placenta increta’. Even deeper invasion involving the serosa or adjacent pelvic organs is termed ‘placenta percreta’. The risk of this is catastrophic intrapartum haemorrhage at the time of placental delivery.\n\nElsayes KM, Trout AT, Friedkin AM, Liu PS, Bude RO, Platt JF, and Menias CO. Imaging of the placenta: a multimodality pictorial review. RadioGraphics 2009; 29: 1371–1391.",
+      "questionNumber": 28
+    },
+    {
+      "question": "You are the interventional radiology fellow in your hospital. A nephrologist has asked you for an opinion on four patients they feel require renal arterial intervention. Patient A is a 68-year-old male who has had a catheter angiogram which showed a 60% narrowing in the right renal artery.This patient has refractory hypertension. Patient B is a 42-year-old female, also with refractory hypertension. She has had an MR angiogram, which has shown a number of stenoses, with intervening mild aneurysm formation, in the proximal right renal artery. Patient C is a 72-year-old female with impaired renal function, who underwent captopril renal scintigraphy. On the baseline study, there was a similar appearance of the kidneys. On the captopril study, there was a differential split of renal function of 15% between the right and left kidney, with a decrease of time to peak activity of 320 seconds.The ﬁnal patient D had a renal Doppler ultrasound, which showed a biphasic ﬂow pattern in the segmental arteries, with a slow upstroke. Which of these patients has signiﬁcant atherosclerotic renal artery stenosis?",
+      "options": [
+        "A. Patients A and B.",
+        "B. Patients C and D.",
+        "C. Patients A, C, and D.",
+        "D. Patients B, C, and D.",
+        "E. All of them."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A 70% stenosis is taken as the cut-off for signiﬁcant stenosis. Patient B is atypical in their age. They also have imaging characteristics typical of ﬁbromuscular dysplasia.  Patients C and D have classical imaging features of renal artery stenosis (RAS). With regard to ultrasound diagnosis using Doppler, this is made by either showing ﬂow acceleration immediately distal to the site of stenosis or showing dampened ﬂow in the segmental arteries. In the renal artery, a peak systolic velocity of over 180 cm/s combined with a renal/aortic velocity ratio of over 3 is reported as being the most sensitive method of detecting RAS.\n\nHouse M, Dowling R, King P, and Gibson R. Using Doppler sonography to reveal renal artery stenosis: an evaluation of optimal imaging parameters. American Journal of Roentgenology 1999; 173: 761–765.\n\nMorgan R and Waltzer E. Handbook of Angioplasty and Stenting Procedures, Springer, 2010, pp. 151–156.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 36-year-old male patient presents with abdominal pain. He has a history of hypertension and obesity. A CT of abdomen reveals a 6-cm right adrenal mass, which shows heterogenous but peripheral enhancement, necrosis, and some calciﬁcation.There is early invasion of the IVC.The left adrenal gland is atrophied. What is the most likely diagnosis?",
+      "options": [
+        "A. Neuroblastoma.",
+        "B. Adrenal cortical carcinoma.",
+        "C. Myelolipoma.",
+        "D. Adrenal adenoma.",
+        "E. Phaeochromocytoma."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The clinical picture is one of undiagnosed Cushing’s syndrome with obesity and hypertension. In this case it is adrenocorticotropic hormone (ACTH) independent Cushing’s, as the negative feedback from the cortisol producing adrenal carcinoma causes reduction in ACTH levels and atrophy of the contra-lateral, normal adrenal gland.\n\nAdrenal adenoma can cause Cushing’s syndrome, but the features described point to adrenal carcinoma. They have a bimodal distribution (ﬁrst and fourth decades). On average 55% are functional, manifesting with Cushing’ syndrome, feminization, virilisation, or a mixture of these. Hypertension is common in all syndrome types. The majority of masses measure more than 6 cm. They are inhomogenous on unenhanced CT, owing to necrosis. They enhance heterogeneously, often peripherally, with a thin rim of enhancing capsule in some cases. In 19–33% of cases calciﬁcation or microcalciﬁcations have been identiﬁed. The liver is the most common metastatic site, followed by the lung and lymph nodes. Direct extension and tumour thrombus can also occur. Compression of the IVC can lead to presentation with abdominal pain, lower extremity oedema or pulmonary embolism.\n\nNeuroblastoma is a disease of childhood. Myelolipoma is a relatively uncommon benign adrenal mass containing fat and haemopoeitic tissue.\n\nPhaeochromocytoma is classically brightly enhancing, but can have a variety of CT appearances. It would explain hypertension, but not atrophy of the contra-lateral adrenal gland. Phaeochromocytoma rarely invades the IVC.\n\nJohnson PT, Horton KM, and Fishman EK. Adrenal mass imaging with multidetector CT: pathologic conditions, pearls, and pitfalls. RadioGraphics 2009; 29: 1333–1351.\n\nRockall AG, Babar SA, Sohaib SA, Isidori AM, Diaz-Cano S, Monson JP et al. CT and MR imaging of the adrenal glands in ACTH-independent Cushing syndrome. RadioGraphics 2004; 24: 435–452.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 30-year-old male with a thyroid nodule is referred for an ultrasound guided FNA.The FNA cytology reveals medullary thyroid carcinoma, which is treated by total thyroidectomy.The following year he undergoes a CTPA examination, which shows a small nodule in the thyroid region. Which of the following serum markers is useful in assessing recurrence?",
+      "options": [
+        "A. CA 19-9.",
+        "B. Calcitonin.",
+        "C. CA 125.",
+        "D. Thyroglobulin.",
+        "E. Calcium."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Medullary thyroid carcinoma arises from the parafollicular C cells of the thyroid that secrete calcitonin, therefore calcitonin is a useful tumour marker for medullary thyroid carcinoma. CEA is another tumour marker produced by neoplastic C cells.\n\nThyroglobulin is produced by follicular cells and is therefore not useful in medullary carcinomas.\n\nPacini F, Castagna MG, Cipri C, and Schlumberger M. Medullary thyroid carcinoma. Clinical Oncology 2010; 22: 475–485.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 24-year-old woman presents to the symptomatic breast clinic with a palpable left-sided breast lesion.There is no family history of breast cancer. Clinical examination reveals a smooth, relatively mobile 2-cm lesion within the left upper quadrant. Ultrasound depicts a well-deﬁned oval hypoechoic lesion with an echogenic capsule following the tissue planes. No malignant features are present.The patient states that she has a phobia of needles. What should be the next step in this patient’s management?",
+      "options": [
+        "A. Reassurance and discharge with advice.",
+        "B. Correlation with mammography.",
+        "C. Ultrasound guided core biopsy.",
+        "D. Ultrasound guided FNA.",
+        "E. Referral for MRI."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The clinical and radiological ﬁndings in this case are typical for ﬁbroadenoma.  Standard practice for investigating breast lumps involves triple assessment with clinical examination, imaging with ultrasound, and tissue diagnosis (with either cytology or histology). However, in women under the age of 25 who present with a clinically and radiologically benign lump, biopsy is not needed unless there is overriding clinical concern. To be assessed as deﬁnitely benign on ultrasound, there should be no malignant features (spiculation, angular margins, acoustic shadowing, calciﬁcation, and marked hypoechogenicity) and the lesion should follow tissue planes (wider than it is tall). The ultrasound should also be performed by an experienced operator. The patient should be advised to seek further assessment if there is any increase in size or change to the mass.\n\nSmith GEC and Burrows P. Ultrasound diagnosis of ﬁbroadenoma – is biopsy always necessary? Clinical Radiology 2008; 63: 511–515 (commentary by Dall BJG, Clinical Radiology, 2008; 63: 516–517).",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 40-year-old man has an ultrasound examination of the abdomen for epigastric pain.The examination is normal apart for an isoechoic ‘mass’ at the midpole of the left kidney.You suspect this may be a normal variant, such as a prominent column of Bertin.You recommend a CT scan of kidneys to conﬁrm this. Which phase of a CT renal tract examination would best show this variant?",
+      "options": [
+        "A. Unenhanced scan.",
+        "B. Cortico-medullary phase.",
+        "C. Nephrographic phase.",
+        "D. Early excretory (3-minute) phase.",
+        "E. Late excretory (10-minute) phase."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Imaging in the cortico-medullary phase is helpful for showing the normal cortico-medullary pattern in pseudotumours such as prominent columns of Bertin or focal renal hypertrophy. It is also useful for suspected abnormalities such as vascular malformations and pseudoaneurysms of the kidney. The nephrographic phase is best to characterize renal masses. Small parenchymal renal lesions may be hidden in the renal medulla on the cortico-medullary phase and excretory phases. Excretory phases are best to assess for collecting system lesions and the unenhanced scan is best for detection of renal calculi and for using as a baseline in assessing the enhancement characteristics of parenchymal renal lesions.\n\nIsrael GM and Bosniak MA. Pitfalls in renal mass evaluation and how to avoid them. RadioGraphics 2008; 28: 1325–1338.",
+      "questionNumber": 33
+    },
+    {
+      "question": "You are consulted about a 24-year-old male patient who is day 3 following a blind right-sided renal biopsy, which diagnosed glomerulonephritis. He has been well until today, when he developed acute right ﬂank pain and haematuria.The urologists asked for an IVU prior to assessing the patient. They feel this showed an absent kidney, but on the 15- and 20-minute images, you feel you can detect a faint nephrogram that is slightly more pronounced on the 20-minute image. Given your suspicions about the cause, which of the following would be the least likely to contribute to the diagnosis?",
+      "options": [
+        "A. Ultrasound.",
+        "B. MRI with GE sequences of the right kidney.",
+        "C. MRI with SE sequences of the right kidney.",
+        "D. Arterial phase CT abdomen.",
+        "E. Portal venous phase CT abdomen."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The IVU has surprisingly been helpful in showing a delayed increasing nephrogram, a classical, although uncommon, appearance of renal vein thrombosis. This is also indicated by the history of glomerulonephritis, which can manifest as nephrotic syndrome, the most common cause for renal vein thrombosis. Ultrasound is often successful at identifying a thrombosed right renal vein, but is not useful in assessing the longer left renal vein. Gradient and SE sequences are both helpful in assessing the renal venous system, with GE giving low-signal thrombus and SE giving high-signal thrombus. Arterial phase CT would be too early to show a venous ﬁlling defect and thus may not contribute, although it may show a rim nephrogram. Portal venous phase CT is reasonably sensitive at detecting the lack of enhancement within the renal vein and abnormal enhancement pattern within the affected kidney.\n\nAdam A and Dixon A. Grainger and Allison’s Diagnostic Radiology. A textbook of medical imaging, Vol 1, 5th edn, Churchill Livingstone, 2008, Ch 39.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 58-year-old smoker presents with haemoptysis and chest pain. A CT of chest conﬁrms a lung carcinoma. While reporting the CT you notice that there is enlargement of the right adrenal gland.The patient has already left the department, but by chance is due to have an MRI scan of lumbar spine at a nearby institution the following morning. Due to time constraints, they can only ﬁt in one sequence to image the adrenal glands. Which one sequence is of most use in further characterizing the adrenal abnormalities?",
+      "options": [
+        "A. T2WI.",
+        "B. STIR.",
+        "C. Axial T1WI with fat saturation.",
+        "D. In- and out-of-phase T1WI.",
+        "E. DWI."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is a T1WI technique and will reveal the presence of intracellular lipid via a dropout of signal on the out-of-phase imaging when compared to the in-phase imaging. Thus a benign adrenal adenoma will show such signal dropout (20% or greater in quantity is diagnostic; 10–20% is highly suggestive), whilst adrenal metastases will not. However, approximately 15% of benign adenomas do not accumulate intracellular lipid and may retain signal on the out-of-phase imaging; in such cases, dynamic gadolinium-enhanced images can increase speciﬁcity to over 90–95% (by showing washout characteristics as seen on CT). If there is still doubt, PET-CT is useful. Adrenal hyperplasia may also show loss of signal on the out-of-phase imaging. Of note an adrenal cortical carcinoma can show dropout of signal in portions on the out-of-phase sequence, but there is not the uniform loss of signal as seen with adenomas.\n\nThe T1WI with fat saturation will show signal dropout in areas of extracellular lipid, e.g. macroscopic fat in lipomas, dermoid cysts, or the subcutaneous tissues. T2WI is not of much beneﬁt in distinguishing benign from malignant adrenal masses unless the tumour is a phaeochromocytoma, which can show very high T2WI signal.\n\nMartin D, Brown M, and Semelka, R. Primer on MR Imaging of the Abdomen and Pelvis, Wiley, 2005, 223–256.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 40-year-old male with a history of haematuria undergoes CT urography. Initial non-contrast scan demonstrates right-sided medullary nephrocalcinosis. Following intravenous contrast administration, a striated ‘paintbrush’ appearance of the renal medulla is noted.The left kidney is unremarkable. What is the diagnosis?",
+      "options": [
+        "A. Hyperparathyroidism.",
+        "B. Renal tubular acidosis.",
+        "C. Medullary sponge kidney.",
+        "D. Sarcoidosis.",
+        "E. Multiple myeloma."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hyperparathyroidism, renal tubular acidosis, and medullary sponge kidney are the three most common causes of medullary nephrocalcinosis. The former two conditions are associated with hypercalciuria that results in uniform medullary nephrocalcinosis. Sarcoidosis and multiple myeloma are associated with hypercalcemia resulting in bilateral nephrocalcinosis. Medullary sponge kidney can affect the kidney segmentally, unilaterally, or bilaterally, therefore unilateral nephocalcinosisis is suggestive of medullary sponge kidney.\n\nMedullary sponge kidney is characterized by cystic dilatation of collecting tubules. Urine stasis within the dilated tubules predisposes to infection and calculus formation within the dilated tubules or urinary tracts. On excretory urogram, contrast within the dilated tubules produces a striated ‘paintbrush’ appearance of the renal pyramids. \n\nJoffe SA, Servaes S, Okon S, and Horowitz M. Multi-detector row CT urography in the evaluation of hematuria. RadioGraphics 2003; 23: 1441–1455.\n\nDyer RB, Chen MY, and Zagoria RJ. Abnormal calciﬁcations in the urinary tract. RadioGraphics 1998; 18: 1405–1424.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 49-year-old woman presents with a rapidly enlarging left-sided breast mass. A large, ﬁrm, non-tender discrete mass is noted on clinical examination with overlying skin ulceration. Mammography reveals a 7-cm multilobulated soft tissue density mass in the left upper quadrant. On ultrasound the mass is solid with cystic areas. Posterior acoustic enhancement is demonstrated. What is the most likely diagnosis?",
+      "options": [
+        "A. Adenoid cystic carcinoma.",
+        "B. Fibromatosis.",
+        "C. Granular cell tumour.",
+        "D. Phyllodes tumour.",
+        "E. Melanoma metastasis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This most commonly manifests as a rapidly growing mass, which is lobulated on mammography. Calciﬁcations are rarely seen. A solid mass containing cystic spaces on ultrasound and demonstrating posterior acoustic enhancement is strongly suggestive of phyllodes tumour. Phyllodes tumour can be benign or malignant, but both have a tendency to recur if not widely excised. Adenoid cystic carcinoma is a slow-growing mass that is well deﬁned on mammography. Fibromatosis presents as an indistinct mass on mammography, which is hypoechoic with posterior acoustic shadowing on ultrasound, simulating malignancy. Granular cell tumours are thought to arise from Schwann cells and have a very variable appearance. Metastatic disease to the breast is much more likely to be multiple or bilateral. Diffuse skin thickening is also a feature.\n\nFeder JM, Shaw de Paredes E, Hogge JP, and Wilken JJ. Unusual breast lesions: radiologicpathologic correlation. RadioGraphics 1999; 19: 511–526.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 50-year-old man attends his GP feeling generally lethargic.The GP organizes blood tests and these reveal renal impairment. A subsequent ultrasound examination shows bilateral hydronephrosis without obvious cause. A CT scan of the abdomen then demonstrates that the hydronephrosis is secondary to bilateral ureteric obstruction from abnormal retroperitoneal soft tissue, intimately related to the aorta and IVC. Which of the following features on CT would suggest that the soft tissue is more likely due to retroperitoneal ﬁbrosis, rather than a malignant cause?",
+      "options": [
+        "A. Nodular contour to the soft tissue.",
+        "B. Contrast enhancement of the soft tissue.",
+        "C. More severe hydronephrosis in the kidneys.",
+        "D. Close application of the soft tissue to the adjacent vertebrae.",
+        "E. Soft-tissue extension above and below the level of the renal hila."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Unfortunately attempts to consistently distinguish benign retroperitoneal ﬁbrosis (RPF) from malignancy are fraught with danger, but there are certain CT ﬁndings which are more commonly seen in one or other of these conditions.\n\nMalignancy tends to be larger and bulkier, displaying mass effect and displacing the aorta and IVC anteriorly from the spine and the ureters laterally. The purely ﬁbrotic process of benign RPF tends to tether these structures to the adjacent vertebrae.\n\nMalignancy is more likely to extend cephalad to the renal hila, with benign RPF remaining caudal to the hila. Neoplasia also more typically has a nodular outline, whereas benign RPF usually manifests as a plaque-like density. There are, of course, exceptions to both these features.\n\nContrast enhancement is not a reliable feature for distinguishing benign RPF from malignancy, as both malignancy and active RPF can enhance with contrast. Similarly, the degree of hydronephrosis caused is not a good distinguisher.\n\nCronin CG, Lohan DG, Blake MA, Roche C, McCarthy P, and Murphy JM. Retroperitoneal ﬁbrosis: a review of clinical features and imaging ﬁndings. American Journal of Roentgenology 2008; 191: 423–431.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 73-year-old male patient is referred from the urologists with a new diagnosis of prostate cancer. He is having an MRI scan to help stage the tumour.The patient reports that he has had a trans-rectal ultrasound (TRUS) biopsy done, but cannot remember when and the date is not on the form.The following information is present on the request form: ‘The tumour is not palpable on digital rectal examination (DRE).The prostate speciﬁc antigen (PSA) is 2.4. One of four biopsies was positive and the Gleason score from this was 5.’ When you do the MRI scan there is low signal in the peripheral zone on the left.There is also low signal on the right, which extends into the seminal vesicles.The images of the pelvis and para-aortic region do not show any evidence of lymphadenopathy. Which of these options would you choose for your report?",
+      "options": [
+        "A. Repeat scan in 4 weeks.",
+        "B. T1 disease.",
+        "C. T2a disease.",
+        "D. T2c disease.",
+        "E. T3b disease."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "There are a number of important points in this question. Firstly, the date from biopsy must be known to avoid misinterpreting haemorrhage as disease on MRI. Fortunately the urologists have provided you with the salient information necessary to estimate disease stage from the Partin’s tables. Whilst these are clinical features, they are essential to know when interpreting MRI. The features described indicate a <1% risk of this patient having extracapsular disease. In combination with the unknown date of the biopsy, it would be prudent to exclude the possibility that this low signal in the seminal vesicles is not haemorrhage by repeating the scan. If this does represent disease invasion of the seminal vesicles, then it would indicate T3b disease.\n\nPartin A, Kattan M, Subong E, Walsh P, Wojno K, Oesterling J et al. Combination of prostatespeciﬁc antigen, clinical stage, and Gleason score to predict pathological stage of localised prostate cancer. A multi-institutional update. Journal of the American Medical Association 1997; 277: 1445–1451.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 45-year-old woman presents with anorexia and loss of weight. A CT of abdomen reveals bilateral non-calciﬁed ovarian masses, but no ascites and no signiﬁcant pelvic lymphadenopathy or peritoneal disease. Serum alpha fetoprotein, beta human chorionic gonadotrophin (b-HCG), and CA-125 are normal.The gynaecology team request an MRI of pelvis.This reveals that both ovaries are enlarged, the left more than the right. Bilateral cystic masses with low signal on T2WI/intermediate signal T1WI with solid portions are demonstrated. Gadolinium-enhanced T1WI with fat saturation reveals marked enhancement of these solid components and septa. What is the most likely diagnosis?",
+      "options": [
+        "A. Krukenberg tumours.",
+        "B. Sertoli–Leydig tumours.",
+        "C. Dysgerminomas.",
+        "D. Fibromas.",
+        "E. Endodermal sinus tumours."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The history points towards a GI source, namely gastric carcinoma. Approximately 5–15% of ovarian tumours are metastatic lesions. They are bilateral in 75% of cases. They are often asymptomatic and may present before the primary tumour. They should be considered, along with serous epithelial tumours of the ovary, when bilateral complex ovarian masses are demonstrated. Krukenberg tumours represent ovarian metastases that contain mucin-secreting ‘signet-ring’ cells from colonic or gastric neoplasms. Other primary neoplasms that less commonly metastasize to the ovary are breast, lung, and the contra-lateral ovary (not strictly Krukenberg tumours due to the cell types). Imaging ﬁndings in metastatic lesions are nonspeciﬁc, consisting of predominately solid components or a mixture of cystic and solid areas. In Krukenberg tumours, there are distinctive ﬁndings, including solid components secondary to stromal reaction that are low T2WI and high T1W signal.\n\nA Sertoli–Leydig tumour is a sex cord-stromal tumour that occurs in young women (less than 30 years old). It manifests as a well-deﬁned, enhancing solid mass with intra-tumoral cysts. They constitute 0.5% of ovarian tumours. They are rarely bilateral.\n\nDysgerminomas are rare ovarian tumours that occur predominantly in young women. Serum F-HCG is increased in 5%. Calciﬁcation may be present in a speckled pattern. Characteristic imaging ﬁndings include multilobulated solid masses with prominent ﬁbrovascular septa. They are rarely if ever bilateral.\n\nFibromas are benign solid tumours of the ovary, which are of low signal on T1W and very low signal on T2W sequences. They can be associated with ascites and pleural effusions (Meigs syndrome), and dense calciﬁcations are often seen. Together with ﬁbrothecomas they form a spectrum of benign tumours.\n\nEndodermal sinus tumour, also known as yolk sac tumour, is a rare malignant ovarian tumour that usually occurs in the second decade of life. These tumours manifest as a large, complex pelvic mass that extends into the abdomen and contains both solid and cystic components. They are rarely bilateral. They grow rapidly and have a poor prognosis. Affected patients have an elevated serum alpha feta protein.\n\nHamm B and Forstner R (eds). MRI and CT of the Female Pelvis, Springer, 2007, p. 259.\n\nJung SE, Lee JM, Rha SE, Byun JY, Jung JI, and Hahn ST. CT and MR imaging of ovarian tumors with emphasis on differential diagnosis. RadioGraphics 2002; 22: 1305–1325.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 54-year-old female patient presents with anaemia and haematuria. A CT of abdomen conﬁrms renal cell carcinoma of the right kidney, but there is also enlargement of the right adrenal gland. Which of the following CT characteristics is most consistent with a benign adrenal adenoma?",
+      "options": [
+        "A. A pre-contrast attenuation of 50.",
+        "B. An immediate post-contrast attenuation of 50.",
+        "C. A relative percentage washout (RPW) of 60%.",
+        "D. Lesion size of 50 mm.",
+        "E. Heterogeneity of the lesion."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Findings consistent with an adrenal adenoma are: a pre-contrast attenuation of 10 HU or less, an absolute percentage washout (APW) of 60% or greater, or an RPW of 40% or greater.\n\nThe percentage washout is calculated by comparing the attenuation value at 15 minutes post contrast (delayed H), to the value in the portal venous phase (enhanced H), and in the case of APW, the pre-contrast value.\n\nRPW = 100 × (enhanced H – delayed H)/enhanced H\n\nAPW = 100 × (enhanced H – delayed H)/(enhanced H – pre-contrast H)\n\nIn practice, an unenhanced scan is not usually performed and thus only the RPW is calculated.\n\nAdrenal cortical carcinomas usually have an RPW of less than 40% although exceptions have been reported. Their large size (usually greater than 6 cm), heterogeneity pre-contrast (necrosis), and heterogeneous enhancement are more reliable indicators of the diagnosis. Phaeochromocytomas and hypervascular metastases may mimic adenomas, but most metastases show RPW < 40% and APW < 60%.\n\nJohnson PT, Horton KM, and Fishman EK. Adrenal mass imaging with multidetector CT: pathologic conditions, pearls, and pitfalls. RadioGraphics 2009; 29: 1333–1351.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 35-year-old female presents with a history of menorrhagia. MRI of pelvis demonstrates a ﬁbroid uterus for which treatment with high-intensity focused ultrasound (HIFU) is proposed. What is the principle mechanism of action of HIFU?",
+      "options": [
+        "A. Coagulation necrosis.",
+        "B. Apoptosis.",
+        "C. Cavitation.",
+        "D. Microstreaming.",
+        "E. Radiation forces."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "HIFU is a non-invasive method to treat solid tumours or haemorrhage. As HIFU is essentially ultrasound, it requires an acoustic window to transmit ultrasound energy and is subject to similar artefact.\n\nThe principle effect of HIFU is heat generation from absorption of acoustic energy. This causes coagulation necrosis within seconds. Hyperthermia also induces apoptosis, which can be an important delayed effect in tissue exposed to lower energy HIFU. This mechanism is also a potential limitation of HIFU as adjacent tissue may be at risk.\n\nMechanical effects such as cavitation and microstreaming are also seen with the use of higher ultrasound intensity.\n\nDubinsky TJ, Cuevas C, Dighe MK, Kolokythas O, and Hwang JH. High-intensity focused ultrasound: current potential and oncologic applications. American Journal of Roentgenology 2008; 190: 191–199.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 60-year-old woman presents with a palpable lump in her right breast. Her recent screening mammogram 6 months previously was negative. Clinical examination reveals a subtle mass in the right lower quadrant. Which of the following mammographic ﬁndings is the most common in invasive lobular carcinoma (ILC)?",
+      "options": [
+        "A. Spiculated mass.",
+        "B. Architectural distortion.",
+        "C. Microcalciﬁcation.",
+        "D. Nipple retraction.",
+        "E. Skin thickening."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "ILC is the second most common form of invasive breast cancer, after ductal carcinoma. It exhibits the same mammographic features as invasive ductal carcinoma, although architectural distortion is the most common mammographic ﬁnding. Due to the pattern of small cells growing around ducts (‘Indian ﬁles’), mammographic ﬁndings are subtle and thus ILC is the most frequently missed breast cancer. Prognosis is generally poor due to late diagnosis.\n\nDahnert W. Radiology Review Manual, 6th edn, Lippincott Williams & Wilkins, 2007, p. 558.",
+      "questionNumber": 43
+    },
+    {
+      "question": "You are asked to assess a 24-year-old woman with TVUS.The patient presents with lower abdominal cramps and is approximately 5 weeks post last menstrual period (LMP). Her pulse and blood pressure are normal. β-HCG levels suggest that the patient is pregnant. On TVUS, no adnexal mass or free ﬂuid is seen. Which of the following ﬁndings would you expect to see in the uterus to conﬁrm that the patient does not have an ectopic pregnancy?",
+      "options": [
+        "A. Pseudogestational sac.",
+        "B. Normal endometrium.",
+        "C. Trilaminar endometrium.",
+        "D. Double decidual sac sign.",
+        "E. Thin-walled decidual cyst."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "All the other answers are ﬁndings in the uterus that may be associated with ectopic pregnancy. In normal pregnancies, TVUS can demonstrate an intradecidual sign approximately 4.5 weeks after the last menstrual period. The intradecidual sign is a small collection of ﬂuid that is eccentrically located within the endometrium and is surrounded by a hyperechoic ring. At approximately 5 weeks, the double decidual sac sign can be visualized. This consists of two concentric hyperechoic rings that surround an anechoic gestational sac in a normal intrauterine pregnancy. The secondary yolk sac may be identiﬁed at TVUS at approximately 5.5 weeks. Embryonic cardiac activity should also be visualized at TVUS at approximately 5–6 weeks, when the gestational sac measures at least 18 mm or when the embryonic pole measures at least 5 mm.\n\nA pseudogestational sac is a thick decidual reaction surrounding intrauterine ﬂuid and is seen in approximately 10% of ectopic pregnancies. A trilaminar endometrium is formed during the late proliferative phase of the menstrual cycle. When an abnormal pregnancy is suspected on the basis of laboratory results, the absence of a true gestational sac in the presence of a trilaminar endometrium is highly suggestive of ectopic pregnancy. Thin-walled decidual cysts are seen at the junction of endometrium and myometrium, and may be seen in both normal and abnormal pregnancies. The thin wall differentiates it from a true gestational sac.\n\nLin EP, Bhatt S, and Dogra V. Diagnostic clues to ectopic pregnancy. RadioGraphics 2008; 28: 1661–1671.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 56-year-old male patient has presented to the urologists with a PSA of 17 ng/ml. He does not have a mass palpable on DRE.Two separate TRUS investigations, with a total of eight biopsies, have failed to yield a tissue diagnosis.The urologists have asked you to carry out an MRI to help guide their future biopsies. As is routine in these difﬁcult cases, magnetic resonance spectroscopy (MRS) is carried out on suspicious areas to provide extra information.The MRI identiﬁes an area of low signal in the anterior peripheral zone.This reveals an elevated choline and creatine peak, and a reduced citrate peak. Which of these features is suggestive of carcinoma?",
+      "options": [
+        "A. Elevated choline.",
+        "B. Reduced polyamine peak.",
+        "C. Reduced citrate peak.",
+        "D. None of them, MRS is only sensitive in the transition zone.",
+        "E. All of them."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "MRI is not a primary investigation in the diagnosis of prostate cancer but it is used in staging known disease. Occasionally, in a patient with a high risk of prostate carcinoma, as in this case, when the urologists have repeatedly failed biopsies, MRI can be used to help guide biopsy. In this setting MRS can also be used to increase conﬁdence in the diagnosis. As with all prostate imaging for cancer, the results are more reliable in the peripheral zone due to the variability of appearances in the transitional zone. Choline is elevated in prostate cancer, and is thought to reﬂect increased cell membrane turnover. Creatine, also detected on MRS, is unchanged. Polyamine is reduced. Citrate, which is stored in normal prostatic cells, is reduced, presumably because of reduced normal function within cancerous cells. The (creatine + choline)/citrate ratio has been used to help discriminate prostate cancer from normal prostate. The role of MRS in the transitional zone is unclear.\n\nFuchsjager M, Shukla-Dave A, Akin O, Barentsz J, and Hricak H. Prostate cancer imaging. Acta Radiologica 2008; 49(1): 107–120.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 64-year-old patient is referred for a CT of abdomen 10 days post laparotomy for a right hemicolectomy for colonic adenocarcinoma. His post-operative course is initially uneventful, but the request form states that over the last 2 days he has developed pyrexia and today his inﬂammatory markers are markedly raised, he is ‘septic’ and unwell.The surgeons suspect a perforation or anastomotic leak, but you ﬁnd no signiﬁcant free ﬂuid or air.There is marked bilateral enhancement of the adrenal glands, which are normal in size.The remainder of the abdominal viscera are unremarkable and the IVC and aorta are normal in calibre.There is marked consolidation at both lung bases. What is the signiﬁcance of the appearance of the adrenal glands?",
+      "options": [
+        "A. Hypovolaemic shock.",
+        "B. Phaeochromocytoma.",
+        "C. Hypervascular metastases.",
+        "D. Addisonian crisis secondary to tuberculous adrenalitis.",
+        "E. Adrenal hyperplasia as a response to the recent surgery."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Marked adrenal enhancement may be the only sign of signiﬁcant hypovolaemic shock.  This is thought to be due to hyperperfusion of the adrenal glands because of their crucial role in this clinical situation. Other signs that may accompany this sign, the ‘hypoperfusion complex’ described in shock due to trauma, are collapsed IVC, small hypodense spleen, small aorta and mesenteric arteries, shock nephogram (lack of renal contrast excretion), intense pancreatic enhancement, dilatation of ﬂuid-ﬁlled intestine with thickening of folds, and increased enhancement of the wall. However, in cases of hypovolaemic shock due to sepsis, where there has been rapid ﬂuid replacement, the IVC and aorta may be of normal calibre and persisting marked adrenal enhancement has been described as the only abnormality.\n\nPhaeochromocytomas are bilateral in only approximately 10% and this would be even less likely in the presence of another neoplasm. Hypervascular metastases are uncommon in colonic carcinoma. Adrenal hyperplasia may occur as a response to stress but the adrenals would enhance normally. In tuberculous adrenalitis, the adrenal glands show areas of necrosis and sometimes calciﬁcation, with possible rim enhancement. In all four of these alternative options the adrenal glands would be enlarged.\n\nCheung SCW, Lee R, Tung HKS, and Chan FL. Persistent adrenal enhancement may be the earliest CT sign of signiﬁcant hypovolaemic shock. Clinical Radiology 2003; 58: 315–318. Dahnert W. Radiology Review Manual, 5th edn, Lippincott Williams & Wilkins, 2003, p. 872. Wang YX, Chen CR, He GX, and Tang AR. CT ﬁndings of adrenal glands in patients with tuberculous Addison’s disease. Journal Belge de Radiologie 1998; 81: 226–228.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 46-year-old female with pressure symptoms related to uterine ﬁbroids is referred for ﬁbroid embolization. Which of the following complications is the patient at increased risk of?",
+      "options": [
+        "A. Uterine sepsis.",
+        "B. Fibroid passage.",
+        "C. Fibroid regrowth.",
+        "D. Ovarian dysfunction.",
+        "E. Hysterectomy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Ovarian dysfunction is a known complication of ﬁbroid embolization. The exact mechanism is not known, but inadvertent embolization of the ovaries via a uterine–ovarian anastomosis has been suggested. There is a higher prevalence of uterine–ovarian anastomosis in women over 45 years of age and that puts them at increased risk.\n\nKitamura Y, Ascher S, Cooper C, Allison SJ, Jha RC, Flick PA et al. Imaging manifestations of complications associated with uterine artery embolization. RadioGraphics 2005; 25: S119–S132.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 28-year-old primiparous woman has been breastfeeding for the past 3 months. She is admitted surgically complaining of warmth and pain in her right breast associated with swinging fever. A 3 × 2 cm inhomogenous, hypoechoic abscess within the right lower inner quadrant is identiﬁed on ultrasound. How should this patient be managed?",
+      "options": [
+        "A. 6 weeks’ antibiotic therapy followed by repeat ultrasound.",
+        "B. Ultrasound guided needle aspiration.",
+        "C. Ultrasound guided catheter drainage.",
+        "D. Surgical incision and drainage.",
+        "E. Analgesia and advice to stop breastfeeding."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Breast abscess is a potential complication of mastitis that may occur during breast-feeding, particularly in primiparous women. Staphylococcus aureus is the most common causative organism. Treatment of mastitis usually consists of breast-emptying procedures and antibiotics. Abscesses are difﬁcult to detect clinically and so the patient should be investigated via ultrasound if mastitis does not promptly respond to appropriate therapy. Ultrasound-guided needle aspiration is a suitable method of treatment for abscesses less than 3 cm in maximum diameter. Continuing breast-feeding is not felt to be problematic.\n\nUlitzsch D, Nyman MKG, and Carlson RA. Breast abscess in lactating women: US-guided treatment. Radiology 2004; 232: 904–909.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 60-year-old man has an unenhanced CT scan of renal tracts for suspected right renal colic.The examination is normal apart from an exophytic rounded lesion at the midpole of the left kidney, which is denser than adjacent renal parenchyma.You elect to perform an intravenous contrastenhanced examination in the nephrographic phase to further evaluate this lesion. Which of the following Hounsﬁeld attenuation values would be most appropriate if this lesion is benign?",
+      "options": [
+        "A. 20 pre-contrast attenuation, 30 post-contrast attenuation.",
+        "B. 30 pre-contrast attenuation, 60 post-contrast attenuation.",
+        "C. 40 pre-contrast attenuation, 50 post-contrast attenuation.",
+        "D. 50 pre-contrast attenuation, 80 post-contrast attenuation.",
+        "E. 60 pre-contrast attenuation, 70 post-contrast attenuation.",
+        "F. 70 pre-contrast attenuation, 100 post-contrast attenuation."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The attenuation of the normal renal parenchyma typically ranges from 30 to 40 HU. That of hyperattenuating renal masses usually is at least 40 HU but no higher than 90 HU on CT without intravenous contrast. Benign cysts are overwhelmingly the most common type of hyperattenuating renal mass and are also known as hyperdense renal cysts. They are usually cysts containing haemorrhage or proteinaceous material. Hyperattenuating cysts should not enhance and therefore cannot be diagnosed with conﬁdence by using unenhanced CT alone. A proper CT examination includes scanning both before and after the administration of intravenous contrast material. Masses that increase in attenuation by 10 HU or less are considered non-enhancing. Masses that increase in attenuation by more than 10 HU are considered enhancing. However, because the standard deviation of attenuation measurements may be more than 10 HU, an attenuation difference of 20 HU or more is a more speciﬁc criterion of enhancement.\n\nSilverman SG, Mortele KJ, Tuncali K, Jinzaki M, and Cibas ES. Hyperattenuating renal masses: etiologies, pathogenesis, and imaging evaluation. RadioGraphics 2007; 27: 1131–1143.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 24-year-old male patient presents to the A&E department with a history of severe episodic right-sided loin pain, radiating to the groin. He has no history of previous renal calculi. A low-dose non-contrast CT of the renal tracts shows a calculus in the distal right ureter, adjacent to the vesicoureteric junction.The calculus measures 7 mm in diameter.The patient has a horseshoe kidney.There is stranding in the peri-nephric fat and around the right ureter.The density of the calculus is measured to be 1500 HU. Which of these observations is least likely to have relevance to this patient’s treatment?",
+      "options": [
+        "A. Site of the calculus.",
+        "B. Size of the calculus.",
+        "C. Perinephric and periureteric stranding.",
+        "D. Density of the calculus.",
+        "E. Horseshoe kidney."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Whilst this observation is sensitive and speciﬁc for detecting calculi, it does not have a bearing on stone outcome or urgency of treatment. The site is of value because if the stone impacts, it dictates the therapeutic approach. The size of the calculus can be used to assess the likelihood of spontaneous passage, with calculi over 5 mm more likely to cause obstruction. The density of the calculus has been found to predict the success of extracorporeal shock wave lithotripsy (ESWL). The presence of anatomical variations is also of interest to the urologists in treatment planning, if this becomes necessary.",
+      "questionNumber": 50
+    }
+  ,
+    {
+      "question": "A 60-year-old woman presents with pelvic pain. An MRI reveals multiple large areas of well-circumscribed, predominantly homogenous low T2WI and low/intermediate T1WI signal within the myometrium.There are also a number of peritoneal nodules demonstrated. What is the most likely diagnosis?",
+      "options": [
+        "A. Endometriosis.",
+        "B. Adenomyosis.",
+        "C. Uterine leiomyomas.",
+        "D. Endometrial carcinoma.",
+        "E. Metastases to the uterus."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Also known as uterine ﬁbroids, these are very common. They are usually of low signal on T2WI and intermediate signal on T1WI. Benign metastasizing leiomyoma is an unusual variant, with tumours in the lungs, lymph nodes, or peritoneal nodules, not uncommonly from a benign uterine ﬁbroid, which has been removed many years earlier. Malignant transformation to leiomyosarcoma is very rare and it is thought the latter may arise de novo even in the presence of leiomyomas.\n\nEndometrial sarcoma might produce peritoneal metastases, but would be expected to show a large heterogenous mass with indistinct or irregular borders arising from the endometrial canal.\n\nEndometriosis and adenomyosis are diseases of the reproductive years. Metastases to the uterus are rare and if present represent advanced malignancy. There is usually diffuse enlargement of the myometrium, which can be of low or high signal.\n\nMartin D, Brown M, and Semelka R. Primer on MR Imaging of the Abdomen and Pelvis, Wiley, 2005, 437–439.\n\nSzklaruk J, Tamm EP, Choi H, and Varavithya V. MR imaging of common and uncommon large pelvic masses. RadioGraphics 2003; 23: 403–424.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 2-day-old male neonate with a right-sided abdominal mass is referred for ultrasound of abdomen. Ultrasound demonstrates an enlarged right kidney containing multiple non-communicating cysts of varying size with little normal parenchyma. What is the most common associated abnormality of the contra-lateral kidney?",
+      "options": [
+        "A. Ectopic ureter.",
+        "B. Pelvi-ureteric junction obstruction.",
+        "C. Vesico-ureteric reﬂux.",
+        "D. Renal hypoplasia.",
+        "E. Renal aplasia."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The abnormality described on ultrasound is multicystic dysplastic kidney (MCDK). It is the most common form of cystic disease in infants and the second most common cause of an abdominal mass in a neonate (after hydronephrosis). Obstruction/atresia of the ureter during the developmental stage is thought to be the etiology.\n\nBilateral MCDK is uncommon, but associated anomalies of the contra-lateral kidney are seen in up to 50% of cases. Vesico-ureteric reﬂux (30–40%) is the most common associated anomaly, followed by pelvi-ureteric junction obstruction (10–20%).\n\nMercado-Deane M-G, Beeson JE, and John SD. US of renal insufﬁciency in neonates. RadioGraphics 2002; 22: 1429–1438.\n\nDahnert W. Multicystic dysplastic kidney, in Radiology Review Manual, 6th edn, Lippincott Williams & Wilkins, 2007, pp. 937–938.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 36-year-old labourer working on a building site falls 15 feet from scaffolding on his back onto a wheelbarrow. He is catheterized in the resuscitation room and is noted to have gross haematuria. Which of the following CT ﬁndings are consistent with a grade 4 renal injury?",
+      "options": [
+        "A. Renal artery avulsion.",
+        "B. Shattered kidney.",
+        "C. Deep laceration to the collecting system.",
+        "D. Subcapsular haematoma.",
+        "E. Parenchymal contusion."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Renal injuries are classiﬁed into ﬁve grades of severity by the American Association for the Surgery of Trauma (AAST), with approximately 80% classiﬁed as grade 1 (Table 4.1). Most signiﬁcant injuries manifest as haematuria and no signiﬁcant urinary tract injury occurs in the absence of gross haematuria and shock. In addition, most signiﬁcant renal trauma is associated with additional visceral injury.\n\nTable 4.1 AAST grading of renal trauma\n\nGrade | Injury\n--- | ---\n1 | Parenchymal contusion, Isolated subcapsular haematoma, Non-expanding perirenal haematoma\n2 | Superﬁcial cortical laceration <1 cm\n3 | Laceration >1 cm without extension to collecting system\n4 | Deep laceration to collecting system, Segmental infarctions without associated lacerations, Injury to main renal artery without devascularization\n5 | Shattered kidney, Ureteropelvic junction avulsion, Devascularization to renal pedicle\n\nAlonso RC, Nacenta SB, Martinez PD, Guerrero AS, and Fuentes CG. Kidney in danger: CT ﬁndings of blunt and penetrating renal trauma. RadioGraphics 2009; 29: 2033–2053.",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 54-year-old woman with no history of major illness is incidentally discovered to have a small, solid enhancing lesion on CT at the lower pole of the right kidney.The CT has been performed pre and post intravenous contrast.The lesion measures 9 mm in size. What is the most appropriate management for this lesion?",
+      "options": [
+        "A. Nephron sparing surgery.",
+        "B. Percutaneous biopsy.",
+        "C. Repeat CT in 3–6 months.",
+        "D. Right nephrectomy.",
+        "E. Lesion ablation."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Solid masses smaller than 1 cm are challenging. Firstly, there is a reasonable chance that a very small solid mass is benign. Secondly, it is often difﬁcult to characterize a mass smaller than 1 cm as solid and enhancing, despite a meticulous technique using state-of-the-art CT and MR imaging. Thirdly, these masses are often too small to biopsy, therefore when encountering a mass that is believed to be solid and is less than 1 cm in size, it is reasonable to observe them with an initial examination with CT or MR at 3–6 months followed by yearly examinations. A full work-up could ensue when the mass reaches 1 cm in size.\n\nSilverman SG, Israel GM, Herts BR, and Richie JP. Management of the incidental renal mass. Radiology 2008; 249: 16–31.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 55-year-old female patient presents to your hospital with a history of recurrent UTIs and gross haematuria. Repeated urine cultures are negative, but analysis reveals copious white and red cells in the urine.The patient fails to improve with antibiotics. A CT scan of renal tracts is carried out, which shows an atrophic right kidney containing calciﬁcation.There is also an area of increased density on the unenhanced portion of the scan noted in the upper pole of the kidney, with overlying cortical thinning.There are multiple strictures noted in the ureter, with intervening areas of dilatation, giving a corkscrew appearance.There is extensive coarse calciﬁcation noted in the wall of the bladder. A CXR is carried out and is normal. Early morning urine collections ﬁnally identify mycobacterium tuberculosis in the urine, conﬁrming the suspicion of renal and urinary tract TB. Which of these features is atypical of renal TB?",
+      "options": [
+        "A. High-density material in the calyceal system.",
+        "B. Bladder calciﬁcation.",
+        "C. Renal calciﬁcation.",
+        "D. Normal CXR.",
+        "E. Corkscrew appearance to the ureter."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Whilst this can be seen in TB, it is more typically associated with schistosomiasis. TB usually causes scarring and a reduced capacity bladder. Renal calciﬁcation is typical. The areas of increased attenuation within the calyceal system represent areas of coalescing caseating granulomas, and may have associated calciﬁcation. Scarring can also cause stenosis of calyces, causing focal obstruction. Occasionally a small calciﬁed kidney is found, evidence of autonephrectomy. Passage of the infection via the urine into the ureters causes focal stenoses, which can coalesce to cause a long stricture, or give a beaded or corkscrew appearance to the ureter. Whilst renal TB results from spread from a primary pulmonary infection, the CXR is only abnormal in 25–50% of cases and is therefore not helpful.\n\nGibson M, Puckett M, and Shelly M. Renal tuberculosis. RadioGraphics 2004; 24: 251–256.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 26-year-old female patient is referred to the gynaecology team with a history of primary infertility and oligomenorrhoea. On examination she is hirsute and has a body mass index (BMI) of 31. Which of the following MRI ﬁndings are most consistent with her diagnosis?",
+      "options": [
+        "A. High T2WI signal C-shaped cystic masses with thin, longitudinally oriented folds along their interior in both adnexae.",
+        "B. Multiple small peripheral rounded high T2WI signal areas with hypointense central stroma in both ovaries.",
+        "C. Normal ovaries.",
+        "D. A small ‘banana’-shaped uterus with a single fallopian tube.",
+        "E. A junctional zone of 14 mm with multiple hyperintense T2WI foci."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The clinical features suggest polycystic ovarian syndrome (PCOS). The diagnosis is based on hormonal imbalance and patients often show an abnormality in the ratio of luteinizing hormone to follicle stimulating hormone. The MRI ﬁndings are those described, with multiple small peripheral cysts with low signal central stroma. MRI is not speciﬁc or sensitive, and 25% of patients with PCOS can have normal appearing ovaries. Multiple small, T2WI hyperintense cysts have been seen in patients with anovulation, medication-stimulated ovulation, or vaginal agenesis.\n\nThe other descriptions are associated with infertility, but not particularly hirsutism or obesity. Option A describes bilateral hydrosalpinx. Option D describes a unicornuate uterus, which is associated with the poorest foetal survival among all uterine anomalies. Option E describes adenomyosis and using a junctional zone thickness of 12 mm or above optimizes the accuracy of MRI for this diagnosis.\n\nImaoka I, Wada A, Matsuo M, Yoshida M, Kitagaki H, and Sugimura K. MR imaging of disorders associated with female infertility: use in diagnosis, treatment, and management. RadioGraphics 2003; 23: 1401–1421.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 12-month-old infant with a history of aniridia and nephroblastomatosis undergoes a follow-up CT of abdomen that demonstrates bilateral enlarged kidneys with a thick rind of homogenous, non-enhancing, hypodense tissue bilaterally. A focal heterogenous enhancing mass with cystic change is noted on one side. What is the diagnosis?",
+      "options": [
+        "A. Neuroblastoma.",
+        "B. Wilms tumour.",
+        "C. Lymphoma.",
+        "D. Renal cell carcinoma.",
+        "E. Cystic nephroma."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Sporadic aniridia is associated with nephroblastomatosis (multiple nephrogenic rests) and an increased risk of Wilms tumour. At CT, the nephrogenic rests appear as homogenous, hypodense nodules/peripheral rind, with little or no enhancement compared to the compressed normal cortical tissue.\n\nAny new, enlarging, or heterogenous mass in the setting of nephroblastomatosis indicates the development of a Wilms tumour.\n\nSethi AT, Das Narla L, Fitch SJ, and Frable WJ. Wilms tumor in the setting of bilateral nephroblastomatosis. RadioGraphics 2010; 30: 1421–1425.",
+      "questionNumber": 57
+    },
+    {
+      "question": "An 18-year-old mountain bike enthusiast is suspected of sustaining a renal injury after attempting a front wheel touch-up manoeuvre. A laceration to the right kidney is noted on CT, which demonstrates contrast enhancement during the pyelographic phase of the examination. What is the signiﬁcance of this ﬁnding?",
+      "options": [
+        "A. Pre-existing angiomyolipoma.",
+        "B. Active haemorrhage.",
+        "C. Devascularization.",
+        "D. Renal infarction.",
+        "E. Urine leak."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Lacerations generally contain clotted blood and therefore do not enhance on scans obtained with intravenous contrast. Contrast enhancement during the pyelographic phase of the CT examination indicates the presence of a urine leak. A delayed scan of 10–15 minutes may show the extent of the urinary extravasation. Intense enhancement within a laceration during the early phase indicates active haemorrhage. Focal areas of infarction do not enhance (unlike contusions). The cortical rim nephrogram is a sign of a devascularized kidney, which occurs due to laceration of the main renal artery.\n\nHarris AC, Zwirewich CV, Lyburn, ID, Torreggiani WC, and Marchinkow LO. CT Findings in blunt renal trauma. RadioGraphics 2001; 21: S201–S214.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 45-year-old man has a complex cyst identiﬁed in the right kidney on an ultrasound scan performed to assess non-speciﬁc epigastric pain.\n\nHe subsequently has a CT scan of kidneys carried out pre and post administration of intravenous contrast.You classify the complex cyst as IIF (II requiring follow-up) according to the Bosniak classiﬁcation. Which of the following features is most likely seen at CT imaging?",
+      "options": [
+        "A. Presence of calciﬁcation.",
+        "B. Thickened smooth wall with enhancement.",
+        "C. Multiple thin non-enhancing septa.",
+        "D. Hyperattenuating cyst <3 cm in size.",
+        "E. Thickened irregular wall."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The criteria for a Bosniak IIF cyst are multiple hairline-thin septa with or without perceived (not measurable) enhancement, minimal smooth thickening of wall or septa that may show perceived (not measurable) enhancement, calciﬁcation may be thick and nodular but no measurable enhancement present, no enhancing soft-tissue components, and intrarenal non-enhancing highattenuation renal mass (> 3cm). The follow-up is CT or MRI at 6 months, 1 year, and then yearly up to 5 years.\n\nThe criteria for a Bosniak II cyst that does not require follow-up include few hairline-thin septa with or without perceived (not measurable) enhancement, ﬁne calciﬁcation or a short segment of slightly thickened calciﬁcation in the wall or septa, homogeneously high-attenuating masses (<3 cm) that are sharply marginated and do not enhance.\n\nThickened irregular or smooth walls or septa, with measurable enhancement, are features of a Bosniak III cyst and these are surgical lesions unless there are co-morbidities or limited life expectancy, when they may be observed.\n\nSilverman SG, Israel GM, Herts BR, and Richie JP. Management of the incidental renal mass. Radiology 2008; 249: 16–31.",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 25-year-old male patient presents to A&E with left renal angle pain, radiating to the groin and signiﬁcant haematuria on dipstick urinalysis. His kidneys, ureters, and bladder (KUB) x-ray is normal. He has a CT KUB, which shows no evidence of a calculus, but a mildly dilated left renal system as far as the mid ureter with peri-ureteric stranding to this point. Given the classical history, the patient undergoes an MR urogram, which shows a ﬁlling defect in the mid left ureter and a diagnosis of an obstructing ureteric calculus is made.The patient is observed and this diagnosis is conﬁrmed when the patient passes a calculus the following day.The patient has a relevant past medical history, which led you to suspect a calculus in spite of the CT ﬁndings. Which of these clinical histories would lead you to suspect this?",
+      "options": [
+        "A. Recurrent proteus infection.",
+        "B. HIV-positive patient on antiretroviral therapy.",
+        "C. Dehydrated patient.",
+        "D. Familial history of xanthine calculi.",
+        "E. Gout."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Whilst CT KUB has 95–99% sensitivity for renal calculi, occasionally calculi due to antiretroviral therapy can be undetectable even to CT. Proteus is associated with formation of staghorn calculi and chronic dehydration with calcium oxalate calculi, both of which are radio-opaque. Xanthine calculi and urate calculi are classically not detectable on plain ﬁlm KUB, but are usually visible on CT KUB.\n\nSandhu C, Anson K, and Patel U. Urinary tract stone – Part 1: Role of radiological imaging in diagnosis and treatment planning. Clinical Radiology 2003; 58: 415–421.",
+      "questionNumber": 60
+    },
+    {
+      "question": "A 43-year-old woman with a history of breast carcinoma undergoes a CT of abdomen for abdominal pain and menorrhagia.This reveals an enlarged uterus and she proceeds to MRI.The normal T2WI zonal anatomy of the uterus is preserved.The endometrial stripe is of high T2WI signal and measures 14 mm in diameter, and the myometrium is thickened. Lattice-like enhancement of the high-signal T2WI endometrial area is demonstrated on T1WI post contrast administration.There is no evidence of myometrial invasion. What is the diagnosis most consistent with these ﬁndings?",
+      "options": [
+        "A. Intrauterine contraceptive device (IUCD).",
+        "B. Tamoxifen therapy.",
+        "C. Lymphoma of the uterus.",
+        "D. Endometrial stromal sarcoma.",
+        "E. Pelvic congestion syndrome."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The normal endometrial stripe is of high T2WI signal and measures 3–6 mm in diameter in the follicular phase and 5–13 mm in the secretory phase. The description of the endometrium in this case is consistent with endometrial hyperplasia, but there is in addition myometrial enlargement. An enlarged uterus is frequently encountered in the presence of endogenous or exogenous hormonal abnormalities. In these cases the uterus usually has normal zonal anatomy, although the signal intensity of the endometrium and myometrium is abnormally increased. However, with tamoxifen, the uterus can display marked zonal anatomy distortion. It is a weak oestrogen agonist and can result in endometrial hyperplasia, polyps, and carcinoma. The ﬁndings of multiple cysts or lattice-like enhancement of the endometrium post contrast are encountered frequently in relation to tamoxifen therapy and favour a benign diagnosis.\n\nIUCDs are widely used for contraception. A study has found that the IUCD-bearing uterus is enlarged. IUCD placement most likely results in myometrial hypertrophy. The associated ﬁndings are symmetrical globular enlargement of the uterine corpus, cervical elongation and enlargement, and diffuse or localized myometrial thickening. The IUCD will usually be seen as a band of low signal intensity within the endometrium.\n\nThe uterus is rarely the primary site for lymphoma, but when it does occur, the most common manifestation is diffuse symmetrical uterine enlargement with relatively high signal on T2WI and epithelial preservation: the endometrium is usually normal. The myometrium will also lack its standard zonal appearance. There will almost always be associated lymphadenopathy.\n\nEndometrial stromal sarcoma invariably exhibits myometrial involvement. Imaging will typically show a large mass that replaces the endometrial cavity and inﬁltrates the myometrium: at the very least the endometrial-myometrial border will be obscured. Myometrial involvement is commonly so extensive that a myometrial component predominates. Bands of low signal may be present within the area of myometrial invasion and these correspond to preserved bundles of myometrium at histologic examination. Extension along the vessels, fallopian tubes, or ligaments is another characteristic of the tumour.\n\nPelvic congestion syndrome involves symptoms, including chronic pelvic pain, that are associated with dilated ovarian veins and pelvic varices resulting from left renal vein reﬂux. This results in a thickened myometrium containing multiple large signal voids, the latter corresponding to engorged arcuate vessels. Additional ﬁndings include varicose veins around the uterus and ovaries with retrograde ﬁlling of ovarian veins.\n\nKido A, Togashi K, Koyama T, Toshihide Y, Fujiwara T, and Fujii S. Diffusely enlarged uterus: evaluation with MR imaging. RadioGraphics 2003; 23: 1423–1439.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A 28-year-old male with a history of von Hippel Lindau disease and a 3-cm renal cell carcinoma undergoes cryo-ablation. Which of the following is suggestive of incomplete treatment/recurrence?",
+      "options": [
+        "A. Hypodense ablation zone larger than the original tumour.",
+        "B. Lack of enhancement in the ablation zone.",
+        "C. Ablation zone unchanged in size over time.",
+        "D. Peripheral ring enhancement.",
+        "E. Perinephric fat-stranding post procedure."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Following ablation the treatment zone is larger than the original lesion, as a margin of normal tissue is intentionally ablated to prevent recurrence. This should reduce in size/involute over time. If the ablation zone remains the same or increases in size, recurrence should be suspected.\n\nLack of enhancement is a reliable indicator of successful treatment. It is not uncommon to ﬁnd peripheral enhancement in the immediate post-treatment period due to reactive hyperaemia. Any nodular or central enhancement indicates incomplete treatment or recurrence.\n\nAllen BC and Remer EM. Percutaneous cryoablation of renal tumors: patient selection, technique, and postprocedural imaging. RadioGraphics 2010; 30: 887–900.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 22-year-old male front seat passenger is admitted following a RTA.\n\nOn examination in A&E, blood is noted at the external urethral meatus and there is swelling of the penis. An urethrogram is performed which demonstrates contrast extravasation below the urogenital diaphragm only. What type of urethral injury does this represent?",
+      "options": [
+        "A. Anterior urethral injury.",
+        "B. Disruption of the membranous urethra.",
+        "C. Bladder neck injury extending into the proximal urethra.",
+        "D. Bladder base injury.",
+        "E. Penile fracture."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Urethral injuries are rarely life-threatening but have signiﬁcant long-term morbidity. Complications include stricture, incontinence, and impotence. The male urethra extends from the bladder base to the external meatus and is divided into the posterior (prostatic and membranous) and anterior (bulbous and penile) urethra. The anterior and posterior urethra are separated by the urogenital diaphragm. The Goldman classiﬁcation of urethral injury emphasizes anatomic location (Table 4.2).\n\nTable 4.2 The Goldman classiﬁcation of urethral injury\n\nType | Injury description | Urethrographic appearance\n---|---|---\nI | Stretching of an intact posterior urethra | Intact but stretched urethra\nII | Urethral disruption above the urogenital diaphragm, membranous segment intact | Contrast extravasation above the urogenital diaphragm only\nIII | Disruption of membranous urethra extending to anterior urethra | Contrast extravasation below the urogenital diaphragm possibly extending to the perineum\nIV | Bladder neck injury extending into the proximal urethra | Extraperitoneal contrast extravasation, bladder neck disruption\nIVa | Bladder base injury simulating type IV | Bladder base disruption, periurethral contrast extravasation\nV | Isolated anterior urethral injury | Contrast extravasation below the urogenital diaphragm\n\nData from Goldman SM, Sandler CM, Corriere JN, and McGuire EJ. Blunt urethral trauma: anatomical mechanical classiﬁcation. Journal of Urology 1997; 157: 85–89.\n\nIngram MD, Watson SG, Skippage PL, and Patel U. Urethral injuries after pelvic trauma: evaluation with urethrography. RadioGraphics 2008; 28: 1631–1643.",
+      "questionNumber": 63
+    },
+    {
+      "question": "A 46-year-old man presents with a 6-week history of painless haematuria.\n\nA CT urogram is performed and this demonstrates a 4-cm left renal mass, which is centrally placed involving both cortex and medulla. Which of the following ﬁndings will be most helpful when determining if this is a TCC invading the cortex, rather than a renal cell carcinoma invading the collecting system?",
+      "options": [
+        "A. Presence of calciﬁcation.",
+        "B. Necrosis within the mass.",
+        "C. Renal vein invasion.",
+        "D. Maintenance of reniform shape.",
+        "E. Hypovascularity of lesion to renal parenchyma."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Advanced TCC of the collecting system in the kidney can cause distortion of the renal architecture, but typically the reniform shape of the kidney is maintained. As RCC arises in the renal cortex, large tumours of this nature typically distort the normal renal outline.\n\nCalciﬁcation can rarely occur in both RCCs and TCCs, although perhaps more commonly in RCC. TCC demonstrates calciﬁcation in less than 3%, when it is usually diffuse and punctate.\n\nNecrosis can occur in both large RCCs and large TCCs, giving a heterogenous enhancement pattern on CT. Renal vein invasion is a more typical manifestation of RCC and both these tumours may be hypovascular compared to normal renal parenchyma on a nephrographic phase of the CT examination.\n\nBrowne RFJ, Meehan CP, Colville J, Power R, and Torregiani WC. Transitional cell carcinoma of the upper urinary tract: spectrum of imaging ﬁndings. RadioGraphics 2005; 25: 1609–1627. Anderson EM, Murphy R, Rennie ATM, and Cowan NC. Multidetector computed tomography urography (MDCTU) for diagnosing urothelial malignancy. Clinical Radiology 2007; 62: 324–332.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 38-year-old patient is referred for an urgent IVU and ultrasound by their GP, who has picked up mild renal impairment on recent blood tests.The ultrasound shows two normal-sized kidneys with no evidence of cortical loss.The IVU shows a normally enhancing renal outline, but the pelvicalyceal system is abnormal. Some calyces show a non-speciﬁc clubbed or blunted appearance.Thin tracks are noted extending from other calyces. In a number of calyces there is a ﬁlling defect noted within a rounded, blunted calyx. From these appearances you are able to make a diagnosis.The patient has a classical history for this condition. From the given options, what is the most typical history?",
+      "options": [
+        "A. Recent history of acute hypotension on a background of dehydration.",
+        "B. Pyrexia, renal angle pain, and urine culture positive for E. coli.",
+        "C. Chronic non-steroidal anti-inﬂammatory drug (NSAID) analgesic overuse.",
+        "D. Previously diagnosed reﬂux nephropathy.",
+        "E. History of TCC within bladder."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The appearances described are those of renal papillary necrosis.This can be due to a number of causes, most commonly analgesic abuse, but also severe renal infection in diabetics, sickle cell disease, haemophilia, and renal vein thrombosis.The causes of chronic renal disease can be subdivided by the effects noted on the renal parenchyma and the papillary/pelvicalyceal system, and whether these are uni- or bilateral. In bilateral cases such as this, no radiological abnormality suggests possible glomerulonephritis, acute tubular necrosis (ATN), acute cortical necrosis, or pyelonephritis. Generalized inﬁltration of the renal parenchyma suggests amyloid or malignant inﬁltration (e.g. lymphoma or leukaemia). Papillary/pelvicalyceal abnormalities, in the presence of normal parenchyma, indicate papillary necrosis, medullary sponge kidney, or renal TB. Papillary calyceal abnormality with focal parenchymal loss indicates reﬂux nephropathy,TB, or calculus. Both parenchymal loss and papillary calyceal abnormalities indicate obstructive nephropathy or severe reﬂux nephropathy.\n\nAdam A and Dixon A. Grainger and Allison’s Diagnostic Radiology. A textbook of medical imaging, Vol 1, 5th edn, Churchill Livingstone, 2008, Ch 39.",
+      "questionNumber": 65
+    },
+    {
+      "question": "A 37-year-old woman presents with a watery vaginal discharge and attends for an MRI of pelvis. She becomes quite claustrophobic at the end of the scan and you are called to assess her as she has been hyperventilating and the radiographers have become concerned. As you reassure her, you notice some peri-oral pigmentation.The MRI reveals a multicystic lesion (high T2WI and low T1WI signal) in the uterine cervix with a solid (low signal T1WI and T2WI) component in the deep cervical stroma.You note from the picture archiving and communication system (PACS) system that a barium enema previously revealed several colonic polyps. What is the likely cause for the MRI ﬁndings?",
+      "options": [
+        "A. Malignant melanoma of the cervix.",
+        "B. Carcinoid tumour of the cervix.",
+        "C. Cervical pregnancy.",
+        "D. Minimal deviation adenocarcinoma of the cervix.",
+        "E. Invasive cervical squamous cell carcinoma."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is also known as adenoma malignum and, as in this scenario, is often associated with PeutzJeghers syndrome (characterized by mucocutaneous pigmentation, multiple hamartomatous polyps of the GI tract, and mucinous tumours of the ovary). Adenoma malignum makes up about 3% of adenocarcinoma of the cervix. Its MRI appearances are as described in the question, but the differential diagnosis includes deep nabothian cysts, ﬂorid endocervical hyperplasia, and even well-differentiated adenocarcinoma. It disseminates into the peritoneal cavity even in the early stage of the disease and its response to radiation or chemotherapy is poor.\n\nCervical squamous carcinoma makes up to 90% of cervical carcinoma. The tumour is of high signal compared to the hypointense cervical stroma, but not cystic as in our vignette. It advances predominantly by direct extension and local spread; haematogenous dissemination is only occasionally seen in the form of hepatic metastases.\n\nCarcinoid tumour of the cervix is a subgroup of small cell carcinoma of the cervix. It cannot be differentiated from squamous cell carcinoma of the cervix on MRI ﬁndings.\n\nMalignant melanoma of the female genital tract accounts for 1–5% of all melanomas. It usually occurs in the vaginal mucosa and occasionally involves the cervix. Malignant melanoma arising in the cervix is very rare (only about 30 reported cases). There is usually high signal intensity on T1WI.\n\nThe incidence of cervical pregnancy has been increasing, possibly due to the increased number of induced abortions. Reported risk factors include multiparity, prior cervical surgical manipulation, cervical or uterine leiomyomas, atrophic endometrium, and septate uterus. The major symptom is painless vaginal bleeding. At MR it is characterized by a mass with heterogenous signal intensity and a partial or complete dark ring on T2WI sequences. As it contains haematoma, it often consists of some high signal on T1WI.\n\nOkamoto Y, Tanaka YO, Nishida M, Tsunoda H, Yoshikawa H, and Itai Y. MR imaging of the uterine cervix: imaging-pathologic correlation. RadioGraphics 2003; 23: 425–445.",
+      "questionNumber": 66
+    },
+    {
+      "question": "A 48-year-old women presents with shortness of breath and undergoes an HRCT of the chest to assess interstitial changes seen on plain ﬁlm. She has emigrated from Eastern Europe and knows that she had a gynaecological cancer that was treated there, but is unsure of her treatment.The HRCT reveals unilateral thickened interlobular septa, perilymphatic nodules, and ipsilateral hilar adenopathy. What is the most likely underlying diagnosis?",
+      "options": [
+        "A. Cervical carcinoma.",
+        "B. Ovarian epithelial carcinoma.",
+        "C. Endometrial carcinoma.",
+        "D. Leiomyosarcoma of the uterus.",
+        "E. Vaginal carcinoma."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This patient has developed lymphangitis carcinomatosis. In 50% of cases the septal thickening is focal or unilateral and this is useful in distinguishing lymphangitis from other causes of septal thickening, such as pulmonary oedema or sarcoidosis. Hilar adenopathy is present in 50% and pleural effusion in 30–50%. The interlobular septal thickening can be smooth (as in pulmonary oedema and alveolar proteinosis) or nodular (also found in sarcoidosis and silicosis).\n\nLymphangitis carcinomatosis usually occurs secondary to the spread of (adeno-) carcinoma, most commonly bronchogenic, breast, and stomach. The mnemonic Certain Cancers Spread By Plugging The Lymphatics (Cervix Colon Stomach Breast Pancreas Thyroid Larynx) is useful. Lymphangitis carcinomatosis is occasionally associated with cervical carcinoma and certainly more so than with the other options presented.\n\nDahnert W. Radiology Review Manual, 5th edn, Lippincott Williams & Wilkins, 2003, p. 502.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A 30-year-old female patient with a history of infertility is referred for an HSG. She has a past history of pelvic inﬂammatory disease. HSG reveals multiple small outpouchings from the uterine cavity. What is the diagnosis?",
+      "options": [
+        "A. Salpingitis isthmica nodosa.",
+        "B. Asherman syndrome.",
+        "C. Adenomyosis.",
+        "D. Endometritis.",
+        "E. Multiple endometrial polyps."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a condition in which the endometrium extends into the myometrium in either a diffuse or a focal distribution. It generally manifests as pelvic pain or abnormal bleeding. It is more commonly detected on MR imaging as thickening of the junctional zone or on ultrasound as diffuse or focal heterogenous myometrium. On HSG, adenomyosis appears as small diverticula extending from the endometrial cavity into the myometrium.\n\nSalpingitis isthmica nodosa appears as small outpouchings from the isthmic portion of the fallopian tube.\n\nMultiple uterine synechiae (linear ﬁlling defects in the uterine cavity) associated with infertility is known as Asherman syndrome.\n\nPolyps would appear as ﬁlling defects on HSG.\n\nSimpson Jr WL, Beitia LG, and Mester J. Hysterosalpingography: a reemerging study. RadioGraphics 2006; 26: 419–431.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A 14-year-old female presents with a history of cyclic pelvic pain. Speculum vaginal examination reveals a bulging vaginal mass. An MRI of the pelvis demonstrates divergent uterine horns with a deep midline fundal cleft, two separate uterine cavities, two separate cervices, and a unilateral hemivaginal septum causing hematometrocolpos.There is associated renal agenesis on the side of the hemivaginal septum. What is the primary uterine anomaly?",
+      "options": [
+        "A. Uterus didelphys.",
+        "B. Uterine bicornuate bicollis.",
+        "C. Septate uterus.",
+        "D. Arcuate uterus.",
+        "E. Imperforate hymen."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is caused by complete failure of fusion of the paramesonephric ducts, resulting in a completely duplicated system (two uterine cavities and two cervices) with no communication between the two cavities. It is associated with complete or partial vaginal septum in 75% of cases, which can result in obstruction and haematometrocolpos. Ipsilateral renal agenesis is associated with a vaginal septum.\n\nBicornuate uterus is caused by partial fusion of the paramesonephric ducts. Bicornuate bicollis uterus demonstrates a septum extending from the fundus to the external os, but some degree of communication remains between the two horns.\n\nSeptate uterus is the most common mullerian/paramesonephric duct anomaly. It is also the most common anomaly associated with infertility and recurrent miscarriage. A complete or partial septum divides the uterine cavity, but there is no fundal cleft.\n\nArcuate uterus is associated with a small indentation in the fundal endometrial canal but the external contour is normal. It has no pathological consequence and is considered by some to be a normal variant.\n\nJunqueira BLP, Allen LM, Spitzer RF, Lucco KL, Babyn PS, and Doria AS. Mullerian duct anomalies and mimics in children and adolescents: correlative intraoperative assessment with clinical imaging. RadioGraphics 2009; 29: 1085–1103.",
+      "questionNumber": 69
+    },
+    {
+      "question": "An 18-year-old male fractures his pelvis following a motorcycle accident. He is suspected of sustaining a bladder injury and undergoes CT cystography. This reveals ill-deﬁned contrast medium within the peri-vesical space with a ‘molar-tooth’ appearance. What is the signiﬁcance of this ﬁnding?",
+      "options": [
+        "A. Interstitial bladder injury.",
+        "B. Intraperitoneal rupture.",
+        "C. Extraperitoneal rupture.",
+        "D. Combined intra- and extraperitoneal rupture.",
+        "E. Bladder contusion."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Over 70% of patients with traumatic bladder injury have a coexisting pelvic fracture. CT cystography is considered to be as accurate as conventional cystography. Extraperitoneal rupture accounts for 80% of all cases of traumatic bladder injury. It occurs as a result of shearing forces or penetrating injury from bony fragments at the base of the bladder. Contrast can also track down into the scrotum or thigh. Intraperitoneal rupture (15% of cases) follows a direct blow to a distended bladder, with the tear involving the bladder dome. Contrast will be seen to outline small bowel loops. Combined injuries occur in 5%. Interstitial injuries are rare and are detected by contrast dissecting into the bladder wall. Imaging is frequently normal in the setting of bladder contusion.\n\nBent C, Lyngkaran T, Power N, Matson M, Hajdinjak T, Buchholz N et al. Urological injuries following trauma. Clinical Radiology 2008; 63: 1361–1371.",
+      "questionNumber": 70
+    },
+    {
+      "question": "A 54-year-old woman is noted to be hypercalcaemic after complaining of lethargy and abdominal pain. Subsequent biochemical testing reveals an elevated parathyroid hormone. She is referred for scintigraphy with 99m Tc sestamibi. Which of the following radiological ﬁndings would suggest a diagnosis of parathyroid adenoma?",
+      "options": [
+        "A. Focus of decreased radionuclide activity within the lower pole of the right lobe of thyroid on initial and delayed images.",
+        "B. Focus of decreased radionuclide activity within the lower pole of the right lobe of thyroid on delayed images only.",
+        "C. Focus of increased radionuclide activity within the lower pole of the right lobe of thyroid on initial and delayed images.",
+        "D. Focus of increased radionuclide activity within the lower pole of the right lobe of thyroid on initial images only.",
+        "E. Focus of increased radionuclide activity within the lower pole of the right lobe of thyroid on delayed images only."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Solitary parathyroid adenoma accounts for 85% of cases of primary hyperparathyroidism, with parathyroid hyperplasia (10%), multiple adenomas (4%), and carcinoma (1%) making up the remainder. When99m Tc MIBI is used for parathyroid imaging, immediate and delayed images of the neck and mediastinum are performed. Parathyroid adenomas may or may not be visualized on initial imaging, but they retain radiopharmaceutical on delayed (1–2 hours) images, whereas the normal thyroid washes out.\n\nBrant WE and Helms CA. Fundamentals of Diagnostic Radiology, 3rd edn, Lippincott Williams & Wilkins, 2007, pp. 1412–1414.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 50-year-old man is discovered to have a cystic abnormality at the lower pole of the left kidney during an ultrasound scan performed for right upper quadrant pain.You think this might be a complex cystic lesion and therefore recommend a CT scan of renal tracts.This shows a conglomeration of variable sized cysts at the lower pole of the left kidney, but no capsule or mural irregularities of the cysts. What is the most likely diagnosis?",
+      "options": [
+        "A. Localized cystic renal disease.",
+        "B. Multilocular cystic nephroma.",
+        "C. Renal lymphangiomatosis.",
+        "D. Cystic clear cell carcinoma.",
+        "E. Multicystic dysplastic kidney."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is an uncommon, non-familial, and non-progressive disorder of the kidney characterized by the replacement of all or localized areas of a kidney by multiple variably sized cysts. These cysts form clusters that are separated by thin areas of normal renal parenchyma. The aggregated cysts in localized cystic disease can frequently appear like a multi-septate mass, but they do not form a distinct encapsulated mass and do not show mural irregularities, which are characteristics of cystic neoplasms.\n\nMultilocular cystic nephroma in adults is much more common in females (female:male 9:1) and manifests as a multi-loculated cystic lesion with hair-like septa and minimal mural enhancement. It is distinguished from localized cystic disease by the presence of a capsule. Typically extension into the central renal sinus is found and multilocular cystic nephroma is often classiﬁed on imaging as Bosniak III lesions.\n\nLymphangioma of the kidney is a rare benign cystic tumour that most often arises from the peripelvic region or renal sinus. It may more rarely arise from the lymphatics of the capsule or cortex. In the diffuse form of lymphangiomatosis, the cystic changes occur diffusely in the renal sinus or perinephric region, with a relatively normal appearing renal parenchyma. Clear cell RCC presents as a solid or a cystic lesion, the cystic variant accounting for 4–15% of all RCCs. These lesions typically have nodular or septal enhancement, distinguishing them from benign cystic renal lesions.\n\nMulticystic dysplastic kidney is a congenital maldevelopment in which the kidney is completely replaced by cysts with no normal renal parenchyma remaining.\n\nFeire M and Remer EM. Clinical and radiological features of cystic renal masses. American Journal of Roentgenology 2009; 192: 1367–1372.",
+      "questionNumber": 72
+    },
+    {
+      "question": "A 32-year-old patient with a history of renal failure has undergone a renal transplant in your centre.You are carrying out serial ultrasound investigations over the weekend to assess the success of the transplant. The graft was a cadaveric transplant.The initial ultrasound scan showed no evidence of perigraft collection, but did show mild renal pelvic dilatation. The pulsatility index (PI) was 2.0 and the resistive index was 0.9.The patient was oliguric. Due to the fears of acute rejection, the patient was commenced on cyclosporine and steroids.The patient, now day 4, is currently anuric and has developed pain over the graft site.You have done an ultrasound.The arterial ﬂow in the kidney has changed. Proximally you notice reversal of diastolic ﬂow evident on spectral waveforms, but in other areas there is no ﬂow evident in the interlobar arteries. Flow is still present in the main renal artery.The RI is now 0.95 and the PI is unchanged.There is still mild renal pelvic dilatation, but you notice a tubular structure of intermediate echogenicity in the renal hilum.There is no evidence of perigraft collection. What do you think the most appropriate next investigative/ therapeutic step is?",
+      "options": [
+        "A. Continue immunosuppression and further observation, with appropriate ﬂuid administration.",
+        "B. Continue immunosuppression and renal biopsy.",
+        "C. Refer for immediate arterial intervention.",
+        "D. Refer for immediate venous intervention.",
+        "E. Nephrostomy."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "There are a number of complications to be aware of in the immediate post-transplant period. The most efﬁcient and cost-effective method of surveillance for these is ultrasound. Acute rejection and acute tubular necrosis (ATN) both occur early in the post-transplant phase and can be difﬁcult to differentiate. Both can cause elevation of pulsatility index (PI) (normal <1.5) and resistive index (RI) (normal <0.7), although these tend to be higher with rejection. ATN is more common with cadaveric transplants. It usually resolves within a matter of days or weeks, but ultimately biopsy can be necessary to reliably differentiate these processes. This patient probably had a degree of ATN initially. Arterial occlusion is uncommon and is evident by reduced/absent arterial ﬂow in the main artery as well as in the interlobar arteries, which can demonstrate loss of ﬂow with any cause of severe oedema (e.g. renal vein thrombosis or acute rejection). Renal vein thrombosis causes pain and anuria. It is associated with early treatment with cyclosporine and steroids. It also causes a rise in the RI and PI. The key feature to notice is the persistent ﬂow in the main renal artery, reducing the likelihood of renal arterial thrombosis. There is also a tubular structure noted in the hilum, which is what a thrombosed renal vein looks like, and reversal of diastolic ﬂow on arterial traces.\n\nBaxter G. Ultrasound of renal transplantation. Clinical Radiology 2001; 56(10): 802–818. Sandhu C and Patel U. Renal transplantation dysfunction: the role of interventional radiology. Clinical Radiology 2002; 57(9): 772–783.",
+      "questionNumber": 73
+    },
+    {
+      "question": "You are asked to assess a renal transplant kidney in the early post-operative period for any abnormality and to serve as a baseline study. Which of the following ﬁndings on colour Doppler ultrasound with regard to the PI, RI and B mode ultrasound imaging, with regard to renal morphology, would be considered within normal limits?",
+      "options": [
+        "A. PI < 1.5, RI < 0.7, loss of cortico-medullary differentiation.",
+        "B. PI < 1.5, RI < 0.7, prominence of renal pyramids.",
+        "C. PI > 1.8, RI < 0.7, loss of cortico-medullary differentiation.",
+        "D. PI > 1.8, RI < 0.7, prominence of renal pyramids.",
+        "E. PI < 1.5, RI > 0.9, loss of cortico-medullary differentiation.",
+        "F. PI < 1.5, RI > 0.9, prominence of renal pyramids.",
+        "G. PI > 1.8, RI > 0.9, loss of cortico-medullary differentiation.",
+        "H. PI > 1.8, RI > 0.9, prominence of renal pyramids."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "PI < 1.5 or RI < 0.7 can be regarded as normal, whilst a PI > 1.8 or RI = 0.9 should be regarded as abnormal. Although both ATN and acute rejection cause the PI and RI to rise, the likelihood of acute rejection is greater with higher values. Complete absence of diastolic ﬂow, or ﬂow reversal, is due to acute rejection in the majority of cases.\n\nMorphologically, the transplant kidney is very similar to the native and many of the subtle differences are attributed to the improved resolution of the former. There is a well-deﬁned renal parenchyma peripherally, with a highly reﬂective echogenic sinus centrally. In distinction to the native kidney, the renal pyramids are more commonly visualized within the transplant, being hypoechoic, relative to the parenchyma itself.\n\nLoss of cortico-medullary differentiation is pathological and is a B mode ﬁnding that can be associated with acute rejection.\n\nBaxter GM. Pictorial review: ultrasound of renal transplantation. Clinical Radiology 2001; 56: 802–818.",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 28-year-old para 0 + 0 female patient is referred from the gynaecology team for an MRI of pelvis, after presenting with pain in the RIF. On TVUS they have identiﬁed enlargement of the right ovary and have raised the possibility of a mass. On MRI, a 2-cm ovoid lesion is demonstrated within the right ovary. It is of high signal on T1WI and T1WI fat saturation sequences, and low signal on T2WI sequences.There is no evidence of a mural nodule or ascites and the uterus is not enlarged. What is the most likely diagnosis?",
+      "options": [
+        "A. Fibrothecoma.",
+        "B. Endometriotic cyst.",
+        "C. Brenner tumour.",
+        "D. Simple follicular cyst.",
+        "E. Endometroid carcinoma."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Also known as a chocolate cyst, the methaemoglobin within the lesion causes T1 shortening, resulting in increased signal on the T1WI sequence. This high signal remains and becomes more conspicuous on the T1WI with fat saturation sequence.\n\nEndometriosis is characterized by the presence of tissue resembling endometrium outside the uterus. The ovaries are the most commonly involved site, and endometriotic cysts usually have a thick ﬁbrotic wall with chocolate-coloured hemorrhagic material. An endometriotic cyst may be high or low signal on T2WI sequences. Chronic cyclical haemorrhage and increased viscosity of the cyst material will produce T2 shortening, leading to the low signal, or ‘T2 shading’. The patient usually presents with cyclical pain. The cysts have a propensity for multicentric growth and are often associated with ﬁbrous adhesions. These latter features increase the MR sensitivity. Small peritoneal implants of endometriosis may be identiﬁed elsewhere and their conspicuity is increased by the use of fat saturation techniques.\n\nEndometroid and clear cell carcinoma of the ovary are malignancies associated with endometriosis and these represent 17.5 and 7.4% of ovarian carcinomas, respectively. Chocolate cysts with multiple locules, mural foci, or nodules within the cyst are suspicious for malignancy and contrast should be administered if this appearance is seen.\n\nThe ﬁndings in this question are not consistent with a follicular cyst, which would show low T1WI and high T2WI signal.\n\nBrenner tumours show low T2WI signal due to their abundant ﬁbrous content and calciﬁcation, but also low T1WI signal. Fibrothecomas show intermediate T1WI signal and usually low (although sometimes it can be mixed high and low) T2WI signal. They sometimes show associated uterine enlargement, as they may be oestrogenic.",
+      "questionNumber": 75
+    }
+  ]
+}
+

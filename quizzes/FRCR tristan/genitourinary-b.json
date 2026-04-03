@@ -1,0 +1,982 @@
+
+{
+  "title": "Genito-urinary, Adrenal, Obstetrics & Gynaecology and Breast Mock Paper",
+  "questions": [
+    {
+      "question": "A 52 year old man presents with loin pain and microscopic haematuria. KUB reveals no abnormality. A CT KUB demonstrates a 7 mm mid-ureteric calculus. What is the most likely composition of the calculus?",
+      "options": [
+        "A. Calcium phosphate",
+        "B. Calcium oxalate",
+        "C. Urate",
+        "D. Xanthine",
+        "E. Cystine"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Although both xanthine and urate stones are radiolucent, urate stones are much more common. Cystine stones are mildly opaque. Calcium oxalate and calcium phosphate stones are radio-opaque Ref: Radiology Review Manual, 6th Ed, p. 989.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 63 year old lady is discovered to have a 3 cm adenocarcinoma of the right lung. Staging CT reveals a unilateral, well-defined, round 12 mm adrenal lesion. A further CT characterization study reveals the lesion has Hounsfield value of + 20 on the unenhanced study. Enhancement is uniform, with delayed images demonstrating 65% washout of contrast medium. What is the likeliest diagnosis?",
+      "options": [
+        "A. Metastasis from lung carcinoma",
+        "B. Adrenocortical adenoma",
+        "C. Adrenal haemorrhage",
+        "D. Adrenocortical carcinoma",
+        "E. Adrenocortical hyperplasia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Greater than 60% washout on delayed post contrast imaging is highly specific and sensitive for adenoma as opposed to metastases. Lipid poor adenomas may have a density of greater than 10 HU. Adrenocortical carcinoma typically exhibits peripheral, nodular enhancement. Ref: Radiology Review Manual, 6th Ed, p. 918-21.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 40 year old man presents with a scrotal mass. US shows a smooth, round, well defined thin walled 2 cm hypoechoic lesion in the epididymal head. The lesion contains low level echoes which move on close examination. The most likely diagnosis is?",
+      "options": [
+        "A. Epididymal cyst",
+        "B. Spermatocoele",
+        "C. Adenomatoid tumour",
+        "D. Papillary cystadenoma",
+        "E. Haemangioma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Epididymal cysts and spermatocoeles are common benign cystic lesions of the epididymis. They can be differentiated by the presence of low level echoes in spermatocoeles, which move on careful examination. Occasionally, spermatocoeles contain crystallised material which can give the initial impression that the lesion is hyperechoic. Ref: Clin Rad (2008); 63(8):929-38.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 46 year-old woman presents with abdominal pain, dysuria and abdominal distension. A plain AXR is performed, which shows air within the right ureter and renal pelvis. Which of the following is the least likely aetiology?",
+      "options": [
+        "A. Caecal tumour",
+        "B. Urinary tract infection with Clostridium spp.",
+        "C. Meckel's diverticulum",
+        "D. Pelvic actinomycosis",
+        "E. Small bowel MALT"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The finding of air within the right ureter and pelvis implies either a colovesical fistula, or UTI by a gas-producing organism. Diverticulitis is the commonest cause of a colovesical fistula (of which Meckel's diverticulum can be a rare cause). Colorectal tumour, Crohn's disease, ulcerative colitis, previous radiotherapy, and pelvic infection/ infective colitis are other causes. Lymphoma typically encases bowel and blood vessel and is unlikely to cause fistulation. Ref: Fundamentals of Diagnostic Radiology, 2nd Ed, p. 904.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A frail 72 year old diabetic woman has serum creatinine measurements which are persistently at the upper end of the normal range. A nuclear medicine clearance scan is requested for a more accurate estimate of glomerular filtration rate. Which of the following tracers would be most appropriate?",
+      "options": [
+        "A. 51Cr-EDTA",
+        "B. 99mTc-DMSA",
+        "C. 99mTc-Glucoheptonate",
+        "D. 99mTc-HIDA",
+        "E. 99mTc-MAG3"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "GFR is a commonly accepted standard measure of renal function. It can be measured by tracers that are cleared exclusively by glomerular filtration, the most common being 51Cr-EDTA (the standard radiopharmaceutical in Europe) and 99mTc-DTPA (more common in the USA). Ref: British nuclear medicine society guidelines: http://www.bnmsonline.co.uk/dmdocuments/gfrguidelinesv5.2.pdf",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 34 year old man presents with gradual onset bilateral loin pain. Ultrasound demonstrates multiple bilateral renal cystic masses. Which of the following would not support a diagnosis of Von-Hippel Lindau?",
+      "options": [
+        "A. Contrast enhancement on CT of more than 20 HU",
+        "B. Raised urinary catecholamines",
+        "C. Multiple pancreatic cysts",
+        "D. Cutaneous angiofibromas",
+        "E. Cerebellar haemangioblastomas on brain MRI"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "VHL is associated with CNS, haemangioblastomas, retinal angiomas, pancreatic cysts and carcinomas and phaeochromocytoma. In the kidney it is associated with the presence of RCC and multiple cysts. The renal cell tumours are usually of the clear cell type, and have a variable appearance depending on the degree of soft tissue involvement. Cutaneous angiofibromas are seen in tuberous sclerosis. Ref: Clin Rad (2009); 64:589-99.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 60 year old man with a prostate specific antigen of 15 ng/ml and a smooth feeling prostate on digital rectal examination is referred for prostate biopsy. Which of the following statements is incorrect?",
+      "options": [
+        "A. A transperineal rather than transrectal approach is possible",
+        "B. Urinary retention is a common complication",
+        "C. Both peripheral and transitional zones should be sampled",
+        "D. A negative biopsy does not exclude prostate cancer",
+        "E. Prophylactic antibiotics should be given routinely"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Prostate biopsy is performed usually via a transrectal route for patients with an elevated (age-specific) PSA, or an abnormal DRE. Complications include haematuria (frequent and usually transient), PR bleeding, infection and retention (uncommon). A negative initial biopsy does not exclude cancer and repeat biopsy (sometimes with extended core protocols) may be required. Ref: RITI 4_017 TRUS guided biopsy of the prostate gland.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 52 year old man is referred for a renal US as part of an investigation for proteinuria. US shows a 2 cm round, well-defined right upper pole cystic lesion. At CT, the lesion demonstrates internal hairline-thin septae and barely perceptible enhancement after the administration of intravenous contrast medium. Which of the following statements is true?",
+      "options": [
+        "A. This is a Bosniak IV lesion",
+        "B. This lesion should be surgically excised",
+        "C. This lesion should be followed-up",
+        "D. This is a Bosniak I lesion",
+        "E. Bosniak classification can be defined on US"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The Bosniak classification is a CT classification of cystic renal lesions. Bosniak I are simple cysts, Bosniak II are minimally complicated cysts. Bosniak IIF (lesions that should be followed-up) have hairline thin septae and subtle wall enhancement or are intrarenal lesions >3 cm with high density content. Bosniak III cysts are complicated lesions with irregular thickened septae, measurable enhancement and coarse irregular calcification. These should be treated surgically. Bosniak IV lesions are clearly malignant with a large necrotic component, irregular thickening or nodular enhancing elements. Ref: Radiology Review Manual, 6th Ed, p. 961.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 55 year old female patient presents with a history of unilateral breast pain. 11 years earlier she had undergone breast augmentation for cosmetic reasons. Her sister has recently been diagnosed with breast cancer and she is concerned she may also have breast cancer. Which of the following statements is true?",
+      "options": [
+        "A. Most implants fail at 5 years",
+        "B. MRI is the initial investigation of choice",
+        "C. Screening mammography is contraindicated",
+        "D. The linguine sign is indicative of rupture on US",
+        "E. Most implants are placed in the retroglandular region"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The typical lifespan of an implant is 10 years. Standard triple assessment remains the initial investigative of choice even with implants in situ. The linguine sign is a sign of rupture on MRI. 75% of implants are placed in the retroglandular region. 25% are placed in the sub-pectoral region. Ref: RITI 4a_009 Radiological assessment of women with breast implants.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 45 year old man with a childhood history of orchidopexy for undescended testis presents with a painless mass in his right hemiscrotum. US shows a discrete uniform hypoechoic mass confined within the tunica albuginea. MRI shows the lesion is of uniformly low signal intensity on T2W. Serum aFP is normal and β-HCG is elevated. What is the likeliest diagnosis?",
+      "options": [
+        "A. Teratoma",
+        "B. Yolk sac tumour",
+        "C. Seminoma",
+        "D. Embryonal cell carcinoma",
+        "E. Lymphoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Seminoma presents in a slightly older age group than the non-seminomatous germ cell tumours. It has the highest rate of association with undescended testis. Lymphoma typically has a more diffuse infiltrative pattern and is the commonest bilateral tumour. Ref: Radiology Review Manual, 6th Ed, p. 978.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 62 year old woman presents with a solitary palpable breast lump. Mammography does not demonstrate any microcalcification within the mass. US demonstrates an irregular solid mass which casts a posterior acoustic shadow. Which of the following techniques is most appropriate for obtaining tissue diagnosis?",
+      "options": [
+        "A. Ultrasound guided core biopsy",
+        "B. Ultrasound guided FNA",
+        "C. Stereotactic guided core biopsy",
+        "D. Stereotactic vacuum assisted biopsy",
+        "E. MRI guided biopsy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "US-guided core biopsy remains the first choice diagnostic test. FNA is helpful for evaluating lesions with fluid components. Stereotactic biopsy is useful for lesions with areas of microcalcification. Vacuum assisted biopsy, whether by US or stereotactic technique helps obtain larger samples but at present its cost means that it is not used as first line. MRI guided biopsy is reserved for equivocal lesions that cannot be clearly identified on US. Ref: RITI 4a 014 Breast Intervention.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 2 month old presents with vomiting and diarrhoea present from the neonatal period. On examination abdominal distension with hepatosplenomegaly is noted. CT demonstrates significantly enlarged adrenal glands which maintain their normal shape and have extensive punctuate calcification bilaterally. Small bowel wall thickening is also noted. What is the likeliest diagnosis?",
+      "options": [
+        "A. Waterhouse-Friedrichsen syndrome",
+        "B. Wolman disease",
+        "C. Neuroblastoma",
+        "D. Tuberculosis",
+        "E. Phaeochromocytoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Wolman disease is a rare autosomal recessive lipidosis with accumulation of cholesterol and triglycerides in various tissues presenting in the neonatal period with malabsorption, failure to thrive and hepatosplenomegaly. The classic imaging finding is bilateral enlarged adrenal glands which maintain their normal shape and have extensive punctuate calcification throughout. Ref: Radiology Review Manual, 6th Ed, p. 993.",
+      "questionNumber": 12
+    },
+    {
+      "question": "Which of the following are not radiological signs of renal artery stenosis?",
+      "options": [
+        "A. Delayed appearance of contrast material on IVU",
+        "B. Notching of proximal ureter on IVU",
+        "C. Spectral broadening and flow reversal on Duplex US",
+        "D. Decreased density of contrast material on IVU",
+        "E. Tardus/ parvus waveform on Duplex US"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "An increase in density of contrast material is seen on IVU due to relative increased water reabsorption. Other IVU signs include delayed washout of contrast medium and lack of distension of the collecting system. US findings include peak Renal artery:Aortic velocity >3.5, absence of blood flow during diastole, no detectable Doppler signal in a visualized renal artery, loss of early systolic peak and a resistive index <0.56. Ref: Radiology Review Manual, 6th Ed, p. 956-7.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 50 year old woman is found to have multiple, round, well defined filling defects in her left ureter on IVU. Which of the following is the least likely diagnosis?",
+      "options": [
+        "A. Emphysematous ureteritis",
+        "B. Ureteritis cystica",
+        "C. Malakoplakia",
+        "D. Leukoplakia",
+        "E. Cervical carcinoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The differential diagnosis for ureteric filling defects also includes TCC and radiolucent calculi. Emphysematous ureteritis typically causes streak like filling defects on IVU. Ref: Radiology Review Manual, 6th Ed, p. 952.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 16 year old boy presents with a history of headaches, abdominal pain, palpitations and sweating. CT examination shows bilateral well defined adrenal lesions, each measuring approximately 2 cm, which enhance avidly with intravenous contrast medium. MRI shows the lesions to be hyperintense to spleen on T2W with no change in signal on opposed phase T1W. Angiography shows a 'spoke-wheel' like appearance of both lesions. What is the likeliest diagnosis?",
+      "options": [
+        "A. Bilateral phaeochromocytoma",
+        "B. Adrenocortical carcinoma with contralateral metastasis",
+        "C. Adrenal hyperplasia",
+        "D. Li-Fraumeni syndrome",
+        "E. Bilateral hyperfunctioning adrenocortical adenomas"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The imaging features of Phaeochromocytoma in addition to those described also include uptake of 131I/123I- MIBG on nuclear imaging. This can be useful when a primary adrenal lesion cannot be identified on CT or MRI in the context of high clinical suspicion (e.g. Raised urinary VMA). Phaeochromocytomas have the 'rule of 10s': 10% bilateral/multiple, 10% malignant, 10% familial, and 10% extra-adrenal. Hyperfunctioning adrenocortical adenomas tend to be unilateral with contralateral atrophy. Li-Fraumeni syndrome resulting from the loss of the p53 tumour suppressor gene results in multiple neoplasms including adrenocortical carcinoma. These demonstrate heterogeneous contrast enhancement with a well circumscribed rim on CT. Ref: Radiology Review Manual, 6th Ed, p. 919-21 & 943.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 63 year old man with a history of renal calculi presents with a 4 month history of unilateral flank pain, weight loss and fever. Renal US shows loss of cortico-medullary differentiation, with hypoechoic dilated calyces with an echogenic rim and multiple hypoechoic masses with low level internal echoes replacing much of the renal parenchyma. CT confirms a 1 cm calculus in the renal pelvis and multiple low attenuation masses within the kidney. Angiography shows displacement of segmental arteries around an avascular masses. What is the likeliest diagnosis?",
+      "options": [
+        "A. Candida pyelonephritis",
+        "B. Renal sarcoma",
+        "C. Chronic renal infarction",
+        "D. Multilocular renal cell carcinoma",
+        "E. Xanthogranulomatous pyelonephritis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "XGP is a chronic granulomatous infection in chronic renal obstruction with progressive macrophage infiltration of the renal parenchyma. Fungal renal infections can cause pyelonephritis with fungal balls. Renal sarcoma typically presents with an infiltrative and expansile mass. Mutilocular RCC is a type of a cystic RCC. Ref: Radiology Review Manual, 6th Ed, p. 953.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 50 year old metformin-controlled diabetic man presents with renal colic. His serum creatinine is 90 µmol/L. Initial CT KUB is equivocal and the decision is made to administer i.v. contrast medium. Which of the following statements is incorrect?",
+      "options": [
+        "A. Contrast induced nephropathy (CIN) is usually transient",
+        "B. The single most important risk factor for CIN is pre-test GFR",
+        "C. High osmolar contrast media are more nephrotoxic than low osmolar contrast media",
+        "D. The patient should stop his metformin for 48 hours after the examination",
+        "E. The patient should be well hydrated prior to the examination"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "If the serum creatinine is within the normal range, or the estimated GFR is >60 ml/min, then metformin need not be stopped. If these are abnormal then discussion with the clinical team is required. Ref: RCR- Standards for iodinated intravascular contrast agent administration to adult patients 2005 (updated 2009).",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 38 year old man presents with an infected, hydronephrotic kidney secondary to an impacted 9 mm distal ureteric calculus. The decision is made to proceed to percutaneous nephrostomy. Which of the following sites would be best approached for initial puncture?",
+      "options": [
+        "A. Renal pelvis",
+        "B. Anterior approach to upper pole calyx",
+        "C. Posterior approach to upper pole calyx",
+        "D. Anterior approach to lower pole calyx",
+        "E. Posterior approach to lower pole calyx"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The upper pole is best avoided due to the risk of pneumothorax. Renal pelvis punctures increase the risk of vascular damage and persistent urine leaks. Generally, anterior punctures are regarded as unfavourable as there is a risk of damage to anterior structures such as bowel, liver or spleen Ref: Interventional Radiology: A survival guide, 2nd Ed, p. 281.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 48 year old man presents with urinary frequency, urgency and dysuria. A cystogram demonstrates superior and anterior displacement of the bladder with a 'teardrop' appearance. IVU shows medial displacement of the distal ureters with mild bilateral hydronephrosis. What is the likeliest diagnosis?",
+      "options": [
+        "A. Liposarcoma",
+        "B. Lipoblastoma",
+        "C. Pelvic lipomatosis",
+        "D. Hibernoma",
+        "E. Teratoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A 'teardrop' or 'pear' shaped bladder on cystography is the classic finding of pelvic lipomatosis. CT shows symmetrical abundant intrapelvic fat. Lipoblastomas are rare soft tissue neoplasms derived from foetal adipose tissue, seen in children. Hibernomas are rare benign, soft tissue tumours composed of brown fat, that present in adult as a firm, painless, slowly growing mass. Ref: Radiographics (2009); 29: 261-90.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 28 year old lady presents with PV bleeding and right-sided lower abdominal pain. Serum β-HCG is elevated. Transabdominal US does not show an intrauterine pregnancy. What is the likeliest site of an ectopic pregnancy?",
+      "options": [
+        "A. Right ovary",
+        "B. Tubal ampulla",
+        "C. Tubal isthmus",
+        "D. Pouch of Douglas",
+        "E. Cervix"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "95% of ectopic pregnancies are tubal, with ampullary pregnancies accounting for 80% of these. Abdominal, ovarian, and cervical pregnancies are extremely rare. In 5% of cases the pelvic US is normal. Ref: Radiology Review Manual, 6th Ed, p. 1036.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 30 year old woman presents with chronic pelvic pain and dyspareunia. PV examination reveals tenderness in the right adnexa. Pelvic US shows a 4 cm cystic lesion arising from the right ovary with diffuse homogeneous low-level internal echoes and echogenic wall foci. What is the likeliest diagnosis?",
+      "options": [
+        "A. Haemorrhagic ovarian cyst",
+        "B. Endometrioma",
+        "C. Dermoid",
+        "D. Cystadenocarcinoma",
+        "E. Tubo-ovarian abscess"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The classic features of an endometrioma are described, others include wall nodularity, a fluid-fluid level and acoustic enhancement. A haemorrhagic ovarian cyst or a tubo-ovarian abscess would present more acutely. A dermoid may have similar appearances but would usually have fat and/or calcium within. A cystic ovarian tumour is in the differential and typically appears as a multilocular cyst with large associated soft tissue component mass, sometimes with papillary excrescences into the cysts. Ref: Radiology Review Manual, 6th Ed, p. 1040.",
+      "questionNumber": 21
+    },
+    {
+      "question": "Regarding traumatic urethral injury, which of the following statements is true?",
+      "options": [
+        "A. It occurs in 1 % of all pelvic fractures",
+        "B. The posterior urethra is more commonly injured than the anterior",
+        "C. It is equally common in males and females",
+        "D. It is associated with bladder rupture in 50% of cases",
+        "E. At urethrography, the AP view provides most information"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Urethral trauma is common in the presence of pelvic fractures (up to 24%) and typically presents with haematuria, meatal blood, perineal swelling or a high riding prostate on DRE in men and labial oedema, vaginal bleeding or urinary leak PR in women. It is more common in men and the posterior urethra, particularly the distal membranous urethra is most commonly injured. It is associated with bladder rupture in 20%. At urethrography, if the patient is able, a right or left anterior oblique view is commonly employed. Ref: Radiographics (2008); 28: 1631-43.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 50 year old woman develops microscopic haematuria and is referred for an IVU. This demonstrates bilateral bulbous cavitation of the papillae with streaks of contrast material extending from the fornix parallel to the axis of the papillae and diminished density of the nephrogram. In addition, small filling defects are seen in the renal calyces. Which of the following is most likely to account for these findings?",
+      "options": [
+        "A. Sickle cell disease",
+        "B. Analgesic nephropathy",
+        "C. Renal vein thrombosis",
+        "D. Christmas disease",
+        "E. Hepatic cirrhosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "These are the IVU signs of papillary necrosis. There is a wide differential diagnosis for these appearances including diabetes mellitus, SCD, obstructive uropathy, and pyelonephritis. Overall, diabetes is the most common cause, but analgesic nephropathy is particularly common in middle-aged females. Ref: Radiographics (2006); 26:1827-36.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 35 year old man presents with night sweats and weight loss. CT examination shows multiple enlarged lymph nodes in the thorax and abdomen with homogeneous, ill defined masses in the kidney. A diagnosis of renal lymphoma is suspected. Which of the following statements is incorrect?",
+      "options": [
+        "A. Renal involvement is more common in NHL than Hodgkin's disease",
+        "B. Primary renal lymphoma is less common than secondary renal lymphoma",
+        "C. It is more commonly bilateral than unilateral",
+        "D. Enhanced through transmission is commonly seen on US",
+        "E. Avid enhancement after contrast medium administration is seen on CT"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Renal lymphoma typically occurs in B-Cell non-Hodgkin's lymphoma, where it is the second most common organ involved after the haematopoietic and reticulo-endothelial systems. Primary renal lymphoma is uncommon as the normal kidney does not contain significant amounts of lymphoid tissue. Intra-renal lymphoma appears as an ill-defined, homogeneous mass on CT which enhance poorly relative to the surrounding parenchyma. Ref: Radiographics (2006); 26:1151-68.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 30 year old woman presents with a history of hypertension and headache. She undergoes renal angiography which demonstrates alternating areas of stenosis and ectasia in the distal third of both main renal arteries. What is the likeliest diagnosis?",
+      "options": [
+        "A. Atherosclerosis",
+        "B. Takayasu's arteritis",
+        "C. Polyarteritis nodosa",
+        "D. Fibromuscular dysplasia",
+        "E. Buerger's disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Overall, the commonest cause of renal artery stenosis is atherosclerosis, but FMD accounts for up to 30% of all cases, and is commoner in young patients. It typically affects the mid and distal portion of the artery and a 'string of beads' appearance is often seen. Ref: Radiology Review Manual, 6th Ed, p. 957.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 30 year old woman presents to the emergency department hypotensive and unwell. CT shows retroperitoneal blood which is arising from a 6 cm renal mass. The mass is well defined and on unenhanced imaging has a mean density of -5 HU. What is the most likely diagnosis?",
+      "options": [
+        "A. Renal oncocytoma",
+        "B. Renal cell carcinoma",
+        "C. Renal angiomyolipoma",
+        "D. Renal liposarcoma",
+        "E. Renal lipoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Renal AML is a benign tumour containing fat, smooth muscle and thick-walled blood vessels. They can bleed (50-60% of AMLs > 4cm bleed spontaneously), and can cause haemorrhagic shock (Wunderlich syndrome). Fat on non-contrast CT in the absence of calcification is virtually diagnostic. They can be associated with tuberous sclerosis (in 80% of TS patients), VHL, and NF. Ref: Radiology Review Manual, 6th Ed, p. 922.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 32 year old woman presents with dysmenorrhoea and menorrhagia. MRI confirms the presence of a large fibroid. Which of the following statements is true regarding uterine fibroid embolisation (UFE)?",
+      "options": [
+        "A. Uterine artery is usually embolised on one side",
+        "B. The uterine artery is a branch of the posterior division of the internal iliac artery",
+        "C. An 8 Fr catheter should be used to catheterize the uterine artery",
+        "D. Embolisation is best achieved with coils",
+        "E. UFE is generally not preferred for pedunculated fibroids"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Bilateral uterine artery embolisation with particulate (PVA or microspheres) are required for satisfactory treatment. A 4Fr catheter is a suitable size to reach the uterine artery. The uterine artery is a branch of the anterior division of the IIA. Pedunculated fibroids may necrose their stalk and fall into the uterine or abdominal cavity, therefore UFE is not the treatment of choice. Ref: Interventional Radiology: A survival guide. 2nd Ed, p. 206.",
+      "questionNumber": 27
+    },
+    {
+      "question": "Regarding the practical use of Hyoscine-N-butylbromide as a smooth muscle relaxant in imaging of the pelvis, which of the following statements is true?",
+      "options": [
+        "A. The dose is 2 mg given intravenously",
+        "B. A history of angina is a contraindication",
+        "C. It is contraindicated in patients with porphyria",
+        "D. Open angle glaucoma is a contraindication",
+        "E. The patient should not drive him/herself home"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Buscopan is a commonly used short acting (up to 1 hour) anti-muscarinic drug. The dose is 20 mg i.v.. A history of allergy should be explored. All patients should be warned that in the event of painful, blurred vision, medical attention should be sought. Stable cardiac disease is not an absolute contraindication. Porphyria and closed angle glaucoma are contraindications. Ref: Clin Rad (2008); 63(7): 739-43.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 28 year old woman is referred for investigations for infertility. HSG and MRI demonstrate normal fundal contour but no division of the uterine horns and a single uterine canal with a saddle shaped fundus. What is the most likely diagnosis?",
+      "options": [
+        "A. Arcuate uterus",
+        "B. Septate uterus",
+        "C. Bicornuate uterus",
+        "D. Uterus didelphys",
+        "E. Unicornuate uterus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Arcuate uterus is the most common uterine anomaly associated with reproductive failure. Uterus didelphys is a duplication defect with 2 vaginas, 2 cervices and 2 uterine horns. Bicornuate and unicornuate abnormalities demonstrate an abnormal fundal contour. Ref: Radiographics (2006); 26:419-31.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 63 year old man is diagnosed with prostate cancer on needle biopsy. Staging MRI shows a solitary low signal intensity lesion on T2W extending from the right peripheral zone into the seminal vesicle on that side. No abnormal local lymph nodes are seen. Bone scintigraphy is unremarkable. What is the TNM staging of this cancer?",
+      "options": [
+        "A. T1c N0 M0",
+        "B. T2c N0 M0",
+        "C. T3a N0 M0",
+        "D. T3b N0 M0",
+        "E. T4a N0 M0"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "T1c cancers are impalpable tumours detected on needle biopsy. T2c tumours are intra-capsular but involve both lobes. T3a cancers are extra-capsular without other organ involvement. T3b cancers involve the seminal vesicles. T4 cancers have direct extension into adjacent organs other than the seminal vesicles. Ref: TNM Atlas, 5th Ed, 2005.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 73 year old woman is referred to the post-menopausal bleed fast track clinic where she undergoes a transvaginal US. Which of the following statements is incorrect?",
+      "options": [
+        "A. Endometrial measurement should be of both opposed endometrial layers",
+        "B. The normal endometrial thickness measurement should be less than 5 mm",
+        "C. If she is taking HRT, normal endometrial thickness can be up to 20 mm",
+        "D. Normal measurement limits can be increased by 1-2 mm in obese patients",
+        "E. Biopsy/D+C is advisable if she is not on HRT and has an endometrial thickness of >8 mm"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "HRT can increase the normal thickness of the post-menopausal endometrium up to 15 mm (depending on the HRT). Measurements should be of bi-layer thickness. For post-menopausal women not on HRT, 5 mm is the upper limit of normal. Ref: Radiology Review Manual, 6th Ed, p. 1024.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 26 year old man is involved in an RTA, and falls from his motorcycle at 60 mph. On arrival in the emergency department he is alert and mobile with a blood pressure of 115/72 and a pulse rate of 60/min. He complains of mild discomfort over his left lower ribcage. A urine sample demonstrates rose coloured urine. Which of the following is the most appropriate next step?",
+      "options": [
+        "A. Renal ultrasound",
+        "B. Admit for observation and image should he deteriorate",
+        "C. Contrast enhanced CT of the abdomen",
+        "D. IVU",
+        "E. Renal angiography"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "With a high velocity injury and frank haematuria, CT is the investigation of choice. 25% of patients with frank haematuria and blunt trauma have a significant renal injury. Normotensive patients with microscopic haematuria have a significant renal injury in <0.2%. Ref: RITI 4c_059 - Guidelines in uroradiology.",
+      "questionNumber": 32
+    },
+    {
+      "question": "Regarding breast MRI techniques, which of the following is incorrect?",
+      "options": [
+        "A. The patient should be prone",
+        "B. The phase encoding direction should be in the anterior to posterior plane",
+        "C. Reducing the field of view improves the in plane resolution",
+        "D. Chemical shift artefact can be reduced by increasing the bandwidth per pixel of the imaging sequence",
+        "E. Wrap-around artefact can be reduced by increasing the number of sampling points in the phase encoding direction"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Blood flow, cardiac, respiratory and patient motion all cause 'ghosting' artifact in the phase encoding direction. If the phase encoding direction is incorrectly set in the anterior to posterior plane, large amounts of breast tissue will be obscured. Ref: Radiographics (2007); 27: s131-45.",
+      "questionNumber": 33
+    },
+    {
+      "question": "An otherwise normal baby is found to have an impalpable right testis at birth. At 6 months he undergoes an US to confirm the presence of an undescended testis. What is the most likely location for such a testis?",
+      "options": [
+        "A. Inguinal canal",
+        "B. Pubic tubercle",
+        "C. Immediately inferior to the right kidney",
+        "D. Contralateral hemiscrotum",
+        "E. Perineum"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The inguinal canal is the commonest site for an undescended testis, although it can lie anywhere along its embryological passage from kidney to scrotum. Ectopic testes can be found in the femoral canal, perineum, contralateral hemiscrotum or prepubic space. Localisation is important as, if present, there is a greatly increased risk of malignancy. Ref: Office urology - The clinicians guide, 1st Ed.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 26 year old woman who has a Mirena IUCD in situ presents with intermittent lower abdominal pain. Which of the following statements is correct?",
+      "options": [
+        "A. 3T MRI is contraindicated",
+        "B. Mirena IUCDs are better visualised than copper IUCDs on transabdominal US",
+        "C. Threads of a lost coil are not visible on ultrasound",
+        "D. IUCDs increase the risk of ectopic pregnancy",
+        "E. The Mirena is commonly used for the treatment of dysfunctional uterine bleeding"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The Mirena is a polyethylene IUCD and is well seen on MRI. Metal IUCDs are not a contraindication to 1.5T MRI examination although safety in a 3T machine has not been fully evaluated. Threads of a lost coil can ball up to form an echogenic mass on ultrasound. IUCDs do not increase the risk of ectopic pregnancy per se, but a higher percentage of ectopic pregnancies are seen in patients with IUCDs as endometrial implantation is restricted. The Mirena is commonly used for treatment of dysfunctional uterine bleeding with success rates of up to 70%. Ref: RITI 4b_ 007 Intrauterine contraceptive devices.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 30 year old woman with a previous history of pelvic inflammatory disease is undergoing investigations for infertility. With regards to assessment of tubal patency, which of the following statements is correct?",
+      "options": [
+        "A. Gadolinium enhanced MRI is the investigation of choice",
+        "B. Normal fallopian tubes are visible on pelvic US",
+        "C. Hysterosalpingography should be performed in the first half of the menstrual cycle",
+        "D. Hysterosalpingo contrast sonography is as good as laparoscopy and dye instillation",
+        "E. Iodine based contrast is used for hysterosalpingo contrast sonography"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Laparoscopy and blue dye instillation (with spillage of dye into the peritoneal cavity indicating patency) is the gold standard, but requires a general anaesthetic. MRI and standard pelvic US do not clearly demonstrate the fallopian tubes. HSG provides an accurate indication of tubal patency but employs ionizing radiation. It should therefore be performed in the first half of the menstrual cycle to avoid irradiating a patient with possible early pregnancy. Hysterosalpingo-Contrast-Sonography uses microbubbles to demonstrate the fallopian tubes and has the advantage of not using ionizing radiation or requiring anaesthesia but is less accurate than the other methods. Ref: RITI 4b_023 HyCoSy and hysterosonography.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 34 year old woman with 2 previous unremarkable vaginal deliveries presents with a history of pelvic pain. TV US shows diffuse heterogeneous myometrial echotexture with multiple tiny myometrial cystic lesions and poor definition of the junctional zone. MRI shows an indistinct diffuse predominantly low signal intensity lesion with small foci of increased signal intensity on T2W along with diffuse widening of the junctional zone on T2W. What is the most likely diagnosis?",
+      "options": [
+        "A. Adenomyosis",
+        "B. Leiomyoma",
+        "C. Endometrial carcinoma",
+        "D. Muscular hypertrophy",
+        "E. Myometrial contraction"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Adenomyosis is a term relating to benign invasion of the myometrium by endometrium. It can exist in either focal or diffuse forms. The diffuse form is characterised by junctional zone widening. Dilated cystic glands or haemorrhagic foci can be seen within the myometrium in 40% of diffuse cases. Ref: Radiology Review Manual, 6th Ed, p. 1028.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 35 year old man is involved in a high speed RTA and sustains a Malgaigne's type pelvic fracture. A small urethral catheter is successfully passed in the emergency department. The patient subsequently develops dark haematuria. Which of the following statements is true?",
+      "options": [
+        "A. The haematuria is most likely to be related to catheter trauma",
+        "B. 70% of patients with pelvic fractures have a bladder rupture",
+        "C. At cystography, widening of the fat planes of obturator internus on the control film suggests intraperitoneal rupture",
+        "D. Extraperitoneal rupture accounts for 40% of traumatic bladder injuries",
+        "E. 10% of ruptures can only be detected after emptying the bladder of contrast medium at cystography"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "High velocity trauma with a significant pelvic fracture means that bladder injury must be excluded. 70% of traumatic bladder ruptures are associated with pelvic fracture. On control film at cystography, widening of the fat planes of obturator internus along with a homogeneous soft tissue density and displacement of ileal loops suggest extraperitoneal rupture. Overall, extraperitoneal ruptures account for 80% of ruptures. 10% of ruptures are detected on post micturition imaging only. Ref: Clin Rad (2008); 63:1361-71.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 23 year old woman presents with abdominal pain. Her β-HCG test is positive and her LMP was 6 weeks ago. An US scan is arranged. Which of the following features suggest a pseudogestational sac rather than a true gestational sac?",
+      "options": [
+        "A. A well defined complete decidual reaction of greater than 2 mm",
+        "B. Location of the lesion within the fundus",
+        "C. A round or oval appearance",
+        "D. The lack of a double decidual sign",
+        "E. Eccentricity of the lesion relative to the endometrium"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The double decidual sign is useful in determining a true gestational sac particularly after 5 weeks gestation. It comprises two hyperechoic rings separated by the hypoechoic apposed endometrial walls. It has a PPV for pregnancy of 98%. Ref: RITI 4b 004 Ultrasound assessment of the first trimester of pregnancy",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 54 year old man presents with microscopic haematuria. CT shows a 3 cm renal mass containing flecks of calcification and which demonstrates heterogeneous enhancement with i.v. contrast medium. What is the likeliest diagnosis?",
+      "options": [
+        "A. Oncocytoma",
+        "B. Angiomyolipoma",
+        "C. Lymphoma",
+        "D. Transitional cell carcinoma",
+        "E. Renal cell carcinoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "RCC is by far the commonest malignant renal tumour. 10% of these tumours calcify. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 291.",
+      "questionNumber": 40
+    },
+    {
+      "question": "Regarding the anatomy of the normal kidney, which of the following statements is true?",
+      "options": [
+        "A. The renal arteries typically have three divisions",
+        "B. The column of Bertin is isoechoic to renal cortex",
+        "C. The column of Bertin represents the fusion of the embryological anterior and posterior kidneys",
+        "D. The right renal artery typically arises at the level of the L3 intervertebral disc",
+        "E. The left renal artery is usually longer and lower than the left"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The column of Bertin is an area of focal cortical hyperplasia, typically seen between the upper and interpolar region. It has the imaging characteristic of renal cortex. Its main clinical significance is that it can be mistaken for a renal tumour. Both renal arteries usually have two divisions. The renal arteries typically arise at the L1/L2 level. The right renal artery is usually longer and lower than the left. Ref: Clinically Oriented Anatomy, 5th Ed, p. 311.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 72 year old man is referred to breast clinic with a unilateral painless breast lump. He has no significant past medical history and is not on any medication. Which of the following statements is true?",
+      "options": [
+        "A. Unilateral swelling makes gynaecomastia unlikely",
+        "B. Gynaecomastia is a risk factor for breast cancer",
+        "C. Male breast cancer presents as earlier stage disease than female breast cancer",
+        "D. Male breast cancer is usually oestrogen receptor positive",
+        "E. Microcalcification in male breast cancer is common"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Male breast cancer represents 0.5% of all breast cancers. Gynaecomastia for which there is a wide differential (including physiological, endocrine, neoplastic and drug related causes) may be unilateral and asymmetrical. Male breast cancer presents at a later stage than female breast cancer and at an older age. It is usually ER positive and unlike in female breast cancer, microcalcification is relatively uncommon. Ref: RITI module 4a 011 Male breast disease.",
+      "questionNumber": 42
+    },
+    {
+      "question": "With regards to 99mTc-DTPA in renal imaging, which of the following statements is incorrect?",
+      "options": [
+        "A. It has a rapid extravascular, extracellular distribution",
+        "B. It is cleared mainly by tubular secretion",
+        "C. It undergoes 5-10% plasma protein binding",
+        "D. Good post test hydration and frequent voiding reduce radiation dose",
+        "E. It is useful in providing information relating to GFR"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "It is mainly cleared by glomerular filtration hence its utility as a GFR agent. It is useful in assessing the degree of obstructive uropathy. 99mTc-MAG3 is cleared by tubular secretion and is the agent of choice in patients with renal insufficiency as it is not GFR dependent. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 939.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 40 year old man undergoes a scrotal ultrasound as part of his investigations for infertility. US shows multiple hypoechoic serpiginous tubular structures with slow flow within them, superior and lateral to the left testicle. Which of the following statements is false?",
+      "options": [
+        "A. Renal US should also be performed",
+        "B. This lesion can be treated with embolisation via a RIJ vein approach",
+        "C. This lesion can be treated with laparoscopic surgery",
+        "D. Treatment does not improve sperm quality",
+        "E. Coil embolisation is preferred to particulate embolisation"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is a left sided varicocoele. An obstructing left renal lesion should be excluded. Sperm quality is improved in up to 53% of patients. The commonest approach for embolisation is via the right CFV vein but the RIJ jugular may also be used. Ref: Interventional Radiology: A survival guide. 2nd Ed, p. 204.",
+      "questionNumber": 44
+    },
+    {
+      "question": "During a routine antenatal ultrasound performed at 11 weeks gestation, the nuchal skin thickness is measured at 5 mm. Which of the following is not part of the differential?",
+      "options": [
+        "A. Normal variation",
+        "B. Noonan's syndrome",
+        "C. Zellwegger syndrome",
+        "D. Klippel-Feil syndrome",
+        "E. Fragile X syndrome"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The nuchal skin thickness should measure up to 3 mm at 9-13 weeks, up to 5 mm at 14-19 weeks and up to 6mm at 19-24 weeks. Although rare ( < 1 % ) normal variation is observed. Other causes of nuchal skin thickening include Turners and Downs syndromes. Ref: Radiology Review Manual, 6th Ed, p. 1003.",
+      "questionNumber": 45
+    },
+    {
+      "question": "With regards to nuclear imaging of the scrotum in cases of suspected torsion which of the following statements is false?",
+      "options": [
+        "A. 99mTc-Pertechnetate is the radioisotope of choice",
+        "B. A peripheral rim of increased activity with a central photopaenic zone is seen in delayed or missed torsion",
+        "C. An area of increased activity extending from the iliac vessels to the scrotum is seen in torsion",
+        "D. Torsion of the hydatid of morgagni is seen as a photopaenic defect",
+        "E. It should not be performed in children under the age of 2 years"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Torsion of the hydatid cannot be identified on scintigraphy as the structure is too small to be accurately defined. An area of increased activity extending from the iliac vessels to the scrotum can sometimes indicate increased perfusion to the scrotum via the pudendal vessels (nubbin sign). Ref: Primer of Diagnostic Imaging, 4th Ed, p. 942.",
+      "questionNumber": 46
+    },
+    {
+      "question": "Antenatal ultrasound at 22 weeks shows thick walled oedematous freely floating bowel loops outside the foetal abdomen. A 2 cm defect in the anterior abdominal wall is seen to the right of a normally inserted umbilical cord. Polyhydramnios but no foetal ascites is noted. No other congenital abnormality can be detected at this stage. What is the likely diagnosis?",
+      "options": [
+        "A. Gastroschisis",
+        "B. Omphalocoele",
+        "C. Limb-body wall complex",
+        "D. Amniotic band syndrome",
+        "E. Ectopia cordis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This can be differentiated from omphalocoele by its location (right paraumbilical as opposed to midline), lack of covering membrane and relatively small defect size. It is also less commonly associated with other congenital defects. It is difficult to reliably diagnose this condition until at least 20 weeks gestation. Ref: Radiology Review Manual, 6th Ed, p. 1044.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 70 kg, 55 year old man undergoes a CT KUB for suspected ureteric colic. Reviewing the study, with the patient on the table, an opacity is identified on the side of the pain which lies approximately 5 cm from the VUJ, however it is difficult to be certain whether or not the opacity lies within the ureter. Which of the following is the next best step?",
+      "options": [
+        "A. Repeat unenhanced examination with the patient prone",
+        "B. Repeat examination post i.v. contrast medium, acquiring at 50s post administration",
+        "C. Repeat examination post i.v. contrast medium, acquiring at 100s post administration",
+        "D. Repeat unenhanced examination in 24 hours",
+        "E. Repeat examination with post i.v. contrast medium, acquiring at 300s post administration"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Although exact techniques vary from department to department, the principles remain the same. In this situation, an excretory phase image is required to determine whether or not the opacity is in the ureter. This phase begins at 240 secs post contrast administration. The nephrographic phase (80-120 secs) provides homogeneous enhancement of the parenchyma and is best for identifying parenchymal lesions. Turning the patient prone can be useful in delineating VUJ calculi and is performed routinely in some centres. Ref: Radiographics (2004); 24:e20.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 32 year old male is found to have a complete duplex ureteric system on the left side at IVU. Which of the following statements is incorrect?",
+      "options": [
+        "A. The upper moiety ureter is more prone to obstruction",
+        "B. Enuresis is less likely in female patients",
+        "C. The lower moiety ureter is more prone to reflux",
+        "D. The upper moiety ureter inserts inferior and medial to the lower moiety ureter",
+        "E. The drooping lily sign may be seen on his IVU"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "In men the upper moiety ureter always inserts proximal to the external urethral sphincter, thus enuresis is less likely. By way of contrast, in females the upper moiety ureter commonly inserts distal to the sphincter, making enuresis more likely. The drooping lily sign refers to an obstructed upper moiety ureter displacing the lower ureter inferiorly on IVU. Ref: RITI 4c_018 Imaging of suspected hydronephrosis and obstruction.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 38 year old woman presents with a palpable breast mass. On mammography it is 3 cm, lobulated, well defined with a halo appearance around it. It contains central popcorn calcification. On US it has a length to depth ratio of 1.5:1 and is slightly compressible. What is the likely diagnosis?",
+      "options": [
+        "A. Fibrocystic disease",
+        "B. Sclerosing adenosis",
+        "C. Fibroadenoma",
+        "D. Lymphoma",
+        "E. Phyllodes tumour"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Popcorn calcification with a halo around a well defined compressible lesion in a pre-menopausal woman is typical of fibroadenoma. Ref: RITI 4c_011 Benign breast disease.",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 2 year old presents with pain and abdominal swelling. US shows an 8 cm hyperechoic poorly defined mass in the retroperitoneum, crossing the midline, with areas of acoustic shadowing within it. CT demonstrates the presence of retroperitoneal adenopathy and encasement of the IVC. What is the likely diagnosis?",
+      "options": [
+        "A. Wilm's tumour",
+        "B. Rhabdomyosarcoma",
+        "C. Renal cell carcinoma",
+        "D. Neuroblastoma",
+        "E. Polycystic kidney disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Neuroblastoma is the commonest solid abdominal mass in infants. It is characterised by difficulty in defining it separately from the kidney, the presence of coarse stippled calcification and the fact it crosses the midline. It may arise from any site within the sympathetic neural chain. Ref: Radiology Review Manual, 6th Ed, p. 941.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 54 year old woman presents with a painful discharging nipple. Clinical examination suggests a small lump. Mammogram shows coarse, smooth bordered rod shaped calcifications in the subareolar area. However, no discrete mass could be identified on magnified views. On MRI dilated tubular structures containing high signal intensity material on T1W and T2W are seen, with no enhancement following i.v. gadolinium. What is the likely diagnosis?",
+      "options": [
+        "A. Paget's disease",
+        "B. Lymphoma",
+        "C. Nipple adenoma",
+        "D. Duct ectasia",
+        "E. Subareolar carcinoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Stasis of intraductal secretions leads to dilatation and inspissation of material within the subareolar ducts which can calcify. The diagnosis is much more likely if it is bilateral. Ref: Radiographics (2007); 27: s57-67.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 56 year old woman is found to have a 1.2 cm lesion in the right adrenal gland on CT KUB during an examination for renal colic. MRI characterisation suggests that the lesion is a metastasis. Which of the following sites is the most likely primary?",
+      "options": [
+        "A. Ovary",
+        "B. Melanoma",
+        "C. Breast",
+        "D. Lung",
+        "E. Thyroid"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Lung is the most common site (40%) followed by breast (20%). Other sites include kidney, pancreas and colon. Ref: Radiology Review Manual, 6th Ed, p. 936.",
+      "questionNumber": 53
+    },
+    {
+      "question": "With regards to normal ovarian anatomy on US, which of the following statements is false?",
+      "options": [
+        "A. Normal ovarian volume in a woman of reproductive age is up to 12 mls",
+        "B. Normal ovarian volume in a postmenopausal woman is up to 4 mls",
+        "C. The broad ligament contains the round ligaments within it",
+        "D. Resistance to flow on Doppler imaging of the ovary is greatest in the luteal phase of the menstrual cycle",
+        "E. The ovarian ligaments are not normally seen"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Highest resistance to flow on Doppler is seen on days 1-8 of the menstrual cycle, gradually reducing with follicular development until day 21. Ref: RITI 4b_002 Normal gynaecological anatomy - Vagina and ovaries.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 30 week pregnant 23 year old lady with a history of previous Caesarian section is found to have extension of her placenta through the uterine scar. She undergoes an MRI study which shows extension of the placenta in to the bladder wall. What is the diagnosis?",
+      "options": [
+        "A. Placenta accreta",
+        "B. Choriocarcinoma",
+        "C. Placenta percreta",
+        "D. Endometriosis",
+        "E. Placenta increta"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In a normal pregnancy, the placenta is adherent to the endometrial lining. Penetration beyond this is abnormal and is categorised according to depth of invasion. In placenta accreta there is superficial invasion of the myometrium by the placental villi, whereas deep invasion of the myometrium is termed placenta increta. Extension of the placental tissue to the peritoneum, often in to the adjacent organs, is termed placenta percreta. The incidence of abnormal placental implantation ranges from 1 in 533 to 1 in 2,500, with both foetal and maternal mortality associated, due to haemorrhagic complications. Ref: European Radiology (2007); 17:1647-9.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 50 year old man presents with chronic dull flank pain. US shows normal sized kidneys with mild prominence of their calyces. IVU shows ureterectasis above L4, medial displacement of the ureters bilaterally in their middle thirds and subsequent distal tapering. CT shows a retroperitoneal periaortic mass of attenuation similar to muscle. What is the most likely diagnosis?",
+      "options": [
+        "A. Retroperitoneal fibrosis",
+        "B. Lymphoma",
+        "C. Liposarcoma",
+        "D. Leiomyoma",
+        "E. Amyloid"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Retroperitoneal fibrosis may be primary (2/3 of cases) where it may be associated with fibrosis in other organ systems, or secondary to drugs, radiation therapy or a desmoplastic reaction to local tumours. Ref: Radiology Review Manual, 6th Ed, p. 970.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 52 year old woman presents with a suprapubic mass. CT shows a 6 cm mass lying anterosuperior to the bladder extending along the course of the urachus. The mass demonstrates heterogeneous enhancement and has peripheral stippled psammomatous calcifications within it. Which of the following is the likeliest histological subtype?",
+      "options": [
+        "A. Transitional cell carcinoma",
+        "B. Papillary cell carcinoma",
+        "C. Adenocarcinoma",
+        "D. Squamous cell carcinoma",
+        "E. Teratoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Urachal carcinoma is a relatively rare tumour characterized by a midline suprapubic mass that may or may not invade the bladder. 10% lie at the umbilical end. Peripheral curved or stippled calcifications are pathognomonic of the mucinous adenocarcinoma subtype which may be complicated by pseudomyxoma peritonei. Ref: Radiology Review Manual, 6th Ed, p. 985.",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 50 year old recent immigrant from Tanzania presents with a history of vague flank pain. CT KUB shows coarse calcification in a thickened bladder wall with extension of the calcification into the walls of the distal ureters. What is the most likely diagnosis?",
+      "options": [
+        "A. Tuberculosis",
+        "B. Transitional cell carcinoma",
+        "C. Schistosomiasis",
+        "D. Lymphoma",
+        "E. Histoplasmosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Although schistosomiasis is rare in the west, it is the commonest cause of mural calcification worldwide. TB causes calcification relatively rarely. TCC can cause mural calcification but this is usually thin curvilinear calcification outlining a normal sized bladder. Ref: Radiology Review Manual, 6th Ed, p. 972.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 60 year old diabetic woman presents with a history of recurrent coliform UTIs. CT urogram shows multiple smooth dome shaped filling defects within the bladder and both distal ureters. At ureteroscopy the lesions have a yellow appearance and biopsy demonstrates the presence of Michaelis-Gutmann bodies. What is the likely diagnosis?",
+      "options": [
+        "A. Polureteritis cystica",
+        "B. Actinomycosis",
+        "C. Squamous cell carcinoma",
+        "D. Malakoplakia",
+        "E. Leukoplakia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A rare condition characterised by altered host response to infection (E. coli in 94%) at the macrophage level. It is multifocal in 75% and bilateral in 50%. Renal involvement is less common, is usually unilateral, and is characterised by diffuse renal enlargement with displacement and distortion of the pelvi-calyceal system. Ref: Radiology Review Manual, 6th Ed, p. 933.",
+      "questionNumber": 59
+    },
+    {
+      "question": "Which of the following structures are mullerian duct remnants?",
+      "options": [
+        "A. Hydatid of Morgagni",
+        "B. Epididymis",
+        "C. Vas deferens",
+        "D. Ejaculatory duct",
+        "E. Tunica albuginea"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The mullerian duct degenerates at around 6 weeks in the male due to production of mullerian inhibiting factor by Sertoli cells, its remnants form the appendix testis and the utricle. Ref: Radiology Review Manual, 6th Ed, p. 908.",
+      "questionNumber": 60
+    },
+    {
+      "question": "A 3 year old child born to an HIV positive mother is found to have bilateral enlarged kidneys on ultrasound. Which of the following conditions is least likely?",
+      "options": [
+        "A. ADPKD",
+        "B. Obstructive pelvic mass",
+        "C. HIV nephropathy",
+        "D. Medullary cystic disease",
+        "E. Lymphoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Medullary cystic disease appears either as a juvenile (rapidly progressive) or as an infantile form. It is characterised by the presence of bilateral small kidneys with numerous small cortico-medullary cysts which give an appearance of increased parenchymal echogenicity, with loss of the corticomedullary junction. Although rare, ADPKD can present in this age group. Ref: Radiology Review Manual, 6th Ed, p. 934.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A male infant is found to have multiple bladder diverticulae along with other congenital abnormalities. Which of the following conditions is least likely?",
+      "options": [
+        "A. William's syndrome",
+        "B. Menke's kinky hair syndrome",
+        "C. Eagle-Barrett syndrome",
+        "D. Diamond-Blackfan syndrome",
+        "E. Meckel-Gruber syndrome"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Meckel-Gruber syndrome is a cause of multiple renal cortical cysts but is invariably fatal at birth due to a combination of lung hypoplasia and renal failure. Ref: Radiology Review Manual, 6th Ed, p. 923.",
+      "questionNumber": 62
+    },
+    {
+      "question": "A 50 year old woman presents with vague left sided abdominal pain. KUB demonstrates no renal tract calcification but an enlarged left renal outline is noted. Which of the following is not part of the differential diagnosis?",
+      "options": [
+        "A. Cervical carcinoma",
+        "B. Nephrotic syndrome",
+        "C. Pyelonephritis",
+        "D. Congenital duplication",
+        "E. Renal artery dissection"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Renal artery dissection causes the affected kidney to decrease in size due to arterial insufficiency. Ureteric obstruction with hydronephrosis can be a presenting feature of cervical cancer.",
+      "questionNumber": 63
+    },
+    {
+      "question": "A 50 year old man undergoes an IVU for suspected ureteric colic. No abnormality is found other than a right ureter which swings medially at the level of L3/L4. Which of the following is the likeliest diagnosis?",
+      "options": [
+        "A. Para-aortic lymphadenopathy",
+        "B. Neurofibroma",
+        "C. Retrocaval ureter",
+        "D. Pelvic lipomatosis",
+        "E. Aortic aneurysm"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Retrocaval ureter is due to a rare embryological failure of IVC formation with persistence of the right posterior cardinal vein and failure of the right supracardinal system to develop. It may be asymptomatic or cause varying degrees of proximal hydroureter. Ref: JK-Practitioner (2005); 12(1): 24-5.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 25 year old woman presents with a 6 month history of debilitating right loin pain. IVU and arteriography show a vascular impression on the superior infundibulum with secondary dilatation of the upper pole calyx. Which of the following is the likeliest diagnosis?",
+      "options": [
+        "A. Fraley's syndrome",
+        "B. Cavernous haemangioma",
+        "C. Bartter syndrome",
+        "D. Bardet-Biedel syndrome",
+        "E. Alport syndrome"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Fraley's syndrome is rare, comprising superior infundibular narrowing due to a crossing vessel causing significant loin pain. It is more common in young women and on the right side. If symptomatic surgery is indicated. Ref: Eur Radiol (2000); 38(4): 410-4.",
+      "questionNumber": 65
+    },
+    {
+      "question": "A 58 year old man is found to have a midline prostatic cystic lesion on MRI. Which of the following is not part of the differential diagnosis?",
+      "options": [
+        "A. Prostate carcinoma",
+        "B. Recent TURP",
+        "C. Utricular cyst",
+        "D. Posterior urethral diverticulum",
+        "E. Ejaculatory duct cyst"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Other causes include mullerian duct cyst and vas deferens cyst. Ref: Abdom imaging (1995); 20:70-1.",
+      "questionNumber": 66
+    },
+    {
+      "question": "With regards to fallopian tube recanalisation, which of the following statements is incorrect?",
+      "options": [
+        "A. It is used in cases of infertility associated with proximal tubal obstruction",
+        "B. It can not be employed after reversal of sterilization surgery",
+        "C. Technical success is achieved in 80-90%",
+        "D. It is associated with increased rates of ectopic pregnancy",
+        "E. Salpingitis isthmica nodosa is a contraindication"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Although primarily used in cases of proximal tubal obstruction, it can be used to treat mid tubal obstructions after reversal of sterilisation surgery. Ref: RITI 1c_046 - Treatment of female sub fertility.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A 30 year old woman who is 10 weeks pregnant presents with bleeding and lower abdominal pain. US shows an endometrial thickness of 8 mm but gross distortion of its normal midline position by heterogeneous material, with no definite sac identified. What is the likely diagnosis?",
+      "options": [
+        "A. Complete miscarriage",
+        "B. Incomplete miscarriage",
+        "C. Delayed miscarriage",
+        "D. Intrauterine haematoma",
+        "E. Ectopic pregnancy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This condition can be asymptomatic and the typical findings on US are those of an expanded endometrial cavity packed with blood and the products of conception. Ref: RITI 4b_005 Early pregnancy problems.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A 30 year old man is involved in a high speed RTA. At contrast enhanced CT, he is noted to have a laceration in the upper pole of his right kidney extending through the corticomedullary junction into the collecting system with extravasation and surrounding haematoma. According to the American Association for the Surgery of Trauma guidelines, how would you categorise this injury?",
+      "options": [
+        "A. Grade I",
+        "B. Grade II",
+        "C. Grade III",
+        "D. Grade IV",
+        "E. Grade V"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Grade I refers to contusion or non-expanding subcapsular haematoma and is the commonest type. Grade II refers a laceration less than 1 cm deep without extravasation. Grade III describes a laceration more than 1 cm deep without extravasation. Grade IV refers to the above or alternatively to a segmental renal artery or vein injury with contained haematoma. Grade V refers to a shattered kidney or to renal pedicle injury. Ref: Radiology Review Manual, 6th Ed, p. 981.",
+      "questionNumber": 69
+    },
+    {
+      "question": "A 55 year old man presents with a vague longstanding history of scrotal discomfort. US shows a right sided lesion, predominantly composed of branching cystic structures lying immediately posterior to the mediastinum. At MRI, the lesion is hypointense on T1W and isointense on T2W. Which of the following is the likeliest diagnosis?",
+      "options": [
+        "A. Sertoli cell tumour",
+        "B. Intratesticular varicocoele",
+        "C. Intratesticular tubular ectasia",
+        "D. Congenital cystic dysplasia",
+        "E. Teratoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Dilatation of the rete testis is due to blockage of the efferent ductules. It is usually bilateral and lies in the region of the mediastinum. Most testicular tumours are of low signal intensity on T2W.",
+      "questionNumber": 70
+    },
+    {
+      "question": "A 63 year old man with an elevated PSA is diagnosed with prostate cancer following needle biopsy. He undergoes an MRI examination to help stage his disease. Which of the following sequences would be most helpful in identifying location and local extent of the tumour?",
+      "options": [
+        "A. T1 Weighted",
+        "B. T1 Weighted with intravenous gadolinium",
+        "C. T2 Weighted",
+        "D. Fat suppressed T1",
+        "E. Fat suppressed T2"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "T2 weighted imaging clearly depicts the distinction between the peripheral zone and the remainder of the gland. Tumours are seen as foci of low signal on T2. Haemorrhage from recent biopsy can cause confusion. Fat suppression and intravenous gadolinium is not necessary. Ref: RITI 4c_ 013 MRI of the urinary tract.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 69 year old woman presents with PV bleeding. US shows a normal sized uterus with an AP endometrial bilayer thickness of 16 mm. The maximally thickened endometrium is predominantly echogenic with scattered hypoechoic areas within it. At MRI a lesion of lower signal intensity than surrounding endometrium but higher signal intensity than myometrium on T2W is seen. Which of the following is the likeliest diagnosis?",
+      "options": [
+        "A. Adenomatous hyperplasia",
+        "B. Submucosal leiomyoma",
+        "C. Endometritis",
+        "D. Endometrial carcinoma",
+        "E. Benign endometrial hyperplasia"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Other features to suggest malignancy include a resistive index of <0.7, disruption of the junctional zone or other evidence of myometrial invasion. Ref: Radiology Review Manual, 6th Ed, p. 1039.",
+      "questionNumber": 72
+    },
+    {
+      "question": "A 31 year old male presents with a painless lump of the testicle. He is referred for an US, which demonstrates a well circumscribed encapsulated lesion measuring 2 cm in diameter, containing alternating hypo/ hyperechoic layers. There is no flow on Doppler imaging. What is the likely diagnosis?",
+      "options": [
+        "A. Choriocarcinoma",
+        "B. Epidermoid",
+        "C. Lymphoma",
+        "D. Seminoma",
+        "E. Yolk sac tumour"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The classic US 'onion-skin' appearance of an epidermoid cyst of the testis is described. These are benign teratomas containing ectodermal components. The alternating hypo/ hyperechoic layers are due to compact keratin layers contrasted with loosely arranged desquamated squamous cells. Ref: Radiology review manual, 6th Ed, p. 977.",
+      "questionNumber": 73
+    },
+    {
+      "question": "With regards to the UK national breast screening programme, which of the following statements is incorrect?",
+      "options": [
+        "A. All women aged between 50 and 70 are invited to attend",
+        "B. The current detection rate is approximately 16 cancers per 1000 women screened",
+        "C. 2 views are obtained as standard in all rounds",
+        "D. It is recommended that readers should report at least 5,000 screening mammograms/year",
+        "E. Women are invited to return at 3 year intervals"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The current detection rate is approximately 6 cancers per 1000 women screened. At the moment the age range for selection is 50-70 years although plans exist to expand the age range from 47-73 years. Ref: Quality assurance guidelines for breast screening radiology NHSBSP publication 59 (January 2005).",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 35 year old man undergoes renal transplantation. On the 1st post operative day he becomes oliguric. Doppler ultrasound shows an enlarged, generally hypoechoic graft with diffusely diminished cortical perfusion, decreased systolic rise time and a plateau like reversal of diastolic flow. Which of the following is the likeliest diagnosis?",
+      "options": [
+        "A. Normal day 1 post transplant changes",
+        "B. Renal allograft necrosis",
+        "C. Renal vein thrombosis",
+        "D. Renal artery stenosis",
+        "E. Arteriovenous fistula"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Renal/iliac vein thrombosis occurs in up to 5% of cases. If it occurs in the immediate post-operative period it is usually due to endothelial injury at the anastomosis site or extrinsic compression. An absence of venous flow can also be observed with Doppler US. Ref: Radiology (1989); 170: 557-8.",
+      "questionNumber": 75
+    }
+  ]
+}
+

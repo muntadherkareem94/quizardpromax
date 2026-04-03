@@ -1,0 +1,788 @@
+
+{
+  "title": "Gastro-intestinal – Questions",
+  "questions": [
+    {
+      "question": "A 71 year old female with scleroderma undergoes a barium swallow examination. Which one of the following findings concerning the oesophagus would not be consistent with this diagnosis?",
+      "options": [
+        "a. Oesophageal dilatation",
+        "b. Superficial ulcers",
+        "c. Hypoperistalsis in the upper third of the oesophagus",
+        "d. Stricture 5 cm above the gastro-oesophageal junction",
+        "e. Oesophageal shortening"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The oesophagus is the most commonly involved location of the gastro-intestinal tract in patients with scleroderma. Smooth muscle atrophy causes hypoperistalsis and eventually aperistalsis in the lower two-thirds of the oesophagus. The upper third of the oesophageal wall contains skeletal muscle and is therefore unaffected by the disease process.\n\n(Ref: Dahnert p. 863)",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 32 year old male front seat passenger is involved in a road traffic accident and sustains blunt abdominal trauma. He is admitted via the emergency department and CT reveals a splenic laceration with subcapsular haematoma. Which one of the following associated injuries is most likely to be found?",
+      "options": [
+        "a. Diaphragmatic rupture",
+        "b. Injury to the liver",
+        "c. Injury to the left kidney",
+        "d. Ipsilateral rib fractures",
+        "e. Injury to the small bowel mesentery"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "All are potential associated injuries and should be actively searched for in the context of blunt abdominal trauma. Rib fractures are found in up to 50% of patients with splenic injuries and as such are the most common association. The left kidney is injured in 10% of patients with splenic injury, and diaphragm rupture is even rarer. Diaphragm rupture may be difficult to appreciate on axial slices, and may be more evident on coronal reformats. (Ref: Dahnert p. 807)",
+      "questionNumber": 2
+    },
+    {
+      "question": "A neonate is diagnosed with congenital tracheoesophageal (TE) fistula. A plain film demonstrates a gasless abdomen. Which type of TE fistula is associated with this finding?",
+      "options": [
+        "a. Type B",
+        "b. Type C",
+        "c. Type D",
+        "d. Type E",
+        "e. None of the above"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Congenital TE fistula and oesophageal atresia occur in approximately 1 in 4000 live births. They are divided into five subtypes, A to E. Type C is the most common, comprising 75% of all types and involves oesophageal atresia with a distal TE fistula. Type D involves oesophageal atresia with both proximal and distal TE fistula, and type E is a TE fistula without oesophageal atresia. Therefore types C to E do not typically present with gasless abdomen. Type B is oesophageal atresia with a proximal TE fistula; there is no communication between the trachea and the distal oesophagus, and therefore a gasless abdomen is typical. Type A is oesophageal atresia without TE fistula and therefore may also present with a gasless abdomen, but is not a listed option.\n\n(Ref: Dahnert p. 817)",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 60 year old female has a plain abdominal film which shows a grossly distended segment of bowel. Which one of the following features makes a diagnosis of caecal volvulus more likely than sigmoid volvulus?",
+      "options": [
+        "a. Pelvic overlap sign",
+        "b. Apex lying above the level of T10",
+        "c. Liver overlap sign",
+        "d. Coffee bean sign",
+        "e. Presence of haustral markings"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Sigmoid and caecal volvulus can sometimes be difficult to differentiate on plain abdominal film. With caecal volvulus the haustral markings are typically present, whereas these are usually absent in sigmoid volvulus. The pelvic overlap, liver overlap and coffee bean signs are typical of sigmoid volvulus. In sigmoid volvulus the apex lies high in the abdomen underneath the left hemi-diaphragm, typically above the level of T10.\n\n(Ref: Grainger & Allison p. 597)",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 40 year old man is admitted to the surgical ward with acute abdominal pain and subsequently a CT abdomen and pelvis is requested. The findings include a 3 cm oval mass with central fat density adjacent to the sigmoid colon and with associated fat stranding. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Diverticulitis",
+        "b. Epiploic appendagitis",
+        "c. Mesenteric lymphadenitis",
+        "d. Meckel’s diverticulitis",
+        "e. Infected enteric duplication cyst"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Epiploic appendagitis is inflammation of one of the epiploic appendages of the colon, with the sigmoid being the commonest site. It typically presents with acute abdominal pain and is an important radiological diagnosis as it can often mimic appendicitis, and management is conservative. The diagnosis is usually made on CT with the features described in the question. Ultrasound is rarely used for diagnosis, and features include a non-compressible hyperechoic mass with hypoechoic margins.\n\n(Ref: Grainger & Allison p. 692, p. 722)",
+      "questionNumber": 5
+    },
+    {
+      "question": "A seven year old boy on chemotherapy for acute leukaemia develops severe right iliac fossa pain and diarrhoea. CT shows ascending colon and caecal wall thickening, with inflammation extending to involve the appendix and terminal ileum and fat stranding in the adjacent mesentery. The most likely diagnosis is:",
+      "options": [
+        "a. Typhlitis",
+        "b. Crohn’s disease",
+        "c. Acute appendicitis",
+        "d. Necrotising enterocolitis",
+        "e. Acute leukaemic infiltration"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Typhlitis, or neutropaenic enterocolitis, is acute inflammation of the caecum, ascending colon, terminal ileum or appendix. It is typically described in children with neutropaenia secondary to lymphoma, leukaemia and immunosuppression. Concentric, often marked, bowel wall thickening with pericolic inflammatory changes is typical, and such changes in a young immunosuppressed child should raise suspicion of typhlitis as a cause. Perforation is a risk factor and therefore contrast examinations are usually avoided.\n\n(Ref: Brant & Helms p. 857)",
+      "questionNumber": 6
+    },
+    {
+      "question": "A young patient is diagnosed with multiple endocrine neoplasia (MEN) type 3 (also known as type 2b) after an episode of bowel obstruction. Which one of the following features would he be unlikely to have or develop in the future with this diagnosis?",
+      "options": [
+        "a. Medullary carcinoma of the thyroid",
+        "b. Marfanoid appearance",
+        "c. Mucosal neuromas of the small bowel",
+        "d. Facial angiofibromas",
+        "e. Prognathism"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "MEN type 3 is a non-inherited syndrome primarily composing medullary thyroid carcinoma, phaeochromocytomas and mucosal neuromas of the gastro-intestinal tract. Other features include prognathism, marfanoid appearance and cutaneous neuromas. Facial angiofibromas are associated with MEN type 1 and occur in greater than 80% of cases. (Refs: Dahnert p. 733; Grainger & Allison p. 1713)",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 48 year old woman with upper abdominal pain is found to have a 4 cm hypervascular lesion in the head of the pancreas on contrast-enhanced CT. She subsequently has an MR scan; the lesion is of low intensity on fat-saturated T1-weighted and high intensity on T2-weighted imaging. Which of the following is the most likely diagnosis?",
+      "options": [
+        "a. Pancreatic adenocarcinoma",
+        "b. Gastrinoma",
+        "c. Insulinoma",
+        "d. Macrocystic adenoma",
+        "e. Pancreatic pseudocyst"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pancreatic adenocarcinoma is a hypovascular lesion. Macrocystic adenoma is also hypovascular, and is only rarely found in the head of the pancreas, with a predilection for the tail. The differential therefore lies between insulinoma and gastrinoma. Although both CT and MR imaging characteristics are similar, the majority of insulinomas are less than 1 cm in size, whereas gastrinomas tend to be larger at presentation with an average size of approximately 3 cm. Gastrinoma is associated with peptic ulceration and Zollinger–Ellison syndrome.\n\n(Ref: Dahnert p. 735)",
+      "questionNumber": 8
+    },
+    {
+      "question": "An 83 year old woman is investigated for weight loss, and undergoes contrastenhanced CT scan of the chest, abdomen and pelvis. Multiple hypervascular metastases are found in the liver. Which one of the following is most likely to be the primary tumour?",
+      "options": [
+        "a. Adenocarcinoma of the stomach",
+        "b. Invasive ductal carcinoma of the breast",
+        "c. Carcinoid tumour",
+        "d. Adenocarcinoma of the sigmoid",
+        "e. Pancreatic ductal adenocarcinoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Of the options listed, carcinoid tumour is the only primary tumour that typically causes hypervascular liver metastases. Other causes of hypervascular liver metastases are pancreatic islet cell tumours, phaeochromocytoma and renal cell carcinoma. Stomach, breast, lung and colon cancers are associated with hypovascular liver metastases. Liver metastases from carcinoid tumours are more common with increasing size of the primary tumour. The incidence of metastases depends on the location of the primary tumour, where approximately 30% of carcinoids of the ileum metastasise compared to less than 5% of carcinoids of the appendix.\n\n(Refs: Chapman & Nakielny 2003 p. 294; Dahnert p. 811)",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 32 year old male is referred for a barium swallow by his GP due to dysphagia resistant to medical treatment. A smooth, lobulated, eccentric mass is seen in the middle third of the oesophagus containing foci of calcification. The diagnosis is most likely to be which one of the following?",
+      "options": [
+        "a. Leiomyoma",
+        "b. Squamous cell carcinoma",
+        "c. Adenocarcinoma",
+        "d. Oesophageal web",
+        "e. Intramural pseudodiverticulosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Oesophageal leiomyoma is the most common benign submucosal tumour of the oesophagus, typically occurring in young men. The classical features of oesophageal leiomyoma include a smooth intramural mass in the lower or middle third of the oesophagus with intact overlying mucosa. It is the only tumour of the oesophagus that calcifies, although calcification is rare.\n\n(Ref: Grainger & Allison p. 615)",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 56 year old woman is diagnosed with pancreatic adenocarcinoma. Which one of the following features on the pancreatic MR contraindicates curative surgery?",
+      "options": [
+        "a. Splenic vein invasion",
+        "b. Tumour size of 2 cm",
+        "c. Portal vein invasion",
+        "d. Hepatic artery invasion",
+        "e. Invasion of the second part of the duodenum"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The only widely recognised absolute contraindication to curative surgical resection of the options listed is invasion of the hepatic artery. Invasion of the splenic and portal veins are relative contraindications as long as the veins are not completely occluded. Invasion of the second part of the duodenum is not a contraindication as it is resected at surgery. Other features that make the tumour unsuitable for curative resection are distant metastases, ascites, distant organ invasion, SMA/coeliac/aortic invasion and involved lymph nodes outside the boundaries of the resection.\n\n(Refs: Grainger & Allison p. 801; Saclarides et al. p. 293)",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 67 year old man is referred for a barium swallow from the surgical outpatient department with a history of dysphagia to solids. A mid-oesophageal stricture is demonstrated. Which one of the following causes is unlikely to be in the differential?",
+      "options": [
+        "a. Barrett’s oesophagus",
+        "b. Squamous cell carcinoma of the oesophagus",
+        "c. Schatzki ring",
+        "d. Caustic substance ingestion",
+        "e. Epidermolysis bullosa"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "All are reasonable differentials for a mid-oesophageal stricture, albeit with varying degrees of frequency, with the exception of a Schatzki ring which is found in the lower oesophagus. It occurs near the squamocolumnar junction and is associated with reflux. It is nondistensible and best seen in the prone position on barium swallow examinations. Schatzki rings are often asymptomatic, but oesophageal dilatation may be required where dysphagia is severe.\n\n(Refs: Chapman & Nakielny 2003 p. 229; Dahnert p. 867)",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 71 year old man is referred to CT for unexplained abdominal distension. Lowattenuation intraperitoneal collections with enhancing septae are demonstrated. There is scalloping of the liver border and omental thickening. Which one of the following is most likely to be the underlying cause?",
+      "options": [
+        "a. Carcinoid tumour of the appendix",
+        "b. Cystadenocarcinoma of the appendix",
+        "c. Melanosis coli",
+        "d. Mastocytosis",
+        "e. Retroperitoneal fibrosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The CT findings described are consistent with pseudomyxoma peritonei. This describes abdominal distension secondary to the accumulation of large quantities of gelatinous ascites. It is most commonly caused by cystadenocarcinoma of the appendix in males and cystadenocarcinoma of the ovary in females. Surgical debulking and intraperitoneal chemotherapy may be offered as a treatment. Bowel obstruction is a frequent complication that may necessitate surgery.\n\n(Ref: Dahnert p. 866)",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 78 year old previously well female is admitted with acute abdominal pain and diarrhoea. Contrast-enhanced CT of the abdomen and pelvis shows thickening of a 13 cm segment of proximal descending colon and mucosal hyperenhancement. The rest of the colon is normal, and the small bowel is unaffected. There is a small amount of free fluid in the pelvis. Which one of the following diagnoses is most likely?",
+      "options": [
+        "a. Crohn’s colitis",
+        "b. Ulcerative colitis",
+        "c. Ischaemic colitis",
+        "d. Infectious colitis",
+        "e. Pseudomembranous colitis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Crohn’s colitis is relatively unlikely due to lack of prior history or small bowel involvement and age of the patient. Ulcerative colitis and pseudomembranous colitis are both unlikely as the rectum is usually involved in these two conditions. Infectious colitis does not normally affect the left-sided colon only, regardless of the underlying pathogen. Ischaemic colitis is the most likely diagnosis of those listed. It typically affects a segment of bowel, with the majority of cases having left-sided colonic involvement.\n\n(Ref: Weissleder et al.)",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 27 year old male has recurrent admissions for intermittent low-grade small bowel obstruction of unknown cause. Which one of the following investigations would be most appropriate?",
+      "options": [
+        "a. Contrast-enhanced CT abdomen and pelvis",
+        "b. Barium meal",
+        "c. Small bowel enteroclysis",
+        "d. Serial abdominal plain films",
+        "e. Barium follow-through"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Small bowel enteroclysis is the most appropriate examination. CT is sensitive for high-grade obstruction as it will readily identify the level of obstruction and can demonstrate complications such as ischaemia and perforation. Enteroclysis is the preferred investigation for recurrent low-grade obstruction as it is more likely to demonstrate the presence of a transition point (for example from non-obstructing adhesions) because the bowel is distended.\n\nThe examination involves passing a nasojejunal tube just distal to the duodenojejunal flexure and distending the small bowel using either dilute barium or a double-contrast examination with high-density barium and methylcellulose.\n\n(Ref: Chapman & Nakielny 2001 p. 64)",
+      "questionNumber": 15
+    },
+    {
+      "question": "An asymptomatic 46 year old woman has an MR liver following an incidental finding of a focal mass in the right lobe of the liver on ultrasound. The MR shows an 8 cm isolated lesion. It is high signal on T1-weighted sequences and isointense on T2-weighted sequences relative to the normal liver parenchyma. The lesion is most likely to be which one of the following?",
+      "options": [
+        "a. Hepatocellular carcinoma",
+        "b. Liver metastasis",
+        "c. Haemangioma",
+        "d. Fibronodular hyperplasia",
+        "e. Adenoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The lesion is most likely to be a hepatic adenoma. None of the other diagnoses typically share these imaging characteristics. Adenomas are benign growths of hepatocytes and are most commonly seen in young women, particularly associated with oral contraceptive use. Eighty per cent are solitary and found in the right lobe of the liver. The high signal on T1-weighted sequences is due to the presence of fat and/or haemorrhage and can distinguish between this and many other lesions in the liver which tend to be of low T1 signal on MR (e.g. metastases, HCC, haemangiomas and FNH). Occasionally, imaging features can overlap with FNH and the two lesions can be difficult to distinguish. However, the majority of FNH lesions are less than 5 cm in size, whereas adenomas tend to be larger.\n\n(Ref: Dahnert p. 719)",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 26 year old female has an ultrasound scan for right upper quadrant pain and a heterogenous 5 cm solitary liver lesion with central calcifications, and a hyperechoic scar is seen. Blood tests reveal a negative alpha-fetoprotein. MR shows the lesion is hypointense on T1 and hyperintense on T2-weighted imaging. The central scar is hypointense on both sequences. Which of the following diagnoses is most likely?",
+      "options": [
+        "a. Hepatic lymphoma",
+        "b. Hepatocellular carcinoma",
+        "c. Fibrolamellar carcinoma",
+        "d. Hepatoblastoma",
+        "e. Hepatic angiosarcoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Fibrolamellar carcinoma occurs in young adults in the absence of normal risk factors for hepatocellular carcinoma. On ultrasound, fibrolamellar carcinoma is of mixed or increased echogenicity, and the hyperechoic central scar is often evident. On unenhanced CT the lesion is of low attenuation, displaying heterogenous enhancement with intravenous contrast administration. The central scar is typically of low signal on both T1- and T2-weighted imaging, which can help differentiate it from FNH (whose scar typically is of low signal on T1 but high signal on T2-weighted imaging). The central scar is present in up to 60% of patients. Calcifications are present in up to 55% and are more common than in hepatocellular carcinoma.\n\n(Ref: Dahnert p. 726)",
+      "questionNumber": 17
+    },
+    {
+      "question": "A 72 year old woman has a pancreatic MR to investigate recurrent episodes of pancreatitis. There is generalised pancreatic atrophy with dilatation of the main pancreatic duct and branch ducts, particularly in the tail. No focal lesion or intraductal calculi are present. Which one of the following diagnoses is most likely?",
+      "options": [
+        "a. Microcystic cystadenoma",
+        "b. Intraductal papillary mucinous tumour of the pancreas",
+        "c. Cystic metastases",
+        "d. Cystic islet cell tumour",
+        "e. Pancreatic lipomatosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Intraductal papillary mucinous tumour (IPMT) of the pancreas is a rare tumour. It tends to present in the elderly population and can be a cause of recurrent pancreatitis. Two recognised types include main duct IPMT, in which the main pancreatic duct is dilated, and branch duct IPMT, in which the main duct is usually uninvolved. It is a risk factor for mucinous carcinoma of the pancreas. Pancreatic atrophy is often present. Imaging characteristics are often similar to those seen in chronic pancreatitis, although calcification is not a feature of IPMT.\n\n(Ref: Dahnert p. 727)",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 25 year old male presents with abdominal cramps and pain with rectal bleeding. Colonoscopy is normal. CT enteroclysis is performed as part of the investigation, which reveals multiple sessile polyps throughout the jejunum and ileum. Subsequent biopsies reveal these polyps to be hamartomas. Which one of the following syndromes is he most likely to be diagnosed with?",
+      "options": [
+        "a. Peutz–Jeghers",
+        "b. Cowden’s",
+        "c. Turcot’s",
+        "d. Familial polyposis",
+        "e. Gardner’s"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Peutz–Jeghers syndrome is most consistent with these findings. It is an autosomal dominant syndrome but often arises as a spontaneous mutation. Hamartomas are found throughout the gastro-intestinal tract, with the exception of the oesophagus. The polyps have almost no malignant potential, but life expectancy is decreased due to associated cancers arising in the stomach, duodenum, colon and ovary. Gardner’s syndrome and familial polyposis are both associated with small bowel adenomas in approximately 5% of cases. Cowden’s syndrome does involve hamartomatous polyps, but these are typically rectosigmoid, and small bowel involvement is not a feature. Small bowel polyps are not a feature of Turcot’s syndrome.\n(Ref: Weissleder et al.)",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 17 year old female undergoes screening colonoscopy and is found to have multiple adenomatous polyps throughout the colon. OGD and biopsy reveal multiple hamartomas of the stomach and duodenum. She subsequently has investigation for a painful jaw that reveals a 1 cm round, discrete, dense lesion in the mandible. Which one of the following syndromes is the most likely underlying diagnosis?",
+      "options": [
+        "a. Lynch syndrome",
+        "b. Cronkhite–Canada syndrome",
+        "c. Familial adenomatous polyposis",
+        "d. Gardner’s syndrome",
+        "e. Peutz–Jegher syndrome"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Gardner’s syndrome is an autosomal dominant condition with colonic polyps present in all patients. Small bowel, duodenal and stomach polyps are also a feature. Extra-intestinal features include osteomas of membranous bone (typically the mandible as described in the question), other soft-tissue tumours and periampullary carcinomas. Osteomas are not a feature of the other conditions. Cronkhite–Canada syndrome and Peutz–Jegher syndrome are associated with multiple hamartomatous polyps of the colon and stomach. CronkhiteCanada syndrome is a sporadic non-familial disorder. Lynch syndrome, or hereditary nonpolyposis colorectal carcinoma (HNPCC), is associated with increased risk of colorectal adenomas and other malignancies such as endometrial and other gastro-intestinal tract malignancies.\n\n(Refs: Dahnert p. 833; Grainger & Allison p. 683)",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 58 year old male has a CT staging scan following a diagnosis of adenocarcinoma of the body of the pancreas. The tumour is 3 cm in size and extends beyond the boundaries of the pancreas but does not invade any vessels or adjacent organs. Two 1 cm lymph nodes lie adjacent to the tumour. No other nodes, or metastatic disease in the chest, abdomen or pelvis, are identified. The tumour is best staged as which one of the following?",
+      "options": [
+        "a. T1N0M0",
+        "b. T1N1M0",
+        "c. T2N0M0",
+        "d. T3N0M0",
+        "e. T3N1M0"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "T1 tumour is disease confined to the pancreas and less than 2 cm in diameter. T2 tumour is also confined to the pancreas but greater than 2 cm in diameter. As the tumour extends beyond the boundary of the pancreas, it is at least T3. Invasion of the coeliac or superior mesenteric arteries would make this a T4 tumour, but as these features are not present it is T3. The presence of regional nodes make it N1 rather than N0 (no nodes involved), and there is no metastatic disease so it is M0. Therefore the correct radiological stage is T3N1M0.\n(Ref: Kochman p. 389)",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 41 year old woman has an outpatient ultrasound scan for intermittent right upper quadrant pain. Five 5 mm gallstones and sludge are present. In addition, there is wall thickening of the gallbladder fundus with multiple foci of increased echogenicity within the wall, each associated with bright artefacts deep to them. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Porcelain gallbladder",
+        "b. Emphysematous cholecystitis",
+        "c. Acute cholecystitis",
+        "d. Adenomyomatosis of the gallbladder",
+        "e. Gallbladder carcinoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The correct diagnosis is adenomyomatosis. This is an uncommon condition, more common in females, and is associated with gallstones in the majority of cases. It is characterised by generalised or focal mural thickening with intramural diverticula (Rokitansky–Aschoff sinuses). The ultrasound artefact from cholesterol crystals in the sinuses produces bright ‘comet-tail’ reverberation artefacts.\n\n(Ref: Chapman & Nakielny 2003 p. 276)",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 32 year old man has an ultrasound scan for obstructive jaundice. Areas of intrahepatic duct dilatation are seen, with increased echogenicity of the portal triads. ERCP reveals alternating segments of dilatation and stenosis of both the intra- and extrahepatic ducts. Which one of the following diagnoses is most likely?",
+      "options": [
+        "a. Primary sclerosing cholangitis",
+        "b. Primary biliary sclerosis",
+        "c. Ascending cholangitis",
+        "d. Choledochal cyst",
+        "e. Congenital hepatic fibrosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "These ultrasound and ERCP features are typical of primary sclerosing cholangitis, which is an idiopathic condition characterised by progressive fibrosis of the biliary tree. It primarily affects young men with inflammatory bowel disease (more common in ulcerative colitis than Crohn’s) although pancreatitis, liver cirrhosis and chronic active hepatitis are other associated conditions. Primary biliary cirrhosis may also cause scattered areas of focal intrahepatic duct dilatation, but this condition is much more common in females and the extrahepatic ducts are not involved.\n\n(Ref: Dahnert p. 699)",
+      "questionNumber": 23
+    },
+    {
+      "question": "A neonate is investigated for obstructive jaundice and as part of the investigation has a hepatobiliary iminodiacetic acid (HIDA) nuclear medicine scan. This shows a photopaenic area within the liver and lack of visualisation of the small bowel. Which one of the following conditions would be most consistent with these findings?",
+      "options": [
+        "a. Enteric duplication cyst",
+        "b. Biliary duct atresia",
+        "c. Choledochal cyst",
+        "d. Pancreatic pseudocyst",
+        "e. Hepatic cyst"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The only one of the listed diagnoses that would have both these features on HIDA scan is a choledochal cyst. This is a congenital condition characterised by dilatation of the common bile duct and common hepatic duct. Patients typically present in childhood with right upper quadrant pain, a mass and/or obstructive jaundice. Although the diagnosis is usually made with MRCP, HIDA scan can show typical features that include a photopaenic area in the liver representing the dilated CBD/CHD. Although a hepatic cyst would also show a photopaenic area within the liver, small bowel visualisation would be expected. Congenital biliary atresia would cause lack of small bowel visualisation, but the whole liver would take up HIDA and photopaenia would not be present.\n\n(Ref: Dahnert p. 703)",
+      "questionNumber": 24
+    },
+    {
+      "question": "A one year old boy is admitted unwell with generalised abdominal tenderness and guarding. A supine plain abdominal film is requested, which shows a large oval radiolucency in the middle of the abdomen, with a well-defined linear opacity in the right upper quadrant. Which one of the following conditions would best explain these appearances?",
+      "options": [
+        "a. Enteric duplication cyst",
+        "b. Choledocal cyst",
+        "c. Pneumoperitoneum",
+        "d. Duodenal atresia",
+        "e. Caecal volvulus"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Whilst uncommon, the appearances seen on plain film are consistent with massive pneumoperitoneum. The oval radiolucency is called the ‘football sign’ and arises due to free air collecting anterior to the intra-abdominal viscera. This sign is only seen in 2% of adults with pneumoperitoneum due to the large quantities of air required to produce it. It is much more common in infants who may present at a later stage. The opacity in the right upper quadrant is produced by air outlining the falciform ligament, which again is a sign of pneumoperitoneum. Causes of perforation in this age group include trauma, intussusception and complications of Meckel’s diverticulum.\n\n(Ref: Rampton J. The football sign. Radiology 2004; 231: 81–82)",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 50 year old male is admitted with epigastric pain, diarrhoea and vomiting. Ascites is present clinically. Serum albumin is low and the patient is anaemic. Colonoscopy is normal but the patient is intolerant of upper gastro-intestinal endoscopy. Barium meal reveals a normal antrum but elsewhere there are diffusely thickened and enlarged gastric folds despite good gastric distension. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Gastric lymphoma",
+        "b. Menetrier’s disease",
+        "c. Gastric adenocarcinoma",
+        "d. Acute gastritis",
+        "e. Linitis plastica"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Menetrier’s disease is a condition characterised by gastric mucosal hypertrophy and protein-losing enteropathy. It is often associated with anaemia. The changes are most marked along the greater curve and the antrum is spared in approximately 50% of cases. Gastric lymphoma typically involves the antrum. With gastric adenocarcinoma and linitis plastica, stomach distension is not typically preserved.\n\n(Ref: Grainger & Allison p. 637)",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 31 year old male is investigated as an outpatient for diarrhoea. A small bowel meal study reveals jejunal dilatation with thickened valvulae conniventes. In the ileum an increased number of mucosal folds are seen. Which of the following diagnoses is most likely?",
+      "options": [
+        "a. Lymphoma",
+        "b. Crohn’s disease",
+        "c. Coeliac disease",
+        "d. Whipple disease",
+        "e. Behcet syndrome"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Jejunal dilatation and jejunisation of the ileal loops are characteristic features of coeliac disease. This is an immunological intolerance to gluten that causes villous atrophy in the small intestine. In Whipple disease there is thickening of the jejunal and duodenal mucosal folds but typically no luminal dilatation. Dilatation of the small bowel does occur with lymphoma but jejunisation of the ileum is not a feature.\n\n(Ref: Chapman & Nakielny 2003 p. 247)",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 53 year old male is investigated for recurrent episodes of biliary colic. Blood tests reveal eosinophilia and normal liver function tests. Abdominal ultrasound demonstrates a 7 cm cystic structure with a thin hyperechoic wall and several smaller satellite cysts up to 2 cm adjacent to the lesion. Which one of the following diagnoses is most likely?",
+      "options": [
+        "a. Hydatid cyst",
+        "b. Pyogenic abscess",
+        "c. Amoebic abscess",
+        "d. Schistosomiasis",
+        "e. Hepatocellular carcinoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The most likely diagnosis is hydatid cyst disease. This condition is caused by infection of the liver with the parasite Echinococcus granulosus. Blood eosinophilia is present in up to 50% of patients. It is more common in the right lobe of the liver and is multiple in 20% of cases. Daughter cysts are typical. Percutaneous aspiration of the cyst is positive for hydatid disease in 70%.\n\n(Ref: Dahnert p. 711)",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 71 year old female is admitted via A&E with abdominal pain, abdominal distension and vomiting. Plain abdominal film shows multiple dilated loops of small bowel. In addition there is gas projected over the liver shadow which is prominent centrally and has a branching appearance. Gas is not visible over the periphery of the liver. No other abnormality is seen on the plain film. Which of the following diagnoses is most likely?",
+      "options": [
+        "a. Small bowel perforation",
+        "b. Small bowel infarction",
+        "c. Gallstone ileus",
+        "d. Emphysematous cholecystitis",
+        "e. Pneumatosis intestinalis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Specific signs of gallstone ileus can be seen on the plain abdominal film in up to 40% of patients. Fifty per cent of patients have evidence of small bowel obstruction and up to 30% have gas in the biliary tree. Biliary tree gas is typically more prominent centrally and spares the periphery of the liver, whereas portal venous gas is more easily visualised in the periphery of the liver, which may be associated with small bowel infarction. The gallstone most frequently lodges in the terminal ileum, but is often not seen on the plain film. The presence of small bowel obstruction, pneumobilia and a visible stone are called Rigler’s triad.\n\n(Refs: Dahnert p. 832; Grainger & Allison p. 595)",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 35 year old male with known ulcerative colitis presents to A&E with severe abdominal pain, pyrexia and diarrhoea. There is no peritonism. Toxic megacolon is suspected clinically. Which one of the following is the most appropriate as first line imaging?",
+      "options": [
+        "a. CT",
+        "b. Plain abdominal film",
+        "c. Double contrast barium enema",
+        "d. Single contrast water-soluble enema",
+        "e. Targeted bowel ultrasound"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Toxic megacolon is a complication of ulcerative colitis, Crohn’s and other forms of acute colitis. It has a poor prognosis with up to 20% mortality. Plain abdominal radiography should be the first line investigation for suspected toxic megacolon, and can be repeated 24 or 48 hourly if necessary. It can often confirm the diagnosis without the need for CT, which is especially useful when considering radiation dose issues in this group of young patients. Typical features on plain film include transverse colon dilatation >5.5 cm, loss of normal haustral folds, thumbprinting of the colon and the presence of mucosal islands (pseudopolyps). CT better demonstrates potential complications of toxic megacolon such as perforation of the bowel.\n\n(Ref: Grainger & Allison p. 696)",
+      "questionNumber": 30
+    },
+    {
+      "question": "As part of an investigation for altered bowel habit, a 32 year old female has a double contrast barium enema performed. Findings include deep and superficial aphthous ulceration from the caecum proximally to the sigmoid colon and the presence of pseudodiverticula. Which one of the following is most likely?",
+      "options": [
+        "a. Crohn’s disease",
+        "b. Ulcerative colitis",
+        "c. Tuberculosis",
+        "d. Yersinia",
+        "e. Lymphoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "These features are highly suggestive of Crohn’s disease. Signs on double contrast barium enema that favour a diagnosis of Crohn’s disease over ulcerative colitis include apthoid ulcers, deep ulcers, discontinuous ulceration, rectal sparing, pseudodiverticulae, fistulae and abscess formation. Ulcerative colitis can be suggested by rectal involvement, continuous pathology with no skip lesions and the presence of mucosal granularity. However, these features may also be present in Crohn’s and are not specific for ulcerative colitis. Although tuberculosis is a mimic, colonic involvement in this pattern is uncommon compared with Crohn’s disease.\n\n(Ref: Dahnert p. 818)",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 38 year old patient with AIDS presents with diarrhoea and steatorrhoea. As part of the work-up, small bowel enteroclysis shows thickened jejunal folds with nodularity and evidence of marked jejunal spasm. The ileum has normal appearances. Which one of the following is the most likely underlying cause?",
+      "options": [
+        "a. Cytomegalovirus",
+        "b. Tuberculosis",
+        "c. Mycobacterium avium intracellulare",
+        "d. Cryptosporidium",
+        "e. Giardiasis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "All the stems are potential causes for these symptoms in a patient with AIDS, however giardiasis is the most likely cause given these imaging appearances. Cytomegalovirus most typically affects the caecum, and tuberculosis affects the caecum and ileocaecal valve. Mycobacterium avium intracellulare can affect the ileum and jejunum but does not usually cause spasm. Cryptosporidium affects the duodenum and the jejunum can be affected, but dilatation is more common than spasm.\n\n(Ref: Weissleder et al.)",
+      "questionNumber": 32
+    },
+    {
+      "question": "An 81 year old man is investigated for anaemia of unknown cause. He has a barium enema as an outpatient that is reported as normal, but is subsequently admitted with a large gastro-intestinal bleed. Initial upper gastro-intestinal endoscopy is normal. He is haemodynamically unstable and therefore has a mesenteric angiogram, which shows early opacification and slow emptying of the ileocolic vein. Which one of the following diagnoses is most likely?",
+      "options": [
+        "a. Angiodysplasia",
+        "b. Diverticulosis",
+        "c. Meckel’s diverticulum",
+        "d. Adenomatous polyp",
+        "e. Radiation enteritis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The typical angiographic feature of a Meckel’s diverticulum is presence of the vitelline artery. Meckel’s diverticulum also typically (although not exclusively) presents in younger patients. With diverticulosis, radiation enteritis and polyps, one might expect an abnormal barium enema, and in addition these angiographic features are not typical. Angiodysplasia is the second most common cause of gastro-intestinal bleed in the elderly population after diverticular disease. It is due to dilatation of the submucosal vessels and occurs most commonly on the right side of the colon. Angiographic features include visualisation of a cluster of vessels on the antimesenteric border, early filling of the ileocolic vein in the arterial phase and delayed emptying of the same vein.\n\n(Ref: Dahnert p. 802)",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 37 year old female has a pelvic MRI for investigation of rectal pain and bleeding, following a normal flexible sigmoidoscopy. This shows a thin-walled dumbbell-shaped 7 cm multilocular cyst. It is in contact anteriorly to the rectum and posteriorly to the presacral fascia, but contained within the mesorectal fascia. Although the rectum is distorted by the mass, the rectum and sigmoid are normal. What is the most likely diagnosis?",
+      "options": [
+        "a. Rectal duplication cyst",
+        "b. Anterior sacral meningocoele",
+        "c. Mucinous rectal carcinoma",
+        "d. Presacral dermoid",
+        "e. Tailgut cyst"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Tailgut cysts or cystic hamartomas are presacral, multilocular, mucous-secreting cysts found distal to the normal embryonic termination of the hindgut. Small cysts may be asymptomatic, but larger cysts may present with rectal pain or bleeding, constipation, anal fistulae or recurrent rectal abscesses. A long and tail-like coccyx is often associated, and can help distinguish between many other cystic lesions in this region. Malignant transformation is a complication, most commonly adenocarcinoma. Duplication cysts are most often unilocular unless complicated by haemorrhage or infection, a meningocele is likely to arise from the sacral foramina, piercing the presacral fascia, and dermoid tumour would be expected to contain fat or layering of contents as seen in dermoid tumours in other locations.\n\n(Ref: Stevenson & Hall p. 782)",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 34 year old female is investigated for intermittent abdominal pain and malabsorption. Small bowel meal shows dilatation of the proximal small bowel loops but a normal mucosal fold pattern. Which one of the following is the most likely underlying diagnosis?",
+      "options": [
+        "a. Coeliac disease",
+        "b. Amyloid",
+        "c. Whipple disease",
+        "d. Giardiasis",
+        "e. Eosinophilic gastroenteritis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "All of these may cause malabsorption. Amyloid can cause dilatation but also causes diffuse thickening of the valvulae conniventes throughout the small bowel. With Whipple disease and eosinophilic gastroenteritis, one would not see dilatation of the bowel, but thickening of the mucosa is again a prominent feature. Giardiasis causes thickening and marked distortion of the mucosal folds in the duodenum and jejunum. One of the hallmark features of untreated coeliac disease is jejunal dilatation. Typically the mucosal folds are of normal thickness.\n\n(Ref: Weissleder et al.)",
+      "questionNumber": 35
+    },
+    {
+      "question": "A six week old child has an ultrasound scan of the abdomen performed for non-bilious projectile vomiting. Which one of the following features would support a diagnosis of infantile pylorospasm over a diagnosis of hypertrophic pyloric stenosis?",
+      "options": [
+        "a. Pyloric muscle wall thickness of 2 mm",
+        "b. Pyloric canal length of 19 mm",
+        "c. Target sign",
+        "d. Antral nipple sign",
+        "e. Transverse pyloric diameter of 14 mm"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Hypertrophic pyloric stenosis presents between four and six weeks of life with non-bilious vomiting, typically in first-born males. A palpable olive-shaped mass is a sign with reported sensitivity of up to 80%, but ultrasound is the most frequently used imaging modality. Typical ultrasound features include the target sign (central hyperechoic mucosa with surrounding hypoechoic pyloric muscle), the nipple sign (pyloric mucosa indenting the gastric antrum), pyloric canal length >16 mm, transverse pyloric diameter >13 mm and pyloric muscle wall thickness >3 mm. Pyloric stenosis can be difficult to differentiate radiologically from infantile pylorospasm. Typically with pylorospasm the appearances change with time, and so if the pyloric muscle thickness is measured at less than 3 mm this makes infantile pylorospasm the more likely diagnosis.\n\n(Ref: Dahnert p. 842)",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 52 year old male has an unenhanced CT KUB for left renal colic. No cause for the pain is discovered on the CT, however the liver is found to be of increased density relative to the spleen. Which one of the following would be most likely to explain this incidental finding?",
+      "options": [
+        "a. Excess alcohol intake",
+        "b. Amiodarone use",
+        "c. Diabetes",
+        "d. Steroids",
+        "e. Past history of chemotherapy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The normal liver is between 30 and 70 HU on unenhanced CT, and should be 10–15 HU lower than spleen density. On portal venous phase the liver will be approximately 25 HU less than the spleen. Amiodarone contains iodine and can cause the liver to appear of increased density on CT. Other causes include cisplatin use, haemochromatosis, Wilson disease and glycogen storage diseases. The more common finding on CT is a liver of decreased density due to a fatty liver. This has many causes including alcohol use, steroids, chemotherapy, diabetes and nutritional causes.\n\n(Ref: Weissleder et al.)",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 68 year old female has a pancreatic MR for characterisation of an isolated lesion within the pancreas seen initially on CT performed for unexplained weight loss. The lesion is 3 cm in diameter, isointense on T1, isointense on T2 STIR and hypointense to pancreatic parenchyma during the arterial phase of gadolinium enhancement. It remains hypointense on the venous and delayed phases of contrast enhancement. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Ductal adenocarcinoma",
+        "b. Insulinoma",
+        "c. Simple pancreatic cyst",
+        "d. Gastrinoma",
+        "e. Glucagonoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Insulinoma tends to be hyperintense on contrast-enhanced images. Gastrinoma is usually hyperintense on STIR imaging and on contrast-enhanced sequences. In a series of 25 patients, an article by Chandarana et al. showed that pancreatic adenocarcinomas were either iso- or hypointense on T1-weighted imaging and iso- or hyperintense on T2 or STIR. All adenocarcinomas were hypointense to pancreatic parenchyma during the arterial phase of gadolinium enhancement on MR, 80% remained hypointense in the venous phase of enhancement and 68% remained hypointense in the delayed phase.\n\n(Ref: Chandarana H et al. Signal characteristic and enhancement patterns of pancreatic adenocarcinoma: evaluation with dynamic gadolinium enhanced MRI. Clinical Radiology 2007; 62: 876–883)",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 45 year old female has a CT for abdominal pain and weight loss. Findings include a soft-tissue mass at the root of the small bowel mesentery with eccentric calcifications and tethering of adjacent small bowel loops resulting in a moderate degree of small bowel obstruction. There is a desmoplastic reaction within the surrounding mesentery. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Lymphoma",
+        "b. Carcinoid tumour",
+        "c. Melanoma metastases",
+        "d. Tuberculosis",
+        "e. Paraganglioma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "These features are typical of carcinoid tumour. The desmoplastic reaction appears on CT as thickened mesentery in a radiating pattern away from the soft-tissue mass, with beading of the mesenteric vascular bundles.\n\n(Ref: Hyland R & Chalmers A. CT features of jejunal pathology. Clinical Radiology 2007; 62: 1154–1162)",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 50 year old female presents to A&E with acute abdominal pain. On examination there is point tenderness over an area in the right iliac fossa. CT reveals a well-defined triangular area of high-attenuation fat density anteriorly in the lower right abdomen. The large and small bowel are normal. Which one of the following is most likely?",
+      "options": [
+        "a. Segmental omental infarction",
+        "b. Rectus haematoma",
+        "c. Epiploic appendagitis",
+        "d. Carcinoid tumour",
+        "e. Mesenteric vein thrombosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Segmental omental infarction is the most likely cause and most commonly affects the right half of the greater omentum. It mimics surgical pathology such as appendicitis. Highattenuation streaks in the omental fat with apparent ‘mass effect’ in the absence of any other findings is suggestive of the diagnosis. Point tenderness over the specific area of CT abnormality is often discovered. Management is conservative.\n\n(Ref: Puylaert JB. Right-sided segmental infarction of the omentum: clinical, US and CT findings. Radiology 1992; 185: 169–172)",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 32 year old woman with no significant past medical history has a CT scan as an outpatient for right iliac fossa pain. No cause for the pain is discovered on this investigation. However, a 1 cm diameter, smoothly marginated, circular, homogenous area of tissue is seen next to the splenic hilum. This area of tissue is isodense compared to normal splenic parenchyma. What is this most likely to be?",
+      "options": [
+        "a. Splenosis",
+        "b. Splenunculus",
+        "c. Lymphoma",
+        "d. Splenic hamartoma",
+        "e. Wandering spleen"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Splenunculus is most likely, and is often seen incidentally. It is much more common than splenosis and is more likely to occur at the splenic hilum than splenosis. A splenunculus, or accessory spleen, is present in up to 30% of people and is most often located near the splenic hilum, but can occur anywhere in the abdomen. Splenogonadal fusion is a recognised entity whereby the accessory splenic tissue is attached to the left ovary or testis. Splenosis occurs following trauma, whereby splenic tissue autotransplants elsewhere in the abdomen, and can also implant above the diaphragm if associated with diaphragm rupture. A wandering spleen denotes abnormal mobility of the spleen on long peritoneal ligaments.\n\n(Refs: Dahnert p. 692; Grainger & Allison p. 1768)",
+      "questionNumber": 41
+    },
+    {
+      "question": "A 58 year old male with unexplained elevated alkaline phosphatase has an MRCP and the ‘double-duct’ sign is observed. Which one of the following diagnoses is most likely to cause this finding?",
+      "options": [
+        "a. Acute pancreatitis",
+        "b. Annular pancreas",
+        "c. Pancreas divisum",
+        "d. Periampullary tumour",
+        "e. Duodenal perforation"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The ‘double-duct’ sign is dilatation of the main pancreatic duct and the common bile duct as seen at ERCP and MRCP, and less commonly with CT and ultrasound. It occurs due to an obstructing lesion at the ampulla, most commonly a carcinoma of the head of the pancreas (in up to 77% of cases) or a carcinoma of the ampulla of Vater (in up to 52% of cases). The sign may be absent if there is an accessory pancreatic duct or when the main pancreatic duct drains into the minor papilla.\n\n(Ref: Ahualli J. The double duct sign. Radiology 2007; 244: 314–315)",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 42 year old woman undergoes a CT abdomen and pelvis for the investigation of right upper quadrant pain and deranged liver function tests. On early post-intravenous contrast images there is prominent enhancement of the central liver and weak enhancement of the peripheral liver. This pattern is reversed on delayed images. In addition there is hypertrophy of the caudate lobe. Which one of the following would most likely explain these findings?",
+      "options": [
+        "a. Acute hepatitis",
+        "b. Cirrhosis",
+        "c. Budd–Chiari syndrome",
+        "d. Portal hypertension",
+        "e. Fatty liver"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Budd–Chiari syndrome is outflow obstruction of the hepatic veins due to a wide variety of causes, but two-thirds are idiopathic. CT features include ‘flip-flop’ enhancement pattern as described in the question, ascites, hepatosplenomegaly, gallbladder wall thickening and increased portal vein diameter. An enlarged caudate lobe is seen in up to 88%, which enhances normally due its venous drainage passing directly into the IVC.\n\n(Ref: Dahnert p. 694)",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 61 year old man undergoes CT abdomen and pelvis for characterisation of a well-defined hyperechoic area seen on ultrasound in the perihilar region of the liver. On CT the area is of decreased attenuation but has no obvious mass effect. There is no abnormal enhancement with intravenous contrast administration. Which one of the following diagnoses is most likely?",
+      "options": [
+        "a. Focal nodular hyperplasia",
+        "b. Focal fatty infiltration",
+        "c. Hepatic cyst",
+        "d. Liver haemangioma",
+        "e. Fibrolamellar carcinoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Focal fatty infiltration occurs typically in the periportal and centrilobar regions of the liver and is commonest adjacent to the falciform ligament. Ultrasound features include a hyperechoic area with geographic margins. CT shows an area of decreased attenuation which does not alter the course of blood vessels or liver contour. The lesions are of high signal on T1-weighted MR imaging, and isointense or low signal on T2-weighted imaging. Haemangiomas would also typically be of increased echogenicity on ultrasound, but would be expected to show increased peripheral enhancement with intravenous contrast on CT. (Refs: Chapman & Nakielny 2003 p. 292; Dahnert p. 713)",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 39 year old woman has an ultrasound scan for right upper quadrant pain and jaundice which reveals biliary ductal dilatation to the level of the common hepatic duct adjacent to a stone in the gallbladder neck. The gallbladder is thick-walled and tender. MRCP confirms these findings and excludes common duct stones. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Primary sclerosing cholangitis",
+        "b. Mirizzi syndrome",
+        "c. Caroli’s disease",
+        "d. Fascioliasis",
+        "e. Acute cholecystitis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Mirizzi syndrome is narrowing of the common hepatic duct caused by a gallstone impacted in the neck of the gallbladder or the cystic duct. The stricture is smooth and often concave to the right as seen on ERCP. Fistulae can develop between the gallbladder and the common duct, and the stone may pass into the common duct. It is associated with acute cholecystitis. Fascioliasis is caused by liver fluke infestation which may cause bile duct wall thickening and multiple hepatic abscesses. Caroli’s disease is a congenital disorder characterised by cystic dilatation of the intrahepatic bile ducts.\n\n(Ref: Grainger & Allison p. 778)",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 48 year old male presents with abdominal pain, nausea and weight loss. Contrast-enhanced CT of the abdomen and pelvis reveals a heterogeneous, welldefined fatty mass at the root of the small bowel mesentery. The mesenteric vessels are surrounded but not distorted by the mass, and the vessels are surrounded by an apparent low-attenuation halo. The small bowel and right colon are normal. Which is the most likely diagnosis?",
+      "options": [
+        "a. Tuberculosis",
+        "b. Mesenteric lymphadenitis",
+        "c. Mesenteric panniculitis",
+        "d. Radiation enteritis",
+        "e. Mesenteric lipoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "These CT findings are typical of mesenteric panniculitis. This is an idiopathic, indolent condition characterised by inflammation of the small bowel mesentery adipose tissue. Fibrosis can predominate, in which case the CT appearances are of an infiltrative soft-tissue mass with soft-tissue density strands radiating away from it. In this situation it has similar appearance to lymphoma, carcinoid or desmoid tumours or retroperitoneal fibrosis, and biopsy is required to differentiate. Mesenteric panniculitis often presents with non-specific symptoms such as abdominal pain, weight loss, nausea, vomiting and pyrexia, and is usually indolent and self-limiting.\n\n(Ref: Grainger & Allison p. 717)",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 76 year old male on ITU has a CT abdomen and pelvis for the investigation of abdominal pain, pyrexia and diarrhoea. The CT reveals 12 mm diffuse large bowel wall thickening with intense mucosal enhancement and low attenuation of the submucosa involving the entire colon including the rectum, and a small volume of ascites. Which one of the following diagnoses is the most likely to explain the above findings?",
+      "options": [
+        "a. Crohn’s colitis",
+        "b. Pseudomembranous colitis",
+        "c. Ischaemic colitis",
+        "d. Yersinia",
+        "e. Giardiasis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Pseudomembranous colitis results from overgrowth of Clostridium difficile most commonly due to broad spectrum antibiotic use in the hospital population. Ascites is often present in severe cases and wall thickening >10 mm is highly suggestive of this diagnosis. A layered pattern of enhancement is often present in severe cases with oedema in the submucosa producing low attenuation in the wall, deep to the enhancing mucosa. The accordion sign is caused by marked submucosal oedema producing thickening of the colonic haustra. The rectum is involved in the majority of cases but any location within the large bowel may be involved. (Ref: Dahnert p. 865)",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 41 year old female has an MRI liver following a solitary 3 cm lesion in the right lobe of the liver. The lesion is isointense on T1-weighted and slightly hyperintense to liver parenchyma on T2-weighted imaging. There is immediate intense homogenous enhancement with gadolinium in the arterial phase, which becomes isointense on the venous phase. A central scar is hypointense on T1 and hyperintense on T2-weighted sequences. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Adenoma",
+        "b. Cavernous haemangioma",
+        "c. Fibrolamellar carcinoma",
+        "d. Regenerative nodules",
+        "e. Focal nodular hyperplasia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "These imaging features are typical of focal nodular hyperplasia. This is the second most common benign liver tumour and typically occurs in women more often than in men. Adenomas are usually larger, enhance less brightly and do not typically have a central fibrous scar. Cavernous haemangiomas are usually high signal on T2-weighted images, and of blood pool intensity on contrast-enhanced T1-weighted images. Fibrolamellar carcinoma also has a central scar, but this is typically of low signal intensity on T2-weighted imaging. Regenerative nodules show high signal intensity on unenhanced T1-weighted imaging and do not have a scar. (Ref: Marin D et al. Focal nodular hyperplasia: typical and atypical MRI findings with emphasis on the use of contrast media. Clinical Radiology 2008; 63: 577–585)",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 71 year old woman with no significant past medical history has an abdominal ultrasound as part of an investigation for right upper quadrant pain, anaemia and weight loss. Multiple, poorly defined, markedly echogenic lesions are seen throughout the liver. Biopsy reveals these to be metastases. Which one of the following is most likely to be the primary tumour?",
+      "options": [
+        "a. Adenocarcinoma of the colon",
+        "b. Melanoma",
+        "c. Invasive ductal carcinoma of the breast",
+        "d. Gastric cancer",
+        "e. Pancreatic ductal adenocarcinoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The most common primary tumours that cause brightly echogenic liver metastases are colonic adenocarcinoma, treated breast cancer and hepatoma. The differential here therefore lies between breast cancer and colon cancer. Colon cancer makes up at least 50% of highly echogenic metastases. In addition the question states that the patient has no significant past medical history, and therefore treated breast cancer is unlikely.\n\n(Refs: Chapman & Nakielny 2003 p. 288; Dahnert p. 731)",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 51 year old male patient has a barium swallow for the investigation of dysphagia. This shows a 10 cm tapered stricture in the mid oesophagus along with multiple fine linear projections perpendicular to the lumen, each 3–4 mm long, in this segment. There are occasional tertiary contractions and mild gastro-oesophageal reflux. What is the most likely diagnosis?",
+      "options": [
+        "a. Chagas disease",
+        "b. Oesophageal intramural pseudodiverticulosis",
+        "c. Oesophageal varices",
+        "d. Cytomegalovirus infection",
+        "e. Oesophageal carcinoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Oesophageal intramural diverticulosis relates to dilated excretory ducts of the deep mucous glands of the oesophagus. They are best demonstrated on barium swallow and have the classical appearance as described in the question. The pseudodiverticular can appear to float outside the oesophagus when no communication with the lumen is seen. Most patients have dysphagia at presentation and associated conditions include diabetes, candida infection, oesophagitis, stricture and alcohol abuse.\n\n(Ref: Dahnert p. 828)",
+      "questionNumber": 50
+    },
+    {
+      "question": "A 25 year old female becomes unwell six hours after induced delivery for pre-eclampsia with severe right upper quadrant pain, oedema and nausea. CT of the abdomen and pelvis reveals copious ascites and multiple wedge-shaped areas of liver non-enhancement consistent with hepatic infarction. Which of the following is the most likely underlying cause?",
+      "options": [
+        "a. Hepatic artery embolus",
+        "b. Portal vein thrombosis",
+        "c. SVC occlusion",
+        "d. HELLP syndrome",
+        "e. Splenic vein thrombosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hepatic infarction is rare because of the dual blood supply to the liver via the hepatic arterial system and the portal venous system. Isolated pathology in either of these vascular supplies is unlikely to cause hepatic necrosis as the other supply will usually compensate. HELLP is characterised by haemolysis, elevated liver enzymes and low platelets and is one of the causes of liver infarction.\n\n(Ref: Dahnert p. 1045)",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 47 year old female with a history of surgery for breast carcinoma is referred for ultrasound after liver function tests show a mildly elevated alkaline phosphatase. The bile ducts are normal but a 3 cm hyperechoic liver lesion is seen in the right lobe. CT is recommended, which shows a focal mass with nodular hyperenhancement of the periphery on arterial phase imaging becoming isointense to the background liver on delayed phase scanning at five minutes. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Fibrolamellar carcinoma",
+        "b. Adenoma",
+        "c. Cavernous haemangioma",
+        "d. Adenocarcinoma metastases",
+        "e. Focal nodular hyperplasia"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Metastases may show peripheral enhancement with complete fill-in on delayed images, but they typically show complete rather than nodular peripheral enhancement and washout on delayed phase imaging. Only haemangiomas typically show peripheral nodular enhancement. Cavernous haemangiomas are the most common benign liver tumours and are usually less than 4 cm in size. Seventy per cent are hyperechoic on ultrasound and they may show acoustic enhancement.\n\n(Ref: Dahnert p. 721)",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 33 year old female presents to A&E with right upper quadrant pain, hypotensive and tachycardic. CT abdomen and pelvis reveals an 11 cm diameter well-defined heterogenous mass within the right lobe of the liver, predominantly of low density but with three focal areas of higher attenuation (>90 HU) within it. There is layered highattenuation fluid within the subhepatic and right subdiaphragmatic space tracking down to the pelvis. Which one of the following is the correct combination of recommendations?",
+      "options": [
+        "a. Adenoma – recommend surgical referral",
+        "b. Adenoma – recommend correct coagulopathy and rescan if it deteriorates",
+        "c. Adenoma – recommend endovascular embolisation",
+        "d. Metastatic hepatocellular carcinoma – recommend gastroenterology referral",
+        "e. Trauma – needs CT thorax to clear other injuries"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Adenomas are vascular lesions comprising hepatocytes. They may occasionally present with massive haemorrhage, and are the most common liver lesion to do so in young people. In this scenario there is active extravasation of contrast implying active bleeding and haemoperitoneum. Urgent embolisation is the most appropriate treatment to halt bleeding. Conservative or surgical management is unlikely to provide rapid haemostasis. As a proportion of adenomas become malignant, they are usually removed surgically.\n\n(Ref: Lee p. 854)",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 54 year old male has a liver MR for characterisation of a 3 cm low-attenuation lesion found on staging CT for rectal carcinoma. Which one of the following characteristics would be most worrying for a metastasis rather than a benign lesion?",
+      "options": [
+        "a. Peripheral washout on delayed imaging",
+        "b. Intense arterial enhancement",
+        "c. Peripheral nodular enhancement",
+        "d. Presence of a pseudocapsule",
+        "e. Low signal intensity on T1-weighted imaging"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Peripheral washout of contrast on delayed imaging is virtually diagnostic of malignancy. On post-gadolinium-enhanced T1-weighted images most metastases are hypovascular compared with the surrounding liver and are most conspicuous at the portal phase of enhancement. However, virtually all metastases exhibit a complete ring of peripheral enhancement, which is best seen in the early arterial phase.\n\n(Ref: Mahfouz AE et al. Peripheral washout: a sign of malignancy on dynamic gadoliniumenhanced MR images of focal liver lesions. Radiology 1994; 190: 49–52)",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 63 year old male has a CT abdomen and pelvis for the investigation of change in bowel habit and weight loss. A sigmoid tumour is demonstrated and there is a solitary liver metastasis. Which one of the following observations on CT would render the patient ineligible for curative resection of the liver metastasis?",
+      "options": [
+        "a. Presence of a single peripheral left lower lobe pulmonary metastasis",
+        "b. Presence of splenic metastasis",
+        "c. Direct extension of the liver metastasis into the right adrenal gland",
+        "d. Involvement of the caudate lobe",
+        "e. Peritoneal metastases"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Generally accepted contraindications to liver resection would include uncontrollable extrahepatic disease such as: non-treatable primary tumour; widespread pulmonary disease; locoregional recurrence; peritoneal disease; extensive nodal disease, such as retroperitoneal, mediastinal or portal nodes; and bone or CNS metastases. Patients with extrahepatic disease that should be considered for liver resection include: resectable/ablatable pulmonary metastases; resectable/ablatable isolated extrahepatic sites – for example, spleen, adrenal or resectable local recurrence; and local direct extension of liver metastases to, for example, the diaphragm or adrenal glands, which can be resected.\n\n(Ref: Garden OJ et al. Guidelines for resection of colorectal cancer liver metastases. Gut 2006; 55(Suppl III): iii1–iii8)",
+      "questionNumber": 55
+    },
+    {
+      "question": "An ultrasound of the abdomen is performed on a 21 year old female presenting to A&E with acute right iliac fossa pain, pyrexia, tenderness and guarding. Which one of the following findings would suggest perforation of the appendix?",
+      "options": [
+        "a. Appendix diameter of 8 mm",
+        "b. Appendix wall thickness of 4 mm",
+        "c. Decreased resistance of arterial waveform",
+        "d. Loss of visualisation of hyperechoic submucosa",
+        "e. Increased echogenicity of surrounding fat"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The use of ultrasound for the diagnosis of acute appendicitis is particularly useful in children and women of child-bearing age. Findings indicating acute appendicitis include a tubular non-compressible blind-ending structure with diameter >6 mm and wall thickness >2 mm, although these signs do not necessarily indicate perforation. Features suggesting perforation include a fluid collection adjacent to the appendix, gas bubbles near the appendix and loss of visualisation of the submucosal layer.\n\n(Ref: Dahnert p. 803)",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 52 year old male with a metal heart valve has a transrectal ultrasound performed to stage rectal carcinoma as MRI is contraindicated. A 3 cm hypoechoic mass is identified from three to seven o’clock in the lower rectum. It extends through an inner hypoechoic layer and into the outer hypoechoic layer, but the outermost hyperechoic layer is intact and unaffected. What is the correct T staging (TNM system) based on these observations?",
+      "options": [
+        "a. T0",
+        "b. T1",
+        "c. T2",
+        "d. T3",
+        "e. T4"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The layers of the rectum are well demonstrated at transrectal ultrasound. The innermost hyperechoic layer represents the balloon-mucosa interface, the middle hyperechoic layer represents the submucosa and the outermost hyperechoic layer represents the serosa. The tumour described in the question extends through the submucosa into the muscularis propria (outer hypoechoic layer) but does not involve the serosa. T1 disease is limited to the submucosa, T2 is limited to the muscularis propria, T3 extends through the serosa and T4 represents invasion of adjacent organs. The correct staging for the tumour described in the question is therefore T2.\n\n(Ref: Grainger & Allison p. 815)",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 73 year old female has a CT abdomen and pelvis for the investigation of anaemia and weight loss. Massive splenomegaly (30 cm) is present with no other abnormalities. Which of the following conditions is most likely to be the underlying cause?",
+      "options": [
+        "a. Sarcoidosis",
+        "b. Felty’s syndrome",
+        "c. Chronic myeloid leukaemia",
+        "d. Haemochromatosis",
+        "e. Non-Hodgkin’s lymphoma"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Splenomegaly is a relatively common finding in many different diseases, but massive splenomegaly always indicates underlying pathology. Although there is no unifying definition, it is often recognised to be enlargement of the spleen into the left lower quadrant of the abdomen or crossing the midline. All the options listed are causes of splenomegaly, however chronic myeloid leukaemia is the only listed cause of massive splenomegaly. Other causes of massive splenomegaly include Gaucher’s disease, malaria, myelofibrosis, schistosomiasis and Leishmaniasis.\n\n(Ref: Doherty & Way p. 633)",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 57 year old diet-compliant male patient with coeliac disease has a CT abdomen and pelvis for the investigation of cachexia and two stone weight loss over six months. A 7 cm segment of ileum shows mild dilatation and circumferential thickening, with multiple low-attenuation mesenteric and para-aortic lymph nodes. Which one of the following is the most likely diagnosis?",
+      "options": [
+        "a. Tuberculosis",
+        "b. Gastro-intestinal lymphoma",
+        "c. Coeliac disease",
+        "d. Whipple disease",
+        "e. Crohn’s disease"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Hypoattenuating lymph nodes can be attributed to many causes, but lymphoma and tuberculosis are the most common. Lymphoma of the gastro-intestinal tract most commonly affects the ileum, although lymphoma associated with coeliac disease most commonly affects the jejunum. Although 90% of tuberculosis of the gastro-intestinal tract occurs in the ileum, lymphoma is most likely in this scenario. Dilatation of the small bowel with lymphoma is common but obstruction is rare due to the soft pliable nature of the tumour.\n\n(Ref: Dahnert p. 851)",
+      "questionNumber": 59
+    },
+    {
+      "question": "A 60 year old male has an abdominal ultrasound for the investigation of deranged LFTs. A 2 cm hyperechoic mass is seen at the porta hepatis. There is dilatation of the right and left hepatic ducts but the common bile duct is of normal calibre. A PET-CT is performed which shows an FDG-avid lesion corresponding to the abnormality on ultrasound and no other findings. Which of the following is the most likely diagnosis?",
+      "options": [
+        "a. Caroli’s disease",
+        "b. Klatskin tumour",
+        "c. Periampullary tumour",
+        "d. Primary sclerosing cholangitis",
+        "e. Biliary cystadenoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Klatskin tumours are the most common form of cholangiocarcinoma, representing tumour at the confluence of the hepatic ducts. The finding of a hyperechoic central porta hepatis mass at ultrasound is typical. Risk factors include inflammatory bowel disease, primary sclerosing cholangitis, Caroli’s disease and cholecystolithiasis. Cholangiocarcinomas have a very poor prognosis with a five-year survival of less than 2%. They are FDG-avid and PET-CT is typically performed in the pre-operative evaluation of these tumours.",
+      "questionNumber": 60
+    }
+  ]
+}
+
+

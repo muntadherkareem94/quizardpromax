@@ -1,0 +1,657 @@
+
+{
+  "title": "Gastro-intestinal Practice SBA Questions",
+  "questions": [
+    {
+      "question": "A 42 year old man presents with severe central abdominal pain and a raised serum amylase. 4 days later, extremely ill, the patient undergoes a CT of the abdomen which demonstrates that only the head and uncinate process of the pancreas are enhancing and there is extensive free fluid in the peri-pancreatic tissues. How would you interpret these findings?",
+      "options": [
+        "A. Acute pancreatitis",
+        "B. Acute pancreatitis with necrosis",
+        "C. Acute pancreatitis with infected necrosis",
+        "D. Acute pancreatitis with abscess",
+        "E. Acute pancreatitis with pseudocyst formation"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The clinical scenario and imaging features clearly indicate acute pancreatitis. Areas of non-enhancement >3 cm, or >30% of the pancreatic volume are considered reliable CT signs for necrosis. Imaging too early in the clinical course will reduce the sensitivity of CT for evaluating pancreatic necrosis. Sepsis tends to complicate severe pancreatitis after the first 1-2 weeks, peaking at 3 weeks, and is a common cause of mortality in these patients. A discrete abscess is less common but is suggested by the development of air within a collection. Pseudocysts are common sequelae of acute pancreatitis but take at least 4 weeks to form. Ref: Radiology (1994); 193:297-306.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A patient with proven Hodgkin lymphoma is referred for a staging PET-CT. This shows a solitary focal lung lesion with cervical and mediastinal lymph node enlargement. All of these lesions are PET positive with no other sites of disease. What stage is this disease?",
+      "options": [
+        "A. I",
+        "B. II",
+        "C. IIE",
+        "D. III",
+        "E. IV"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This describes stage IIE: localised involvement of a single extralymphatic organ or site and its regional lymph nodes with or without involvement of other lymph node regions on the same side of the diaphragm. Disseminated or multifocal extralymphatic disease would constitute stage IV disease. Ref: TNM Atlas, 5th Ed; p. 371-382.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 47 year old patient is referred for an abdominal US. In the spleen, several rounded, thin-walled hypoechoic lesions are seen in a subcapsular position. CT shows the lesions have a density of 20 HU and there is no enhancement with intravenous contrast medium. What is the most likely diagnosis?",
+      "options": [
+        "A. Infarction",
+        "B. Lymphangioma",
+        "C. Haemangioma",
+        "D. Hamartoma",
+        "E. Abscess"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "These are the typical imaging features of these asymptomatic lesions. Infarcts are usually wedge-shaped, whilst the remaining lesions usually show some enhancement. Ref: Diagnostic Radiology, 5th Ed, p. 1763.",
+      "questionNumber": 3
+    },
+    {
+      "question": "Emphysematous gastritis is most commonly associated with which of the following organisms?",
+      "options": [
+        "A. S. pneumoniae",
+        "B. C. difficile",
+        "C. S. milleri",
+        "D. E. coli",
+        "E. S. aureus"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Clostridium welchii is another common cause of this unusual condition. S. pneumoniae, S. aureus (and E. coli) may cause non-emphysematous gastritis. S. milleri is a cause of liver abscesses and C. difficile colitis. Ref: Diagnostic Radiology, 5th Ed, p. 638.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 47 year old man undergoes a CT and subsequently an MRI. These show an area of focal fat accumulation adjacent to the falciform ligament anteriorly. This may be attributed to flow within which of the following?",
+      "options": [
+        "A. Vein of Sappey",
+        "B. Cholecystic vein",
+        "C. Right gastric vein",
+        "D. Anterior gastric vein",
+        "E. Inferior epigastric vein"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is a common aberrant vein which drains the superior epigastric vein and/ or the internal thoracic veins and communicates with the left portal vein branches. Ref: J Comput Assist Tomogr (2007); 31:526-33.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 61 year old man has alcohol-related chronic liver disease. Which of the following conditions is he not at increased risk of developing compared with the general population?",
+      "options": [
+        "A. Non-specific interstitial pneumonitis",
+        "B. Bacterial pneumonia",
+        "C. Hydrothorax",
+        "D. Pulmonary hypertension",
+        "E. Acute respiratory distress syndrome"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "There is no increased risk of NSIP or any other interstitial lung disease as a result of cirrhosis. Patients with cirrhosis have altered immunity and undergo changes to the vascular bed both within the liver and the lungs. Ref: Radiographics (2009); 29:825-837.",
+      "questionNumber": 6
+    },
+    {
+      "question": "Enteropathy-associated T-cell lymphoma is most commonly associated with which of the following conditions?",
+      "options": [
+        "A. Coeliac disease",
+        "B. Crohn's disease",
+        "C. Lymphangectasia",
+        "D. Whipple's disease",
+        "E. Peutz-Jegher's syndrome"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is invariably seen in the underlying bowel in patients with this condition, although it may not have been diagnosed prior to the lymphoma. The other conditions do not predispose to lymphomas. Ref: Radiol Clin North Am (2008); 46(2):287-312.",
+      "questionNumber": 7
+    },
+    {
+      "question": "An 18 year old male patient with known von Hippel Lindau disease is referred for abdominal imaging. Which of the following conditions would you not expect to see in association with this disease?",
+      "options": [
+        "A. Phaeochromocytoma",
+        "B. Serous cystadenoma of the pancreas",
+        "C. Neuroendocrine pancreatic tumour",
+        "D. Pancreatic cysts",
+        "E. Adrenocortical carcinoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "There are a number of abdominal manifestations in addition to these including renal cysts and renal cell carcinoma. Epididymal papillary cystadenoma may be seen on scrotal US in male patients. Ref: Radiographics (2008); 28:65-79.",
+      "questionNumber": 8
+    },
+    {
+      "question": "With regard to radiation enteropathy, which of the following is not true?",
+      "options": [
+        "A. Acute changes occur in patients who have received 1,000cGy or more",
+        "B. Acute changes are due to damage to the blood supply",
+        "C. Chronic changes may be seen in up to 15% of patients",
+        "D. Multiple stenoses are a feature of chronic disease",
+        "E. Acute radiation enteropathy refers to changes within the first 2 months"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Acute radiation enteropathy is due to death of the mucosal cells which are dividing rapidly. Chronic enteropathy is due to the effect on the vasculature, resulting in strictures, adhesions and fistulae. Ref: R-ITI 3_061 Small bowel: vascular conditions of the small bowel (including bleeding and ischaemia).",
+      "questionNumber": 9
+    },
+    {
+      "question": "A young man presents to A&E with severe central chest pain following an episode of vomiting. On questioning he reports that he has been drinking alcohol the night before. The CT shows an eccentric hyperattenuating mass within the wall of the oesophagus. What is the most likely diagnosis?",
+      "options": [
+        "A. Mallory-Weiss tear",
+        "B. Intramural oesophageal dissection",
+        "C. Boerhaave syndrome",
+        "D. Transmural perforation",
+        "E. Intramural haematoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The CT features indicate an intramural haematoma. Such patients often have a history of instrumentation, vomiting or food impaction and present with sudden onset pain, dysphagia or odynophagia. Haematemesis tends to occur later in the clinical course. Mallory-Weiss tear is a longitudinal mucosal laceration at the gastro-oesophageal junction. Dissection gives a double-barrelled appearance of the lumen due to a mucosal flap. Options (c) and (d) are full-thickness injuries and result in mediastinal air or fluid on CT. Ref: Radiographics (2008); 28:1541-1553.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 58 year old lady is referred for staging of a carcinoma in the middle third of the oesophagus. Which of the following statements is true?",
+      "options": [
+        "A. Lymphatic drainage is likely to be via the upper abdominal lymph nodes",
+        "B. A PET study can reliably exclude the presence of involved loco-regional nodes",
+        "C. EUS is superior to PET-CT in the evaluation of loco-regional lymph nodes",
+        "D. Following treatment, EUS most commonly under-stages residual disease",
+        "E. The adrenal glands are the commonest site of metastatic disease"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The upper and middle thirds of the oesophagus usually drain superiorly. Local staging is best performed with endoscopic US. PET-CT is the most accurate modality for distant lymph nodes or metastases but the intense uptake of the primary tumour may obscure local nodes. Following treatment, it is difficult to distinguish fibrosis from active tumour at EUS; PET is more accurate in this circumstance. The most common sites of metastases are, in order, liver, lungs bones and adrenal glands. Ref: Radiographics (2009); 29:403-42.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A patient with multiple medical problems is referred for CT colonography and requires intravenous hyoscine butylbromide (Buscopan) as part of the procedure. Which of the medical conditions listed are contraindications to this?",
+      "options": [
+        "A. Open angle glaucoma",
+        "B. Hypertension",
+        "C. Ischaemic heart disease",
+        "D. Myasthenia Gravis",
+        "E. Parkinson's disease"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In addition, Buscopan is contraindicated in patients with megacolon, untreated narrow angle glaucoma, tachycardia, hypertrophy of the prostate with urinary retention, and mechanical stenoses of the gastrointestinal tract.",
+      "questionNumber": 12
+    },
+    {
+      "question": "The junction of the squamous and columnar epithelium, seen on the barium swallow, is given what term?",
+      "options": [
+        "A. A-ring",
+        "B. B-ring",
+        "C. Schatzki ring",
+        "D. Barrett's line",
+        "E. Z-line"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The A-ring is transient and muscular. The B- or Schatzki ring is a fixed mucosal/ muscular ring which may cause dysphagia or obstruction. Barrett's stricture is a complication of gastro-oesophageal reflux disease and is premalignant. Ref: R-ITI 3_002. The Gastro-Oeosophageal Junction, Hiatus Hernia and Reflux Disease.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A patient with a metastasis from a GIST tumour undergoes a contrast-enhanced CT study before and after chemotherapy. On the initial study, the lesion measures 5 cm in diameter and has a density of 100 HU. At follow up, the lesion measures 6 cm and has a density of 80 HU. How should you classify the response to chemotherapy?",
+      "options": [
+        "A. Complete response",
+        "B. Partial response",
+        "C. Mixed response",
+        "D. Stable disease",
+        "E. Progressive disease"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Metastatic GIST tumours are treated with monoclonal antibody agents. These typically reduce the blood supply and metabolism of the tumours with little change in tumour size and as such, the RECIST criteria are of little value. The Choi criteria differ from RECIST in that to obtain a PR, one needs a 10% reduction in size or a 15% reduction in density. Progressive disease requires 10% tumour growth without a 15% reduction in lesion density, a new lesion or a new or growing nodule of enhancing tumour within an existing lesion. There is no mixed response category. Ref: AJR (2004); 183:1619-1628.",
+      "questionNumber": 14
+    },
+    {
+      "question": "Regarding 2nd generation US contrast agents, which of the following statements is true?",
+      "options": [
+        "A. Hepatocyte-specific agents are of particular value in characterising liver lesions",
+        "B. Microbubbles persist for 30 minutes",
+        "C. Excretion is mainly through biliary pathways",
+        "D. A high mechanical index setting is required for dynamic imaging",
+        "E. Metastases are best seen in the delayed phase (2-5 min)"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "US contrast agents are microbubbles comprising a 'shell' containing an inert gas, which is injected i.v. and may persist for up to 6 hours. The agents stay within the blood pool, but for an unknown reason pool in the sinusoids during the delayed (2-5 min) phase, hence metastases are well depicted. Imaging is performed using a low mechanical index (0.1-0.2) to avoid bursting the bubbles. Ref: Contrast Enhanced US in Clinical Practice, p. 3-9.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 77 year old man presents with abdominal distension. A CT study of his abdomen and pelvis reveals nodular peritoneal thickening, omental cake and a stellate appearance within the mesentery. Some foci of calcification are evident. What is the most likely diagnosis?",
+      "options": [
+        "A. Tuberculosis",
+        "B. Lymphoma",
+        "C. Carcinoma",
+        "D. Pseudomyxoma",
+        "E. Mesothelioma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "These are the typical features of sarcomatous mesothelioma. Peritoneal mesothelioma represents 6-10% cases of mesothelioma, with 50% cases having had previous asbestos exposure. Radiation therapy also predisposes to this condition, which affects visceral and parietal peritoneum. Ref: Cancer Treat Res (2008); 143:281-97.",
+      "questionNumber": 16
+    },
+    {
+      "question": "An unenhanced CT of the liver is performed. The liver has a density of 60 HU and the spleen has a density of 50 HU. How might you account for these findings?",
+      "options": [
+        "A. Normal findings",
+        "B. Diffuse fatty infiltration",
+        "C. Haemochromatosis",
+        "D. Wilson's disease",
+        "E. Budd-Chiari syndrome"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The normal liver has a density of 50-70 HU. Fatty infiltration will reduce this as the atomic numbers of the elements C, H and O are low. Iron and copper deposition can raise the density, as they have high atomic numbers.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A patient is referred for a CT of the chest, abdomen and pelvis, the clinical details read \"Riedel's thyroiditis. Hyper-IgG4 disease\". Are any other organs involved?' Which of the following conditions are not associated?",
+      "options": [
+        "A. Cryptogenic organising pneumonia",
+        "B. Benign pleural mesothelioma",
+        "C. Systemic sclerosis",
+        "D. Autoimmune pancreatitis",
+        "E. Retroperitoneal fibrosis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Hyper IgG4 is a chronic inflammatory condition that may involve a number of organs. It is characterised histologically by a lymphoplasmacytic inflammation with IgG4-positive cells and exuberant fibrosis, which leaves dense fibrosis on resolution. It may respond to corticosteroids or other immunosuppressant therapy. Sclerosing sialadenitis, retro-orbital pseudotumour, and panniculitis may also be seen. Ref: BMC Medicine (2006); 4:23.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 50 year old man undergoes liver transplantation. A routine follow-up liver US comments that the intra-hepatic arterial Doppler has a low resistance index (0.48) and a prolonged systolic acceleration time. What diagnosis does this suggest?",
+      "options": [
+        "A. Hepatic artery stenosis",
+        "B. Portal vein occlusion",
+        "C. Hepatic artery pseudoaneurysm",
+        "D. Graft rejection",
+        "E. Hepatic artery thrombosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The tardus et parvus waveform described here is seen distal to a stenosis. At the stenosis, a jet phenomenon may be seen with greatly increased flow. Ref: US of Abdominal Transplantation, p. 90-104.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A patient with liver disease is referred for US assessment of their TIPS stent which has been in situ for 3 months. The Doppler study demonstrates a flow rate of 2.3 m/s. What is this most likely to represent?",
+      "options": [
+        "A. Normal flow",
+        "B. Arterio-venous fistula",
+        "C. Stent stenosis",
+        "D. Stent fracture",
+        "E. Stent occlusion"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a jet phenomenon at a narrow stenosis. Normal flow rates are 0.5-1.9m/s but may vary with respiration. Ref: US of Abdominal Transplantation, p. 76-89.",
+      "questionNumber": 20
+    },
+    {
+      "question": "Which of the following is not a recognised cause of gastric fold thickening?",
+      "options": [
+        "A. Adult hypertrophic pyloric stenosis",
+        "B. Lymphoma",
+        "C. Gastritis",
+        "D. Menetrier's disease",
+        "E. Zollinger-Ellison syndrome"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This has similar appearances to infantile hypertrophic pyloric stenosis but may be associated with ulceration. Differentiation from malignancy in the antrum may also be difficult. Ref: R-ITI 3_044. Non-neoplastic disorders of the stomach and duodenum.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 45 year old woman with a history of diarrhoea and weight loss undergoes an endoscopy and has a duodenal biopsy. The biopsy is reported to show foamy macrophages. Granules within the cytoplasm of these macrophages stain positively with periodic acid-Schiff (PAS) stain. What additional feature might you expect on a small bowel enema in this patient?",
+      "options": [
+        "A. Multiple polyps",
+        "B. Ulceration of the mucosa",
+        "C. Reduced mucosal folds with dilatation of the small bowel",
+        "D. Pseudosacculation",
+        "E. Thickening of the mucosal folds"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "These are the clinical, pathological and radiological features of Whipple's disease. This is an uncommon condition of the small bowel caused by a bacterial infection, thought to be Tropheryma whippelii. Antibiotic therapy needs to continue for at least a year and relapses may involve the CNS. Ref: Digestive diseases (1995); 108:118.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 2.3 cm adrenal lesion is noted in a 62 year old man undergoing a staging CT for colon carcinoma. A dedicated study demonstrates the lesion to have a density of -2 HU before contrast medium, 56 HU in the portal venous phase and 20 HU at 10 minutes. What is the most likely diagnosis?",
+      "options": [
+        "A. Cyst",
+        "B. Adenoma",
+        "C. Metastasis",
+        "D. Lipoma",
+        "E. Adrenocortical carcinoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "An adenoma is typically a low density lesion (< 15 HU) due to fat within the lesion. It usually demonstrates a rapid wash-in and wash-out of intravenous contrast medium, thus the density at 10 minutes is less than half that seen in the portal venous phase. Ref: Radiology (2008) 249: 756-75.",
+      "questionNumber": 23
+    },
+    {
+      "question": "Which of the following is true of polysplenia?",
+      "options": [
+        "A. It has an 80% mortality in the first year",
+        "B. It is associated with total anomalous pulmonary venous drainage",
+        "C. It is more common in females",
+        "D. It is associated with right isomerism",
+        "E. It is associated with annular pancreas"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The remaining features are seen in asplenia, which is more commonly seen in males. Polysplenia has a mortality of 50-60% and is associated with partial abnormal pulmonary venous return, left isomerism and a semi-annular pancreas. Ref: R-ITI 3 132. The Abnormal Spleen.",
+      "questionNumber": 24
+    },
+    {
+      "question": "An 18 year old man undergoes an abdominal US and is found to have splenomegaly with multiple focal lesions. Which of the following diagnoses is least likely to give these appearances?",
+      "options": [
+        "A. Sarcoidosis",
+        "B. Lymphoma",
+        "C. Portal hypertension",
+        "D. Sickle cell disease",
+        "E. Amyloidosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Sickle cell disease results in chronic sequestration with a small, occasionally calcified, spleen. The remaining diagnoses can cause splenomegaly with or without focal lesions. Ref: R-ITI 3 132. The Abnormal Spleen.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 40 year old man is found to have abnormal liver function whilst undergoing routine blood tests prior to abdominal surgery. Subsequent imaging demonstrates a relatively normal liver parenchyma but there is irregularity of the bile ducts with beading and short segment strictures. What is the most likely diagnosis?",
+      "options": [
+        "A. Autoimmune liver disease",
+        "B. Viral hepatitis",
+        "C. Primary biliary cirrhosis",
+        "D. Cholangiocarcinoma",
+        "E. Primary sclerosing cholangitis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Primary sclerosing cholangitis is a biliary condition of unknown aetiology that is more common in men (2:1) and often presents under the age of 45 years. It is associated with ulcerative colitis, sicca complex and retroperitoneal fibrosis and patients are at increased risk of developing cholangiocarcinoma. Ref: R-ITI 3_ 103. Gall Bladder and Biliary Tract: Inflammatory Conditions of the Biliary Tract.",
+      "questionNumber": 26
+    },
+    {
+      "question": "In the staging of colorectal carcinoma, inferior mesenteric lymph nodes are considered distant metastasis rather than regional drainage for which tumour site?",
+      "options": [
+        "A. Ascending colon",
+        "B. Transverse colon",
+        "C. Descending colon",
+        "D. Sigmoid colon",
+        "E. Rectum"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The ileocolic, right colic and middle colic lymph nodes are the regional drainage for the ascending colon (following arterial blood supply). All other nodal groups are considered distant metastases. Ref: TNM Atlas, 5th Ed, p. 103.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 46 year old man presents with abdominal pain, fever and vomiting 5 weeks after an episode of acute pancreatitis. A CT study shows a well-circumscribed collection adjacent to the pancreas with an enhancing rim. What is the most likely diagnosis?",
+      "options": [
+        "A. Pseudocyst",
+        "B. Pancreatic abscess",
+        "C. Infective necrosis",
+        "D. Acute pancreatitis",
+        "E. Chronic pancreatitis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A pancreatic abscess complicates 3% of cases of acute pancreatitis and is due to infection within a fluid collection such as a pseudocyst. Such abscesses may be found anywhere within the abdomen or pelvis and require percutaneous drainage. Ref: Radiology (1994); 193:297-306.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 47 year old lady attends for an US of her biliary system. Three comet-tail artefacts are seen arising from the anterior wall, which is slightly thickened. The remainder of the examination was unremarkable. What is the most likely cause?",
+      "options": [
+        "A. Adenomyomatosis",
+        "B. Cholesterolosis",
+        "C. Gallstones",
+        "D. Chronic cholecystitis",
+        "E. Porcelain gallbladder"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Adenomyomatosis is caused by mucosal hyperplasia with herniations of mucosa in to the thickened muscular layer (Rokitansky-Aschoff sinuses). Cholesterol crystals deposited in these sinuses give rise to the hyperechoic comet-tail artefacts from the anterior wall, clearly visible against the hypoechoic bile. Ref: Ultrasound: The Requisites, p. 35-54.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A patient with a pyrexia of unknown origin is referred for a radio-labelled white cell scan with Tc-99m HMPAO. At which time points should imaging of the abdomen be performed?",
+      "options": [
+        "A. 1 and 3 hours",
+        "B. 1, 3 and 6 hours",
+        "C. 1 and 6 hours",
+        "D. 1, 3 and 24 hours",
+        "E. 1, 6 and 24 hours"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "99mTc-HMPAO begins to break down by 4 hours as it is not as stable as 111In; thereafter, breakdown products may be seen within the bile and intestines. Ref: R-ITI 7i 004. Infection 4 - Abdominal infection.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A patient is referred for the investigation of right upper quadrant pain. US has equivocal findings and a HIDA examination is requested. At 35 minutes, there is little uptake within the liver, but renal excretion is noted. What is the most likely cause for these findings?",
+      "options": [
+        "A. Poor liver function",
+        "B. Acute cholecystitis",
+        "C. Poor renal function",
+        "D. Sphincter of Oddi dysfunction",
+        "E. Chronic cholecystitis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Liver uptake should be seen within 10 minutes. Thereafter, there is filling of the gallbladder and subsequent excretion to the bowel. Cholecystitis impairs uptake to the GB. Ref: R-ITI 7g_005. The investigation of hepatobiliary disease-1.",
+      "questionNumber": 31
+    },
+    {
+      "question": "Where do gastrointestinal stromal tumours (GIST) most commonly arise?",
+      "options": [
+        "A. Oesophagus",
+        "B. Stomach",
+        "C. Small intestine",
+        "D. Colon",
+        "E. Appendix"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Approximately 60% arise in the stomach, 30% in the small bowel, 7% in the ano-rectal region and the remainder in the oesophagus and colon. Ref: R-ITI 3_ 059. Gastro-intestinal stromal tumours (hollow organ and mesentery).",
+      "questionNumber": 32
+    },
+    {
+      "question": "A patient with Hodgkin's lymphoma undergoes a PET-CT which shows a 10 x 5 cm nodal mass which is PET positive. Following 2 cycles of chemotherapy, the nodal mass measures 6 x 3 cm but there is no uptake of FDG within the mass. How should you report this study?",
+      "options": [
+        "A. Partial response",
+        "B. Stable disease",
+        "C. Mixed response",
+        "D. Too early to assess response",
+        "E. Complete response"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "If a PET positive lesion becomes PET negative, this is regarded as a CR irrespective of the size of the nodal mass. Early assessment (after 1 or 2 cycles of chemotherapy) appears to be a better predictor of long term outcome than later imaging. Ref: Clin Rad (2008); 63:125-135.",
+      "questionNumber": 33
+    },
+    {
+      "question": "Which of the following tumours of the vermiform appendix is encountered most commonly?",
+      "options": [
+        "A. Adenocarcinoma",
+        "B. Carcinoid",
+        "C. Lymphoma",
+        "D. Mucinous adenocarcinoma",
+        "E. Gastrointestinal Stromal Tumour"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Seen in up to 1.4% of histology specimens and is usually incidental. Other tumours are encountered less commonly. The presence of adenocarcinoma may necessitate a formal right hemicolectomy to resect the draining lymph nodes. Ref: Clin Rad (2009); 64:190-99.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 39 year old man presents with epigastric pain, diarrhoea, PR bleeding, exhaustion, and fatigue. He is noted to have a swelling of the jaw. On examination there are several calvarial lumps. CT head shows sebaceous cysts and bone lesions which are likely osteomas. OGD shows gastric hamartomas, colonoscopy shows multiple polyps throughout the colon. What is the most likely diagnosis?",
+      "options": [
+        "A. Cowden disease",
+        "B. Gardner's syndrome",
+        "C. Lynch syndrome",
+        "D. Peutz-Jegher's syndrome",
+        "E. Turcot's syndrome"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "5% of colorectal carcinoma is genetic in origin; the most common inherited syndromes being familial adenomatous polyposis and hereditary non-polyposis colorectal cancer (Lynch syndrome; HNPCC). Gardner's syndrome is associated with polyposis in the colon (100%), duodenum (90%) and, rarely other bowel segments; there is an association with gastric hamartomas, osteomas in calvarium/ mandible, and soft tissue tumours (30%). Turcot syndrome is a rare condition which is also associated with CNS gliomas and medulloblastomas. Peutz-Jeghers syndrome consists of hamartomas throughout the GI system with the rare potential for malignant transformation, and perioral pigmentation. Cowden disease has hamartomas gingival hyperplasia oral papillomas, muco-cutaneous pigmentation and an increased risk of breast and thyroid malignancy. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 191-2.",
+      "questionNumber": 35
+    },
+    {
+      "question": "Which of the following is true of insulinomas?",
+      "options": [
+        "A. Men are affected twice as often as women",
+        "B. Multiple lesions are seen in 25% cases",
+        "C. They account for 25% of pancreatic endocrine tumours",
+        "D. They are associated with MEN-I syndrome",
+        "E. Approximately 25% cases are malignant"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Endocrine tumours account for 1-2% of all pancreatic tumours and insulinoma is the most common of these, representing 60% of cases. Approximately 5-10% are malignant; these tend to be the larger lesions (>5 cm). However, most lesions are less than 1.5 cm at presentation and only 5-10% cases have multiple lesions. Ref: European Radiology (2000); 10(Supp 2):S203-4.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A patient is referred for an abdominal radiograph and telephones the department to ask about radiation. What is the typical effective dose of a plain abdominal radiograph?",
+      "options": [
+        "A. 0.02 mSv",
+        "B. 0.3 mSv",
+        "C. 0.7 mSv",
+        "D. 1 mSv",
+        "E. 1.5 mSv"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A chest radiograph has an effective dose of approximately 0.02mSv or 3 days background radiation. An abdominal film has a dose 35x that at 0.7mSv, equivalent to 4 months background radiation. Ref: RCR. Making the best use of clinical radiology services, 6th Ed.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A patient with a 4 month history of severe upper abdominal pain undergoes an endoscopic US. This reports a combination of echogenic and echo-poor foci throughout the pancreas, an irregular contour of the pancreatic duct and thickening of the duct wall with some side duct dilatation. What is the most likely diagnosis?",
+      "options": [
+        "A. Autoimmune pancreatitis",
+        "B. Pancreatic adenocarcinoma",
+        "C. Intraductal papillary mucinous tumour",
+        "D. von Hippel Lindau syndrome",
+        "E. Chronic pancreatitis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "These are the typical findings of chronic pancreatitis at endoscopic ultrasound. Ref: R-ITI 3_ 125. Pancreas: Pancreatitis Diagnosis (Chronic).",
+      "questionNumber": 38
+    },
+    {
+      "question": "Hepatocellular adenomas are not associated with which of the following?",
+      "options": [
+        "A. Spontaneous rupture",
+        "B. Oral contraceptive pill",
+        "C. Hepatocellular carcinoma",
+        "D. Androgenic steroids",
+        "E. Cholangiocarcinoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Hepatocellular adenomas are uncommon benign tumours which comprise hepatocytes with no portal tracts or bile ducts. They are associated with the oral contraceptive pill and androgenic steroids. On imaging, they may have a scar or a pseudocapsule and enhance avidly in the arterial phase which can make differentiation from FNH difficult. There is a tendency to bleed or rupture, whilst 1 % are thought to transform in to malignant lesions (HCC). Ref: Diagnostic Radiology, 5th Ed, p. 741-2.",
+      "questionNumber": 39
+    },
+    {
+      "question": "Which of the following is associated with an increased risk of developing pancreatic adenocarcinoma?",
+      "options": [
+        "A. Hereditary pancreatitis",
+        "B. High alcohol consumption",
+        "C. High coffee consumption",
+        "D. Low fibre diet",
+        "E. Type-1 diabetes mellitus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "There is a 70-fold increase in pancreatic adenocarcinoma in this condition. Dietary factors play no role, but cigarette smoking is associated. Diabetes mellitus may be a presenting feature, but is not associated with an increased risk of malignancy. Ref: R-ITI 3_ 127. Pancreatic adenocarcinoma.",
+      "questionNumber": 40
+    },
+    {
+      "question": "Which of the following statements regarding the internal anal sphincter is true?",
+      "options": [
+        "A. It is made of striated muscle",
+        "B. Isolated injury is usually due to obstetric injury",
+        "C. It appears hyperechoic on endo-anal ultrasound",
+        "D. It is the termination of the circular smooth muscle of the gastrointestinal tract",
+        "E. The deep part fuses with the puborectalis sling and levator muscles"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The IAS comprises smooth muscle and is not under voluntary control. It appears hypoechoic on US. Obstetric injuries involve the external anal sphincter +/- IAS. Isolated injury is due to endo-anal trauma e.g. haemorrhoid surgery. Answers (a) and (e) pertain to the external anal sphincter, which is under voluntary control. Ref: R-ITI 3_071. Endoanal Ultrasound and Anal Rectal MRI (Non- Malignant) Fistula Disease.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A previously well 65 year old man has a myocardial infarction. Six days later he develops acute abdominal pain and distension; he feels nauseated and vomits. An abdominal film demonstrates distended proximal colon to the splenic flexure and normal colon distally. A contrast enema is performed with no abnormality seen. What is the most likely diagnosis?",
+      "options": [
+        "A. Sigmoid volvulus",
+        "B. Adhesions causing large bowel obstruction",
+        "C. Caecal volvulus",
+        "D. Toxic megacolon",
+        "E. Acute colonic pseudo-obstruction"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Acute colonic pseudo-obstruction (Ogilvie syndrome) is a rare condition that may be seen most commonly after trauma (including surgery), infection or with cardiac disease. The features mimic bowel obstruction and complications include perforation. Gastrograffin enema may be therapeutic; air should never be insufflated in to the colon in these cases. Ref: Ogilvie syndrome: e-medicine Gastroenterology",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 56 year old HIV-positive man presents with diarrhoea which the clinical team feel is due to a gastrointestinal infection. His CD4 count is 350. Which of the following is most likely?",
+      "options": [
+        "A. Mycobacterium tuberculosis",
+        "B. Herpes simplex virus",
+        "C. Candida albicans",
+        "D. Cytomegalovirus",
+        "E. Cryptosporidium"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Extrapulmonary TB is seen as the CD4 count falls below 400. Candida and Cryptosporidium are associated with a CD4 <200; HSV and CMV are associated with a CD4 <100. Ref: Radiographics (1995); 15:1155-1178.",
+      "questionNumber": 43
+    },
+    {
+      "question": "How many types of caecal volvulus are described?",
+      "options": [
+        "A. 1",
+        "B. 2",
+        "C. 3",
+        "D. 4",
+        "E. 5"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "In the axial torsion type, the caecum twists around its long axis and remains in the right lower quadrant. In the loop type, the caecum twists around its long axis and also inverts. In the caecal bascule type, the caecum folds anteromedial to the ascending colon with no torsion. In the latter two scenarios, the caecum is found in the upper abdomen. Ref: AJR (2001); 177:95-8.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 37 year old lady with longstanding constipation is referred for a defaecating proctography. The only abnormality seen on resulting images show an 8 cm anterior bulge of the anterior margin of the rectum with incomplete evacuation. What is the diagnosis?",
+      "options": [
+        "A. Rectal prolapse",
+        "B. Rectocoele",
+        "C. Anismus",
+        "D. Cystocoele",
+        "E. Enterocoele"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "An anterior bulge of up to 3 or 4 cm may be normal in many cases, but beyond this, and with incomplete evacuation, the diagnosis of a rectocoele may be made. Cystocoele and enterocoele are the abnormal descent of bladder and small bowel respectively. Prolapse is the abnormal descent of the rectum. Anismus is a functional abnormality leading to poor co-ordination of the pelvic floor muscles. Ref: R-ITI 3_ 072. Constipation and Obstructive Defaecation Disorders.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A patient with a biopsy proven cholangiocarcinoma undergoes imaging which demonstrates that the tumour is confined to the common bile duct. How would you classify this?",
+      "options": [
+        "A. Bismuth I",
+        "B. Bismuth II",
+        "C. Bismuth III",
+        "D. Bismuth IV",
+        "E. Bismuth V"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A type II stricture extends in to the 1st order ducts. A type III stricture involves 2nd order ducts in either the right (IIIA) or left (IIIB) side, whilst type IV involve 2nd order ducts bilaterally. There is no type V. This classification is used to plan surgery. Ref: Ann Surg (2002); 215:31-38.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 56 year old patient presents with carcinoid syndrome and is found to have liver metastases. What is the most likely site of the primary lesion?",
+      "options": [
+        "A. Stomach",
+        "B. Duodenum",
+        "C. Small Bowel",
+        "D. Appendix",
+        "E. Rectum"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Over 40% of carcinoid tumours arise within the small intestine, with rectum (27%), appendix (24%) and stomach (8%) next most common. Duodenal carcinoids are rare. Small intestinal carcinoid tumours are often symptomatic. Ref: Radiographics (2007); 1 :237-257.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 28 year old man with cystic fibrosis and abnormal liver function is referred to you for liver imaging by his clinical team. Which of the following are not associated with cystic fibrosis?",
+      "options": [
+        "A. Nodular regenerative hyperplasia",
+        "B. Steatosis",
+        "C. Sclerosing cholangitis",
+        "D. Cirrhosis",
+        "E. Cholelithiasis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Cystic fibrosis produces a range of abnormalities, which may lead to fibrosis, cirrhosis and portal hypertension. A micro-gallbladder is also seen commonly. Ref: Radiographics (2006); 26:679-90.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A patient with known Crohn's disease is referred for a small bowel enema. Which of the following features would you not expect to see?",
+      "options": [
+        "A. Aphthoid ulcers",
+        "B. Kinked bowel segments",
+        "C. Sacculation",
+        "D. Increased number of folds in the ileum",
+        "E. Loop separation"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Jejunisation of the ileum is a feature of coeliac disease. In addition to the other features, transmural ulceration, fistulae, stenoses and fold thickening may be seen. Crohn's disease may affect any part of the GI tract, from mouth to anus. Ref: R-ITI 3 054. Crohn's disease.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 76 year old man with a clinical suspicion of a hernia is referred for an ultrasound. A colleague performs the study and reports: \"The hernia lies lateral to the conjoint tendon and medial to the inferior epigastric artery at the inferior aspect of Hesselbach's triangle.\" What type of hernia is described?",
+      "options": [
+        "A. Direct inguinal hernia",
+        "B. Spigelian hernia",
+        "C. Hypogastic hernia",
+        "D. Femoral hernia",
+        "E. Obturator hernia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Direct inguinal hernias originate infero-medial to the inferior epigastric artery, whilst indirect originate supero-laterally. Spigelian hernias lie at the linea semilunaris, hypogastric hernias lie in the midline below the umbilicus and femoral hernias pass through the femoral canal. Ref: R-ITI 3 009. Abdominal wall hernia.",
+      "questionNumber": 50
+    }
+  ]
+}
+

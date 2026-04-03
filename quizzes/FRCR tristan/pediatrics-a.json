@@ -1,0 +1,658 @@
+
+
+{
+  "title": "Paediatrics Practice SBA Questions",
+  "questions": [
+    {
+      "question": "A 3 year old presents with central epigastric pain. Blood tests reveal a raised amylase. Which of the following is the least likely cause?",
+      "options": [
+        "A. Choledochal cyst",
+        "B. Cystic fibrosis",
+        "C. Henoch-Schonlein purpura",
+        "D. Non-accidental injury",
+        "E. Rubella"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Trauma (including NAI) is one of the leading causes of pancreatitis in the paediatric population. Other causes include cystic fibrosis, hyperlipidaemia syndromes, drugs, viral, hyperparathyroidism, hypercalcaemia, idiopathic, Pearson syndrome (mitochondrial disorder), Schwachman-Diamond syndrome, and anatomical anomaly (pancreas divisum). Ref: Primer of Diagnostic Imaging, 4th Ed, p. 902.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 15 year old boy is under investigation for hypertension. The serum catecholamines and urinary VMAs are raised. CT abdomen confirms a left adrenal phaeochromocytoma and additionally shows multiple cysts within the liver, pancreas and both kidneys. Which of following additional features would you look for?",
+      "options": [
+        "A. Bilateral acoustic neuromas",
+        "B. CNS haemangioblastomas",
+        "C. Iris hamartomas",
+        "D. Parathyroid adenomas",
+        "E. Pulmonary lymphangioleiomyomatosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "VHL is associated with CNS haemangioblastomas in 50%, pancreatic/ hepatic/ renal cysts, RCC, and phaeochromocytoma (10%). Phaeochromocytomas are also associated with MEN types 2A and 2B (also medullary thyroid cancer, parathyroid adenomas), NF-1, and tuberous sclerosis. Bilateral acoustic neuromas are associated with NF-2. Ref: Radiology Review Manual, 6th Ed, p. 943-4 & Primer of Diagnostic Imaging, 4th Ed, p. 576-80.",
+      "questionNumber": 2
+    },
+    {
+      "question": "An antenatal US performed at 20 weeks demonstrated a right renal pelvis with an AP diameter of 5 mm. A 32 week scan shows the diameter to be 10 mm. The post-natal US at 4 days confirms unilateral right-sided neonatal hydronephrosis. What is the commonest cause of these findings?",
+      "options": [
+        "A. Ectopic ureterocoele",
+        "B. Pelvi-ureteric junction obstruction",
+        "C. Posterior urethral valve",
+        "D. Prune-belly syndrome",
+        "E. Vesico-ureteric junction obstruction"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The most common causes of antenatal hydronephrosis (regardless of gender), in order of decreasing frequency are: PUJ obstruction (22%), posterior urethral valve (18%), ectopic ureterocoele (14%), Prune-belly syndrome (12%), and VUJ obstruction (8%). Ref: Radiology Review Manual, 6th Ed, p. 931.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 1 year old boy presents with an acute history of cough, wheeze, and respiratory distress. Which of the following is true?",
+      "options": [
+        "A. Collapse of a lung or lobe is the commonest radiographic finding acutely",
+        "B. An inhaled foreign body is equally likely to pass into either mainstem bronchus",
+        "C. The majority of foreign bodies are radio-opaque and can be seen on CXR",
+        "D. Mediastinal shift on expiratory radiographs/fluoroscopy is toward the lucent side",
+        "E. Normal imaging excludes the diagnosis of inhaled foreign body"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The majority of inhaled foreign bodies are food material (e.g. peanuts), thus are not radio-opaque. The paediatric airway diameter increases in inspiration, decreases in expiration - a partial obstruction in inspiration may become complete in expiration, allowing air-trapping in expiration. The carinal angle is symmetric in infants making it equally likely that a foreign body will pass into either left or right mainstem bronchus. Radiographic evidence of air trapping is typical, however, no imaging modality can definitely exclude the diagnosis, therefore, if the history is suggestive, the child should undergo bronchoscopy. Ref: R-ITI 5_027. Inhaled Foreign Body",
+      "questionNumber": 4
+    },
+    {
+      "question": "The settings on the CT machine need to be optimised to reduce the dose when scanning paediatric patients. A student radiographer asks you how this can be achieved. Which of the following will actually increase patient dose?",
+      "options": [
+        "A. Reducing the gantry rotation speed",
+        "B. Reducing the kVp",
+        "C. Reducing the mA",
+        "D. Reducing the scanned volume to only the abnormal region",
+        "E. Use of automatic exposure control"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Increasing gantry rotation speed will reduce dose and also decreases movement artefact. Use of AEC reduces dose by automatically adjusting current in response to the attenuation of the section scanned. Reducing mA reduces dose, but noise is increased. There is an exponential relationship between kVp and dose, thus decreasing kVp greatly reduces dose, however, there are greater beam hardening artefacts and noise increases. Ref: R-ITI 5_001. The effects of radiation on children and dose reduction.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 3 year old girl presents with increasing abdominal girth. US demonstrates a mass within the region of the left kidney. The patient proceeds to CT examination. Which of the following findings favours Wilms' tumour over neuroblastoma?",
+      "options": [
+        "A. Calcification within the mass",
+        "B. Mass crosses the mid line",
+        "C. Mass encases and lifts the aorta",
+        "D. Mass invades into the IVC",
+        "E. Presence of bone metastases"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Classically neuroblastoma encases vessels, whereas Wilm's tumours may invade vessels. Calcification is more common in neuroblastoma (85-95%) than Wilm's (15%), neuroblastoma commonly crosses the midline, only 10% of Wilm's tumours are bilateral. Neuroblastoma typically metastasises to bone and lymph nodes; Wilm's to the liver, lungs and lymph nodes. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 865-8.",
+      "questionNumber": 6
+    },
+    {
+      "question": "An 18 month old child presents with an unwitnessed head injury. There are elements of the history which appear inconsistent. The CT head examination demonstrates a subdural haematoma. Which of the following findings are least specific for NAI?",
+      "options": [
+        "A. Associated presence of retinal haemorrhage",
+        "B. Bilateral SDHs",
+        "C. Interhemispheric (falx) SDH",
+        "D. SDH of differing age",
+        "E. SDH underlying a skull fracture"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "SDH is the most common intracranial finding in NAI and accidental causes are rare (e.g. RTA) and will likely be witnessed, with other injuries apparent. Options (a) - (d) are features which strongly suggest SDH secondary to NAI. Accidental SDHs do not usually extend into the falx. A further NAI-related feature is SDH without a fracture (implying shaking injury). Ref: Diagnostic Radiology, 5th Ed, p. 1632-5.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 3 year old boy presents with abdominal swelling. US and subsequent CT examination show a large 12 cm mass inferior to the liver. There is distortion of the renal parenchyma and apparent exophytic growth. There is poor enhancement and the aorta and IVC are displaced. Which of the following features is not a known association?",
+      "options": [
+        "A. Aniridia",
+        "B. Cerebellar ataxia",
+        "C. Horseshoe kidney",
+        "D. Macroglossia",
+        "E. Male pseudohermaphroditism"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cerebellar ataxia is associated with neuroblastoma. Wilm's is associated with WAGR (includes duplex/ horseshoe/ fused kidneys), Drash syndrome (male pseudo-hermaphroditism), and Beckwith-Wiedemann syndrome (macroglossia). It is also associated with spontaneous aniridia and hemihypertrophy. Ref: Radiology Review Manual, 6th Ed, p. 940 & 993.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A neonatal male patient failed to pass meconium by 48 hours and was found to have an imperforate anus of the high malformation subtype. A colostomy was formed in the neonatal period and surgical repair completed in infancy. At the age of 5 the patient presents with a UTI. What is the likely underlying aetiology of the UTI?",
+      "options": [
+        "A. Colovesical fistula",
+        "B. Neurogenic bladder",
+        "C. Pelvi-ureteric junction obstruction",
+        "D. Rectourethral fistula",
+        "E. Urethrocoele"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Anorectal malformation may be low (commonest), intermediate, or high, depending on the relation to the levator sling. High malformations are associated with fistulas and a high association with GU (50%), and VACTERL anomalies. History of surgical repair makes fistulas unlikely; post-op patients often suffer urinary incontinence; the additional association of spinal anomalies make neurogenic bladder (which predisposes to UTI) a likelihood. There is no association with PUJ obstruction or urethrocoele. Ref: Radiology Review Manual, 6th Ed, p. 843.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 6 week old boy with a family history of developmental dysplasia attends the department for a screening US scan of the hips. Which of the following imaging findings constitutes an abnormal result?",
+      "options": [
+        "A. 60° for a-angle",
+        "B. 60° for β-angle",
+        "C. 60% of femoral head covered by acetabulum",
+        "D. Femoral head lying inferio-medial to the Perkin's/Hilgenreiner's line intersection",
+        "E. Hypoechoic appearance of the femoral head"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Coronal US images are acquired with patient in the lateral decubitus position and hip flexed at 90°. The a-angle is between the acetabular roof and the iliac bone (normal = >60°). The β-angle is between the acetabular labrum and the iliac bone (normal = <55°). Also >50% of the femoral head should be covered by the acetabulum. The femoral head is unossified at this age and a hypoechoic appearance is normal. Option (d) is a plain film marker of normal hip location, the normal hip lies inferior and medial to the intersection of these lines. Ref: Radiology Review Manual, 6th Ed, p. 67-8.",
+      "questionNumber": 10
+    },
+    {
+      "question": "An infant presents within the first few weeks of life with stridor, respiratory distress, and wheezing. CXR shows left deviation of the trachea, the lateral view reveals increased density in the region of the hilum. A pulmonary sling is suspected and a CT chest is arranged for further evaluation. Which of the following findings is most likely to be seen?",
+      "options": [
+        "A. Anterior trachea and anterior oesophageal compression",
+        "B. Anterior trachea and posterior oesophageal compression",
+        "C. No compression",
+        "D. Posterior trachea and anterior oesophageal compression",
+        "E. Posterior trachea and posterior oesophageal compression"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A 'pulmonary sling' refers to an aberrant left PA, which arises from the right PA and passes between the trachea and oesophagus, resulting in posterior compression of the trachea and anterior compression of the oesophagus. It may lead to tracheo-bronchiomalacia or stenosis in up to 50% patients. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 138.",
+      "questionNumber": 11
+    },
+    {
+      "question": "An 8 month old boy presents with prolonged cough. On examination there is reduced air entry on the right side. The subsequent CXR demonstrates mediastinal shift towards the left side of the chest. Which of the following is more likely?",
+      "options": [
+        "A. Congenital lobar emphysema",
+        "B. Bronchogenic cyst",
+        "C. Pulmonary agenesis",
+        "D. Scimitar syndrome",
+        "E. Swyer-James (Mcleod) syndrome"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Causes of mediastinal shift away from the abnormal side include pleural effusions, tumours, diaphragmatic hernia, tension pneumothorax, and causes of air-trapping (e.g. bronchial atresia, congenital lobar emphysema). Asthma may be a cause, but uncomplicated cases do not cause shift. Mediastinal shift towards the abnormal hemithorax suggests volume loss as a cause (e.g. lobar collapse). Ref: R-ITI 5_016. The_dense_hemithorax.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 2 year old boy presents with haematochezia. He is in obvious distress on examination, but the bowel sounds are normal. AXR is unremarkable, and the paediatric team suspect a Meckel's diverticulum. Your advice is sought regarding further investigation. Which of the following would be the most sensitive radiological investigation?",
+      "options": [
+        "A. Barium follow-through",
+        "B. CT",
+        "C. MRI",
+        "D. 99mTc-pertechnatate scintigraphy",
+        "E. Ultrasound"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Pertechnatate studies are the most sensitive test (85%), although wireless capsule endoscopy has good potential. Pertechnatate is taken up by the ectopic gastric mucosa within the Meckel's. False +ve results include AVM, haemangioma, UC, Crohn's, appendicitis; false -ve results occur if the diverticulum contains no gastric mucosa. Ref: Clin Rad (2009); 64(2): 109-18.",
+      "questionNumber": 13
+    },
+    {
+      "question": "An 18 month old boy is found to have a neuroblastoma. A subsequent CT is performed for staging purposes. This reveals the primary tumour and evidence of metastases in the skin, liver, lung and bone marrow. What is the appropriate stage?",
+      "options": [
+        "A. Stage I",
+        "B. Stage II",
+        "C. Stage III",
+        "D. Stage IV",
+        "E. Stage IV-S"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Stage I limited to organ of origin. Stage II regional spread, but does not cross midline. Stage III tumour extends across midline, or is a unilateral tumour with contralateral LNs. Stage IV: the tumour has spread to distant lymph nodes, bone, bone marrow, liver, skin or other organs. Stage IV-S is a subset of neuroblastoma in infants < 1 year with a good prognosis. Ref: Diagnostic Radiology, 5th Ed, p. 1647-8.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 7 year old girl presents with lethargy, headaches and vomiting. CT shows a hyperdense lesion in the region of the posterior fossa. MR imaging confirms a midline vermian mass which abuts the roof of the 4th ventricle, displacing the brainstem anteriorly. The mass is hypointense on T2 and enhances homogeneously on T1 following i.v. contrast. What is the most likely diagnosis?",
+      "options": [
+        "A. Brainstem glioma",
+        "B. Ependymoma",
+        "C. Haemangioblastoma",
+        "D. Medulloblastoma",
+        "E. Pilocytic astrocytoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "All are examples of posterior fossa masses in children; other causes include meningioma, and epidermoid or dermoid cysts. These features are typical for medulloblastoma (the differential diagnosis is an atypical teratoid/rhabdoid tumour). Pilocytic astrocytomas are cystic with an enhancing peripheral nodule, ependymomas arise from 4th ventricle floor and are hypodense on CT, haemangioblastomas enhance avidly. Ref: Diagnostic Radiology, 5th Ed, p. 1677-8.",
+      "questionNumber": 15
+    },
+    {
+      "question": "Which of the following types of craniosynostosis is correctly linked to the suture involved?",
+      "options": [
+        "A. Anterior plagiocephaly - unilateral lambdoidal suture",
+        "B. Brachycephaly - metoptic suture",
+        "C. Posterior plagiocephaly - unilateral coronal suture",
+        "D. Scaphocephaly - sagittal suture",
+        "E. Trigonocephaly - bilateral coronal suture"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The most common single suture affected is the sagittal suture (scaphocephaly), others include uni-coronal (anterior plagiocephaly), bi-coronal (brachycephaly), metoptic (trigonocephaly) and unilateral lambdoidal (posterior plagiocephaly). Craniosynostosis may be part of a syndrome, with multiple sutures involved, or secondary to drugs, metabolic disease, or other causes of microcephaly. Ref: Diagnostic Radiology, 5th Ed, p. 1674-6.",
+      "questionNumber": 16
+    },
+    {
+      "question": "An 8 month old boy presents with red-currant jelly stool and abdominal distension. US confirms an intussusception and the paediatric surgeons ask you to attempt fluoroscopic reduction. Which of the following is a contraindication to fluoroscopic reduction?",
+      "options": [
+        "A. Age > 12 months",
+        "B. Evidence of small bowel obstruction",
+        "C. Free intra-peritoneal fluid",
+        "D. Hypovolaemic shock",
+        "E. US demonstrates fluid in the lumen around the intussusceptum"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hypovolaemic shock suggests ischaemic bowel, which would require surgical intervention, furthermore reduction should not be attempted in a sick infant and the patient should be appropriately resuscitated before any attempts at reduction are made. Other contraindications include pneumoperitoneum and peritonitis. The remaining options are not absolute contra-indications, but their presence reduces the chances of successful therapeutic reduction. Small bowel obstruction implies ischaemia or the presence of a tight intussusception. Free intra-peritoneal fluid or fluid in the lumen surrounding the intussusceptum suggests oedema or ischaemia of the bowel. An older age (> 12 months) suggests a pathological lead point may be the aetiology, in which case resection may be necessary. Ref: R-ITI 5_047. Paediatric Intussusception.",
+      "questionNumber": 17
+    },
+    {
+      "question": "A supine AXR is performed on a 4 day old neonate born at 32 weeks, who is noted to have increasing abdominal distension and appears clinically unwell. Which of the following features is an indication for urgent surgery?",
+      "options": [
+        "A. Air in the portal vein",
+        "B. Adynamic ileus",
+        "C. Pneumatosis intestalis",
+        "D. Pneumobilia",
+        "E. Pneumoperitoneum"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "NEC is the commonest GI emergency in premature infants. It is an infective/ ischaemic disorder of the neonatal gut in a compromised baby secondary to hypoxia. It typically presents at 2-3 days after birth and in 90% occurs before day 10. Treatment is normally conservative, surgery may be necessary due to perforation. Compared to adult patients, air in the portal system does not have such a grave prognosis. Late complications include intestinal strictures. Ref: R-ITI 5_044. Necrotising Enterocolitis - NEC & Radiology Review Manual, 6th Ed, p. 861.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 14 year old girl presents with abnormal curvature of the spine, there is no history of any back pain. On examination there is an obvious scoliosis. Which of the following is the most likely as an underlying cause?",
+      "options": [
+        "A. Neurofibromatosis type I",
+        "B. Osteoid osteoma",
+        "C. Hemivertebrae",
+        "D. Facet joint OA",
+        "E. TB of psoas muscle"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The patient has a 'painless' scoliosis. Congenital (e.g. hemi-vertebrae, wedge-shaped, or supernumerary vertebrae) and idiopathic types of scoliosis are usually painless, but can lead to secondary back pain due to the abnormal mechanics. Painful scoliosis is due to one of four primary causes: neoplastic (e.g. osteochondroma, GCT, osteoid osteoma), infective (e.g. paraspinal or psoas abscess), degenerative (facet joint OA), or traumatic. Ref: R-ITI 5_115. Scoliosis.",
+      "questionNumber": 19
+    },
+    {
+      "question": "Which of the following conditions has the highest frequency of non-genitourinary anomalies?",
+      "options": [
+        "A. Ask-Upmark kidney",
+        "B. Bilateral ectopia",
+        "C. Crossed-fused ectopia",
+        "D. Duplex kidney",
+        "E. Horseshoe kidney"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Horseshoe kidneys are associated with other renal anomalies in 50%, and non-GU system anomalies in 30% (GI, cardiac, skeletal). In 90% of crossed ectopia there will be fusion (crossed-fused ectopia); associated anomalies are rare. Ask-Upmark kidney shows segmental hypoplasia; there is controversy over whether it is a congenital anomaly or a sequelae of severe pyelonephritis. In the cited reference, no patients with duplex kidneys were found to have non-GU related anomalies. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 856 & Radiology Review Manual, 6th Ed, p. 882 & 929 & Chang Gung Med J (2001); 24(12):779-85.",
+      "questionNumber": 20
+    },
+    {
+      "question": "Antenatal US shows a RUQ cystic structure. A day 3 US shows an anechoic cyst with hyperechoic inner lining and a hypoechoic outer rim, causing superior-anterior displacement of the 1st and 2nd portion of the duodenum without bile duct dilation. What is the most likely diagnosis?",
+      "options": [
+        "A. Choledochal cyst",
+        "B. Choledochocoele",
+        "C. Duplication cyst",
+        "D. Mesenteric lymphangioma",
+        "E. Pancreatic pseudocyst"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "These cysts appear anechoic, displace the proximal duodenum supero-anteriorly. There is a double capsule: inner mucosal lining (hyperechoic) and outer rim of bowel wall (hypoechoic), this can be identified as the 'muscular rim' sign described. Choledochal cysts have 5 subtypes (type V = Caroli's disease). All bar type III involve the intra-hepatic bile ducts. Choledochocoeles arise from the duodenal portion of CBD, but other features support a duplication cyst. In mesenteric lymphangioma there is a single wall. Ref: Radiology Review Manual, 6th Ed, p. 704 & 824-6.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 15 year old boy under investigation for polyuria presents to A&E with an acute episode of dyspnoea. CXR reveals a small right-sided pneumothorax and lung cysts are noted: What is the most likely underlying diagnosis?",
+      "options": [
+        "A. a1-anti-trypsin deficiency",
+        "B. Langerhans Cell Histiocystosis",
+        "C. Lymphangiomyomatosis",
+        "D. Neurofibromatosis",
+        "E. Tuberous sclerosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "All are causes of cystic lung disease which may present in young patients. LAM is seen in female patients. In chronic disseminated LCH (Hand-Schuller-Christian disease) there is a classic triad of exophthalmos, diabetes insipidus (due to pituitary stalk lesions) and lytic skull lesions. In 25% of these patients there are lung cysts associated, with bleb formation and spontaneous pneumothorax. The history of polyuria makes LCH the likely diagnosis. Ref: Fundamentals of Diagnostic Radiology, 2nd Ed, p. 504-5.",
+      "questionNumber": 22
+    },
+    {
+      "question": "Which of the following classifications of atria/viscera positioning relative to the midline is associated with the lowest frequency of congenital heart defects?",
+      "options": [
+        "A. Situs ambiguous",
+        "B. Situs inversus/dextrocardia",
+        "C. Situs inversus/levocardia",
+        "D. Situs solitus/dextrocardia",
+        "E. Situs solitus/levocardia"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Normal anatomy is situs solitus/levocardia. The frequency of associated CHD is: situs solitus/levocardia < 1 %, situs inversus/dextrocardia 4%, situs solitus/dextrocardia 95%, situs inversus/levocardia 95%, situs ambiguous (heterotaxy syndromes) 50-100%. Ref: Radiology Review Manual, 6th Ed, p. 593-4.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 3 week old boy presents with high output cardiac failure. On examination he has a mass within the right upper quadrant. CT shows a large heterogeneous mass with central areas of low density, occupying the entire left lobe of the liver. The mass enhances peripherally in the arterial phase. What is the most likely diagnosis?",
+      "options": [
+        "A. Haemangioendothelioma",
+        "B. Haemangiopericytoma",
+        "C. Hamartoma",
+        "D. Hepatoblastoma",
+        "E. Hepatocellular carcinoma"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Infantile haemangioendothelioma typically presents in neonates (85% are diagnosed at < 6 months). 15% present with high output cardiac failure (AV shunts), consumption can lead to thrombocytopaenia/ DIC. Imaging characteristics are similar to adult haemangiomas. Haemangiopericytoma is a soft tissue sarcoma. Broadly speaking paediatric liver tumours present in 'alphabetical order' with age: haemangioendothelioma (neonates), hamartoma (15-22 months), hepatoblastoma (<3 years), and HCC (>3 years). Ref: Radiology Review Manual, 6th Ed, p. 722-5.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 4 year old girl has a proven first UTI. E. coli is cultured and there is a good response to antibiotics. Her GP phones to ask your advice on the most appropriate way to proceed with imaging. What should you recommend?",
+      "options": [
+        "A. DMSA scan at 6 months",
+        "B. MCUG at 6 weeks",
+        "C. No imaging",
+        "D. US acutely",
+        "E. US at 6 weeks"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Recent NICE guidelines recommend no imaging for simple (non-atypical) first UTIs in infants 6 months - 3 years and children over 3 years which respond to antibiotics within 48 hours. In children over 3 years with an atypical UTI, an US should be urgently arranged, in those with recurrent UTIs a 6 week US and 6 month DMSA scan should be arranged; there is no role in this age group for MCUG. An US is always performed in those < 6 months old (routinely at 6 wks), if this is abnormal, or there is an atypical organism, or recurrent UTIs, MCUG is performed. MCUG may be considered in those 6 months - 3 years if there is pelvic dilation on US, or a family history of VUR. Ref: NICE guideline CG54 (August 2007).",
+      "questionNumber": 25
+    },
+    {
+      "question": "Which of the following types of polycystic kidney disease is associated with the greatest degree of liver fibrosis?",
+      "options": [
+        "A. Autosomal dominant PKD",
+        "B. Antenatal autosomal recessive PKD",
+        "C. Infantile autosomal recessive PKD",
+        "D. Juvenile autosomal recessive PKD",
+        "E. Neonatal autosomal recessive PKD"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "ARPKD is associated with liver fibrosis and portal hypertension. The degree of hepatic fibrosis is inversely related to the degree of renal disease. The relative involvement is: antenatal (90%; renal disease; minimal hepatic fibrosis), neonatal (60%; mild fibrosis) infantile (20%; moderate fibrosis) and juvenile (10%; gross liver fibrosis). Juvenile type is postulated to be a primary hepatic fibrosis rather than an ARPKD. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 861-2.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 14 year old boy presents with mid/ lower back pain. He is noted to be kyphotic on examination. A lateral X-ray of the thoraco-lumbar vertebrae shows anterior wedging of the T8-10 vertebral bodies. What is the most likely diagnosis?",
+      "options": [
+        "A. Ankylosing spondylitis",
+        "B. Eosinophilic granuloma",
+        "C. Morquio's syndrome",
+        "D. Osteogenesis imperfecta",
+        "E. Scheuermann's disease"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Scheuermann's is thought to be caused by herniation of disc material through congenital end-plate defects during the adolescent growth spurt (presents 13-17 yrs). It accounts for 31 % of cases of back pain in adolescent boys and is located in the thoracic (75%) or thoraco-lumbar spine (25%). At least one vertebral body needs to be involved with anterior wedging of >5° (usually 3-5 are involved), and there must be kyphosis of >35°. The posterior aspect of the vertebral body is protected by posterior articulation. The other listed conditions are potential causes of kyphosis in children. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 879 & p. 911 & Radiology Review Manual, 6th Ed, p. 223.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 3 year old boy presents with a first seizure; he is afebrile. CT scan shows calcification within the right parietal gyri with ipsilateral skull thickening and enlargement of the choroid plexus. What is the likely diagnosis?",
+      "options": [
+        "A. Klippel-Trenaunay syndrome",
+        "B. Neurofibromatosis type 2",
+        "C. Sturge-Weber syndrome",
+        "D. Tuberous sclerosis",
+        "E. von Hippel Lindau syndrome"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Sturge-Weber syndrome is associated with a 'port-wine stain' naevus in the distribution of the trigeminal nerve, tram-track gyral calcification (usually parietal lobe), ipsilateral choroid plexus enlargement, leptomeningeal venous angiomas, hemiparesis, seizures, mental retardation, glaucoma (30%) and choidoidal haemangiomas of the orbit. Ref: Radiology Review Manual, 6th Ed, p. 326-7.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 2 year old boy considered at high risk for NAI. An initial skeletal survey is performed and subsequently a bone scan is requested for additional evaluation. Which of the following are not true regarding bone scintigraphy?",
+      "options": [
+        "A. It is more sensitive than plain film",
+        "B. It is more accurate in diagnosing skull fractures",
+        "C. It is less accurate in diagnosing metaphyseal fractures",
+        "D. It is less specific than plain film",
+        "E. Scintigraphy cannot reliably differentiate old and new fractures"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Bone scans have an increased sensitivity, but low specificity. Any fracture (accidental or non-accidental) will increase uptake on bone scan. Scintigraphy is most accurate for the evaluation of rib and long bone abnormalities. It is not accurate for the evaluation of skull fractures due to the increased activity in sutures. Bone scintigraphy is not accurate at determining the age of fractures (old fractures may have no activity); plain film is useful because different stages of healing have different radiographic features. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 873-4.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 3 day old baby has dyspnoea. The CXR shows shift of the mediastinum to the right; the left hemithorax is filled with multiple cyst-like structures. The stomach is centrally located and there is a paucity of bowel gas within the abdomen. What is the most likely diagnosis?",
+      "options": [
+        "A. Bochdalek hernia",
+        "B. Bronchogenic cyst",
+        "C. Congenital cystic adenomatoid malformation",
+        "D. Extrapulmonary sequestration",
+        "E. Septum transverum defect"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Congenital diaphragmatic hernias include Bochdalek (85-90%), Morgagni (5%), and rarely: septum transverum defects, hiatus hernia and diaphragmatic eventration. Bochdalek hernias are posterior, and left-sided (80%), Morgagni hernias are anterio-medial, right-sided. Differentiation from CCAM can be difficult, however, CCAM is less commonly macrocystic, the stomach will be normally sited to the left and the bowel gas pattern will be normal. Ref: Radiology Review Manual, 6th Ed, p. 490-1.",
+      "questionNumber": 30
+    },
+    {
+      "question": "Which of the following features is not a feature of Juvenile Chronic Arthritis?",
+      "options": [
+        "A. Growth retardation",
+        "B. Iridocyclitis",
+        "C. Rheumatoid factor positive",
+        "D. Spinal involvement typically precedes peripheral arthritis",
+        "E. Oligoarthritis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "JCA by definition starts < 16 years old, it can be oligo- or poly- arthritis and the majority of cases are seronegative. The large joints are typically affected first, diffuse ankylosis is common and periosteal reaction is typically present. Although there is often overgrowth of the epiphyses due to increased perfusion, there is usually growth retardation due to early closure of the growth plates. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 887.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 3 week old, previously well baby present with cough and difficulty in breathing. On examination there is reduced air entry on the right. CXR reveals complete opacification of the right hemithorax. There is rib crowding on the right and the trachea is positioned to the right. What is the most likely underlying cause?",
+      "options": [
+        "A. Congenital cystic adenomatoid malformation",
+        "B. Congenital diaphragmatic hernia",
+        "C. Extra-pulmonary sequestration",
+        "D. Mucous plugging",
+        "E. Pleural effusion"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "When there is a unilateral dense hemithorax, it needs to be decided if this is the abnormal side (usually obvious). The differential diagnosis is based on the medisatinum: if it moves towards the opaque side it suggests volume loss (collapse due to mucous plugging, asthma, CF, ET tube misplacement, pulmonary aplasia, and, rarely, pneumonectomy). Mediastinal shift away from the opaque side suggests mass effect, usually due to pleural fluid (or tumours, CCAM, etc). Ref: R-ITI 5_016. The_dense_hemithorax.",
+      "questionNumber": 32
+    },
+    {
+      "question": "Regarding lung lesions in the paediatric population. Which of the following conditions is the most likely to present as multiple pulmonary opacities?",
+      "options": [
+        "A. Arterio-venous malformations",
+        "B. Congenital cystic adenomatoid malformation",
+        "C. Extra lobar pulmonary sequestrations",
+        "D. Intralobar pulmonary sequestrations",
+        "E. Pulmonary hamartomas"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "AVMs are multiple in up to 35%, and are more likely to be so if associated with hereditary haemorrhagic telangiectasia. Pulmonary sequestrations and pulmonary hamartomas are considered solitary intrathoracic masses. Ref: R-ITI 5_017. Solitary Lung Opacity & 5_018. Multiple Lung Opacities.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 4 month old baby has a witnessed fall and head injury. The lateral skull view demonstrates no fracture, but shows multiple bones within the lambdoid suture. Which of the following is the least likely cause?",
+      "options": [
+        "A. Cleidocranial dysostosis",
+        "B. Hypoparathyroidism",
+        "C. Normal variant",
+        "D. Osteogenesis imperfecta",
+        "E. Pycnodysotosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Wormian bones are intra-sutural ossicles, commonest in the lambdoid suture. They are normally found up to 6 months of age (the commonest cause). The mnemonic 'PORKCHOPS' can be used to remember other causes: Pyknodysostosis, Osteogenesis imperfecta, Rickets (healing phase), Kinky hair syndrome, Cleidocranial dysostosis, Hypothyroidism/ Hypophosphatasia, Otopalattodigital syndrome, Pachydermoperiostosis, and (syndrome of) Down. Ref: Radiology Review Manual, 6th Ed, p. 178.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 3 year old presents with abdominal pain and vomiting. The paediatric surgeons are concerned about possible malrotation and request a plain film in the first instance. What is the most common plain radiograph finding in malrotation?",
+      "options": [
+        "A. Bowel wall oedema",
+        "B. Caecum located on left side",
+        "C. Normal",
+        "D. Small bowel obstruction",
+        "E. SMA lying to right of the SMV"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The commonest plain film finding in malrotation is 'normal appearances', thus a 'normal' AXR cannot exclude malrotation. Other plain film findings of malrotation include ascites, bowel wall oedema (thumb-printing, due to SMV compression), evidence of ischaemic gut (due to SMA compression), duodenal obstruction (due to Ladd's bands), SBO, right-sided small bowel, left-sided caecum/ colon. Ref: R-ITI 5 042. Malrotation.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 1 year old girl presents to A&E with a harsh cough, fever and stridor. A lateral neck X-ray shows normal supraglottic structures. The CXR shows narrowing of the sub-glottic airway. What is the most likely diagnosis?",
+      "options": [
+        "A. Croup",
+        "B. Enlarged tonsils",
+        "C. Epiglottitis",
+        "D. Inhaled foreign body in RLL",
+        "E. Vocal cord palsy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Croup is a viral infection occurring at 6 months - 3 years, mainly in winter. The 'steeple' (or inverted 'V') sign is due to oedematous narrowing of the sub-glottic airway. Epiglottitis is caused by Haemophilus influenzae and typically presents with stridor, fever, sore throat and drooling. It usually presents in older children (3-6 years), the key finding is thickened aryepiglottic folds on lateral neck films and it may be associated with subglottic narrowing similar to croup. Ref: R-ITI 5 081. Stridor In Children.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A neonate has bile stained vomiting post feeding. The AXR shows a 'double bubble' sign? Which of the following conditions is the least likely underlying cause?",
+      "options": [
+        "A. Annular pancreas",
+        "B. Duodenal atresia",
+        "C. Ladd's bands",
+        "D. Pre-duodenal vein",
+        "E. Pyloric stenosis"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The 'double bubble' sign describes gas within the proximal duodenum and stomach. There is often a gasless distal abdomen due to obstruction in the duodenum. Pyloric stenosis causes obstruction at the level of the pylorus. In this condition, the duodenum is usually gas-free - if gas passes into the duodenum it will also freely pass more distally. Ref: Aids to Radiological Differential Diagnosis. 4th Ed, p. 218.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 5 year old girl presents with a swelling on the left side of her neck. An MRI examination is subsequently arranged for investigation. Which feature makes branchial cleft cyst more likely than cystic hygroma?",
+      "options": [
+        "A. Associated coarctation of the aorta",
+        "B. Extending between ECA/ICA",
+        "C. Extension into mediastinum",
+        "D. High signal on T2W MR imaging",
+        "E. Multi-loculated appearance on US"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Branchial cleft cyst is usually in the anterior triangle. The 'beak sign', where tissue points between the ICA and ECA is described as pathognomonic. Cystic hygroma is a single or multiloculated lymphangioma and is associated with chromosomal anomalies, including Turner's syndrome (coarctation in 15%). Both are high signal on T2, cystic hygroma may be low or high signal on T1 (depending on levels of lipid/ protein/ blood products). Ref: Radiology Review Manual, 6th Ed, p. 376-7 & p. 390.",
+      "questionNumber": 38
+    },
+    {
+      "question": "An antenatal US shows oligohydramnios, a protruberant abdomen, bilateral hydronephrosis and markedly dilated and tortuous ureter. The posterior urethra is dilated and there is a large distended thin-walled bladder. At birth the testicles are noted to be undescended. What is the most likely diagnosis?",
+      "options": [
+        "A. Cloacal abnormality",
+        "B. Megacystis-microcolon-hypoperistalsis (MMH) syndrome",
+        "C. Posterior urethral valves",
+        "D. Prostatic rhabdomyosarcoma",
+        "E. Prune-belly syndrome"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Prune-belly syndrome is a triad of absent/ deficient abdominal muscles, renal dysplasia (bilateral hydroureters/ hydronephrosis), and cryptorchidism. Due to the associated absence of the prostate gland, the posterior urethra is often dilated proximally - the entire urethra may be dilated. PUVs are a key differential, but the implied abdominal wall defect, thin-walled bladder, and cryptorchidism go against this. MMH causes insufficiency of the abdominal viscera, but occurs in females. Rhabdomyosarcoma would be unusual antenatally. Ref: Fundamentals of Diagnostic Radiology, 2nd Ed, p. 1309-10.",
+      "questionNumber": 39
+    },
+    {
+      "question": "Which of the following causes of neonatal hydrocephalus is more likely to be communicating rather than non-communicating?",
+      "options": [
+        "A. Aqueduct stenosis",
+        "B. Arnold-Chiari syndrome",
+        "C. Dandy-Walker syndrome",
+        "D. Encephalocoele",
+        "E. Germinal matrix haemorrhage"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Obstructive (non-communicating) causes are more common and include spina bifida, aqueduct stenosis, Dandy-Walker syndrome, Arnold-Chiari syndrome, meningocoele, and encephalocoele. Non-obstructive causes result from reduced reabsorption within the arachnoid granulation tissue, e.g. infection or haemorrhage, or increased CSF production e.g. choroid plexus papilloma; these can also cause obstructive hydrocephalus also. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 779.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A request is made for an MRI examination in a neonate. An antenatal US had revealed agenesis of the corpus callosum. The MRI scan shows an abnormal posterior fossa. Which of these features make Dandy-Walker a more likely diagnosis than Chiari II malformation?",
+      "options": [
+        "A. Hydrocephalus",
+        "B. Klippel-Feil anomaly",
+        "C. Large posterior fossa",
+        "D. Syringohydromyelia",
+        "E. 'Towering' cerebellum"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Dandy-Walker malformation results from congenital atresia of the foramina of Magendie and Luschka, leading to an enlarged posterior fossa, a large posterior fossa cyst, hydrocephalus and varying degrees of cerebellar hemisphere and verminian hypoplasia. Both have syringohydromyelia and hydrocephalus; Chiari II has a small posterior fossa; Chiari I is associated with Klippel-Feil. Ref: Primer of Diagnostic Imaging, 4th Ed, p. 571-6.",
+      "questionNumber": 41
+    },
+    {
+      "question": "A pregnant mother with low a-FP, increased β-hCG and decreased unconjugated oestriol on screening is considered high risk for carrying a baby with Down's syndrome. An 18 week anomaly US is arranged. Which of the following findings indicative of Down's syndrome is least likely to be seen?",
+      "options": [
+        "A. Cystic hygroma",
+        "B. Duodenal atresia",
+        "C. Omphalocoele",
+        "D. Increased nuchal thickness",
+        "E. Short femur length"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "13-50% may not have any US-detectable anomalies. Duodenal atresia is present in 50%, but is not detected before 22 weeks. Nuchal thickness is increased in 40% to >= 3 mm at 10-13 wks, >= 5 mm at 14-18 wks; CHDs are present in 40%. Other US findings include hydrops, echogenic bowel, pyelectasis, hypoplasia of the 5th digit, and 11 pairs of ribs. Ref: Radiology Review Manual, 6th Ed, p. 70-1.",
+      "questionNumber": 42
+    },
+    {
+      "question": "Regarding duplication cysts of the gastro-intestinal tract in neonates. Where is the commonest location?",
+      "options": [
+        "A. Duodenum",
+        "B. Ileum",
+        "C. Jejunum",
+        "D. Oesophagus",
+        "E. Stomach"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "15% of paediatric abdominal masses are duplication cysts, they can be found anywhere along the GI tract, commonest locations are: ileum (30-33%), oesophagus (17-20%), colon (13-20%), jejunum (10-13%), stomach (7%), pylorus (4%), duodenum (4-5%), ileocaecal junction (4%), rectum (4%). Ref: Radiology Review Manual, 6th Ed, p. 824.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 9 year old child presents following an RTA. Prelimary 'FAST' scan US in A&E shows intra-abdominal free fluid. The child is resuscitated and a CT requested to help identify a bleeding site. Which of the following is not a recognised feature of hypovolaemia with CT?",
+      "options": [
+        "A. Small hypodense spleen",
+        "B. Reduced renal enhancement",
+        "C. Small bowel dilatation",
+        "D. Collapsed IVC",
+        "E. Pancreatic enhancement"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The kidneys show enhancement, the so-called 'shock nephrogram' due to decreased excretion of contrast medium. The spleen is small and hypodense due to hypoperfusion; the small bowel is dilated with wall thickening/ enhancement due to vasoconstriction of the mesenterics, and the IVC collapsed due to decreased venous return (a very serious sign). Ref: Radiology Review Manual, 6th Ed, p. 807.",
+      "questionNumber": 44
+    },
+    {
+      "question": "An infant is seen by the GP non-acutely, with stridor. He is systemically well and is not in distress. Tracheomalacia is suspected as a possible cause and further investigations are arranged. Regarding tracheomalacia, which of the following statements is correct?",
+      "options": [
+        "A. It is associated with trachea-oesophageal fistula",
+        "B. It is the commonest cause of inspiratory stridor",
+        "C. Expiratory CT is the definitive method of diagnosis",
+        "D. Resolution occurs in late childhood",
+        "E. The trachea typically collapses in inspiration"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Tracheomalacia can be congenital due to immaturity of the tracheal cartilage and is associated with TOF. Secondary causes include vascular rings, infective, inflammatory or post-instrumentation. It is frequently found in children who have undergone TOF repair. There is collapse of the airway on expiration with associated expiratory stridor, although rarely, if the extra-thoracic trachea is affected, there may be inspiratory collapse/ stridor. Majority have resolution of symptoms by 1 year. Chest fluoroscopy can confirm diagnosis, but bronchoscopy is more definitive; CT may not reveal its dynamic nature. Ref: Radiology Review Manual, 6th Ed, p. 447.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 15 year old girl presents with gradually increasing bilateral hip pain. Pelvic X-ray reveals bilateral sclerosis of the femoral head, with lucent crescents paralleling the articular surface and subchondral cysts. The acetabulum is normal and the epiphyseal height and alignment is preserved. She had an episode of right hip pain 1 year ago and the X-ray was reported as normal. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Developmental dysplasia of the hips",
+        "B. Diaphyseal achlasia",
+        "C. Perthe's disease",
+        "D. Sickle cell disease",
+        "E. Slipped upper femoral epiphyses"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Bilateral AVN of the femoral head is described; plain film signs may lag several months behind symptom onset. Perthe's can cause idiopathic AVN and is bilateral in 5-10% (systemic disorders are more likely to be bilateral), but typically presents at 5-10 years, and the patient was described as having a normal X-ray aged 14. Other causes to consider are trauma, collagen vascular diseases, glycogen storage diseases, drug therapy (steroids). Ref: Radiology Review Manual, 6th Ed, p. 49-50.",
+      "questionNumber": 46
+    },
+    {
+      "question": "Regarding the normal anatomy of the umbilical cord, there is:",
+      "options": [
+        "A. 1 umbilical artery, 1 umbilical vein",
+        "B. 1 umbilical artery, 2 umbilical veins",
+        "C. 2 umbilical arteries, 1 umbilical vein",
+        "D. 2 umbilical arteries, 2 umbilical veins",
+        "E. No 'normal number' as it is common to have different combinations of umbilical arteries/veins as an anatomical variant"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A single UA is present in less than 1 % of all births. Single UA is more common with twins and diabetic mothers, and is associated with congenital anomalies. Ref: Radiology Review Manual, 6th Ed, p. 1063.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 4 week old baby is cyanosed and has a heart murmur. The CXR reveals pulmonary oedema with widening of the superior mediastinum to produce a 'snowman' ('cottage loaf') appearance. What is the likely type of total anomalous pulmonary venous connection (TAPVC) present?",
+      "options": [
+        "A. Cardiac",
+        "B. Infracardiac",
+        "C. Mixed",
+        "D. Scimitar syndrome",
+        "E. Supracardiac"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "TAPVC describes return of the pulmonary veins to the RA rather than the LA; there are 3 types: supracardiac, cardiac and infracardiac. Supracardiac is the commonest; the veins drain into a common left-sided trunk which runs superiorly and drains into the left innominate vein then the SVC, widening the superior mediastinum to give the 'snowman' ('cottage loaf' or 'figure 8') appearance. Scimitar syndrome is a type of PAPVC. Ref: R-ITI 5_033. Cardiac Shapes.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 10 year old boy presents to his GP with back-pain. He is found to have a scoliosis, but is also noted to be tall for his age and rather thin. Which of the following supports the diagnosis of Marfan's syndrome over homocystinuria?",
+      "options": [
+        "A. Aortic aneurysm",
+        "B. Lens dislocation",
+        "C. Mental retardation",
+        "D. Osteoporosis",
+        "E. History of pulmonary emboli"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The conditions have a similar phenotype. In Marfan's there is MV prolapse, aortic regurgitation, coarctation, and dissecting aneurysm of the ascending aorta; lens dislocation is upwards and outwards (down/ inward in homocystinuria). Homocystinuria is an enzyme deficiency disorder, leading to homocystine build-up which causes a defect in collagen structure. Features which help distinguish it from Marfan's include the propensity for thrombo-embolic disease and osteoporosis (osteopaenia in Marfan's). Ref: Radiology Review Manual, 6th Ed, p. 103 & 115.",
+      "questionNumber": 49
+    },
+    {
+      "question": "An antenatal US shows a myelomeningocoele of the lower cord, but normal cranial appearances. A post-natal lateral skull X-ray reveals multiple ovoid lucencies with thinning of the inner table of the calvarium, clustered within in the parietal and occipital bones. What is the most likely diagnosis?",
+      "options": [
+        "A. Convolutional markings",
+        "B. Dermoid cyst",
+        "C. Epidermoid cyst",
+        "D. Lacunar skull",
+        "E. Langerhans cell histiocytosis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Lacunar skull (luckenschadel) is due to defective ossification of the inner table of the skull. There are oval lucencies which are present at birth and disappear by 5 months. They are not due to increased intracranial pressure/ hydrocephalus, but are associated with Chiari II malformations, encephalocoeles, and myelomeningocoeles. Convolutional markings do not appear until 1 year; the other options are causes of lucent lesions (+/- soft tissue mass) in the neonate. Ref: R-ITI 5_090. Skull Vault Lucencies and Bumps on the Head.",
+      "questionNumber": 50
+    }
+  ]
+}
+

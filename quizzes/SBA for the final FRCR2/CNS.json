@@ -1,0 +1,988 @@
+
+{
+  "title": "Central Nervous, Head and Neck - Questions 1-25",
+  "questions": [
+    {
+      "question": "A 9-year-old male presents to the paediatric A&E department with a history of increasing drowsiness over the last 24 hours. Neurological assessment reveals that there is absence of upward gaze. A CT brain is requested which reveals hydrocephalus, with marked dilatation of the lateral and third ventricles.The fourth ventricle is unremarkable and there is obliteration of the ambient cistern due to mass effect from a hyperdense mass noted posterior to the third ventricle.This mass has some central areas of calciﬁcation.There is no evidence of haemorrhage. An MRI is carried out following insertion of a shunt to decompress the ventricles. On sagittal sequences a lesion is located between the splenium of the corpus callosum and the tectal plate, which exerts mass effect.This lesion is of intermediate signal intensity on both T1WI and T2WI, and displays avid contrast enhancement. Enhancing meningeal lesions are also noted in the spinal cord, indicating seeding. What is the most likely diagnosis?",
+      "options": [
+        "A. Pituitary teratoma.",
+        "B. Meningioma.",
+        "C. Pineoblastoma.",
+        "D. Germinoma.",
+        "E. Pineal cyst."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The lesion is described in the pineal region, so the differential of pineal tumours should be considered. These are differentiated between germ cell tumours and pineal cell tumours. Germinomas account for 40% of all pineal region masses and are much more frequent in males than females. They are also the most common germ cell tumour, with teratomas and choriocarcinoma having different imaging characteristics. The main differential in this case is between pineoblastoma and germinoma, as both occur in patients of this age group and both are hyperdense on CT. Imaging features described to help differentiate are the avid enhancement, which is more characteristic of germinomas, but can occur in either. Central calciﬁcation is seen commonly in germinomas, but is uncommon in pineoblastomas, and when it occurs is often peripheral, giving the impression of an ‘exploded’ pineal gland. Subarachnoid seeding is seen in both tumours and if present CSF sampling can yield a tissue diagnosis. Pineocytomas occur in an older age group and infrequently cause subarachnoid seeding.\n\nSmirniotopoulos J, Rushing E, and Mena H. Pineal region masses: differential diagnosis. RadioGraphics 1992; 12(3): 577–596\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, pp. 156–162.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A patient presents with recent onset neurological symptoms suspicious of an acute presentation of multiple sclerosis (MS). Which of the following anatomical sites of plaque involvement is least consistent with this?",
+      "options": [
+        "A. Corpus callosum.",
+        "B. Spine involvement in the absence of brain involvement.",
+        "C. Cerebral cortex.",
+        "D. Symmetrical involvement of cerebral white matter.",
+        "E. Floor of the fourth ventricle."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Symmetrical involvement of the cerebral hemispheres or cerebellar peduncles is unusual in MS and is occasionally seen in acute disseminated encephalomyelitis (ADEM). ADEM can mimic an acute presentation of MS both clinically and in terms of imaging ﬁndings. The monophasic nature of ADEM can be deduced both from the uniformity of lesional oedema and contrast enhancement in the acute phase. Lesions in ADEM resolve on follow-up, and although enhancing and non-enhancing lesions can coexist for a period, new lesions should not appear.\n\nMS plaques are classically seen in the periventricular and juxtacortical white matter. The other options in the question are all common plaque locations. Involvement of the corpus callosum is characteristic. Other common supratentorial sites include the white matter abutting the temporal horns and trigones of the lateral ventricles. Cortical lesions are less conspicuous on MRI than white matter lesions, but their detection is improved by the inclusion of a FLAIR sequence. Juxtacortical white matter lesions are highly suggestive of MS, as lesions are not commonly seen in this region in normal ageing. Twelve per cent of patients have lesions on MRI limited to the spine without brain involvement.\n\nPretorius PM and Quaghebeur G. The role of MRI in the diagnosis of MS. Clinical Radiology 2003; 58: 434–448.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 45-year-old female patient is referred to you with a history of mild confusion and new onset seizures.This patient has a history of breast cancer and is currently undergoing chemotherapy following a wide local excision with axillary radiotherapy.The patient has a low-grade pyrexia and a low neutrophil count. An MRI reveals a solitary lesion in the right frontal lobe, which is low/intermediate signal on T1WI and high signal on T2WI.The lesion demonstrates ring enhancement. Diffusion-weighted imaging (DWI) reveals slightly increased signal on B1000 imaging, with increased signal on B0 imaging, and this area is bright on the apparent diffusion coefﬁcient (ADC) map. What is the most likely diagnosis?",
+      "options": [
+        "A. Abscess.",
+        "B. Metastasis.",
+        "C. Glioblastoma multiforme.",
+        "D. Infarct.",
+        "E. Radiotherapy change."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The answer options give some of the classical radiological differentials for a ring-enhancing lesion in the brain: MAGIC DR (metastasis, abscess, glioblastoma multiforme, infarct, contusion, demyelinating conditions and post-radiotherapy change). The clinical history should steer the reader toward the ﬁrst two. DWI is reasonably useful at differentiating between these two (exceptions being in some fungal infections and toxoplasmosis), with necrotic metastasis having unrestricted diffusion and abscess having restricted diffusion. The appearances in this case are slightly confused by the DWI b1000 imaging showing increased signal. However, the presence of increased signal on the ADC map correctly identiﬁes this as being T2 shine through, showing the importance of checking both sequences.\n\nChapman N and Nakielny R. Aids to Radiological Differential Diagnosis, 4th edn, Saunders, 2003, p. 433.\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, p. 143.",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 69-year-old lady was admitted 10 days ago following an acute intracerebral haematoma diagnosed on CT. What are the most likely radiological ﬁndings on the follow-up MRI scan of brain?",
+      "options": [
+        "A. Haematoma hypointense to grey matter on T1WI, hyperintense on T2WI.",
+        "B. Haematoma hyperintense to grey matter on both T1WI and T2WI.",
+        "C. Haematoma hyperintense to grey matter on T1WI, hypointense on T2WI.",
+        "D. Haematoma hypointense to grey matter on both T1WI and T2WI.",
+        "E. Haematoma isointense to grey matter on both T1WI and T2WI."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The MRI appearances of intracranial haemorrhage are determined primarily by the state of the haemoglobin (Hb), which evolves with age. This can be staged as hyperacute (ﬁrst few hours), acute (1–3 days), early subacute (3–7 days), late subacute (4–7 days to 1 month), or chronic (1 month to years). Table 6.1 illustrates the sequential signal intensity changes of the evolving intracerebral haematoma.\n\nTable 6.1 The sequential signal intensity changes of the evolving intracerebral haematoma\nState of Hb | Magnetic properties | T1 Signal intensity | T2 Signal intensity\nHyperacute | Intracellular oxy-Hb | Diamagnetic | m/q | o\nAcute | Intracellular deoxy-Hb | Paramagnetic | m/q | q\nEarly subacute | Intracellular met-Hb | Paramagnetic | oo | qq\nLate subacute | Extracellular met-Hb | Paramagnetic | oo | oo\nChronic | Haemosiderin | Superparamagnetic | m/q | qq\n\nData from Parizel PM, Makkat S, Van Miert E, Van Goethem JW, van den Hauwe L, and De Schepper AM. Intracranial hemorrhage: principles of CT and MRI interpretation. European Radiology 2001; 11: 1770–1783.",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 40-year-old man is being investigated by the neurologists for new onset epilepsy. An electroencephalogram (EEG) indicates an epileptogenic focus in the left temporal lobe. An MRI is carried out.The hippocampal structures are unremarkable. A 2-cm lesion is noted in the subcortical region of the left temporal lobe.This lesion demonstrates mild enhancement. Areas of low signal on T1WI and T2WI are felt to represent foci of calciﬁcation. There is also an area of high signal on T1WI and T2WI seen inferiorly within the lesion, which probably represents an area of haemorrhage.There is a rim of surrounding oedema noted on T2WI and ﬂuid-attenuated inversion recovery (FLAIR). What is the most likely diagnosis?",
+      "options": [
+        "A. Haemangioblastoma.",
+        "B. Desmoplastic infantile ganglioglioma (DIG).",
+        "C. Dysembryoplastic neuroepithelial tumour (DNET).",
+        "D. Pleomorphic xanthoastrocytoma (PXA).",
+        "E. Oligodendroglioma."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Prior to evaluating the imaging characteristics, the patient’s demographics should be considered in this case, as in all cases of intracranial masses, as it will help limit the differential diagnosis signiﬁcantly. The patient is an adult, thus making DIG and DNET unlikely. Secondly, consider the temporal lobe location. Haemangioblastomas are usually infratentorial in location, especially in the absence of a history of von Hippel–Lindau syndrome. All the other lesions are classical temporal lobe tumours. Finally, considering the imaging characteristics, both PXA and oligodendrogliomas may be entirely solid, but cysts are commonly seen in PXAs. Calciﬁcation is seen in 60–80% of oligodendrogliomas, but is rarely seen in PXAs. Similarly haemorrhage, while not typical of oligodendrogliomas, is rare in PXAs.\n\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, pp. 137–141.",
+      "questionNumber": 5
+    },
+    {
+      "question": "A 52-year-old man is investigated by MRI of brain for a possible transient ischaemic attack (TIA). Focal lesions of CSF signal intensity are identiﬁed adjacent to the anterior commissures.The referring neurologist suspects that these lesions are chronic lacunar infarcts. What MRI ﬁnding suggests that these are in fact prominent perivascular spaces?",
+      "options": [
+        "A. No restricted diffusion on DWI.",
+        "B. Hypointense on T1WI.",
+        "C. Hyperintense on T2WI.",
+        "D. Suppress on FLAIR.",
+        "E. Normal surrounding brain parenchyma."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Perivascular spaces (Virchow–Robin spaces) are pial lined interstitial ﬂuid structures that accompany penetrating arteries, but do not communicate directly with the subarachnoid space. They can occur anywhere, but typically cluster around the anterior commissure. They follow CSF signal intensity, suppress on FLAIR, and do not exhibit restricted diffusion. They can occasionally be giant when located within the midbrain. Lacunar infarcts will also be hypointense on T1WI and hyperintense on T2WI. Restricted diffusion will be seen when acute/subacute. They are typically of increased signal on FLAIR, although will suppress if there is central encephalomalacia. A halo of surrounding high signal on T2WI and FLAIR is typical of lacunar infarction, although up to 25% of prominent perivascular spaces can also demonstrate a slight halo of increased signal. Lacunar infarcts are also more typically seen in the setting of more extensive white matter disease.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Castillo M et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-7: 22–25.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A patient with a known diagnosis of a neurocutaneous syndrome is having a routine follow-up MRI scan.This patient is noted to have a history of right retinal calciﬁcations. On MRI a retinal lesion is noted in the right eye, which is increased signal on T1WI.The scan shows a 2-cm lesion in the left lateral cerebellar hemisphere.This is predominantly low on T1WI and high on T2WI, but has a peripheral nodular area, which has a central signal void and demonstrates enhancement on T1WI. A further small enhancing lesion is noted in the cervical spinal cord, with an associated syrinx.The appearances are unchanged from previous imaging. Based on these ﬁndings, which neurocutaneous syndrome does this patient have?",
+      "options": [
+        "A. Neuroﬁbromatosis type 1 (NF-1).",
+        "B. Neuroﬁbromatosis type 2 (NF-2).",
+        "C. Tuberous sclerosis.",
+        "D. Sturge Weber syndrome.",
+        "E. Von Hippel–Lindau syndrome."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This syndrome is characterized by retinal lesions variously described as being retinal angiomas, retinal haemangiomas, or retinal hamartomas. These lesions (Lindau tumours) cause retinal calciﬁcation, although this is also seen in NF-1 and tuberous sclerosis (TS) from other causes. The ﬁndings describe the classical appearance of a cerebellar haemangioblastoma. These lesions can also be entirely cystic or solid in a minority of cases. A signal void and lack of dural enhancement help differentiate this from other infratentorial masses in adults. Twenty per cent of haemangioblastomas are associated with Von Hippel–Lindau syndrome and 80% of Von Hippel–Lindau syndrome patients have this tumour. The spinal ﬁnding also indicates a further haemangioblastoma in the cord. Unlike in the posterior fossa, these seldom have ﬂow voids, but are associated with the development of a syrinx.\n\nLeung R, Biswas S, Duncan M, and Rankin S. Imaging features of von Hippel-Lindau Disease. RadioGraphics 2008; 28(1): 65–79.\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, pp. 456–457. Chapman S and Nakielny R. Aids to Radiological Differential Diagnosis, 4th edn, Saunders, 2003, pp. 450–451.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 32-year-old man presents with recent onset of migraine and TIAs. He also reports some cognitive decline. Cerebral angiogram is normal. An MRI of brain reveals discrete hyperintensities in the anterior temporal poles and external capsules. What is the most likely diagnosis?",
+      "options": [
+        "A. Cerebral autosomal dominant arteriopathy with subcortical infarcts and leukoencephalopathy (CADASIL).",
+        "B. Mitochondrial myopathy, encephalopathy, lactic acidosis, and stroke (MELAS).",
+        "C. Myoclonic epilepsy with ragged red ﬁbres (MERRF).",
+        "D. Sporadic subcortical arteriosclerotic encephalopathy (sSAE).",
+        "E. Protein S deﬁciency."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is a hereditary small vessel disease, which causes stroke in young adults. The genetic mutation is found on chromosome 19. Presentation can include migraine, cognitive decline, psychiatric disturbance, TIAs, and stroke, the latter usually with substantial/complete recovery after individual strokes, particularly early in the disease process.\n\nImaging reveals subcortical lacunar infarcts and leukoencephalopathy in young adults. The frontal lobe has the highest lesion load, followed by the temporal lobe and insula. Anterior temporal pole and external capsule lesions have higher sensitivity and speciﬁcity for CADASIL. The cerebral cortex is usually spared. MRI is the investigation of choice: CT will reveal only areas of hypodensity and angiography is normal.\n\nsSAE is associated with hypertension and results in multiple lacunar infarcts in the lenticular nuclei, pons, internal capsule, and caudate nuclei. MELAS and MERRF are mitochondrial disorders. MELAS results in bilateral multiple cortical and subcortical hyperintense lesions on FLAIR images; MERRF has a propensity for the basal ganglia and caudate nuclei, and watershed ischaemia/ infarcts are common. Hypercoagulable states such as protein S deﬁciency result in cortical and lacunar infarcts of various sizes, but the cerebral angiogram is abnormal.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Hedlund GL et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-4: 62–65.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 36-year-old patient with known AIDS is admitted to your hospital with a right-sided hemiparesis. His wife gives a history of cognitive decline, headache, and lethargy for the past few weeks, but with an acute deterioration in the last 36 hours. His CD4 counts are between 200 and 500 (category B). An MRI is carried out which shows multiple ring-enhancing lesions in the brain.These lesions are high signal on T2WI/FLAIR, but demonstrate a low intensity peripheral ring. Lesions are noted in the basal ganglia bilaterally.The cortical region and subcortical U-ﬁbres are spared. A thallium SPECT is also carried out that shows abnormal uptake in the brain, which correlates with the areas identiﬁed on MRI. What is your primary diagnosis?",
+      "options": [
+        "A. Nocardia abscesses.",
+        "B. Toxoplasmosis.",
+        "C. Progressive multifocal leukoencephalopathy.",
+        "D. Primary CNS lymphoma.",
+        "E. Cerebral cryptococcus infection."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is the most common intracranial opportunistic infection in AIDS patients and the most common cause of intracranial mass lesions in this population, with lymphoma second and cryptococcus third. Differentiating toxoplasmosis from lymphoma has been the subject of much debate in the literature and ultimately there is no deﬁnitive means of differentiating them on imaging alone. As described toxoplasmosis causes multiple ring-enhancing lesions and often affects the basal ganglia. Lymphoma tends to involve the subependymal regions and can cause leptomeningeal enhancement. Lymphoma can cause encasement of the ventricle, which is not seen with toxoplasmosis. Toxoplasmosis tends to be higher intensity on T2WI/FLAIR than lymphoma.\n\nPET and thallium SPECT have also been reported to show abnormal uptake in lymphoma, but not toxoplasmosis, although exceptions exist. Response to anti-toxoplasma treatment is often used as a clinical differentiator.\n\nCryptococcus classically causes dilatation of Virchow–Robin spaces. PML is a demyelinating condition secondary to JC virus of oligodendrocytes and is differentiated from other HIV-related demyelinating conditions by affecting the subcortical U ﬁbres.\n\nOfﬁah C and Turnbull I. The imaging appearances of intracranial CNS infections in adult HIV and AIDS patients. Clinical Radiology 2006; 61: 393–401.\nBuerger J. Mass lesions of the brain in AIDS: the dilemmas of distinguishing toxoplasmosis from primary CNS lymphoma. American Journal of Neuroradiology 2003; 24(4): 554–555.\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, p. 297.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 50-year-old male patient is referred from A&E for a CT brain. He has a history of headache for 2 months and increasing clumsiness.The CT shows a lesion abutting the sphenoid in the anterior cranial fossa. It measures 4 cm in size and demonstrates heterogeneous enhancement.There is no evidence of calciﬁcation.The lesion is displacing and effacing the third ventricle, causing mild hydrocephalus in the lateral ventricles. An MRI is performed.The lesion is isointense on T1WI and T2WI, and demonstrates an enhancing dural tail and broad dural base. Again the enhancement pattern is heterogeneous. A number of ﬂow voids are noted in the lesion. There is little peritumoural oedema noted. An MR angiogram is performed, which indicates dual supply to the lesion from the internal and external carotid artery. What lesion typically demonstrates these imaging ﬁndings?",
+      "options": [
+        "A. WHO 1 meningioma.",
+        "B. WHO 3 meningioma.",
+        "C. Haemangiopericytoma.",
+        "D. Melanocytoma.",
+        "E. Schwannoma."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The imaging ﬁndings clearly describe an extra-axial tumour. These are classed as either lesions of meningeal origin or tumours of neurogenic origin. The broad dural base and dural tail indicates that this is a tumour of meningeal origin. Meningioma is the most common of these tumours, but the imaging characteristics are not typical. World Health Organization (WHO) 1 and 2 meningiomas demonstrate uniform enhancement, although haemorrhage into meningiomas is recognized. WHO 3 meningiomas (malignant meningiomas) are indicated on imaging when there is invasion of the adjacent parenchyma, which is not described. Otherwise the diagnosis of malignant meningioma is made by an aggressive pattern of growth on serial imaging and biopsy. The dual arterial supply is also atypical. While meningiomas can have dual supply, they more typically derive their arterial supply from the external carotid (via the meningeal artery). Melanocytomas are suggested on imaging by increased signal on T1WI and are more commonly infratentorial. Without this the diagnosis is again reached most commonly following biopsy. All the features described are typical of haemangiopericytoma.\n\nSibtain N, Butt S, and Connor S. Imaging features of central nervous system haemangiopericytomas. European Radiology 2007; 17: 1685–1693.\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, 99–105.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A patient is referred to your neurointerventional team for embolization of a meningioma prior to surgical resection.The lesion is based on the tentorium. What is the likely feeding vessel (parent vessel is named in brackets)?",
+      "options": [
+        "A. Anterior meningeal artery (vertebral).",
+        "B. Middle meningeal artery (external carotid artery (ECA)).",
+        "C. Posterior meningeal artery (variable).",
+        "D. Bernasconi–Casanari artery (Internal carotid artery (ICA)).",
+        "E. Dorsal meningeal artery (ICA)."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The majority of meningiomas occur in the parafalcine region, along the convexity or around the sphenoid. These all derive their supply from the ECA, although parafalcine meningiomas can also receive supply from a branch of the ophthalmic artery. Tentorial or cerebellopontine angle (CPA) tumours are classically fed by the Bernasconi–Casanari artery, a branch of the meningohypophyseal trunk of the ICA. Lesions around the foramen magnum, clivus, and posterior fossa are fed by branches of the vertebral artery (anterior and posterior meningeal) and meningohypophyseal trunk of the ICA.\n\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, p. 104.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 7-year-old girl is brought into A&E with a history of headache of 4 hours’ duration, associated with neck stiffness.The parents noted a petechial rash and are concerned about the possibility of meningitis.\n\nThere is no photophobia and no other neurological signs are present.\n\nA&E have requested a CT scan to rule out raised intracranial pressure and to diagnose meningitis, whilst also commencing antibiotic therapy for presumed meningitis.The CT scan is normal. As it is a normal working day, A&E have also requested an MRI scan to diagnose meningitis.This was not carried out as the child was agitated.The following day the child develops a pyrexia and a right unilateral aspect to the headache, with decreased GCS. An MRI is carried out and demonstrates features of developing right temporal lobe empyema. Which of the following is an appropriate indication for imaging in the investigation of meningitis?",
+      "options": [
+        "A. CT to rule out raised intracranial pressure.",
+        "B. CT to diagnose meningitis.",
+        "C. MRI to diagnose meningitis.",
+        "D. MRI due to deterioration in clinical course.",
+        "E. All of these."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "In the absence of clinical features of raised intracranial pressure a CT is not necessarily indicated prior to lumbar puncture to exclude raised intracranial pressure. CT is also insensitive at diagnosing meningitis, being normal in most uncomplicated cases. MRI is also negative in 50% of cases of uncomplicated meningitis. The value of imaging is in the detection of complications of meningitis, including hydrocephalus, abcess, cerebritis, venous thrombosis, and infarction.\n\nHughes D, Raghavan A, Mordekar S, Grifﬁths P, and Connolly D. Role of imaging in the diagnosis of acute bacterial meningitis and its complications. Postgraduate Medical Journal 2010; 86(1018): 478–485.",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 13-year-old boy is brought to your paediatric hospital with a recent history of headache and high fever.The child is becoming progressively drowsy and demonstrates rigidity and tremor on neurological examination. An MRI is requested. Relevant past medical history on the request form is of recent travel to Asia, history of measles as a 6-year-old and recent viral infection.The MRI scan shows increased signal on T2WI and FLAIR sequences in the hippocampal regions of the temporal lobes.There is also increased FLAIR signal in the thalami and putamina bilaterally. Small foci of increased T1WI signal within these regions are felt to represent haemorrhage. What diagnosis would you place at the top of your differential list?",
+      "options": [
+        "A. Herpes simplex type 1 encephalitis.",
+        "B. Herpes simplex type 2 encephalitis.",
+        "C. Japanese encephalitis.",
+        "D. Varicella Zoster encephalitis.",
+        "E. Subacute sclerosing panencephalitis (SSPE)."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Japanese encephalitis and herpes simplex virus (HSV) encephalitis both present with similar acute and rapidly progressive neurological symptoms. The key differentiator is involvement of the basal ganglia, which is typical in Japanese encephalitis but rare in HSV. Both commonly involve the hippocampi, this being the classical appearance of HSV encephalitis. HSV type 1 is the subtype that affects adult and older children. HSV type 2 causes neonatal and in utero infection. Herpes varicella zoster virus (VZV) infection can be seen in immunocompromised children, but in the immunocompetent population is more typically seen in elderly patients, often, but not exclusively, in the presence of cutaneous shingles. It causes a vasculitis, which can be seen angiographically and causes bilateral increased T2WI/FLAIR foci and gyriform enhancement in the distribution of the vasculitis. SSPE presents with a more protracted history of neurological decline.\n\nAndreula C. Cranial viral infections in the adult. European Radiology 2004; 14: E132–E144.\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, 288–304.",
+      "questionNumber": 13
+    },
+    {
+      "question": "An 8-year-old female patient presents to your paediatric neurology service with a history of increasing ataxia, repeated headaches, and vomiting, increasing in severity over the last 5 months. Clinical examination reveals marked cerebellar signs of past pointing and dysdiadochokinesis. An MRI is requested, which shows a solid mass in the posterior fossa measuring 2 cm in size.This mass arises in the left cerebellar hemisphere and displaces the fourth ventricle. It is of low intensity on T1WI and high signal on T2WI. There is only a small rim of surrounding oedema.The lesion demonstrates relatively homogeneous moderate enhancement.There is no evidence of subarachnoid seeding. What is the most likely diagnosis?",
+      "options": [
+        "A. Pilocytic astrocytoma.",
+        "B. Ependymoma.",
+        "C. Medulloblastoma.",
+        "D. Metastasis.",
+        "E. Lhermitte–Duclos syndrome."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This question deals with the classical neurological differential diagnosis of a posterior fossa mass in a child. While there are many causes, pilocytic astrocytoma and medulloblastoma account for over 60% of all childhood posterior fossa masses. Pilocytic astrocytomas have a classical appearance of being cystic lesions with an avidly enhancing mural nodule. However, 30% of pilocytic astrocytomas are solid tumours. In differentiating them from medulloblastomas, pilocytic astrocytomas often arise more peripherally and displace the fourth ventricle, whereas medulloblastomas usually arise centrally from the vermis. Subarachnoid seeding is seen in up to 50% of cases of medulloblastoma. Ependymomas are also included in the differential. As these arise from the ependyma lining the ventricle, they tend to be centred on the fourth ventricle in children. Metastases are the most common cause of a posterior fossa mass in adults, but are less common in children.\n\nBrant W and Helms C. Fundamentals of Diagnostic Radiology, Lippincott Williams & Wilkins, 2006, pp. 135–142.",
+      "questionNumber": 14
+    },
+    {
+      "question": "A 30-year-old male patient is referred from ENT for an MRI with a history of tinnitus and slight hearing loss on the left side. A lesion is noted in the left cerebellopontine angle.This extends along the nerve and expands the internal auditory canal. A separate nerve is noted to enter the anterior superior portion of the internal auditory canal.The lesion is isointense to the pons on all pulse sequences. The lesion makes an acute angle with the petrous bone.There is no evidence of a dural tail following enhancement. What is the most likely cause?",
+      "options": [
+        "A. Meningioma.",
+        "B. Facial nerve schwannoma.",
+        "C. Vestibular nerve schwannoma.",
+        "D. Epidermoid.",
+        "E. Arachnoid cyst."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Even in the absence of the imaging ﬁndings this would be a reasonable bet as it accounts for 75% of CPA tumours. However, assessment of the imaging characteristics increases the likelihood of this diagnosis. The second most common cause of CPA tumour is meningioma (10%). Differentiating features are lack of a dural tail, acute angle with the petrous bone (seen in schwannomas, less commonly with meningiomas, which make an obtuse angle), and, most importantly, expansion of the internal auditory canal (IAC). Facial nerve schwannomas can appear in the same site and appear identical, but they only constitute 4% of lesions in this site and as such would not be the most likely cause. The facial nerve lies in the antero-superior portion of the IAC, although it cannot usually be separated from the mass in the IAC on imaging.\n\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, pp. 105–108.",
+      "questionNumber": 15
+    },
+    {
+      "question": "An MRI is carried out for your neurology service on a 30-year-old male patient.The most pertinent abnormality is of thick smooth meningeal enhancement following the dural-arachnoid around the convexity, falx, and tentorium without extension into the basal ganglia or ventricles.The referring clinician arrives to discuss the ﬁndings, but has mislaid the request form and clinical information. While he is looking for it, what do you think the most likely clinical presentation is?",
+      "options": [
+        "A. Neck stiffness, photophobia, raised WCC, petechial rash.",
+        "B. Neck stiffness, drowsiness, with history of breast cancer.",
+        "C. Acute limb weakness on right side 3 days previously, not resolving.",
+        "D. Recent back surgery complicated by ongoing CSF leak.",
+        "E. Possible fungal meningitis in immunocompromised patient."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The key feature is the pattern of meningeal enhancement. It is important to recognize that the imaging ﬁndings describe pachymeningeal, not leptomeningeal, enhancement and as such the causes of leptomeningeal enhancement (bacterial or fungal meningitis) can be discounted. Similarly a recent stroke can cause gyriform enhancement, not pachymeningeal enhancement. Breast cancer is the most common malignancy to cause pachymeningeal enhancement, but this would usually be more nodular than smooth. CSF leak or any cause of intracranial hypotension will be associated with smooth pachymeningeal thickening, primarily over the convexities and falx. This enhances, not because of any inﬂammatory process, but because this part of the meninges has no blood–brain barrier, unlike the leptomeninges.\n\nSmirniotopoulos J, Murphy F, Rushing E, Rees J, and Shroeder J. Patterns of contrast enhancement in the brain and meninges. RadioGraphics 2007; 27: 525–551.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A patient is having an MRI scan carried out to investigate a possible right frontal astrocytoma, incidentally detected on CT following a head injury. The MRI features are typical of an astrocytoma, with no evidence of necrosis or callosal involvement to indicate glioblastoma multiforme (GBM). MRS has been carried out to help assess the grade of this tumour. What MRS features would indicate a high grade lesion?",
+      "options": [
+        "A. Elevated choline, reduced N-acetyl aspartate (NAA), choline/creatine (Cho/Cr) ratio of 1.",
+        "B. Elevated choline, reduced NAA, Cho/Cr ratio of 2.",
+        "C. Normal choline, elevated NAA.",
+        "D. Reduced choline, reduced NAA. Cho/Cr ratio of 1.2.",
+        "E. All normal, these are unaffected by tumour grade."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "NAA is thought to be a marker of neuronal integrity, choline indicates cell turnover, and creatine indicates cell metabolism. Lactate is not detectable in normal brain spectra but is elevated in inﬂammation, infarction, and some neoplasms. Most brain conditions, whether neoplastic, vascular, or demyelinating, are associated with a reduction in NAA. A notable exception is Canavan’s disease, which causes a rise in NAA. Choline is elevated in many disorders, but is markedly increased in high-grade neoplasms. It has been reported that the ratio of choline to creatine can be used to help grade tumours, with a ratio over 1.5 indicating high grade in the majority of cases. A reduced choline and NAA in an area of tumour can indicate necrosis.\n\nSoares D and Law M. Magnetic resonance spectroscopy of the brain: review of metabolites and clinical applications. Clinical Radiology 2009; 64(1): 12–21.\nFayed N, Davila J, Medrano J, and Olmos S. Malignancy assessment of brain tumours with magnetic resonance spectroscopy and dynamic susceptibility contrast MRI. European Journal of Radiology 2008; 67(3): 427–433.",
+      "questionNumber": 17
+    },
+    {
+      "question": "Which one of the following orbital pathologies typically arises from the intraconal compartment?",
+      "options": [
+        "A. Cavernous haemangioma.",
+        "B. Adenocystic carcinoma.",
+        "C. Rhabdomyosarcoma.",
+        "D. Dermoid.",
+        "E. Orbital pseudotumour."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The orbital compartments are split up into extraconal, conal, intraconal, and globe. The extraconal compartment consists of fat, lacrimal gland, and bony orbit. Pathology in this region includes infection, neuroﬁbroma, adenocarcinoma, mucoepidermoid and adenoid cystic carcinoma, neoplasia of bone, and lymphoma.\n\nConal pathology (muscle) includes rhabdomyosarcoma, thyroid eye disease, and idiopathic orbital inﬂammation (pseudotumour).\n\nThe intraconal compartment consists of fat, lymph nodes, vessels, nerves, and the optic nerve sheath complex. Pathology in this region includes venolymphatic malformation, haemangioma, arteriovenous malformation, optic nerve meningioma/glioma, and lymphoma.\n\nPathology in the globe includes retinoblastoma, metastasis, and melanoma.\n\nAviv RI and Miszkiel K. Orbital imaging Part2. Intraorbital pathology. Clinical Radiology 2005; 60: 288–307.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 35-year-old man presents with tinnitus and hearing loss in the right ear. Investigations include an MRI of the internal auditory meati.This demonstrates an expansile lesion in the right petrous apex, without bone destruction.The lesion is of increased signal on T1WI, increased signal on T2WI, and non-enhancing. What is the most likely diagnosis?",
+      "options": [
+        "A. Cholesteatoma.",
+        "B. Petrous apex cephalocele.",
+        "C. Mucocele.",
+        "D. Petrous apicitis.",
+        "E. Cholesterol granuloma."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The ﬁndings described are typical of cholesterol granuloma. A critical distinction is between this and a petrous carotid artery aneurysm, which may show similar features of increased T1WI signal. However, the presence of ﬂow void, lesion centred on the carotid canal, and additional complex areas of signal due to blood products of varying ages might be expected in an aneurysm.\n\nA petrous apex cephalocele is an area of ﬂuid signal (hypointense T1WI, hyperintense T2WI) adjacent to the petrous apex that is in communication with Meckel’s cave.\n\nA mucocele of the petrous apex may cause benign bony expansion and is typically of decreased signal on T1WI and increased signal on T2WI, and is non-enhancing. A cholesteatoma may have similar T1WI and T2WI signal characteristics, but these entities may be differentiated by DWI. On DWI, cholesteatoma is typically of increased signal, whereas a mucocele is of decreased signal.\n\nPetrous apicitis is an aggressive process that typically enhances with gadolinium and is secondary to infection. There may be an accompanying history of infection, middle ear disease, diabetes, or immunocompromise.\n\nConnor SEJ, Leung R, and Natas S. Imaging of the petrous apex: a pictorial review. British Journal of Radiology 2008; 81: 427–435.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 54-year-old lady with a history of exophthalmos undergoes a CT scan of orbits for assessment.There is spindle-shaped enlargement of extra-orbital musculature that does not involve the tendinous insertions. Which pair of muscles is most likely to be involved?",
+      "options": [
+        "A. Superior and inferior.",
+        "B. Superior and medial.",
+        "C. Superior and lateral.",
+        "D. Inferior and medial.",
+        "E. Inferior and lateral.",
+        "F. Medial and lateral."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The question refers to Graves ophthalmopathy, where enlargement of the extraocular muscles is observed, with sparing of the tendinous insertions. This is in distinction to idiopathic orbital inﬂammatory syndrome, where the muscle swelling typically involves the tendinous insertions.\n\nIn Graves ophthalmopathy, the extra-orbital muscles are involved with decreasing frequency as follows: inferior, medial, superior, and lateral recti.\n\nLeBedis CA and Sakai O. Nontraumatic orbital conditions: diagnosis with CT and MR imaging in the emergent setting. RadioGraphics 2008; 28: 1741–1753.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 7-year-old boy presents with rapid onset right proptosis. CT shows an extraconal mass in the right orbit with irregular margins.There is evidence of intraconal and intracranial extension. On MRI, the lesion is of decreased signal on T1WI, increased signal on T2WI, and shows relatively uniform enhancement. What is the most likely diagnosis?",
+      "options": [
+        "A. Retinoblastoma.",
+        "B. Non-Hodgkin lymphoma.",
+        "C. Capillary haemangioma.",
+        "D. Ruptured dermoid cyst.",
+        "E. Rhabdomyosarcoma."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The clinical and radiological features described are typical of rhabdomyosarcoma. It usually presents in the ﬁrst decade of life with a rapidly growing mass causing proptosis. The globe is often distorted and displaced, but rarely invaded. The lesion is aggressive and there may be extension into the sinuses or intracranial compartment, and bony destruction can occur.\n\nNHL is usually found in older adults, but it can occur in older children or adolescents. Unlike rhabdomyosarcoma, NHL commonly causes lacrimal gland involvement, may be hypointense on T2WI, and encases rather than distorts the globe.\n\nCapillary haemangioma typically presents in the ﬁrst few months of life. They have a proliferative phase for approximately 12 months following diagnosis and then are stable, before gradually involuting over a period of years. These lesions show rapid and persistent enhancement on CT and MRI. On unenhanced MRI, it is typically iso- to hyperintense relative to muscle on T1WI and moderately hyperintense on T2WI, with ﬂow voids at the periphery of or within the tumour.\n\nA ruptured dermoid cyst can mimic a rhabdomyosarcoma both clinically and radiologically, but one might expect to see calciﬁcation or fatty or cystic components in the native lesion. Retinoblastoma is an intraorbital lesion.\n\nChung EM, Smirniotopoulos JG, Specht CS, Schroeder JW, and Cube R. Pediatric orbit tumors and tumorlike lesions: nonosseous lesions of the extraocular orbit. RadioGraphics 2007; 27: 1777–1799.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 10-year-old girl presents with gradual onset proptosis in the left eye and is noted to have restricted left eye movements. An MRI scan is performed and this demonstrates a poorly circumscribed lobulated lesion that involves both the intraconal and extraconal compartments.The lesion has mixed signal intensity on T1WI, with areas of increased and decreased signal. It is mostly of increased signal on T2WI and there are areas containing a ﬂuidﬂuid level. Post contrast, there is heterogenous enhancement. What is the most likely diagnosis?",
+      "options": [
+        "A. Venous-lymphatic malformation.",
+        "B. Orbital varix.",
+        "C. Cavernous haemangioma.",
+        "D. Capillary haemangioma.",
+        "E. Haemangiopericytoma."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Venous-lymphatic malformation (previously known as a lymphangioma) typically has a presentation in childhood. MRI is the modality of choice for diagnosis, as ﬂuid–ﬂuid levels are almost pathognomic of this condition and these represent areas of haemorrhage of varying ages. The MRI ﬁndings are as those described and there are typically no large feeding vessels or ﬂow voids. The lesion is predominantly extraconal, but can insinuate into the intraconal compartment.\n\nCapillary haemangioma also presents in childhood, but may be apparent clinically and on MRI there are not typically ﬂuid–ﬂuid levels, but there may be ﬂow voids within the lesion from prominent vessels. Also, enhancement is usually more rapid and persistent in capillary haemangioma than in venous-lymphatic malformation.\n\nOrbital varices usually present in young adults and on imaging have the appearance of dilated, tortuous vessels.\n\nCavernous haemangioma typically presents in adulthood. They are usually well-circumscribed and most often occur in the lateral aspect of the retrobulbar intraconal space. On CT, they are slightly hyperattenuating prior to contrast and may contain phleboliths. On MRI, they are isointense to muscle on T1WI and hyperintense on T2WI. They show progressive enhancement on multiphase dynamic imaging.\n\nHaemangiopericytomas are rare vascular tumours that are more often seen in adults than children. Large lesions may show bony erosion and they do not typically have ﬂuid–ﬂuid levels on CT or MRI.\n\nSmoker WRK, Gentry LR, Yee NK, Reede DL, and Nerad JA. Vascular lesions of the orbit: more than meets the eye. RadioGraphics 2008; 28: 185–204.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 20-year-old female with a history of neuroﬁbromatosis presents with reduced visual acuity in the right eye. She subsequently has CT and MR imaging of the orbits to assess for a tumour relating to the right optic nerve. Which of the following ﬁndings on imaging would be more suggestive of the presence of an optic nerve glioma, rather than a meningioma arising from the optic nerve sheath?",
+      "options": [
+        "A. Presence of the ‘tram-track’ sign.",
+        "B. Presence of optic canal widening.",
+        "C. Presence of marked intense tumour enhancement.",
+        "D. Presence of calciﬁcation.",
+        "E. Presence of bony hyperostosis."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The presence of a widened optic nerve canal occurs in up to 90% of cases of optic nerve glioma. While it can also occur in meningioma, it is more common in glioma and some cases of meningioma may even have a narrowed canal secondary to bony hyperostosis.\n\nThe ‘tram-track’ sign is typically associated with meningioma and refers to the more avidly enhancing meningioma surrounding the non-enhancing optic nerve on axial CT and MR imaging of the orbit. Although both meningioma and glioma enhance following intravenous contrast, it is meningioma that is more typically associated with marked intense enhancement.\n\nCalciﬁcation and bony hyperostosis are features associated with meningioma. Calciﬁcation is rare in gliomas, unless they have previously undergone radiotherapy.\n\nGoh PS, Gi MT, Charlton A, Tan C, Gangadhara Sundar JK, and Amrith S. Review of orbital imaging. European Journal of Radiology 2008; 66: 387–395.\nAviv RI and Miszkiel K. Orbital imaging Part2. Intraorbital pathology. Clinical Radiology 2005; 60: 288–307.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 45-year-old man has a severe head injury and is noted to have a left facial nerve palsy. Following stabilization, a subsequent HRCT scan of the temporal bone is performed.This demonstrates a fracture of the left temporal bone, involving the course of the left facial nerve. Which orientation of fracture and which segment of the facial nerve are most likely to be involved?",
+      "options": [
+        "A. Transverse/internal auditory canal.",
+        "B. Longitudinal/internal auditory canal.",
+        "C. Transverse/labyrinthine.",
+        "D. Longitudinal/labyrinthine.",
+        "E. Transverse/mastoid.",
+        "F. Longitudinal/mastoid."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Transverse temporal bone fractures are more commonly associated with facial nerve paralysis (approximately up to 50%) than longitudinal temporal bone fractures (approximately up to 20%). The labyrinthine segment is the most likely segment of the facial nerve to be associated with facial paralysis.\n\nJager L and Reiser M. CT and MR imaging of the normal and pathologic conditions of the facial nerve. European Journal of Radiology 2001; 40: 133–146.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 42-year-old woman has a CT scan of brain performed for the investigation of headache. A lesion with density similar to cerebrospinal ﬂuid is noted at the right cerebellopontine angle. A subsequent MRI scan is performed and this shows that the lesion is well deﬁned, of decreased signal on T1WI and increased signal on T2WI.You think the lesion is most likely an epidermoid cyst, but wish to exclude an arachnoid cyst. Which of the following further MRI sequences will be most helpful in achieving this aim?",
+      "options": [
+        "A. Proton density.",
+        "B. STIR.",
+        "C. T1 with fat suppression.",
+        "D. FLAIR.",
+        "E. T1 post gadolinium."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "On a FLAIR sequence, epidermoid cysts can be differentiated from arachnoid cysts because the former show mixed iso- to hyperintense signal, but with poor demarcation, while the signal of the latter is suppressed, like the signal of CSF.\n\nDWI offers a ﬁnding speciﬁc for extra-axial epidermoid cysts by showing very high signal. Restricted ADC compared to CSF, almost comparable to that of the brain and T2 shine-through effect, both play an important role in the high signal intensity of epidermoid cyst at DWI. This can therefore be useful in helping to distinguish them from arachnoid cyst.",
+      "questionNumber": 25
+    }
+ ,
+    {
+      "question": "A 45-year-old man presents with a 4-month history of worsening lower back pain radiating into the right lower extremity with weakness. An MRI scan of lumbar spine shows a 3-cm well-deﬁned ovoid lesion eccentrically placed at the conus medullaris, the location of which is felt to be intradural and extramedullary. It is hypointense on T1WI and hyperintense on T2WI. There are ﬂow voids and haemorrrhage within the lesion. It enhances avidly post injection of contrast. Which of the following lesions ﬁts best with the imaging ﬁndings?",
+      "options": [
+        "A. Meningioma.",
+        "B. Schwannoma.",
+        "C. Neuroﬁbroma.",
+        "D. Paraganglioma.",
+        "E. Metastasis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Paragangliomas are rare intradural extramedullary tumours that are usually benign and have imaging characteristics as those described. Schwannomas, neuroﬁbromas, and meningiomas are much more common, but do not typically contain vascular ﬂow voids or areas of haemorrhage. Meningiomas may have a dural tail or foci of calciﬁcation. Schwannomas and neuroﬁbromas can be difﬁcult to distinguish on imaging. They are typically isointense on T1WI and markedly hyperintense on T2WI. Enhancement may be intense and homogenous or peripheral. Neuroﬁbromas tend to encase, rather than displace, nerve roots.\n\nLeptomeningeal metastases present with three different imaging patterns:\n\n1) Diffuse, thin enhancing coating of the surface of the spinal cord and nerve roots.\n\n2) Multiple small enhancing nodules on the surface of the cord and nerve roots.\n\n3) A single mass in the lowest part of the thecal sac.\n\nAbul-Kasim K, Thurnher MM, McKeever P, and Sundgren PC. Intradural spinal tumors: current classiﬁcation and MRI features. Neuroradiology 2008; 50: 301–314.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 45-year-old woman presents with a several month history of neck pain and gradually progressive weakness and paraesthesia in the upper limbs. An MRI scan of the cervical spine is performed and this shows a well-deﬁned central intramedullary mass in the mid-cervical spinal cord.The mass is generally slightly hyperintense on T2WI, but also has a few low signal peripheral areas. It enhances homogeneously with gadolinium. What is the most likely diagnosis?",
+      "options": [
+        "A. Astrocytoma.",
+        "B. Metastasis.",
+        "C. Haemangioblastoma.",
+        "D. Ganglioglioma.",
+        "E. Ependymoma."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Ependymoma is the most common intramedullary neoplasm in adults. It tends to be centrally located within the cord, unlike astrocytoma, which can be eccentric. Astrocytoma can have a longer segment of cord involvement than ependymoma and may have a more inﬁltrative margin. The peripheral low signal areas seen on T2WI in ependymoma are related to haemosiderin deposition from prior haemorrhage.\n\nHaemangioblastoma is more often seen in the dorsal cord than the cervical cord and is typically a small well-deﬁned lesion. It may have an associated cord cyst or syrinx. Flow voids may be seen within the lesion, from dilated vascular channels.\n\nGanglioglioma is a very rare, slow-growing tumour of low malignant potential. The imaging appearance is non-speciﬁc, but there are some ﬁndings that may suggest the diagnosis. Compared with other spinal cord tumors, gangliogliomas are more likely to involve long segments of the cord (greater than four levels, up to the whole cord), to be associated with bone erosion or scalloping, to have tumoral cysts, and to have areas of mixed high signal on precontrast T1WI.\n\nIntramedullary metastasis represents less than 5% of intramedullary lesions. They usually occur in the setting of advanced malignant disease, typically from a lung or breast primary. The spinal cord oedema can seem out of keeping with the small size of the metastatic lesion.\n\nSmith JK, Lury K, and Castillo M. Imaging of spinal and spinal cord tumors. Seminars in Roentogenology 2006; 41: 274–293.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 30-year-old male patient attends A&E 30 minutes after a head injury. He has consumed alcohol.You are contacted by the A&E doctor, who requests a CT brain. At this time, which of the following is a correct indication for immediate scanning?",
+      "options": [
+        "A. Two episodes of vomiting.",
+        "B. GCS 13.",
+        "C. Loss of consciousness.",
+        "D. Amnesia for 20 minutes before accident.",
+        "E. Visual hallucinations."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Almost anything will buy you a CT brain these days, but surprisingly, the GCS must be less than 13 in the A&E department within 2 hours of the injury under NICE guidelines to warrant one. After 2 hours have passed, a GCS of anything less than normal is an indication for scanning. Other factors which require a CT within 1 hour are suspected open or depressed skull fracture, sign of fracture at skull base, post-traumatic seizure, focal neurological deﬁcit and amnesia, or loss of consciousness and coagulopathy. Additional factors which necessitate a CT brain within 8 hours are amnesia of events for greater than 30 minutes before impact, and if there is any amnesia or loss of consciousness and the patient is older than 65/dangerous mechanism of injury. Note that, perversely, even if the scan can be delayed but be performed within 8 hours, the guidelines state it should be requested immediately. Prepare to be awoken from your sleep!\n\nNICE Guideline on Head Injury: triage, assessment, investigation and early management of head injury in infants, children and adults. September 2007. Quick reference guide. Available online at: http://www.nice.org.uk/nicemedia/live/11836/36257/36257.pdf.",
+      "questionNumber": 28
+    },
+    {
+      "question": "A 27-year-old female patient undergoes urgent neuroimaging following loss of consciousness as a result of an RTA. CT is unremarkable. MRI reveals multiple small areas of increased signal on T2WI in the white matter near the grey–white matter junction within the frontal and temporal lobes. In the same locations, DWI reveals areas of increased signal on the B1000 image and reduced signal on the ADC map. What is the most likely diagnosis?",
+      "options": [
+        "A. Subarachnoid haemorrhage.",
+        "B. Extradural haematoma.",
+        "C. Subdural haematoma.",
+        "D. Hypoxic brain injury.",
+        "E. Diffuse axonal injury."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "CT is initially often normal (up to 80% of cases) in DAI. If positive, it may reveal small low attenuation foci (oedema) or high attenuation foci of petechial haemorrhage. The gray/white matter interface of the frontotemporal lobes, corpus callosum (especially the splenium), and brainstem are the most commonly involved sites in DAI. MRI is much more sensitive and is the investigation of choice.\n\nThe signal on MRI depends on the age of the lesion and whether haemorrhage is present, but classically hyperintense foci on T2WI sequences are seen acutely. In the more chronic phase, the lesions may only be detected as hypointense foci at characteristic locations on GE sequences: this appearance may remain for years. DWI reveals hyperintense foci of restricted diffusion on B1000 images, with corresponding low signal on the ADC map. The ﬁndings on DWI are easily distinguishable from extradural haematoma/subarachnoid haemorrhage/subdural haematoma/ generalized oedema, which are discussed in other questions in this chapter.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Hedlund GL et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-2: 30–33.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 34-year-old man undergoes MRI of brain after admission for head trauma.\n\nWhich of the following sequences is most sensitive for subarachnoid haemorrhage?",
+      "options": [
+        "A. T1WI.",
+        "B. T1WI with fat saturation.",
+        "C. T2WI.",
+        "D. FLAIR.",
+        "E. Proton density."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Although CT is generally used for investigating acute subarachnoid haemorrhage (SAH), FLAIR sequence on MRI has been suggested as being as sensitive as or more sensitive than CT. It is particularly useful in regions where CT may be limited due to beam hardening artefacts or if there is a very small amount of blood. Acute SAH appears as high intensity on FLAIR within the cisterns and sulci. Subacute SAH may be better appreciated on MRI because of its high signal intensity when the blood is isointense to CSF on CT. SAH differs from intra-parenchymal haemorrhage in that the mix of blood with high-oxygen tension CSF delays generation of paramagnetic deoxyhaemoglobin, and oxyhaemoglobin remains present longer than in intra-parenchymal haemorrhage. This contributes to continued T2 prolongation. Beware that there are other pathological (meningitis, leptomeningeal metastases, acute stroke, fat-containing tumour/dermoid rupture) and benign (artefact, supplemental oxygenation) causes of FLAIR hyperintensity in the subarachnoid space.\n\nChronic haemorrhage from SAH is best detected on GE sequences, resulting in marked subarachnoid low signal (the blooming of superﬁcial siderosis).\n\nStuckey SL, Goh TD, Heffernan T, and Rowan D. Hyperintensity in the subarachnoid space on FLAIR MRI. American Journal of Roentgenology 2007; 189: 913–921.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 58-year-old patient is found at home with a reduced GCS. CT brain reveals atrophy only. MRI brain reveals hyperintensity in the tegmentum (except for the red nucleus) and hypointensity of the superior colliculus on T2WI, as well as hyperintensity in the basal ganglia. What is the most likely cause?",
+      "options": [
+        "A. Cocaine abuse.",
+        "B. Methanol poisoning.",
+        "C. Primary basal ganglia haemorrhage.",
+        "D. Wilson’s disease.",
+        "E. Carbon monoxide poisoning."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Hyperintensity in the tegmentum (except for the red nucleus) and hypointensity of the superior colliculus are described as the ‘face of the giant panda sign’ and are seen in axial T2WI sections of the midbrain in Wilson’s disease. A ‘double panda sign’ has also been described, with a second ‘panda cub face’ in the pons. Abnormal signal can also be seen in the basal ganglia and thalamus in Wilson’s disease (putamen most commonly). The signal abnormalities are due to copper deposition. Signal is generally reduced on T1WI sequences, although it may be increased due to the paramagnetic effects of copper and also due to the hepatic component of Wilson’s disease (a portocaval shunt can produce this latter ﬁnding). Signal is generally increased on T2WI sequences, but it can be of mixed or reduced intensity. Similarly carbon monoxide poisoning and methanol poisoning can cause increased or reduced signal on T1WI. Methanol poisoning typically causes abnormal signal in the putamen, with haemorrhagic necrosis being more typical, whereas carbon monoxide poisoning typically affects the globus pallidus. The latter would be expected to cause low attenuation in the basal ganglia on CT.\n\nThe ﬁndings on CT exclude basal ganglia haemorrhage. Amphetamine and cocaine abuse can cause high T2WI signal in the basal ganglia due to small areas of infarction, but are not associated with the midbrain changes.\n\nJacobs DA, Markowitz CE, Liebeskind DS, and Galetta SL. The ‘double panda sign’ in Wilson’s disease. Neurology 2003; 61: 969.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 27-year-old man suffers a head injury. A CT brain is performed. Which of the following features favours a subdural haematoma (SDH) over an extradural haematoma (EDH)?",
+      "options": [
+        "A. The haematoma measures 50 HU.",
+        "B. The presence of a temporal skull fracture.",
+        "C. The haematoma crosses the midline over the falx.",
+        "D. The collection has a biconvex conﬁguration.",
+        "E. The haematoma crosses sutures."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "An SDH will cross suture lines and may extend over the whole cerebral hemisphere; an EDH will not. Only an EDH can cross the midline, and this usually occurs at the vertex in the setting of a venous EDH. EDHs are more usually arterial bleeds and associated with temporal skull fractures, which disrupt the adjacent middle meningeal artery. The latter are typically biconvex; SDHs are typically lentiform in shape. Both measure 50–60 HU if acute. Chronic SDHs may be iso- or hypodense to brain, although anaemia or clotting disorders can produce a similar appearance. EDH is a neurosurgical emergency more so than SDH because of the potential lucent period followed by sudden deterioration as arterial bleeding continues after having stripped the dura from the inner table of the skull.\n\nBarr RM, Gean AD, and Tuong HL. Craniofacial trauma. In: Brant WE and Helms CA (eds), Fundamentals of Diagnostic Radiology, 3rd edn, Lippincott, Williams & Wilkins, 2007, pp. 57–59.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 65-year-old woman with a history of previous subarachnoid haemorrhage presents with slowly progressive cognitive decline and worsening gait. A CT brain reveals ventricular dilatation with rounded frontal horns and periventricular hypodensity. What is the most likely diagnosis?",
+      "options": [
+        "A. Heavy metal toxicity secondary to aneurysm clip.",
+        "B. Parkinson’s disease.",
+        "C. Alzheimer’s disease.",
+        "D. Normal pressure hydrocephalus.",
+        "E. Binswanger’s disease."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Fifty per cent of cases of normal pressure hydrocephalus (NPH) are idiopathic, while 50% have a cause, e.g. meningitis, neurosurgery, head trauma, or, as in the current vignette, previous subarachnoid haemorrhage. The imaging reveals dilated ventricles with rounded frontal horns, which are enlarged out of proportion to the degree of sulcal enlargement (as one would see in cerebral atrophy). On CT there may be periventricular low attenuation in the frontal and occipital regions, representing transependymal CSF ﬂow. The MRI equivalent is periventricular high signal and there are other MRI ﬁndings, including upward bowing of the corpus callosum and the aqueductal ﬂow void sign (reﬂecting increased CSF velocity through the cerebral aqueduct).\n\nThe bradykinesia and gait apraxia of NPH may mimic Parkinson’s disease, although there is typically no associated tremor. Binswanger’s disease (also known as subcortical arteriosclerotic encephalopathy) is a continuous, irreversible ischaemic degeneration of periventricular and deep white matter. MRI reveals extensive periventricular and deep white matter hyperintensities, which reﬂect microinfarctions and demyelination, and enlarged ventricles.\n\nHathout GM. Clinical Neuroradiology: A case based approach, Cambridge University Press, 2009, p. 106.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Hedlund GL et al. Diagnostic Imaging: Brain, Amirsys, 2004, II-1: 24–27.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 34-year-old liver transplant recipient presents to hospital with confusion and seizures. A CT brain reveals low attenuation in the deep and subcortical white matter of the occipital and parietal lobes bilaterally.There is no abnormal enhancement post IV contrast administration. As the reporting radiologist, you advise that the clinical team ﬁrst:",
+      "options": [
+        "A. measure blood glucose",
+        "B. measure serum alpha-feta protein",
+        "C. measure blood pressure",
+        "D. send coagulation screen",
+        "E. measure d-dimer."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The CT ﬁndings are consistent with PRES. This is a usually reversible neurological syndrome with a variety of presenting symptoms ranging from altered mental status to seizures, headache, and loss of vision. Common causes include hypertension, eclampsia and preeclampsia, immunosuppressive medications such as cyclosporine, various antineoplastic agents (including interferon), SLE, and various causes of renal failure. Hypertension is common in PRES, but may be mild and is not universally present, especially in the setting of immunosuppression. However, in the vignette given, hypertension is a possible cause and should be sought. Cyclosporin or tacrolimus might be causes; the former is thought to result in PRES both via a direct neurotoxic effect and by causing hypertension.\n\nThe condition is not always reversible and may result in haemorrhagic infarcts. The classic MRI ﬁnding is of hyperintensity on FLAIR in the parieto-occipital and posterior frontal cortical and subcortical white matter. Less commonly the brainstem, basal ganglia, and cerebellum are involved. Atypical imaging appearances include contrast enhancement, haemorrhage, and restricted diffusion on MRI. Abnormalities can often be seen on CT, as described in the vignette.\n\nMcKinney AM, Short J, Truwit CL, McKinney ZJ, Kozak OS, SantaCruz KS et al. Posterior reversible encephalopathy syndrome: incidence of atypical regions of involvement and imaging ﬁndings. American Journal of Roentgenology 2007; 189: 904–912.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 34-year-old female presents with neurological symptoms suggestive of MS and is referred for an MRI of brain by the neurology team. Which of the following sequences is most useful for determining if there are plaques of differing ages (i.e. dissemination in time)?",
+      "options": [
+        "A. FLAIR.",
+        "B. T2WI.",
+        "C. Pre- and post-contrast T1WI.",
+        "D. Proton density.",
+        "E. STIR."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "MS plaques are generally most conspicuous on FLAIR sequences. However, if there are enhancing and non-enhancing plaques on T1WI post-contrast, this indicates plaques of differing ages, i.e. dissemination in time. While this is not diagnostic of MS (imaging alone never is), it is very suggestive.\n\nProton density sequences are useful, but not quite as useful as FLAIR sequences, in showing periventricular lesions. T2WI sequences are superior to FLAIR sequences when it comes to detection of lesions in the posterior fossa and spinal cord. T2W STIR is probably superior to standard T2WI sequences in detecting spinal cord lesions, but is not routinely used. STIR sequences or fat suppression are useful when imaging the optic nerves, as contrast between lesions and the surrounding orbital fat is increased.\n\nPretorius PM and Quaghebeur G. The role of MRI in the diagnosis of MS. Clinical Radiology 2003; 58: 434–448.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 34-year-old woman presents with a seizure. She has a history of migraine and low mood over the preceding year, and reported occasional episodes of confusion. On examination there is slight left-sided motor weakness. An MRI of brain reveals small multifocal frontal and parietal subcortical white matter T2WI hyperintensities, and a few areas of restricted diffusion in the right cerebral hemisphere on DWI. What is the most likely diagnosis?",
+      "options": [
+        "A. Multiple sclerosis (MS).",
+        "B. SLE.",
+        "C. Small vessel ischaemia.",
+        "D. Susac syndrome.",
+        "E. Lyme disease."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The combination of white matter hyperintensities and focal infarcts (indicated by the areas of restricted diffusion) in combination with established neurology and neuropsychiatric symptoms, in a woman of child-bearing age, strongly suggests the diagnosis of cerebral lupus. SLE is an autoimmune disorder that affects many organ systems, including the CNS. Clinical presentation can include migraine, seizures, stroke, chorea, psychosis, mood disorder, acute confusional state, cognitive dysfunction, transverse myelopathy, cranial neuropathies, and aseptic meningitis. The CNS pathology includes vasculitis, dural venous sinus thrombosis, cerebritis, intracranial haemorrhage, infarction, and infection. Infarction can occur as a result of direct thrombosis as well as embolism from Libman–Sacks endocarditis. Diffuse neuropsychiatric symptoms are attributed to direct neuronal damage mediated by antibodies.\n\nThe most common imaging ﬁnding is small multifocal T2WI or FLAIR hyperintense white matter lesions. Focal infarcts and grey matter lesions may also be seen, as well as diffuse steroid responsive subcortical lesions. Acute lesions may enhance. MR angiography and venography may show thrombotic lesions of vessels and dural venous sinus thrombosis, respectively. When a patient with SLE presents with an acute neurological deterioration, it is crucial to image them promptly: initially with unenhanced CT to exclude haemorrhage and then with MRI (including post-contrast sequences) to evaluate for stroke or abscess. Note that a negative brain MRI cannot exclude cerebral lupus. Treatment consists of immunosuppression, with anticoagulation for thrombotic events.\n\nStroke is atypical for MS. Small vessel ischaemia should not occur in such a young age without an underlying cause and is not a satisfactory diagnosis. Susac syndrome is a triad of encephalopathy, branch retinal artery occlusions, and hearing loss. It is a microangiopathy of unknown aetiology and results in multiple T2WI hyperintense deep white matter and corpus callosum lesions. Lyme disease results in T2WI hyperintense periventricular white matter lesions, which may enhance, and it may resemble ADEM or MS.\n\nLalani TA, Kanne JP, Hatﬁeld GA, and Chen P. Imaging ﬁndings in systemic lupus erythematosus. RadioGraphics 2004; 24: 1069–1086.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Hedlund GL et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-4: 54–57.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 73-year-old has been referred for assessment of cognitive decline. A CT brain reveals cerebral atrophy and a dementia specialist refers her for PET-CT brain. Which of the following ﬁndings is most consistent with early Alzheimer’s disease?",
+      "options": [
+        "A. Diffuse reduced activity.",
+        "B. Reduced activity in the precuneus and posterior cingulate gyrus.",
+        "C. Reduced activity in the frontotemporal regions.",
+        "D. Reduced activity in the caudate and lentiform nuclei.",
+        "E. Reduced activity bilaterally in the occipital cortex."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "FDG-PET-CT has been shown to have a sensitivity and speciﬁcity of 93% for mild to moderate Alzheimer’s disease. The technique has been shown to provide important prognostic information so that a negative PET-CT scan is indicative of unlikely progression of cognitive impairment for a mean follow-up of 3 years in those patients who initially present with cognitive symptoms of dementia. The more speciﬁc ﬁndings on PET-CT in Alzheimer’s disease are early reduced activity in the precuneus/posterior cingulate gyrus and the superior, middle, and inferior temporal lobe gyrus, with relative sparing of the primary sensorimotor and visual cortex, and sparing of the striatum, thalamus, and cerebellum.\n\nDiffuse reduced activity of the cortical/subcortical regions and cerebellum is more typical of multiinfarct dementia. Reduced activity in the fronto-temporal regions is more consistent with fronto-temporal dementia. Reduced activity in the occipital cortex reﬂects the visual problems encountered in lewy body dementia. Reduced activity in the caudate and lentiform nuclei is more typical of Huntingdon’s chorea.\n\nSilverman DHS and Thompson PM. Structural and functional neuroimaging: focussing on mild cognitive impairment. Applied Neurology 2006; Feb: 10–24.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 15-year-old male presents with a history of recurrent epistaxis and nasal obstruction. MRI demonstrates a lesion centred at the sphenopalatine foramen, which is hypointense on T1WI and heterogeneously intermediate signal on T2WI. Intense lesional enhancement and multiple ﬂow voids are noted on post-gadolinium T1WI. What is the diagnosis?",
+      "options": [
+        "A. Ludwig angina.",
+        "B. Nasopharyngeal carcinoma.",
+        "C. Inverted papilloma.",
+        "D. Juvenile angioﬁbroma.",
+        "E. Glomus jugulare."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Juvenile angioﬁbromas are benign but locally aggressive tumours with high vascularity. They typically occur in adolescent boys and present with recurrent epistaxis and nasal obstruction. They are centred within the sphenopalatine foramen and involve the pterygopalatine fossa, producing a bowed appearance of the posterior wall of maxillary sinus and widening of pterygopalatine fossa, inferior orbital, and pteryogomaxillary ﬁssures. Osseous erosion is commonly seen.\n\nThe speciﬁc differentiating feature on MRI is the presence of multiple ﬂow voids on T2WI and enhanced T1WI.\n\nMomeni A, Roberts C, and Chew F. Imaging of chronic and exotic sinonasal disease: selfassessment module. American Journal of Roentgenology 2007; 189: S46–S48.\n\nLudwig B, Foster B, Saito N, Nadgir RN, Castro-Aragon I, and Sakai O. Diagnostic imaging in nontraumatic pediatric head and neck emergencies. RadioGraphics 2010; 30: 781–799.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 50-year-old male presents with a history of intermittent epistaxis, nasal obstruction, and frontal headache. He undergoes a CT of the sinuses that demonstrates an isodense soft-tissue mass ﬁlling the right maxillary antrum with extension through the infundibulum into the nasal cavity.There is associated bony remodelling of the infundibulum. On MRI, the mass is isointense to muscle on T1WI and T2WI, and demonstrates a convoluted cerebriform pattern on enhanced T1WI.The remainder of the sinuses are unremarkable. What is the diagnosis?",
+      "options": [
+        "A. Juvenile angioﬁbroma.",
+        "B. Inverted papilloma.",
+        "C. Antrochoanal polyp.",
+        "D. Invasive fungal sinusitis.",
+        "E. Nasal carcinoma."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Inverted papillomas are uncommon benign epithelial neoplasms with signiﬁcant malignant potential. They arise from the lateral nasal wall or maxillary sinus. They are most commonly seen in 40–70-year-olds with a male to female ratio of 2–4:1. CT demonstrates a soft-tissue mass centred in the middle meatus associated with bone remodelling. Stippled calciﬁcation is seen in 20% of cases. On MRI, it is isointense on T1WI and iso/hypointense on T2WI. Heterogenous enhancement is seen in 50% of cases. A convoluted cerebriform pattern on T2WI or enhanced T1WI is typical of inverted papillomas.\n\nJuvenile angioﬁbromas are seen in younger patients and are located in the posterior nasal cavity. They demonstrate intense enhancement and ﬂow voids on MRI. Antrochoanal polyps are homogenously hyperintense on T2WI. Invasive fungal sinusitis is primarily seen in immunosuppressed patients. They are frequently bilateral. CT ﬁndings include complete opaciﬁcation of sinuses by hyperdense mass, erosion or remodelling of sinuses, and intrasinus calciﬁcation. They are hypointense on T2WI. Nasal carcinomas cause bone erosion/destruction rather than remodelling.\n\nMomeni A, Roberts C, and Chew F. Imaging of chronic and exotic sinonasal disease: selfassessment module. American Journal of Roentgenology 2007; 189: S46–S48.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 45-year-old female patient presents with recurrent frontal sinusitis following functional endoscopic sinus surgery (FESS). Which of the following CT ﬁndings is not commonly associated with postoperative frontal recess stenosis?",
+      "options": [
+        "A. Inadequate removal of the agger nasi and frontal recess cells.",
+        "B. Retained superior portion of the uncinate process.",
+        "C. Medialization of middle turbinate.",
+        "D. Osteoneogenesis due to chronic inﬂammation or mucosal stripping.",
+        "E. Scarring or inﬂammatory mucosal thickening."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "FESS is the treatment of choice for patients with medically refractory sinusitis. Obstruction of the frontal recess is the main cause for medically refractory frontal sinusitis. The frontal recess is considered a difﬁcult area to treat with FESS and it is also prone to re-stenosis.\n\nAll of the above options are commonly associated with postoperative frontal recess stenosis except medialization of middle turbinate. Medialization (‘Bolgerization’) is performed to treat a lateralized middle turbinate, which is a well-recognized cause of frontal recess stenosis.\n\nHuang B, Lloyd K, DelGaudio JM, Jablonsowski E, and Hudgins PA. Failed endoscopic sinus surgery: spectrum of CT ﬁndings in the frontal recess. RadioGraphics 2009: 29: 177–195.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 12-year-old male with a history of gelastic seizures is referred for MRI of the brain. Which of the following statements regarding hamartomas of the tuber cinereum is true?",
+      "options": [
+        "A. No change in size, shape, or signal intensity on follow-up MRI.",
+        "B. Demonstrate homogenous contrast enhancement.",
+        "C. Calciﬁcation is a common ﬁnding.",
+        "D. Hyperintense on T1WI and T2WI, and hypointense on fat suppressed sequences.",
+        "E. Located in the sella turcica."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Hypothalamic hamartomas are developmental malformations located in the tuber cinereum of the hypothalamus. The typical patient is male, in the ﬁrst or second decade of life, presenting with precocious puberty or gelastic seizures.\n\nOn MRI, they appear as well-deﬁned pedunculated or sessile lesions that are iso/mildly hypointense on T1WI and iso/hyperintense on T2WI, with no contrast enhancement or calciﬁcation. Lack of interval change strongly supports the diagnosis.\n\nSaleem S, Ahmed-Hesham MS, and Lee DH. Lesions of the hypothalamus: MR imaging diagnostic features. RadioGraphics 2007; 27: 1807–1108.",
+      "questionNumber": 41
+    },
+    {
+      "question": "You are reporting a CT scan of neck in a patient with a head and neck cancer.You see an enlarged necrotic jugulo-digastric lymph node on the right side and wish to describe the appropriate level of this lymph node in your report. What is the correct level?",
+      "options": [
+        "A. I.",
+        "B. II.",
+        "C. III.",
+        "D. IV.",
+        "E. V.",
+        "F. VI.",
+        "G. VII."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Lymph nodes in the neck have been divided into seven levels, generally for the purpose of squamous cell carcinoma staging. This is, however, not all inclusive, as the parotid nodes and retropharyngeal space nodes are not included in this system.\n\nLevel I: Below mylohyoid to hyoid bone anteriorly Level Ia: Submental Level Ib: Submandibular Level II: Jugulodigastric (base of skull to hyoid) Level III: Deep cervical (hyoid to cricoid) Level IV: Virchow (cricoid to clavicle) Level V: Posterior triangle groups\n\nLevel Va: Accessory spinal (posterior triangle), superior half\n\nLevel Vb: Accessory spinal (posterior triangle), inferior half Level VI: Prelaryngeal/pretracheal/Delphian node Level VII: Superior mediastinal (between common carotid arteries (CCAs), below top of\n\nmanubrium) Lymph node levels of the neck. Radiopaedia.org.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 4-week-old infant with a history of breech delivery is brought to the A&E department with a history of swelling in the left side of the neck and torticollis. An ultrasound of the neck demonstrates a non-tender, focal fusiform enlargement of the lower half of the left sternocleidomastoid muscle. No other abnormality is identiﬁed. What is the diagnosis?",
+      "options": [
+        "A. Fibromatosis colli.",
+        "B. Lymphoma.",
+        "C. Rhabdomyosarcoma.",
+        "D. Cystic hygroma.",
+        "E. Branchial cleft cyst."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Fibromatosis colli or pseudotumour of the sternocleidomastoid muscle is a benign self-limiting condition that occurs in the ﬁrst 2–4 weeks of life. It is often associated with breech or forceps delivery. It is thought to result from pressure necrosis and subsequent ﬁbrocollagenous inﬁltration of the sternocleidomastoid muscle.\n\nTypical presentation is with a ﬁrm and non-tender mass in the lower two-thirds of the sternocleidomastoid muscle. It may be associated with torticollis in approximately 20% of cases. It usually resolves spontaneously in the ﬁrst year of life.\n\nTypical ﬁndings on ultrasound include focal or diffuse enlargement of the sternocleidomastoid with variable echogenicity. The clinical history and ultrasound appearances are so typical that no further investigation is usually necessary.\n\nLudwig B, Foster B, Saito N, Nadgir RN, Castro-Aragon I, and Sahai O. Diagnostic imaging in nontraumatic pediatric head and neck emergencies. RadioGraphics 2010; 30: 781–799.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 60-year-old female presents with a history of facial pain and diplopia.\n\nClinical examination reveals palsies of the III, IV, and VI cranial nerves, Horner’s syndrome, and facial sensory loss in the distribution of the ophthalmic and maxillary divisions of the trigeminal (V) cranial nerve. Where is the causative abnormality located?",
+      "options": [
+        "A. Dorello’s canal.",
+        "B. Cavernous sinus.",
+        "C. Superior orbital ﬁssure.",
+        "D. Inferior orbital ﬁssure.",
+        "E. Meckel’s cave."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Cranial nerves III, IV, and VI, and ophthalmic (V1) and maxillary (V2) divisions of the V cranial nerve course through the cavernous sinus along with the internal carotid artery. The V2 division of the trigeminal nerve passes through the inferior portion of the cavernous sinus and exits via the foramen rotundum. The remainder of the cranial nerves mentioned above enter the orbit via the superior orbital ﬁssure.\n\nThe cavernous sinus location accounts for these features. Palsies of cranial nerves III, IV, and VI result in ophthalmoplegia. Involvement of V1 and V2 divisions of the trigeminal nerve produces facial pain and sensory loss; involvement of sympathetic nerves around the internal carotid artery results in Horner’s syndrome. This cluster of ﬁndings is found in Tolosa Hunt syndrome, an idiopathic inﬂammatory process involving the cavernous sinus.\n\nHoang J, Eastwood J, and Glastonbury C. What’s in a name? Eponyms in head and neck imaging. Clinical Radiology 2010; 65: 237–245.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 50-year-old male undergoes an MR carotid angiogram on which an incidental soft-tissue mass is noted in right parapharyngeal soft tissue.The mass displaces the right parapharyngeal space anteromedially. What is the location of the soft-tissue mass?",
+      "options": [
+        "A. Masticator space.",
+        "B. Carotid space.",
+        "C. Retropharyngeal space.",
+        "D. Mucosal space.",
+        "E. Parotid space."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Loss of symmetry and displacement of the parapharyngeal space are useful for lesion identiﬁcation and localization in the parapharyngeal soft tissues. A thorough knowledge of the anatomical relationship between the spaces is essential.\n\nThe parapharyngeal space is shaped like an inverted pyramid with the apex pointing inferiorly toward the greater cornu of the hyoid bone and the skull base demarcates the base superiorly. A lesion arising from the parotid space displaces the fat in the parapharyngeal space anteromedially. A lesion in the masticator space displaces the parapharyngeal fat posteromedially. Carotid space lesions displace it anteriorly, mucosal space lesions displace it posterolaterally, and retropharyngeal space lesions displace it anterolaterally.\n\nPosterior displacement of the carotid space or parapharyngeal fat completely surrounding a lesion localizes it to the parapharyngeal space.\n\nBahrami S and Yim C. Blind spots at brain imaging. RadioGraphics 2009; 29: 1877–1896.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 55-year-old man undergoes 99m Tc scintigraphy on which incidental note is made of multiple foci of increased tracer uptake in the parotid regions. Ultrasound of the parotid glands demonstrates bilateral multiple hypoechoic lesions with anechoic areas. On MRI, the lesions are of intermediate signal intensity on T1WI and intermediate signal intensity with focal areas of hyperintensity on T2WI.There is no enhancement following contrast administration. What is the likely diagnosis?",
+      "options": [
+        "A. Pleomorphic adenomas.",
+        "B. Warthin tumours.",
+        "C. Lipomas.",
+        "D. Haemangiomas.",
+        "E. Mucoepidermoid carcinomas."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Warthin tumour or adenolymphoma is the second most common benign tumour of the parotid gland. It is usually solitary. Multiple or bilateral parotid masses and increased uptake on 99m Tc are strongly suggestive of Warthin tumour. Warthin tumours do not enhance following gadolinium administration.\n\nPleomorphic adenomas are usually solitary and unilateral. They appear as hypoechoic, lobulated, well-deﬁned lesions with posterior acoustic enhancement on ultrasound scan (USS). On MRI, they are of intermediate signal on T1WI and hyperintense on T2WI. They demonstrate homogenous enhancement following gadolinium administration.\n\nMucoepidermoid carcinomas vary in appearances. Low-grade tumours are similar to pleomorphic adenomas. High-grade tumours are heterogenous with low to intermediate signal intensity on T1WI and T2WI. They demonstrate inﬁltrating margins and heterogenous enhancement following gadolinium administration.\n\nSoler R, Bargiela A, Requejo I, Rodriguez E, Rey JL, and Sancristan F. Pictorial review: MR imaging of parotid tumours. Clinical Radiology 1997; 52: 269–275.\n\nBialek EJ, Jakubowski W, Zajkowski P, Szopinski KT, and Osmolski A. US of the major salivary glands: anatomy and spatial relationships, pathologic conditions, and pitfalls. RadioGraphics 2006; 26: 745–763.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 60-year-old woman presents with a painless, slowly growing mass in the lateral aspect of the neck.The patient is referred for imaging with a clinical diagnosis of carotid body paraganglioma. Which of the following is a distinctive feature of carotid body paraganglioma on imaging?",
+      "options": [
+        "A. Soft-tissue mass in the carotid space.",
+        "B. Intense enhancement after IV contrast administration.",
+        "C. High signal on T2WI.",
+        "D. Splaying of the internal and external carotid arteries.",
+        "E. Low signal on T2WI."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Carotid body tumour or paraganglioma is the most common paraganglioma of the head and neck. It arises from the paraganglionic cells located on the medial aspect of the carotid bifurcation. On MRI, they are of low to intermediate signal intensity on T1WI and hyperintense on T2WI. They are hypervascular and demonstrate intense enhancement after contrast administration. Splaying of the internal and external carotid arteries and multiple ﬂow voids producing a ‘salt and pepper’ appearance are distinctive features on imaging.\n\nLee KY, Oh Y-W, Noh HJ, Lee YJ, Yong HS, and Kang EY. Extraadrenal paragangliomas of the body: imaging features. American Journal of Roentgenology 2006; 187: 492–504.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 22-year-old woman presents with upper and lower limb neurological symptoms and signs. She is subsequently discovered on MRI to have a mass in the cervical spinal cord. Which of the following features on MRI is going to point more towards a diagnosis of spinal cord astrocytoma, rather than ependymoma?",
+      "options": [
+        "A. Predominant T2WI high signal.",
+        "B. Homogeneous enhancement post gadolinium.",
+        "C. Short segment of cord involvement.",
+        "D. Eccentrically placed lesion in the cord.",
+        "E. Sharply marginated lesion."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Table 6.2 illustrates the diagnostic features of astrocytoma and ependymoma.\n\nTable 6.2 Diagnostic features of astrocytoma and ependymoma\n\nAge Region Location in cord Margins Other ﬁndings Associated syndrome\n\nAstrocytoma Children C>T>L Eccentric Inﬁltrating Long segment involved Neuroﬁbromatosis-1\n\nEpendymoma Adults\n\nC\n\n>\n\nT\n\n=\n\nL\n\nCentral Sharp Peripheral low T2WI signal Neuroﬁbromatosis-2\n\nSmith JK, Lury K, and Castillo M. Imaging of spinal and spinal cord tumors. Seminars in Roentogenology 2006; 41: 274–293.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 52-year-old woman presents with gradually increasing gait disturbance and lower limb sensory symptoms. An MRI of her spine is performed and this shows an anteriorly placed intradural, but extramedullary spinal mass. It is fairly markedly low signal on T1WI and T2WI, and shows only miminal patchy enhancement post administration of intravenous gadolinium. What is the most likely diagnosis?",
+      "options": [
+        "A. Neuroﬁbroma.",
+        "B. Schwannoma.",
+        "C. Lymphoma.",
+        "D. Metastasis.",
+        "E. Meningioma."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Spinal meningiomas are typically iso- to hypointense on T1WI and slightly hyperintense on T2WI. There is usually strong and homogeneous enhancement with gadolinium. However, some meningiomas may contain calciﬁcation and are typically the only intradural extramedullary tumours to do so. Some meningiomas can be heavily calciﬁed and such a meningioma is being described in the question. These will remain dark on all MRI sequences and demonstrate only little contrast uptake (in the non-calciﬁed areas).\n\nSchwannomas, neuroﬁbromas, and metastases would not typically be hypointense on T2WI. Meningeal lymphomas are very rare and usually manifest as diffuse thickening of nerve roots and/ or multiple enhancing nodules.\n\nAbul-Kasim K, Thurner MM, McKeever P, and Sundgren PC. Intradural spinal tumours: current classiﬁcation and MRI features. Neuroradiology 2008; 50: 301–314.",
+      "questionNumber": 49
+    },
+    {
+      "question": "You are asked to protocol an MRI scan that is speciﬁcally being performed to look for vertebral metastatic disease.The radiographer complains that you have asked for too many sequences. Which of the following sagittal sequences is likely to be least helpful for the purposes of your examination?",
+      "options": [
+        "A. STIR.",
+        "B. T2 fast SE with fat saturation.",
+        "C. T2 fast SE.",
+        "D. T1 fast SE.",
+        "E. T1 GE out of phase."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "T2 fast SE is probably the least useful sequence when speciﬁcally looking for vertebral marrow deposits because the metastases are less conspicuous, typically being high signal on a background of high-signal fatty marrow. On STIR and T2 fast SE with fat saturation, the metastases typically stand out as being of increased signal on a background of dark marrow because of the fat saturation techniques. On T1 fast SE sequences, the metastases typically stand out as being low signal on a background of high-signal fatty marrow.\n\nFinally, T1 GE out–of-phase imaging is also good for looking for vertebral metastatic disease. This is a sequence with a speciﬁc echo time corresponding to the time it takes for water and fat protons to move exactly 180° out of phase. In the normal adult human, the medullary bone of the vertebral bodies contains approximately equal amounts of water and fat protons. In out-ofphase conditions, the signal of both will cancel out, leaving the vertebrae completely black. In the case of vertebral pathology, however, the signal will increase and, as such, vertebral metastases (or other lesions) will clearly stand out.",
+      "questionNumber": 50
+    }
+,
+    {
+      "question": "A 44-year-old woman presents with severe facial injuries following an RTA. CT of the facial bones demonstrates multiple maxillofacial fractures in keeping with a Le Fort conﬁguration. Which of the following statements regarding Le Fort fractures is false?",
+      "options": [
+        "A. Any combination of Le Fort I, II, and III fractures can occur.",
+        "B. Disruption of pterygoid plates from the posterior maxilla is an essential ﬁnding in Le Fort fractures.",
+        "C. Le Fort fractures by deﬁnition refer to fractures involving the maxilla bilaterally.",
+        "D. Craniofacial separation is noted in Le Fort III pattern.",
+        "E. Le Fort fracture associated with a palate fracture will result in widening of the maxillary arch."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Separation of all or a portion of the maxilla from the skull base is described as a Le Fort fracture. This can be unilateral when it is associated with sagittal or parasagittal fractures of the palate.\n\nLe Fort fractures by deﬁnition involve the posterior maxillary buttress at the junction of the posterior maxillary sinus and the pterygoid plates of the sphenoid. This may be either through the pterygoid plates or through the posterior walls of the maxillary sinus.\n\nOnce a pterygomaxillary disruption has been identiﬁed, the remaining facial buttresses are inspected to identify the type of Le Fort fracture. In Le Fort I fracture, the maxillary arch will move in relation to the rest of the face and skull. In Le Fort II fracture, the entire maxilla will move in relation to the skull base. In Le Fort III, there is complete craniofacial separation.\n\nAny combination of Le Fort I, II, and III can occur. Posterior extension of Le Fort fracture into the hard palate results in widening of the maxillary arch and dental malocclusion.\n\nHopper RA, Salemy S, and Sze RW. Diagnosis of midface fractures with CT: what the surgeon needs to know. RadioGraphics 2006; 26: 783–793.",
+      "questionNumber": 51
+    },
+    {
+      "question": "A 25-year-old woman is brought to the A&E department following an RTA.\n\nCT of brain and facial bones are requested for assessment of head and facial injuries. On the CT studies, incidental note is made of dense calciﬁcation of the falx cerebri, midface hypoplasia, and prognathism. Multiple cystic lesions are also noted in the mandible, which are associated with cortical expansion. Some of the lesions break through the cortex. Following contrast administration there is minimal peripheral enhancement. What is the underlying mandibular abnormality?",
+      "options": [
+        "A. Radicular cyst.",
+        "B. Keratocystic odontogenic tumour.",
+        "C. Dentigerous cyst.",
+        "D. Stafne cyst.",
+        "E. Ameloblastoma."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "These are benign but locally aggressive developmental tumours affecting adults in the second to fourth decades. They are most commonly located in the mandibular ramus and body, and are associated with an impacted tooth. They may be unilocular or multilocular and often contain daughter cysts extending into the surrounding bone. They can be associated with cortical expansion and erosion. They demonstrate minimal peripheral enhancement with contrast.\n\nThe presence of multiple keratocystic odontogenic tumours raises the possibility of Gorlin basal cell nevus syndrome, which is an autosomal dominant disorder. Associated features include multiple basal cell carcinomas of the skin, mental retardation, midface hypoplasia, frontal bossing and prognathism, calciﬁcation of the falx and dura, and biﬁd ribs.\n\nDevenney-Cakir B, Subramaniam RM, Reddy SM, Imsande H, Gohel A, and Sakai O. Cystic and cystic-appearing lesion of the mandible: Review. American Journal of Roentgenology 2001; 196: WS66–WS77.",
+      "questionNumber": 52
+    },
+    {
+      "question": "A 45-year-old female undergoes an MRI of the pituitary that demonstrates a kidney-shaped lesion located centrally in the pituitary fossa in the axial plane. It is hyperintense on T1WI and hypointense on T2WI.There is no enhancement following gadolinium administration and no ﬂuid–ﬂuid level. What is the diagnosis?",
+      "options": [
+        "A. Rathke cleft cyst.",
+        "B. Craniopharyngioma.",
+        "C. Cholesterol granuloma.",
+        "D. Haemorrhagic adenoma.",
+        "E. Lipoma."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "These are benign cystic lesions of the pituitary fossa derived from the Rathke pouch. They are usually asymptomatic. Rathke cleft cysts are located in the midline between the anterior and posterior pituitary lobes and have a characteristic kidney shape on axial images. They are homogenously hyperintense on T1WI, due to high protein concentration, and hypointense on T2WI, due to low intracystic water content. They do not enhance following contrast administration.\n\nAbsence of a ﬂuid–ﬂuid level is helpful in differentiating Rathke cleft cyst from hemorrhagic adenoma. Acute haemorrhage has heterogenous signal on T2WI and may demonstrate thin peripheral enhancement on T1WI. Craniopharyngiomas have variable solid, cystic, and calciﬁed components. They demonstrate heterogenous enhancement following contrast. They may be intrasellar or suprasellar. A pseudo-ﬂuid–ﬂuid level may occasionally be seen in craniopharyngioma. Lipoma and cholesterol granuloma are hyperintense on both T1WI and T2WI.\n\nBonneville F, Cattin F, Marsot-Dupuch K, Dormont D, Bonneville J-F, and Chiras J. T1 signal hyperintensity in the sellar region: spectrum of ﬁndings. RadioGraphics 2006; 26: 93–113.",
+      "questionNumber": 53
+    },
+    {
+      "question": "A 30-year-old male presents with a ﬂuctuant swelling in the right side of the neck. On ultrasound examination, an anechoic lesion with posterior acoustic enhancement is noted along the anteromedial margin of the sternocleiodomastoid muscle, posterior to the submandibular gland and superﬁcial to the carotid artery and internal jugular vein.There is no increased surrounding vascularity on power Doppler. What is the likely diagnosis?",
+      "options": [
+        "A. Dermoid cyst.",
+        "B. Lymphangioma.",
+        "C. First branchial cleft cyst.",
+        "D. Abscess.",
+        "E. Second branchial cyst."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "The majority of branchial cleft anomalies arise from the second branchial cleft. The described ﬁndings are typical of a second branchial cleft cyst. Similar ultrasound appearances may be seen in a ﬁrst branchial cleft cyst or a dermoid cyst. The anatomical location is the key to the diagnosis. Dermoid cysts are typically midline in location in the neck and ﬁrst branchial cleft cysts are located in the region of parotid gland, external auditory canal, and angle of mandible.\n\nLymphangiomas are typically located in the posterior triangle. On ultrasound, they appear multiloculated with intervening thin septa. Abscesses appear as ill-deﬁned, irregular collections with thick walls and internal debris. Surrounding soft-tissue oedema, hyperaemia, and enlarged adjacent lymph nodes are also noted.\n\nWong KT, Lee YYP, King AD, and Ahuja AT. Imaging of cystic and cyst-like neck masses. Clinical Radiology 2008; 63: 613–622.",
+      "questionNumber": 54
+    },
+    {
+      "question": "A 5-year-old girl with a clinical suspicion of retropharyngeal abscess is referred for MRI of the neck. Which of the following features on MRI is useful in differentiating retropharyngeal abscess from retropharyngeal suppurative lymph node?",
+      "options": [
+        "A. Enhancing wall.",
+        "B. Rounded or ovoid conﬁguration.",
+        "C. Mass effect.",
+        "D. Filling of retropharyngeal space from side to side.",
+        "E. Primary infection source such as otitis media or tonsillitis."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Understanding the retropharyngeal space anatomy is crucial in differentiating retropharyngeal space abscess and retropharyngeal suppurative lymph node. The retropharyngeal space is bounded by visceral fascia covering the pharynx and oesophagus anteriorly, the prevertebral fascia covering the prevertebral muscles posteriorly, and the carotid sheaths laterally.\n\nA retropharyngeal suppurative lymph node is unilateral, whereas a retropharyngeal abscess ﬁlls the entire retropharyngeal space from side to side. The differentiation is important because many cases of suppurative lymph nodes do not have purulent material at surgery. The treatment for suppurative lymph nodes is a trial of antibiotics if the patient is stable. Surgical drainage is considered if there is progression or if the suppurative lymph node is large at presentation. The volume of central low density is a better predictor of purulence than the mere presence of rim enhancement and low-density centre.\n\nHoang JK, Branstetter IV BF, Eastwood JD, and Glastonbury CM. Multiplanar CT and MRI of collections in the retropharyngeal space: Is it an abscess? American Journal of Roentgenology 2011; 196: W426–W432.",
+      "questionNumber": 55
+    },
+    {
+      "question": "A 42-year-old male patient of African-Caribbean ethnicity presents to the neurologists with a history of facial paraesthesia and slight weakness, headache, lethargy, and neck stiffness. He also has a history of mild dyspnoea. An MRI is requested, which shows left frontal leptomeningeal thickening, with an apparent dural mass noted along the falx.There is increased T2WI/FLAIR signal in the cortex adjacent to this area of meningeal disease.There is also thickening and enhancement noted of the right trigeminal and facial nerves on post-contrast T1WI. Further enhancement is also noted along the parasellar region on the left. Multiple non-enhancing high T2WI/FLAIR periventricular white matter lesions are noted. Abnormality is noted in the skull vault, where there is an expanded diploic space over the right occipital region, with associated apparent thinning of the outer table, although this is hard to deﬁne on MRI. Due to concern with regard to multifocal meningioma the patient is started on steroids to reduce the mass effect from the frontal lesion and referred to neurosurgery. A CT is non-contributory. An MRI is repeated, which shows only mild meningeal thickening. What is the most likely diagnosis?",
+      "options": [
+        "A. NF-2.",
+        "B. Neurosarcoid.",
+        "C. Neurotoxoplasmosis.",
+        "D. Tuberous sclerosis.",
+        "E. Multiple sclerosis."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Whilst primary neurosarcoid is rare, it is not uncommon for the systemic disease to present via its neurological manifestations. The ﬁndings of neurosarcoid are non-speciﬁc, with the common manifestations mirroring those described in this patient. Leptomeningeal thickening and enhancement are classical. Involvement of the perivascular spaces adjacent to this can cause increased signal in the adjacent cortex. This appearance can mimic meningioma.\n\nMultifocal meningiomas and nerve sheath schwannomas are features of NF-2, but this would not be expected to resolve with steroid therapy. The features described are not typical of TS.\n\nThe meningeal disease would make MS unlikely, even given the periventricular high-signal lesions, which are the most common intraparenchymal ﬁnding in neurosarcoid.\n\nSarcoid involving the skull table is not directly related to the neurosarcoid and is more commonly seen with other manifestations of musculoskeletal sarcoid.\n\nToxoplasmosis, in the absence of immunocompromise, is unlikely.\n\nOverall the response to steroid, along with the wide variation of CNS disease described, are the strongest indicators for sarcoid. Whilst neurosarcoid does typically respond well to steroid therapy, it has a high recurrence rate.\n\nLury K, Smith K, Matheus M, and Castillo M. Neurosarcoidosis – review of imaging ﬁndings. Seminars in Roentgenology 2004; 39(4): 495–504.",
+      "questionNumber": 56
+    },
+    {
+      "question": "A 62-year-old man presents with tremor and incontinence. Examination reveals bradykinesia and gait ataxia. He is also noted to have a reduced mini mental state examination (MMSE) and postural hypotension. He has an MRI scan of brain as part of the diagnostic workup. On the axial T2WI a cruciform hyperintensity in the pons is noted. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Parkinson’s disease.",
+        "B. Multisystem atrophy (MSA).",
+        "C. Progressive supranuclear palsy (PSP).",
+        "D. Cryptobasal degeneration.",
+        "E. Lewy body dementia."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "T2WI cruciform hyperintensity or the ‘hot cross bun’ sign within the pons, is suggestive of MSA, although it is not speciﬁc, as it also occurs in spinocerebellar ataxia. Other MRI features include hyperintensity within the putamen. Patients with MSA typically have parkinsonian features poorly responsive to levodopa therapy and autonomic disturbance. MRI features of Parkinson’s disease are generally non-speciﬁc, but narrowing of the pars compacta of the substantia nigra may be seen on T2WI. Substantia nigra atrophy is also a feature of Lewy body dementia. T2WI hypointensity of the putamen due to iron deposition is a feature of progressive supranuclear palsy.\n\nGilman S, Wenning GK, Low PA, Brooks DJ, Mathias CJ, and Trojanowski JQ. Second consensus statement on the diagnosis of multiple system atrophy. Neurology 2008; 71(9): 670–676 .",
+      "questionNumber": 57
+    },
+    {
+      "question": "A 56-year-old man with chronic alcohol dependence presents with progressive cognitive impairment, gait disturbance, and signs of interhemispheric disconnection. An MRI scan of brain demonstrates increased T2WI signal lesions without mass effect within the corpus callosum and dorsal part of the external capsule. Which of the following is the most likely diagnosis?",
+      "options": [
+        "A. Wernicke’s encephalopathy.",
+        "B. Osmotic myelinolysis.",
+        "C. Marchifava–Bignami disease.",
+        "D. Alcohol withdrawal syndrome.",
+        "E. Chronic hepatic encephalopathy."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a rare complication of chronic alcohol consumption characterized by demyelination and necrosis of the corpus callosum, although other white matter tracts (such as the external capsule) may be involved. Bilateral and symmetrical T2WI hyperintensities within the thalami, periaqueductal grey, and mammillary bodies are seen in Wernicke’s encephalopathy. Osmotic myelinolyis is usually secondary to rapid changes in serum sodium and results in increased T2WI signal within the central pons. Extrapontine myelinolysis is rare. In alcohol withdrawal syndrome, patients present with seizures and delirium tremens. MRI may show volume loss in the temporal cortex and anterior hippocampus. Hepatic encephalopathy secondary to hepatocellular failure may produce T1WI hyperintensity within the caudate nucleus, globus pallidus, putamen, and anterior midbrain due to increased concentration of manganese.\n\nGeibprasert S, Gallucci M, and Krings T. Alcohol induced changes in the brain as assessed by MRI and CT. European Radiology 2010; 20: 1492–1501.",
+      "questionNumber": 58
+    },
+    {
+      "question": "A 74-year-old woman is admitted with acute left-sided hemiplegia of 2 hours onset. On assessment by the stroke team she is deemed suitable for thrombolysis and referred for CT. As part of your institution’s work-up, CT perfusion (CTP) is performed following the unenhanced study. Which of the following CTP ﬁndings with regards to cerebral blood ﬂow (CBF), cerebral blood volume (CBV) and mean transit time (MTT) are consistent with infarction?",
+      "options": [
+        "A. Decreased CBF/decreased CBV/increased MTT.",
+        "B. Decreased CBF/increased CBV/increased MTT.",
+        "C. Decreased CBF/decreased CBV/decreased MTT.",
+        "D. Increased CBF/increased CBV/decreased MTT.",
+        "E. Increased CBF/decreased CBV/decreased MTT."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "In identifying the ischaemic penumbra, CT perfusion offers promise in improved patient selection for thrombolysis beyond a rigid time window. In the infarct core (tissue which is not salvageable) both CBF and CBV are decreased with a corresponding increase in MTT. Penumbral tissue (which is potentially recoverable by thrombolysis) exhibits a CBF/CBV mismatch with an increased CBV, but decreased CBF (and increased MTT). An increase in CBF and CBV with decreased MTT is a feature noticed in tumours secondary to angiogenesis and microvascular permeability.\n\nHoeffner EG, Case I, Jain R, Gujar SK, Shah GV, Deveikis JP et al. Cerebral perfusion CT: technique and clinical applications. Radiology 2004; 231: 632–644.",
+      "questionNumber": 59
+    },
+    {
+      "question": "An immunocompetent 24-year-old patient presents with an acute history of right-sided limb weakness which has rapidly progressed.The patient now also has mixed sensory symptoms and poorly controlled seizures. Basic observations and initial blood results are normal. An MRI is carried out which shows a large mass-like lesion in the right posterior frontal lobe.There is mild mass effect associated with this lesion on the adjacent parenchyma, with mild compression of the right lateral ventricle.The lesion is also noted to involve the corpus callosum and cross the midline into the left cerebral hemisphere.This lesion is bright on FLAIR imaging. On post-contrast T1WI the lesion has peripheral rim enhancement.Vascular structures are noted to pass through the lesion.There is no evidence of necrosis or haemorrhage. On DWI, the b1000 sequence reveals increased signal in the lesion. Other high T2WI lesions are noted in the cerebellum, with a further lesion in the spinal cord. What is the most likely diagnosis based on this information?",
+      "options": [
+        "A. MS.",
+        "B. Glioblastoma multiforme.",
+        "C. High-grade astrocytoma.",
+        "D. Lymphoma.",
+        "E. Abscess."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The key feature in this clinical vignette is the identiﬁcation of the mass lesion crossing the midline. Only a few lesions demonstrate this ability and they are GBM, lymphoma, metastases, MS and other white matter disorders, lipoma, stroke, and shearing injuries. Abscess is thus excluded and would be unlikely given the clinical features. GBM is unlikely given the absence of necrosis and would be rare in a patient of this age group. High-grade astrocytomas do not involve the corpus callosum and cross the midline. Lymphoma exhibiting these features would be uncommon in immunocompetent patients, being more typically associated with HIV-related lymphoma. Tumefactive MS typically presents with an acute clinical history and frequently displays the imaging features described. The presence of vascular structures crossing the lesion also indicates this diagnosis, as these would be displaced by neoplastic lesions.\n\nGrossman R and Yousem D. Neuroradiology: The Requisites, 2nd edn, Mosby, 2003, pp. 139–145, 153–155.",
+      "questionNumber": 60
+    },
+    {
+      "question": "A 32-year-old woman of 38 weeks gestation presents with seizure following a headache. She is referred for CT querying venous thrombosis. Unenhanced CT brain demonstrates bilateral low attenuation change within the thalami. Given this location, where is the most likely site of thrombosis?",
+      "options": [
+        "A. Superior sagittal sinus.",
+        "B. Transverse sinus.",
+        "C. Sigmoid sinus.",
+        "D. Straight sinus.",
+        "E. Cavernous sinus."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Pregnancy is a risk factor for both venous sinus thrombosis and hypertensive haemorrhage secondary to eclampsia. Hyperattenuating thrombus within the occluded sinus is classical on the unenhanced CT, but is seen in only 25% of cases. On the contrast-enhanced study, a central ﬁlling defect surrounded by enhancing dura (empty delta sign) is present in over 30%. Most of the superior cerebrum is drained by the superior sagittal sinus. The transverse sinuses receive blood from the temporal, parietal, and occipital lobes. The transverse sinuses drain into the sigmoid sinuses and on into the internal jugular veins. The straight sinus forms from the conﬂuence of the inferior sagittal sinus and vein of Galen. The vein of Galen is part of the deep venous system, which drains the corpus callosum, basal ganglia, thalami, and upper brainstem. Cavernous sinus thrombosis presents with proptosis and cranial nerve palsies (usually cranial nerve VI ﬁrst). The cavernous sinus receives the petrosal sinuses and middle cerebral veins.\n\nLeach JL, Fortuna RB, Jones BV, and Gaskill-Shipley MF. Imaging of cerebral venous thrombosis: current techniques, spectrum of ﬁndings and diagnostic pitfalls. RadioGraphics 2006; 26: S19–S41.",
+      "questionNumber": 61
+    },
+    {
+      "question": "A 36-year-old man is admitted following a seizure. Unenhanced CT demonstrates a right frontal mixed attenuation lesion, which avidly enhances post contrast. Multiple ﬂow voids are seen on MRI of brain. What ﬁnding on catheter angiography differentiates arteriovenous malformation (AVM) from other vascular lesions of the brain?",
+      "options": [
+        "A. Early venous drainage.",
+        "B. Arterial stenoses of feeder vessels.",
+        "C. External carotid transdural supply.",
+        "D. Dilated medullary veins (caput medusa).",
+        "E. Dilated cortical veins."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Brain AVMs are abnormal connections between arteries that would normally supply the brain tissue and veins that normally drain the brain, resulting in shunting with an intervening network of vessels within the brain parenchyma. The ﬁnding of early venous drainage is important in differentiating brain AVMs from other vascular lesions. Cortical venous drainage may be seen in superﬁcial lesions. Recruitment of transdural supply is observed in large lesions, although this is a more typical feature of proliferative angiopathy, which is a diffuse type of AVM. Classically, in this condition, normal brain parenchyma is interspersed between the abnormal vessels. Stenoses of feeder vessels are also often identiﬁed in proliferative angiopathy. The caput medusa of dilated medullary veins is a feature of DVAs, a normal variant. Dilated cortical veins are seen in dural arteriovenous ﬁstulas (DAVFs), which are abnormal connections between arteries that normally supply the meninges (but not the brain) and small venules within the dura.\n\nGeibprasert S, Pongpech S, Jiarakongmun P, Shroff MM, Armstrong DC, and Krings T. Radiologic assessment of brain arteriovenous malformations: what clinicians need to know. RadioGraphics 2010; 30: 483–501.",
+      "questionNumber": 62
+    },
+    {
+      "question": "You are contacted by the A&E department requesting a CT brain for a 28-year-old female presenting with headache which reached peak intensity 15 minutes after onset.The headache came on during sexual activity and is associated with vomiting. Which feature in the clinical history is most predictive of subarachnoid haemorrhage?",
+      "options": [
+        "A. Female sex.",
+        "B. Age <40 years.",
+        "C. 15 minute onset to peak intensity.",
+        "D. Onset during sexual activity.",
+        "E. Association with vomiting."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Headache accounts for approximately 2% of all A&E department visits, yet subarachnoid haemorrhage accounts for less than 3% of these headaches. Up to half of all patients with subarachnoid haemorrhage, however, will be alert and neurologically intact. A recent study prospectively assessed neurologically intact patients presenting with headache peaking within 1 hour to determine which variables are predictive of subarachnoid haemorrhage. High-risk variables include age >40, neck pain, witnessed loss of consciousness, onset with exertion (but not sexual activity), arrival by ambulance, vomiting, and blood pressure >160/100 mmHg. The presence of one or more of these ﬁndings in a patient with an acute non-traumatic headache reaching maximum intensity within 1 hour should prompt further investigation.\n\nPerry JJ, Stiell IG, Sivilotti MLA, Bullard MJ, Lee JS, Eisenhauer M et al. High risk clinical characteristics for subarachnoid haemorrhage in patients with acute headache: prospective cohort study. British Medical Journal 2010; 341: c5204.",
+      "questionNumber": 63
+    },
+    {
+      "question": "A 54-year-old female is admitted following a seizure. CT of the brain demonstrates a rounded, 2-cm hyperdense lesion within the right temporal lobe, which exhibits calciﬁcation. No enhancement is seen post contrast. On follow-up MRI of brain, the lesion is of mixed intensity on T1WI.The lesion has a hypointense rim on T2WI. Prominent susceptibility effect is noted on T2* GE imaging. DWI is normal and no enhancement is demonstrated on T1WI post gadolinium. Based on the imaging ﬁndings, what is the most likely diagnosis?",
+      "options": [
+        "A. AVM.",
+        "B. Haemorrhagic neoplasm.",
+        "C. Cavernous malformation (cavernoma).",
+        "D. Amyloid angiopathy.",
+        "E. Capillary telangiectasia."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a benign vascular hamartoma, which can occur anywhere throughout the CNS, although spinal cord involvement is rare. It is typically a discrete, lobulated mass <4 cm containing blood products at different stages of evolution. On MRI they are described as having a ‘popcorn’ appearance of mixed signal intensity with a hypointense haemosiderin rim. They display little to no enhancement. Prominent susceptibility effect on T2* GE is typical. AVMs will demonstrate multiple ﬂow voids. Haemorrhagic neoplasms will exhibit strong enhancement and an incomplete haemosiderin rim. Multiple ‘black dots’ are a feature of amyloid angiopathy. Capillary telangiectasias are poorly demarcated lesions, usually <1 cm, demonstrating ‘brush-like’ enhancement on T1WI post contrast. They are not usually identiﬁed on CT.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Castillo M et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-5: 24–27.",
+      "questionNumber": 64
+    },
+    {
+      "question": "A 42-year-old man is admitted with sudden onset headache suspicious of subarachnoid haemorrhage.There is no loss of consciousness. Unenhanced CT demonstrates blood in the cisterns around the midbrain and into the anterior part of the interhemispheric ﬁssure. Subsequent CT angiogram (CTA) is negative. What is advised next for this patient?",
+      "options": [
+        "A. Lumbar puncture.",
+        "B. MRA.",
+        "C. Catheter angiography.",
+        "D. Repeat CTA in 1 week.",
+        "E. No further investigation necessary (perimesencephalic haemorrhage)."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Perimesencephalic haemorrhage is conﬁned to the cisterns around the midbrain. In some cases the only blood is found anterior to the pons. Some sedimentation into the lateral ventricles may occur, but frank haemorrhage into the ventricles and/or extension into the sylvian ﬁssure or anterior interhemispheric ﬁssure (as in this case) indicates arterial haemorrhage. Catheter angiography following a negative CTA in the setting of a perimesencephalic bleed arguably does not have any extra diagnostic yield. However, catheter angiography remains the gold standard for detecting aneurysms, and in this case an anterior communicating artery aneurysm requires exclusion.\n\nVan Gijn J and Rinkel CJE. Subarachnoid haemorrhage: diagnosis, causes and management. Brain 2001; 124: 249–278.",
+      "questionNumber": 65
+    },
+    {
+      "question": "A 74-year-old man with a history of diabetes presents with a history of slurred speech and right-sided weakness, which spontaneously resolved over 1–2 hours. Initial unenhanced CT is normal. Further investigation by MRI is requested. What sequence is most sensitive for diagnosing acute ischaemia?",
+      "options": [
+        "A. T2WI.",
+        "B. FLAIR.",
+        "C. DWI.",
+        "D. GE imaging.",
+        "E. T1WI post gadolinium."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The sensitivity and speciﬁcity of DWI in detecting acute ischaemia are 88–100% and 86–100%, respectively, and DWI is established as better than other conventional MRI techniques. In addition, acute from chronic ischaemia can be differentiated. DWI is a measure of the Brownian motion of water molecules within a tissue. Two sets of images are acquired; the DWI and the quantitative ADC map. Chronic lesions may appear bright on the DWI (T2 shine through), but only acute lesions with restricted diffusion will be dark on the ADC map. It should be noted, however, that high signal intensity on DWI with low ADC has been reported in a variety of conditions such as abscess, lymphoma, and gliomas. GE is useful for identifying microbleeds that may inﬂuence antithrombotic treatment.\n\nWallis A and Saunders T. Imaging transient ischaemic attack with diffusion weighted magnetic resonance imaging. British Medical Journal 2010; 340: c2215.",
+      "questionNumber": 66
+    },
+    {
+      "question": "A 16-year-old female is referred for MRI after presenting with an increasing number of cutaneous neuroﬁbromata. As a child she had been noted to have a cafe-au-lait spot on her back. What MRI ﬁnding would conﬁrm the diagnosis of NF-1?",
+      "options": [
+        "A. Multiple hyperintense white matter foci on T2WI.",
+        "B. Bilateral vestibular schwannomas.",
+        "C. Meningioma.",
+        "D. Optic nerve glioma.",
+        "E. Multiple ependymomas."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "NF-1 is an autosomal dominant neurocutaneous disorder. The gene locus is located on 17q11.2. Diagnosis of NF-1 requires two or more of the following: six or more cafe-au-lait spots, two or more neuroﬁbromas (or one plexiform neuroﬁbroma), axillary/inguinal freckling, optic nerve glioma, sphenoid wing dysplasia or a ﬁrst-degree relative with NF-1. The classic imaging appearance is multiple focal areas of white matter and deep gray matter signal abnormality. Other potential ﬁndings include intracranial stenoses and moyamoya type proliferation.\n\nNF-2 characteristically presents with multiple intracranial schwannomas, meningiomas and ependymomas (MISME). Bilateral vestibular schwannomas is diagnostic of NF-2.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Castillo M et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-1: 78–85.",
+      "questionNumber": 67
+    },
+    {
+      "question": "A 16-year-old male with a history of epilepsy is investigated via MRI. Axial T2WI demonstrates a cystic space within the left frontal lobe isointense to CSF.This is causing local mass effect and there is adjacent enlargement of the left lateral ventricle.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Porencephalic cyst.",
+        "B. Arachnoid cyst.",
+        "C. Schizencephaly.",
+        "D. Hydranencephaly.",
+        "E. Ependymal cyst."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Porencephaly is a congenital/acquired cystic cavity within the brain parenchyma with adjacent enlargement of the lateral ventricle. They develop in utero or early infancy. Arachnoid cysts are also CSF isointense, but are extra-axial, displacing the brain away from the adjacent skull. Ependymal cysts are intraventricular and the surrounding brain is usually normal. Schizencephaly is characterized by an intraparenchymal cleft extending from the ventricular surface to the brain surface lined by gray matter. Hydranencephaly results from an early destructive process of the developing brain. The cranial vault is CSF ﬁlled with absence of the cortical mantle and ventricles (water-bag brain). Death in infancy is typical.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Castillo M et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-7: 36–39.",
+      "questionNumber": 68
+    },
+    {
+      "question": "A 32-year-old man presents with schizophrenic-like psychosis and parkinsonian-type movement disorder.There is a family history of neuropsychiatric disturbance. An initial CT is requested which demonstrates heavy bilateral, symmetric calciﬁcations within the globus pallidus, thalami, putamen, and cerebellum.There is no enhancement post contrast. Which of the following suggests a diagnosis of Fahr disease over pseudohypoparathyroidism?",
+      "options": [
+        "A. Involvement of the globus pallidus.",
+        "B. Involvement of the thalami.",
+        "C. Involvement of the putamen.",
+        "D. Involvement of the cerebellum.",
+        "E. Normal calcium-phosphorus metabolism."
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Fahr disease is a rare degenerative neurological disorder characterized by extensive bilateral basal ganglia calciﬁcations that can lead to progressive dystonia, parkinsonism, and neuropsychiatric manifestations. CT has higher diagnostic speciﬁcity for basal ganglia calciﬁcation over MRI. The distribution of calciﬁcations is similar in endocrinological disorders such as hyperparathyroidism, hypoparathyroidism, and pseudohypoparathyroidism. The calciumphosphorus metabolism is usually normal in Fahr disease. In pseudohypoparathyroidism the serum calcium is low with an appropriately high parathyroid hormone (PTH), due to PTH resistance.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Castillo M et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-10: 16–19.",
+      "questionNumber": 69
+    },
+    {
+      "question": "A 29-year-old female complains of increasing headache, followed by generalized seizure activity 24 hours after giving birth. She is noted to be hypertensive. MRI demonstrates bilateral parieto-occipital T2WI hyperintense cortical and subcortical lesions. ADC is elevated. Similar lesions are noted in the anterior watershed zones. What is the most likely diagnosis?",
+      "options": [
+        "A. Hypotensive cerebral infarction.",
+        "B. Postpartum cerebral angiopathy.",
+        "C. Posterior reversible encephalopathy syndrome (PRES).",
+        "D. Progressive multifocal leucoencephalopathy (PML).",
+        "E. Gliomatosis cerebri."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is a disorder of cerebrovascular autoregulation and is associated with eclampsia, which is deﬁned clinically as seizure or coma with pregnancy-induced hypertension. There is a predilection for the posterior circulation and watershed zones, possibly due to its sparse vasomotor sympathetic innervation. T2WI hyperintense lesions within the posterior cortex and subcortical white matter, without diffusion restriction, are typical. Diffusion restriction/low ADC will be found in infarction. The diagnosis of postpartum cerebral angiopathy should be considered in normotensive postpartum women presenting with intracerebral haemorrhage. Reversible high T2WI signal abnormalities may also be seen in the cortex and subcortical white matter. Multifocal stenoses and beading of the intracranial vasculature are also a feature. PML presents with asymmetrical T2WI hyperintensity in the periventricular and subcortical white matter, with cortical sparing. It is seen in the immunocompromised. Gliomatosis cerebri is a diffusely inﬁltrating tumour involving two or more lobes and is frequently bilateral. Enlargement of the involved structures is seen. It can mimic brainstem PRES.\n\nZak IT, Dulai HS, and Kish KK. Imaging of neurologic disorders associated with pregnancy and the postpartum period. RadioGraphics 2007; 27: 95–108.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Castillo M et al. Diagnostic Imaging: Brain, Amirsys, 2004, I-10: 28–31.",
+      "questionNumber": 70
+    },
+    {
+      "question": "A 62-year-old man is referred for MRI of brain after presenting with cognitive decline, gait apraxia, and urinary incontinence.There is a preceding history of chronic headache.Ventriculomegaly is noted on initial CT. Which of the following conventional MRI ﬁndings distinguishes aqueductal stenosis from normal pressure hydrocephalus?",
+      "options": [
+        "A. Periventricular T2WI hyperintensity.",
+        "B. Normal sulci.",
+        "C. Aqueductal ﬂow void.",
+        "D. Funnel-shaped aqueduct.",
+        "E. Relatively normal calibre fourth ventricle."
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "Aqueductal stenosis is a focal reduction in aqueduct size, which can be congenital or acquired. Stenosis occurs at the level of the superior colliculi or at the intercollicular sulcus. The best diagnostic clue is a funnel-shaped aqueduct. There is resultant ballooning of the lateral and third ventricles. The fourth ventricle is normal distal to the obstruction. The most speciﬁc ﬁnding is lack of CSF ﬂow through the aqueduct on phase contrast MRI. Other ﬁndings include thinning of the corpus callosum and downward displacement of the internal cerebral veins and third ventricular ﬂoor. In older patients it can present similarly to NPH. Imaging ﬁndings in NPH include ventriculomegaly (with relative sparing of the fourth ventricle) out of proportion to sulcal enlargement, with normal hippocampi. The aqueductal ‘ﬂow-void’ sign reﬂects increased CSF velocity through the aqueduct, although this can be observed in normal individuals.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Castillo M et al. Diagnostic Imaging: Brain, Amirsys, 2004, II-1: 20–27.",
+      "questionNumber": 71
+    },
+    {
+      "question": "A 24-year-old male boxer is admitted with concussion following a head injury. His admission CT does not demonstrate any evidence of intracranial injury, but the A&E physician asks you about a midline CSF space.You explain that this is a cavum velum interpositum. What distinguishes this CSF space from cavum septum pellucidum and cavum vergae?",
+      "options": [
+        "A. Position between the frontal horns of the lateral ventricles.",
+        "B. Posterior extension between the fornices.",
+        "C. Does not extend anterior to foramen of Monro.",
+        "D. Mildly hyperdensity to CSF in lateral ventricles.",
+        "E. Absent septum pellucidum."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Cavum septum pellucidum (CSP), cavum vergae (CV), and cavum vellum interpositum (CVI) are all considered normal variants, although CSP is possibly more prevalent in boxers due to repeated head trauma, most famously referred to in Rocky V. CSP is universal in foetuses, but decreases with age. CSP is an elongated ﬁnger-shaped CSF collection between the frontal horns of the lateral ventricles. Posterior extension between the fornices is referred to as CV. CV almost never occurs in the absence of CSP. CVI, however, is a triangular-shaped CSF space between the lateral ventricles that does not extend anterior to the foramen of Monro. Absent septum pellucidum can look like CSP/CV on sagittal imaging. It is commonly associated with other congenital anomalies.\n\nOsborn AG, Blaser SI, Salzman KL, Katzman GL, Provenzale J, Castillo M et al. Diagnostic Imaging: Brain, Amirsys, 2004, II-1: 8–11.",
+      "questionNumber": 72
+    },
+    {
+      "question": "A 42-year-old male is admitted with ﬁrst presentation of a seizure.There is no signiﬁcant past medical history. CT demonstrates a mass lesion within the right frontal lobe. He is further investigated via MRI, which includes MR perfusion and spectroscopy.The neurosurgical team are keen to biopsy this lesion if there is radiological suspicion of a high-grade lesion. Which of the following radiological ﬁndings is most consistent with a high grade lesion?",
+      "options": [
+        "A. Relative cerebral blood volume (rCBV) 1.5 on MR perfusion.",
+        "B. Lactate peak on MRS.",
+        "C. Elevated ADC on DWI.",
+        "D. Peritumoral hyperintensity on T2WI.",
+        "E. Nodular enhancement on T1WI post gadolinium."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Neuroepithelial tumours are either low grade (WHO I and II) or high grade (WHO III and IV). The classiﬁcation relies on pathology, but as this requires brain biopsy it is not without signiﬁcant risk. Advanced MRI techniques play an increasing role in helping to differentiate these lesions, as low-grade lesions may be managed via a ‘watch and wait’ approach. Conventional MRI is poorly sensitive for glioma grading, as low-grade gliomas can enhance (in up to 20%) and up to 30% of non-enhancing gliomas are malignant. MR perfusion can help differentaiate, as rCBV tends to increase with tumour grade. A threshold of 1.75 is commonly utilized to separate low- from highgrade gliomas, but low-grade oligodendrogliomas can give misleadingly elevated rCBV values. The classic MR spectroscopy features of high-grade lesions are elevated choline and reduced NAA.\n\nIn addition an elevated lactate signal is typical of high-grade lesions secondary to the anaerobic environment. ADC is usually lower in high-grade lesions, but there is considerable overlap and so ADC maps are insufﬁcient on their own for predicting tumour grade.\n\nAl-Okaili RN, Krejza J, Wang S, Woo JH, and Melhem ER. Advanced MR imaging techniques in the diagnosis of intraaxial brain tumors in adults. RadioGraphics 2006; 26: S173–S189.\n\nLaw M, Yang S, Wang H, Babb JS, Johnson G, Cha S et al. Glioma grading: sensitivity, speciﬁcity and predictive values of perfusion MR imaging and proton MR spectroscopic imaging compared with conventional MR imaging. American Journal of Neuroradiology 2003, 24: 1989–1998.",
+      "questionNumber": 73
+    },
+    {
+      "question": "A 54-year-old man presents with hearing loss in the left ear, which is of the sensori-neural type. He undergoes an MRI scan of the internal auditory meati and subsequently a full MRI scan of brain. A large extra-axial mass lesion is identiﬁed at the left cerebellopontine angle. Which of the following features on MR imaging will be most helpful in indicating that this is probably a large vestibular schwannoma, rather than a meningioma?",
+      "options": [
+        "A. Enhancing dura adjacent to the mass.",
+        "B. Erosion of the adjacent porus acousticus.",
+        "C. Tumour within the adjacent internal auditory meatus.",
+        "D. Intense enhancement within the mass.",
+        "E. Hyperostosis in the adjacent petrous temporal ridge."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A large meningioma at the cerebellopontine angle can easily grow into the adjacent internal auditory meatus (IAM), but typically does so without causing any enlargement or erosion of this structure. Most vestibular schwannomas arise from the inferior vestibular nerve within the IAM and as they grow they smoothly erode the posterior edge of the porus acousticus.\n\nAlthough dural enhancement has been described adjacent to vestibular schwannomas, an enhancing ‘dural tail’ would be a ﬁnding more commonly associated with a lesion arising from the dura, typically a meningioma.\n\nBony hyperostosis is a ﬁnding that is associated with meningioma. Both meningiomas and vestibular schwannomas typically show avid enhancement with intravenous gadolinium.\n\nBonneville F, Savatovsky J, and Chiras J. Imaging of cerebellopontine angle lesions: an update. Part 1: enhancing extra-axial lesions. European Radiology 2007; 17: 2472–2482.",
+      "questionNumber": 74
+    },
+    {
+      "question": "A 32-year-old female is referred to neurology complaining of visual disturbance and headache. She is 4 months postpartum. On examination a bitemporal hemianopia is noted. Hormonal testing reveals hypoadrenalism and hypothyroidism. A dedicated MRI of her pituitary gland is requested. Which of the following features is suggestive of autoimmune hypophysitis over pituitary adenoma?",
+      "options": [
+        "A. Asymmetric pituitary enlargement.",
+        "B. Heterogenous gadolinium enhancement.",
+        "C. Loss of the posterior pituitary bright spot.",
+        "D. Sphenoid sinus mucosal thickening.",
+        "E. Age >30."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Autoimmune hypophysitis (AH) and non-secreting pituitary adenomas can only be differentiated with certainty on histology. As a result, approximately 40% of patients with AH are misdiagnosed as having pituitary macroadenoma and undergo unnecessary surgery. Hormone production is compromised in both conditions, although a history of infertility is common with adenomas, whereas patients with AH typically achieve spontaneous pregnancy. In an attempt to develop a scoring system to differentiate the two conditions, a recent study found that features signiﬁcantly associated with AH over adenoma were age <30, relation to pregnancy, homogenous gadolinium enhancement, loss of the posterior pituitary bright spot, and enlarged stalk. Features consistent with adenoma were asymmetrically enlarged pituitary, size >6 cm3 , and associated sinus mucosal thickening. The normal posterior pituitary gland is bright on T1WI due to the rich content of vasopressin neurosecretory granules. This is frequently lost in AH due to direct autoimmune involvement of the neurohypophysis, whereas it is conserved in the majority of adenomas, even when displaced by large tumour size.",
+      "questionNumber": 75
+    }
+  ]
+}
+

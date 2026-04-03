@@ -1,0 +1,656 @@
+
+{
+  "title": "Musculoskeletal system and trauma",
+  "questions": [
+    {
+      "question": "A 45-year-old man attends the Accident & Emergency Department with a 1-week history of foot pain. He is a regular runner and recently completed the London marathon. There is a history of lymphoma 15 years ago treated with chemotherapy. He is also diabetic and has chronic renal failure. Radiographs demonstrated a subtle periosteal reaction at the second metatarsal shaft. Bone scan shows focal tracer uptake in the second metatarsal region.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Lymphoma deposit in second metatarsal",
+        "B. Stress fracture",
+        "C. Osteomyelitis",
+        "D. Neuropathic foot",
+        "E. Osteomalacia"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is the most likely diagnosis as this is a very common site for stress fractures in the feet of runners, especially affecting the second and third metatarsals. Bone scan is almost 100% sensitive showing abnormal uptake within 6–72 hours of injury. MRI is also a very sensitive modality showing intermediate signal intensity on T1 and high signal on STIR and T2-weighted images.",
+      "questionNumber": 1
+    },
+    {
+      "question": "A 55-year-old housewife attended her GP with a gradually growing soft tissue swelling on the dorsum of her foot for 1 year. The swelling is tender and mobile in a side-to-side direction. Ultrasound shows a 4 cm hypervascular lesion on the dorsum of the foot between the tendons of extensor hallucis and extensor digitorum. MRI shows that the lesion is bright on STIR and intermediate signal on T1. It shows homogenous enhancement with gadolinium.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Soft tissue ganglion",
+        "B. Peripheral nerve sheath tumour",
+        "C. Lipoma",
+        "D. Liposarcoma",
+        "E. Callus from a previous fracture"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The location and direction of mobility along with typical MRI features clinch the diagnosis of peripheral nerve sheath tumour. Ganglion, lipoma and callous would not appear as hypervascular lesions. Liposarcoma can show increased vascularity but demonstrates heterogenous enhancement on MRI.",
+      "questionNumber": 2
+    },
+    {
+      "question": "A 34-year-old sedentary male office worker presents with a 2-month history of heel pain. A radiograph demonstrates a well-defined lytic lesion in the calcaneum. This produces mild expansion with endosteal scalloping and has a central ossified nodule. On MRI, the lesion is high signal on T1 and T2.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Giant cell tumour",
+        "B. Fibrous cortical defect",
+        "C. Intraosseous lipoma",
+        "D. Osteoid osteoma",
+        "E. Solitary bone cyst"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This is an expansile, non-aggressive lesion usually seen in metaphyses. It may contain a focal area of dystrophic calcification within (secondary to fat necrosis). On MRI, the lesion returns fat signal on all sequences (high signal on T1 and T2, and low signal on STIR).",
+      "questionNumber": 3
+    },
+    {
+      "question": "A 10-year-old boy presented with fracture of the left proximal humerus sustained during a tackle in a football match. Plain radiographs show a pathological fracture and underlying lytic lesion in the metaphysis of the proximal humerus. The lesion shows endosteal scalloping and a small bone fragment in the floor of the cyst. MRI features include intermediate signal on T1 and high signal on T2 with a fluid–fluid level.\n\nWhat is the most likely diagnosis of the underlying bony lesion?",
+      "options": [
+        "A. Unicameral bone cyst",
+        "B. Lymphoma",
+        "C. Aneurysmal bone cyst",
+        "D. Telangiectatic osteosarcoma",
+        "E. Giant cell tumour"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is usually asymptomatic unless fractured. The lesion usually is 2–3 cm in size, usually in the metaphysis, with its long axis parallel to the long axis of the bone. There may be endosteal scalloping of the bone and a ‘fallen-fragment sign’ (if fractured, centrally dislodged fracture fragment falls into a dependent position in the cyst).",
+      "questionNumber": 4
+    },
+    {
+      "question": "A 15-year-old boy attended the Accident & Emergency Department with ankle pain after a twisting injury 7 days previously. The history suggests there has been ill-defined swelling and ache for a few weeks. The plain radiograph shows a fracture in the distal fibula, with lamellar periosteal reaction. There appears to be an associated soft tissue bulge.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Fracture with large haematoma",
+        "B. Neuroblastoma metastasis",
+        "C. Lymphoma",
+        "D. Ewing’s sarcoma with fracture",
+        "E. Osteomyelitis"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "For a simple fracture with haematoma, this case has presented too early for a periosteal reaction. Neuroblastoma metastasis could be considered in a child less than 5 years old, and lymphoma should be considered in patients over 30 years age. Osteomyelitis could have been possible if there had been a previous history of localised pain, fever etc.",
+      "questionNumber": 5
+    },
+    {
+      "question": "An 80-year-old diabetic complains of left groin pain. He undergoes twice a week haemodialysis. The plain radiograph shows large globular periarticular calcifications around both hip joints. A bone scan shows absence of renal activity and ‘superscan’ appearance. The calcifications also show increased tracer uptake.\n\nThe most likely cause of the calcifications is?",
+      "options": [
+        "A. Dermatomyositis",
+        "B. Renal osteodystrophy",
+        "C. Scleroderma",
+        "D. Calcium pyrophosphate deposition disease",
+        "E. Renal osteodystrophy"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Patients with renal osteodystrophy have extensive soft tissue calcifications, particularly in periarticular distribution. ‘Superscan’ appearance is also a feature.",
+      "questionNumber": 6
+    },
+    {
+      "question": "A 65-year-old woman with chronic rheumatoid arthritis, had fracture of the lateral malleolus which was treated by a cast immobilisation. Since removal of the plaster, the foot has been swollen and painful on movements. Plain radiographs show that the fracture is united but the bones show diffuse osteopenia with endosteal scalloping and severe periarticular demineralisation. Bone scan shows increased uptake on three phase scintigram.\n\nThe most likely cause of the patient’s symptoms is?",
+      "options": [
+        "A. Reflex sympathetic dystrophy",
+        "B. Transient regional osteoporosis",
+        "C. Myelomatosis",
+        "D. Infection",
+        "E. Disuse osteoporosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is commonly associated with trauma. The condition causes hyperhidrosis skin changes with excessive pitting oedema, sudomotor changes (hyperhidrosis and hypertrichosis), pain and patchy osteopenia. Three-phase bone scan shows increased blood flow, increased blood pool and increased periarticular uptake on delayed images.",
+      "questionNumber": 7
+    },
+    {
+      "question": "A 40-year-old woman with lung cancer and multiple liver metastases presents with back pain and left L5 radiculopathy. Plain radiography demonstrates prominent vertical striations in L4 vertebral body. MRI scans demonstrated a sequestrated disc pressing the left L5 nerve root in the lateral recess. The L4 vertebral body shows a well-defined lesion, returning high signal on T1 and T2.\n\nThe lesion in the L4 vertebral body is?",
+      "options": [
+        "A. Intraosseous ganglion",
+        "B. Metastatic deposit from lung cancer",
+        "C. Haemangioma",
+        "D. Osteoid osteoma",
+        "E. Schmorl’s node"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Vertebral haemangiomas are visualised with fine or coarse vertical striations, commonly seen in vertebral bodies. CT shows a dotted appearance in a fatty matrix. On MRI, they present as lesions, returning high signal on T1 and T2 due to their high fat content. Metastatic lesions are Intermediate signal on T1 and high on T2. Schmorl’s node affects the end plates.",
+      "questionNumber": 8
+    },
+    {
+      "question": "A 20-year-old athlete presented with chronic leg pain relieved with aspirin. The plain radiograph shows 2–3 cm area of sclerosis and cortical thickening in the midshaft tibia. CT shows a 1 cm lytic lesion with central mineralisation. MRI demonstrates a bone oedema pattern but normal surrounding soft tissues.\n\nThe most likely cause of underlying pathology is?",
+      "options": [
+        "A. Stress fracture",
+        "B. Ewing’s sarcoma",
+        "C. Osteomyelitis",
+        "D. Enchondroma",
+        "E. Osteoid osteoma"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This typically presents as a small lytic lesion with central mineralisation surrounded by reactive sclerotic area. On bone scans, the central nidus shows intense uptake surrounded by region of lesser activity (double density sign). MRI demonstrates bone oedema pattern and typically relieved with aspirin. Stress fractures are transverse and linear. Ewing’s sarcoma and infection must be considered if soft tissue involvement is seen on MRI.",
+      "questionNumber": 9
+    },
+    {
+      "question": "A 40-year-old mother presents with knee pain. Plain radiographs show an eccentric, expansile, lytic lesion with a narrow zone of transition in the lateral femoral condyle extending to subarticular bone. The lateral cortex is thinned but no periosteal reaction or sclerosis is seen. MRI shows a well-defined bony lesion with intermediate signal on T1 and mixed signal on T2 and multiple fluid–fluid levels.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Benign fibrous histiocytoma",
+        "B. Giant cell tumour",
+        "C. Telangiectatic osteosarcoma",
+        "D. Brodie’s abscess",
+        "E. Simple bone cyst"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Typical features on radiograph are a lytic, eccentric, expansile, subarticular lesion with ‘soap bubble’ appearance (fluid–fluid level on MRI). Benign fibrous histiocytoma and telangiectatic osteosarcoma can also show fluidfluid levels but are metaphyseal lesions not extending to the subarticular surface. A simple bone cyst is unilocular and situated away from the articular surface.",
+      "questionNumber": 10
+    },
+    {
+      "question": "A 10-year-old white boy presented with mass in abdomen and bilateral hip pain. He was found to have splenomegaly and pancytopaenia. Pelvic radiograph suggests bilateral avascular necrosis of femoral heads. MRI shows diffuse low signal bone marrow on T1 and T2.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Gaucher’s disease",
+        "B. Sickle cell disease",
+        "C. Perthes’ disease",
+        "D. Leukaemia",
+        "E. Multifocal histiocytosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is the commonest lipid storage disorder. Marrow infiltration leads to avascular necrosis in the femur, ankle and humerus. Patients have splenomegaly, anaemia and pancytopaenia. Loss of normal remodelling of the femur results in Erlenmeyer flask’ deformity at the distal femur.",
+      "questionNumber": 11
+    },
+    {
+      "question": "A 40-year-old man presents with right knee pain. Plain radiography shows a large joint effusion. MRI of the knee shows multiple foci of low signal intensity seen in the synovium on T1, T2 and gradient-echo sequences. There is a moderate joint effusion.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Haemangioma",
+        "B. Pigmented villonodular synovitis",
+        "C. Rheumatoid arthritis",
+        "D. Synovial sarcoma",
+        "E. Synovial chondromatosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is a benign pathology affecting usually the knee joint. It shows no calcifications, osteoporosis or erosions (until late). MRI is diagnostic, the lesions returning low signal on all sequences due to iron (haemosiderin).",
+      "questionNumber": 12
+    },
+    {
+      "question": "A 55-year-old man presents with pain and swelling in the left big toe. The plain radiograph shows periarticular erosions with sclerotic margins and overhanging edges in the first metatarsophalangeal joint. The joint space is preserved and there is moderate surrounding soft tissue swelling.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Rheumatoid arthritis",
+        "B. Erosive osteoarthritis",
+        "C. Gouty arthritis",
+        "D. Psoriatic arthropathy",
+        "E. Calcium pyrophosphate deposition disease"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Periarticular erosions with sclerotic borders and overhanging margins with preserved articular surface are typical of gout. Rheumatoid arthropathy has non-proliferative marginal erosions, symmetrical distribution and joint space narrowing. Psoriasis show progressive joint destruction with erosions. Erosive osteoarthritis is symmetrical with erosions are the articular surface Calcium pyrophosphate deposition disease is polyarticular, and shows chondrocalcinosis and joint-space narrowing.",
+      "questionNumber": 13
+    },
+    {
+      "question": "A 40-year-old chronic smoker with recently diagnosed bronchogenic carcinoma presents with bilateral leg pains. A plain radiograph shows lamellar periosteal reaction in bilateral tibia. A bone scan demonstrates diffusely increased uptake along the cortical margins of the tibial diaphysis.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Bilateral tibial metastases",
+        "B. Osteomyelitis",
+        "C. Chronic venous stasis",
+        "D. Hypertrophic osteoarthropathy",
+        "E. Acromegaly"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This is seen in multiple conditions (e.g. malignant tumours of the lung, some benign lesions, chronic chest infections). The condition manifests as cortical thickening and lamellar periosteal reaction in the diametaphyseal regions of the long bones. Bone scanning shows symmetrical uptake along the cortical margins of the diaphysis and metaphysis of tubular bones.",
+      "questionNumber": 14
+    },
+    {
+      "question": "An elderly patient with history of urinary frequency and dribbling presents with right hip pain. A radiograph of pelvis shows there is marked thickening of the iliopectineal line with acetabular protrusion, coarsening of the trabecular pattern and increased sclerosis in the entire right hemipelvis. The left hemipelvis appears normal.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Sclerotic metastases from prostate carcinoma",
+        "B. Paget’s disease",
+        "C. Lymphoma",
+        "D. Normal variant",
+        "E. Fluorosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Asymmetrical cortical sclerosis and trabecular thickening is seen in Paget’s disease. Metastatic disease of the prostate is unlike to affect only a hemipelvis and does not directly cause acetabular protrusion. Fluorosis causes generalised sclerosis of the bones in the body.",
+      "questionNumber": 15
+    },
+    {
+      "question": "A 35-year-old man presents with knee pain. MRI shows a 1.5 cm homogenous ovoid lesion which pushes the medial collateral ligament. It returns high signal on STIR and T2 images. There is also a horizontal cleavage tear of the posterior horn of the medial meniscus and a radial tear of the lateral meniscus.\n\nThe most likely cause of the lesion is?",
+      "options": [
+        "A. Dissecting bakers cyst",
+        "B. Ganglion",
+        "C. Pes anserinus bursa",
+        "D. Haemangioma",
+        "E. Meniscal cyst"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "Meniscal cysts are very commonly associated with meniscal tears. MRI shows classic features of the cyst, related to the parameniscal structures. Lateral meniscal cysts tend to be smaller but are often more symptomatic than cysts in the medial counterparts.",
+      "questionNumber": 16
+    },
+    {
+      "question": "A 21-year-old man presents with multiple swellings and focal areas of bluish discoloration in both hands. Plain radiograph of the hands show multiple, welldefined, expanded lytic lesions in the metacarpals. These lesions show stippled calcifications in the matrix and cause cortical thinning. Multiple small round calcifications are seen in the surrounding soft tissues.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Ollier’s disease",
+        "B. Maffucci’s syndrome",
+        "C. Metastases",
+        "D. Diaphyseal aclasis",
+        "E. Kaposi’s sarcoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This diagnosis is a combination of multiple enchondromatosis and soft tissue haemangiomas. Hand and foot involvement is common and severe. The soft tissue calcifications are phleboliths from haemangiomas. In Ollier’s disease, there is absence of haemangioma and phleboliths.",
+      "questionNumber": 17
+    },
+    {
+      "question": "An 80-year-old woman complains of pain in both hands. Radiography of the hands shows bilateral central articular ‘seagull’ erosions affecting the interphalangeal joints of fingers in both hands. Mild periarticular osteoporosis is seen.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Osteoarthritis",
+        "B. Erosive osteoarthritis",
+        "C. Calcium pyrophosphate deposition disease",
+        "D. Gouty arthropathy",
+        "E. Rheumatoid arthritis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Central articular erosion with a ‘seagull’ pattern, ankylosis and periarticular osteoporosis is typical of erosive osteoarthritis. This is seen in older women and is usually limited to hands, particularly affecting the proximal interphalangeal joints.",
+      "questionNumber": 18
+    },
+    {
+      "question": "A 35-year-old woman with moderate hallux valgus deformity, complains of pain between the second and third toes of left foot. Ultrasound shows a 1 cm hypoechoic lesion in the region of the distal intermetatarsal heads of the second and third toes. This is non-compressible and shows no significant vascularity.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Bursitis",
+        "B. Morton’s neuroma",
+        "C. Ganglion from metatarsophalangeal joint",
+        "D. Tenosynovitis from the flexor tendons",
+        "E. Synovial sarcoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This is the typical ultrasound appearance of a Morton’s neuroma. Treatment is conservative or surgical removal. On MRI the lesion appears as intermediate signal intensity on T1 and T2. Bursitis is compressible on ultrasound probe pressure.",
+      "questionNumber": 19
+    },
+    {
+      "question": "A 67-year-old man with history of lung cancer and renal transplant had a bone scan. There are multiple focal areas of increased tracer uptake in the left ribs, arranged in a linear pattern. Increased tracer uptake is also identified along the cortices of both humerus and radius bones bilaterally. No renal uptake is seen.\n\nThe most likely diagnosis for this appearance is?",
+      "options": [
+        "A. Hypertrophic osteoarthropathy with rib metastases",
+        "B. Hypertrophic osteoarthropathy with rib fractures",
+        "C. Normal uptake in lower limbs with rib fractures",
+        "D. Normal uptake in lower limbs with rib metastases",
+        "E. Diffuse skeletal metastases"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "On bone scan multiple areas of uptake in a linear pattern suggests traumatic injury to ribs. HPOA is characterised by bilateral symmetrical tracer uptake on bone scanning, involving the diaphyseal and metaphyseal regions of long bones. Characteristically a periosteal reaction is seen along the shafts of involved bones. This pattern of uptake is called a ‘double-stripe’ or ‘parallel-track’ sign and is characteristic of HPOA.",
+      "questionNumber": 20
+    },
+    {
+      "question": "A 60-year-old man with history of diabetes, chronic renal failure and bilateral intermittent claudication, had a left ankle injury 6 months ago. It was treated by open reduction and internal fixation of the medial and lateral malleoli. He now complains of persistent pain and swelling in the ankle and foot. Plain radiographs show marked osteopenia of the bones in the left ankle and foot. Bone scan shows diffuse increased tracer uptake in the periarticular distribution in left ankle and foot.\n\nThe likely cause of the bone scan appearances is?",
+      "options": [
+        "A. Chronic ischemic feet",
+        "B. Hypertrophic osteoarthropathy",
+        "C. Secondary hyperparathyroidism",
+        "D. Reflex sympathetic dystrophy",
+        "E. Diabetic foot"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "A history of trauma, periarticular uptake on bone scan and osteoporosis suggests reflex sympathetic dystrophy. All other conditions are likely to affect both feet.",
+      "questionNumber": 21
+    },
+    {
+      "question": "A 75-year-old woman presents with symptoms of headache, right leg pain and raised serum alkaline phosphatase. Plain radiography of the right leg shows cortical thickening of the proximal tibia with coarse trabeculations and bowing. A bone scan demonstrates intense tracer uptake in the calvarium and the right tibia.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Multiple myeloma",
+        "B. Paget’s disease",
+        "C. Secondary hyperparathyroidism",
+        "D. Hypertrophic pulmonary osteoarthropathy",
+        "E. Myelofibrosis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Paget’s disease can be monostotic or polyostotic and demonstrates intense tracer uptake on bone scan. The area of uptake usually conforms well to the area of bone that is distorted or expanded. The most common bones involved are the pelvis, spine, skull, femur, scapula, tibia and humerus. Many patients are evaluated after finding increased serum alkaline phosphatase.",
+      "questionNumber": 22
+    },
+    {
+      "question": "A 60-year-old woman with recent history of falls presents with bilateral hip and low back pain. MRI of the pelvis shows bilateral sacral ala fractures and parasymphysial pubic fractures with marginal sclerosis. There is increased tracer uptake on bone scan of these regions.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Multiple myeloma with pathological fractures",
+        "B. Insufficiency fractures",
+        "C. Traumatic fractures",
+        "D. Metastatic disease with unknown primary",
+        "E. Lymphoma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Presence of bilateral sacral ala fractures with pubic fractures in this clinical context is virtually diagnostic of insufficiency fractures. Presence of marginal sclerosis at the fractures suggests chronic changes.",
+      "questionNumber": 23
+    },
+    {
+      "question": "A 24-year-old man was involved in a road traffic accident. CT of the left knee shows isolated 5 mm depression of the lateral tibial plateau.\n\nWhat is the Schatzker classification of this fracture?",
+      "options": [
+        "A. Type 1",
+        "B. Type 2",
+        "C. Type 3",
+        "D. Type 4",
+        "E. Type 5"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Type 1 is lateral condylar split, type 2 is lateral split with depression, type 3 is pure lateral depression, type 4 is medial condylar fracture and depression, type 5 is bicondylar fracture and type 6 is fracture extending to metadiaphysis.",
+      "questionNumber": 24
+    },
+    {
+      "question": "A 13-year-old footballer complains of pain in the right groin after a tackle.\n\nRadiograph of the pelvis shows an avulsion fracture of the lesser tuberosity.\n\nWhich muscle is attached to the lesser tuberosity?",
+      "options": [
+        "A. Iliopsoas",
+        "B. Rectus femoris",
+        "C. Sartorius",
+        "D. Biceps femoris",
+        "E. Vastus medialis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is attached to the lesser trochanter.",
+      "questionNumber": 25
+    },
+    {
+      "question": "A 10-year-old boy presents after falling down stairs and sustaining injury to his left forearm. Radiographs show a displaced fracture of the proximal shaft ulna and anterior dislocation of the radial head.\n\nWhat is the diagnosis?",
+      "options": [
+        "A. Galeazzi fracture dislocation",
+        "B. Monteggia fracture dislocation",
+        "C. Essex–Lopresti fracture complex",
+        "D. Weber fracture",
+        "E. Maisonneuve fracture"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This involves a fracture of the proximal ulna shaft with dislocated radial head.",
+      "questionNumber": 26
+    },
+    {
+      "question": "A 30-year-old African man presents with knee pain. Radiograph shows a serpiginous area of lucency with sclerotic margins in the proximal metaphysis of tibia. MRI shows a ‘double-line’ sign on T2-weighted images. There is a linear area of low signal peripheral to a high signal intensity inner border. A bone scan shows no uptake in the area.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Bone infarct",
+        "B. Osteomyelitis",
+        "C. Enchondroma",
+        "D. Non-ossifying fibroma",
+        "E. Osteonecrosis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The radiographic and MRI appearances described are typical for a bone infarct. These are typically metaphyseal or diaphyseal in contrast to osteonecrosis. Bone scans may show increased uptake in acute stages where revascularisation has occurred.",
+      "questionNumber": 27
+    },
+    {
+      "question": "A 62-year-old man presents with sudden-onset pain after minor injury. Plain radiograph shows subchondral sclerosis in the medial femoral condyle and joint effusion. MRI shows a diffuse oedema in the subchondral bone of medial femoral condyle with a crescentic linear fracture in a subchondral location.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Spontaneous osteonecrosis of knee",
+        "B. Osteoarthritis",
+        "C. Osteochondritis desiccans",
+        "D. Calcium pyrophosphate deposition disease",
+        "E. Gout"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Typical subchondral fracture in elderly patient after minor knee injury.",
+      "questionNumber": 28
+    },
+    {
+      "question": "An 18-year-old man presents with progressive swelling of right knee. Radiographs show large joint effusion in the suprapatellar pouch. MRI shows marked synovial thickening and large synovial fronds which return high signal on T1, T2 and proton density images. The lesions are low signal on STIR images.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Synovial lipoma",
+        "B. Synovial osteochondromatosis",
+        "C. Hypertrophic synovitis",
+        "D. Pigmented villonodular synovitis",
+        "E. Lipoma arborescens"
+      ],
+      "correctAnswerIndex": 4,
+      "explanation": "This condition is seen most commonly in the suprapatellar pouch, with small to large frond-like masses arising from synovium. On MRI, the masses show characteristic signal of fat on all sequences. Saturation on STIR images is diagnostic.",
+      "questionNumber": 29
+    },
+    {
+      "question": "A 51-year-old man with a palpable nodule on the planter aspect of the foot.\n\nUltrasound shows a 2 cm, vascular and hypoechoic lesion within the mid part of the plantar fascia.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Plantar lipoma",
+        "B. Plantar fibromatosis",
+        "C. Ganglion cyst",
+        "D. Accessory muscle",
+        "E. Haemangioma"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "This presents as nodular thickening in the plantar fascia. There can be single or multiple lesions. On MRI, the lesion is low signal on T1 and mild hyperintensity on T2, and the nodule enhances with gadolinium.",
+      "questionNumber": 30
+    },
+    {
+      "question": "A 35-year-old woman presents with swelling in the thigh. The radiograph shows a bony excrescence from the femoral cortex without medullary continuity. On MRI there is a soft tissue surrounding the bony excrescence, which returns high signal on T1 and T2 and homogenous low signal on STIR.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Osteochondroma",
+        "B. Osteosarcoma",
+        "C. Liposarcoma",
+        "D. Parosteal lipoma",
+        "E. Intramuscular lipoma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "These are benign tumours of adipose tissue which are intimately related to the periosteum. They often contain bony excrescences that may resemble osteochondroma but, unlike osteochondroma, they do not communicate with the medullary cavity of parent bone. MRI is diagnostic, confirming the juxtacortical benign nature of the fatty lesion and non-communication of the bony lesion with the medulla of the adjacent bone.",
+      "questionNumber": 31
+    },
+    {
+      "question": "A 12-year-old boy presents with a hard lump around his right knee. A radiograph shows a bony projection from the medial part of the tibial metaphysis with continuity of the cortex and medulla of the tibia.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Osteochondroma",
+        "B. Parosteal osteosarcoma",
+        "C. Chondrosarcoma",
+        "D. Periosteal osteosarcoma",
+        "E. Juxtacortical myositis ossificans"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The best diagnostic feature of osteochondroma is continuity of the bony cortex and medulla with the parent bone.",
+      "questionNumber": 32
+    },
+    {
+      "question": "A 20-year-old woman presents with pain after injury to the index finger. The radiograph shows a 2 cm lytic lesion with a matrix containing calcifications. There is endosteal scalloping of the cortex with cortical expansion, but no cortical breach.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Bone infarct",
+        "B. Enchondroma",
+        "C. Chondrosarcoma",
+        "D. Juxtacortical chondroma",
+        "E. Epidermoid cyst"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Radiographic features are typical and diagnostic. A bone infarct appears as a serpiginous area with sclerotic margins and no endosteal scalloping. Chondrosarcoma shows periosteal reaction and an associated soft tissue mass.",
+      "questionNumber": 33
+    },
+    {
+      "question": "A 26-year-old man presents with dull pain in the left thigh not relieved with salicylates. Radiograph shows a 3 cm expansile lytic lesion in the mid-shaft of the left femur, which shows reactive sclerosis and periosteal reaction. The bone scan shows intense tracer uptake.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Osteoid osteoma",
+        "B. Osteoblastoma",
+        "C. Osteosarcoma",
+        "D. Osteomyelitis",
+        "E. Aneurysmal bone cyst"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Also called giant osteoid osteoma when measuring > 2 cm. Osteoid osteoma are < 2 cm, have a predilection for the axial skeleton and usually respond to salicylates. Osteosarcomas show cortical destruction, mineralised matrix and soft tissue mass. Aneurysmal bone cysts show fluid–fluid levels and no matrix calcification.",
+      "questionNumber": 34
+    },
+    {
+      "question": "A 33-year-old man presents with a 2-year history of a hard lump on the left middle finger. A radiograph shows a 2 cm, well-defined, round, densely sclerotic lesion attached to the cortex of the proximal phalanx of the left middle finger. No cortical erosion or periosteal reaction is seen. A bone scan shows no tracer uptake.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Enostosis",
+        "B. Osteoma",
+        "C. Parosteal osteosarcoma",
+        "D. Osteochondroma",
+        "E. Myositis ossificans"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The best diagnostic clue is the densely sclerotic, well-defined lesion attached to the parent bone. Latent lesions show no tracer uptake.",
+      "questionNumber": 35
+    },
+    {
+      "question": "A 20-year-old football player presents after injuring his right knee in a tackle. Plain radiographs show fracture of the tibial spine with lipohaemarthrosis.\n\nWhat structure is attached to the medial part of the anterior tibial spine?",
+      "options": [
+        "A. Anterior cruciate ligament",
+        "B. Posterior cruciate ligament",
+        "C. Medial collateral ligament",
+        "D. Lateral collateral ligament",
+        "E. Medial meniscus"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The anterior cruciate ligament is attached to the medial part of the tibial spine.",
+      "questionNumber": 36
+    },
+    {
+      "question": "A 40-year-old man with a history of dislocated left hip in a road traffic accident 2 years ago presents with left hip pain. Radiography show flattening and sclerosis in the superolateral part of the femoral head.\n\nThe most likely diagnosis is?",
+      "options": [
+        "A. Degenerative arthritis",
+        "B. Calcium pyrophosphate deposition disease",
+        "C. Avascular necrosis",
+        "D. Paget’s disease",
+        "E. Prostatic metastases"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Avascular necrosis of the femoral head is a complication after hip dislocation. It may be seen as a wedge-shaped or geographical area of subchondral ischemic focus in the weight-bearing area. On MRI, there is a hyperintense inner border parallel to a hypointense periphery.",
+      "questionNumber": 37
+    },
+    {
+      "question": "A 60-year-old presents with left groin pain. Ultrasound shows a 2 cm hypoechoic lesion bulging medial to the epigastric vessels on Valsalva manoeuvre and absent on rest.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Direct inguinal hernia",
+        "B. Indirect inguinal hernia",
+        "C. Obturator hernia",
+        "D. Spigelian hernia",
+        "E. Femoral hernia"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A direct inguinal hernia is seen medial to the inferior epigastric vessels whereas an indirect hernia is seen lateral to them.",
+      "questionNumber": 38
+    },
+    {
+      "question": "A 40-year-old man presents with right groin pain. Ultrasound shows a 3 cm echogenic soft tissue mass distending the right inguinal canal on straining, and which goes away on relaxation.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Direct inguinal hernia",
+        "B. Indirect inguinal hernia",
+        "C. Femoral hernia",
+        "D. Obturator hernia",
+        "E. Lymph node"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "An indirect inguinal hernia protrudes through the internal inguinal ring and extends along the inguinal canal parallel to its long axis.",
+      "questionNumber": 39
+    },
+    {
+      "question": "A 40-year-old man presents with a lump in the right groin 2 months after a laparoscopic inguinal hernia repair. Ultrasound shows a well-defined homogenous, hyperechoic, avascular soft tissue mass lateral to the inferior epigastric vessels in the right groin. It has no change on pressure or with Valsalva manoeuvre.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Recurrent direct inguinal hernia",
+        "B. Recurrent indirect inguinal hernia",
+        "C. Lymph node",
+        "D. Lipoma",
+        "E. Seroma"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "The lesion has typical sonographic characteristics of a lipoma.",
+      "questionNumber": 40
+    },
+    {
+      "question": "A 20-year-old runner presents with a history of right leg pain for 4 weeks.\n\nRadiography of the right leg shows a transverse cortical lucency and cortical thickening in the anterior cortex of the mid shaft of the tibia.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Stress fracture",
+        "B. Nutrient artery foramen",
+        "C. Osteomalacia",
+        "D. Normal variant",
+        "E. Hypertrophic pulmonary osteoarthropathy"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "This is commonly seen in runners and other athletes, in marching soldiers and in other patients in whom repetitive prolonged muscular action and stress are applied to a bone that is not accustomed to such action.",
+      "questionNumber": 41
+    },
+    {
+      "question": "An 18-year-old football player presents with right groin pain after a tackle. The radiograph shows avulsion of the lesser trochanter.\n\nWhich muscle is attached to the lesser trochanter?",
+      "options": [
+        "A. Sartorius",
+        "B. Rectus femoris",
+        "C. Iliopsoas",
+        "D. Hamstrings",
+        "E. Adductor longus"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Iliopsoas is attached to the lesser trochanter.",
+      "questionNumber": 42
+    },
+    {
+      "question": "A 70-year-old man presents after falling down five stairs and sustaining injury to the neck. An open-mouth view shows increased space between the dens and medial border of lateral masses of C1. CT shows fracture of the anterior and posterior arch of the C1 vertebra.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Hangman’s fracture",
+        "B. Clay shoveller’s fracture",
+        "C. Jefferson fracture",
+        "D. Extension teardrop fracture",
+        "E. Flexion teardrop fracture"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Jefferson fracture involves the C1 vertebra. There is a comminuted fracture of the C1 ring, at least through two places. Plain radiography using an open-mouth view demonstrates lateral displacement of the lateral masses.",
+      "questionNumber": 43
+    },
+    {
+      "question": "A 15-year-old boy presents with pain and swelling in the hands. Radiographs show periarticular osteopenia, loss of joint space at the metacarpophalangeal joints and widened bases in the proximal phalanges. A periosteal reaction is seen in the metacarpal bones.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Juvenile rheumatoid arthritis",
+        "B. Psoriatic arthropathy",
+        "C. Scleroderma",
+        "D. Systemic lupus erythematosus",
+        "E. Dermatomyositis"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "The condition is usually seen in young people before the age of 16 years. In the hand, the metacarpophalangeal and interphalangeal joints are usually affected. Chronic synovitis causes enlargement of bones and epiphyses. Malalignment and subluxation are common. An important feature of juvenile arthritis is periosteal reaction affecting the metacarpal and phalangeal shafts.",
+      "questionNumber": 44
+    },
+    {
+      "question": "A 40-year-old immigrant from south Asia with a history of sexually transmitted disease treated 20 years ago presents with a painless, swollen right knee. Radiograph of the right knee shows collapse and fragmentation of the medial femoral condyle with subluxation of tibiofemoral joint. There is calcified debris in the knee and a large joint effusion. The bones show excessive sclerosis.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Diabetes",
+        "B. Haemophilia",
+        "C. Charcot’s joint",
+        "D. Calcium pyrophosphate deposition disease",
+        "E. Osteoarthritis"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The radiographic features are those of Charcot’s joint. Given the history of treated sexually transmitted disease, syphilis must be considered.",
+      "questionNumber": 45
+    },
+    {
+      "question": "A 42-year-old man in remission for lymphoma complains of bilateral hip pain.\n\nCoronal T1 images on MRI show geographical areas of abnormality in bilateral femoral heads, which are well demarcated from the normal bone by a thin rim of low signal on T1-weighted images.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Lymphoma recurrence",
+        "B. Red bone marrow",
+        "C. Avascular necrosis",
+        "D. Osteomyelitis",
+        "E. Stress fractures"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "This appearance on MRI is typical of avascular necrosis.",
+      "questionNumber": 46
+    },
+    {
+      "question": "A 70-year-old woman with a history of dysphagia presents with multiple swelling in the hands. Radiographs of the hands show widespread soft tissue calcification with terminal phalangeal resorption.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Systemic lupus erythematosus",
+        "B. Scleroderma",
+        "C. Dermatomyositis",
+        "D. Psoriasis",
+        "E. Calcium pyrophosphate deposition disease"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Scleroderma is the cutaneous manifestation of progressive systemic sclerosis. This causes fibrosis and small vessel disease in several organs. In the hands, typically it causes terminal phalangeal resorption due to pressure atrophy, soft tissue calcification and occasionally intra-articular calcification.",
+      "questionNumber": 47
+    },
+    {
+      "question": "A 60-year-old diabetic man with a 7-day-old compound fracture of the right tibia and fibula develops fever and septicaemia. Radiography of the leg shows a fracture of the mid shaft of tibia and fibula, along with extensive air in the soft tissues extending to the ankle and knee.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Air secondary to compound fracture",
+        "B. Aerobic bacterial infection",
+        "C. Clostridium infection",
+        "D. Staphylococcus infection",
+        "E. Beta-haemolytic streptococci"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Gas in the soft tissues after compound fractures is a manifestation of infection. Gas gangrene after Clostridium infection is a classical example and causes extensive oedema, necrosis of tissues with gas production resulting in a severe toxic state. Other gas-forming organisms include anaerobic bacteria, coliforms and Bacteroides.",
+      "questionNumber": 48
+    },
+    {
+      "question": "A 40-year-old man presents with progressive pain and swelling of the left knee joint. MRI shows extensive low-signal synovial masses around the right knee on T1, T2 and STIR sequences. There is marked degenerative joint disease as well.\n\nWhat is the most likely diagnosis?",
+      "options": [
+        "A. Synovial chondromatosis",
+        "B. Pigmented villonodular synovitis",
+        "C. Synovial hypertrophy",
+        "D. Lipoma arborescens",
+        "E. Degenerative arthritis"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The MRI appearances described are typical of pigmented villonodular synovitis, showing low signal of abnormal synovium on all sequences.",
+      "questionNumber": 49
+    },
+    {
+      "question": "A 14-year-old boy presents with persistent right hip pain after a recent injury.\n\nRadiographs confirm the diagnosis of slipped capital femoral epiphysis.\n\nWhat is the Salter–Harris classification of this condition?",
+      "options": [
+        "A. Type I",
+        "B. Type II",
+        "C. Type III",
+        "D. Type IV",
+        "E. Type V"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "Slipped capital femoral epiphysis is classified as a type I Salter–Harris injury because there is a slipped epiphysis due to the shearing force of an injury, separating the epiphysis from the metaphysis. There is no fracture of the metaphysis or the epiphysis itself.",
+      "questionNumber": 50
+    }
+  ]
+}
