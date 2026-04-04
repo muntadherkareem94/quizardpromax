@@ -5,7 +5,8 @@
     <meta name="view-transition" content="same-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Quizard - Admin Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="main-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.css" rel="stylesheet">
@@ -14,6 +15,7 @@
         body { font-family: 'Inter', sans-serif; }
         .modal { transition: opacity 0.25s ease; }
     </style>
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Quizard">
@@ -987,6 +989,9 @@ async function loadUsers() {
                         <button class="grant-purchase-btn text-green-600 hover:text-green-900 ml-4" data-user-id="${userData.id}" data-username="${userData.username}">
                             Manage Purchases
                         </button>
+                        <button onclick="openEditRoleModal('${userData.id}', '${userData.username}', '${userData.role}', '${userData.speciality || ''}')" class="text-purple-600 hover:text-purple-900 ml-4 font-bold">
+                            Edit Role
+                        </button>
                     </td>
                 </tr>`;
             userList.innerHTML += userRow;
@@ -1449,6 +1454,145 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Ensure the logout button calls the correct new function
         document.getElementById('logoutButton').addEventListener('click', handleLogout);
 
+
+// --- SPECIALTY ADMIN ROLE MANAGEMENT ---
+const editRoleModal = document.getElementById('editRoleModal');
+const editRoleForm = document.getElementById('editRoleForm');
+const editRoleSelect = document.getElementById('editRoleSelect');
+const editRoleSpecialtyContainer = document.getElementById('editRoleSpecialtyContainer');
+const editRoleSpecialtySelect = document.getElementById('editRoleSpecialtySelect');
+
+
+// Show/Hide Specialty dropdown based on selected role
+editRoleSelect.addEventListener('change', (e) => {
+    if (e.target.value === 'specialty_admin') {
+        editRoleSpecialtyContainer.classList.remove('hidden');
+        populateRoleSpecialtyDropdown(); // <-- RENAMED 
+    } else {
+        editRoleSpecialtyContainer.classList.add('hidden');
+    }
+});
+
+// Close Modal handlers
+document.getElementById('closeEditRoleModal').addEventListener('click', () => editRoleModal.classList.add('hidden'));
+document.getElementById('cancelRoleBtn').addEventListener('click', () => editRoleModal.classList.add('hidden'));
+
+// Function to fetch unique specialties from your database to populate the dropdown
+async function populateRoleSpecialtyDropdown(selectedSpecialty = '') { // <-- RENAMED
+    try {
+        const { data, error } = await supabase.from('disciplines').select('speciality');
+        if (error) throw error;
+        
+        // Extract unique, non-null specialties
+        const uniqueSpecialties = [...new Set(data.map(d => d.speciality).filter(Boolean))];
+        
+        editRoleSpecialtySelect.innerHTML = '<option value="">Select a Specialty...</option>';
+        uniqueSpecialties.forEach(spec => {
+            const option = document.createElement('option');
+            option.value = spec;
+            option.textContent = spec;
+            if (spec === selectedSpecialty) option.selected = true;
+            editRoleSpecialtySelect.appendChild(option);
+        });
+    } catch (err) {
+        console.error("Error fetching specialties:", err);
+    }
+}
+
+// Open Modal function (You will call this from your User Table)
+window.openEditRoleModal = function(userId, username, currentRole, currentSpecialty) {
+    document.getElementById('editRoleUserId').value = userId;
+    document.getElementById('editRoleUsername').value = username || 'Unknown User';
+    document.getElementById('editRoleSelect').value = currentRole || 'user';
+    
+    if (currentRole === 'specialty_admin') {
+        editRoleSpecialtyContainer.classList.remove('hidden');
+        populateRoleSpecialtyDropdown(currentSpecialty); // <-- RENAMED
+    } else {
+        editRoleSpecialtyContainer.classList.add('hidden');
+    }
+    
+    editRoleModal.classList.remove('hidden');
+};
+
+// Handle Form Submission to Update Supabase
+editRoleForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const userId = document.getElementById('editRoleUserId').value;
+    const newRole = document.getElementById('editRoleSelect').value;
+    let newSpecialty = editRoleSpecialtySelect.value;
+
+    // Validation
+    if (newRole === 'specialty_admin' && !newSpecialty) {
+        alert("Please select a specialty for this admin.");
+        return;
+    }
+    // If they are no longer a specialty admin, clear their specialty field
+    if (newRole !== 'specialty_admin') {
+        newSpecialty = null; 
+    }
+
+    try {
+        document.getElementById('saveRoleBtn').textContent = 'Saving...';
+        
+        const { error } = await supabase
+            .from('users')
+            .update({ role: newRole, speciality: newSpecialty })
+            .eq('id', userId);
+
+        if (error) throw error;
+        
+        alert("User role updated successfully!");
+        editRoleModal.classList.add('hidden');
+        loadUsers(); // Refresh your table to show the new role!
+        
+    } catch (err) {
+        console.error("Error updating user:", err);
+        alert("Failed to update role.");
+    } finally {
+        document.getElementById('saveRoleBtn').textContent = 'Save Changes';
+    }
+});
+
     </script>
+
+    <div id="editRoleModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-[70]">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold text-gray-800">Edit User Role</h2>
+            <button id="closeEditRoleModal" class="text-gray-500 hover:text-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <form id="editRoleForm" class="space-y-4">
+            <input type="hidden" id="editRoleUserId">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="editRoleUsername" disabled class="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 shadow-sm sm:text-sm p-2">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Role</label>
+                <select id="editRoleSelect" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                    <option value="user">Standard User</option>
+                    <option value="specialty_admin">Specialty Admin</option>
+                    <option value="admin">Super Admin</option>
+                </select>
+            </div>
+            
+            <div id="editRoleSpecialtyContainer" class="hidden">
+                <label class="block text-sm font-medium text-gray-700">Assign Specialty</label>
+                <select id="editRoleSpecialtySelect" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                    <option value="">Select a Specialty...</option>
+                    </select>
+                <p class="text-xs text-gray-500 mt-1">Required for Specialty Admins. Draws from existing Discipline specialties.</p>
+            </div>
+            
+            <div class="flex justify-end pt-4">
+                <button type="button" id="cancelRoleBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+                <button type="submit" id="saveRoleBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

@@ -7,14 +7,15 @@
     <title>Quizard - Discipline Chapters</title>
     
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="main-styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="main-styles.css">
+    
     <style>
     .dropdown-item {
         display: flex;
@@ -554,17 +555,22 @@ async function loadAllData(user) {
     const questionsCacheStr = localStorage.getItem(`offline_disc_${disciplineId}_questions`);
     const historyCacheStr = localStorage.getItem(`offline_disc_${disciplineId}_history`);
 
-    if (questionsCacheStr !== null && historyCacheStr !== null && cChapters.length > 0) {
-        // We have the data for this specific discipline. Instant render!
-        paintData(JSON.parse(questionsCacheStr), JSON.parse(historyCacheStr), cBooks, cChapters, cUserData);
-    } else {
-        // We don't have the questions for THIS discipline yet. Show skeletons.
-        if (listEl) {
-            if (wrapper) wrapper.classList.remove('hidden');
-            listEl.className = "grid grid-cols-1 gap-3 max-w-4xl mx-auto";
-            listEl.innerHTML = Array(6).fill(0).map(() => `<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between opacity-50 mb-3 animate-pulse"><div class="flex items-center gap-4 w-1/2"><div class="w-10 h-10 bg-gray-200 rounded-full"></div><div class="h-5 bg-gray-200 rounded w-full"></div></div><div class="w-12 h-12 bg-gray-200 rounded-full"></div></div>`).join('');
-        }
-    }
+// Do NOT render discipline question/history cache immediately.
+// Cached discipline stats can be stale and cause wrong donut charts for ~1 second.
+// Instead, show skeletons and wait for the fresh sync below to paint the real data.
+if (listEl) {
+    if (wrapper) wrapper.classList.remove('hidden');
+    listEl.className = "grid grid-cols-1 gap-3 max-w-4xl mx-auto";
+    listEl.innerHTML = Array(6).fill(0).map(() => `
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between opacity-50 mb-3 animate-pulse">
+            <div class="flex items-center gap-4 w-1/2">
+                <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                <div class="h-5 bg-gray-200 rounded w-full"></div>
+            </div>
+            <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+        </div>
+    `).join('');
+}
 
     // 3. SURGICAL BACKGROUND SYNC (Only fetch questions & history for THIS discipline)
     setTimeout(async () => {
@@ -623,21 +629,37 @@ async function loadAllData(user) {
             saveWithEviction(`offline_disc_${disciplineId}_history`, hData);
             // ---------------------------------------------
 
-            if (listEl && listEl.innerHTML.includes('animate-pulse')) {
-                console.log("Surgical Sync complete. Replacing skeletons.");
-                paintData(qData, hData, cBooks, cChapters, cUserData);
-            } else {
-                // Silent memory update (prevents UI flashing)
-                window.pageQuestions = qData;
-                window.pageHistoryMap = new Map();
-                hData.forEach(h => {
-                    const qId = h.questionId || h.question_id;
-                    if (qId && h.lastResult) {
-                        const isCorrect = String(h.lastResult).toLowerCase() === 'correct' || h.lastResult === true || h.lastResult === 'true';
-                        window.pageHistoryMap.set(String(qId), isCorrect ? 'correct' : 'wrong');
-                    }
-                });
-            }
+           const oldQuestionsJson = questionsCacheStr || '[]';
+const oldHistoryJson = historyCacheStr || '[]';
+const newQuestionsJson = JSON.stringify(qData);
+const newHistoryJson = JSON.stringify(hData);
+
+// Repaint whenever the fresh synced data differs from what was initially rendered.
+// This fixes stale donut charts after returning from quiz pages.
+if (
+    (listEl && listEl.innerHTML.includes('animate-pulse')) ||
+    newQuestionsJson !== oldQuestionsJson ||
+    newHistoryJson !== oldHistoryJson
+) {
+    console.log("Discipline sync complete. Repainting with fresh data.");
+    paintData(qData, hData, cBooks, cChapters, cUserData);
+} else {
+    // No meaningful change; keep memory in sync without forcing repaint
+    window.pageQuestions = qData;
+    window.pageHistoryMap = new Map();
+
+    hData.forEach(h => {
+        const qId = h.questionId || h.question_id;
+        if (qId && h.lastResult) {
+            const isCorrect =
+                String(h.lastResult).toLowerCase() === 'correct' ||
+                h.lastResult === true ||
+                h.lastResult === 'true';
+
+            window.pageHistoryMap.set(String(qId), isCorrect ? 'correct' : 'wrong');
+        }
+    });
+}
         } catch (err) {
             console.warn("Discipline background sync failed.", err);
         } finally {
@@ -1184,20 +1206,21 @@ function renderChaptersByDiscipline(chapters, container) {
         const total = chQuestions.length;
         let correct = 0, wrong = 0;
         chQuestions.forEach(q => {
-            if (historyMap.has(q.id)) {
-                // FIX: Explicitly check for 'correct' or 'wrong'
-                if (historyMap.get(q.id) === 'correct') correct++; 
-                else if (historyMap.get(q.id) === 'wrong') wrong++;
-            }
-        });
+    const qId = String(q.id);
+    if (historyMap.has(qId)) {
+        if (historyMap.get(qId) === 'correct') correct++;
+        else if (historyMap.get(qId) === 'wrong') wrong++;
+    }
+});
         const unanswered = total - (correct + wrong);
 
         // Build Card
         const card = document.createElement('div');
-        card.setAttribute('data-id', chapter.id); 
-        // Fluid design: items-start on mobile helps long titles wrap without pulling the button out of place
-        card.className = 'bg-white p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-4 group';
+card.className = "bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-between p-4 mb-3";
+card.setAttribute('data-chart-card', 'true');
+card.dataset.total = String(total);
 
+        
         // --- NEW: Safely lookup the book title from the global array ---
         // (This MUST be outside the HTML backticks)
         const parentBook = allBooks.find(b => b.book_data && b.book_data.id === chapter.book_id);
@@ -1238,61 +1261,93 @@ function renderChaptersByDiscipline(chapters, container) {
                 </button>
             </div>
         `;
-        container.appendChild(card);
+        fragment.appendChild(card);
     });
 
-    container.appendChild(fragment);
+container.appendChild(fragment);
 
-// 2. PROGRESSIVE CHART RENDERING (The Jank Killer - Memory Safe)
-    let chartIndex = 0;
-    const renderChartsBatch = () => {
-        if (!window.isRenderingCharts) return; // Kill switch! Stop drawing.
+// 2. PROGRESSIVE CHART RENDERING (same behavior as book page)
+let chartIndex = 0;
+const renderChartsBatch = () => {
+    if (!window.isRenderingCharts) return; // Kill switch triggered! Stop drawing.
 
-        const batchSize = 5;
-        const end = Math.min(chartIndex + batchSize, chapters.length);
+    const batchSize = 5;
+    const end = Math.min(chartIndex + batchSize, chapters.length);
 
-        for (; chartIndex < end; chartIndex++) {
-            const chapter = chapters[chartIndex];
-            const chQuestions = questions.filter(q => (q.chapterId === chapter.id || q.chapter_id === chapter.id));
-            const total = chQuestions.length;
-            let correct = 0, wrong = 0;
-            
-            chQuestions.forEach(q => {
-                if (historyMap.has(String(q.id))) {
-                    if (historyMap.get(String(q.id)) === 'correct') correct++; 
-                    else if (historyMap.get(String(q.id)) === 'wrong') wrong++;
-                }
-            });
-            const unanswered = total - (correct + wrong);
+    for (; chartIndex < end; chartIndex++) {
+        const chapter = chapters[chartIndex];
 
-            const canvas = document.getElementById(`ch-chart-${chapter.id}`);
-            if (!canvas) continue;
-            const ctx = canvas.getContext('2d');
+        const chQuestions = questions.filter(q =>
+            q.chapter_id === chapter.id || q.chapterId === chapter.id
+        );
 
-            const chartData = total === 0 ? [0,0,1] : [correct, wrong, unanswered];
-            const chartColors = total === 0 ? ['#f3f4f6','#f3f4f6','#f3f4f6'] : ['#22c55e', '#ef4444', '#e5e7eb'];
-
-            window.chapterCharts.push(new Chart(ctx, {
-                type: 'doughnut',
-                data: { labels: ['Correct', 'Wrong', 'Unanswered'], datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }] },
-                options: { responsive: true, maintainAspectRatio: true, aspectRatio: 1, cutout: '70%', animation: { duration: 0 }, plugins: { legend: { display: false }, tooltip: { enabled: false, external: typeof externalTooltipHandler !== 'undefined' ? externalTooltipHandler : null } } }
-            }));
-            canvas.style.visibility = 'visible';
-        }
-
-        if (chartIndex < chapters.length) {
-            window.chartRenderFrameId = requestAnimationFrame(renderChartsBatch);
-        } else {
-            window.isRenderingCharts = false;
-            // Only initialize Sortable after all heavy DOM updates are complete
-            if (typeof Sortable !== 'undefined') {
-                container._sortable = new Sortable(container, { animation: 150, handle: '.drag-handle', ghostClass: 'bg-indigo-50' });
+        let correct = 0, wrong = 0;
+        chQuestions.forEach(q => {
+            if (historyMap.has(String(q.id))) {
+                if (historyMap.get(String(q.id)) === 'correct') correct++;
+                else if (historyMap.get(String(q.id)) === 'wrong') wrong++;
             }
-        }
-    };
+        });
 
-    window.isRenderingCharts = true;
-    window.chartRenderFrameId = requestAnimationFrame(renderChartsBatch);
+        const unanswered = chQuestions.length - (correct + wrong);
+
+        const canvas = document.getElementById(`ch-chart-${chapter.id}`);
+        if (!canvas) continue;
+
+        const ctx = canvas.getContext('2d');
+
+        const chartData = chQuestions.length === 0
+            ? [0, 0, 1]
+            : [correct, wrong, unanswered];
+
+        const chartColors = chQuestions.length === 0
+            ? ['#f3f4f6', '#f3f4f6', '#f3f4f6']
+            : ['#22c55e', '#ef4444', '#e5e7eb'];
+
+        const newChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Correct', 'Wrong', 'Unanswered'],
+                datasets: [{
+                    data: chartData,
+                    backgroundColor: chartColors,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: '70%',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: false,
+                        external: externalTooltipHandler
+                    }
+                }
+            }
+        });
+
+        window.chapterCharts.push(newChart);
+        canvas.style.visibility = 'visible';
+    }
+
+    if (chartIndex < chapters.length) {
+        window.chartRenderFrameId = requestAnimationFrame(renderChartsBatch);
+    } else {
+        window.isRenderingCharts = false;
+        if (typeof Sortable !== 'undefined') {
+            container._sortable = new Sortable(container, {
+                animation: 150,
+                handle: '.drag-handle',
+                ghostClass: 'bg-indigo-50'
+            });
+        }
+    }
+};
+
+window.isRenderingCharts = true;
+window.chartRenderFrameId = requestAnimationFrame(renderChartsBatch);
 }
 // Global start helper
 // --- DEBUG VERSION: START QUIZ ---

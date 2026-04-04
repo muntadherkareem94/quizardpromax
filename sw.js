@@ -1,8 +1,7 @@
 
 // Version 6: Forces a clean slate and uses relative paths
-const CACHE_NAME = 'quizard-app-shell-v8';
+const CACHE_NAME = 'quizard-app-shell-v9';
 
-// The "App Shell" - Using strict relative paths
 const APP_SHELL = [
   './',
   './index.html',
@@ -11,6 +10,7 @@ const APP_SHELL = [
   './store.html',
   './user_profile.html',
   './main-styles.css',
+  './tailwind.css',
   './supabaseClient.js',
   './manifest.json',
   './images/logo.png',
@@ -60,7 +60,18 @@ self.addEventListener('fetch', (event) => {
       caches.match(request).then((cachedResponse) => {
         // Fetch fresh version in the background to keep the cache updated
         const fetchPromise = fetch(request).then((networkResponse) => {
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, networkResponse.clone()));
+          // Check if we received a valid response before cloning
+          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+            return networkResponse;
+          }
+          
+          // Clone IMMEDIATELY
+          const responseToCache = networkResponse.clone();
+          
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(request, responseToCache);
+          });
+          
           return networkResponse;
         }).catch(() => {});
         

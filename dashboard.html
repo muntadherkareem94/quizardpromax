@@ -7,14 +7,15 @@
     <title>Quizard - Dashboard</title>
     
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="main-styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.js"></script>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.8.2/slimselect.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="main-styles.css">
+    
     <style> 
     /* Add this inside the <style> tag */
 .dropdown-item {
@@ -77,9 +78,13 @@
         <a href="dashboard.html"><img src="images/logo.png" alt="Quizard Logo" class="h-16"></a>
     </div>
     <div class="flex-1 flex justify-end items-center space-x-3">
-        <a href="admin_dashboard.html" id="adminDashboardButton" class="header-icon-btn hidden" title="Admin Panel">
+       <a href="admin_dashboard.html" id="adminDashboardButton" class="header-icon-btn hidden" title="Admin Panel" style="display: none;">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-        </a>
+       </a>
+      <a href="specialty_admin.html" id="specialtyAdminBtn" class="hidden items-center bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-lg font-semibold transition-colors shadow-sm ml-3" style="display: none;">
+           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+           <span id="specialtyAdminLabel">Specialty Admin</span>
+       </a>
 
        <button id="notificationButton" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition relative" title="Notifications">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
@@ -1140,7 +1145,12 @@ function renderBooks(booksToRender, userData, bookStats = {}) {
                 responsive: true,
                 maintainAspectRatio: false,
                 cutout: '70%', 
-                animation: false,
+                animation: {
+                    animateRotate: true,
+                    animateScale: true,
+                    duration: 1800,
+                    easing: 'easeOutQuart'
+                },
                 plugins: { 
                     legend: { display: false }, 
                     tooltip: { 
@@ -1706,13 +1716,37 @@ document.addEventListener('DOMContentLoaded', async () => {
             currentUser = session.user;
 loadDisciplines();
 loadBooksAndVideos();
-            // Fetch user data from the 'users' table to check for premium status
-            const { data: userData } = await supabase.from('users').select('account_type').eq('id', session.user.id).single();
+            // Fetch user data from the 'users' table (Now fetching role and speciality too!)
+            const { data: userData } = await supabase.from('users').select('account_type, role, speciality').eq('id', session.user.id).single();
             
             // Pass both user and userData to the function
             updateUserProfileIcon(session.user, userData);
 
-     
+            // --- SPECIALTY ADMIN & SUPER ADMIN BUTTON LOGIC ---
+            if (userData) {
+                const superAdminGear = document.getElementById('adminDashboardButton'); 
+                const specialtyAdminBtn = document.getElementById('specialtyAdminBtn');
+                const specialtyAdminLabel = document.getElementById('specialtyAdminLabel');
+
+                if (userData.role === 'admin') {
+                    if (superAdminGear) { superAdminGear.classList.remove('hidden'); superAdminGear.style.display = 'flex'; }
+                    if (specialtyAdminBtn) specialtyAdminBtn.style.display = 'none';
+                } else if (userData.role === 'specialty_admin') {
+                    if (superAdminGear) superAdminGear.style.display = 'none'; 
+                    if (specialtyAdminBtn) {
+                        specialtyAdminBtn.classList.remove('hidden'); 
+                        specialtyAdminBtn.style.display = 'flex'; 
+                        if (userData.speciality) {
+                            specialtyAdminLabel.textContent = `${userData.speciality} Portal`;
+                        }
+                    }
+                } else {
+                    if (superAdminGear) superAdminGear.style.display = 'none';
+                    if (specialtyAdminBtn) specialtyAdminBtn.style.display = 'none';
+                }
+            }
+            // ------------------------------------------------
+
            await initializeCustomQuizBuilder();
             await fetchAndDisplayNotifications(); 
 
@@ -1811,9 +1845,24 @@ async function loadAllData(user) {
         allDisciplines = disciplinesRes.data || [];
         allChapters = chaptersRes.data || [];
         
-        if (currentUserData.role === 'admin') {
-            dom.adminDashboardButton.classList.remove('hidden');
-        }
+        // Strict Button Visibility Logic
+        const specialtyAdminBtn = document.getElementById('specialtyAdminBtn');
+        const specialtyAdminLabel = document.getElementById('specialtyAdminLabel');
+        
+        if (currentUserData.role === 'admin') {
+            if (dom.adminDashboardButton) { dom.adminDashboardButton.classList.remove('hidden'); dom.adminDashboardButton.style.display = 'flex'; }
+            if (specialtyAdminBtn) specialtyAdminBtn.style.display = 'none';
+        } else if (currentUserData.role === 'specialty_admin') {
+            if (dom.adminDashboardButton) dom.adminDashboardButton.style.display = 'none';
+            if (specialtyAdminBtn) {
+                specialtyAdminBtn.classList.remove('hidden');
+                specialtyAdminBtn.style.display = 'flex';
+                if (currentUserData.speciality) specialtyAdminLabel.textContent = `${currentUserData.speciality} Portal`;
+            }
+        } else {
+            if (dom.adminDashboardButton) dom.adminDashboardButton.style.display = 'none';
+            if (specialtyAdminBtn) specialtyAdminBtn.style.display = 'none';
+        }
 
         const purchasedBookIds = new Set((bookPurchasesRes.data || []).map(p => p.book_id));
         const purchasedCourseIds = new Set((videoPurchasesRes.data || []).map(p => p.course_id));
@@ -2699,7 +2748,18 @@ async function loadDisciplines() {
             const chartColors = stats.total === 0 ? ['#f3f4f6', '#f3f4f6', '#f3f4f6'] : ['#22c55e', '#ef4444', '#d1d5db'];
             window.disciplineCharts.push(new Chart(ctx, {
                 type: 'doughnut', data: { labels: ['Correct', 'Wrong', 'Unanswered'], datasets: [{ data: chartData, backgroundColor: chartColors, borderWidth: 0, hoverOffset: 4 }] },
-                options: { responsive: true, maintainAspectRatio: false, cutout: '70%', animation: false, plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltipHandler } } }
+                options: { 
+                    responsive: true, 
+                    maintainAspectRatio: false, 
+                    cutout: '70%', 
+                    animation: {
+                        animateRotate: true,
+                        animateScale: true,
+                        duration: 1500,
+                        easing: 'easeOutQuart'
+                    }, 
+                    plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltipHandler } } 
+                }
             }));
         });
         renderFlashcardDisciplines(disciplines);
@@ -2746,7 +2806,25 @@ async function loadBooksAndVideos() {
     const user = session.user;
 
     const paintBooksAndVideos = (userData, booksData, rawDisciplines, chaptersData, videosData, questions, history) => {
-        if (userData.role === 'admin') document.getElementById('adminDashboardButton')?.classList.remove('hidden');
+        // Strict Button Visibility Logic for Cache/Sync
+        const superAdminGear = document.getElementById('adminDashboardButton');
+        const specialtyAdminBtn = document.getElementById('specialtyAdminBtn');
+        const specialtyAdminLabel = document.getElementById('specialtyAdminLabel');
+
+        if (userData.role === 'admin') {
+            if (superAdminGear) { superAdminGear.classList.remove('hidden'); superAdminGear.style.display = 'flex'; }
+            if (specialtyAdminBtn) specialtyAdminBtn.style.display = 'none';
+        } else if (userData.role === 'specialty_admin') {
+            if (superAdminGear) superAdminGear.style.display = 'none';
+            if (specialtyAdminBtn) {
+                specialtyAdminBtn.classList.remove('hidden');
+                specialtyAdminBtn.style.display = 'flex';
+                if (userData.speciality) specialtyAdminLabel.textContent = `${userData.speciality} Portal`;
+            }
+        } else {
+            if (superAdminGear) superAdminGear.style.display = 'none';
+            if (specialtyAdminBtn) specialtyAdminBtn.style.display = 'none';
+        }
         
         allBooks = booksData;
         

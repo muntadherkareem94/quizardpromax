@@ -5,7 +5,8 @@
     <meta name="view-transition" content="same-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Quizard - Manage Questions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="main-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -56,9 +57,12 @@
                     <textarea id="questionText" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
                 </div>
                 <div>
-                    <label for="questionImageUrl" class="block text-sm font-medium text-gray-700">Image URL (Optional)</label>
-                    <input type="text" id="questionImageUrl" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                </div>
+                    <label class="block text-sm font-medium text-gray-700">Question Image (Upload or Paste URL)</label>
+                    <div class="mt-1 flex flex-col sm:flex-row gap-2">
+                        <input type="file" id="questionImageUpload" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100">
+                        <input type="text" id="questionImageUrl" placeholder="Or paste URL here..." class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
+                    </div>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="optionA" class="block text-sm font-medium text-gray-700">Option A</label>
@@ -96,9 +100,12 @@
                     <textarea id="explanation" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
                 </div>
                 <div>
-                    <label for="explanationImageUrl" class="block text-sm font-medium text-gray-700">Explanation Image URL (Optional)</label>
-                    <input type="text" id="explanationImageUrl" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                </div>
+                    <label class="block text-sm font-medium text-gray-700">Explanation Image (Upload or Paste URL)</label>
+                    <div class="mt-1 flex flex-col sm:flex-row gap-2">
+                        <input type="file" id="explanationImageUpload" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100">
+                        <input type="text" id="explanationImageUrl" placeholder="Or paste URL here..." class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
+                    </div>
+                </div>
                 <div class="flex justify-end pt-4">
                     <button type="button" id="cancelButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
                     <button type="submit" id="saveButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg">Save Question</button>
@@ -169,19 +176,34 @@ import { supabase } from './supabaseClient.js';
         }
 
         function closeModal(modal) {
-            modal.classList.add('opacity-0');
-            modal.querySelector('div').classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                if (modal === questionModal) {
-                    questionForm.reset();
-                    document.getElementById('questionId').value = '';
-                }
-                if (modal === importModal) {
-                    importForm.reset();
-                }
-            }, 300);
-        }
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                if (modal === questionModal) {
+                    questionForm.reset();
+                    document.getElementById('questionId').value = '';
+                    document.getElementById('questionImageUpload').value = '';
+                    document.getElementById('explanationImageUpload').value = '';
+                }
+                if (modal === importModal) {
+                    importForm.reset();
+                }
+            }, 300);
+        }
+
+        // --- UPLOAD HELPER ---
+        async function uploadToStorage(file, chapterId, typePrefix) {
+            const fileExt = file.name.split('.').pop();
+            const safeName = file.name.replace(/[^a-zA-Z0-9.\-]/g, '');
+            const filePath = `chapter_${chapterId}/${typePrefix}_${Date.now()}_${safeName}`;
+
+            const { error } = await supabase.storage.from('question_images').upload(filePath, file, { upsert: true });
+            if (error) throw error;
+
+            const { data } = supabase.storage.from('question_images').getPublicUrl(filePath);
+            return data.publicUrl;
+        }
 
         async function loadQuestions() {
             if (!bookId || !chapterId) {
@@ -246,10 +268,10 @@ import { supabase } from './supabaseClient.js';
             const { data: { session } } = await supabase.auth.getSession();
             if (session) {
                 const { data: userData, error } = await supabase.from('users').select('role').eq('id', session.user.id).single();
-                if (error || !userData || userData.role !== 'admin') {
-                    document.body.innerHTML = `<div class="text-center p-10"><h1 class="text-2xl font-bold text-red-600">Access Denied</h1></div>`;
-                    return;
-                }
+                if (error || !userData || (userData.role !== 'admin' && userData.role !== 'specialty_admin')) {
+                    document.body.innerHTML = `<div class="text-center p-10"><h1 class="text-2xl font-bold text-red-600">Access Denied</h1></div>`;
+                    return;
+                }
                 loadQuestions();
             } else {
                 window.location.href = 'index.html';
@@ -263,27 +285,46 @@ import { supabase } from './supabaseClient.js';
         });
 
         questionForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const id = document.getElementById('questionId').value;
-            const options = [
-                document.getElementById('optionA').value, document.getElementById('optionB').value,
-                document.getElementById('optionC').value, document.getElementById('optionD').value,
-            ];
-            const optionE = document.getElementById('optionE').value;
-            if (optionE) options.push(optionE);
+            e.preventDefault();
+            
+            const saveBtn = document.getElementById('saveButton');
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Saving...';
+            
+            const id = document.getElementById('questionId').value;
+            const options = [
+                document.getElementById('optionA').value, document.getElementById('optionB').value,
+                document.getElementById('optionC').value, document.getElementById('optionD').value,
+            ];
+            const optionE = document.getElementById('optionE').value;
+            if (optionE) options.push(optionE);
 
-            try {
-                const { data: chapterInfo, error: chapterError } = await supabase.from('chapters').select('discipline_id').eq('id', chapterId).single();
-                if (chapterError) throw chapterError;
+            try {
+                const { data: chapterInfo, error: chapterError } = await supabase.from('chapters').select('discipline_id').eq('id', chapterId).single();
+                if (chapterError) throw chapterError;
 
-                const questionData = {
+                // Process Question Image Upload
+                let finalQuestionImgUrl = document.getElementById('questionImageUrl').value;
+                const qImageFile = document.getElementById('questionImageUpload').files[0];
+                if (qImageFile) {
+                    finalQuestionImgUrl = await uploadToStorage(qImageFile, chapterId, 'q');
+                }
+
+                // Process Explanation Image Upload
+                let finalExplImgUrl = document.getElementById('explanationImageUrl').value;
+                const explImageFile = document.getElementById('explanationImageUpload').files[0];
+                if (explImageFile) {
+                    finalExplImgUrl = await uploadToStorage(explImageFile, chapterId, 'expl');
+                }
+
+                const questionData = {
                     questionNumber: Number(document.getElementById('questionNumber').value),
                     question: document.getElementById('questionText').value,
-                    imageUrl: document.getElementById('questionImageUrl').value,
+                    imageUrl: finalQuestionImgUrl,
                     options: options.filter(Boolean),
                     correctAnswerIndex: Number(document.getElementById('correctAnswer').value),
                     explanation: document.getElementById('explanation').value,
-                    explanationImageUrl: document.getElementById('explanationImageUrl').value,
+                    explanationImageUrl: finalExplImgUrl,
                     book_id: bookId,
                     chapter_id: chapterId,
                     discipline_id: chapterInfo.discipline_id
@@ -297,14 +338,17 @@ import { supabase } from './supabaseClient.js';
                 }
                 if (error) throw error;
                 
-                showMessage(id ? "Question updated successfully!" : "Question added successfully!");
-                closeModal(questionModal);
-                loadQuestions();
-            } catch (err) {
-                 console.error("Error saving question: ", err);
-                 showMessage(`Failed to save question. ${err.message}`, true);
-            }
-        });
+              showMessage(id ? "Question updated successfully!" : "Question added successfully!");
+                closeModal(questionModal);
+                loadQuestions();
+            } catch (err) {
+                 console.error("Error saving question: ", err);
+                 showMessage(`Failed to save question. ${err.message}`, true);
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.textContent = 'Save Question';
+            }
+        });
 
      importForm.addEventListener('submit', async (e) => {
             e.preventDefault();
