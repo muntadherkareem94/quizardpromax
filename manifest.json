@@ -4,7 +4,7 @@
   "description": "Master your medical exams with advanced MCQ banks and flashcards.",
   "start_url": "index.html",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "categories": ["education", "medical"],
