@@ -426,7 +426,7 @@ let inactivityTimer;
 
 // In dashboard.html, inside the <script type="module"> tag
 
-// --- Register Service Worker ---
+// --- Register Service Worker & Auto-Refresh Logic ---
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js')
@@ -436,6 +436,16 @@ if ('serviceWorker' in navigator) {
       .catch(error => {
         console.log('ServiceWorker registration failed: ', error);
       });
+  });
+
+  // NEW: Detect when the new Service Worker takes over and force a refresh
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!refreshing) {
+      refreshing = true;
+      console.log('New update found! Reloading page to apply changes...');
+      window.location.reload();
+    }
   });
 }
 
