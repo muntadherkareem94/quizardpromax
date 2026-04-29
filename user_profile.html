@@ -281,7 +281,15 @@ async function handleLogout() {
         // Use the globally available 'currentUser' object
         if (currentUser) {
             // Delete the session from our custom 'active_sessions' table
-            await supabase.from('active_sessions').delete().eq('user_id', currentUser.id);
+            const sessionId = localStorage.getItem('sessionId');
+
+if (currentUser && sessionId) {
+    await supabase
+        .from('active_sessions')
+        .delete()
+        .eq('user_id', currentUser.id)
+        .eq('session_id', sessionId);
+}
         }
         // Sign out from Supabase's main auth system
         await supabase.auth.signOut();
@@ -303,38 +311,38 @@ async function handleLogout() {
      // --- In dashboard.html's <script type="module"> block ---
 
 async function validateAndEnforceSession(user) {
-    // Get the specific session ID the browser is using
     const sessionId = localStorage.getItem('sessionId');
 
     if (!sessionId) {
+        console.warn("No sessionId found → logout");
         await handleLogout();
         return false;
     }
 
-    // Query for that ONE specific session record
-    const { data: sessionData, error } = await supabase
+    const { data, error } = await supabase
         .from('active_sessions')
         .select('expires_at')
         .eq('user_id', user.id)
         .eq('session_id', sessionId)
-        .single(); // Expect exactly one result
+        .maybeSingle();
 
-    if (error || !sessionData) {
-        // If no session was found matching the ID, log out
+    if (error) {
+        console.warn("Temporary session check error → IGNORE", error.message);
+        return true; // ⚠️ DO NOT LOGOUT
+    }
+
+    if (!data) {
+        console.warn("Session row missing → logout");
         await handleLogout();
         return false;
     }
 
-    // Check if the session is expired
-    const now = new Date();
-    const expiryDate = new Date(sessionData.expires_at);
-
-    if (now > expiryDate) {
+    if (new Date() > new Date(data.expires_at)) {
+        console.warn("Session expired → logout");
         await handleLogout();
         return false;
     }
 
-    // If we reach here, the session is valid
     return true;
 }
 

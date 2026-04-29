@@ -135,7 +135,15 @@
     async function handleLogout() {
         const { data: { session } } = await supabase.auth.getSession();
         if (session) {
-            await supabase.from('active_sessions').delete().eq('user_id', session.user.id);
+            const sessionId = localStorage.getItem('sessionId');
+
+if (session?.user && sessionId) {
+    await supabase
+        .from('active_sessions')
+        .delete()
+        .eq('user_id', session.user.id)
+        .eq('session_id', sessionId);
+}
         }
         await supabase.auth.signOut();
         localStorage.clear();

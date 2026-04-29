@@ -420,7 +420,15 @@ async function handleLogout() {
     try {
         const { data: { user } } = await supabase.auth.getUser();
         if (user) {
-            await supabase.from('active_sessions').delete().eq('user_id', user.id);
+            const sessionId = localStorage.getItem('sessionId');
+
+if (user && sessionId) {
+    await supabase
+        .from('active_sessions')
+        .delete()
+        .eq('user_id', user.id)
+        .eq('session_id', sessionId);
+}
         }
         await supabase.auth.signOut();
     } catch (error) {
@@ -433,23 +441,38 @@ async function handleLogout() {
 }
 
 async function validateAndEnforceSession(user) {
-    const { data: sessionData, error } = await supabase
-        .from('active_sessions')
-        .select('*')
-        .eq('user_id', user.id);
+    const sessionId = localStorage.getItem('sessionId');
 
-    if (error || !sessionData || sessionData.length === 0) {
-        await handleLogout(); 
-        return false;
-    }
-
-    const now = new Date();
-    const expiryDate = new Date(sessionData[0].expires_at);
-
-    if (now > expiryDate) {
+    if (!sessionId) {
+        console.warn("No sessionId found → logout");
         await handleLogout();
         return false;
     }
+
+    const { data, error } = await supabase
+        .from('active_sessions')
+        .select('expires_at')
+        .eq('user_id', user.id)
+        .eq('session_id', sessionId)
+        .maybeSingle();
+
+    if (error) {
+        console.warn("Temporary session check error → IGNORE", error.message);
+        return true; // ⚠️ DO NOT LOGOUT
+    }
+
+    if (!data) {
+        console.warn("Session row missing → logout");
+        await handleLogout();
+        return false;
+    }
+
+    if (new Date() > new Date(data.expires_at)) {
+        console.warn("Session expired → logout");
+        await handleLogout();
+        return false;
+    }
+
     return true;
 }
 

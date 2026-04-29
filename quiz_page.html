@@ -339,6 +339,60 @@ body.hl-mode-on .hl-target{
         animation: smoothReveal 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     }
 
+    /* --- Image carousel for question/explanation images --- */
+.quiz-image-carousel {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.quiz-image-carousel img {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.quiz-image-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.9);
+  color: #db2777;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  z-index: 5;
+}
+
+.quiz-image-arrow:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.quiz-image-arrow.left {
+  left: -18px;
+}
+
+.quiz-image-arrow.right {
+  right: -18px;
+}
+
+.quiz-image-counter {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -1489,22 +1543,33 @@ function updateUserProfileIcon(user, userData) {
      // --- In quiz_page.html ---
 
 async function handleLogout() {
-    // This single function handles everything, including stopping the quiz timer
     if (quizTimerInterval) clearInterval(quizTimerInterval);
 
     try {
-        if (currentUserId) {
-            // Delete the session from our custom table
-            await supabase.from('active_sessions').delete().eq('user_id', currentUserId);
+        const sessionId = localStorage.getItem('sessionId');
+
+        if (currentUserId && sessionId) {
+            await supabase
+                .from('active_sessions')
+                .delete()
+                .eq('user_id', currentUserId)
+                .eq('session_id', sessionId);
         }
-        // Sign out from Supabase's main auth
+
         await supabase.auth.signOut();
     } catch (error) {
         console.error("Error during logout:", error);
     } finally {
-        // Clear everything and redirect to login
+        const rememberedKeys = ['supabase.auth.token'];
+        const savedSessionId = localStorage.getItem('sessionId');
+
         localStorage.clear();
         sessionStorage.clear();
+
+        if (savedSessionId) {
+            localStorage.removeItem('sessionId');
+        }
+
         window.location.href = 'index.html';
     }
 }
@@ -1512,38 +1577,41 @@ async function handleLogout() {
 // --- In dashboard.html's <script type="module"> block ---
 
 async function validateAndEnforceSession(user) {
-    // Get the specific session ID the browser is using
     const sessionId = localStorage.getItem('sessionId');
 
     if (!sessionId) {
+        console.warn("No local sessionId found. Logging out.");
         await handleLogout();
         return false;
     }
 
-    // Query for that ONE specific session record
     const { data: sessionData, error } = await supabase
         .from('active_sessions')
         .select('expires_at')
         .eq('user_id', user.id)
         .eq('session_id', sessionId)
-        .single(); // Expect exactly one result
+        .maybeSingle();
 
-    if (error || !sessionData) {
-        // If no session was found matching the ID, log out
+    if (error) {
+        console.warn("Temporary active session check failed. User will NOT be logged out.", error.message);
+        return true;
+    }
+
+    if (!sessionData) {
+        console.warn("Active session row is missing. Logging out.");
         await handleLogout();
         return false;
     }
 
-    // Check if the session is expired
     const now = new Date();
     const expiryDate = new Date(sessionData.expires_at);
 
     if (now > expiryDate) {
+        console.warn("Active session expired. Logging out.");
         await handleLogout();
         return false;
     }
 
-    // If we reach here, the session is valid
     return true;
 }
 
@@ -2083,6 +2151,68 @@ async function loadDisciplineQuiz() {
         }
     }
 }
+
+function renderImageCarousel(container, imageUrls, altText) {
+    container.innerHTML = '';
+
+    const cleanImages = (imageUrls || []).filter(url => url && String(url).trim() !== '');
+
+    if (cleanImages.length === 0) return;
+
+    let currentImageIndex = 0;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'quiz-image-carousel';
+
+    const img = document.createElement('img');
+    img.className = 'block mx-auto rounded-lg shadow-md cursor-pointer';
+    img.alt = altText;
+
+    const counter = document.createElement('div');
+    counter.className = 'quiz-image-counter';
+
+    function updateImage() {
+        img.src = cleanImages[currentImageIndex];
+        img.onclick = () => openLightbox(cleanImages[currentImageIndex]);
+        counter.textContent = cleanImages.length > 1 ? `${currentImageIndex + 1} / ${cleanImages.length}` : '';
+    }
+
+    img.onerror = function () {
+        this.style.display = 'none';
+    };
+
+    wrapper.appendChild(img);
+
+    if (cleanImages.length > 1) {
+        const leftBtn = document.createElement('button');
+        leftBtn.type = 'button';
+        leftBtn.className = 'quiz-image-arrow left';
+        leftBtn.innerHTML = '&#8249;';
+        leftBtn.onclick = (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + cleanImages.length) % cleanImages.length;
+            updateImage();
+        };
+
+        const rightBtn = document.createElement('button');
+        rightBtn.type = 'button';
+        rightBtn.className = 'quiz-image-arrow right';
+        rightBtn.innerHTML = '&#8250;';
+        rightBtn.onclick = (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % cleanImages.length;
+            updateImage();
+        };
+
+        wrapper.appendChild(leftBtn);
+        wrapper.appendChild(rightBtn);
+    }
+
+    updateImage();
+
+    container.appendChild(wrapper);
+    container.appendChild(counter);
+}
       function displayQuestion() {
     if (!quizData.questions || quizData.questions.length === 0) return;
     const question = quizData.questions[currentQuestionIndex];
@@ -2096,28 +2226,13 @@ dom.questionDisplay.className =
 
 dom.questionDisplay.innerHTML = question.question.trim();
     
-   const questionImageContainer = document.getElementById('questionImageContainer');
-    questionImageContainer.innerHTML = ''; 
+       const questionImageContainer = document.getElementById('questionImageContainer');
 
-    // FIX: Proactively handle both single (imageUrl) and multiple (imageUrls) question images.
-    const questionImages = question.imageUrls || (question.imageUrl ? [question.imageUrl] : []);
+    const questionImages = Array.isArray(question.imageUrls) && question.imageUrls.length > 0
+        ? question.imageUrls
+        : (question.imageUrl ? [question.imageUrl] : []);
 
-    questionImages.forEach(url => {
-        if (url && url.trim() !== '') {
-            const img = document.createElement('img');
-            img.src = url;
-            // Added mb-2 (margin-bottom) for better spacing between multiple images
-            img.className = 'block mx-auto rounded-lg shadow-md cursor-pointer mb-2';
-            img.alt = 'Question image';
-            img.onclick = () => openLightbox(url);
-
-            img.onerror = function() {
-                this.style.display = 'none';
-            };
-            
-            questionImageContainer.appendChild(img);
-        }
-    });
+    renderImageCarousel(questionImageContainer, questionImages, 'Question image');
 
     dom.optionsContainer.innerHTML = '';
     const previouslyAnsweredIndex = userAnswers[question.id];
@@ -2232,27 +2347,13 @@ options.forEach((label, index) => {
 });
     dom.explanationText.textContent = question.explanation || "No explanation provided.";
 
-    const explanationImageContainer = document.getElementById('explanationImageContainer');
-    explanationImageContainer.innerHTML = '';
+        const explanationImageContainer = document.getElementById('explanationImageContainer');
 
-    // FINAL FIX: This reads from the new `explanationImageUrls` column (the array)
-    // and falls back to the old `explanationImageUrl` column (the string) for older questions.
-    const explanationImages = question.explanationImageUrls || (question.explanationImageUrl ? [question.explanationImageUrl] : []);
+    const explanationImages = Array.isArray(question.explanationImageUrls) && question.explanationImageUrls.length > 0
+        ? question.explanationImageUrls
+        : (question.explanationImageUrl ? [question.explanationImageUrl] : []);
 
-    explanationImages.forEach(url => {
-        if (url && url.trim() !== '') {
-            const img = document.createElement('img');
-            img.src = url;
-            img.className = 'block mx-auto rounded-lg shadow-md cursor-pointer mb-2';
-            img.alt = 'Explanation image';
-            img.onclick = () => openLightbox(url);
-            img.onerror = function() {
-                this.style.display = 'none';
-                console.error("Failed to load image:", url); // Added for better debugging
-            };
-            explanationImageContainer.appendChild(img);
-        }
-    });
+    renderImageCarousel(explanationImageContainer, explanationImages, 'Explanation image');
 
     dom.explanationDisplay.classList.remove('hidden');
 }

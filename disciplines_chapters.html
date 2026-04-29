@@ -435,20 +435,54 @@ document.addEventListener('click', () => {
     // --- Session & Auth Functions ---
     async function handleLogout() {
         const sessionId = localStorage.getItem('sessionId');
-        if (sessionId) await supabase.from('active_sessions').delete().eq('session_id', sessionId);
+        if (currentUser && sessionId) {
+    await supabase
+        .from('active_sessions')
+        .delete()
+        .eq('user_id', currentUser.id)
+        .eq('session_id', sessionId);
+}
         await supabase.auth.signOut();
         localStorage.clear();
         sessionStorage.clear();
         window.location.href = 'index.html';
     }
 
-    async function validateAndEnforceSession(user) {
-        const sessionId = localStorage.getItem('sessionId');
-        if (!sessionId) { await handleLogout(); return false; }
-        const { data, error } = await supabase.from('active_sessions').select('expires_at').eq('user_id', user.id).eq('session_id', sessionId).single();
-        if (error || !data || new Date() > new Date(data.expires_at)) { await handleLogout(); return false; }
-        return true;
+   async function validateAndEnforceSession(user) {
+    const sessionId = localStorage.getItem('sessionId');
+
+    if (!sessionId) {
+        console.warn("No sessionId found → logout");
+        await handleLogout();
+        return false;
     }
+
+    const { data, error } = await supabase
+        .from('active_sessions')
+        .select('expires_at')
+        .eq('user_id', user.id)
+        .eq('session_id', sessionId)
+        .maybeSingle();
+
+    if (error) {
+        console.warn("Temporary session check error → IGNORE", error.message);
+        return true; // ⚠️ DO NOT LOGOUT
+    }
+
+    if (!data) {
+        console.warn("Session row missing → logout");
+        await handleLogout();
+        return false;
+    }
+
+    if (new Date() > new Date(data.expires_at)) {
+        console.warn("Session expired → logout");
+        await handleLogout();
+        return false;
+    }
+
+    return true;
+}
     
 function updateUserProfileIcon(user, userData) {
     const photoURL =

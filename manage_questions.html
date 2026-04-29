@@ -56,13 +56,13 @@
                     <label for="questionText" class="block text-sm font-medium text-gray-700">Question</label>
                     <textarea id="questionText" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Question Image (Upload or Paste URL)</label>
-                    <div class="mt-1 flex flex-col sm:flex-row gap-2">
-                        <input type="file" id="questionImageUpload" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100">
-                        <input type="text" id="questionImageUrl" placeholder="Or paste URL here..." class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                    </div>
-                </div>
+               <div>
+    <label class="block text-sm font-medium text-gray-700">Question Images</label>
+    <div class="mt-1 space-y-2">
+        <input type="file" id="questionImageUpload" accept="image/*" multiple class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100">
+        <textarea id="questionImageUrl" rows="3" placeholder="Paste one or multiple image URLs here. Put each URL on a new line." class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
+    </div>
+</div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="optionA" class="block text-sm font-medium text-gray-700">Option A</label>
@@ -99,13 +99,13 @@
                     <label for="explanation" class="block text-sm font-medium text-gray-700">Explanation</label>
                     <textarea id="explanation" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Explanation Image (Upload or Paste URL)</label>
-                    <div class="mt-1 flex flex-col sm:flex-row gap-2">
-                        <input type="file" id="explanationImageUpload" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100">
-                        <input type="text" id="explanationImageUrl" placeholder="Or paste URL here..." class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                    </div>
-                </div>
+               <div>
+    <label class="block text-sm font-medium text-gray-700">Explanation Images</label>
+    <div class="mt-1 space-y-2">
+        <input type="file" id="explanationImageUpload" accept="image/*" multiple class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100">
+        <textarea id="explanationImageUrl" rows="3" placeholder="Paste one or multiple image URLs here. Put each URL on a new line." class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
+    </div>
+</div>
                 <div class="flex justify-end pt-4">
                     <button type="button" id="cancelButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
                     <button type="submit" id="saveButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg">Save Question</button>
@@ -205,6 +205,26 @@ import { supabase } from './supabaseClient.js';
             return data.publicUrl;
         }
 
+
+function parseImageUrlsFromTextarea(value) {
+    return (value || '')
+        .split(/\n|,/)
+        .map(url => url.trim())
+        .filter(Boolean);
+}
+
+async function uploadMultipleImages(fileList, chapterId, typePrefix) {
+    const files = Array.from(fileList || []);
+    const uploadedUrls = [];
+
+    for (const file of files) {
+        const uploadedUrl = await uploadToStorage(file, chapterId, typePrefix);
+        uploadedUrls.push(uploadedUrl);
+    }
+
+    return uploadedUrls;
+}
+
         async function loadQuestions() {
             if (!bookId || !chapterId) {
                 showMessage("Book ID or Chapter ID is missing.", true);
@@ -303,32 +323,36 @@ import { supabase } from './supabaseClient.js';
                 const { data: chapterInfo, error: chapterError } = await supabase.from('chapters').select('discipline_id').eq('id', chapterId).single();
                 if (chapterError) throw chapterError;
 
-                // Process Question Image Upload
-                let finalQuestionImgUrl = document.getElementById('questionImageUrl').value;
-                const qImageFile = document.getElementById('questionImageUpload').files[0];
-                if (qImageFile) {
-                    finalQuestionImgUrl = await uploadToStorage(qImageFile, chapterId, 'q');
-                }
+const typedQuestionImageUrls = parseImageUrlsFromTextarea(document.getElementById('questionImageUrl').value);
+const uploadedQuestionImageUrls = await uploadMultipleImages(
+    document.getElementById('questionImageUpload').files,
+    chapterId,
+    'q'
+);
+const finalQuestionImageUrls = [...typedQuestionImageUrls, ...uploadedQuestionImageUrls];
 
-                // Process Explanation Image Upload
-                let finalExplImgUrl = document.getElementById('explanationImageUrl').value;
-                const explImageFile = document.getElementById('explanationImageUpload').files[0];
-                if (explImageFile) {
-                    finalExplImgUrl = await uploadToStorage(explImageFile, chapterId, 'expl');
-                }
+const typedExplanationImageUrls = parseImageUrlsFromTextarea(document.getElementById('explanationImageUrl').value);
+const uploadedExplanationImageUrls = await uploadMultipleImages(
+    document.getElementById('explanationImageUpload').files,
+    chapterId,
+    'expl'
+);
+const finalExplanationImageUrls = [...typedExplanationImageUrls, ...uploadedExplanationImageUrls];
 
-                const questionData = {
-                    questionNumber: Number(document.getElementById('questionNumber').value),
-                    question: document.getElementById('questionText').value,
-                    imageUrl: finalQuestionImgUrl,
-                    options: options.filter(Boolean),
-                    correctAnswerIndex: Number(document.getElementById('correctAnswer').value),
-                    explanation: document.getElementById('explanation').value,
-                    explanationImageUrl: finalExplImgUrl,
-                    book_id: bookId,
-                    chapter_id: chapterId,
-                    discipline_id: chapterInfo.discipline_id
-                };
+const questionData = {
+    questionNumber: Number(document.getElementById('questionNumber').value),
+    question: document.getElementById('questionText').value,
+    imageUrl: finalQuestionImageUrls[0] || null,
+    imageUrls: finalQuestionImageUrls.length > 0 ? finalQuestionImageUrls : null,
+    options: options.filter(Boolean),
+    correctAnswerIndex: Number(document.getElementById('correctAnswer').value),
+    explanation: document.getElementById('explanation').value,
+    explanationImageUrl: finalExplanationImageUrls[0] || null,
+    explanationImageUrls: finalExplanationImageUrls.length > 0 ? finalExplanationImageUrls : null,
+    book_id: bookId,
+    chapter_id: chapterId,
+    discipline_id: chapterInfo.discipline_id
+};
 
                 let error;
                 if (id) {
@@ -440,7 +464,11 @@ import { supabase } from './supabaseClient.js';
                 document.getElementById('questionId').value = questionId;
                 document.getElementById('questionNumber').value = data.questionNumber;
                 document.getElementById('questionText').value = data.question;
-                document.getElementById('questionImageUrl').value = data.imageUrl || '';
+                document.getElementById('questionImageUrl').value = (
+    Array.isArray(data.imageUrls) && data.imageUrls.length > 0
+        ? data.imageUrls
+        : (data.imageUrl ? [data.imageUrl] : [])
+).join('\n');
                 document.getElementById('optionA').value = data.options[0] || '';
                 document.getElementById('optionB').value = data.options[1] || '';
                 document.getElementById('optionC').value = data.options[2] || '';
@@ -448,7 +476,11 @@ import { supabase } from './supabaseClient.js';
                 document.getElementById('optionE').value = data.options[4] || '';
                 document.getElementById('correctAnswer').value = data.correctAnswerIndex;
                 document.getElementById('explanation').value = data.explanation;
-                document.getElementById('explanationImageUrl').value = data.explanationImageUrl || '';
+                document.getElementById('explanationImageUrl').value = (
+    Array.isArray(data.explanationImageUrls) && data.explanationImageUrls.length > 0
+        ? data.explanationImageUrls
+        : (data.explanationImageUrl ? [data.explanationImageUrl] : [])
+).join('\n');
                 modalTitle.textContent = "Edit Question";
                 openModal(questionModal);
             }
