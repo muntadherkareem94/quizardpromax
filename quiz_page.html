@@ -2633,23 +2633,21 @@ async function saveProgressToDatabase() {
     const progressKey = getQuizProgressKey();
     if (!progressKey || !currentUserId) return;
 
-    // HYBRID SAVING: Save only IDs if it's lazy-loaded or massive (>3500)
-    const isLazyLoaded = quizData.questions.some(q => !q.question);
-    const lightQuestions = (isLazyLoaded || quizData.questions.length > 3500) 
-        ? quizData.questions.map(q => ({ id: q.id, bookId: q.bookId || q.book_id, chapterId: q.chapterId || q.chapter_id, disciplineId: q.disciplineId || q.discipline_id })) 
-        : quizData.questions;
+    const lightQuestions = quizData.questions.map(q => ({
+        id: q.id,
+        bookId: q.bookId || q.book_id || null,
+        chapterId: q.chapterId || q.chapter_id || null,
+        disciplineId: q.disciplineId || q.discipline_id || null
+    }));
 
     const dataToSave = {
         questions: lightQuestions,
         currentQuestionIndex,
         userAnswers,
-        bookId: bookId 
+        bookId: bookId || null
     };
 
-    // 1. ALWAYS SAVE LOCALLY FIRST (The Offline Queue)
-    localStorage.setItem(progressKey, JSON.stringify(dataToSave));
-
-    // 2. ATTEMPT TO SYNC WITH SUPABASE
+    // 1. Save to Supabase first
     try {
         const { error } = await supabase
             .from('quiz_progress')
@@ -2661,11 +2659,16 @@ async function saveProgressToDatabase() {
             }, { onConflict: 'user_id, quiz_key' });
 
         if (error) throw error;
-        
-        // If sync succeeds, we can optionally clear the local queue flag if you implement a sync manager later
     } catch (networkError) {
-        // If it fails, we silently catch it. The data is already safe in localStorage!
-        console.warn("Network offline. Progress saved locally and will sync later.", networkError);
+        console.warn("Supabase progress sync failed:", networkError);
+    }
+
+    // 2. Save only the small version locally, safely
+    try {
+        localStorage.setItem(progressKey, JSON.stringify(dataToSave));
+    } catch (storageError) {
+        console.warn("LocalStorage is full. Removing local quiz cache and relying on Supabase.", storageError);
+        localStorage.removeItem(progressKey);
     }
 }
 
