@@ -34,9 +34,10 @@
         <div class="flex justify-between items-center mb-8 gap-4">
             <h2 id="chapterTitle" class="text-3xl font-extrabold text-gray-800">Loading...</h2>
             <div class="flex gap-2">
-                <button id="bulkImportButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Bulk Import</button>
-                <button id="addQuestionButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Add New Question</button>
-            </div>
+    <button id="bulkImportButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Bulk Import</button>
+    <button id="imageBulkImportButton" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Image Bulk Import</button>
+    <button id="addQuestionButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Add New Question</button>
+</div>
         </div>
         <div id="questionList" class="space-y-6">
             <div id="loadingState" class="text-center text-gray-500 py-10">Loading questions...</div>
@@ -101,9 +102,45 @@
                 </div>
             </form>
         </div>
+</div>
+
+<div id="imageBulkImportModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full transform transition-transform duration-300 scale-95">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Image Bulk Import</h3>
+
+        <p class="text-sm text-gray-600 mb-3">
+            Select multiple images. Name each file using the question number plus type:
+            <strong>q</strong> for question image and <strong>e</strong> for explanation image.
+        </p>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm text-gray-700 mb-4">
+            <p class="font-semibold mb-1">Examples:</p>
+            <p><code>4q.png</code> = question image for question 4</p>
+            <p><code>7e.jpg</code> = explanation image for question 7</p>
+            <p><code>18e.webp</code> = explanation image for question 18</p>
+        </div>
+
+        <form id="imageBulkImportForm" class="space-y-4">
+            <input 
+                type="file" 
+                id="imageBulkInput" 
+                accept="image/*" 
+                multiple 
+                required
+                class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
+            >
+
+            <div id="imageBulkImportReport" class="hidden text-sm rounded-lg p-3 border"></div>
+
+            <div class="flex justify-end pt-4">
+                <button type="button" id="cancelImageBulkImportButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
+                <button type="submit" id="imageBulkImportSubmitButton" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg">Import Images</button>
+            </div>
+        </form>
     </div>
+</div>
     
-    <div id="messageBox" class="hidden fixed bottom-5 right-5 mt-6 px-4 py-3 rounded-lg shadow-lg" role="alert">
+<div id="messageBox" class="hidden fixed bottom-5 right-5 mt-6 px-4 py-3 rounded-lg shadow-lg" role="alert">
         <p id="messageText"></p>
     </div>
 
@@ -128,10 +165,21 @@ import { supabase } from './supabaseClient.js';
         const logoutButton = document.getElementById('logoutButton');
         const backToChaptersButton = document.getElementById('backToChaptersButton');
         const bulkImportButton = document.getElementById('bulkImportButton');
-        const importModal = document.getElementById('importModal');
-        const cancelImportButton = document.getElementById('cancelImportButton');
-        const importForm = document.getElementById('importForm');
-      const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+const imageBulkImportButton = document.getElementById('imageBulkImportButton');
+
+const importModal = document.getElementById('importModal');
+const cancelImportButton = document.getElementById('cancelImportButton');
+const importForm = document.getElementById('importForm');
+const jsonInput = document.getElementById('jsonInput');
+
+const imageBulkImportModal = document.getElementById('imageBulkImportModal');
+const imageBulkImportForm = document.getElementById('imageBulkImportForm');
+const imageBulkInput = document.getElementById('imageBulkInput');
+const cancelImageBulkImportButton = document.getElementById('cancelImageBulkImportButton');
+const imageBulkImportSubmitButton = document.getElementById('imageBulkImportSubmitButton');
+const imageBulkImportReport = document.getElementById('imageBulkImportReport');
+
+const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 
 function ensureOptionFields() {
     const optionA = document.getElementById('optionA');
@@ -270,9 +318,15 @@ buildOptionControls();
                     document.getElementById('questionImageUpload').value = '';
                     document.getElementById('explanationImageUpload').value = '';
                 }
-                if (modal === importModal) {
-                    importForm.reset();
-                }
+if (modal === importModal) {
+    importForm.reset();
+}
+
+if (modal === imageBulkImportModal) {
+    imageBulkImportForm.reset();
+    imageBulkImportReport.classList.add('hidden');
+    imageBulkImportReport.innerHTML = '';
+}
             }, 300);
         }
 
@@ -307,6 +361,58 @@ async function uploadMultipleImages(fileList, chapterId, typePrefix) {
     }
 
     return uploadedUrls;
+}
+
+function parseBulkImageFilename(fileName) {
+    const baseName = fileName.replace(/\.[^/.]+$/, '').trim().toLowerCase();
+
+    // Supports: 4q, 4_q, 4-q, 4 q
+    const match = baseName.match(/^(\d+)\s*[-_ ]?\s*([qe])$/i);
+
+    if (!match) {
+        return null;
+    }
+
+    return {
+        questionNumber: Number(match[1]),
+        imageType: match[2].toLowerCase() === 'q' ? 'question' : 'explanation'
+    };
+}
+
+function normalizeImageArray(primaryImageUrl, imageUrlsArray) {
+    if (Array.isArray(imageUrlsArray) && imageUrlsArray.length > 0) {
+        return imageUrlsArray.filter(Boolean);
+    }
+
+    return primaryImageUrl ? [primaryImageUrl] : [];
+}
+
+function showImageBulkReport({ importedCount, skippedFiles, updatedQuestions }) {
+    const hasWarnings = skippedFiles.length > 0;
+
+    imageBulkImportReport.className = `text-sm rounded-lg p-3 border ${
+        hasWarnings 
+            ? 'bg-yellow-50 border-yellow-300 text-yellow-800' 
+            : 'bg-green-50 border-green-300 text-green-800'
+    }`;
+
+    imageBulkImportReport.innerHTML = `
+        <p class="font-semibold mb-1">Image bulk import finished.</p>
+        <p>Imported images: <strong>${importedCount}</strong></p>
+        <p>Updated questions: <strong>${updatedQuestions}</strong></p>
+        ${
+            skippedFiles.length
+                ? `<div class="mt-2">
+                    <p class="font-semibold">Skipped files:</p>
+                    <ul class="list-disc pl-5">
+                        ${skippedFiles.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                   </div>`
+                : ''
+        }
+    `;
+
+    imageBulkImportReport.classList.remove('hidden');
 }
 
         async function loadQuestions() {
@@ -490,6 +596,124 @@ correctAnswerIndex: correctAnswerIndex,
             }
         });
 
+
+imageBulkImportForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const files = Array.from(imageBulkInput.files || []);
+    if (files.length === 0) {
+        showMessage('Please select at least one image.', true);
+        return;
+    }
+
+    imageBulkImportSubmitButton.disabled = true;
+    imageBulkImportSubmitButton.textContent = 'Importing...';
+    imageBulkImportReport.classList.add('hidden');
+    imageBulkImportReport.innerHTML = '';
+
+    const skippedFiles = [];
+    let importedCount = 0;
+
+    try {
+        const { data: questions, error: questionsError } = await supabase
+            .from('questions')
+            .select('id, questionNumber, imageUrl, imageUrls, explanationImageUrl, explanationImageUrls')
+            .eq('chapter_id', chapterId);
+
+        if (questionsError) throw questionsError;
+
+        const questionByNumber = new Map(
+            (questions || []).map(q => [Number(q.questionNumber), q])
+        );
+
+        const updatesByQuestionId = new Map();
+
+        for (const file of files) {
+            const parsed = parseBulkImageFilename(file.name);
+
+            if (!parsed) {
+                skippedFiles.push(`${file.name}: invalid filename. Use format like 4q.png or 7e.jpg.`);
+                continue;
+            }
+
+            const question = questionByNumber.get(parsed.questionNumber);
+
+            if (!question) {
+                skippedFiles.push(`${file.name}: no question found with questionNumber ${parsed.questionNumber}.`);
+                continue;
+            }
+
+            const uploadedUrl = await uploadToStorage(
+                file,
+                chapterId,
+                parsed.imageType === 'question' ? `bulk_q${parsed.questionNumber}` : `bulk_e${parsed.questionNumber}`
+            );
+
+            if (!updatesByQuestionId.has(question.id)) {
+                updatesByQuestionId.set(question.id, {
+                    question,
+                    newQuestionImages: [],
+                    newExplanationImages: []
+                });
+            }
+
+            const updateEntry = updatesByQuestionId.get(question.id);
+
+            if (parsed.imageType === 'question') {
+                updateEntry.newQuestionImages.push(uploadedUrl);
+            } else {
+                updateEntry.newExplanationImages.push(uploadedUrl);
+            }
+
+            importedCount++;
+        }
+
+        if (importedCount === 0) {
+            showImageBulkReport({
+                importedCount,
+                skippedFiles,
+                updatedQuestions: 0
+            });
+            throw new Error('No images were imported. Check filenames and question numbers.');
+        }
+
+        for (const { question, newQuestionImages, newExplanationImages } of updatesByQuestionId.values()) {
+            const existingQuestionImages = normalizeImageArray(question.imageUrl, question.imageUrls);
+            const existingExplanationImages = normalizeImageArray(question.explanationImageUrl, question.explanationImageUrls);
+
+            const finalQuestionImages = [...existingQuestionImages, ...newQuestionImages];
+            const finalExplanationImages = [...existingExplanationImages, ...newExplanationImages];
+
+            const { error: updateError } = await supabase
+                .from('questions')
+                .update({
+                    imageUrl: finalQuestionImages[0] || null,
+                    imageUrls: finalQuestionImages.length > 0 ? finalQuestionImages : null,
+                    explanationImageUrl: finalExplanationImages[0] || null,
+                    explanationImageUrls: finalExplanationImages.length > 0 ? finalExplanationImages : null
+                })
+                .eq('id', question.id);
+
+            if (updateError) throw updateError;
+        }
+
+        showImageBulkReport({
+            importedCount,
+            skippedFiles,
+            updatedQuestions: updatesByQuestionId.size
+        });
+
+        showMessage(`${importedCount} images imported successfully.`, false);
+        loadQuestions();
+
+    } catch (error) {
+        console.error('Image bulk import error:', error);
+        showMessage(`Image bulk import failed: ${error.message}`, true);
+    } finally {
+        imageBulkImportSubmitButton.disabled = false;
+        imageBulkImportSubmitButton.textContent = 'Import Images';
+    }
+});
      importForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const importBtn = document.getElementById('importButton');
@@ -616,8 +840,12 @@ document.getElementById('correctAnswer').value = String(data.correctAnswerIndex 
         });
 
         bulkImportButton.addEventListener('click', () => openModal(importModal));
-        cancelImportButton.addEventListener('click', () => closeModal(importModal));
-        cancelButton.addEventListener('click', () => closeModal(questionModal));
+cancelImportButton.addEventListener('click', () => closeModal(importModal));
+
+imageBulkImportButton.addEventListener('click', () => openModal(imageBulkImportModal));
+cancelImageBulkImportButton.addEventListener('click', () => closeModal(imageBulkImportModal));
+
+cancelButton.addEventListener('click', () => closeModal(questionModal));
         
         async function handleLogout() {
             await supabase.auth.signOut();
