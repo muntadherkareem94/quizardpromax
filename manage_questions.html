@@ -63,38 +63,13 @@
         <textarea id="questionImageUrl" rows="3" placeholder="Paste one or multiple image URLs here. Put each URL on a new line." class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
     </div>
 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="optionA" class="block text-sm font-medium text-gray-700">Option A</label>
-                        <input type="text" id="optionA" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
-                    </div>
-                     <div>
-                        <label for="optionB" class="block text-sm font-medium text-gray-700">Option B</label>
-                        <input type="text" id="optionB" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
-                    </div>
-                     <div>
-                        <label for="optionC" class="block text-sm font-medium text-gray-700">Option C</label>
-                        <input type="text" id="optionC" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
-                    </div>
-                     <div>
-                        <label for="optionD" class="block text-sm font-medium text-gray-700">Option D</label>
-                        <input type="text" id="optionD" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
-                    </div>
-                     <div>
-                        <label for="optionE" class="block text-sm font-medium text-gray-700">Option E (Optional)</label>
-                        <input type="text" id="optionE" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm">
-                    </div>
-                </div>
-                 <div>
-                    <label for="correctAnswer" class="block text-sm font-medium text-gray-700">Correct Answer</label>
-                    <select id="correctAnswer" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                        <option value="0">Option A</option>
-                        <option value="1">Option B</option>
-                        <option value="2">Option C</option>
-                        <option value="3">Option D</option>
-                        <option value="4">Option E</option>
-                    </select>
-                </div>
+                <div id="optionsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+<div>
+    <label for="correctAnswer" class="block text-sm font-medium text-gray-700">Correct Answer</label>
+    <select id="correctAnswer" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></select>
+    <p class="text-xs text-gray-500 mt-1">Supports choices A–J. Keep options continuous without empty gaps.</p>
+</div>
                 <div>
                     <label for="explanation" class="block text-sm font-medium text-gray-700">Explanation</label>
                     <textarea id="explanation" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
@@ -156,7 +131,116 @@ import { supabase } from './supabaseClient.js';
         const importModal = document.getElementById('importModal');
         const cancelImportButton = document.getElementById('cancelImportButton');
         const importForm = document.getElementById('importForm');
-        const jsonInput = document.getElementById('jsonInput');
+      const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+
+function ensureOptionFields() {
+    const optionA = document.getElementById('optionA');
+    const optionsGrid = document.getElementById('optionsGrid') || optionA?.closest('.grid');
+
+    if (!optionsGrid) return;
+
+    OPTION_LETTERS.forEach((letter, index) => {
+        if (document.getElementById(`option${letter}`)) return;
+
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = `
+            <label for="option${letter}" class="block text-sm font-medium text-gray-700">
+                Option ${letter}${index < 4 ? '' : ' (Optional)'}
+            </label>
+            <input 
+                type="text" 
+                id="option${letter}" 
+                ${index < 4 ? 'required' : ''} 
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+            >
+        `;
+        optionsGrid.appendChild(wrapper);
+    });
+}
+
+function rebuildCorrectAnswerDropdown(optionCount = 10, selectedIndex = 0) {
+    const correctAnswerSelect = document.getElementById('correctAnswer');
+    if (!correctAnswerSelect) return;
+
+    const count = Math.min(10, Math.max(4, Number(optionCount) || 10));
+
+    correctAnswerSelect.innerHTML = OPTION_LETTERS.slice(0, count).map((letter, index) => `
+        <option value="${index}">Option ${letter}</option>
+    `).join('');
+
+    const safeSelectedIndex = Math.min(
+        Math.max(Number(selectedIndex) || 0, 0),
+        count - 1
+    );
+
+    correctAnswerSelect.value = String(safeSelectedIndex);
+}
+
+function getOptionsAndCorrectAnswerFromForm() {
+    const rawOptions = OPTION_LETTERS.map(letter => {
+        const input = document.getElementById(`option${letter}`);
+        return input ? input.value.trim() : '';
+    });
+
+    const lastFilledIndex = rawOptions.map(Boolean).lastIndexOf(true);
+
+    const firstBlankBeforeLast = rawOptions.findIndex((value, index) => {
+        return !value && index < lastFilledIndex;
+    });
+
+    if (firstBlankBeforeLast !== -1) {
+        throw new Error(`Option ${OPTION_LETTERS[firstBlankBeforeLast]} is empty, but a later option is filled. Keep options continuous.`);
+    }
+
+    const options = rawOptions.filter(Boolean);
+
+    if (options.length < 4) {
+        throw new Error('Each question must have at least 4 options: A–D.');
+    }
+
+    if (options.length > 10) {
+        throw new Error('A question can have a maximum of 10 options: A–J.');
+    }
+
+    const correctAnswerIndex = Number(document.getElementById('correctAnswer').value);
+
+    if (!Number.isInteger(correctAnswerIndex) || correctAnswerIndex < 0 || correctAnswerIndex >= options.length) {
+        throw new Error(`Correct answer must be between Option A and Option ${OPTION_LETTERS[options.length - 1]}.`);
+    }
+
+    return { options, correctAnswerIndex };
+}
+
+ensureOptionFields();
+rebuildCorrectAnswerDropdown(10, 0);
+
+function buildOptionControls() {
+    const optionsGrid = document.getElementById('optionsGrid');
+    const correctAnswerSelect = document.getElementById('correctAnswer');
+
+    if (!optionsGrid || !correctAnswerSelect) return;
+
+    optionsGrid.innerHTML = OPTION_LETTERS.map((letter, index) => `
+        <div>
+            <label for="option${letter}" class="block text-sm font-medium text-gray-700">
+                Option ${letter}${index < 2 ? '' : ' (Optional)'}
+            </label>
+            <input 
+                type="text" 
+                id="option${letter}" 
+                ${index < 2 ? 'required' : ''} 
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+            >
+        </div>
+    `).join('');
+
+    correctAnswerSelect.innerHTML = OPTION_LETTERS.map((letter, index) => `
+        <option value="${index}">Option ${letter}</option>
+    `).join('');
+}
+
+
+buildOptionControls();
 
         backToChaptersButton.href = `manage_chapters.html?bookId=${bookId}`;
 
@@ -250,7 +334,10 @@ async function uploadMultipleImages(fileList, chapterId, typePrefix) {
 
                     const questionCard = `
                         <div class="bg-white p-6 rounded-lg shadow" data-id="${q.id}">
-                            <p class="font-semibold text-gray-800">Q${q.questionNumber}: ${q.question}</p>
+                           <div class="font-semibold text-gray-800">
+    <span>Q${q.questionNumber}:</span>
+    <div class="mt-2 overflow-x-auto">${q.question}</div>
+</div>
                             
                             <div class="my-4 space-y-2">
                                 ${questionImages.map(url => `
@@ -261,7 +348,10 @@ async function uploadMultipleImages(fileList, chapterId, typePrefix) {
                                 ${q.options.map((opt, i) => `<p class="${i === q.correctAnswerIndex ? 'text-green-600 font-bold' : 'text-gray-600'}"><strong>${String.fromCharCode(65+i)}:</strong> ${opt}</p>`).join('')}
                             </div>
                             <div class="mt-4 pt-4 border-t border-gray-200">
-                                <p class="text-sm text-gray-800"><strong class="font-semibold">Explanation:</strong> ${q.explanation}</p>
+                               <div class="text-sm text-gray-800">
+    <strong class="font-semibold">Explanation:</strong>
+    <div class="mt-2 overflow-x-auto">${q.explanation}</div>
+</div>
                                 
                                 <div class="my-4 space-y-2">
                                     ${explanationImages.map(url => `
@@ -298,11 +388,15 @@ async function uploadMultipleImages(fileList, chapterId, typePrefix) {
             }
         });
 
-        addQuestionButton.addEventListener('click', () => {
-            document.getElementById('questionId').value = '';
-            modalTitle.textContent = "Add New Question";
-            openModal(questionModal);
-        });
+       addQuestionButton.addEventListener('click', () => {
+    questionForm.reset();
+    ensureOptionFields();
+    rebuildCorrectAnswerDropdown(10, 0);
+
+    document.getElementById('questionId').value = '';
+    modalTitle.textContent = "Add New Question";
+    openModal(questionModal);
+});
 
         questionForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -312,12 +406,34 @@ async function uploadMultipleImages(fileList, chapterId, typePrefix) {
             saveBtn.textContent = 'Saving...';
             
             const id = document.getElementById('questionId').value;
-            const options = [
-                document.getElementById('optionA').value, document.getElementById('optionB').value,
-                document.getElementById('optionC').value, document.getElementById('optionD').value,
-            ];
-            const optionE = document.getElementById('optionE').value;
-            if (optionE) options.push(optionE);
+
+const rawOptions = OPTION_LETTERS.map(letter => {
+    const input = document.getElementById(`option${letter}`);
+    return input ? input.value.trim() : '';
+});
+
+const lastFilledIndex = rawOptions.map(Boolean).lastIndexOf(true);
+const firstBlankBeforeLast = rawOptions.findIndex((value, index) => !value && index < lastFilledIndex);
+
+if (firstBlankBeforeLast !== -1) {
+    throw new Error(`Option ${OPTION_LETTERS[firstBlankBeforeLast]} is empty, but a later option is filled. Please keep options continuous.`);
+}
+
+const options = rawOptions.filter(Boolean);
+
+if (options.length < 2) {
+    throw new Error('Each question must have at least 2 options.');
+}
+
+if (options.length > 10) {
+    throw new Error('A question can have a maximum of 10 options: A–J.');
+}
+
+const correctAnswerIndex = Number(document.getElementById('correctAnswer').value);
+
+if (!Number.isInteger(correctAnswerIndex) || correctAnswerIndex < 0 || correctAnswerIndex >= options.length) {
+    throw new Error(`Correct answer must be between Option A and Option ${OPTION_LETTERS[options.length - 1]}.`);
+}
 
             try {
                 const { data: chapterInfo, error: chapterError } = await supabase.from('chapters').select('discipline_id').eq('id', chapterId).single();
@@ -344,8 +460,8 @@ const questionData = {
     question: document.getElementById('questionText').value,
     imageUrl: finalQuestionImageUrls[0] || null,
     imageUrls: finalQuestionImageUrls.length > 0 ? finalQuestionImageUrls : null,
-    options: options.filter(Boolean),
-    correctAnswerIndex: Number(document.getElementById('correctAnswer').value),
+    options: options,
+correctAnswerIndex: correctAnswerIndex,
     explanation: document.getElementById('explanation').value,
     explanationImageUrl: finalExplanationImageUrls[0] || null,
     explanationImageUrls: finalExplanationImageUrls.length > 0 ? finalExplanationImageUrls : null,
@@ -396,10 +512,23 @@ const questionData = {
 
                 // --- THIS IS THE CORRECTED MAPPING LOGIC ---
               const questionsToInsert = parsedData.questions.map(q => {
-                    if (q.questionNumber === undefined || !q.question || !q.options || q.correctAnswerIndex === undefined || !q.explanation) {
-                        throw new Error(`A question in the JSON (Q# ${q.questionNumber}) is missing a required field.`);
-                    }
-                    return {
+                   if (q.questionNumber === undefined || !q.question || !q.options || q.correctAnswerIndex === undefined || !q.explanation) {
+    throw new Error(`A question in the JSON (Q# ${q.questionNumber}) is missing a required field.`);
+}
+
+if (!Array.isArray(q.options)) {
+    throw new Error(`Q# ${q.questionNumber}: options must be an array.`);
+}
+
+if (q.options.length < 2 || q.options.length > 10) {
+    throw new Error(`Q# ${q.questionNumber}: options must be between 2 and 10 choices, A–J.`);
+}
+
+if (!Number.isInteger(q.correctAnswerIndex) || q.correctAnswerIndex < 0 || q.correctAnswerIndex >= q.options.length) {
+    throw new Error(`Q# ${q.questionNumber}: correctAnswerIndex is out of range for its options.`);
+}
+
+return {
                         questionNumber: q.questionNumber,
                         question: q.question,
                         options: q.options,
@@ -469,12 +598,12 @@ const questionData = {
         ? data.imageUrls
         : (data.imageUrl ? [data.imageUrl] : [])
 ).join('\n');
-                document.getElementById('optionA').value = data.options[0] || '';
-                document.getElementById('optionB').value = data.options[1] || '';
-                document.getElementById('optionC').value = data.options[2] || '';
-                document.getElementById('optionD').value = data.options[3] || '';
-                document.getElementById('optionE').value = data.options[4] || '';
-                document.getElementById('correctAnswer').value = data.correctAnswerIndex;
+                OPTION_LETTERS.forEach((letter, index) => {
+    const input = document.getElementById(`option${letter}`);
+    if (input) input.value = Array.isArray(data.options) ? (data.options[index] || '') : '';
+});
+
+document.getElementById('correctAnswer').value = String(data.correctAnswerIndex ?? 0);
                 document.getElementById('explanation').value = data.explanation;
                 document.getElementById('explanationImageUrl').value = (
     Array.isArray(data.explanationImageUrls) && data.explanationImageUrls.length > 0

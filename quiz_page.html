@@ -393,6 +393,200 @@ body.hl-mode-on .hl-target{
   margin-top: 6px;
 }
 
+/* --- Rich HTML explanation rendering: cleaner contrast + centered table --- *//* --- Rich HTML explanation rendering: clean academic card style --- */
+
+.explanation-card {
+  position: relative;
+  background: linear-gradient(135deg, #f5f7f8 0%, #ffffff 70%);
+  border-color: #d1d5db;
+  border-left: 3px solid #9ca3af;
+  color: #1f2937;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.explanation-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.explanation-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+@keyframes explanationPop {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.explanation-card:not(.hidden) {
+  animation: explanationPop 0.28s ease-out;
+}
+
+.explanation-content {
+  overflow-x: auto;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+.explanation-content p {
+  margin: 0.85rem 0;
+  color: #1f2937;
+}
+
+.explanation-content ul,
+.explanation-content ol {
+  margin: 0.6rem 0 0.9rem 1.25rem;
+  padding-left: 1rem;
+  color: #1f2937;
+}
+
+.explanation-content ul {
+  list-style-type: disc;
+}
+
+.explanation-content ol {
+  list-style-type: decimal;
+}
+
+.explanation-content li {
+  margin: 0.3rem 0;
+  color: #1f2937;
+}
+
+.explanation-content strong,
+.explanation-content b,
+.explanation-content th {
+  color: #111827;
+}
+
+.explanation-content table {
+  width: auto;
+  min-width: 520px;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto; /* centers table horizontally */
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  font-size: 0.94rem;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.explanation-content th,
+.explanation-content td {
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+  text-align: left;
+  color: #1f2937;
+}
+
+.explanation-content th {
+  background: #f1f5f9; /* slate-100 */
+  font-weight: 800;
+}
+
+.explanation-content thead th {
+  background: #e2e8f0; /* slate-200 */
+  color: #0f172a;
+}
+
+@media (max-width: 640px) {
+  .explanation-card {
+    padding: 1rem;
+  }
+
+  .explanation-content table {
+    min-width: 480px;
+    font-size: 0.84rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .explanation-content th,
+  .explanation-content td {
+    padding: 0.45rem 0.55rem;
+  }
+}
+
+/* --- Rich HTML question rendering: tables inside question stem --- */
+.question-content {
+  overflow-x: auto;
+}
+
+.question-content p {
+  margin: 0.75rem 0;
+}
+
+.question-content table {
+  width: auto;
+  min-width: 520px;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: left;
+  hyphens: none;
+  letter-spacing: normal;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.question-content th,
+.question-content td {
+  border: 1px solid #d1d5db;
+  padding: 0.55rem 0.7rem;
+  vertical-align: top;
+  text-align: left;
+  color: #1f2937;
+}
+
+.question-content th {
+  background: #f1f5f9;
+  font-weight: 800;
+  color: #111827;
+}
+
+.question-content thead th {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+@media (max-width: 640px) {
+  .question-content table {
+    min-width: 480px;
+    font-size: 0.82rem;
+  }
+
+  .question-content th,
+  .question-content td {
+    padding: 0.45rem 0.55rem;
+  }
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -495,7 +689,7 @@ body.hl-mode-on .hl-target{
 
     <!-- Question + options -->
     <div class="flex-1 min-w-0 pr-2 sm:pr-3 md:pr-4">
-      <div id="questionDisplay"></div>
+      <div id="questionDisplay" class="question-content"></div>
       <div id="questionImageContainer" class="my-4"></div>
      <div id="optionsContainer" class="space-y-4 mt-6 pb-6"></div>
 
@@ -556,9 +750,12 @@ body.hl-mode-on .hl-target{
 
 </div>
           
-            <div id="explanationDisplay" class="hidden mt-2 p-4 w-full rounded-lg border text-base leading-relaxed break-words bg-yellow-100 border-yellow-400 text-yellow-800">
-    <strong class="font-semibold">Explanation:</strong>
-    <p id="explanationText" class="mt-1"></p>
+           <div id="explanationDisplay" class="hidden mt-4 p-5 w-full rounded-2xl border text-base leading-relaxed break-words explanation-card">
+    <div class="explanation-header">
+        <span class="explanation-badge">Explanation</span>
+    </div>
+
+    <div id="explanationText" class="mt-3 explanation-content"></div>
     <div id="explanationImageContainer" class="mt-3"></div>
 </div>
 
@@ -2219,12 +2416,11 @@ function renderImageCarousel(container, imageUrls, altText) {
 
     console.log('DEBUG: Image URL from database is:', question.imageUrl);
 
-// Optimized version to support automatic hyphenation points
+// Optimized version to support automatic hyphenation points + question HTML tables
 dom.questionDisplay.className =
-"tracking-tight leading-relaxed antialiased border-none pl-0 ml-0";
+"question-content tracking-tight leading-relaxed antialiased border-none pl-0 ml-0";
 
-
-dom.questionDisplay.innerHTML = question.question.trim();
+dom.questionDisplay.innerHTML = sanitizeQuestionHtml(question.question || '');
     
        const questionImageContainer = document.getElementById('questionImageContainer');
 
@@ -2284,6 +2480,74 @@ attachHighlightHandlers();
             dom.difficultyIcon.classList.toggle('active', !!history?.userDifficulty);
         }
 
+
+        function escapeHtmlForExplanation(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function sanitizeExplanationHtml(rawExplanation) {
+    const raw = String(rawExplanation || 'No explanation provided.');
+    const containsHtmlTags = /<\/?[a-z][\s\S]*>/i.test(raw);
+
+    const sourceHtml = containsHtmlTags
+        ? raw
+        : escapeHtmlForExplanation(raw).replace(/\n/g, '<br>');
+
+    const template = document.createElement('template');
+    template.innerHTML = sourceHtml;
+
+    const allowedTags = new Set([
+        'p', 'br', 'div', 'span', 'strong', 'b', 'em', 'i', 'u', 'sub', 'sup',
+        'ul', 'ol', 'li',
+        'table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td', 'caption',
+        'hr', 'small'
+    ]);
+
+    const allowedAttributes = new Set([
+        'colspan', 'rowspan', 'scope', 'class'
+    ]);
+
+    function cleanNode(node) {
+        const children = Array.from(node.childNodes);
+
+        for (const child of children) {
+            if (child.nodeType === Node.ELEMENT_NODE) {
+                const tag = child.tagName.toLowerCase();
+
+                if (!allowedTags.has(tag)) {
+                    while (child.firstChild) {
+                        child.parentNode.insertBefore(child.firstChild, child);
+                    }
+                    child.remove();
+                    continue;
+                }
+
+                for (const attr of Array.from(child.attributes)) {
+                    const attrName = attr.name.toLowerCase();
+
+                    if (attrName.startsWith('on') || !allowedAttributes.has(attrName)) {
+                        child.removeAttribute(attr.name);
+                    }
+                }
+
+                cleanNode(child);
+            } else if (child.nodeType !== Node.TEXT_NODE) {
+                child.remove();
+            }
+        }
+    }
+
+    cleanNode(template.content);
+    return template.innerHTML;
+}
+function sanitizeQuestionHtml(rawQuestion) {
+    return sanitizeExplanationHtml(rawQuestion || '');
+}
 function showReviewedAnswer() {
     const question = quizData.questions[currentQuestionIndex];
     const userAnswerIndex = userAnswers[question.id];
@@ -2345,7 +2609,7 @@ options.forEach((label, index) => {
     pctPill.textContent = `${pctValue}%`;
     label.appendChild(pctPill);
 });
-    dom.explanationText.textContent = question.explanation || "No explanation provided.";
+    dom.explanationText.innerHTML = sanitizeExplanationHtml(question.explanation || "No explanation provided.");
 
         const explanationImageContainer = document.getElementById('explanationImageContainer');
 
