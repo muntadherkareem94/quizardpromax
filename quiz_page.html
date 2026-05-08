@@ -1106,7 +1106,11 @@ const dom = {
         let quizPieChart;
         let resultPieChartInstance, resultBarChartInstance, resultBookBarChartInstance;
         let quizTimerInterval = null;
-let resultModalAlreadyOpened = false;
+
+// Use window-scoped locks so click handlers never throw ReferenceError
+window.resultModalAlreadyOpened = false;
+window.navigationLocked = false;
+
 const difficultyLevels = ['Very Easy', 'Easy', 'Moderate', 'Difficult', 'Very Difficult'];
 
         
@@ -2728,14 +2732,32 @@ function updateFinishNavigationState() {
 }
 
 async function finishQuizFromNavigation() {
-    if (resultModalAlreadyOpened) return;
+    if (window.resultModalAlreadyOpened || window.navigationLocked) return;
 
-    resultModalAlreadyOpened = true;
+    window.navigationLocked = true;
+    window.resultModalAlreadyOpened = true;
 
     dom.nextButton.disabled = true;
     dom.nextButtonMobile.disabled = true;
 
     await showResults();
+
+    window.navigationLocked = false;
+}
+
+function safeJumpToQuestion(targetIndex) {
+    if (window.navigationLocked) return;
+
+    if (!quizData.questions || quizData.questions.length === 0) return;
+    if (targetIndex < 0 || targetIndex >= quizData.questions.length) return;
+
+    window.navigationLocked = true;
+
+    jumpToQuestion(targetIndex);
+
+    setTimeout(() => {
+        window.navigationLocked = false;
+    }, 300);
 }
         
 const CHUNK_SIZE = 5; // Load 5 questions at a time to keep it lightning fast
@@ -3188,9 +3210,11 @@ if (isComplete) {
 }
 }
 
-        function resetQuiz() {
-    if (quizTimerInterval) clearInterval(quizTimerInterval);
-    resultModalAlreadyOpened = false;
+                                function resetQuiz() {
+            if (quizTimerInterval) clearInterval(quizTimerInterval);
+            window.resultModalAlreadyOpened = false;
+            window.navigationLocked = false;
+
             const progressKey = getQuizProgressKey();
             if(progressKey) localStorage.removeItem(progressKey);
             userAnswers = {};
@@ -3371,30 +3395,55 @@ const backButtonUrl = () => {
         
         
         dom.lightboxClose.addEventListener('click', closeLightbox);
-        dom.lightbox.addEventListener('click', (e) => { if (e.target === dom.lightbox) closeLightbox(); });
-        dom.nextButton.addEventListener('click', () => {
-    if (currentQuestionIndex === quizData.questions.length - 1) {
-        finishQuizFromNavigation();
-        return;
-    }
+        dom.lightbox.addEventListener('click', (e) => {
+            if (e.target === dom.lightbox) closeLightbox();
+        });
 
-    if (currentQuestionIndex < quizData.questions.length - 1) {
-        jumpToQuestion(currentQuestionIndex + 1);
-    }
-});
+        dom.backButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
 
-dom.nextButtonMobile.addEventListener('click', () => {
-    if (currentQuestionIndex === quizData.questions.length - 1) {
-        finishQuizFromNavigation();
-        return;
-    }
+            if (currentQuestionIndex > 0) {
+                safeJumpToQuestion(currentQuestionIndex - 1);
+            }
+        });
 
-    if (currentQuestionIndex < quizData.questions.length - 1) {
-        jumpToQuestion(currentQuestionIndex + 1);
-    }
-});
-        dom.backButtonMobile.addEventListener('click', () => { if (currentQuestionIndex > 0) jumpToQuestion(currentQuestionIndex - 1); });
-        dom.nextButtonMobile.addEventListener('click', () => { if (currentQuestionIndex < quizData.questions.length - 1) jumpToQuestion(currentQuestionIndex + 1); });
+        dom.nextButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (window.navigationLocked) return;
+
+            if (currentQuestionIndex === quizData.questions.length - 1) {
+                finishQuizFromNavigation();
+                return;
+            }
+
+            safeJumpToQuestion(currentQuestionIndex + 1);
+        });
+
+        dom.backButtonMobile.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (currentQuestionIndex > 0) {
+                safeJumpToQuestion(currentQuestionIndex - 1);
+            }
+        });
+
+        dom.nextButtonMobile.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (window.navigationLocked) return;
+
+            if (currentQuestionIndex === quizData.questions.length - 1) {
+                finishQuizFromNavigation();
+                return;
+            }
+
+            safeJumpToQuestion(currentQuestionIndex + 1);
+        });
 
        function setupFunctionalIconListeners() {
     // Helper: attach only if element exists
