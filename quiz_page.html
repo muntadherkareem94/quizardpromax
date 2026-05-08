@@ -1106,7 +1106,8 @@ const dom = {
         let quizPieChart;
         let resultPieChartInstance, resultBarChartInstance, resultBookBarChartInstance;
         let quizTimerInterval = null;
-        const difficultyLevels = ['Very Easy', 'Easy', 'Moderate', 'Difficult', 'Very Difficult'];
+let resultModalAlreadyOpened = false;
+const difficultyLevels = ['Very Easy', 'Easy', 'Moderate', 'Difficult', 'Very Difficult'];
 
         
         
@@ -2669,38 +2670,72 @@ options.forEach((label, index) => {
 
     dom.explanationDisplay.classList.remove('hidden');
 }
-// --- FIND THIS FUNCTION ---
+// --- Submit answer without auto-opening the result modal ---
 function handleSubmitAnswer() {
     const selectedOption = dom.optionsContainer.querySelector('input[name="quizOption"]:checked');
+
     if (!selectedOption) {
         showMessage('Please select an answer.');
         return;
     }
-    const answerIndex = parseInt(selectedOption.value);
+
+    const answerIndex = parseInt(selectedOption.value, 10);
     const question = quizData.questions[currentQuestionIndex];
-   const isCorrect = answerIndex === question.correctAnswerIndex;
-        updateUserQuestionHistory(question, isCorrect);
-        userAnswers[question.id] = answerIndex;
+    const isCorrect = answerIndex === question.correctAnswerIndex;
 
-    // --- NEW: Send this exact answer to the global peer stats tally silently ---
-        supabase.rpc('increment_peer_response', { 
-            p_question_id: question.id, 
-            p_option_index: answerIndex 
-        }).then(({ error }) => {
-            if (error) console.error("Stats update failed:", error);
-        });
+    updateUserQuestionHistory(question, isCorrect);
+    userAnswers[question.id] = answerIndex;
 
-        saveProgressToDatabase(); 
-        updatePieChart();
+    // Send this exact answer to the global peer stats tally silently
+    supabase.rpc('increment_peer_response', {
+        p_question_id: question.id,
+        p_option_index: answerIndex
+    }).then(({ error }) => {
+        if (error) console.error("Stats update failed:", error);
+    });
+
+    saveProgressToDatabase();
+    updatePieChart();
     showReviewedAnswer();
     updateDotStyles();
 
     dom.submitAnswerButton.classList.add('hidden');
     dom.submitAnswerButtonMobile.classList.add('hidden');
 
-    if (Object.keys(userAnswers).length === quizData.questions.length) {
-        setTimeout(() => showResults(), 500);
-    }
+    // Important: do NOT call showResults() here.
+    // Let the user read the explanation first, then click Finish Quiz.
+    updateFinishNavigationState();
+}
+
+
+function updateFinishNavigationState() {
+    if (!quizData.questions || quizData.questions.length === 0) return;
+
+    const isFirst = currentQuestionIndex === 0;
+    const isLast = currentQuestionIndex === quizData.questions.length - 1;
+    const allAnswered = Object.keys(userAnswers).length === quizData.questions.length;
+
+    dom.backButton.disabled = isFirst;
+    dom.backButtonMobile.disabled = isFirst;
+
+    dom.nextButton.textContent = isLast ? 'Finish Quiz' : 'Next';
+    dom.nextButtonMobile.textContent = isLast ? 'Finish Quiz' : 'Next';
+
+    // On the last question, allow finishing only after all questions are answered.
+    // For normal questions, keep the existing Next behavior.
+    dom.nextButton.disabled = isLast && !allAnswered;
+    dom.nextButtonMobile.disabled = isLast && !allAnswered;
+}
+
+async function finishQuizFromNavigation() {
+    if (resultModalAlreadyOpened) return;
+
+    resultModalAlreadyOpened = true;
+
+    dom.nextButton.disabled = true;
+    dom.nextButtonMobile.disabled = true;
+
+    await showResults();
 }
         
 const CHUNK_SIZE = 5; // Load 5 questions at a time to keep it lightning fast
@@ -2809,12 +2844,7 @@ const CHUNK_SIZE = 5; // Load 5 questions at a time to keep it lightning fast
                 displayQuestion();
                 updateProgressBar();
                 
-                const isFirst = currentQuestionIndex === 0;
-                const isLast = currentQuestionIndex === quizData.questions.length - 1;
-                dom.backButton.disabled = isFirst;
-                dom.backButtonMobile.disabled = isFirst;
-                dom.nextButton.disabled = isLast;
-                dom.nextButtonMobile.disabled = isLast;
+                updateFinishNavigationState();
 
                 // Silently maintain the sliding window in the background
                 ensureSlidingWindow(index);
@@ -3159,7 +3189,8 @@ if (isComplete) {
 }
 
         function resetQuiz() {
-            if (quizTimerInterval) clearInterval(quizTimerInterval);
+    if (quizTimerInterval) clearInterval(quizTimerInterval);
+    resultModalAlreadyOpened = false;
             const progressKey = getQuizProgressKey();
             if(progressKey) localStorage.removeItem(progressKey);
             userAnswers = {};
@@ -3341,8 +3372,27 @@ const backButtonUrl = () => {
         
         dom.lightboxClose.addEventListener('click', closeLightbox);
         dom.lightbox.addEventListener('click', (e) => { if (e.target === dom.lightbox) closeLightbox(); });
-        dom.backButton.addEventListener('click', () => { if (currentQuestionIndex > 0) jumpToQuestion(currentQuestionIndex - 1); });
-        dom.nextButton.addEventListener('click', () => { if (currentQuestionIndex < quizData.questions.length - 1) jumpToQuestion(currentQuestionIndex + 1); });
+        dom.nextButton.addEventListener('click', () => {
+    if (currentQuestionIndex === quizData.questions.length - 1) {
+        finishQuizFromNavigation();
+        return;
+    }
+
+    if (currentQuestionIndex < quizData.questions.length - 1) {
+        jumpToQuestion(currentQuestionIndex + 1);
+    }
+});
+
+dom.nextButtonMobile.addEventListener('click', () => {
+    if (currentQuestionIndex === quizData.questions.length - 1) {
+        finishQuizFromNavigation();
+        return;
+    }
+
+    if (currentQuestionIndex < quizData.questions.length - 1) {
+        jumpToQuestion(currentQuestionIndex + 1);
+    }
+});
         dom.backButtonMobile.addEventListener('click', () => { if (currentQuestionIndex > 0) jumpToQuestion(currentQuestionIndex - 1); });
         dom.nextButtonMobile.addEventListener('click', () => { if (currentQuestionIndex < quizData.questions.length - 1) jumpToQuestion(currentQuestionIndex + 1); });
 
