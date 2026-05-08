@@ -434,14 +434,14 @@ document.addEventListener('click', () => {
     const INACTIVITY_TIMEOUT = 30 * 60 * 1000; // 30 minutes
     let inactivityTimer;
 
-    function resetInactivityTimer() {
-        if (inactivityTimer) clearTimeout(inactivityTimer);
+ function resetInactivityTimer() {
+    if (inactivityTimer) clearTimeout(inactivityTimer);
 
-        inactivityTimer = setTimeout(async () => {
-            alert("You have been logged out due to inactivity.");
-            await handleLogout();
-        }, INACTIVITY_TIMEOUT);
-    }
+    inactivityTimer = setTimeout(async () => {
+        console.warn("User logged out due to inactivity.");
+        await handleLogout();
+    }, INACTIVITY_TIMEOUT);
+}
 
     function setupActivityListeners() {
         ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'].forEach(event => {
@@ -517,7 +517,53 @@ document.addEventListener('click', () => {
         return false;
     }
 
-    return true;
+        return true;
+}
+
+function getOrCreateDeviceId() {
+    let deviceId = localStorage.getItem('quizardDeviceId');
+
+    if (!deviceId) {
+        deviceId = crypto.randomUUID();
+        localStorage.setItem('quizardDeviceId', deviceId);
+    }
+
+    return deviceId;
+}
+
+async function refreshActiveSession() {
+    const sessionId = localStorage.getItem('sessionId');
+
+    if (!sessionId) {
+        return;
+    }
+
+    try {
+        const { error } = await supabase.functions.invoke('create-active-session', {
+            body: {
+                device_id: getOrCreateDeviceId(),
+                existing_session_id: sessionId
+            }
+        });
+
+        if (error) {
+            console.warn('Active session refresh failed:', error.message);
+        }
+    } catch (error) {
+        console.warn('Active session refresh exception:', error);
+    }
+}
+
+function startActiveSessionHeartbeat() {
+    refreshActiveSession();
+
+    setInterval(refreshActiveSession, 5 * 60 * 1000);
+
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+            refreshActiveSession();
+        }
+    });
 }
     
 function updateUserProfileIcon(user, userData) {
@@ -1057,10 +1103,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             currentUser = session.user;
             await loadAllData(currentUser);
 
-            // Start inactivity logout timer
+                        // Start inactivity logout timer
             setupActivityListeners();
+
+            // Refresh active_sessions expires_at while the user is active on this page
+            startActiveSessionHeartbeat();
             
-            // --- HEARTBEAT CHECKER ---
+            // --- SESSION VALIDATION CHECKER ---
             setInterval(async () => {
                 await validateAndEnforceSession(session.user);
             }, 30000); 

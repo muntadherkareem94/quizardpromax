@@ -3,7 +3,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 import UAParser from 'https://esm.sh/ua-parser-js@1.0.35'
 
 const MAX_ACTIVE_DEVICES = 2
-const SESSION_HOURS = 6
+const SESSION_TTL_MINUTES = 45
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -64,8 +64,8 @@ serve(async (req) => {
 
     const now = new Date()
     const nowIso = now.toISOString()
-    const expiryDate = new Date(Date.now() + SESSION_HOURS * 60 * 60 * 1000)
-    const expiresAtIso = expiryDate.toISOString()
+    const expiryDate = new Date(Date.now() + SESSION_TTL_MINUTES * 60 * 1000)
+const expiresAtIso = expiryDate.toISOString()
 
     const ua = req.headers.get('User-Agent') || ''
     const parser = new UAParser(ua)
