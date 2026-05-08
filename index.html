@@ -193,26 +193,39 @@ if ('serviceWorker' in navigator) {
     // --- Supabase Session Management (Replaces Firebase version) ---
 // In index.html
 
-async function manageActiveSession(user) {
-    // Invoke the new Edge Function to handle session creation.
-    const { data, error } = await supabase.functions.invoke('create-active-session');
+function getOrCreateDeviceId() {
+    let deviceId = localStorage.getItem('quizardDeviceId');
 
-    if (error) {
-        // The Edge Function will provide a specific error message, like "Device limit reached."
-        throw new Error(error.message);
+    if (!deviceId) {
+        deviceId = crypto.randomUUID();
+        localStorage.setItem('quizardDeviceId', deviceId);
     }
 
-    // The Edge Function returns the new session ID, which we save to local storage.
-    if (data && data.session_id) {
-        localStorage.setItem('sessionId', data.session_id);
-    } else {
-        // Handle cases where the function might not return a session ID
-        throw new Error("Failed to create a valid session.");
-    }
-
-    return true;
+    return deviceId;
 }
 
+async function manageActiveSession(user) {
+    const deviceId = getOrCreateDeviceId();
+    const existingSessionId = localStorage.getItem('sessionId');
+
+    const { data, error } = await supabase.functions.invoke('create-active-session', {
+        body: {
+            device_id: deviceId,
+            existing_session_id: existingSessionId
+        }
+    });
+
+    if (error) {
+        throw new Error(error.message || 'Device session could not be created.');
+    }
+
+    if (data && data.session_id) {
+        localStorage.setItem('sessionId', data.session_id);
+        return true;
+    }
+
+    throw new Error("Failed to create a valid session.");
+}
     // --- AUTHENTICATION FLOW ---
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -271,19 +284,36 @@ document.addEventListener('DOMContentLoaded', async () => {
        } catch (error) {
     console.error("Login Error:", error);
 
-    let friendlyMessage = error.message || 'An unexpected error occurred.';
+    const rawMessage = error.message || 'An unexpected error occurred.';
+    const lowerMessage = rawMessage.toLowerCase();
+
+    let friendlyMessage = rawMessage;
+
+    const invalidCredentials = lowerMessage.includes('invalid login credentials');
+
+    // If email/password were correct but active-session creation failed,
+    // Supabase Auth may already have logged the user in.
+    // We must clear this local half-login state.
+    if (!invalidCredentials) {
+        try {
+            localStorage.removeItem('sessionId');
+            await supabase.auth.signOut({ scope: 'local' });
+        } catch (signOutError) {
+            console.warn('Local sign-out after failed login/session creation failed:', signOutError);
+        }
+    }
 
     // Wrong password/email
-    if (friendlyMessage.toLowerCase().includes('invalid login credentials')) {
+    if (invalidCredentials) {
         friendlyMessage = 'Invalid email or password. Please try again.';
     }
 
     // Device limit reached
     if (
-        friendlyMessage.toLowerCase().includes('device') ||
-        friendlyMessage.toLowerCase().includes('session') ||
-        friendlyMessage.toLowerCase().includes('limit') ||
-        friendlyMessage.toLowerCase().includes('non-2xx')
+        lowerMessage.includes('device') ||
+        lowerMessage.includes('session') ||
+        lowerMessage.includes('limit') ||
+        lowerMessage.includes('non-2xx')
     ) {
         friendlyMessage = 'Device limit reached. Please log out from one of your other devices before signing in here.';
     }
