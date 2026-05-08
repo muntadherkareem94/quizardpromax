@@ -31,14 +31,12 @@
     <meta name="apple-mobile-web-app-title" content="Quizard">
     <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
-<body class="bg-gradient-to-br from-indigo-600 to-purple-800 flex justify-center items-center min-h-screen p-4">
+<body class="flex justify-center items-center min-h-screen p-4" style="background-color: #3da0be;">
 
     <!-- Main container for the sign-up form -->
     <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-xl max-w-lg w-full transform transition-all duration-300">
         <div class="text-center mb-8">
-            <svg class="w-16 h-16 mx-auto mb-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-.75-10.25a.75.75 0 011.5 0v3.5a.75.75 0 01-1.5 0v-3.5zm.75-2.25c.414 0 .75.336.75.75s-.336.75-.75-.75-.75-.336-.75-.75.336-.75.75-.75z"/>
-            </svg>
+            <img src="images/logo.png" alt="Quizard Logo" class="h-24 mx-auto mb-4">
             <h1 class="text-3xl font-extrabold text-gray-800 mb-2">Create Your Account</h1>
             <p class="text-gray-600">Join Quizard to start your personalized learning journey.</p>
         </div>
@@ -153,7 +151,60 @@
     const signupForm = document.getElementById('signupForm');
     const submitButton = document.getElementById('submitButton');
     const messageBox = document.getElementById('messageBox');
-    const messageText = document.getElementById('messageText');
+        const messageText = document.getElementById('messageText');
+
+    function getOrCreateDeviceId() {
+        let deviceId = localStorage.getItem('quizardDeviceId');
+
+        if (!deviceId) {
+            deviceId = crypto.randomUUID();
+            localStorage.setItem('quizardDeviceId', deviceId);
+        }
+
+        return deviceId;
+    }
+
+    async function refreshOrCreateActiveSessionBeforeRedirect() {
+        const deviceId = getOrCreateDeviceId();
+        const existingSessionId = localStorage.getItem('sessionId');
+
+        const { data, error } = await supabase.functions.invoke('create-active-session', {
+            body: {
+                device_id: deviceId,
+                existing_session_id: existingSessionId
+            }
+        });
+
+        if (error) {
+            throw new Error(error.message || 'Could not validate active session.');
+        }
+
+        if (data && data.session_id) {
+            localStorage.setItem('sessionId', data.session_id);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const { data: { session } } = await supabase.auth.getSession();
+
+            if (session) {
+                await refreshOrCreateActiveSessionBeforeRedirect();
+                window.location.replace('dashboard.html');
+            }
+        } catch (error) {
+            console.warn('Existing session redirect check failed:', error);
+
+            // If the auth session exists but device-session creation fails,
+            // clear only this local auth state and allow the user to stay on signup.
+            try {
+                localStorage.removeItem('sessionId');
+                await supabase.auth.signOut({ scope: 'local' });
+            } catch (signOutError) {
+                console.warn('Local sign-out after signup redirect check failed:', signOutError);
+            }
+        }
+    });
 
     // --- Function to show messages ---
     function showMessage(message, isError = true) {
