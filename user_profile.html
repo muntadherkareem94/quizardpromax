@@ -201,13 +201,12 @@ document.addEventListener('click', () => {
         const INACTIVITY_TIMEOUT = 30*60 * 1000; // 5 minutes for testing
         let inactivityTimer;
 
-        function resetInactivityTimer() {
+                function resetInactivityTimer() {
             if (inactivityTimer) clearTimeout(inactivityTimer);
-            
-            inactivityTimer = setTimeout(() => {
-                // This page doesn't have a dedicated message box, so we can create one or use a simple alert.
-                // For consistency, we'll just log out directly.
-                handleLogout();
+
+            inactivityTimer = setTimeout(async () => {
+                alert("You have been logged out due to inactivity.");
+                await handleLogout();
             }, INACTIVITY_TIMEOUT);
         }
 
@@ -277,30 +276,35 @@ function updateUserProfileIcon(user, userData) {
          */
       // ADD THIS NEW SUPABASE FUNCTION
 async function handleLogout() {
-    try {
-        // Use the globally available 'currentUser' object
-        if (currentUser) {
-            // Delete the session from our custom 'active_sessions' table
-            const sessionId = localStorage.getItem('sessionId');
+    const sessionId = localStorage.getItem('sessionId');
 
-if (currentUser && sessionId) {
-    await supabase
-        .from('active_sessions')
-        .delete()
-        .eq('user_id', currentUser.id)
-        .eq('session_id', sessionId);
-}
+    try {
+        if (sessionId) {
+            await supabase
+                .from('active_sessions')
+                .delete()
+                .eq('session_id', sessionId);
         }
-        // Sign out from Supabase's main auth system
-        await supabase.auth.signOut();
     } catch (error) {
-        console.error("Error during logout:", error);
-    } finally {
-        // Clear all storage and redirect to the login page
-        localStorage.clear();
-        sessionStorage.clear();
-        window.location.href = 'index.html';
+        console.warn('Active session cleanup failed, continuing logout:', error);
     }
+
+    // Remove only the active session id.
+    // Do NOT use localStorage.clear(), because it deletes quizardDeviceId.
+    localStorage.removeItem('sessionId');
+
+    // Optional old Firebase key cleanup, safe to keep:
+    localStorage.removeItem('userSessionId');
+
+    sessionStorage.clear();
+
+    try {
+        await supabase.auth.signOut({ scope: 'local' });
+    } catch (error) {
+        console.warn('Supabase local sign-out failed:', error);
+    }
+
+    window.location.href = 'index.html';
 }
 
         /**
@@ -472,10 +476,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             const { data: userData } = await supabase.from('users').select('account_type').eq('id', session.user.id).single();
             
             // Pass both the auth user and the user data to the functions
-            updateUserProfileIcon(session.user, userData);
+                        updateUserProfileIcon(session.user, userData);
             await loadUserProfile(session.user);
-            
+
+            // Start inactivity logout timer
             setupActivityListeners();
+
+            // HEARTBEAT CHECKER
+            setInterval(async () => {
+                await validateAndEnforceSession(session.user);
+            }, 30000);
         }
         
     } else {
@@ -485,7 +495,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
         // --- Event Listeners ---
-        dom.logoutButton.addEventListener('click', handleLogout);
+                dom.logoutButton.addEventListener('click', async () => {
+            await handleLogout();
+        });
         // --- START: ADD THIS ENTIRE BLOCK ---
 
         // This makes the "Change Photo" button open the file window.

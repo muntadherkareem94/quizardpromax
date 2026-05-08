@@ -423,28 +423,64 @@ document.addEventListener('click', () => {
     }
 });
 
-    // --- DOM Elements ---
- 
-    // --- Global State ---
+        // --- Global State ---
     let allBooks = [], allChapters = [], accessibleContent = { chapters: [] };
     let currentUser = null, currentUserData = null;
     let quizStartContext = {};
     let sourcesSelector, userHistoryCache = new Map();
     let builderContext = 'discipline'; // This page is always in the discipline context
 
+    // --- Inactivity Logout ---
+    const INACTIVITY_TIMEOUT = 30 * 60 * 1000; // 30 minutes
+    let inactivityTimer;
+
+    function resetInactivityTimer() {
+        if (inactivityTimer) clearTimeout(inactivityTimer);
+
+        inactivityTimer = setTimeout(async () => {
+            alert("You have been logged out due to inactivity.");
+            await handleLogout();
+        }, INACTIVITY_TIMEOUT);
+    }
+
+    function setupActivityListeners() {
+        ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+            document.addEventListener(event, resetInactivityTimer, true);
+        });
+
+        resetInactivityTimer();
+    }
+
     // --- Session & Auth Functions ---
     async function handleLogout() {
         const sessionId = localStorage.getItem('sessionId');
-        if (currentUser && sessionId) {
-    await supabase
-        .from('active_sessions')
-        .delete()
-        .eq('user_id', currentUser.id)
-        .eq('session_id', sessionId);
-}
-        await supabase.auth.signOut();
-        localStorage.clear();
+
+        try {
+            if (sessionId) {
+                await supabase
+                    .from('active_sessions')
+                    .delete()
+                    .eq('session_id', sessionId);
+            }
+        } catch (error) {
+            console.warn('Active session cleanup failed, continuing logout:', error);
+        }
+
+        // Remove only the active session id.
+        // Do NOT use localStorage.clear(), because it deletes quizardDeviceId.
+        localStorage.removeItem('sessionId');
+
+        // Optional old Firebase key cleanup, safe to keep:
+        localStorage.removeItem('userSessionId');
+
         sessionStorage.clear();
+
+        try {
+            await supabase.auth.signOut({ scope: 'local' });
+        } catch (error) {
+            console.warn('Supabase local sign-out failed:', error);
+        }
+
         window.location.href = 'index.html';
     }
 
@@ -1017,11 +1053,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const isSessionValid = await validateAndEnforceSession(session.user);
         
         if (isSessionValid) {
-            // 3. Load Data
+                        // 3. Load Data
             currentUser = session.user;
-            await loadAllData(currentUser); 
+            await loadAllData(currentUser);
+
+            // Start inactivity logout timer
+            setupActivityListeners();
             
-            // --- NEW: THE HEARTBEAT CHECKER ---
+            // --- HEARTBEAT CHECKER ---
             setInterval(async () => {
                 await validateAndEnforceSession(session.user);
             }, 30000); 
@@ -1058,7 +1097,11 @@ if (headerBackBtn) {
     });
 }
 // Logout (only if this page has the button)
-if (dom.logoutButton) dom.logoutButton.addEventListener('click', handleLogout);
+if (dom.logoutButton) {
+    dom.logoutButton.addEventListener('click', async () => {
+        await handleLogout();
+    });
+}
 
 // Read discipline context from URL (THIS is the source of truth)
 const urlParams = new URLSearchParams(window.location.search);

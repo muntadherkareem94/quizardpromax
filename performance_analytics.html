@@ -396,13 +396,12 @@ function processAndRenderAnalytics(filterDays) {
     const INACTIVITY_TIMEOUT = 30*60 * 1000; // 10 seconds for testing
     let inactivityTimer;
 
-    function resetInactivityTimer() {
+       function resetInactivityTimer() {
         if (inactivityTimer) clearTimeout(inactivityTimer);
-        
-        inactivityTimer = setTimeout(() => {
+
+        inactivityTimer = setTimeout(async () => {
             alert("You have been logged out due to inactivity.");
-            // This will call the handleLogout function that is already in this file
-            handleLogout();
+            await handleLogout();
         }, INACTIVITY_TIMEOUT);
     }
 
@@ -417,27 +416,35 @@ function processAndRenderAnalytics(filterDays) {
     
     // --- END: ADD THIS ENTIRE BLOCK ---
 async function handleLogout() {
-    try {
-        const { data: { user } } = await supabase.auth.getUser();
-        if (user) {
-            const sessionId = localStorage.getItem('sessionId');
+    const sessionId = localStorage.getItem('sessionId');
 
-if (user && sessionId) {
-    await supabase
-        .from('active_sessions')
-        .delete()
-        .eq('user_id', user.id)
-        .eq('session_id', sessionId);
-}
+    try {
+        if (sessionId) {
+            await supabase
+                .from('active_sessions')
+                .delete()
+                .eq('session_id', sessionId);
         }
-        await supabase.auth.signOut();
     } catch (error) {
-        console.error("Error during logout:", error);
-    } finally {
-        localStorage.clear();
-        sessionStorage.clear();
-        window.location.href = 'index.html';
+        console.warn('Active session cleanup failed, continuing logout:', error);
     }
+
+    // Remove only the active session id.
+    // Do NOT use localStorage.clear(), because it deletes quizardDeviceId.
+    localStorage.removeItem('sessionId');
+
+    // Optional old Firebase key cleanup, safe to keep:
+    localStorage.removeItem('userSessionId');
+
+    sessionStorage.clear();
+
+    try {
+        await supabase.auth.signOut({ scope: 'local' });
+    } catch (error) {
+        console.warn('Supabase local sign-out failed:', error);
+    }
+
+    window.location.href = 'index.html';
 }
 
 async function validateAndEnforceSession(user) {
@@ -593,17 +600,25 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Pass both user and userData to the function
             updateUserProfileIcon(session.user, userData);
 
-            // This is your main function to get analytics data
+                        // This is your main function to get analytics data
             fetchAllData(session.user.id);
 
+            // Start inactivity logout timer
             setupActivityListeners();
+
+            // HEARTBEAT CHECKER
+            setInterval(async () => {
+                await validateAndEnforceSession(session.user);
+            }, 30000);
         }
     } else {
         window.location.href = 'index.html';
     }
 });
 
- dom.logoutButton.addEventListener('click', handleLogout);
+  dom.logoutButton.addEventListener('click', async () => {
+    await handleLogout();
+});
         dom.dateFilters.addEventListener('click', (e) => {
             if (e.target.tagName === 'BUTTON') {
                 dom.dateFilters.querySelector('.active').classList.remove('active');

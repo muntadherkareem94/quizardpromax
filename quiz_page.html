@@ -983,7 +983,7 @@ document.addEventListener('click', () => {
 
 function resetInactivityTimer() {
     if (inactivityTimer) clearTimeout(inactivityTimer);
-    
+
     inactivityTimer = setTimeout(() => {
         const messageBox = document.getElementById('messageBox');
         if (messageBox) {
@@ -991,9 +991,10 @@ function resetInactivityTimer() {
             messageBox.className = 'mt-6 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-lg relative mx-auto max-w-lg';
             messageBox.classList.remove('hidden');
         }
-        
-        // *** FIX: Call the correct logout function that exists in this file ***
-        setTimeout(handleLogout, 2000); 
+
+        setTimeout(async () => {
+            await handleLogout();
+        }, 2000);
 
     }, INACTIVITY_TIMEOUT);
 }
@@ -1742,33 +1743,35 @@ function updateUserProfileIcon(user, userData) {
 async function handleLogout() {
     if (quizTimerInterval) clearInterval(quizTimerInterval);
 
-    try {
-        const sessionId = localStorage.getItem('sessionId');
+    const sessionId = localStorage.getItem('sessionId');
 
-        if (currentUserId && sessionId) {
+    try {
+        if (sessionId) {
             await supabase
                 .from('active_sessions')
                 .delete()
-                .eq('user_id', currentUserId)
                 .eq('session_id', sessionId);
         }
-
-        await supabase.auth.signOut();
     } catch (error) {
-        console.error("Error during logout:", error);
-    } finally {
-        const rememberedKeys = ['supabase.auth.token'];
-        const savedSessionId = localStorage.getItem('sessionId');
-
-        localStorage.clear();
-        sessionStorage.clear();
-
-        if (savedSessionId) {
-            localStorage.removeItem('sessionId');
-        }
-
-        window.location.href = 'index.html';
+        console.warn('Active session cleanup failed, continuing logout:', error);
     }
+
+    // Remove only the active session id.
+    // Do NOT use localStorage.clear(), because it deletes quizardDeviceId.
+    localStorage.removeItem('sessionId');
+
+    // Optional old Firebase key cleanup, safe to keep:
+    localStorage.removeItem('userSessionId');
+
+    sessionStorage.clear();
+
+    try {
+        await supabase.auth.signOut({ scope: 'local' });
+    } catch (error) {
+        console.warn('Supabase local sign-out failed:', error);
+    }
+
+    window.location.href = 'index.html';
 }
 
 // --- In dashboard.html's <script type="module"> block ---
@@ -3282,7 +3285,9 @@ const backButtonUrl = () => {
         dom.backToChaptersButton.addEventListener('click', handleSmartBack);
         dom.backToChaptersFromModal.addEventListener('click', handleSmartBack);
         // -------------------------------------
-        dom.logoutButton.addEventListener('click', handleLogout);
+        dom.logoutButton.addEventListener('click', async () => {
+    await handleLogout();
+});
         
         
         dom.lightboxClose.addEventListener('click', closeLightbox);

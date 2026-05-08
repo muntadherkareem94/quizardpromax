@@ -133,25 +133,40 @@
 }
     
     async function handleLogout() {
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session) {
-            const sessionId = localStorage.getItem('sessionId');
+        const sessionId = localStorage.getItem('sessionId');
 
-if (session?.user && sessionId) {
-    await supabase
-        .from('active_sessions')
-        .delete()
-        .eq('user_id', session.user.id)
-        .eq('session_id', sessionId);
-}
+        try {
+            if (sessionId) {
+                await supabase
+                    .from('active_sessions')
+                    .delete()
+                    .eq('session_id', sessionId);
+            }
+        } catch (error) {
+            console.warn('Active session cleanup failed, continuing logout:', error);
         }
-        await supabase.auth.signOut();
-        localStorage.clear();
+
+        // Remove only the active session id.
+        // Do NOT use localStorage.clear(), because it deletes quizardDeviceId.
+        localStorage.removeItem('sessionId');
+
+        // Optional old Firebase key cleanup, safe to keep:
+        localStorage.removeItem('userSessionId');
+
         sessionStorage.clear();
+
+        try {
+            await supabase.auth.signOut({ scope: 'local' });
+        } catch (error) {
+            console.warn('Supabase local sign-out failed:', error);
+        }
+
         window.location.href = 'index.html';
     }
 
-    document.getElementById('logoutButton').addEventListener('click', handleLogout);
+        document.getElementById('logoutButton').addEventListener('click', async () => {
+        await handleLogout();
+    });
 
     // --- Store Page Specific Code ---
     const dom = {
@@ -323,6 +338,63 @@ function renderStoreItems(itemsToRender, userData) {
 
 let currentUserData = null;
 
+// --- Inactivity Logout ---
+const INACTIVITY_TIMEOUT = 30 * 60 * 1000; // 30 minutes
+let inactivityTimer;
+
+function resetInactivityTimer() {
+    if (inactivityTimer) clearTimeout(inactivityTimer);
+
+    inactivityTimer = setTimeout(async () => {
+        alert("You have been logged out due to inactivity.");
+        await handleLogout();
+    }, INACTIVITY_TIMEOUT);
+}
+
+function setupActivityListeners() {
+    ['mousemove', 'mousedown', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+        document.addEventListener(event, resetInactivityTimer, true);
+    });
+
+    resetInactivityTimer();
+}
+
+async function validateAndEnforceSession(user) {
+    const sessionId = localStorage.getItem('sessionId');
+
+    if (!sessionId) {
+        console.warn("No sessionId found → logout");
+        await handleLogout();
+        return false;
+    }
+
+    const { data, error } = await supabase
+        .from('active_sessions')
+        .select('expires_at')
+        .eq('user_id', user.id)
+        .eq('session_id', sessionId)
+        .maybeSingle();
+
+    if (error) {
+        console.warn("Temporary session check error → IGNORE", error.message);
+        return true;
+    }
+
+    if (!data) {
+        console.warn("Session row missing → logout");
+        await handleLogout();
+        return false;
+    }
+
+    if (new Date() > new Date(data.expires_at)) {
+        console.warn("Session expired → logout");
+        await handleLogout();
+        return false;
+    }
+
+    return true;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. NON-BLOCKING CACHE RENDER 
     const cachedStoreItems = JSON.parse(localStorage.getItem('offline_store_items'));
@@ -345,13 +417,24 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(async () => {
         try {
             const { data: { session } } = await supabase.auth.getSession();
-            if (session) {
+                       if (session) {
+                const isSessionValid = await validateAndEnforceSession(session.user);
+
+                if (!isSessionValid) {
+                    return;
+                }
+
                 populateSpecialtyFilter();
                 
                 // Fetch role, account_type, AND speciality
-                const { data: userDataResponse } = await supabase.from('users').select('role, account_type, speciality').eq('id', session.user.id).single();
+                const { data: userDataResponse } = await supabase
+                    .from('users')
+                    .select('role, account_type, speciality')
+                    .eq('id', session.user.id)
+                    .single();
+
                 currentUserData = userDataResponse; 
-                localStorage.setItem('offline_userData', JSON.stringify(currentUserData)); // Update cache
+                localStorage.setItem('offline_userData', JSON.stringify(currentUserData));
                 
                 updateUserProfileIcon(session.user, currentUserData);
 
@@ -363,6 +446,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 dom.searchInput.addEventListener('input', handleFilterAndSearch);
                 dom.specialtyFilter.addEventListener('change', handleFilterAndSearch);
+
+                // Start inactivity logout timer
+                setupActivityListeners();
+
+                // HEARTBEAT CHECKER
+                setInterval(async () => {
+                    await validateAndEnforceSession(session.user);
+                }, 30000);
             } else {
                 window.location.href = 'index.html';
             }

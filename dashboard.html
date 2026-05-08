@@ -454,15 +454,10 @@ if ('serviceWorker' in navigator) {
 // In dashboard.html
 function resetInactivityTimer() {
     if (inactivityTimer) clearTimeout(inactivityTimer);
-    
-    inactivityTimer = setTimeout(() => {
-        alert("You have been logged out due to inactivity.");
-        
-        // FIX: Call the handleLogout function correctly.
-        // It no longer needs a 'user' parameter because it gets the
-        // session_id from local storage.
-        handleLogout();
 
+    inactivityTimer = setTimeout(async () => {
+        alert("You have been logged out due to inactivity.");
+        await handleLogout();
     }, INACTIVITY_TIMEOUT);
 }
 
@@ -1444,21 +1439,35 @@ async function populateHierarchicalSliders(questionPool) {
 // This is the new, improved logout function
 // In dashboard.html
 async function handleLogout() {
-    // Get the specific session ID from local storage.
     const sessionId = localStorage.getItem('sessionId');
 
-    if (sessionId) {
-        // FIX: Delete only the row matching the current session's ID.
-        await supabase
-            .from('active_sessions')
-            .delete()
-            .eq('session_id', sessionId);
+    try {
+        if (sessionId) {
+            await supabase
+                .from('active_sessions')
+                .delete()
+                .eq('session_id', sessionId);
+        }
+    } catch (error) {
+        console.warn('Active session cleanup failed, continuing logout:', error);
     }
 
-    // The rest of the logout process remains the same.
-    await supabase.auth.signOut();
-    localStorage.clear();
+    // Remove only the active session id.
+    // Do NOT use localStorage.clear(), because it deletes quizardDeviceId
+    // and may make the same browser look like a new device later.
+    localStorage.removeItem('sessionId');
+
+    // Optional old Firebase key cleanup, safe to keep:
+    localStorage.removeItem('userSessionId');
+
     sessionStorage.clear();
+
+    try {
+        await supabase.auth.signOut({ scope: 'local' });
+    } catch (error) {
+        console.warn('Supabase local sign-out failed:', error);
+    }
+
     window.location.href = 'index.html';
 }
   
@@ -1787,12 +1796,15 @@ loadBooksAndVideos();
             }
             // --- END SMART TAB RESTORATION ---
 
-            // --- NEW: THE HEARTBEAT CHECKER ---
-            // Checks the database every 30 seconds. If an admin deletes their session, 
+                 // Start inactivity logout timer
+            setupActivityListeners();
+
+            // --- HEARTBEAT CHECKER ---
+            // Checks the database every 30 seconds. If an admin deletes their session,
             // they will be instantly kicked back to the login screen.
             setInterval(async () => {
                 await validateAndEnforceSession(session.user);
-            }, 30000); 
+            }, 30000);
             // ----------------------------------
 
         }
@@ -2390,11 +2402,8 @@ async function getUserHistory(userId) {
     }  
         // --- General Event Listeners ---
 // Update the event listener to pass the current user to the function
-dom.logoutButton.addEventListener('click', () => {
-    // We use the `currentUser` variable we created earlier
-    if (currentUser) {
-        handleLogout(currentUser);
-    }
+dom.logoutButton.addEventListener('click', async () => {
+    await handleLogout();
 });
 
 // --- START: NEW, CONSOLIDATED EVENT LISTENERS ---
