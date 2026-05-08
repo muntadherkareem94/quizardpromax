@@ -654,50 +654,61 @@ async function fetchAndDisplayNotifications() {
         .from('user_notifications')
         .select(`id, is_read, notifications (content, type, link_url, created_at)`)
         .eq('recipient_id', currentUser.id)
-        .eq('is_read', false);
-    
+        .order('created_at', { foreignTable: 'notifications', ascending: false })
+        .limit(100);
+
     if (error) {
         console.error("Error fetching notifications:", error);
         return;
     }
 
-    if (userNotifications.length > 0) {
+    const notifications = userNotifications || [];
+    const unreadCount = notifications.filter(item => item.is_read === false).length;
+
+    if (unreadCount > 0) {
         notificationBadge.classList.remove('hidden');
     } else {
         notificationBadge.classList.add('hidden');
     }
-    
+
     notificationList.innerHTML = '';
 
-    // FIX 1: Safely create and append the empty state placeholder
-    if (userNotifications.length === 0) {
+    if (notifications.length === 0) {
         const placeholder = document.createElement('p');
         placeholder.className = 'p-4 text-sm text-gray-500 text-center';
-        placeholder.textContent = 'You have no new notifications.';
+        placeholder.textContent = 'You have no notifications.';
         notificationList.appendChild(placeholder);
         return;
     }
 
-    // FIX 2: Force sort the notifications so the newest dates are at the top
-    userNotifications.sort((a, b) => {
+    notifications.sort((a, b) => {
         const dateA = a.notifications ? new Date(a.notifications.created_at).getTime() : 0;
         const dateB = b.notifications ? new Date(b.notifications.created_at).getTime() : 0;
         return dateB - dateA;
     });
 
-    userNotifications.forEach(item => {
-        const notification = item.notifications; 
-        if (!notification) return; 
+    notifications.forEach(item => {
+        const notification = item.notifications;
+        if (!notification) return;
+
+        const isUnread = item.is_read === false;
 
         const notifElement = document.createElement('a');
         notifElement.href = notification.link_url || '#';
-        notifElement.className = 'block p-4 hover:bg-gray-50';
         notifElement.dataset.userNotificationId = item.id;
+        notifElement.dataset.isRead = String(!isUnread);
+
+        notifElement.className = isUnread
+            ? 'block p-4 bg-blue-50 hover:bg-blue-100 border-b border-gray-100 transition'
+            : 'block p-4 bg-white hover:bg-gray-50 border-b border-gray-100 transition';
 
         notifElement.innerHTML = `
-            <p class="font-semibold text-gray-800">${notification.content}</p>
-            <p class="text-xs text-gray-500 mt-1">${new Date(notification.created_at).toLocaleString()}</p>
+            <div class="min-w-0">
+                <p class="${isUnread ? 'font-bold text-gray-900' : 'font-medium text-gray-700'}">${notification.content}</p>
+                <p class="text-xs text-gray-500 mt-1">${new Date(notification.created_at).toLocaleString()}</p>
+            </div>
         `;
+
         notificationList.appendChild(notifElement);
     });
 }
@@ -705,40 +716,43 @@ async function fetchAndDisplayNotifications() {
 // Mark notification as read when it's clicked
 // This is the NEW, corrected click listener.
 notificationList.addEventListener('click', async (e) => {
-    e.preventDefault(); // Prevent the link from navigating immediately
     const link = e.target.closest('a');
-    
-    if (link && link.dataset.userNotificationId) {
-        const userNotificationId = link.dataset.userNotificationId;
-        
-        // Step 1: Tell Supabase to update the row
+    if (!link || !link.dataset.userNotificationId) return;
+
+    e.preventDefault();
+
+    const userNotificationId = link.dataset.userNotificationId;
+    const alreadyRead = link.dataset.isRead === 'true';
+
+    if (!alreadyRead) {
         const { error } = await supabase
             .from('user_notifications')
-            .update({ is_read: true, read_at: new Date().toISOString() })
+            .update({
+                is_read: true,
+                read_at: new Date().toISOString()
+            })
             .eq('id', userNotificationId);
-            
-        // Step 2: Check for and log any errors from the database
+
         if (error) {
             console.error("Error marking notification as read:", error);
-            alert("Could not update notification status. See console for details.");
-            return; // Stop the function if there was an error
-        } 
-        
-        // Step 3: If successful, update the UI
-        console.log("Successfully marked as read. Navigating now...");
-        
-        // Visually remove the item from the list
-        link.remove();
-        
-        // Re-check if any unread notifications are left to update the badge
-        if (notificationList.children.length === 0 || !notificationList.querySelector('a')) {
-             notificationList.innerHTML = ''; // Clear the list completely
-             notificationList.appendChild(notificationPlaceholder);
-             notificationBadge.classList.add('hidden');
+            alert("Could not update notification status.");
+            return;
         }
-        
-        // Step 4: Go to the link's destination
-        window.location.href = link.href;
+
+        link.dataset.isRead = 'true';
+        link.className = 'block p-4 bg-white hover:bg-gray-50 border-b border-gray-100 transition';
+
+        const message = link.querySelector('p');
+        if (message) {
+            message.className = 'font-medium text-gray-700';
+        }
+
+        await fetchAndDisplayNotifications();
+    }
+
+    const href = link.getAttribute('href');
+    if (href && href !== '#') {
+        window.location.href = href;
     }
 });
 

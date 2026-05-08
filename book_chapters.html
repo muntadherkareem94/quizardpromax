@@ -171,6 +171,7 @@ canvas[id^="ch-chart-"]{
 
 <script type="module">
  import { supabase } from './supabaseClient.js';
+import { initNotifications } from './notifications.js';
 
 
 // --- GLOBAL CHARTS & HELPERS ---
@@ -1082,9 +1083,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             const { data: userData } = await supabase.from('users').select('account_type').eq('id', session.user.id).single();
             
             // Pass both user and userData to the function
-            updateUserProfileIcon(session.user, userData);
+                        updateUserProfileIcon(session.user, userData);
 
-                        await loadBookAndChapters(); 
+            // Activate shared notifications dropdown
+            initNotifications();
+
+            await loadBookAndChapters(); 
             await initializeCustomQuizBuilder();
 
             // Start inactivity logout timer
