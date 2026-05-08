@@ -2865,24 +2865,123 @@ async function loadDisciplines() {
         grid.innerHTML = Array(6).fill(0).map(() => `<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden animate-pulse h-40 flex flex-col"><div class="h-28 bg-gray-200 w-full"></div><div class="p-4 flex justify-between items-end flex-grow"><div class="space-y-2 w-2/3"><div class="h-4 bg-gray-200 rounded w-3/4"></div><div class="h-3 bg-gray-200 rounded w-1/2"></div></div><div class="h-12 w-12 bg-gray-200 rounded-full"></div></div></div>`).join('');
     }
 
-    // 2. BACKGROUND SYNC (Updates cache silently without blocking UI)
+        // 2. BACKGROUND SYNC
     setTimeout(async () => {
         try {
-            const { data: ud } = await supabase.from('users').select('*').eq('id', user.id).single();
-            const { data: rd } = await supabase.from('disciplines').select('*').order('name');
-            let qData = [], hData = [], from = 0; let keep = true;
-            while(keep) { const { data } = await supabase.from('questions').select('id, discipline_id').range(from, from+999); if(data&&data.length>0){ qData=qData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
-            from = 0; keep = true;
-            while(keep) { const { data } = await supabase.from('userQuestionHistory').select('questionId, lastResult').eq('userId', user.id).range(from, from+999); if(data&&data.length>0){ hData=hData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
+            const { data: ud, error: userErr } = await supabase
+                .from('users')
+                .select('*')
+                .eq('id', user.id)
+                .single();
 
-            localStorage.setItem('offline_userData', JSON.stringify(ud || {speciality: null}));
-            localStorage.setItem('offline_rawDisciplines', JSON.stringify(rd || []));
-            localStorage.setItem('offline_discQuestions', JSON.stringify(qData));
-            localStorage.setItem('offline_discHistory', JSON.stringify(hData));
-            
-            // Re-paint just in case data changed on another device
-            paintDisciplines(ud || {speciality: null}, rd || [], qData, hData);
-        } catch (e) { console.warn("Background sync failed. Continuing with cached disciplines."); }
+            if (userErr) throw userErr;
+
+            const { data: rd, error: discErr } = await supabase
+                .from('disciplines')
+                .select('*')
+                .order('name');
+
+            if (discErr) throw discErr;
+
+            let qData = [];
+            let qFrom = 0;
+            let qKeep = true;
+
+            while (qKeep) {
+                const { data, error } = await supabase
+                    .from('questions')
+                    .select('id, discipline_id')
+                    .range(qFrom, qFrom + 999);
+
+                if (error) throw error;
+
+                if (data && data.length > 0) {
+                    qData = qData.concat(data);
+                    qKeep = data.length === 1000;
+                    qFrom += 1000;
+                } else {
+                    qKeep = false;
+                }
+            }
+
+            let hData = [];
+            let hFrom = 0;
+            let hKeep = true;
+
+            while (hKeep) {
+                const { data, error } = await supabase
+                    .from('userQuestionHistory')
+                    .select('questionId, lastResult')
+                    .eq('userId', user.id)
+                    .range(hFrom, hFrom + 999);
+
+                if (error) throw error;
+
+                if (data && data.length > 0) {
+                    hData = hData.concat(data);
+                    hKeep = data.length === 1000;
+                    hFrom += 1000;
+                } else {
+                    hKeep = false;
+                }
+            }
+
+            // IMPORTANT: repaint FIRST, before touching localStorage.
+            // This prevents cache/storage problems from blocking discipline donuts.
+            paintDisciplines(ud || { speciality: null }, rd || [], qData, hData);
+
+            // THEN cache safely.
+            const saveWithEviction = (key, data) => {
+                const dataString = JSON.stringify(data);
+
+                try {
+                    localStorage.setItem(key, dataString);
+                } catch (e) {
+                    if (e.name === 'QuotaExceededError') {
+                        console.warn("LocalStorage full. Clearing old discipline/book caches and retrying.", e);
+
+                        const keysToRemove = [];
+                        for (let i = 0; i < localStorage.length; i++) {
+                            const k = localStorage.key(i);
+
+                            if (
+    k &&
+    (
+        k === 'offline_discQuestions' ||
+        k === 'offline_discHistory' ||
+        k === 'offline_bookQuestions' ||
+        k === 'offline_bookHistory' ||
+        k.startsWith('offline_disc_') ||
+        k.startsWith('offline_book_')
+    )
+) {
+    keysToRemove.push(k);
+}
+                        }
+
+                        keysToRemove.forEach(k => localStorage.removeItem(k));
+
+                        try {
+                            localStorage.setItem(key, dataString);
+                        } catch (retryError) {
+                            console.warn(`Still could not cache ${key}. App will continue without this cache.`, retryError);
+                        }
+                    } else {
+                        console.warn(`Could not cache ${key}.`, e);
+                    }
+                }
+            };
+
+            saveWithEviction('offline_userData', ud || { speciality: null });
+            saveWithEviction('offline_rawDisciplines', rd || []);
+            // Do NOT cache huge question/history arrays.
+// They exceed localStorage quota and can break small required caches.
+localStorage.removeItem('offline_discQuestions');
+localStorage.removeItem('offline_discHistory');
+
+        } catch (e) {
+            console.warn("Background sync failed. Continuing with cached disciplines.", e);
+        }
     }, 100);
 }
 
@@ -2981,16 +3080,64 @@ async function loadBooksAndVideos() {
             from = 0; keep = true;
             while (keep) { const { data } = await supabase.from('userQuestionHistory').select('questionId, lastResult').eq('userId', user.id).range(from, from+999); if(data&&data.length>0){ hData=hData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
 
-            localStorage.setItem('offline_userData', JSON.stringify(ud || cUserData));
-            localStorage.setItem('offline_books', JSON.stringify(bd || []));
-            localStorage.setItem('offline_rawDisciplines', JSON.stringify(rd || []));
-            localStorage.setItem('offline_chapters', JSON.stringify(cd || []));
-            localStorage.setItem('offline_videos', JSON.stringify(vd || []));
-            localStorage.setItem('offline_bookQuestions', JSON.stringify(qData));
-            localStorage.setItem('offline_bookHistory', JSON.stringify(hData));
-
+                        // FIRST repaint the dashboard with the fresh data.
+            // This prevents localStorage problems from blocking the donut charts.
             paintBooksAndVideos(ud || cUserData, bd || [], rd || [], cd || [], vd || [], qData, hData);
-        } catch (err) { console.warn("Background sync failed. Using cache."); }
+
+            // THEN save cache safely.
+            const saveWithEviction = (key, data) => {
+                const dataString = JSON.stringify(data);
+
+                try {
+                    localStorage.setItem(key, dataString);
+                } catch (e) {
+                    if (e.name === 'QuotaExceededError') {
+                        console.warn("LocalStorage full. Clearing old dashboard caches and retrying.", e);
+
+                        const keysToRemove = [];
+                        for (let i = 0; i < localStorage.length; i++) {
+                            const k = localStorage.key(i);
+                            if (
+                                k &&
+                                (
+                                    k.startsWith('offline_book') ||
+                                    k.startsWith('offline_disc') ||
+                                    k === 'offline_bookQuestions' ||
+                                    k === 'offline_bookHistory' ||
+                                    k === 'offline_discQuestions' ||
+                                    k === 'offline_discHistory'
+                                )
+                            ) {
+                                keysToRemove.push(k);
+                            }
+                        }
+
+                        keysToRemove.forEach(k => localStorage.removeItem(k));
+
+                        try {
+                            localStorage.setItem(key, dataString);
+                        } catch (retryError) {
+                            console.warn(`Still could not cache ${key}. App will continue without cache.`, retryError);
+                        }
+                    } else {
+                        console.warn(`Could not cache ${key}.`, e);
+                    }
+                }
+            };
+
+            saveWithEviction('offline_userData', ud || cUserData);
+            saveWithEviction('offline_books', bd || []);
+            saveWithEviction('offline_rawDisciplines', rd || []);
+            saveWithEviction('offline_chapters', cd || []);
+            saveWithEviction('offline_videos', vd || []);
+            // Do NOT cache huge question/history arrays.
+// They exceed localStorage quota and can break small required caches.
+localStorage.removeItem('offline_bookQuestions');
+localStorage.removeItem('offline_bookHistory');
+
+        } catch (err) {
+            console.warn("Background sync failed. Using cache.", err);
+        }
     }, 100);
 }
 

@@ -176,6 +176,9 @@
 
     <script type="module">
    import { supabase } from './supabaseClient.js';
+   import { initNotifications } from './notifications.js';
+
+   initNotifications();
 
 
 let currentUser = null; // <-- ADD THIS LINE HERE

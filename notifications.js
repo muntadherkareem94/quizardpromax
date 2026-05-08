@@ -12,8 +12,8 @@ function buildNotificationDropdown(notificationButton) {
 
     const parent = notificationButton.parentElement;
 
-        const wrapper = document.createElement('div');
-    wrapper.className = 'relative inline-flex items-center justify-center';
+    const wrapper = document.createElement('div');
+    wrapper.className = 'relative inline-flex items-center justify-center flex-shrink-0';
     wrapper.style.position = 'relative';
     wrapper.style.display = 'inline-flex';
     wrapper.style.alignItems = 'center';
@@ -29,19 +29,27 @@ function buildNotificationDropdown(notificationButton) {
     badge.className = 'hidden';
     badge.textContent = '';
     badge.style.position = 'absolute';
-        badge.style.top = '2px';
-    badge.style.right = '2px';
-    badge.style.width = '12px';
-    badge.style.height = '12px';
+    badge.style.top = '0px';
+    badge.style.right = '0px';
+    badge.style.width = '13px';
+    badge.style.height = '13px';
     badge.style.backgroundColor = '#ef4444';
     badge.style.borderRadius = '9999px';
     badge.style.border = '2px solid white';
-    badge.style.zIndex = '10';
+    badge.style.zIndex = '20';
     wrapper.appendChild(badge);
 
     const dropdown = document.createElement('div');
     dropdown.id = 'notificationDropdown';
-    dropdown.className = 'hidden absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl z-50 overflow-hidden';
+    dropdown.className = 'hidden bg-white rounded-lg shadow-xl overflow-hidden';
+
+    dropdown.style.position = 'absolute';
+    dropdown.style.top = '100%';
+    dropdown.style.right = '0';
+    dropdown.style.marginTop = '8px';
+    dropdown.style.width = '320px';
+    dropdown.style.maxWidth = 'calc(100vw - 24px)';
+    dropdown.style.zIndex = '9999';
 
     dropdown.innerHTML = `
         <div class="p-3 border-b border-gray-100">

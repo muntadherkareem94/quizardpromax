@@ -954,7 +954,15 @@ body.hl-mode-on .hl-target{
     <!-- Firebase and Main Script -->
     <script type="module">
           // --- Supabase SDK Import ---
+// --- Supabase SDK Import ---
 import { supabase } from './supabaseClient.js';
+import { initNotifications } from './notifications.js';
+
+initNotifications();
+
+
+
+    // Add these new variables
 
 
 

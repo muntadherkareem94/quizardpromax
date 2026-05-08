@@ -73,10 +73,9 @@ canvas[id^="ch-chart-"]{
         <a href="admin_dashboard.html" id="adminDashboardButton" class="header-icon-btn hidden" title="Admin Panel">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
         </a>
-        <button id="notificationButton" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition relative" title="Notifications">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
-            <span id="notificationBadge" class="hidden absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"></span>
-        </button>
+        <button id="notificationButton" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition" title="Notifications">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+</button>
         <div class="relative">
             <button id="profileDropdownButton" class="w-10 h-10 rounded-full bg-gray-200 flex justify-center items-center overflow-hidden" title="Account"></button>
             <div class="absolute bottom-0 right-0 w-4 h-4 bg-gray-200 rounded-full flex items-center justify-center border-2 border-white pointer-events-none">
@@ -100,12 +99,7 @@ canvas[id^="ch-chart-"]{
                 </button>
             </div>
         </div>
-        <div id="notificationPanel" class="hidden absolute right-16 top-full mt-2 w-80 max-w-sm bg-white rounded-lg shadow-xl overflow-hidden z-50">
-            <div class="p-4 font-semibold border-b">Notifications</div>
-            <div id="notificationList" class="divide-y max-h-96 overflow-y-auto">
-                <p id="notification-placeholder" class="p-4 text-sm text-gray-500">You have no new notifications.</p>
-            </div>
-        </div>
+
     </div>
 </header>
     <main class="flex-grow container mx-auto px-4 py-8 md:py-12">
@@ -292,6 +286,8 @@ canvas[id^="ch-chart-"]{
 import { supabase } from './supabaseClient.js';
 import { initNotifications } from './notifications.js';
 
+initNotifications();
+
    const dom = {
         logoutButton: document.getElementById('logoutButton'),
         loadingState: document.getElementById('loadingState'),
@@ -321,96 +317,6 @@ import { initNotifications } from './notifications.js';
         customAlertCloseBtn: document.getElementById('customAlertCloseBtn'),
     };
 
-
-    // --- Notification Elements & Logic ---
-const notificationButton = document.getElementById('notificationButton');
-const notificationPanel = document.getElementById('notificationPanel');
-const notificationList = document.getElementById('notificationList');
-const notificationBadge = document.getElementById('notificationBadge');
-const notificationPlaceholder = document.getElementById('notification-placeholder');
-
-async function fetchAndDisplayNotifications() {
-    if (!currentUser) return;
-
-    const { data: userNotifications, error } = await supabase
-        .from('user_notifications')
-        .select(`id, is_read, notifications (content, type, link_url, created_at)`)
-        .eq('recipient_id', currentUser.id)
-        .eq('is_read', false)
-        .order('created_at', { foreignTable: 'notifications', ascending: false });
-    
-    if (error) {
-        console.error("Error fetching notifications:", error);
-        if (notificationPlaceholder) notificationPlaceholder.textContent = `Error fetching notifications.`;
-        return;
-    }
-
-    if (userNotifications.length > 0) {
-        notificationBadge.classList.remove('hidden');
-    } else {
-        notificationBadge.classList.add('hidden');
-    }
-    
-    notificationList.innerHTML = '';
-    const placeholder = document.createElement('p');
-    placeholder.className = 'p-4 text-sm text-gray-500';
-    placeholder.textContent = 'You have no new notifications.';
-
-    if (userNotifications.length === 0) {
-        notificationList.appendChild(placeholder);
-        return;
-    }
-
-    // --- FIX: Force sort the notifications so the newest dates are at the top ---
-    userNotifications.sort((a, b) => {
-        const dateA = a.notifications ? new Date(a.notifications.created_at).getTime() : 0;
-        const dateB = b.notifications ? new Date(b.notifications.created_at).getTime() : 0;
-        return dateB - dateA; // Subtracting A from B forces descending order (Newest first)
-    });
-
-    userNotifications.forEach(item => {
-        const notification = item.notifications; 
-        if (!notification) return;
-
-        const notifElement = document.createElement('a');
-        notifElement.href = notification.link_url || '#';
-        notifElement.className = 'block p-4 hover:bg-gray-50';
-        notifElement.dataset.userNotificationId = item.id;
-
-        notifElement.innerHTML = `
-            <p class="font-semibold text-gray-800">${notification.content}</p>
-            <p class="text-xs text-gray-500 mt-1">${new Date(notification.created_at).toLocaleString()}</p>
-        `;
-        notificationList.appendChild(notifElement);
-    });
-}
-
-notificationList.addEventListener('click', async (e) => {
-    e.preventDefault();
-    const link = e.target.closest('a');
-    
-    if (link && link.dataset.userNotificationId) {
-        const userNotificationId = link.dataset.userNotificationId;
-        const { error } = await supabase
-            .from('user_notifications')
-            .update({ is_read: true, read_at: new Date().toISOString() })
-            .eq('id', userNotificationId);
-            
-        if (error) {
-            console.error("Error marking notification as read:", error);
-            alert("Could not update notification status.");
-        } else {
-            window.location.href = link.href;
-        }
-    }
-});
-
-notificationButton.addEventListener('click', (e) => {
-    e.stopPropagation();
-    // This assumes a 'notificationPanel' div exists in your HTML, let's add it if not.
-    const panel = document.getElementById('notificationPanel'); 
-    if(panel) panel.classList.toggle('hidden');
-});
 
 // --- Profile Dropdown Logic ---
 dom.profileDropdownButton.addEventListener('click', (event) => {
@@ -664,9 +570,37 @@ async function loadAllData(user) {
     };
 
     // 1. INSTANT LOAD FROM GLOBAL CACHE (Books, Chapters, User are handled by Dashboard)
-    const cBooks = JSON.parse(localStorage.getItem('offline_books')) || [];
-    const cChapters = JSON.parse(localStorage.getItem('offline_chapters')) || [];
-    const cUserData = JSON.parse(localStorage.getItem('offline_userData')) || {};
+    let cBooks = JSON.parse(localStorage.getItem('offline_books')) || [];
+let cChapters = JSON.parse(localStorage.getItem('offline_chapters')) || [];
+let cUserData = JSON.parse(localStorage.getItem('offline_userData')) || {};
+
+// If dashboard cache was cleared because localStorage was full,
+// fetch the small required tables directly so discipline chapters still work.
+if (!cBooks.length || !cChapters.length) {
+    console.warn("Dashboard cache missing. Fetching books and chapters directly for discipline page.");
+
+    const [booksRes, chaptersRes, userRes] = await Promise.all([
+        supabase.rpc('get_dashboard_books'),
+        supabase.from('chapters').select('*'),
+        supabase.from('users').select('*').eq('id', user.id).single()
+    ]);
+
+    if (booksRes.error) console.warn("Could not fetch dashboard books:", booksRes.error);
+    if (chaptersRes.error) console.warn("Could not fetch chapters:", chaptersRes.error);
+    if (userRes.error) console.warn("Could not fetch user data:", userRes.error);
+
+    cBooks = booksRes.data || cBooks;
+    cChapters = chaptersRes.data || cChapters;
+    cUserData = userRes.data || cUserData;
+
+    try {
+        localStorage.setItem('offline_books', JSON.stringify(cBooks));
+        localStorage.setItem('offline_chapters', JSON.stringify(cChapters));
+        localStorage.setItem('offline_userData', JSON.stringify(cUserData));
+    } catch (e) {
+        console.warn("Could not cache small discipline-page data. Continuing without cache.", e);
+    }
+}
 
     // 2. CHECK SPECIFIC DISCIPLINE CACHE
     const questionsCacheStr = localStorage.getItem(`offline_disc_${disciplineId}_questions`);

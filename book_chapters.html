@@ -51,10 +51,7 @@ canvas[id^="ch-chart-"]{
         }
     </script>
 <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Quizard">
-    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
-</head>
+   
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Quizard">
@@ -170,8 +167,11 @@ canvas[id^="ch-chart-"]{
         </div>
 
 <script type="module">
- import { supabase } from './supabaseClient.js';
+import { supabase } from './supabaseClient.js';
 import { initNotifications } from './notifications.js';
+
+// Build the notification dropdown/badge and load unread status
+initNotifications();
 
 
 // --- GLOBAL CHARTS & HELPERS ---
