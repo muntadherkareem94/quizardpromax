@@ -216,8 +216,24 @@ async function manageActiveSession(user) {
     });
 
     if (error) {
-        throw new Error(error.message || 'Device session could not be created.');
+    let realMessage = error.message || 'Device session could not be created.';
+    let realCode = '';
+
+    try {
+        if (error.context && typeof error.context.json === 'function') {
+            const errorBody = await error.context.json();
+            realMessage = errorBody.error || realMessage;
+            realCode = errorBody.code || '';
+            console.error('Edge Function real error body:', errorBody);
+        }
+    } catch (parseError) {
+        console.warn('Could not parse Edge Function error body:', parseError);
     }
+
+    const finalError = new Error(realMessage);
+    finalError.code = realCode;
+    throw finalError;
+}
 
     if (data && data.session_id) {
         localStorage.setItem('sessionId', data.session_id);
@@ -309,14 +325,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Device limit reached
-    if (
-        lowerMessage.includes('device') ||
-        lowerMessage.includes('session') ||
-        lowerMessage.includes('limit') ||
-        lowerMessage.includes('non-2xx')
-    ) {
-        friendlyMessage = 'Device limit reached. Please log out from one of your other devices before signing in here.';
-    }
+   if (
+    error.code === 'DEVICE_LIMIT_REACHED' ||
+    lowerMessage.includes('device limit reached')
+) {
+    friendlyMessage = 'Device limit reached. Please log out from one of your other devices before signing in here.';
+}
 
     showMessage(friendlyMessage);
 

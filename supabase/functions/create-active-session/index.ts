@@ -227,12 +227,17 @@ const expiresAtIso = expiryDate.toISOString()
 
     return jsonResponse(newSession)
   } catch (error) {
-    let errorMessage = 'An unexpected error occurred.'
+  console.error('create-active-session error:', error)
 
-    if (error instanceof Error) {
-      errorMessage = error.message
-    }
+  const errorMessage =
+    error instanceof Error ? error.message : 'An unexpected error occurred.'
 
-    return jsonResponse({ error: errorMessage }, 400)
-  }
+  return jsonResponse(
+    {
+      error: errorMessage,
+      code: 'CREATE_ACTIVE_SESSION_FAILED',
+    },
+    500
+  )
+}
 })
