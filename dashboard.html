@@ -832,8 +832,199 @@ let builderContext = 'global';
 let sourcesSelector;
 let sourceRelationshipMap = new Map();
 let userHistoryCache = new Map();
+// --- USER-SAFE DASHBOARD CACHE HELPERS ---
+// Keeps the app fast for the same user, but prevents one user's specialty cache
+// from appearing after another user logs in on the same device/browser.
+
+function safeParseLocalStorage(key, fallback = null) {
+    try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+    } catch (error) {
+        console.warn(`Invalid localStorage JSON for ${key}. Removing it.`, error);
+        localStorage.removeItem(key);
+        return fallback;
+    }
+}
+
+function isCacheForCurrentUser(cachedUserData, user) {
+    return Boolean(
+        cachedUserData &&
+        cachedUserData.id &&
+        user &&
+        cachedUserData.id === user.id
+    );
+}
+
+function clearDashboardContentCache() {
+    const exactKeysToRemove = new Set([
+        'offline_userData',
+        'offline_books',
+        'offline_rawDisciplines',
+        'offline_chapters',
+        'offline_videos',
+        'offline_bookQuestions',
+        'offline_bookHistory',
+        'offline_discQuestions',
+        'offline_discHistory',
+
+        // Prevent old custom quizzes from another account/specialty leaking forward.
+        'customQuizQuestions',
+        'customQuizTimer',
+        'customQuizTotalCount'
+    ]);
+
+    const prefixesToRemove = [
+        'offline_book_',
+        'offline_disc_'
+    ];
+
+    const keysToRemove = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (
+            key &&
+            (
+                exactKeysToRemove.has(key) ||
+                prefixesToRemove.some(prefix => key.startsWith(prefix))
+            )
+        ) {
+            keysToRemove.push(key);
+        }
+    }
+
+    keysToRemove.forEach(key => localStorage.removeItem(key));
+}
      
-        
+// --- COMPACT DASHBOARD DONUT STATS CACHE ---
+// This stores only final numbers, not huge question/history arrays.
+// Example size: a few KB instead of thousands of rows.
+
+const DASHBOARD_STATS_CACHE_VERSION = 1;
+
+function dashboardStatsCacheKey(userId) {
+    return `dashboardStatsCache_${userId}`;
+}
+
+function getValidDashboardStatsCache(user) {
+    if (!user || !user.id) return null;
+
+    const cache = safeParseLocalStorage(dashboardStatsCacheKey(user.id), null);
+
+    if (
+        !cache ||
+        cache.version !== DASHBOARD_STATS_CACHE_VERSION ||
+        cache.userId !== user.id
+    ) {
+        return null;
+    }
+
+    return cache;
+}
+
+function saveDashboardStatsPart(user, partialStats) {
+    if (!user || !user.id) return;
+
+    const oldCache = getValidDashboardStatsCache(user) || {
+        version: DASHBOARD_STATS_CACHE_VERSION,
+        userId: user.id,
+        bookStats: null,
+        disciplineStats: null,
+        dirty: false,
+        updatedAt: null
+    };
+
+    const newCache = {
+        ...oldCache,
+        ...partialStats,
+        version: DASHBOARD_STATS_CACHE_VERSION,
+        userId: user.id,
+        dirty: false,
+        updatedAt: new Date().toISOString()
+    };
+
+    try {
+        localStorage.setItem(dashboardStatsCacheKey(user.id), JSON.stringify(newCache));
+    } catch (error) {
+        console.warn('Could not save dashboard stats cache.', error);
+    }
+}
+
+function normalizeHistoryResult(result) {
+    const value = String(result || '').toLowerCase();
+    if (value === 'correct') return 'correct';
+    if (value === 'wrong') return 'wrong';
+    return null;
+}
+
+function buildHistoryResultMap(history = []) {
+    const historyMap = new Map();
+
+    history.forEach(h => {
+        const qId = String(h.questionId || h.question_id || '');
+        const result = normalizeHistoryResult(h.lastResult);
+
+        if (qId && result) {
+            historyMap.set(qId, result);
+        }
+    });
+
+    return historyMap;
+}
+
+function buildBookStatsFromRaw(booksData = [], questions = [], history = []) {
+    const historyMap = buildHistoryResultMap(history);
+    const bookStats = {};
+
+    booksData.forEach(item => {
+        const book = item.book_data || item;
+        if (book && book.id) {
+            bookStats[book.id] = { total: 0, correct: 0, wrong: 0 };
+        }
+    });
+
+    questions.forEach(q => {
+        const bookId = q.book_id || q.bookId;
+
+        if (bookId && bookStats[bookId]) {
+            const stats = bookStats[bookId];
+            stats.total++;
+
+            const result = historyMap.get(String(q.id));
+            if (result === 'correct') stats.correct++;
+            else if (result === 'wrong') stats.wrong++;
+        }
+    });
+
+    return bookStats;
+}
+
+function buildDisciplineStatsFromRaw(disciplines = [], questions = [], history = []) {
+    const historyMap = buildHistoryResultMap(history);
+    const disciplineStats = {};
+
+    disciplines.forEach(d => {
+        if (d && d.id) {
+            disciplineStats[d.id] = { total: 0, correct: 0, wrong: 0 };
+        }
+    });
+
+    questions.forEach(q => {
+        const disciplineId = q.discipline_id || q.disciplineId;
+
+        if (disciplineId && disciplineStats[disciplineId]) {
+            const stats = disciplineStats[disciplineId];
+            stats.total++;
+
+            const result = historyMap.get(String(q.id));
+            if (result === 'correct') stats.correct++;
+            else if (result === 'wrong') stats.wrong++;
+        }
+    });
+
+    return disciplineStats;
+}        
 
 // --- START: New Helper Function ---
 function hasVideoAccess(course) {
@@ -1517,15 +1708,17 @@ async function handleLogout() {
         console.warn('Active session cleanup failed, continuing logout:', error);
     }
 
-    // Remove only the active session id.
-    // Do NOT use localStorage.clear(), because it deletes quizardDeviceId
-    // and may make the same browser look like a new device later.
-    localStorage.removeItem('sessionId');
+  // Remove only auth/session identifiers and user-specific dashboard content.
+// Do NOT use localStorage.clear(), because it deletes quizardDeviceId
+// and may make the same browser look like a new device later.
+localStorage.removeItem('sessionId');
 
-    // Optional old Firebase key cleanup, safe to keep:
-    localStorage.removeItem('userSessionId');
+// Optional old Firebase key cleanup, safe to keep:
+localStorage.removeItem('userSessionId');
 
-    sessionStorage.clear();
+
+
+sessionStorage.clear();
 
     try {
         await supabase.auth.signOut({ scope: 'local' });
@@ -2765,7 +2958,7 @@ async function loadDisciplines() {
 
     // Helper function to process data and paint the UI
     // Helper function to process data and paint the UI
-    const paintDisciplines = (userData, rawDisciplines, questions, history) => {
+    const paintDisciplines = (userData, rawDisciplines, questions = [], history = [], cachedDisciplineStats = null) => {
         const userSpecialty = userData.speciality;
         let disciplines = userSpecialty ? rawDisciplines.filter(d => d.speciality === userSpecialty) : rawDisciplines;
 
@@ -2774,28 +2967,7 @@ async function loadDisciplines() {
         disciplines.sort((a, b) => a.name.localeCompare(b.name));
         // --------------------------------------------
 
-        const historyMap = new Map();
-        history.forEach(h => {
-            const qId = String(h.questionId);
-            const result = String(h.lastResult || "").toLowerCase();
-            if (result === 'correct' || result === 'wrong') historyMap.set(qId, result === 'correct');
-        });
-
-        const discStats = {};
-        disciplines.forEach(d => { discStats[d.id] = { total: 0, correct: 0, wrong: 0 }; });
-
-        questions.forEach(q => {
-            const dId = q.discipline_id; 
-            if (dId && discStats[dId]) {
-                const s = discStats[dId];
-                s.total++;
-                const qId = String(q.id);
-                if (historyMap.has(qId)) {
-                    if (historyMap.get(qId)) s.correct++;
-                    else s.wrong++;
-                }
-            }
-        });
+        const discStats = cachedDisciplineStats || buildDisciplineStatsFromRaw(disciplines, questions, history);
 
         if (window.disciplineCharts && window.disciplineCharts.length > 0) {
             window.disciplineCharts.forEach(chart => chart.destroy());
@@ -2853,36 +3025,114 @@ async function loadDisciplines() {
     };
 
     // 1. INSTANT RENDER FROM CACHE (0ms delay)
-    const cUserData = JSON.parse(localStorage.getItem('offline_userData'));
-    const cRawDisc = JSON.parse(localStorage.getItem('offline_rawDisciplines'));
-    const cQuestions = JSON.parse(localStorage.getItem('offline_discQuestions')) || [];
-    const cHistory = JSON.parse(localStorage.getItem('offline_discHistory')) || [];
+    const cUserData = safeParseLocalStorage('offline_userData');
+const cRawDisc = safeParseLocalStorage('offline_rawDisciplines');
+const cQuestions = safeParseLocalStorage('offline_discQuestions', []);
+const cHistory = safeParseLocalStorage('offline_discHistory', []);
 
-    if (cUserData && cRawDisc && cRawDisc.length > 0) {
-        paintDisciplines(cUserData, cRawDisc, cQuestions, cHistory);
-    } else {
-        // Only show skeleton if cache is empty (first load ever)
-        grid.innerHTML = Array(6).fill(0).map(() => `<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden animate-pulse h-40 flex flex-col"><div class="h-28 bg-gray-200 w-full"></div><div class="p-4 flex justify-between items-end flex-grow"><div class="space-y-2 w-2/3"><div class="h-4 bg-gray-200 rounded w-3/4"></div><div class="h-3 bg-gray-200 rounded w-1/2"></div></div><div class="h-12 w-12 bg-gray-200 rounded-full"></div></div></div>`).join('');
+const dashboardStatsCache = getValidDashboardStatsCache(user);
+
+if (isCacheForCurrentUser(cUserData, user) && cRawDisc && cRawDisc.length > 0) {
+    paintDisciplines(
+        cUserData,
+        cRawDisc,
+        [],
+        [],
+        dashboardStatsCache?.disciplineStats || null
+    );
+} else {
+    // Cache belongs to another user or old legacy cache without user id.
+    // Do not paint it, because that causes wrong-specialty content to appear.
+    grid.innerHTML = Array(6).fill(0).map(() => `<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden animate-pulse h-40 flex flex-col"><div class="h-28 bg-gray-200 w-full"></div><div class="p-4 flex justify-between items-end flex-grow"><div class="space-y-2 w-2/3"><div class="h-4 bg-gray-200 rounded w-3/4"></div><div class="h-3 bg-gray-200 rounded w-1/2"></div></div><div class="h-12 w-12 bg-gray-200 rounded-full"></div></div></div>`).join('');
+}
+
+// 2. FAST CORE SYNC FIRST, THEN HEAVY STATS SYNC
+setTimeout(async () => {
+    let ud = null;
+    let rd = [];
+
+    const saveWithEviction = (key, data) => {
+        const dataString = JSON.stringify(data);
+
+        try {
+            localStorage.setItem(key, dataString);
+        } catch (e) {
+            if (e.name === 'QuotaExceededError') {
+                console.warn("LocalStorage full. Clearing old heavy caches and retrying.", e);
+
+                const keysToRemove = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const k = localStorage.key(i);
+                    if (
+                        k &&
+                        (
+                            k === 'offline_discQuestions' ||
+                            k === 'offline_discHistory' ||
+                            k === 'offline_bookQuestions' ||
+                            k === 'offline_bookHistory' ||
+                            k.startsWith('offline_disc_') ||
+                            k.startsWith('offline_book_')
+                        )
+                    ) {
+                        keysToRemove.push(k);
+                    }
+                }
+
+                keysToRemove.forEach(k => localStorage.removeItem(k));
+
+                try {
+                    localStorage.setItem(key, dataString);
+                } catch (retryError) {
+                    console.warn(`Still could not cache ${key}. App will continue without this cache.`, retryError);
+                }
+            } else {
+                console.warn(`Could not cache ${key}.`, e);
+            }
+        }
+    };
+
+    try {
+        // FAST FETCH: user + disciplines only.
+        const [userRes, discRes] = await Promise.all([
+            supabase.from('users').select('*').eq('id', user.id).single(),
+            supabase.from('disciplines').select('*').order('name')
+        ]);
+
+        if (userRes.error) throw userRes.error;
+        if (discRes.error) throw discRes.error;
+
+        ud = userRes.data || cUserData || { id: user.id, speciality: null };
+        rd = discRes.data || [];
+
+        const cachedDisciplineStats =
+    getValidDashboardStatsCache(user)?.disciplineStats || null;
+
+// Show discipline/flashcard cards quickly.
+// Use compact cached donut stats if available.
+// Do NOT repaint with empty old question/history arrays.
+paintDisciplines(
+    ud,
+    rd,
+    [],
+    [],
+    cachedDisciplineStats
+);
+
+        saveWithEviction('offline_userData', ud);
+        saveWithEviction('offline_rawDisciplines', rd);
+
+        // Do not cache huge dashboard-wide question/history arrays.
+        localStorage.removeItem('offline_discQuestions');
+        localStorage.removeItem('offline_discHistory');
+
+    } catch (e) {
+        console.warn("Fast discipline core sync failed. Using valid cache if available.", e);
+        return;
     }
 
-        // 2. BACKGROUND SYNC
+    // HEAVY STATS FETCH: run after discipline cards already appeared.
     setTimeout(async () => {
         try {
-            const { data: ud, error: userErr } = await supabase
-                .from('users')
-                .select('*')
-                .eq('id', user.id)
-                .single();
-
-            if (userErr) throw userErr;
-
-            const { data: rd, error: discErr } = await supabase
-                .from('disciplines')
-                .select('*')
-                .order('name');
-
-            if (discErr) throw discErr;
-
             let qData = [];
             let qFrom = 0;
             let qKeep = true;
@@ -2926,63 +3176,34 @@ async function loadDisciplines() {
                 }
             }
 
-            // IMPORTANT: repaint FIRST, before touching localStorage.
-            // This prevents cache/storage problems from blocking discipline donuts.
-            paintDisciplines(ud || { speciality: null }, rd || [], qData, hData);
+            const visibleDisciplines = (ud && ud.speciality)
+    ? (rd || []).filter(d => d.speciality === ud.speciality)
+    : (rd || []);
 
-            // THEN cache safely.
-            const saveWithEviction = (key, data) => {
-                const dataString = JSON.stringify(data);
+const freshDisciplineStats = buildDisciplineStatsFromRaw(
+    visibleDisciplines,
+    qData,
+    hData
+);
 
-                try {
-                    localStorage.setItem(key, dataString);
-                } catch (e) {
-                    if (e.name === 'QuotaExceededError') {
-                        console.warn("LocalStorage full. Clearing old discipline/book caches and retrying.", e);
+saveDashboardStatsPart(user, {
+    disciplineStats: freshDisciplineStats
+});
 
-                        const keysToRemove = [];
-                        for (let i = 0; i < localStorage.length; i++) {
-                            const k = localStorage.key(i);
+paintDisciplines(
+    ud,
+    rd,
+    [],
+    [],
+    freshDisciplineStats
+);
 
-                            if (
-    k &&
-    (
-        k === 'offline_discQuestions' ||
-        k === 'offline_discHistory' ||
-        k === 'offline_bookQuestions' ||
-        k === 'offline_bookHistory' ||
-        k.startsWith('offline_disc_') ||
-        k.startsWith('offline_book_')
-    )
-) {
-    keysToRemove.push(k);
-}
-                        }
-
-                        keysToRemove.forEach(k => localStorage.removeItem(k));
-
-                        try {
-                            localStorage.setItem(key, dataString);
-                        } catch (retryError) {
-                            console.warn(`Still could not cache ${key}. App will continue without this cache.`, retryError);
-                        }
-                    } else {
-                        console.warn(`Could not cache ${key}.`, e);
-                    }
-                }
-            };
-
-            saveWithEviction('offline_userData', ud || { speciality: null });
-            saveWithEviction('offline_rawDisciplines', rd || []);
-            // Do NOT cache huge question/history arrays.
-// They exceed localStorage quota and can break small required caches.
-localStorage.removeItem('offline_discQuestions');
-localStorage.removeItem('offline_discHistory');
-
-        } catch (e) {
-            console.warn("Background sync failed. Continuing with cached disciplines.", e);
+        } catch (statsErr) {
+            console.warn("Discipline stats sync failed. Cards remain visible.", statsErr);
         }
-    }, 100);
+    }, 250);
+
+}, 50);
 }
 
 // --- CACHE-FIRST LOADER: BOOKS AND VIDEOS (0ms Instant Render) ---
@@ -2991,7 +3212,7 @@ async function loadBooksAndVideos() {
     if (!session) return;
     const user = session.user;
 
-    const paintBooksAndVideos = (userData, booksData, rawDisciplines, chaptersData, videosData, questions, history) => {
+const paintBooksAndVideos = (userData, booksData, rawDisciplines, chaptersData, videosData, questions = [], history = [], cachedBookStats = null) => {
         // Strict Button Visibility Logic for Cache/Sync
         const superAdminGear = document.getElementById('adminDashboardButton');
         const specialtyAdminBtn = document.getElementById('specialtyAdminBtn');
@@ -3022,23 +3243,7 @@ async function loadBooksAndVideos() {
         
         allChapters = chaptersData;
 
-        const historyMap = new Map();
-        history.forEach(h => {
-            const qId = String(h.questionId); const result = String(h.lastResult || "").toLowerCase();
-            if (result === 'correct' || result === 'wrong') historyMap.set(qId, result === 'correct');
-        });
-
-        const bookStats = {};
-        allBooks.forEach(item => { bookStats[item.book_data.id] = { total: 0, correct: 0, wrong: 0 }; });
-
-        questions.forEach(q => {
-            if (q.book_id && bookStats[q.book_id]) {
-                const stats = bookStats[q.book_id];
-                stats.total++;
-                const qId = String(q.id);
-                if (historyMap.has(qId)) { if (historyMap.get(qId)) stats.correct++; else stats.wrong++; }
-            }
-        });
+        const bookStats = cachedBookStats || buildBookStatsFromRaw(allBooks, questions, history);
 
         if (typeof renderBooks === 'function') renderBooks(allBooks, userData, bookStats);
         if (typeof renderVideoCourses === 'function') renderVideoCourses(videosData, userData);
@@ -3050,95 +3255,228 @@ async function loadBooksAndVideos() {
         accessibleContent.disciplines = allDisciplines;
         accessibleContent.chapters = allChapters.filter(chapter => chapter.book_id && builderAccessibleBookIds.has(chapter.book_id));
 
-        if (typeof recalculateAvailableQuestionsAndUpdateUI === 'function') recalculateAvailableQuestionsAndUpdateUI();
+       // Do NOT calculate the custom quiz question pool during normal dashboard loading.
+// This is expensive because it may fetch user history and question pools.
+// Only recalculate when the custom quiz modal is actually open.
+const customQuizModalIsOpen =
+    dom.customQuizModal &&
+    !dom.customQuizModal.classList.contains('hidden');
+
+if (
+    customQuizModalIsOpen &&
+    typeof recalculateAvailableQuestionsAndUpdateUI === 'function'
+) {
+    recalculateAvailableQuestionsAndUpdateUI();
+}
     };
 
     // 1. INSTANT RENDER FROM CACHE (0ms delay)
-    const cUserData = JSON.parse(localStorage.getItem('offline_userData'));
-    const cBooks = JSON.parse(localStorage.getItem('offline_books'));
-    const cRawDisc = JSON.parse(localStorage.getItem('offline_rawDisciplines'));
-    const cChapters = JSON.parse(localStorage.getItem('offline_chapters'));
-    const cVideos = JSON.parse(localStorage.getItem('offline_videos')) || [];
-    const cQuestions = JSON.parse(localStorage.getItem('offline_bookQuestions')) || [];
-    const cHistory = JSON.parse(localStorage.getItem('offline_bookHistory')) || [];
+    const cUserData = safeParseLocalStorage('offline_userData');
+const cBooks = safeParseLocalStorage('offline_books');
+const cRawDisc = safeParseLocalStorage('offline_rawDisciplines');
+const cChapters = safeParseLocalStorage('offline_chapters');
+const cVideos = safeParseLocalStorage('offline_videos', []);
+const cQuestions = safeParseLocalStorage('offline_bookQuestions', []);
+const cHistory = safeParseLocalStorage('offline_bookHistory', []);
 
-    if (cUserData && cBooks && cChapters) {
-        paintBooksAndVideos(cUserData, cBooks, cRawDisc || [], cChapters, cVideos, cQuestions, cHistory);
-    }
+const dashboardStatsCache = getValidDashboardStatsCache(user);
 
-    // 2. BACKGROUND SYNC
-    setTimeout(async () => {
+if (isCacheForCurrentUser(cUserData, user) && cBooks && cChapters) {
+    paintBooksAndVideos(
+        cUserData,
+        cBooks,
+        cRawDisc || [],
+        cChapters,
+        cVideos,
+        [],
+        [],
+        dashboardStatsCache?.bookStats || null
+    );
+}
+
+// 2. FAST CORE SYNC FIRST, THEN HEAVY STATS SYNC
+setTimeout(async () => {
+    let ud = null;
+    let bd = [];
+    let rd = [];
+    let cd = [];
+    let vd = [];
+
+    const saveWithEviction = (key, data) => {
+        const dataString = JSON.stringify(data);
+
         try {
-            const { data: ud } = await supabase.from('users').select('*').eq('id', user.id).single();
-            const { data: bd } = await supabase.rpc('get_dashboard_books');
-            const { data: rd } = await supabase.from('disciplines').select('*').order('name');
-            const { data: cd } = await supabase.from('chapters').select('*');
-            const { data: vd } = await supabase.rpc('get_dashboard_video_courses');
+            localStorage.setItem(key, dataString);
+        } catch (e) {
+            if (e.name === 'QuotaExceededError') {
+                console.warn("LocalStorage full. Clearing old heavy caches and retrying.", e);
 
-            let qData = [], hData = [], from = 0; let keep = true;
-            while (keep) { const { data } = await supabase.from('questions').select('id, book_id').range(from, from+999); if(data&&data.length>0){ qData=qData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
-            from = 0; keep = true;
-            while (keep) { const { data } = await supabase.from('userQuestionHistory').select('questionId, lastResult').eq('userId', user.id).range(from, from+999); if(data&&data.length>0){ hData=hData.concat(data); keep=data.length===1000; } else keep=false; from+=1000; }
+                const keysToRemove = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const k = localStorage.key(i);
+                    if (
+                        k &&
+                        (
+                            k === 'offline_bookQuestions' ||
+                            k === 'offline_bookHistory' ||
+                            k === 'offline_discQuestions' ||
+                            k === 'offline_discHistory' ||
+                            k.startsWith('offline_book_') ||
+                            k.startsWith('offline_disc_')
+                        )
+                    ) {
+                        keysToRemove.push(k);
+                    }
+                }
 
-                        // FIRST repaint the dashboard with the fresh data.
-            // This prevents localStorage problems from blocking the donut charts.
-            paintBooksAndVideos(ud || cUserData, bd || [], rd || [], cd || [], vd || [], qData, hData);
-
-            // THEN save cache safely.
-            const saveWithEviction = (key, data) => {
-                const dataString = JSON.stringify(data);
+                keysToRemove.forEach(k => localStorage.removeItem(k));
 
                 try {
                     localStorage.setItem(key, dataString);
-                } catch (e) {
-                    if (e.name === 'QuotaExceededError') {
-                        console.warn("LocalStorage full. Clearing old dashboard caches and retrying.", e);
-
-                        const keysToRemove = [];
-                        for (let i = 0; i < localStorage.length; i++) {
-                            const k = localStorage.key(i);
-                            if (
-                                k &&
-                                (
-                                    k.startsWith('offline_book') ||
-                                    k.startsWith('offline_disc') ||
-                                    k === 'offline_bookQuestions' ||
-                                    k === 'offline_bookHistory' ||
-                                    k === 'offline_discQuestions' ||
-                                    k === 'offline_discHistory'
-                                )
-                            ) {
-                                keysToRemove.push(k);
-                            }
-                        }
-
-                        keysToRemove.forEach(k => localStorage.removeItem(k));
-
-                        try {
-                            localStorage.setItem(key, dataString);
-                        } catch (retryError) {
-                            console.warn(`Still could not cache ${key}. App will continue without cache.`, retryError);
-                        }
-                    } else {
-                        console.warn(`Could not cache ${key}.`, e);
-                    }
+                } catch (retryError) {
+                    console.warn(`Still could not cache ${key}. App will continue without this cache.`, retryError);
                 }
-            };
-
-            saveWithEviction('offline_userData', ud || cUserData);
-            saveWithEviction('offline_books', bd || []);
-            saveWithEviction('offline_rawDisciplines', rd || []);
-            saveWithEviction('offline_chapters', cd || []);
-            saveWithEviction('offline_videos', vd || []);
-            // Do NOT cache huge question/history arrays.
-// They exceed localStorage quota and can break small required caches.
-localStorage.removeItem('offline_bookQuestions');
-localStorage.removeItem('offline_bookHistory');
-
-        } catch (err) {
-            console.warn("Background sync failed. Using cache.", err);
+            } else {
+                console.warn(`Could not cache ${key}.`, e);
+            }
         }
-    }, 100);
+    };
+
+    try {
+        // FAST FETCH: only small/core dashboard data.
+        // This is enough to show cards quickly.
+        const [userRes, booksRes, discRes, chaptersRes, videosRes] = await Promise.all([
+            supabase.from('users').select('*').eq('id', user.id).single(),
+            supabase.rpc('get_dashboard_books'),
+            supabase.from('disciplines').select('*').order('name'),
+            supabase.from('chapters').select('*'),
+            supabase.rpc('get_dashboard_video_courses')
+        ]);
+
+        if (userRes.error) throw userRes.error;
+        if (booksRes.error) throw booksRes.error;
+        if (discRes.error) throw discRes.error;
+        if (chaptersRes.error) throw chaptersRes.error;
+        if (videosRes.error) throw videosRes.error;
+
+        ud = userRes.data || cUserData || { id: user.id, speciality: null };
+        bd = booksRes.data || [];
+        rd = discRes.data || [];
+        cd = chaptersRes.data || [];
+        vd = videosRes.data || [];
+
+        // Paint immediately with no heavy stats.
+        // Cards and flashcards appear fast; progress can update later.
+        const cachedBookStats =
+    getValidDashboardStatsCache(user)?.bookStats || null;
+
+// Show books/videos quickly.
+// Use compact cached donut stats if available.
+// Do NOT repaint with empty old question/history arrays.
+paintBooksAndVideos(
+    ud,
+    bd,
+    rd,
+    cd,
+    vd,
+    [],
+    [],
+    cachedBookStats
+);
+
+        // Cache only small/core data.
+        saveWithEviction('offline_userData', ud);
+        saveWithEviction('offline_books', bd);
+        saveWithEviction('offline_rawDisciplines', rd);
+        saveWithEviction('offline_chapters', cd);
+        saveWithEviction('offline_videos', vd);
+
+        // Do not cache huge dashboard-wide question/history arrays.
+        localStorage.removeItem('offline_bookQuestions');
+        localStorage.removeItem('offline_bookHistory');
+
+    } catch (err) {
+        console.warn("Fast dashboard core sync failed. Using valid cache if available.", err);
+        return;
+    }
+
+    // HEAVY STATS FETCH: run after the cards already appeared.
+    setTimeout(async () => {
+        try {
+            let qData = [];
+            let hData = [];
+
+            let from = 0;
+            let keep = true;
+
+            while (keep) {
+                const { data, error } = await supabase
+                    .from('questions')
+                    .select('id, book_id')
+                    .range(from, from + 999);
+
+                if (error) throw error;
+
+                if (data && data.length > 0) {
+                    qData = qData.concat(data);
+                    keep = data.length === 1000;
+                    from += 1000;
+                } else {
+                    keep = false;
+                }
+            }
+
+            from = 0;
+            keep = true;
+
+            while (keep) {
+                const { data, error } = await supabase
+                    .from('userQuestionHistory')
+                    .select('questionId, lastResult')
+                    .eq('userId', user.id)
+                    .range(from, from + 999);
+
+                if (error) throw error;
+
+                if (data && data.length > 0) {
+                    hData = hData.concat(data);
+                    keep = data.length === 1000;
+                    from += 1000;
+                } else {
+                    keep = false;
+                }
+            }
+
+            // Build and save compact final book donut stats.
+// This is the important cache that prevents recalculation on next login.
+const freshBookStats = buildBookStatsFromRaw(
+    bd || [],
+    qData,
+    hData
+);
+
+saveDashboardStatsPart(user, {
+    bookStats: freshBookStats
+});
+
+// Repaint using the compact stats object, not the huge raw arrays.
+paintBooksAndVideos(
+    ud,
+    bd,
+    rd,
+    cd,
+    vd,
+    [],
+    [],
+    freshBookStats
+);
+
+        } catch (statsErr) {
+            console.warn("Dashboard stats sync failed. Cards remain visible.", statsErr);
+        }
+    }, 250);
+
+}, 50);
 }
 
 // --- PWA Custom Install Logic ---

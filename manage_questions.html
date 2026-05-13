@@ -12,6 +12,430 @@
         body { font-family: 'Inter', sans-serif; }
         .modal { transition: opacity 0.25s ease; }
         textarea { resize: vertical; }
+
+        /* --- Better scrollable edit question modal --- */
+#questionModal {
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.question-modal-panel {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+}
+
+.question-modal-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.question-modal-panel::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+
+.question-modal-actions {
+    position: sticky;
+    bottom: -2rem;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+    z-index: 5;
+}
+        /* --- Admin quiz-style preview: matches quiz_page.html rendering --- */
+.admin-quiz-preview-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.10);
+    padding: 1.25rem;
+    color: #1f2937;
+}
+
+.admin-preview-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.admin-question-number {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    background: #f5f3ff;
+    color: #6d28d9;
+    border: 1px solid #ddd6fe;
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+
+.admin-preview-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+}
+
+.admin-question-preview {
+    font-size: clamp(0.92rem, 2.6vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.55;
+    color: #1f2937;
+    letter-spacing: -0.011em;
+    text-align: justify;
+    text-justify: inter-character;
+    hyphens: auto;
+    hyphenate-character: "-";
+    margin-bottom: 1rem;
+}
+
+/* Same rich HTML question rendering style from quiz_page */
+.question-content {
+    overflow-x: auto;
+}
+
+.question-content p {
+    margin: 0.75rem 0;
+}
+
+.question-content table {
+    width: auto;
+    min-width: 520px;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 1rem auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    font-size: 0.92rem;
+    font-weight: 400;
+    line-height: 1.55;
+    text-align: left;
+    hyphens: none;
+    letter-spacing: normal;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.question-content th,
+.question-content td {
+    border: 1px solid #d1d5db;
+    padding: 0.55rem 0.7rem;
+    vertical-align: top;
+    text-align: left;
+    color: #1f2937;
+}
+
+.question-content th {
+    background: #f1f5f9;
+    font-weight: 800;
+    color: #111827;
+}
+
+.question-content thead th {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+/* Quiz-like option cards */
+.admin-options-preview {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 1vw, 16px);
+    margin-top: 1.25rem;
+    padding-bottom: 0.5rem;
+}
+
+.admin-option-preview {
+    display: flex;
+    align-items: flex-start;
+    padding: clamp(12px, 1vw, 16px);
+    border: 1px solid #e5e7eb;
+    border-radius: clamp(12px, 0.9vw, 16px);
+    min-height: 60px;
+    width: 100%;
+    background: #ffffff;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.admin-option-preview.correct {
+    background: #dcfce7;
+    border-color: #22c55e;
+}
+
+.admin-option-preview .option-text {
+    font-size: clamp(0.78rem, 2.2vw, 1.05rem);
+    line-height: 1.4;
+    color: #1f2937;
+}
+
+.admin-correct-pill {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #15803d;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #86efac;
+    border-radius: 9999px;
+    padding: 0.25rem 0.55rem;
+}
+
+/* Same explanation card feeling from quiz_page */
+.explanation-card {
+    position: relative;
+    background: linear-gradient(135deg, #f5f7f8 0%, #ffffff 70%);
+    border-color: #d1d5db;
+    border-left: 3px solid #9ca3af;
+    color: #1f2937;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+.explanation-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.explanation-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.explanation-content {
+    overflow-x: auto;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+.explanation-content p {
+    margin: 0.85rem 0;
+    color: #1f2937;
+}
+
+.explanation-content ul,
+.explanation-content ol {
+    margin: 0.6rem 0 0.9rem 1.25rem;
+    padding-left: 1rem;
+    color: #1f2937;
+}
+
+.explanation-content ul {
+    list-style-type: disc;
+}
+
+.explanation-content ol {
+    list-style-type: decimal;
+}
+
+.explanation-content li {
+    margin: 0.3rem 0;
+    color: #1f2937;
+}
+
+.explanation-content strong,
+.explanation-content b,
+.explanation-content th {
+    color: #111827;
+}
+
+.explanation-content table {
+    width: auto;
+    min-width: 520px;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 1rem auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    font-size: 0.94rem;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.explanation-content th,
+.explanation-content td {
+    border: 1px solid #d1d5db;
+    padding: 0.6rem 0.75rem;
+    vertical-align: top;
+    text-align: left;
+    color: #1f2937;
+}
+
+.explanation-content th {
+    background: #f1f5f9;
+    font-weight: 800;
+}
+
+.explanation-content thead th {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.admin-preview-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.admin-preview-images img {
+    max-width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+    border: 1px solid #e5e7eb;
+    cursor: zoom-in;
+}
+
+@media (max-width: 640px) {
+    .admin-quiz-preview-card {
+        padding: 1rem;
+    }
+
+    .question-content table,
+    .explanation-content table {
+        min-width: 480px;
+        font-size: 0.82rem;
+    }
+
+    .question-content th,
+    .question-content td,
+    .explanation-content th,
+    .explanation-content td {
+        padding: 0.45rem 0.55rem;
+    }
+}
+
+
+/* --- Visual HTML editor for question/explanation --- */
+.rich-editor-shell {
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.rich-editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.rich-editor-toolbar button {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.55rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    background: white;
+    color: #374151;
+    transition: all 0.15s ease;
+}
+
+.rich-editor-toolbar button:hover {
+    background: #f3e8ff;
+    border-color: #a855f7;
+    color: #6d28d9;
+}
+
+.rich-visual-editor {
+    min-height: 170px;
+    max-height: 360px;
+    overflow: auto;
+    padding: 0.85rem;
+    color: #1f2937;
+    outline: none;
+    background: white;
+}
+
+.rich-visual-editor:focus {
+    box-shadow: inset 0 0 0 2px rgba(168, 85, 247, 0.35);
+}
+
+.rich-visual-editor:empty::before {
+    content: attr(data-placeholder);
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.rich-visual-editor table {
+    width: auto;
+    min-width: 520px;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 1rem auto;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+}
+
+.rich-visual-editor th,
+.rich-visual-editor td {
+    border: 1px solid #d1d5db;
+    padding: 0.55rem 0.7rem;
+    vertical-align: top;
+    text-align: left;
+    min-width: 90px;
+    color: #1f2937;
+}
+
+.rich-visual-editor th {
+    background: #f1f5f9;
+    font-weight: 800;
+}
+
+.rich-visual-editor td:focus,
+.rich-visual-editor th:focus {
+    outline: 2px solid #a855f7;
+    outline-offset: -2px;
+    background: #faf5ff;
+}
+
+.rich-html-source {
+    width: 100%;
+    min-height: 180px;
+    padding: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8rem;
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    outline: none;
+    color: #0f172a;
+}
+
+.rich-editor-help {
+    font-size: 0.72rem;
+    color: #6b7280;
+    margin-top: 0.35rem;
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -44,8 +468,8 @@
         </div>
     </main>
 
-    <div id="questionModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0 overflow-y-auto">
-        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full my-8 transform transition-transform duration-300 scale-95">
+    <div id="questionModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-start justify-center p-4 hidden opacity-0 overflow-y-auto z-50">
+    <div class="question-modal-panel bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full my-8 transform transition-transform duration-300 scale-95">
             <h3 id="modalTitle" class="text-2xl font-bold text-gray-800 mb-6">Add New Question</h3>
             <form id="questionForm" class="space-y-4">
                 <input type="hidden" id="questionId">
@@ -54,9 +478,35 @@
                     <input type="number" id="questionNumber" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
                 </div>
                 <div>
-                    <label for="questionText" class="block text-sm font-medium text-gray-700">Question</label>
-                    <textarea id="questionText" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
-                </div>
+    <label for="questionVisualEditor" class="block text-sm font-medium text-gray-700">Question</label>
+
+    <div class="rich-editor-shell mt-1" data-editor-shell="question">
+        <div class="rich-editor-toolbar" data-editor-toolbar="questionVisualEditor">
+            <button type="button" data-command="bold"><b>B</b></button>
+            <button type="button" data-command="italic"><i>I</i></button>
+            <button type="button" data-command="insertUnorderedList">• List</button>
+            <button type="button" data-command="insertOrderedList">1. List</button>
+            <button type="button" data-action="insertTable">Add Table</button>
+            <button type="button" data-action="addRow">+ Row</button>
+            <button type="button" data-action="deleteRow">− Row</button>
+            <button type="button" data-action="addColumn">+ Column</button>
+            <button type="button" data-action="deleteColumn">− Column</button>
+            <button type="button" data-action="deleteTable">Delete Table</button>
+            <button type="button" data-action="toggleHtml">HTML</button>
+        </div>
+
+        <div 
+            id="questionVisualEditor" 
+            class="rich-visual-editor question-content" 
+            contenteditable="true"
+            data-placeholder="Type or paste the question here. Tables can be edited visually."
+        ></div>
+
+        <textarea id="questionText" rows="4" class="rich-html-source hidden"></textarea>
+    </div>
+
+    <p class="rich-editor-help">Tip: click inside a table cell, then use row/column buttons.</p>
+</div>
                <div>
     <label class="block text-sm font-medium text-gray-700">Question Images</label>
     <div class="mt-1 space-y-2">
@@ -71,10 +521,36 @@
     <select id="correctAnswer" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></select>
     <p class="text-xs text-gray-500 mt-1">Supports choices A–J. Keep options continuous without empty gaps.</p>
 </div>
-                <div>
-                    <label for="explanation" class="block text-sm font-medium text-gray-700">Explanation</label>
-                    <textarea id="explanation" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
-                </div>
+               <div>
+    <label for="explanationVisualEditor" class="block text-sm font-medium text-gray-700">Explanation</label>
+
+    <div class="rich-editor-shell mt-1" data-editor-shell="explanation">
+        <div class="rich-editor-toolbar" data-editor-toolbar="explanationVisualEditor">
+            <button type="button" data-command="bold"><b>B</b></button>
+            <button type="button" data-command="italic"><i>I</i></button>
+            <button type="button" data-command="insertUnorderedList">• List</button>
+            <button type="button" data-command="insertOrderedList">1. List</button>
+            <button type="button" data-action="insertTable">Add Table</button>
+            <button type="button" data-action="addRow">+ Row</button>
+            <button type="button" data-action="deleteRow">− Row</button>
+            <button type="button" data-action="addColumn">+ Column</button>
+            <button type="button" data-action="deleteColumn">− Column</button>
+            <button type="button" data-action="deleteTable">Delete Table</button>
+            <button type="button" data-action="toggleHtml">HTML</button>
+        </div>
+
+        <div 
+            id="explanationVisualEditor" 
+            class="rich-visual-editor explanation-content" 
+            contenteditable="true"
+            data-placeholder="Type or paste the explanation here. Tables can be edited visually."
+        ></div>
+
+        <textarea id="explanation" rows="4" class="rich-html-source hidden"></textarea>
+    </div>
+
+    <p class="rich-editor-help">Tip: use HTML mode only when you need to inspect raw code.</p>
+</div>
                <div>
     <label class="block text-sm font-medium text-gray-700">Explanation Images</label>
     <div class="mt-1 space-y-2">
@@ -82,7 +558,7 @@
         <textarea id="explanationImageUrl" rows="3" placeholder="Paste one or multiple image URLs here. Put each URL on a new line." class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
     </div>
 </div>
-                <div class="flex justify-end pt-4">
+                <div class="question-modal-actions flex justify-end pt-4">
                     <button type="button" id="cancelButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
                     <button type="submit" id="saveButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg">Save Question</button>
                 </div>
@@ -387,6 +863,503 @@ function normalizeImageArray(primaryImageUrl, imageUrlsArray) {
     return primaryImageUrl ? [primaryImageUrl] : [];
 }
 
+
+// --- VISUAL HTML EDITOR WITH TABLE CONTROLS ---
+
+const RICH_EDITOR_CONFIG = [
+    {
+        editorId: 'questionVisualEditor',
+        textareaId: 'questionText'
+    },
+    {
+        editorId: 'explanationVisualEditor',
+        textareaId: 'explanation'
+    }
+];
+
+function getEditorPairByEditorId(editorId) {
+    return RICH_EDITOR_CONFIG.find(item => item.editorId === editorId);
+}
+
+function getCleanRichEditorHtml(html) {
+    const raw = String(html || '').trim();
+
+    if (!raw || raw === '<br>' || raw === '<div><br></div>' || raw === '<p><br></p>') {
+        return '';
+    }
+
+    // Reuse the sanitizer from the admin preview if it exists.
+    // This prevents dangerous pasted HTML while keeping tables/lists/bold text.
+    if (typeof sanitizeAdminPreviewHtml === 'function') {
+        return sanitizeAdminPreviewHtml(raw);
+    }
+
+    return raw;
+}
+
+function syncEditorToTextarea(editorId) {
+    const pair = getEditorPairByEditorId(editorId);
+    if (!pair) return;
+
+    const editor = document.getElementById(pair.editorId);
+    const textarea = document.getElementById(pair.textareaId);
+
+    if (!editor || !textarea) return;
+
+    textarea.value = getCleanRichEditorHtml(editor.innerHTML);
+}
+
+function syncTextareaToEditor(textareaId) {
+    const pair = RICH_EDITOR_CONFIG.find(item => item.textareaId === textareaId);
+    if (!pair) return;
+
+    const editor = document.getElementById(pair.editorId);
+    const textarea = document.getElementById(pair.textareaId);
+
+    if (!editor || !textarea) return;
+
+    editor.innerHTML = textarea.value || '';
+}
+
+function setRichEditorHtml(textareaId, html) {
+    const textarea = document.getElementById(textareaId);
+    if (textarea) textarea.value = html || '';
+
+    syncTextareaToEditor(textareaId);
+}
+
+function syncAllRichEditorsToTextareas() {
+    RICH_EDITOR_CONFIG.forEach(item => syncEditorToTextarea(item.editorId));
+}
+
+function clearAllRichEditors() {
+    RICH_EDITOR_CONFIG.forEach(item => {
+        const editor = document.getElementById(item.editorId);
+        const textarea = document.getElementById(item.textareaId);
+
+        if (editor) editor.innerHTML = '';
+        if (textarea) textarea.value = '';
+    });
+}
+
+function getSelectedCellInsideEditor(editor) {
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0) return null;
+
+    let node = selection.anchorNode;
+
+    if (!node) return null;
+
+    if (node.nodeType === Node.TEXT_NODE) {
+        node = node.parentElement;
+    }
+
+    const cell = node.closest ? node.closest('td, th') : null;
+
+    if (!cell || !editor.contains(cell)) return null;
+
+    return cell;
+}
+
+function focusEditor(editor) {
+    editor.focus();
+
+    const selection = window.getSelection();
+
+    if (!selection.rangeCount) {
+        const range = document.createRange();
+        range.selectNodeContents(editor);
+        range.collapse(false);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+
+function insertTableIntoEditor(editor, rows = 3, cols = 3) {
+    focusEditor(editor);
+
+    let tableHtml = `
+        <table>
+            <tbody>
+    `;
+
+    for (let r = 0; r < rows; r++) {
+        tableHtml += '<tr>';
+        for (let c = 0; c < cols; c++) {
+            tableHtml += `<td>${r === 0 ? '<strong>Header</strong>' : '&nbsp;'}</td>`;
+        }
+        tableHtml += '</tr>';
+    }
+
+    tableHtml += `
+            </tbody>
+        </table>
+        <p><br></p>
+    `;
+
+    document.execCommand('insertHTML', false, tableHtml);
+    syncEditorToTextarea(editor.id);
+}
+
+function addRowBelow(editor) {
+    const cell = getSelectedCellInsideEditor(editor);
+
+    if (!cell) {
+        alert('Click inside a table cell first.');
+        return;
+    }
+
+    const row = cell.closest('tr');
+    const newRow = row.cloneNode(true);
+
+    Array.from(newRow.children).forEach(cell => {
+        cell.innerHTML = '&nbsp;';
+    });
+
+    row.after(newRow);
+    syncEditorToTextarea(editor.id);
+}
+
+function deleteCurrentRow(editor) {
+    const cell = getSelectedCellInsideEditor(editor);
+
+    if (!cell) {
+        alert('Click inside a table cell first.');
+        return;
+    }
+
+    const row = cell.closest('tr');
+    const table = cell.closest('table');
+    const rows = table.querySelectorAll('tr');
+
+    if (rows.length <= 1) {
+        table.remove();
+    } else {
+        row.remove();
+    }
+
+    syncEditorToTextarea(editor.id);
+}
+
+function addColumnRight(editor) {
+    const cell = getSelectedCellInsideEditor(editor);
+
+    if (!cell) {
+        alert('Click inside a table cell first.');
+        return;
+    }
+
+    const row = cell.closest('tr');
+    const table = cell.closest('table');
+    const cellIndex = Array.from(row.children).indexOf(cell);
+
+    table.querySelectorAll('tr').forEach(tr => {
+        const newCell = document.createElement('td');
+        newCell.innerHTML = '&nbsp;';
+
+        const referenceCell = tr.children[cellIndex];
+
+        if (referenceCell && referenceCell.nextSibling) {
+            tr.insertBefore(newCell, referenceCell.nextSibling);
+        } else {
+            tr.appendChild(newCell);
+        }
+    });
+
+    syncEditorToTextarea(editor.id);
+}
+
+function deleteCurrentColumn(editor) {
+    const cell = getSelectedCellInsideEditor(editor);
+
+    if (!cell) {
+        alert('Click inside a table cell first.');
+        return;
+    }
+
+    const row = cell.closest('tr');
+    const table = cell.closest('table');
+    const cellIndex = Array.from(row.children).indexOf(cell);
+    const firstRowCellCount = table.querySelector('tr')?.children.length || 0;
+
+    if (firstRowCellCount <= 1) {
+        table.remove();
+    } else {
+        table.querySelectorAll('tr').forEach(tr => {
+            if (tr.children[cellIndex]) {
+                tr.children[cellIndex].remove();
+            }
+        });
+    }
+
+    syncEditorToTextarea(editor.id);
+}
+
+function deleteCurrentTable(editor) {
+    const cell = getSelectedCellInsideEditor(editor);
+
+    if (!cell) {
+        alert('Click inside a table cell first.');
+        return;
+    }
+
+    const table = cell.closest('table');
+
+    if (confirm('Delete this table?')) {
+        table.remove();
+        syncEditorToTextarea(editor.id);
+    }
+}
+
+function toggleHtmlMode(editor) {
+    const pair = getEditorPairByEditorId(editor.id);
+    if (!pair) return;
+
+    const textarea = document.getElementById(pair.textareaId);
+    if (!textarea) return;
+
+    const htmlIsHidden = textarea.classList.contains('hidden');
+
+    if (htmlIsHidden) {
+        syncEditorToTextarea(editor.id);
+        textarea.classList.remove('hidden');
+        editor.classList.add('hidden');
+        textarea.focus();
+    } else {
+        editor.innerHTML = textarea.value || '';
+        textarea.classList.add('hidden');
+        editor.classList.remove('hidden');
+        editor.focus();
+        syncEditorToTextarea(editor.id);
+    }
+}
+
+function setupRichEditorToolbar(toolbar) {
+    const editorId = toolbar.dataset.editorToolbar;
+    const editor = document.getElementById(editorId);
+
+    if (!editor) return;
+
+    toolbar.querySelectorAll('button').forEach(button => {
+        // Prevent button click from destroying table-cell selection.
+        button.addEventListener('mousedown', event => {
+            event.preventDefault();
+        });
+
+        button.addEventListener('click', () => {
+            const command = button.dataset.command;
+            const action = button.dataset.action;
+
+            if (command) {
+                focusEditor(editor);
+                document.execCommand(command, false, null);
+                syncEditorToTextarea(editor.id);
+                return;
+            }
+
+            if (action === 'insertTable') insertTableIntoEditor(editor);
+            if (action === 'addRow') addRowBelow(editor);
+            if (action === 'deleteRow') deleteCurrentRow(editor);
+            if (action === 'addColumn') addColumnRight(editor);
+            if (action === 'deleteColumn') deleteCurrentColumn(editor);
+            if (action === 'deleteTable') deleteCurrentTable(editor);
+            if (action === 'toggleHtml') toggleHtmlMode(editor);
+        });
+    });
+}
+
+function initializeRichHtmlEditors() {
+    document.querySelectorAll('.rich-editor-toolbar').forEach(setupRichEditorToolbar);
+
+    RICH_EDITOR_CONFIG.forEach(item => {
+        const editor = document.getElementById(item.editorId);
+        const textarea = document.getElementById(item.textareaId);
+
+        if (!editor || !textarea) return;
+
+        editor.addEventListener('input', () => syncEditorToTextarea(item.editorId));
+
+        textarea.addEventListener('input', () => {
+            if (!textarea.classList.contains('hidden')) {
+                editor.innerHTML = textarea.value || '';
+            }
+        });
+
+        // Make pasted tables cleaner.
+        editor.addEventListener('paste', () => {
+            setTimeout(() => syncEditorToTextarea(item.editorId), 0);
+        });
+    });
+}
+
+initializeRichHtmlEditors();
+// --- Quiz-style admin preview helpers ---
+
+function escapeHtmlForAdminPreview(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function escapeAttributeForAdminPreview(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
+function sanitizeAdminPreviewHtml(rawHtml, fallback = '') {
+    const raw = String(rawHtml || fallback || '');
+    const containsHtmlTags = /<\/?[a-z][\s\S]*>/i.test(raw);
+
+    const sourceHtml = containsHtmlTags
+        ? raw
+        : escapeHtmlForAdminPreview(raw).replace(/\n/g, '<br>');
+
+    const template = document.createElement('template');
+    template.innerHTML = sourceHtml;
+
+    const allowedTags = new Set([
+        'p', 'br', 'div', 'span', 'strong', 'b', 'em', 'i', 'u', 'sub', 'sup',
+        'ul', 'ol', 'li',
+        'table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td', 'caption',
+        'hr', 'small'
+    ]);
+
+    const allowedAttributes = new Set([
+        'colspan', 'rowspan', 'scope', 'class'
+    ]);
+
+    function cleanNode(node) {
+        const children = Array.from(node.childNodes);
+
+        for (const child of children) {
+            if (child.nodeType === Node.ELEMENT_NODE) {
+                const tag = child.tagName.toLowerCase();
+
+                if (!allowedTags.has(tag)) {
+                    while (child.firstChild) {
+                        child.parentNode.insertBefore(child.firstChild, child);
+                    }
+                    child.remove();
+                    continue;
+                }
+
+                for (const attr of Array.from(child.attributes)) {
+                    const attrName = attr.name.toLowerCase();
+
+                    if (attrName.startsWith('on') || !allowedAttributes.has(attrName)) {
+                        child.removeAttribute(attr.name);
+                    }
+                }
+
+                cleanNode(child);
+            } else if (child.nodeType !== Node.TEXT_NODE) {
+                child.remove();
+            }
+        }
+    }
+
+    cleanNode(template.content);
+    return template.innerHTML;
+}
+
+function renderAdminPreviewImages(imageUrls = []) {
+    const cleanImages = (imageUrls || [])
+        .map(url => String(url || '').trim())
+        .filter(Boolean);
+
+    if (cleanImages.length === 0) return '';
+
+    return `
+        <div class="admin-preview-images">
+            ${cleanImages.map(url => `
+                <a href="${escapeAttributeForAdminPreview(url)}" target="_blank" title="Open full image">
+                    <img 
+                        src="${escapeAttributeForAdminPreview(url)}" 
+                        alt="Question image"
+                        onerror="this.style.display='none'"
+                    >
+                </a>
+            `).join('')}
+        </div>
+    `;
+}
+
+function renderAdminQuestionCard(q) {
+    const questionImages = normalizeImageArray(q.imageUrl, q.imageUrls);
+    const explanationImages = normalizeImageArray(q.explanationImageUrl, q.explanationImageUrls);
+
+    const options = Array.isArray(q.options) ? q.options : [];
+    const correctAnswerIndex = Number(q.correctAnswerIndex);
+    const safeQuestionId = String(q.id || '').replace(/[^a-zA-Z0-9_-]/g, '_');
+
+    const optionsHtml = options.map((opt, i) => {
+        const isCorrect = i === correctAnswerIndex;
+
+        return `
+            <label class="admin-option-preview ${isCorrect ? 'correct' : ''}">
+                <input 
+                    type="radio" 
+                    name="adminPreviewOption_${safeQuestionId}" 
+                    value="${i}" 
+                    class="form-radio h-5 w-5 text-purple-600 mt-1 flex-shrink-0" 
+                    ${isCorrect ? 'checked' : ''} 
+                    disabled
+                >
+                <span class="ml-3 option-text flex-1">
+                    <strong>${OPTION_LETTERS[i] || String.fromCharCode(65 + i)}.</strong>
+                    ${sanitizeAdminPreviewHtml(opt)}
+                </span>
+                ${isCorrect ? '<span class="admin-correct-pill">Correct</span>' : ''}
+            </label>
+        `;
+    }).join('');
+
+    return `
+        <div class="admin-quiz-preview-card" data-id="${escapeAttributeForAdminPreview(q.id)}">
+            <div class="admin-preview-meta">
+                <span class="admin-question-number">Q${escapeHtmlForAdminPreview(q.questionNumber)}</span>
+                <div class="text-sm text-gray-500">
+                    Preview as user sees it + admin correct answer marker
+                </div>
+            </div>
+
+            <div class="admin-preview-label">Question</div>
+            <div class="admin-question-preview question-content tracking-tight leading-relaxed antialiased border-none pl-0 ml-0">
+                ${sanitizeAdminPreviewHtml(q.question)}
+            </div>
+
+            ${renderAdminPreviewImages(questionImages)}
+
+            <div class="admin-options-preview">
+                ${optionsHtml}
+            </div>
+
+            <div class="explanation-card mt-5 p-5 w-full rounded-2xl border text-base leading-relaxed break-words">
+                <div class="explanation-header">
+                    <span class="explanation-badge">Explanation</span>
+                </div>
+
+                <div class="mt-3 explanation-content">
+                    ${sanitizeAdminPreviewHtml(q.explanation, 'No explanation provided.')}
+                </div>
+
+                ${renderAdminPreviewImages(explanationImages)}
+            </div>
+
+            <div class="text-right mt-5 pt-4 border-t border-gray-200">
+                <a href="#" class="text-indigo-600 hover:text-indigo-900 font-semibold edit-btn">Edit</a>
+                <a href="#" class="text-red-600 hover:text-red-900 font-semibold ml-4 delete-btn">Delete</a>
+            </div>
+        </div>
+    `;
+}
+
 function showImageBulkReport({ importedCount, skippedFiles, updatedQuestions }) {
     const hasWarnings = skippedFiles.length > 0;
 
@@ -434,45 +1407,7 @@ function showImageBulkReport({ importedCount, skippedFiles, updatedQuestions }) 
                     questionListEl.innerHTML = `<div class="text-center text-gray-500 py-10">No questions found.</div>`;
                     return;
                 }
-          questions.forEach(q => {
-                    const questionImages = q.imageUrls || (q.imageUrl ? [q.imageUrl] : []);
-                    const explanationImages = q.explanationImageUrls || (q.explanationImageUrl ? [q.explanationImageUrl] : []);
-
-                    const questionCard = `
-                        <div class="bg-white p-6 rounded-lg shadow" data-id="${q.id}">
-                           <div class="font-semibold text-gray-800">
-    <span>Q${q.questionNumber}:</span>
-    <div class="mt-2 overflow-x-auto">${q.question}</div>
-</div>
-                            
-                            <div class="my-4 space-y-2">
-                                ${questionImages.map(url => `
-                                    <img src="${url}" class="rounded-lg max-h-48 border" onerror="this.style.display='none'">
-                                `).join('')}
-                            </div>
-                            <div class="mt-4 space-y-2 text-sm">
-                                ${q.options.map((opt, i) => `<p class="${i === q.correctAnswerIndex ? 'text-green-600 font-bold' : 'text-gray-600'}"><strong>${String.fromCharCode(65+i)}:</strong> ${opt}</p>`).join('')}
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-gray-200">
-                               <div class="text-sm text-gray-800">
-    <strong class="font-semibold">Explanation:</strong>
-    <div class="mt-2 overflow-x-auto">${q.explanation}</div>
-</div>
-                                
-                                <div class="my-4 space-y-2">
-                                    ${explanationImages.map(url => `
-                                        <img src="${url}" class="rounded-lg max-h-48 border" onerror="this.style.display='none'">
-                                    `).join('')}
-                                </div>
-
-                            </div>
-                            <div class="text-right mt-4">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900 edit-btn">Edit</a>
-                                <a href="#" class="text-red-600 hover:text-red-900 ml-4 delete-btn">Delete</a>
-                            </div>
-                        </div>`;
-                    questionListEl.innerHTML += questionCard;
-                });
+          questionListEl.innerHTML = questions.map(q => renderAdminQuestionCard(q)).join('');
             } catch (error) {
                 console.error("Error loading questions:", error);
                 showMessage(error.message, true);
@@ -496,6 +1431,7 @@ function showImageBulkReport({ importedCount, skippedFiles, updatedQuestions }) 
 
        addQuestionButton.addEventListener('click', () => {
     questionForm.reset();
+    clearAllRichEditors();
     ensureOptionFields();
     rebuildCorrectAnswerDropdown(10, 0);
 
@@ -512,6 +1448,15 @@ function showImageBulkReport({ importedCount, skippedFiles, updatedQuestions }) 
             saveBtn.textContent = 'Saving...';
             
             const id = document.getElementById('questionId').value;
+syncAllRichEditorsToTextareas();
+
+if (!document.getElementById('questionText').value.trim()) {
+    throw new Error('Question text cannot be empty.');
+}
+
+if (!document.getElementById('explanation').value.trim()) {
+    throw new Error('Explanation cannot be empty.');
+}
 
 const rawOptions = OPTION_LETTERS.map(letter => {
     const input = document.getElementById(`option${letter}`);
@@ -816,7 +1761,7 @@ return {
                 }
                 document.getElementById('questionId').value = questionId;
                 document.getElementById('questionNumber').value = data.questionNumber;
-                document.getElementById('questionText').value = data.question;
+                setRichEditorHtml('questionText', data.question || '');
                 document.getElementById('questionImageUrl').value = (
     Array.isArray(data.imageUrls) && data.imageUrls.length > 0
         ? data.imageUrls
@@ -828,7 +1773,7 @@ return {
 });
 
 document.getElementById('correctAnswer').value = String(data.correctAnswerIndex ?? 0);
-                document.getElementById('explanation').value = data.explanation;
+                setRichEditorHtml('explanation', data.explanation || '');
                 document.getElementById('explanationImageUrl').value = (
     Array.isArray(data.explanationImageUrls) && data.explanationImageUrls.length > 0
         ? data.explanationImageUrls
@@ -852,6 +1797,8 @@ cancelButton.addEventListener('click', () => closeModal(questionModal));
             window.location.href = 'index.html';
         }
         logoutButton.addEventListener('click', handleLogout);
+
+
 
     </script>
 </body>

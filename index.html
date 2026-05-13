@@ -289,10 +289,71 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
 
             if (error) throw error;
-            if (!data.user) throw new Error("Login failed, please try again.");
-            
-            // 2. After successful login, manage their session device count
-            await manageActiveSession(data.user);
+if (!data.user) throw new Error("Login failed, please try again.");
+
+// IMPORTANT FIX:
+// If this browser has dashboard cache from another user/specialty,
+// remove it before entering dashboard. This prevents Internal Medicine
+// books from appearing after a Clinical Pharmacy login.
+try {
+    const cachedUserRaw = localStorage.getItem('offline_userData');
+    const cachedUser = cachedUserRaw ? JSON.parse(cachedUserRaw) : null;
+
+    if (cachedUser && cachedUser.id !== data.user.id) {
+        const exactKeysToRemove = [
+            'offline_userData',
+            'offline_books',
+            'offline_rawDisciplines',
+            'offline_chapters',
+            'offline_videos',
+            'offline_bookQuestions',
+            'offline_bookHistory',
+            'offline_discQuestions',
+            'offline_discHistory',
+            'customQuizQuestions',
+            'customQuizTimer',
+            'customQuizTotalCount'
+        ];
+
+        exactKeysToRemove.forEach(key => localStorage.removeItem(key));
+
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (
+                key &&
+                (
+                    key.startsWith('offline_book_') ||
+                    key.startsWith('offline_disc_')
+                )
+            ) {
+                keysToRemove.push(key);
+            }
+        }
+
+        keysToRemove.forEach(key => localStorage.removeItem(key));
+    }
+} catch (cacheError) {
+    console.warn('Could not inspect old dashboard cache. Clearing dashboard cache safely.', cacheError);
+
+    [
+        'offline_userData',
+        'offline_books',
+        'offline_rawDisciplines',
+        'offline_chapters',
+        'offline_videos',
+        'offline_bookQuestions',
+        'offline_bookHistory',
+        'offline_discQuestions',
+        'offline_discHistory',
+        'customQuizQuestions',
+        'customQuizTimer',
+        'customQuizTotalCount'
+    ].forEach(key => localStorage.removeItem(key));
+}
+
+// 2. After successful login, manage their session device count
+await manageActiveSession(data.user);
 
             // 3. If everything is successful, redirect to the dashboard
             window.location.href = 'dashboard.html';

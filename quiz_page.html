@@ -1107,6 +1107,90 @@ const dom = {
         let resultPieChartInstance, resultBarChartInstance, resultBookBarChartInstance;
         let quizTimerInterval = null;
 
+        // --- UPDATE DASHBOARD DONUT CACHE AFTER ANSWERING QUESTIONS ---
+// This keeps dashboard donuts fast after logout/login without recalculating 12k questions.
+
+const DASHBOARD_STATS_CACHE_VERSION = 1;
+
+function dashboardStatsCacheKey(userId) {
+    return `dashboardStatsCache_${userId}`;
+}
+
+function normalizeDashboardResult(result) {
+    const value = String(result || '').toLowerCase();
+    if (value === 'correct') return 'correct';
+    if (value === 'wrong') return 'wrong';
+    return null;
+}
+
+function adjustStatsObject(statsObject, itemId, previousResult, newResult) {
+    if (!statsObject || !itemId || !statsObject[itemId]) {
+        return false;
+    }
+
+    const stats = statsObject[itemId];
+
+    previousResult = normalizeDashboardResult(previousResult);
+    newResult = normalizeDashboardResult(newResult);
+
+    if (previousResult === newResult) {
+        return true;
+    }
+
+    if (previousResult === 'correct') {
+        stats.correct = Math.max(0, (stats.correct || 0) - 1);
+    } else if (previousResult === 'wrong') {
+        stats.wrong = Math.max(0, (stats.wrong || 0) - 1);
+    }
+
+    if (newResult === 'correct') {
+        stats.correct = (stats.correct || 0) + 1;
+    } else if (newResult === 'wrong') {
+        stats.wrong = (stats.wrong || 0) + 1;
+    }
+
+    return true;
+}
+
+function updateDashboardStatsCacheAfterAnswer(question, previousResult, newResult) {
+    if (!currentUserId || !question || !question.id) return;
+
+    const cacheKey = dashboardStatsCacheKey(currentUserId);
+    const rawCache = localStorage.getItem(cacheKey);
+
+    if (!rawCache) return;
+
+    try {
+        const cache = JSON.parse(rawCache);
+
+        if (
+            !cache ||
+            cache.version !== DASHBOARD_STATS_CACHE_VERSION ||
+            cache.userId !== currentUserId
+        ) {
+            return;
+        }
+
+        const bookId = question.bookId || question.book_id || null;
+        const disciplineId = question.disciplineId || question.discipline_id || null;
+
+        const bookUpdated = adjustStatsObject(cache.bookStats, bookId, previousResult, newResult);
+        const disciplineUpdated = adjustStatsObject(cache.disciplineStats, disciplineId, previousResult, newResult);
+
+        // If the cache lacks this book/discipline key, mark dirty so dashboard can rebuild later.
+        if (!bookUpdated || !disciplineUpdated) {
+            cache.dirty = true;
+        } else {
+            cache.dirty = false;
+        }
+
+        cache.updatedAt = new Date().toISOString();
+
+        localStorage.setItem(cacheKey, JSON.stringify(cache));
+    } catch (error) {
+        console.warn('Could not update dashboard stats cache after answer.', error);
+    }
+}
 // Use window-scoped locks so click handlers never throw ReferenceError
 window.resultModalAlreadyOpened = false;
 window.navigationLocked = false;
@@ -2018,13 +2102,14 @@ async function updateUserHistoryDetails(questionId, dataToUpdate) {
 async function updateUserQuestionHistory(question, isCorrect) {
     if (!currentUserId || !question || !question.id) return;
 
-    // This new destructuring handles both snake_case and camelCase
     const { id, bookId, book_id, chapterId, chapter_id, disciplineId, discipline_id } = question;
+    const newResult = isCorrect ? 'correct' : 'wrong';
+    let previousResult = null;
+    let saveSucceeded = false;
 
-    // Correctly query for an existing record
     const { data: existing, error: selectError } = await supabase
         .from('userQuestionHistory')
-        .select('id, attempts, timesCorrect, timesWrong')
+        .select('id, attempts, timesCorrect, timesWrong, lastResult')
         .eq('userId', currentUserId)
         .eq('questionId', id)
         .maybeSingle();
@@ -2034,42 +2119,62 @@ async function updateUserQuestionHistory(question, isCorrect) {
         return;
     }
 
+    previousResult = existing?.lastResult || null;
+
     if (existing) {
-        // If it exists, UPDATE it
         const { error: updateError } = await supabase
             .from('userQuestionHistory')
             .update({
-                lastResult: isCorrect ? 'correct' : 'wrong',
+                lastResult: newResult,
                 lastAttemptDate: new Date().toISOString(),
                 attempts: (existing.attempts || 0) + 1,
                 timesCorrect: (existing.timesCorrect || 0) + (isCorrect ? 1 : 0),
                 timesWrong: (existing.timesWrong || 0) + (isCorrect ? 0 : 1),
             })
             .eq('id', existing.id);
-        if (updateError) console.error("Error updating history:", updateError);
+
+        if (updateError) {
+            console.error("Error updating history:", updateError);
+            return;
+        }
+
+        saveSucceeded = true;
 
     } else {
-        // If it does NOT exist, INSERT a new record
         const { error: insertError } = await supabase
             .from('userQuestionHistory')
             .insert({
                 userId: currentUserId,
                 questionId: id,
-                // Use the OR operator to pick the correct ID, whichever is available
                 bookId: bookId || book_id,
                 chapterId: chapterId || chapter_id,
                 disciplineId: disciplineId || discipline_id,
-                lastResult: isCorrect ? 'correct' : 'wrong',
+                lastResult: newResult,
                 lastAttemptDate: new Date().toISOString(),
                 attempts: 1,
                 timesCorrect: isCorrect ? 1 : 0,
                 timesWrong: isCorrect ? 0 : 1,
-                firstAttemptResult: isCorrect ? 'correct' : 'wrong'
+                firstAttemptResult: newResult
             });
-        if (insertError) console.error("Error inserting new history:", insertError);
+
+        if (insertError) {
+            console.error("Error inserting new history:", insertError);
+            return;
+        }
+
+        saveSucceeded = true;
+    }
+
+    if (saveSucceeded) {
+        const cachedData = userHistoryCache.get(id) || {};
+        userHistoryCache.set(id, {
+            ...cachedData,
+            lastResult: newResult
+        });
+
+        updateDashboardStatsCacheAfterAnswer(question, previousResult, newResult);
     }
 }
-
       // --- In quiz_page.html, replace the entire function with this ---
 // In quiz_page.html
 
