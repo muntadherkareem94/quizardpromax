@@ -587,6 +587,93 @@ body.hl-mode-on .hl-target{
     padding: 0.45rem 0.55rem;
   }
 }
+
+/* --- FINAL RESPONSIVE TABLE FIX FOR QUIZ PAGE --- */
+/* Makes question/explanation tables shrink to the screen instead of forcing horizontal overflow */
+
+.question-content,
+.explanation-content {
+  max-width: 100% !important;
+  overflow-x: auto;
+}
+
+/* Force all tables to respect the available card width */
+.question-content table,
+.explanation-content table {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+  border-collapse: collapse !important;
+  margin: 1rem 0 !important;
+  font-size: clamp(0.72rem, 1.6vw, 0.94rem) !important;
+}
+
+/* Override old or imported table column widths */
+.question-content col,
+.explanation-content col {
+  width: auto !important;
+}
+
+/* Make cells wrap instead of expanding the table */
+.question-content th,
+.question-content td,
+.explanation-content th,
+.explanation-content td {
+  min-width: 0 !important;
+  max-width: none !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  padding: clamp(0.35rem, 1.2vw, 0.75rem) !important;
+  font-size: inherit !important;
+  line-height: 1.45 !important;
+}
+
+/* Prevent long paragraphs inside cells from forcing table overflow */
+.question-content td *,
+.question-content th *,
+.explanation-content td *,
+.explanation-content th * {
+  max-width: 100% !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* Better mobile table behavior */
+@media (max-width: 640px) {
+  .question-content table,
+  .explanation-content table {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: fixed !important;
+    font-size: clamp(0.62rem, 2.3vw, 0.82rem) !important;
+  }
+
+  .question-content th,
+  .question-content td,
+  .explanation-content th,
+  .explanation-content td {
+    padding: 0.32rem 0.38rem !important;
+    line-height: 1.35 !important;
+  }
+}
+
+/* Very narrow mobile screens */
+@media (max-width: 420px) {
+  .question-content table,
+  .explanation-content table {
+    font-size: 0.58rem !important;
+  }
+
+  .question-content th,
+  .question-content td,
+  .explanation-content th,
+  .explanation-content td {
+    padding: 0.25rem 0.3rem !important;
+  }
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
