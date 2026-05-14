@@ -1107,11 +1107,34 @@ try {
 
 // Build the chapter priority list from what is currently rendered (supports Sortable order too)
 function getDisciplinePriorityList() {
-    const list = Array.from(document.querySelectorAll('#chapterList [data-id]'))
-        .map(el => el.getAttribute('data-id'))
+    // 1. Prefer the visible rendered chapter cards.
+    // This respects the current Sortable order if the user reorders the list.
+    let ids = Array.from(document.querySelectorAll('#chapterList [data-chapter-id], #chapterList [data-id]'))
+        .map(el => el.dataset.chapterId || el.dataset.id || '')
+        .map(id => String(id).replace(/^chapter_/, '').trim())
         .filter(Boolean);
 
-    return list;
+    if (ids.length > 0) {
+        return ids;
+    }
+
+    // 2. Fallback to the global list created by renderChaptersByDiscipline().
+    if (Array.isArray(window.disciplineChapterIds) && window.disciplineChapterIds.length > 0) {
+        return window.disciplineChapterIds
+            .map(id => String(id).replace(/^chapter_/, '').trim())
+            .filter(Boolean);
+    }
+
+    // 3. Final fallback from accessibleContent, if available.
+    const { disciplineId } = getDisciplineContext();
+
+    ids = (accessibleContent?.chapters || [])
+        .filter(chapter => !disciplineId || chapter.discipline_id === disciplineId)
+        .sort((a, b) => (a.chapterNumber || 0) - (b.chapterNumber || 0))
+        .map(chapter => chapter.id)
+        .filter(Boolean);
+
+    return ids;
 }
 
 function startDisciplineQuiz(mode) {
@@ -1276,9 +1299,15 @@ function renderChaptersByDiscipline(chapters, container) {
         const unanswered = total - (correct + wrong);
 
         // Build Card
-        const card = document.createElement('div');
+      const card = document.createElement('div');
 card.className = "bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-between p-4 mb-3";
 card.setAttribute('data-chart-card', 'true');
+
+// IMPORTANT FIX:
+// The global flashcard button needs to collect chapter IDs from the rendered cards.
+card.dataset.id = chapter.id;
+card.dataset.chapterId = chapter.id;
+
 card.dataset.total = String(total);
 
         
@@ -1627,28 +1656,7 @@ function getDisciplineContext() {
 
 // Helper: collect chapter order (priority list) from the sortable list
 function getDisciplineChapterPriority() {
-  // 1) If you have the sequence builder list (rule-item)
-  const seqItems = document.querySelectorAll('#sequenceList .rule-item[data-id]');
-  let ids = Array.from(seqItems)
-    .map(el => (el.dataset.id || '').replace(/^chapter_/, ''))
-    .filter(Boolean);
-
-  if (ids.length) return ids;
-
-  // 2) If there is any old sortable list (just in case)
-  const liItems = document.querySelectorAll('#sortable-chapter-list li[data-chapter-id]');
-  ids = Array.from(liItems)
-    .map(li => li.dataset.chapterId)
-    .filter(Boolean);
-
-  if (ids.length) return ids;
-
-  // 3) Fallback to the global list if your page already builds it somewhere
-  if (Array.isArray(window.disciplineChapterIds) && window.disciplineChapterIds.length) {
-    return window.disciplineChapterIds;
-  }
-
-  return [];
+    return getDisciplinePriorityList();
 }
 
 

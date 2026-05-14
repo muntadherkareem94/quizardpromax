@@ -296,6 +296,90 @@
 #flashcardContainer:fullscreen .flashcard-dot.active {
     background-color: white;
 }
+
+/* --- Rich HTML rendering for flashcard text --- */
+
+#cardFrontText,
+#cardBackText {
+    white-space: normal !important;
+}
+
+.flashcard-rich-content {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.flashcard-rich-content p {
+    margin: 0.65rem 0;
+}
+
+.flashcard-rich-content ul,
+.flashcard-rich-content ol {
+    margin: 0.6rem 0 0.9rem 1.25rem;
+    padding-left: 1rem;
+}
+
+.flashcard-rich-content ul {
+    list-style-type: disc;
+}
+
+.flashcard-rich-content ol {
+    list-style-type: decimal;
+}
+
+.flashcard-rich-content li {
+    margin: 0.25rem 0;
+}
+
+.flashcard-rich-content table {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    font-size: clamp(0.72rem, 1.5vw, 0.95rem);
+    line-height: 1.45;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.flashcard-rich-content th,
+.flashcard-rich-content td {
+    border: 1px solid #d1d5db;
+    padding: clamp(0.35rem, 1vw, 0.65rem);
+    vertical-align: top;
+    text-align: left;
+    color: #1f2937;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.flashcard-rich-content th {
+    background: #f1f5f9;
+    font-weight: 800;
+    color: #111827;
+}
+
+.flashcard-rich-content strong,
+.flashcard-rich-content b {
+    font-weight: 800;
+    color: inherit;
+}
+
+@media (max-width: 640px) {
+    .flashcard-rich-content table {
+        font-size: 0.68rem;
+    }
+
+    .flashcard-rich-content th,
+    .flashcard-rich-content td {
+        padding: 0.32rem 0.38rem;
+    }
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -787,8 +871,89 @@ if (
         }
 
 
-        // --- Render Logic ---
-     function renderCard() {
+   // --- Rich HTML Flashcard Rendering Helpers ---
+
+function escapeFlashcardHtml(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function decodeMaybeEscapedFlashcardHtml(value) {
+    const raw = String(value || '');
+
+    // If HTML was accidentally saved as &lt;table&gt;, decode it back.
+    if (/&lt;\/?[a-z][\s\S]*?&gt;/i.test(raw)) {
+        const textarea = document.createElement('textarea');
+        textarea.innerHTML = raw;
+        return textarea.value;
+    }
+
+    return raw;
+}
+
+function sanitizeFlashcardDisplayHtml(value) {
+    const decoded = decodeMaybeEscapedFlashcardHtml(value).trim();
+
+    if (!decoded) return '';
+
+    const containsHtmlTags = /<\/?[a-z][\s\S]*>/i.test(decoded);
+
+    const sourceHtml = containsHtmlTags
+        ? decoded
+        : escapeFlashcardHtml(decoded).replace(/\n/g, '<br>');
+
+    const template = document.createElement('template');
+    template.innerHTML = sourceHtml;
+
+    const allowedTags = new Set([
+        'p', 'br', 'div', 'span', 'strong', 'b', 'em', 'i', 'u', 'sub', 'sup',
+        'ul', 'ol', 'li',
+        'table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td', 'caption',
+        'hr', 'small'
+    ]);
+
+    const allowedAttributes = new Set([
+        'colspan', 'rowspan', 'scope'
+    ]);
+
+    function cleanNode(node) {
+        Array.from(node.childNodes).forEach(child => {
+            if (child.nodeType === Node.ELEMENT_NODE) {
+                const tag = child.tagName.toLowerCase();
+
+                if (!allowedTags.has(tag)) {
+                    while (child.firstChild) {
+                        child.parentNode.insertBefore(child.firstChild, child);
+                    }
+                    child.remove();
+                    return;
+                }
+
+                Array.from(child.attributes).forEach(attr => {
+                    const attrName = attr.name.toLowerCase();
+
+                    if (attrName.startsWith('on') || !allowedAttributes.has(attrName)) {
+                        child.removeAttribute(attr.name);
+                    }
+                });
+
+                cleanNode(child);
+            } else if (child.nodeType !== Node.TEXT_NODE) {
+                child.remove();
+            }
+        });
+    }
+
+    cleanNode(template.content);
+    return template.innerHTML;
+}
+
+// --- Render Logic ---
+function renderCard() {
             const card = flashcards[currentIndex];
             if (!card) return;
 
@@ -799,8 +964,11 @@ if (
             dom.prevBtn.disabled = currentIndex === 0;
             dom.nextBtn.disabled = currentIndex === flashcards.length - 1;
 
-            dom.cardFrontText.textContent = card.front_text;
-            dom.cardBackText.textContent = card.back_text;
+            dom.cardFrontText.classList.add('flashcard-rich-content');
+dom.cardBackText.classList.add('flashcard-rich-content');
+
+dom.cardFrontText.innerHTML = sanitizeFlashcardDisplayHtml(card.front_text);
+dom.cardBackText.innerHTML = sanitizeFlashcardDisplayHtml(card.back_text);
 
             // Render Front Image
             // Render Front Image
