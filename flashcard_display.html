@@ -380,6 +380,97 @@
         padding: 0.32rem 0.38rem;
     }
 }
+
+/* --- Scrollable visual edit flashcard modal --- */
+
+#addCardModal {
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.flashcard-edit-modal-panel {
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+}
+
+.flashcard-edit-modal-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.flashcard-edit-modal-panel::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+
+.flashcard-edit-modal-actions {
+    position: sticky;
+    bottom: -2rem;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+    z-index: 5;
+}
+
+/* Visual HTML editor inside edit modal */
+.flashcard-visual-editor {
+    width: 100%;
+    min-height: 110px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background: white;
+    color: #1f2937;
+    outline: none;
+    line-height: 1.55;
+    cursor: text;
+    -webkit-user-select: text !important;
+    user-select: text !important;
+}
+
+.flashcard-visual-editor:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+
+.flashcard-visual-editor:empty::before {
+    content: attr(data-placeholder);
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.flashcard-visual-editor table {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    background: white;
+    border: 1px solid #cbd5e1;
+    font-size: 0.9rem;
+}
+
+.flashcard-visual-editor th,
+.flashcard-visual-editor td {
+    border: 1px solid #d1d5db;
+    padding: 0.45rem 0.55rem;
+    vertical-align: top;
+    text-align: left;
+    color: #1f2937;
+    overflow-wrap: anywhere;
+}
+
+.flashcard-visual-editor th {
+    background: #f1f5f9;
+    font-weight: 800;
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -549,8 +640,8 @@
         </div>
     </div>
 </div>
-    <div id="addCardModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full text-gray-800">
+    <div id="addCardModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-80 flex items-start justify-center p-4 z-50 overflow-y-auto">
+    <div class="flashcard-edit-modal-panel bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-lg w-full text-gray-800 my-6">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-2xl font-bold text-gray-800">Create Flashcard</h3>
                 <button id="closeAddCardModal" class="text-gray-400 hover:text-gray-700">
@@ -561,7 +652,15 @@
            <div class="space-y-4">
                 <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
                     <label class="block text-sm font-semibold text-gray-700 mb-1">Front (Question / Prompt)</label>
-                    <textarea id="newCardFront" rows="2" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none resize-none mb-2" placeholder="e.g. What is the most common cause of..."></textarea>
+                    <div
+    id="newCardFrontEditor"
+    class="flashcard-visual-editor mb-2"
+    contenteditable="true"
+    data-hidden-textarea="newCardFront"
+    data-placeholder="Type the front of the card here..."
+></div>
+
+<textarea id="newCardFront" class="hidden"></textarea>
                     
                     <label class="flex items-center gap-2 cursor-pointer text-sm text-indigo-600 hover:text-indigo-800 font-semibold w-fit">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
@@ -576,7 +675,15 @@
 
                 <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
                     <label class="block text-sm font-semibold text-gray-700 mb-1">Back (Answer)</label>
-                    <textarea id="newCardBack" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none resize-none mb-2" placeholder="e.g. The correct answer is..."></textarea>
+                   <div
+    id="newCardBackEditor"
+    class="flashcard-visual-editor mb-2"
+    contenteditable="true"
+    data-hidden-textarea="newCardBack"
+    data-placeholder="Type the back/answer of the card here..."
+></div>
+
+<textarea id="newCardBack" class="hidden"></textarea>
                     
                     <label class="flex items-center gap-2 cursor-pointer text-sm text-indigo-600 hover:text-indigo-800 font-semibold w-fit">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
@@ -590,7 +697,7 @@
                 </div>
             </div>
 
-            <div class="mt-8 flex justify-end gap-3">
+            <div class="flashcard-edit-modal-actions mt-8 flex justify-end gap-3">
                 <button id="cancelAddCardBtn" class="py-2 px-6 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors">Cancel</button>
                 <button id="saveCardBtn" class="py-2 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow transition-colors flex items-center">
                     Save Card
@@ -637,7 +744,9 @@ flashcardDotsNav: document.getElementById('flashcardDotsNav'),
     cancelAddCardBtn: document.getElementById('cancelAddCardBtn'),
     saveCardBtn: document.getElementById('saveCardBtn'),
     newCardFront: document.getElementById('newCardFront'),
-    newCardBack: document.getElementById('newCardBack'), 
+newCardBack: document.getElementById('newCardBack'),
+newCardFrontEditor: document.getElementById('newCardFrontEditor'),
+newCardBackEditor: document.getElementById('newCardBackEditor'), 
     frontImageInput: document.getElementById('frontImageInput'),
     frontImagePreview: document.getElementById('frontImagePreview'),
     removeFrontImageBtn: document.getElementById('removeFrontImageBtn'),
@@ -883,16 +992,39 @@ function escapeFlashcardHtml(value) {
 }
 
 function decodeMaybeEscapedFlashcardHtml(value) {
-    const raw = String(value || '');
+    let decoded = String(value || '');
 
-    // If HTML was accidentally saved as &lt;table&gt;, decode it back.
-    if (/&lt;\/?[a-z][\s\S]*?&gt;/i.test(raw)) {
+    if (!decoded) return '';
+
+    // Decode HTML entities safely.
+    // This fixes visible entities such as &nbsp; and also supports accidentally
+    // escaped HTML like &lt;table&gt;...&lt;/table&gt;.
+    for (let i = 0; i < 3; i++) {
         const textarea = document.createElement('textarea');
-        textarea.innerHTML = raw;
-        return textarea.value;
+        textarea.innerHTML = decoded;
+
+        const next = textarea.value;
+
+        if (next === decoded) break;
+
+        decoded = next;
     }
 
-    return raw;
+    // Convert non-breaking spaces to normal spaces so they do not appear as text
+    // and do not create strange spacing in flashcards.
+    decoded = decoded
+        .replace(/\u00A0/g, ' ')
+        .replace(/&nbsp;/gi, ' ')
+        .replace(/&amp;nbsp;/gi, ' ');
+
+    // Clean excessive spacing, but keep line breaks.
+    decoded = decoded
+        .split('\n')
+        .map(line => line.replace(/[ \t]{2,}/g, ' ').trimEnd())
+        .join('\n')
+        .trim();
+
+    return decoded;
 }
 
 function sanitizeFlashcardDisplayHtml(value) {
@@ -903,8 +1035,12 @@ function sanitizeFlashcardDisplayHtml(value) {
     const containsHtmlTags = /<\/?[a-z][\s\S]*>/i.test(decoded);
 
     const sourceHtml = containsHtmlTags
-        ? decoded
-        : escapeFlashcardHtml(decoded).replace(/\n/g, '<br>');
+    ? decoded
+    : escapeFlashcardHtml(decoded)
+        .replace(/\u00A0/g, ' ')
+        .replace(/&nbsp;/gi, ' ')
+        .replace(/&amp;nbsp;/gi, ' ')
+        .replace(/\n/g, '<br>');
 
     const template = document.createElement('template');
     template.innerHTML = sourceHtml;
@@ -952,6 +1088,32 @@ function sanitizeFlashcardDisplayHtml(value) {
     return template.innerHTML;
 }
 
+// --- Visual edit modal helpers ---
+
+function setFlashcardEditHtml(editor, textarea, value) {
+    if (!editor || !textarea) return;
+
+    const cleanHtml = sanitizeFlashcardDisplayHtml(value || '');
+
+    editor.innerHTML = cleanHtml;
+    textarea.value = cleanHtml;
+}
+
+function syncFlashcardEditEditorToTextarea(editor, textarea) {
+    if (!editor || !textarea) return;
+
+    textarea.value = sanitizeFlashcardDisplayHtml(editor.innerHTML || '');
+}
+
+function syncAllFlashcardEditEditors() {
+    syncFlashcardEditEditorToTextarea(dom.newCardFrontEditor, dom.newCardFront);
+    syncFlashcardEditEditorToTextarea(dom.newCardBackEditor, dom.newCardBack);
+}
+
+function clearFlashcardEditEditors() {
+    setFlashcardEditHtml(dom.newCardFrontEditor, dom.newCardFront, '');
+    setFlashcardEditHtml(dom.newCardBackEditor, dom.newCardBack, '');
+}
 // --- Render Logic ---
 function renderCard() {
             const card = flashcards[currentIndex];
@@ -1429,8 +1591,23 @@ document.addEventListener('fullscreenchange', () => {
         }
 
         // Listen for Ctrl+V / Paste in the textareas
-        dom.newCardFront.addEventListener('paste', (e) => handleImagePaste(e, dom.frontImageInput));
-        dom.newCardBack.addEventListener('paste', (e) => handleImagePaste(e, dom.backImageInput));
+        dom.newCardFrontEditor.addEventListener('input', () => {
+    syncFlashcardEditEditorToTextarea(dom.newCardFrontEditor, dom.newCardFront);
+});
+
+dom.newCardBackEditor.addEventListener('input', () => {
+    syncFlashcardEditEditorToTextarea(dom.newCardBackEditor, dom.newCardBack);
+});
+
+dom.newCardFrontEditor.addEventListener('paste', (e) => {
+    handleImagePaste(e, dom.frontImageInput);
+    setTimeout(() => syncFlashcardEditEditorToTextarea(dom.newCardFrontEditor, dom.newCardFront), 0);
+});
+
+dom.newCardBackEditor.addEventListener('paste', (e) => {
+    handleImagePaste(e, dom.backImageInput);
+    setTimeout(() => syncFlashcardEditEditorToTextarea(dom.newCardBackEditor, dom.newCardBack), 0);
+});
 
         // --- ADD & EDIT CARD LOGIC ---
         function openModal(isEdit = false) {
@@ -1445,8 +1622,8 @@ document.addEventListener('fullscreenchange', () => {
             if (isEdit) {
                 const card = flashcards[currentIndex];
                 editingCardId = card.id;
-                dom.newCardFront.value = card.front_text;
-                dom.newCardBack.value = card.back_text;
+                setFlashcardEditHtml(dom.newCardFrontEditor, dom.newCardFront, card.front_text);
+setFlashcardEditHtml(dom.newCardBackEditor, dom.newCardBack, card.back_text);
                 
                 currentFrontImageUrl = card.front_image_url || null;
                 if (currentFrontImageUrl) {
@@ -1466,14 +1643,13 @@ document.addEventListener('fullscreenchange', () => {
                 editingCardId = null;
                 currentFrontImageUrl = null;
                 currentBackImageUrl = null;
-                dom.newCardFront.value = '';
-                dom.newCardBack.value = '';
+                clearFlashcardEditEditors();
                 modalTitle.textContent = 'Create Flashcard';
                 dom.saveCardBtn.textContent = 'Save Card';
             }
             
             dom.addCardModal.classList.remove('hidden');
-            dom.newCardFront.focus();
+            dom.newCardFrontEditor?.focus();
         }
 
         function closeModal() {
@@ -1516,9 +1692,11 @@ document.addEventListener('fullscreenchange', () => {
         });
 
     // Save / Update Card
-        dom.saveCardBtn.addEventListener('click', async () => {
-            const front = dom.newCardFront.value.trim();
-            const back = dom.newCardBack.value.trim();
+       dom.saveCardBtn.addEventListener('click', async () => {
+    syncAllFlashcardEditEditors();
+
+    const front = dom.newCardFront.value.trim();
+    const back = dom.newCardBack.value.trim();
 
             // Bulletproof check: Looks at text, attached files, OR if the image preview is currently visible
             const isFrontImagePresent = dom.frontImageInput.files.length > 0 || !dom.frontImagePreview.classList.contains('hidden') || currentFrontImageUrl;

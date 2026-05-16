@@ -436,6 +436,52 @@
     color: #6b7280;
     margin-top: 0.35rem;
 }
+
+/* --- Strong visible buttons for import tools --- */
+.image-bulk-import-admin-btn {
+    background: linear-gradient(135deg, #f97316, #ea580c) !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    border: 1px solid #c2410c;
+    box-shadow: 0 8px 18px rgba(234, 88, 12, 0.25);
+}
+
+.image-bulk-import-admin-btn:hover {
+    background: linear-gradient(135deg, #ea580c, #c2410c) !important;
+    transform: translateY(-1px);
+}
+
+.json-file-attach-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    width: fit-content;
+    cursor: pointer;
+    background: #eef2ff;
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
+    font-weight: 700;
+    padding: 0.55rem 0.8rem;
+    border-radius: 0.65rem;
+    transition: all 0.15s ease;
+}
+
+.json-file-attach-label:hover {
+    background: #e0e7ff;
+    color: #3730a3;
+    transform: translateY(-1px);
+}
+
+.json-file-name-badge {
+    display: none;
+    margin-left: 0.5rem;
+    font-size: 0.78rem;
+    color: #374151;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 0.35rem 0.55rem;
+    border-radius: 9999px;
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -459,7 +505,9 @@
             <h2 id="chapterTitle" class="text-3xl font-extrabold text-gray-800">Loading...</h2>
             <div class="flex gap-2">
     <button id="bulkImportButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Bulk Import</button>
-    <button id="imageBulkImportButton" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Image Bulk Import</button>
+   <button id="imageBulkImportButton" class="image-bulk-import-admin-btn py-2 px-4 rounded-lg transition duration-300">
+    Image Bulk Import
+</button>
     <button id="addQuestionButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Add New Question</button>
 </div>
         </div>
@@ -571,7 +619,26 @@
             <h3 class="text-2xl font-bold text-gray-800 mb-4">Bulk Import Questions</h3>
             <p class="text-sm text-gray-600 mb-4">Paste the contents of your JSON file below. The JSON should be an object with a "questions" array.</p>
             <form id="importForm">
-                <textarea id="jsonInput" rows="10" class="w-full p-2 border border-gray-300 rounded-md font-mono text-sm" placeholder='{ "questions": [ ... ] }'></textarea>
+    <div class="mb-3 flex flex-wrap items-center gap-2">
+        <label for="jsonFileInput" class="json-file-attach-label">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.586-6.586a4 4 0 10-5.657-5.657L5.757 10.757a6 6 0 108.486 8.486L20 13.486" />
+            </svg>
+            Attach JSON file
+        </label>
+
+        <input 
+            type="file" 
+            id="jsonFileInput" 
+            accept=".json,application/json" 
+            class="hidden"
+        >
+
+        <span id="jsonFileNameBadge" class="json-file-name-badge"></span>
+    </div>
+
+    <textarea id="jsonInput" rows="10" class="w-full p-2 border border-gray-300 rounded-md font-mono text-sm" placeholder='{ "questions": [ ... ] }'></textarea>
                 <div class="flex justify-end pt-4">
                     <button type="button" id="cancelImportButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">Cancel</button>
                     <button type="submit" id="importButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">Import Questions</button>
@@ -647,7 +714,8 @@ const importModal = document.getElementById('importModal');
 const cancelImportButton = document.getElementById('cancelImportButton');
 const importForm = document.getElementById('importForm');
 const jsonInput = document.getElementById('jsonInput');
-
+const jsonFileInput = document.getElementById('jsonFileInput');
+const jsonFileNameBadge = document.getElementById('jsonFileNameBadge');
 const imageBulkImportModal = document.getElementById('imageBulkImportModal');
 const imageBulkImportForm = document.getElementById('imageBulkImportForm');
 const imageBulkInput = document.getElementById('imageBulkInput');
@@ -796,6 +864,11 @@ buildOptionControls();
                 }
 if (modal === importModal) {
     importForm.reset();
+
+    if (jsonFileNameBadge) {
+        jsonFileNameBadge.textContent = '';
+        jsonFileNameBadge.style.display = 'none';
+    }
 }
 
 if (modal === imageBulkImportModal) {
@@ -1784,8 +1857,52 @@ document.getElementById('correctAnswer').value = String(data.correctAnswerIndex 
             }
         });
 
-        bulkImportButton.addEventListener('click', () => openModal(importModal));
+       bulkImportButton.addEventListener('click', () => openModal(importModal));
 cancelImportButton.addEventListener('click', () => closeModal(importModal));
+
+jsonFileInput.addEventListener('change', async () => {
+    const file = jsonFileInput.files && jsonFileInput.files[0];
+
+    if (!file) return;
+
+    const fileName = file.name || '';
+
+    if (!fileName.toLowerCase().endsWith('.json')) {
+        showMessage('Please attach a valid .json file.', true);
+        jsonFileInput.value = '';
+        return;
+    }
+
+    try {
+        const text = await file.text();
+
+        // Validate early so the user knows immediately if the file is broken.
+        const parsed = JSON.parse(text);
+
+        if (!parsed.questions || !Array.isArray(parsed.questions)) {
+            throw new Error('The JSON file must contain an object with a "questions" array.');
+        }
+
+        jsonInput.value = text;
+
+        if (jsonFileNameBadge) {
+            jsonFileNameBadge.textContent = fileName;
+            jsonFileNameBadge.style.display = 'inline-flex';
+        }
+
+        showMessage(`JSON file loaded: ${fileName}`, false);
+
+    } catch (error) {
+        console.error('JSON file read/parse error:', error);
+        showMessage(`Could not load JSON file: ${error.message}`, true);
+        jsonFileInput.value = '';
+
+        if (jsonFileNameBadge) {
+            jsonFileNameBadge.textContent = '';
+            jsonFileNameBadge.style.display = 'none';
+        }
+    }
+});
 
 imageBulkImportButton.addEventListener('click', () => openModal(imageBulkImportModal));
 cancelImageBulkImportButton.addEventListener('click', () => closeModal(imageBulkImportModal));
