@@ -471,6 +471,90 @@
     background: #f1f5f9;
     font-weight: 800;
 }
+
+/* --- FINAL ORGANIZED FLASHCARD RICH CONTENT FIX --- */
+/* Prevent table/text from becoming side-by-side flex items */
+
+#cardFrontText.flashcard-rich-content,
+#cardBackText.flashcard-rich-content {
+    display: block !important;
+    white-space: normal !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Cards containing tables should use normal study-note sizing, not huge title sizing */
+#cardFrontText.flashcard-rich-content.has-table-content,
+#cardBackText.flashcard-rich-content.has-table-content {
+    font-size: clamp(0.9rem, 1.2vw, 1.08rem) !important;
+    line-height: 1.55 !important;
+    font-weight: 500 !important;
+}
+
+/* Text before/after tables should appear as normal paragraphs */
+.flashcard-rich-content.has-table-content > div,
+.flashcard-rich-content.has-table-content > p {
+    margin: 0.6rem 0 !important;
+}
+
+/* Make pasted ChatGPT tables readable and centered */
+.flashcard-rich-content table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    margin: 0.85rem auto !important;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    font-size: clamp(0.72rem, 1.05vw, 0.9rem) !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+}
+
+/* Cell text should wrap instead of making ugly narrow columns */
+.flashcard-rich-content th,
+.flashcard-rich-content td {
+    border: 1px solid #d1d5db !important;
+    padding: clamp(0.35rem, 0.8vw, 0.6rem) !important;
+    vertical-align: top !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+    color: #1f2937 !important;
+}
+
+.flashcard-rich-content th {
+    background: #f1f5f9 !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+}
+
+/* If the card has a very wide table, allow horizontal scroll instead of destroying layout */
+.flashcard-rich-content {
+    overflow-x: auto !important;
+}
+
+/* Better mobile behavior */
+@media (max-width: 640px) {
+    #cardFrontText.flashcard-rich-content.has-table-content,
+    #cardBackText.flashcard-rich-content.has-table-content {
+        font-size: 0.82rem !important;
+    }
+
+    .flashcard-rich-content table {
+        font-size: 0.68rem !important;
+    }
+
+    .flashcard-rich-content th,
+    .flashcard-rich-content td {
+        padding: 0.3rem 0.35rem !important;
+    }
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -1129,8 +1213,22 @@ function renderCard() {
             dom.cardFrontText.classList.add('flashcard-rich-content');
 dom.cardBackText.classList.add('flashcard-rich-content');
 
+dom.cardFrontText.classList.remove('has-table-content');
+dom.cardBackText.classList.remove('has-table-content');
+
 dom.cardFrontText.innerHTML = sanitizeFlashcardDisplayHtml(card.front_text);
 dom.cardBackText.innerHTML = sanitizeFlashcardDisplayHtml(card.back_text);
+
+// IMPORTANT FIX:
+// If the card contains tables/lists/rich HTML, disable title-like huge layout
+// and let CSS organize the content normally.
+if (dom.cardFrontText.querySelector('table, ul, ol')) {
+    dom.cardFrontText.classList.add('has-table-content');
+}
+
+if (dom.cardBackText.querySelector('table, ul, ol')) {
+    dom.cardBackText.classList.add('has-table-content');
+}
 
             // Render Front Image
             // Render Front Image
@@ -1183,8 +1281,16 @@ saveFlashcardStudyProgress();
         }
 
 
-        function fitTextToContainer(textEl, sideEl) {
+function fitTextToContainer(textEl, sideEl) {
     if (!textEl || !sideEl) return;
+
+    // Do not auto-enlarge complex HTML/table flashcards.
+    // Tables need stable normal font sizing, otherwise they become ugly and squeezed.
+    if (textEl.querySelector('table, ul, ol') || textEl.classList.contains('has-table-content')) {
+        textEl.style.fontSize = '';
+        textEl.style.lineHeight = '';
+        return;
+    }
 
     // Reset first
     textEl.style.fontSize = '';
