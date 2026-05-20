@@ -240,34 +240,45 @@
             // Step 1: Create the user in Supabase Authentication
             // The SQL trigger will automatically create the matching row in public.users
             const { data: authData, error: authError } = await supabase.auth.signUp({
-                email: email,
-                password: password,
-                options: {
-                    emailRedirectTo: 'https://quizardpromax.netlify.app/',
-                    data: {
-                        username: username,
-                        speciality: speciality,
-                        role: userRole,
-                        account_type: 'free'
-                    }
-                }
-            });
+    email: email,
+    password: password,
+    options: {
+        emailRedirectTo: 'https://quizardpromax.netlify.app/',
+        data: {
+            username: username,
+            speciality: speciality,
+            role: userRole,
+            account_type: 'free'
+        }
+    }
+});
 
-            if (authError) {
-                throw authError;
-            }
+if (authError) {
+    throw authError;
+}
 
-            if (!authData.user) {
-                throw new Error("Could not create user account. Please try again.");
-            }
-            
-            console.log('User created in Supabase Auth:', authData.user.id);
-            console.log('User profile will be created automatically by SQL trigger.');
+if (!authData.user) {
+    throw new Error("Could not create user account. Please try again.");
+}
 
-            showMessage('Account created successfully! Please check your email to confirm your account, then you can log in.', false);
-            
-            submitButton.disabled = false;
-            submitButton.textContent = 'Sign Up';
+// Detect Supabase "existing user" signup case
+const identities = authData.user.identities || [];
+const isExistingUser = identities.length === 0;
+
+if (isExistingUser) {
+    showMessage('This email is already linked to an account. Please log in or use a different email.');
+    submitButton.disabled = false;
+    submitButton.textContent = 'Sign Up';
+    return;
+}
+
+console.log('User created in Supabase Auth:', authData.user.id);
+console.log('User profile will be created automatically by SQL trigger.');
+
+showMessage('Account created successfully! Please check your email to confirm your account, then you can log in.', false);
+
+submitButton.disabled = false;
+submitButton.textContent = 'Sign Up';
 
         } catch (error) {
             console.error("Signup Error:", error);

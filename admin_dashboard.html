@@ -1497,25 +1497,108 @@ editRoleSelect.addEventListener('change', (e) => {
 document.getElementById('closeEditRoleModal').addEventListener('click', () => editRoleModal.classList.add('hidden'));
 document.getElementById('cancelRoleBtn').addEventListener('click', () => editRoleModal.classList.add('hidden'));
 
-// Function to fetch unique specialties from your database to populate the dropdown
-async function populateRoleSpecialtyDropdown(selectedSpecialty = '') { // <-- RENAMED
-    try {
-        const { data, error } = await supabase.from('disciplines').select('speciality');
-        if (error) throw error;
-        
-        // Extract unique, non-null specialties
-        const uniqueSpecialties = [...new Set(data.map(d => d.speciality).filter(Boolean))];
-        
-        editRoleSpecialtySelect.innerHTML = '<option value="">Select a Specialty...</option>';
-        uniqueSpecialties.forEach(spec => {
+async function populateRoleSpecialtyDropdown(selectedSpecialty = '') {
+    // IMPORTANT:
+    // Do not build this list only from the disciplines table.
+    // New specialties may not have disciplines/books yet, but they still need
+    // to be assignable as specialty_admin.
+
+    const defaultMedicalSpecialties = {
+        "Internal Medicine": [
+            "Internal Medicine - General",
+            "Cardiology",
+            "Endocrinology",
+            "Gastroenterology",
+            "Hematology",
+            "Infectious Disease",
+            "Nephrology",
+            "Oncology",
+            "Pulmonology",
+            "Rheumatology"
+        ],
+        "Surgery": [
+            "General Surgery",
+            "Cardiothoracic Surgery",
+            "Neurosurgery",
+            "Orthopedic Surgery",
+            "Otolaryngology (ENT)",
+            "Pediatric Surgery",
+            "Plastic Surgery",
+            "Urology",
+            "Vascular Surgery"
+        ],
+        "Pediatrics": [
+            "Pediatrics - General",
+            "Neonatology",
+            "Pediatric Cardiology",
+            "Pediatric Endocrinology",
+            "Pediatric Gastroenterology"
+        ],
+        "Obstetrics & Gynecology": [
+            "Obstetrics & Gynecology - General",
+            "Gynecologic Oncology",
+            "Maternal-Fetal Medicine",
+            "Reproductive Endocrinology and Infertility"
+        ],
+        "Other Major Specialties": [
+            "anesthesiology and Intensive Care",
+            "Dermatology",
+            "Emergency Medicine",
+            "Family Medicine",
+            "Neurology",
+            "Ophthalmology",
+            "Pathology",
+            "Psychiatry",
+            "Radiology"
+        ],
+        "Pharmacy": [
+            "Clinical Pharmacy"
+        ]
+    };
+
+    const sourceSpecialties =
+        typeof medicalSpecialties !== 'undefined'
+            ? medicalSpecialties
+            : defaultMedicalSpecialties;
+
+    editRoleSpecialtySelect.innerHTML = '<option value="">Select a Specialty...</option>';
+
+    for (const groupName in sourceSpecialties) {
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = groupName;
+
+        sourceSpecialties[groupName].forEach(spec => {
             const option = document.createElement('option');
             option.value = spec;
             option.textContent = spec;
-            if (spec === selectedSpecialty) option.selected = true;
-            editRoleSpecialtySelect.appendChild(option);
+
+            if (spec === selectedSpecialty) {
+                option.selected = true;
+            }
+
+            optgroup.appendChild(option);
         });
-    } catch (err) {
-        console.error("Error fetching specialties:", err);
+
+        editRoleSpecialtySelect.appendChild(optgroup);
+    }
+
+    // Safety fallback:
+    // If a user already has a specialty saved in the database that is not in the
+    // master list, keep it visible so you do not accidentally lose it.
+    if (
+        selectedSpecialty &&
+        !Array.from(editRoleSpecialtySelect.options).some(option => option.value === selectedSpecialty)
+    ) {
+        const customGroup = document.createElement('optgroup');
+        customGroup.label = 'Existing Custom Specialty';
+
+        const option = document.createElement('option');
+        option.value = selectedSpecialty;
+        option.textContent = selectedSpecialty;
+        option.selected = true;
+
+        customGroup.appendChild(option);
+        editRoleSpecialtySelect.appendChild(customGroup);
     }
 }
 
