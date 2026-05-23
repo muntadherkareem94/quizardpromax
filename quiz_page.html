@@ -676,10 +676,16 @@ body.hl-mode-on .hl-target{
 }
 
 /* --- FINAL TEXT SELECTION / COPY FIX --- */
-/* Allow question and explanation text to be selected/copied normally */
+/* Allow question, choices, and explanation text to be selected/copied normally */
 
 #questionDisplay,
 #questionDisplay *,
+#optionsContainer,
+#optionsContainer *,
+#optionsContainer label,
+#optionsContainer label *,
+#optionsContainer .option-text,
+#optionsContainer .option-text *,
 #explanationDisplay,
 #explanationDisplay *,
 #explanationText,
@@ -696,10 +702,11 @@ body.hl-mode-on .hl-target{
 
 /* Keep normal text cursor over readable areas */
 #questionDisplay,
+#optionsContainer .option-text,
 #explanationText,
 .question-content,
 .explanation-content {
-  cursor: text;
+  cursor: text !important;
 }
 
 /* Make table text selectable too */
@@ -709,6 +716,13 @@ body.hl-mode-on .hl-target{
 .explanation-content table * {
   -webkit-user-select: text !important;
   user-select: text !important;
+}
+
+/* Keep radio buttons and peer percentage pills non-selectable */
+#optionsContainer input,
+#optionsContainer .peer-percentage {
+  -webkit-user-select: none !important;
+  user-select: none !important;
 }
 
 /* But keep images acting like images, not selectable text */
@@ -722,6 +736,8 @@ body.hl-mode-on .hl-target{
 
 /* When highlight mode is ON, keep the highlighter cursor/behavior */
 body.hl-mode-on #questionDisplay,
+body.hl-mode-on #optionsContainer,
+body.hl-mode-on #optionsContainer .option-text,
 body.hl-mode-on #explanationDisplay,
 body.hl-mode-on #explanationText,
 body.hl-mode-on .question-content,
@@ -729,7 +745,6 @@ body.hl-mode-on .explanation-content,
 body.hl-mode-on .hl-target {
   cursor: crosshair !important;
 }
-
 /* --- Scrollable Create Flashcard Modal Fix --- */
 #quizFlashcardModal {
   align-items: flex-start !important;
@@ -1509,6 +1524,16 @@ const dom = {
     removeQuizBackImageBtn: document.getElementById('removeQuizBackImageBtn'),
 };
 
+
+// Allow option text to be copied without accidentally selecting/changing the answer
+dom.optionsContainer.addEventListener('click', (event) => {
+    const selectedText = window.getSelection?.().toString().trim();
+
+    if (selectedText) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+}, true);
 
         // --- Global State ---
         let quizData = { questions: [] };
