@@ -1,0 +1,70 @@
+[
+    {
+        "questionNumber": 1,
+        "question": "A 57-year-old woman presents with a two day history of nausea and haemoptysis.\nShe is otherwise feeling well though has noticed that her urine seems pink. Urinalysis demonstrates ++++ blood +++ protein. CXR shows diffuse bilateral infiltrates.\nBloods show:\n\nSodium 141 mmol/L (137-144)\nPotassium 4.8 mmol/L (3.5-4.9)\nUrea 35.2 mmol/L (2.5-7.5)\nCreatinine 850 μmol/L (60-110)\n\nWhich of the following is most likely to be positive?",
+        "options": [
+            "Urine culture",
+            "ANA",
+            "Ziehl-Neelsen staining",
+            "Anti DS-DNA",
+            "Anti-GBM antibody"
+        ],
+        "correctAnswerIndex": 4,
+        "explanation": "<b>Key learning points</b><br>Nephrology<br><ul><li>Investigation of glomerulo-nephritis</li></ul><br><b>Explanation</b><br>This patient most likely has Goodpasture's syndrome, hence the positive anti-GBM antibody.<br>The ANA and DS-DNA antibodies would suggest lupus nephritis but this short, very acute history is less in keeping with lupus nephritis. The diagnosis of lupus nephritis would of course require confirmation on a renal biopsy.<br>This is not a history of urinary tract infection, and renal tuberculosis would also be very unlikely.",
+        "imageUrl": null,
+        "imageUrls": [],
+        "explanationImageUrl": null,
+        "explanationImageUrls": []
+    },
+    {
+        "questionNumber": 1,
+        "question": "A 68-year-old male is referred to the Emergency department with deteriorating breathlessness.\nThis has deteriorated over the last two weeks and he has also noticed leg swelling and discomfort. He has a history of ischaemic heart disease with congestive cardiac failure, gastro-oesophageal reflux and gout.\nHe takes:\n- omeprazole 20 mg daily\n- allopurinol 100 mg daily\n- atorvastatin 10 mg daily\n- digoxin 0,125 mg daily\n- furosemide 80 mg daily\n- spironolactone 10 mg daily\n- carvedilol 2.5 mg twice daily\n- ramipril 10 mg daily.\nHe has recently commenced trimethoprim 200 mg bd for a urine tract infection.\nExamination reveals him to be slightly breathless at rest with a blood pressure of 108/80 mmHg. His jugular venous pressure is elevated and he has peripheral oedema up to his knees. Auscultation of the heart reveals a soft systolic murmur at the apex and he has bilateral basal chest crackles.\nInvestigations reveal:\n\nSerum sodium 131 mmol/L (137-144)\nSerum potassium 4.0 mmol/L (3.5-4.9)\nSerum urea 26.5 mmol/L (2.5-7.5)\nSerum creatinine 400 μmol/L (60-110)\nPlasma glucose 5.9 mmol/L (3.0-6.0)\n\nWhich drug does not require dose reduction due to his renal impairment?",
+        "options": [
+            "Digoxin",
+            "Omeprazole",
+            "Trimethoprim",
+            "Allopurinol",
+            "Spironolactone"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "The patient has significant renal impairment as evidenced by elevated serum urea and creatinine levels. Many drugs require dose adjustment in renal impairment to avoid toxicity.\n\n- Digoxin: Requires dose reduction in renal impairment due to decreased clearance and risk of toxicity.\n- Omeprazole: Does not require dose adjustment in renal impairment as it is metabolized by the liver.\n- Trimethoprim: Requires dose adjustment in renal impairment.\n- Allopurinol: Requires dose adjustment in renal impairment to prevent accumulation and toxicity.\n- Spironolactone: Requires caution and dose adjustment in renal impairment due to risk of hyperkalemia.\n\nTherefore, omeprazole is the drug that does not require dose reduction in this patient with renal impairment.",
+        "imageUrl": null,
+        "imageUrls": [],
+        "explanationImageUrl": null,
+        "explanationImageUrls": []
+    },
+    {
+        "questionNumber": 1,
+        "question": "You are asked to see a patient whose bloods have been reported as:\n\nSodium 139 mmol/L (137-144)\nPotassium 4.0 mmol/L (3.5-4.9)\nCreatinine 95 μmol/L (60-110)\nANA negative\ncANCA positive\nanti-PR3 >100\nanti-MPO 3\n\nWhat is the most likely diagnosis?",
+        "options": [
+            "Microscopic polyangiitis",
+            "Churg-Strauss syndrome",
+            "Polyarteritis nodosa",
+            "Goodpasture's syndrome",
+            "Granulomatosis with polyangiitis"
+        ],
+        "correctAnswerIndex": null,
+        "explanation": null,
+        "imageUrl": null,
+        "imageUrls": [],
+        "explanationImageUrl": null,
+        "explanationImageUrls": []
+    },
+    {
+        "questionNumber": 1,
+        "question": "You are asked to see a patient whose bloods have been reported as:\nSodium 139 mmol/L (137-144)\nPotassium 4.0 mmol/L (3.5-4.9)\nCreatinine 95 μmol/L (60-110)\nANA negative\ncANCA positive\nanti-PR3 >100\nanti-MPO 3\nWhat is the most likely diagnosis?",
+        "options": [
+            "Microscopic polyangiitis",
+            "Churg-Strauss syndrome",
+            "Polyarteritis nodosa",
+            "Goodpasture's syndrome",
+            "Granulomatosis with polyangiitis"
+        ],
+        "correctAnswerIndex": 4,
+        "explanation": "<b>Key learning points</b><br>Nephrology<br>ANCA positive vasculitis<br><br><b>Explanation</b><br><a href=\"https://en.wikipedia.org/wiki/Granulomatosis_with_polyangiitis\">Granulomatosis with polyangiitis</a> is an ANCA-associated vasculitis.<br>Typically the patient has a positive cANCA, and either the anti-PR3 or anti-MPO antibody is strongly positive.<br>Usually the PR3 antibody is associated with Granulomatosis with polyangiitis, whereas the MPO antibody is associated with microscopic polyangiitis, which is closely linked.<br>Occasionally a patient with <a href=\"https://en.wikipedia.org/wiki/Granulomatosis_with_polyangiitis\">Granulomatosis with polyangiitis</a> has a positive anti-MPO and a patient with microscopic polyangiitis has a positive anti-PR3.",
+        "imageUrl": null,
+        "imageUrls": [],
+        "explanationImageUrl": null,
+        "explanationImageUrls": []
+    }
+]

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Quizard - PDF to JSON Converter</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="main-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Custom drag-and-drop zone styling */
+        .drop-zone {
+            border: 2px dashed #cbd5e1;
+            transition: all 0.2s ease;
+        }
+        .drop-zone.dragover {
+            border-color: #6366f1;
+            background-color: #e0e7ff;
+        }
+        
+        /* Spinner animation */
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 3px solid #ffffff;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen flex flex-col">
+    
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 flex justify-between items-center z-10 flex-shrink-0">
+        <div class="flex items-center">
+            <svg class="w-8 h-8 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <h1 class="text-2xl font-bold text-gray-800">PDF AI Extraction</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="admin_dashboard.html" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-200">Back to Admin</a>
+            <button id="logoutButton" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Logout</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex-grow flex flex-col h-full overflow-hidden">
+        
+        <div class="mb-6">
+            <h2 class="text-3xl font-extrabold text-gray-800">Convert Textbook to MCQs</h2>
+            <p class="text-gray-600 mt-1">Upload scanned pages (e.g., Davidson's, Cecil) to automatically extract questions and explanations.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg border border-gray-200 flex-grow flex flex-col lg:flex-row overflow-hidden">
+            
+            <div class="w-full lg:w-1/3 p-6 bg-gray-50 border-b lg:border-b-0 lg:border-r border-gray-200 flex flex-col overflow-y-auto">
+                
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Extraction Settings</h3>
+                
+                <div class="mb-5">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">1. Select PDF File</label>
+                    <div id="dropZone" class="drop-zone rounded-lg p-6 flex flex-col items-center justify-center bg-white cursor-pointer hover:bg-gray-50 text-center">
+                        <svg class="w-10 h-10 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                        <span class="text-sm text-gray-600 font-medium">Click to browse or drag file here</span>
+                        <span id="fileNameDisplay" class="text-xs text-indigo-600 font-bold mt-2 hidden break-all"></span>
+                        <input type="file" id="pdfFileInput" accept=".pdf" class="hidden">
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">2. Page Range (Optional)</label>
+                    <p class="text-xs text-gray-500 mb-2">Processing entire textbooks at once may cause timeouts. The app will split the PDF into chunks automatically.</p>
+                    <div class="flex gap-3">
+                        <div class="flex-1">
+                            <input type="number" id="startPage" placeholder="Start (e.g. 15)" min="1" class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                        <div class="flex-1">
+                            <input type="number" id="endPage" placeholder="End (e.g. 20)" min="1" class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">3. AI Provider</label>
+                    <select id="aiProviderSelect" class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="auto" selected>Auto fallback: Gemini → OpenAI → Claude</option>
+                        <option value="gemini">Gemini only</option>
+                        <option value="openai">OpenAI only</option>
+                        <option value="claude">Claude only</option>
+                    </select>
+                    <p class="text-xs text-gray-500 mt-2">Recommended: keep Auto selected. If Gemini quota is consumed, the backend will automatically try another provider.</p>
+                </div>
+
+                <div class="flex-grow"></div> <button id="processBtn" disabled class="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white font-bold py-3 px-4 rounded-lg shadow-lg transition duration-300 flex justify-center items-center h-[50px]">
+                    <span id="btnText">Extract with AI</span>
+                    <div id="btnSpinner" class="spinner hidden ml-2"></div>
+                </button>
+            </div>
+
+            <div class="w-full lg:w-2/3 p-0 flex flex-col min-h-[500px] lg:min-h-[700px] relative">
+                <div class="bg-gray-800 text-gray-200 text-sm font-mono px-4 py-2 flex justify-between items-center shrink-0">
+                    <span>output.json</span>
+                    <button id="copyBtn" class="text-indigo-400 hover:text-white transition-colors font-semibold flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        Copy JSON
+                    </button>
+                </div>
+                
+                <textarea id="jsonOutput" readonly class="flex-grow w-full p-4 bg-[#1e1e1e] text-[#d4d4d4] font-mono text-sm resize-y focus:outline-none min-h-[500px]" placeholder="// Extracted JSON data will appear here...&#10;// Ready to be pasted into the 'Bulk Import' tool in 'Manage Questions'."></textarea>
+                
+                <div id="processingOverlay" class="absolute inset-0 bg-gray-900 bg-opacity-70 flex flex-col items-center justify-center hidden z-10">
+                    <div class="spinner w-12 h-12 border-4 mb-4"></div>
+                    <p class="text-white font-semibold text-lg animate-pulse" id="processingStatusText">Analyzing PDF Document...</p>
+                    <p class="text-gray-300 text-sm mt-2">This usually takes 10-20 seconds.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="messageBox" class="hidden fixed bottom-5 right-5 mt-6 px-4 py-3 rounded-lg shadow-lg z-50" role="alert">
+        <p id="messageText"></p>
+    </div>
+
+    <script type="module">
+        import { supabase } from './supabaseClient.js';
+import { PDFDocument } from 'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/+esm';
+
+        // --- DOM Elements ---
+        const dropZone = document.getElementById('dropZone');
+        const pdfFileInput = document.getElementById('pdfFileInput');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+        const processBtn = document.getElementById('processBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const jsonOutput = document.getElementById('jsonOutput');
+        const copyBtn = document.getElementById('copyBtn');
+        const processingOverlay = document.getElementById('processingOverlay');
+        const processingStatusText = document.getElementById('processingStatusText');
+        const messageBox = document.getElementById('messageBox');
+const messageText = document.getElementById('messageText');
+const aiProviderSelect = document.getElementById('aiProviderSelect');
+        
+        let selectedFile = null;
+
+        // --- Auth Check (Admin Only) ---
+        document.addEventListener('DOMContentLoaded', async () => {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (!session) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Reusing your admin check logic
+            const { data: userData, error } = await supabase.from('users').select('role').eq('id', session.user.id).single();
+            if (error || !userData || (userData.role !== 'admin' && userData.role !== 'specialty_admin')) {
+                document.body.innerHTML = `<div class="text-center p-10"><h1 class="text-2xl font-bold text-red-600">Access Denied</h1></div>`;
+                setTimeout(() => window.location.href = 'dashboard.html', 2000);
+            }
+        });
+
+        // --- Helper Functions ---
+        function showMessage(message, isError = false) {
+            messageText.textContent = message;
+            messageBox.className = `fixed bottom-5 right-5 mt-6 px-4 py-3 rounded-lg shadow-lg z-50 ${isError ? 'bg-red-100 border-red-400 text-red-700' : 'bg-green-100 border-green-400 text-green-700'}`;
+            messageBox.classList.remove('hidden');
+            setTimeout(() => messageBox.classList.add('hidden'), 5000);
+        }
+
+               // --- PDF Chunking Helpers ---
+const PDF_CHUNK_SIZE = 2; // Process 2 pages per chunk
+const DELAY_BETWEEN_CHUNKS_MS = 15000; // Normal delay after successful chunk
+const MAX_RETRIES_PER_CHUNK = 10; // Allow more retries when Gemini quota is temporarily exhausted
+const QUOTA_RETRY_EXTRA_BUFFER_MS = 7000; // Add safety buffer after Gemini's retry time
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function cleanJsonText(text) {
+            return String(text || "")
+                .replace(/^```json\s*/i, "")
+                .replace(/^```\s*/i, "")
+                .replace(/```$/i, "")
+                .trim();
+        }
+
+        async function blobToBase64(blob) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const dataUrl = String(reader.result || "");
+                    const base64 = dataUrl.split(",")[1];
+                    resolve(base64);
+                };
+                reader.onerror = () => reject(new Error("Could not convert PDF chunk to Base64."));
+                reader.readAsDataURL(blob);
+            });
+        }
+
+        async function createPdfChunk(sourcePdf, startPage, endPage) {
+            const chunkPdf = await PDFDocument.create();
+
+            const pageIndexes = [];
+            for (let pageNumber = startPage; pageNumber <= endPage; pageNumber++) {
+                pageIndexes.push(pageNumber - 1);
+            }
+
+            const copiedPages = await chunkPdf.copyPages(sourcePdf, pageIndexes);
+            copiedPages.forEach(page => chunkPdf.addPage(page));
+
+            const chunkBytes = await chunkPdf.save();
+            return new Blob([chunkBytes], { type: "application/pdf" });
+        }
+
+        function extractJsonArrayFromResponse(data, chunkLabel) {
+            let rawText = "";
+
+            if (typeof data === "string") {
+                rawText = data;
+            } else if (data?.json) {
+                rawText = data.json;
+            } else {
+                rawText = JSON.stringify(data, null, 4);
+            }
+
+            const cleaned = cleanJsonText(rawText);
+
+            try {
+                const parsed = JSON.parse(cleaned);
+
+                if (Array.isArray(parsed)) {
+                    return parsed;
+                }
+
+                if (Array.isArray(parsed.questions)) {
+                    return parsed.questions;
+                }
+
+                if (Array.isArray(parsed.data)) {
+                    return parsed.data;
+                }
+
+                throw new Error("The AI response was valid JSON but not a JSON array.");
+            } catch (error) {
+                throw new Error(
+                    `Could not parse JSON from ${chunkLabel}.\n\n` +
+                    `Raw response:\n${cleaned.slice(0, 2000)}`
+                );
+            }
+        }
+
+
+        let lastImportValidationReport = null;
+
+function stripHtmlForSignature(value) {
+    return String(value || "")
+        .replace(/<[^>]*>/g, " ")
+        .replace(/&nbsp;/gi, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase();
+}
+
+function normalizeTextField(value) {
+    return String(value || "")
+        .replace(/&nbsp;/gi, " ")
+        .replace(/\u00A0/g, " ")
+        .trim();
+}
+
+function normalizeImageArray(primaryImage, imageArray) {
+    const urls = [];
+
+    if (Array.isArray(imageArray)) {
+        urls.push(...imageArray);
+    }
+
+    if (typeof primaryImage === "string" && primaryImage.trim()) {
+        urls.unshift(primaryImage.trim());
+    }
+
+    return [...new Set(
+        urls
+            .filter(url => typeof url === "string")
+            .map(url => url.trim())
+            .filter(Boolean)
+    )];
+}
+
+function normalizeOptionText(option, index) {
+    const letter = String.fromCharCode(65 + index);
+    return String(option || "")
+        .replace(new RegExp(`^\\s*${letter}\\s*[\\).:-]\\s*`, "i"), "")
+        .replace(/&nbsp;/gi, " ")
+        .replace(/\u00A0/g, " ")
+        .trim();
+}
+
+function getQuestionSignature(questionText) {
+    const plain = stripHtmlForSignature(questionText);
+    return plain.slice(0, 280);
+}
+
+function scoreQuestionCandidate(q) {
+    let score = 0;
+
+    if (q.question) score += stripHtmlForSignature(q.question).length;
+    if (Array.isArray(q.options)) score += q.options.join(" ").length;
+    if (Number.isInteger(q.correctAnswerIndex)) score += 1000;
+    if (q.explanation) score += stripHtmlForSignature(q.explanation).length * 2;
+
+    return score;
+}
+
+function normalizeQuestionForImport(q, fallbackNumber) {
+    const question = normalizeTextField(q.question || q.questionText || q.stem);
+    const options = Array.isArray(q.options)
+        ? q.options.map((option, index) => normalizeOptionText(option, index)).filter(Boolean)
+        : [];
+
+    const explanation = normalizeTextField(q.explanation || q.answerExplanation || q.rationale);
+
+    let correctAnswerIndex = q.correctAnswerIndex;
+
+    if (typeof correctAnswerIndex === "string" && correctAnswerIndex.trim() !== "") {
+        const trimmed = correctAnswerIndex.trim();
+
+        if (/^[A-J]$/i.test(trimmed)) {
+            correctAnswerIndex = trimmed.toUpperCase().charCodeAt(0) - 65;
+        } else if (/^\d+$/.test(trimmed)) {
+            correctAnswerIndex = Number(trimmed);
+        }
+    }
+
+    return {
+        questionNumber: Number.isInteger(Number(q.questionNumber)) ? Number(q.questionNumber) : fallbackNumber,
+        question,
+        options,
+        correctAnswerIndex,
+        explanation
+    };
+}
+
+function cleanAndPrepareQuestionsForImport(rawQuestions) {
+    const report = {
+        rawExtractedCount: Array.isArray(rawQuestions) ? rawQuestions.length : 0,
+        duplicateRemovedCount: 0,
+        skippedInvalidCount: 0,
+        skippedInvalidItems: []
+    };
+
+    const bestBySignature = new Map();
+
+    for (const rawQuestion of rawQuestions || []) {
+        const signature = getQuestionSignature(rawQuestion?.question || rawQuestion?.questionText || rawQuestion?.stem);
+
+        if (!signature || signature.length < 25) {
+            report.skippedInvalidCount++;
+            report.skippedInvalidItems.push({
+                reason: "Missing or very short question text",
+                questionPreview: String(rawQuestion?.question || "").slice(0, 120)
+            });
+            continue;
+        }
+
+        const existing = bestBySignature.get(signature);
+
+        if (!existing) {
+            bestBySignature.set(signature, rawQuestion);
+            continue;
+        }
+
+        report.duplicateRemovedCount++;
+
+        if (scoreQuestionCandidate(rawQuestion) > scoreQuestionCandidate(existing)) {
+            bestBySignature.set(signature, rawQuestion);
+        }
+    }
+
+    const finalQuestions = [];
+
+    for (const rawQuestion of bestBySignature.values()) {
+        const normalized = normalizeQuestionForImport(rawQuestion, finalQuestions.length + 1);
+
+        if (!normalized.question) {
+            report.skippedInvalidCount++;
+            report.skippedInvalidItems.push({
+                reason: "Missing question text",
+                questionPreview: ""
+            });
+            continue;
+        }
+
+        if (!Array.isArray(normalized.options) || normalized.options.length < 2 || normalized.options.length > 10) {
+            report.skippedInvalidCount++;
+            report.skippedInvalidItems.push({
+                reason: "Invalid options count",
+                questionPreview: stripHtmlForSignature(normalized.question).slice(0, 120)
+            });
+            continue;
+        }
+
+        if (
+            !Number.isInteger(normalized.correctAnswerIndex) ||
+            normalized.correctAnswerIndex < 0 ||
+            normalized.correctAnswerIndex >= normalized.options.length
+        ) {
+            report.skippedInvalidCount++;
+            report.skippedInvalidItems.push({
+                reason: "Missing or invalid correctAnswerIndex",
+                questionPreview: stripHtmlForSignature(normalized.question).slice(0, 120)
+            });
+            continue;
+        }
+
+        if (!normalized.explanation) {
+            report.skippedInvalidCount++;
+            report.skippedInvalidItems.push({
+                reason: "Missing explanation",
+                questionPreview: stripHtmlForSignature(normalized.question).slice(0, 120)
+            });
+            continue;
+        }
+
+        normalized.questionNumber = finalQuestions.length + 1;
+        finalQuestions.push(normalized);
+    }
+
+    return {
+        questions: finalQuestions,
+        report
+    };
+}
+
+function buildImportableJsonOutput(rawQuestions) {
+    const prepared = cleanAndPrepareQuestionsForImport(rawQuestions);
+    lastImportValidationReport = prepared.report;
+
+    return JSON.stringify({
+        questions: prepared.questions
+    }, null, 4);
+}
+        function getRetryDelayFromErrorText(text) {
+    const safeText = String(text || "");
+
+    // Example: "Please retry in 47.077188602s."
+    const match = safeText.match(/retry in\s+([\d.]+)s/i);
+
+    if (match && match[1]) {
+        const seconds = Number(match[1]);
+        if (!Number.isNaN(seconds)) {
+            return Math.ceil(seconds * 1000) + QUOTA_RETRY_EXTRA_BUFFER_MS;
+        }
+    }
+
+    // Fallback if Gemini does not provide exact retry time
+    return 30000;
+}
+       async function invokePdfToJson(pdfBase64, fileName, chunkStart, chunkEnd) {
+    for (let attempt = 1; attempt <= MAX_RETRIES_PER_CHUNK; attempt++) {
+        const { data, error } = await supabase.functions.invoke('pdf-to-json', {
+body: {
+    pdfBase64,
+    fileName,
+    mimeType: "application/pdf",
+    startPage: chunkStart,
+    endPage: chunkEnd,
+    provider: aiProviderSelect?.value || "auto"
+}
+        });
+
+        if (!error) {
+            return data;
+        }
+
+        let detailedMessage = error.message || "Edge Function returned an error.";
+        let serverText = "";
+        let statusCode = null;
+
+        if (error.context) {
+            statusCode = error.context.status || null;
+
+            if (typeof error.context.text === "function") {
+                try {
+                    serverText = await error.context.text();
+                    if (serverText) {
+                        detailedMessage += "\n\nServer details:\n" + serverText;
+                    }
+                } catch (_) {}
+            }
+        }
+
+        const isQuotaError =
+            statusCode === 429 ||
+            detailedMessage.includes("429") ||
+            detailedMessage.toLowerCase().includes("quota") ||
+            detailedMessage.toLowerCase().includes("too many requests") ||
+            serverText.toLowerCase().includes("quota") ||
+            serverText.toLowerCase().includes("too many requests");
+
+     if (isQuotaError && attempt < MAX_RETRIES_PER_CHUNK) {
+    const retryDelayMs = getRetryDelayFromErrorText(detailedMessage + "\n" + serverText);
+    const retrySeconds = Math.ceil(retryDelayMs / 1000);
+
+    processingStatusText.textContent =
+        `Gemini quota limit reached. Waiting ${retrySeconds} seconds then retrying pages ${chunkStart}-${chunkEnd}... attempt ${attempt + 1}/${MAX_RETRIES_PER_CHUNK}`;
+
+    await sleep(retryDelayMs);
+    continue;
+}
+
+        throw new Error(detailedMessage);
+    }
+
+    throw new Error(`Failed to process pages ${chunkStart}-${chunkEnd}.`);
+}
+
+        // --- File Handling UI ---
+        dropZone.addEventListener('click', () => pdfFileInput.click());
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length) {
+                handleFileSelection(e.dataTransfer.files[0]);
+            }
+        });
+
+        pdfFileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) {
+                handleFileSelection(e.target.files[0]);
+            }
+        });
+
+        function handleFileSelection(file) {
+            if (file.type !== 'application/pdf') {
+                showMessage("Please select a valid PDF file.", true);
+                return;
+            }
+            selectedFile = file;
+            fileNameDisplay.textContent = file.name;
+            fileNameDisplay.classList.remove('hidden');
+            processBtn.disabled = false;
+        }
+
+        // --- REAL AI Processing Logic WITH AUTOMATIC PDF CHUNKING ---
+        processBtn.addEventListener('click', async () => {
+            if (!selectedFile) return;
+
+            processBtn.disabled = true;
+            btnText.textContent = 'Processing...';
+            btnSpinner.classList.remove('hidden');
+            processingOverlay.classList.remove('hidden');
+            jsonOutput.value = '';
+
+            try {
+                processingStatusText.textContent = "Reading PDF file...";
+
+                const selectedArrayBuffer = await selectedFile.arrayBuffer();
+                const sourcePdf = await PDFDocument.load(selectedArrayBuffer);
+                const totalPages = sourcePdf.getPageCount();
+
+                const startInput = document.getElementById('startPage')?.value?.trim();
+                const endInput = document.getElementById('endPage')?.value?.trim();
+
+                let startPage = startInput ? Number(startInput) : 1;
+                let endPage = endInput ? Number(endInput) : totalPages;
+
+                if (!Number.isInteger(startPage) || !Number.isInteger(endPage)) {
+                    throw new Error("Page range must be valid whole numbers.");
+                }
+
+                if (startPage < 1 || endPage < 1 || startPage > totalPages || endPage > totalPages || startPage > endPage) {
+                    throw new Error(`Invalid page range. This PDF has ${totalPages} pages.`);
+                }
+
+                const allQuestions = [];
+                const totalSelectedPages = endPage - startPage + 1;
+                const totalChunks = Math.ceil(totalSelectedPages / PDF_CHUNK_SIZE);
+
+                let currentChunkNumber = 0;
+
+                for (let chunkStart = startPage; chunkStart <= endPage; chunkStart += PDF_CHUNK_SIZE) {
+                    currentChunkNumber++;
+
+                    const chunkEnd = Math.min(chunkStart + PDF_CHUNK_SIZE - 1, endPage);
+                    const chunkLabel = `pages ${chunkStart}-${chunkEnd}`;
+
+                    processingStatusText.textContent = `Processing ${chunkLabel} (${currentChunkNumber}/${totalChunks})...`;
+
+                    const chunkBlob = await createPdfChunk(sourcePdf, chunkStart, chunkEnd);
+                    const chunkBase64 = await blobToBase64(chunkBlob);
+
+                    const data = await invokePdfToJson(
+                        chunkBase64,
+                        `${selectedFile.name} - ${chunkLabel}.pdf`,
+                        chunkStart,
+                        chunkEnd
+                    );
+
+                    const usedProvider = data?.provider ? ` using ${data.provider}` : "";
+processingStatusText.textContent = `Finished ${chunkLabel}${usedProvider}. Merging JSON...`;
+
+const chunkQuestions = extractJsonArrayFromResponse(data, chunkLabel);
+
+                    allQuestions.push(...chunkQuestions);
+
+                    jsonOutput.value = buildImportableJsonOutput(allQuestions);
+
+// Short delay after successful chunks.
+// If Gemini blocks the next request, invokePdfToJson() will wait Gemini's exact retry time.
+if (chunkEnd < endPage) {
+    processingStatusText.textContent =
+        `Finished pages ${chunkStart}-${chunkEnd}. Waiting 8 seconds before next chunk...`;
+
+    await sleep(DELAY_BETWEEN_CHUNKS_MS);
+}
+                }
+
+                jsonOutput.value = buildImportableJsonOutput(allQuestions);
+
+const report = lastImportValidationReport || {};
+showMessage(
+    `PDF processed successfully. Importable questions: ${report.rawExtractedCount - (report.duplicateRemovedCount || 0) - (report.skippedInvalidCount || 0)}. Duplicates removed: ${report.duplicateRemovedCount || 0}. Invalid skipped: ${report.skippedInvalidCount || 0}.`,
+    false
+);
+
+            } catch (error) {
+                console.error("Processing error:", error);
+                showMessage("An error occurred. Check the output box.", true);
+                jsonOutput.value = "// Error:\n" + (error.message || String(error));
+            } finally {
+                processBtn.disabled = false;
+                btnText.textContent = 'Extract with AI';
+                btnSpinner.classList.add('hidden');
+                processingOverlay.classList.add('hidden');
+                processingStatusText.textContent = "Analyzing PDF Document...";
+            }
+        });
+
+        // --- Copy to Clipboard ---
+        copyBtn.addEventListener('click', () => {
+            if (!jsonOutput.value) return;
+            navigator.clipboard.writeText(jsonOutput.value);
+            
+            const originalHTML = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<svg class="w-4 h-4 mr-1 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span class="text-green-400">Copied!</span>';
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = originalHTML;
+            }, 2000);
+        });
+
+        // --- Logout ---
+        document.getElementById('logoutButton').addEventListener('click', async () => {
+            await supabase.auth.signOut();
+            window.location.href = 'index.html';
+        });
+
+    </script>
+</body>
+</html>

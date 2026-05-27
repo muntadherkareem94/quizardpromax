@@ -53,16 +53,22 @@
 
         <!-- Discipline Management Section -->
 
-       <div>
+       <div class="mb-8">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-3xl font-extrabold text-gray-800">System Tools</h2>
             </div>
-            <a href="admin_duplicates.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition block border-l-4 border-yellow-500">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Find Duplicates</h3>
-                <p class="text-gray-600 text-sm">Scan the entire question bank and remove duplicate questions grouped by chapter.</p>
-            </a>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="admin_duplicates.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition block border-l-4 border-yellow-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Find Duplicates</h3>
+                    <p class="text-gray-600 text-sm">Scan the entire question bank and remove duplicate questions grouped by chapter.</p>
+                </a>
+                
+                <a href="pdf_to_json.html" class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition block border-l-4 border-indigo-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">PDF to JSON Converter</h3>
+                    <p class="text-gray-600 text-sm">Open the dedicated tool to extract MCQs from medical textbooks and convert them into Quizard-compatible JSON.</p>
+                </a>
+            </div>
         </div>
-
         <div>
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-3xl font-extrabold text-gray-800">Discipline Management</h2>
@@ -685,6 +691,8 @@ const bookNameToDelete = document.getElementById('bookNameToDelete');
 const deleteConfirmationInput = document.getElementById('deleteConfirmationInput');
 const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
 const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+
 
 // START: Add these lines for the new multi-select
 const bookLinkedSpecialtiesEl = document.getElementById('bookLinkedSpecialties');

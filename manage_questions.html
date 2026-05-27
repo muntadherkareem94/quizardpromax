@@ -482,6 +482,137 @@
     padding: 0.35rem 0.55rem;
     border-radius: 9999px;
 }
+
+/* --- Quiz-page style dot navigation for Manage Questions --- */
+.admin-question-navigator {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 0 0.25rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.admin-dot-section {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.admin-question-counter {
+    display: none;
+}
+
+.admin-dot-navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    margin: 0 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.admin-dot-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.admin-nav-dot {
+    border: none;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    background-color: #d1d5db;
+}
+
+.admin-nav-dot:hover {
+    background-color: #93c5fd;
+}
+
+.admin-nav-dot.current {
+    width: 22px;
+    height: 22px;
+    background-color: #8b5cf6;
+}
+
+.admin-nav-dot.current::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26px;
+    height: 26px;
+    background-color: rgba(167, 139, 250, 0.6);
+    border-radius: 50%;
+}
+
+.admin-nav-arrow {
+    flex-shrink: 0;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.12);
+    transition: all 0.18s ease;
+}
+
+.admin-nav-arrow:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.admin-nav-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-nav-back {
+    background: #d1d5db;
+    color: #1f2937;
+}
+
+.admin-nav-back:hover:not(:disabled) {
+    background: #9ca3af;
+}
+
+.admin-nav-next {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+.admin-nav-next:hover:not(:disabled) {
+    background: #2563eb;
+}
+
+@media (max-width: 640px) {
+    .admin-question-navigator {
+        margin-top: 1.25rem;
+        padding-top: 0.8rem;
+    }
+
+    .admin-dot-navigation {
+        margin: 0 0.6rem;
+        gap: 0.45rem;
+    }
+
+    .admin-nav-arrow {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.85rem;
+    }
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -501,16 +632,63 @@
     </header>
 
     <main class="container mx-auto px-4 py-8 md:py-12">
-        <div class="flex justify-between items-center mb-8 gap-4">
-            <h2 id="chapterTitle" class="text-3xl font-extrabold text-gray-800">Loading...</h2>
-            <div class="flex gap-2">
-    <button id="bulkImportButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Bulk Import</button>
-   <button id="imageBulkImportButton" class="image-bulk-import-admin-btn py-2 px-4 rounded-lg transition duration-300">
-    Image Bulk Import
-</button>
-    <button id="addQuestionButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Add New Question</button>
-</div>
+       <div class="flex flex-col mb-8 gap-4">
+            <div class="flex justify-between items-center gap-4">
+                <h2 id="chapterTitle" class="text-3xl font-extrabold text-gray-800">Loading...</h2>
+                <div class="flex gap-2 flex-wrap justify-end">
+                    <button id="toggleFindReplaceBtn" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        Find & Replace
+                    </button>
+                    <button id="bulkImportButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Bulk Import</button>
+                    <button id="imageBulkImportButton" class="image-bulk-import-admin-btn py-2 px-4 rounded-lg transition duration-300">Image Bulk Import</button>
+                    <button id="addQuestionButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Add New Question</button>
+                </div>
+            </div>
+
+            <div id="findReplacePanel" class="hidden bg-white p-5 rounded-lg shadow-md border border-gray-200 flex flex-col gap-4 transition-all duration-300">
+                <div class="flex flex-wrap gap-4 items-end">
+                    <div class="flex-1 min-w-[200px]">
+                        <label for="findTextInput" class="block text-sm font-medium text-gray-700 mb-1">Find</label>
+                        <input type="text" id="findTextInput" placeholder="Word or phrase to find..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500">
+                    </div>
+                    <div class="flex-1 min-w-[200px]">
+                        <label for="replaceTextInput" class="block text-sm font-medium text-gray-700 mb-1">Replace With</label>
+                        <input type="text" id="replaceTextInput" placeholder="Replacement text..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500">
+                    </div>
+                    <button id="executeReplaceBtn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition duration-300 h-[42px]">
+                        Replace All
+                    </button>
+                </div>
+                
+                <div id="searchResultsContainer" class="hidden mt-2 border border-gray-200 rounded-md overflow-hidden bg-gray-50">
+                    <div class="bg-gray-100 px-3 py-2 text-xs font-semibold text-gray-600 border-b border-gray-200 flex justify-between items-center">
+                        <span id="searchResultsCount">0 results found</span>
+                    </div>
+                    <div id="searchResultsList" class="max-h-60 overflow-y-auto text-sm">
+                        </div>
+                </div>
+                
+                <div class="w-full text-xs text-gray-500 mt-1">
+                    <em>Note: This will search and replace text across the questions, options, and explanations for <strong>all loaded questions in this chapter</strong>.</em>
+                </div>
+            </div>
         </div>
+                       <div id="adminQuestionNavigator" class="admin-question-navigator hidden">
+            <button id="adminPrevQuestionBtn" type="button" class="admin-nav-arrow admin-nav-back" title="Previous question">
+                Back
+            </button>
+
+            <div class="admin-dot-section">
+                <div id="adminQuestionCounter" class="admin-question-counter">Question 0 of 0</div>
+                <div id="adminDotNavigation" class="admin-dot-navigation" aria-label="Question dot navigation"></div>
+            </div>
+
+            <button id="adminNextQuestionBtn" type="button" class="admin-nav-arrow admin-nav-next" title="Next question">
+                Next
+            </button>
+        </div>
+
         <div id="questionList" class="space-y-6">
             <div id="loadingState" class="text-center text-gray-500 py-10">Loading questions...</div>
         </div>
@@ -708,7 +886,17 @@ import { supabase } from './supabaseClient.js';
         const logoutButton = document.getElementById('logoutButton');
         const backToChaptersButton = document.getElementById('backToChaptersButton');
         const bulkImportButton = document.getElementById('bulkImportButton');
-const imageBulkImportButton = document.getElementById('imageBulkImportButton');
+        const imageBulkImportButton = document.getElementById('imageBulkImportButton');
+        
+       // Find & Replace Elements
+        const toggleFindReplaceBtn = document.getElementById('toggleFindReplaceBtn');
+        const findReplacePanel = document.getElementById('findReplacePanel');
+        const findTextInput = document.getElementById('findTextInput');
+        const replaceTextInput = document.getElementById('replaceTextInput');
+        const executeReplaceBtn = document.getElementById('executeReplaceBtn');
+        const searchResultsContainer = document.getElementById('searchResultsContainer');
+        const searchResultsList = document.getElementById('searchResultsList');
+        const searchResultsCount = document.getElementById('searchResultsCount');
 
 const importModal = document.getElementById('importModal');
 const cancelImportButton = document.getElementById('cancelImportButton');
@@ -722,6 +910,15 @@ const imageBulkInput = document.getElementById('imageBulkInput');
 const cancelImageBulkImportButton = document.getElementById('cancelImageBulkImportButton');
 const imageBulkImportSubmitButton = document.getElementById('imageBulkImportSubmitButton');
 const imageBulkImportReport = document.getElementById('imageBulkImportReport');
+
+// --- Admin dot navigation state ---
+const adminQuestionNavigator = document.getElementById('adminQuestionNavigator');
+const adminDotNavigation = document.getElementById('adminDotNavigation');
+const adminQuestionCounter = document.getElementById('adminQuestionCounter');
+const adminPrevQuestionBtn = document.getElementById('adminPrevQuestionBtn');
+const adminNextQuestionBtn = document.getElementById('adminNextQuestionBtn');
+let adminQuestions = [];
+let currentAdminQuestionIndex = 0;
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 
@@ -954,8 +1151,31 @@ function getEditorPairByEditorId(editorId) {
     return RICH_EDITOR_CONFIG.find(item => item.editorId === editorId);
 }
 
+function normalizeStoredHtmlEntities(value) {
+    let text = String(value ?? '');
+
+    // Decode double-escaped entities such as &amp;nbsp; into &nbsp;,
+    // then into the real character.
+    const decoder = document.createElement('textarea');
+
+    for (let i = 0; i < 2; i++) {
+        decoder.innerHTML = text;
+        const decoded = decoder.value;
+
+        if (decoded === text) break;
+
+        text = decoded;
+    }
+
+    // Convert non-breaking spaces into normal spaces so they do not appear as code.
+    return text
+        .replace(/\u00a0/g, ' ')
+        .replace(/&nbsp;/gi, ' ')
+        .replace(/&#160;/gi, ' ');
+}
+
 function getCleanRichEditorHtml(html) {
-    const raw = String(html || '').trim();
+    const raw = normalizeStoredHtmlEntities(html).trim();
 
     if (!raw || raw === '<br>' || raw === '<div><br></div>' || raw === '<p><br></p>') {
         return '';
@@ -969,7 +1189,6 @@ function getCleanRichEditorHtml(html) {
 
     return raw;
 }
-
 function syncEditorToTextarea(editorId) {
     const pair = getEditorPairByEditorId(editorId);
     if (!pair) return;
@@ -995,8 +1214,10 @@ function syncTextareaToEditor(textareaId) {
 }
 
 function setRichEditorHtml(textareaId, html) {
+    const cleanedHtml = normalizeStoredHtmlEntities(html || '');
+
     const textarea = document.getElementById(textareaId);
-    if (textarea) textarea.value = html || '';
+    if (textarea) textarea.value = cleanedHtml;
 
     syncTextareaToEditor(textareaId);
 }
@@ -1286,7 +1507,7 @@ function escapeAttributeForAdminPreview(value) {
 }
 
 function sanitizeAdminPreviewHtml(rawHtml, fallback = '') {
-    const raw = String(rawHtml || fallback || '');
+    const raw = normalizeStoredHtmlEntities(rawHtml || fallback || '');
     const containsHtmlTags = /<\/?[a-z][\s\S]*>/i.test(raw);
 
     const sourceHtml = containsHtmlTags
@@ -1338,7 +1559,10 @@ function sanitizeAdminPreviewHtml(rawHtml, fallback = '') {
     }
 
     cleanNode(template.content);
-    return template.innerHTML;
+
+    return template.innerHTML
+        .replace(/\u00a0/g, ' ')
+        .replace(/&nbsp;/gi, ' ');
 }
 
 function renderAdminPreviewImages(imageUrls = []) {
@@ -1425,6 +1649,8 @@ function renderAdminQuestionCard(q) {
                 ${renderAdminPreviewImages(explanationImages)}
             </div>
 
+                       <div class="admin-navigation-mount"></div>
+
             <div class="text-right mt-5 pt-4 border-t border-gray-200">
                 <a href="#" class="text-indigo-600 hover:text-indigo-900 font-semibold edit-btn">Edit</a>
                 <a href="#" class="text-red-600 hover:text-red-900 font-semibold ml-4 delete-btn">Delete</a>
@@ -1461,32 +1687,250 @@ function showImageBulkReport({ importedCount, skippedFiles, updatedQuestions }) 
     imageBulkImportReport.classList.remove('hidden');
 }
 
-        async function loadQuestions() {
+               function generateAdminDots() {
+            if (!adminDotNavigation) return;
+
+            adminDotNavigation.innerHTML = '';
+
+            adminQuestions.forEach((question, index) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'admin-nav-dot';
+                dot.dataset.index = String(index);
+                dot.title = `Go to question ${question.questionNumber || index + 1}`;
+                dot.addEventListener('click', () => jumpToAdminQuestion(index));
+                adminDotNavigation.appendChild(dot);
+            });
+        }
+
+        function placeAdminNavigatorInsideCurrentCard() {
+            if (!adminQuestionNavigator) return;
+
+            const mount = questionListEl.querySelector('.admin-navigation-mount');
+
+            if (mount) {
+                mount.appendChild(adminQuestionNavigator);
+            }
+        }
+
+        function updateAdminNavigationState() {
+            const total = adminQuestions.length;
+            const currentQuestion = adminQuestions[currentAdminQuestionIndex];
+
+            if (!total || !currentQuestion) {
+                adminQuestionNavigator?.classList.add('hidden');
+                return;
+            }
+
+            placeAdminNavigatorInsideCurrentCard();
+            adminQuestionNavigator?.classList.remove('hidden');
+
+            if (adminQuestionCounter) {
+                adminQuestionCounter.textContent = `Question ${currentAdminQuestionIndex + 1} of ${total} • Q# ${currentQuestion.questionNumber || currentAdminQuestionIndex + 1}`;
+            }
+
+            if (adminPrevQuestionBtn) {
+                adminPrevQuestionBtn.disabled = currentAdminQuestionIndex === 0;
+            }
+
+            if (adminNextQuestionBtn) {
+                adminNextQuestionBtn.disabled = currentAdminQuestionIndex === total - 1;
+            }
+
+            if (adminDotNavigation) {
+                const dots = adminDotNavigation.querySelectorAll('.admin-nav-dot');
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('current', index === currentAdminQuestionIndex);
+
+                    if (index === currentAdminQuestionIndex) {
+                        dot.scrollIntoView({
+                            behavior: 'smooth',
+                            inline: 'center',
+                            block: 'nearest'
+                        });
+                    }
+                });
+            }
+        }
+
+       function applySearchHighlight(container, term) {
+            if (!term) return;
+            const safeTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${safeTerm})`, 'gi');
+            
+            // Only search inside text areas, preventing HTML tag breakage
+            const targets = container.querySelectorAll('.question-content, .explanation-content, .option-text');
+            
+            targets.forEach(target => {
+                const walker = document.createTreeWalker(target, NodeFilter.SHOW_TEXT, null, false);
+                const nodes = [];
+                let node;
+                while (node = walker.nextNode()) {
+                    if (node.nodeValue.match(regex)) nodes.push(node);
+                }
+                
+                nodes.forEach(n => {
+                    const frag = document.createDocumentFragment();
+                    const parts = n.nodeValue.split(regex);
+                    parts.forEach(part => {
+                        if (part.toLowerCase() === term.toLowerCase()) {
+                            const mark = document.createElement('mark');
+                            mark.className = 'bg-yellow-300 text-yellow-900 rounded px-1 font-bold shadow-sm';
+                            mark.textContent = part;
+                            frag.appendChild(mark);
+                        } else if (part) {
+                            frag.appendChild(document.createTextNode(part));
+                        }
+                    });
+                    n.parentNode.replaceChild(frag, n);
+                });
+            });
+        }
+
+        function renderCurrentAdminQuestion(searchTerm = '') {
+            if (!adminQuestions.length) {
+                adminQuestionNavigator?.classList.add('hidden');
+                questionListEl.innerHTML = `<div class="text-center text-gray-500 py-10">No questions found.</div>`;
+                return;
+            }
+
+            currentAdminQuestionIndex = Math.min(
+                Math.max(currentAdminQuestionIndex, 0),
+                adminQuestions.length - 1
+            );
+
+            questionListEl.innerHTML = renderAdminQuestionCard(adminQuestions[currentAdminQuestionIndex]);
+            updateAdminNavigationState();
+
+            // Apply the visual highlight if a search is active
+            if (searchTerm) {
+                applySearchHighlight(questionListEl, searchTerm);
+            }
+        }
+
+        function jumpToAdminQuestion(index, shouldScrollToTop = true, searchTerm = '') {
+            if (!adminQuestions.length) return;
+
+            currentAdminQuestionIndex = Math.min(
+                Math.max(Number(index), 0),
+                adminQuestions.length - 1
+            );
+
+            renderCurrentAdminQuestion(searchTerm);
+
+            if (shouldScrollToTop) {
+                // Slight delay ensures the UI has rendered the card before jumping to it
+                setTimeout(() => {
+                    questionListEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 50);
+            }
+        }
+
+        async function loadQuestions(preferredQuestionId = null) {
             if (!bookId || !chapterId) {
                 showMessage("Book ID or Chapter ID is missing.", true);
                 return;
             }
+
+            const previousQuestionId = preferredQuestionId || adminQuestions[currentAdminQuestionIndex]?.id || null;
+
             try {
-                const { data: chapterData, error: chapterError } = await supabase.from('chapters').select('chapterNumber, name').eq('id', chapterId).single();
+                adminQuestionNavigator?.classList.add('hidden');
+                questionListEl.innerHTML = `<div class="text-center text-gray-500 py-10">Loading questions...</div>`;
+
+                const { data: chapterData, error: chapterError } = await supabase
+                    .from('chapters')
+                    .select('chapterNumber, name')
+                    .eq('id', chapterId)
+                    .single();
+
                 if (chapterError) throw chapterError;
+
                 chapterTitleEl.textContent = `Questions for: Ch. ${chapterData.chapterNumber} - ${chapterData.name}`;
 
-                const { data: questions, error: questionsError } = await supabase.from('questions').select('*').eq('chapter_id', chapterId).order('questionNumber', { ascending: true });
+                const { data: questions, error: questionsError } = await supabase
+                    .from('questions')
+                    .select('*')
+                    .eq('chapter_id', chapterId)
+                    .order('questionNumber', { ascending: true });
+
                 if (questionsError) throw questionsError;
 
-                loadingStateEl.classList.add('hidden');
-                questionListEl.innerHTML = '';
-                if (questions.length === 0) {
-                    questionListEl.innerHTML = `<div class="text-center text-gray-500 py-10">No questions found.</div>`;
+                adminQuestions = questions || [];
+
+                if (!adminQuestions.length) {
+                    currentAdminQuestionIndex = 0;
+                    renderCurrentAdminQuestion();
                     return;
                 }
-          questionListEl.innerHTML = questions.map(q => renderAdminQuestionCard(q)).join('');
+
+                if (previousQuestionId) {
+                    const preservedIndex = adminQuestions.findIndex(q => q.id === previousQuestionId);
+                    currentAdminQuestionIndex = preservedIndex !== -1
+                        ? preservedIndex
+                        : Math.min(currentAdminQuestionIndex, adminQuestions.length - 1);
+                } else {
+                    currentAdminQuestionIndex = 0;
+                }
+
+                generateAdminDots();
+                renderCurrentAdminQuestion();
             } catch (error) {
                 console.error("Error loading questions:", error);
                 showMessage(error.message, true);
-                loadingStateEl.textContent = "Error loading questions.";
+                adminQuestionNavigator?.classList.add('hidden');
+                questionListEl.innerHTML = `<div class="text-center text-red-500 py-10">Error loading questions.</div>`;
             }
         }
+
+        adminPrevQuestionBtn?.addEventListener('click', () => {
+            jumpToAdminQuestion(currentAdminQuestionIndex - 1);
+        });
+
+        adminNextQuestionBtn?.addEventListener('click', () => {
+            jumpToAdminQuestion(currentAdminQuestionIndex + 1);
+        });
+
+        function shouldIgnoreAdminKeyboardNavigation(event) {
+            if (!adminQuestions.length) return true;
+            if (event.ctrlKey || event.metaKey || event.altKey) return true;
+
+            const openModal = document.querySelector('.modal:not(.hidden)');
+            if (openModal) return true;
+
+            const activeElement = document.activeElement;
+
+            if (!activeElement) return false;
+
+            const tagName = activeElement.tagName?.toLowerCase();
+
+            if (
+                tagName === 'input' ||
+                tagName === 'textarea' ||
+                tagName === 'select' ||
+                activeElement.isContentEditable ||
+                activeElement.closest('[contenteditable="true"]')
+            ) {
+                return true;
+            }
+
+            return false;
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (shouldIgnoreAdminKeyboardNavigation(event)) return;
+
+            if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                jumpToAdminQuestion(currentAdminQuestionIndex - 1);
+            }
+
+            if (event.key === 'ArrowRight') {
+                event.preventDefault();
+                jumpToAdminQuestion(currentAdminQuestionIndex + 1);
+            }
+        });
 
         document.addEventListener('DOMContentLoaded', async () => {
             const { data: { session } } = await supabase.auth.getSession();
@@ -1840,9 +2284,13 @@ return {
         ? data.imageUrls
         : (data.imageUrl ? [data.imageUrl] : [])
 ).join('\n');
-                OPTION_LETTERS.forEach((letter, index) => {
+OPTION_LETTERS.forEach((letter, index) => {
     const input = document.getElementById(`option${letter}`);
-    if (input) input.value = Array.isArray(data.options) ? (data.options[index] || '') : '';
+    if (input) {
+        input.value = Array.isArray(data.options)
+            ? normalizeStoredHtmlEntities(data.options[index] || '').trim()
+            : '';
+    }
 });
 
 document.getElementById('correctAnswer').value = String(data.correctAnswerIndex ?? 0);
@@ -1908,6 +2356,317 @@ imageBulkImportButton.addEventListener('click', () => openModal(imageBulkImportM
 cancelImageBulkImportButton.addEventListener('click', () => closeModal(imageBulkImportModal));
 
 cancelButton.addEventListener('click', () => closeModal(questionModal));
+
+    // --- FIND AND REPLACE LOGIC ---
+        
+        let excludedMatchKeys = new Set();
+
+        // Helper to get a snippet around the found text for preview
+        function getSnippet(text, searchText, maxLength = 60) {
+            if (!text) return "";
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = text;
+            const plainText = tempDiv.textContent || tempDiv.innerText || "";
+            const lowerText = plainText.toLowerCase();
+            const lowerSearch = searchText.toLowerCase();
+            const index = lowerText.indexOf(lowerSearch);
+            
+            if (index === -1) return "";
+
+            const start = Math.max(0, index - (maxLength / 2));
+            const end = Math.min(plainText.length, index + searchText.length + (maxLength / 2));
+            
+            let snippet = plainText.substring(start, end);
+            if (start > 0) snippet = "..." + snippet;
+            if (end < plainText.length) snippet = snippet + "...";
+
+            const regex = new RegExp(`(${searchText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return snippet.replace(regex, '<span class="bg-yellow-200 text-yellow-900 font-bold px-1 rounded">$1</span>');
+        }
+
+        function updateSearchResults() {
+            const findText = findTextInput.value.trim();
+            
+            if (!findText) {
+                searchResultsContainer.classList.add('hidden');
+                return;
+            }
+
+            if (!adminQuestions || adminQuestions.length === 0) return;
+
+            let totalMatches = 0;
+            let resultsHTML = '';
+            
+            // Regex to find all occurrences (case-insensitive)
+            const safeSearchTerm = findText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const searchRegex = new RegExp(`(${safeSearchTerm})`, 'gi');
+
+            adminQuestions.forEach((q) => {
+                let matchDetails = '';
+                let questionTotalMatches = 0;
+
+                // Helper to find all matches in a specific text block
+                const processTextBlock = (fieldKey, labelHtml, textContent) => {
+                    if (!textContent) return;
+                    
+                    // Strip HTML for the preview, keeping plain text
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = textContent;
+                    const plainText = tempDiv.textContent || tempDiv.innerText || "";
+                    
+                    let match;
+                    let occurrenceIndex = 0; // Track which occurrence this is in the field
+                    
+                    // Find EVERY occurrence in the plain text
+                    while ((match = searchRegex.exec(plainText)) !== null) {
+                        questionTotalMatches++;
+                        
+                        // Unique key for this specific occurrence
+                        const matchKey = `${q.id}-${fieldKey}-${occurrenceIndex}`;
+                        const isExcluded = excludedMatchKeys.has(matchKey);
+                        
+                        // Create a snippet around this specific match index
+                        const maxLength = 60;
+                        const start = Math.max(0, match.index - (maxLength / 2));
+                        const end = Math.min(plainText.length, match.index + findText.length + (maxLength / 2));
+                        
+                        let snippet = plainText.substring(start, end);
+                        if (start > 0) snippet = "..." + snippet;
+                        if (end < plainText.length) snippet = snippet + "...";
+
+                        // Highlight just the term in the snippet
+                        const snippetHighlightRegex = new RegExp(`(${safeSearchTerm})`, 'gi');
+                        const highlightedSnippet = snippet.replace(snippetHighlightRegex, '<span class="bg-yellow-200 text-yellow-900 font-bold px-1 rounded">$1</span>');
+
+                        matchDetails += `
+                            <div class="match-item flex justify-between items-start ml-4 py-1.5 text-gray-600 rounded px-2 mt-1 cursor-pointer ${isExcluded ? 'opacity-50' : 'hover:bg-purple-50'}" data-match-key="${matchKey}">
+                                <div class="flex-1 ${isExcluded ? 'line-through' : ''}">${labelHtml} ${highlightedSnippet}</div>
+                                ${!isExcluded ? `<button type="button" class="exclude-btn text-red-400 hover:text-red-600 hover:bg-red-50 font-bold px-2 py-0.5 rounded transition-colors" title="Exclude this from replacement">✕</button>` : `<span class="text-xs text-red-500 font-semibold italic px-2">Excluded</span>`}
+                            </div>`;
+                            
+                        occurrenceIndex++;
+                    }
+                    
+                    // Reset regex index for the next call
+                    searchRegex.lastIndex = 0;
+                };
+
+                processTextBlock('question', '<span class="font-semibold text-xs text-purple-600 mr-2">Q Text:</span>', q.question);
+                processTextBlock('explanation', '<span class="font-semibold text-xs text-blue-600 mr-2">Explanation:</span>', q.explanation);
+                
+                if (q.options && Array.isArray(q.options)) {
+                    q.options.forEach((opt, idx) => {
+                        const letter = String.fromCharCode(65 + idx);
+                        processTextBlock(`option-${idx}`, `<span class="font-semibold text-xs text-green-600 mr-2">Option ${letter}:</span>`, opt);
+                    });
+                }
+
+                if (questionTotalMatches > 0) {
+                    totalMatches += questionTotalMatches;
+                    resultsHTML += `
+                        <div class="question-result-block border-b border-gray-200 last:border-0 pb-3 pt-2" data-q-index="${adminQuestions.indexOf(q)}">
+                            <div class="jump-header flex items-center text-gray-800 font-medium text-sm mb-1 px-2 cursor-pointer hover:text-purple-600 transition-colors inline-block w-fit">
+                                <span class="bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full text-xs mr-2">Q${q.questionNumber || adminQuestions.indexOf(q) + 1}</span>
+                                <span class="text-xs text-gray-500 hover:underline">(Click to jump to question)</span>
+                            </div>
+                            ${matchDetails}
+                        </div>
+                    `;
+                }
+            });
+
+            if (totalMatches > 0) {
+                searchResultsCount.textContent = `${totalMatches} result${totalMatches !== 1 ? 's' : ''} found in ${adminQuestions.filter(q => resultsHTML.includes(`Q${q.questionNumber || adminQuestions.indexOf(q) + 1}`)).length} question(s)`;
+                searchResultsList.innerHTML = resultsHTML;
+                searchResultsContainer.classList.remove('hidden');
+            } else {
+                searchResultsCount.textContent = "No results found";
+                searchResultsList.innerHTML = `<div class="p-4 text-center text-gray-500 italic">No matches found for "${findText}"</div>`;
+                searchResultsContainer.classList.remove('hidden');
+            }
+        }
+
+        // Handle clicks on Exclude buttons, specific matches, and Jump headers
+        searchResultsList.addEventListener('click', (e) => {
+            const excludeBtn = e.target.closest('.exclude-btn');
+            if (excludeBtn) {
+                e.stopPropagation();
+                const matchItem = excludeBtn.closest('.match-item');
+                if (matchItem) {
+                    const matchKey = matchItem.dataset.matchKey;
+                    excludedMatchKeys.add(matchKey);
+                    matchItem.classList.add('opacity-50');
+                    matchItem.classList.remove('hover:bg-purple-50', 'cursor-pointer');
+                    matchItem.firstElementChild.classList.add('line-through');
+                    excludeBtn.outerHTML = `<span class="text-xs text-red-500 font-semibold italic px-2">Excluded</span>`;
+                }
+                return;
+            }
+            
+            const matchItem = e.target.closest('.match-item');
+            if (matchItem && !matchItem.classList.contains('opacity-50')) {
+                const questionBlock = matchItem.closest('.question-result-block');
+                if (questionBlock) {
+                    const idx = questionBlock.dataset.qIndex;
+                    const term = findTextInput.value.trim();
+                    if (idx !== undefined) jumpToAdminQuestion(parseInt(idx), true, term);
+                }
+                return;
+            }
+
+            const headerArea = e.target.closest('.jump-header');
+            if (headerArea) {
+                const questionBlock = headerArea.closest('.question-result-block');
+                if (questionBlock) {
+                    const idx = questionBlock.dataset.qIndex;
+                    const term = findTextInput.value.trim();
+                    if (idx !== undefined) jumpToAdminQuestion(parseInt(idx), true, term);
+                }
+            }
+        });
+
+        toggleFindReplaceBtn.addEventListener('click', () => {
+            findReplacePanel.classList.toggle('hidden');
+            if (!findReplacePanel.classList.contains('hidden')) {
+                findTextInput.focus();
+                if (findTextInput.value) updateSearchResults(); 
+            }
+        });
+
+        let searchTimeout;
+        findTextInput.addEventListener('input', () => {
+            excludedMatchKeys.clear();
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(updateSearchResults, 300);
+        });
+
+        executeReplaceBtn.addEventListener('click', async () => {
+            const findText = findTextInput.value;
+            const replaceText = replaceTextInput.value;
+
+            if (!findText) {
+                showMessage('Please enter text to find.', true);
+                return;
+            }
+
+            if (!adminQuestions || adminQuestions.length === 0) return;
+
+            if (!confirm(`Are you sure you want to replace occurrences of "${findText}" with "${replaceText}"? (Excluded items will be skipped)`)) {
+                return;
+            }
+
+            executeReplaceBtn.disabled = true;
+            executeReplaceBtn.textContent = 'Replacing...';
+            
+            let updatedCount = 0;
+            const updates = [];
+            
+            const safeSearchTerm = findText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const searchRegex = new RegExp(`(${safeSearchTerm})`, 'gi');
+
+            for (let q of adminQuestions) {
+                let isModified = false;
+                
+                // Helper function to replace text while respecting exclusions
+                const replaceWithExclusions = (textContent, fieldKey) => {
+                    if (!textContent) return textContent;
+                    
+                    let occurrenceIndex = 0;
+                    let newText = textContent;
+                    
+                    // We use replace with a replacer function to handle exclusions occurrence by occurrence
+                    newText = newText.replace(searchRegex, (match, p1, offset) => {
+                        const matchKey = `${q.id}-${fieldKey}-${occurrenceIndex}`;
+                        const isExcluded = excludedMatchKeys.has(matchKey);
+                        
+                        occurrenceIndex++;
+                        
+                        if (isExcluded) {
+                            return match; // Keep original if excluded
+                        } else {
+                            return replaceText; // Replace if not excluded
+                        }
+                    });
+                    
+                    return newText;
+                };
+                
+                // 1. Process Question Text
+                if (q.question && q.question.toLowerCase().includes(findText.toLowerCase())) {
+                    const newQuestion = replaceWithExclusions(q.question, 'question');
+                    if (newQuestion !== q.question) {
+                        q.question = newQuestion;
+                        isModified = true;
+                    }
+                }
+
+                // 2. Process Explanation
+                if (q.explanation && q.explanation.toLowerCase().includes(findText.toLowerCase())) {
+                    const newExplanation = replaceWithExclusions(q.explanation, 'explanation');
+                    if (newExplanation !== q.explanation) {
+                        q.explanation = newExplanation;
+                        isModified = true;
+                    }
+                }
+
+                // 3. Process Options
+                if (q.options && Array.isArray(q.options)) {
+                    let optionsModified = false;
+                    const newOptions = q.options.map((opt, idx) => {
+                        if (opt && opt.toLowerCase().includes(findText.toLowerCase())) {
+                            const newOpt = replaceWithExclusions(opt, `option-${idx}`);
+                            if (newOpt !== opt) {
+                                optionsModified = true;
+                                return newOpt;
+                            }
+                        }
+                        return opt;
+                    });
+                    
+                    if (optionsModified) {
+                        q.options = newOptions;
+                        isModified = true;
+                    }
+                }
+
+                if (isModified) {
+                    updates.push(
+                        supabase.from('questions')
+                            .update({ 
+                                question: q.question, 
+                                explanation: q.explanation, 
+                                options: q.options 
+                            })
+                            .eq('id', q.id)
+                    );
+                    updatedCount++;
+                }
+            }
+
+            if (updates.length > 0) {
+                try {
+                    await Promise.all(updates);
+                    showMessage(`Success! Replaced text in ${updatedCount} question(s).`, false);
+                    
+                    findTextInput.value = '';
+                    replaceTextInput.value = '';
+                    excludedMatchKeys.clear();
+                    searchResultsContainer.classList.add('hidden');
+                    findReplacePanel.classList.add('hidden');
+                    
+                    await loadQuestions(); 
+                } catch (err) {
+                    console.error("Error during bulk replace:", err);
+                    showMessage("Error saving replaced text. Check console.", true);
+                }
+            } else {
+                showMessage(`No replacements were made. Either no matches were found or all were excluded.`, true);
+            }
+
+            executeReplaceBtn.disabled = false;
+            executeReplaceBtn.textContent = 'Replace All';
+        });
+        // --- END FIND AND REPLACE LOGIC ---
         
         async function handleLogout() {
             await supabase.auth.signOut();
