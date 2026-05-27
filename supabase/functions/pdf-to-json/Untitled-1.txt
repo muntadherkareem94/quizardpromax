@@ -1,0 +1,225 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "question": "A 40-year-old lady three years post-splenectomy for chronic ITP presents with a petechial rash and gum bleeding.<br><br>Her blood count shows:<br><table><tr><td>WBC</td><td>6.3 ×10<sup>9</sup>/L</td><td>(normal diff)</td></tr><tr><td>Haemoglobin</td><td>115 g/L</td><td></td></tr><tr><td>Platelet count</td><td>3 ×10<sup>9</sup>/L</td><td></td></tr></table><br>What would be the most appropriate next treatment modality provided the presence of accessory spleens having been excluded?",
+            "options": [
+                "All of the above are acceptable; treatment should be patient-centred as regards choice of immunosuppressive agent",
+                "Mycophenolate mofetil",
+                "Cyclosporin",
+                "Thrombopoietin agonists (eltrombopag or romiplostim)",
+                "Rituximab"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The management of immune thrombocytopenic purpura post-splenectomy is based around exclusion of accessory splenic tissue by imaging studies and confirming post-splenectomy changes (Howell-Jolly bodies and target cells) on blood film examination.<br><br>There is a move towards thrombopoietin agonists even in this setting but there is no evidence for their use in this setting. Thrombopoietin agonists are expensive and the durability of the response is directly proportional to their administration, with platelets decreasing again in most cases when the thrombopoietin agonist is discontinued.<br><br>In such a situation post-splenectomy all of the immunosuppressants mentioned above are valid options and the decision about which drug to use should be discussed with the patient and on a case by case basis."
+        },
+        {
+            "questionNumber": 2,
+            "question": "An 82-year old man presents to his general practitioner with a six month history of fatigue and increasing exertional dyspnoea.<br><br>Investigations show:<br><table><tr><td>Haemoglobin</td><td>75 g/L</td><td>(130-180)</td></tr><tr><td>White blood cells</td><td>3.12 ×10<sup>9</sup>/L</td><td>(4-11)</td></tr><tr><td>Neutrophils</td><td>34%</td><td>-</td></tr><tr><td>Blasts</td><td>1%</td><td>-</td></tr><tr><td>Platelets</td><td>12 ×10<sup>9</sup>/L</td><td>(150-400)</td></tr></table><br>His blood film is shown below:<br>[Image of blood film showing dimorphic picture and hypogranular, hyposegmented neutrophils]<br><br>A bone marrow aspirate, stained with an iron stain shows:<br>[Image of bone marrow showing ring sideroblasts]<br><br>What is the most likely diagnosis to explain his symptoms?",
+            "options": [
+                "Bone marrow aplasia",
+                "Chronic myeloid leukaemia",
+                "Metastatic bone marrow infiltration",
+                "Myelofibrosis",
+                "Myelodysplastic syndrome"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "The patient has a macrocytic anaemia, thrombocytopenia and neutropenia with a small number of circulating blasts (as shown on the blood film). This suggests a diagnosis of myelodysplastic syndrome (MDS).<br><br>Further evidence in support of a diagnosis of MDS comes from the blood film, showing a dimorphic picture (some red cells are hypochromic and microcytic, while others appear macrocytic), and the neutrophils are hypogranular and hyposegmented (Pelger-Huet cells).<br><br>The bone marrow shows ring sideroblasts with an iron stain. Ring sideroblasts contain an abnormally high concentration of iron - usually stored in perinuclear mitochondria. Perl's stain (which stains for iron) shows this iron deposition as a dark ring around the margin of the nucleus."
+        },
+        {
+            "questionNumber": 3,
+            "question": "A 65-year-old lady presents to the Emergency department with hemisensory loss and involuntary movements.<br><br>Her blood results come back with:<br><table><tr><td>Platelet count</td><td>5 ×10<sup>9</sup>/L</td><td>(150-400)</td></tr><tr><td>Haemoglobin</td><td>60 g/L</td><td>(115-165)</td></tr><tr><td>Creatinine</td><td>160 µmol/L</td><td>(60-110)</td></tr></table><br>An urgent blood smear shows profuse red cell fragments.<br><br>The patient is diagnosed with suspected thrombotic thrombocytopenic purpura and transferred to ITU.<br><br>Which is the most appropriate treatment modality for this patient?",
+            "options": [
+                "Fresh frozen plasma",
+                "Cyclosporin",
+                "Platelet transfusion",
+                "Aspirin",
+                "Plasmapheresis"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Thrombotic thrombocytopenic purpura is a rare disorder characterised by increased platelet aggregation due to abnormal deposition of vWF multimers.<br><br>Mortality is 90% unless diagnosed and treated urgently, falling to 10% if treated appropriately. The most appropriate treatment is plasmapheresis with fresh frozen plasma, although fresh frozen plasma transfusion alone is useful as a holding measure till access to plasmapheresis is established.<br><br>Platelet transfusion is actually deleterious and should not be administered.<br><br>Aspirin and cyclosporin are useful only in the management of chronic TTP to decrease the chance of relapse."
+        },
+        {
+            "questionNumber": 4,
+            "question": "A 34-year-old female presented to the antenatal clinic at 24 weeks gestation complaining of general malaise, fatigue and shortness of breath at rest. Her partner said that at times over the past 24 hours she had been vague and mildly confused. This was her first pregnancy and had been uncomplicated. At her booking appointment she had not reported any significant past medical history. There was no abnormality detected at the dating ultrasound scan and her full blood count was within normal limits.<br><br>On examination her blood pressure was 122/80 mmHg; her booking blood pressure had been 116/77 mmHg. Her temperature was 37.8°C. Heart sounds were normal. Chest was clear and abdominal examination was unremarkable. Examination of the peripheral and central nervous system was unremarkable; but she was disorientated in date, day and time. She also seemed very agitated. There was a purpuric rash over her shins.<br><br>She was admitted to the antenatal ward and a series of blood tests sent. The results are shown below:<br><table><tr><td>Haemoglobin</td><td>48 g/L</td><td>(115 - 165)</td></tr><tr><td>Reticulocytes</td><td>16%</td><td>(0.5 - 2.4)</td></tr><tr><td>White cell count</td><td>12.0 ×10⁹/L</td><td>(4 - 11)</td></tr><tr><td>Neutrophils</td><td>9.6 ×10⁹/L</td><td>(1.5 - 7.0)</td></tr><tr><td>Lymphocytes</td><td>2.0 ×10⁹/L</td><td>(1.5 - 4.0)</td></tr><tr><td>Monocytes</td><td>0.2 ×10⁹/L</td><td>(0 - 0.8)</td></tr><tr><td>Eosinophils</td><td>0.1 ×10⁹/L</td><td>(0.04 - 0.4)</td></tr><tr><td>Basophils</td><td>0.1 ×10⁹/L</td><td>(0 - 0.1)</td></tr><tr><td>Platelets</td><td>6.0 ×10⁹/L</td><td>(150 - 400)</td></tr><tr><td>Prothrombin time</td><td>16 s</td><td>(11.5 - 15.5)</td></tr><tr><td>APTT</td><td>35 s</td><td>(30 - 40)</td></tr><tr><td>Fibrinogen</td><td>5.6 g/L</td><td>(1.8 - 5.4)</td></tr><tr><td>D-dimer</td><td>&lt;0.5 mg/L</td><td>(&lt;0.5)</td></tr><tr><td>Serum sodium</td><td>137 mmol/L</td><td>(137 - 144)</td></tr><tr><td>Serum potassium</td><td>4.8 mmol/L</td><td>(3.5 - 4.9)</td></tr><tr><td>Serum urea</td><td>8.0 mmol/L</td><td>(2.5 - 7.5)</td></tr><tr><td>Serum creatinine</td><td>131 µmol/L</td><td>(60 - 110)</td></tr><tr><td>Serum phosphate</td><td>1.38 mmol/L</td><td>(0.8 - 1.4)</td></tr><tr><td>Serum corrected calcium</td><td>2.5 mmol/L</td><td>(2.2 - 2.6)</td></tr><tr><td>Serum bilirubin</td><td>100 µmol/L</td><td>(1 - 22)</td></tr><tr><td>Serum AST</td><td>30 U/L</td><td>(1 - 31)</td></tr><tr><td>Serum alkaline phosphatase</td><td>120 U/L</td><td>(45 - 105)</td></tr><tr><td>Serum lactate dehydrogenase</td><td>1898 U/L</td><td>(10 - 250)</td></tr></table><br>A peripheral blood film showed gross red cell fragmentation with polychromasia with numerous spherocytes and nucleated red cells.<br><br>Urinalysis showed:<br>Blood +1<br>Protein +1<br><br>What is the correct management for this patient?",
+            "options": [
+                "Observation on antenatal ward",
+                "Platelet infusion",
+                "Plasma exchange",
+                "Delivery of baby as soon as possible",
+                "Intravenous broad-spectrum antibiotics"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "<b>Key learning points</b><br><b>Haematology</b><ul><li>Treatment of TTP is with plasma exchange.</li></ul><br><b>Explanation</b><br>The differential diagnosis is a pregnancy associated thrombotic microangiopathy, which includes:<ul><li>Thrombotic thrombocytopenia purpura (TTP)</li><li>Haemolytic uraemic syndrome (HUS)</li><li>Pre-eclampsia</li><li>HELLP</li><li>Disseminated Intravascular coagulation (DIC)</li><li>Acute fatty liver of pregnancy</li><li>Systemic lupus erythematosus.</li></ul><br>In this case the diagnosis favours TTP.<br><br>The full blood count shows there is a haemolytic anaemia-raised reticulocyte count. The film shows polychromasia and spherocytes in keeping with haemolysis and fragmentation - suggesting a microangiopathic process. The LDH and bilirubin are also in keeping with haemolysis. There is marked thrombocytopenia. The coagulation screen is only slightly abnormal; but importantly the fibrinogen is not low and D-dimers normal (excluding DIC). Renal function is slightly impaired and liver enzymes really normal for pregnancy.<br><br>The renal function is only slightly impaired and is against HUS and pre-eclampsia. Her BP is normal and urinalysis only slightly off - again against pre-eclampsia.<br><br>The normal liver enzymes exclude HELLP and acute fatty liver of pregnancy.<br><br>In TTP there is typically a pentad:<ol><li>Microangiopathic haemolytic anaemia</li><li>Severe thrombocytopenia</li><li>Neurological involvement</li><li>Renal impairment</li><li>Fever.</li></ol><br>However not all of these have to be present. Coagulation is typically normal.<br><br>TTP in pregnancy typically occurs early - usually less than 24 weeks, whereas HELLP and pre-eclampsia occur usually much later. The only management option for TTP is plasma exchange. Delivery has no effect on disease."
+        },
+        {
+            "questionNumber": 5,
+            "question": "A 30-year-old man was referred to outpatients because of abnormal liver function tests.<br><br>He had attended his general practitioner complaining of lethargy and feeling generally unwell. He worked at his family's dairy farm. He drank alcohol regularly, consuming on average 30 units per week. He took thyroxine for hypothyroidism. He denied drug abuse; he had never had a blood transfusion and had never travelled abroad.<br><br>On examination he looked generally well, he was not overtly jaundiced, there were no signs of chronic liver disease.<br><br>His tests revealed:<br><table><tr><td>Haemoglobin</td><td>142 g/L</td><td>(130-180)</td></tr><tr><td>White cells</td><td>9.0 ×10⁹/L</td><td>(4-11)</td></tr><tr><td>Platelets</td><td>300 ×10⁹/L</td><td>(150-400)</td></tr><tr><td>MCV</td><td>102 fL</td><td>(80-96)</td></tr><tr><td>Albumin</td><td>40 g/L</td><td>(37-49)</td></tr><tr><td>Bilirubin</td><td>35 μmol/L</td><td>(1-22)</td></tr><tr><td>Alanine transferase</td><td>210 U/L</td><td>(5-35)</td></tr><tr><td>Alkaline phosphatase</td><td>140 U/L</td><td>(45-105)</td></tr><tr><td>Gamma gluteryltransferase</td><td>120 U/L</td><td>(<50)</td></tr><tr><td>Smooth muscle antibody</td><td>Detected 1:200</td><td>-</td></tr><tr><td>Anti mitochondrial antibody</td><td>Not detected</td><td>-</td></tr><tr><td>Serum IgG</td><td>23 g/L</td><td>(6-13)</td></tr><tr><td>Serum IgA</td><td>1 g/L</td><td>(0.8-3)</td></tr></table><br>What is the cause of his liver dysfunction?",
+            "options": [
+                "Alcohol excess",
+                "Brucellosis",
+                "Wilson's disease",
+                "Viral hepatitis",
+                "Autoimmune hepatitis"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "<b>Key learning points</b><br>The presence of smooth muscle antibodies are suggestive of autoimmune hepatitis.<br><br><b>Explanation</b><br>This man does drink but in the absence of other liver disease he is unlikely to run into trouble with 30 units per week. The raised mean corpuscular volume (MCV) may point to alcohol excess but it is not specific and his thyroid status may be playing a role in this.<br><br>There is nothing in the history to point to hepatitis C virus (HCV) or hepatitis B virus (HBV) but both hepatitis A and E are faecal-oral spread and should be considered.<br><br>Brucellosis would go along with the contact with cattle but the clinical features do not fit and it is very rare in the United Kingdom.<br><br>Wilson's should be looked for in this situation but the antibody (+SMA) and immunoglobulin (high IgG) point to autoimmune hepatitis (AH).<br><br>Having one autoimmune disease (hypothyroidism) should also raise the suspicion of another."
+        },
+        {
+            "questionNumber": 6,
+            "question": "A 15-year-old boy with severe haemophilia A (factor VIII level < 1%) is admitted with a swollen, painful left knee with restriction of movement in all planes. His most recent inhibitor screen is negative.<br><br>This is managed as a suspected haemoarthroses and is most appropriately managed with which product in this case of haemophilia A?",
+            "options": [
+                "Recombinant factor VIII",
+                "Recombinant factor VII (NovoSeven)",
+                "FEIBA",
+                "Cryoprecipitate",
+                "Plasma derived factor VIII"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "<b>Key learning points</b><br>This question concerns the management of haemophilia.<br><br><b>Explanation</b><br>The most appropriate product is recombinant factor VIII since it results in the least exposure of the patient to transmissible infections and human donors. Thus recombinant factor VIII is the most appropriate answer.<br><br>Cryoprecipitate has no use in haemophilia A and plasma derived factor VIII is used only where there is no access to recombinant factor VIII.<br><br>FEIBA and NovoSeven are of use in the management of haemophilia patients who have developed a high titre inhibitor, which in this case is not present."
+        },
+        {
+            "questionNumber": 7,
+            "question": "A 60-year-old Chinese man has been started by his general practitioner on quinine for leg cramps.<br><br>He presents, a week later, with five days of darkened urine and two days of increasing breathlessness, back pain and fatigue.<br><br>Investigations show a haemoglobin of 70 g/L (130-180) and raised reticulocyte count.<br><br>Which of the following best explain this drug reaction?",
+            "options": [
+                "Sickle cell disease",
+                "Glucose-6-phosphate dehydrogenase deficiency",
+                "Autoimmune haemolytic anaemia",
+                "Pyruvate kinase deficiency",
+                "Hereditary spherocytosis"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "<b>Key learning points:</b><br>G6PD deficiency is an inherited deficiency which predisposes patients to acute haemolytic episodes, in the setting of oxidant injury from medications, acute illnesses, and certain foods.<br><br>G6PDH (X linked recessive) is seen in people of African, Mediterranean, Iraqi, Jewish, South East Asian and Chinese origin, and predisposes to a haemolytic anaemia reaction with drugs or infection.<br><br>Implicated drugs include:<ul><li>Aspirin</li><li>Sulphonamides</li><li>Antimalarials, and</li><li>Quinine/quinidine.</li></ul><br>The haemolytic anaemia is non-immune (direct antiglobulin test [DAT] negative).<br><br>Pyruvate kinase deficiency is autosomal recessive and presents as a chronic haemolytic anaemia exacerbated by viral infections.<br><br>Hereditary spherocytosis is characterised by variable chronic non-immune haemolysis exacerbated by infections."
+        },
+        {
+            "questionNumber": 8,
+            "question": "A 74-year-old man was admitted to hospital for a transurethral resection of the prostate.<br><br>Investigations showed:<br><table><tr><td>Haemoglobin</td><td>135 g/L</td><td>(130-180)</td></tr><tr><td>White cell count</td><td>32.2 ×10<sup>9</sup>/L</td><td>(4-11)</td></tr><tr><td>Platelets</td><td>289 ×10<sup>9</sup>/L</td><td>(150-400)</td></tr></table><br>His blood film is shown below:<br><br>What is the diagnosis?",
+            "options": [
+                "Myelofibrosis",
+                "Leukoerythroblastic anaemia",
+                "Chronic lymphocytic leukaemia",
+                "Chronic myeloid leukaemia",
+                "Myelodysplastic syndrome"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "<b>Key learning points:</b><br>Chronic lymphocytic leukaemia (CLL) is a monoclonal disorder characterised by a progressive accumulation of functionally incompetent lymphocytes."
+        },
+        {
+            "questionNumber": 9,
+            "question": "A 27-year-old female with Hodgkin's lymphoma with a bulky mediastinal mass at presentation has completed treatment with combination chemotherapy and radiotherapy to the mediastinum.<br><br>For which of the following will this patient need long term monitoring?",
+            "options": [
+                "Bone marrow failure",
+                "Secondary malignancy",
+                "Osteoporosis",
+                "Infertility",
+                "Cataracts"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "<b>Key learning points</b><br>Haematology<ul><li>Patients with multiple lines of high dose chemotherapy are high risk for secondary malignancy.</li></ul><br><b>Explanation</b><br>Secondary malignancy is the long term complication of highest concern of the treatment this lady has received. This patient would also be at increased risk of breast cancer given the radiotherapy to the mediastinum that she has received.<br><br>Bone marrow failure is unusual in the setting of Hodgkin's lymphoma unless the patient has had multiple salvage regimens as treatment. Fertility is usually preserved unless there has been gonadal irradiation. Cataracts and osteoporosis are not specific to the type of treatment described in this lady.<br><br><b>Reference:</b><br>De Bruin ML, Sparidans J, van't Veer MB, et al. Breast cancer risk in female survivors of Hodgkin's lymphoma: lower risk after smaller radiation volumes. <i>J Clin Oncol.</i> 2009;27:4239-46."
+        },
+        {
+            "questionNumber": 10,
+            "question": "A 30-year-old lady diagnosed with placenta praevia is noted to be bleeding from the site of cannulation during caesarean delivery.<br><br>Her laboratory investigations show a platelet count of 40 ×10<sup>9</sup>/L, a fibrinogen level of 0.4, prolonged PT at 14 seconds and an elevated quantitative D-dimer.<br><br>What is the cornerstone of the treatment of DIC in this patient?",
+            "options": [
+                "Cryoprecipitate",
+                "Treatment of the underlying cause",
+                "Anticoagulation with unfractionated heparin and anti-fibrinolytic",
+                "Platelet transfusion",
+                "Fresh frozen plasma"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In 2009 the British Committee for Standards in Haematology (BCSH) released guidelines relating to the investigation and management of disseminated intravascular coagulation (DIC).<br><br><b>The cornerstone of the treatment of DIC is treatment of the underlying condition.</b><br><br>Transfusion of platelets or plasma components is reserved for patients who present with bleeding, and the diagnosis of DIC should encompass both laboratory and clinical findings. In this case, the underlying cause is the placenta praevia, and hence urgent delivery of the fetus and removal of the inciting factor for the DIC (the placenta).<br><br>This of course should be supported by plasma and platelet transfusion; although all the blood product support options are appropriate, each one in isolation is not adequate to manage DIC."
+        },
+        {
+            "questionNumber": 11,
+            "question": "A 55-year-old gentleman presented to the outpatient clinic after being referred by his general practitioner.<br><br>He complained of feeling lethargic and had lost 15 kg in weight. He also complained of profuse sweating, especially at night and also had some upper abdominal discomfort. On examination, the spleen was palpable 12 cm below the left costal margin.<br><br>Investigations revealed:<br><table><tr><td>Haemoglobin</td><td>97 g/L</td><td>(130-180)</td></tr><tr><td>White cell count</td><td>17.4 ×10<sup>9</sup>/L</td><td>(4-11)</td></tr><tr><td>Neutrophils</td><td>14.0 ×10<sup>9</sup>/L</td><td>(1.5-7)</td></tr><tr><td>Lymphocytes</td><td>1.5 ×10<sup>9</sup>/L</td><td>(1.5-4)</td></tr><tr><td>Monocytes</td><td>0.8 ×10<sup>9</sup>/L</td><td>(0-0.8)</td></tr><tr><td>Basophils</td><td>0.7 ×10<sup>9</sup>/L</td><td>(0-0.1)</td></tr><tr><td>Eosinophils</td><td>0.4 ×10<sup>9</sup>/L</td><td>(0.04-0.4)</td></tr><tr><td>Platelets</td><td>550 ×10<sup>9</sup>/L</td><td>(150-400)</td></tr></table><br>The blood film was reported as follows: The neutrophils are left shifted with numerous myelocytes present. There is an occasional promyelocyte but no blasts. There are also a number of nucleated red blood cells. There is a thrombocytosis with platelet anisocytosis.<br><br>What investigation should be performed next?",
+            "options": [
+                "Molecular analysis of peripheral blood",
+                "Ultra sound scan (USS) of abdomen",
+                "Immunophenotyping of peripheral blood",
+                "Neutrophil alkaline phosphatase (NAP) score",
+                "Lactate dehydrogenase (LDH) measurement"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "The candidate should recognise anaemia, WBC and thrombocytosis with a leucoerythroblastic blood film. The patient has 'B' symptoms - weight loss and night sweats with splenomegaly.<br><br>The differential is really between the myeloproliferative disorders, chronic myeloid leukaemia (CML), myelofibrosis and essential thrombocythaemia (ET).<br><br>CML and myelofibrosis can be very difficult to distinguish in the early stages on morphology alone or on clinical findings and the most useful and least invasive for the patient is molecular analysis (PCR) of the peripheral blood - most cases of CML are usually associated with BCR-ABL translocation (t[9:22]), and this can be detected by PCR, whereas this is not seen in myelofibrosis or ET.<br><br>If present it can usually be detected in the peripheral blood, however in practice one would still eventually proceed to a bone marrow (BM) examination to assess morphology and you would still also perform conventional cytogenetics on the bone marrow (this is done on a bone marrow sample rather than peripheral blood because the cellularity tends to be greater in the BM, giving lower failure rates of the test).<br><br>LDH, NAP and USS are not going to help with making the diagnosis, neither is immunophenotyping, as there are no blasts in the blood and this is not an acute leukaemia."
+        },
+        {
+            "questionNumber": 12,
+            "question": "A 49-year-old female attended the ward for pre-clerking for a routine laparoscopic cholecystectomy.<br><br>Her past medical history included surgery for an injury to her left arm one year previously. Her only medication was hormone replacement therapy. Apart from occasional episodes of right upper quadrant pain secondary to gall stones, she was otherwise very well.<br><br>Routine pre-operative bloods were performed and the results are shown below:<br><br><table><tr><td>Haemoglobin</td><td>138 g/L</td><td>(115 - 165)</td></tr><tr><td>White cell count</td><td>7.9 ×10⁹/L</td><td>(4 - 11)</td></tr><tr><td>Neutrophils</td><td>5.0 ×10⁹/L</td><td>(1.5 - 7)</td></tr><tr><td>Lymphocytes</td><td>2.0 ×10⁹/L</td><td>(1.5 - 4)</td></tr><tr><td>Monocytes</td><td>0.4 ×10⁹/L</td><td>(0 - 0.8)</td></tr><tr><td>Eosinophils</td><td>0.4 ×10⁹/L</td><td>(0.04 - 0.4)</td></tr><tr><td>Basophils</td><td>0.1 ×10⁹/L</td><td>(0 - 0.1)</td></tr><tr><td>Platelet count</td><td>220 ×10⁹/L</td><td>(150 - 400)</td></tr><tr><td>Prothrombin time</td><td>13.0 s</td><td>(11.5 - 15.5)</td></tr><tr><td>APTT</td><td>79 s</td><td>(30 - 40)</td></tr><tr><td>Fibrinogen</td><td>4.6 g/L</td><td>(1.8 - 5.4)</td></tr><tr><td>APTT (50:50 mix with normal plasma)</td><td>70 s</td><td></td></tr></table><br>The laparoscopic cholecystectomy was performed without complications.<br><br>What is the most likely explanation for the laboratory results?",
+            "options": [
+                "Factor IX deficiency",
+                "von Willebrand disease",
+                "Lupus anticoagulant present",
+                "Factor VIII deficiency",
+                "Factor VIII inhibitor"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "<b>Key learning points:</b><br>Presence of a Lupus anticoagulant demonstrates a significantly prolonged APTT which does not correct by a significant amount when patient's plasma is mixed with normal plasma.<br><br><b>Explanation:</b><br>The candidate should recognise that the only abnormality on the blood results is a significantly prolonged activated partial thromboplastin time (APTT), which does not correct by a significant amount when patient's plasma is mixed with normal plasma.<br><br>If this were a factor deficiency then greater than 50% correction would be expected. This is therefore in keeping with an inhibitor of some kind.<br><br>Factor VIII deficiency, factor IX deficiency and von Willebrand disease are therefore ruled out. The clinical details and history are against these too - female, previous surgery, uncomplicated, etc.<br><br>This leaves us with either factor VIII inhibitor or the presence of lupus anticoagulant.<br><br>The development of a factor VIII inhibitor is usually associated with some bleeding symptoms, and in fact factor inhibitors are usually associated with a high degree of morbidity and mortality. This patient is very well, with no bleeding symptoms at all.<br><br>In addition, factor VIII inhibitors are usually time dependent. As a result when the initial 50:50 mix is done there is correction of the APTT; but if you repeat the APTT after allowing the 50:50 mix to incubate for two hours, there will be no correction.<br><br>The most likely answer is therefore that the lupus anticoagulant (LAC) is present.<br><br>Coagulation tests to demonstrate the presence of the LAC are as follows:<br><ul><li>Prolongation of a phospholipid-dependent coagulation test, for example, APTT, kaolin clotting time or others.</li><li>Demonstration of inhibitor by failing to correct the above coagulation test on 50:50 mixing studies by more than 50%.</li><li>Demonstrate phospholipid dependence-correction of the coagulation test used in (1) with phospholipid.</li></ul>"
+        },
+        {
+            "questionNumber": 13,
+            "question": "A 72-year-old man is referred to clinic with a four month history of breathlessness, abdominal swelling and discomfort.<br><br>On examination, he appears pale and unwell. His liver is palpable 9 cm below the right costal margin and his spleen palpable 7 cm below the left costal margin. No lymphadenopathy was detected.<br><br>Investigations show:<br><br><table><tr><td>Hb</td><td>79 g/L</td><td>(130-180)</td></tr><tr><td>RBC</td><td>2.1 ×10¹²/L</td><td>-</td></tr><tr><td>PCV</td><td>0.17</td><td>-</td></tr><tr><td>MCH</td><td>30 pg</td><td>(28-32)</td></tr><tr><td>MCV</td><td>82 fL</td><td>(80-96)</td></tr><tr><td>Reticulocytes</td><td>1.4%</td><td>(0.5-2.4)</td></tr><tr><td>Total WBC</td><td>23 ×10⁹/L</td><td>(4-11)</td></tr><tr><td>Normoblasts</td><td>8%</td><td>-</td></tr><tr><td>Platelets</td><td>280 ×10⁹/L</td><td>(150-400)</td></tr><tr><td>Neutrophils</td><td>9.0 ×10⁹/L</td><td>(1.5-7)</td></tr><tr><td>Lymphocytes</td><td>5.2 ×10⁹/L</td><td>(1.5-4)</td></tr><tr><td>Monocytes</td><td>1.3 ×10⁹/L</td><td>(0-0.8)</td></tr><tr><td>Eosinophils</td><td>0.2 ×10⁹/L</td><td>(0.04-0.4)</td></tr><tr><td>Basophils</td><td>0.2 ×10⁹/L</td><td>(0-0.1)</td></tr><tr><td>Metamyelocytes</td><td>5.1 ×10⁹/L</td><td>-</td></tr><tr><td>Myelocytes</td><td>1.6 ×10⁹/L</td><td>-</td></tr><tr><td>Blast cells</td><td>0.4 ×10⁹/L</td><td>-</td></tr></table><br>Blood film: Anisocytosis, poikilocytosis and occasional erythrocyte tear drop cells.<br><br>What is the first investigation of choice?",
+            "options": [
+                "Bone marrow smear",
+                "Bone scan",
+                "Bone marrow culture for mycobacteria",
+                "Leucocyte alkaline phosphatase",
+                "Bone (trephine) biopsy"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "<b>Key learning points:</b><br>Trephine biopsy is the preferred initial investigation in myelofibrosis.<br><br><b>Explanation:</b><br>Trephine biopsy is the preferred initial investigation.<br><br>The likely diagnosis is myelofibrosis, a disease characterised by bone marrow infiltration by fibrous tissue.<br><br>As a result, bone marrow aspiration often results in a dry tap."
+        },
+        {
+            "questionNumber": 14,
+            "question": "A 49-year-old gentleman presents to the GP with tiredness and headaches. He also reports an itchy rash after bathing.<br><br>He has been an ex-smoker for five years, but prior to that had smoked for 20 years. He is under considerable stress in his office job and has been taking a homeopathic medicine for stress. He is on no other medication. There is a family history of hypertension.<br><br>On examination he is plethoric. Cardiovascular examination and auscultation of the chest is unremarkable. On palpation of the abdomen the GP could palpate the spleen two finger breadths below the left costal margin. His blood pressure is 138/89 mmHg.<br><br>The GP refers him for a number of investigations. The results are as follows:<br><br><b>Full blood count:</b><br><table><tr><td>Haemoglobin</td><td>208 g/L</td><td>(130-180)</td></tr><tr><td>Haematocrit</td><td>0.61</td><td>(0.40-0.52)</td></tr><tr><td>White cell count</td><td>18.0 ×10⁹/L</td><td>(4-11)</td></tr><tr><td>Neutrophils</td><td>15.5 ×10⁹/L</td><td>(1.5-7)</td></tr><tr><td>Lymphocytes</td><td>2.0 ×10⁹/L</td><td>(1.5-4)</td></tr><tr><td>Monocytes</td><td>0.2 ×10⁹/L</td><td>(0-0.8)</td></tr><tr><td>Eosinophils</td><td>0.1 ×10⁹/L</td><td>(0.04-0.4)</td></tr><tr><td>Basophils</td><td>0.2 ×10⁹/L</td><td>(0-0.1)</td></tr><tr><td>Platelet count</td><td>550 ×10⁹/L</td><td>(150-400)</td></tr></table><br><b>Haematinics:</b><br><table><tr><td>Serum ferritin</td><td>15 g/L</td><td>(15-300)</td></tr><tr><td>Serum B12</td><td>900 ng/L</td><td>(160-760)</td></tr><tr><td>Serum folate</td><td>5.0 g/L</td><td>(2.0-11.0)</td></tr></table><br><b>Coagulation screen:</b><br><table><tr><td>Prothrombin time</td><td>13.0 s</td><td>(11.5-15.5)</td></tr><tr><td>Activated partial thromboplastin time</td><td>35 s</td><td>(30-40)</td></tr><tr><td>Fibrinogen</td><td>4.0 g/L</td><td>(1.8-5.4)</td></tr></table><br><b>Chemistry:</b><br><table><tr><td>Serum sodium</td><td>137 mmol/L</td><td>(137-144)</td></tr><tr><td>Serum potassium</td><td>4.8 mmol/L</td><td>(3.5-4.9)</td></tr><tr><td>Serum urea</td><td>7.5 mmol/L</td><td>(2.5-7.5)</td></tr><tr><td>Serum creatinine</td><td>98 µmol/L</td><td>(60-110)</td></tr><tr><td>Serum aspartate aminotransferase</td><td>30 U/L</td><td>(1-31)</td></tr><tr><td>Serum alkaline phosphatase</td><td>90 U/L</td><td>(45-105)</td></tr><tr><td>Serum total bilirubin</td><td>22 µmol/L</td><td>(1-22)</td></tr><tr><td>Serum phosphate</td><td>1.0 mmol/L</td><td>(0.8-1.4)</td></tr><tr><td>Serum corrected calcium</td><td>2.3 mmol/L</td><td>(2.2-2.6)</td></tr></table><br>What is the diagnosis?",
+            "options": [
+                "Secondary erythrocytosis",
+                "Idiopathic erythrocytosis",
+                "Polycythaemia vera",
+                "Chronic myeloid leukaemia",
+                "Apparent erythrocytosis due to the homeopathic medicine"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "<b>Key learning points:</b><br>PCV is characterised by high HB and HCV and commonly is associated with JAK-2 mutation.<br><br>There is a high haemoglobin (Hb) and haematocrit (HCT) - therefore there is polycythaemia. This is the most significant abnormality.<br><br>There is also a mild neutrophilia and thrombocytosis with a slightly raised basophil count.<br><br>Absolute erythrocytosis, as opposed to apparent, is defined as an HCT greater than 0.60 in males and HCT greater than 0.56 in females. We have therefore ruled out apparent erythrocytosis in this man.<br><br>We are therefore left trying to decide if this is<ul><li>Primary erythrocytosis (polycythaemia vera [PV])</li><li>Secondary erythrocytosis (due to some congenital or acquired cause) or</li><li>Idiopathic erythrocytosis (those with an absolute polycythaemia but not primary and no secondary cause).</li></ul><br>The diagnosis favours polycythaemia vera as opposed to secondary or idiopathic for the following reasons:<ul><li>Low serum ferritin is more common in PV than secondary</li><li>High B12 is characteristic of PV due to transcobalamin release from an increased granulocytic mass</li><li>In the absence of liver disease a palpable spleen is a reliable sign of PV</li><li>The pruritus is typically aquagenic as described here.</li><li>In PV, the white cell count and platelet count can be elevated.</li></ul><br>In chronic myeloid leukaemia you may expect a higher white cell count and would not see the polycythaemia."
+        },
+        {
+            "questionNumber": 15,
+            "question": "A 32-year-old man, previously healthy, presents with a seven day history of petechial rash and gum bleeding.<br><br>His blood count shows:<br><table><tr><td>WBC</td><td>9.3 ×10⁹/L</td><td>(4-11)</td></tr><tr><td>Normal differential</td><td>-</td><td></td></tr><tr><td>Haemoglobin</td><td>135 g/L</td><td>(130-180)</td></tr><tr><td>Platelet</td><td>3 ×10⁹/L</td><td>(150-400)</td></tr></table><br>His APTT and PT are not prolonged and HIV testing is negative. His blood group is O positive.<br><br>He is commenced on prednisone 1 mg/kg/day. On the third day of his admission, he is noted to be hemiparetic. Urgent CT scanning of the brain shows a massive intracerebral haemorrhage with no midline shift.<br><br>Which of the following is the most urgent treatment modality required?",
+            "options": [
+                "Thrombopoietin agonists (romiplostim/eltrombopag)",
+                "Intravenous immunoglobulin",
+                "Methylprednisolone + intravenous immunoglobulin + platelet transfusion",
+                "Anti-D",
+                "Platelet transfusion"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "<b>Key learning points:</b><br>This question covers the management of immune thrombocytopenic purpura.<br><br>The management of immune thrombocytopenic purpura (ITP) which presents with a catastrophic bleed is aimed at achieving a rapid rise in platelet count to reduce the morbidity.<br><br>Although platelet transfusions are not efficacious in ITP (due to transfused platelets being consumed in the same way as platelets released from bone marrow), they are useful in this setting, together with high doses of intravenous steroids and immunoglobulins. Hence methylprednisolone, intravenous immunoglobulin and platelet transfusion is the correct answer, together with consideration for urgent craniotomy and intracranial clot evacuation by neurosurgeons.<br><br>Although anti-D is useful in this setting, its use is hindered by very poor availability.<br><br>There is no evidence for the use of thrombopoietin agonists in this setting."
+        },
+        {
+            "questionNumber": 16,
+            "question": "A 37-year-old gentleman newly diagnosed with myeloma is commenced on treatment with dexamethasone and lenalidomide (an immunomodulatory drug in the same class of drugs as thalidomide).<br><br>Which treatment related issue MUST be discussed and clearly documented in the notes?",
+            "options": [
+                "Teratogenic potential",
+                "Peripheral neuropathy",
+                "Constipation",
+                "Somnolence",
+                "Myelosuppression"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Immunomodulatory drugs such as thalidomide and lenalidomide are now first line medications in the treatment of myeloma. The most common side effect of lenalidomide is myelosuppression, whereas somnolence, peripheral neuropathy and constipation are side effects of thalidomide.<br><br>The inherent, serious issue that is applicable to both medications is the <b>teratogenic potential</b> - all patients must be informed of this risk and advised regarding birth control and avoidance of sharing of medications with any other person.<br><br>It is not known whether lenalidomide is present in the semen of male patients receiving the drug. Therefore, males receiving lenalidomide must always use a latex condom during any sexual contact with females of childbearing potential even if they have undergone a successful vasectomy."
+        },
+        {
+            "questionNumber": 17,
+            "question": "A 52-year-old lady was being treated for non-Hodgkins lymphoma. She had tolerated the first three cycles of chemotherapy well, and was attending for the fourth cycle. Over the course of several days she complained of an increasing tingling sensation in her hands and feet that was also associated with a sensation of numbness.<br><br>She had a past history of hypertension for which she was taking atenolol. Her other regular prescribed medications comprised:<br><ul><li>Omeprazole for a previous duodenal ulcer</li><li>Allopurinol as prophylaxis against tumour lysis</li><li>Ciprofloxacin and co-trimoxazole as antibacterial prophylaxis</li><li>Itraconazole as anti-fungal prophylaxis</li></ul><br>There was no past history or family history of diabetes mellitus.<br><br>Clinical examination revealed diminished sensation in a glove and stocking distribution, consistent with peripheral neuropathy. Her blood pressure was 150/85 mmHg and a random blood glucose was 11 mmol/L.<br><br>Since she had received vincristine as part of the chemotherapeutic regimen, this was considered to be the most likely precipitating cause.<br><br>Which of the following drugs is responsible for possibly exacerbating the vincristine neurotoxicity?",
+            "options": [
+                "Allopurinol",
+                "Co-trimoxazole",
+                "Omeprazole",
+                "Ciprofloxacin",
+                "Itraconazole"
+            ],
+            "correctAnswerIndex": 4,
+            "explanation": "Metabolism of vincristine is inhibited by <b>itraconazole</b> causing increased risk of neurotoxicity which appears to be dose-related. The liver is the major excretory organ for vincristine in humans and animals.<br><br>Neurological toxicity manifested as peripheral or autonomic neuropathy is a feature of treatment with all vinca alkaloids and is a limiting side effect of vincristine.<br><br>If symptoms of neurotoxicity are severe, doses should be reduced. Generally recovery of the nervous system is very slow but in most cases complete."
+        }
+    ]
+}
