@@ -337,6 +337,353 @@ document.addEventListener('click', () => {
     let sourcesSelector, userHistoryCache = new Map();
     let builderContext = 'discipline'; // This page is always in the discipline context
 
+const DISCIPLINE_HISTORY_CACHE_VERSION = 2;
+let latestDisciplineHistoryPromise = null;
+let builderHistoryRefreshPromise = null;
+let builderRecalcTimer = null;
+let builderRecalcRunId = 0;
+
+function safeParseJson(value, fallback = null) {
+    try {
+        return value ? JSON.parse(value) : fallback;
+    } catch {
+        return fallback;
+    }
+}
+
+function getCurrentDisciplineId() {
+    return new URLSearchParams(window.location.search).get('disciplineId');
+}
+
+function getDisciplineHistoryCacheKey() {
+    const disciplineId = getCurrentDisciplineId();
+    return `offline_disc_${disciplineId}_history_v${DISCIPLINE_HISTORY_CACHE_VERSION}_${currentUser?.id || 'anonymous'}`;
+}
+
+function saveWithEviction(key, data) {
+    const dataString = JSON.stringify(data);
+
+    try {
+        localStorage.setItem(key, dataString);
+    } catch (e) {
+        if (e.name === 'QuotaExceededError') {
+            console.warn("LocalStorage full. Evicting old heavy caches.");
+
+            const keysToRemove = [];
+
+            for (let i = 0; i < localStorage.length; i++) {
+                const k = localStorage.key(i);
+                if (
+                    k &&
+                    (
+                        k.startsWith('offline_disc_') ||
+                        k.startsWith('offline_book_') ||
+                        k.startsWith('dashboardStatsCache_')
+                    ) &&
+                    !k.endsWith('_data') &&
+                    !k.endsWith('_chapters')
+                ) {
+                    keysToRemove.push(k);
+                }
+            }
+
+            keysToRemove.forEach(k => localStorage.removeItem(k));
+
+            try {
+                localStorage.setItem(key, dataString);
+            } catch (retryError) {
+                console.warn(`Still could not cache ${key}. App will continue without this cache.`, retryError);
+            }
+        } else {
+            console.warn(`Could not cache ${key}.`, e);
+        }
+    }
+}
+
+function updateUserHistoryCache(historyRows) {
+    userHistoryCache.clear();
+
+    (historyRows || []).forEach(item => {
+        const questionId = String(item.questionId || item.question_id || '');
+        if (questionId) {
+            userHistoryCache.set(questionId, item);
+        }
+    });
+}
+
+function hydrateUserHistoryCacheFromLocalStorage() {
+    const cachedHistory =
+        safeParseJson(localStorage.getItem(getDisciplineHistoryCacheKey()), null) ||
+        safeParseJson(localStorage.getItem(`offline_disc_${getCurrentDisciplineId()}_history`), []);
+
+    if (cachedHistory && cachedHistory.length > 0) {
+        updateUserHistoryCache(cachedHistory);
+        return true;
+    }
+
+    return false;
+}
+
+function scheduleRecalculateAvailableQuestionsAndUpdateUI(delay = 80) {
+    if (builderRecalcTimer) clearTimeout(builderRecalcTimer);
+
+    builderRecalcTimer = setTimeout(() => {
+        recalculateAvailableQuestionsAndUpdateUI();
+    }, delay);
+}
+
+async function refreshDisciplineHistoryInBackground() {
+    if (!builderHistoryRefreshPromise) {
+        builderHistoryRefreshPromise = fetchDisciplineSpecificHistory()
+            .then((rows) => {
+                if (dom.customQuizModal && !dom.customQuizModal.classList.contains('hidden')) {
+                    scheduleRecalculateAvailableQuestionsAndUpdateUI(0);
+                }
+                return rows;
+            })
+            .catch((error) => {
+                console.warn("Background builder discipline-history refresh failed:", error);
+                return [];
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    builderHistoryRefreshPromise = null;
+                }, 5000);
+            });
+    }
+
+    return builderHistoryRefreshPromise;
+}
+
+async function getLightDisciplineQuestionPool() {
+    const disciplineId = getCurrentDisciplineId();
+
+    if (window.pageQuestions && window.pageQuestions.length > 0) {
+        return window.pageQuestions.filter(q => (q.discipline_id || q.disciplineId) === disciplineId);
+    }
+
+    const cachedQuestions = safeParseJson(
+        localStorage.getItem(`offline_disc_${disciplineId}_questions`),
+        []
+    );
+
+    if (cachedQuestions && cachedQuestions.length > 0) {
+        window.pageQuestions = cachedQuestions;
+        return cachedQuestions.filter(q => (q.discipline_id || q.disciplineId) === disciplineId);
+    }
+
+    const freshQuestionIndex = await fetchDisciplineQuestionIndex();
+    window.pageQuestions = freshQuestionIndex;
+    saveWithEviction(`offline_disc_${disciplineId}_questions`, freshQuestionIndex);
+
+    return freshQuestionIndex;
+}
+
+function getActiveFilterKeys() {
+    return Array.from(document.querySelectorAll('.filter-checkbox:checked'))
+        .map(cb => cb.dataset.filterKey);
+}
+
+function getSelectedChapterIdsForBuilder(mode, forcedSources = null) {
+    const selectedSources = forcedSources || (sourcesSelector ? sourcesSelector.getSelected() : []);
+
+    if (mode === 'all_available') {
+        const sourceData = sourcesSelector
+            ? sourcesSelector.getData().flatMap(group => group.options)
+            : [];
+
+        return new Set(
+            sourceData
+                .map(source => source.value)
+                .filter(value => value && value.startsWith('chapter_'))
+                .map(value => value.split('_')[1])
+        );
+    }
+
+    return new Set(
+        selectedSources
+            .filter(value => value && value.startsWith('chapter_'))
+            .map(value => value.split('_')[1])
+    );
+}
+
+async function getFilteredQuestionIndexForBuilder(forcedSources = null) {
+    const form = dom.customQuizForm;
+    const mode = form.questionCountMode.value;
+
+    let questionPool = await getLightDisciplineQuestionPool();
+
+    const selectedChapterIds = getSelectedChapterIdsForBuilder(mode, forcedSources);
+
+    if (mode === 'from_sources' || mode === 'set_number') {
+        if (selectedChapterIds.size === 0) return [];
+        questionPool = questionPool.filter(q => selectedChapterIds.has(q.chapter_id || q.chapterId));
+    }
+
+    const activeFilterKeys = getActiveFilterKeys();
+
+    if (activeFilterKeys.length > 0) {
+        await getUserHistory(currentUser.id);
+
+        const filterFunctions = getFilterFunctions();
+
+        questionPool = questionPool.filter(q => {
+            return activeFilterKeys.some(key => {
+                return filterFunctions[key] && filterFunctions[key](q);
+            });
+        });
+    }
+
+    return questionPool;
+}
+
+async function fetchFullQuestionsByIds(questionIds) {
+    const uniqueIds = [...new Set((questionIds || []).map(id => String(id)).filter(Boolean))];
+
+    if (uniqueIds.length === 0) return [];
+
+    const fullQuestionMap = new Map();
+    const chunkSize = 100;
+
+    for (let i = 0; i < uniqueIds.length; i += chunkSize) {
+        const chunk = uniqueIds.slice(i, i + chunkSize);
+
+        const { data, error } = await supabase
+            .from('questions')
+            .select('*')
+            .in('id', chunk)
+            .order('chapter_id', { ascending: true })
+            .order('questionNumber', { ascending: true });
+
+        if (error) throw error;
+
+        (data || []).forEach(q => {
+            fullQuestionMap.set(String(q.id), q);
+        });
+    }
+
+    return uniqueIds
+        .map(id => fullQuestionMap.get(id))
+        .filter(Boolean);
+}
+
+async function fetchDisciplineQuestionIndex() {
+    const disciplineId = getCurrentDisciplineId();
+    let allQuestions = [];
+    let from = 0;
+    const limit = 1000;
+
+    while (true) {
+        const { data, error } = await supabase
+            .from('questions')
+            .select('id, discipline_id, chapter_id, questionNumber')
+            .eq('discipline_id', disciplineId)
+            .order('chapter_id', { ascending: true })
+            .order('questionNumber', { ascending: true })
+            .range(from, from + limit - 1);
+
+        if (error) throw error;
+
+        if (!data || data.length === 0) break;
+
+        allQuestions = allQuestions.concat(data);
+
+        if (data.length < limit) break;
+        from += limit;
+    }
+
+    return allQuestions;
+}
+
+async function fetchFullDisciplineQuestions() {
+    const disciplineId = getCurrentDisciplineId();
+    let allQuestions = [];
+    let from = 0;
+    const limit = 1000;
+
+    while (true) {
+        const { data, error } = await supabase
+            .from('questions')
+            .select('*')
+            .eq('discipline_id', disciplineId)
+            .order('chapter_id', { ascending: true })
+            .order('questionNumber', { ascending: true })
+            .range(from, from + limit - 1);
+
+        if (error) throw error;
+
+        if (!data || data.length === 0) break;
+
+        allQuestions = allQuestions.concat(data);
+
+        if (data.length < limit) break;
+        from += limit;
+    }
+
+    return allQuestions;
+}
+
+async function fetchDisciplineSpecificHistory(questionIndex = null) {
+    const disciplineId = getCurrentDisciplineId();
+
+    try {
+        const { data, error } = await supabase.rpc('get_my_discipline_question_history', {
+            p_discipline_id: disciplineId
+        });
+
+        if (error) throw error;
+
+        const historyRows = Array.isArray(data)
+            ? data
+            : safeParseJson(data, []);
+
+        updateUserHistoryCache(historyRows);
+
+        saveWithEviction(getDisciplineHistoryCacheKey(), historyRows);
+        saveWithEviction(`offline_disc_${disciplineId}_history`, historyRows);
+
+        return historyRows;
+    } catch (rpcError) {
+        console.warn("Discipline-specific history RPC failed. Falling back to question-id chunk fetch.", rpcError);
+
+        const questions = questionIndex || await fetchDisciplineQuestionIndex();
+        const questionIds = [...new Set(questions.map(q => String(q.id)).filter(Boolean))];
+
+        if (questionIds.length === 0) {
+            updateUserHistoryCache([]);
+            return [];
+        }
+
+        const allHistory = [];
+        const chunkSize = 100;
+
+        for (let i = 0; i < questionIds.length; i += chunkSize) {
+            const chunk = questionIds.slice(i, i + chunkSize);
+
+            const { data, error } = await supabase
+                .from('userQuestionHistory')
+                .select('*')
+                .eq('userId', currentUser.id)
+                .in('questionId', chunk)
+                .order('questionId', { ascending: true });
+
+            if (error) throw error;
+
+            if (data && data.length > 0) {
+                allHistory.push(...data);
+            }
+        }
+
+        updateUserHistoryCache(allHistory);
+
+        saveWithEviction(getDisciplineHistoryCacheKey(), allHistory);
+        saveWithEviction(`offline_disc_${disciplineId}_history`, allHistory);
+
+        return allHistory;
+    }
+}
+
+
     // --- Inactivity Logout ---
     const INACTIVITY_TIMEOUT = 30 * 60 * 1000; // 30 minutes
     let inactivityTimer;
@@ -623,101 +970,56 @@ if (listEl) {
     `).join('');
 }
 
-    // 3. SURGICAL BACKGROUND SYNC (Only fetch questions & history for THIS discipline)
-    setTimeout(async () => {
-        try {
-            let qData = [], qFrom = 0, qKeep = true;
-            while (qKeep) {
-                const { data } = await supabase.from('questions').select('id, discipline_id, chapter_id').eq('discipline_id', disciplineId).range(qFrom, qFrom + 999);
-                if (data && data.length > 0) { qData = qData.concat(data); qKeep = data.length === 1000; qFrom += 1000; } else qKeep = false;
-            }
+// 3. SURGICAL BACKGROUND SYNC
+// Fetch only this discipline's questions + this discipline's user history.
+// Do not fetch the user's entire history table.
+setTimeout(async () => {
+    try {
+        const qData = await fetchDisciplineQuestionIndex();
+        const hData = await fetchDisciplineSpecificHistory(qData);
 
-            let hData = [], hFrom = 0, hKeep = true;
-            while (hKeep) {
-                const { data } = await supabase.from('userQuestionHistory').select('questionId, lastResult').eq('userId', user.id).range(hFrom, hFrom + 999);
-                if (data && data.length > 0) { hData = hData.concat(data); hKeep = data.length === 1000; hFrom += 1000; } else hKeep = false;
-            }
+        saveWithEviction(`offline_disc_${disciplineId}_questions`, qData);
+        saveWithEviction(getDisciplineHistoryCacheKey(), hData);
+        saveWithEviction(`offline_disc_${disciplineId}_history`, hData);
 
-            // --- SMART CACHE MANAGEMENT (LRU Eviction) ---
-            const saveWithEviction = (key, data) => {
-                const dataString = JSON.stringify(data);
-                try {
-                    localStorage.setItem(key, dataString);
-                } catch (e) {
-                    if (e.name === 'QuotaExceededError') {
-                        console.warn("Local Storage full! Evicting old data to make room...");
-                        // 1. Gather all keys related to disciplines and books
-                        const keysToRemove = [];
-                        for (let i = 0; i < localStorage.length; i++) {
-                            const k = localStorage.key(i);
-                            // Target cached questions/history, but KEEP core app data safe
-                            if (k && (k.startsWith('offline_disc_') || k.startsWith('offline_book_')) && !k.endsWith('_data') && !k.endsWith('_chapters')) {
-                                keysToRemove.push(k);
-                            }
-                        }
-                        
-                        // 2. We don't have timestamps, so we just clear the oldest half of the cached keys
-                        // to free up a massive chunk of space immediately.
-                        const numToClear = Math.ceil(keysToRemove.length / 2);
-                        for (let i = 0; i < numToClear; i++) {
-                            localStorage.removeItem(keysToRemove[i]);
-                        }
-                        
-                        // 3. Try saving again!
-                        try {
-                            localStorage.setItem(key, dataString);
-                            console.log("Successfully saved after eviction.");
-                        } catch (retryError) {
-                            console.error("Still out of space after eviction! Cannot cache this discipline.", retryError);
-                        }
-                    } else {
-                        throw e; // Throw if it's some other random error
-                    }
+        const oldQuestionsJson = questionsCacheStr || '[]';
+        const oldHistoryJson =
+            localStorage.getItem(getDisciplineHistoryCacheKey()) ||
+            historyCacheStr ||
+            '[]';
+
+        const newQuestionsJson = JSON.stringify(qData);
+        const newHistoryJson = JSON.stringify(hData);
+
+        if (
+            (listEl && listEl.innerHTML.includes('animate-pulse')) ||
+            newQuestionsJson !== oldQuestionsJson ||
+            newHistoryJson !== oldHistoryJson
+        ) {
+            console.log("Discipline sync complete. Repainting with fresh data.");
+            paintData(qData, hData, cBooks, cChapters, cUserData);
+        } else {
+            window.pageQuestions = qData;
+            window.pageHistoryMap = new Map();
+
+            hData.forEach(h => {
+                const qId = h.questionId || h.question_id;
+                if (qId && h.lastResult) {
+                    const isCorrect =
+                        String(h.lastResult).toLowerCase() === 'correct' ||
+                        h.lastResult === true ||
+                        h.lastResult === 'true';
+
+                    window.pageHistoryMap.set(String(qId), isCorrect ? 'correct' : 'wrong');
                 }
-            };
-
-            saveWithEviction(`offline_disc_${disciplineId}_questions`, qData);
-            saveWithEviction(`offline_disc_${disciplineId}_history`, hData);
-            // ---------------------------------------------
-
-           const oldQuestionsJson = questionsCacheStr || '[]';
-const oldHistoryJson = historyCacheStr || '[]';
-const newQuestionsJson = JSON.stringify(qData);
-const newHistoryJson = JSON.stringify(hData);
-
-// Repaint whenever the fresh synced data differs from what was initially rendered.
-// This fixes stale donut charts after returning from quiz pages.
-if (
-    (listEl && listEl.innerHTML.includes('animate-pulse')) ||
-    newQuestionsJson !== oldQuestionsJson ||
-    newHistoryJson !== oldHistoryJson
-) {
-    console.log("Discipline sync complete. Repainting with fresh data.");
-    paintData(qData, hData, cBooks, cChapters, cUserData);
-} else {
-    // No meaningful change; keep memory in sync without forcing repaint
-    window.pageQuestions = qData;
-    window.pageHistoryMap = new Map();
-
-    hData.forEach(h => {
-        const qId = h.questionId || h.question_id;
-        if (qId && h.lastResult) {
-            const isCorrect =
-                String(h.lastResult).toLowerCase() === 'correct' ||
-                h.lastResult === true ||
-                h.lastResult === 'true';
-
-            window.pageHistoryMap.set(String(qId), isCorrect ? 'correct' : 'wrong');
+            });
         }
-    });
-}
-        } catch (err) {
-            console.warn("Discipline background sync failed.", err);
-        } finally {
-            // Absolute failsafe: Always kill the loader, even if sync errors out
-            if (dom.loadingState) dom.loadingState.classList.add('hidden');
-        }
-    }, 100);
+    } catch (err) {
+        console.warn("Discipline background sync failed.", err);
+    } finally {
+        if (dom.loadingState) dom.loadingState.classList.add('hidden');
+    }
+}, 100);
 }
 
    
@@ -729,42 +1031,46 @@ if (
  // --- Custom Quiz Builder Functions ---
  
 function openAdvancedBuilder(sourceData) {
-    // This is the new, single function to open the builder.
-    // It takes the source data as an argument, making it reusable.
-    
-    // Clear the history cache to get the latest data
-    userHistoryCache.clear();
+    // Fast path: use accurate local discipline-specific history first.
+    // Do NOT clear userHistoryCache here, because clearing forces a network wait.
+    hydrateUserHistoryCacheFromLocalStorage();
 
     sourcesSelector.setData(sourceData);
-    
-    // Reset the form to a clean, default state every time it's opened.
+
     dom.customQuizForm.reset();
     document.getElementById('percentageBuilderContainer').classList.add('hidden');
     document.getElementById('sequenceBuilderContainer').classList.add('hidden');
 
-    // Trigger the initial UI setup and question calculation.
-    handleQuizBuilderState();
-    
-    // Show the modal.
     dom.customQuizModal.classList.remove('hidden');
+
+    // Fast calculation from light cached question index.
+    handleQuizBuilderState();
+    scheduleRecalculateAvailableQuestionsAndUpdateUI(50);
+
+    // Accuracy refresh in background. If fresh history differs, it recalculates again.
+    refreshDisciplineHistoryInBackground();
 }
 
 function handleQuizBuilderState() {
-        // This function manages the UI of the builder, enabling/disabling parts of the form
-        const form = dom.customQuizForm;
-        const mode = form.questionCountMode.value;
-        const sourcesFieldset = document.getElementById('questionSourcesFieldset');
-        const countInput = document.getElementById('customQuestionCount');
-        const percentageContainer = document.getElementById('percentageBuilderContainer');
-        const helpText = document.getElementById('recalculateHelpText');
-        const sourcesEnabled = (mode === 'from_sources' || mode === 'set_number');
-        sourcesFieldset.style.opacity = sourcesEnabled ? 1 : 0.5;
-        sourcesEnabled ? sourcesSelector.enable() : sourcesSelector.disable();
-        countInput.disabled = (mode !== 'set_number');
-        percentageContainer.classList.toggle('hidden', mode !== 'set_number');
-        helpText.classList.toggle('hidden', mode === 'all_available');
-        recalculateAvailableQuestionsAndUpdateUI();
-    }
+    const form = dom.customQuizForm;
+    const mode = form.questionCountMode.value;
+    const sourcesFieldset = document.getElementById('questionSourcesFieldset');
+    const countInput = document.getElementById('customQuestionCount');
+    const percentageContainer = document.getElementById('percentageBuilderContainer');
+    const helpText = document.getElementById('recalculateHelpText');
+
+    const sourcesEnabled = (mode === 'from_sources' || mode === 'set_number');
+
+    sourcesFieldset.style.opacity = sourcesEnabled ? 1 : 0.5;
+    sourcesEnabled ? sourcesSelector.enable() : sourcesSelector.disable();
+
+    countInput.disabled = (mode !== 'set_number');
+    percentageContainer.classList.toggle('hidden', mode !== 'set_number');
+    helpText.classList.toggle('hidden', mode === 'all_available');
+
+    scheduleRecalculateAvailableQuestionsAndUpdateUI();
+    updateFlowControlUI();
+}
 
 function populateSequenceListFromSelection() {
         const listEl = document.getElementById('sequenceList');
@@ -896,117 +1202,126 @@ function populateSequenceListFromSelection() {
         }
     });
 
-    countInput.addEventListener('input', () => {
+    countInput.oninput = () => {
         if (!isDragging) {
             distributeQuestions(parseInt(countInput.value, 10) || 0);
         }
-    });
+    };
 
     distributeQuestions(parseInt(countInput.value, 10) || 0);
 }
 async function recalculateAvailableQuestionsAndUpdateUI() {
+    const runId = ++builderRecalcRunId;
     const buildStatus = document.getElementById('buildStatus');
-    if(buildStatus) buildStatus.textContent = 'Calculating...';
 
-    const baseFilteredPool = await getQuestionsForSourceAndFilters();
-    const totalPossible = baseFilteredPool.length;
-
-    const form = dom.customQuizForm;
-    const mode = form.questionCountMode.value;
-    const countInput = document.getElementById('customQuestionCount');
-    countInput.max = totalPossible;
-
-    let finalQuestionCount = 0;
-
-    if (mode === 'all_available') {
-        finalQuestionCount = totalPossible;
-        countInput.value = finalQuestionCount;
-    } else if (mode === 'from_sources') {
-        const selectedChapters = sourcesSelector.getSelected();
-        const selectedChapterIds = new Set(selectedChapters.map(s => s.split('_')[1]));
-        finalQuestionCount = baseFilteredPool.filter(q => selectedChapterIds.has(q.chapter_id)).length;
-        countInput.value = finalQuestionCount;
-    } else { // mode === 'set_number'
-        if (parseInt(countInput.value, 10) > totalPossible) {
-            countInput.value = totalPossible;
-        }
-        if (!countInput.value || parseInt(countInput.value, 10) === 0) {
-            countInput.value = totalPossible;
-        }
-        finalQuestionCount = parseInt(countInput.value, 10);
-        // This is the crucial call to create the sliders
-        await populateSlidersFromSelection(baseFilteredPool);
+    if (!dom.customQuizModal || dom.customQuizModal.classList.contains('hidden')) {
+        return;
     }
 
-    if(buildStatus) buildStatus.textContent = `${finalQuestionCount} questions selected.`;
+    if (buildStatus) buildStatus.textContent = 'Calculating...';
+
+    try {
+        const baseFilteredPool = await getFilteredQuestionIndexForBuilder();
+
+        if (runId !== builderRecalcRunId) return;
+
+        const totalPossible = baseFilteredPool.length;
+
+        const form = dom.customQuizForm;
+        const mode = form.questionCountMode.value;
+        const countInput = document.getElementById('customQuestionCount');
+
+        countInput.max = totalPossible;
+
+        let finalQuestionCount = 0;
+
+        if (mode === 'all_available') {
+            finalQuestionCount = totalPossible;
+            countInput.value = finalQuestionCount;
+        } else if (mode === 'from_sources') {
+            finalQuestionCount = totalPossible;
+            countInput.value = finalQuestionCount;
+        } else {
+            if (parseInt(countInput.value, 10) > totalPossible) {
+                countInput.value = totalPossible;
+            }
+
+            if (!countInput.value || parseInt(countInput.value, 10) === 0) {
+                countInput.value = totalPossible;
+            }
+
+            finalQuestionCount = parseInt(countInput.value, 10) || 0;
+
+            await populateSlidersFromSelection(baseFilteredPool);
+        }
+
+        if (runId !== builderRecalcRunId) return;
+
+        if (buildStatus) buildStatus.textContent = `${finalQuestionCount} questions selected.`;
+    } catch (error) {
+        console.error("Fast discipline custom quiz calculation failed:", error);
+        if (buildStatus) buildStatus.textContent = 'Could not calculate questions.';
+    }
 }
 
 async function getUserHistory(userId) {
-        // If we already loaded it, don't fetch again
-        if (userHistoryCache.size > 0) return; 
-        
-        let from = 0;
-        const limit = 1000;
-        let keepFetching = true;
+    if (userHistoryCache.size > 0) return;
 
-        // Fetch ALL history records in chunks to bypass the 1000 row limit
-        while (keepFetching) {
-            const { data, error } = await supabase
-                .from('userQuestionHistory')
-                .select('*') // We need '*' here to get timesWrong and firstAttemptResult
-                .eq('userId', userId)
-                .range(from, from + limit - 1);
-
-            if (error) {
-                console.error("Error fetching user history for builder:", error);
-                break;
-            }
-
-            if (data && data.length > 0) {
-                data.forEach(item => userHistoryCache.set(item.questionId, item));
-                if (data.length < limit) keepFetching = false;
-            } else {
-                keepFetching = false;
-            }
-            from += limit;
-        }
+    if (hydrateUserHistoryCacheFromLocalStorage()) {
+        // Use local accurate cache instantly, then refresh silently.
+        refreshDisciplineHistoryInBackground();
+        return;
     }
+
+    if (!latestDisciplineHistoryPromise) {
+        latestDisciplineHistoryPromise = fetchDisciplineSpecificHistory();
+    }
+
+    await latestDisciplineHistoryPromise;
+}
 
 function initializeCustomQuizBuilder() {
-        if (sourcesSelector) sourcesSelector.destroy();
-        
-        sourcesSelector = new SlimSelect({
-            select: '#sourcesSelect',
-            settings: { placeholderText: 'Select chapters...', searchPlaceholder: 'Search...' },
-            events: { afterChange: recalculateAvailableQuestionsAndUpdateUI }
-        });
+    if (sourcesSelector) sourcesSelector.destroy();
 
-        // This listener handles all dynamic updates within the builder form
-dom.customQuizForm.addEventListener('change', (e) => {
-            const target = e.target;
+    sourcesSelector = new SlimSelect({
+        select: '#sourcesSelect',
+        settings: { placeholderText: 'Select chapters...', searchPlaceholder: 'Search...' },
+        events: {
+            afterChange: () => scheduleRecalculateAvailableQuestionsAndUpdateUI()
+        }
+    });
 
-            // Recalculate whenever a filter or the question count mode changes
-            if (target.name === 'questionCountMode' || target.classList.contains('filter-checkbox')) {
-                // THIS IS THE FIX: Call the main state handler function
-                handleQuizBuilderState();
+    dom.customQuizForm.addEventListener('change', (e) => {
+        const target = e.target;
+
+        if (target.name === 'questionCountMode') {
+            handleQuizBuilderState();
+        } else if (target.classList.contains('filter-checkbox')) {
+            scheduleRecalculateAvailableQuestionsAndUpdateUI();
+        }
+
+        if (target.name === 'timerMode') {
+            const timerInputs = document.getElementById('timerInputs');
+            const enabled = target.value === 'custom';
+
+            if (timerInputs) {
+                timerInputs.style.opacity = enabled ? 1 : 0.5;
+                timerInputs.querySelectorAll('input').forEach(input => input.disabled = !enabled);
             }
+        }
 
-            // Handle timer visibility
-            if (target.name === 'timerMode') {
-                const timerInputs = document.getElementById('timerInputs');
-                const enabled = target.value === 'custom';
-                if(timerInputs) {
-                    timerInputs.style.opacity = enabled ? 1 : 0.5;
-                    timerInputs.querySelectorAll('input').forEach(input => input.disabled = !enabled);
-                }
-            }
+        if (target.name === 'flowMode') {
+            updateFlowControlUI();
+        }
+    });
 
-            // This part handles the sequential flow
-            if (target.name === 'flowMode') {
-                updateFlowControlUI();
-            }
+    const countInput = document.getElementById('customQuestionCount');
+    if (countInput) {
+        countInput.addEventListener('input', () => {
+            scheduleRecalculateAvailableQuestionsAndUpdateUI(120);
         });
     }
+}
 // --- INITIALIZATION (Clean & Fixes the Error) ---
 // --- INITIALIZATION (Clean & Fixes the Error) ---
 document.addEventListener('DOMContentLoaded', async () => {
@@ -1468,172 +1783,165 @@ window.startQuizForChapter = (chapterId) => {
 window.launchChapterQuiz = window.startQuizForChapter;
 
 function getFilterFunctions() {
-        return {
-            'unanswered': q => !userHistoryCache.has(q.id),
-            
-            'lastly-wrong': q => {
-                const history = userHistoryCache.get(q.id);
-                return history && (history.lastResult === 'wrong');
-            },
-            
-            // FIX: "Previously wrong" means they have gotten it wrong at least once EVER, 
-            // even if they got it right 50 times later.
-            'previously-wrong': q => {
-                const history = userHistoryCache.get(q.id);
-                return history && (history.timesWrong > 0);
-            },
-            
-            // FIX: "Initially wrong" means the very first time they took it, they failed.
-            'initial-wrong': q => {
-                const history = userHistoryCache.get(q.id);
-                return history && (history.firstAttemptResult === 'wrong');
-            },
-            
-            'review': q => userHistoryCache.get(q.id)?.isForReview === true,
-            'note': q => userHistoryCache.get(q.id)?.hasNote === true,
-            'very-difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Difficult',
-            'difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Difficult',
-            'moderate': q => userHistoryCache.get(q.id)?.userDifficulty === 'Moderate',
-            'easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Easy',
-            'very-easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Easy',
-        };
-    }
+    const getHistory = (q) => userHistoryCache.get(String(q.id));
 
-  async function getBaseQuestionPool() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const disciplineId = urlParams.get('disciplineId');
-        
-        // Find which chapters in this discipline the user actually has access to
-        const chapterIdsInDiscipline = accessibleContent.chapters
-            .filter(c => c.discipline_id === disciplineId)
-            .map(c => c.id);
-        
-        if (chapterIdsInDiscipline.length === 0) return [];
+    return {
+        'unanswered': q => !getHistory(q),
 
-        // FIX: Instead of making a new Supabase query that hits the 1000-row limit,
-        // use the fully paginated question list we already loaded in loadAllData()
-        if (window.pageQuestions && window.pageQuestions.length > 0) {
-            const chapterIdsSet = new Set(chapterIdsInDiscipline);
-            // Filter the memory bank to only include questions the user has access to
-            return window.pageQuestions.filter(q => chapterIdsSet.has(q.chapter_id));
-        }
+        'lastly-wrong': q => {
+            const history = getHistory(q);
+            return history && String(history.lastResult || '').toLowerCase() === 'wrong';
+        },
 
-        return [];
-    }
-async function getQuestionsForSourceAndFilters(sources) {
-        // Ensure the latest user history is loaded before filtering
-        await getUserHistory(currentUser.id); 
-        
-        // Get the base pool of all accessible questions for the current discipline
-        let questionPool = await getBaseQuestionPool();
-        
-        const selectedChapters = sources || (sourcesSelector ? sourcesSelector.getSelected() : []);
-        const mode = dom.customQuizForm.questionCountMode.value;
+        'previously-wrong': q => {
+            const history = getHistory(q);
+            return history && Number(history.timesWrong || 0) > 0;
+        },
 
-        // Step 1: Filter by selected sources (chapters) if applicable
-        if ((mode === 'from_sources' || mode === 'set_number') && selectedChapters.length > 0) {
-            const selectedChapterIds = new Set(selectedChapters.map(s => s.split('_')[1]));
-            questionPool = questionPool.filter(q => selectedChapterIds.has(q.chapter_id));
-        } else if ((mode === 'from_sources' || mode === 'set_number') && selectedChapters.length === 0) {
-            return []; // Return nothing if sources are required but none are selected
-        }
-        
-        // Step 2: Apply the checkbox filters to the remaining question pool
-        const activeFilterKeys = Array.from(document.querySelectorAll('.filter-checkbox:checked')).map(cb => cb.dataset.filterKey);
-        
-        if (activeFilterKeys.length > 0) {
-            const filterFunctions = getFilterFunctions();
-            questionPool = questionPool.filter(q => {
-                // A question just needs to match one of the selected filters
-                for (const key of activeFilterKeys) {
-                    if (filterFunctions[key] && filterFunctions[key](q)) {
-                        return true;
-                    }
-                }
-                return false;
-            });
-        }
-        
-        return questionPool;
-    }
+        'initial-wrong': q => {
+            const history = getHistory(q);
+            return history && String(history.firstAttemptResult || '').toLowerCase() === 'wrong';
+        },
 
- async function handleStartCustomQuiz(e) {
-        e.preventDefault();
-        dom.startCustomQuizBtn.disabled = true;
-        dom.startCustomQuizBtn.textContent = 'Building...';
+        'review': q => getHistory(q)?.isForReview === true,
+        'note': q => getHistory(q)?.hasNote === true,
+        'very-difficult': q => getHistory(q)?.userDifficulty === 'Very Difficult',
+        'difficult': q => getHistory(q)?.userDifficulty === 'Difficult',
+        'moderate': q => getHistory(q)?.userDifficulty === 'Moderate',
+        'easy': q => getHistory(q)?.userDifficulty === 'Easy',
+        'very-easy': q => getHistory(q)?.userDifficulty === 'Very Easy',
+    };
+}
 
-        try {
-            const form = dom.customQuizForm;
-            const questionCountMode = form.questionCountMode.value;
-            const selectedSources = sourcesSelector.getSelected();
+async function getBaseQuestionPool() {
+    // Important: this now returns the light question index only.
+    // Full question text/options/explanations are fetched later only after Start Quiz.
+    return await getLightDisciplineQuestionPool();
+}
 
-            if ((questionCountMode === 'from_sources' || questionCountMode === 'set_number') && selectedSources.length === 0) {
-                dom.customAlertMessage.textContent = "Please select at least one question source to build your quiz.";
-                dom.customAlertModal.classList.remove('hidden');
-                dom.startCustomQuizBtn.disabled = false;
-                dom.startCustomQuizBtn.textContent = 'Start Quiz';
-                return;
-            }
+async function getQuestionsForSourceAndFilters(sources = null) {
+    return await getFilteredQuestionIndexForBuilder(sources);
+}
 
-            const settings = {
-                mode: questionCountMode,
-                count: parseInt(form.customQuestionCount.value, 10),
-                timer: form.timerMode.value === 'custom' ? (parseInt(form.timerHours.value, 10) * 3600 + parseInt(form.timerMinutes.value, 10) * 60) : -1,
-                sources: selectedSources,
-                flowMode: form.flowMode.value,
-            };
+async function handleStartCustomQuiz(e) {
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
 
-            let finalQuestions = await getQuestionsForSourceAndFilters(settings.sources);
+    dom.startCustomQuizBtn.disabled = true;
+    dom.startCustomQuizBtn.textContent = 'Building...';
 
-            if (settings.flowMode === 'sequential') {
-                const sequenceOrder = Array.from(document.querySelectorAll('#sequenceList .rule-item')).map(item => item.dataset.id);
-                const sourceOrderMap = new Map(sequenceOrder.map((id, index) => [id, index]));
-                
-                finalQuestions.sort((a, b) => {
-                    const chapterIdA = `chapter_${a.chapter_id}`;
-                    const chapterIdB = `chapter_${b.chapter_id}`;
-                    const indexA = sourceOrderMap.get(chapterIdA) ?? Infinity;
-                    const indexB = sourceOrderMap.get(chapterIdB) ?? Infinity;
+    try {
+        const form = dom.customQuizForm;
+        const questionCountMode = form.questionCountMode.value;
+        const selectedSources = sourcesSelector ? sourcesSelector.getSelected() : [];
 
-                    if (indexA !== indexB) return indexA - indexB;
-                    return (a.questionNumber || 0) - (b.questionNumber || 0);
-                });
-            } else { // Random Flow
-                for (let i = finalQuestions.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [finalQuestions[i], finalQuestions[j]] = [finalQuestions[j], finalQuestions[i]];
-                }
-            }
-
-            if (settings.mode === 'set_number') {
-                 finalQuestions = finalQuestions.slice(0, settings.count);
-            }
-
-            if (finalQuestions.length === 0) {
-                dom.customAlertMessage.textContent = "No questions found that match your filter/source criteria.";
-                dom.customAlertModal.classList.remove('hidden');
-            } else {
-                const serializableQuestions = finalQuestions.map(q => ({...q, bookId: q.book_id, chapterId: q.chapter_id, disciplineId: q.discipline_id}));
-                localStorage.setItem('customQuizQuestions', JSON.stringify(serializableQuestions));
-                localStorage.setItem('customQuizTimer', String(settings.timer));
-                
-                let redirectUrl = `quiz_page.html?quizType=advanced_custom&from=disciplines&flowMode=${settings.flowMode}`;
-const disciplineId = dom.disciplineTitle.dataset.id;
-const disciplineName = dom.disciplineTitle.textContent;
-redirectUrl += `&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}`;
-window.location.href = redirectUrl;
-
-            }
-
-        } catch (error) {
-            console.error("Error building custom quiz:", error);
-            dom.customAlertMessage.textContent = "A critical error occurred while building the quiz. Please try again.";
+        if ((questionCountMode === 'from_sources' || questionCountMode === 'set_number') && selectedSources.length === 0) {
+            dom.customAlertMessage.textContent = "Please select at least one question source to build your quiz.";
             dom.customAlertModal.classList.remove('hidden');
-        } finally {
-            dom.startCustomQuizBtn.disabled = false;
-            dom.startCustomQuizBtn.textContent = 'Start Quiz';
+            return;
         }
+
+        const settings = {
+            mode: questionCountMode,
+            count: parseInt(document.getElementById('customQuestionCount').value, 10),
+            timer: form.timerMode.value === 'custom'
+                ? (parseInt(form.timerHours.value, 10) * 3600 + parseInt(form.timerMinutes.value, 10) * 60)
+                : -1,
+            sources: selectedSources,
+            flowMode: form.flowMode.value,
+        };
+
+        // First get only the light filtered question index.
+        let finalQuestionIndex = await getQuestionsForSourceAndFilters(settings.sources);
+
+        if (settings.flowMode === 'sequential') {
+            const sequenceOrder = Array.from(document.querySelectorAll('#sequenceList .rule-item'))
+                .map(item => item.dataset.id);
+
+            const sourceOrderMap = new Map(sequenceOrder.map((id, index) => [id, index]));
+
+            finalQuestionIndex.sort((a, b) => {
+                const chapterIdA = `chapter_${a.chapter_id}`;
+                const chapterIdB = `chapter_${b.chapter_id}`;
+
+                const indexA = sourceOrderMap.get(chapterIdA) ?? Infinity;
+                const indexB = sourceOrderMap.get(chapterIdB) ?? Infinity;
+
+                if (indexA !== indexB) return indexA - indexB;
+                return (a.questionNumber || 0) - (b.questionNumber || 0);
+            });
+        } else {
+            for (let i = finalQuestionIndex.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [finalQuestionIndex[i], finalQuestionIndex[j]] = [finalQuestionIndex[j], finalQuestionIndex[i]];
+            }
+        }
+
+        if (settings.mode === 'set_number') {
+            finalQuestionIndex = finalQuestionIndex.slice(0, settings.count);
+        }
+
+        if (finalQuestionIndex.length === 0) {
+            dom.customAlertMessage.textContent = "No questions found that match your filter/source criteria.";
+            dom.customAlertModal.classList.remove('hidden');
+            return;
+        }
+
+        // Only now fetch full question text/options/explanations for the final selected IDs.
+        dom.startCustomQuizBtn.textContent = 'Loading questions...';
+
+        const lightQuestionMap = new Map(
+            finalQuestionIndex.map(q => [String(q.id), q])
+        );
+
+        const fullQuestions = (await fetchFullQuestionsByIds(finalQuestionIndex.map(q => q.id)))
+            .map(q => ({
+                ...lightQuestionMap.get(String(q.id)),
+                ...q
+            }));
+
+        if (fullQuestions.length === 0) {
+            dom.customAlertMessage.textContent = "Could not load the selected questions. Please try again.";
+            dom.customAlertModal.classList.remove('hidden');
+            return;
+        }
+
+        const serializableQuestions = fullQuestions.map(q => ({
+            id: q.id,
+            question: q.question,
+            options: q.options,
+            correctAnswerIndex: q.correctAnswerIndex,
+            explanation: q.explanation,
+
+            imageUrl: q.imageUrl || null,
+            imageUrls: q.imageUrls || q.image_urls || null,
+            explanationImageUrl: q.explanationImageUrl || null,
+            explanationImageUrls: q.explanationImageUrls || q.explanation_image_urls || null,
+
+            bookId: q.book_id,
+            chapterId: q.chapter_id,
+            disciplineId: q.discipline_id,
+            chapterNumber: q.chapterNumber,
+            questionNumber: q.questionNumber
+        }));
+
+        localStorage.setItem('customQuizQuestions', JSON.stringify(serializableQuestions));
+        localStorage.setItem('customQuizTimer', String(settings.timer));
+
+        const { disciplineId, disciplineName } = getDisciplineContext();
+
+        let redirectUrl = `quiz_page.html?quizType=advanced_custom&from=disciplines&flowMode=${settings.flowMode}`;
+        redirectUrl += `&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}`;
+
+        window.location.href = redirectUrl;
+    } catch (error) {
+        console.error("Error building custom quiz:", error);
+        dom.customAlertMessage.textContent = "A critical error occurred while building the quiz. Please try again.";
+        dom.customAlertModal.classList.remove('hidden');
+    } finally {
+        dom.startCustomQuizBtn.disabled = false;
+        dom.startCustomQuizBtn.textContent = 'Start Quiz';
     }
+}
 
     
 

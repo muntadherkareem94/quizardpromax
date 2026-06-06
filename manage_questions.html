@@ -640,9 +640,15 @@
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                         Find & Replace
                     </button>
-                    <button id="bulkImportButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Bulk Import</button>
-                    <button id="imageBulkImportButton" class="image-bulk-import-admin-btn py-2 px-4 rounded-lg transition duration-300">Image Bulk Import</button>
-                    <button id="addQuestionButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Add New Question</button>
+                                       <button id="bulkImportButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Bulk Import</button>
+
+<button id="bulkModifyButton" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">
+    Bulk Modify
+</button>
+
+<button id="exportJsonButton" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Export JSON</button>
+<button id="imageBulkImportButton" class="image-bulk-import-admin-btn py-2 px-4 rounded-lg transition duration-300">Image Bulk Import</button>
+<button id="addQuestionButton" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">Add New Question</button>
                 </div>
             </div>
 
@@ -825,6 +831,103 @@
         </div>
 </div>
 
+<div id="bulkModifyModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0 z-50">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Bulk Modify Existing Questions</h3>
+
+        <p class="text-sm text-gray-600 mb-4">
+            Upload or paste a corrected JSON file. This will update existing questions by matching
+            <strong>questionNumber</strong>. It will not delete/recreate questions, so existing question IDs and user statistics are preserved.
+        </p>
+
+        <div class="bg-yellow-50 border border-yellow-200 text-yellow-800 rounded-lg p-3 text-sm mb-4">
+            <strong>Important:</strong> This modifies only questions that already exist in this chapter. Questions not found by questionNumber will be skipped.
+        </div>
+
+        <form id="bulkModifyForm">
+            <div class="mb-3 flex flex-wrap items-center gap-2">
+                <label for="bulkModifyJsonFileInput" class="json-file-attach-label">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.586-6.586a4 4 0 10-5.657-5.657L5.757 10.757a6 6 0 108.486 8.486L20 13.486" />
+                    </svg>
+                    Attach corrected JSON file
+                </label>
+
+                <input
+                    type="file"
+                    id="bulkModifyJsonFileInput"
+                    accept=".json,application/json"
+                    class="hidden"
+                >
+
+                <span id="bulkModifyJsonFileNameBadge" class="json-file-name-badge"></span>
+            </div>
+
+            <textarea
+                id="bulkModifyJsonInput"
+                rows="14"
+                class="w-full p-2 border border-gray-300 rounded-md font-mono text-sm"
+                placeholder='{ "questions": [ ... ] }'
+            ></textarea>
+
+            <label class="flex items-center gap-2 mt-3 text-sm text-gray-700">
+                <input
+                    type="checkbox"
+                    id="bulkModifyPreserveImages"
+                    checked
+                    class="h-4 w-4 text-amber-600 border-gray-300 rounded focus:ring-amber-500"
+                >
+                Preserve existing image URLs. Recommended when repairing text, tables, explanations, or correctAnswerIndex.
+            </label>
+
+            <div id="bulkModifyReport" class="hidden mt-4 text-sm rounded-lg p-3 border"></div>
+
+            <div class="flex justify-end pt-4">
+                <button type="button" id="cancelBulkModifyButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg mr-3">
+                    Cancel
+                </button>
+                <button type="submit" id="bulkModifySubmitButton" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg">
+                    Modify Matching Questions
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="exportJsonModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0 z-50">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-300 scale-95">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Export Current Chapter as JSON</h3>
+
+        <p class="text-sm text-gray-600 mb-4">
+            This exports the latest saved questions directly from Supabase for the current chapter.
+            Any edits must be saved first before they appear in this JSON.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-3">
+            <button type="button" id="copyExportJsonButton" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">
+                Copy JSON
+            </button>
+            <button type="button" id="downloadExportJsonButton" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300">
+                Download .json
+            </button>
+        </div>
+
+        <textarea 
+            id="exportJsonOutput" 
+            rows="18" 
+            readonly 
+            class="w-full p-3 border border-gray-300 rounded-md font-mono text-xs md:text-sm bg-gray-50 text-gray-900"
+            placeholder="The exported JSON will appear here..."
+        ></textarea>
+
+        <div class="flex justify-end pt-4">
+            <button type="button" id="closeExportJsonButton" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
 <div id="imageBulkImportModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 hidden opacity-0">
     <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full transform transition-transform duration-300 scale-95">
         <h3 class="text-2xl font-bold text-gray-800 mb-4">Image Bulk Import</h3>
@@ -885,7 +988,8 @@ import { supabase } from './supabaseClient.js';
         const messageText = document.getElementById('messageText');
         const logoutButton = document.getElementById('logoutButton');
         const backToChaptersButton = document.getElementById('backToChaptersButton');
-        const bulkImportButton = document.getElementById('bulkImportButton');
+                const bulkImportButton = document.getElementById('bulkImportButton');
+        const exportJsonButton = document.getElementById('exportJsonButton');
         const imageBulkImportButton = document.getElementById('imageBulkImportButton');
         
        // Find & Replace Elements
@@ -904,6 +1008,24 @@ const importForm = document.getElementById('importForm');
 const jsonInput = document.getElementById('jsonInput');
 const jsonFileInput = document.getElementById('jsonFileInput');
 const jsonFileNameBadge = document.getElementById('jsonFileNameBadge');
+const bulkModifyButton = document.getElementById('bulkModifyButton');
+const bulkModifyModal = document.getElementById('bulkModifyModal');
+const bulkModifyForm = document.getElementById('bulkModifyForm');
+const bulkModifyJsonInput = document.getElementById('bulkModifyJsonInput');
+const bulkModifyJsonFileInput = document.getElementById('bulkModifyJsonFileInput');
+const bulkModifyJsonFileNameBadge = document.getElementById('bulkModifyJsonFileNameBadge');
+const cancelBulkModifyButton = document.getElementById('cancelBulkModifyButton');
+const bulkModifySubmitButton = document.getElementById('bulkModifySubmitButton');
+const bulkModifyReport = document.getElementById('bulkModifyReport');
+const bulkModifyPreserveImages = document.getElementById('bulkModifyPreserveImages');
+
+const exportJsonModal = document.getElementById('exportJsonModal');
+const exportJsonOutput = document.getElementById('exportJsonOutput');
+const copyExportJsonButton = document.getElementById('copyExportJsonButton');
+const downloadExportJsonButton = document.getElementById('downloadExportJsonButton');
+const closeExportJsonButton = document.getElementById('closeExportJsonButton');
+let currentExportFileName = 'chapter_questions_export.json';
+
 const imageBulkImportModal = document.getElementById('imageBulkImportModal');
 const imageBulkImportForm = document.getElementById('imageBulkImportForm');
 const imageBulkInput = document.getElementById('imageBulkInput');
@@ -1066,6 +1188,27 @@ if (modal === importModal) {
         jsonFileNameBadge.textContent = '';
         jsonFileNameBadge.style.display = 'none';
     }
+}
+
+if (modal === bulkModifyModal) {
+    bulkModifyForm.reset();
+    bulkModifyJsonInput.value = '';
+    bulkModifyPreserveImages.checked = true;
+
+    if (bulkModifyJsonFileNameBadge) {
+        bulkModifyJsonFileNameBadge.textContent = '';
+        bulkModifyJsonFileNameBadge.style.display = 'none';
+    }
+
+    if (bulkModifyReport) {
+        bulkModifyReport.classList.add('hidden');
+        bulkModifyReport.innerHTML = '';
+    }
+}
+
+if (modal === exportJsonModal) {
+    exportJsonOutput.value = '';
+    currentExportFileName = 'chapter_questions_export.json';
 }
 
 if (modal === imageBulkImportModal) {
@@ -2305,6 +2448,128 @@ document.getElementById('correctAnswer').value = String(data.correctAnswerIndex 
             }
         });
 
+async function exportCurrentChapterQuestionsAsJson() {
+    if (!chapterId) {
+        showMessage('Chapter ID is missing. Cannot export JSON.', true);
+        return;
+    }
+
+    exportJsonButton.disabled = true;
+    exportJsonButton.textContent = 'Exporting...';
+
+    exportJsonOutput.value = 'Generating the latest saved JSON from Supabase...';
+    openModal(exportJsonModal);
+
+    try {
+        const { data: chapterData, error: chapterError } = await supabase
+            .from('chapters')
+            .select('chapterNumber, name')
+            .eq('id', chapterId)
+            .single();
+
+        if (chapterError) throw chapterError;
+
+        const { data: latestQuestions, error: questionsError } = await supabase
+            .from('questions')
+            .select('questionNumber, question, options, correctAnswerIndex, explanation, imageUrl, imageUrls, explanationImageUrl, explanationImageUrls')
+            .eq('chapter_id', chapterId)
+            .order('questionNumber', { ascending: true });
+
+        if (questionsError) throw questionsError;
+
+        const exportedQuestions = (latestQuestions || []).map(q => {
+            const questionImages = normalizeImageArray(q.imageUrl, q.imageUrls);
+            const explanationImages = normalizeImageArray(q.explanationImageUrl, q.explanationImageUrls);
+
+            return {
+                questionNumber: Number(q.questionNumber),
+                question: normalizeStoredHtmlEntities(q.question || ''),
+                options: Array.isArray(q.options)
+                    ? q.options.map(option => normalizeStoredHtmlEntities(option || '').trim())
+                    : [],
+                correctAnswerIndex: Number(q.correctAnswerIndex ?? 0),
+                explanation: normalizeStoredHtmlEntities(q.explanation || ''),
+                imageUrl: questionImages[0] || null,
+                imageUrls: questionImages.length > 0 ? questionImages : null,
+                explanationImageUrl: explanationImages[0] || null,
+                explanationImageUrls: explanationImages.length > 0 ? explanationImages : null
+            };
+        });
+
+        const exportObject = {
+            questions: exportedQuestions
+        };
+
+        exportJsonOutput.value = JSON.stringify(exportObject, null, 2);
+
+        const safeChapterName = String(chapterData?.name || 'chapter')
+            .replace(/[^a-zA-Z0-9]+/g, '_')
+            .replace(/^_+|_+$/g, '')
+            .slice(0, 80) || 'chapter';
+
+        const chapterNumberPart = chapterData?.chapterNumber !== undefined
+            ? `chapter_${chapterData.chapterNumber}`
+            : 'chapter';
+
+        currentExportFileName = `${chapterNumberPart}_${safeChapterName}_questions.json`;
+
+        showMessage(`${exportedQuestions.length} latest saved questions exported as JSON.`, false);
+
+    } catch (error) {
+        console.error('Export JSON error:', error);
+        exportJsonOutput.value = '';
+        showMessage(`Export failed: ${error.message}`, true);
+    } finally {
+        exportJsonButton.disabled = false;
+        exportJsonButton.textContent = 'Export JSON';
+    }
+}
+
+async function copyExportJsonToClipboard() {
+    const jsonText = exportJsonOutput.value.trim();
+
+    if (!jsonText) {
+        showMessage('There is no JSON to copy yet.', true);
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(jsonText);
+        showMessage('Exported JSON copied to clipboard.', false);
+    } catch (error) {
+        exportJsonOutput.focus();
+        exportJsonOutput.select();
+        document.execCommand('copy');
+        showMessage('Exported JSON copied to clipboard.', false);
+    }
+}
+
+function downloadExportedJsonFile() {
+    const jsonText = exportJsonOutput.value.trim();
+
+    if (!jsonText) {
+        showMessage('There is no JSON to download yet.', true);
+        return;
+    }
+
+    const blob = new Blob([jsonText], { type: 'application/json;charset=utf-8' });
+    const downloadUrl = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = currentExportFileName || 'chapter_questions_export.json';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    URL.revokeObjectURL(downloadUrl);
+}
+
+exportJsonButton.addEventListener('click', exportCurrentChapterQuestionsAsJson);
+closeExportJsonButton.addEventListener('click', () => closeModal(exportJsonModal));
+copyExportJsonButton.addEventListener('click', copyExportJsonToClipboard);
+downloadExportJsonButton.addEventListener('click', downloadExportedJsonFile);
+
        bulkImportButton.addEventListener('click', () => openModal(importModal));
 cancelImportButton.addEventListener('click', () => closeModal(importModal));
 
@@ -2352,6 +2617,316 @@ jsonFileInput.addEventListener('change', async () => {
     }
 });
 
+// --- BULK MODIFY EXISTING QUESTIONS ---
+// This updates existing question rows by matching questionNumber.
+// It does NOT delete/recreate questions, so question IDs and user statistics remain preserved.
+
+function hasOwnField(obj, key) {
+    return Object.prototype.hasOwnProperty.call(obj, key);
+}
+
+function normalizeJsonImageArray(primaryImageUrl, imageUrlsArray) {
+    const urls = [];
+
+    if (Array.isArray(imageUrlsArray)) {
+        imageUrlsArray.forEach(url => {
+            if (url) urls.push(String(url).trim());
+        });
+    } else if (typeof imageUrlsArray === 'string' && imageUrlsArray.trim()) {
+        urls.push(imageUrlsArray.trim());
+    }
+
+    if (primaryImageUrl) {
+        urls.unshift(String(primaryImageUrl).trim());
+    }
+
+    return [...new Set(urls.filter(Boolean))];
+}
+
+function normalizeBulkModifyQuestion(q) {
+    const questionNumber = Number(q.questionNumber);
+
+    if (!Number.isInteger(questionNumber) || questionNumber <= 0) {
+        throw new Error(`Invalid or missing questionNumber: ${q.questionNumber}`);
+    }
+
+    if (q.question === undefined || q.question === null || String(q.question).trim() === '') {
+        throw new Error(`Q# ${questionNumber}: question text is missing.`);
+    }
+
+    if (!Array.isArray(q.options)) {
+        throw new Error(`Q# ${questionNumber}: options must be an array.`);
+    }
+
+    const options = q.options.map(option => String(option ?? '').trim());
+
+    if (options.length < 2 || options.length > 10) {
+        throw new Error(`Q# ${questionNumber}: options must be between 2 and 10 choices.`);
+    }
+
+    if (options.some(option => !option)) {
+        throw new Error(`Q# ${questionNumber}: options cannot contain empty values.`);
+    }
+
+    const correctAnswerIndex = Number(q.correctAnswerIndex);
+
+    if (!Number.isInteger(correctAnswerIndex) || correctAnswerIndex < 0 || correctAnswerIndex >= options.length) {
+        throw new Error(`Q# ${questionNumber}: correctAnswerIndex is out of range.`);
+    }
+
+    if (q.explanation === undefined || q.explanation === null) {
+        throw new Error(`Q# ${questionNumber}: explanation is missing.`);
+    }
+
+    return {
+        original: q,
+        questionNumber,
+        updateData: {
+            question: String(q.question).trim(),
+            options,
+            correctAnswerIndex,
+            explanation: String(q.explanation).trim()
+        }
+    };
+}
+
+function parseBulkModifyJson() {
+    const rawText = bulkModifyJsonInput.value.trim();
+
+    if (!rawText) {
+        throw new Error('Please paste or attach a JSON file first.');
+    }
+
+    const parsed = JSON.parse(rawText);
+
+    if (!parsed.questions || !Array.isArray(parsed.questions)) {
+        throw new Error('Invalid JSON format. It must be an object with a "questions" array.');
+    }
+
+    if (parsed.questions.length === 0) {
+        throw new Error('The JSON file contains no questions.');
+    }
+
+    return parsed.questions;
+}
+
+function showBulkModifyReport({ updatedCount, skippedQuestionNumbers, totalJsonQuestions }) {
+    const skippedHtml = skippedQuestionNumbers.length
+        ? `<p class="mt-2"><strong>Skipped questionNumbers not found in this chapter:</strong> ${skippedQuestionNumbers.join(', ')}</p>`
+        : '';
+
+    bulkModifyReport.className = `mt-4 text-sm rounded-lg p-3 border ${
+        skippedQuestionNumbers.length
+            ? 'bg-yellow-50 border-yellow-300 text-yellow-800'
+            : 'bg-green-50 border-green-300 text-green-800'
+    }`;
+
+    bulkModifyReport.innerHTML = `
+        <p><strong>Bulk modify completed.</strong></p>
+        <p>Total questions in JSON: ${totalJsonQuestions}</p>
+        <p>Updated existing questions: ${updatedCount}</p>
+        <p>Skipped: ${skippedQuestionNumbers.length}</p>
+        ${skippedHtml}
+    `;
+
+    bulkModifyReport.classList.remove('hidden');
+}
+
+async function updateQuestionsInBatches(updateJobs) {
+    const batchSize = 25;
+
+    for (let i = 0; i < updateJobs.length; i += batchSize) {
+        const batch = updateJobs.slice(i, i + batchSize);
+
+        await Promise.all(batch.map(async job => {
+            const { error } = await supabase
+                .from('questions')
+                .update(job.updateData)
+                .eq('id', job.id);
+
+            if (error) {
+                throw new Error(`Q# ${job.questionNumber}: ${error.message}`);
+            }
+        }));
+    }
+}
+
+bulkModifyButton.addEventListener('click', () => openModal(bulkModifyModal));
+cancelBulkModifyButton.addEventListener('click', () => closeModal(bulkModifyModal));
+
+bulkModifyJsonFileInput.addEventListener('change', async () => {
+    const file = bulkModifyJsonFileInput.files && bulkModifyJsonFileInput.files[0];
+
+    if (!file) return;
+
+    const fileName = file.name || '';
+
+    if (!fileName.toLowerCase().endsWith('.json')) {
+        showMessage('Please attach a valid .json file.', true);
+        bulkModifyJsonFileInput.value = '';
+        return;
+    }
+
+    try {
+        const text = await file.text();
+
+        const parsed = JSON.parse(text);
+
+        if (!parsed.questions || !Array.isArray(parsed.questions)) {
+            throw new Error('The JSON file must contain an object with a "questions" array.');
+        }
+
+        bulkModifyJsonInput.value = text;
+
+        if (bulkModifyJsonFileNameBadge) {
+            bulkModifyJsonFileNameBadge.textContent = fileName;
+            bulkModifyJsonFileNameBadge.style.display = 'inline-flex';
+        }
+
+        showMessage(`Bulk modify JSON loaded: ${fileName}`, false);
+
+    } catch (error) {
+        console.error('Bulk modify JSON file error:', error);
+        showMessage(`Could not load JSON file: ${error.message}`, true);
+        bulkModifyJsonFileInput.value = '';
+
+        if (bulkModifyJsonFileNameBadge) {
+            bulkModifyJsonFileNameBadge.textContent = '';
+            bulkModifyJsonFileNameBadge.style.display = 'none';
+        }
+    }
+});
+
+bulkModifyForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    bulkModifySubmitButton.disabled = true;
+    bulkModifySubmitButton.textContent = 'Modifying...';
+
+    if (bulkModifyReport) {
+        bulkModifyReport.classList.add('hidden');
+        bulkModifyReport.innerHTML = '';
+    }
+
+    try {
+        const jsonQuestions = parseBulkModifyJson();
+
+        const normalizedQuestions = [];
+        const seenQuestionNumbers = new Set();
+
+        for (const q of jsonQuestions) {
+            const normalized = normalizeBulkModifyQuestion(q);
+
+            if (seenQuestionNumbers.has(normalized.questionNumber)) {
+                throw new Error(`Duplicate questionNumber found in JSON: ${normalized.questionNumber}`);
+            }
+
+            seenQuestionNumbers.add(normalized.questionNumber);
+            normalizedQuestions.push(normalized);
+        }
+
+        const { data: existingQuestions, error: existingError } = await supabase
+            .from('questions')
+            .select('id, questionNumber')
+            .eq('chapter_id', chapterId);
+
+        if (existingError) throw existingError;
+
+        const existingByQuestionNumber = new Map(
+            (existingQuestions || []).map(q => [Number(q.questionNumber), q])
+        );
+
+        const preserveImages = bulkModifyPreserveImages.checked;
+        const updateJobs = [];
+        const skippedQuestionNumbers = [];
+
+        for (const item of normalizedQuestions) {
+            const existing = existingByQuestionNumber.get(item.questionNumber);
+
+            if (!existing) {
+                skippedQuestionNumbers.push(item.questionNumber);
+                continue;
+            }
+
+            const updateData = { ...item.updateData };
+
+            if (!preserveImages) {
+                const hasQuestionImages =
+                    hasOwnField(item.original, 'imageUrl') ||
+                    hasOwnField(item.original, 'imageUrls');
+
+                const hasExplanationImages =
+                    hasOwnField(item.original, 'explanationImageUrl') ||
+                    hasOwnField(item.original, 'explanationImageUrls');
+
+                if (hasQuestionImages) {
+                    const questionImages = normalizeJsonImageArray(
+                        item.original.imageUrl,
+                        item.original.imageUrls
+                    );
+
+                    updateData.imageUrl = questionImages[0] || null;
+                    updateData.imageUrls = questionImages.length > 0 ? questionImages : null;
+                }
+
+                if (hasExplanationImages) {
+                    const explanationImages = normalizeJsonImageArray(
+                        item.original.explanationImageUrl,
+                        item.original.explanationImageUrls
+                    );
+
+                    updateData.explanationImageUrl = explanationImages[0] || null;
+                    updateData.explanationImageUrls = explanationImages.length > 0 ? explanationImages : null;
+                }
+            }
+
+            updateJobs.push({
+                id: existing.id,
+                questionNumber: item.questionNumber,
+                updateData
+            });
+        }
+
+        if (updateJobs.length === 0) {
+            throw new Error('No matching existing questions were found. Check that the questionNumber values match this chapter.');
+        }
+
+        const confirmMessage =
+            `Bulk Modify will update ${updateJobs.length} existing questions.\n` +
+            `It will skip ${skippedQuestionNumbers.length} questions not found in this chapter.\n\n` +
+            `This will NOT delete/recreate questions, so question IDs should remain preserved.\n\n` +
+            `Continue?`;
+
+        if (!confirm(confirmMessage)) {
+            showMessage('Bulk modify cancelled.', false);
+            return;
+        }
+
+        await updateQuestionsInBatches(updateJobs);
+
+        showBulkModifyReport({
+            updatedCount: updateJobs.length,
+            skippedQuestionNumbers,
+            totalJsonQuestions: jsonQuestions.length
+        });
+
+        showMessage(`${updateJobs.length} questions modified successfully.`, false);
+        await loadQuestions();
+
+    } catch (error) {
+        console.error('Bulk modify error:', error);
+        showMessage(`Bulk modify failed: ${error.message}`, true);
+
+        if (bulkModifyReport) {
+            bulkModifyReport.className = 'mt-4 text-sm rounded-lg p-3 border bg-red-50 border-red-300 text-red-800';
+            bulkModifyReport.innerHTML = `<strong>Bulk modify failed:</strong> ${error.message}`;
+            bulkModifyReport.classList.remove('hidden');
+        }
+    } finally {
+        bulkModifySubmitButton.disabled = false;
+        bulkModifySubmitButton.textContent = 'Modify Matching Questions';
+    }
+});
 imageBulkImportButton.addEventListener('click', () => openModal(imageBulkImportModal));
 cancelImageBulkImportButton.addEventListener('click', () => closeModal(imageBulkImportModal));
 

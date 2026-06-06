@@ -1,6 +1,6 @@
 
 // Version 6: Forces a clean slate and uses relative paths
-const CACHE_NAME = 'quizard-app-shell-v13';
+const CACHE_NAME = 'quizard-app-shell-v19';
 
 const APP_SHELL = [
   './',

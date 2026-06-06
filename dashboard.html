@@ -832,6 +832,13 @@ let builderContext = 'global';
 let sourcesSelector;
 let sourceRelationshipMap = new Map();
 let userHistoryCache = new Map();
+
+const DASHBOARD_BUILDER_CACHE_VERSION = 2;
+const FULL_QUESTION_PREFETCH_LIMIT = 800;
+
+let builderRecalcTimer = null;
+let builderRecalcRunId = 0;
+let builderHistoryRefreshPromise = null;
 // --- USER-SAFE DASHBOARD CACHE HELPERS ---
 // Keeps the app fast for the same user, but prevents one user's specialty cache
 // from appearing after another user logs in on the same device/browser.
@@ -901,7 +908,8 @@ function clearDashboardContentCache() {
 // This stores only final numbers, not huge question/history arrays.
 // Example size: a few KB instead of thousands of rows.
 
-const DASHBOARD_STATS_CACHE_VERSION = 1;
+const DASHBOARD_STATS_CACHE_VERSION = 2;
+let latestDashboardStatsPromise = null;
 
 function dashboardStatsCacheKey(userId) {
     return `dashboardStatsCache_${userId}`;
@@ -1026,6 +1034,353 @@ function buildDisciplineStatsFromRaw(disciplines = [], questions = [], history =
     return disciplineStats;
 }        
 
+async function fetchFreshDashboardStats() {
+    if (!latestDashboardStatsPromise) {
+        latestDashboardStatsPromise = (async () => {
+            const { data, error } = await supabase.rpc('get_my_dashboard_stats');
+
+            if (error) throw error;
+
+            if (typeof data === 'string') {
+                try {
+                    return JSON.parse(data);
+                } catch {
+                    return { bookStats: {}, disciplineStats: {} };
+                }
+            }
+
+            return data || { bookStats: {}, disciplineStats: {} };
+        })();
+
+        latestDashboardStatsPromise.finally(() => {
+            setTimeout(() => {
+                latestDashboardStatsPromise = null;
+            }, 5000);
+        });
+    }
+
+    return latestDashboardStatsPromise;
+}
+
+function dashboardBuilderQuestionCacheKey() {
+    return `dashboard_builder_questions_v${DASHBOARD_BUILDER_CACHE_VERSION}_${currentUser?.id || 'anonymous'}`;
+}
+
+function dashboardBuilderHistoryCacheKey() {
+    return `dashboard_builder_history_v${DASHBOARD_BUILDER_CACHE_VERSION}_${currentUser?.id || 'anonymous'}`;
+}
+
+function hydrateUserHistoryCacheFromLocalStorage() {
+    const cachedHistory = safeParseLocalStorage(dashboardBuilderHistoryCacheKey(), []);
+
+    if (cachedHistory && cachedHistory.length > 0) {
+        userHistoryCache.clear();
+
+        cachedHistory.forEach(item => {
+            const questionId = String(item.questionId || item.question_id || '');
+            if (questionId) userHistoryCache.set(questionId, item);
+        });
+
+        return true;
+    }
+
+    return false;
+}
+
+function saveBuilderHistoryCache() {
+    try {
+        localStorage.setItem(
+            dashboardBuilderHistoryCacheKey(),
+            JSON.stringify(Array.from(userHistoryCache.values()))
+        );
+    } catch (error) {
+        console.warn("Could not cache dashboard builder history.", error);
+    }
+}
+
+function scheduleRecalculateAvailableQuestionsAndUpdateUI(delay = 80) {
+    if (builderRecalcTimer) clearTimeout(builderRecalcTimer);
+
+    builderRecalcTimer = setTimeout(() => {
+        recalculateAvailableQuestionsAndUpdateUI();
+    }, delay);
+}
+
+function getChapterNumberMap() {
+    const map = new Map();
+
+    (accessibleContent.chapters || []).forEach(chapter => {
+        if (chapter && chapter.id) {
+            map.set(String(chapter.id), chapter.chapterNumber || 0);
+        }
+    });
+
+    return map;
+}
+
+function enrichQuestionIndexRows(rows = []) {
+    const chapterNumberMap = getChapterNumberMap();
+
+    return (rows || []).map(q => ({
+        ...q,
+        chapterNumber: q.chapterNumber || chapterNumberMap.get(String(q.chapter_id || q.chapterId)) || 0
+    }));
+}
+async function fetchLightQuestionsByChapterIds(chapterIds) {
+    const uniqueChapterIds = [...new Set((chapterIds || []).map(id => String(id)).filter(Boolean))];
+
+    if (uniqueChapterIds.length === 0) return [];
+
+    const allQuestions = [];
+    const chapterChunkSize = 100;
+
+    for (let i = 0; i < uniqueChapterIds.length; i += chapterChunkSize) {
+        const chapterChunk = uniqueChapterIds.slice(i, i + chapterChunkSize);
+
+        let from = 0;
+        const limit = 1000;
+
+        while (true) {
+            const { data, error } = await supabase
+                .from('questions')
+                .select('id, book_id, chapter_id, discipline_id, questionNumber')
+                .in('chapter_id', chapterChunk)
+                .order('chapter_id', { ascending: true })
+                .order('questionNumber', { ascending: true })
+                .range(from, from + limit - 1);
+
+            if (error) throw error;
+
+            if (!data || data.length === 0) break;
+
+            allQuestions.push(...data);
+
+            if (data.length < limit) break;
+            from += limit;
+        }
+    }
+
+    return enrichQuestionIndexRows(allQuestions);
+}
+
+function getChapterIdsFromSources(sources = null) {
+    const currentMode = dom.customQuizForm.questionCountMode.value;
+    let sourcesToUse = [];
+
+    if (currentMode === 'all_available') {
+        sourcesToUse = accessibleContent.chapters
+            .filter(c => c.id)
+            .map(c => `chapter_${c.id}`);
+    } else if (sourcesSelector) {
+        sourcesToUse = sources || sourcesSelector.getSelected();
+    }
+
+    const chapterIdsToFetch = new Set();
+
+    sourcesToUse.forEach(source => {
+        const [type, id] = source.split('_');
+
+        if (type === 'chapter') {
+            chapterIdsToFetch.add(id);
+        } else if (type === 'book') {
+            accessibleContent.chapters.forEach(c => {
+                if (c.book_id === id) chapterIdsToFetch.add(c.id);
+            });
+        } else if (type === 'discipline') {
+            accessibleContent.chapters.forEach(c => {
+                if (c.discipline_id === id) chapterIdsToFetch.add(c.id);
+            });
+        }
+    });
+
+    return [...chapterIdsToFetch];
+}
+
+async function getLightDashboardQuestionPool(sources = null) {
+    const chapterIds = getChapterIdsFromSources(sources);
+
+    if (chapterIds.length === 0) return [];
+
+    const cachedQuestions = safeParseLocalStorage(dashboardBuilderQuestionCacheKey(), []);
+    const wantedChapterSet = new Set(chapterIds);
+
+    if (cachedQuestions && cachedQuestions.length > 0) {
+        const filteredCached = cachedQuestions.filter(q =>
+            wantedChapterSet.has(q.chapter_id || q.chapterId)
+        );
+
+        // Fast path: cache has questions for all requested chapters.
+        const cachedChapterSet = new Set(filteredCached.map(q => q.chapter_id || q.chapterId));
+        const allRequestedChaptersPresent = chapterIds.every(id => cachedChapterSet.has(id));
+
+       if (allRequestedChaptersPresent) {
+    return enrichQuestionIndexRows(filteredCached);
+}
+    }
+
+    const freshQuestions = await fetchLightQuestionsByChapterIds(chapterIds);
+
+    // Merge fresh questions into the dashboard builder cache without deleting other cached sources.
+    const merged = new Map((cachedQuestions || []).map(q => [String(q.id), q]));
+    freshQuestions.forEach(q => merged.set(String(q.id), q));
+
+    try {
+        localStorage.setItem(
+            dashboardBuilderQuestionCacheKey(),
+            JSON.stringify(Array.from(merged.values()))
+        );
+    } catch (error) {
+        console.warn("Could not cache dashboard builder question index.", error);
+    }
+
+   return enrichQuestionIndexRows(freshQuestions);
+}
+
+async function fetchHistoryForQuestionPool(questionPool, options = {}) {
+    const forceRefresh = options.forceRefresh === true;
+    const questionIds = [...new Set((questionPool || []).map(q => String(q.id)).filter(Boolean))];
+
+    if (questionIds.length === 0) return;
+
+    if (!forceRefresh && userHistoryCache.size === 0) {
+        hydrateUserHistoryCacheFromLocalStorage();
+    }
+
+    const missingIds = forceRefresh
+        ? questionIds
+        : questionIds.filter(id => !userHistoryCache.has(id));
+
+    if (missingIds.length === 0) return;
+
+    const chunkSize = 100;
+
+    for (let i = 0; i < missingIds.length; i += chunkSize) {
+        const chunk = missingIds.slice(i, i + chunkSize);
+
+        const { data, error } = await supabase
+            .from('userQuestionHistory')
+            .select('*')
+            .eq('userId', currentUser.id)
+            .in('questionId', chunk)
+            .order('questionId', { ascending: true });
+
+        if (error) throw error;
+
+        (data || []).forEach(item => {
+            userHistoryCache.set(String(item.questionId), item);
+        });
+    }
+
+    saveBuilderHistoryCache();
+}
+
+async function refreshDashboardBuilderHistoryInBackground(questionPool) {
+    if (!builderHistoryRefreshPromise) {
+        builderHistoryRefreshPromise = fetchHistoryForQuestionPool(questionPool, { forceRefresh: true })
+            .then(() => {
+                if (dom.customQuizModal && !dom.customQuizModal.classList.contains('hidden')) {
+                    scheduleRecalculateAvailableQuestionsAndUpdateUI(0);
+                }
+            })
+            .catch(error => {
+                console.warn("Dashboard builder history refresh failed:", error);
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    builderHistoryRefreshPromise = null;
+                }, 5000);
+            });
+    }
+
+    return builderHistoryRefreshPromise;
+}
+
+function getActiveFilterKeys() {
+    return Array.from(document.querySelectorAll('.filter-checkbox:checked'))
+        .map(cb => cb.dataset.filterKey);
+}
+
+async function getFilteredQuestionIndexForBuilder(sources = null, options = {}) {
+    let questions = await getLightDashboardQuestionPool(sources);
+
+    const activeFilters = getActiveFilterKeys();
+
+    if (activeFilters.length > 0) {
+        if (userHistoryCache.size === 0) {
+            hydrateUserHistoryCacheFromLocalStorage();
+        }
+
+        if (options.forceFreshHistory || userHistoryCache.size === 0) {
+            await fetchHistoryForQuestionPool(questions, {
+                forceRefresh: options.forceFreshHistory === true
+            });
+        } else {
+            refreshDashboardBuilderHistoryInBackground(questions);
+        }
+
+        const filterFunctions = getFilterFunctions();
+
+        questions = questions.filter(q => {
+            return activeFilters.some(filterKey => {
+                const filterFn = filterFunctions[filterKey];
+                return filterFn ? filterFn(q) : false;
+            });
+        });
+    }
+
+    return questions;
+}
+
+async function fetchFullQuestionsByIds(questionIds) {
+    const uniqueIds = [...new Set((questionIds || []).map(id => String(id)).filter(Boolean))];
+
+    if (uniqueIds.length === 0) return [];
+
+    const fullQuestionMap = new Map();
+    const chunkSize = 100;
+
+    for (let i = 0; i < uniqueIds.length; i += chunkSize) {
+        const chunk = uniqueIds.slice(i, i + chunkSize);
+
+        const { data, error } = await supabase
+            .from('questions')
+            .select('*')
+            .in('id', chunk)
+            .order('chapter_id', { ascending: true })
+            .order('questionNumber', { ascending: true });
+
+        if (error) throw error;
+
+        (data || []).forEach(q => {
+            fullQuestionMap.set(String(q.id), q);
+        });
+    }
+
+    return uniqueIds
+        .map(id => fullQuestionMap.get(id))
+        .filter(Boolean);
+}
+
+function normalizeQuestionForQuiz(q) {
+    return {
+        id: q.id,
+        question: q.question,
+        options: q.options,
+        correctAnswerIndex: q.correctAnswerIndex,
+        explanation: q.explanation,
+
+        imageUrl: q.imageUrl || null,
+        imageUrls: q.imageUrls || q.image_urls || null,
+        explanationImageUrl: q.explanationImageUrl || null,
+        explanationImageUrls: q.explanationImageUrls || q.explanation_image_urls || null,
+
+        bookId: q.book_id || q.bookId,
+        chapterId: q.chapter_id || q.chapterId,
+        disciplineId: q.discipline_id || q.disciplineId,
+        chapterNumber: q.chapterNumber,
+        questionNumber: q.questionNumber
+    };
+}
 // --- START: New Helper Function ---
 function hasVideoAccess(course) {
     if (!course || !currentUserData) return false;
@@ -1551,145 +1906,181 @@ function handleSearch() {
 
         
 // This is the final, corrected function.
-async function populateHierarchicalSliders(questionPool) {
+function populateHierarchicalSliders(questionPool) {
     const listEl = document.getElementById('sliderList');
-    const totalCountInput = document.getElementById('customQuestionCount');
+    const countInput = document.getElementById('customQuestionCount');
+    const percentageContainer = document.getElementById('percentageBuilderContainer');
+
+    let isDragging = false;
+
     listEl.innerHTML = '';
 
     if (!sourcesSelector) {
-        document.getElementById('percentageBuilderContainer').classList.add('hidden');
+        percentageContainer.classList.add('hidden');
         return;
     }
 
-    const allSourceData = sourcesSelector.getData();
-    const selectedSourceIds = new Set(sourcesSelector.getSelected());
+    const selectedValues = new Set(sourcesSelector.getSelected());
+    const sourceData = sourcesSelector.getData();
 
-    const selectedGroups = allSourceData.filter(group => {
-        const parentOpt = group.options.find(opt => !opt.value.startsWith('chapter_'));
-        const hasSelectedParent = parentOpt && selectedSourceIds.has(parentOpt.value);
-        const hasSelectedChild = group.options.some(opt => opt.value.startsWith('chapter_') && selectedSourceIds.has(opt.value));
-        return hasSelectedParent || hasSelectedChild;
-    });
+    const sliderSourcesMap = new Map();
 
-    if (selectedGroups.length === 0) {
-        document.getElementById('percentageBuilderContainer').classList.add('hidden');
-        return;
-    }
-    document.getElementById('percentageBuilderContainer').classList.remove('hidden');
+    sourceData.forEach(group => {
+        const parentOption = group.options.find(opt => !opt.value.startsWith('chapter_'));
+        const chapterOptions = group.options.filter(opt => opt.value.startsWith('chapter_'));
 
-    selectedGroups.forEach(group => {
-        const parentOpt = group.options.find(opt => !opt.value.startsWith('chapter_'));
-        const parentId = parentOpt.value;
-        const childOpts = group.options.filter(opt => opt.value.startsWith('chapter_'));
+        const parentSelected = parentOption && selectedValues.has(parentOption.value);
 
-        const maxForParent = childOpts.reduce((sum, child) => {
-            // THE FIX: Changed child.id to child.value to correctly find the chapter's ID
-            return sum + questionPool.filter(q => q.chapter_id === child.value.split('_')[1]).length;
-        }, 0);
+        chapterOptions.forEach(chapterOption => {
+            const chapterId = chapterOption.value.split('_')[1];
+            const chapterSelected = selectedValues.has(chapterOption.value);
 
-        if (maxForParent === 0) return;
-
-        let childrenHTML = '';
-        childOpts.forEach(child => {
-            // THE FIX: Changed child.id to child.value here as well
-            const childMax = questionPool.filter(q => q.chapter_id === child.value.split('_')[1]).length;
-            if (childMax > 0) {
-                childrenHTML += `
-                    <div class="grid grid-cols-6 gap-4 items-center child-slider-row">
-                        <label class="col-span-2 truncate text-xs text-gray-600">${child.text}</label>
-                        <input type="range" data-child-id="${child.value}" min="0" max="${childMax}" value="0" class="child-slider col-span-3 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer">
-                        <span class="child-label col-span-1 text-xs font-mono text-right">0% (0)</span>
-                    </div>
-                `;
+            // If parent is selected, include its chapters.
+            // If an individual chapter is selected, include only that chapter.
+            if (parentSelected || chapterSelected) {
+                if (!sliderSourcesMap.has(chapterOption.value)) {
+                    sliderSourcesMap.set(chapterOption.value, {
+                        id: chapterOption.value,
+                        name: chapterOption.text,
+                        chapterId,
+                        maxQuestions: questionPool.filter(q =>
+                            String(q.chapter_id || q.chapterId) === String(chapterId)
+                        ).length,
+                        currentQuestions: 0,
+                        sliderEl: null,
+                        labelEl: null
+                    });
+                }
             }
         });
+    });
 
-       listEl.insertAdjacentHTML('beforeend', `
-            <div class="bg-gray-100 p-3 rounded-lg border parent-slider-group">
-                <div class="grid grid-cols-6 gap-4 items-center font-semibold">
-                    <label class="col-span-2 truncate text-sm">${group.label}</label>
-                    <input type="range" readonly disabled value="0" max="${maxForParent}" class="parent-slider col-span-2 h-2 bg-gray-300 rounded-lg appearance-none">
-                    <span class="parent-label col-span-2 text-sm font-mono text-right">0 Questions</span>
-                </div>
-                <div class="pl-6 pt-2 mt-2 border-t space-y-2">${childrenHTML}</div>
+    const sliderSources = Array.from(sliderSourcesMap.values())
+        .filter(source => source.maxQuestions > 0);
+
+    if (sliderSources.length === 0) {
+        percentageContainer.classList.add('hidden');
+        countInput.value = 0;
+        if (dom.buildStatus) dom.buildStatus.textContent = '0 Questions found (Check filters/sources)';
+        return;
+    }
+
+    percentageContainer.classList.remove('hidden');
+
+    function updateAllLabels(total) {
+        sliderSources.forEach(source => {
+            if (!source.labelEl) return;
+
+            const percentage = total > 0
+                ? Math.round((source.currentQuestions / total) * 100)
+                : 0;
+
+            source.labelEl.textContent = `${percentage}% (${source.currentQuestions})`;
+        });
+
+        if (dom.buildStatus) {
+            dom.buildStatus.textContent = `${total} questions selected.`;
+        }
+    }
+
+    function getCurrentTotalFromSliders() {
+        return sliderSources.reduce((sum, source) => {
+            const slider = document.getElementById(`slider_${source.id}`);
+            return sum + (slider ? parseInt(slider.value, 10) || 0 : 0);
+        }, 0);
+    }
+
+    function distributeQuestions(totalToDistribute) {
+        const activeSources = sliderSources.filter(source => source.maxQuestions > 0);
+
+        activeSources.forEach(source => {
+            source.currentQuestions = 0;
+            if (source.sliderEl) source.sliderEl.value = 0;
+        });
+
+        let questionsLeft = Math.min(
+            totalToDistribute,
+            activeSources.reduce((sum, source) => sum + source.maxQuestions, 0)
+        );
+
+        let protection = 0;
+
+        while (questionsLeft > 0 && protection < 10000) {
+            for (const source of activeSources) {
+                if (questionsLeft <= 0) break;
+
+                if (source.currentQuestions < source.maxQuestions) {
+                    source.currentQuestions++;
+                    questionsLeft--;
+                }
+            }
+
+            protection++;
+
+            if (activeSources.every(source => source.currentQuestions >= source.maxQuestions)) {
+                break;
+            }
+        }
+
+        activeSources.forEach(source => {
+            if (source.sliderEl) source.sliderEl.value = source.currentQuestions;
+        });
+
+        const newTotal = activeSources.reduce((sum, source) => sum + source.currentQuestions, 0);
+        countInput.value = newTotal;
+        updateAllLabels(newTotal);
+    }
+
+    sliderSources.forEach(source => {
+        const sliderId = `slider_${source.id}`;
+        const labelId = `label_${source.id}`;
+
+        listEl.insertAdjacentHTML('beforeend', `
+            <div class="grid grid-cols-6 gap-4 items-center bg-gray-50 border rounded-lg p-3">
+                <label class="col-span-2 truncate text-sm text-gray-700" for="${sliderId}">
+                    ${source.name}
+                </label>
+                <input
+                    type="range"
+                    id="${sliderId}"
+                    min="0"
+                    max="${source.maxQuestions}"
+                    value="0"
+                    step="1"
+                    class="col-span-3 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                >
+                <span id="${labelId}" class="col-span-1 text-sm font-mono text-right">
+                    0% (0)
+                </span>
             </div>
         `);
+
+        source.sliderEl = document.getElementById(sliderId);
+        source.labelEl = document.getElementById(labelId);
+
+        source.sliderEl.oninput = () => {
+            isDragging = true;
+
+            source.currentQuestions = parseInt(source.sliderEl.value, 10) || 0;
+
+            const newTotal = getCurrentTotalFromSliders();
+            countInput.value = newTotal;
+            updateAllLabels(newTotal);
+        };
+
+        source.sliderEl.onchange = () => {
+            isDragging = false;
+        };
     });
 
-   const updateAllUI = () => {
-        let grandTotal = 0;
-        
-        // Pass 1: Sum parent totals and update child labels
-        document.querySelectorAll('.parent-slider-group').forEach(groupEl => {
-            let parentTotal = 0;
-            groupEl.querySelectorAll('.child-slider').forEach(childSlider => {
-                parentTotal += parseInt(childSlider.value, 10);
-            });
-            
-            groupEl.querySelector('.parent-slider').value = parentTotal;
-            grandTotal += parentTotal;
-
-            groupEl.querySelectorAll('.child-slider-row').forEach(childRow => {
-                const childSlider = childRow.querySelector('.child-slider');
-                const childLabel = childRow.querySelector('.child-label');
-                const childValue = parseInt(childSlider.value, 10);
-                const percentage = parentTotal > 0 ? Math.round((childValue / parentTotal) * 100) : 0;
-                childLabel.textContent = `${percentage}% (${childValue})`;
-            });
-        });
-
-        // Pass 2: Update parent percentage labels
-        document.querySelectorAll('.parent-slider-group').forEach(groupEl => {
-            const parentTotal = parseInt(groupEl.querySelector('.parent-slider').value, 10);
-            const percentage = grandTotal > 0 ? Math.round((parentTotal / grandTotal) * 100) : 0;
-            groupEl.querySelector('.parent-label').textContent = `${percentage}% (${parentTotal} Questions)`;
-        });
-
-        // --- CONSOLIDATED SYNC & LIVE UPDATE ---
-        const currentMode = dom.customQuizForm.questionCountMode.value;
-        const poolSize = parseInt(dom.buildStatus.textContent) || 0;
-
-        if (currentMode === 'from_sources') {
-            // Prevent the sliders from resetting the UI to a lower number 
-            // until they have actually finished "leveling up" to the pool total.
-            if (grandTotal >= poolSize || grandTotal === 0) {
-                totalCountInput.value = grandTotal;
-                dom.buildStatus.textContent = `${grandTotal} questions selected.`;
-                console.log(`--- DEBUG: UI Updated to ${grandTotal} ---`);
-            } else {
-                // Keep the input synced to the pool so the redistribution loop continues
-                totalCountInput.value = poolSize;
-                console.log(`--- DEBUG: Waiting for sliders to catch up to ${poolSize} ---`);
-            }
-        } else {
-            totalCountInput.value = poolSize;
+    countInput.oninput = () => {
+        if (!isDragging) {
+            distributeQuestions(parseInt(countInput.value, 10) || 0);
         }
     };
 
-    document.querySelectorAll('.child-slider').forEach(slider => {
-        slider.addEventListener('input', updateAllUI);
-    });
-
-    totalCountInput.addEventListener('input', () => {
-        let totalToDistribute = parseInt(totalCountInput.value, 10) || 0;
-        const allChildSliders = Array.from(document.querySelectorAll('.child-slider'));
-        allChildSliders.forEach(s => s.value = 0);
-
-        let protection = 0;
-        while (totalToDistribute > 0 && protection < 10000) {
-            for (const slider of allChildSliders) {
-                if (totalToDistribute > 0 && parseInt(slider.value) < parseInt(slider.max)) {
-                    slider.value = parseInt(slider.value) + 1;
-                    totalToDistribute--;
-                }
-            }
-            protection++;
-            if (allChildSliders.every(s => s.value === s.max)) break;
-        }
-        updateAllUI();
-    });
-
-    totalCountInput.dispatchEvent(new Event('input'));
+    const requestedTotal = parseInt(countInput.value, 10) || sliderSources.reduce((sum, source) => sum + source.maxQuestions, 0);
+    distributeQuestions(requestedTotal);
 }
 
 // This is the new, improved logout function
@@ -1729,13 +2120,42 @@ sessionStorage.clear();
     window.location.href = 'index.html';
 }
   
-        
-async function openAdvancedBuilder(sourceData) {
-    userHistoryCache.clear();
+function closeCustomQuizBuilder() {
+    // Stop any pending delayed calculation
+    if (builderRecalcTimer) {
+        clearTimeout(builderRecalcTimer);
+        builderRecalcTimer = null;
+    }
+
+    // Cancel any running calculation result from updating the closed modal
+    builderRecalcRunId++;
+
+    if (dom.customQuizModal) {
+        dom.customQuizModal.classList.add('hidden');
+    }
+
+    if (dom.customQuizChoiceModal) {
+        dom.customQuizChoiceModal.classList.add('hidden');
+    }
+
+    if (dom.buildStatus) {
+        dom.buildStatus.textContent = '';
+    }
+
+    if (dom.startCustomQuizBtn) {
+        dom.startCustomQuizBtn.disabled = false;
+        dom.startCustomQuizBtn.textContent = 'Start Quiz';
+    }
+}
+
+function openAdvancedBuilder(sourceData) {
+    // Fast path: use cached dashboard builder history first.
+    // Do NOT clear userHistoryCache here, because clearing forces a network wait.
+    hydrateUserHistoryCacheFromLocalStorage();
+
     sourcesSelector.setData(sourceData);
     dom.customQuizForm.reset();
 
-    // Reset UI visibility
     document.getElementById('sourceTypeFieldset').classList.add('hidden');
     document.getElementById('questionSourcesFieldset').classList.add('hidden');
     document.getElementById('percentageBuilderContainer').classList.add('hidden');
@@ -1743,13 +2163,9 @@ async function openAdvancedBuilder(sourceData) {
 
     dom.customQuizModal.classList.remove('hidden');
 
-    // Wait for any pending data loads to stabilize
-    setTimeout(async () => {
-        console.log("--- DEBUG: Modal Open - Forcing Calculation with current data ---");
-        handleQuizBuilderState(); 
-        await recalculateAvailableQuestionsAndUpdateUI();
-        updateFlowControlUI();
-    }, 100); 
+    handleQuizBuilderState();
+    scheduleRecalculateAvailableQuestionsAndUpdateUI(50);
+    updateFlowControlUI();
 }
 
 
@@ -1792,22 +2208,11 @@ async function openAdvancedBuilder(sourceData) {
                 options: group.options.map(option => ({ ...option, disabled: toDisable.has(option.value) }))
             }));
 
-setTimeout(async () => {
+setTimeout(() => {
     sourcesSelector.setData(newData);
-    sourcesSelector.setSelected(finalSelectedValues, false); 
-    
-    // This finds the 46 questions
-    await recalculateAvailableQuestionsAndUpdateUI();
+    sourcesSelector.setSelected(finalSelectedValues, false);
 
-    const totalCountInput = document.getElementById('customQuestionCount');
-    const poolSize = parseInt(dom.buildStatus.textContent) || 0;
-    
-    if (poolSize > 0) {
-        console.log(`--- DEBUG: Snap sliders to new Max: ${poolSize} ---`);
-        totalCountInput.value = poolSize;
-        // This triggers the loop that pushes sliders to 100%
-        totalCountInput.dispatchEvent(new Event('input'));
-    }
+    scheduleRecalculateAvailableQuestionsAndUpdateUI(50);
     updateFlowControlUI();
 }, 0);
         }
@@ -1820,16 +2225,17 @@ function handleQuizBuilderState() {
     const countInput = document.getElementById('customQuestionCount');
     const percentageContainer = document.getElementById('percentageBuilderContainer');
     const helpText = document.getElementById('recalculateHelpText');
-    
+
     const sourcesVisible = (mode === 'from_sources' || mode === 'set_number');
+
     sourceTypeFieldset.classList.toggle('hidden', !sourcesVisible);
     questionSourcesFieldset.classList.toggle('hidden', !sourcesVisible);
 
     countInput.disabled = (mode !== 'set_number');
     percentageContainer.classList.toggle('hidden', mode !== 'set_number');
-    
-    // This call forces the "Number of Questions" calculation to run immediately
-    recalculateAvailableQuestionsAndUpdateUI();
+    helpText.classList.toggle('hidden', mode === 'all_available');
+
+    scheduleRecalculateAvailableQuestionsAndUpdateUI();
     updateFlowControlUI();
 }
   
@@ -1930,49 +2336,62 @@ function handleQuizBuilderState() {
         }
 // This is the new, corrected recalculateAvailableQuestionsAndUpdateUI function
 async function recalculateAvailableQuestionsAndUpdateUI() {
-    console.log("--- DEBUG: Starting Recalculation ---");
+    const runId = ++builderRecalcRunId;
+
+    if (!dom.customQuizModal || dom.customQuizModal.classList.contains('hidden')) {
+        return;
+    }
+
     dom.buildStatus.textContent = 'Calculating...';
-    
+
     const mode = dom.customQuizForm.questionCountMode.value;
-    
+
     if (mode !== 'all_available' && !sourcesSelector) {
         dom.buildStatus.textContent = 'Select a Source Type to begin.';
         return;
     }
 
     try {
-        await getUserHistory(currentUser.id); 
-        
-        // 1. Fetch the combined pool for ALL selected chapters
         const questionPool = await getQuestionsForSourceAndFilters();
-        
-        // 2. GRAND TOTAL: Derived from the combined pooled array
+
+        if (runId !== builderRecalcRunId) return;
+
         const totalCount = questionPool.length;
-        
-        // --- ADDED DEBUG LINES ---
-        console.log(`--- DEBUG UI SYNC ---`);
-        console.log(`Pool Array Length: ${questionPool.length}`);
-        console.log(`Calculated totalCount: ${totalCount}`);
-        // -------------------------
+        const countInput = document.getElementById('customQuestionCount');
 
-        // 3. UI UPDATE: This is the line that MUST overwrite the old text
-        if (totalCount === 0) {
-            dom.buildStatus.textContent = '0 Questions found (Check filters/sources)';
-            dom.startCustomQuizBtn.disabled = true;
-        } else {
-            // We use totalCount here to ensure the SUM is displayed
-            dom.buildStatus.textContent = `${totalCount} questions selected.`;
-            console.log(`DOM buildStatus updated to: ${dom.buildStatus.textContent}`);
-            dom.startCustomQuizBtn.disabled = false;
-        }
+        countInput.max = totalCount;
 
-        // 4. Update the source sliders
-        if (mode === 'from_sources') {
+        if (mode === 'set_number') {
+            if (!countInput.value || parseInt(countInput.value, 10) === 0) {
+                countInput.value = totalCount;
+            }
+
+            if (parseInt(countInput.value, 10) > totalCount) {
+                countInput.value = totalCount;
+            }
+
             await populateHierarchicalSliders(questionPool);
+        } else {
+            countInput.value = totalCount;
         }
 
+        if (runId !== builderRecalcRunId) return;
+
+      if (totalCount === 0) {
+    dom.buildStatus.textContent = '0 Questions found (Check filters/sources)';
+    dom.startCustomQuizBtn.disabled = true;
+} else {
+    dom.buildStatus.textContent = `${countInput.value || totalCount} questions selected.`;
+    dom.startCustomQuizBtn.disabled = false;
+}
+
+// Sliders should appear only in Set Total Number mode,
+// just like book_chapters.html and disciplines_chapters.html.
+if (mode !== 'set_number') {
+    document.getElementById('percentageBuilderContainer').classList.add('hidden');
+}
     } catch (error) {
-        console.error("Calculation Error:", error);
+        console.error("Fast dashboard calculation error:", error);
         dom.buildStatus.textContent = 'Error calculating questions.';
     }
 }
@@ -2259,90 +2678,139 @@ async function loadAllData(user) {
             // Finally, populate the new dropdown with data
             sourcesSelector.setData(dataForSelector);
         }
-async function initializeCustomQuizBuilder() {
-            sourceRelationshipMap.clear();
-            // Build the relationship map for parent/child logic (this part is unchanged)
-            accessibleContent.chapters.forEach(c => {
-                const chapterValue = `chapter_${c.id}`;
-                const bookValue = `book_${c.book_id}`;
-                const disciplineValue = `discipline_${c.discipline_id}`;
-                if (!sourceRelationshipMap.has(chapterValue)) sourceRelationshipMap.set(chapterValue, { parents: new Set(), children: new Set() });
-                if (c.book_id) sourceRelationshipMap.get(chapterValue).parents.add(bookValue);
-                if (c.discipline_id) sourceRelationshipMap.get(chapterValue).parents.add(disciplineValue);
-            });
-            accessibleContent.books.forEach(b => {
-                const bookValue = `book_${b.id}`;
-                if (!sourceRelationshipMap.has(bookValue)) sourceRelationshipMap.set(bookValue, { parents: new Set(), children: new Set() });
-                accessibleContent.chapters.filter(c => c.book_id === b.id).forEach(c => sourceRelationshipMap.get(bookValue).children.add(`chapter_${c.id}`));
-            });
-            accessibleContent.disciplines.forEach(d => {
-                const disciplineValue = `discipline_${d.id}`;
-                if (!sourceRelationshipMap.has(disciplineValue)) sourceRelationshipMap.set(disciplineValue, { parents: new Set(), children: new Set() });
-                accessibleContent.chapters.filter(c => c.discipline_id === d.id).forEach(c => sourceRelationshipMap.get(disciplineValue).children.add(`chapter_${c.id}`));
-            });
+function initializeCustomQuizBuilder() {
+    sourceRelationshipMap.clear();
 
-            // Add event listener for the source type radio buttons
-            const sourceTypeContainer = document.getElementById('sourceTypeContainer');
-            if (!sourceTypeContainer.dataset.listenerAttached) {
-                sourceTypeContainer.addEventListener('change', (e) => {
-                    if (e.target.name === 'sourceType') {
-                        // This now calls the function that handles initialization and population
-                        populateSourcesDropdown(e.target.value);
-                    }
-                });
-                sourceTypeContainer.dataset.listenerAttached = 'true';
-            }
-    
-            // Attach other general listeners for the form (unchanged)
-if (!dom.customQuizForm.dataset.listenerAttached) {
-    // --- START OF NEW FIX ---
+    accessibleContent.chapters.forEach(c => {
+        const chapterValue = `chapter_${c.id}`;
+        const bookValue = `book_${c.book_id}`;
+        const disciplineValue = `discipline_${c.discipline_id}`;
 
-    // Part A: Attach a dedicated, simple listener directly to each radio button.
-    const questionModeRadios = dom.customQuizForm.querySelectorAll('input[name="questionCountMode"]');
-    questionModeRadios.forEach(radio => {
-        radio.addEventListener('click', () => {
-            // This now calls the state handler every single time a radio is clicked.
-            handleQuizBuilderState();
-        });
-    });
-
-    // Part B: Keep a general listener for the rest of the form's controls.
-    dom.customQuizForm.addEventListener('click', (e) => {
-        const target = e.target;
-
-        // NOTE: We no longer check for 'questionCountMode' here.
-        if (target.classList.contains('filter-checkbox')) {
-            handleQuizBuilderState();
-        } else if (target.name === 'timerMode') {
-            const enabled = target.value === 'custom';
-            const timerInputs = document.getElementById('timerInputs');
-            if (timerInputs) {
-                timerInputs.style.opacity = enabled ? 1 : 0.5;
-                timerInputs.querySelectorAll('input').forEach(input => input.disabled = !enabled);
-            }
-        } else if (target.name === 'flowMode') {
-            updateFlowControlUI();
-        } else if (target.name === 'sequenceType') {
-            populateGlobalSequenceList();
+        if (!sourceRelationshipMap.has(chapterValue)) {
+            sourceRelationshipMap.set(chapterValue, { parents: new Set(), children: new Set() });
         }
+
+        if (c.book_id) sourceRelationshipMap.get(chapterValue).parents.add(bookValue);
+        if (c.discipline_id) sourceRelationshipMap.get(chapterValue).parents.add(disciplineValue);
     });
 
-    // --- END OF NEW FIX ---
+    accessibleContent.books.forEach(b => {
+        const bookValue = `book_${b.id}`;
 
-    dom.customQuizForm.dataset.listenerAttached = 'true';
+        if (!sourceRelationshipMap.has(bookValue)) {
+            sourceRelationshipMap.set(bookValue, { parents: new Set(), children: new Set() });
+        }
+
+        accessibleContent.chapters
+            .filter(c => c.book_id === b.id)
+            .forEach(c => sourceRelationshipMap.get(bookValue).children.add(`chapter_${c.id}`));
+    });
+
+    accessibleContent.disciplines.forEach(d => {
+        const disciplineValue = `discipline_${d.id}`;
+
+        if (!sourceRelationshipMap.has(disciplineValue)) {
+            sourceRelationshipMap.set(disciplineValue, { parents: new Set(), children: new Set() });
+        }
+
+        accessibleContent.chapters
+            .filter(c => c.discipline_id === d.id)
+            .forEach(c => sourceRelationshipMap.get(disciplineValue).children.add(`chapter_${c.id}`));
+    });
+
+    const sourceTypeContainer = document.getElementById('sourceTypeContainer');
+
+    if (!sourceTypeContainer.dataset.listenerAttached) {
+        sourceTypeContainer.addEventListener('change', (e) => {
+            if (e.target.name === 'sourceType') {
+                populateSourcesDropdown(e.target.value);
+            }
+        });
+
+        sourceTypeContainer.dataset.listenerAttached = 'true';
+    }
+
+    if (!dom.customQuizForm.dataset.listenerAttached) {
+        const questionModeRadios = dom.customQuizForm.querySelectorAll('input[name="questionCountMode"]');
+
+        questionModeRadios.forEach(radio => {
+            radio.addEventListener('click', () => {
+                handleQuizBuilderState();
+            });
+        });
+
+        dom.customQuizForm.addEventListener('change', (e) => {
+            const target = e.target;
+
+            if (target.classList.contains('filter-checkbox')) {
+                scheduleRecalculateAvailableQuestionsAndUpdateUI();
+            }
+
+            if (target.name === 'timerMode') {
+                const enabled = target.value === 'custom';
+                document.getElementById('timerHours').disabled = !enabled;
+                document.getElementById('timerMinutes').disabled = !enabled;
+                document.getElementById('timerInputs').style.opacity = enabled ? 1 : 0.5;
+            }
+
+            if (target.name === 'flowMode' || target.name === 'sequenceType') {
+                updateFlowControlUI();
+            }
+        });
+
+        const countInput = document.getElementById('customQuestionCount');
+        if (countInput) {
+            countInput.addEventListener('input', () => {
+                scheduleRecalculateAvailableQuestionsAndUpdateUI(120);
+            });
+        }
+
+        dom.customQuizForm.dataset.listenerAttached = 'true';
+    }
+
+        if (dom.closeQuizBuilderBtn && !dom.closeQuizBuilderBtn.dataset.listenerAttached) {
+        dom.closeQuizBuilderBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeCustomQuizBuilder();
+        });
+
+        dom.closeQuizBuilderBtn.dataset.listenerAttached = 'true';
+    }
+
+    if (dom.cancelChoiceBtn && !dom.cancelChoiceBtn.dataset.listenerAttached) {
+        dom.cancelChoiceBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (dom.customQuizChoiceModal) {
+                dom.customQuizChoiceModal.classList.add('hidden');
+            }
+        });
+
+        dom.cancelChoiceBtn.dataset.listenerAttached = 'true';
+    }
 }
 
-            // Attach listeners for modal buttons (unchanged)
-            if (!dom.closeQuizBuilderBtn.dataset.listenerAttached) {
-                dom.closeQuizBuilderBtn.addEventListener('click', () => dom.customQuizModal.classList.add('hidden'));
-                dom.closeQuizBuilderBtn.dataset.listenerAttached = 'true';
-            }
-            if (!dom.startCustomQuizBtn.dataset.listenerAttached) {
-                dom.startCustomQuizBtn.addEventListener('click', handleStartCustomQuiz);
-                dom.startCustomQuizBtn.dataset.listenerAttached = 'true';
-            }
-            handleQuizBuilderState();
-        }
+
+document.addEventListener('click', (e) => {
+    if (
+        dom.customQuizModal &&
+        !dom.customQuizModal.classList.contains('hidden') &&
+        e.target === dom.customQuizModal
+    ) {
+        closeCustomQuizBuilder();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (
+        e.key === 'Escape' &&
+        dom.customQuizModal &&
+        !dom.customQuizModal.classList.contains('hidden')
+    ) {
+        closeCustomQuizBuilder();
+    }
+});
 
        function getQuestionSortKey(q) {
             const chapter = allChapters.find(c => c.id === q.chapterId);
@@ -2357,18 +2825,15 @@ if (!dom.customQuizForm.dataset.listenerAttached) {
 // In dashboard.html
 
 async function handleStartCustomQuiz(e) {
-    e.preventDefault();
+    if (e && typeof e.preventDefault === 'function') e.preventDefault();
+
     dom.startCustomQuizBtn.disabled = true;
     dom.startCustomQuizBtn.textContent = 'Building...';
 
     const form = dom.startCustomQuizBtn.closest('form');
     const questionCountMode = form.questionCountMode.value;
-    
-    // THE FIX: Use optional chaining (?.) and default to an empty array 
-    // if the selector doesn't exist (which happens in "All Available" mode).
     const selectedSources = sourcesSelector?.getSelected() || [];
 
-    // Validation check for source-based modes
     if ((questionCountMode === 'from_sources' || questionCountMode === 'set_number') && selectedSources.length === 0) {
         dom.customAlertMessage.textContent = "Please select at least one question source to build your quiz.";
         dom.customAlertModal.classList.remove('hidden');
@@ -2381,92 +2846,119 @@ async function handleStartCustomQuiz(e) {
         const settings = {
             mode: questionCountMode,
             count: parseInt(form.customQuestionCount.value, 10),
-            timer: form.timerMode.value === 'custom' ? (parseInt(form.timerHours.value, 10) * 3600 + parseInt(form.timerMinutes.value, 10) * 60) : -1,
+            timer: form.timerMode.value === 'custom'
+                ? (parseInt(form.timerHours.value, 10) * 3600 + parseInt(form.timerMinutes.value, 10) * 60)
+                : -1,
             sources: selectedSources,
             flowMode: form.flowMode.value,
             sequenceType: form.sequenceType.value
         };
 
-        // This function already correctly handles the "All Available" mode internally
-        let finalQuestions = await getQuestionsForSourceAndFilters(settings.sources);
+        const hasActiveFilters = getActiveFilterKeys().length > 0;
+
+        // If filters are active, force exact fresh history only at Start.
+        let finalQuestionIndex = await getQuestionsForSourceAndFilters(settings.sources, {
+            forceFreshHistory: hasActiveFilters
+        });
 
         if (settings.flowMode === 'sequential') {
-            const sequenceOrder = Array.from(document.querySelectorAll('#sequenceList .rule-item')).map(item => item.dataset.id);
+            const sequenceOrder = Array.from(document.querySelectorAll('#sequenceList .rule-item'))
+                .map(item => item.dataset.id);
+
             const sourceOrderMap = new Map(sequenceOrder.map((id, index) => [id, index]));
-            
-            finalQuestions.sort((a, b) => {
+
+            finalQuestionIndex.sort((a, b) => {
                 let idA, idB;
+
+                const aBookId = a.book_id || a.bookId;
+                const bBookId = b.book_id || b.bookId;
+                const aDisciplineId = a.discipline_id || a.disciplineId;
+                const bDisciplineId = b.discipline_id || b.disciplineId;
+                const aChapterId = a.chapter_id || a.chapterId;
+                const bChapterId = b.chapter_id || b.chapterId;
+
                 if (settings.mode === 'all_available') {
-                   const type = settings.sequenceType;
-                   idA = type === 'book' ? `book_${a.bookId}` : `discipline_${a.disciplineId}`;
-                   idB = type === 'book' ? `book_${b.bookId}` : `discipline_${b.disciplineId}`;
+                    const type = settings.sequenceType;
+                    idA = type === 'book' ? `book_${aBookId}` : `discipline_${aDisciplineId}`;
+                    idB = type === 'book' ? `book_${bBookId}` : `discipline_${bDisciplineId}`;
                 } else {
-                    idA = settings.sources.find(s => sourceRelationshipMap.get(s)?.children.has(`chapter_${a.chapterId}`)) || `chapter_${a.chapterId}`;
-                    idB = settings.sources.find(s => sourceRelationshipMap.get(s)?.children.has(`chapter_${b.chapterId}`)) || `chapter_${b.chapterId}`;
+                    idA = settings.sources.find(s => sourceRelationshipMap.get(s)?.children.has(`chapter_${aChapterId}`)) || `chapter_${aChapterId}`;
+                    idB = settings.sources.find(s => sourceRelationshipMap.get(s)?.children.has(`chapter_${bChapterId}`)) || `chapter_${bChapterId}`;
                 }
+
                 const indexA = sourceOrderMap.get(idA) ?? Infinity;
                 const indexB = sourceOrderMap.get(idB) ?? Infinity;
 
                 if (indexA !== indexB) return indexA - indexB;
                 if ((a.chapterNumber || 0) !== (b.chapterNumber || 0)) return (a.chapterNumber || 0) - (b.chapterNumber || 0);
+
                 return (a.questionNumber || 0) - (b.questionNumber || 0);
             });
         } else {
-            for (let i = finalQuestions.length - 1; i > 0; i--) {
+            for (let i = finalQuestionIndex.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
-                [finalQuestions[i], finalQuestions[j]] = [finalQuestions[j], finalQuestions[i]];
+                [finalQuestionIndex[i], finalQuestionIndex[j]] = [finalQuestionIndex[j], finalQuestionIndex[i]];
             }
         }
 
         if (settings.mode === 'set_number') {
-             finalQuestions = finalQuestions.slice(0, settings.count);
+            finalQuestionIndex = finalQuestionIndex.slice(0, settings.count);
         }
 
-        if (finalQuestions.length === 0) {
+        if (finalQuestionIndex.length === 0) {
             dom.customAlertMessage.textContent = "No questions found that match your filter/source criteria.";
             dom.customAlertModal.classList.remove('hidden');
             dom.startCustomQuizBtn.disabled = false;
             dom.startCustomQuizBtn.textContent = 'Start Quiz';
             return;
         }
-        
-// HYBRID APPROACH: Byte-Size Calculator (Limit is 4.5 Megabytes)
-        const payloadString = JSON.stringify(finalQuestions);
-        const byteSize = new Blob([payloadString]).size;
-        
+
         let dataToSave;
-        if (byteSize > 4718592) {
-            // Massive quiz (> 4.5MB): Send IDs only to activate the Sliding Window
-            console.log(`Quiz is ${byteSize} bytes. Activating Sliding Window.`);
-            dataToSave = finalQuestions.map(q => q.id);
+
+        if (finalQuestionIndex.length > FULL_QUESTION_PREFETCH_LIMIT) {
+            // Large quiz: send IDs only and let quiz_page sliding-window loader fetch questions.
+            dataToSave = finalQuestionIndex.map(q => q.id);
+            console.log(`Large dashboard custom quiz (${finalQuestionIndex.length}). Saving IDs only.`);
         } else {
-            // Small/Medium quiz: Send full questions for instant RAM loading
-            console.log(`Quiz is ${byteSize} bytes. Loading instantly into RAM.`);
-            dataToSave = finalQuestions;
+            // Small/medium quiz: fetch full question details only now, after Start.
+            dom.startCustomQuizBtn.textContent = 'Loading questions...';
+
+            const lightQuestionMap = new Map(
+                finalQuestionIndex.map(q => [String(q.id), q])
+            );
+
+            const fullQuestions = (await fetchFullQuestionsByIds(finalQuestionIndex.map(q => q.id)))
+                .map(q => ({
+                    ...lightQuestionMap.get(String(q.id)),
+                    ...q
+                }));
+
+            dataToSave = fullQuestions.map(normalizeQuestionForQuiz);
         }
 
         localStorage.setItem('customQuizQuestions', JSON.stringify(dataToSave));
-        localStorage.setItem('customQuizTotalCount', finalQuestions.length.toString());
+        localStorage.setItem('customQuizTotalCount', finalQuestionIndex.length.toString());
         localStorage.setItem('customQuizTimer', String(settings.timer));
 
-        // --- THIS IS THE CRITICAL UPDATE ---
         let redirectUrl = `quiz_page.html?quizType=advanced_custom&flowMode=${settings.flowMode}`;
-        
-        // If the builder was opened from a discipline view, add its info to the URL
+
         if (builderContext === 'discipline') {
-            const disciplineId = dom.disciplineTitle.dataset.id;
-            const disciplineName = dom.disciplineTitle.textContent;
+            const disciplineId = dom.disciplineTitle?.dataset?.id;
+            const disciplineName = dom.disciplineTitle?.textContent;
+
             if (disciplineId && disciplineName) {
                 redirectUrl += `&disciplineId=${disciplineId}&disciplineName=${encodeURIComponent(disciplineName)}`;
             }
         }
-        window.location.href = redirectUrl;
-        // --- END OF UPDATE ---
 
+        window.location.href = redirectUrl;
     } catch (error) {
         console.error("Error building custom quiz:", error);
         dom.customAlertMessage.textContent = "A critical error occurred while building the quiz. Please try again.";
         dom.customAlertModal.classList.remove('hidden');
+        dom.startCustomQuizBtn.disabled = false;
+        dom.startCustomQuizBtn.textContent = 'Start Quiz';
+    } finally {
         dom.startCustomQuizBtn.disabled = false;
         dom.startCustomQuizBtn.textContent = 'Start Quiz';
     }
@@ -2506,161 +2998,49 @@ async function handleStartCustomQuiz(e) {
         }
        
 // WITH this new, robust version in dashboard.html
-async function getQuestionsForSourceAndFilters(sources) {
-    const currentMode = dom.customQuizForm.questionCountMode.value;
-    let sourcesToUse = [];
-
-    if (currentMode === 'all_available') {
-        accessibleContent.chapters.forEach(c => {
-            if (c.id) sourcesToUse.push(`chapter_${c.id}`);
-        });
-    } else {
-        if (sourcesSelector) {
-            sourcesToUse = sources || sourcesSelector.getSelected();
-        }
-    }
-
-    // 1. Get the raw pool of questions based on selected chapters
- let questions = await getBaseQuestionPool(sourcesToUse);
-
-    const activeFilters = Array.from(document.querySelectorAll('.filter-checkbox:checked'))
-                               .map(cb => cb.dataset.filterKey);
-    
-    if (activeFilters.length > 0) {
-        console.log(`--- DEBUG: Applying Filters: ${activeFilters.join(', ')} ---`);
-        const filterFunctions = await getFilterFunctions();
-        
-        // THE FIX: Use .some() instead of .every() to additively combine categories
-        questions = questions.filter(q => {
-            return activeFilters.some(filterKey => {
-                const filterFn = filterFunctions[filterKey];
-                return filterFn ? filterFn(q) : false;
-            });
-        });
-        // Filtering this way automatically prevents duplicates because the 
-        // original array only contains unique question objects.
-    }
-
-    return questions;
-}
-// In dashboard.html
-async function getBaseQuestionPool(sources) {
-    const chapterIdsToFetch = new Set();
-    // Safety check for sourceList
-    const sourceList = sources || (sourcesSelector ? sourcesSelector.getSelected() : []);
-
-    if (sourceList.length > 0) {
-        sourceList.forEach(source => {
-            const [type, id] = source.split('_');
-            if (type === 'chapter') {
-                chapterIdsToFetch.add(id);
-            } else if (type === 'book') {
-                accessibleContent.chapters.forEach(c => { if (c.book_id === id) chapterIdsToFetch.add(c.id); });
-            } else if (type === 'discipline') {
-                accessibleContent.chapters.forEach(c => { if (c.discipline_id === id) chapterIdsToFetch.add(c.id); });
-            }
-        });
-    }
-
-    console.log(`--- DEBUG: Fetching questions for ${chapterIdsToFetch.size} chapters ---`);
-    if (chapterIdsToFetch.size === 0) return [];
-
-    // ROBUST PAGINATION LOOP (To bypass 1000-row limit)
-    let allQuestions = [];
-    let from = 0;
-    const limit = 1000;
-    let keepFetching = true;
-    const chapterArray = Array.from(chapterIdsToFetch);
-
-    while (keepFetching) {
-        const { data, error } = await supabase
-            .from('questions')
-            .select('*')
-            .in('chapter_id', chapterArray)
-            .range(from, from + limit - 1);
-
-        if (error) {
-            console.error("--- DEBUG: Supabase Fetch Error:", error);
-            break;
-        }
-
-        if (data && data.length > 0) {
-            allQuestions = allQuestions.concat(data);
-            if (data.length < limit) keepFetching = false;
-        } else {
-            keepFetching = false;
-        }
-        from += limit;
-    }
-    
-    console.log(`--- DEBUG: Successfully fetched ${allQuestions.length} questions ---`);
-    return allQuestions;
+async function getQuestionsForSourceAndFilters(sources = null, options = {}) {
+    return await getFilteredQuestionIndexForBuilder(sources, options);
 }
 
+async function getBaseQuestionPool(sources = null) {
+    return await getLightDashboardQuestionPool(sources);
+}
 
 function getFilterFunctions() {
-        return {
-            'unanswered': q => !userHistoryCache.has(q.id),
-            
-            // "Lastly wrong" strictly checks the very last attempt. If they got it right last time, it ignores it.
-            'lastly-wrong': q => {
-                const history = userHistoryCache.get(q.id);
-                return history && (history.lastResult === 'wrong');
-            },
-            
-            // FIX: "Previously wrong" means they have gotten it wrong at least once EVER, 
-            // even if they got it right 50 times later.
-            'previously-wrong': q => {
-                const history = userHistoryCache.get(q.id);
-                return history && (history.timesWrong > 0);
-            },
-            
-            // FIX: "Initially wrong" means the very first time they took it, they failed.
-            'initial-wrong': q => {
-                const history = userHistoryCache.get(q.id);
-                return history && (history.firstAttemptResult === 'wrong');
-            },
-            
-            'review': q => userHistoryCache.get(q.id)?.isForReview === true,
-            'note': q => userHistoryCache.get(q.id)?.hasNote === true,
-            'very-difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Difficult',
-            'difficult': q => userHistoryCache.get(q.id)?.userDifficulty === 'Difficult',
-            'moderate': q => userHistoryCache.get(q.id)?.userDifficulty === 'Moderate',
-            'easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Easy',
-            'very-easy': q => userHistoryCache.get(q.id)?.userDifficulty === 'Very Easy',
-        };
-    }
+    const getHistory = (q) => userHistoryCache.get(String(q.id));
 
+    return {
+        'unanswered': q => !getHistory(q),
+
+        'lastly-wrong': q => {
+            const history = getHistory(q);
+            return history && String(history.lastResult || '').toLowerCase() === 'wrong';
+        },
+
+        'previously-wrong': q => {
+            const history = getHistory(q);
+            return history && Number(history.timesWrong || 0) > 0;
+        },
+
+        'initial-wrong': q => {
+            const history = getHistory(q);
+            return history && String(history.firstAttemptResult || '').toLowerCase() === 'wrong';
+        },
+
+        'review': q => getHistory(q)?.isForReview === true,
+        'note': q => getHistory(q)?.hasNote === true,
+        'very-difficult': q => getHistory(q)?.userDifficulty === 'Very Difficult',
+        'difficult': q => getHistory(q)?.userDifficulty === 'Difficult',
+        'moderate': q => getHistory(q)?.userDifficulty === 'Moderate',
+        'easy': q => getHistory(q)?.userDifficulty === 'Easy',
+        'very-easy': q => getHistory(q)?.userDifficulty === 'Very Easy',
+    };
+}
 async function getUserHistory(userId) {
-        // If we already loaded it, don't fetch again
-        if (userHistoryCache.size > 0) return; 
-        
-        let from = 0;
-        const limit = 1000;
-        let keepFetching = true;
+    if (userHistoryCache.size > 0) return;
 
-        // Fetch ALL history records in chunks to bypass the 1000 row limit
-        while (keepFetching) {
-            const { data, error } = await supabase
-                .from('userQuestionHistory')
-                .select('*') // We need '*' here to get timesWrong and firstAttemptResult
-                .eq('userId', userId)
-                .range(from, from + limit - 1);
-
-            if (error) {
-                console.error("Error fetching user history for builder:", error);
-                break;
-            }
-
-            if (data && data.length > 0) {
-                data.forEach(item => userHistoryCache.set(item.questionId, item));
-                if (data.length < limit) keepFetching = false;
-            } else {
-                keepFetching = false;
-            }
-            from += limit;
-        }
-    }  
+    hydrateUserHistoryCacheFromLocalStorage();
+}
         // --- General Event Listeners ---
 // Update the event listener to pass the current user to the function
 dom.logoutButton.addEventListener('click', async () => {
@@ -3130,78 +3510,29 @@ paintDisciplines(
         return;
     }
 
-    // HEAVY STATS FETCH: run after discipline cards already appeared.
-    setTimeout(async () => {
-        try {
-            let qData = [];
-            let qFrom = 0;
-            let qKeep = true;
+// COMPACT STATS FETCH: accurate and fast.
+// Supabase calculates the stats server-side and returns only final numbers.
+setTimeout(async () => {
+    try {
+        const freshStats = await fetchFreshDashboardStats();
+        const freshDisciplineStats = freshStats.disciplineStats || {};
 
-            while (qKeep) {
-                const { data, error } = await supabase
-                    .from('questions')
-                    .select('id, discipline_id')
-                    .range(qFrom, qFrom + 999);
+        saveDashboardStatsPart(user, {
+            disciplineStats: freshDisciplineStats
+        });
 
-                if (error) throw error;
+        paintDisciplines(
+            ud,
+            rd,
+            [],
+            [],
+            freshDisciplineStats
+        );
 
-                if (data && data.length > 0) {
-                    qData = qData.concat(data);
-                    qKeep = data.length === 1000;
-                    qFrom += 1000;
-                } else {
-                    qKeep = false;
-                }
-            }
-
-            let hData = [];
-            let hFrom = 0;
-            let hKeep = true;
-
-            while (hKeep) {
-                const { data, error } = await supabase
-                    .from('userQuestionHistory')
-                    .select('questionId, lastResult')
-                    .eq('userId', user.id)
-                    .range(hFrom, hFrom + 999);
-
-                if (error) throw error;
-
-                if (data && data.length > 0) {
-                    hData = hData.concat(data);
-                    hKeep = data.length === 1000;
-                    hFrom += 1000;
-                } else {
-                    hKeep = false;
-                }
-            }
-
-            const visibleDisciplines = (ud && ud.speciality)
-    ? (rd || []).filter(d => d.speciality === ud.speciality)
-    : (rd || []);
-
-const freshDisciplineStats = buildDisciplineStatsFromRaw(
-    visibleDisciplines,
-    qData,
-    hData
-);
-
-saveDashboardStatsPart(user, {
-    disciplineStats: freshDisciplineStats
-});
-
-paintDisciplines(
-    ud,
-    rd,
-    [],
-    [],
-    freshDisciplineStats
-);
-
-        } catch (statsErr) {
-            console.warn("Discipline stats sync failed. Cards remain visible.", statsErr);
-        }
-    }, 250);
+    } catch (statsErr) {
+        console.warn("Discipline stats sync failed. Cards remain visible.", statsErr);
+    }
+}, 250);
 
 }, 50);
 }
@@ -3400,81 +3731,32 @@ paintBooksAndVideos(
         return;
     }
 
-    // HEAVY STATS FETCH: run after the cards already appeared.
-    setTimeout(async () => {
-        try {
-            let qData = [];
-            let hData = [];
+// COMPACT STATS FETCH: accurate and fast.
+// Supabase calculates the stats server-side and returns only final numbers.
+setTimeout(async () => {
+    try {
+        const freshStats = await fetchFreshDashboardStats();
+        const freshBookStats = freshStats.bookStats || {};
 
-            let from = 0;
-            let keep = true;
+        saveDashboardStatsPart(user, {
+            bookStats: freshBookStats
+        });
 
-            while (keep) {
-                const { data, error } = await supabase
-                    .from('questions')
-                    .select('id, book_id')
-                    .range(from, from + 999);
+        paintBooksAndVideos(
+            ud,
+            bd,
+            rd,
+            cd,
+            vd,
+            [],
+            [],
+            freshBookStats
+        );
 
-                if (error) throw error;
-
-                if (data && data.length > 0) {
-                    qData = qData.concat(data);
-                    keep = data.length === 1000;
-                    from += 1000;
-                } else {
-                    keep = false;
-                }
-            }
-
-            from = 0;
-            keep = true;
-
-            while (keep) {
-                const { data, error } = await supabase
-                    .from('userQuestionHistory')
-                    .select('questionId, lastResult')
-                    .eq('userId', user.id)
-                    .range(from, from + 999);
-
-                if (error) throw error;
-
-                if (data && data.length > 0) {
-                    hData = hData.concat(data);
-                    keep = data.length === 1000;
-                    from += 1000;
-                } else {
-                    keep = false;
-                }
-            }
-
-            // Build and save compact final book donut stats.
-// This is the important cache that prevents recalculation on next login.
-const freshBookStats = buildBookStatsFromRaw(
-    bd || [],
-    qData,
-    hData
-);
-
-saveDashboardStatsPart(user, {
-    bookStats: freshBookStats
-});
-
-// Repaint using the compact stats object, not the huge raw arrays.
-paintBooksAndVideos(
-    ud,
-    bd,
-    rd,
-    cd,
-    vd,
-    [],
-    [],
-    freshBookStats
-);
-
-        } catch (statsErr) {
-            console.warn("Dashboard stats sync failed. Cards remain visible.", statsErr);
-        }
-    }, 250);
+    } catch (statsErr) {
+        console.warn("Dashboard stats sync failed. Cards remain visible.", statsErr);
+    }
+}, 250);
 
 }, 50);
 }

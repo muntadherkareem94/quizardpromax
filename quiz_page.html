@@ -3400,25 +3400,48 @@ const CHUNK_SIZE = 5; // Load 5 questions at a time to keep it lightning fast
             }
         }
 
-        async function jumpToQuestion(index) {
-            if (index >= 0 && index < quizData.questions.length) {
-                currentQuestionIndex = index;
-                
-                // If it's a massive quiz and the question isn't loaded yet, show a loader
-                if (!quizData.questions[index].question) {
-                    dom.questionDisplay.innerHTML = '<div class="animate-pulse text-purple-600 font-bold p-4 text-center">Loading question data...</div>';
-                    await ensureSlidingWindow(index);
-                }
+       function scrollToCurrentQuestionTop() {
+    const target = document.getElementById('questionDisplay');
 
-                displayQuestion();
-                updateProgressBar();
-                
-                updateFinishNavigationState();
+    if (!target) return;
 
-                // Silently maintain the sliding window in the background
-                ensureSlidingWindow(index);
-            }
+    // Adjust this number if you want the question slightly higher/lower.
+    // 115px keeps the header/title area from covering the question.
+    const topOffset = 115;
+
+    const targetY = target.getBoundingClientRect().top + window.pageYOffset - topOffset;
+
+    window.scrollTo({
+        top: Math.max(targetY, 0),
+        behavior: 'smooth'
+    });
+}
+
+async function jumpToQuestion(index) {
+    if (index >= 0 && index < quizData.questions.length) {
+        currentQuestionIndex = index;
+        
+        // If it's a massive quiz and the question isn't loaded yet, show a loader
+        if (!quizData.questions[index].question) {
+            dom.questionDisplay.innerHTML = '<div class="animate-pulse text-purple-600 font-bold p-4 text-center">Loading question data.</div>';
+            await ensureSlidingWindow(index);
         }
+
+        displayQuestion();
+        updateProgressBar();
+        
+        updateFinishNavigationState();
+
+        // Scroll AFTER the new question is rendered.
+        // requestAnimationFrame makes sure the browser has updated the layout first.
+        requestAnimationFrame(() => {
+            scrollToCurrentQuestionTop();
+        });
+
+        // Silently maintain the sliding window in the background
+        ensureSlidingWindow(index);
+    }
+}
 
         function updateProgressBar() {
             const answeredCount = Object.keys(userAnswers).length;
@@ -3991,6 +4014,84 @@ const backButtonUrl = () => {
 
             safeJumpToQuestion(currentQuestionIndex + 1);
         });
+
+        // --- PC KEYBOARD NAVIGATION: Arrow Left / Arrow Right ---
+function isAnyQuizBlockingModalOpen() {
+    const modalIds = [
+        'resumeModal',
+        'resultModal',
+        'lightbox',
+        'quizFlashcardModal',
+        'noteModal',
+        'difficultyModal',
+        'highlightModal'
+    ];
+
+    return modalIds.some(id => {
+        const modal = document.getElementById(id);
+        return modal && !modal.classList.contains('hidden');
+    });
+}
+
+function isUserTypingOrEditing() {
+    const activeEl = document.activeElement;
+    if (!activeEl) return false;
+
+    const tag = activeEl.tagName?.toLowerCase();
+    const inputType = activeEl.type?.toLowerCase();
+
+    return (
+        tag === 'textarea' ||
+        tag === 'select' ||
+        activeEl.isContentEditable ||
+        activeEl.closest?.('[contenteditable="true"]') ||
+        (
+            tag === 'input' &&
+            !['radio', 'checkbox', 'button', 'submit'].includes(inputType)
+        )
+    );
+}
+
+document.addEventListener('keydown', (event) => {
+    // Only handle left/right arrows
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+
+    // Do not interfere with typing, editing flashcards/notes, modals, or shortcuts
+    if (
+        event.ctrlKey ||
+        event.metaKey ||
+        event.altKey ||
+        event.shiftKey ||
+        isUserTypingOrEditing() ||
+        isAnyQuizBlockingModalOpen()
+    ) {
+        return;
+    }
+
+    // Do not navigate if quiz is not loaded yet
+    if (!quizData.questions || quizData.questions.length === 0) return;
+    if (dom.quizContainer?.classList.contains('hidden')) return;
+
+    event.preventDefault();
+
+    if (event.key === 'ArrowLeft') {
+        if (currentQuestionIndex > 0) {
+            safeJumpToQuestion(currentQuestionIndex - 1);
+        }
+        return;
+    }
+
+    if (event.key === 'ArrowRight') {
+        if (window.navigationLocked) return;
+
+        if (currentQuestionIndex === quizData.questions.length - 1) {
+            finishQuizFromNavigation();
+            return;
+        }
+
+        safeJumpToQuestion(currentQuestionIndex + 1);
+    }
+});
 
        function setupFunctionalIconListeners() {
     // Helper: attach only if element exists
