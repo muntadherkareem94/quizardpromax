@@ -446,9 +446,28 @@ function startActiveSessionHeartbeat() {
 
         if (updateUserError) throw updateUserError;
         
-        displayProfilePhoto(publicURL);
-        updateUserProfileIcon(publicURL);
-        dom.uploadStatus.textContent = 'Photo updated successfully!';
+       const cacheBustedURL = `${publicURL}?v=${Date.now()}`;
+
+
+const updatedUser = {
+    ...user,
+    user_metadata: {
+        ...(user.user_metadata || {}),
+        photoURL: cacheBustedURL
+    }
+};
+
+currentUser = updatedUser;
+
+const { data: userData } = await supabase
+    .from('users')
+    .select('account_type')
+    .eq('id', user.id)
+    .single();
+
+displayProfilePhoto(cacheBustedURL);
+updateUserProfileIcon(updatedUser, userData);
+dom.uploadStatus.textContent = 'Photo updated successfully!';
 
     } catch (error) {
         console.error("Error uploading photo:", error);
