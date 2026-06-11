@@ -1,0 +1,44 @@
+column_name,data_type
+id,uuid
+instance_id,uuid
+created_at,timestamp with time zone
+id,uuid
+aud,character varying
+username,text
+speciality,text
+role,character varying
+role,text
+email,character varying
+account_type,text
+encrypted_password,character varying
+premium_expires_at,timestamp with time zone
+email_confirmed_at,timestamp with time zone
+invited_at,timestamp with time zone
+has_expiry_notification_sent,boolean
+confirmation_token,character varying
+confirmation_sent_at,timestamp with time zone
+recovery_token,character varying
+recovery_sent_at,timestamp with time zone
+email_change_token_new,character varying
+email_change,character varying
+email_change_sent_at,timestamp with time zone
+last_sign_in_at,timestamp with time zone
+raw_app_meta_data,jsonb
+raw_user_meta_data,jsonb
+is_super_admin,boolean
+created_at,timestamp with time zone
+updated_at,timestamp with time zone
+phone,text
+phone_confirmed_at,timestamp with time zone
+phone_change,text
+phone_change_token,character varying
+phone_change_sent_at,timestamp with time zone
+confirmed_at,timestamp with time zone
+email_change_token_current,character varying
+email_change_confirm_status,smallint
+banned_until,timestamp with time zone
+reauthentication_token,character varying
+reauthentication_sent_at,timestamp with time zone
+is_sso_user,boolean
+deleted_at,timestamp with time zone
+is_anonymous,boolean
