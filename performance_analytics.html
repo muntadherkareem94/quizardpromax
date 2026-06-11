@@ -102,11 +102,92 @@
     </div>
 
     <div id="analyticsContainer" class="hidden">
-        <div id="dateFilters" class="custom-filter-bar mx-auto mb-10">
-            <button data-days="7" class="custom-filter-button">Last 7 Days</button>
-            <button data-days="30" class="custom-filter-button">Last 30 Days</button>
-            <button data-days="all" class="custom-filter-button active">All Time</button>
+
+    <!-- Target Daily Goal Card -->
+    <div id="dailyGoalCard" class="custom-card mb-10">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+            <div>
+                <h3 class="text-2xl font-bold text-black">Target Daily Goal</h3>
+                <p class="text-gray-600 text-sm mt-1">
+                    Track your daily question target, deficit, and required pace.
+                </p>
+            </div>
+
+            <button id="editDailyGoalButton" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition">
+                Edit Goal
+            </button>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+
+            <!-- Today Progress -->
+            <div class="bg-white rounded-xl p-5 shadow-sm border">
+                <p class="text-sm font-bold text-gray-500 uppercase mb-3">Today</p>
+
+               <div id="dailyGoalTodayDonut" class="relative w-36 h-36 mx-auto rounded-full flex items-center justify-center"
+     style="background: conic-gradient(#8b5cf6 0deg, #e5e7eb 0deg);">
+                    <div class="w-24 h-24 bg-white rounded-full flex flex-col items-center justify-center">
+                        <span id="dailyGoalPercent" class="text-2xl font-bold text-gray-800">0%</span>
+                        <span class="text-xs text-gray-500">Achieved</span>
+                    </div>
+                </div>
+
+                <p class="mt-4 text-gray-700">
+                    <span id="dailyGoalAnswered" class="font-bold">0</span> /
+                    <span id="dailyGoalTarget" class="font-bold">100</span> questions
+                </p>
+
+                <p id="dailyGoalRemainingText" class="text-sm text-gray-500 mt-1">
+                    100 remaining today
+                </p>
+            </div>
+
+            <!-- Net Balance -->
+            <div class="bg-white rounded-xl p-5 shadow-sm border">
+                <p class="text-sm font-bold text-gray-500 uppercase mb-3">Net Balance</p>
+
+              <div id="dailyGoalNetDonut" class="relative w-36 h-36 mx-auto rounded-full flex items-center justify-center"
+     style="background: conic-gradient(#10b981 360deg, #e5e7eb 0deg);">
+                    <div class="w-24 h-24 bg-white rounded-full flex flex-col items-center justify-center">
+                        <span id="dailyGoalNetNumber" class="text-2xl font-bold text-gray-800">0</span>
+                        <span id="dailyGoalNetLabel" class="text-xs text-gray-500">On track</span>
+                    </div>
+                </div>
+
+                <p id="dailyGoalNetText" class="mt-4 text-gray-700">
+                    You are on track.
+                </p>
+
+                <p id="dailyGoalCatchupText" class="text-sm text-gray-500 mt-1">
+                    No catch-up needed.
+                </p>
+            </div>
+
+            <!-- Required Pace -->
+            <div class="bg-white rounded-xl p-5 shadow-sm border">
+                <p class="text-sm font-bold text-gray-500 uppercase mb-3">Required Pace</p>
+
+                <div class="flex flex-col items-center justify-center h-36">
+                    <span id="dailyGoalPacePerHour" class="text-4xl font-bold text-gray-800">20</span>
+                    <span class="text-sm text-gray-500">questions / hour</span>
+                </div>
+
+                <p id="dailyGoalPacePerQuestion" class="mt-4 text-gray-700">
+                    ≈ 1 question every 3 minutes
+                </p>
+
+                <p id="dailyGoalStudyTimeText" class="text-sm text-gray-500 mt-1">
+                    Based on 5 study hours/day
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="dateFilters" class="custom-filter-bar mx-auto mb-10">
+        <button data-days="7" class="custom-filter-button">Last 7 Days</button>
+        <button data-days="30" class="custom-filter-button">Last 30 Days</button>
+        <button data-days="all" class="custom-filter-button active">All Time</button>
+    </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-center">
             <div>
@@ -152,12 +233,79 @@
     </div>
 </main>
 
-    <!-- Drilldown Modal -->
+       <!-- Drilldown Modal -->
     <div id="drilldownModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full">
             <h3 id="drilldownTitle" class="text-2xl font-bold text-gray-800 mb-6">Detailed Performance</h3>
             <div class="h-96"><canvas id="drilldownChart"></canvas></div>
             <button id="closeDrilldownModal" class="mt-6 w-full py-2 px-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold rounded-lg">Close</button>
+        </div>
+    </div>
+
+    <!-- Daily Goal Modal -->
+    <div id="dailyGoalModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Edit Daily Goal</h3>
+
+            <div class="space-y-5">
+                <div>
+                    <label for="dailyGoalTargetInput" class="block text-sm font-bold text-gray-700 mb-1">
+                        Daily question target
+                    </label>
+                    <input id="dailyGoalTargetInput" type="number" min="1" value="100"
+                           class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="dailyGoalStudyHoursInput" class="block text-sm font-bold text-gray-700 mb-1">
+                        Study time per day, in hours
+                    </label>
+                    <input id="dailyGoalStudyHoursInput" type="number" min="0.25" step="0.25" value="5"
+                           class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="dailyGoalStartDateInput" class="block text-sm font-bold text-gray-700 mb-1">
+                        Goal start date
+                    </label>
+                    <input id="dailyGoalStartDateInput" type="date"
+                           class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label for="dailyGoalResetHourInput" class="block text-sm font-bold text-gray-700 mb-1">
+                        Daily reset hour
+                    </label>
+                    <select id="dailyGoalResetHourInput"
+                            class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:outline-none">
+                        <option value="0">00:00 midnight</option>
+                        <option value="1">01:00</option>
+                        <option value="2">02:00</option>
+                        <option value="3">03:00</option>
+                        <option value="4">04:00</option>
+                        <option value="5">05:00</option>
+                        <option value="6">06:00</option>
+                        <option value="7">07:00</option>
+                        <option value="8">08:00</option>
+                        <option value="9">09:00</option>
+                        <option value="10">10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00 noon</option>
+                    </select>
+                    <p class="text-xs text-gray-500 mt-1">
+                        Example: if reset is 04:00, answers after midnight but before 04:00 count toward the previous study day.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-3 mt-8">
+                <button id="cancelDailyGoalButton" class="flex-1 py-2 px-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold rounded-lg">
+                    Cancel
+                </button>
+                <button id="saveDailyGoalButton" class="flex-1 py-2 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg">
+                    Save Goal
+                </button>
+            </div>
         </div>
     </div>
 
@@ -237,10 +385,382 @@ document.addEventListener('click', () => {
             closeDrilldownModal: document.getElementById('closeDrilldownModal'),
         };
 
+         // --- Daily Goal DOM Elements ---
+        const dailyGoalDom = {
+            card: document.getElementById('dailyGoalCard'),
+            editButton: document.getElementById('editDailyGoalButton'),
+            modal: document.getElementById('dailyGoalModal'),
+            cancelButton: document.getElementById('cancelDailyGoalButton'),
+            saveButton: document.getElementById('saveDailyGoalButton'),
+
+            targetInput: document.getElementById('dailyGoalTargetInput'),
+            studyHoursInput: document.getElementById('dailyGoalStudyHoursInput'),
+            startDateInput: document.getElementById('dailyGoalStartDateInput'),
+            resetHourInput: document.getElementById('dailyGoalResetHourInput'),
+
+            todayDonut: document.getElementById('dailyGoalTodayDonut'),
+            netDonut: document.getElementById('dailyGoalNetDonut'),
+
+            percent: document.getElementById('dailyGoalPercent'),
+            answered: document.getElementById('dailyGoalAnswered'),
+            target: document.getElementById('dailyGoalTarget'),
+            remainingText: document.getElementById('dailyGoalRemainingText'),
+
+            netNumber: document.getElementById('dailyGoalNetNumber'),
+            netLabel: document.getElementById('dailyGoalNetLabel'),
+            netText: document.getElementById('dailyGoalNetText'),
+            catchupText: document.getElementById('dailyGoalCatchupText'),
+
+            pacePerHour: document.getElementById('dailyGoalPacePerHour'),
+            pacePerQuestion: document.getElementById('dailyGoalPacePerQuestion'),
+            studyTimeText: document.getElementById('dailyGoalStudyTimeText'),
+        };
+
         // --- Global State ---
         let allQuizResults = [], allQuestionHistory = [], allDisciplines = [], allBooks = [], allChapters = [];
         let trendChart, disciplineChart, bookChart, drilldownChart;
+        let currentUserId = null;
 
+        let dailyGoalSettings = {
+            daily_target: 100,
+            study_minutes_per_day: 300,
+            reset_hour: 0,
+            start_date: new Date().toISOString().slice(0, 10)
+        };
+
+   function getLocalDateKey(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function getStudyDayKey(dateValue, resetHour = 0) {
+    const date = new Date(dateValue);
+
+    if (Number.isNaN(date.getTime())) {
+        return null;
+    }
+
+    if (date.getHours() < resetHour) {
+        date.setDate(date.getDate() - 1);
+    }
+
+    return getLocalDateKey(date);
+}
+
+function getTodayStudyKey() {
+    return getStudyDayKey(new Date(), dailyGoalSettings.reset_hour || 0);
+}
+
+function getDaysInclusive(startKey, endKey) {
+    const start = new Date(`${startKey}T00:00:00`);
+    const end = new Date(`${endKey}T00:00:00`);
+
+    if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime()) || end < start) {
+        return 1;
+    }
+
+    const diffMs = end - start;
+    return Math.floor(diffMs / (24 * 60 * 60 * 1000)) + 1;
+}
+
+function getQuestionCountFromQuizResult(result) {
+    const possibleNumberFields = [
+        'totalQuestions',
+        'questionCount',
+        'questionsCount',
+        'answeredQuestions',
+        'answered_count',
+        'numQuestions',
+        'total_questions'
+    ];
+
+    for (const field of possibleNumberFields) {
+        const value = Number(result[field]);
+        if (Number.isFinite(value) && value > 0) {
+            return value;
+        }
+    }
+
+    const possibleArrayFields = [
+        'answers',
+        'userAnswers',
+        'questionIds',
+        'questions',
+        'answeredQuestionIds',
+        'selectedAnswers'
+    ];
+
+    for (const field of possibleArrayFields) {
+        const value = result[field];
+
+        if (Array.isArray(value)) {
+            return value.length;
+        }
+
+        if (value && typeof value === 'object') {
+            return Object.keys(value).length;
+        }
+    }
+
+    const correct = Number(result.correctCount || result.correctAnswers || result.correct || 0);
+    const wrong = Number(result.wrongCount || result.wrongAnswers || result.incorrect || 0);
+
+    if (correct + wrong > 0) {
+        return correct + wrong;
+    }
+
+    return 0;
+}
+
+function buildDailyAnswerCounts() {
+    const counts = {};
+
+    /*
+        IMPORTANT:
+        The main analytics page already uses userQuestionHistory.attempts
+        to calculate Total Questions Answered.
+
+        So the daily goal should also use userQuestionHistory first.
+        quizResults is only used as a backup.
+    */
+
+    allQuestionHistory.forEach(history => {
+        const attemptDate =
+            history.lastAttemptDate ||
+            history.last_attempt_date ||
+            history.updated_at ||
+            history.created_at;
+
+        if (!attemptDate) return;
+
+        const dayKey = getStudyDayKey(attemptDate, dailyGoalSettings.reset_hour || 0);
+        if (!dayKey) return;
+
+        const attempts = Number(
+            history.attempts ??
+            ((Number(history.timesCorrect || 0)) + (Number(history.timesWrong || 0))) ??
+            1
+        );
+
+        const safeAttempts = Number.isFinite(attempts) && attempts > 0 ? attempts : 1;
+
+        counts[dayKey] = (counts[dayKey] || 0) + safeAttempts;
+    });
+
+    // If userQuestionHistory has data, use it and stop here.
+    if (Object.keys(counts).length > 0) {
+        console.log('Daily goal counts from userQuestionHistory:', counts);
+        return counts;
+    }
+
+    // Backup only: use quizResults if history has no usable dates.
+    allQuizResults.forEach(result => {
+        const completedAt =
+            result.completedAt ||
+            result.completed_at ||
+            result.created_at;
+
+        const count = getQuestionCountFromQuizResult(result);
+
+        if (!completedAt || count <= 0) return;
+
+        const dayKey = getStudyDayKey(completedAt, dailyGoalSettings.reset_hour || 0);
+        if (!dayKey) return;
+
+        counts[dayKey] = (counts[dayKey] || 0) + count;
+    });
+
+    console.log('Daily goal counts from quizResults backup:', counts);
+    return counts;
+}
+
+function renderDailyGoalCard() {
+    if (!dailyGoalDom.card) return;
+
+    const dailyTarget = Number(dailyGoalSettings.daily_target) || 100;
+    const studyMinutes = Number(dailyGoalSettings.study_minutes_per_day) || 300;
+    const startKey = dailyGoalSettings.start_date || getTodayStudyKey();
+    const todayKey = getTodayStudyKey();
+
+    const dailyCounts = buildDailyAnswerCounts();
+    const answeredToday = dailyCounts[todayKey] || 0;
+
+    let answeredSinceStart = 0;
+    Object.entries(dailyCounts).forEach(([dayKey, count]) => {
+        if (dayKey >= startKey && dayKey <= todayKey) {
+            answeredSinceStart += count;
+        }
+    });
+
+    const daysActive = getDaysInclusive(startKey, todayKey);
+    const expectedCumulative = daysActive * dailyTarget;
+    const netBalance = answeredSinceStart - expectedCumulative;
+
+    const todayPercentRaw = dailyTarget > 0 ? (answeredToday / dailyTarget) * 100 : 0;
+    const todayPercentCapped = Math.min(todayPercentRaw, 100);
+    const todayDegrees = todayPercentCapped * 3.6;
+
+    dailyGoalDom.todayDonut.style.background =
+        `conic-gradient(#8b5cf6 ${todayDegrees}deg, #e5e7eb ${todayDegrees}deg)`;
+
+    dailyGoalDom.percent.textContent = `${Math.round(todayPercentCapped)}%`;
+    dailyGoalDom.answered.textContent = answeredToday;
+    dailyGoalDom.target.textContent = dailyTarget;
+
+    const remainingToday = Math.max(dailyTarget - answeredToday, 0);
+    const todayBonus = Math.max(answeredToday - dailyTarget, 0);
+
+    if (todayBonus > 0) {
+        dailyGoalDom.remainingText.textContent = `Daily target completed. Bonus: +${todayBonus} questions.`;
+    } else {
+        dailyGoalDom.remainingText.textContent = `${remainingToday} remaining today.`;
+    }
+
+    if (netBalance < 0) {
+        const deficit = Math.abs(netBalance);
+        const deficitPercent = expectedCumulative > 0
+            ? Math.min((deficit / expectedCumulative) * 100, 100)
+            : 0;
+        const deficitDegrees = deficitPercent * 3.6;
+
+        dailyGoalDom.netDonut.style.background =
+            `conic-gradient(#ef4444 ${deficitDegrees}deg, #e5e7eb ${deficitDegrees}deg)`;
+
+        dailyGoalDom.netNumber.textContent = deficit;
+        dailyGoalDom.netLabel.textContent = 'Behind';
+        dailyGoalDom.netText.textContent = `${deficit} questions behind.`;
+        dailyGoalDom.catchupText.textContent = `Answer ${deficit + remainingToday} today to finish today fully on track.`;
+    } else if (netBalance > 0) {
+        dailyGoalDom.netDonut.style.background =
+            `conic-gradient(#10b981 360deg, #e5e7eb 0deg)`;
+
+        dailyGoalDom.netNumber.textContent = `+${netBalance}`;
+        dailyGoalDom.netLabel.textContent = 'Ahead';
+        dailyGoalDom.netText.textContent = `You are ${netBalance} questions ahead.`;
+        dailyGoalDom.catchupText.textContent = 'No catch-up needed.';
+    } else {
+        dailyGoalDom.netDonut.style.background =
+            `conic-gradient(#10b981 360deg, #e5e7eb 0deg)`;
+
+        dailyGoalDom.netNumber.textContent = '0';
+        dailyGoalDom.netLabel.textContent = 'On track';
+        dailyGoalDom.netText.textContent = 'You are on track.';
+        dailyGoalDom.catchupText.textContent = 'No catch-up needed.';
+    }
+
+    const neededTodayToBeOnTrack = remainingToday + Math.max(Math.abs(Math.min(netBalance, 0)), 0);
+    const studyHours = studyMinutes / 60;
+    const pacePerHour = studyHours > 0 ? Math.ceil(neededTodayToBeOnTrack / studyHours) : 0;
+    const minutesPerQuestion = neededTodayToBeOnTrack > 0
+        ? Math.max(1, Math.round(studyMinutes / neededTodayToBeOnTrack))
+        : 0;
+
+    dailyGoalDom.pacePerHour.textContent = pacePerHour;
+
+    if (neededTodayToBeOnTrack <= 0) {
+        dailyGoalDom.pacePerQuestion.textContent = 'Goal already completed for today.';
+    } else {
+        dailyGoalDom.pacePerQuestion.textContent = `≈ 1 question every ${minutesPerQuestion} minute${minutesPerQuestion === 1 ? '' : 's'}`;
+    }
+
+    dailyGoalDom.studyTimeText.textContent = `Based on ${(studyMinutes / 60).toFixed(1).replace('.0', '')} study hours/day`;
+}
+
+async function loadDailyGoalSettings(userId) {
+    const today = new Date().toISOString().slice(0, 10);
+
+    const defaultSettings = {
+        user_id: userId,
+        daily_target: 100,
+        study_minutes_per_day: 300,
+        reset_hour: 0,
+        start_date: today
+    };
+
+    const { data, error } = await supabase
+        .from('user_daily_goals')
+        .select('*')
+        .eq('user_id', userId)
+        .maybeSingle();
+
+    if (error) {
+        console.warn('Could not load daily goal settings:', error.message);
+        dailyGoalSettings = defaultSettings;
+        return;
+    }
+
+    if (data) {
+        dailyGoalSettings = data;
+        return;
+    }
+
+    const { data: insertedData, error: insertError } = await supabase
+        .from('user_daily_goals')
+        .insert(defaultSettings)
+        .select()
+        .single();
+
+    if (insertError) {
+        console.warn('Could not create default daily goal:', insertError.message);
+        dailyGoalSettings = defaultSettings;
+        return;
+    }
+
+    dailyGoalSettings = insertedData;
+}
+
+async function saveDailyGoalSettings() {
+    if (!currentUserId) return;
+
+    const dailyTarget = Math.max(1, Number(dailyGoalDom.targetInput.value) || 100);
+    const studyHours = Math.max(0.25, Number(dailyGoalDom.studyHoursInput.value) || 5);
+    const studyMinutes = Math.round(studyHours * 60);
+    const resetHour = Number(dailyGoalDom.resetHourInput.value) || 0;
+    const startDate = dailyGoalDom.startDateInput.value || new Date().toISOString().slice(0, 10);
+
+    const updatedSettings = {
+        user_id: currentUserId,
+        daily_target: dailyTarget,
+        study_minutes_per_day: studyMinutes,
+        reset_hour: resetHour,
+        start_date: startDate,
+        updated_at: new Date().toISOString()
+    };
+
+    const { data, error } = await supabase
+        .from('user_daily_goals')
+        .upsert(updatedSettings, { onConflict: 'user_id' })
+        .select()
+        .single();
+
+    if (error) {
+        console.error('Could not save daily goal:', error);
+        alert('Could not save daily goal. Please try again.');
+        return;
+    }
+
+    dailyGoalSettings = data;
+    renderDailyGoalCard();
+    closeDailyGoalModal();
+}
+
+function openDailyGoalModal() {
+    dailyGoalDom.targetInput.value = dailyGoalSettings.daily_target || 100;
+    dailyGoalDom.studyHoursInput.value = ((dailyGoalSettings.study_minutes_per_day || 300) / 60)
+        .toFixed(2)
+        .replace(/\.00$/, '')
+        .replace(/0$/, '');
+    dailyGoalDom.startDateInput.value = dailyGoalSettings.start_date || new Date().toISOString().slice(0, 10);
+    dailyGoalDom.resetHourInput.value = dailyGoalSettings.reset_hour || 0;
+
+    dailyGoalDom.modal.classList.remove('hidden');
+}
+
+function closeDailyGoalModal() {
+    dailyGoalDom.modal.classList.add('hidden');
+}     
 async function fetchAllData(userId) {
     try {
         // Fetch small tables in parallel
@@ -288,11 +808,12 @@ async function fetchAllData(userId) {
             hFrom += hLimit;
         }
 
-        if (allQuizResults.length === 0) {
+              if (allQuizResults.length === 0 && allQuestionHistory.length === 0) {
             dom.loadingState.innerHTML = '<p class="text-xl">No quiz data found. Complete a quiz to see your analytics!</p>';
             return;
         }
-        
+
+        renderDailyGoalCard();
         processAndRenderAnalytics('all');
         dom.loadingState.classList.add('hidden');
         dom.analyticsContainer.classList.remove('hidden');
@@ -652,8 +1173,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Pass both user and userData to the function
             updateUserProfileIcon(session.user, userData);
 
-                        // This is your main function to get analytics data
-            fetchAllData(session.user.id);
+                 currentUserId = session.user.id;
+
+            // Load daily goal settings first, then analytics data
+            await loadDailyGoalSettings(currentUserId);
+            await fetchAllData(currentUserId);
 
                         // Start inactivity logout timer
             setupActivityListeners();
@@ -681,7 +1205,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 processAndRenderAnalytics(e.target.dataset.days);
             }
         });
-        dom.closeDrilldownModal.addEventListener('click', () => dom.drilldownModal.classList.add('hidden'));
+              dom.closeDrilldownModal.addEventListener('click', () => dom.drilldownModal.classList.add('hidden'));
+
+        dailyGoalDom.editButton.addEventListener('click', openDailyGoalModal);
+        dailyGoalDom.cancelButton.addEventListener('click', closeDailyGoalModal);
+        dailyGoalDom.saveButton.addEventListener('click', saveDailyGoalSettings);
+
+        dailyGoalDom.modal.addEventListener('click', (event) => {
+            if (event.target === dailyGoalDom.modal) {
+                closeDailyGoalModal();
+            }
+        });
 
     </script>
 </body>

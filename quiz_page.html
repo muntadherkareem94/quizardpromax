@@ -1201,6 +1201,26 @@ body.hl-mode-on .hl-target {
         </div>
     </div>
     
+       <!-- Daily Goal Achieved Modal -->
+    <div id="dailyGoalAchievedModal" class="modal hidden fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center p-4 z-[120]">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center transform transition-all">
+            <div class="text-6xl mb-4">🎉</div>
+
+            <h3 class="text-2xl font-extrabold text-gray-800 mb-2">
+                Daily Goal Achieved!
+            </h3>
+
+            <p id="dailyGoalAchievedMessage" class="text-gray-600 mb-6">
+                Excellent work. You completed your daily question target.
+            </p>
+
+            <button id="closeDailyGoalAchievedModal"
+                    class="w-full py-3 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg shadow">
+                Continue Quiz
+            </button>
+        </div>
+    </div>
+
     <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-[100]">
         <button id="lightboxClose" class="absolute top-4 right-4 text-white text-5xl font-bold">&times;</button>
         <img id="lightboxImage" src="" class="max-w-full max-h-full">
@@ -1505,6 +1525,11 @@ const dom = {
     toggleHighlightModeBtn: document.getElementById('toggleHighlightModeBtn'),
     unhighlightBtn: document.getElementById('unhighlightBtn'),
 
+// Daily goal achieved modal
+    dailyGoalAchievedModal: document.getElementById('dailyGoalAchievedModal'),
+    dailyGoalAchievedMessage: document.getElementById('dailyGoalAchievedMessage'),
+    closeDailyGoalAchievedModal: document.getElementById('closeDailyGoalAchievedModal'),
+
 // Flashcard modal
     createFlashcardBtn: document.getElementById('createFlashcardBtn'),
     quizFlashcardModal: document.getElementById('quizFlashcardModal'),
@@ -1547,7 +1572,11 @@ dom.optionsContainer.addEventListener('click', (event) => {
         let userHistoryCache = new Map();
         let quizPieChart;
         let resultPieChartInstance, resultBarChartInstance, resultBookBarChartInstance;
-        let quizTimerInterval = null;
+                let quizTimerInterval = null;
+
+        // --- Daily Goal Achievement State ---
+        let quizDailyGoalSettings = null;
+let quizDailyGoalAnsweredToday = 0;
 
         // --- UPDATE DASHBOARD DONUT CACHE AFTER ANSWERING QUESTIONS ---
 // This keeps dashboard donuts fast after logout/login without recalculating 12k questions.
@@ -3222,7 +3251,191 @@ options.forEach((label, index) => {
     dom.explanationDisplay.classList.remove('hidden');
 }
 // --- Submit answer without auto-opening the result modal ---
-function handleSubmitAnswer() {
+
+// --- Daily Goal Achievement Helpers ---
+// This version does NOT use user_daily_question_progress.
+// It uses your existing user_daily_goals + userQuestionHistory only.
+
+function getQuizLocalDateKey(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function getQuizStudyDayKey(dateValue = new Date(), resetHour = 0) {
+    const date = new Date(dateValue);
+
+    if (Number.isNaN(date.getTime())) {
+        return null;
+    }
+
+    if (date.getHours() < resetHour) {
+        date.setDate(date.getDate() - 1);
+    }
+
+    return getQuizLocalDateKey(date);
+}
+
+async function loadQuizDailyGoalState(userId) {
+    if (!userId) return;
+
+    const today = new Date().toISOString().slice(0, 10);
+
+    const defaultGoal = {
+        daily_target: 100,
+        study_minutes_per_day: 300,
+        reset_hour: 0,
+        start_date: today
+    };
+
+    const { data: goalData, error: goalError } = await supabase
+        .from('user_daily_goals')
+        .select('daily_target, study_minutes_per_day, reset_hour, start_date')
+        .eq('user_id', userId)
+        .maybeSingle();
+
+    if (goalError) {
+        console.warn('Could not load daily goal settings on quiz page:', goalError.message);
+    }
+
+    quizDailyGoalSettings = goalData || defaultGoal;
+
+    const todayKey = getQuizStudyDayKey(new Date(), quizDailyGoalSettings.reset_hour || 0);
+
+    /*
+        CRITICAL FIX:
+        Performance Analytics paginates userQuestionHistory.
+        The quiz page must do the same, otherwise Supabase may return only the first 1000 rows
+        and miss today's answered questions.
+    */
+    let allHistoryRows = [];
+    let hFrom = 0;
+    const hLimit = 1000;
+    let hKeep = true;
+
+    while (hKeep) {
+        const { data, error } = await supabase
+            .from('userQuestionHistory')
+            .select('*')
+            .eq('userId', userId)
+            .range(hFrom, hFrom + hLimit - 1);
+
+        if (error) {
+            console.error('Daily goal failed to load paginated userQuestionHistory:', error);
+            quizDailyGoalAnsweredToday = 0;
+            return;
+        }
+
+        if (data && data.length > 0) {
+            allHistoryRows = allHistoryRows.concat(data);
+
+            if (data.length < hLimit) {
+                hKeep = false;
+            }
+        } else {
+            hKeep = false;
+        }
+
+        hFrom += hLimit;
+    }
+
+    quizDailyGoalAnsweredToday = 0;
+
+    const dailyDebugRows = [];
+
+    allHistoryRows.forEach(history => {
+        const attemptDate =
+            history.lastAttemptDate ||
+            history.last_attempt_date ||
+            history.updated_at ||
+            history.updatedAt ||
+            history.created_at ||
+            history.createdAt;
+
+        if (!attemptDate) return;
+
+        const dayKey = getQuizStudyDayKey(attemptDate, quizDailyGoalSettings.reset_hour || 0);
+        if (dayKey !== todayKey) return;
+
+        const attempts = Number(
+            history.attempts ??
+            ((Number(history.timesCorrect || 0)) + (Number(history.timesWrong || 0))) ??
+            1
+        );
+
+        const safeAttempts = Number.isFinite(attempts) && attempts > 0 ? attempts : 1;
+
+        quizDailyGoalAnsweredToday += safeAttempts;
+
+        dailyDebugRows.push({
+            questionId: history.questionId,
+            attemptDate,
+            dayKey,
+            attempts: safeAttempts
+        });
+    });
+
+    console.log('Quiz daily goal loaded from paginated userQuestionHistory:', {
+        target: quizDailyGoalSettings.daily_target,
+        answeredToday: quizDailyGoalAnsweredToday,
+        todayKey,
+        totalRowsFetched: allHistoryRows.length,
+        matchingRows: dailyDebugRows.length
+    });
+
+    console.table(dailyDebugRows.slice(0, 20));
+}
+function showDailyGoalAchievedModal(target, answeredCount) {
+    if (!dom.dailyGoalAchievedModal) return;
+
+    if (dom.dailyGoalAchievedMessage) {
+        dom.dailyGoalAchievedMessage.textContent =
+            `Excellent work. You have answered ${answeredCount} questions today and completed your daily target of ${target} questions.`;
+    }
+
+    dom.dailyGoalAchievedModal.classList.remove('hidden');
+}
+
+function closeDailyGoalAchievedModal() {
+    if (!dom.dailyGoalAchievedModal) return;
+    dom.dailyGoalAchievedModal.classList.add('hidden');
+}
+
+function recordDailyGoalAnswerAndMaybeCelebrate() {
+    if (!currentUserId || !quizDailyGoalSettings) return;
+
+    const target = Number(quizDailyGoalSettings.daily_target || 100);
+    const resetHour = Number(quizDailyGoalSettings.reset_hour || 0);
+    const todayKey = getQuizStudyDayKey(new Date(), resetHour);
+
+    if (!todayKey || target <= 0) return;
+
+    const previousCount = quizDailyGoalAnsweredToday;
+    const newCount = previousCount + 1;
+
+    quizDailyGoalAnsweredToday = newCount;
+
+    const celebrationKey = `dailyGoalCelebrated_${currentUserId}_${todayKey}_${target}`;
+    const alreadyCelebrated = localStorage.getItem(celebrationKey) === 'true';
+
+    console.log('Daily goal submit check:', {
+        target,
+        previousCount,
+        newCount,
+        todayKey,
+        alreadyCelebrated
+    });
+
+    if (previousCount < target && newCount >= target && !alreadyCelebrated) {
+        localStorage.setItem(celebrationKey, 'true');
+        showDailyGoalAchievedModal(target, newCount);
+    }
+}
+
+async function handleSubmitAnswer() {
+    if (window.answerSubmitLocked) return;
+
     const selectedOption = dom.optionsContainer.querySelector('input[name="quizOption"]:checked');
 
     if (!selectedOption) {
@@ -3230,32 +3443,47 @@ function handleSubmitAnswer() {
         return;
     }
 
-    const answerIndex = parseInt(selectedOption.value, 10);
-    const question = quizData.questions[currentQuestionIndex];
-    const isCorrect = answerIndex === question.correctAnswerIndex;
+    window.answerSubmitLocked = true;
+    dom.submitAnswerButton.disabled = true;
+    dom.submitAnswerButtonMobile.disabled = true;
 
-    updateUserQuestionHistory(question, isCorrect);
-    userAnswers[question.id] = answerIndex;
+    try {
+        const answerIndex = parseInt(selectedOption.value, 10);
+        const question = quizData.questions[currentQuestionIndex];
+        const isCorrect = answerIndex === question.correctAnswerIndex;
 
-    // Send this exact answer to the global peer stats tally silently
-    supabase.rpc('increment_peer_response', {
-        p_question_id: question.id,
-        p_option_index: answerIndex
-    }).then(({ error }) => {
-        if (error) console.error("Stats update failed:", error);
-    });
+        await updateUserQuestionHistory(question, isCorrect);
 
-    saveProgressToDatabase();
-    updatePieChart();
-    showReviewedAnswer();
-    updateDotStyles();
+        userAnswers[question.id] = answerIndex;
 
-    dom.submitAnswerButton.classList.add('hidden');
-    dom.submitAnswerButtonMobile.classList.add('hidden');
+        // Send this exact answer to the global peer stats tally silently
+        supabase.rpc('increment_peer_response', {
+            p_question_id: question.id,
+            p_option_index: answerIndex
+        }).then(({ error }) => {
+            if (error) console.error("Stats update failed:", error);
+        });
 
-    // Important: do NOT call showResults() here.
-    // Let the user read the explanation first, then click Finish Quiz.
-    updateFinishNavigationState();
+        await saveProgressToDatabase();
+
+       recordDailyGoalAnswerAndMaybeCelebrate();
+
+        updatePieChart();
+        showReviewedAnswer();
+        updateDotStyles();
+
+        dom.submitAnswerButton.classList.add('hidden');
+        dom.submitAnswerButtonMobile.classList.add('hidden');
+
+        // Important: do NOT call showResults() here.
+        // Let the user read the explanation first, then click Finish Quiz.
+        updateFinishNavigationState();
+
+    } finally {
+        window.answerSubmitLocked = false;
+        dom.submitAnswerButton.disabled = false;
+        dom.submitAnswerButtonMobile.disabled = false;
+    }
 }
 
 
@@ -3821,7 +4049,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const isSessionValid = await validateAndEnforceSession(session.user);
 
         if (isSessionValid) {
-            currentUserId = session.user.id;
+                       currentUserId = session.user.id;
+
+            // Load daily goal state for the congratulations notification
+            await loadQuizDailyGoalState(currentUserId);
             
             // --- THIS IS THE NEW LOGIC ---
             const progressKey = getQuizProgressKey();
@@ -3940,8 +4171,16 @@ const backButtonUrl = () => {
     console.log("DECISION: Defaulting to Dashboard");
     return 'dashboard.html';
 };
-        dom.submitAnswerButton.addEventListener('click', handleSubmitAnswer);
+                dom.submitAnswerButton.addEventListener('click', handleSubmitAnswer);
         dom.submitAnswerButtonMobile.addEventListener('click', handleSubmitAnswer);
+
+        dom.closeDailyGoalAchievedModal?.addEventListener('click', closeDailyGoalAchievedModal);
+
+        dom.dailyGoalAchievedModal?.addEventListener('click', (event) => {
+            if (event.target === dom.dailyGoalAchievedModal) {
+                closeDailyGoalAchievedModal();
+            }
+        });
        // --- SMART BACK NAVIGATION (Guaranteed Smooth Mobile Transition) ---
         const handleSmartBack = (e) => {
             if (e) e.preventDefault();
@@ -4023,8 +4262,9 @@ function isAnyQuizBlockingModalOpen() {
         'lightbox',
         'quizFlashcardModal',
         'noteModal',
-        'difficultyModal',
-        'highlightModal'
+                'difficultyModal',
+        'highlightModal',
+        'dailyGoalAchievedModal'
     ];
 
     return modalIds.some(id => {
