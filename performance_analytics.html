@@ -499,26 +499,37 @@ function processAndRenderAnalytics(filterDays) {
     const filteredResults = filterDays === 'all' ? allQuizResults : allQuizResults.filter(r => new Date(r.completedAt) >= filterDate);
     const filteredHistory = filterDays === 'all' ? allQuestionHistory : allQuestionHistory.filter(h => h.lastAttemptDate && new Date(h.lastAttemptDate) >= filterDate);
 
-    if (filteredResults.length === 0) {
-        dom.avgScore.textContent = 'N/A';
-        dom.completedQuizzes.textContent = '0';
-        dom.totalQuestions.textContent = '0';
-        if(trendChart) trendChart.destroy();
-        if(disciplineChart) disciplineChart.destroy();
-        if(bookChart) bookChart.destroy();
-        dom.strengthsList.innerHTML = '<li class="text-gray-500">No data for this period.</li>';
-        dom.weaknessesList.innerHTML = '<li class="text-gray-500">No data for this period.</li>';
-        return;
-    }
+    if (filteredResults.length === 0 && filteredHistory.length === 0) {
+  dom.avgScore.textContent = 'N/A';
+  dom.completedQuizzes.textContent = '0';
+  dom.totalQuestions.textContent = '0';
+
+  if (trendChart) trendChart.destroy();
+  if (disciplineChart) disciplineChart.destroy();
+  if (bookChart) bookChart.destroy();
+
+  dom.strengthsList.innerHTML = '<li class="text-gray-500">No data for this period.</li>';
+  dom.weaknessesList.innerHTML = '<li class="text-gray-500">No data for this period.</li>';
+
+  return;
+}
     
     // --- Process Data ---
-    const totalScore = filteredResults.reduce((sum, result) => sum + result.score, 0);
-    const avgScore = totalScore / filteredResults.length;
-    const totalQuestionsAnswered = filteredHistory.reduce((sum, h) => sum + (h.attempts || 0), 0);
-    
-    dom.avgScore.textContent = `${avgScore.toFixed(0)}%`;
-    dom.completedQuizzes.textContent = filteredResults.length;
-    dom.totalQuestions.textContent = totalQuestionsAnswered;
+    const totalScore = filteredResults.reduce((sum, result) => {
+  return sum + (Number(result.score) || 0);
+}, 0);
+
+const avgScore = filteredResults.length > 0
+  ? totalScore / filteredResults.length
+  : null;
+
+const totalQuestionsAnswered = filteredHistory.reduce((sum, h) => {
+  return sum + (Number(h.attempts) || 0);
+}, 0);
+
+dom.avgScore.textContent = avgScore === null ? 'N/A' : `${avgScore.toFixed(0)}%`;
+dom.completedQuizzes.textContent = filteredResults.length;
+dom.totalQuestions.textContent = totalQuestionsAnswered;
 
     const trendLabels = filteredResults.map((_, index) => `Quiz ${index + 1}`);
     const trendData = filteredResults.map(result => result.score);
@@ -913,59 +924,104 @@ async function fetchActiveGoal(userId) {
     return data;
 }
 
+function normalizePerDayTargets(perDayTargets) {
+    const normalized = {};
+
+    DAY_KEYS.forEach(k => {
+        const raw = perDayTargets && perDayTargets[k];
+        const n = Math.max(0, parseInt(raw, 10) || 0);
+        normalized[k] = n;
+    });
+
+    return normalized;
+}
+
 async function saveGoal(userId, perDayTargets) {
     const today = localDateString(new Date());
-    // Store per-day targets as JSON string in daily_target column
-    const targetJson = JSON.stringify(perDayTargets);
+    const targetPayload = normalizePerDayTargets(perDayTargets);
 
-    const { data: existing } = await supabase
+    const { data: existing, error: existingError } = await supabase
         .from('user_daily_goals')
         .select('id')
         .eq('user_id', userId)
         .limit(1)
         .maybeSingle();
 
+    if (existingError) {
+        console.error('saveGoal existing check error:', existingError);
+        return null;
+    }
+
     let data, error;
+
     if (existing) {
         ({ data, error } = await supabase
             .from('user_daily_goals')
-            .update({ daily_target: targetJson, start_date: today, updated_at: new Date().toISOString() })
+            .update({
+                daily_target: targetPayload,
+                start_date: today,
+                updated_at: new Date().toISOString()
+            })
             .eq('user_id', userId)
             .select()
             .single());
     } else {
         ({ data, error } = await supabase
             .from('user_daily_goals')
-            .insert({ user_id: userId, daily_target: targetJson, start_date: today })
+            .insert({
+                user_id: userId,
+                daily_target: targetPayload,
+                start_date: today
+            })
             .select()
             .single());
     }
 
-    if (error) { console.error('saveGoal error:', error); return null; }
+    if (error) {
+        console.error('saveGoal error:', error);
+        alert('Could not save goal. Check console for details.');
+        return null;
+    }
+
     return data;
 }
 
 function parseGoalTargets(goal) {
-    // Returns a perDayTargets object regardless of how it was stored
     if (!goal) return null;
+
     const raw = goal.daily_target;
-    if (typeof raw === 'number') {
-        // Legacy integer — convert
-        const t = {};
-        DAY_KEYS.forEach(k => t[k] = (k === 'sat' || k === 'sun') ? 0 : raw);
-        return t;
+
+    // New jsonb format: {sun:0, mon:100, ...}
+    if (typeof raw === 'object' && raw !== null && !Array.isArray(raw)) {
+        return normalizePerDayTargets(raw);
     }
+
+    // Legacy integer format
+    if (typeof raw === 'number') {
+        const t = {};
+        DAY_KEYS.forEach(k => {
+            t[k] = (k === 'sat' || k === 'sun') ? 0 : raw;
+        });
+        return normalizePerDayTargets(t);
+    }
+
+    // Emergency support if old JSON string exists somewhere
     if (typeof raw === 'string') {
-        try { return JSON.parse(raw); } catch(e) {}
-        // Plain integer string
-        const n = parseInt(raw, 10);
-        if (!isNaN(n)) {
-            const t = {};
-            DAY_KEYS.forEach(k => t[k] = (k === 'sat' || k === 'sun') ? 0 : n);
-            return t;
+        try {
+            const parsed = JSON.parse(raw);
+            return normalizePerDayTargets(parsed);
+        } catch (e) {
+            const n = parseInt(raw, 10);
+            if (!isNaN(n)) {
+                const t = {};
+                DAY_KEYS.forEach(k => {
+                    t[k] = (k === 'sat' || k === 'sun') ? 0 : n;
+                });
+                return normalizePerDayTargets(t);
+            }
         }
     }
-    if (typeof raw === 'object' && raw !== null) return raw;
+
     return null;
 }
 
@@ -1019,21 +1075,33 @@ function computeGoalStats(history, goal) {
         cursor.setDate(cursor.getDate() + 1);
     }
 
-    // Week stats: Mon through today, each day uses its own target
-    const weekStart = new Date(todayDate);
-    const dow = weekStart.getDay(); // 0=Sun
-    weekStart.setDate(weekStart.getDate() - (dow === 0 ? 6 : dow - 1));
-    let weekAnswered = 0, weekTarget = 0;
-    const wCursor = new Date(weekStart);
-    while (wCursor <= todayDate) {
-        const key = localDateString(wCursor);
-        weekAnswered += dailyCounts[key] || 0;
-        weekTarget += targetForDate(perDayTargets, wCursor);
-        wCursor.setDate(wCursor.getDate() + 1);
-    }
-    const weekPercent = weekTarget === 0
-        ? 100
-        : Math.min(100, Math.round((weekAnswered / weekTarget) * 100));
+    // Week stats: full Monday-Sunday week target
+const weekStart = new Date(todayDate);
+const dow = weekStart.getDay(); // 0=Sun
+weekStart.setDate(weekStart.getDate() - (dow === 0 ? 6 : dow - 1));
+
+const weekEnd = new Date(weekStart);
+weekEnd.setDate(weekStart.getDate() + 6);
+
+let weekAnswered = 0;
+let weekTarget = 0;
+
+const wCursor = new Date(weekStart);
+while (wCursor <= weekEnd) {
+    const key = localDateString(wCursor);
+
+    // Future days naturally have 0 answered questions
+    weekAnswered += dailyCounts[key] || 0;
+
+    // But target should include the whole week
+    weekTarget += targetForDate(perDayTargets, wCursor);
+
+    wCursor.setDate(wCursor.getDate() + 1);
+}
+
+const weekPercent = weekTarget === 0
+    ? 100
+    : Math.min(100, Math.round((weekAnswered / weekTarget) * 100));
 
     return { todayAnswered, todayTarget, todayPercent, runningBalance, weekAnswered, weekTarget, weekPercent, perDayTargets };
 }
