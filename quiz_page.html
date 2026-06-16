@@ -3668,7 +3668,12 @@ function handleSubmitAnswer() {
     const question = quizData.questions[currentQuestionIndex];
     const isCorrect = answerIndex === question.correctAnswerIndex;
 
-    updateUserQuestionHistory(question, isCorrect);
+    bumpQuizGoalMiniLegendImmediately();
+
+updateUserQuestionHistory(question, isCorrect)
+    .finally(() => {
+        scheduleQuizGoalMiniExactRefreshAfterAnswer();
+    });
     userAnswers[question.id] = answerIndex;
 
     // Send this exact answer to the global peer stats tally silently
@@ -4231,6 +4236,43 @@ function updateQuizGoalMiniLegend() {
     miniText.textContent = `${todayAnswered}/${todayTarget} (${todayPercent}%)`;
 }
 
+function getQuizGoalTodayRangeIso() {
+    const now = new Date();
+
+    const start = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        0, 0, 0, 0
+    );
+
+    const end = new Date(start);
+    end.setDate(end.getDate() + 1);
+
+    return {
+        startIso: start.toISOString(),
+        endIso: end.toISOString()
+    };
+}
+
+async function fetchQuizGoalTodayAnsweredCount(userId) {
+    const { startIso, endIso } = getQuizGoalTodayRangeIso();
+
+    const { count, error } = await supabase
+        .from('userQuestionHistory')
+        .select('id', { count: 'exact', head: true })
+        .eq('userId', userId)
+        .gte('lastAttemptDate', startIso)
+        .lt('lastAttemptDate', endIso);
+
+    if (error) {
+        console.warn('fetchQuizGoalTodayAnsweredCount error:', error);
+        return 0;
+    }
+
+    return count || 0;
+}
+
 async function ensureQuizGoalMiniLegendLoaded({ force = false } = {}) {
     const miniText = document.getElementById('quizGoalLegendMiniText');
 
@@ -4267,14 +4309,22 @@ async function ensureQuizGoalMiniLegendLoaded({ force = false } = {}) {
             return;
         }
 
-        const history = await fetchQuizGoalHistorySinceGoalStart(session.user.id, goal);
-        const stats = computeQuizGoalStats(history, goal);
+        const targets = parseQuizGoalTargets(goal);
+        const todayTarget = quizGoalTargetForDate(targets, new Date());
+        const todayAnswered = await fetchQuizGoalTodayAnsweredCount(session.user.id);
+
+        const todayPercent = todayTarget === 0
+            ? 100
+            : Math.min(100, Math.round((todayAnswered / todayTarget) * 100));
 
         quizGoalActiveGoal = goal;
-        quizGoalQuestionHistory = history;
-        quizGoalDataReady = true;
 
-        quizGoalMiniStats = stats;
+        quizGoalMiniStats = {
+            todayAnswered,
+            todayTarget,
+            todayPercent
+        };
+
         quizGoalMiniLoadedForUserId = session.user.id;
 
         updateQuizGoalMiniLegend();
@@ -4285,6 +4335,46 @@ async function ensureQuizGoalMiniLegendLoaded({ force = false } = {}) {
     } finally {
         quizGoalMiniLoading = false;
     }
+}
+
+
+let quizGoalMiniExactRefreshTimer = null;
+
+function bumpQuizGoalMiniLegendImmediately() {
+    if (!quizGoalMiniStats) return;
+
+    const todayTarget = Number(quizGoalMiniStats.todayTarget) || 0;
+
+    if (todayTarget === 0) {
+        updateQuizGoalMiniLegend();
+        return;
+    }
+
+    const nextAnswered = (Number(quizGoalMiniStats.todayAnswered) || 0) + 1;
+
+    quizGoalMiniStats = {
+        ...quizGoalMiniStats,
+        todayAnswered: nextAnswered,
+        todayPercent: Math.min(100, Math.round((nextAnswered / todayTarget) * 100))
+    };
+
+    updateQuizGoalMiniLegend();
+}
+
+function scheduleQuizGoalMiniExactRefreshAfterAnswer() {
+    if (quizGoalMiniExactRefreshTimer) {
+        clearTimeout(quizGoalMiniExactRefreshTimer);
+    }
+
+    quizGoalMiniExactRefreshTimer = setTimeout(async () => {
+        await ensureQuizGoalMiniLegendLoaded({ force: true });
+
+        const modal = document.getElementById('quizGoalModal');
+
+        if (modal && !modal.classList.contains('hidden')) {
+            refreshQuizGoalData({ silent: true });
+        }
+    }, 600);
 }
 
 function makeQuizGoalDonutChart(canvasId, percent, color, trackColor) {
