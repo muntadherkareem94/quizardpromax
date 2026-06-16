@@ -472,8 +472,8 @@
     font-weight: 800;
 }
 
-/* --- FINAL ORGANIZED FLASHCARD RICH CONTENT FIX --- */
-/* Prevent table/text from becoming side-by-side flex items */
+/* --- FINAL ORGANIZED FLASHCARD RICH CONTENT + FLOWCHART FIX --- */
+/* Prevent table/text/flowchart from becoming side-by-side flex items */
 
 #cardFrontText.flashcard-rich-content,
 #cardBackText.flashcard-rich-content {
@@ -482,23 +482,40 @@
     text-align: left !important;
     width: 100% !important;
     max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    color: #1f2937 !important;
 }
 
-/* Cards containing tables should use normal study-note sizing, not huge title sizing */
+/* Cards containing structured content should not use huge title-like text */
 #cardFrontText.flashcard-rich-content.has-table-content,
-#cardBackText.flashcard-rich-content.has-table-content {
-    font-size: clamp(0.9rem, 1.2vw, 1.08rem) !important;
+#cardBackText.flashcard-rich-content.has-table-content,
+#cardFrontText.flashcard-rich-content.has-flowchart-content,
+#cardBackText.flashcard-rich-content.has-flowchart-content {
+    font-size: clamp(0.88rem, 1.15vw, 1.08rem) !important;
     line-height: 1.55 !important;
     font-weight: 500 !important;
 }
 
-/* Text before/after tables should appear as normal paragraphs */
-.flashcard-rich-content.has-table-content > div,
-.flashcard-rich-content.has-table-content > p {
+/* Normal paragraphs/lists */
+.flashcard-rich-content p,
+.flashcard-rich-content div {
     margin: 0.6rem 0 !important;
 }
 
-/* Make pasted ChatGPT tables readable and centered */
+.flashcard-rich-content ul,
+.flashcard-rich-content ol {
+    margin: 0.6rem 0 0.9rem 1.25rem !important;
+    padding-left: 1rem !important;
+}
+
+.flashcard-rich-content li {
+    margin: 0.25rem 0 !important;
+}
+
+/* Tables */
 .flashcard-rich-content table {
     display: table !important;
     width: 100% !important;
@@ -512,9 +529,10 @@
     font-size: clamp(0.72rem, 1.05vw, 0.9rem) !important;
     line-height: 1.4 !important;
     text-align: left !important;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08) !important;
+    border-radius: 0.5rem !important;
 }
 
-/* Cell text should wrap instead of making ugly narrow columns */
 .flashcard-rich-content th,
 .flashcard-rich-content td {
     border: 1px solid #d1d5db !important;
@@ -534,15 +552,95 @@
     color: #111827 !important;
 }
 
-/* If the card has a very wide table, allow horizontal scroll instead of destroying layout */
-.flashcard-rich-content {
+/* FLOWCHART SUPPORT */
+/* This keeps arrows, vertical lines, indentation, and branch spacing organized */
+.flashcard-flowchart {
+    position: relative !important;
+    display: block !important;
+    width: max-content !important;
+    min-width: min(100%, max-content) !important;
+    max-width: none !important;
+    margin: 1rem auto !important;
+    padding: 1.25rem 1.35rem 1.1rem 1.35rem !important;
+
+    font-family: "JetBrains Mono", "Fira Code", "Consolas", "Courier New", monospace !important;
+    font-size: clamp(0.76rem, 1.02vw, 0.98rem) !important;
+    line-height: 1.42 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+
+    white-space: pre !important;
+    text-align: left !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+
+    color: #243041 !important;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,250,252,0.98)) !important;
+    border: 1px solid #cfd8e3 !important;
+    border-left: 5px solid #64748b !important;
+    border-radius: 1rem !important;
+    box-shadow:
+        0 10px 24px rgba(15, 23, 42, 0.08),
+        0 2px 6px rgba(15, 23, 42, 0.05) !important;
+
+    overflow: visible !important;
+}
+
+/* subtle top label feel without adding actual text */
+.flashcard-flowchart::before {
+    content: "";
+    position: absolute;
+    top: 0.7rem;
+    right: 0.85rem;
+    width: 42px;
+    height: 6px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #cbd5e1, #94a3b8);
+    opacity: 0.7;
+}
+
+/* Parent scrolls horizontally if the flowchart is wider than the card */
+.flashcard-rich-content.has-flowchart-content {
     overflow-x: auto !important;
+    overflow-y: visible !important;
+    padding: 0.15rem 0 0.45rem 0 !important;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.flashcard-rich-content.has-flowchart-content::-webkit-scrollbar {
+    height: 8px;
+}
+
+.flashcard-rich-content.has-flowchart-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+
+.flashcard-rich-content.has-flowchart-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Fullscreen flowchart: slightly larger and more premium */
+#flashcardContainer:fullscreen .flashcard-flowchart,
+#flashcardContainer:-webkit-full-screen .flashcard-flowchart {
+    font-size: clamp(0.92rem, 1.12vw, 1.14rem) !important;
+    line-height: 1.45 !important;
+    padding: 1.4rem 1.5rem 1.25rem 1.5rem !important;
+    border-radius: 1.1rem !important;
+    box-shadow:
+        0 16px 36px rgba(15, 23, 42, 0.12),
+        0 4px 10px rgba(15, 23, 42, 0.06) !important;
 }
 
 /* Better mobile behavior */
 @media (max-width: 640px) {
     #cardFrontText.flashcard-rich-content.has-table-content,
-    #cardBackText.flashcard-rich-content.has-table-content {
+    #cardBackText.flashcard-rich-content.has-table-content,
+    #cardFrontText.flashcard-rich-content.has-flowchart-content,
+    #cardBackText.flashcard-rich-content.has-flowchart-content {
         font-size: 0.82rem !important;
     }
 
@@ -554,6 +652,23 @@
     .flashcard-rich-content td {
         padding: 0.3rem 0.35rem !important;
     }
+
+    .flashcard-flowchart {
+        font-size: 0.69rem !important;
+        line-height: 1.38 !important;
+        padding: 0.95rem 1rem 0.9rem 1rem !important;
+        margin: 0.85rem auto !important;
+        border-radius: 0.9rem !important;
+        border-left-width: 4px !important;
+    }
+
+    .flashcard-flowchart::before {
+        width: 34px;
+        height: 5px;
+        top: 0.65rem;
+        right: 0.7rem;
+    }
+
 }
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1094,37 +1209,133 @@ function decodeMaybeEscapedFlashcardHtml(value) {
         decoded = next;
     }
 
-    // Convert non-breaking spaces to normal spaces so they do not appear as text
-    // and do not create strange spacing in flashcards.
+    // Convert non-breaking spaces to normal spaces.
+    // IMPORTANT: Do NOT collapse repeated spaces. Flowcharts need spacing.
     decoded = decoded
         .replace(/\u00A0/g, ' ')
         .replace(/&nbsp;/gi, ' ')
-        .replace(/&amp;nbsp;/gi, ' ');
-
-    // Clean excessive spacing, but keep line breaks.
-    decoded = decoded
+        .replace(/&amp;nbsp;/gi, ' ')
+        .replace(/\r\n/g, '\n')
+        .replace(/\r/g, '\n')
         .split('\n')
-        .map(line => line.replace(/[ \t]{2,}/g, ' ').trimEnd())
+        .map(line => line.replace(/[ \t]+$/g, ''))
         .join('\n')
         .trim();
 
     return decoded;
 }
 
+function extractPlainTextFromFlashcardHtml(html) {
+    const template = document.createElement('template');
+    template.innerHTML = String(html || '');
+
+    function walk(node) {
+        let out = '';
+
+        node.childNodes.forEach(child => {
+            if (child.nodeType === Node.TEXT_NODE) {
+                out += child.nodeValue;
+                return;
+            }
+
+            if (child.nodeType !== Node.ELEMENT_NODE) return;
+
+            const tag = child.tagName.toLowerCase();
+
+            if (tag === 'br') {
+                out += '\n';
+                return;
+            }
+
+            out += walk(child);
+
+            if (['div', 'p', 'li', 'tr', 'table', 'pre'].includes(tag)) {
+                out += '\n';
+            }
+        });
+
+        return out;
+    }
+
+    return walk(template.content)
+        .replace(/\u00A0/g, ' ')
+        .replace(/\r\n/g, '\n')
+        .replace(/\r/g, '\n')
+        .split('\n')
+        .map(line => line.replace(/[ \t]+$/g, ''))
+        .join('\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+}
+
+function looksLikeFlashcardFlowchart(value) {
+    const text = String(value || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    const lines = text.split('\n').filter(line => line.trim() !== '');
+
+    if (lines.length < 3) return false;
+
+    const joined = lines.join('\n');
+
+    const hasFlowArrows = /[↓↑→←↔↕↘↙↗↖⟶⟵⟷➜➡⬅▼▲◆◇]/.test(joined);
+
+    // Avoid regex with < and > inside inline HTML scripts because VS Code can misread it.
+    const hasAsciiArrows =
+        joined.includes('-->') ||
+        joined.includes('<--') ||
+        joined.includes('->') ||
+        joined.includes('<-') ||
+        joined.includes('=>') ||
+        joined.includes('<=');
+
+    const hasVerticalConnectors = lines.filter(line => /^[\s│|┃╽╿║┆┊]+$/.test(line.trim())).length >= 1;
+    const hasBranchLines = lines.filter(line => /[─━_]{3,}|[┌┐└┘├┤┬┴┼]/.test(line)).length >= 1;
+    const hasIndentedStructure = lines.filter(line => /^\s{2,}\S/.test(line)).length >= 2;
+
+    return hasFlowArrows || hasAsciiArrows || hasVerticalConnectors || hasBranchLines || hasIndentedStructure;
+}
+
+function normalizeFlowchartText(value) {
+    const lines = String(value || '')
+        .replace(/\r\n/g, '\n')
+        .replace(/\r/g, '\n')
+        .split('\n')
+        .map(line => line.replace(/[ \t]+$/g, ''));
+
+    while (lines.length && lines[0].trim() === '') lines.shift();
+    while (lines.length && lines[lines.length - 1].trim() === '') lines.pop();
+
+    return lines.join('\n');
+}
+
+function makeFlowchartHtml(value) {
+    return `<pre class="flashcard-flowchart">${escapeFlashcardHtml(normalizeFlowchartText(value))}</pre>`;
+}
+
 function sanitizeFlashcardDisplayHtml(value) {
-    const decoded = decodeMaybeEscapedFlashcardHtml(value).trim();
+    const decoded = decodeMaybeEscapedFlashcardHtml(value);
 
     if (!decoded) return '';
 
     const containsHtmlTags = /<\/?[a-z][\s\S]*>/i.test(decoded);
 
+    // If copied ChatGPT flowchart is saved as plain text, preserve it as a preformatted block.
+    if (!containsHtmlTags && looksLikeFlashcardFlowchart(decoded)) {
+        return makeFlowchartHtml(decoded);
+    }
+
+    // If copied flowchart was saved as HTML div/br structure, convert it back to aligned text.
+    if (containsHtmlTags) {
+        const extractedText = extractPlainTextFromFlashcardHtml(decoded);
+
+        if (looksLikeFlashcardFlowchart(extractedText)) {
+            return makeFlowchartHtml(extractedText);
+        }
+    }
+
     const sourceHtml = containsHtmlTags
-    ? decoded
-    : escapeFlashcardHtml(decoded)
-        .replace(/\u00A0/g, ' ')
-        .replace(/&nbsp;/gi, ' ')
-        .replace(/&amp;nbsp;/gi, ' ')
-        .replace(/\n/g, '<br>');
+        ? decoded
+        : escapeFlashcardHtml(decoded)
+            .replace(/\n/g, '<br>');
 
     const template = document.createElement('template');
     template.innerHTML = sourceHtml;
@@ -1133,11 +1344,12 @@ function sanitizeFlashcardDisplayHtml(value) {
         'p', 'br', 'div', 'span', 'strong', 'b', 'em', 'i', 'u', 'sub', 'sup',
         'ul', 'ol', 'li',
         'table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td', 'caption',
+        'pre', 'code',
         'hr', 'small'
     ]);
 
     const allowedAttributes = new Set([
-        'colspan', 'rowspan', 'scope'
+        'colspan', 'rowspan', 'scope', 'class'
     ]);
 
     function cleanNode(node) {
@@ -1158,6 +1370,18 @@ function sanitizeFlashcardDisplayHtml(value) {
 
                     if (attrName.startsWith('on') || !allowedAttributes.has(attrName)) {
                         child.removeAttribute(attr.name);
+                        return;
+                    }
+
+                    // Only allow the flowchart class; remove all other classes.
+                    if (attrName === 'class') {
+                        const allowedClass = child.classList.contains('flashcard-flowchart');
+
+                        if (!allowedClass) {
+                            child.removeAttribute('class');
+                        } else {
+                            child.setAttribute('class', 'flashcard-flowchart');
+                        }
                     }
                 });
 
@@ -1171,7 +1395,6 @@ function sanitizeFlashcardDisplayHtml(value) {
     cleanNode(template.content);
     return template.innerHTML;
 }
-
 // --- Visual edit modal helpers ---
 
 function setFlashcardEditHtml(editor, textarea, value) {
@@ -1210,20 +1433,31 @@ function renderCard() {
             dom.prevBtn.disabled = currentIndex === 0;
             dom.nextBtn.disabled = currentIndex === flashcards.length - 1;
 
-            dom.cardFrontText.classList.add('flashcard-rich-content');
+dom.cardFrontText.classList.add('flashcard-rich-content');
 dom.cardBackText.classList.add('flashcard-rich-content');
 
-dom.cardFrontText.classList.remove('has-table-content');
-dom.cardBackText.classList.remove('has-table-content');
+dom.cardFrontText.classList.remove('has-table-content', 'has-flowchart-content');
+dom.cardBackText.classList.remove('has-table-content', 'has-flowchart-content');
 
 dom.cardFrontText.innerHTML = sanitizeFlashcardDisplayHtml(card.front_text);
 dom.cardBackText.innerHTML = sanitizeFlashcardDisplayHtml(card.back_text);
 
-// IMPORTANT FIX:
-// If the card contains tables/lists/rich HTML, disable title-like huge layout
-// and let CSS organize the content normally.
+// If the card contains tables/lists/rich HTML/flowcharts,
+// disable huge title-like layout and let CSS organize it normally.
 if (dom.cardFrontText.querySelector('table, ul, ol')) {
     dom.cardFrontText.classList.add('has-table-content');
+}
+
+if (dom.cardBackText.querySelector('table, ul, ol')) {
+    dom.cardBackText.classList.add('has-table-content');
+}
+
+if (dom.cardFrontText.querySelector('pre, .flashcard-flowchart')) {
+    dom.cardFrontText.classList.add('has-flowchart-content');
+}
+
+if (dom.cardBackText.querySelector('pre, .flashcard-flowchart')) {
+    dom.cardBackText.classList.add('has-flowchart-content');
 }
 
 if (dom.cardBackText.querySelector('table, ul, ol')) {
@@ -1286,7 +1520,11 @@ function fitTextToContainer(textEl, sideEl) {
 
     // Do not auto-enlarge complex HTML/table flashcards.
     // Tables need stable normal font sizing, otherwise they become ugly and squeezed.
-    if (textEl.querySelector('table, ul, ol') || textEl.classList.contains('has-table-content')) {
+  if (
+    textEl.querySelector('table, ul, ol, pre, .flashcard-flowchart') ||
+    textEl.classList.contains('has-table-content') ||
+    textEl.classList.contains('has-flowchart-content')
+) {
         textEl.style.fontSize = '';
         textEl.style.lineHeight = '';
         return;
@@ -1705,14 +1943,35 @@ dom.newCardBackEditor.addEventListener('input', () => {
     syncFlashcardEditEditorToTextarea(dom.newCardBackEditor, dom.newCardBack);
 });
 
+function handleFlashcardEditorPaste(e, editor, textarea, targetInput) {
+    handleImagePaste(e, targetInput);
+
+    // If an image was pasted, handleImagePaste already prevented default.
+    if (e.defaultPrevented) return;
+
+    const clipboard = e.clipboardData || window.clipboardData;
+    const plainText = clipboard?.getData('text/plain') || '';
+
+    // Preserve copied ChatGPT flowcharts as monospace preformatted blocks.
+    if (looksLikeFlashcardFlowchart(plainText)) {
+        e.preventDefault();
+
+        editor.focus();
+        document.execCommand('insertHTML', false, makeFlowchartHtml(plainText) + '<p><br></p>');
+
+        syncFlashcardEditEditorToTextarea(editor, textarea);
+        return;
+    }
+
+    setTimeout(() => syncFlashcardEditEditorToTextarea(editor, textarea), 0);
+}
+
 dom.newCardFrontEditor.addEventListener('paste', (e) => {
-    handleImagePaste(e, dom.frontImageInput);
-    setTimeout(() => syncFlashcardEditEditorToTextarea(dom.newCardFrontEditor, dom.newCardFront), 0);
+    handleFlashcardEditorPaste(e, dom.newCardFrontEditor, dom.newCardFront, dom.frontImageInput);
 });
 
 dom.newCardBackEditor.addEventListener('paste', (e) => {
-    handleImagePaste(e, dom.backImageInput);
-    setTimeout(() => syncFlashcardEditEditorToTextarea(dom.newCardBackEditor, dom.newCardBack), 0);
+    handleFlashcardEditorPaste(e, dom.newCardBackEditor, dom.newCardBack, dom.backImageInput);
 });
 
         // --- ADD & EDIT CARD LOGIC ---

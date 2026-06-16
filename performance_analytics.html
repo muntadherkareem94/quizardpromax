@@ -419,17 +419,32 @@ document.addEventListener('click', () => {
             closeDrilldownModal: document.getElementById('closeDrilldownModal'),
         };
 
-        // --- Global State ---
-        let allQuizResults = [], allQuestionHistory = [], allDisciplines = [], allBooks = [], allChapters = [];
-        let trendChart, disciplineChart, bookChart, drilldownChart;
+       // --- Global State ---
+let allQuizResults = [], allQuestionHistory = [], allDisciplines = [], allBooks = [], allChapters = [];
+let trendChart, disciplineChart, bookChart, drilldownChart;
+
+// Goal-specific state.
+// IMPORTANT: Do not mix this with allQuestionHistory.
+// This prevents changing/unstable numbers caused by partial refreshes.
+let goalQuestionHistory = [];
+let goalDataReady = false;
+let goalRefreshTimer = null;
+let goalRefreshRequestId = 0;
+let analyticsLoadRequestId = 0;
 
 async function fetchAllData(userId) {
+    const requestId = ++analyticsLoadRequestId;
+
     try {
-        // Fetch small tables in parallel
+        dom.loadingState.classList.remove('hidden');
+        dom.loadingState.innerHTML = '<p class="text-xl">Loading your performance data...</p>';
+
+        // Fetch only the columns actually needed.
+        // This keeps the page faster without relying on aggressive caching.
         const [disciplinesRes, booksRes, chaptersRes] = await Promise.all([
-            supabase.from('disciplines').select('*'),
-            supabase.from('books').select('*'),
-            supabase.from('chapters').select('*')
+            supabase.from('disciplines').select('id, name'),
+            supabase.from('books').select('id, title'),
+            supabase.from('chapters').select('id, name, chapterNumber')
         ]);
 
         if (disciplinesRes.error) throw disciplinesRes.error;
@@ -440,50 +455,71 @@ async function fetchAllData(userId) {
         allBooks = booksRes.data || [];
         allChapters = chaptersRes.data || [];
 
-        // Paginated fetch for quizResults (bypass 1000 limit)
+        // Paginated fetch for quizResults.
+        // Only score/completedAt are needed for this page.
         allQuizResults = [];
-        let rFrom = 0; const rLimit = 1000; let rKeep = true;
-        while(rKeep) {
-            const {data, error} = await supabase.from('quizResults').select('*').eq('userId', userId).range(rFrom, rFrom + rLimit - 1);
+        let rFrom = 0;
+        const rLimit = 1000;
+
+        while (true) {
+            const { data, error } = await supabase
+                .from('quizResults')
+                .select('id, score, completedAt')
+                .eq('userId', userId)
+                .order('completedAt', { ascending: true })
+                .range(rFrom, rFrom + rLimit - 1);
+
             if (error) throw error;
-            if (data && data.length > 0) { 
-                allQuizResults = allQuizResults.concat(data); 
-                if(data.length < rLimit) rKeep = false; 
-            } else {
-                rKeep = false;
-            }
+
+            if (!data || data.length === 0) break;
+
+            allQuizResults = allQuizResults.concat(data);
+
+            if (data.length < rLimit) break;
+
             rFrom += rLimit;
         }
 
-        // Paginated fetch for userQuestionHistory (bypass 1000 limit)
+        // Paginated fetch for userQuestionHistory.
+        // Only the columns used by analytics are fetched.
         allQuestionHistory = [];
-        let hFrom = 0; const hLimit = 1000; let hKeep = true;
-        while(hKeep) {
-            const {data, error} = await supabase.from('userQuestionHistory').select('*').eq('userId', userId).range(hFrom, hFrom + hLimit - 1);
+        let hFrom = 0;
+        const hLimit = 1000;
+
+        while (true) {
+            const { data, error } = await supabase
+                .from('userQuestionHistory')
+                .select('id, disciplineId, bookId, chapterId, attempts, timesCorrect, timesWrong, lastAttemptDate')
+                .eq('userId', userId)
+                .range(hFrom, hFrom + hLimit - 1);
+
             if (error) throw error;
-            if (data && data.length > 0) { 
-                allQuestionHistory = allQuestionHistory.concat(data); 
-                if(data.length < hLimit) hKeep = false; 
-            } else {
-                hKeep = false;
-            }
+
+            if (!data || data.length === 0) break;
+
+            allQuestionHistory = allQuestionHistory.concat(data);
+
+            if (data.length < hLimit) break;
+
             hFrom += hLimit;
         }
 
-        if (allQuizResults.length === 0) {
+        // Ignore stale/old async results if another load started later.
+        if (requestId !== analyticsLoadRequestId) return;
+
+        if (allQuizResults.length === 0 && allQuestionHistory.length === 0) {
             dom.loadingState.innerHTML = '<p class="text-xl">No quiz data found. Complete a quiz to see your analytics!</p>';
-            // Still update goal donuts even if no quiz results
-            updateGoalDonuts();
+            dom.analyticsContainer.classList.add('hidden');
             return;
         }
-        
+
         processAndRenderAnalytics('all');
-        updateGoalDonuts();
+
         dom.loadingState.classList.add('hidden');
         dom.analyticsContainer.classList.remove('hidden');
 
     } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching analytics data:", error);
         dom.loadingState.textContent = 'Could not load your analytics data.';
     }
 }
@@ -837,7 +873,7 @@ function handleChartClick(e, elements, chart, chartData, type) {
 // =====================================================================
 
 let currentUserId = null;
-let activeGoal = null;         // { dailyTarget, goalStartDate }
+let activeGoal = null;
 let donutTodayChart = null;
 let donutBalanceChart = null;
 let donutWeekChart = null;
@@ -1046,6 +1082,42 @@ function buildDailyCountsFromHistory(history, goalStartDate) {
     return counts;
 }
 
+async function fetchGoalHistorySinceGoalStart(userId, goal) {
+    if (!userId || !goal) return [];
+
+    const goalStartDate = goal.start_date || localDateString(new Date());
+    const startIso = startOfLocalDay(goalStartDate).toISOString();
+
+    const rows = [];
+    let from = 0;
+    const limit = 1000;
+
+    while (true) {
+        const { data, error } = await supabase
+            .from('userQuestionHistory')
+            .select('id, lastAttemptDate')
+            .eq('userId', userId)
+            .gte('lastAttemptDate', startIso)
+            .order('lastAttemptDate', { ascending: false })
+            .range(from, from + limit - 1);
+
+        if (error) {
+            console.warn('fetchGoalHistorySinceGoalStart error:', error);
+            return rows;
+        }
+
+        if (!data || data.length === 0) break;
+
+        rows.push(...data);
+
+        if (data.length < limit) break;
+
+        from += limit;
+    }
+
+    return rows;
+}
+
 function computeGoalStats(history, goal) {
     const perDayTargets = parseGoalTargets(goal);
     const goalStartDate = goal.start_date;
@@ -1208,6 +1280,9 @@ function renderGoalDonuts(stats) {
 
 async function initDailyGoalSection(userId) {
     currentUserId = userId;
+    goalDataReady = false;
+    goalQuestionHistory = [];
+
     document.getElementById('dailyGoalSection').classList.remove('hidden');
 
     activeGoal = await fetchActiveGoal(userId);
@@ -1215,75 +1290,110 @@ async function initDailyGoalSection(userId) {
     // Highlight today's input cell
     highlightTodayInput();
 
-    // Live weekly summary as user types
-    document.getElementById('dayTargetsGrid').addEventListener('input', () => {
-        updateWeeklySummary(getPerDayTargets());
-    });
+    // Avoid attaching duplicate input listeners if this function runs again.
+    const dayTargetsGrid = document.getElementById('dayTargetsGrid');
+    if (!dayTargetsGrid.dataset.listenerAttached) {
+        dayTargetsGrid.addEventListener('input', () => {
+            updateWeeklySummary(getPerDayTargets());
+        });
+        dayTargetsGrid.dataset.listenerAttached = 'true';
+    }
 
     if (activeGoal) {
         const saved = parseGoalTargets(activeGoal);
+
         if (saved) setPerDayInputs(saved);
+
         updateWeeklySummary(saved || getPerDayTargets());
+
         document.getElementById('noGoalMsg').classList.add('hidden');
         document.getElementById('goalDonutsGrid').classList.remove('hidden');
-        updateGoalDonuts();
+
+        // Fetch goal-specific history once before rendering donuts.
+        // This prevents showing random temporary numbers.
+        await refreshGoalData({ silent: false });
+
         startGoalAutoRefresh();
     } else {
         updateWeeklySummary(getPerDayTargets());
+
         document.getElementById('noGoalMsg').classList.remove('hidden');
         document.getElementById('goalDonutsGrid').classList.add('hidden');
+
+        const note = document.getElementById('goalRefreshNote');
+        if (note) note.classList.add('hidden');
     }
 
-    document.getElementById('goalSaveBtn').addEventListener('click', async () => {
-        const perDay = getPerDayTargets();
-        const total = Object.values(perDay).reduce((s, v) => s + v, 0);
-        if (total < 1) { alert('Please set at least 1 question target on any day.'); return; }
-        const btn = document.getElementById('goalSaveBtn');
-        btn.textContent = 'Saving…'; btn.disabled = true;
-        activeGoal = await saveGoal(userId, perDay);
-        btn.textContent = 'Save Goal'; btn.disabled = false;
-        if (activeGoal) {
-            document.getElementById('noGoalMsg').classList.add('hidden');
-            document.getElementById('goalDonutsGrid').classList.remove('hidden');
-            updateGoalDonuts();
-            startGoalAutoRefresh();
-        }
-    });
+    const goalSaveBtn = document.getElementById('goalSaveBtn');
+
+    // Avoid duplicate click listeners.
+    if (!goalSaveBtn.dataset.listenerAttached) {
+        goalSaveBtn.addEventListener('click', async () => {
+            const perDay = getPerDayTargets();
+            const total = Object.values(perDay).reduce((s, v) => s + v, 0);
+
+            if (total < 1) {
+                alert('Please set at least 1 question target on any day.');
+                return;
+            }
+
+            const btn = document.getElementById('goalSaveBtn');
+            btn.textContent = 'Saving…';
+            btn.disabled = true;
+
+            goalDataReady = false;
+            goalQuestionHistory = [];
+
+            activeGoal = await saveGoal(userId, perDay);
+
+            btn.textContent = 'Save Goal';
+            btn.disabled = false;
+
+            if (activeGoal) {
+                document.getElementById('noGoalMsg').classList.add('hidden');
+                document.getElementById('goalDonutsGrid').classList.remove('hidden');
+
+                await refreshGoalData({ silent: false });
+
+                startGoalAutoRefresh();
+            }
+        });
+
+        goalSaveBtn.dataset.listenerAttached = 'true';
+    }
 }
 
 function updateGoalDonuts() {
-    if (!activeGoal || !allQuestionHistory.length) return;
-    const stats = computeGoalStats(allQuestionHistory, activeGoal);
+    if (!activeGoal || !goalDataReady) return;
+
+    const stats = computeGoalStats(goalQuestionHistory, activeGoal);
     renderGoalDonuts(stats);
 }
 
 // Live refresh: re-fetch today's question history from Supabase
-async function refreshGoalData() {
+async function refreshGoalData({ silent = true } = {}) {
     if (!activeGoal || !currentUserId) return;
-    const today = localDateString(new Date());
-    const startOfToday = new Date(today + 'T00:00:00').toISOString();
 
-    const { data, error } = await supabase
-        .from('userQuestionHistory')
-        .select('id, lastAttemptDate')
-        .eq('userId', currentUserId)
-        .gte('lastAttemptDate', startOfToday);
-
-    if (error) { console.warn('Goal refresh error:', error); return; }
-
-    // Merge today's fresh data into allQuestionHistory
-    // Remove old today entries, add fresh ones
-    allQuestionHistory = allQuestionHistory.filter(h => {
-        if (!h.lastAttemptDate) return true;
-        return localDateString(new Date(h.lastAttemptDate)) !== today;
-    });
-    if (data) allQuestionHistory = allQuestionHistory.concat(data);
-
-    updateGoalDonuts();
-    // Keep weekly summary in sync
-    if (activeGoal) updateWeeklySummary(parseGoalTargets(activeGoal));
+    const requestId = ++goalRefreshRequestId;
 
     const note = document.getElementById('goalRefreshNote');
+    if (note && !silent) {
+        note.textContent = 'Calculating goal progress…';
+        note.classList.remove('hidden');
+    }
+
+    const freshGoalHistory = await fetchGoalHistorySinceGoalStart(currentUserId, activeGoal);
+
+    // Ignore stale/older requests if a newer refresh finished later.
+    if (requestId !== goalRefreshRequestId) return;
+
+    goalQuestionHistory = freshGoalHistory;
+    goalDataReady = true;
+
+    updateGoalDonuts();
+
+    if (activeGoal) updateWeeklySummary(parseGoalTargets(activeGoal));
+
     if (note) {
         note.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
         note.classList.remove('hidden');
@@ -1291,9 +1401,18 @@ async function refreshGoalData() {
 }
 
 function startGoalAutoRefresh() {
-    // Refresh immediately, then every 60 seconds
-    refreshGoalData();
-    setInterval(refreshGoalData, 60 * 1000);
+    // Only one interval is allowed.
+    // This prevents multiple overlapping refresh loops and unstable numbers.
+    if (goalRefreshTimer) {
+        clearInterval(goalRefreshTimer);
+        goalRefreshTimer = null;
+    }
+
+    refreshGoalData({ silent: true });
+
+    goalRefreshTimer = setInterval(() => {
+        refreshGoalData({ silent: true });
+    }, 90 * 1000);
 }
 
 // =====================================================================
@@ -1306,36 +1425,35 @@ function startGoalAutoRefresh() {
 document.addEventListener('DOMContentLoaded', async () => {
     const { data: { session } } = await supabase.auth.getSession();
 
-    if (session) {
-        const isSessionValid = await validateAndEnforceSession(session.user);
-        if (isSessionValid) {
-
-            // Fetch user data from 'users' table to check for premium status
-            const { data: userData } = await supabase.from('users').select('account_type').eq('id', session.user.id).single();
-
-            // Pass both user and userData to the function
-            updateUserProfileIcon(session.user, userData);
-
-                        // Init daily goal section
-            initDailyGoalSection(session.user.id);
-
-                        // This is your main function to get analytics data
-            fetchAllData(session.user.id);
-
-                        // Start inactivity logout timer
-            setupActivityListeners();
-
-            // Refresh active_sessions expires_at while the user is active on this page
-            startActiveSessionHeartbeat();
-
-            // SESSION VALIDATION CHECKER
-            setInterval(async () => {
-                await validateAndEnforceSession(session.user);
-            }, 30000);
-        }
-    } else {
+    if (!session) {
         window.location.href = 'index.html';
+        return;
     }
+
+    const isSessionValid = await validateAndEnforceSession(session.user);
+
+    if (!isSessionValid) return;
+
+    // Fetch user data from 'users' table to check for premium status.
+    const { data: userData } = await supabase
+        .from('users')
+        .select('account_type')
+        .eq('id', session.user.id)
+        .single();
+
+    updateUserProfileIcon(session.user, userData);
+
+    // Run goal section and analytics in parallel.
+    // They no longer share partial history, so the numbers stay stable.
+    initDailyGoalSection(session.user.id);
+    fetchAllData(session.user.id);
+
+    setupActivityListeners();
+    startActiveSessionHeartbeat();
+
+    setInterval(async () => {
+        await validateAndEnforceSession(session.user);
+    }, 30000);
 });
 
   dom.logoutButton.addEventListener('click', async () => {

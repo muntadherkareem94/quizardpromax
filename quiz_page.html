@@ -956,6 +956,296 @@ body.hl-mode-on .hl-target {
 #quizFlashcardModal.flashcard-maximized .flashcard-editor-layout {
   align-items: start;
 }
+
+/* =========================================================
+   DAILY GOAL MODAL INSIDE QUIZ PAGE
+   ========================================================= */
+/* Compact non-clickable daily goal row inside the small quiz donut legend */
+.quiz-goal-mini-row {
+  display: flex;
+  align-items: center;
+  color: #7c3aed;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.quiz-goal-mini-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  background: #8b5cf6;
+}
+
+.quiz-goal-mini-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+@media (min-width: 640px) {
+  .quiz-goal-mini-row {
+    font-size: 0.75rem;
+  }
+}
+
+.quiz-goal-modal-panel {
+  width: min(96vw, 980px);
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.quiz-goal-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1.1rem 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.quiz-goal-modal-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #111827;
+}
+
+.quiz-goal-modal-subtitle {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+}
+
+.quiz-goal-close-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-goal-close-btn:hover {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+/* Same daily goal container styling as Performance Analytics */
+.goal-section {
+  background: #fff;
+  border-radius: 0;
+  padding: 1.35rem;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+
+.goal-section h2 {
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.goal-donuts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.donut-card {
+  background: #f9f7ff;
+  border: 1px solid #ede9fe;
+  border-radius: 1rem;
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.donut-card canvas {
+  max-width: 130px;
+  max-height: 130px;
+  margin: 0 auto;
+  display: block;
+}
+
+.donut-label {
+  color: #6d28d9;
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.donut-value {
+  color: #1f2937;
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-top: 0.5rem;
+}
+
+.donut-sub {
+  color: #7c3aed;
+  font-size: 0.75rem;
+  margin-top: 0.15rem;
+}
+
+.goal-setup-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f5f3ff;
+  border: 1px solid #ede9fe;
+  border-radius: 0.9rem;
+  padding: 0.9rem 1.1rem;
+}
+
+.goal-status-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+}
+
+.badge-surplus {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-deficit {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-perfect {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.no-goal-msg {
+  color: #6d28d9;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.goal-refresh-note {
+  color: #9ca3af;
+  font-size: 0.72rem;
+}
+
+.day-targets-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.day-target-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.day-target-cell label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #6d28d9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.day-target-cell label.is-today {
+  color: #dc2626;
+}
+
+.day-target-cell input {
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid #c4b5fd;
+  border-radius: 0.45rem;
+  color: #1f2937;
+  padding: 0.35rem 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+  outline: none;
+}
+
+.day-target-cell input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.12);
+}
+
+.day-target-cell input.is-today {
+  border-color: #fca5a5;
+}
+
+.goal-save-btn {
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 0.55rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.goal-save-btn:hover {
+  background: #6d28d9;
+  transform: translateY(-1px);
+}
+
+.goal-save-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .goal-donuts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day-targets-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .quiz-goal-modal-panel {
+    width: 96vw;
+    max-height: calc(100vh - 1rem);
+    border-radius: 1.1rem;
+  }
+
+  .goal-section {
+    padding: 1rem;
+  }
+}
     </style>
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -1108,11 +1398,80 @@ body.hl-mode-on .hl-target {
         </svg>
     </button>
 
-    <button id="createFlashcardBtn" class="functional-icon text-gray-400" title="Create Flashcard for this Chapter">
-        <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-        </svg>
-    </button>
+ <button id="createFlashcardBtn" class="functional-icon text-gray-400" title="Create Flashcard for this Chapter">
+    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+    </svg>
+</button>
+
+<button id="dailyGoalIcon" class="functional-icon text-gray-400" title="Daily Question Target">
+    <svg class="w-5 h-5 md:w-6 md:h-6"
+         viewBox="0 0 512 512"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-hidden="true">
+        
+        <!-- bottom baseline -->
+        <path d="M16 497H496"
+              stroke="currentColor"
+              stroke-width="30"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <!-- bar columns -->
+        <path d="M46 497V316H106V497"
+              stroke="currentColor"
+              stroke-width="30"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <path d="M166 497V376H226V497"
+              stroke="currentColor"
+              stroke-width="30"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <path d="M286 497V256H346V497"
+              stroke="currentColor"
+              stroke-width="30"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <path d="M406 497V166H466V497"
+              stroke="currentColor"
+              stroke-width="30"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <!-- rising statistics line -->
+        <path d="M78 196L197 255L316 136L436 46"
+              stroke="currentColor"
+              stroke-width="34"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <!-- circular points -->
+        <circle cx="78" cy="196" r="30"
+                fill="white"
+                stroke="currentColor"
+                stroke-width="30"/>
+
+        <circle cx="197" cy="255" r="30"
+                fill="white"
+                stroke="currentColor"
+                stroke-width="30"/>
+
+        <circle cx="316" cy="136" r="30"
+                fill="white"
+                stroke="currentColor"
+                stroke-width="30"/>
+
+        <circle cx="436" cy="46" r="30"
+                fill="white"
+                stroke="currentColor"
+                stroke-width="30"/>
+    </svg>
+</button>
 
 </div>
 
@@ -1383,6 +1742,80 @@ body.hl-mode-on .hl-target {
 
 
     <!-- Firebase and Main Script -->
+
+
+    <!-- Daily Question Target Modal inside Quiz Page -->
+<div id="quizGoalModal" class="modal hidden fixed inset-0 bg-slate-900 bg-opacity-70 flex items-center justify-center p-3 z-[80]">
+    <div class="quiz-goal-modal-panel">
+        <div class="quiz-goal-modal-header">
+            <div>
+                <div class="quiz-goal-modal-title">Daily Question Target</div>
+                <div class="quiz-goal-modal-subtitle">View your progress and update your daily targets without leaving the quiz.</div>
+            </div>
+            <button id="closeQuizGoalModalBtn" class="quiz-goal-close-btn" type="button" title="Close">×</button>
+        </div>
+
+        <div id="dailyGoalSection" class="goal-section">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                Daily Question Target
+            </h2>
+
+            <div id="goalDonutsGrid" class="goal-donuts-grid hidden">
+                <div class="donut-card">
+                    <div class="donut-label">Today's Progress</div>
+                    <canvas id="donutToday"></canvas>
+                    <div class="donut-value" id="donutTodayVal">0 / 0</div>
+                    <div class="donut-sub" id="donutTodaySub">questions answered today</div>
+                </div>
+
+                <div class="donut-card">
+                    <div class="donut-label">Running Balance</div>
+                    <canvas id="donutBalance"></canvas>
+                    <div class="donut-value" id="donutBalanceVal">0</div>
+                    <div class="donut-sub" id="donutBalanceSub">net since goal started</div>
+                </div>
+
+                <div class="donut-card">
+                    <div class="donut-label">This Week</div>
+                    <canvas id="donutWeek"></canvas>
+                    <div class="donut-value" id="donutWeekVal">0 / 0</div>
+                    <div class="donut-sub" id="donutWeekSub">questions this week</div>
+                </div>
+            </div>
+
+            <div id="noGoalMsg" class="no-goal-msg mb-4">
+                Set your daily question target below to start tracking your progress.
+            </div>
+
+            <div class="goal-setup-row" style="flex-direction:column;align-items:stretch;">
+                <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+                    <span style="color:#4b5563;font-size:0.9rem;font-weight:700;">Set questions target per day:</span>
+                    <span style="color:#9ca3af;font-size:0.75rem;">(set 0 for rest days)</span>
+                    <span id="goalStatusBadge" class="goal-status-badge hidden" style="margin-left:auto;"></span>
+                </div>
+
+                <div class="day-targets-grid" id="dayTargetsGrid">
+                    <div class="day-target-cell"><label id="lbl-mon">Mon</label><input id="dt-mon" type="number" min="0" max="9999" placeholder="0" value="100"></div>
+                    <div class="day-target-cell"><label id="lbl-tue">Tue</label><input id="dt-tue" type="number" min="0" max="9999" placeholder="0" value="100"></div>
+                    <div class="day-target-cell"><label id="lbl-wed">Wed</label><input id="dt-wed" type="number" min="0" max="9999" placeholder="0" value="100"></div>
+                    <div class="day-target-cell"><label id="lbl-thu">Thu</label><input id="dt-thu" type="number" min="0" max="9999" placeholder="0" value="100"></div>
+                    <div class="day-target-cell"><label id="lbl-fri">Fri</label><input id="dt-fri" type="number" min="0" max="9999" placeholder="0" value="100"></div>
+                    <div class="day-target-cell"><label id="lbl-sat">Sat</label><input id="dt-sat" type="number" min="0" max="9999" placeholder="0" value="0"></div>
+                    <div class="day-target-cell"><label id="lbl-sun">Sun</label><input id="dt-sun" type="number" min="0" max="9999" placeholder="0" value="0"></div>
+                </div>
+
+                <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                    <button id="goalSaveBtn" class="goal-save-btn" type="button">Save Goal</button>
+                    <span id="goalWeeklySummary" style="color:#6d28d9;font-size:0.85rem;font-weight:700;"></span>
+                    <span id="goalRefreshNote" class="goal-refresh-note hidden" style="margin-left:auto;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <script type="module">
           // --- Supabase SDK Import ---
 // --- Supabase SDK Import ---
@@ -1507,6 +1940,7 @@ const dom = {
 
 // Flashcard modal
     createFlashcardBtn: document.getElementById('createFlashcardBtn'),
+dailyGoalIcon: document.getElementById('dailyGoalIcon'),
     quizFlashcardModal: document.getElementById('quizFlashcardModal'),
     closeQuizFlashcardBtn: document.getElementById('closeQuizFlashcardBtn'),
     maximizeQuizFlashcardBtn: document.getElementById('maximizeQuizFlashcardBtn'),
@@ -3452,6 +3886,728 @@ async function jumpToQuestion(index) {
             if (dom.totalQuestions) dom.totalQuestions.textContent = total;
         }
 
+
+  // =====================================================================
+//  DAILY GOAL MODAL INSIDE QUIZ PAGE
+// =====================================================================
+
+const QUIZ_GOAL_DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+let quizGoalCurrentUserId = null;
+let quizGoalActiveGoal = null;
+let quizGoalQuestionHistory = [];
+let quizGoalDataReady = false;
+let quizGoalRefreshTimer = null;
+let quizGoalRefreshRequestId = 0;
+
+let quizGoalTodayChart = null;
+let quizGoalBalanceChart = null;
+let quizGoalWeekChart = null;
+
+let quizGoalMiniStats = null;
+let quizGoalMiniLoading = false;
+let quizGoalMiniLoadedForUserId = null;
+
+function quizGoalLocalDateString(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
+function quizGoalStartOfLocalDay(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    return new Date(y, m - 1, d);
+}
+
+function getQuizGoalPerDayTargets() {
+    const targets = {};
+
+    QUIZ_GOAL_DAY_KEYS.forEach(k => {
+        const el = document.getElementById('dt-' + k);
+        targets[k] = el ? Math.max(0, parseInt(el.value, 10) || 0) : 0;
+    });
+
+    return targets;
+}
+
+function setQuizGoalPerDayInputs(targets) {
+    if (typeof targets === 'number') {
+        QUIZ_GOAL_DAY_KEYS.forEach(k => {
+            const el = document.getElementById('dt-' + k);
+            if (el) el.value = (k === 'sat' || k === 'sun') ? 0 : targets;
+        });
+        return;
+    }
+
+    QUIZ_GOAL_DAY_KEYS.forEach(k => {
+        const el = document.getElementById('dt-' + k);
+        if (el) el.value = targets?.[k] ?? 0;
+    });
+}
+
+function quizGoalTargetForDate(perDayTargets, date) {
+    const key = QUIZ_GOAL_DAY_KEYS[date.getDay()];
+    return perDayTargets?.[key] ?? 0;
+}
+
+function highlightQuizGoalTodayInput() {
+    const todayKey = QUIZ_GOAL_DAY_KEYS[new Date().getDay()];
+
+    QUIZ_GOAL_DAY_KEYS.forEach(k => {
+        const lbl = document.getElementById('lbl-' + k);
+        const inp = document.getElementById('dt-' + k);
+
+        if (lbl) lbl.classList.toggle('is-today', k === todayKey);
+        if (inp) inp.classList.toggle('is-today', k === todayKey);
+    });
+}
+
+function updateQuizGoalWeeklySummary(perDayTargets) {
+    const total = QUIZ_GOAL_DAY_KEYS.reduce((sum, k) => sum + (Number(perDayTargets?.[k]) || 0), 0);
+    const el = document.getElementById('goalWeeklySummary');
+
+    if (el) el.textContent = `Weekly total: ${total} questions`;
+}
+
+async function fetchQuizGoalActiveGoal(userId) {
+    const { data, error } = await supabase
+        .from('user_daily_goals')
+        .select('*')
+        .eq('user_id', userId)
+        .order('updated_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+    if (error) {
+        console.warn('fetchQuizGoalActiveGoal error:', error);
+        return null;
+    }
+
+    return data;
+}
+
+function normalizeQuizGoalPerDayTargets(perDayTargets) {
+    const normalized = {};
+
+    QUIZ_GOAL_DAY_KEYS.forEach(k => {
+        const raw = perDayTargets && perDayTargets[k];
+        normalized[k] = Math.max(0, parseInt(raw, 10) || 0);
+    });
+
+    return normalized;
+}
+
+async function saveQuizGoal(userId, perDayTargets) {
+    const today = quizGoalLocalDateString(new Date());
+    const targetPayload = normalizeQuizGoalPerDayTargets(perDayTargets);
+
+    const { data: existing, error: existingError } = await supabase
+        .from('user_daily_goals')
+        .select('id')
+        .eq('user_id', userId)
+        .limit(1)
+        .maybeSingle();
+
+    if (existingError) {
+        console.error('saveQuizGoal existing check error:', existingError);
+        alert('Could not save goal. Check console for details.');
+        return null;
+    }
+
+    let data;
+    let error;
+
+    if (existing) {
+        ({ data, error } = await supabase
+            .from('user_daily_goals')
+            .update({
+                daily_target: targetPayload,
+                start_date: today,
+                updated_at: new Date().toISOString()
+            })
+            .eq('user_id', userId)
+            .select()
+            .single());
+    } else {
+        ({ data, error } = await supabase
+            .from('user_daily_goals')
+            .insert({
+                user_id: userId,
+                daily_target: targetPayload,
+                start_date: today
+            })
+            .select()
+            .single());
+    }
+
+    if (error) {
+        console.error('saveQuizGoal error:', error);
+        alert('Could not save goal. Check console for details.');
+        return null;
+    }
+
+    return data;
+}
+
+function parseQuizGoalTargets(goal) {
+    if (!goal) return null;
+
+    const raw = goal.daily_target;
+
+    if (typeof raw === 'object' && raw !== null && !Array.isArray(raw)) {
+        return normalizeQuizGoalPerDayTargets(raw);
+    }
+
+    if (typeof raw === 'number') {
+        const targets = {};
+
+        QUIZ_GOAL_DAY_KEYS.forEach(k => {
+            targets[k] = (k === 'sat' || k === 'sun') ? 0 : raw;
+        });
+
+        return normalizeQuizGoalPerDayTargets(targets);
+    }
+
+    if (typeof raw === 'string') {
+        try {
+            const parsed = JSON.parse(raw);
+            return normalizeQuizGoalPerDayTargets(parsed);
+        } catch (e) {
+            const n = parseInt(raw, 10);
+
+            if (!Number.isNaN(n)) {
+                const targets = {};
+
+                QUIZ_GOAL_DAY_KEYS.forEach(k => {
+                    targets[k] = (k === 'sat' || k === 'sun') ? 0 : n;
+                });
+
+                return normalizeQuizGoalPerDayTargets(targets);
+            }
+        }
+    }
+
+    return null;
+}
+
+function buildQuizGoalDailyCountsFromHistory(history, goalStartDate) {
+    const startMs = quizGoalStartOfLocalDay(goalStartDate).getTime();
+    const counts = {};
+
+    history.forEach(h => {
+        if (!h.lastAttemptDate) return;
+
+        const d = new Date(h.lastAttemptDate);
+        if (d.getTime() < startMs) return;
+
+        const key = quizGoalLocalDateString(d);
+        counts[key] = (counts[key] || 0) + 1;
+    });
+
+    return counts;
+}
+
+async function fetchQuizGoalHistorySinceGoalStart(userId, goal) {
+    if (!userId || !goal) return [];
+
+    const goalStartDate = goal.start_date || quizGoalLocalDateString(new Date());
+    const startIso = quizGoalStartOfLocalDay(goalStartDate).toISOString();
+
+    const rows = [];
+    let from = 0;
+    const limit = 1000;
+
+    while (true) {
+        const { data, error } = await supabase
+            .from('userQuestionHistory')
+            .select('id, lastAttemptDate')
+            .eq('userId', userId)
+            .gte('lastAttemptDate', startIso)
+            .order('lastAttemptDate', { ascending: false })
+            .range(from, from + limit - 1);
+
+        if (error) {
+            console.warn('fetchQuizGoalHistorySinceGoalStart error:', error);
+            return rows;
+        }
+
+        if (!data || data.length === 0) break;
+
+        rows.push(...data);
+
+        if (data.length < limit) break;
+
+        from += limit;
+    }
+
+    return rows;
+}
+
+function computeQuizGoalStats(history, goal) {
+    const perDayTargets = parseQuizGoalTargets(goal) || normalizeQuizGoalPerDayTargets({});
+    const goalStartDate = goal.start_date || quizGoalLocalDateString(new Date());
+    const dailyCounts = buildQuizGoalDailyCountsFromHistory(history, goalStartDate);
+
+    const today = quizGoalLocalDateString(new Date());
+    const startDate = quizGoalStartOfLocalDay(goalStartDate);
+    const todayDate = quizGoalStartOfLocalDay(today);
+    const todayDayObj = new Date(todayDate);
+
+    const todayTarget = quizGoalTargetForDate(perDayTargets, todayDayObj);
+    const todayAnswered = dailyCounts[today] || 0;
+
+    const todayPercent = todayTarget === 0
+        ? 100
+        : Math.min(100, Math.round((todayAnswered / todayTarget) * 100));
+
+    let runningBalance = 0;
+    const cursor = new Date(startDate);
+
+    while (cursor <= todayDate) {
+        const key = quizGoalLocalDateString(cursor);
+        const answered = dailyCounts[key] || 0;
+        const target = quizGoalTargetForDate(perDayTargets, cursor);
+
+        runningBalance += answered - target;
+        cursor.setDate(cursor.getDate() + 1);
+    }
+
+    const weekStart = new Date(todayDate);
+    const dow = weekStart.getDay();
+
+    weekStart.setDate(weekStart.getDate() - (dow === 0 ? 6 : dow - 1));
+
+    const weekEnd = new Date(weekStart);
+    weekEnd.setDate(weekStart.getDate() + 6);
+
+    let weekAnswered = 0;
+    let weekTarget = 0;
+
+    const wCursor = new Date(weekStart);
+
+    while (wCursor <= weekEnd) {
+        const key = quizGoalLocalDateString(wCursor);
+
+        weekAnswered += dailyCounts[key] || 0;
+        weekTarget += quizGoalTargetForDate(perDayTargets, wCursor);
+
+        wCursor.setDate(wCursor.getDate() + 1);
+    }
+
+    const weekPercent = weekTarget === 0
+        ? 100
+        : Math.min(100, Math.round((weekAnswered / weekTarget) * 100));
+
+    return {
+        todayAnswered,
+        todayTarget,
+        todayPercent,
+        runningBalance,
+        weekAnswered,
+        weekTarget,
+        weekPercent,
+        perDayTargets
+    };
+}
+
+function updateQuizGoalMiniLegend() {
+    const miniText = document.getElementById('quizGoalLegendMiniText');
+
+    if (!miniText) return;
+
+    if (!quizGoalMiniStats) {
+        miniText.textContent = quizGoalMiniLoading ? 'Loading…' : 'No goal';
+        return;
+    }
+
+    const { todayAnswered, todayTarget, todayPercent } = quizGoalMiniStats;
+
+    if (todayTarget === 0) {
+        miniText.textContent = 'Rest day (100%)';
+        return;
+    }
+
+    miniText.textContent = `${todayAnswered}/${todayTarget} (${todayPercent}%)`;
+}
+
+async function ensureQuizGoalMiniLegendLoaded({ force = false } = {}) {
+    const miniText = document.getElementById('quizGoalLegendMiniText');
+
+    if (!miniText) return;
+
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+        miniText.textContent = 'No login';
+        return;
+    }
+
+    if (
+        !force &&
+        quizGoalMiniLoadedForUserId === session.user.id &&
+        quizGoalMiniStats
+    ) {
+        updateQuizGoalMiniLegend();
+        return;
+    }
+
+    if (quizGoalMiniLoading) return;
+
+    quizGoalMiniLoading = true;
+    updateQuizGoalMiniLegend();
+
+    try {
+        const goal = await fetchQuizGoalActiveGoal(session.user.id);
+
+        if (!goal) {
+            quizGoalMiniStats = null;
+            quizGoalMiniLoadedForUserId = session.user.id;
+            updateQuizGoalMiniLegend();
+            return;
+        }
+
+        const history = await fetchQuizGoalHistorySinceGoalStart(session.user.id, goal);
+        const stats = computeQuizGoalStats(history, goal);
+
+        quizGoalActiveGoal = goal;
+        quizGoalQuestionHistory = history;
+        quizGoalDataReady = true;
+
+        quizGoalMiniStats = stats;
+        quizGoalMiniLoadedForUserId = session.user.id;
+
+        updateQuizGoalMiniLegend();
+
+    } catch (error) {
+        console.warn('Daily goal mini legend load failed:', error);
+        miniText.textContent = 'Unavailable';
+    } finally {
+        quizGoalMiniLoading = false;
+    }
+}
+
+function makeQuizGoalDonutChart(canvasId, percent, color, trackColor) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return null;
+
+    const ctx = canvas.getContext('2d');
+    const remaining = Math.max(0, 100 - percent);
+
+    return new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [percent, remaining],
+                backgroundColor: [color, trackColor],
+                borderWidth: 0,
+                hoverOffset: 0
+            }]
+        },
+        options: {
+            cutout: '72%',
+            responsive: true,
+            maintainAspectRatio: true,
+            animation: { duration: 500 },
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: false }
+            }
+        }
+    });
+}
+
+function renderQuizGoalDonuts(stats) {
+    const {
+        todayAnswered,
+        todayTarget,
+        todayPercent,
+        runningBalance,
+        weekAnswered,
+        weekTarget,
+        weekPercent
+    } = stats;
+
+    if (quizGoalTodayChart) quizGoalTodayChart.destroy();
+    if (quizGoalBalanceChart) quizGoalBalanceChart.destroy();
+    if (quizGoalWeekChart) quizGoalWeekChart.destroy();
+
+    const todayTrack = todayTarget === 0 ? '#f3e8ff' : 'rgba(139,92,246,0.15)';
+    quizGoalTodayChart = makeQuizGoalDonutChart('donutToday', todayPercent, '#8b5cf6', todayTrack);
+
+    document.getElementById('donutTodayVal').textContent = todayTarget === 0
+        ? 'Rest day'
+        : `${todayAnswered} / ${todayTarget}`;
+
+    document.getElementById('donutTodaySub').textContent = todayTarget === 0
+        ? 'No target set today'
+        : `${todayPercent}% of today's target`;
+
+    const absBalance = Math.abs(runningBalance);
+    const weekTotalTarget = weekTarget || todayTarget || 1;
+
+    const balanceFillPct = runningBalance === 0
+        ? 100
+        : Math.min(100, Math.round((absBalance / weekTotalTarget) * 100));
+
+    let balanceColor;
+    let balanceTrack;
+    let balanceLabel;
+    let balanceValText;
+
+    if (runningBalance > 0) {
+        balanceColor = '#10b981';
+        balanceTrack = '#d1fae5';
+        balanceLabel = `${runningBalance} questions ahead`;
+        balanceValText = `+${runningBalance}`;
+    } else if (runningBalance < 0) {
+        balanceColor = '#ef4444';
+        balanceTrack = '#fee2e2';
+        balanceLabel = `${absBalance} questions still needed`;
+        balanceValText = `-${absBalance}`;
+    } else {
+        balanceColor = '#8b5cf6';
+        balanceTrack = '#ede9fe';
+        balanceLabel = 'Exactly on track!';
+        balanceValText = '0';
+    }
+
+    quizGoalBalanceChart = makeQuizGoalDonutChart('donutBalance', balanceFillPct, balanceColor, balanceTrack);
+
+    const balanceValEl = document.getElementById('donutBalanceVal');
+    balanceValEl.textContent = balanceValText;
+    balanceValEl.style.color = runningBalance > 0
+        ? '#059669'
+        : runningBalance < 0
+            ? '#dc2626'
+            : '#1f2937';
+
+    document.getElementById('donutBalanceSub').textContent = balanceLabel;
+    document.getElementById('donutBalanceSub').style.color = runningBalance > 0
+        ? '#059669'
+        : runningBalance < 0
+            ? '#dc2626'
+            : '#7c3aed';
+
+    const weekTrack = weekTarget === 0 ? '#fef9c3' : 'rgba(245,158,11,0.15)';
+    quizGoalWeekChart = makeQuizGoalDonutChart('donutWeek', weekPercent, '#f59e0b', weekTrack);
+
+    document.getElementById('donutWeekVal').textContent = weekTarget === 0
+        ? 'Rest week'
+        : `${weekAnswered} / ${weekTarget}`;
+
+    document.getElementById('donutWeekSub').textContent = weekTarget === 0
+        ? 'No targets set this week'
+        : `${weekPercent}% of weekly target`;
+
+    const badge = document.getElementById('goalStatusBadge');
+    badge.className = 'goal-status-badge';
+
+    if (runningBalance > 0) {
+        badge.classList.add('badge-surplus');
+        badge.textContent = `▲ +${runningBalance} ahead`;
+    } else if (runningBalance < 0) {
+        badge.classList.add('badge-deficit');
+        badge.textContent = `▼ ${Math.abs(runningBalance)} still needed`;
+    } else {
+        badge.classList.add('badge-perfect');
+        badge.textContent = '✓ On track';
+    }
+
+    badge.classList.remove('hidden');
+
+ quizGoalMiniStats = stats;
+quizGoalMiniLoadedForUserId = quizGoalCurrentUserId;
+updateQuizGoalMiniLegend();
+}
+
+function updateQuizGoalDonuts() {
+    if (!quizGoalActiveGoal || !quizGoalDataReady) return;
+
+    const stats = computeQuizGoalStats(quizGoalQuestionHistory, quizGoalActiveGoal);
+    renderQuizGoalDonuts(stats);
+}
+
+async function refreshQuizGoalData({ silent = true } = {}) {
+    if (!quizGoalActiveGoal || !quizGoalCurrentUserId) return;
+
+    const requestId = ++quizGoalRefreshRequestId;
+
+    const note = document.getElementById('goalRefreshNote');
+    if (note && !silent) {
+        note.textContent = 'Calculating goal progress…';
+        note.classList.remove('hidden');
+    }
+
+    const freshGoalHistory = await fetchQuizGoalHistorySinceGoalStart(quizGoalCurrentUserId, quizGoalActiveGoal);
+
+    if (requestId !== quizGoalRefreshRequestId) return;
+
+    quizGoalQuestionHistory = freshGoalHistory;
+    quizGoalDataReady = true;
+
+    updateQuizGoalDonuts();
+
+    if (quizGoalActiveGoal) {
+        updateQuizGoalWeeklySummary(parseQuizGoalTargets(quizGoalActiveGoal));
+    }
+
+    if (note) {
+        note.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+        note.classList.remove('hidden');
+    }
+}
+
+function startQuizGoalAutoRefresh() {
+    if (quizGoalRefreshTimer) {
+        clearInterval(quizGoalRefreshTimer);
+        quizGoalRefreshTimer = null;
+    }
+
+    refreshQuizGoalData({ silent: true });
+
+    quizGoalRefreshTimer = setInterval(() => {
+        const modal = document.getElementById('quizGoalModal');
+
+        if (modal && !modal.classList.contains('hidden')) {
+            refreshQuizGoalData({ silent: true });
+        }
+    }, 90 * 1000);
+}
+
+async function initQuizGoalSection(userId) {
+    quizGoalCurrentUserId = userId;
+    quizGoalDataReady = false;
+    quizGoalQuestionHistory = [];
+
+    highlightQuizGoalTodayInput();
+
+    const dayTargetsGrid = document.getElementById('dayTargetsGrid');
+
+    if (dayTargetsGrid && !dayTargetsGrid.dataset.listenerAttached) {
+        dayTargetsGrid.addEventListener('input', () => {
+            updateQuizGoalWeeklySummary(getQuizGoalPerDayTargets());
+        });
+
+        dayTargetsGrid.dataset.listenerAttached = 'true';
+    }
+
+    quizGoalActiveGoal = await fetchQuizGoalActiveGoal(userId);
+
+    if (quizGoalActiveGoal) {
+        const saved = parseQuizGoalTargets(quizGoalActiveGoal);
+
+        if (saved) setQuizGoalPerDayInputs(saved);
+
+        updateQuizGoalWeeklySummary(saved || getQuizGoalPerDayTargets());
+
+        document.getElementById('noGoalMsg').classList.add('hidden');
+        document.getElementById('goalDonutsGrid').classList.remove('hidden');
+
+        await refreshQuizGoalData({ silent: false });
+
+        startQuizGoalAutoRefresh();
+    } else {
+        updateQuizGoalWeeklySummary(getQuizGoalPerDayTargets());
+
+        document.getElementById('noGoalMsg').classList.remove('hidden');
+        document.getElementById('goalDonutsGrid').classList.add('hidden');
+
+        const badge = document.getElementById('goalStatusBadge');
+        if (badge) badge.classList.add('hidden');
+
+        const note = document.getElementById('goalRefreshNote');
+        if (note) note.classList.add('hidden');
+    }
+
+    const goalSaveBtn = document.getElementById('goalSaveBtn');
+
+    if (goalSaveBtn && !goalSaveBtn.dataset.listenerAttached) {
+        goalSaveBtn.addEventListener('click', async () => {
+            const perDay = getQuizGoalPerDayTargets();
+            const total = Object.values(perDay).reduce((sum, value) => sum + value, 0);
+
+            if (total < 1) {
+                alert('Please set at least 1 question target on any day.');
+                return;
+            }
+
+            goalSaveBtn.textContent = 'Saving…';
+            goalSaveBtn.disabled = true;
+
+            quizGoalDataReady = false;
+            quizGoalQuestionHistory = [];
+
+            quizGoalActiveGoal = await saveQuizGoal(quizGoalCurrentUserId, perDay);
+
+            goalSaveBtn.textContent = 'Save Goal';
+            goalSaveBtn.disabled = false;
+
+            if (quizGoalActiveGoal) {
+                document.getElementById('noGoalMsg').classList.add('hidden');
+                document.getElementById('goalDonutsGrid').classList.remove('hidden');
+
+                await refreshQuizGoalData({ silent: false });
+
+                startQuizGoalAutoRefresh();
+            }
+        });
+
+        goalSaveBtn.dataset.listenerAttached = 'true';
+    }
+}
+
+async function openQuizGoalModal() {
+    const modal = document.getElementById('quizGoalModal');
+
+    if (!modal) return;
+
+    modal.classList.remove('hidden');
+
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+        alert('Please log in again.');
+        window.location.href = 'index.html';
+        return;
+    }
+
+    await initQuizGoalSection(session.user.id);
+}
+
+function closeQuizGoalModal() {
+    const modal = document.getElementById('quizGoalModal');
+
+    if (modal) modal.classList.add('hidden');
+
+    if (quizGoalRefreshTimer) {
+        clearInterval(quizGoalRefreshTimer);
+        quizGoalRefreshTimer = null;
+    }
+}
+
+document.getElementById('closeQuizGoalModalBtn')?.addEventListener('click', closeQuizGoalModal);
+
+document.getElementById('quizGoalModal')?.addEventListener('click', (event) => {
+    if (event.target.id === 'quizGoalModal') {
+        closeQuizGoalModal();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        const modal = document.getElementById('quizGoalModal');
+
+        if (modal && !modal.classList.contains('hidden')) {
+            closeQuizGoalModal();
+        }
+    }
+});
+
+// =====================================================================
+//  END DAILY GOAL MODAL INSIDE QUIZ PAGE
+// =====================================================================      
+
 function updatePieChart() {
     const total = quizData.questions.length;
     if (total === 0) return;
@@ -3468,21 +4624,45 @@ function updatePieChart() {
     const unanswered = total - (correct + wrong);
     const getPct = (val) => total > 0 ? Math.round((val / total) * 100) : 0;
 
-    // --- CLEAN SIDE LEGEND (KEEP THIS) ---
-    const legendContainer = document.getElementById('inQuizLegend');
-    legendContainer.innerHTML = `
-        <div class="flex items-center text-green-600 text-[10px] sm:text-xs font-bold">
-            <span class="w-2.5 h-2.5 rounded-full bg-green-500 mr-2 shrink-0"></span>
-            Correct: ${correct} (${getPct(correct)}%)
-        </div>
-        <div class="flex items-center text-red-600 text-[10px] sm:text-xs font-bold">
-            <span class="w-2.5 h-2.5 rounded-full bg-red-500 mr-2 shrink-0"></span>
-            Wrong: ${wrong} (${getPct(wrong)}%)
-        </div>
-        <div class="flex items-center text-gray-500 text-[10px] sm:text-xs font-bold">
-            <span class="w-2.5 h-2.5 rounded-full bg-gray-300 mr-2 shrink-0"></span>
-            Left: ${unanswered} (${getPct(unanswered)}%)
-        </div>`;
+// --- CLEAN SIDE LEGEND + NON-CLICKABLE DAILY GOAL ROW ---
+const legendContainer = document.getElementById('inQuizLegend');
+
+legendContainer.innerHTML = `
+    <div class="flex items-center text-green-600 text-[10px] sm:text-xs font-bold">
+        <span class="w-2.5 h-2.5 rounded-full bg-green-500 mr-2 shrink-0"></span>
+        Correct: ${correct} (${getPct(correct)}%)
+    </div>
+
+    <div class="flex items-center text-red-600 text-[10px] sm:text-xs font-bold">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-500 mr-2 shrink-0"></span>
+        Wrong: ${wrong} (${getPct(wrong)}%)
+    </div>
+
+    <div class="flex items-center text-gray-500 text-[10px] sm:text-xs font-bold">
+        <span class="w-2.5 h-2.5 rounded-full bg-gray-300 mr-2 shrink-0"></span>
+        Left: ${unanswered} (${getPct(unanswered)}%)
+    </div>
+
+    <div class="quiz-goal-mini-row" title="Daily question target">
+        <span class="quiz-goal-mini-dot"></span>
+        <span class="quiz-goal-mini-text">
+            Goal: <span id="quizGoalLegendMiniText">Loading…</span>
+        </span>
+    </div>
+`;
+
+updateQuizGoalMiniLegend();
+ensureQuizGoalMiniLegendLoaded();
+
+const openDailyGoalLegendBtn = document.getElementById('openDailyGoalLegendBtn');
+
+if (openDailyGoalLegendBtn) {
+    openDailyGoalLegendBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        openQuizGoalModal();
+    });
+}
     
     const chartData = {
         labels: ['Correct', 'Wrong', 'Unanswered'],
@@ -4017,15 +5197,16 @@ const backButtonUrl = () => {
 
         // --- PC KEYBOARD NAVIGATION: Arrow Left / Arrow Right ---
 function isAnyQuizBlockingModalOpen() {
-    const modalIds = [
-        'resumeModal',
-        'resultModal',
-        'lightbox',
-        'quizFlashcardModal',
-        'noteModal',
-        'difficultyModal',
-        'highlightModal'
-    ];
+ const modalIds = [
+    'resumeModal',
+    'resultModal',
+    'lightbox',
+    'quizFlashcardModal',
+    'quizGoalModal',
+    'noteModal',
+    'difficultyModal',
+    'highlightModal'
+];
 
     return modalIds.some(id => {
         const modal = document.getElementById(id);
@@ -4578,6 +5759,11 @@ setupFlashcardRichEditors();
     }
     on(dom.quizFlashcardFront, 'paste', (e) => handleImagePaste(e, dom.quizFrontImageInput));
     on(dom.quizFlashcardBack, 'paste', (e) => handleImagePaste(e, dom.quizBackImageInput));
+
+// --- DAILY GOAL / STATISTICS ICON ---
+on(dom.dailyGoalIcon, 'click', () => {
+    openQuizGoalModal();
+});
 
     // --- CREATE FLASHCARD ---
  on(dom.createFlashcardBtn, 'click', () => {
