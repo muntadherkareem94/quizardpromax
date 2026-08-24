@@ -939,9 +939,10 @@
 
         <div class="bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm text-gray-700 mb-4">
             <p class="font-semibold mb-1">Examples:</p>
-            <p><code>4q.png</code> = question image for question 4</p>
-            <p><code>7e.jpg</code> = explanation image for question 7</p>
-            <p><code>18e.webp</code> = explanation image for question 18</p>
+            <p><code>4q.png</code> = one question image for question 4</p>
+            <p><code>4q1.png</code>, <code>4q2.png</code> = multiple question images for question 4</p>
+            <p><code>7e.jpg</code> = one explanation image for question 7</p>
+            <p><code>7e1.jpg</code>, <code>7e2.jpg</code> = multiple explanation images for question 7</p>
         </div>
 
         <form id="imageBulkImportForm" class="space-y-4">
@@ -1255,8 +1256,15 @@ async function uploadMultipleImages(fileList, chapterId, typePrefix) {
 function parseBulkImageFilename(fileName) {
     const baseName = fileName.replace(/\.[^/.]+$/, '').trim().toLowerCase();
 
-    // Supports: 4q, 4_q, 4-q, 4 q
-    const match = baseName.match(/^(\d+)\s*[-_ ]?\s*([qe])$/i);
+    // Single image (backward compatible):
+    //   4q, 4_q, 4-q, 4 q, 7e
+    //
+    // Multiple images for the same question/type:
+    //   4q1, 4q2, 4q_3, 4q-4, 4q.5
+    //   7e1, 7e2, 7e_3, 7e-4, 7e.5
+    //
+    // q = question image, e = explanation image.
+    const match = baseName.match(/^(\d+)\s*[-_ ]?\s*([qe])(?:\s*[-_. ]?\s*(\d+))?$/i);
 
     if (!match) {
         return null;
@@ -1264,7 +1272,8 @@ function parseBulkImageFilename(fileName) {
 
     return {
         questionNumber: Number(match[1]),
-        imageType: match[2].toLowerCase() === 'q' ? 'question' : 'explanation'
+        imageType: match[2].toLowerCase() === 'q' ? 'question' : 'explanation',
+        imageOrder: match[3] ? Number(match[3]) : 0
     };
 }
 
@@ -2237,7 +2246,7 @@ imageBulkImportForm.addEventListener('submit', async (e) => {
             const parsed = parseBulkImageFilename(file.name);
 
             if (!parsed) {
-                skippedFiles.push(`${file.name}: invalid filename. Use format like 4q.png or 7e.jpg.`);
+                skippedFiles.push(`${file.name}: invalid filename. Use 4q.png / 7e.jpg for one image, or indexed names like 4q1.png, 4q2.png, 7e1.jpg, 7e2.jpg.`);
                 continue;
             }
 
@@ -2264,10 +2273,16 @@ imageBulkImportForm.addEventListener('submit', async (e) => {
 
             const updateEntry = updatesByQuestionId.get(question.id);
 
+            const newImageItem = {
+                url: uploadedUrl,
+                order: Number.isFinite(parsed.imageOrder) ? parsed.imageOrder : 0,
+                fileName: file.name
+            };
+
             if (parsed.imageType === 'question') {
-                updateEntry.newQuestionImages.push(uploadedUrl);
+                updateEntry.newQuestionImages.push(newImageItem);
             } else {
-                updateEntry.newExplanationImages.push(uploadedUrl);
+                updateEntry.newExplanationImages.push(newImageItem);
             }
 
             importedCount++;
@@ -2286,8 +2301,25 @@ imageBulkImportForm.addEventListener('submit', async (e) => {
             const existingQuestionImages = normalizeImageArray(question.imageUrl, question.imageUrls);
             const existingExplanationImages = normalizeImageArray(question.explanationImageUrl, question.explanationImageUrls);
 
-            const finalQuestionImages = [...existingQuestionImages, ...newQuestionImages];
-            const finalExplanationImages = [...existingExplanationImages, ...newExplanationImages];
+            const sortImportedImages = (items) => [...items]
+                .sort((a, b) => {
+                    const orderDiff = (a.order || 0) - (b.order || 0);
+                    if (orderDiff !== 0) return orderDiff;
+                    return String(a.fileName || '').localeCompare(String(b.fileName || ''), undefined, {
+                        numeric: true,
+                        sensitivity: 'base'
+                    });
+                })
+                .map(item => item.url);
+
+            const finalQuestionImages = [
+                ...existingQuestionImages,
+                ...sortImportedImages(newQuestionImages)
+            ];
+            const finalExplanationImages = [
+                ...existingExplanationImages,
+                ...sortImportedImages(newExplanationImages)
+            ];
 
             const { error: updateError } = await supabase
                 .from('questions')
