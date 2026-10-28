@@ -1362,6 +1362,7 @@ body.hl-mode-on .hl-target {
             sticky top-2 md:top-4
             -mr-3 sm:-mr-1 md:mr-0">
 
+ 
     <!-- Note (TOP) -->
     <button id="noteIcon" class="functional-icon text-gray-400" title="Add/Edit Note">
         <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1371,7 +1372,35 @@ body.hl-mode-on .hl-target {
         </svg>
     </button>
 
+    <!-- Voice Quiz Assistant (STRUCTURE ONLY) -->
+    <button
+        id="voiceQuizIcon"
+        type="button"
+        class="functional-icon text-gray-400"
+        style="order: 99;"
+        title="Voice Quiz Assistant - Coming Soon"
+        aria-label="Voice Quiz Assistant - Coming Soon"
+        disabled
+    >
+        <svg
+            class="w-5 h-5 md:w-6 md:h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+        >
+            <rect x="9" y="2" width="6" height="12" rx="3"></rect>
+            <path d="M5 10v2a7 7 0 0 0 14 0v-2"></path>
+            <path d="M12 19v3"></path>
+            <path d="M8 22h8"></path>
+        </svg>
+    </button>
+
     <!-- Flag -->
+
     <button id="flagIcon" class="functional-icon text-gray-400" title="Flag for Review">
         <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -5983,6 +6012,16 @@ dom.maximizeQuizFlashcardBtn?.addEventListener('click', () => {
                      d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4" />`;
     }
 });
+
     </script>
+
+
+    <!-- QUIZARD VOICE ASSISTANT -->
+    <script src="voice-quiz.js" defer></script>
+
+    <!-- PERSONAL AI ACCOUNTS — AUTHENTICATED SERVER CONNECTION -->
+    <script type="module" src="quizard-ai-connect.js"></script>
+
 </body>
 </html>
+

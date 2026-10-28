@@ -32,6 +32,32 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
+    <div id="authStartupOverlay"
+         style="position:fixed; inset:0; z-index:99999;
+                background:#3da0be; display:flex;
+                align-items:center; justify-content:center;
+                padding:20px; font-family:Inter,sans-serif;">
+        <div style="background:white; border-radius:16px;
+                    padding:30px; text-align:center;
+                    max-width:360px; width:100%;
+                    box-shadow:0 10px 30px rgba(0,0,0,.12);">
+
+            <img src="images/logo.png" alt="Quizard"
+                 style="height:65px; margin:0 auto 20px;">
+
+            <p style="font-weight:600; color:#1f2937;
+                      margin-bottom:10px;">
+                Checking your session...
+            </p>
+
+            <p style="color:#6b7280; font-size:14px;">
+                Connecting securely. If your internet is slow,
+                this may take longer than usual.
+            </p>
+
+        </div>
+    </div>
+
     <main class="flex-grow flex justify-center items-center p-4" style="background-color: #3da0be;">
         <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-xl max-w-sm w-full">
             <div class="text-center mb-8">
@@ -242,34 +268,87 @@ async function manageActiveSession(user) {
 
     throw new Error("Failed to create a valid session.");
 }
-    // --- AUTHENTICATION FLOW ---
-
+// --- AUTHENTICATION FLOW ---
 document.addEventListener('DOMContentLoaded', async () => {
-        const hashParams = new URLSearchParams(window.location.hash.substring(1));
-        const typeFromHash = hashParams.get('type');
+    const overlay = document.getElementById('authStartupOverlay');
+    let redirecting = false;
 
-        // Handle Signup Verification
+    const hashParams = new URLSearchParams(
+        window.location.hash.substring(1)
+    );
+
+    const typeFromHash = hashParams.get('type');
+
+    try {
+        // Preserve email verification handling.
         if (typeFromHash === 'signup' && verificationMessage) {
             verificationMessage.classList.remove('hidden');
-            history.replaceState({}, document.title, window.location.pathname);
+            history.replaceState(
+                {},
+                document.title,
+                window.location.pathname
+            );
         }
 
-        // Handle Password Recovery
+        // Preserve password recovery handling.
         if (typeFromHash === 'recovery') {
-            // Show the new password modal
-            document.getElementById('newPasswordModal').classList.remove('hidden');
-            // We removed the code that clears the URL here so Supabase can read the token!
-            return; 
+            document.getElementById('newPasswordModal')
+                .classList.remove('hidden');
+            return;
         }
 
-        // Normal Login Check
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session) {
-            window.location.href = 'dashboard.html';
-        } else {
-            console.log("No user is signed in. Waiting for login.");
+        // Step 1: Restore the saved Supabase authentication.
+        const { data, error } = await supabase.auth.getSession();
+
+        if (error) throw error;
+
+        if (!data?.session?.user) {
+            console.log('No saved login. Showing login form.');
+            return;
         }
-    });
+
+        // Step 2: Confirm or renew the device session.
+        // Do NOT enter the dashboard before this succeeds.
+        await manageActiveSession(data.session.user);
+
+        // Step 3: Navigate only after session restoration.
+        console.log('Session restored successfully.');
+
+        redirecting = true;
+        window.location.replace('dashboard.html');
+
+    } catch (error) {
+        console.warn('Automatic session restoration failed:', error);
+
+        const deviceLimitReached =
+            error?.code === 'DEVICE_LIMIT_REACHED' ||
+            (error?.message || '').toLowerCase()
+                .includes('device limit reached');
+
+        if (deviceLimitReached) {
+            showMessage(
+                'Device limit reached. Please log out from ' +
+                'another device before signing in here.'
+            );
+        } else {
+            showMessage(
+                'Could not restore your previous session. ' +
+                'Please check your internet connection and ' +
+                'refresh the page or log in again.'
+            );
+        }
+
+        // Important: do not repeatedly redirect or
+        // automatically sign out due to a network error.
+
+    } finally {
+        // Keep the loading screen during navigation.
+        // Otherwise reveal the login form or recovery modal.
+        if (!redirecting) {
+            overlay?.remove();
+        }
+    }
+});
 
     // This listener handles the manual login form submission
     loginForm.addEventListener('submit', async (event) => {

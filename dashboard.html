@@ -474,37 +474,165 @@ function setupActivityListeners() {
 async function validateAndEnforceSession(user) {
     const sessionId = localStorage.getItem('sessionId');
 
+    // If the local session ID is missing, attempt recovery.
     if (!sessionId) {
-        console.warn("No sessionId found → logout");
-        await handleLogout();
+        console.warn(
+            'No stored device session. Attempting recovery.'
+        );
+
+        const restoredSessionId = await refreshActiveSession();
+
+        if (restoredSessionId) {
+            document.getElementById('sessionRecoveryOverlay')?.remove();
+            return true;
+        }
+
+        showSessionRecoveryScreen();
         return false;
     }
 
-    const { data, error } = await supabase
-        .from('active_sessions')
-        .select('expires_at')
-        .eq('user_id', user.id)
-        .eq('session_id', sessionId)
-        .maybeSingle();
+    try {
+        const { data, error } = await supabase
+            .from('active_sessions')
+            .select('expires_at')
+            .eq('user_id', user.id)
+            .eq('session_id', sessionId)
+            .maybeSingle();
 
-    if (error) {
-        console.warn("Temporary session check error → IGNORE", error.message);
-        return true; // ⚠️ DO NOT LOGOUT
-    }
+        if (error) {
+            // Temporary network or database errors must
+            // not trigger logout.
+            console.warn(
+                'Temporary session verification error:',
+                error.message
+            );
 
-    if (!data) {
-        console.warn("Session row missing → logout");
-        await handleLogout();
-        return false;
-    }
+            return true;
+        }
 
-    if (new Date() > new Date(data.expires_at)) {
-        console.warn("Session expired → logout");
-        await handleLogout();
-        return false;
-    }
+        if (!data) {
+            // Another refresh may have renewed the session
+            // while this verification request was running.
+            if (activeSessionRefreshPromise) {
+                const refreshedId = await activeSessionRefreshPromise;
+
+                if (refreshedId) {
+                    document.getElementById(
+                        'sessionRecoveryOverlay'
+                    )?.remove();
+
+                    return true;
+                }
+            }
+
+            // A confirmed missing session record can indicate
+            // administrative revocation. Preserve logout.
+            console.warn(
+                'Session record missing. Signing out.'
+            );
+
+            await handleLogout();
+            return false;
+        }
+
+        const expiry = Date.parse(data.expires_at);
+
+        if (!Number.isFinite(expiry) || Date.now() >= expiry) {
+            console.warn(
+                'Device session expired. Attempting renewal.'
+            );
+
+            const restoredSessionId = await refreshActiveSession();
+
+            if (restoredSessionId) {
+                document.getElementById(
+                    'sessionRecoveryOverlay'
+                )?.remove();
+
+                return true;
+            }
+
+            // Do not sign out because renewal failed.
+            showSessionRecoveryScreen();
+            return false;
+        }
+
+        document.getElementById('sessionRecoveryOverlay')?.remove();
+        return true;
+
+    } catch (error) {
+        // Treat a failed verification request as temporary.
+        console.warn(
+            'Session verification temporarily unavailable:',
+            error
+        );
 
         return true;
+    }
+}
+
+function showSessionRecoveryScreen() {
+    if (document.getElementById('sessionRecoveryOverlay')) {
+        return;
+    }
+
+    const overlay = document.createElement('div');
+
+    overlay.id = 'sessionRecoveryOverlay';
+
+    overlay.style.cssText = `
+        position:fixed;
+        inset:0;
+        z-index:99999;
+        background:#3da0be;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+    `;
+
+    overlay.innerHTML = `
+        <div style="
+            background:white;
+            border-radius:16px;
+            padding:28px;
+            max-width:360px;
+            width:100%;
+            text-align:center;
+            font-family:Arial,sans-serif;
+        ">
+            <h2 style="color:#1f2937;margin-bottom:12px;">
+                Connection Required
+            </h2>
+
+            <p style="color:#6b7280;line-height:1.6;">
+                Quizard could not verify your device session.
+                Please check your internet connection and
+                try again.
+            </p>
+
+            <button id="retrySessionButton"
+                style="
+                    margin-top:20px;
+                    padding:12px 25px;
+                    border:0;
+                    border-radius:8px;
+                    background:#4f46e5;
+                    color:white;
+                    font-weight:bold;
+                    cursor:pointer;
+                ">
+                Try Again
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('#retrySessionButton')
+        .addEventListener('click', () => {
+            window.location.reload();
+        });
 }
 
 function getOrCreateDeviceId() {
@@ -518,29 +646,65 @@ function getOrCreateDeviceId() {
     return deviceId;
 }
 
-async function refreshActiveSession() {
-    const sessionId = localStorage.getItem('sessionId');
+let activeSessionRefreshPromise = null;
 
-    if (!sessionId) {
-        return;
+async function refreshActiveSession() {
+    // Prevent simultaneous refresh requests.
+    if (activeSessionRefreshPromise) {
+        return activeSessionRefreshPromise;
     }
+
+    activeSessionRefreshPromise = (async () => {
+        try {
+            const sessionId = localStorage.getItem('sessionId');
+
+            const { data, error } =
+                await supabase.functions.invoke(
+                    'create-active-session',
+                    {
+                        body: {
+                            device_id: getOrCreateDeviceId(),
+                            existing_session_id: sessionId
+                        }
+                    }
+                );
+
+            if (error) throw error;
+
+            if (!data?.session_id) {
+                throw new Error(
+                    'No session_id returned from the server.'
+                );
+            }
+
+            // Save the renewed session ID.
+            localStorage.setItem(
+                'sessionId',
+                data.session_id
+            );
+
+            console.log('Device session refreshed.');
+
+            return data.session_id;
+
+        } catch (error) {
+            console.warn(
+                'Device session refresh failed:',
+                error
+            );
+
+            // A temporary failure must not clear the
+            // existing session or force automatic logout.
+            return null;
+        }
+    })();
 
     try {
-        const { error } = await supabase.functions.invoke('create-active-session', {
-            body: {
-                device_id: getOrCreateDeviceId(),
-                existing_session_id: sessionId
-            }
-        });
-
-        if (error) {
-            console.warn('Active session refresh failed:', error.message);
-        }
-    } catch (error) {
-        console.warn('Active session refresh exception:', error);
+        return await activeSessionRefreshPromise;
+    } finally {
+        activeSessionRefreshPromise = null;
     }
 }
-
 
 function startActiveSessionHeartbeat() {
     // Refresh once immediately after page validation
