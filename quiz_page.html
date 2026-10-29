@@ -2114,9 +2114,154 @@ const difficultyLevels = ['Very Easy', 'Easy', 'Moderate', 'Difficult', 'Very Di
 
         // --- Highlight State (NEW) ---
 // --- Highlight State (NEW) ---
+
 let highlightModeOn = false;
 let selectedHighlightClass = 'hl-yellow'; // current color
 let highlightListenersBound = false;
+
+// =======================================================
+// QUIZARD — PERSISTENT QUESTION HIGHLIGHTS
+// Saves highlights separately for each user and question.
+// Works with question text, choices, and explanations.
+// =======================================================
+
+let lastRenderedHighlightQuestionId = null;
+let highlightSaveTimer = null;
+
+function highlightStorageKey(questionId) {
+  if (!currentUserId || !questionId) return null;
+  return `quizardHighlightsV1:${currentUserId}:${questionId}`;
+}
+
+function captureHighlightText(element) {
+  if (!element || !element.querySelector('.hl-mark')) return null;
+
+  return {
+    text: element.textContent,
+    html: element.innerHTML
+  };
+}
+
+function saveCurrentQuestionHighlights() {
+  const key = highlightStorageKey(lastRenderedHighlightQuestionId);
+  if (!key) return;
+
+  let previous = {};
+
+  try {
+    previous = JSON.parse(localStorage.getItem(key) || '{}') || {};
+  } catch (_) {
+    // Ignore invalid previously saved data.
+  }
+
+  const explanationVisible = dom.explanationDisplay &&
+    !dom.explanationDisplay.classList.contains('hidden');
+
+  const saved = {
+    question: captureHighlightText(dom.questionDisplay),
+
+    options: Array.from(
+      dom.optionsContainer.querySelectorAll('label .option-text')
+    ).map(captureHighlightText),
+
+    explanation: explanationVisible
+      ? captureHighlightText(dom.explanationText)
+      : (previous.explanation || null)
+  };
+
+  try {
+    if (
+      saved.question ||
+      saved.options.some(Boolean) ||
+      saved.explanation
+    ) {
+      localStorage.setItem(key, JSON.stringify(saved));
+    } else {
+      localStorage.removeItem(key);
+    }
+  } catch (error) {
+    console.warn('Could not save highlights on this device:', error);
+  }
+}
+
+function restoreQuestionHighlights(questionId) {
+  const key = highlightStorageKey(questionId);
+  if (!key) return;
+
+  let saved;
+
+  try {
+    saved = JSON.parse(localStorage.getItem(key) || 'null');
+  } catch (_) {
+    return;
+  }
+
+  if (!saved) return;
+
+  function restoreText(element, snapshot) {
+    if (
+      !element ||
+      !snapshot ||
+      typeof snapshot.html !== 'string' ||
+      typeof snapshot.text !== 'string'
+    ) {
+      return;
+    }
+
+    // Never replace updated or different question content.
+    if (element.textContent !== snapshot.text) return;
+
+    // Preserve any highlights already present on screen.
+    if (element.querySelector('.hl-mark')) return;
+
+    element.innerHTML = snapshot.html;
+  }
+
+  // Restore question highlights.
+  restoreText(dom.questionDisplay, saved.question);
+
+  // Restore answer-choice highlights.
+  const optionTexts = dom.optionsContainer.querySelectorAll(
+    'label .option-text'
+  );
+
+  optionTexts.forEach((element, index) => {
+    restoreText(element, saved.options?.[index]);
+  });
+
+  // Restore explanation highlights only when visible.
+  if (
+    dom.explanationDisplay &&
+    !dom.explanationDisplay.classList.contains('hidden')
+  ) {
+    restoreText(dom.explanationText, saved.explanation);
+  }
+}
+
+function scheduleHighlightSave() {
+  if (!highlightModeOn || !lastRenderedHighlightQuestionId) return;
+
+  clearTimeout(highlightSaveTimer);
+
+  // Wait until existing desktop/mobile highlight handlers finish.
+  highlightSaveTimer = setTimeout(
+    saveCurrentQuestionHighlights,
+    80
+  );
+}
+
+// Save after mouse, finger, or stylus highlighting.
+document.addEventListener('pointerup', scheduleHighlightSave, true);
+document.addEventListener('mouseup', scheduleHighlightSave, true);
+document.addEventListener('touchend', scheduleHighlightSave, true);
+
+// Save when leaving or refreshing the page.
+window.addEventListener('pagehide', saveCurrentQuestionHighlights);
+
+// =======================================================
+// END PERSISTENT QUESTION HIGHLIGHTS
+// =======================================================
+
 
 // Paint (single-touch / pen / mouse drag)
 let hlPainting = false;
@@ -2442,14 +2587,20 @@ function unhighlightRange(range) {
 
 
 // ---------------- Attach highlight to rendered content ----------------
+
 function attachHighlightHandlers() {
-  // mark targets (question, options text, explanation)
+  // Highlight only actual question, option and explanation text.
   dom.questionDisplay?.classList.add('hl-target');
-  dom.explanationDisplay?.classList.add('hl-target');
+
+  // The explanation card also contains a title and images.
+  // Target its readable text rather than the entire card.
+  dom.explanationDisplay?.classList.remove('hl-target');
+  dom.explanationText?.classList.add('hl-target');
 
   dom.optionsContainer?.querySelectorAll('label .option-text')?.forEach(span => {
     span.classList.add('hl-target');
   });
+
 
   // bind global listeners only once
   if (highlightListenersBound) return;
@@ -2690,8 +2841,85 @@ if (!r.collapsed) {
   sel?.removeAllRanges?.();
 };
 
+
 document.addEventListener('pointerup', endPaint, { passive: true });
 document.addEventListener('pointercancel', endPaint, { passive: true });
+
+// --- MOBILE EXPLANATION HIGHLIGHT FIX ---
+// A short tap highlights one word in the explanation.
+// Vertical scrolling and desktop highlighting stay unchanged.
+
+let mobileExplanationTap = null;
+
+dom.explanationText?.addEventListener('pointerdown', (event) => {
+  if (!highlightModeOn) return;
+  if (selectedHighlightClass === 'hl-none') return;
+  if (event.pointerType !== 'touch') return;
+  if (event.isPrimary === false) return;
+
+  mobileExplanationTap = {
+    pointerId: event.pointerId,
+    x: event.clientX,
+    y: event.clientY
+  };
+}, { passive: true });
+
+document.addEventListener('pointerup', (event) => {
+  if (!mobileExplanationTap) return;
+
+  const tap = mobileExplanationTap;
+  mobileExplanationTap = null;
+
+  if (event.pointerId !== tap.pointerId) return;
+  if (!highlightModeOn) return;
+  if (selectedHighlightClass === 'hl-none') return;
+
+  const dx = event.clientX - tap.x;
+  const dy = event.clientY - tap.y;
+
+  // Ignore scrolling, swiping and dragging.
+  if (Math.hypot(dx, dy) > 12) return;
+
+  const explanation = dom.explanationText;
+  if (!explanation || !explanation.isConnected) return;
+
+  // Highlight only when the finger finishes on explanation text.
+  const hitElement = document.elementFromPoint(
+    event.clientX,
+    event.clientY
+  );
+
+  if (!hitElement || !explanation.contains(hitElement)) return;
+
+  // Find the word directly underneath the finger.
+  const wordRange = getWordRangeAtPoint(
+    event.clientX,
+    event.clientY
+  );
+
+  if (!wordRange || wordRange.collapsed) return;
+
+  // Ensure that the selected word belongs to the explanation.
+  const startNode = wordRange.startContainer;
+  const endNode = wordRange.endContainer;
+
+  if (!explanation.contains(startNode)) return;
+  if (!explanation.contains(endNode)) return;
+
+  try {
+    applyRangeHighlight(wordRange);
+  } catch (error) {
+    console.warn(
+      'Mobile explanation highlighting failed:',
+      error
+    );
+  }
+}, { passive: true });
+
+document.addEventListener('pointercancel', () => {
+  mobileExplanationTap = null;
+}, { passive: true });
+
 
 
   // Unhighlight button in the modal
@@ -3527,11 +3755,19 @@ optionElement.dataset.optionIndex = index;
         dom.submitAnswerButtonMobile.classList.remove('hidden');
     }
 
+
   updateFunctionalIconsState();
-updateProgressBar();
-updateDotStyles();
-attachHighlightHandlers();
+  updateProgressBar();
+  updateDotStyles();
+  attachHighlightHandlers();
+
+  // Remember which question is currently displayed.
+  lastRenderedHighlightQuestionId = question.id;
+
+  // Restore its saved highlights after the HTML is rebuilt.
+  restoreQuestionHighlights(question.id);
 }
+
 
         
         function updateFunctionalIconsState() {
@@ -3680,10 +3916,14 @@ options.forEach((label, index) => {
         ? question.explanationImageUrls
         : (question.explanationImageUrl ? [question.explanationImageUrl] : []);
 
-    renderImageCarousel(explanationImageContainer, explanationImages, 'Explanation image');
 
+    renderImageCarousel(explanationImageContainer, explanationImages, 'Explanation image');
     dom.explanationDisplay.classList.remove('hidden');
+
+    // Restore highlighted explanation text after it has been rendered.
+    restoreQuestionHighlights(question.id);
 }
+
 // --- Submit answer without auto-opening the result modal ---
 function handleSubmitAnswer() {
     const selectedOption = dom.optionsContainer.querySelector('input[name="quizOption"]:checked');
@@ -3885,11 +4125,19 @@ const CHUNK_SIZE = 5; // Load 5 questions at a time to keep it lightning fast
     });
 }
 
+
 async function jumpToQuestion(index) {
     if (index >= 0 && index < quizData.questions.length) {
+
+        // Save highlights belonging to the question being left.
+        // This works with both mobile and desktop navigation.
+        saveCurrentQuestionHighlights();
+
+        // Now change to the requested question.
         currentQuestionIndex = index;
-        
+
         // If it's a massive quiz and the question isn't loaded yet, show a loader
+
         if (!quizData.questions[index].question) {
             dom.questionDisplay.innerHTML = '<div class="animate-pulse text-purple-600 font-bold p-4 text-center">Loading question data.</div>';
             await ensureSlidingWindow(index);
