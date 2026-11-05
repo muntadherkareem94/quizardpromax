@@ -259,19 +259,22 @@ dialog.innerHTML = `
 
         
 <div class="qza-cancel-panel">
-    <strong>Cancel Active Subscriptions</strong>
+ 
+<strong>Cancel Active & Scheduled Subscriptions</strong>
 
-    <p>
-        Immediately expire the user's active Premium
-        and Platinum subscriptions and remove manual
-        plan overrides. Their payment history will
-        remain unchanged.
+<p>
+    Reset this user to Free by expiring all currently
+    active subscriptions and future scheduled renewals,
+    including Premium and Platinum.
 
-        This is intended for sandbox resets and
-        authorized administrative cancellations.
-        It does not issue a refund or cancel
-        future recurring payments.
-    </p>
+    Manual plan overrides will also be cleared.
+    Qi payment transactions will be preserved.
+
+    This action does not issue refunds or cancel
+    payment gateway recurring billing agreements.
+    Use it for sandbox testing or authorized cancellations.
+</p>
+
 
     <button
         type="button"
@@ -619,7 +622,9 @@ async function cancelUserSubscriptions() {
 
         setStatus(
             'Reset completed successfully. ' +
-            `${data.expired_count} active subscription(s) expired. ` +
+            
+`${data.expired_count} active or scheduled subscription(s) expired. ` +
+
             `${data.overrides_removed} manual override(s) removed. ` +
             'The user can now refresh Dashboard and ' +
             'make a new sandbox purchase.'
