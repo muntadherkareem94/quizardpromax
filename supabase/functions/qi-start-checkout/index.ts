@@ -138,15 +138,21 @@ Deno.serve(async (req) => {
       }, 400);
     }
 
-    const callback = new URL(returnUrl);
+  
+const requestId = crypto.randomUUID();
 
-    if (callback.protocol !== 'https:') {
-      return respond({
-        error: 'Secure return URL required.'
-      }, 500);
-    }
+const callback = new URL(returnUrl);
 
-    const requestId = crypto.randomUUID();
+if (callback.protocol !== 'https:') {
+  return respond({
+    error: 'Secure return URL required.'
+  }, 500);
+}
+
+// Include our own payment reference in the return URL.
+// Never use this URL parameter as proof of successful payment.
+callback.searchParams.set('requestId', requestId);
+
 
     // Record the intended transaction before contacting Qi.
     const insert = await admin.from('qz_card_checkouts')

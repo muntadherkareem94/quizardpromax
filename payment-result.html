@@ -1,0 +1,461 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Quizard | Payment Status</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px 14px;
+    font-family: Inter, Arial, sans-serif;
+    background: linear-gradient(145deg,#e9f5fa,#f6f9fc);
+    color: #17344b;
+}
+
+.panel {
+    width: 100%;
+    max-width: 610px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 14px 50px #123a551c;
+    border: 1px solid #dceaf0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.mark {
+    width: 34px;
+    height: 34px;
+    background: #218fb3;
+    color: white;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+}
+
+.pill {
+    display: inline-block;
+    font-size: 11px;
+    padding: 5px 10px;
+    background: #eff5f9;
+    border-radius: 20px;
+    color: #566f82;
+    margin-bottom: 12px;
+}
+
+.indicator {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #edf4fa;
+    color: #557c97;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.indicator.paid {
+    color: #138151;
+    background: #e2f8ec;
+}
+
+.indicator.failed,
+.indicator.error {
+    color: #bd3d3d;
+    background: #fff0ef;
+}
+
+h1 {
+    font-size: 26px;
+    margin: 0 0 10px;
+}
+
+p {
+    line-height: 1.55;
+    color: #5a7184;
+}
+
+.receipt {
+    background: #f4f8fb;
+    border: 1px solid #e1edf3;
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 22px 0;
+}
+
+.receipt[hidden] {
+    display: none;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid #e0e9ef;
+    font-size: 14px;
+}
+
+.detail:last-child {
+    border-bottom: none;
+}
+
+.detail span:first-child {
+    color: #667c8e;
+}
+
+.detail span:last-child {
+    font-weight: 700;
+    text-align: right;
+    overflow-wrap: anywhere;
+    max-width: 70%;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #2489aa;
+    background: #2489aa;
+    color: white;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn.secondary {
+    background: #fff;
+    color: #2489aa;
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: wait;
+}
+
+.footnote {
+    margin: 18px 0 0;
+    font-size: 12px;
+}
+
+@media (max-width: 500px) {
+    .panel { padding: 22px 18px; }
+    h1 { font-size: 23px; }
+    .actions { flex-direction: column; }
+}
+</style>
+</head>
+
+<body>
+
+<main class="panel">
+
+    <div class="brand">
+        <span class="mark">Q</span>
+        Quizard Pro Max
+    </div>
+
+    <span class="pill">
+        Qi Sandbox · Test transaction
+    </span>
+
+    <div id="indicator" class="indicator"
+         aria-hidden="true">…</div>
+
+    <h1 id="heading">Verifying your payment</h1>
+
+    <p id="description" role="status" aria-live="polite">
+        Checking the payment record in Quizard.
+        This may take a few moments.
+    </p>
+
+    <div class="receipt" id="receipt" hidden>
+
+        <div class="detail">
+            <span>Plan</span>
+            <span id="rPlan">—</span>
+        </div>
+
+        <div class="detail">
+            <span>Specialty</span>
+            <span id="rSpecialty">—</span>
+        </div>
+
+        <div class="detail">
+            <span>Duration</span>
+            <span id="rMonths">—</span>
+        </div>
+
+        <div class="detail">
+            <span>Amount</span>
+            <span id="rAmount">—</span>
+        </div>
+
+        <div class="detail">
+            <span>Payment status</span>
+            <span id="rStatus">—</span>
+        </div>
+
+        <div class="detail">
+            <span>Reference</span>
+            <span id="rReference">—</span>
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <a class="btn" href="dashboard.html">
+            Go to Dashboard
+        </a>
+
+        <button class="btn secondary"
+                id="checkAgain"
+                type="button">
+            Check payment again
+        </button>
+    </div>
+
+    <p class="footnote">
+        Only a verified server-side payment can activate
+        a subscription. The browser redirect alone is not
+        confirmation. Keep your transaction reference
+        if you need payment support.
+    </p>
+
+</main>
+
+<script type="module">
+
+import { supabase } from './supabaseClient.js';
+
+const $ = id => document.getElementById(id);
+
+const query = new URLSearchParams(window.location.search);
+
+const requestId =
+    query.get('requestId') ||
+    query.get('request_id');
+
+const returnedPaymentId =
+    query.get('paymentId') ||
+    query.get('payment_id');
+
+const isUuid = value =>
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+        .test(value || '');
+
+let checking = false;
+
+function state(kind, title, description) {
+
+    $('indicator').className = 'indicator ' + kind;
+
+    $('indicator').textContent =
+        kind === 'paid' ? '✓' :
+        (kind === 'failed' || kind === 'error') ? '×' : '…';
+
+    $('heading').textContent = title;
+    $('description').textContent = description;
+}
+
+function showReceipt(row) {
+
+    $('receipt').hidden = false;
+
+    $('rPlan').textContent =
+        row.plan_slug === 'platinum' ? 'Platinum' : 'Premium';
+
+    $('rSpecialty').textContent = row.speciality;
+
+    $('rMonths').textContent = row.months + ' months';
+
+    $('rAmount').textContent =
+        Number(row.amount_iqd).toLocaleString('en-IQ') +
+        ' ' + row.currency;
+
+    $('rStatus').textContent = row.status.toUpperCase();
+
+    $('rReference').textContent = row.request_id;
+}
+
+function showPaymentStatus(row) {
+
+    showReceipt(row);
+
+    if (row.status === 'paid') {
+
+        state(
+            'paid',
+            'Payment confirmed',
+            'Your payment was verified by Quizard. ' +
+            'Your purchase has been recorded. ' +
+            'Open the Dashboard to see your current access.'
+        );
+
+        return true;
+    }
+
+    if (row.status === 'failed') {
+
+        state(
+            'failed',
+            'Payment not confirmed',
+            'This transaction did not activate a subscription. ' +
+            'If your card appears charged, contact support ' +
+            'with your transaction reference.'
+        );
+
+        return true;
+    }
+
+    state(
+        'pending',
+        'Payment verification in progress',
+        'We are waiting for confirmation from the payment backend. ' +
+        'Please do not submit a second purchase yet.'
+    );
+
+    return false;
+}
+
+async function checkPayment() {
+
+    if (checking) return;
+
+    checking = true;
+    $('checkAgain').disabled = true;
+
+    try {
+
+        if (!isUuid(requestId)) {
+            throw new Error(
+                'The payment reference is missing or invalid. ' +
+                'Return to Dashboard to check your account.'
+            );
+        }
+
+        const {
+            data: auth,
+            error: authError
+        } = await supabase.auth.getUser();
+
+        if (authError || !auth?.user) {
+            throw new Error(
+                'Please sign in to Quizard on this website ' +
+                'with the account used for your purchase, ' +
+                'then reopen this payment-result link.'
+            );
+        }
+
+        // Read-only verification against the authenticated
+        // user's payment records protected by Supabase RLS.
+
+        for (let attempt = 0; attempt < 20; attempt++) {
+
+            const {
+                data: row,
+                error
+            } = await supabase
+                .from('qz_card_checkouts')
+                .select(
+                    'request_id,user_id,provider_payment_id,' +
+                    'plan_slug,speciality,months,amount_iqd,' +
+                    'currency,status'
+                )
+                .eq('request_id', requestId)
+                .eq('user_id', auth.user.id)
+                .maybeSingle();
+
+            if (error) throw error;
+
+            if (!row) {
+                throw new Error(
+                    'Payment record not found for this account. ' +
+                    'Sign in with the account that initiated checkout.'
+                );
+            }
+
+            if (
+                returnedPaymentId &&
+                row.provider_payment_id &&
+                returnedPaymentId !== row.provider_payment_id
+            ) {
+                throw new Error(
+                    'Payment reference mismatch. ' +
+                    'Do not make another payment; contact support.'
+                );
+            }
+
+            // Only the database-verified payment status
+            // determines the displayed result.
+            if (showPaymentStatus(row)) return;
+
+            // Give the backend time to receive and
+            // process the Qi payment notification.
+            if (attempt < 19) {
+                await new Promise(resolve =>
+                    setTimeout(resolve, 3000)
+                );
+            }
+        }
+
+        state(
+            'pending',
+            'Still waiting for confirmation',
+            'No final status has been recorded yet. ' +
+            'You can check again later. Do not buy the ' +
+            'same plan twice until this payment is resolved.'
+        );
+
+    } catch (error) {
+
+        state(
+            'error',
+            'Unable to verify payment',
+            error?.message ||
+                'Could not check the payment right now.'
+        );
+
+    } finally {
+
+        checking = false;
+        $('checkAgain').disabled = false;
+    }
+}
+
+$('checkAgain').addEventListener('click', checkPayment);
+
+checkPayment();
+
+</script>
+</body>
+</html>
