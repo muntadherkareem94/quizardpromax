@@ -1,5 +1,8 @@
 
+
 import { supabase } from './supabaseClient.js';
+import './standalone-book-checkout.js';
+
 
 // QUIZARD SUBSCRIPTION MODAL
 // Opens over dashboard.html without leaving the page.
@@ -179,22 +182,37 @@ function createSubscriptionModal() {
         }
 
     
+
 #qz-sub-overlay .qz-cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
-    align-items: start;
+    align-items: stretch;
 }
-
 
 #qz-sub-overlay .qz-plan {
     border: 1px solid #dce7ee;
     border-radius: 15px;
     padding: 21px;
     min-width: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
+
+/* Keep included/not-included text and buttons at the bottom */
+#qz-sub-overlay .qz-plan > .qz-included,
+#qz-sub-overlay .qz-plan > .qz-not-included {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+#qz-sub-overlay .qz-plan > .qz-purchase {
+    margin-top: 10px;
+    min-height: 46px;
+    flex-shrink: 0;
+}
+
 
 #qz-sub-overlay .qz-plan.free {
     border: 2px solid #48a868;
@@ -989,11 +1007,13 @@ ${purchasable
                     ${formatPrice(selectedRule.standalone_price_iqd)}
                 </div>
 
-                <button type="button"
-                        class="qz-purchase"
-                        data-qz-action="book">
-                    Request Individual Purchase
-                </button>
+          
+<button type="button"
+        class="qz-purchase"
+        data-qz-buy-book="${escapeHtml(currentBookId)}">
+    Buy This Book — ${formatPrice(selectedRule.standalone_price_iqd)}
+</button>
+
             </div>
         `;
     } else {

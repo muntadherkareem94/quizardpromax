@@ -200,20 +200,24 @@ p {
 
     <div class="receipt" id="receipt" hidden>
 
-        <div class="detail">
-            <span>Plan</span>
-            <span id="rPlan">—</span>
-        </div>
+
+<div class="detail">
+    <span id="rProductLabel">Plan</span>
+    <span id="rPlan">—</span>
+</div>
+
 
         <div class="detail">
             <span>Specialty</span>
             <span id="rSpecialty">—</span>
         </div>
 
-        <div class="detail">
-            <span>Duration</span>
-            <span id="rMonths">—</span>
-        </div>
+  
+<div class="detail">
+    <span id="rDurationLabel">Duration</span>
+    <span id="rMonths">—</span>
+</div>
+
 
         <div class="detail">
             <span>Amount</span>
@@ -287,16 +291,31 @@ function state(kind, title, description) {
     $('description').textContent = description;
 }
 
-function showReceipt(row) {
 
+function showReceipt(row) {
     $('receipt').hidden = false;
 
-    $('rPlan').textContent =
-        row.plan_slug === 'platinum' ? 'Platinum' : 'Premium';
+    const isBook = row.kind === 'book';
+
+    $('rProductLabel').textContent =
+        isBook ? 'Book' : 'Plan';
+
+    $('rDurationLabel').textContent =
+        isBook ? 'Access' : 'Duration';
+
+    $('rPlan').textContent = isBook
+        ? (row.book_title || 'Individual Book')
+        : (
+            row.plan_slug === 'platinum'
+                ? 'Platinum'
+                : 'Premium'
+        );
 
     $('rSpecialty').textContent = row.speciality;
 
-    $('rMonths').textContent = row.months + ' months';
+    $('rMonths').textContent = isBook
+        ? 'Individual book access'
+        : row.months + ' months';
 
     $('rAmount').textContent =
         Number(row.amount_iqd).toLocaleString('en-IQ') +
@@ -306,6 +325,7 @@ function showReceipt(row) {
 
     $('rReference').textContent = row.request_id;
 }
+
 
 function showPaymentStatus(row) {
 
@@ -329,7 +349,9 @@ function showPaymentStatus(row) {
         state(
             'failed',
             'Payment not confirmed',
-            'This transaction did not activate a subscription. ' +
+           
+'This transaction did not activate the purchased product. ' +
+
             'If your card appears charged, contact support ' +
             'with your transaction reference.'
         );
@@ -386,11 +408,13 @@ async function checkPayment() {
                 error
             } = await supabase
                 .from('qz_card_checkouts')
-                .select(
-                    'request_id,user_id,provider_payment_id,' +
-                    'plan_slug,speciality,months,amount_iqd,' +
-                    'currency,status'
-                )
+
+.select(
+    'request_id,user_id,provider_payment_id,' +
+    'kind,book_id,plan_slug,speciality,months,' +
+    'amount_iqd,currency,status'
+)
+
                 .eq('request_id', requestId)
                 .eq('user_id', auth.user.id)
                 .maybeSingle();
@@ -415,9 +439,24 @@ async function checkPayment() {
                 );
             }
 
-            // Only the database-verified payment status
-            // determines the displayed result.
-            if (showPaymentStatus(row)) return;
+
+// Resolve the purchased book's title for the receipt.
+// The displayed title is informational only.
+if (row.kind === 'book' && row.book_id) {
+    const { data: book } = await supabase
+        .from('books')
+        .select('title')
+        .eq('id', row.book_id)
+        .maybeSingle();
+
+    row.book_title =
+        book?.title || 'Individual Book';
+}
+
+// Only the verified database payment record
+// determines the displayed result.
+if (showPaymentStatus(row)) return;
+
 
             // Give the backend time to receive and
             // process the Qi payment notification.
