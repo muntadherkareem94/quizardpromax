@@ -123,10 +123,42 @@ dialog.innerHTML = `
             cursor: pointer;
         }
 
-        #qza-plan-dialog .qza-secondary {
-            background: #e8eff4;
-            color: #294e66;
-        }
+
+#qza-plan-dialog .qza-secondary {
+    background: #e8eff4;
+    color: #294e66;
+}
+
+#qza-plan-dialog .qza-cancel-panel {
+    margin-top: 18px;
+    padding: 15px;
+    border: 1px solid #f0c7c7;
+    border-radius: 12px;
+    background: #fff8f8;
+}
+
+#qza-plan-dialog .qza-cancel-panel strong {
+    font-size: 14px;
+    color: #a82e35;
+}
+
+#qza-plan-dialog .qza-cancel-panel p {
+    font-size: 12px;
+    color: #77555a;
+    line-height: 1.5;
+    margin: 8px 0 12px;
+}
+
+#qza-plan-dialog .qza-danger {
+    width: 100%;
+    background: #bd343e;
+    color: white;
+}
+
+#qza-plan-dialog .qza-danger:hover:not(:disabled) {
+    background: #9f2932;
+}
+
 
         #qza-plan-dialog .qza-btn:disabled {
             opacity: .5;
@@ -225,12 +257,38 @@ dialog.innerHTML = `
                 subscriptions again.
             </div>
 
-            <div id="qzaStatus"
-                 class="qza-status"
-                 role="status"
-                 aria-live="polite">
-                Loading user...
-            </div>
+        
+<div class="qza-cancel-panel">
+    <strong>Cancel Active Subscriptions</strong>
+
+    <p>
+        Immediately expire the user's active Premium
+        and Platinum subscriptions and remove manual
+        plan overrides. Their payment history will
+        remain unchanged.
+
+        This is intended for sandbox resets and
+        authorized administrative cancellations.
+        It does not issue a refund or cancel
+        future recurring payments.
+    </p>
+
+    <button
+        type="button"
+        id="qzaCancelSubscriptions"
+        class="qza-btn qza-danger"
+        disabled>
+        Cancel Subscriptions & Reset to Free
+    </button>
+</div>
+
+<div id="qzaStatus"
+     class="qza-status"
+     role="status"
+     aria-live="polite">
+    Loading user...
+</div>
+
 
             <div class="qza-actions">
                 <button type="button"
@@ -368,8 +426,12 @@ async function openPlanManager(userId) {
     $('qzaCurrent').textContent = '';
     $('qzaPaidPlans').replaceChildren();
 
-    $('qzaSave').disabled = true;
-    setStatus('Loading subscription information...');
+
+$('qzaSave').disabled = true;
+$('qzaCancelSubscriptions').disabled = true;
+
+setStatus('Loading subscription information...');
+
 
     dialog.showModal();
 
@@ -381,9 +443,12 @@ async function openPlanManager(userId) {
             throw Error('Super Admin permission required.');
         }
 
-        await loadUserPlan(userId);
 
-        $('qzaSave').disabled = false;
+await loadUserPlan(userId);
+
+$('qzaSave').disabled = false;
+$('qzaCancelSubscriptions').disabled = false;
+
 
     } catch (error) {
         setStatus('Unable to load user: ' + error.message);
@@ -459,13 +524,124 @@ async function savePlan(event) {
     } catch (error) {
         setStatus('Save failed: ' + error.message);
 
+   
     } finally {
         saving = false;
         $('qzaSave').disabled = false;
+        $('qzaCancelSubscriptions').disabled = false;
+    }
+}
+
+// ------------------------------------------
+// Cancel subscriptions and reset user to Free
+// ------------------------------------------
+
+async function cancelUserSubscriptions() {
+    if (saving || !selectedUserId || !currentInfo) {
+        return;
+    }
+
+    const username = String(
+        currentInfo.username || ''
+    ).trim();
+
+    if (!username) {
+        setStatus('Unable to identify this user.');
+        return;
+    }
+
+    const reason =
+        $('qzaReason').value.trim() ||
+        'Sandbox subscription reset';
+
+    if (reason.length < 3 || reason.length > 300) {
+        setStatus(
+            'Enter a reason between 3 and 300 characters.'
+        );
+        return;
+    }
+
+    const confirmation = window.prompt(
+        'Cancel ALL active subscriptions for:\n\n' +
+        username + '\n\n' +
+        'This will:\n' +
+        '- Expire active Premium/Platinum subscriptions\n' +
+        '- Remove manual subscription overrides\n' +
+        '- Reset legacy Premium access\n' +
+        '- Preserve Qi payment history\n\n' +
+        'Type the EXACT username to confirm:'
+    );
+
+    if (confirmation === null) return;
+
+    if (confirmation !== username) {
+        setStatus(
+            'Cancellation aborted: username does not match.'
+        );
+        return;
+    }
+
+    const finalConfirmation = window.confirm(
+        'FINAL CONFIRMATION\n\n' +
+        'Reset ' + username + ' to Free access?\n\n' +
+        'This does not refund or reverse transactions. ' +
+        'It does not cancel recurring gateway charges.'
+    );
+
+    if (!finalConfirmation) return;
+
+    saving = true;
+
+    $('qzaSave').disabled = true;
+    $('qzaCancelSubscriptions').disabled = true;
+
+    setStatus('Cancelling active subscriptions...');
+
+    try {
+        const { data, error } = await supabase.rpc(
+            'qz_admin_cancel_user_subscriptions',
+            {
+                p_user_id: selectedUserId,
+                p_confirm_username: confirmation,
+                p_reason: reason
+            }
+        );
+
+        if (error) throw error;
+
+        if (!data?.plan_info) {
+            throw Error('Server did not return updated user data.');
+        }
+
+        renderUser(data.plan_info);
+
+        $('qzaReason').value = '';
+
+        setStatus(
+            'Reset completed successfully. ' +
+            `${data.expired_count} active subscription(s) expired. ` +
+            `${data.overrides_removed} manual override(s) removed. ` +
+            'The user can now refresh Dashboard and ' +
+            'make a new sandbox purchase.'
+        );
+
+    } catch (error) {
+        console.error('Subscription cancellation:', error);
+
+        setStatus(
+            'Cancellation failed: ' + error.message
+        );
+
+    } finally {
+        saving = false;
+
+        $('qzaSave').disabled = false;
+        $('qzaCancelSubscriptions').disabled = false;
     }
 }
 
 // Delegated click listener works with dynamically loaded user rows.
+
 document.addEventListener('click', event => {
     const button = event.target.closest('.manage-plan-btn');
 
@@ -485,6 +661,14 @@ $('qzaClose').addEventListener('click', () => {
     if (!saving) dialog.close();
 });
 
+
 $('qzaCancel').addEventListener('click', () => {
     if (!saving) dialog.close();
 });
+
+// Dedicated cancellation action
+$('qzaCancelSubscriptions').addEventListener(
+    'click',
+    cancelUserSubscriptions
+);
+
