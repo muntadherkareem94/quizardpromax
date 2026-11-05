@@ -238,22 +238,67 @@ async function loadStoreContent(user, userData) {
     // --- 2. SURGICAL BACKGROUND SYNC ---
     setTimeout(async () => {
         try {
-            const [booksRes, coursesRes, bookPurchasesRes, videoPurchasesRes] = await Promise.all([
-                supabase.from('books').select('*').in('access_level', ['premium', 'purchasable', 'free']),
-                supabase.from('video_courses').select('*').in('access_level', ['premium', 'purchasable', 'free']),
-                supabase.from('user_purchases').select('book_id').eq('user_id', user.id).or('expires_at.is.null,expires_at.gt.now()'),
-                supabase.from('user_video_purchases').select('course_id').eq('user_id', user.id).or('expires_at.is.null,expires_at.gt.now()')
-            ]);
+           
+const [
+    booksRes, coursesRes, accessRes, rulesRes,
+    videoPurchasesRes
+] = await Promise.all([
+    supabase.from('books').select('*').in('access_level', ['premium', 'purchasable', 'free']),
+    supabase.from('video_courses').select('*').in('access_level', ['premium', 'purchasable', 'free']),
+    supabase.rpc('qz_my_book_access'),
+    supabase.from('qz_book_rules').select('book_id,access_mode,standalone_enabled,standalone_price_iqd'),
+    supabase.from('user_video_purchases').select('course_id').eq('user_id', user.id).or('expires_at.is.null,expires_at.gt.now()')
+]);
 
-            if (booksRes.error) throw booksRes.error;
-            if (coursesRes.error) throw coursesRes.error;
+for (const result of [
+    booksRes, coursesRes, accessRes, rulesRes, videoPurchasesRes
+]) {
+    if (result.error) throw result.error;
+}
 
-            const allBooks = booksRes.data.map(item => ({ ...item, type: 'book' }));
-            const allCourses = coursesRes.data.map(item => ({ ...item, type: 'video_course' }));
-            const allItems = [...allBooks, ...allCourses];
+const bookAccessMap = new Map(
+    (accessRes.data || []).map(row => [
+        String(row.book_id), row
+    ])
+);
 
-            const purchasedBookIds = new Set((bookPurchasesRes.data || []).map(p => p.book_id));
-            const purchasedCourseIds = new Set((videoPurchasesRes.data || []).map(p => p.course_id));
+const bookRulesMap = new Map(
+    (rulesRes.data || []).map(row => [
+        String(row.book_id), row
+    ])
+);
+
+const allBooks = (booksRes.data || []).map(item => {
+    const rule = bookRulesMap.get(String(item.id));
+    const configuredTier =
+        rule?.access_mode || item.access_level;
+
+    return {
+        ...item,
+        type: 'book',
+        access_level: configuredTier === 'standalone'
+            ? 'purchasable'
+            : configuredTier,
+        standalone_enabled:
+            rule?.standalone_enabled === true,
+        standalone_price_iqd:
+            rule?.standalone_price_iqd ?? null
+    };
+});
+
+const allCourses = (coursesRes.data || []).map(item => ({
+    ...item,
+    type: 'video_course'
+}));
+
+const allItems = [...allBooks, ...allCourses];
+
+const purchasedCourseIds = new Set(
+    (videoPurchasesRes.data || []).map(p =>
+        String(p.course_id)
+    )
+);
+
 
            const itemsToDisplay = allItems.filter(item => {
                 const userSpecialty = userData.speciality.trim();
@@ -261,11 +306,30 @@ async function loadStoreContent(user, userData) {
                 const matchesLinkedSpecialty = item.linked_specialties && item.linked_specialties.includes(userSpecialty);
                 const userHasSpecialtyAccess = matchesPrimarySpecialty || matchesLinkedSpecialty;
 
-                const isOwned = item.type === 'book' ? purchasedBookIds.has(item.id) : purchasedCourseIds.has(item.id);
-                if (isOwned) return false;
+               
+if (item.type === 'book') {
+    // Use current Supabase entitlements for book ownership.
+    if (
+        item.access_level !== 'free' &&
+        bookAccessMap.get(String(item.id))?.has_access === true
+    ) {
+        return false;
+    }
+} else {
+    // Preserve the existing video-course access system.
+    if (purchasedCourseIds.has(String(item.id))) {
+        return false;
+    }
 
-                const isPremiumUserWithAccess = userData.account_type === 'premium' && item.access_level === 'premium' && userHasSpecialtyAccess;
-                if (isPremiumUserWithAccess) return false;
+    if (
+        userData.account_type === 'premium' &&
+        item.access_level === 'premium' &&
+        userHasSpecialtyAccess
+    ) {
+        return false;
+    }
+}
+
 
                 const isFreeContentInSpecialty = item.access_level === 'free' && userHasSpecialtyAccess;
                 if (isFreeContentInSpecialty) return false;
@@ -310,12 +374,61 @@ function renderStoreItems(itemsToRender, userData) {
         if (item.access_level === 'free') {
             badgeHTML = `<span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">Free</span>`;
             buttonHTML = `<button data-item-id="${item.id}" data-item-type="${item.type}" class="add-free-item-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 text-center">Add to Dashboard</button>`;
-        } else {
-            buttonHTML = `<button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 text-center">Purchase</button>`;
-            if (item.access_level === 'premium') {
-                badgeHTML = `<span class="absolute top-2 right-2 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1"><img src="./images/general/crown.png" class="w-3 h-3">Premium</span>`;
-            }
-        }
+     
+} else if (item.type === 'book') {
+    const canBuyAlone =
+        item.standalone_enabled === true &&
+        Number(item.standalone_price_iqd) > 0;
+
+    const isInPlan =
+        ['premium', 'platinum'].includes(item.access_level);
+
+    const canRequest = canBuyAlone || isInPlan;
+
+    if (canRequest) {
+        const individualPrice = canBuyAlone
+            ? `<p class="px-4 py-2 text-center text-sm font-semibold text-gray-700">Individual book: ${Number(item.standalone_price_iqd).toLocaleString('en-IQ')} IQD</p>`
+            : '';
+
+        buttonHTML = individualPrice +
+            `<button type="button"
+                data-qz-plan-book="${item.id}"
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 text-center">
+                View Plans & Prices
+            </button>`;
+    } else {
+        buttonHTML = `
+            <button type="button" disabled
+                class="w-full bg-gray-400 text-white font-semibold py-3 px-4 text-center cursor-not-allowed">
+                Not for sale
+            </button>`;
+    }
+
+    if (item.access_level === 'premium') {
+        badgeHTML = `
+            <span class="absolute top-2 right-2 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                Premium
+            </span>`;
+    } else if (item.access_level === 'platinum') {
+        badgeHTML = `
+            <span class="absolute top-2 right-2 bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                Platinum
+            </span>`;
+    } else if (item.access_level === 'purchasable') {
+        badgeHTML = `
+            <span class="absolute top-2 right-2 bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                Standalone
+            </span>`;
+    }
+} else {
+    // Video purchases require a separate checkout implementation.
+    buttonHTML = `
+        <button type="button" disabled
+            class="w-full bg-gray-400 text-white font-semibold py-3 px-4 text-center cursor-not-allowed">
+            Video checkout unavailable
+        </button>`;
+}
+
         
         if (item.type === 'video_course') {
             badgeHTML += `<span class="absolute top-2 left-2 bg-indigo-500 text-white text-xs font-bold px-2 py-1 rounded-full">Video Course</span>`;
@@ -551,7 +664,12 @@ dom.storeGrid.addEventListener('click', (e) => {
         handleAddFreeItem(itemId, itemType, button);
     }
 });
+
 </script>
+
+<!-- Shared Premium / Platinum and standalone book purchase popup -->
+<script type="module" src="./subscription-modal.js"></script>
 
 </body>
 </html>
+

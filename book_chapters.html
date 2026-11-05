@@ -761,13 +761,39 @@ dom.customQuizForm.addEventListener('change', (e) => {
 
     // --- END: Added code for Sequential Flow UI ---
 // --- BLAZING FAST LOADER: PROGRESSIVE RENDERING + CACHE FIRST ---
+
 async function loadBookAndChapters() {
+
     if (!bookId || !currentUser) {
-        dom.bookTitle.textContent = "Book Not Found or User Not Logged In";
+        dom.bookTitle.textContent =
+            "Book Not Found or User Not Logged In";
         return;
     }
 
-    const targetMode = new URLSearchParams(window.location.search).get('target') || 'quiz';
+    // Always verify current access before showing cached chapters.
+    const { data: allowed, error: permissionError } =
+        await supabase.rpc('qz_can_access_book', {
+            p_book_id: String(bookId)
+        });
+
+    if (permissionError) {
+        console.error('Book permission check failed:', permissionError);
+        dom.bookTitle.textContent =
+            'Unable to verify book access.';
+        return;
+    }
+
+    if (allowed !== true) {
+        window.location.replace(
+            `plans.html?book=${encodeURIComponent(bookId)}`
+        );
+        return;
+    }
+
+    const targetMode =
+        new URLSearchParams(window.location.search)
+            .get('target') || 'quiz';
+
     const listEl = dom.chaptersList;
 
     // Helper function to paint the UI efficiently
@@ -949,10 +975,36 @@ setTimeout(async () => {
         if (bookRes.error) throw bookRes.error;
         if (chaptersRes.error) throw chaptersRes.error;
 
-        const bData = bookRes.data;
-        const cData = chaptersRes.data || [];
+        
+const bData = bookRes.data;
 
-        const qData = await fetchBookQuestionIndex();
+// This loader has already verified book entitlement using
+// the new subscription system.
+let cData = (chaptersRes.data || []).map(item => ({
+    ...item,
+    has_access: true
+}));
+
+// Compatibility fallback for newer subscriptions that
+// the original chapter-access RPC does not recognize.
+if (cData.length === 0) {
+    const { data: directChapters, error: chapterError } =
+        await supabase
+            .from('chapters')
+            .select('*')
+            .eq('book_id', bookId)
+            .order('chapterNumber');
+
+    if (chapterError) throw chapterError;
+
+    cData = (directChapters || []).map(chapter => ({
+        chapter_data: chapter,
+        has_access: true
+    }));
+}
+
+const qData = await fetchBookQuestionIndex();
+
         const hData = await fetchBookSpecificHistory(qData);
 
         if (bData && cData) {

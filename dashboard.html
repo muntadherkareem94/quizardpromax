@@ -1697,7 +1697,12 @@ function renderVideoCourses(coursesToRender, userData, purchasedCourseIds = new 
         card.innerHTML = `
           ${isLocked ? `
                 <div class="absolute inset-0 flex items-center justify-center z-20">
-                    <a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+                    
+
+
+<a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+
+
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
@@ -1867,7 +1872,12 @@ function renderBooks(booksToRender, userData, bookStats = {}) {
         
     const lockOverlay = isLocked ? `
             <div class="absolute inset-0 flex items-center justify-center z-20">
-                <a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+                
+
+
+<a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+
+
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
@@ -1911,21 +1921,24 @@ function renderBooks(booksToRender, userData, bookStats = {}) {
             </div>
         `;
 
-        card.addEventListener('click', (e) => {
-            if (isLocked) {
-                const alertModal = document.getElementById('customAlertModal');
-                if (alertModal) {
-                    document.getElementById('customAlertTitle').textContent = 'Access Restricted';
-                    document.getElementById('customAlertMessage').textContent = 'This book is locked. Please purchase to unlock.';
-                    alertModal.classList.remove('hidden');
-                } else {
-                    alert("This book is locked.");
-                }
-                return;
-            }
-            if(e.target.tagName === 'CANVAS') return;
-            window.location.href = `book_chapters.html?bookId=${book.id}&title=${encodeURIComponent(book.title)}`;
-        });
+        
+
+card.addEventListener('click', (e) => {
+    if (isLocked) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        window.openSubscriptionModal(book.id);
+        return;
+    }
+
+    if (e.target.tagName === 'CANVAS') return;
+
+    window.location.href =
+        `book_chapters.html?bookId=${book.id}&title=${encodeURIComponent(book.title)}`;
+});
+
+
 
         dom.booksGrid.appendChild(card);
 
@@ -1977,10 +1990,22 @@ dom.booksGrid.addEventListener('click', (e) => {
     const bookItem = allBooks.find(item => item.book_data && item.book_data.id === bookId);
     if (!bookItem) return;
 
+    
     const book = bookItem.book_data;
 
-    // For virtual books (which are single chapters), go directly to the quiz modal. This is correct.
+  
+if (bookItem.has_access !== true) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        window.openSubscriptionModal(book.id);
+        return;
+    }
+
+
+    // Virtual books open the quiz selection modal.
     if (book.isVirtual) {
+
         quizStartContext = { type: 'virtual_chapter', originalBookId: book.originalBookId, chapterId: book.linkedChapterId };
         
         // Ensure the "Custom" button is hidden for virtual chapter quizzes
@@ -3471,7 +3496,12 @@ function renderFlashcardBooks(booksToRender, userData) {
         
         const lockOverlay = isLocked ? `
             <div class="absolute inset-0 flex items-center justify-center z-20">
-                <a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+                
+
+
+<a href="store.html" class="bg-indigo-600/90 p-5 rounded-full text-white shadow-2xl transform transition-transform hover:scale-125 group-hover:scale-110 flex items-center justify-center">
+
+
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                     </svg>
@@ -3505,10 +3535,19 @@ function renderFlashcardBooks(booksToRender, userData) {
         `;
 
         // Notice the "&target=flashcards" added to the URL!
-        card.addEventListener('click', (e) => {
-            if (isLocked) return; // Prevents routing if locked (store link in overlay handles click)
-            window.location.href = `book_chapters.html?bookId=${book.id}&title=${encodeURIComponent(book.title)}&target=flashcards`;
-        });
+     
+card.addEventListener('click', (e) => {
+    if (isLocked) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.openSubscriptionModal(book.id);
+        return;
+    }
+
+    window.location.href =
+        `book_chapters.html?bookId=${encodeURIComponent(book.id)}&title=${encodeURIComponent(book.title)}&target=flashcards`;
+});
+
 
         dom.flashcardsBooksGrid.appendChild(card);
     });
@@ -3752,7 +3791,76 @@ const paintBooksAndVideos = (userData, booksData, rawDisciplines, chaptersData, 
             if (specialtyAdminBtn) specialtyAdminBtn.style.display = 'none';
         }
         
-        allBooks = booksData;
+        
+// Remove duplicate book cards created by merging older
+// dashboard results with the new subscription entitlements.
+// Prefer an accessible copy over a locked duplicate.
+
+const uniqueBooks = [];
+const seenBookIds = new Map();
+const seenBookSignatures = new Map();
+
+for (const item of (booksData || [])) {
+    const book = item.book_data;
+    if (!book) continue;
+
+    const bookId = String(book.id || '').trim();
+
+    // Virtual chapter books represent separate content.
+    // Do not merge them with ordinary book cards.
+    const isVirtual = book.isVirtual === true;
+
+    const signature = isVirtual
+        ? null
+        : [
+            String(book.title || '').trim().toLowerCase(),
+            String(book.image || '').trim().toLowerCase(),
+            String(book.speciality || '').trim().toLowerCase()
+        ].join('|');
+
+    let existingIndex = -1;
+
+    if (bookId && seenBookIds.has(bookId)) {
+        existingIndex = seenBookIds.get(bookId);
+    } else if (
+        signature &&
+        seenBookSignatures.has(signature)
+    ) {
+        existingIndex = seenBookSignatures.get(signature);
+    }
+
+    if (existingIndex >= 0) {
+        const existing = uniqueBooks[existingIndex];
+
+        // Keep the version that has valid access.
+        if (
+            item.has_access === true &&
+            existing.has_access !== true
+        ) {
+            uniqueBooks[existingIndex] = item;
+        }
+
+        if (bookId) {
+            seenBookIds.set(bookId, existingIndex);
+        }
+
+        continue;
+    }
+
+    const index = uniqueBooks.length;
+    uniqueBooks.push(item);
+
+    if (bookId) {
+        seenBookIds.set(bookId, index);
+    }
+
+    if (signature) {
+        seenBookSignatures.set(signature, index);
+    }
+}
+
+allBooks = uniqueBooks;
+
         
         // --- BULLETPROOF MOBILE ALPHABETICAL SORT ---
         let sortedDisciplines = userData.speciality ? rawDisciplines.filter(d => d.speciality === userData.speciality) : rawDisciplines;
@@ -3864,25 +3972,140 @@ setTimeout(async () => {
     try {
         // FAST FETCH: only small/core dashboard data.
         // This is enough to show cards quickly.
-        const [userRes, booksRes, discRes, chaptersRes, videosRes] = await Promise.all([
-            supabase.from('users').select('*').eq('id', user.id).single(),
-            supabase.rpc('get_dashboard_books'),
-            supabase.from('disciplines').select('*').order('name'),
-            supabase.from('chapters').select('*'),
-            supabase.rpc('get_dashboard_video_courses')
-        ]);
+    
+const [
+    userRes,
+    booksRes,
+    discRes,
+    chaptersRes,
+    videosRes,
+    accessRes
+] = await Promise.all([
+    supabase.from('users')
+        .select('*')
+        .eq('id', user.id)
+        .single(),
 
-        if (userRes.error) throw userRes.error;
-        if (booksRes.error) throw booksRes.error;
-        if (discRes.error) throw discRes.error;
-        if (chaptersRes.error) throw chaptersRes.error;
-        if (videosRes.error) throw videosRes.error;
+    supabase.rpc('get_dashboard_books'),
 
-        ud = userRes.data || cUserData || { id: user.id, speciality: null };
-        bd = booksRes.data || [];
-        rd = discRes.data || [];
-        cd = chaptersRes.data || [];
-        vd = videosRes.data || [];
+    supabase.from('disciplines')
+        .select('*')
+        .order('name'),
+
+    supabase.from('chapters').select('*'),
+
+    supabase.rpc('get_dashboard_video_courses'),
+
+    supabase.rpc('qz_my_book_access')
+]);
+
+if (userRes.error) throw userRes.error;
+if (booksRes.error) throw booksRes.error;
+if (discRes.error) throw discRes.error;
+if (chaptersRes.error) throw chaptersRes.error;
+if (videosRes.error) throw videosRes.error;
+if (accessRes.error) throw accessRes.error;
+
+const accessMap = new Map(
+    (accessRes.data || []).map(row => [
+        String(row.book_id),
+        row
+    ])
+);
+
+ud = userRes.data || cUserData || {
+    id: user.id,
+    speciality: null
+};
+
+bd = (booksRes.data || []).map(item => {
+    if (!item.book_data) return item;
+
+    const id = String(
+        item.book_data.originalBookId ||
+        item.book_data.id
+    );
+
+    const entitlement = accessMap.get(id);
+
+    return {
+        ...item,
+        has_access: entitlement
+            ? entitlement.has_access === true
+            : false,
+        access_mode: entitlement?.access_mode || null
+    };
+});
+
+
+rd = discRes.data || [];
+cd = chaptersRes.data || [];
+vd = videosRes.data || [];
+
+// Include newly entitled books omitted by the older dashboard RPC.
+const displayedBookIds = new Set(
+    bd.filter(item => item.book_data).map(item =>
+        String(item.book_data.originalBookId || item.book_data.id)
+    )
+);
+
+
+// Load all books assigned to the user's subscription specialty,
+// even when their original book specialty is different.
+const accountSpecialty = String(ud.speciality || '').trim();
+
+let specialtyBookIds = [];
+
+if (accountSpecialty) {
+    const { data: specialtyBooks, error: specialtyError } =
+        await supabase
+            .from('qz_specialty_plan_books')
+            .select('book_id')
+            .eq('speciality', accountSpecialty);
+
+    if (specialtyError) throw specialtyError;
+
+    specialtyBookIds = (specialtyBooks || []).map(
+        item => String(item.book_id)
+    );
+}
+
+// Combine books assigned to the user's specialty with
+// books already entitled through purchases or subscriptions.
+const wantedBookIds = new Set([
+    ...specialtyBookIds,
+
+    ...(accessRes.data || [])
+        .filter(item => item.has_access === true)
+        .map(item => String(item.book_id))
+]);
+
+const missingBookIds = [...wantedBookIds].filter(
+    id => !displayedBookIds.has(id)
+);
+
+if (missingBookIds.length > 0) {
+    const { data: additionalBooks, error: extraBooksError } =
+        await supabase
+            .from('books')
+            .select('*')
+            .in('id', missingBookIds);
+
+    if (extraBooksError) throw extraBooksError;
+
+    (additionalBooks || []).forEach(book => {
+        const entitlement = accessMap.get(String(book.id));
+
+        bd.push({
+            book_data: book,
+            has_access: entitlement?.has_access === true,
+            access_mode: entitlement?.access_mode || null
+        });
+    });
+}
+
+
+
 
         // Paint immediately with no heavy stats.
         // Cards and flashcards appear fast; progress can update later.
@@ -3997,5 +4220,9 @@ window.addEventListener('appinstalled', () => {
 
 
     </script>
+
+<!-- Quizard Premium / Platinum Subscription Popup -->
+<script type="module" src="./subscription-modal.js"></script>
+
 </body>
 </html>

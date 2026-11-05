@@ -1,0 +1,1283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quizard | Subscription Administration</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: #eef5f9;
+    color: #172c43;
+}
+header {
+    background: #fff;
+    border-bottom: 1px solid #dce6ef;
+    padding: 20px max(20px, calc((100% - 1200px)/2));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+header h1 { margin: 0; font-size: 22px; }
+header a { color: #287ca4; text-decoration: none; }
+main { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+h2 { font-size: 22px; margin: 0 0 18px; }
+h3 { margin: 0 0 14px; }
+.panel {
+    background: #fff;
+    border: 1px solid #dce6ef;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 16px #18354a0a;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+.plan {
+    padding: 22px;
+    border: 1px solid #dde7ee;
+    border-radius: 14px;
+}
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 14px 0 6px;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd9e3;
+    border-radius: 8px;
+    background: white;
+    font: inherit;
+}
+input[type=checkbox] { width: auto; }
+.checkbox {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 15px 0;
+}
+.checkbox label { margin: 0; }
+button {
+    padding: 11px 18px;
+    color: white;
+    border: 0;
+    border-radius: 9px;
+    background: #2388ad;
+    font-weight: 700;
+    cursor: pointer;
+}
+button:hover { filter: brightness(.92); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.secondary { background: #52647c; }
+.danger { background: #be4444; }
+table { width: 100%; border-collapse: collapse; }
+th, td {
+    border-bottom: 1px solid #e5edf3;
+    padding: 13px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 14px;
+}
+th { background: #f4f8fb; }
+
+.table-wrap { overflow-x: auto; }
+.small { font-size: 12px; color: #66788a; }
+
+.book-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.book-stat {
+    background: #f1f7fa;
+    border: 1px solid #dce8ef;
+    border-radius: 12px;
+    padding: 17px;
+    text-align: center;
+}
+
+.book-stat strong {
+    display: block;
+    font-size: 27px;
+    color: #173f59;
+    margin-bottom: 5px;
+}
+
+.book-stat span {
+    font-size: 12px;
+    color: #647a8c;
+    font-weight: 600;
+}
+
+.book-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.book-controls input[type="search"] {
+    flex: 1 1 260px;
+}
+
+.book-controls select {
+    flex: 0 1 220px;
+}
+
+.bulk-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bulk-controls select {
+    width: auto;
+    min-width: 220px;
+}
+
+.bulk-controls label {
+    margin: 0;
+}
+
+.book-preview {
+    background: #f4f8fb;
+    padding: 14px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.book-preview p {
+    margin: 7px 0;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+#booksBody tr.book-dirty {
+    background: #fff8e5;
+}
+
+#booksBody .edit-marker {
+    display: inline-block;
+    padding: 3px 7px;
+    margin-left: 8px;
+    background: #fce4a2;
+    color: #75510f;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#booksBody .book-mode {
+    min-width: 195px;
+}
+
+#booksBody .book-price {
+    min-width: 145px;
+    max-width: 185px;
+}
+
+#booksBody .book-select,
+#booksBody .book-sale,
+#selectVisibleBooks {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+#booksBody td:nth-child(2) {
+    min-width: 220px;
+}
+
+.book-footer {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.book-warning {
+    padding: 13px 16px;
+    border-left: 4px solid #d49b36;
+    background: #fff9ec;
+    color: #79581d;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+#status {
+    padding: 14px 20px;
+    background: #e1f2fb;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+@media(max-width: 760px) {
+    .grid { grid-template-columns: 1fr; }
+    header { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Quizard | Subscription Administration</h1>
+    <a href="admin_dashboard.html">Back to Admin Panel</a>
+</header>
+
+<main>
+    <div id="status">Checking administrator access...</div>
+
+    <div id="adminContent" hidden>
+
+        <section class="panel">
+            <h2>Subscription Plans & Pricing</h2>
+            <p class="small">
+                All prices are in Iraqi dinars (IQD).
+                Enable only the subscription durations you wish to sell.
+            </p>
+
+            <div class="grid">
+                <div class="plan">
+                    <h3>Premium Plan</h3>
+                    <label>Plan title</label>
+                    <input id="title-premium">
+                    <label>Description</label>
+                    <textarea id="description-premium" rows="3"></textarea>
+                    <div class="checkbox">
+                        <input type="checkbox" id="enabled-premium">
+                        <label for="enabled-premium">Plan available</label>
+                    </div>
+                    <label>Quarterly price (3 months)</label>
+                    <input type="number" id="price-premium-3" min="0">
+                    <div class="checkbox">
+                        <input type="checkbox" id="active-premium-3">
+                        <label for="active-premium-3">Enable quarterly</label>
+                    </div>
+                    <label>Semiannual price (6 months)</label>
+                    <input type="number" id="price-premium-6" min="0">
+                    <div class="checkbox">
+                        <input type="checkbox" id="active-premium-6">
+                        <label for="active-premium-6">Enable semiannual</label>
+                    </div>
+                    <label>Annual price (12 months)</label>
+                    <input type="number" id="price-premium-12" min="0">
+                    <div class="checkbox">
+                        <input type="checkbox" id="active-premium-12">
+                        <label for="active-premium-12">Enable annual</label>
+                    </div>
+                </div>
+
+                <div class="plan">
+                    <h3>Platinum Plan</h3>
+                    <label>Plan title</label>
+                    <input id="title-platinum">
+                    <label>Description</label>
+                    <textarea id="description-platinum" rows="3"></textarea>
+                    <div class="checkbox">
+                        <input type="checkbox" id="enabled-platinum">
+                        <label for="enabled-platinum">Plan available</label>
+                    </div>
+                    <label>Quarterly price (3 months)</label>
+                    <input type="number" id="price-platinum-3" min="0">
+                    <div class="checkbox">
+                        <input type="checkbox" id="active-platinum-3">
+                        <label for="active-platinum-3">Enable quarterly</label>
+                    </div>
+                    <label>Semiannual price (6 months)</label>
+                    <input type="number" id="price-platinum-6" min="0">
+                    <div class="checkbox">
+                        <input type="checkbox" id="active-platinum-6">
+                        <label for="active-platinum-6">Enable semiannual</label>
+                    </div>
+                    <label>Annual price (12 months)</label>
+                    <input type="number" id="price-platinum-12" min="0">
+                    <div class="checkbox">
+                        <input type="checkbox" id="active-platinum-12">
+                        <label for="active-platinum-12">Enable annual</label>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top:18px">
+                <button id="savePlans">Save Plans & Prices</button>
+            </p>
+        </section>
+
+ 
+<section class="panel">
+    <h2>Book Access Management</h2>
+
+    <p class="small">
+        Assign books to Free, Premium, Platinum or Standalone.
+        Platinum automatically includes all Premium books.
+        Individual purchasing can also be enabled for
+        Premium and Platinum books.
+    </p>
+
+    <!-- Live Book Statistics -->
+    <div class="book-stats">
+
+        <div class="book-stat">
+            <strong id="countFree">0</strong>
+            <span>Free Books</span>
+        </div>
+
+        <div class="book-stat">
+            <strong id="countPremium">0</strong>
+            <span>Premium Books</span>
+        </div>
+
+        <div class="book-stat">
+            <strong id="countPlatinum">0</strong>
+            <span>Platinum Total</span>
+        </div>
+
+        <div class="book-stat">
+            <strong id="countExclusive">0</strong>
+            <span>Platinum Exclusive</span>
+        </div>
+
+        <div class="book-stat">
+            <strong id="countStandalone">0</strong>
+            <span>Standalone Books</span>
+        </div>
+
+        <div class="book-stat">
+            <strong id="countIndividual">0</strong>
+            <span>Individual Sales Enabled</span>
+        </div>
+
+    </div>
+
+    <!-- Live Plan Preview -->
+    <div class="book-preview">
+        <p>
+            <strong>Premium includes:</strong>
+            <span id="premiumBookPreview">Loading...</span>
+        </p>
+
+        <p>
+            <strong>Platinum includes:</strong>
+            <span id="platinumBookPreview">Loading...</span>
+        </p>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="book-controls">
+        <input
+            type="search"
+            id="searchBooks"
+            placeholder="Search books by title..."
+            autocomplete="off"
+        >
+
+        <select id="filterBookMode">
+            <option value="all">All Books</option>
+            <option value="free">Free</option>
+            <option value="premium">Premium</option>
+            <option value="platinum">Platinum Exclusive</option>
+            <option value="standalone">Standalone</option>
+            <option value="changed">Unsaved Changes</option>
+        </select>
+    </div>
+
+    <!-- Bulk Book Assignment -->
+    <div class="bulk-controls">
+        <label for="bulkBookMode">
+            Bulk assign selected books:
+        </label>
+
+        <select id="bulkBookMode">
+            <option value="">Choose access tier...</option>
+            <option value="free">Free</option>
+            <option value="premium">Premium</option>
+            <option value="platinum">Platinum</option>
+            <option value="standalone">Standalone</option>
+        </select>
+
+        <button type="button" id="applyBulkBookTier">
+            Apply to Selected
+        </button>
+
+        <button
+            type="button"
+            id="clearBookSelection"
+            class="secondary">
+            Clear Selection
+        </button>
+    </div>
+
+    <p id="visibleBookCount" class="small">
+        Loading books...
+    </p>
+
+    <!-- Book Management Table -->
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input
+                            type="checkbox"
+                            id="selectVisibleBooks"
+                            title="Select visible books"
+                            aria-label="Select all visible books"
+                        >
+                    </th>
+
+                    <th>Book</th>
+                    <th>Access Tier</th>
+                    <th>Individual Sale</th>
+                    <th>Price (IQD)</th>
+                </tr>
+            </thead>
+
+            <tbody id="booksBody"></tbody>
+        </table>
+    </div>
+
+    <div class="book-warning">
+        Existing Premium subscribers may be affected when
+        previously included books are removed from Premium.
+        Review these changes before saving.
+    </div>
+
+    <div class="book-footer">
+        <div>
+            <strong>
+                <span id="pendingBookChanges">0</span>
+                unsaved changes
+            </strong>
+        </div>
+
+        <div class="actions">
+            <button
+                type="button"
+                id="discardBookChanges"
+                class="secondary"
+                disabled>
+                Discard Changes
+            </button>
+
+            <button
+                type="button"
+                id="saveBooks"
+                disabled>
+                Save Book Access Rules
+            </button>
+        </div>
+    </div>
+</section>
+
+
+        <section class="panel">
+            <h2>Pending Purchase Requests</h2>
+            <p class="small">
+                Approve a request only after you have independently
+                verified the customer's payment.
+                Approval immediately grants the purchased access.
+            </p>
+            <button id="refreshRequests" class="secondary">
+                Refresh Requests
+            </button>
+            <div class="table-wrap" style="margin-top:18px">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Requested</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requestsBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<script type="module">
+import { supabase } from './supabaseClient.js';
+
+const $ = id => document.getElementById(id);
+const esc = value => String(value ?? '').replace(
+    /[&<>"']/g,
+    c => ({
+        '&':'&amp;', '<':'&lt;', '>':'&gt;',
+        '"':'&quot;', "'":'&#39;'
+    })[c]
+);
+const money = value => Number(value || 0).toLocaleString('en-IQ')
+    + ' IQD';
+
+
+let books = [];
+let bookRules = new Map();
+let bookDraft = new Map();
+let selectedBookIds = new Set();
+let usersMap = new Map();
+
+
+function status(message) {
+    $('status').textContent = message;
+}
+
+async function checkAdmin() {
+    const { data: { user }, error } =
+        await supabase.auth.getUser();
+
+    if (error || !user) {
+        location.replace('index.html');
+        return false;
+    }
+
+    const result = await supabase.rpc('qz_is_super_admin');
+
+    if (result.error || result.data !== true) {
+        status('Access denied. Super Admin account required.');
+        return false;
+    }
+
+    $('adminContent').hidden = false;
+    status('Super Admin authenticated.');
+    return true;
+}
+
+async function loadPlans() {
+    const [planRes, priceRes] = await Promise.all([
+        supabase.from('qz_plans').select('*'),
+        supabase.from('qz_plan_prices').select('*')
+    ]);
+
+    if (planRes.error) throw planRes.error;
+    if (priceRes.error) throw priceRes.error;
+
+    for (const plan of planRes.data || []) {
+        $('title-' + plan.slug).value = plan.title;
+        $('description-' + plan.slug).value = plan.description;
+        $('enabled-' + plan.slug).checked = plan.enabled;
+    }
+
+    for (const price of priceRes.data || []) {
+        const key = price.plan_slug + '-' + price.months;
+        $('price-' + key).value = price.amount_iqd || '';
+        $('active-' + key).checked = price.enabled;
+    }
+}
+
+async function savePlans() {
+    const button = $('savePlans');
+    button.disabled = true;
+
+    try {
+        const plans = ['premium', 'platinum'].map(slug => ({
+            slug,
+            title: $('title-' + slug).value.trim(),
+            description: $('description-' + slug).value.trim(),
+            enabled: $('enabled-' + slug).checked,
+            display_order: slug === 'premium' ? 1 : 2
+        }));
+
+        if (plans.some(p => !p.title)) {
+            throw Error('Both plans need a title.');
+        }
+
+        const prices = [];
+        for (const slug of ['premium', 'platinum']) {
+            for (const months of [3, 6, 12]) {
+                const key = slug + '-' + months;
+                const amount = Number($('price-' + key).value || 0);
+                const enabled = $('active-' + key).checked;
+
+                if (!Number.isSafeInteger(amount) || amount < 0) {
+                    throw Error('Invalid price for ' + key);
+                }
+                if (enabled && amount === 0) {
+                    throw Error('Enter a price for ' + key);
+                }
+
+                prices.push({
+                    plan_slug: slug,
+                    months,
+                    amount_iqd: amount,
+                    enabled
+                });
+            }
+        }
+
+        const a = await supabase.from('qz_plans')
+            .upsert(plans, { onConflict: 'slug' });
+        if (a.error) throw a.error;
+
+        const b = await supabase.from('qz_plan_prices')
+            .upsert(prices, { onConflict: 'plan_slug,months' });
+        if (b.error) throw b.error;
+
+        status('Plans and pricing saved successfully.');
+    } catch (error) {
+        status('Save failed: ' + error.message);
+    } finally {
+        button.disabled = false;
+    }
+}
+
+
+const BOOK_TIER_LABELS = [
+    ['free', 'Free'],
+    ['premium', 'Premium (also in Platinum)'],
+    ['platinum', 'Platinum exclusive'],
+    ['standalone', 'Standalone only']
+];
+
+function originalRule(book) {
+    const saved = bookRules.get(String(book.id));
+
+    return {
+        book_id: String(book.id),
+        access_mode: saved?.access_mode ||
+            (book.access_level === 'purchasable'
+                ? 'standalone'
+                : book.access_level || 'free'),
+        standalone_enabled: saved?.standalone_enabled === true,
+        standalone_price_iqd: saved?.standalone_price_iqd == null
+            ? null
+            : Number(saved.standalone_price_iqd)
+    };
+}
+
+function changedBook(book) {
+    const before = originalRule(book);
+    const after = bookDraft.get(String(book.id));
+
+    return !!after && (
+        before.access_mode !== after.access_mode ||
+        before.standalone_enabled !== after.standalone_enabled ||
+        before.standalone_price_iqd !== after.standalone_price_iqd
+    );
+}
+
+function visibleBooks() {
+    const query = $('searchBooks').value.trim().toLowerCase();
+    const filter = $('filterBookMode').value;
+
+    return books.filter(book => {
+        const rule = bookDraft.get(String(book.id));
+
+        const matchesQuery =
+            book.title.toLowerCase().includes(query);
+
+        const matchesFilter =
+            filter === 'all' ||
+            (filter === 'changed' && changedBook(book)) ||
+            rule.access_mode === filter;
+
+        return matchesQuery && matchesFilter;
+    });
+}
+
+function renderBookSummary() {
+    const counts = {
+        free: 0,
+        premium: 0,
+        platinum: 0,
+        standalone: 0,
+        individual: 0,
+        changed: 0
+    };
+
+    const premiumTitles = [];
+    const platinumTitles = [];
+
+    for (const book of books) {
+        const rule = bookDraft.get(String(book.id));
+
+        counts[rule.access_mode]++;
+
+        if (
+            rule.standalone_enabled &&
+            rule.access_mode !== 'free'
+        ) {
+            counts.individual++;
+        }
+
+        if (changedBook(book)) counts.changed++;
+
+        if (rule.access_mode === 'premium') {
+            premiumTitles.push(book.title);
+        }
+
+        if (rule.access_mode === 'platinum') {
+            platinumTitles.push(book.title);
+        }
+    }
+
+    $('countFree').textContent = counts.free;
+    $('countPremium').textContent = counts.premium;
+
+    // Platinum includes Premium plus Platinum-exclusive books.
+    $('countPlatinum').textContent =
+        counts.premium + counts.platinum;
+
+    $('countExclusive').textContent = counts.platinum;
+    $('countStandalone').textContent = counts.standalone;
+    $('countIndividual').textContent = counts.individual;
+    $('pendingBookChanges').textContent = counts.changed;
+
+    $('saveBooks').disabled = counts.changed === 0;
+    $('discardBookChanges').disabled = counts.changed === 0;
+
+    const summarize = names => names.length
+        ? names.slice(0, 6).join(', ') +
+          (names.length > 6
+              ? `, +${names.length - 6} more`
+              : '')
+        : 'No books assigned';
+
+    $('premiumBookPreview').textContent =
+        summarize(premiumTitles);
+
+    $('platinumBookPreview').textContent =
+        summarize([...premiumTitles, ...platinumTitles]);
+}
+
+function renderBookTable() {
+    const filtered = visibleBooks();
+
+    $('visibleBookCount').textContent =
+        `Showing ${filtered.length} of ${books.length} books; ` +
+        `${selectedBookIds.size} selected`;
+
+    $('booksBody').innerHTML = filtered.length
+        ? filtered.map(book => {
+            const id = String(book.id);
+            const rule = bookDraft.get(id);
+            const dirty = changedBook(book);
+
+            const options = BOOK_TIER_LABELS.map(
+                ([value, label]) =>
+                    `<option value="${value}"
+                        ${rule.access_mode === value
+                            ? 'selected' : ''}>
+                        ${esc(label)}
+                    </option>`
+            ).join('');
+
+            return `
+                <tr data-book-id="${esc(id)}"
+                    class="${dirty ? 'book-dirty' : ''}">
+
+                    <td>
+                        <input type="checkbox"
+                            class="book-select"
+                            aria-label="Select ${esc(book.title)}"
+                            ${selectedBookIds.has(id)
+                                ? 'checked' : ''}>
+                    </td>
+
+                    <td>
+                        <strong>${esc(book.title)}</strong>
+                        ${dirty
+                            ? '<span class="edit-marker">Unsaved</span>'
+                            : ''}
+                    </td>
+
+                    <td>
+                        <select class="book-mode"
+                            aria-label="Access tier for ${esc(book.title)}">
+                            ${options}
+                        </select>
+                    </td>
+
+                    <td>
+                        <input type="checkbox"
+                            class="book-sale"
+                            aria-label="Allow individual sale for ${esc(book.title)}"
+                            ${rule.standalone_enabled
+                                ? 'checked' : ''}
+                            ${rule.access_mode === 'free'
+                                ? 'disabled' : ''}>
+                    </td>
+
+                    <td>
+                        <input type="number"
+                            class="book-price"
+                            min="1"
+                            step="1"
+                            aria-label="Price in Iraqi dinars for ${esc(book.title)}"
+                            value="${esc(
+                                rule.standalone_price_iqd ?? ''
+                            )}"
+                            placeholder="IQD"
+                            ${rule.access_mode === 'free'
+                                ? 'disabled' : ''}>
+                    </td>
+                </tr>
+            `;
+        }).join('')
+
+        : '<tr><td colspan="5">No books match your search.</td></tr>';
+
+    const allSelected = filtered.length > 0 &&
+        filtered.every(book =>
+            selectedBookIds.has(String(book.id))
+        );
+
+    const someSelected = filtered.some(book =>
+        selectedBookIds.has(String(book.id))
+    );
+
+    $('selectVisibleBooks').checked = allSelected;
+
+    $('selectVisibleBooks').indeterminate =
+        someSelected && !allSelected;
+
+    renderBookSummary();
+}
+
+async function loadBooks() {
+    const [bookRes, rulesRes] = await Promise.all([
+        supabase.from('books')
+            .select('id,title,access_level')
+            .order('title'),
+
+        supabase.from('qz_book_rules')
+            .select('*')
+    ]);
+
+    if (bookRes.error) throw bookRes.error;
+    if (rulesRes.error) throw rulesRes.error;
+
+    books = bookRes.data || [];
+
+    bookRules = new Map(
+        (rulesRes.data || []).map(rule => [
+            String(rule.book_id),
+            rule
+        ])
+    );
+
+    bookDraft = new Map(books.map(book => [
+        String(book.id),
+        originalRule(book)
+    ]));
+
+    selectedBookIds.clear();
+
+    renderBookTable();
+}
+
+async function saveBooks() {
+    // Save only books that have actually changed.
+    const changed = books.filter(changedBook);
+
+    if (!changed.length) return;
+
+    const rulesToSave = [];
+    let removedPremium = 0;
+
+    for (const book of changed) {
+        const before = originalRule(book);
+        const rule = bookDraft.get(String(book.id));
+        const price = rule.standalone_price_iqd;
+
+        if (
+            price !== null &&
+            (!Number.isSafeInteger(price) || price <= 0)
+        ) {
+            status(`Invalid individual price for: ${book.title}`);
+            return;
+        }
+
+        if (rule.standalone_enabled && price === null) {
+            status(`Set an individual price for: ${book.title}`);
+            return;
+        }
+
+        if (
+            before.access_mode === 'premium' &&
+            rule.access_mode !== 'premium'
+        ) {
+            removedPremium++;
+        }
+
+        rulesToSave.push({
+            book_id: String(book.id),
+            access_mode: rule.access_mode,
+            standalone_enabled: rule.standalone_enabled,
+            standalone_price_iqd: price,
+            updated_at: new Date().toISOString()
+        });
+    }
+
+    const warning = removedPremium
+        ? `\n\nWARNING: ${removedPremium} previously Premium books ` +
+          'will leave Premium. Existing Premium customers may lose ' +
+          'access unless grandfathering is implemented.'
+        : '';
+
+    if (!confirm(
+        `Save changes to ${changed.length} book(s)?` +
+        `${warning}\n\nOnly modified books will be updated.`
+    )) {
+        return;
+    }
+
+    // Extra confirmation for changes affecting legacy Premium books.
+    if (removedPremium) {
+        const ack = prompt(
+            'Legacy Premium access may be affected. ' +
+            'Type CONFIRM to proceed.'
+        );
+
+        if (ack !== 'CONFIRM') return;
+    }
+
+    const button = $('saveBooks');
+    button.disabled = true;
+
+    try {
+        const { error } = await supabase
+            .from('qz_book_rules')
+            .upsert(rulesToSave, {
+                onConflict: 'book_id'
+            });
+
+        if (error) throw error;
+
+        await loadBooks();
+
+        status(
+            `Saved ${rulesToSave.length} book changes. ` +
+            'Refresh the user popup to verify.'
+        );
+
+    } catch (error) {
+        status('Book update failed: ' + error.message);
+        renderBookSummary();
+
+    } finally {
+        button.disabled = false;
+        renderBookSummary();
+    }
+}
+
+
+
+async function loadRequests() {
+    const { data, error } = await supabase
+        .from('qz_purchase_requests')
+        .select('*')
+        .eq('status', 'pending')
+        .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    const requests = data || [];
+    const ids = [...new Set(requests.map(r => r.user_id))];
+
+    usersMap = new Map();
+    if (ids.length) {
+        const usersResult = await supabase.from('users')
+            .select('id,username,email')
+            .in('id', ids);
+
+        if (!usersResult.error) {
+            usersMap = new Map(
+                (usersResult.data || []).map(u => [u.id, u])
+            );
+        }
+    }
+
+    if (!requests.length) {
+        $('requestsBody').innerHTML =
+            '<tr><td colspan="5">No pending requests.</td></tr>';
+        return;
+    }
+
+    $('requestsBody').innerHTML = requests.map(req => {
+        const user = usersMap.get(req.user_id);
+        const book = books.find(
+            b => String(b.id) === String(req.book_id)
+        );
+
+        
+const product = req.kind === 'plan'
+    ? `${req.plan_slug.toUpperCase()} — ${req.months} months — ${req.speciality || 'Legacy Global'}`
+    : (book?.title || req.book_id);
+
+
+        return `
+        <tr data-order-id="${esc(req.id)}">
+            <td>
+                ${esc(user?.username || req.user_id)}
+                <div class="small">${esc(user?.email || '')}</div>
+            </td>
+            <td>${esc(product)}</td>
+            <td>${money(req.expected_price_iqd)}</td>
+            <td>${esc(new Date(req.created_at).toLocaleString())}</td>
+            <td>
+                <div class="actions">
+                    <button data-review="approve">Approve</button>
+                    <button class="danger" data-review="reject">Reject</button>
+                </div>
+            </td>
+        </tr>`;
+    }).join('');
+}
+
+async function reviewOrder(orderId, approve, button) {
+    const prompt = approve
+        ? 'Have you independently verified payment? Approve access?'
+        : 'Reject this purchase request?';
+
+    if (!confirm(prompt)) return;
+
+    button.disabled = true;
+
+    try {
+        const { error } = await supabase.rpc('qz_review_order', {
+            p_request_id: orderId,
+            p_approve: approve
+        });
+        if (error) throw error;
+
+        status(approve
+            ? 'Request approved. Access granted.'
+            : 'Request rejected.');
+
+        await loadRequests();
+    } catch (error) {
+        status('Review failed: ' + error.message);
+        button.disabled = false;
+    }
+}
+
+$('requestsBody').addEventListener('click', event => {
+    const button = event.target.closest('[data-review]');
+    if (!button) return;
+
+    const row = button.closest('tr');
+    reviewOrder(
+        row.dataset.orderId,
+        button.dataset.review === 'approve',
+        button
+    );
+});
+
+
+// -----------------------------------------
+// Subscription pricing
+// -----------------------------------------
+$('savePlans').addEventListener('click', savePlans);
+$('saveBooks').addEventListener('click', saveBooks);
+
+$('refreshRequests').addEventListener('click', () => {
+    loadRequests().catch(e => status(e.message));
+});
+
+// -----------------------------------------
+// Book manager: individual row changes
+// -----------------------------------------
+$('booksBody').addEventListener('change', event => {
+    const row = event.target.closest('tr[data-book-id]');
+    if (!row) return;
+
+    const id = row.dataset.bookId;
+    const target = event.target;
+
+    if (target.classList.contains('book-select')) {
+        if (target.checked) {
+            selectedBookIds.add(id);
+        } else {
+            selectedBookIds.delete(id);
+        }
+
+        renderBookTable();
+        return;
+    }
+
+    const draft = bookDraft.get(id);
+    if (!draft) return;
+
+    if (target.classList.contains('book-mode')) {
+        draft.access_mode = target.value;
+
+        // Free books cannot have individual sales.
+        if (draft.access_mode === 'free') {
+            draft.standalone_enabled = false;
+            draft.standalone_price_iqd = null;
+        }
+
+    } else if (target.classList.contains('book-sale')) {
+        draft.standalone_enabled = target.checked;
+
+    } else if (target.classList.contains('book-price')) {
+        draft.standalone_price_iqd =
+            target.value.trim() === ''
+                ? null
+                : Number(target.value);
+    }
+
+    renderBookTable();
+});
+
+// -----------------------------------------
+// Search and tier filters
+// -----------------------------------------
+$('searchBooks').addEventListener('input', renderBookTable);
+
+$('filterBookMode').addEventListener(
+    'change',
+    renderBookTable
+);
+
+// -----------------------------------------
+// Select all visible books
+// -----------------------------------------
+$('selectVisibleBooks').addEventListener('change', event => {
+    for (const book of visibleBooks()) {
+        const id = String(book.id);
+
+        if (event.target.checked) {
+            selectedBookIds.add(id);
+        } else {
+            selectedBookIds.delete(id);
+        }
+    }
+
+    renderBookTable();
+});
+
+// -----------------------------------------
+// Bulk assign selected books
+// -----------------------------------------
+$('applyBulkBookTier').addEventListener('click', () => {
+    if (!selectedBookIds.size) {
+        status('Select at least one book first.');
+        return;
+    }
+
+    const mode = $('bulkBookMode').value;
+
+    if (!mode) {
+        status('Choose a target tier first.');
+        return;
+    }
+
+    if (!confirm(
+        `Apply ${mode.toUpperCase()} to ` +
+        `${selectedBookIds.size} selected books?\n` +
+        'This changes the draft only; nothing is saved yet.'
+    )) {
+        return;
+    }
+
+    for (const id of selectedBookIds) {
+        const draft = bookDraft.get(id);
+        if (!draft) continue;
+
+        draft.access_mode = mode;
+
+        if (mode === 'free') {
+            draft.standalone_enabled = false;
+            draft.standalone_price_iqd = null;
+        }
+    }
+
+    selectedBookIds.clear();
+
+    renderBookTable();
+
+    status(
+        'Bulk tier applied to draft. ' +
+        'Review changes before saving.'
+    );
+});
+
+// -----------------------------------------
+// Clear selected books
+// -----------------------------------------
+$('clearBookSelection').addEventListener('click', () => {
+    selectedBookIds.clear();
+    renderBookTable();
+});
+
+// -----------------------------------------
+// Discard unsaved book changes
+// -----------------------------------------
+$('discardBookChanges').addEventListener('click', () => {
+    if (!books.some(changedBook)) return;
+
+    if (!confirm('Discard ALL unsaved book changes?')) {
+        return;
+    }
+
+    bookDraft = new Map(books.map(book => [
+        String(book.id),
+        originalRule(book)
+    ]));
+
+    selectedBookIds.clear();
+
+    renderBookTable();
+
+    status('Unsaved book changes discarded.');
+});
+
+// -----------------------------------------
+// Warn before leaving with unsaved edits
+// -----------------------------------------
+window.addEventListener('beforeunload', event => {
+    if (!books.some(changedBook)) return;
+
+    event.preventDefault();
+    event.returnValue = '';
+});
+
+
+(async function init() {
+    try {
+        if (!await checkAdmin()) return;
+
+        await Promise.all([
+            loadPlans(),
+            loadBooks()
+        ]);
+
+        await loadRequests();
+        status('Subscription administration ready.');
+    } catch (error) {
+        status('Initialization failed: ' + error.message);
+    }
+})();
+
+</script>
+
+<!-- Specialty-specific membership and pricing management -->
+<script type="module" src="./specialty-subscriptions-admin.js"></script>
+
+</body>
+</html>
+

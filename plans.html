@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quizard | Plans & Subscriptions</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: #eef6fa;
+    color: #19344a;
+}
+header {
+    background: white;
+    padding: 20px;
+    border-bottom: 1px solid #dde8ef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header strong { font-size: 22px; }
+a { color: #2286a8; text-decoration: none; }
+main { max-width: 1150px; margin: auto; padding: 32px 18px; }
+.hero { text-align: center; margin-bottom: 30px; }
+.hero h1 { font-size: 34px; margin-bottom: 10px; }
+.hero p { color: #607386; }
+.durations {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+button {
+    border: 0;
+    border-radius: 9px;
+    padding: 13px 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.duration {
+    background: white;
+    color: #33546c;
+    border: 1px solid #cbdce7;
+}
+.duration.selected {
+    background: #298eb1;
+    color: white;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+.card {
+    background: white;
+    padding: 28px;
+    border: 1px solid #d9e5ed;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px #214a6810;
+}
+.card.platinum { border: 2px solid #5a64a9; }
+.card h2 { margin-top: 0; font-size: 26px; }
+.price {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 18px 0;
+}
+.muted { color: #607386; }
+.book-list {
+    margin: 18px 0;
+    padding: 0;
+    list-style: none;
+}
+.book-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #edf2f5;
+}
+.book-list li::before {
+    content: '✓';
+    color: #179667;
+    margin-right: 9px;
+    font-weight: bold;
+}
+.purchase {
+    background: #208aad;
+    color: white;
+    width: 100%;
+}
+.platinum .purchase { background: #5967aa; }
+.purchase:disabled { opacity: .5; cursor: not-allowed; }
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-top: 28px;
+    border: 1px solid #d9e5ed;
+}
+.standalone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+.standalone-card {
+    border: 1px solid #e0e8ee;
+    border-radius: 12px;
+    padding: 16px;
+}
+.highlight {
+    outline: 3px solid #278eaf;
+    outline-offset: 2px;
+}
+.notice {
+    padding: 15px;
+    background: #e3f1f8;
+    border-radius: 10px;
+    margin-bottom: 22px;
+}
+.order {
+    padding: 12px 0;
+    border-bottom: 1px solid #e9eff3;
+}
+@media(max-width: 720px) {
+    .cards { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 27px; }
+    header strong { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <strong>Quizard | Membership Plans</strong>
+    <a href="dashboard.html">Back to Dashboard</a>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Choose Your Learning Plan</h1>
+        <p>Unlock medical question banks with Premium or Platinum.</p>
+    </section>
+
+    <div id="notice" class="notice">Loading available plans...</div>
+
+    <div class="durations">
+        <button class="duration selected" data-months="3">
+            Quarterly
+        </button>
+        <button class="duration" data-months="6">
+            Semiannual
+        </button>
+        <button class="duration" data-months="12">
+            Annual
+        </button>
+    </div>
+
+    <div id="plansGrid" class="cards"></div>
+
+    <section class="panel">
+        <h2>Individually Available Books</h2>
+        <p class="muted">
+            These books can be purchased separately without
+            buying a subscription.
+        </p>
+        <div id="standaloneGrid" class="standalone-grid"></div>
+    </section>
+
+    <section class="panel">
+        <h2>My Subscriptions & Requests</h2>
+        <div id="mySubscriptions"></div>
+        <div id="myOrders"></div>
+    </section>
+
+    <section class="panel">
+        <strong>Purchase requests</strong>
+        <p class="muted">
+            Submitting a request does not collect a payment
+            or immediately activate access.
+            Requests are reviewed by Quizard administration.
+            Access becomes active only after the administrator
+            verifies payment and approves the request.
+        </p>
+    </section>
+</main>
+
+<script type="module">
+import { supabase } from './supabaseClient.js';
+
+const $ = id => document.getElementById(id);
+const esc = value => String(value ?? '').replace(
+    /[&<>"']/g,
+    c => ({
+        '&':'&amp;', '<':'&lt;', '>':'&gt;',
+        '"':'&quot;', "'":'&#39;'
+    })[c]
+);
+const money = n => Number(n || 0).toLocaleString('en-IQ')
+    + ' IQD';
+
+const selectedBookId =
+    new URLSearchParams(location.search).get('book');
+
+let currentUser;
+let selectedMonths = 3;
+let plans = [];
+let prices = [];
+let books = [];
+let rules = [];
+
+function message(text) {
+    $('notice').textContent = text;
+}
+
+function bookName(id) {
+    return books.find(b => String(b.id) === String(id))?.title || id;
+}
+
+function includedBooks(slug) {
+    return rules.filter(r =>
+        r.access_mode === 'premium' ||
+        (slug === 'platinum' && r.access_mode === 'platinum')
+    ).map(r => ({
+        ...r,
+        title: bookName(r.book_id)
+    }));
+}
+
+function renderPlans() {
+    const activePlans = plans.filter(p => p.enabled);
+
+    if (!activePlans.length) {
+        $('plansGrid').innerHTML =
+            '<p>Subscription plans are currently unavailable.</p>';
+        return;
+    }
+
+    $('plansGrid').innerHTML = activePlans.map(plan => {
+        const price = prices.find(p =>
+            p.plan_slug === plan.slug &&
+            p.months === selectedMonths
+        );
+
+        const available = !!(
+            price?.enabled && Number(price.amount_iqd) > 0
+        );
+
+        const included = includedBooks(plan.slug);
+        const focused = selectedBookId &&
+            included.some(b => String(b.book_id) === selectedBookId);
+
+        return `
+        <article class="card ${esc(plan.slug)}
+                ${focused ? 'highlight' : ''}">
+            <h2>${esc(plan.title)}</h2>
+            <p class="muted">${esc(plan.description)}</p>
+
+            <div class="price">
+                ${available
+                    ? money(price.amount_iqd)
+                    : 'Not available'}
+            </div>
+
+            <p class="muted">
+                ${selectedMonths} months of access
+            </p>
+
+            <h3>Included books (${included.length})</h3>
+
+            <ul class="book-list">
+                ${included.map(b =>
+                    `<li>${esc(b.title)}</li>`
+                ).join('') ||
+                    '<li>No books assigned yet.</li>'}
+            </ul>
+
+            <button class="purchase"
+                data-purchase="plan"
+                data-slug="${esc(plan.slug)}"
+                ${!available || !included.length ? 'disabled' : ''}>
+                ${available ? 'Request Subscription' : 'Unavailable'}
+            </button>
+        </article>`;
+    }).join('');
+}
+
+function renderStandalone() {
+    const items = rules.filter(r =>
+        r.standalone_enabled &&
+        Number(r.standalone_price_iqd) > 0 &&
+        r.access_mode !== 'free'
+    );
+
+    items.sort((a, b) =>
+        Number(String(b.book_id) === selectedBookId) -
+        Number(String(a.book_id) === selectedBookId)
+    );
+
+    $('standaloneGrid').innerHTML = items.length
+        ? items.map(r => `
+            <div class="standalone-card
+                ${String(r.book_id) === selectedBookId
+                    ? 'highlight' : ''}">
+                <h3>${esc(bookName(r.book_id))}</h3>
+                <p class="price" style="font-size:21px">
+                    ${money(r.standalone_price_iqd)}
+                </p>
+                <p class="muted">Individual book access</p>
+                <button class="purchase"
+                    data-purchase="book"
+                    data-book-id="${esc(r.book_id)}">
+                    Request Book Purchase
+                </button>
+            </div>`
+        ).join('')
+        : '<p>No books are currently offered for individual sale.</p>';
+}
+
+async function loadMyAccount() {
+    const [subsRes, ordersRes] = await Promise.all([
+        supabase.from('qz_user_plan_subscriptions')
+            .select('*')
+            .eq('user_id', currentUser.id)
+            .order('expires_at', { ascending: false }),
+        supabase.from('qz_purchase_requests')
+            .select('*')
+            .eq('user_id', currentUser.id)
+            .order('created_at', { ascending: false })
+            .limit(10)
+    ]);
+
+    if (subsRes.error) throw subsRes.error;
+    if (ordersRes.error) throw ordersRes.error;
+
+    const now = Date.now();
+    const activeSubs = (subsRes.data || []).filter(s =>
+        new Date(s.starts_at).getTime() <= now &&
+        new Date(s.expires_at).getTime() > now
+    );
+
+    $('mySubscriptions').innerHTML = activeSubs.length
+        ? activeSubs.map(s => `
+            <div class="order">
+                <strong>${esc(s.plan_slug.toUpperCase())}</strong>
+                — Active until
+                ${esc(new Date(s.expires_at).toLocaleDateString())}
+            </div>`
+        ).join('')
+        : '<p class="muted">No active paid subscriptions.</p>';
+
+    const orders = ordersRes.data || [];
+    $('myOrders').innerHTML = orders.length
+        ? '<h3>Recent requests</h3>' +
+          orders.map(o => `
+            <div class="order">
+                <strong>${esc(o.kind === 'plan'
+                    ? o.plan_slug + ' / ' + o.months + ' months'
+                    : bookName(o.book_id))}</strong>
+                — ${money(o.expected_price_iqd)}
+                — ${esc(o.status)}
+            </div>`
+          ).join('')
+        : '<p class="muted">No purchase requests yet.</p>';
+}
+
+async function requestPurchase(kind, slug, bookId, button) {
+    const label = kind === 'plan'
+        ? `${slug} for ${selectedMonths} months`
+        : bookName(bookId);
+
+    if (!confirm(
+        `Submit access request for ${label}?\n` +
+        'No online payment will be collected.'
+    )) return;
+
+    button.disabled = true;
+    const previousText = button.textContent;
+    button.textContent = 'Submitting...';
+
+    try {
+        const args = {
+            p_kind: kind,
+            p_slug: kind === 'plan' ? slug : null,
+            p_months: kind === 'plan' ? selectedMonths : null,
+            p_book_id: kind === 'book' ? bookId : null
+        };
+
+        const { error } = await supabase.rpc(
+            'qz_request_purchase', args
+        );
+
+        if (error) throw error;
+
+        message(
+            'Request submitted successfully. ' +
+            'Access will be granted after administrative approval.'
+        );
+
+        await loadMyAccount();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    } catch (error) {
+        message('Could not submit request: ' + error.message);
+    } finally {
+        button.disabled = false;
+        button.textContent = previousText;
+    }
+}
+
+document.querySelectorAll('[data-months]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        selectedMonths = Number(btn.dataset.months);
+        document.querySelectorAll('[data-months]').forEach(b =>
+            b.classList.toggle('selected', b === btn)
+        );
+        renderPlans();
+    });
+});
+
+document.addEventListener('click', e => {
+    const button = e.target.closest('[data-purchase]');
+    if (!button) return;
+
+    requestPurchase(
+        button.dataset.purchase,
+        button.dataset.slug || null,
+        button.dataset.bookId || null,
+        button
+    );
+});
+
+(async function init() {
+    try {
+        const { data: { user }, error } =
+            await supabase.auth.getUser();
+
+        if (error || !user) {
+            location.replace('index.html');
+            return;
+        }
+
+        currentUser = user;
+
+        const results = await Promise.all([
+            supabase.from('qz_plans')
+                .select('*').order('display_order'),
+            supabase.from('qz_plan_prices').select('*'),
+            supabase.from('books').select('id,title'),
+            supabase.from('qz_book_rules').select('*')
+        ]);
+
+        for (const result of results) {
+            if (result.error) throw result.error;
+        }
+
+        plans = results[0].data || [];
+        prices = results[1].data || [];
+        books = results[2].data || [];
+        rules = results[3].data || [];
+
+        renderPlans();
+        renderStandalone();
+        await loadMyAccount();
+
+        if (selectedBookId) {
+            message(
+                'Explore available plans and purchase options for: ' +
+                bookName(selectedBookId)
+            );
+        } else {
+            message('Select your preferred plan and duration.');
+        }
+
+    } catch (error) {
+        message('Error loading subscriptions: ' + error.message);
+    }
+})();
+</script>
+</body>
+</html>
