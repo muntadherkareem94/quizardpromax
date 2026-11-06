@@ -68,11 +68,20 @@ Deno.serve(async (req: Request) => {
 
     const body = await req.json();
 
-    const bookId = String(body?.book_id || '').trim();
 
-    if (!/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(bookId)) {
-      return respond({ error: 'Invalid book ID' }, 400);
-    }
+const bookId = String(body?.book_id || '').trim();
+const months = Number(body?.months);
+
+if (!/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(bookId)) {
+  return respond({ error: 'Invalid book ID' }, 400);
+}
+
+if (![3, 6, 9].includes(months)) {
+  return respond({
+    error: 'Choose 3, 6, or 9 months of book access.'
+  }, 400);
+}
+
 
     const admin = createClient(url, serviceKey);
 
@@ -87,10 +96,13 @@ Deno.serve(async (req: Request) => {
 
         admin.from('qz_book_rules')
          
+
 .select(
   'access_mode,standalone_enabled,' +
-  'standalone_price_iqd,standalone_duration_months'
+  'standalone_price_iqd,standalone_price_6m_iqd,' +
+  'standalone_price_9m_iqd'
 )
+
 
           .eq('book_id', bookId)
           .maybeSingle(),
@@ -128,32 +140,37 @@ Deno.serve(async (req: Request) => {
     }
 
  
-const amount = Number(
-  rule.data?.standalone_price_iqd
-);
 
-const bookDurationMonths = Number(
-  rule.data?.standalone_duration_months
-);
+// The customer selects a duration, NOT a price.
+// Read the matching price directly from Supabase.
 
-if (![3, 6, 12].includes(bookDurationMonths)) {
+const priceField =
+  months === 3
+    ? 'standalone_price_iqd'
+    : months === 6
+      ? 'standalone_price_6m_iqd'
+      : 'standalone_price_9m_iqd';
+
+const amount = Number(rule.data?.[priceField]);
+
+const saleEnabled =
+  rule.data?.standalone_enabled === true &&
+  rule.data?.access_mode !== 'free' &&
+  rule.data?.[priceField] != null &&
+  Number.isSafeInteger(amount) &&
+  amount > 0;
+
+if (!saleEnabled) {
   return respond({
-    error: 'Invalid standalone book duration.'
+    error: 'This book duration is not available for purchase.'
   }, 400);
 }
 
-const saleEnabled =
 
-      rule.data?.standalone_enabled === true &&
-      rule.data?.access_mode !== 'free' &&
-      Number.isSafeInteger(amount) &&
-      amount > 0;
 
-    if (!saleEnabled) {
-      return respond({
-        error: 'This book is not available for individual purchase.'
-      }, 400);
-    }
+// Sale eligibility and selected-duration price
+// have already been validated above.
+
 
     // Prevent charging again for a book already
     // owned through a standalone book license.
@@ -195,8 +212,10 @@ book_id: bookId,
 speciality,
 plan_slug: null,
 months: null,
-book_duration_months: bookDurationMonths,
+
+book_duration_months: months,
 amount_iqd: amount,
+
 currency: 'IQD',
 status: 'created'
 

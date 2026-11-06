@@ -9,8 +9,11 @@ import './standalone-book-checkout.js';
 
 let overlay = null;
 let currentBookId = null;
-let selectedMonths = 3;
+
+let selectedMonths = 3;       // Premium/Platinum: 3/6/12
+let selectedBookMonths = 3;   // Individual book: 3/6/9
 let modalData = null;
+
 let previousOverflow = '';
 let previousFocus = null;
 let loadVersion = 0;
@@ -379,13 +382,55 @@ function createSubscriptionModal() {
             cursor: not-allowed;
         }
 
-        #qz-sub-overlay .qz-standalone {
-            background: #f4f8fb;
-            border: 1px solid #dce7ee;
-            border-radius: 13px;
-            padding: 17px;
-            margin-top: 17px;
-        }
+     
+#qz-sub-overlay .qz-standalone {
+    background: #f4f8fb;
+    border: 1px solid #dce7ee;
+    border-radius: 13px;
+    padding: 19px;
+    margin-top: 17px;
+}
+
+#qz-sub-overlay .qz-book-duration-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 15px 0;
+}
+
+#qz-sub-overlay .qz-book-term {
+    padding: 11px 19px;
+    border: 1px solid #cddfe9;
+    border-radius: 9px;
+    background: #fff;
+    color: #264a63;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#qz-sub-overlay .qz-book-term.selected {
+    background: #258eb0;
+    border-color: #258eb0;
+    color: #fff;
+}
+
+#qz-sub-overlay .qz-book-term:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+#qz-sub-overlay .qz-book-discount {
+    display: inline-block;
+    padding: 7px 11px;
+    background: #e4f5eb;
+    color: #16784b;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 6px 0 10px;
+}
+
 
      
 #qz-sub-overlay .qz-store-link {
@@ -599,16 +644,37 @@ function createSubscriptionModal() {
 
         const action = button.dataset.qzAction;
 
-        if (action === 'close') {
-            closeSubscriptionModal();
-            return;
-        }
 
-        if (action === 'duration') {
-            selectedMonths = Number(button.dataset.months);
-            renderSubscriptionModal();
-            return;
-        }
+if (action === 'close') {
+    closeSubscriptionModal();
+    return;
+}
+
+if (action === 'free-plan') {
+    closeSubscriptionModal();
+    window.location.assign('dashboard.html');
+    return;
+}
+
+
+if (action === 'duration') {
+    selectedMonths = Number(button.dataset.months);
+    renderSubscriptionModal();
+    return;
+}
+
+if (action === 'book-duration') {
+    const months = Number(button.dataset.months);
+
+    if (![3, 6, 9].includes(months) || button.disabled) {
+        return;
+    }
+
+    selectedBookMonths = months;
+    renderSubscriptionModal();
+    return;
+}
+
 
       
 if (action === 'plan') {
@@ -873,11 +939,13 @@ function renderSubscriptionModal() {
                     : 'This book is not included'}
             </div>
 
-            <button type="button"
-                    class="qz-purchase"
-                    disabled>
-                Free for all users
-            </button>
+
+<button type="button"
+        class="qz-purchase"
+        data-qz-action="free-plan">
+    Free Plan
+</button>
+
         </div>
     `);
 
@@ -893,11 +961,12 @@ function renderSubscriptionModal() {
         const includesBook =
             bookIncludedInPlan(accessMode, slug);
 
-        const purchasable =
-            plan.enabled === true &&
-            price?.enabled === true &&
-            Number(price.amount_iqd) > 0 &&
-            includesBook;
+      
+const purchasable =
+    plan.enabled === true &&
+    price?.enabled === true &&
+    Number(price.amount_iqd) > 0;
+
 
        
 const priceText =
@@ -974,9 +1043,11 @@ ${savingsHtml}
                         data-slug="${slug}"
                         ${purchasable ? '' : 'disabled'}>
                    
+
 ${purchasable
     ? 'Purchase'
-    : 'Unavailable for this book'}
+    : 'Plan currently unavailable'}
+
 
                 </button>
             </div>
@@ -986,55 +1057,124 @@ ${purchasable
     document.getElementById('qz-sub-cards').innerHTML =
         cards.join('');
 
-    const standaloneContainer =
-        document.getElementById('qz-sub-standalone');
 
-    const standaloneAvailable =
-        selectedRule?.standalone_enabled === true &&
-        Number(selectedRule.standalone_price_iqd) > 0 &&
-        selectedRule.access_mode !== 'free';
+const standaloneContainer =
+    document.getElementById('qz-sub-standalone');
 
-    if (standaloneAvailable) {
-        standaloneContainer.innerHTML = `
-            <div class="qz-standalone">
-                <strong>Purchase this book individually</strong>
+// Read all available duration prices.
+const bookPrices = {
+    3: Number(selectedRule?.standalone_price_iqd || 0),
+    6: Number(selectedRule?.standalone_price_6m_iqd || 0),
+    9: Number(selectedRule?.standalone_price_9m_iqd || 0)
+};
 
-              
-<p class="qz-small">
-    Purchase access to this book without subscribing
-    to Premium or Platinum.
-    <br>
-    <strong>
-        Access duration:
-        ${Number(selectedRule.standalone_duration_months || 3)}
-        months
-    </strong>
-    <br>
-    Access expires automatically after the purchased period.
-</p>
+const availableMonths = [3, 6, 9].filter(months =>
+    Number.isSafeInteger(bookPrices[months]) &&
+    bookPrices[months] > 0
+);
 
+const standaloneAvailable =
+    selectedRule?.standalone_enabled === true &&
+    selectedRule.access_mode !== 'free' &&
+    availableMonths.length > 0;
 
-                <div class="qz-price" style="font-size:21px">
-                    ${formatPrice(selectedRule.standalone_price_iqd)}
-                </div>
-
-          
-<button type="button"
-        class="qz-purchase"
-        data-qz-buy-book="${escapeHtml(currentBookId)}">
-    Buy This Book — ${formatPrice(selectedRule.standalone_price_iqd)}
-</button>
-
-            </div>
-        `;
-    } else {
-        standaloneContainer.innerHTML = '';
+if (standaloneAvailable) {
+    // If the selected duration is not offered,
+    // choose the first available duration.
+    if (!availableMonths.includes(selectedBookMonths)) {
+        selectedBookMonths = availableMonths[0];
     }
 
-    setMessage(
-        'Purchase requests require administrator approval ' +
-        'after payment verification.'
-    );
+    const selectedPrice = bookPrices[selectedBookMonths];
+
+    // Compare with repeated 3-month purchases.
+    // Only advertise a real positive discount.
+    const baseline = bookPrices[3] *
+        (selectedBookMonths / 3);
+
+    const amountSaved =
+        bookPrices[3] > 0 && selectedBookMonths > 3
+            ? baseline - selectedPrice
+            : 0;
+
+    const percentSaved =
+        amountSaved > 0
+            ? Math.round((amountSaved / baseline) * 100)
+            : 0;
+
+    const savingsHtml = amountSaved > 0
+        ? `
+            <div class="qz-book-discount">
+                ✓ Save ${formatPrice(amountSaved)}
+                (${percentSaved}%)
+                compared with renewing every 3 months
+            </div>
+        `
+        : '';
+
+    const durationButtons = [3, 6, 9].map(months => {
+        const enabled = availableMonths.includes(months);
+
+        return `
+            <button
+                type="button"
+                class="qz-book-term
+                    ${selectedBookMonths === months ? 'selected' : ''}"
+                data-qz-action="book-duration"
+                data-months="${months}"
+                aria-pressed="${selectedBookMonths === months}"
+                ${enabled ? '' : 'disabled'}>
+                ${months} Months
+            </button>
+        `;
+    }).join('');
+
+    standaloneContainer.innerHTML = `
+        <div class="qz-standalone">
+            <strong>Purchase this book individually</strong>
+
+            <p class="qz-small">
+                Buy access to this book without purchasing
+                a Premium or Platinum subscription.
+                Select your preferred access duration.
+            </p>
+
+            <div class="qz-book-duration-options"
+                 aria-label="Individual book duration">
+                ${durationButtons}
+            </div>
+
+            <div class="qz-price" style="font-size:22px">
+                ${formatPrice(selectedPrice)}
+            </div>
+
+            ${savingsHtml}
+
+            <p class="qz-small">
+                ${selectedBookMonths} months of access.
+                Access expires automatically at the
+                end of the purchased period.
+            </p>
+
+            <button
+                type="button"
+                class="qz-purchase"
+                data-qz-buy-book="${escapeHtml(currentBookId)}"
+                data-qz-book-months="${selectedBookMonths}">
+                Buy This Book —
+                ${formatPrice(selectedPrice)}
+            </button>
+        </div>
+    `;
+} else {
+    standaloneContainer.innerHTML = '';
+}
+
+setMessage(
+    'Payments are processed through Qi Sandbox. ' +
+    'Purchased access activates after verified payment.'
+);
+
 }
 
 
@@ -1044,14 +1184,30 @@ async function startCardCheckout(planSlug, button) {
         return;
     }
 
-    const months = selectedMonths;
 
-    if (!confirm(
-        `Purchase ${planSlug.toUpperCase()} for ${months} months?\n\n` +
-        'You will be redirected to a secure payment gateway.'
-    )) {
-        return;
-    }
+const months = selectedMonths;
+
+const bookTier = modalData?.memberships?.find(
+    item => String(item.book_id) === String(currentBookId)
+)?.tier || 'none';
+
+const includesClickedBook =
+    bookIncludedInPlan(bookTier, planSlug);
+
+const warning = includesClickedBook
+    ? ''
+    : '\n\nIMPORTANT: The book you clicked is not ' +
+      'included in this plan. Purchasing this plan ' +
+      'will not unlock that particular book.';
+
+if (!confirm(
+    `Purchase ${planSlug.toUpperCase()} for ${months} months?` +
+    warning +
+    '\n\nContinue to secure payment?'
+)) {
+    return;
+}
+
 
     const originalText = button.textContent;
     button.disabled = true;
@@ -1154,9 +1310,12 @@ async function openSubscriptionModal(bookId) {
 
     createSubscriptionModal();
 
-    currentBookId = String(bookId);
-    selectedMonths = 3;
-    modalData = null;
+
+currentBookId = String(bookId);
+selectedMonths = 3;
+selectedBookMonths = 3;
+modalData = null;
+
 
     const version = ++loadVersion;
 
@@ -1230,7 +1389,13 @@ const [
 
     supabase.from('qz_book_rules')
        
-.select('book_id,access_mode,standalone_enabled,standalone_price_iqd,standalone_duration_months'),
+
+.select(
+    'book_id,access_mode,standalone_enabled,' +
+    'standalone_price_iqd,standalone_price_6m_iqd,' +
+    'standalone_price_9m_iqd'
+),
+
 
 
     supabase.from('books')

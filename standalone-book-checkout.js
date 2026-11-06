@@ -22,6 +22,7 @@ function showCheckoutError(message) {
     }
 }
 
+
 export async function startStandaloneCheckout(bookId, button) {
     if (checkoutBusy) return;
 
@@ -29,6 +30,14 @@ export async function startStandaloneCheckout(bookId, button) {
         showCheckoutError('Book ID is missing.');
         return;
     }
+
+    const months = Number(button?.dataset.qzBookMonths);
+
+    if (![3, 6, 9].includes(months)) {
+        showCheckoutError('Choose a valid book duration.');
+        return;
+    }
+
 
     const { data: auth, error: authError } =
         await supabase.auth.getUser();
@@ -38,12 +47,13 @@ export async function startStandaloneCheckout(bookId, button) {
         return;
     }
 
-    const proceed = window.confirm(
-        'Purchase this book individually?\n\n' +
-        'This purchase grants access to only this book. ' +
-        'It does not include Premium or Platinum.\n\n' +
-        'You will be redirected to Qi Sandbox checkout.'
-    );
+const proceed = window.confirm(
+    `Purchase this book for ${months} months?\n\n` +
+    'Only this book will be unlocked. ' +
+    'Premium and Platinum are not included.\n\n' +
+    'You will be redirected to Qi Sandbox checkout.'
+);
+
 
     if (!proceed) return;
 
@@ -60,9 +70,12 @@ export async function startStandaloneCheckout(bookId, button) {
         const { data, error } = await supabase.functions.invoke(
             'qi-start-book-checkout',
             {
-                body: {
-                    book_id: String(bookId)
-                }
+       
+body: {
+    book_id: String(bookId),
+    months
+}
+
             }
         );
 
