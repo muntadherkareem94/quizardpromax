@@ -78,6 +78,11 @@ const targetPlan = String(
   body?.target_plan_slug || ''
 ).trim().toLowerCase();
 
+
+const targetPlan = String(
+  body?.target_plan_slug || ''
+).trim().toLowerCase();
+
 const months = Number(body?.months);
 const maxAmount = Number(body?.max_amount_iqd);
 
@@ -91,8 +96,10 @@ if (
 }
 
 
+
     // Creates a checkout and a frozen upgrade quote
     // atomically, based on the authenticated user.
+
 
 const { data: quote, error: quoteError } =
   await publicClient.rpc('qz_plan_change_quote', {
@@ -101,6 +108,7 @@ const { data: quote, error: quoteError } =
     p_create: true,
     p_max_amount_iqd: maxAmount
   });
+
 
 
     if (quoteError) {
@@ -144,12 +152,14 @@ const { data: quote, error: quoteError } =
           notificationUrl:
             `${url}/functions/v1/qi-payment-webhook`,
 
+
 additionalInfo: {
   source: 'quizard',
   productType: 'plan_upgrade',
   targetPlan,
   months
 }
+
 
         })
       }
@@ -202,6 +212,7 @@ additionalInfo: {
     if (savedUpgrade.error) throw savedUpgrade.error;
 
 
+
 return respond({
   checkout_url: checkout.href,
   request_id: requestId,
@@ -213,6 +224,7 @@ return respond({
   credit_iqd: quote.credit_iqd,
   net_iqd: quote.net_iqd
 });
+
 
 
   } catch (error) {
