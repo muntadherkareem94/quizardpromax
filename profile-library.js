@@ -1,7 +1,9 @@
 
 
 import { supabase } from './supabaseClient.js';
-import { openPlanUpgradeModal } from './plan-upgrade.js';
+
+import { openPlanChangeModal } from './plan-change-modal.js';
+
 
 
 // Quizard Personal Profile — My Library
@@ -228,7 +230,68 @@ ${badge(
 
 
 
-function renderPlans(plans, override) {
+
+function purchasedTermMonths(plan, payments = []) {
+    // Prefer the exact paid checkout corresponding
+    // to the current subscription activation.
+    const matchingPayment = payments.find(payment =>
+        payment.status === 'paid' &&
+        payment.kind === 'plan' &&
+        payment.plan_slug === plan.plan_slug &&
+        payment.speciality === plan.speciality &&
+        payment.paid_at &&
+        Math.abs(
+            new Date(payment.paid_at).getTime() -
+            new Date(plan.starts_at).getTime()
+        ) < 1000
+    );
+
+    const recordedMonths = Number(matchingPayment?.months);
+
+    if ([3, 6, 12].includes(recordedMonths)) {
+        return recordedMonths;
+    }
+
+    // Fallback for older purchases outside
+    // the recent payment-history window.
+    const start = new Date(plan.starts_at);
+    const end = new Date(plan.expires_at);
+
+    if (
+        !Number.isFinite(start.getTime()) ||
+        !Number.isFinite(end.getTime())
+    ) {
+        return null;
+    }
+
+    for (const months of [3, 6, 12]) {
+        const candidate = new Date(start);
+
+        // Match PostgreSQL calendar-month behavior,
+        // including months with fewer days.
+        candidate.setUTCDate(1);
+        candidate.setUTCMonth(start.getUTCMonth() + months);
+
+        const lastDay = new Date(Date.UTC(
+            candidate.getUTCFullYear(),
+            candidate.getUTCMonth() + 1,
+            0
+        )).getUTCDate();
+
+        candidate.setUTCDate(
+            Math.min(start.getUTCDate(), lastDay)
+        );
+
+        if (Math.abs(candidate - end) <= 1000) {
+            return months;
+        }
+    }
+
+    return null;
+}
+
+function renderPlans(plans, override, payments = []) {
+
     const container = $('qzLibraryPlans');
     const items = [];
 
@@ -313,13 +376,24 @@ const renewalKey =
     String(plan.speciality || '') + ':' +
     String(plan.plan_slug || '');
 
+
+const currentMonths = purchasedTermMonths(plan, payments);
+
+const isMaximumPlan =
+    valid &&
+    plan.plan_slug === 'platinum' &&
+    currentMonths === 12;
+
 const canUpgrade =
     !override &&
     !upgradeShown &&
     scheduledPlans.length === 0 &&
     activePlans.length === 1 &&
     valid &&
-    plan.plan_slug === 'premium';
+    ['premium', 'platinum'].includes(plan.plan_slug) &&
+    [3, 6, 12].includes(currentMonths) &&
+    !isMaximumPlan;
+
 
 if (canUpgrade) {
     upgradeShown = true;
@@ -336,21 +410,25 @@ if (canRenew) {
     renewalShown.add(renewalKey);
 }
 
+
 const renewButton = canUpgrade
     ? `
         <button
             type="button"
-            data-qz-upgrade-plan="platinum"
+            data-qz-upgrade-plan="${escapeHtml(plan.plan_slug)}"
+            data-qz-current-months="${currentMonths}"
             class="inline-flex items-center justify-center
                    mt-3 px-4 py-2 rounded-lg
                    bg-purple-600 hover:bg-purple-700
                    text-white font-semibold text-sm">
-            Upgrade to Platinum
+            ${plan.plan_slug === 'platinum'
+                ? 'Upgrade Platinum Duration'
+                : 'Upgrade Plan or Duration'}
         </button>
 
         <p class="text-xs text-gray-500 mt-2">
-            Your unused paid Premium value will be
-            credited toward your new Platinum plan.
+            Your unused subscription value will be
+            deducted from the new plan price.
         </p>
       `
     : canRenew
@@ -368,14 +446,29 @@ const renewButton = canUpgrade
                 )} Plan
             </button>
           `
-        : valid && plan.plan_slug === 'platinum'
+        : isMaximumPlan
             ? `
+                <button type="button" disabled
+                    class="mt-3 px-4 py-2 rounded-lg
+                           bg-gray-200 text-gray-500
+                           text-sm font-semibold cursor-not-allowed">
+                    Maximum Plan — No Upgrade Available
+                </button>
+
                 <p class="text-xs text-green-700 mt-2">
-                    Your Platinum membership is active.
-                    Downgrading while active is unavailable.
+                    Your 12-month Platinum membership is
+                    the highest available subscription.
                 </p>
               `
-            : '';
+            : valid && !currentMonths
+                ? `
+                    <p class="text-xs text-gray-500 mt-2">
+                        Contact support to manage this
+                        subscription's duration.
+                    </p>
+                  `
+                : '';
+
 
 items.push(`
 
@@ -597,9 +690,11 @@ if (!Array.isArray(bookAccess)) {
         const override = data?.override || null;
 
 
+
 renderBooks(books, bookAccess);
-renderPlans(plans, override);
+renderPlans(plans, override, payments);
 renderPayments(payments);
+
 
 
         const activeBooks = books.filter(book =>
@@ -662,7 +757,12 @@ $('qzLibraryPlans').addEventListener('click', event => {
 
     event.preventDefault();
 
-    openPlanUpgradeModal();
+
+openPlanChangeModal({
+    currentPlan: button.dataset.qzUpgradePlan,
+    currentMonths: Number(button.dataset.qzCurrentMonths)
+});
+
 });
 
 // Renew an expired Premium or Platinum plan.

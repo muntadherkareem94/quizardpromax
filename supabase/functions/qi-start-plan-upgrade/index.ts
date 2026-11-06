@@ -73,25 +73,35 @@ Deno.serve(async (req: Request) => {
 
     const body = await req.json();
 
-    const months = Number(body?.months);
-    const maxAmount = Number(body?.max_amount_iqd);
 
-    if (
-      ![3, 6, 12].includes(months) ||
-      !Number.isSafeInteger(maxAmount) ||
-      maxAmount <= 0
-    ) {
-      return respond({ error: 'Invalid upgrade selection' }, 400);
-    }
+const targetPlan = String(
+  body?.target_plan_slug || ''
+).trim().toLowerCase();
+
+const months = Number(body?.months);
+const maxAmount = Number(body?.max_amount_iqd);
+
+if (
+  !['premium', 'platinum'].includes(targetPlan) ||
+  ![3, 6, 12].includes(months) ||
+  !Number.isSafeInteger(maxAmount) ||
+  maxAmount <= 0
+) {
+  return respond({ error: 'Invalid upgrade selection' }, 400);
+}
+
 
     // Creates a checkout and a frozen upgrade quote
     // atomically, based on the authenticated user.
-    const { data: quote, error: quoteError } =
-      await publicClient.rpc('qz_upgrade_quote', {
-        p_months: months,
-        p_create: true,
-        p_max_amount_iqd: maxAmount
-      });
+
+const { data: quote, error: quoteError } =
+  await publicClient.rpc('qz_plan_change_quote', {
+    p_target_plan_slug: targetPlan,
+    p_months: months,
+    p_create: true,
+    p_max_amount_iqd: maxAmount
+  });
+
 
     if (quoteError) {
       return respond({ error: quoteError.message }, 409);
@@ -133,12 +143,14 @@ Deno.serve(async (req: Request) => {
           finishPaymentUrl: callback.href,
           notificationUrl:
             `${url}/functions/v1/qi-payment-webhook`,
-          additionalInfo: {
-            source: 'quizard',
-            productType: 'plan_upgrade',
-            targetPlan: 'platinum',
-            months
-          }
+
+additionalInfo: {
+  source: 'quizard',
+  productType: 'plan_upgrade',
+  targetPlan,
+  months
+}
+
         })
       }
     );
@@ -189,14 +201,19 @@ Deno.serve(async (req: Request) => {
 
     if (savedUpgrade.error) throw savedUpgrade.error;
 
-    return respond({
-      checkout_url: checkout.href,
-      request_id: requestId,
-      gross_iqd: quote.gross_iqd,
-      credit_iqd: quote.credit_iqd,
-      net_iqd: quote.net_iqd,
-      months
-    });
+
+return respond({
+  checkout_url: checkout.href,
+  request_id: requestId,
+  current_plan: quote.current_plan,
+  current_months: quote.current_months,
+  target_plan: quote.target_plan,
+  target_months: quote.target_months,
+  gross_iqd: quote.gross_iqd,
+  credit_iqd: quote.credit_iqd,
+  net_iqd: quote.net_iqd
+});
+
 
   } catch (error) {
     console.error('Upgrade checkout error:', error);
