@@ -136,7 +136,115 @@
                 </div>
             </div>
 
-            <!-- Overall Stats Section -->
+           
+<!-- My Library & Subscriptions -->
+<section id="qzLibrarySection"
+    class="border-t pt-8 mb-10">
+
+    <div class="flex flex-col sm:flex-row
+                sm:items-center sm:justify-between
+                gap-3 mb-5">
+
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800">
+                My Library &amp; Subscriptions
+            </h2>
+
+            <p class="text-gray-500 text-sm mt-1">
+                Manage your purchased access and view
+                your payment history.
+            </p>
+        </div>
+
+        <button id="qzLibraryRefresh"
+            type="button"
+            class="bg-blue-50 text-blue-800
+                   hover:bg-blue-100 px-4 py-2
+                   rounded-lg font-semibold text-sm">
+            Refresh
+        </button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3
+                gap-3 mb-6">
+
+        <div class="bg-blue-50 p-4 rounded-xl">
+            <p class="text-gray-500 text-xs">
+                Active Individual Books
+            </p>
+            <strong id="qzLibraryBookCount"
+                class="text-2xl text-blue-800">—</strong>
+        </div>
+
+        <div class="bg-purple-50 p-4 rounded-xl">
+            <p class="text-gray-500 text-xs">
+                Current Plans
+            </p>
+            <strong id="qzLibraryPlanCount"
+                class="text-2xl text-purple-800">—</strong>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-xl">
+            <p class="text-gray-500 text-xs">
+                Recent Transactions
+            </p>
+            <strong id="qzLibraryPaymentCount"
+                class="text-2xl text-gray-800">—</strong>
+        </div>
+    </div>
+
+    <div class="flex gap-2 flex-wrap mb-5"
+         role="tablist"
+         aria-label="Library sections">
+
+        <button type="button"
+            role="tab"
+            data-qz-library-tab="books"
+            class="bg-blue-600 text-white px-4 py-2
+                   rounded-lg text-sm font-semibold">
+            My Books
+        </button>
+
+        <button type="button"
+            role="tab"
+            data-qz-library-tab="plans"
+            class="bg-gray-100 text-gray-700 px-4 py-2
+                   rounded-lg text-sm font-semibold">
+            My Plans
+        </button>
+
+        <button type="button"
+            role="tab"
+            data-qz-library-tab="payments"
+            class="bg-gray-100 text-gray-700 px-4 py-2
+                   rounded-lg text-sm font-semibold">
+            Payment History
+        </button>
+    </div>
+
+    <p id="qzLibraryStatus"
+       role="status"
+       aria-live="polite"
+       class="text-sm text-gray-500 mb-4">
+        Loading your library...
+    </p>
+
+    <div id="qzLibraryBooks"
+         role="tabpanel"
+         class="space-y-3"></div>
+
+    <div id="qzLibraryPlans"
+         role="tabpanel"
+         class="space-y-3 hidden"></div>
+
+    <div id="qzLibraryPayments"
+         role="tabpanel"
+         class="space-y-3 hidden"></div>
+
+</section>
+
+<!-- Overall Stats Section -->
+
             <div class="border-t pt-8">
                 <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Overall Statistics</h2>
                 <div id="statsContainer" class="hidden grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
@@ -637,6 +745,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
  // --- END: ADD THIS ENTIRE BLOCK ---
+
 </script>
+
+<!-- My Library & Subscriptions -->
+<script type="module" src="./profile-library.js"></script>
+
 </body>
+
 </html>
+
