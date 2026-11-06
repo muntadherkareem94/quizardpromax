@@ -7,12 +7,18 @@ import './standalone-book-checkout.js';
 // QUIZARD SUBSCRIPTION MODAL
 // Opens over dashboard.html without leaving the page.
 
+
 let overlay = null;
 let currentBookId = null;
 
 let selectedMonths = 3;       // Premium/Platinum: 3/6/12
 let selectedBookMonths = 3;   // Individual book: 3/6/9
 let modalData = null;
+
+// Supports plan renewal without selecting a particular book.
+let planOnlyMode = false;
+let preferredPlanSlug = null;
+
 
 let previousOverflow = '';
 let previousFocus = null;
@@ -931,13 +937,20 @@ function renderSubscriptionModal() {
 
             ${renderPlanBookCovers(freeBooks)}
 
-            <div class="${freeIncludesBook
-                ? 'qz-included'
-                : 'qz-not-included'}">
-                ${freeIncludesBook
-                    ? '✓ Includes this book'
-                    : 'This book is not included'}
-            </div>
+
+<div class="${planOnlyMode
+    ? 'qz-small'
+    : freeIncludesBook
+        ? 'qz-included'
+        : 'qz-not-included'}">
+
+    ${planOnlyMode
+        ? 'Free books are always available on Dashboard.'
+        : freeIncludesBook
+            ? '✓ Includes this book'
+            : 'This book is not included'}
+</div>
+
 
 
 <button type="button"
@@ -1002,8 +1015,12 @@ const savingsHtml = savings && plan.enabled === true
                 : platinumCount;
 
         cards.push(`
-            <div class="qz-plan ${slug}
-                 ${includesBook ? 'recommended' : ''}">
+
+<div class="qz-plan ${slug}
+     ${(planOnlyMode
+        ? slug === preferredPlanSlug
+        : includesBook) ? 'recommended' : ''}">
+
 
                 <h3>
                     ${slug === 'premium' ? '★' : '◆'}
@@ -1029,13 +1046,20 @@ ${savingsHtml}
 
                 ${renderPlanBookCovers(planBooks)}
 
-                <div class="${includesBook
-                    ? 'qz-included'
-                    : 'qz-not-included'}">
-                    ${includesBook
-                        ? '✓ Includes this book'
-                        : 'This book is not included'}
-                </div>
+
+<div class="${planOnlyMode
+    ? 'qz-included'
+    : includesBook
+        ? 'qz-included'
+        : 'qz-not-included'}">
+
+    ${planOnlyMode
+        ? 'Select this plan to renew your membership.'
+        : includesBook
+            ? '✓ Includes this book'
+            : 'This book is not included'}
+</div>
+
 
                 <button type="button"
                         class="qz-purchase"
@@ -1194,11 +1218,14 @@ const bookTier = modalData?.memberships?.find(
 const includesClickedBook =
     bookIncludedInPlan(bookTier, planSlug);
 
-const warning = includesClickedBook
-    ? ''
-    : '\n\nIMPORTANT: The book you clicked is not ' +
-      'included in this plan. Purchasing this plan ' +
-      'will not unlock that particular book.';
+
+const warning =
+    planOnlyMode || includesClickedBook
+        ? ''
+        : '\n\nIMPORTANT: The book you clicked is not ' +
+          'included in this plan. Purchasing this plan ' +
+          'will not unlock that particular book.';
+
 
 if (!confirm(
     `Purchase ${planSlug.toUpperCase()} for ${months} months?` +
@@ -1305,16 +1332,28 @@ const { error } = await supabase.rpc(
     }
 }
 
-async function openSubscriptionModal(bookId) {
-    if (!bookId) return;
+
+async function openSubscriptionModal(bookId, renewPlanSlug = null) {
+    const requestedPlan = String(renewPlanSlug || '').toLowerCase();
+    const planOnly = bookId == null || bookId === '';
+
+    if (
+        planOnly &&
+        !['premium', 'platinum'].includes(requestedPlan)
+    ) {
+        return;
+    }
 
     createSubscriptionModal();
 
+    planOnlyMode = planOnly;
+    preferredPlanSlug = planOnly ? requestedPlan : null;
 
-currentBookId = String(bookId);
-selectedMonths = 3;
-selectedBookMonths = 3;
-modalData = null;
+    currentBookId = planOnly ? null : String(bookId);
+    selectedMonths = 3;
+    selectedBookMonths = 3;
+    modalData = null;
+
 
 
     const version = ++loadVersion;
@@ -1370,10 +1409,14 @@ const [
     rulesResult,
     catalogResult
 ] = await Promise.all([
-    supabase.from('books')
+   
+planOnlyMode
+    ? Promise.resolve({ data: null, error: null })
+    : supabase.from('books')
         .select('id,title')
         .eq('id', currentBookId)
         .maybeSingle(),
+
 
     supabase.from('qz_specialty_plans')
         .select('plan_slug,title,description,enabled')
@@ -1416,11 +1459,24 @@ for (const result of [
 
         if (version !== loadVersion || overlay.hidden) return;
 
-        const bookTitle =
-            bookResult.data?.title || 'Medical Question Bank';
 
-        document.getElementById('qz-sub-heading').textContent =
-            'Unlock ' + bookTitle;
+const bookTitle =
+    bookResult.data?.title || 'Medical Question Bank';
+
+document.getElementById('qz-sub-heading').textContent =
+    planOnlyMode
+        ? 'Renew ' +
+          preferredPlanSlug.toUpperCase() +
+          ' — ' + speciality
+        : 'Unlock ' + bookTitle;
+
+overlay.querySelector('.qz-description').textContent =
+    planOnlyMode
+        ? 'Choose your preferred plan and access duration. ' +
+          'Prices and included books are shown below.'
+        : 'Choose a subscription or purchase this book ' +
+          'individually if available.';
+
 
        
 modalData = {

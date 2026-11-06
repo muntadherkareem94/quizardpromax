@@ -70,9 +70,20 @@ function safeCover(url) {
     return '';
 }
 
-function renderBooks(books) {
+
+function renderBooks(books, accessRows = []) {
     const container = $('qzLibraryBooks');
     const now = Date.now();
+
+    // Use the same book-access result as Dashboard.
+    // This includes subscriptions, individual licenses,
+    // and other access entitlements.
+    const accessibleBookIds = new Set(
+        accessRows
+            .filter(row => row.has_access === true)
+            .map(row => String(row.book_id))
+    );
+
 
     if (!books.length) {
         container.innerHTML = `
@@ -114,19 +125,20 @@ function renderBooks(books) {
                </div>`;
 
    
-const action = active
-    ? `
-        <a href="dashboard.html"
-           class="inline-block text-blue-700 font-semibold text-sm">
-            Open in Dashboard
-        </a>
 
-        <p class="text-xs text-gray-500 mt-1">
-            Renewal becomes available when this
-            individual book license expires.
-        </p>
-      `
-    : `
+// Does the user currently have this book through
+// Premium, Platinum, Free, or another entitlement?
+const hasCurrentAccess = accessibleBookIds.has(
+    String(book.book_id)
+);
+
+// Only offer renewal if BOTH conditions are true:
+// 1. The individual license has expired.
+// 2. There is no other active entitlement.
+const canRenew = !active && !hasCurrentAccess;
+
+const action = canRenew
+    ? `
         <button
             type="button"
             data-qz-plan-book="${escapeHtml(book.book_id)}"
@@ -136,7 +148,28 @@ const action = active
                    text-sm px-4 py-2 rounded-lg">
             Renew Book Access
         </button>
+      `
+    : `
+        <a href="dashboard.html"
+           class="inline-flex items-center justify-center
+                  bg-green-50 hover:bg-green-100
+                  text-green-800 font-semibold
+                  text-sm px-4 py-2 rounded-lg">
+            Open in Dashboard
+        </a>
+
+        ${!active && hasCurrentAccess
+            ? `
+                <p class="text-xs text-green-700 mt-2">
+                    This book is already available through
+                    your current membership or another
+                    active entitlement.
+                    No additional purchase is needed.
+                </p>
+              `
+            : ''}
       `;
+
 
 
         return `
@@ -151,10 +184,16 @@ const action = active
                         <h3 class="font-bold text-gray-800">
                             ${escapeHtml(book.title)}
                         </h3>
-                        ${badge(
-                            active ? 'Active' : 'Expired / Cancelled',
-                            active
-                        )}
+
+${badge(
+    hasCurrentAccess
+        ? 'Accessible Now'
+        : active
+            ? 'Individual License Active'
+            : 'Expired / Cancelled',
+    hasCurrentAccess || active
+)}
+
                     </div>
 
                     <p class="text-sm text-gray-600">
@@ -165,10 +204,17 @@ const action = active
                         Expires: ${formatDate(book.expires_at)}
                     </p>
 
-                    <p class="text-sm font-semibold
-                              ${active ? 'text-green-700' : 'text-gray-500'}">
-                        ${remainingDays(book.expires_at)}
-                    </p>
+
+<p class="text-sm font-semibold
+          ${hasCurrentAccess || active
+              ? 'text-green-700'
+              : 'text-gray-500'}">
+
+    ${!active && hasCurrentAccess
+        ? 'Individual license expired, but book access is active.'
+        : remainingDays(book.expires_at)}
+</p>
+
 
                     ${action}
                 </div>
@@ -458,11 +504,24 @@ async function loadLibrary() {
             throw Error('Please sign in to view your library.');
         }
 
-        const { data, error } = await supabase.rpc(
-            'qz_my_library_summary'
-        );
 
-        if (error) throw error;
+// Load purchases and current book entitlements together.
+// qz_my_book_access is already used by Dashboard.
+const [
+    { data, error },
+    { data: bookAccess, error: accessError }
+] = await Promise.all([
+    supabase.rpc('qz_my_library_summary'),
+    supabase.rpc('qz_my_book_access')
+]);
+
+if (error) throw error;
+if (accessError) throw accessError;
+
+if (!Array.isArray(bookAccess)) {
+    throw Error('Unable to verify current book access.');
+}
+
 
         const books = Array.isArray(data?.books)
             ? data.books : [];
@@ -475,9 +534,11 @@ async function loadLibrary() {
 
         const override = data?.override || null;
 
-        renderBooks(books);
-        renderPlans(plans, override);
-        renderPayments(payments);
+
+renderBooks(books, bookAccess);
+renderPlans(plans, override);
+renderPayments(payments);
+
 
         const activeBooks = books.filter(book =>
             !book.expires_at ||
