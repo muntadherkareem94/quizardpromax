@@ -313,9 +313,14 @@ function showReceipt(row) {
 
     $('rSpecialty').textContent = row.speciality;
 
-    $('rMonths').textContent = isBook
-        ? 'Individual book access'
-        : row.months + ' months';
+   
+$('rMonths').textContent = isBook
+    ? (
+        Number(row.book_duration_months || 3) +
+        ' months of individual book access'
+    )
+    : row.months + ' months';
+
 
     $('rAmount').textContent =
         Number(row.amount_iqd).toLocaleString('en-IQ') +
@@ -411,8 +416,10 @@ async function checkPayment() {
 
 .select(
     'request_id,user_id,provider_payment_id,' +
-    'kind,book_id,plan_slug,speciality,months,' +
-    'amount_iqd,currency,status'
+
+'kind,book_id,plan_slug,speciality,months,' +
+'book_duration_months,amount_iqd,currency,status'
+
 )
 
                 .eq('request_id', requestId)

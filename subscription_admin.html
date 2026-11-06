@@ -446,8 +446,11 @@ th { background: #f4f8fb; }
 
                     <th>Book</th>
                     <th>Access Tier</th>
-                    <th>Individual Sale</th>
-                    <th>Price (IQD)</th>
+                  
+<th>Individual Sale</th>
+<th>Price (IQD)</th>
+<th>Book Access Duration</th>
+
                 </tr>
             </thead>
 
@@ -651,30 +654,44 @@ const BOOK_TIER_LABELS = [
     ['standalone', 'Standalone only']
 ];
 
+
 function originalRule(book) {
     const saved = bookRules.get(String(book.id));
 
     return {
         book_id: String(book.id),
+
         access_mode: saved?.access_mode ||
             (book.access_level === 'purchasable'
                 ? 'standalone'
                 : book.access_level || 'free'),
-        standalone_enabled: saved?.standalone_enabled === true,
-        standalone_price_iqd: saved?.standalone_price_iqd == null
-            ? null
-            : Number(saved.standalone_price_iqd)
+
+        standalone_enabled:
+            saved?.standalone_enabled === true,
+
+        standalone_price_iqd:
+            saved?.standalone_price_iqd == null
+                ? null
+                : Number(saved.standalone_price_iqd),
+
+        standalone_duration_months:
+            Number(saved?.standalone_duration_months || 3)
     };
 }
+
 
 function changedBook(book) {
     const before = originalRule(book);
     const after = bookDraft.get(String(book.id));
 
     return !!after && (
-        before.access_mode !== after.access_mode ||
-        before.standalone_enabled !== after.standalone_enabled ||
-        before.standalone_price_iqd !== after.standalone_price_iqd
+      
+before.access_mode !== after.access_mode ||
+before.standalone_enabled !== after.standalone_enabled ||
+before.standalone_price_iqd !== after.standalone_price_iqd ||
+before.standalone_duration_months !==
+    after.standalone_duration_months
+
     );
 }
 
@@ -830,14 +847,32 @@ function renderBookTable() {
                                 rule.standalone_price_iqd ?? ''
                             )}"
                             placeholder="IQD"
+                     
                             ${rule.access_mode === 'free'
                                 ? 'disabled' : ''}>
                     </td>
+
+                    <td>
+                        <select
+                            class="book-duration"
+                            aria-label="Individual access duration for ${esc(book.title)}"
+                            ${rule.access_mode === 'free' ? 'disabled' : ''}>
+
+                            ${[3, 6, 12].map(months => `
+                                <option value="${months}"
+                                    ${rule.standalone_duration_months === months
+                                        ? 'selected' : ''}>
+                                    ${months} Months
+                                </option>
+                            `).join('')}
+                        </select>
+                    </td>
                 </tr>
+
             `;
         }).join('')
 
-        : '<tr><td colspan="5">No books match your search.</td></tr>';
+        : '<tr><td colspan="6">No books match your search.</td></tr>';
 
     const allSelected = filtered.length > 0 &&
         filtered.every(book =>
@@ -925,9 +960,13 @@ async function saveBooks() {
         rulesToSave.push({
             book_id: String(book.id),
             access_mode: rule.access_mode,
-            standalone_enabled: rule.standalone_enabled,
-            standalone_price_iqd: price,
-            updated_at: new Date().toISOString()
+            
+standalone_enabled: rule.standalone_enabled,
+standalone_price_iqd: price,
+standalone_duration_months:
+    rule.standalone_duration_months,
+updated_at: new Date().toISOString()
+
         });
     }
 
@@ -1133,14 +1172,20 @@ $('booksBody').addEventListener('change', event => {
     } else if (target.classList.contains('book-sale')) {
         draft.standalone_enabled = target.checked;
 
-    } else if (target.classList.contains('book-price')) {
-        draft.standalone_price_iqd =
-            target.value.trim() === ''
-                ? null
-                : Number(target.value);
-    }
+  
+} else if (target.classList.contains('book-price')) {
+    draft.standalone_price_iqd =
+        target.value.trim() === ''
+            ? null
+            : Number(target.value);
 
-    renderBookTable();
+} else if (target.classList.contains('book-duration')) {
+    draft.standalone_duration_months =
+        Number(target.value);
+}
+
+renderBookTable();
+
 });
 
 // -----------------------------------------

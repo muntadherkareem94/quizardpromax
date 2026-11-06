@@ -999,9 +999,20 @@ ${purchasable
             <div class="qz-standalone">
                 <strong>Purchase this book individually</strong>
 
-                <p class="qz-small">
-                    Get access without subscribing to Premium or Platinum.
-                </p>
+              
+<p class="qz-small">
+    Purchase access to this book without subscribing
+    to Premium or Platinum.
+    <br>
+    <strong>
+        Access duration:
+        ${Number(selectedRule.standalone_duration_months || 3)}
+        months
+    </strong>
+    <br>
+    Access expires automatically after the purchased period.
+</p>
+
 
                 <div class="qz-price" style="font-size:21px">
                     ${formatPrice(selectedRule.standalone_price_iqd)}
@@ -1218,7 +1229,9 @@ const [
         .eq('speciality', speciality),
 
     supabase.from('qz_book_rules')
-        .select('book_id,access_mode,standalone_enabled,standalone_price_iqd'),
+       
+.select('book_id,access_mode,standalone_enabled,standalone_price_iqd,standalone_duration_months'),
+
 
     supabase.from('books')
         .select('*')

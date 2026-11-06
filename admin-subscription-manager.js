@@ -1,5 +1,8 @@
 
+
 import { supabase } from './supabaseClient.js';
+import { installBookLicenseManager } from './admin-book-licenses.js';
+
 
 // Quizard Super Admin — Manual Subscription Management
 
@@ -310,9 +313,14 @@ dialog.innerHTML = `
     </div>
 `;
 
+
 document.body.appendChild(dialog);
 
+// Add individual-book controls to the same Super Admin window.
+const bookLicenseManager = installBookLicenseManager(dialog);
+
 const $ = id => dialog.querySelector('#' + id);
+
 
 let selectedUserId = null;
 let currentInfo = null;
@@ -447,10 +455,15 @@ setStatus('Loading subscription information...');
         }
 
 
+
 await loadUserPlan(userId);
+
+// Independently load Qi standalone-book licenses.
+await bookLicenseManager.load(userId);
 
 $('qzaSave').disabled = false;
 $('qzaCancelSubscriptions').disabled = false;
+
 
 
     } catch (error) {

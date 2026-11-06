@@ -86,10 +86,12 @@ Deno.serve(async (req: Request) => {
           .maybeSingle(),
 
         admin.from('qz_book_rules')
-          .select(
-            'access_mode,standalone_enabled,' +
-            'standalone_price_iqd'
-          )
+         
+.select(
+  'access_mode,standalone_enabled,' +
+  'standalone_price_iqd,standalone_duration_months'
+)
+
           .eq('book_id', bookId)
           .maybeSingle(),
 
@@ -125,11 +127,23 @@ Deno.serve(async (req: Request) => {
       }, 400);
     }
 
-    const amount = Number(
-      rule.data?.standalone_price_iqd
-    );
+ 
+const amount = Number(
+  rule.data?.standalone_price_iqd
+);
 
-    const saleEnabled =
+const bookDurationMonths = Number(
+  rule.data?.standalone_duration_months
+);
+
+if (![3, 6, 12].includes(bookDurationMonths)) {
+  return respond({
+    error: 'Invalid standalone book duration.'
+  }, 400);
+}
+
+const saleEnabled =
+
       rule.data?.standalone_enabled === true &&
       rule.data?.access_mode !== 'free' &&
       Number.isSafeInteger(amount) &&
@@ -176,13 +190,16 @@ Deno.serve(async (req: Request) => {
         request_id: requestId,
         user_id: user.id,
         kind: 'book',
-        book_id: bookId,
-        speciality,
-        plan_slug: null,
-        months: null,
-        amount_iqd: amount,
-        currency: 'IQD',
-        status: 'created'
+       
+book_id: bookId,
+speciality,
+plan_slug: null,
+months: null,
+book_duration_months: bookDurationMonths,
+amount_iqd: amount,
+currency: 'IQD',
+status: 'created'
+
       });
 
     if (insert.error) throw insert.error;
