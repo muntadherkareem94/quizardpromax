@@ -113,15 +113,31 @@ function renderBooks(books) {
                     Book
                </div>`;
 
-        const action = active
-            ? `<a href="dashboard.html"
-                   class="text-blue-700 font-semibold text-sm">
-                   Go to Dashboard
-               </a>`
-            : `<a href="store.html"
-                   class="text-blue-700 font-semibold text-sm">
-                   Explore Renewal Options
-               </a>`;
+   
+const action = active
+    ? `
+        <a href="dashboard.html"
+           class="inline-block text-blue-700 font-semibold text-sm">
+            Open in Dashboard
+        </a>
+
+        <p class="text-xs text-gray-500 mt-1">
+            Renewal becomes available when this
+            individual book license expires.
+        </p>
+      `
+    : `
+        <button
+            type="button"
+            data-qz-plan-book="${escapeHtml(book.book_id)}"
+            class="inline-flex items-center justify-center
+                   bg-blue-600 hover:bg-blue-700
+                   text-white font-semibold
+                   text-sm px-4 py-2 rounded-lg">
+            Renew Book Access
+        </button>
+      `;
+
 
         return `
             <article class="border border-gray-200 rounded-xl
@@ -161,9 +177,14 @@ function renderBooks(books) {
     }).join('');
 }
 
+
 function renderPlans(plans, override) {
     const container = $('qzLibraryPlans');
     const items = [];
+
+    // One renewal action per plan tier and specialty.
+    const renewalShown = new Set();
+
 
     if (override) {
         const manualActive = override.plan_slug !== 'free';
@@ -217,9 +238,39 @@ function renderPlans(plans, override) {
                     ? 'Administrative override applies'
                     : 'Active';
 
-        const effective = valid && !override;
+const effective = valid && !override;
 
-        items.push(`
+const renewalKey =
+    String(plan.speciality || '') + ':' +
+    String(plan.plan_slug || '');
+
+const canRenew =
+    ['premium', 'platinum'].includes(plan.plan_slug) &&
+    !renewalShown.has(renewalKey);
+
+if (canRenew) {
+    renewalShown.add(renewalKey);
+}
+
+const renewButton = canRenew
+    ? `
+        <button
+            type="button"
+            data-qz-renew-plan="${escapeHtml(plan.plan_slug)}"
+            data-qz-renew-speciality="${escapeHtml(plan.speciality || '')}"
+            class="inline-flex items-center justify-center
+                   mt-3 px-4 py-2 rounded-lg
+                   bg-blue-600 hover:bg-blue-700
+                   text-white font-semibold text-sm">
+            Renew ${escapeHtml(
+                String(plan.plan_slug).toUpperCase()
+            )} Plan
+        </button>
+      `
+    : '';
+
+items.push(`
+
             <article class="border border-gray-200
                             rounded-xl p-4 space-y-2">
 
@@ -248,11 +299,16 @@ function renderPlans(plans, override) {
                     Expires: ${formatDate(plan.expires_at)}
                 </p>
 
-                <p class="text-sm font-semibold
-                          ${effective ? 'text-green-700' : 'text-gray-500'}">
-                    ${remainingDays(plan.expires_at)}
-                </p>
-            </article>
+
+<p class="text-sm font-semibold
+          ${effective ? 'text-green-700' : 'text-gray-500'}">
+    ${remainingDays(plan.expires_at)}
+</p>
+
+${renewButton}
+
+</article>
+
         `);
     }
 
@@ -466,11 +522,91 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    $('qzLibraryRefresh').addEventListener(
-        'click',
-        loadLibrary
+
+$('qzLibraryRefresh').addEventListener(
+    'click',
+    loadLibrary
+);
+
+// Renew a Premium or Platinum plan from Personal Profile.
+$('qzLibraryPlans').addEventListener('click', async event => {
+    const button = event.target.closest(
+        '[data-qz-renew-plan]'
     );
 
-    setTab('books');
-    loadLibrary();
+    if (!button || button.disabled) return;
+
+    event.preventDefault();
+
+    const planSlug = button.dataset.qzRenewPlan;
+    const requestedSpeciality =
+        button.dataset.qzRenewSpeciality || '';
+
+    if (!['premium', 'platinum'].includes(planSlug)) {
+        return;
+    }
+
+    button.disabled = true;
+
+    try {
+        const {
+            data: { user },
+            error: authError
+        } = await supabase.auth.getUser();
+
+        if (authError || !user) {
+            throw Error('Please sign in again.');
+        }
+
+        // Current Qi plan checkout uses the account specialty.
+        const { data: profile, error: profileError } =
+            await supabase
+                .from('users')
+                .select('speciality')
+                .eq('id', user.id)
+                .single();
+
+        if (profileError) throw profileError;
+
+        const currentSpeciality =
+            String(profile?.speciality || '').trim();
+
+        if (!currentSpeciality) {
+            throw Error('Your account has no specialty assigned.');
+        }
+
+        if (
+            requestedSpeciality &&
+            requestedSpeciality !== currentSpeciality
+        ) {
+            throw Error(
+                'This historical plan belongs to ' +
+                requestedSpeciality +
+                ', but your current specialty is ' +
+                currentSpeciality +
+                '. Please contact support before renewing.'
+            );
+        }
+
+        if (typeof window.openSubscriptionModal !== 'function') {
+            throw Error('The purchase window is not available.');
+        }
+
+        // No book ID: open the plan-only renewal view.
+        window.openSubscriptionModal(null, planSlug);
+
+    } catch (error) {
+        console.error('Plan renewal:', error);
+        window.alert(
+            'Unable to open plan renewal: ' + error.message
+        );
+
+    } finally {
+        button.disabled = false;
+    }
+});
+
+setTab('books');
+loadLibrary();
+
 });
