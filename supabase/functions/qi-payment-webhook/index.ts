@@ -98,9 +98,24 @@ Deno.serve(async (req) => {
       }, 400);
     }
 
-    if (actual.status === 'SUCCESS') {
+
+if (actual.status === 'SUCCESS') {
+      // Identify whether this is an ordinary purchase
+      // or a pro-rated Premium -> Platinum upgrade.
+      const upgrade = await admin
+        .from('qz_plan_upgrade_orders')
+        .select('request_id')
+        .eq('request_id', requestId)
+        .maybeSingle();
+
+      if (upgrade.error) throw upgrade.error;
+
+      const confirmationFunction = upgrade.data
+        ? 'qz_confirm_plan_upgrade'
+        : 'qz_confirm_card_payment';
+
       const { error } = await admin.rpc(
-        'qz_confirm_card_payment',
+        confirmationFunction,
         {
           p_request_id: requestId,
           p_payment_id: paymentId,
@@ -111,13 +126,19 @@ Deno.serve(async (req) => {
 
       if (error) throw error;
 
-      return json({ ok: true });
+      return json({
+        ok: true,
+        upgrade: Boolean(upgrade.data)
+      });
     }
 
-    if (
-      ['FAILED', 'AUTHENTICATION_FAILED']
+
+
+if (
+      ['FAILED', 'AUTHENTICATION_FAILED', 'EXPIRED']
         .includes(actual.status)
     ) {
+
       const update = await admin
         .from('qz_card_checkouts')
         .update({ status: 'failed' })
@@ -125,6 +146,18 @@ Deno.serve(async (req) => {
         .neq('status', 'paid');
 
       if (update.error) throw update.error;
+
+      
+// Release the upgrade reservation after a verified
+// terminal payment failure.
+const failedUpgrade = await admin
+  .from('qz_plan_upgrade_orders')
+  .update({ status: 'failed' })
+  .eq('request_id', requestId)
+  .in('status', ['created', 'pending']);
+
+if (failedUpgrade.error) throw failedUpgrade.error;
+
 
       return json({
         ok: true,

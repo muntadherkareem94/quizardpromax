@@ -1,5 +1,8 @@
 
+
 import { supabase } from './supabaseClient.js';
+import { openPlanUpgradeModal } from './plan-upgrade.js';
+
 
 // Quizard Personal Profile — My Library
 // Read-only customer data. Never changes entitlements.
@@ -224,12 +227,31 @@ ${badge(
 }
 
 
+
 function renderPlans(plans, override) {
     const container = $('qzLibraryPlans');
     const items = [];
 
-    // One renewal action per plan tier and specialty.
     const renewalShown = new Set();
+    let upgradeShown = false;
+
+    // Detect active and scheduled paid memberships.
+    const activePlans = plans.filter(plan =>
+        activeAt(plan.starts_at, plan.expires_at)
+    );
+
+    const scheduledPlans = plans.filter(plan =>
+        new Date(plan.starts_at).getTime() > Date.now() &&
+        new Date(plan.expires_at).getTime() > Date.now()
+    );
+
+    // Historical expired plans should not offer renewal
+    // while another active membership is providing access.
+    const canOfferRenewal =
+        !override &&
+        activePlans.length === 0 &&
+        scheduledPlans.length === 0;
+
 
 
     if (override) {
@@ -286,11 +308,27 @@ function renderPlans(plans, override) {
 
 const effective = valid && !override;
 
+
 const renewalKey =
     String(plan.speciality || '') + ':' +
     String(plan.plan_slug || '');
 
+const canUpgrade =
+    !override &&
+    !upgradeShown &&
+    scheduledPlans.length === 0 &&
+    activePlans.length === 1 &&
+    valid &&
+    plan.plan_slug === 'premium';
+
+if (canUpgrade) {
+    upgradeShown = true;
+}
+
 const canRenew =
+    canOfferRenewal &&
+    !upcoming &&
+    !valid &&
     ['premium', 'platinum'].includes(plan.plan_slug) &&
     !renewalShown.has(renewalKey);
 
@@ -298,22 +336,46 @@ if (canRenew) {
     renewalShown.add(renewalKey);
 }
 
-const renewButton = canRenew
+const renewButton = canUpgrade
     ? `
         <button
             type="button"
-            data-qz-renew-plan="${escapeHtml(plan.plan_slug)}"
-            data-qz-renew-speciality="${escapeHtml(plan.speciality || '')}"
+            data-qz-upgrade-plan="platinum"
             class="inline-flex items-center justify-center
                    mt-3 px-4 py-2 rounded-lg
-                   bg-blue-600 hover:bg-blue-700
+                   bg-purple-600 hover:bg-purple-700
                    text-white font-semibold text-sm">
-            Renew ${escapeHtml(
-                String(plan.plan_slug).toUpperCase()
-            )} Plan
+            Upgrade to Platinum
         </button>
+
+        <p class="text-xs text-gray-500 mt-2">
+            Your unused paid Premium value will be
+            credited toward your new Platinum plan.
+        </p>
       `
-    : '';
+    : canRenew
+        ? `
+            <button
+                type="button"
+                data-qz-renew-plan="${escapeHtml(plan.plan_slug)}"
+                data-qz-renew-speciality="${escapeHtml(plan.speciality || '')}"
+                class="inline-flex items-center justify-center
+                       mt-3 px-4 py-2 rounded-lg
+                       bg-blue-600 hover:bg-blue-700
+                       text-white font-semibold text-sm">
+                Renew ${escapeHtml(
+                    String(plan.plan_slug).toUpperCase()
+                )} Plan
+            </button>
+          `
+        : valid && plan.plan_slug === 'platinum'
+            ? `
+                <p class="text-xs text-green-700 mt-2">
+                    Your Platinum membership is active.
+                    Downgrading while active is unavailable.
+                </p>
+              `
+            : '';
 
 items.push(`
 
@@ -584,12 +646,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+
 $('qzLibraryRefresh').addEventListener(
     'click',
     loadLibrary
 );
 
-// Renew a Premium or Platinum plan from Personal Profile.
+// Upgrade an active paid Premium membership to Platinum.
+$('qzLibraryPlans').addEventListener('click', event => {
+    const button = event.target.closest(
+        '[data-qz-upgrade-plan]'
+    );
+
+    if (!button || button.disabled) return;
+
+    event.preventDefault();
+
+    openPlanUpgradeModal();
+});
+
+// Renew an expired Premium or Platinum plan.
+
 $('qzLibraryPlans').addEventListener('click', async event => {
     const button = event.target.closest(
         '[data-qz-renew-plan]'

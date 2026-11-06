@@ -89,13 +89,39 @@ Deno.serve(async (req) => {
       profile.data?.speciality || ''
     ).trim();
 
-    if (!speciality) {
+
+if (!speciality) {
       return respond({
         error: 'Choose your account specialty first.'
       }, 400);
     }
 
+    // Do not create overlapping full-price memberships.
+    // Active Premium users must use the pro-rated upgrade
+    // flow. Active Platinum users cannot downgrade.
+    const nowIso = new Date().toISOString();
+
+    const existing = await admin
+      .from('qz_user_plan_subscriptions')
+      .select('plan_slug')
+      .eq('user_id', user.id)
+      .eq('speciality', speciality)
+      .lte('starts_at', nowIso)
+      .gt('expires_at', nowIso)
+      .limit(1);
+
+    if (existing.error) throw existing.error;
+
+    if (existing.data?.length) {
+      return respond({
+        error:
+          'You already have an active subscription. ' +
+          'Open Personal Profile to manage your plan.'
+      }, 409);
+    }
+
     // Never trust a price supplied by the browser.
+
     const [plan, rate, memberships] = await Promise.all([
       admin.from('qz_specialty_plans')
         .select('enabled')
