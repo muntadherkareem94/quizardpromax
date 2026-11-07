@@ -1,0 +1,610 @@
+
+/*
+ * QUIZARD — PERSONAL PROFILE REDESIGN
+ * Visual changes only.
+ * Existing IDs, account features, purchases and payments
+ * are preserved.
+ */
+
+:root {
+    --qzp-primary: #176b91;
+    --qzp-primary-dark: #124a67;
+    --qzp-ink: #17354a;
+    --qzp-muted: #728397;
+    --qzp-border: #e2eaf2;
+    --qzp-bg: #f1f6fa;
+    --qzp-white: #ffffff;
+    --qzp-radius: 18px;
+    --qzp-shadow: 0 8px 28px rgba(27, 65, 89, 0.055);
+}
+
+/* Page background and navigation */
+
+body {
+    background: linear-gradient(
+        145deg,
+        #eaf4f8 0%,
+        #f4f8fb 48%,
+        #f8fafc 100%
+    ) !important;
+    color: var(--qzp-ink);
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+body > .container {
+    max-width: 1100px !important;
+}
+
+body > .container > header {
+    background: #ffffff;
+    border: 1px solid var(--qzp-border);
+    border-radius: 16px;
+    box-shadow: var(--qzp-shadow);
+}
+
+/* Main desktop layout */
+
+main.qz-profile-main {
+    max-width: 1100px !important;
+    padding-top: 26px !important;
+    padding-bottom: 60px !important;
+}
+
+.qz-profile-page {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    column-gap: 20px;
+    row-gap: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    min-width: 0;
+}
+
+/* Main page heading */
+
+#profileTitleContainer {
+    grid-column: 1 / -1;
+    display: block !important;
+    text-align: left;
+    padding: 4px 3px;
+    margin-bottom: 20px !important;
+}
+
+#profileTitleContainer::before {
+    content: "QUIZARD ACCOUNT";
+    display: block;
+    color: var(--qzp-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    margin-bottom: 8px;
+}
+
+#profileTitleContainer h1 {
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 800;
+    color: var(--qzp-ink);
+    line-height: 1.2;
+}
+
+#profileTitleContainer::after {
+    content: "Your account, subscriptions and learning activity";
+    display: block;
+    color: var(--qzp-muted);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* Profile picture card */
+
+.qz-profile-page > .flex.flex-col.items-center.mb-10 {
+    grid-column: 1;
+    grid-row: 2;
+    background: var(--qzp-white);
+    border: 1px solid var(--qzp-border);
+    border-radius: var(--qzp-radius);
+    box-shadow: var(--qzp-shadow);
+    padding: 26px 18px;
+    margin-bottom: 22px !important;
+    justify-content: center;
+    min-width: 0;
+}
+
+#profileImageContainer {
+    width: 108px !important;
+    height: 108px !important;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    background: #e9f1f6;
+    box-shadow: 0 0 0 1px #dce7ef,
+                0 8px 18px rgba(24, 71, 95, .09);
+    margin-bottom: 17px !important;
+    flex-shrink: 0;
+}
+
+#changePhotoButton {
+    border: 1px solid #c9deea;
+    background: #f1f8fc;
+    color: var(--qzp-primary-dark);
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .2s, transform .2s;
+}
+
+#changePhotoButton:hover {
+    background: #e1f0f8;
+    transform: translateY(-1px);
+}
+
+#uploadStatus {
+    text-align: center;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+
+/* Account information card */
+
+.qz-profile-page > .space-y-4.mb-10 {
+    grid-column: 2;
+    grid-row: 2;
+    background: var(--qzp-white);
+    border: 1px solid var(--qzp-border);
+    border-radius: var(--qzp-radius);
+    box-shadow: var(--qzp-shadow);
+    padding: 26px 30px;
+    margin-bottom: 22px !important;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.qz-profile-page > .space-y-4.mb-10 > .flex.items-center {
+    display: grid;
+    grid-template-columns: 135px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 14px;
+    padding: 9px 0;
+    margin: 0 !important;
+    border-bottom: 1px solid #eef2f6;
+    min-width: 0;
+}
+
+.qz-profile-page > .space-y-4.mb-10 > .flex.items-center > span:first-child {
+    width: auto !important;
+    color: #74869a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#userEmail,
+#userSpecialty,
+#memberSince {
+    color: var(--qzp-ink);
+    font-size: 13px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+
+.qz-profile-page > .space-y-4.mb-10 > .pt-4.border-t {
+    margin-top: 8px !important;
+    padding-top: 11px !important;
+    border-top: none;
+}
+
+#openChangePasswordBtn {
+    background: #edf2fd;
+    color: #5549a9;
+    border: 1px solid #dedbf8;
+    border-radius: 10px;
+    padding: 10px 17px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#openChangePasswordBtn:hover {
+    background: #e3e4fb;
+}
+
+#passwordStatusMessage {
+    line-height: 1.5;
+}
+
+/* Library section */
+
+#qzLibrarySection {
+    grid-column: 1 / -1;
+    background: var(--qzp-white);
+    border: 1px solid var(--qzp-border);
+    border-radius: var(--qzp-radius);
+    box-shadow: var(--qzp-shadow);
+    padding: 27px 30px !important;
+    margin-bottom: 22px !important;
+    min-width: 0;
+}
+
+#qzLibrarySection > div:first-child {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px !important;
+}
+
+#qzLibrarySection > div:first-child > div {
+    flex: 1;
+    min-width: 0;
+}
+
+#qzLibrarySection h2 {
+    color: var(--qzp-ink);
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+#qzLibrarySection h2 + p {
+    color: var(--qzp-muted);
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Refresh button */
+
+#qzLibraryRefresh {
+    flex-shrink: 0;
+    align-self: center;
+    border: 1px solid #d5e6f1;
+    background: #f1f8fc;
+    color: var(--qzp-primary-dark);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .2s, box-shadow .2s;
+}
+
+#qzLibraryRefresh:hover {
+    background: #e4f2fa;
+    box-shadow: 0 3px 8px rgba(30, 85, 118, .08);
+}
+
+#qzLibraryRefresh:disabled {
+    opacity: .5;
+    cursor: wait;
+}
+
+/* Three dashboard summary cards */
+
+#qzLibrarySection > div:nth-child(2) {
+    gap: 13px;
+    margin-bottom: 22px !important;
+}
+
+#qzLibrarySection > div:nth-child(2) > div {
+    border-radius: 13px;
+    border: 1px solid var(--qzp-border);
+    background: #f8fafc;
+    padding: 19px 20px;
+    min-width: 0;
+}
+
+#qzLibrarySection > div:nth-child(2) > div:first-child {
+    background: #eff7fc;
+    border-color: #deecf6;
+}
+
+#qzLibrarySection > div:nth-child(2) > div:nth-child(2) {
+    background: #f6f3fd;
+    border-color: #ece6f9;
+}
+
+#qzLibrarySection > div:nth-child(2) p {
+    font-size: 11px;
+    color: #718398;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 9px;
+}
+
+#qzLibrarySection > div:nth-child(2) strong {
+    display: block;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -.8px;
+}
+
+/* Books / Plans / Payment History tabs */
+
+#qzLibrarySection [role="tablist"] {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    max-width: 100%;
+    gap: 5px;
+    border: 1px solid #e7eef4;
+    background: #f3f6f9;
+    padding: 5px;
+    border-radius: 12px;
+    margin-bottom: 12px !important;
+}
+
+#qzLibrarySection [role="tab"] {
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .18s, color .18s;
+}
+
+#qzLibrarySection [role="tab"][aria-selected="true"] {
+    background: var(--qzp-primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 3px 9px rgba(23, 107, 145, .17);
+}
+
+#qzLibrarySection [role="tab"][aria-selected="false"] {
+    background: transparent !important;
+    color: #64778a !important;
+}
+
+#qzLibraryStatus {
+    font-size: 11px;
+    color: #8494a5;
+    margin-bottom: 15px !important;
+}
+
+/* Preserve the tab hiding behavior */
+
+#qzLibrarySection [role="tabpanel"].hidden {
+    display: none !important;
+}
+
+/* Purchased book cards */
+
+#qzLibraryBooks > article,
+#qzLibraryPlans > article,
+#qzLibraryPayments > article {
+    border: 1px solid #e3ebf2;
+    border-radius: 14px;
+    background: #ffffff;
+    padding: 19px 21px;
+    box-shadow: 0 2px 8px rgba(21, 59, 83, .025);
+    transition: border-color .2s, box-shadow .2s;
+}
+
+#qzLibraryBooks > article:hover,
+#qzLibraryPlans > article:hover,
+#qzLibraryPayments > article:hover {
+    border-color: #bbd6e6;
+    box-shadow: 0 5px 17px rgba(21, 59, 83, .06);
+}
+
+#qzLibraryBooks > article {
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#qzLibraryBooks article img {
+    width: 76px;
+    height: 105px;
+    object-fit: contain;
+    padding: 6px;
+    background: #f8fafc;
+    border: 1px solid #e9eff4;
+    border-radius: 10px;
+}
+
+#qzLibraryBooks h3 {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--qzp-ink);
+}
+
+#qzLibraryBooks article p,
+#qzLibraryPlans article p,
+#qzLibraryPayments article p {
+    line-height: 1.65;
+}
+
+/* Purchase, upgrade and renewal actions */
+
+#qzLibrarySection button[data-qz-upgrade-plan],
+#qzLibrarySection button[data-qz-renew-plan],
+#qzLibrarySection button[data-qz-plan-book] {
+    border: 0;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 11px 17px;
+    transition: filter .2s, transform .2s;
+}
+
+#qzLibrarySection button[data-qz-upgrade-plan]:hover,
+#qzLibrarySection button[data-qz-renew-plan]:hover,
+#qzLibrarySection button[data-qz-plan-book]:hover {
+    filter: brightness(.96);
+    transform: translateY(-1px);
+}
+
+/* Better payment history layout */
+
+#qzLibraryPayments:not(.hidden) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+#qzLibraryPayments > p:first-child {
+    grid-column: 1 / -1;
+    margin-bottom: 3px;
+    line-height: 1.6;
+}
+
+#qzLibraryPayments article {
+    min-width: 0;
+}
+
+#qzLibraryPayments article strong {
+    color: var(--qzp-ink);
+}
+
+/* Learning statistics */
+
+.qz-profile-page > div.border-t.pt-8 {
+    grid-column: 1 / -1;
+    background: #ffffff;
+    border: 1px solid var(--qzp-border);
+    border-radius: var(--qzp-radius);
+    box-shadow: var(--qzp-shadow);
+    padding: 26px 30px !important;
+    margin: 0;
+    min-width: 0;
+}
+
+.qz-profile-page > div.border-t.pt-8 > h2 {
+    font-size: 21px;
+    color: var(--qzp-ink);
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#statsContainer {
+    gap: 13px;
+}
+
+#statsContainer > div {
+    border-radius: 13px;
+    border: 1px solid #e6edf4;
+    background: #f8fafc;
+    padding: 20px 14px;
+}
+
+#statsContainer p:first-child {
+    color: #728397;
+    font-size: 11px;
+    letter-spacing: .2px;
+}
+
+#statsContainer p:nth-child(2) {
+    color: var(--qzp-primary);
+    margin-top: 9px;
+}
+
+/* Responsive tablet and mobile */
+
+@media (max-width: 760px) {
+    main.qz-profile-main {
+        padding-top: 18px !important;
+    }
+
+    .qz-profile-page {
+        grid-template-columns: 1fr;
+    }
+
+    #profileTitleContainer {
+        grid-column: 1;
+        margin-bottom: 15px !important;
+    }
+
+    .qz-profile-page > .flex.flex-col.items-center.mb-10 {
+        grid-column: 1;
+        grid-row: auto;
+        padding: 23px;
+        margin-bottom: 14px !important;
+    }
+
+    #profileImageContainer {
+        width: 96px !important;
+        height: 96px !important;
+    }
+
+    .qz-profile-page > .space-y-4.mb-10 {
+        grid-column: 1;
+        grid-row: auto;
+        padding: 23px;
+        margin-bottom: 17px !important;
+    }
+
+    #qzLibrarySection {
+        padding: 22px !important;
+    }
+
+    #qzLibraryPayments:not(.hidden) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    body > .container,
+    main.qz-profile-main {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    #profileTitleContainer h1 {
+        font-size: 27px;
+    }
+
+    .qz-profile-page > .space-y-4.mb-10 > .flex.items-center {
+        grid-template-columns: 100px minmax(0, 1fr);
+        column-gap: 9px;
+    }
+
+    #userEmail,
+    #userSpecialty,
+    #memberSince {
+        font-size: 12px;
+    }
+
+    #qzLibrarySection {
+        padding: 19px 15px !important;
+    }
+
+    #qzLibrarySection > div:first-child {
+        align-items: center;
+        gap: 9px;
+    }
+
+    #qzLibrarySection h2 {
+        font-size: 18px;
+    }
+
+    #qzLibraryRefresh {
+        padding: 8px 10px;
+    }
+
+    #qzLibrarySection > div:nth-child(2) {
+        grid-template-columns: 1fr;
+    }
+
+    #qzLibrarySection [role="tab"] {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    #qzLibraryBooks > article {
+        gap: 11px;
+        padding: 14px 12px;
+    }
+
+    #qzLibraryBooks article img {
+        width: 57px;
+        height: 82px;
+    }
+
+    .qz-profile-page > div.border-t.pt-8 {
+        padding: 21px 17px !important;
+    }
+}
