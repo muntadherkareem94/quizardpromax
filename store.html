@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     
+
     <style>
         .dropdown-item{display:flex;align-items:center;width:100%;padding:0.75rem;border-radius:0.5rem;color:#374151;transition:background-color .2s}
         .dropdown-item:hover{background-color:#f3f4f6}
@@ -18,7 +19,116 @@
         .video-thumbnail{position:relative;cursor:pointer}
         .video-thumbnail .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:4rem;height:4rem;background-color:rgba(0,0,0,0.5);border-radius:9999px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
         .video-thumbnail:hover .play-icon{opacity:1}
-    </style> 
+
+        /* Quizard Store — clean product cards */
+        .qz-store-card {
+            border: 1px solid #e0eaf1;
+            transition: transform .2s ease,
+                        box-shadow .2s ease,
+                        border-color .2s ease;
+        }
+
+        .qz-store-card:hover {
+            transform: translateY(-3px);
+            border-color: #b8d9e8;
+            box-shadow: 0 12px 30px rgba(17, 58, 82, .13);
+        }
+
+        /* A single badge identifying the content type */
+        .qz-store-type-badge {
+            position: absolute;
+            top: 11px;
+            left: 11px;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 11px;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, .96);
+            border: 1px solid rgba(205, 219, 232, .95);
+            box-shadow: 0 3px 12px rgba(16, 42, 62, .10);
+            backdrop-filter: blur(8px);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .15px;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .qz-store-type-badge svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+        }
+
+        .qz-store-type-book {
+            color: #315b90;
+        }
+
+        .qz-store-type-video {
+            color: #087f72;
+        }
+
+        /* Store purchase section */
+        .qz-store-purchase-area {
+            margin-top: auto;
+            padding: 7px 16px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .qz-store-price-hint {
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .qz-store-price-hint strong {
+            color: #17354a;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .qz-store-buy-button {
+            display: block;
+            width: 100%;
+            min-height: 45px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 10px;
+            background: #178eae;
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            line-height: 1.4;
+            cursor: pointer;
+            transition: background .2s ease,
+                        box-shadow .2s ease;
+        }
+
+        .qz-store-buy-button:hover {
+            background: #116e8b;
+            box-shadow: 0 5px 15px rgba(23, 142, 174, .2);
+        }
+
+        .qz-store-buy-button:focus-visible {
+            outline: 3px solid #8dd9ee;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 480px) {
+            .qz-store-type-badge {
+                top: 8px;
+                left: 8px;
+                padding: 7px 9px;
+                font-size: 10px;
+            }
+        }
+    </style>
+
 <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Quizard">
@@ -250,10 +360,11 @@ supabase.from('books').select('*').in('access_level', ['premium', 'platinum', 'p
     supabase.rpc('qz_my_book_access'),
     
 
+
 supabase.from('qz_book_rules').select(
     'book_id,access_mode,standalone_enabled,' +
     'standalone_price_iqd,standalone_price_6m_iqd,' +
-    'standalone_price_9m_iqd'
+    'standalone_price_12m_iqd'
 ),
 
 
@@ -297,8 +408,8 @@ standalone_price_iqd:
     rule?.standalone_price_iqd ?? null,
 standalone_price_6m_iqd:
     rule?.standalone_price_6m_iqd ?? null,
-standalone_price_9m_iqd:
-    rule?.standalone_price_9m_iqd ?? null
+standalone_price_12m_iqd:
+    rule?.standalone_price_12m_iqd ?? null
 
 
     };
@@ -382,127 +493,158 @@ function renderStoreItems(itemsToRender, userData) {
     }
 
     itemsToRender.forEach(item => {
+
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-xl shadow-lg overflow-hidden flex flex-col';
+        card.className = 'qz-store-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col';
+
         
         let buttonHTML = '';
         let badgeHTML = '';
 
-        // FIX: Differentiate rendering based on access level
+
+        // Store actions — one purchase button per book.
         if (item.access_level === 'free') {
-            badgeHTML = `<span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">Free</span>`;
-            buttonHTML = `<button data-item-id="${item.id}" data-item-type="${item.type}" class="add-free-item-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 text-center">Add to Dashboard</button>`;
-     
-} else if (item.type === 'book') {
+            buttonHTML = `
+                <div class="qz-store-purchase-area">
+                    <button
+                        type="button"
+                        data-item-id="${item.id}"
+                        data-item-type="${item.type}"
+                        class="add-free-item-btn qz-store-buy-button">
+                        Add to Dashboard
+                    </button>
+                </div>
+            `;
 
+        } else if (item.type === 'book') {
 
-const individualOffers = [
-    { months: 3, price: Number(item.standalone_price_iqd) },
-    { months: 6, price: Number(item.standalone_price_6m_iqd) },
-    { months: 9, price: Number(item.standalone_price_9m_iqd) }
-].filter(offer =>
-    Number.isSafeInteger(offer.price) &&
-    offer.price > 0
-);
+            // Current individual-book pricing:
+            // 3, 6 and 12 months.
+            const individualOffers = [
+                {
+                    months: 3,
+                    price: Number(item.standalone_price_iqd)
+                },
+                {
+                    months: 6,
+                    price: Number(item.standalone_price_6m_iqd)
+                },
+                {
+                    months: 12,
+                    price: Number(item.standalone_price_12m_iqd)
+                }
+            ].filter(offer =>
+                Number.isSafeInteger(offer.price) &&
+                offer.price > 0
+            );
 
-const canBuyAlone =
-    item.standalone_enabled === true &&
-    item.access_level !== 'free' &&
-    individualOffers.length > 0;
+            const canBuyAlone =
+                item.standalone_enabled === true &&
+                individualOffers.length > 0;
 
-const isInPlan =
-    ['premium', 'platinum'].includes(item.access_level);
+            const isInPlan =
+                ['premium', 'platinum'].includes(
+                    item.access_level
+                );
 
-const lowestPrice = individualOffers.length
-    ? Math.min(...individualOffers.map(offer => offer.price))
-    : 0;
+            if (canBuyAlone || isInPlan) {
+                const lowestPrice = canBuyAlone
+                    ? Math.min(
+                        ...individualOffers.map(offer => offer.price)
+                    )
+                    : null;
 
+                const priceHint = lowestPrice !== null
+                    ? `
+                        <p class="qz-store-price-hint">
+                            From
+                            <strong>
+                                ${lowestPrice.toLocaleString('en-IQ')} IQD
+                            </strong>
+                        </p>
+                    `
+                    : '';
 
-if (canBuyAlone || isInPlan) {
+                buttonHTML = `
+                    <div class="qz-store-purchase-area">
+                        ${priceHint}
 
-const bookPurchase = canBuyAlone
-    ? `
-        <div class="px-4 pt-3 pb-2">
-            <p class="text-center text-sm font-semibold text-gray-700 mb-3">
-                Individual book from:
-                ${lowestPrice.toLocaleString('en-IQ')} IQD
+                        <button
+                            type="button"
+                            data-qz-plan-book="${item.id}"
+                            class="qz-store-buy-button">
+                            Buy This Book
+                        </button>
+                    </div>
+                `;
+            } else {
+                buttonHTML = `
+                    <div class="qz-store-purchase-area">
+                        <button type="button" disabled
+                            class="w-full bg-gray-400 text-white
+                                   font-semibold py-3 px-4
+                                   rounded-lg cursor-not-allowed">
+                            Not Currently for Sale
+                        </button>
+                    </div>
+                `;
+            }
 
-                <br>
-
-                <span class="text-xs font-normal text-gray-500">
-                    Choose 3, 6 or 9 months of access
-                </span>
-            </p>
-
-            <button
-                type="button"
-                data-qz-plan-book="${item.id}"
-                class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg">
-                Choose Duration & Buy Book
-            </button>
-        </div>
-    `
-    : '';
-
-
-    const planButton = isInPlan
-        ? `
-            <div class="px-4 pb-4 pt-2">
-                <button
-                    type="button"
-                    data-qz-plan-book="${item.id}"
-                    class="w-full bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-semibold py-3 px-4 rounded-lg">
-                    View Subscription Plans
-                </button>
-            </div>
-        `
-        : '';
-
-    buttonHTML = bookPurchase + planButton;
-
-} else {
-    buttonHTML = `
-        <button
-            type="button"
-            disabled
-            class="w-full bg-gray-400 text-white font-semibold py-3 px-4 text-center cursor-not-allowed">
-            Not Currently for Sale
-        </button>
-    `;
-}
-
-
-    if (item.access_level === 'premium') {
-        badgeHTML = `
-            <span class="absolute top-2 right-2 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                Premium
-            </span>`;
-    } else if (item.access_level === 'platinum') {
-        badgeHTML = `
-            <span class="absolute top-2 right-2 bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                Platinum
-            </span>`;
-    } else if (item.access_level === 'purchasable') {
-        badgeHTML = `
-            <span class="absolute top-2 right-2 bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                Standalone
-            </span>`;
-    }
-} else {
-    // Video purchases require a separate checkout implementation.
-    buttonHTML = `
-        <button type="button" disabled
-            class="w-full bg-gray-400 text-white font-semibold py-3 px-4 text-center cursor-not-allowed">
-            Video checkout unavailable
-        </button>`;
-}
-
-        
-        if (item.type === 'video_course') {
-            badgeHTML += `<span class="absolute top-2 left-2 bg-indigo-500 text-white text-xs font-bold px-2 py-1 rounded-full">Video Course</span>`;
         } else {
-            badgeHTML += `<span class="absolute top-2 left-2 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full">Book</span>`;
+            // Keep existing video-course restrictions.
+            // The book checkout must not be used for videos.
+            buttonHTML = `
+                <div class="qz-store-purchase-area">
+                    <button type="button" disabled
+                        class="w-full bg-gray-400 text-white
+                               font-semibold py-3 px-4
+                               rounded-lg cursor-not-allowed">
+                        Video Checkout Unavailable
+                    </button>
+                </div>
+            `;
         }
+
+        // One elegant content-type badge.
+        // No Standalone, Premium or Platinum labels.
+        if (item.type === 'video_course') {
+            badgeHTML = `
+                <span class="qz-store-type-badge qz-store-type-video">
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <rect x="3" y="4" width="18"
+                              height="16" rx="3"/>
+                        <path d="m10 8 6 4-6 4z"/>
+                    </svg>
+                    <span>Video Course</span>
+                </span>
+            `;
+        } else {
+            badgeHTML = `
+                <span class="qz-store-type-badge qz-store-type-book">
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="M12 6c-3-2-6-2-9-1v14
+                                 c3-1 6-1 9 1"/>
+                        <path d="M12 6c3-2 6-2 9-1v14
+                                 c-3-1-6-1-9 1"/>
+                        <path d="M12 6v14"/>
+                    </svg>
+                    <span>Book</span>
+                </span>
+            `;
+        }
+
 
         card.innerHTML = `
             <div class="p-6 flex flex-col flex-grow">
