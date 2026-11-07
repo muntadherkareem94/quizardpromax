@@ -12,9 +12,15 @@ let overlay = null;
 let currentBookId = null;
 
 
+
 let selectedMonths = 3;       // Premium/Platinum: 3/6/12
 let selectedBookMonths = 3;   // Individual book: 3/6/12
 let modalData = null;
+
+// Prevent stale upgrade quotes and duplicate checkout clicks.
+let upgradeQuoteVersion = 0;
+let planCheckoutBusy = false;
+
 
 
 // Supports plan renewal without selecting a particular book.
@@ -735,11 +741,31 @@ if (action === 'free-plan') {
 }
 
 
+
 if (action === 'duration') {
-    selectedMonths = Number(button.dataset.months);
+    const months = Number(button.dataset.months);
+
+    if (![3, 6, 12].includes(months)) {
+        return;
+    }
+
+    selectedMonths = months;
+
+    // Clear the previous duration's credit quote.
+    if (modalData) {
+        modalData.upgradeChoices = {};
+    }
+
     renderSubscriptionModal();
+
+    // Recalculate permitted upgrades for this duration.
+    if (modalData?.subscriptionState?.mode === 'active') {
+        refreshUpgradeChoices();
+    }
+
     return;
 }
+
 
 
 if (action === 'book-duration') {
@@ -798,10 +824,220 @@ function bookIncludedInPlan(mode, planSlug) {
         return planSlug === 'platinum';
     }
 
+
     return false;
 }
 
+// Determine the original purchased duration.
+// This is used for customer-facing labels only.
+// Supabase remains authoritative for upgrade eligibility.
+function getPurchasedPlanMonths(plan, payments = []) {
+    const payment = payments.find(item =>
+        item.status === 'paid' &&
+        item.kind === 'plan' &&
+        item.plan_slug === plan.plan_slug &&
+        item.speciality === plan.speciality &&
+        item.paid_at &&
+        Math.abs(
+            new Date(item.paid_at).getTime() -
+            new Date(plan.starts_at).getTime()
+        ) <= 1000
+    );
+
+    const recorded = Number(payment?.months);
+
+    if ([3, 6, 12].includes(recorded)) {
+        return recorded;
+    }
+
+    const start = new Date(plan.starts_at);
+    const end = new Date(plan.expires_at);
+
+    if (
+        !Number.isFinite(start.getTime()) ||
+        !Number.isFinite(end.getTime())
+    ) {
+        return null;
+    }
+
+    for (const months of [3, 6, 12]) {
+        const expected = new Date(start);
+        const originalDay = start.getUTCDate();
+
+        expected.setUTCDate(1);
+        expected.setUTCMonth(
+            start.getUTCMonth() + months
+        );
+
+        const lastDay = new Date(Date.UTC(
+            expected.getUTCFullYear(),
+            expected.getUTCMonth() + 1,
+            0
+        )).getUTCDate();
+
+        expected.setUTCDate(
+            Math.min(originalDay, lastDay)
+        );
+
+        if (
+            Math.abs(expected.getTime() - end.getTime()) <= 1000
+        ) {
+            return months;
+        }
+    }
+
+    return null;
+}
+
+// Read the currently effective subscription of the
+// signed-in user, using the existing Profile summary RPC.
+function getPurchaseSubscriptionState(summary, speciality) {
+    const now = Date.now();
+
+    const plans = (summary?.plans || []).filter(plan =>
+        plan.speciality === speciality
+    );
+
+    const active = plans.filter(plan =>
+        new Date(plan.starts_at).getTime() <= now &&
+        new Date(plan.expires_at).getTime() > now
+    );
+
+    const scheduled = plans.filter(plan =>
+        new Date(plan.starts_at).getTime() > now &&
+        new Date(plan.expires_at).getTime() > now
+    );
+
+    // Avoid full-price purchases or upgrades when
+    // overlapping memberships or manual overrides exist.
+    if (
+        summary?.override ||
+        scheduled.length > 0 ||
+        active.length > 1
+    ) {
+        return {
+            mode: 'blocked',
+            plan_slug: null,
+            months: null
+        };
+    }
+
+    if (active.length === 0) {
+        return {
+            mode: 'none',
+            plan_slug: null,
+            months: null
+        };
+    }
+
+    return {
+        mode: 'active',
+        plan_slug: active[0].plan_slug,
+        months: getPurchasedPlanMonths(
+            active[0],
+            summary?.payments || []
+        )
+    };
+}
+
+// Check upgrade availability using the real
+// server-side proration calculator.
+// An invalid upgrade is never offered for checkout.
+async function refreshUpgradeChoices() {
+    if (
+        !modalData ||
+        !overlay ||
+        overlay.hidden ||
+        modalData.subscriptionState?.mode !== 'active'
+    ) {
+        return;
+    }
+
+    const requestVersion = ++upgradeQuoteVersion;
+    const modalVersion = loadVersion;
+    const context = modalData;
+    const months = selectedMonths;
+
+    context.upgradeChoices = {
+        premium: { state: 'loading' },
+        platinum: { state: 'loading' }
+    };
+
+    renderSubscriptionModal();
+
+    const results = await Promise.all(
+        ['premium', 'platinum'].map(async slug => {
+            try {
+                const { data, error } = await supabase.rpc(
+                    'qz_plan_change_quote',
+                    {
+                        p_target_plan_slug: slug,
+                        p_months: months,
+                        p_create: false,
+                        p_max_amount_iqd: null
+                    }
+                );
+
+                if (
+                    error ||
+                    !data ||
+                    data.target_plan !== slug ||
+                    Number(data.target_months) !== months ||
+                    !Number.isSafeInteger(Number(data.net_iqd)) ||
+                    Number(data.net_iqd) <= 0
+                ) {
+                    return {
+                        slug,
+                        state: 'unavailable',
+                        quote: null
+                    };
+                }
+
+                return {
+                    slug,
+                    state: 'available',
+                    quote: data
+                };
+
+            } catch (error) {
+                console.warn(
+                    'Upgrade quote unavailable:',
+                    slug,
+                    error
+                );
+
+                return {
+                    slug,
+                    state: 'unavailable',
+                    quote: null
+                };
+            }
+        })
+    );
+
+    // Ignore responses from old popup sessions or
+    // from previously selected duration buttons.
+    if (
+        requestVersion !== upgradeQuoteVersion ||
+        modalVersion !== loadVersion ||
+        modalData !== context ||
+        selectedMonths !== months ||
+        overlay.hidden
+    ) {
+        return;
+    }
+
+    context.upgradeChoices = {};
+
+    for (const result of results) {
+        context.upgradeChoices[result.slug] = result;
+    }
+
+    renderSubscriptionModal();
+}
+
 function getBookCoverSrc(book) {
+
     if (!book) return '';
 
     return (
@@ -1083,12 +1319,77 @@ const savingsHtml = savings && plan.enabled === true
                 ? premiumBooks
                 : platinumBooks;
 
+
         const count =
             slug === 'premium'
                 ? premiumCount
                 : platinumCount;
 
+        const subscription = modalData.subscriptionState;
+        const upgradeResult =
+            modalData.upgradeChoices?.[slug];
+
+        const canPurchase =
+            purchasable &&
+            subscription.mode === 'none';
+
+        const canUpgrade =
+            purchasable &&
+            subscription.mode === 'active' &&
+            upgradeResult?.state === 'available' &&
+            upgradeResult.quote?.target_plan === slug &&
+            Number(upgradeResult.quote?.target_months) ===
+                selectedMonths;
+
+        const buttonEnabled = canPurchase || canUpgrade;
+
+        let planButtonText = 'Plan currently unavailable';
+
+        if (purchasable) {
+            if (canPurchase) {
+                planButtonText = 'Purchase';
+
+            } else if (canUpgrade) {
+                planButtonText =
+                    'Upgrade — ' +
+                    formatPrice(upgradeResult.quote.net_iqd);
+
+            } else if (subscription.mode === 'blocked') {
+                planButtonText = 'Manage in Personal Profile';
+
+            } else if (subscription.mode === 'active') {
+                if (
+                    subscription.plan_slug === 'platinum' &&
+                    subscription.months === 12
+                ) {
+                    planButtonText = 'Maximum Plan';
+
+                } else if (
+                    subscription.plan_slug === 'platinum' &&
+                    slug === 'premium'
+                ) {
+                    planButtonText = 'Downgrade Unavailable';
+
+                } else if (
+                    subscription.plan_slug === slug &&
+                    subscription.months === selectedMonths
+                ) {
+                    planButtonText = 'Current Plan';
+
+                } else if (
+                    upgradeResult?.state === 'loading' ||
+                    !upgradeResult
+                ) {
+                    planButtonText = 'Checking Upgrades...';
+
+                } else {
+                    planButtonText = 'Upgrade Not Available';
+                }
+            }
+        }
+
         cards.push(`
+
 
 <div class="qz-plan ${slug}
      ${(planOnlyMode
@@ -1135,19 +1436,18 @@ ${savingsHtml}
 </div>
 
 
+
                 <button type="button"
                         class="qz-purchase"
                         data-qz-action="plan"
                         data-slug="${slug}"
-                        ${purchasable ? '' : 'disabled'}>
-                   
-
-${purchasable
-    ? 'Purchase'
-    : 'Plan currently unavailable'}
-
-
+                        data-qz-checkout-mode="${canUpgrade
+                            ? 'upgrade'
+                            : 'purchase'}"
+                        ${buttonEnabled ? '' : 'disabled'}>
+                    ${planButtonText}
                 </button>
+
             </div>
         `);
     }
@@ -1332,56 +1632,172 @@ setMessage(
 }
 
 
+
 async function startCardCheckout(planSlug, button) {
-    if (!['premium', 'platinum'].includes(planSlug)) {
-        setMessage('Invalid subscription plan.');
+    if (
+        !['premium', 'platinum'].includes(planSlug) ||
+        !button ||
+        button.disabled ||
+        planCheckoutBusy
+    ) {
         return;
     }
 
+    const months = selectedMonths;
+    const subscription = modalData?.subscriptionState;
+    const checkoutMode = button.dataset.qzCheckoutMode;
 
-const months = selectedMonths;
+    const isNewPurchase =
+        subscription?.mode === 'none' &&
+        checkoutMode === 'purchase';
 
-const bookTier = modalData?.memberships?.find(
-    item => String(item.book_id) === String(currentBookId)
-)?.tier || 'none';
+    const isUpgrade =
+        subscription?.mode === 'active' &&
+        checkoutMode === 'upgrade' &&
+        modalData?.upgradeChoices?.[planSlug]?.state ===
+            'available';
 
-const includesClickedBook =
-    bookIncludedInPlan(bookTier, planSlug);
+    if (!isNewPurchase && !isUpgrade) {
+        setMessage(
+            'This subscription option is not available. ' +
+            'Refresh the purchase window and try again.'
+        );
+        return;
+    }
 
+    const bookTier = modalData?.memberships?.find(
+        item => String(item.book_id) === String(currentBookId)
+    )?.tier || 'none';
 
-const warning =
-    planOnlyMode || includesClickedBook
-        ? ''
-        : '\n\nIMPORTANT: The book you clicked is not ' +
-          'included in this plan. Purchasing this plan ' +
-          'will not unlock that particular book.';
+    const includesClickedBook =
+        bookIncludedInPlan(bookTier, planSlug);
 
-
-if (!confirm(
-    `Purchase ${planSlug.toUpperCase()} for ${months} months?` +
-    warning +
-    '\n\nContinue to secure payment?'
-)) {
-    return;
-}
-
+    const warning =
+        planOnlyMode || includesClickedBook
+            ? ''
+            : '\n\nIMPORTANT: The selected book is not ' +
+              'included in this plan. This purchase or ' +
+              'upgrade will not unlock that book.';
 
     const originalText = button.textContent;
+    let redirecting = false;
+    let quote = null;
+
+    planCheckoutBusy = true;
     button.disabled = true;
-    button.textContent = 'Opening secure checkout...';
 
     try {
-        const { data, error } = await supabase.functions.invoke(
-            'qi-start-checkout',
-            {
-                body: {
-                    plan_slug: planSlug,
-                    months
-                }
-            }
-        );
+        let functionName;
+        let requestBody;
 
-        if (error) throw error;
+        if (isUpgrade) {
+            // Get a fresh authoritative quote.
+            // Never calculate monetary credit in JavaScript.
+            button.textContent = 'Calculating upgrade...';
+
+            const {
+                data: freshQuote,
+                error: quoteError
+            } = await supabase.rpc(
+                'qz_plan_change_quote',
+                {
+                    p_target_plan_slug: planSlug,
+                    p_months: months,
+                    p_create: false,
+                    p_max_amount_iqd: null
+                }
+            );
+
+            if (quoteError) throw quoteError;
+
+            if (
+                !freshQuote ||
+                freshQuote.target_plan !== planSlug ||
+                Number(freshQuote.target_months) !== months ||
+                !Number.isSafeInteger(
+                    Number(freshQuote.net_iqd)
+                ) ||
+                Number(freshQuote.net_iqd) <= 0
+            ) {
+                throw Error(
+                    'Unable to verify a valid upgrade price.'
+                );
+            }
+
+            quote = freshQuote;
+
+            const proceed = window.confirm(
+                'Confirm Subscription Upgrade\n\n' +
+                'Current: ' +
+                    String(quote.current_plan).toUpperCase() +
+                    ' — ' + quote.current_months + ' months\n' +
+                'New: ' + planSlug.toUpperCase() +
+                    ' — ' + months + ' months\n\n' +
+                'Full new price: ' +
+                    formatPrice(quote.gross_iqd) + '\n' +
+                'Unused subscription credit: -' +
+                    formatPrice(quote.credit_iqd) + '\n' +
+                'AMOUNT TO PAY: ' +
+                    formatPrice(quote.net_iqd) +
+                '\n\nThe new full subscription period starts ' +
+                'after successful Qi payment verification.' +
+                warning
+            );
+
+            if (!proceed) return;
+
+            functionName = 'qi-start-plan-upgrade';
+
+            requestBody = {
+                target_plan_slug: planSlug,
+                months,
+                max_amount_iqd: Number(quote.net_iqd)
+            };
+
+        } else {
+            const proceed = window.confirm(
+                `Purchase ${planSlug.toUpperCase()} ` +
+                `for ${months} months?` +
+                warning +
+                '\n\nContinue to secure payment?'
+            );
+
+            if (!proceed) return;
+
+            functionName = 'qi-start-checkout';
+
+            requestBody = {
+                plan_slug: planSlug,
+                months
+            };
+        }
+
+        button.textContent = 'Opening secure checkout...';
+
+        const { data, error } =
+            await supabase.functions.invoke(
+                functionName,
+                {
+                    body: requestBody
+                }
+            );
+
+        if (error) {
+            let message = error.message;
+
+            try {
+                const details =
+                    await error.context?.json?.();
+
+                if (details?.error) {
+                    message = details.error;
+                }
+            } catch (_) {
+                // Preserve the original error message.
+            }
+
+            throw Error(message);
+        }
 
         if (!data?.checkout_url) {
             throw Error(
@@ -1389,7 +1805,26 @@ if (!confirm(
             );
         }
 
-        // Accept only secure Qi-hosted checkout URLs.
+        // Verify the upgrade checkout matches the
+        // specific plan and duration selected by the user.
+        if (isUpgrade) {
+            const finalAmount = Number(data.net_iqd);
+
+            if (
+                data.target_plan !== planSlug ||
+                Number(data.target_months) !== months ||
+                !Number.isSafeInteger(finalAmount) ||
+                finalAmount <= 0 ||
+                finalAmount > Number(quote.net_iqd)
+            ) {
+                throw Error(
+                    'The upgrade checkout does not match ' +
+                    'the confirmed amount or duration.'
+                );
+            }
+        }
+
+        // Card details must only be entered at Qi.
         const checkout = new URL(data.checkout_url);
         const host = checkout.hostname.toLowerCase();
 
@@ -1400,23 +1835,29 @@ if (!confirm(
             throw Error('Invalid payment gateway URL.');
         }
 
-        // Hosted gateway collects and authenticates card data.
-        // Never collect card details inside Quizard.
         window.location.assign(checkout.href);
+        redirecting = true;
 
     } catch (error) {
-        console.error('Checkout error:', error);
+        console.error('Subscription checkout:', error);
 
         setMessage(
-            'Secure checkout is currently unavailable. ' +
-            'No payment has been collected. ' +
-            error.message
+            'Could not open secure checkout: ' +
+            error.message +
+            ' If an earlier payment attempt is pending, ' +
+            'verify its status before trying again.'
         );
 
-        button.disabled = false;
-        button.textContent = originalText;
+    } finally {
+        planCheckoutBusy = false;
+
+        if (!redirecting && button.isConnected) {
+            button.disabled = false;
+            button.textContent = originalText;
+        }
     }
 }
+
 
 async function submitSubscriptionRequest(kind, slug, button) {
 
@@ -1587,11 +2028,40 @@ for (const result of [
     if (result.error) throw result.error;
 }
 
+
         if (version !== loadVersion || overlay.hidden) return;
 
+        // This is the same authenticated subscription
+        // summary already used by Personal Profile.
+        const {
+            data: librarySummary,
+            error: libraryError
+        } = await supabase.rpc(
+            'qz_my_library_summary'
+        );
+
+        if (
+            libraryError ||
+            !librarySummary ||
+            !Array.isArray(librarySummary.plans)
+        ) {
+            throw Error(
+                libraryError?.message ||
+                'Unable to verify your current membership.'
+            );
+        }
+
+        if (version !== loadVersion || overlay.hidden) return;
+
+        const subscriptionState =
+            getPurchaseSubscriptionState(
+                librarySummary,
+                speciality
+            );
 
 const bookTitle =
     bookResult.data?.title || 'Medical Question Bank';
+
 
 document.getElementById('qz-sub-heading').textContent =
     planOnlyMode
@@ -1609,19 +2079,36 @@ overlay.querySelector('.qz-description').textContent =
 
 
        
+
 modalData = {
     speciality,
     plans: plansResult.data || [],
     prices: pricesResult.data || [],
     memberships: membershipsResult.data || [],
     rules: rulesResult.data || [],
-    catalog: catalogResult.data || []
+    catalog: catalogResult.data || [],
+
+    // Current customer's effective subscription.
+    subscriptionState,
+
+    // Server-verified upgrade options for the
+    // currently selected plan duration.
+    upgradeChoices: {}
 };
+
+
 
 
         renderSubscriptionModal();
 
+        // Check upgrade eligibility and net pricing
+        // without modifying subscriptions or payments.
+        if (subscriptionState.mode === 'active') {
+            refreshUpgradeChoices();
+        }
+
     } catch (error) {
+
         if (version !== loadVersion || overlay.hidden) return;
 
         console.error('Subscription modal error:', error);
