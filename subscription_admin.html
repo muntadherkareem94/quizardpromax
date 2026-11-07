@@ -451,7 +451,7 @@ th { background: #f4f8fb; }
 <th>Individual Sale</th>
 <th>3 Months (IQD)</th>
 <th>6 Months (IQD)</th>
-<th>9 Months (IQD)</th>
+<th>12 Months (IQD)</th>
 
 
                 </tr>
@@ -687,8 +687,8 @@ function originalRule(book) {
         standalone_price_6m_iqd:
             readPrice('standalone_price_6m_iqd'),
 
-        standalone_price_9m_iqd:
-            readPrice('standalone_price_9m_iqd')
+        standalone_price_12m_iqd:
+            readPrice('standalone_price_12m_iqd')
     };
 }
 
@@ -705,7 +705,7 @@ before.access_mode !== after.access_mode ||
 before.standalone_enabled !== after.standalone_enabled ||
 before.standalone_price_iqd !== after.standalone_price_iqd ||
 before.standalone_price_6m_iqd !== after.standalone_price_6m_iqd ||
-before.standalone_price_9m_iqd !== after.standalone_price_9m_iqd
+before.standalone_price_12m_iqd !== after.standalone_price_12m_iqd
 
 
     );
@@ -857,7 +857,7 @@ function renderBookTable() {
 ${[
     ['book-price', 'standalone_price_iqd', 3],
     ['book-price-6', 'standalone_price_6m_iqd', 6],
-    ['book-price-9', 'standalone_price_9m_iqd', 9]
+    ['book-price-12', 'standalone_price_12m_iqd', 12]
 ].map(([cssClass, field, months]) => `
     <td>
         <input
@@ -979,7 +979,7 @@ if (
 standalone_enabled: rule.standalone_enabled,
 standalone_price_iqd: rule.standalone_price_iqd,
 standalone_price_6m_iqd: rule.standalone_price_6m_iqd,
-standalone_price_9m_iqd: rule.standalone_price_9m_iqd,
+standalone_price_12m_iqd: rule.standalone_price_12m_iqd,
 standalone_duration_months: 3,
 updated_at: new Date().toISOString()
 
@@ -1186,7 +1186,7 @@ if (draft.access_mode === 'free') {
     draft.standalone_enabled = false;
     draft.standalone_price_iqd = null;
     draft.standalone_price_6m_iqd = null;
-    draft.standalone_price_9m_iqd = null;
+    draft.standalone_price_12m_iqd = null;
 }
 
 
@@ -1198,12 +1198,12 @@ if (draft.access_mode === 'free') {
 } else if (
     target.classList.contains('book-price') ||
     target.classList.contains('book-price-6') ||
-    target.classList.contains('book-price-9')
+    target.classList.contains('book-price-12')
 ) {
     const field = target.classList.contains('book-price-6')
         ? 'standalone_price_6m_iqd'
-        : target.classList.contains('book-price-9')
-            ? 'standalone_price_9m_iqd'
+        : target.classList.contains('book-price-12')
+            ? 'standalone_price_12m_iqd'
             : 'standalone_price_iqd';
 
     draft[field] = target.value.trim() === ''
@@ -1273,10 +1273,14 @@ $('applyBulkBookTier').addEventListener('click', () => {
 
         draft.access_mode = mode;
 
+
         if (mode === 'free') {
             draft.standalone_enabled = false;
             draft.standalone_price_iqd = null;
+            draft.standalone_price_6m_iqd = null;
+            draft.standalone_price_12m_iqd = null;
         }
+
     }
 
     selectedBookIds.clear();

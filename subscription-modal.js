@@ -11,9 +11,11 @@ import './standalone-book-checkout.js';
 let overlay = null;
 let currentBookId = null;
 
+
 let selectedMonths = 3;       // Premium/Platinum: 3/6/12
-let selectedBookMonths = 3;   // Individual book: 3/6/9
+let selectedBookMonths = 3;   // Individual book: 3/6/12
 let modalData = null;
+
 
 // Supports plan renewal without selecting a particular book.
 let planOnlyMode = false;
@@ -389,6 +391,7 @@ function createSubscriptionModal() {
         }
 
      
+
 #qz-sub-overlay .qz-standalone {
     background: #f4f8fb;
     border: 1px solid #dce7ee;
@@ -396,6 +399,75 @@ function createSubscriptionModal() {
     padding: 19px;
     margin-top: 17px;
 }
+
+#qz-sub-overlay .qz-standalone-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+#qz-sub-overlay .qz-standalone-cover {
+    flex: 0 0 110px;
+    width: 110px;
+    max-width: 110px;
+    aspect-ratio: 3 / 4;
+    border: 1px solid #d8e4ec;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(16, 53, 75, 0.08);
+}
+
+#qz-sub-overlay .qz-standalone-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #ffffff;
+    display: block;
+}
+
+#qz-sub-overlay .qz-standalone-info {
+    flex: 1;
+    min-width: 0;
+}
+
+#qz-sub-overlay .qz-standalone-title {
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 800;
+    color: #16334b;
+    margin: 7px 0;
+    overflow-wrap: anywhere;
+}
+
+#qz-sub-overlay .qz-standalone-label {
+    display: inline-block;
+    padding: 5px 9px;
+    background: #e3f2f9;
+    color: #237eac;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 7px;
+}
+
+@media (max-width: 600px) {
+    #qz-sub-overlay .qz-standalone-header {
+        gap: 12px;
+    }
+
+    #qz-sub-overlay .qz-standalone-cover {
+        flex-basis: 86px;
+        width: 86px;
+        max-width: 86px;
+    }
+
+    #qz-sub-overlay .qz-standalone-title {
+        font-size: 15px;
+    }
+}
+
 
 #qz-sub-overlay .qz-book-duration-options {
     display: flex;
@@ -669,10 +741,11 @@ if (action === 'duration') {
     return;
 }
 
+
 if (action === 'book-duration') {
     const months = Number(button.dataset.months);
 
-    if (![3, 6, 9].includes(months) || button.disabled) {
+    if (![3, 6, 12].includes(months) || button.disabled) {
         return;
     }
 
@@ -680,6 +753,7 @@ if (action === 'book-duration') {
     renderSubscriptionModal();
     return;
 }
+
 
 
       
@@ -1089,10 +1163,10 @@ const standaloneContainer =
 const bookPrices = {
     3: Number(selectedRule?.standalone_price_iqd || 0),
     6: Number(selectedRule?.standalone_price_6m_iqd || 0),
-    9: Number(selectedRule?.standalone_price_9m_iqd || 0)
+    9: Number(selectedRule?.standalone_price_12m_iqd || 0)
 };
 
-const availableMonths = [3, 6, 9].filter(months =>
+const availableMonths = [3, 6, 12].filter(months =>
     Number.isSafeInteger(bookPrices[months]) &&
     bookPrices[months] > 0
 );
@@ -1136,7 +1210,7 @@ if (standaloneAvailable) {
         `
         : '';
 
-    const durationButtons = [3, 6, 9].map(months => {
+    const durationButtons = [3, 6, 12].map(months => {
         const enabled = availableMonths.includes(months);
 
         return `
@@ -1153,15 +1227,67 @@ if (standaloneAvailable) {
         `;
     }).join('');
 
+
+    // Get the actual selected book from the catalog.
+    // Uses the same source and cover helper as the plan cards.
+    const standaloneBook = bookMap.get(String(currentBookId));
+
+    const standaloneBookTitle =
+        standaloneBook?.title || 'Selected Medical Book';
+
+    const standaloneCoverSrc =
+        getBookCoverSrc(standaloneBook);
+
+    const standaloneCoverHtml = standaloneCoverSrc
+        ? `
+            <img
+                src="${escapeHtml(standaloneCoverSrc)}"
+                alt="${escapeHtml(standaloneBookTitle)}"
+                loading="lazy"
+                decoding="async"
+            >
+          `
+        : `
+            <div class="qz-cover-fallback">
+                ${escapeHtml(
+                    getBookShortTitle(standaloneBookTitle)
+                )}
+            </div>
+          `;
+
     standaloneContainer.innerHTML = `
         <div class="qz-standalone">
-            <strong>Purchase this book individually</strong>
 
-            <p class="qz-small">
-                Buy access to this book without purchasing
-                a Premium or Platinum subscription.
-                Select your preferred access duration.
-            </p>
+            <div class="qz-standalone-header">
+
+                <div class="qz-cover-card qz-standalone-cover"
+                     title="${escapeHtml(standaloneBookTitle)}">
+                    ${standaloneCoverHtml}
+                </div>
+
+                <div class="qz-standalone-info">
+
+                    <strong>
+                        Purchase this book individually
+                    </strong>
+
+                    <div class="qz-standalone-title">
+                        ${escapeHtml(standaloneBookTitle)}
+                    </div>
+
+                    <div class="qz-standalone-label">
+                        Individual Book Access
+                    </div>
+
+                    <p class="qz-small" style="margin-top:12px">
+                        Buy access to this book without purchasing
+                        a Premium or Platinum subscription.
+                        Select your preferred access duration.
+                    </p>
+
+                </div>
+
+            </div>
 
             <div class="qz-book-duration-options"
                  aria-label="Individual book duration">
@@ -1188,8 +1314,10 @@ if (standaloneAvailable) {
                 Buy This Book —
                 ${formatPrice(selectedPrice)}
             </button>
+
         </div>
     `;
+
 } else {
     standaloneContainer.innerHTML = '';
 }
@@ -1436,7 +1564,7 @@ planOnlyMode
 .select(
     'book_id,access_mode,standalone_enabled,' +
     'standalone_price_iqd,standalone_price_6m_iqd,' +
-    'standalone_price_9m_iqd'
+    'standalone_price_12m_iqd'
 ),
 
 
@@ -1517,3 +1645,5 @@ document.addEventListener('click', event => {
 
     openSubscriptionModal(link.dataset.qzPlanBook);
 }, true);
+
+

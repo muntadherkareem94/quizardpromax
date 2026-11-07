@@ -76,9 +76,9 @@ if (!/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(bookId)) {
   return respond({ error: 'Invalid book ID' }, 400);
 }
 
-if (![3, 6, 9].includes(months)) {
+if (![3, 6, 12].includes(months)) {
   return respond({
-    error: 'Choose 3, 6, or 9 months of book access.'
+    error: 'Choose 3, 6, or 12 months of book access.'
   }, 400);
 }
 
@@ -149,7 +149,7 @@ const priceField =
     ? 'standalone_price_iqd'
     : months === 6
       ? 'standalone_price_6m_iqd'
-      : 'standalone_price_9m_iqd';
+      : 'standalone_price_12m_iqd';
 
 const amount = Number(rule.data?.[priceField]);
 

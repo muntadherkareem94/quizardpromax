@@ -33,7 +33,7 @@ export async function startStandaloneCheckout(bookId, button) {
 
     const months = Number(button?.dataset.qzBookMonths);
 
-    if (![3, 6, 9].includes(months)) {
+    if (![3, 6, 12].includes(months)) {
         showCheckoutError('Choose a valid book duration.');
         return;
     }
