@@ -1,8 +1,10 @@
 
 
+
 import { supabase } from './supabaseClient.js';
 
-import { openPlanChangeModal } from './plan-change-modal.js';
+// The Dashboard and Profile share subscription-modal.js.
+// Its public entry point is window.openSubscriptionModal().
 
 
 
@@ -747,7 +749,9 @@ $('qzLibraryRefresh').addEventListener(
     loadLibrary
 );
 
-// Upgrade an active paid Premium membership to Platinum.
+
+// Open the shared Dashboard subscription window
+// for active Premium or Platinum membership upgrades.
 $('qzLibraryPlans').addEventListener('click', event => {
     const button = event.target.closest(
         '[data-qz-upgrade-plan]'
@@ -757,13 +761,51 @@ $('qzLibraryPlans').addEventListener('click', event => {
 
     event.preventDefault();
 
+    const currentPlan = String(
+        button.dataset.qzUpgradePlan || ''
+    ).toLowerCase();
 
-openPlanChangeModal({
-    currentPlan: button.dataset.qzUpgradePlan,
-    currentMonths: Number(button.dataset.qzCurrentMonths)
+    const currentMonths = Number(
+        button.dataset.qzCurrentMonths
+    );
+
+    if (
+        !['premium', 'platinum'].includes(currentPlan) ||
+        ![3, 6, 12].includes(currentMonths)
+    ) {
+        window.alert(
+            'Unable to identify your current plan. ' +
+            'Please refresh Personal Profile.'
+        );
+        return;
+    }
+
+    if (currentPlan === 'platinum' && currentMonths === 12) {
+        return;
+    }
+
+    if (typeof window.openSubscriptionModal !== 'function') {
+        window.alert(
+            'The subscription window is unavailable. ' +
+            'Please refresh the page.'
+        );
+        return;
+    }
+
+    // Recommend an eligible Platinum duration initially.
+    // The customer can still select another allowed option.
+    const preferredMonths =
+        currentMonths === 3 ? 6 : 12;
+
+    // No book ID means display the membership cards
+    // without the individual-book purchase section.
+    window.openSubscriptionModal(
+        null,
+        'platinum',
+        preferredMonths
+    );
 });
 
-});
 
 // Renew an expired Premium or Platinum plan.
 

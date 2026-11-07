@@ -1904,8 +1904,16 @@ const { error } = await supabase.rpc(
 }
 
 
-async function openSubscriptionModal(bookId, renewPlanSlug = null) {
-    const requestedPlan = String(renewPlanSlug || '').toLowerCase();
+
+async function openSubscriptionModal(
+    bookId,
+    renewPlanSlug = null,
+    preferredMonths = 3
+) {
+    const requestedPlan = String(
+        renewPlanSlug || ''
+    ).toLowerCase();
+
     const planOnly = bookId == null || bookId === '';
 
     if (
@@ -1919,11 +1927,19 @@ async function openSubscriptionModal(bookId, renewPlanSlug = null) {
 
     planOnlyMode = planOnly;
     preferredPlanSlug = planOnly ? requestedPlan : null;
-
     currentBookId = planOnly ? null : String(bookId);
-    selectedMonths = 3;
+
+    // The Profile can suggest a relevant upgrade duration.
+    // Dashboard's existing book calls still default to 3 months.
+    const requestedMonths = Number(preferredMonths);
+
+    selectedMonths = [3, 6, 12].includes(requestedMonths)
+        ? requestedMonths
+        : 3;
+
     selectedBookMonths = 3;
     modalData = null;
+
 
 
 
@@ -2063,19 +2079,41 @@ const bookTitle =
     bookResult.data?.title || 'Medical Question Bank';
 
 
+
 document.getElementById('qz-sub-heading').textContent =
     planOnlyMode
-        ? 'Renew ' +
-          preferredPlanSlug.toUpperCase() +
-          ' — ' + speciality
+        ? subscriptionState.mode === 'active'
+            ? 'Manage My Subscription'
+            : 'Choose Your Subscription'
         : 'Unlock ' + bookTitle;
 
 overlay.querySelector('.qz-description').textContent =
     planOnlyMode
-        ? 'Choose your preferred plan and access duration. ' +
-          'Prices and included books are shown below.'
+        ? subscriptionState.mode === 'active'
+            ? 'Current plan: ' +
+              String(
+                  subscriptionState.plan_slug || 'Paid'
+              ).toUpperCase() +
+              (
+                  [3, 6, 12].includes(
+                      Number(subscriptionState.months)
+                  )
+                      ? ' — ' +
+                        subscriptionState.months +
+                        ' months.'
+                      : '.'
+              ) +
+              ' Choose an available upgrade below. ' +
+              'Unused paid subscription value will be ' +
+              'deducted automatically at checkout. ' +
+              'Specialty: ' + speciality + '.'
+            : 'Choose Premium or Platinum and your ' +
+              'preferred access duration. ' +
+              'Prices and included books are shown below. ' +
+              'Specialty: ' + speciality + '.'
         : 'Choose a subscription or purchase this book ' +
           'individually if available.';
+
 
 
        
