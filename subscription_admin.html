@@ -941,20 +941,20 @@ async function saveBooks() {
         const before = originalRule(book);
         const rule = bookDraft.get(String(book.id));
 
+
 const prices = [
     rule.standalone_price_iqd,
     rule.standalone_price_6m_iqd,
-    rule.standalone_price_9m_iqd
+    rule.standalone_price_12m_iqd
 ];
 
 if (prices.some(price =>
     price !== null &&
     (!Number.isSafeInteger(price) || price <= 0)
 )) {
-    status(`Invalid 3, 6 or 9-month price for: ${book.title}`);
+    status(`Invalid 3, 6 or 12-month price for: ${book.title}`);
     return;
 }
-
 if (
     rule.standalone_enabled &&
     !prices.some(price => price !== null)
@@ -962,6 +962,7 @@ if (
     status(`Set at least one book price for: ${book.title}`);
     return;
 }
+
 
 
         if (

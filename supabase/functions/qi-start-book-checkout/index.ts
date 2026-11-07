@@ -100,8 +100,9 @@ if (![3, 6, 12].includes(months)) {
 .select(
   'access_mode,standalone_enabled,' +
   'standalone_price_iqd,standalone_price_6m_iqd,' +
-  'standalone_price_9m_iqd'
+  'standalone_price_12m_iqd'
 )
+
 
 
           .eq('book_id', bookId)

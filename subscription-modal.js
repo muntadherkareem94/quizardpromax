@@ -1159,17 +1159,19 @@ ${purchasable
 const standaloneContainer =
     document.getElementById('qz-sub-standalone');
 
+
 // Read all available duration prices.
 const bookPrices = {
     3: Number(selectedRule?.standalone_price_iqd || 0),
     6: Number(selectedRule?.standalone_price_6m_iqd || 0),
-    9: Number(selectedRule?.standalone_price_12m_iqd || 0)
+    12: Number(selectedRule?.standalone_price_12m_iqd || 0)
 };
 
 const availableMonths = [3, 6, 12].filter(months =>
     Number.isSafeInteger(bookPrices[months]) &&
     bookPrices[months] > 0
 );
+
 
 const standaloneAvailable =
     selectedRule?.standalone_enabled === true &&
