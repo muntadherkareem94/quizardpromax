@@ -437,10 +437,17 @@ const purchasedCourseIds = new Set(
 
                
 if (item.type === 'book') {
-    // Use current Supabase entitlements for book ownership.
+    const entitlement = bookAccessMap.get(String(item.id));
+
+    // Hide free books that this user has already claimed.
+    if (entitlement?.access_mode === 'claimed_free') {
+        return false;
+    }
+
+    // Preserve existing ownership filtering for paid books.
     if (
         item.access_level !== 'free' &&
-        bookAccessMap.get(String(item.id))?.has_access === true
+        entitlement?.has_access === true
     ) {
         return false;
     }
@@ -460,7 +467,13 @@ if (item.type === 'book') {
 }
 
 
-                const isFreeContentInSpecialty = item.access_level === 'free' && userHasSpecialtyAccess;
+              const isFreeContentInSpecialty =
+    item.access_level === 'free' &&
+    (
+        item.type === 'book'
+            ? matchesPrimarySpecialty
+            : userHasSpecialtyAccess
+    );
                 if (isFreeContentInSpecialty) return false;
 
                 return true;
@@ -503,7 +516,24 @@ function renderStoreItems(itemsToRender, userData) {
 
 
         // Store actions — one purchase button per book.
-        if (item.access_level === 'free') {
+            if (item.type === 'book' && item.access_level === 'free') {
+            // Free books outside the user's specialty are claimed through
+            // the same purchase modal, without invoking a payment gateway.
+            buttonHTML = `
+                <div class="qz-store-purchase-area">
+                    <p class="qz-store-price-hint">
+                        <strong>Free — 0 IQD</strong>
+                    </p>
+                    <button type="button"
+                            data-qz-plan-book="${item.id}"
+                            class="qz-store-buy-button">
+                        Buy This Book
+                    </button>
+                </div>
+            `;
+
+        } else if (item.access_level === 'free') {
+            // Preserve the existing behavior of free video courses.
             buttonHTML = `
                 <div class="qz-store-purchase-area">
                     <button

@@ -3859,7 +3859,33 @@ for (const item of (booksData || [])) {
     }
 }
 
-allBooks = uniqueBooks;
+// Free access is scoped to the user's specialty, not global.
+// Other access modes stay unchanged so individually purchased books
+// from different specialties still appear on the dashboard.
+const normalizeSpecialtyForBooks = value => String(value ?? '')
+    .normalize('NFKC')
+    .replace(/[\u2010-\u2015]/g, '-')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+
+const accountSpecialtyForBooks = normalizeSpecialtyForBooks(userData?.speciality);
+
+allBooks = uniqueBooks.filter(item => {
+    if (!item?.book_data) return false;
+
+    const accessMode = String(item.access_mode ?? '').trim().toLowerCase();
+
+    // Keep the existing handling of Premium, Platinum and
+    // standalone purchases, even across specialties.
+    if (accessMode !== 'free') return true;
+
+    const bookSpecialty = normalizeSpecialtyForBooks(item.book_data.speciality);
+
+    if (!accountSpecialtyForBooks || !bookSpecialty) return false;
+
+    return accountSpecialtyForBooks === bookSpecialty;
+});
 
         
         // --- BULLETPROOF MOBILE ALPHABETICAL SORT ---

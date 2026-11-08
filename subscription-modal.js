@@ -740,6 +740,10 @@ if (action === 'free-plan') {
     return;
 }
 
+if (action === 'claim-free-book') {
+    claimFreeBook(button);
+    return;
+}
 
 
 if (action === 'duration') {
@@ -1181,13 +1185,117 @@ function renderSubscriptionModal() {
     );
 
     const selectedRule = ruleMap.get(String(currentBookId));
+    const selectedBook = bookMap.get(String(currentBookId));
+
+    const selectedBookMode = selectedRule?.access_mode ||
+        (selectedBook?.access_level === 'purchasable'
+            ? 'standalone'
+            : selectedBook?.access_level);
+
+    // Restore the subscription duration selector when changing modes.
+    const freeClaimDurationBar = overlay.querySelector('.qz-durations');
+
+    if (freeClaimDurationBar) {
+        freeClaimDurationBar.style.display = '';
+    }
+
+    if (!planOnlyMode && selectedBook && selectedBookMode === 'free') {
+        if (freeClaimDurationBar) {
+            freeClaimDurationBar.style.display = 'none';
+        }
+
+        // This free claim does not require a paid subscription.
+        const title = escapeHtml(selectedBook.title || 'Free Book');
+        const cover = getBookCoverSrc(selectedBook);
+
+        const coverHtml = cover
+            ? `<img src="${escapeHtml(cover)}"
+                    alt="${title}"
+                    loading="lazy">`
+            : `<div class="qz-cover-fallback">${title}</div>`;
+
+        const hasPaidPlans = (plans || []).some(plan =>
+            plan.enabled === true &&
+            (prices || []).some(price =>
+                price.plan_slug === plan.plan_slug &&
+                price.enabled === true &&
+                Number(price.amount_iqd) > 0
+            )
+        );
+
+        document.getElementById('qz-sub-cards').innerHTML = hasPaidPlans
+            ? ''
+            : `<div class="qz-notice"
+                    style="grid-column:1 / -1">
+                   Currently, no plans are available for your specialty.
+               </div>`;
+
+        document.getElementById('qz-sub-standalone').innerHTML = `
+            <div class="qz-standalone">
+                <div class="qz-standalone-header">
+                    <div class="qz-cover-card qz-standalone-cover">
+                        ${coverHtml}
+                    </div>
+
+                    <div class="qz-standalone-info">
+                        <strong>
+                            Purchase this book individually
+                        </strong>
+
+                        <div class="qz-standalone-title">
+                            ${title}
+                        </div>
+
+                        <div class="qz-standalone-label">
+                            Permanent Free Access
+                        </div>
+
+                        <p class="qz-small" style="margin-top:12px">
+                            No payment required. This book will be
+                            permanently added to your personal dashboard.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="qz-price">
+                    0 IQD
+                </div>
+
+                <button type="button"
+                        class="qz-purchase"
+                        data-qz-action="claim-free-book">
+                    Buy This Book — 0 IQD
+                </button>
+            </div>
+        `;
+
+        setMessage(
+            'This book is free. No Qi payment will be initiated.'
+        );
+
+        return;
+    }
 
     const accessMode = memberships.find(
         r => String(r.book_id) === currentBookId
     )?.tier || 'none';
 
+    // A free book belongs only to users in that book's specialty.
+    const normalizeSpeciality = value => String(value ?? '')
+        .normalize('NFKC')
+        .replace(/[\u2010-\u2015]/g, '-')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
+
+    const accountSpeciality = normalizeSpeciality(speciality);
+
     const freeBooks = dedupeBooks(
         (catalog || []).filter(book => {
+            if (normalizeSpeciality(book.speciality) !== accountSpeciality) {
+                return false;
+            }
+
             const rule = ruleMap.get(String(book.id));
             const mode = rule?.access_mode ||
                 (book.access_level === 'purchasable'
@@ -1223,12 +1331,13 @@ function renderSubscriptionModal() {
 
     const cards = [];
 
-    cards.push(`
+    // Do not create an empty Free plan for a specialty.
+    if (freeCount > 0) cards.push(`
         <div class="qz-plan free ${freeIncludesBook ? 'recommended' : ''}">
             <h3>● Free</h3>
 
             <div class="qz-small">
-                Books available to every user
+                Free books for your specialty
             </div>
 
             <div class="qz-price">
@@ -1274,7 +1383,17 @@ function renderSubscriptionModal() {
 
     for (const slug of ['premium', 'platinum']) {
         const plan = plans.find(p => p.plan_slug === slug);
-        if (!plan) continue;
+
+        // Only offer plans configured for the signed-in user's specialty.
+        const hasPublishedPrice = prices.some(price =>
+            price.plan_slug === slug &&
+            price.enabled === true &&
+            Number(price.amount_iqd) > 0
+        );
+
+        if (!plan || plan.enabled !== true || !hasPublishedPrice) {
+            continue;
+        }
 
         const price = prices.find(p =>
             p.plan_slug === slug &&
@@ -1452,8 +1571,24 @@ ${savingsHtml}
         `);
     }
 
+    const hasPaidPlans = cards.length > (freeCount > 0 ? 1 : 0);
+    const planDurations = overlay.querySelector('.qz-durations');
+
+    if (planDurations) {
+        planDurations.style.display = hasPaidPlans ? '' : 'none';
+    }
+
     document.getElementById('qz-sub-cards').innerHTML =
-        cards.join('');
+        cards.length > 0
+            ? cards.join('')
+            : `<div class="qz-notice" role="status"
+                    style="grid-column:1 / -1;padding:24px;">
+                   <strong>Currently, no plans are available for your specialty.</strong>
+                   <div style="margin-top:8px;">
+                       You can still purchase individual books from any
+                       specialty using the option below or the Quizard Store.
+                   </div>
+               </div>`;
 
 
 const standaloneContainer =
@@ -1632,6 +1767,54 @@ setMessage(
 }
 
 
+
+async function claimFreeBook(button) {
+    if (button.disabled || !currentBookId || !modalData) {
+        return;
+    }
+
+    button.disabled = true;
+
+    const previousText = button.textContent;
+    button.textContent = 'Adding book...';
+
+    try {
+        const { data, error } = await supabase.rpc(
+            'qz_claim_free_book',
+            { p_book_id: currentBookId }
+        );
+
+        if (error) throw error;
+
+        if (
+            !data ||
+            data.book_id !== currentBookId ||
+            !['claimed', 'already_claimed'].includes(data.status)
+        ) {
+            throw new Error(
+                'The server did not confirm the free book claim.'
+            );
+        }
+
+        // Refresh entitlement-dependent content on next page load.
+        localStorage.removeItem('offline_store_items');
+        localStorage.removeItem('offline_books');
+
+        setMessage('Book added to your dashboard.');
+
+        window.location.assign('dashboard.html');
+
+    } catch (error) {
+        console.error('Free book claim failed:', error);
+
+        setMessage(
+            'Could not add this book: ' + error.message
+        );
+
+        button.disabled = false;
+        button.textContent = previousText;
+    }
+}
 
 async function startCardCheckout(planSlug, button) {
     if (
