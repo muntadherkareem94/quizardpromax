@@ -29,7 +29,69 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Quizard">
     <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+
+<style id="quizard-login-footer-fix">
+    footer {
+        background: #3da0be !important;
+        padding: 16px 20px 25px !important;
+        text-align: center;
+    }
+
+    footer nav {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        max-width: 900px;
+        margin: 0 auto 18px !important;
+    }
+
+    footer nav a {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 15px !important;
+        border: 1px solid rgba(255,255,255,0.28);
+        border-radius: 8px;
+        background: rgba(255,255,255,0.12);
+        color: white !important;
+        font-size: 12px !important;
+        font-weight: 500;
+        line-height: 1.4;
+        text-decoration: none !important;
+        white-space: nowrap;
+        transition: background 0.2s ease;
+    }
+
+    footer nav a:hover {
+        background: rgba(255,255,255,0.25);
+    }
+
+    footer .space-x-6 {
+        display: none !important;
+    }
+
+    footer p {
+        color: white;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 480px) {
+        footer nav {
+            gap: 8px !important;
+        }
+
+        footer nav a {
+            padding: 8px 11px !important;
+            font-size: 11px !important;
+        }
+    }
+</style>
 </head>
+
 <body class="flex flex-col min-h-screen">
 
     <div id="authStartupOverlay"
