@@ -358,5 +358,344 @@ export function installBookLicenseManager(dialog) {
         }
     }
 
-    return { load };
+
+    // ------------------------------------------------
+    // Super Admin — Independent Manual Book Grants
+    // ------------------------------------------------
+
+    const grantPanel = document.createElement('section');
+    grantPanel.className = 'qza-card';
+
+    grantPanel.innerHTML = `
+        <strong>Grant Individual Book</strong>
+
+        <p>
+            Give any user access to one book without
+            creating a payment or changing their plan.
+        </p>
+
+        <form id="qzaManualGrantForm">
+            <label class="qza-label" for="qzaGrantBook">
+                Select book
+            </label>
+
+            <select id="qzaGrantBook" required>
+                <option value="">Loading books...</option>
+            </select>
+
+            <label class="qza-label" for="qzaGrantDuration">
+                Access duration
+            </label>
+
+            <select id="qzaGrantDuration">
+                <option value="3">3 Months</option>
+                <option value="6">6 Months</option>
+                <option value="9">9 Months</option>
+                <option value="12">12 Months</option>
+                <option value="0">Lifetime</option>
+            </select>
+
+            <label class="qza-label" for="qzaGrantReason">
+                Reason for manual grant
+            </label>
+
+            <textarea
+                id="qzaGrantReason"
+                rows="2"
+                minlength="3"
+                maxlength="300"
+                required
+                placeholder="E.g. Alternative payment arrangement"
+            ></textarea>
+
+            <button
+                type="submit"
+                class="qza-btn"
+                id="qzaGrantSubmit"
+                style="width:100%;margin-top:15px"
+            >
+                Grant Book Access
+            </button>
+        </form>
+
+        <div class="qza-info" style="margin-top:12px">
+            No payment transaction will be created.
+            Existing purchased licenses are unaffected.
+        </div>
+
+        <h3 style="margin-top:22px;font-size:15px">
+            Active Manual Grants
+        </h3>
+
+        <div id="qzaManualGrantList"></div>
+
+        <div
+            id="qzaManualGrantStatus"
+            class="qza-status"
+            role="status"
+            aria-live="polite"
+            style="margin-top:15px"
+        ></div>
+    `;
+
+    panel.after(grantPanel);
+
+    const grantForm =
+        grantPanel.querySelector('#qzaManualGrantForm');
+
+    const grantBook =
+        grantPanel.querySelector('#qzaGrantBook');
+
+    const grantDuration =
+        grantPanel.querySelector('#qzaGrantDuration');
+
+    const grantReason =
+        grantPanel.querySelector('#qzaGrantReason');
+
+    const grantList =
+        grantPanel.querySelector('#qzaManualGrantList');
+
+    const grantStatus =
+        grantPanel.querySelector('#qzaManualGrantStatus');
+
+    const grantSubmit =
+        grantPanel.querySelector('#qzaGrantSubmit');
+
+    let grantUserId = null;
+    let grantBusy = false;
+    let grantLoadSequence = 0;
+
+    function grantSay(message) {
+        grantStatus.textContent = message;
+    }
+
+    async function loadManualGrants(userId) {
+        grantUserId = userId;
+
+        const sequence = ++grantLoadSequence;
+
+        grantBook.disabled = true;
+        grantList.replaceChildren();
+        grantSay('Loading available books and grants...');
+
+        try {
+            const [booksResult, grantsResult] =
+                await Promise.all([
+                    supabase.rpc('qz_admin_grantable_books'),
+                    supabase.rpc(
+                        'qz_admin_list_manual_book_grants',
+                        { p_user_id: userId }
+                    )
+                ]);
+
+            if (sequence !== grantLoadSequence) return;
+
+            if (booksResult.error) {
+                throw booksResult.error;
+            }
+
+            if (grantsResult.error) {
+                throw grantsResult.error;
+            }
+
+            grantBook.replaceChildren();
+
+            const placeholder = new Option(
+                'Choose a book...',
+                ''
+            );
+
+            grantBook.appendChild(placeholder);
+
+            for (const book of booksResult.data || []) {
+                const option = new Option(
+                    `${book.book_title} — ${book.book_speciality || 'General'}`,
+                    book.book_id
+                );
+
+                grantBook.appendChild(option);
+            }
+
+            grantBook.disabled = false;
+
+            const grants = grantsResult.data || [];
+
+            if (!grants.length) {
+                const empty = document.createElement('p');
+                empty.textContent = 'No active manual grants.';
+                grantList.appendChild(empty);
+            }
+
+            for (const item of grants) {
+                const row = document.createElement('div');
+
+                row.style.cssText = `
+                    padding:12px;
+                    margin-top:10px;
+                    border:1px solid #dbe8ef;
+                    border-radius:10px;
+                    background:white;
+                `;
+
+                const title = document.createElement('strong');
+                title.textContent = item.book_title;
+
+                const details = document.createElement('p');
+
+                details.textContent =
+                    'Expires: ' +
+                    (
+                        item.expires_at
+                            ? new Date(item.expires_at)
+                                .toLocaleString()
+                            : 'Lifetime'
+                    ) +
+                    '\nReason: ' +
+                    (item.reason || '');
+
+                details.style.whiteSpace = 'pre-line';
+
+                const revoke = document.createElement('button');
+
+                revoke.type = 'button';
+                revoke.className =
+                    'qza-btn qza-danger';
+
+                revoke.style.cssText = `
+                    width:100%;
+                    margin-top:9px;
+                    padding:9px;
+                `;
+
+                revoke.textContent = 'Revoke Manual Grant';
+
+                revoke.addEventListener('click', async () => {
+                    if (grantBusy) return;
+
+                    const targetUserId = grantUserId;
+
+                    if (!window.confirm(
+                        `Revoke manual access to "${item.book_title}"?`
+                    )) {
+                        return;
+                    }
+
+                    const reason = window.prompt(
+                        'Reason for revocation:',
+                        'Manual grant revoked'
+                    );
+
+                    if (reason === null) return;
+
+                    if (reason.trim().length < 3) {
+                        grantSay('A valid reason is required.');
+                        return;
+                    }
+
+                    grantBusy = true;
+                    revoke.disabled = true;
+
+                    try {
+                        const { error } = await supabase.rpc(
+                            'qz_admin_revoke_book_grant',
+                            {
+                                p_user_id: targetUserId,
+                                p_book_id: item.book_id,
+                                p_reason: reason.trim()
+                            }
+                        );
+
+                        if (error) throw error;
+
+                        if (grantUserId === targetUserId) {
+                            await loadManualGrants(targetUserId);
+                            grantSay('Manual grant revoked.');
+                        }
+                    } catch (error) {
+                        grantSay('Revoke failed: ' + error.message);
+                    } finally {
+                        grantBusy = false;
+                        revoke.disabled = false;
+                    }
+                });
+
+                row.append(title, details, revoke);
+                grantList.appendChild(row);
+            }
+
+            grantSay('Manual book access is ready.');
+
+        } catch (error) {
+            grantSay('Unable to load grants: ' + error.message);
+        }
+    }
+
+    grantForm.addEventListener('submit', async event => {
+        event.preventDefault();
+
+        if (grantBusy || !grantUserId) return;
+
+        const targetUserId = grantUserId;
+        const bookId = grantBook.value;
+        const months = Number(grantDuration.value);
+        const reason = grantReason.value.trim();
+
+        if (!bookId || reason.length < 3) {
+            grantSay('Select a book and enter a valid reason.');
+            return;
+        }
+
+        const selectedBookName =
+            grantBook.options[grantBook.selectedIndex].text;
+
+        if (!window.confirm(
+            `Grant "${selectedBookName}" to this user?\n` +
+            `Duration: ${months === 0 ? 'Lifetime' : months + ' months'}\n\n` +
+            'No payment will be charged.'
+        )) {
+            return;
+        }
+
+        grantBusy = true;
+        grantSubmit.disabled = true;
+        grantSay('Creating manual book grant...');
+
+        try {
+            const { error } = await supabase.rpc(
+                'qz_admin_grant_book',
+                {
+                    p_user_id: targetUserId,
+                    p_book_id: bookId,
+                    p_months: months,
+                    p_reason: reason
+                }
+            );
+
+            if (error) throw error;
+
+            if (grantUserId === targetUserId) {
+                grantReason.value = '';
+                await loadManualGrants(targetUserId);
+                grantSay('Book access granted successfully.');
+            }
+
+        } catch (error) {
+            grantSay('Grant failed: ' + error.message);
+
+        } finally {
+            grantBusy = false;
+            grantSubmit.disabled = false;
+        }
+    });
+
+    // Load both existing licenses and new manual grants.
+    return {
+        load: async userId => {
+            await Promise.all([
+                load(userId),
+                loadManualGrants(userId)
+            ]);
+        }
+    };
 }
+
