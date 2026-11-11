@@ -1849,10 +1849,24 @@ function renderBooks(booksToRender, userData, bookStats = {}) {
         return;
     }
 
-    booksToRender.forEach(item => {
+   
+    // Prioritize accessible Free Plan books.
+    // Preserve the existing order of all other books.
+    const isFreePlanBook = item =>
+        item?.has_access === true &&
+        String(item.access_mode || '').trim().toLowerCase() === 'free';
+
+    const sortedBooks = [...booksToRender].sort((a, b) => {
+        return Number(isFreePlanBook(b)) - Number(isFreePlanBook(a));
+    });
+
+    sortedBooks.forEach(item => {
         const book = item.book_data;
         const hasAccess = item.has_access;
         if (!book) return;
+
+        const isFree = isFreePlanBook(item);
+
 
         // Get Stats
         const stats = bookStats[book.id] || { total: 0, correct: 0, wrong: 0 };
@@ -1885,14 +1899,37 @@ function renderBooks(booksToRender, userData, bookStats = {}) {
             </div>
         ` : '';
 
+
         card.innerHTML = `
             ${lockOverlay}
-            
+
             <div class="h-64 bg-gray-50 flex items-center justify-center p-4 relative border-b border-gray-100 rounded-t-2xl overflow-hidden">
-                <img src="${imgSrc}" 
-                     alt="${book.title}" 
+
+                ${isFree ? `
+                    <span
+                        aria-label="Free Plan book"
+                        style="
+                            position: absolute;
+                            top: 12px;
+                            left: 12px;
+                            z-index: 30;
+                            background: #16a34a;
+                            color: white;
+                            padding: 7px 14px;
+                            border-radius: 9999px;
+                            font-size: 12px;
+                            font-weight: 800;
+                            letter-spacing: 0.08em;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+                        "
+                    >FREE</span>
+                ` : ''}
+
+                <img src="${imgSrc}"
+                     alt="${book.title}"
                      class="h-full w-auto object-contain drop-shadow-md transition-transform duration-500 group-hover:scale-105">
             </div>
+
             
             <div class="p-5 flex flex-col flex-grow rounded-b-2xl">
                 <div class="mb-3">
