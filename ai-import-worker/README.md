@@ -1,48 +1,48 @@
-# Quizard autonomous MCQ book importer (initial implementation)
+# Quizard AI Book Import — isolated staging phase
 
-## What is implemented
+## Current state (16 November 2026)
 
-- Full-admin-only, multi-PDF bulk upload with *existing Quizard specialty names*.
-- 500 MB per-book private storage bucket (subject to the project's global file-size limit).
-- Signed resumable/TUS upload into private Supabase Storage.
-- Persistent queue: jobs stay in PostgreSQL, independent of browser availability.
-- Dedicated Python worker downloads PDF, inspects its actual cover/title, maps chapters via bookmarks or visible headings, extracts MCQs batch-by-batch using the OpenAI Responses API with strict structured JSON, runs a separate AI source audit, validates fields, and tries to extract embedded figures.
-- Existing Quizard tables used: books, chapters, questions, disciplines. Existing public image buckets used: book_covers, question_images.
-- A single PostgreSQL transaction publishes an entire book only after all sections are verified; paid/purchasable access is the default, with no automatic subscription entitlements.
-- Uncertain cases become **needs_review**, not silently auto-published. This is deliberate: 100% accurate transcription cannot be guaranteed by models.
+This is a test-only importer on the GitHub feature branch `feature/ai-book-import-v1`.
+The production Supabase project has only the following *new* isolated resources:
 
-## Deployment (required; PR alone does NOT activate background processing)
+- `public.ai_import_jobs` — admin-readable, service-role writable.
+- `public.ai_import_sections` — admin-readable, service-role writable.
+- `ai_import_sources` private PDF bucket.
+- `ai_import_assets` private original-cover and extracted-figure bucket.
+- `public.ai_claim_import_job()` service-role-only, invoker-security queue function.
+- `ai-import-admin` Edge Function, authorized full admins only, with JWT verification.
 
-1. Review and merge the PR. Confirm the database schema matches the existing books/chapters/questions definitions in your live Supabase database.
-2. Apply migration from \`supabase/migrations/20261116000000_ai_book_import.sql\` using your Supabase migration process or SQL editor (review the migration before execution).
-3. Confirm the existing \`book_covers\` and \`question_images\` buckets are public (the current Quizard UI uses their public URLs). The source PDF bucket \`ai_import_sources\` must remain **private**.
-4. Deploy \`supabase/functions/ai-import-admin\` as an Edge Function with JWT verification enabled. Supabase must provide SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY as server-side environment variables.
-5. Deploy \`ai-import-worker\` as a **persistent container/worker**, not a static Netlify site or a short-lived Edge Function. For example, build its Dockerfile with Render Background Worker, Railway worker, or your own VPS.
-6. Set worker server-side secrets: \`SUPABASE_URL\`, \`SUPABASE_SERVICE_ROLE_KEY\`, \`OPENAI_API_KEY\`. Never expose service role or OpenAI keys to the website/client/GitHub.
-7. Set \`OPENAI_EXTRACTION_MODEL\` and \`OPENAI_VERIFICATION_MODEL\` to models actually enabled in your OpenAI project. The example defaults to \`gpt-6.1-sol\` for extraction and \`gpt-6-astra\` for an independent, high-accuracy audit. These are paid API models, not ChatGPT subscription entitlements; check API access, costs and limits before starting 10 books.
-8. Check your Supabase project-level Storage file size limit and raise it appropriately before testing large textbooks.
-9. In Quizard super-admin dashboard open **AI Autonomous Book Import**, choose a specialty, upload PDF books; repeat for additional specialties. Leave the worker running.
-10. Before accepting paid/public content, benchmark against manually reviewed books and confirm copyright/licensing.
+**No publication RPC exists.** The AI worker *cannot* insert into the existing `books`, `chapters`, or `questions` tables. `AUTO_PUBLISH` is hard-disabled in code. Existing Quizard payments, subscribers, quiz access and books remain unchanged.
 
-## Safety / known limitations of initial implementation
+## What the worker does
 
-- The chapter planner tries PDF bookmarks, then printed "Chapter ..." headings. If neither exists (e.g. an entirely scanned PDF lacking bookmarks) it flags the chapter structure for review instead of hallucinating it.
-- Answer keys/explanations separated far from stems may not appear within the extraction window; such questions are blocked for review instead of fabricating answers. A full book-wide key reconciliation pass is a planned improvement.
-- Embedded raster figures are cropped from the **source PDF**, not generated. Vector figures, ambiguous image-to-question matches, multi-question page figures and figures on adjacent pages trigger manual review, not incorrect automatic attribution.
-- The automatic source verifier is a separate model pass with up to two discrepancy-repair attempts, not a proof of 100% correctness. It must be benchmarked.
-- The system is not yet an image-aware source-side correction editor. The UI displays exact issue descriptions and can retry, but review/edit tooling is a separate phase.
-- The title/cover finder inspects the opening five pages; books whose real cover is elsewhere will require review.
-- The uploaded specialty is a Quizard specialty (e.g. General Surgery or Rheumatology), and is **never** overridden by the AI.
-- Source PDFs are kept private and not served publicly.
-- Running twice for the same title creates separate import jobs. Each job is idempotent on publication, but global deduplication against existing books is not implemented.
-- Publication uses an atomic SQL RPC; existing plans/subscriptions are not changed.
+1. Read privately uploaded PDF and inspect title and cover page.
+2. Discover chapters using PDF table of contents/bookmarks or printed headings; flag uncertainties.
+3. Extract every question in small PDF page batches with exact source text, options and source-provided answer/explanation.
+4. Independently audit transcription with a second model and attempt up to two source-grounded repairs.
+5. Extract and stage source images *privately*; flag ambiguous figure matching.
+6. Save verified chapter/question JSON to staging tables. Uncertain items go to `needs_review`. A fully checked book is `ready`, **not** published.
 
-## Operational notes
+## How to operate (not yet running)
 
-Stop a container gracefully and restart it to resume the queue; sections already verified are reused. Jobs have stale worker locks that can be reclaimed after 90 minutes.
+1. Deploy `ai-import-worker` to Railway from this feature branch, with root directory `/ai-import-worker` and Dockerfile `Dockerfile`.
+2. Configure the required secrets as Railway **sealed/server-side** variables: `SUPABASE_SERVICE_ROLE_KEY` and `OPENAI_API_KEY`. Do not paste them into ChatGPT, code or public GitHub.
+3. `SUPABASE_URL=https://ftcttxpmuqhqtbcdwgtr.supabase.co`, `AUTO_PUBLISH=false`, `PAGES_PER_BATCH=3`, `POLL_SECONDS=60` are non-secret settings.
+4. The models are configurable. Current defaults are `gpt-6.1-sol` extraction and `gpt-6-astra` independent audit; verify your API access and watch token costs before sending an entire textbook.
+5. Make the new `ai_book_import.html` page available through a controlled test deployment (do not merge an unreviewed feature branch to the customer-facing site).
+6. Test with an appropriately licensed short book/sample first. Manually inspect ALL extracted question stems, answers, explanations, original source pages, image matches, and chapter divisions before enabling an automatic publishing migration.
+7. Only after a successful pilot, design a separate reviewed publish path to copy private assets to approved public buckets and transactionally create books/chapters/questions.
 
-Status transitions: uploading → queued → processing → ready → published. Failed or uncertain content uses failed/needs_review.
+## Known limitations / safeguards
 
-If \`AUTO_PUBLISH=false\`, the worker sets \`ready\`; the publisher requires an admin-initiated secure approval procedure (not yet implemented), so leave it enabled only after acceptance tests.
+- No automatic publishing, no subscription changes.
+- There is no source page review editor yet; results and issues can be inspected in the queue and database.
+- Books with answers/explanations only in a distant answer key will be flagged, not fabricated.
+- Scanned books with no printed chapter headings/bookmarks need a more robust document-wide chapter planner.
+- Complex tables/vector graphics and multiple figures on the same page can be ambiguous; the worker flags these instead of guessing.
+- The current upload flow allows signed TUS PDF uploads and an admin-only queue. It must be tested against the live storage size limits before processing large files.
+- The AI verifier is not a substitute for manual sampling; a machine-generated "verified" result does not prove perfect source fidelity.
+- Only process source books you have appropriate rights to reproduce and make available to Quizard users.
+- Even without a paid Supabase development branch, storage, Railway compute and OpenAI API usage can generate charges.
 
-> **Important:** This is a substantial first implementation committed to a feature branch. It has not been deployed or tested against the live Quizard database. Do not merge directly into production without migration preview and end-to-end tests.
+**Current safety policy:** deploy only isolated staging resources; do not merge to production or start paid AI processing until credentials, cost limits and acceptance tests are configured.
