@@ -1,0 +1,112 @@
+import { createClient } from 'npm:@supabase/supabase-js@2';
+
+const cors = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-client-info',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Content-Type': 'application/json',
+};
+const respond = (payload: unknown, status = 200) =>
+  new Response(JSON.stringify(payload), { status, headers: cors });
+
+Deno.serve(async (req) => {
+  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
+  if (req.method !== 'POST') return respond({ error: 'POST required' }, 405);
+  try {
+    const url = Deno.env.get('SUPABASE_URL');
+    const anon = Deno.env.get('SUPABASE_ANON_KEY');
+    const secret = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+    if (!url || !anon || !secret) return respond({ error: 'Server is not configured' }, 500);
+
+    const authorization = req.headers.get('Authorization') || '';
+    const token = authorization.replace(/^Bearer\s+/i, '').trim();
+    if (!token) return respond({ error: 'Sign-in required' }, 401);
+
+    const auth = createClient(url, anon);
+    const { data: { user }, error: authError } = await auth.auth.getUser(token);
+    if (authError || !user) return respond({ error: 'Invalid session' }, 401);
+
+    const db = createClient(url, secret);
+    const { data: profile, error: profileError } = await db.from('users')
+      .select('role').eq('id', user.id).single();
+    // This endpoint is reserved for full admins, not specialty admins.
+    if (profileError || profile?.role !== 'admin')
+      return respond({ error: 'Super-admin role required' }, 403);
+
+    const input = await req.json();
+    const action = String(input.action || '');
+    if (action === 'prepare-upload') {
+      const filename = String(input.filename || '').trim();
+      const speciality = String(input.speciality || '').trim();
+      const titleHint = String(input.title || '').trim();
+      const size = Number(input.size || 0);
+      if (!filename.toLowerCase().endsWith('.pdf') || size < 1 || size > 500 * 1024 * 1024)
+        return respond({ error: 'A PDF smaller than 500 MB is required' }, 400);
+      if (!speciality || speciality.length > 120 || !titleHint || titleHint.length > 300)
+        return respond({ error: 'Book title and specialty are required' }, 400);
+      const id = crypto.randomUUID();
+      const path = user.id + '/' + id + '/book.pdf';
+      const { data: signed, error: uploadError } = await db.storage
+        .from('ai_import_sources').createSignedUploadUrl(path, { upsert: false });
+      if (uploadError || !signed) throw uploadError || new Error('Cannot sign upload');
+      const { error } = await db.from('ai_import_jobs').insert({
+        id, uploaded_by: user.id, file_name: filename.slice(0, 300),
+        title_hint: titleHint, speciality, source_path: path, status: 'uploading'
+      });
+      if (error) throw error;
+      return respond({ id, path, token: signed.token });
+    }
+
+    const id = String(input.id || '');
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id))
+      return respond({ error: 'Valid job id required' }, 400);
+    const { data: job, error: fetchError } = await db.from('ai_import_jobs')
+      .select('id, status, source_path').eq('id', id).single();
+    if (fetchError || !job) return respond({ error: 'Job not found' }, 404);
+
+    if (action === 'finalize-upload') {
+      if (job.status !== 'uploading') return respond({ error: 'Not awaiting upload' }, 409);
+      const parent = job.source_path.substring(0, job.source_path.lastIndexOf('/'));
+      const { data: entries, error: listError } = await db.storage.from('ai_import_sources')
+        .list(parent, { limit: 100, search: 'book.pdf' });
+      if (listError || !entries?.some((file) => file.name === 'book.pdf'))
+        return respond({ error: 'PDF upload not found in storage' }, 409);
+      const { error } = await db.from('ai_import_jobs').update({
+        status: 'queued', updated_at: new Date().toISOString()
+      }).eq('id', id).eq('status', 'uploading');
+      if (error) throw error;
+      return respond({ ok: true });
+    }
+
+    if (action === 'retry') {
+      if (!['failed', 'needs_review'].includes(job.status))
+        return respond({ error: 'Only failed/review jobs can be retried' }, 409);
+      const { error } = await db.from('ai_import_jobs').update({
+        status: 'queued', last_error: null, updated_at: new Date().toISOString()
+      }).eq('id', id).eq('status', job.status);
+      if (error) throw error;
+      return respond({ ok: true });
+    }
+
+    if (action === 'cancel') {
+      if (!['queued', 'failed', 'needs_review', 'ready'].includes(job.status))
+        return respond({ error: 'Only non-running jobs may be cancelled' }, 409);
+      const { error } = await db.from('ai_import_jobs').update({
+        status: 'cancelled', updated_at: new Date().toISOString()
+      }).eq('id', id).eq('status', job.status);
+      if (error) throw error;
+      return respond({ ok: true });
+    }
+
+    if (action === 'source-link') {
+      const { data, error } = await db.storage.from('ai_import_sources')
+        .createSignedUrl(job.source_path, 120);
+      if (error || !data?.signedUrl) throw error || new Error('Cannot open source');
+      return respond({ url: data.signedUrl });
+    }
+    return respond({ error: 'Unknown action' }, 400);
+  } catch (error) {
+    console.error('AI import request failed', error);
+    return respond({ error: error instanceof Error ? error.message : 'Request failed' }, 500);
+  }
+});
