@@ -7,7 +7,7 @@ os.environ.setdefault("SUPABASE_URL", "https://example.supabase.co")
 os.environ.setdefault("SUPABASE_SERVICE_ROLE_KEY", "not-a-real-service-key")
 os.environ.setdefault("OPENAI_API_KEY", "not-a-real-api-key")
 
-from worker import find_sections, validate_question, page_part, EXTRACTION_SCHEMA
+from worker import find_sections, validate_question, page_part, EXTRACTION_SCHEMA, normalize_claimed_job
 
 class ImportTests(unittest.TestCase):
     def test_bookmarked_chapters(self):
@@ -54,6 +54,15 @@ class ImportTests(unittest.TestCase):
         snippet=fitz.open(stream=data,filetype="pdf")
         self.assertEqual(len(snippet),3)
         snippet.close();source.close()
+
+    def test_empty_queue_composite_is_not_a_job(self):
+        self.assertIsNone(normalize_claimed_job(None))
+        self.assertIsNone(normalize_claimed_job([]))
+        self.assertIsNone(normalize_claimed_job({"id":None,"source_path":None}))
+        self.assertIsNone(normalize_claimed_job([{"id":None}]))
+        job={"id":"8f43e841-a424-4ab9-afda-2e9ac3611480","source_path":"x/book.pdf"}
+        self.assertEqual(normalize_claimed_job(job),job)
+        self.assertEqual(normalize_claimed_job([{"id":None},job]),job)
 
     def test_strict_schema(self):
         self.assertFalse(EXTRACTION_SCHEMA["additionalProperties"])
