@@ -450,14 +450,22 @@ def process_job(job):
     finally:
         document.close()
 
+def normalize_claimed_job(data):
+    """PostgREST represents an empty composite return as a row with null fields."""
+    if isinstance(data, list):
+        data = next((item for item in data if isinstance(item, dict) and item.get("id")), None)
+    if not isinstance(data, dict) or not data.get("id"):
+        return None
+    return data
+
+
 def main():
     LOG.info("Quizard importer running. Extraction=%s, verification=%s",MODEL,VERIFY_MODEL)
     while True:
         try:
             result=DB.rpc("ai_claim_import_job").execute()
-            job=result.data
-            if isinstance(job,list):job=job[0] if job else None
-            if not job:
+            job=normalize_claimed_job(result.data)
+            if job is None:
                 time.sleep(POLL_SECONDS);continue
             try:
                 process_job(job)
