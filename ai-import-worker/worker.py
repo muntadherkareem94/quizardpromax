@@ -31,7 +31,7 @@ MODEL = os.getenv("OPENAI_EXTRACTION_MODEL", "gpt-6.1-sol")
 VERIFY_MODEL = os.getenv("OPENAI_VERIFICATION_MODEL", "gpt-6-astra")
 PAGES_PER_BATCH = max(1, min(6, int(os.getenv("PAGES_PER_BATCH", "3"))))
 POLL_SECONDS = max(10, int(os.getenv("POLL_SECONDS", "60")))
-AUTO_PUBLISH = os.getenv("AUTO_PUBLISH", "true").lower() == "true"
+AUTO_PUBLISH = False  # Safety interlock: this branch is staging-only
 DB = create_client(URL, SERVICE_KEY)
 AI = OpenAI(api_key=os.environ["OPENAI_API_KEY"], timeout=300, max_retries=3)
 
@@ -222,9 +222,11 @@ def detect_raster_figures(document, page):
     return found
 
 def upload_image(bucket,path,data,mime):
-    # Unique job-scoped paths; never overwrite existing content in another book.
+    # Stage image bytes in PRIVATE bucket: never publish source figures before approval.
+    if bucket != "ai_import_assets":
+        raise ValueError("Only the private staging asset bucket is allowed")
     DB.storage.from_(bucket).upload(path,data,{"content-type":mime,"upsert":"true"})
-    return DB.storage.from_(bucket).get_public_url(path)
+    return "staging://" + bucket + "/" + path
 
 def attach_figures(document,job,section_index,questions):
     """Fail closed on ambiguous figure associations rather than attach wrong images."""
@@ -256,7 +258,7 @@ def attach_figures(document,job,section_index,questions):
             pix=document[page-1].get_pixmap(matrix=fitz.Matrix(2,2),clip=rect,alpha=False)
             data=pix.tobytes("png")
             path=f"ai-import/{job['id']}/ch{section_index}/{number}{'e' if need_e else 'q'}{idx}.png"
-            urls.append(upload_image("question_images",path,data,"image/png"))
+            urls.append(upload_image("ai_import_assets",path,data,"image/png"))
         if urls:
             field="explanationImageUrls" if need_e else "imageUrls"
             field_first="explanationImageUrl" if need_e else "imageUrl"
@@ -413,7 +415,7 @@ def process_job(job):
         # Render the actual source cover/title page; never generate a fictional cover.
         cover=document[cover_page-1].get_pixmap(matrix=fitz.Matrix(1.3,1.3),alpha=False)
         cover_bytes=cover.tobytes("png")
-        cover_url=upload_image("book_covers",f"ai-import/{job_id}/cover.png",cover_bytes,"image/png")
+        cover_url=upload_image("ai_import_assets",f"ai-import/{job_id}/cover.png",cover_bytes,"image/png")
         update_job(job_id,cover_url=cover_url)
         records=[]
         total=0
@@ -439,12 +441,10 @@ def process_job(job):
                    total_questions=total,verified_questions=sum(
                       len(r["questions"]) for r in records if r["status"]=="verified"),
                    processed_pages=pages)
-        if not review and AUTO_PUBLISH:
-            DB.rpc("ai_publish_import_job",{"p_job_id":job_id}).execute()
-            LOG.info("Published %s, %s questions",job_id,total)
-        else:
-            LOG.info("Job %s %s, %d review issues",job_id,
-                     "requires review" if review else "ready",len(review))
+        # No publication RPC exists in phase 1. A later separately audited deployment
+        # will copy approved assets into public buckets and publish questions atomically.
+        LOG.info("Job %s staged: %s; %s questions; %d review issues",
+                 job_id, "needs_review" if review else "ready",total,len(review))
     finally:
         document.close()
 
