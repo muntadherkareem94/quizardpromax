@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quizard — Autonomous Book Import</title>
+<link rel="stylesheet" href="tailwind.css">
+<link rel="stylesheet" href="main-styles.css">
+<style>
+body{background:#f1f5f9;font-family:Inter,system-ui,sans-serif;color:#0f172a}
+.panel{background:white;border:1px solid #e2e8f0;border-radius:18px;padding:24px;margin-bottom:22px}
+.btn{border-radius:9px;padding:10px 18px;font-weight:650;background:#4f46e5;color:#fff;cursor:pointer}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-secondary{background:#334155}
+.field{border:1px solid #cbd5e1;border-radius:8px;padding:10px;width:100%;background:#fff}
+.pill{border-radius:99px;padding:4px 10px;background:#e2e8f0;font-size:12px;font-weight:bold;white-space:nowrap}
+table{width:100%;border-collapse:collapse}
+th,td{padding:11px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top}
+td{font-size:14px}
+.progress{height:8px;background:#e2e8f0;border-radius:8px;overflow:hidden}
+.progress>div{height:100%;background:#4f46e5}
+</style>
+</head>
+<body>
+<header class="bg-white border-b p-5"><div class="max-w-6xl mx-auto flex items-center justify-between">
+<div><h1 class="text-2xl font-bold">AI Book Import Center</h1><p class="text-slate-500 text-sm">Verified PDFs → Books → Chapters → Questions and images</p></div>
+<a href="admin_dashboard.html" class="text-indigo-700 font-bold">← Admin dashboard</a></div></header>
+<main class="max-w-6xl mx-auto p-5">
+<div id="notice" class="hidden panel" role="alert"></div>
+<section class="panel">
+<h2 class="font-bold text-xl mb-2">Upload books in batches</h2>
+<p class="text-slate-600 mb-4">Choose the existing Quizard specialty for these books. Upload another batch for a different specialty. Each book is processed independently, even after you close this page.</p>
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<label><span class="block font-semibold mb-2">Specialty</span><select id="specialty" class="field" required>
+<option value="">Select specialty...</option>
+<optgroup label="Internal Medicine"><option>Internal Medicine - General</option><option>Cardiology</option><option>Endocrinology</option><option>Gastroenterology</option><option>Hematology</option><option>Infectious Disease</option><option>Nephrology</option><option>Oncology</option><option>Pulmonology</option><option>Rheumatology</option></optgroup>
+<optgroup label="Surgery"><option>General Surgery</option><option>Cardiothoracic Surgery</option><option>Neurosurgery</option><option>Orthopedic Surgery</option><option>Otolaryngology (ENT)</option><option>Pediatric Surgery</option><option>Plastic Surgery</option><option>Urology</option><option>Vascular Surgery</option></optgroup>
+<optgroup label="Other"><option>Pediatrics - General</option><option>Neonatology</option><option>Obstetrics &amp; Gynecology - General</option><option>anesthesiology and Intensive Care</option><option>Dermatology</option><option>Emergency Medicine</option><option>Family Medicine</option><option>Neurology</option><option>Ophthalmology</option><option>Pathology</option><option>Psychiatry</option><option>Radiology</option><option>Clinical Pharmacy</option></optgroup>
+</select></label>
+<label><span class="block font-semibold mb-2">PDF textbooks</span><input id="files" type="file" accept="application/pdf,.pdf" multiple class="field"></label>
+</div>
+<div class="flex gap-3 items-center flex-wrap">
+<button id="upload" class="btn" disabled>Upload and queue books</button>
+<span id="uploadInfo" class="text-slate-500 text-sm">Books will be added with private source storage.</span>
+</div>
+</section>
+<section class="panel">
+<div class="flex justify-between items-center mb-3"><div><h2 class="font-bold text-xl">Processing queue</h2><p class="text-sm text-slate-500">Questions are published only after automated verification; uncertain content requires review.</p></div>
+<button id="refresh" class="btn btn-secondary">Refresh</button></div>
+<div class="overflow-x-auto"><table><thead><tr><th>Book</th><th>Specialty</th><th>Progress</th><th>Status</th><th>Actions</th></tr></thead>
+<tbody id="jobs"><tr><td colspan="5">Loading…</td></tr></tbody></table></div>
+</section>
+<section class="panel"><h2 class="font-bold mb-2">Publication rules</h2>
+<p class="text-sm text-slate-600">Books default to <strong>purchasable</strong> and are not added to paid plans automatically. A complete book is published atomically only if its chapter and question checks pass. Books with any unresolved uncertainty remain unpublished for review. Only upload books you have rights to reproduce.</p>
+</section>
+</main>
+<script type="module">
+import { supabase } from './supabaseClient.js';
+const $=(id)=>document.getElementById(id);
+let busy=false;
+function notice(message,error=false){
+ $('notice').className='panel '+(error?'text-red-700 bg-red-50':'text-green-800 bg-green-50');
+ $('notice').textContent=message;
+}
+function pct(job){return job.total_pages?Math.round(100*job.processed_pages/job.total_pages):0}
+function button(text, action,id){const b=document.createElement('button');b.textContent=text;b.className='text-indigo-700 font-semibold mr-3 mb-1';b.addEventListener('click',()=>runAction(action,id));return b}
+async function invoke(action,payload={}){
+ const {data,error}=await supabase.functions.invoke('ai-import-admin',{body:{action,...payload}});
+ if(error)throw error;
+ if(data?.error)throw new Error(data.error);
+ return data;
+}
+async function runAction(action,id){
+ try{
+   if(action==='source-link'){
+     const data=await invoke(action,{id}); window.open(data.url,'_blank','noopener,noreferrer');
+   }else{
+     if(action==='cancel' && !confirm('Cancel this import job?'))return;
+     await invoke(action,{id}); notice('Job updated.');await refresh();
+   }
+ }catch(e){notice(e.message,true)}
+}
+async function refresh(){
+ const {data,error}=await supabase.from('ai_import_jobs').select('*').order('created_at',{ascending:false}).limit(200);
+ if(error){notice(error.message,true);return}
+ $('jobs').replaceChildren();
+ if(!data.length){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=5;td.textContent='No books uploaded yet.';tr.appendChild(td);$('jobs').appendChild(tr);return}
+ for(const job of data){
+  const tr=document.createElement('tr'); const make=()=>{const td=document.createElement('td');tr.appendChild(td);return td};
+  const name=make();name.textContent=job.title_hint;name.appendChild(document.createElement('br'));
+  const file=document.createElement('small');file.className='text-slate-500';file.textContent=job.file_name;name.appendChild(file);
+  make().textContent=job.speciality;
+  const prog=make();prog.textContent=job.total_pages?job.processed_pages+' / '+job.total_pages+' pages; '+job.verified_questions+' verified questions':'Not started';
+  const bar=document.createElement('div');bar.className='progress mt-2';const fill=document.createElement('div');fill.style.width=pct(job)+'%';bar.appendChild(fill);prog.appendChild(bar);
+  const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
+  if(job.last_error){const err=document.createElement('p');err.className='text-xs text-red-700 mt-2';err.textContent=job.last_error;status.appendChild(err)}
+  const issues=Array.isArray(job.review_issues)?job.review_issues:[];
+  if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
+  const act=make();act.appendChild(button('Source PDF','source-link',job.id));
+  if(['failed','needs_review'].includes(job.status))act.appendChild(button('Retry','retry',job.id));
+  if(['queued','failed','needs_review','ready'].includes(job.status))act.appendChild(button('Cancel','cancel',job.id));
+  if(job.book_id){const a=document.createElement('a');a.href='manage_chapters.html?bookId='+encodeURIComponent(job.book_id);a.className='text-green-700 font-bold';a.textContent='Open book';act.appendChild(a)}
+  $('jobs').appendChild(tr);
+ }
+}
+async function upload(){
+ const files=Array.from($('files').files||[]);const speciality=$('specialty').value;
+ if(!files.length||!speciality)return;
+ busy=true;$('upload').disabled=true;
+ let ok=0;
+ for(const [i,file] of files.entries()){
+  try{
+   $('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name;
+   const title=file.name.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').trim().slice(0,300);
+   const job=await invoke('prepare-upload',{filename:file.name,size:file.size,title,speciality});
+   const {error}=await supabase.storage.from('ai_import_sources')
+     .uploadToSignedUrl(job.path,job.token,file,{contentType:'application/pdf'});
+   if(error)throw error;
+   await invoke('finalize-upload',{id:job.id});ok++;
+  }catch(e){notice('Failed to queue '+file.name+': '+e.message,true)}
+ }
+ busy=false;$('upload').disabled=false;$('files').value='';
+ $('uploadInfo').textContent=ok+' / '+files.length+' books queued.';
+ await refresh();
+}
+async function init(){
+ const {data:{user}}=await supabase.auth.getUser();
+ if(!user){location.href='index.html';return}
+ const {data:profile,error}=await supabase.from('users').select('role').eq('id',user.id).single();
+ if(error||profile?.role!=='admin'){document.querySelector('main').textContent='Super-admin access required.';return}
+ $('upload').disabled=false;
+ $('upload').addEventListener('click',upload);
+ $('refresh').addEventListener('click',refresh);
+ await refresh();
+ setInterval(()=>{if(!busy)refresh()},15000);
+}
+init();
+</script></body></html>
