@@ -23,11 +23,11 @@ The production Supabase project has only the following *new* isolated resources:
 5. Extract and stage source images *privately*; flag ambiguous figure matching.
 6. Save verified chapter/question JSON to staging tables. Uncertain items go to `needs_review`. A fully checked book is `ready`, **not** published.
 
-## How to operate (not yet running)
+## How to operate (Railway worker deployed, scheduled hourly in staging)
 
-1. Deploy `ai-import-worker` to Railway from this feature branch, with root directory `/ai-import-worker` and Dockerfile `Dockerfile`.
+1. Railway staging uses root directory `/ai-import-worker`, Dockerfile `Dockerfile`, and schedule `0 * * * *` (hourly UTC). `RUN_ONCE=true` makes the worker exit when queue empties, limiting idle compute cost.
 2. Configure the required secrets as Railway **sealed/server-side** variables: `SUPABASE_SERVICE_ROLE_KEY` and `OPENAI_API_KEY`. Do not paste them into ChatGPT, code or public GitHub.
-3. `SUPABASE_URL=https://ftcttxpmuqhqtbcdwgtr.supabase.co`, `AUTO_PUBLISH=false`, `PAGES_PER_BATCH=3`, `POLL_SECONDS=60` are non-secret settings.
+3. `SUPABASE_URL=https://ftcttxpmuqhqtbcdwgtr.supabase.co`, `AUTO_PUBLISH=false`, `RUN_ONCE=true`, `MAX_PAGES_PER_JOB=10`, and `PAGES_PER_BATCH=3` are non-secret settings.
 4. The models are configurable. Current defaults are `gpt-6.1-sol` extraction and `gpt-6-astra` independent audit; verify your API access and watch token costs before sending an entire textbook.
 5. Make the new `ai_book_import.html` page available through a controlled test deployment (do not merge an unreviewed feature branch to the customer-facing site).
 6. Test with an appropriately licensed short book/sample first. Manually inspect ALL extracted question stems, answers, explanations, original source pages, image matches, and chapter divisions before enabling an automatic publishing migration.
@@ -45,4 +45,4 @@ The production Supabase project has only the following *new* isolated resources:
 - Only process source books you have appropriate rights to reproduce and make available to Quizard users.
 - Even without a paid Supabase development branch, storage, Railway compute and OpenAI API usage can generate charges.
 
-**Current safety policy:** deploy only isolated staging resources; do not merge to production or start paid AI processing until credentials, cost limits and acceptance tests are configured.
+**Current safety policy:** no production merge or publication until licensed sample-PDF pilot and accuracy review. The hourly staging worker is deployed; no PDF jobs have yet been queued. Railway compute and model API processing may incur usage charges.
