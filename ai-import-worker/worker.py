@@ -299,7 +299,8 @@ advertisements, table of contents, and standalone answer explanations without st
         result=run_structured(mini,prompt,EXTRACTION_SCHEMA,"quizard_extract",MODEL)
         part=[q for q in result.get("questions",[]) if
               isinstance(q.get("sourcePage"),int) and start <= q["sourcePage"] <= finish]
-        verifier_prompt=f"""Act as an independent source-audit reviewer. Read ALL original PDF
+        def audit_candidate(candidate):
+            verifier_prompt=f"""Act as an independent source-audit reviewer. Read ALL original PDF
 pages {start}-{extended_end}, where attached PDF page 1 corresponds to original {start}.
 Review only questions whose stems start on source pages {start}-{finish}.
 The candidate JSON follows. Independently enumerate all visible MCQ QUESTION NUMBERS.
@@ -310,21 +311,54 @@ table. Do NOT accept correctness merely because the medical answer seems plausib
 If answers are elsewhere in the book, report this uncertainty. Report every
 discrepancy using the numbered issue list. Return empty issues ONLY if fully supported.
 CANDIDATE JSON:
-{json.dumps(part,ensure_ascii=False)}"""
-        check=run_structured(mini,verifier_prompt,VERIFICATION_SCHEMA,
-                             "quizard_source_audit",VERIFY_MODEL)
-        original=[int(x) for x in check["questionNumbersInSource"]]
-        captured=[q["questionNumber"] for q in part]
-        if Counter(original)!=Counter(captured):
-            issues.append({"pages":[start,finish],"type":"completeness",
-                           "detail":"Independent source question numbers differ from extraction",
-                           "source":original,"extracted":captured})
-        for i in check["issues"]:
-            issues.append({"pages":[start,finish],"type":"independent_audit",**i})
-        for q in part:
-            for issue in validate_question(q,start,finish):
-                issues.append({"pages":[start,finish],"type":"validation",
-                               "number":q.get("questionNumber"),"detail":issue})
+{json.dumps(candidate,ensure_ascii=False)}"""
+            check=run_structured(mini,verifier_prompt,VERIFICATION_SCHEMA,
+                                 "quizard_source_audit",VERIFY_MODEL)
+            reported=[]
+            original=[int(x) for x in check["questionNumbersInSource"]]
+            captured=[q["questionNumber"] for q in candidate]
+            if Counter(original)!=Counter(captured):
+                reported.append({"pages":[start,finish],"type":"completeness",
+                                 "detail":"Independent source question numbers differ from extraction",
+                                 "source":original,"extracted":captured})
+            for i in check["issues"]:
+                reported.append({"pages":[start,finish],"type":"independent_audit",**i})
+            for q in candidate:
+                for issue in validate_question(q,start,finish):
+                    reported.append({"pages":[start,finish],"type":"validation",
+                                     "number":q.get("questionNumber"),"detail":issue})
+            return reported
+        batch_issues=audit_candidate(part)
+        # The agent tries to fix each source disagreement itself before involving an admin.
+        # Do not "repair" absent source answer keys by medical reasoning.
+        for attempt in range(2):
+            if not batch_issues: break
+            if all(i["type"]=="validation" and (
+                "answer key absent" in i["detail"] or
+                "Explanation missing" in i["detail"] or
+                "No exact source evidence" in i["detail"])
+                for i in batch_issues):
+                break
+            correction_prompt=f"""Repair an MCQ transcription from the ATTACHED ORIGINAL PDF.
+The first PDF page is original page {start}. Extract ONLY questions whose stem
+starts on original pages {start}-{finish}. Preserve exact source text, options,
+order, numerical values, HTML tables, and explanations. DO NOT invent answers
+or explanations. If not visibly printed, use correctAnswerIndex=-1 and empty
+explanation/answerEvidence. Do not omit a question to make the audit pass.
+Current candidate:
+{json.dumps(part,ensure_ascii=False)}
+Independent auditor's specific findings:
+{json.dumps(batch_issues,ensure_ascii=False)}
+Return a complete corrected question array using the supplied JSON schema.
+Only correct faults supported by visible text in these PDF pages."""
+            repaired=run_structured(mini,correction_prompt,EXTRACTION_SCHEMA,
+                                    "quizard_repair",MODEL)
+            part=[q for q in repaired.get("questions",[]) if
+                  isinstance(q.get("sourcePage"),int) and start <= q["sourcePage"] <= finish]
+            batch_issues=audit_candidate(part)
+            LOG.info("Re-audit %s pages %s-%s attempt %s: %s issues",
+                     job_id,start,finish,attempt+1,len(batch_issues))
+        issues.extend(batch_issues)
         questions.extend(part)
         update_job(job_id,worker_lock_at=
                    __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat())
