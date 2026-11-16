@@ -32,6 +32,7 @@ MODEL = os.getenv("OPENAI_EXTRACTION_MODEL", "gpt-6.1-sol")
 VERIFY_MODEL = os.getenv("OPENAI_VERIFICATION_MODEL", "gpt-6-astra")
 PAGES_PER_BATCH = max(1, min(6, int(os.getenv("PAGES_PER_BATCH", "3"))))
 POLL_SECONDS = max(10, int(os.getenv("POLL_SECONDS", "60")))
+RUN_ONCE = os.getenv("RUN_ONCE", "false").lower() == "true"
 MAX_PAGES_PER_JOB = max(1, int(os.getenv("MAX_PAGES_PER_JOB", "30")))  # Pilot cost guard
 AUTO_PUBLISH = False  # Safety interlock: this branch is staging-only
 DB = create_client(URL, SERVICE_KEY)
@@ -466,7 +467,11 @@ def main():
             result=DB.rpc("ai_claim_import_job").execute()
             job=normalize_claimed_job(result.data)
             if job is None:
-                time.sleep(POLL_SECONDS);continue
+                if RUN_ONCE:
+                    LOG.info("Queue empty; scheduled worker exiting cleanly")
+                    return
+                time.sleep(POLL_SECONDS)
+                continue
             try:
                 process_job(job)
             except Exception as exc:
