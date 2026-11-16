@@ -58,6 +58,17 @@ EXTRACTION_SCHEMA = {
     }, "required": ["questions"],
 }
 
+BOOK_SCHEMA = {
+    "type":"object","additionalProperties":False,
+    "properties":{
+        "title":{"type":"string"},
+        "coverPage":{"type":"integer"},
+        "titleEvidence":{"type":"string"},
+        "confidence":{"type":"string","enum":["high","medium","low"]},
+    },
+    "required":["title","coverPage","titleEvidence","confidence"]
+}
+
 VERIFICATION_SCHEMA = {
     "type": "object", "additionalProperties": False,
     "properties": {
@@ -124,7 +135,7 @@ def find_sections(document):
         # The first level with actual chapter-like entries is preferable.
         chapter_level = next(
             (level for level in levels if sum(l == level and
-              re.search(r"chapter|section|part\s+\d+",t,re.I) is not None
+              re.search(r"chapter|section",t,re.I) is not None
               for l,t,_ in candidates) >= 2), None)
         if chapter_level is None:
             chapter_level = next((level for level in levels if counts[level] >= 2), None)
@@ -158,6 +169,18 @@ def finalize_sections(entries,pages):
         result.append(dict(section_index=len(result)+1,title=title[:250],
                            start_page=p,end_page=pages))
     return result
+
+def inspect_book_metadata(document):
+    count=min(5,len(document))
+    mini=page_part(document,1,count)
+    prompt="""Examine these original PDF pages (first page corresponds to original page 1).
+Identify the real book title, preserving the exact printed title and edition, and
+which page is the actual book cover or title page (1-based). Do not infer a title
+from generic headers, ISBN-only or copyright-only pages. If no reliable title or
+cover is visible set confidence='low', title='', coverPage=1,
+titleEvidence=''. Only report 'high' when clearly printed on the selected page.
+Return structured JSON."""
+    return run_structured(mini,prompt,BOOK_SCHEMA,"quizard_book_metadata",MODEL)
 
 def clean(s):
     return re.sub(r"\s+"," ",unicodedata.normalize("NFKC",str(s or "")).strip())
@@ -303,10 +326,12 @@ CANDIDATE JSON:
                 issues.append({"pages":[start,finish],"type":"validation",
                                "number":q.get("questionNumber"),"detail":issue})
         questions.extend(part)
-        update_job(job_id,processed_pages=min(finish,job["total_pages"]),worker_lock_at=
+        update_job(job_id,worker_lock_at=
                    __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat())
         LOG.info("Job %s chapter %s processed PDF pages %s-%s",job_id,
                  section["section_index"],start,finish)
+    if not questions:
+        issues.append({"type":"empty_chapter","detail":"No MCQs found; a chapter cannot be safely published without review"})
     seen_numbers=set()
     for q in questions:
         number=q["questionNumber"]
@@ -341,20 +366,33 @@ def process_job(job):
         job["total_pages"]=pages
         sections,global_issues=find_sections(document)
         if len(sections)<1:raise ValueError("No sections detected")
-        # Cover is original page 1 (no generative cover); store in existing bucket.
-        cover=document[0].get_pixmap(matrix=fitz.Matrix(1.3,1.3),alpha=False)
+        metadata=inspect_book_metadata(document)
+        cover_page=metadata.get("coverPage",1)
+        if not isinstance(cover_page,int) or not 1 <= cover_page <= min(5,pages):
+            cover_page=1
+            global_issues.append({"type":"cover","detail":"AI-selected cover page was invalid"})
+        if metadata.get("confidence")!="high" or not clean(metadata.get("titleEvidence")):
+            global_issues.append({"type":"book_metadata","detail":"Book cover/title not unambiguously identified"})
+        else:
+            title=clean(metadata.get("title"))
+            if title and len(title)<300: update_job(job_id,title_hint=title)
+        # Render the actual source cover/title page; never generate a fictional cover.
+        cover=document[cover_page-1].get_pixmap(matrix=fitz.Matrix(1.3,1.3),alpha=False)
         cover_bytes=cover.tobytes("png")
         cover_url=upload_image("book_covers",f"ai-import/{job_id}/cover.png",cover_bytes,"image/png")
         update_job(job_id,cover_url=cover_url)
         records=[]
         total=0
+        pages_completed=0
         for section in sections:
             assert_job_active(job_id)
             record=process_section(document,job,section,[])
             records.append(record)
             total+=len(record["questions"])
+            pages_completed+=section["end_page"]-section["start_page"]+1
             verified=sum(len(r["questions"]) for r in records if r["status"]=="verified")
-            update_job(job_id,total_questions=total,verified_questions=verified)
+            update_job(job_id,total_questions=total,verified_questions=verified,
+                       processed_pages=min(pages,pages_completed))
         review=list(global_issues)
         for r in records:
             review.extend({"chapter":r["section_index"],**i} for i in r["issues"])
