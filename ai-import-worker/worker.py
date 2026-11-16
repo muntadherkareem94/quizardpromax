@@ -14,6 +14,7 @@ import os
 import re
 import time
 import traceback
+from datetime import datetime, timezone
 import unicodedata
 from collections import Counter
 from pathlib import Path
@@ -31,6 +32,7 @@ MODEL = os.getenv("OPENAI_EXTRACTION_MODEL", "gpt-6.1-sol")
 VERIFY_MODEL = os.getenv("OPENAI_VERIFICATION_MODEL", "gpt-6-astra")
 PAGES_PER_BATCH = max(1, min(6, int(os.getenv("PAGES_PER_BATCH", "3"))))
 POLL_SECONDS = max(10, int(os.getenv("POLL_SECONDS", "60")))
+MAX_PAGES_PER_JOB = max(1, int(os.getenv("MAX_PAGES_PER_JOB", "30")))  # Pilot cost guard
 AUTO_PUBLISH = False  # Safety interlock: this branch is staging-only
 DB = create_client(URL, SERVICE_KEY)
 AI = OpenAI(api_key=os.environ["OPENAI_API_KEY"], timeout=300, max_retries=3)
@@ -83,8 +85,7 @@ VERIFICATION_SCHEMA = {
 }
 
 def update_job(job_id, **fields):
-    fields["updated_at"] = "now()" if False else __import__("datetime").datetime.now(
-        __import__("datetime").timezone.utc).isoformat()
+    fields["updated_at"] = datetime.now(timezone.utc).isoformat()
     DB.table("ai_import_jobs").update(fields).eq("id", job_id).execute()
 
 def assert_job_active(job_id):
@@ -272,7 +273,7 @@ def to_json_question(q):
 
 def process_section(document,job,section,common_issues):
     job_id=job["id"]
-    existing=DB.table("ai_import_sections").select("status,questions,issues").eq(
+    existing=DB.table("ai_import_sections").select("*").eq(
         "job_id",job_id).eq("section_index",section["section_index"]).execute().data
     if existing and existing[0]["status"] == "verified":
         return existing[0]
@@ -362,8 +363,7 @@ Only correct faults supported by visible text in these PDF pages."""
                      job_id,start,finish,attempt+1,len(batch_issues))
         issues.extend(batch_issues)
         questions.extend(part)
-        update_job(job_id,worker_lock_at=
-                   __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat())
+        update_job(job_id,worker_lock_at=datetime.now(timezone.utc).isoformat())
         LOG.info("Job %s chapter %s processed PDF pages %s-%s",job_id,
                  section["section_index"],start,finish)
     if not questions:
@@ -398,6 +398,8 @@ def process_job(job):
         if document.needs_pass: raise ValueError("Password-protected PDFs are not supported")
         pages=len(document)
         if not pages:raise ValueError("Empty PDF")
+        if pages > MAX_PAGES_PER_JOB:
+            raise ValueError(f"Pilot safety limit: {pages} pages exceeds {MAX_PAGES_PER_JOB}. Raise MAX_PAGES_PER_JOB after acceptance testing.")
         update_job(job_id,total_pages=pages,processed_pages=0)
         job["total_pages"]=pages
         sections,global_issues=find_sections(document)
