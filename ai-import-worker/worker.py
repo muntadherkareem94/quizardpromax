@@ -27,8 +27,8 @@ LOG = logging.getLogger("quizard-ai-import")
 
 URL = os.environ["SUPABASE_URL"]
 SERVICE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
-MODEL = os.getenv("OPENAI_EXTRACTION_MODEL", "gpt-5.5")
-VERIFY_MODEL = os.getenv("OPENAI_VERIFICATION_MODEL", MODEL)
+MODEL = os.getenv("OPENAI_EXTRACTION_MODEL", "gpt-6.1-sol")
+VERIFY_MODEL = os.getenv("OPENAI_VERIFICATION_MODEL", "gpt-6-astra")
 PAGES_PER_BATCH = max(1, min(6, int(os.getenv("PAGES_PER_BATCH", "3"))))
 POLL_SECONDS = max(10, int(os.getenv("POLL_SECONDS", "60")))
 AUTO_PUBLISH = os.getenv("AUTO_PUBLISH", "true").lower() == "true"
