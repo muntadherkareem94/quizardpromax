@@ -19,7 +19,7 @@ from collections import Counter
 from pathlib import Path
 
 import fitz
-from openai import OpenAI
+from openai import OpenAI, APIConnectionError, APITimeoutError, RateLimitError, InternalServerError
 from supabase import create_client
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -461,7 +461,14 @@ def main():
                 process_job(job)
             except Exception as exc:
                 LOG.error("Failed job %s: %s\n%s",job["id"],exc,traceback.format_exc())
-                update_job(job["id"],status="failed",last_error=str(exc)[:2000])
+                transient=isinstance(exc,(APIConnectionError,APITimeoutError,
+                                           RateLimitError,InternalServerError))
+                if transient and int(job.get("attempts",0)) < 5:
+                    # Leave already verified sections intact; recover autonomously.
+                    update_job(job["id"],status="queued",last_error=str(exc)[:2000])
+                    time.sleep(min(600,30*2**int(job.get("attempts",1))))
+                else:
+                    update_job(job["id"],status="failed",last_error=str(exc)[:2000])
         except KeyboardInterrupt:raise
         except Exception as exc:
             LOG.exception("Worker queue error: %s",exc)
