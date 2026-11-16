@@ -19,7 +19,7 @@
 4. Deploy \`supabase/functions/ai-import-admin\` as an Edge Function with JWT verification enabled. Supabase must provide SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY as server-side environment variables.
 5. Deploy \`ai-import-worker\` as a **persistent container/worker**, not a static Netlify site or a short-lived Edge Function. For example, build its Dockerfile with Render Background Worker, Railway worker, or your own VPS.
 6. Set worker server-side secrets: \`SUPABASE_URL\`, \`SUPABASE_SERVICE_ROLE_KEY\`, \`OPENAI_API_KEY\`. Never expose service role or OpenAI keys to the website/client/GitHub.
-7. Set \`OPENAI_EXTRACTION_MODEL\` and \`OPENAI_VERIFICATION_MODEL\` to models actually enabled in your OpenAI project. The example uses \`gpt-5.5\`, configurable; check live availability/prices before deploying.
+7. Set \`OPENAI_EXTRACTION_MODEL\` and \`OPENAI_VERIFICATION_MODEL\` to models actually enabled in your OpenAI project. The example defaults to \`gpt-6.1-sol\` for extraction and \`gpt-6-astra\` for an independent, high-accuracy audit. These are paid API models, not ChatGPT subscription entitlements; check API access, costs and limits before starting 10 books.
 8. Check your Supabase project-level Storage file size limit and raise it appropriately before testing large textbooks.
 9. In Quizard super-admin dashboard open **AI Autonomous Book Import**, choose a specialty, upload PDF books; repeat for additional specialties. Leave the worker running.
 10. Before accepting paid/public content, benchmark against manually reviewed books and confirm copyright/licensing.
@@ -29,7 +29,7 @@
 - The chapter planner tries PDF bookmarks, then printed "Chapter ..." headings. If neither exists (e.g. an entirely scanned PDF lacking bookmarks) it flags the chapter structure for review instead of hallucinating it.
 - Answer keys/explanations separated far from stems may not appear within the extraction window; such questions are blocked for review instead of fabricating answers. A full book-wide key reconciliation pass is a planned improvement.
 - Embedded raster figures are cropped from the **source PDF**, not generated. Vector figures, ambiguous image-to-question matches, multi-question page figures and figures on adjacent pages trigger manual review, not incorrect automatic attribution.
-- The automatic source verifier is a second AI pass, not a proof of 100% correctness. It must be benchmarked.
+- The automatic source verifier is a separate model pass with up to two discrepancy-repair attempts, not a proof of 100% correctness. It must be benchmarked.
 - The system is not yet an image-aware source-side correction editor. The UI displays exact issue descriptions and can retry, but review/edit tooling is a separate phase.
 - The title/cover finder inspects the opening five pages; books whose real cover is elsewhere will require review.
 - The uploaded specialty is a Quizard specialty (e.g. General Surgery or Rheumatology), and is **never** overridden by the AI.
