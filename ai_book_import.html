@@ -115,7 +115,7 @@ async function upload(){
    const job=await invoke('prepare-upload',{filename:file.name,size:file.size,title,speciality});
    await new Promise((resolve,reject)=>{
      const upload=new tus.Upload(file,{
-       endpoint:SUPABASE_URL.replace(/\/$/,'')+'/storage/v1/upload/resumable/sign',
+       endpoint:SUPABASE_URL.replace(/\/$/,'').replace('.supabase.co','.storage.supabase.co')+'/storage/v1/upload/resumable',
        headers:{'x-signature':job.token},
        retryDelays:[0,3000,5000,10000,20000],
        chunkSize:6*1024*1024,
