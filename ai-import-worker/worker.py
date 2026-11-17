@@ -490,12 +490,31 @@ Indicate whether the QUESTION or the EXPLANATION contains a figure needing extra
 Never generate text placeholders for images. Return all questions; omit headers,
 advertisements, table of contents, and standalone answer explanations without stems."""
         text_source = safely_selectable_text(document,start,extended_end) if TEXT_FIRST_ENABLED else None
-        result=run_structured(mini,prompt,EXTRACTION_SCHEMA,"quizard_extract",MODEL,
-                              job_id=job_id,stage="extraction",
-                              page_count=extended_end-start+1,text_source=text_source)
-        part=[q for q in result.get("questions",[]) if
-              isinstance(q.get("sourcePage"),int) and start <= q["sourcePage"] <= finish]
-        extraction_provider=FREE_ROUTER.last_provider if job.get("provider_mode")=="free_only" else None
+        if old and int(old["end_page"])==finish and old["status"]=="extracted":
+            part=old.get("questions") or []
+            if not isinstance(part,list):raise ValueError("Corrupted extraction checkpoint")
+            extraction_provider=old.get("extraction_provider")
+            if job.get("provider_mode")=="free_only" and not extraction_provider:
+                raise ValueError("Extraction checkpoint lacks independent-audit provider identity")
+            LOG.info("Reusing already extracted page %s (provider=%s) job=%s",
+                     start,extraction_provider,job_id)
+        else:
+            update_job(job_id,progress_note=f"Extracting source page {start} of {end}")
+            result=run_structured(mini,prompt,EXTRACTION_SCHEMA,"quizard_extract",MODEL,
+                                  job_id=job_id,stage="extraction",
+                                  page_count=extended_end-start+1,text_source=text_source)
+            part=[q for q in result.get("questions",[]) if
+                  isinstance(q.get("sourcePage"),int) and start <= q["sourcePage"] <= finish]
+            extraction_provider=FREE_ROUTER.last_provider if job.get("provider_mode")=="free_only" else None
+            # Persist extracted text BEFORE sending it to the independent AI.
+            # Provider outage/timeout will not force us to re-spend extraction tokens.
+            DB.table("ai_import_batches").upsert({
+                "job_id":job_id,"section_index":section["section_index"],
+                "start_page":start,"end_page":finish,"status":"extracted",
+                "questions":part,"issues":[],"extraction_provider":extraction_provider,
+                "updated_at":datetime.now(timezone.utc).isoformat(),
+            },on_conflict="job_id,section_index,start_page").execute()
+        update_job(job_id,progress_note=f"Checking source page {start} of {end} against the PDF")
         def audit_candidate(candidate):
             verifier_prompt=f"""Act as an independent source-audit reviewer. Read ALL original PDF
 pages {start}-{extended_end}, where attached PDF page 1 corresponds to original {start}.
@@ -569,13 +588,23 @@ Only correct faults supported by visible text in these PDF pages."""
             "start_page":start,"end_page":finish,
             "status":"needs_review" if batch_issues else "verified",
             "questions":part,"issues":batch_issues,
+            "extraction_provider":extraction_provider,
             "updated_at":datetime.now(timezone.utc).isoformat(),
         }
         DB.table("ai_import_batches").upsert(
             checkpoint,on_conflict="job_id,section_index,start_page").execute()
         issues.extend(batch_issues)
         questions.extend(part)
-        update_job(job_id,worker_lock_at=datetime.now(timezone.utc).isoformat())
+        batch_checkpoints[start]=checkpoint
+        verified_in_section=sum(
+            len(b.get("questions") or []) for b in batch_checkpoints.values()
+            if b.get("status")=="verified")
+        update_job(job_id,processed_pages=finish,
+                   verified_questions=verified_in_section,
+                   progress_note=(f"Source-audited page {finish}/{end}; "+
+                      f"{verified_in_section} verified questions in this chapter"+
+                      (" (issues require review)" if batch_issues else "")),
+                   worker_lock_at=datetime.now(timezone.utc).isoformat())
         LOG.info("Job %s chapter %s processed PDF pages %s-%s",job_id,
                  section["section_index"],start,finish)
     if not questions:
@@ -682,7 +711,8 @@ def process_job(job):
         if not pages:raise ValueError("Empty PDF")
         if pages > MAX_PAGES_PER_JOB:
             raise ValueError(f"Pilot safety limit: {pages} pages exceeds {MAX_PAGES_PER_JOB}. Raise MAX_PAGES_PER_JOB after acceptance testing.")
-        update_job(job_id,total_pages=pages,processed_pages=0)
+        update_job(job_id,total_pages=pages,
+                   progress_note="Loading existing checkpoints and preparing source pages")
         job["total_pages"]=pages
         sections,global_issues=find_sections(document)
         if len(sections)<1:raise ValueError("No sections detected")
