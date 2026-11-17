@@ -120,8 +120,11 @@ Deno.serve(async (req) => {
       // is transmitted to Railway or to the browser.
       if (job.provider_mode !== 'free_only')
         return respond({ error: 'Process Now is enabled only for free-only test imports' }, 409);
+      // Idempotent: clicking twice after a successful start is NOT an error.
+      if (job.status === 'processing')
+        return respond({ ok: true, already_processing: true, started: false });
       if (!['queued', 'waiting_provider'].includes(job.status))
-        return respond({ error: 'Only queued or provider-waiting books can be started' }, 409);
+        return respond({ error: 'This book is not queued for processing (status: ' + job.status + ')' }, 409);
       if (job.status === 'waiting_provider' && job.next_attempt_at &&
           Date.parse(job.next_attempt_at) > Date.now())
         return respond({
@@ -151,6 +154,14 @@ Deno.serve(async (req) => {
       }
       const result = await workerResponse.json().catch(() => ({}));
       if (workerResponse.status !== 202) {
+        if (workerResponse.status === 409) {
+          // Another click or tab may have dispatched this job while the page
+          // was still refreshing; treat an already-running job as success.
+          const { data: latest } = await db.from('ai_import_jobs')
+            .select('status').eq('id', id).single();
+          if (latest?.status === 'processing')
+            return respond({ ok: true, already_processing: true, started: false });
+        }
         const safeMessage = String((result as {error?: string}).error || 'Unable to dispatch this book');
         return respond({ error: safeMessage }, workerResponse.status >= 500 ? 503 : 409);
       }
