@@ -116,8 +116,8 @@ Deno.serve(async (req) => {
 
     if (action === 'process-now') {
       // Server-triggered processing: only real super-admin sessions reach here.
-      // This uses an HMAC request signature; it NEVER sends the service-role
-      // key to the worker, the user's browser, or any third-party AI.
+      // One-time database token authorizes only this job; no service-role key
+      // is transmitted to Railway or to the browser.
       if (job.provider_mode !== 'free_only')
         return respond({ error: 'Process Now is enabled only for free-only test imports' }, 409);
       if (!['queued', 'waiting_provider'].includes(job.status))
@@ -128,25 +128,22 @@ Deno.serve(async (req) => {
           error: 'Free provider cooldown is still active. Earliest eligible retry: ' +
             new Date(job.next_attempt_at).toISOString()
         }, 409);
-      const issuedAt = String(Math.floor(Date.now() / 1000));
-      const dataToSign = new TextEncoder().encode(id + ':' + issuedAt);
-      const hmacKey = await crypto.subtle.importKey(
-        'raw', new TextEncoder().encode(secret),
-        { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
-      const signed = new Uint8Array(await crypto.subtle.sign('HMAC', hmacKey, dataToSign));
-      const signature = [...signed].map(b => b.toString(16).padStart(2, '0')).join('');
+      // Only this super-admin-authorized Edge Function can issue a dispatch token.
+      // Supabase stores it for 90 seconds, and Railway consumes it exactly once.
+      // The service-role key is never transmitted between the two services.
+      const { data: dispatchToken, error: issueError } = await db.rpc(
+        'ai_issue_import_dispatch_token', { p_job_id: id });
+      if (issueError) throw issueError;
+      if (!dispatchToken)
+        return respond({ error: 'Book is not eligible to start, or its provider cooldown is active.' }, 409);
       const workerUrl = 'https://quizard-ai-worker-staging.up.railway.app/run';
       let workerResponse: Response;
       try {
         workerResponse = await fetch(workerUrl, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Quizard-Timestamp': issuedAt,
-            'X-Quizard-Signature': signature
-          },
-          body: JSON.stringify({ job_id: id }),
-          signal: AbortSignal.timeout(15000)
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ job_id: id, dispatch_token: dispatchToken }),
+          signal: AbortSignal.timeout(30000)
         });
       } catch (dispatchError) {
         console.error('AI worker dispatch unavailable', dispatchError);
