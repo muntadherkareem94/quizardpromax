@@ -38,6 +38,12 @@ td{font-size:14px}
 </select></label>
 <label><span class="block font-semibold mb-2">PDF textbooks</span><input id="files" type="file" accept="application/pdf,.pdf" multiple class="field"></label>
 </div>
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<label><span class="block font-semibold mb-2">Estimated OpenAI budget per book (USD)</span>
+<input id="budget" type="number" class="field" min="0.20" max="5.00" step="0.05" value="0.75">
+</label>
+<div class="text-sm text-slate-600 self-center">Text-first extraction is enabled on safe pages. Each book pauses before further AI calls when its estimated budget runs low. Estimates are not a guaranteed billing cap.</div>
+</div>
 <div id="assignments" class="grid gap-2 mb-4" aria-live="polite"></div>
 <div class="flex gap-3 items-center flex-wrap">
 <button id="upload" class="btn" disabled>Upload and queue books</button>
@@ -47,7 +53,7 @@ td{font-size:14px}
 <section class="panel">
 <div class="flex justify-between items-center mb-3"><div><h2 class="font-bold text-xl">Processing queue</h2><p class="text-sm text-slate-500">The four synthetic fixture books are inserted into a hidden TEST tier for end-to-end checks. Real books remain in private staging for review.</p></div>
 <button id="refresh" class="btn btn-secondary">Refresh</button></div>
-<div class="overflow-x-auto"><table><thead><tr><th>Book</th><th>Specialty</th><th>Progress</th><th>Status</th><th>Actions</th></tr></thead>
+<div class="overflow-x-auto"><table><thead><tr><th>Book</th><th>Specialty</th><th>Progress / API estimate</th><th>Status</th><th>Actions</th></tr></thead>
 <tbody id="jobs"><tr><td colspan="5">Loading…</td></tr></tbody></table></div>
 </section>
 <section class="panel"><h2 class="font-bold mb-2">End-to-end TEST results</h2>
@@ -80,6 +86,16 @@ async function runAction(action,id){
  try{
    if(action==='source-link'){
      const data=await invoke(action,{id}); window.open(data.url,'_blank','noopener,noreferrer');
+   }else if(action==='set-budget'){
+     const jobEl=[...document.querySelectorAll('tr[data-job-id]')].find(el=>el.dataset.jobId===id);
+     const oldBudget=jobEl?.dataset.budget||'0.75';
+     const response=prompt('Enter the new total API budget for this book in USD (0.20 to 5.00). Previously tracked usage is retained:',oldBudget);
+     if(response===null)return;
+     const budget_usd=Number(response);
+     if(!Number.isFinite(budget_usd)||budget_usd<0.20||budget_usd>5.00){
+       notice('Enter a book budget between $0.20 and $5.00.',true);return;
+     }
+     await invoke('set-budget',{id,budget_usd});notice('Budget updated. Retry if this book is paused.');await refresh();
    }else{
      if(action==='cancel' && !confirm('Cancel this import job?'))return;
      if(action==='remove-test' && !confirm('Delete this synthetic test book, chapters and questions from Quizard?'))return;
@@ -93,12 +109,406 @@ async function refresh(){
  $('jobs').replaceChildren();
  if(!data.length){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=5;td.textContent='No books uploaded yet.';tr.appendChild(td);$('jobs').appendChild(tr);return}
  for(const job of data){
-  const tr=document.createElement('tr'); const make=()=>{const td=document.createElement('td');tr.appendChild(td);return td};
+  const tr=document.createElement('tr');tr.dataset.jobId=job.id;tr.dataset.budget=String(job.budget_usd??0.75);
+  const make=()=>{const td=document.createElement('td');tr.appendChild(td);return td};
   const name=make();name.textContent=job.title_hint;name.appendChild(document.createElement('br'));
   const file=document.createElement('small');file.className='text-slate-500';file.textContent=job.file_name;name.appendChild(file);
   make().textContent=job.speciality;
   const prog=make();prog.textContent=job.total_pages?job.processed_pages+' / '+job.total_pages+' pages; '+job.verified_questions+' verified questions':'Not started';
   const bar=document.createElement('div');bar.className='progress mt-2';const fill=document.createElement('div');fill.style.width=pct(job)+'%';bar.appendChild(fill);prog.appendChild(bar);
+  const spent=Number(job.api_spend_estimate_usd||0),budget=Number(job.budget_usd??0.75);
+  const cost=document.createElement('div');cost.className='text-xs text-slate-600 mt-2';
+  cost.textContent=Number(job.api_request_count)>0
+    ? 'Estimated API: 
+  const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
+  if(job.last_error){const err=document.createElement('p');err.className='text-xs text-red-700 mt-2';err.textContent=job.last_error;status.appendChild(err)}
+  const issues=Array.isArray(job.review_issues)?job.review_issues:[];
+  if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
+  const act=make();
+  if(['queued','processing','needs_review','ready','published','paused_budget'].includes(job.status))
+    act.appendChild(button('Source PDF','source-link',job.id));
+  if(['failed','needs_review','paused_budget'].includes(job.status))act.appendChild(button('Retry','retry',job.id));
+  if(['uploading','queued','failed','paused_budget','needs_review','ready'].includes(job.status))act.appendChild(button('Edit budget','set-budget',job.id));
+  if(['queued','failed','needs_review','ready','paused_budget'].includes(job.status))act.appendChild(button('Cancel','cancel',job.id));
+  if(job.book_id){
+    const a=document.createElement('a');a.href='manage_chapters.html?bookId='+encodeURIComponent(job.book_id);a.className='text-green-700 font-bold';a.textContent='Open book';act.appendChild(a);
+    act.appendChild(button('Remove test book','remove-test',job.id));
+  }
+  $('jobs').appendChild(tr);
+ }
+ await renderTestReport(data);
+}
+async function renderTestReport(jobs){
+ const published=jobs.filter(j=>j.book_id);
+ const container=$('testCards');container.replaceChildren();
+ if(!published.length){$('testSummary').textContent='No synthetic test books published yet.';return}
+ const ids=published.map(j=>j.book_id);
+ const [booksRes,chaptersRes,questionsRes]=await Promise.all([
+   supabase.from('books').select('id,title,speciality,image,access_level').in('id',ids),
+   supabase.from('chapters').select('id,book_id').in('book_id',ids),
+   supabase.from('questions').select('book_id,chapter_id,imageUrl,explanationImageUrl').in('book_id',ids)
+ ]);
+ if(booksRes.error||chaptersRes.error||questionsRes.error){
+   $('testSummary').textContent='Could not verify published tables. '+(booksRes.error||chaptersRes.error||questionsRes.error).message;
+   return;
+ }
+ const books=booksRes.data||[],chapters=chaptersRes.data||[],qs=questionsRes.data||[];
+ const covers=books.filter(b=>b.image).length,qi=qs.filter(q=>q.imageUrl).length,ei=qs.filter(q=>q.explanationImageUrl).length;
+ const surg=books.filter(b=>b.speciality==='General Surgery').length;
+ const gyn=books.filter(b=>b.speciality==='Obstetrics & Gynecology - General').length;
+ $('testSummary').textContent=
+   'Books '+books.length+'/4 | Surgery '+surg+'/2 | Gynecology '+gyn+'/2 | Chapters '+chapters.length+'/4 | Questions '+qs.length+'/16 | Covers '+covers+'/4 | Question images '+qi+'/8 | Explanation images '+ei+'/8';
+ for(const book of books){
+   const job=published.find(j=>j.book_id===book.id);
+   const chapterCount=chapters.filter(ch=>ch.book_id===book.id).length;
+   const bookQs=qs.filter(q=>q.book_id===book.id);
+   const qImgs=bookQs.filter(q=>q.imageUrl).length;
+   const eImgs=bookQs.filter(q=>q.explanationImageUrl).length;
+   const card=document.createElement('article');card.className='border rounded-xl p-3 flex gap-3 items-start';
+   if(book.image){const img=document.createElement('img');img.src=book.image;img.alt='Book cover';img.width=95;img.className='rounded-md border';card.appendChild(img);}
+   const info=document.createElement('div');info.className='text-sm';
+   const title=document.createElement('div');title.className='font-bold';title.textContent=book.title;info.appendChild(title);
+   const details=document.createElement('p');
+   details.textContent=book.speciality+' | '+chapterCount+' chapters | '+bookQs.length+' questions | '+qImgs+' question images | '+eImgs+' explanation images';
+   info.appendChild(details);
+   if(job?.review_issues?.length){const warn=document.createElement('p');warn.className='text-orange-700';warn.textContent=job.review_issues.length+' source review issue(s) — test-only publication';info.appendChild(warn);}
+   const link=document.createElement('a');link.href='manage_chapters.html?bookId='+encodeURIComponent(book.id);link.className='text-indigo-700 underline';link.textContent='Open chapters in Quizard';info.appendChild(link);
+   card.appendChild(info);container.appendChild(card);
+ }
+}
+function showAssignments(){
+ const files=Array.from($('files').files||[]);
+ $('assignments').replaceChildren();
+ files.forEach((file,i)=>{
+   const row=document.createElement('label');row.className='border rounded-lg p-3 grid md:grid-cols-2 gap-2 items-center';
+   const name=document.createElement('span');name.textContent=file.name;name.className='font-semibold text-sm';row.appendChild(name);
+   const sel=$('specialty').cloneNode(true);sel.id='assignment-'+i;sel.className='field';
+   if(/surgery_test_book/i.test(file.name))sel.value='General Surgery';
+   else if(/gynecology_test_book/i.test(file.name))sel.value='Obstetrics & Gynecology - General';
+   else sel.value=$('specialty').value;
+   row.appendChild(sel);$('assignments').appendChild(row);
+ });
+}
+async function upload(){
+ const files=Array.from($('files').files||[]);
+ if(!files.length)return;
+ busy=true;$('upload').disabled=true;
+ let ok=0;
+ for(const [i,file] of files.entries()){
+  let job=null;
+  try{
+   const speciality=$('assignment-'+i)?.value||$('specialty').value;
+   if(!speciality)throw new Error('Select a specialty for this PDF');
+   const budget_usd=Number($('budget').value);
+   if(!Number.isFinite(budget_usd)||budget_usd<0.20||budget_usd>5.00)throw new Error('Enter a valid API budget per book.');
+   $('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name;
+   const title=file.name.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').trim().slice(0,300);
+   // The normal Supabase session access token (JWT) is required by TUS.
+   // A createSignedUploadUrl token is for uploadToSignedUrl, NOT for TUS headers.
+   const {data:{session},error:sessionError}=await supabase.auth.getSession();
+   if(sessionError||!session?.access_token)throw new Error('Session expired. Please sign in again.');
+   job=await invoke('prepare-upload',{filename:file.name,size:file.size,title,speciality,budget_usd});
+   await new Promise((resolve,reject)=>{
+     const upload=new tus.Upload(file,{
+       endpoint:SUPABASE_URL.replace(/\/$/,'').replace('.supabase.co','.storage.supabase.co')+'/storage/v1/upload/resumable',
+       headers:{authorization:'Bearer '+session.access_token},
+       retryDelays:[0,3000,5000,10000,20000],
+       chunkSize:6*1024*1024,
+       uploadDataDuringCreation:true,
+       removeFingerprintOnSuccess:true,
+       metadata:{bucketName:'ai_import_sources',objectName:job.path,contentType:'application/pdf',cacheControl:'3600'},
+       onError:reject,
+       onSuccess:resolve,
+       onProgress:(done,total)=>{$('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name+' — '+Math.round(100*done/total)+'%';}
+     });
+     upload.start();
+   });
+   await invoke('finalize-upload',{id:job.id});ok++;
+  }catch(e){
+    if(job?.id){
+      try{await invoke('upload-failed',{id:job.id,reason:String(e?.message||e)});}
+      catch(recordError){console.warn('Could not mark failed PDF upload',recordError);}
+    }
+    notice('Failed to queue '+file.name+': '+e.message,true);
+  }
+ }
+ busy=false;$('upload').disabled=false;$('files').value='';$('assignments').replaceChildren();
+ $('uploadInfo').textContent=ok+' / '+files.length+' books queued.';
+ await refresh();
+}
+async function init(){
+ const {data:{user}}=await supabase.auth.getUser();
+ if(!user){location.href='index.html';return}
+ const {data:profile,error}=await supabase.from('users').select('role').eq('id',user.id).single();
+ if(error||profile?.role!=='admin'){document.querySelector('main').textContent='Super-admin access required.';return}
+ $('upload').disabled=false;
+ $('upload').addEventListener('click',upload);
+ $('files').addEventListener('change',showAssignments);
+ $('specialty').addEventListener('change',showAssignments);
+ $('refresh').addEventListener('click',refresh);
+ await refresh();
+ setInterval(()=>{if(!busy)refresh()},15000);
+}
+init();
+</script></body></html>+spent.toFixed(4)+' / 
+  const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
+  if(job.last_error){const err=document.createElement('p');err.className='text-xs text-red-700 mt-2';err.textContent=job.last_error;status.appendChild(err)}
+  const issues=Array.isArray(job.review_issues)?job.review_issues:[];
+  if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
+  const act=make();
+  if(['queued','processing','needs_review','ready','published'].includes(job.status))
+    act.appendChild(button('Source PDF','source-link',job.id));
+  if(['failed','needs_review'].includes(job.status))act.appendChild(button('Retry','retry',job.id));
+  if(['queued','failed','needs_review','ready'].includes(job.status))act.appendChild(button('Cancel','cancel',job.id));
+  if(job.book_id){
+    const a=document.createElement('a');a.href='manage_chapters.html?bookId='+encodeURIComponent(job.book_id);a.className='text-green-700 font-bold';a.textContent='Open book';act.appendChild(a);
+    act.appendChild(button('Remove test book','remove-test',job.id));
+  }
+  $('jobs').appendChild(tr);
+ }
+ await renderTestReport(data);
+}
+async function renderTestReport(jobs){
+ const published=jobs.filter(j=>j.book_id);
+ const container=$('testCards');container.replaceChildren();
+ if(!published.length){$('testSummary').textContent='No synthetic test books published yet.';return}
+ const ids=published.map(j=>j.book_id);
+ const [booksRes,chaptersRes,questionsRes]=await Promise.all([
+   supabase.from('books').select('id,title,speciality,image,access_level').in('id',ids),
+   supabase.from('chapters').select('id,book_id').in('book_id',ids),
+   supabase.from('questions').select('book_id,chapter_id,imageUrl,explanationImageUrl').in('book_id',ids)
+ ]);
+ if(booksRes.error||chaptersRes.error||questionsRes.error){
+   $('testSummary').textContent='Could not verify published tables. '+(booksRes.error||chaptersRes.error||questionsRes.error).message;
+   return;
+ }
+ const books=booksRes.data||[],chapters=chaptersRes.data||[],qs=questionsRes.data||[];
+ const covers=books.filter(b=>b.image).length,qi=qs.filter(q=>q.imageUrl).length,ei=qs.filter(q=>q.explanationImageUrl).length;
+ const surg=books.filter(b=>b.speciality==='General Surgery').length;
+ const gyn=books.filter(b=>b.speciality==='Obstetrics & Gynecology - General').length;
+ $('testSummary').textContent=
+   'Books '+books.length+'/4 | Surgery '+surg+'/2 | Gynecology '+gyn+'/2 | Chapters '+chapters.length+'/4 | Questions '+qs.length+'/16 | Covers '+covers+'/4 | Question images '+qi+'/8 | Explanation images '+ei+'/8';
+ for(const book of books){
+   const job=published.find(j=>j.book_id===book.id);
+   const chapterCount=chapters.filter(ch=>ch.book_id===book.id).length;
+   const bookQs=qs.filter(q=>q.book_id===book.id);
+   const qImgs=bookQs.filter(q=>q.imageUrl).length;
+   const eImgs=bookQs.filter(q=>q.explanationImageUrl).length;
+   const card=document.createElement('article');card.className='border rounded-xl p-3 flex gap-3 items-start';
+   if(book.image){const img=document.createElement('img');img.src=book.image;img.alt='Book cover';img.width=95;img.className='rounded-md border';card.appendChild(img);}
+   const info=document.createElement('div');info.className='text-sm';
+   const title=document.createElement('div');title.className='font-bold';title.textContent=book.title;info.appendChild(title);
+   const details=document.createElement('p');
+   details.textContent=book.speciality+' | '+chapterCount+' chapters | '+bookQs.length+' questions | '+qImgs+' question images | '+eImgs+' explanation images';
+   info.appendChild(details);
+   if(job?.review_issues?.length){const warn=document.createElement('p');warn.className='text-orange-700';warn.textContent=job.review_issues.length+' source review issue(s) — test-only publication';info.appendChild(warn);}
+   const link=document.createElement('a');link.href='manage_chapters.html?bookId='+encodeURIComponent(book.id);link.className='text-indigo-700 underline';link.textContent='Open chapters in Quizard';info.appendChild(link);
+   card.appendChild(info);container.appendChild(card);
+ }
+}
+function showAssignments(){
+ const files=Array.from($('files').files||[]);
+ $('assignments').replaceChildren();
+ files.forEach((file,i)=>{
+   const row=document.createElement('label');row.className='border rounded-lg p-3 grid md:grid-cols-2 gap-2 items-center';
+   const name=document.createElement('span');name.textContent=file.name;name.className='font-semibold text-sm';row.appendChild(name);
+   const sel=$('specialty').cloneNode(true);sel.id='assignment-'+i;sel.className='field';
+   if(/surgery_test_book/i.test(file.name))sel.value='General Surgery';
+   else if(/gynecology_test_book/i.test(file.name))sel.value='Obstetrics & Gynecology - General';
+   else sel.value=$('specialty').value;
+   row.appendChild(sel);$('assignments').appendChild(row);
+ });
+}
+async function upload(){
+ const files=Array.from($('files').files||[]);
+ if(!files.length)return;
+ busy=true;$('upload').disabled=true;
+ let ok=0;
+ for(const [i,file] of files.entries()){
+  let job=null;
+  try{
+   const speciality=$('assignment-'+i)?.value||$('specialty').value;
+   if(!speciality)throw new Error('Select a specialty for this PDF');
+   $('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name;
+   const title=file.name.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').trim().slice(0,300);
+   // The normal Supabase session access token (JWT) is required by TUS.
+   // A createSignedUploadUrl token is for uploadToSignedUrl, NOT for TUS headers.
+   const {data:{session},error:sessionError}=await supabase.auth.getSession();
+   if(sessionError||!session?.access_token)throw new Error('Session expired. Please sign in again.');
+   job=await invoke('prepare-upload',{filename:file.name,size:file.size,title,speciality});
+   await new Promise((resolve,reject)=>{
+     const upload=new tus.Upload(file,{
+       endpoint:SUPABASE_URL.replace(/\/$/,'').replace('.supabase.co','.storage.supabase.co')+'/storage/v1/upload/resumable',
+       headers:{authorization:'Bearer '+session.access_token},
+       retryDelays:[0,3000,5000,10000,20000],
+       chunkSize:6*1024*1024,
+       uploadDataDuringCreation:true,
+       removeFingerprintOnSuccess:true,
+       metadata:{bucketName:'ai_import_sources',objectName:job.path,contentType:'application/pdf',cacheControl:'3600'},
+       onError:reject,
+       onSuccess:resolve,
+       onProgress:(done,total)=>{$('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name+' — '+Math.round(100*done/total)+'%';}
+     });
+     upload.start();
+   });
+   await invoke('finalize-upload',{id:job.id});ok++;
+  }catch(e){
+    if(job?.id){
+      try{await invoke('upload-failed',{id:job.id,reason:String(e?.message||e)});}
+      catch(recordError){console.warn('Could not mark failed PDF upload',recordError);}
+    }
+    notice('Failed to queue '+file.name+': '+e.message,true);
+  }
+ }
+ busy=false;$('upload').disabled=false;$('files').value='';$('assignments').replaceChildren();
+ $('uploadInfo').textContent=ok+' / '+files.length+' books queued.';
+ await refresh();
+}
+async function init(){
+ const {data:{user}}=await supabase.auth.getUser();
+ if(!user){location.href='index.html';return}
+ const {data:profile,error}=await supabase.from('users').select('role').eq('id',user.id).single();
+ if(error||profile?.role!=='admin'){document.querySelector('main').textContent='Super-admin access required.';return}
+ $('upload').disabled=false;
+ $('upload').addEventListener('click',upload);
+ $('files').addEventListener('change',showAssignments);
+ $('specialty').addEventListener('change',showAssignments);
+ $('refresh').addEventListener('click',refresh);
+ await refresh();
+ setInterval(()=>{if(!busy)refresh()},15000);
+}
+init();
+</script></body></html>+budget.toFixed(2)+' book budget ('+job.api_request_count+' calls)'
+    : 'Book budget 
+  const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
+  if(job.last_error){const err=document.createElement('p');err.className='text-xs text-red-700 mt-2';err.textContent=job.last_error;status.appendChild(err)}
+  const issues=Array.isArray(job.review_issues)?job.review_issues:[];
+  if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
+  const act=make();
+  if(['queued','processing','needs_review','ready','published'].includes(job.status))
+    act.appendChild(button('Source PDF','source-link',job.id));
+  if(['failed','needs_review'].includes(job.status))act.appendChild(button('Retry','retry',job.id));
+  if(['queued','failed','needs_review','ready'].includes(job.status))act.appendChild(button('Cancel','cancel',job.id));
+  if(job.book_id){
+    const a=document.createElement('a');a.href='manage_chapters.html?bookId='+encodeURIComponent(job.book_id);a.className='text-green-700 font-bold';a.textContent='Open book';act.appendChild(a);
+    act.appendChild(button('Remove test book','remove-test',job.id));
+  }
+  $('jobs').appendChild(tr);
+ }
+ await renderTestReport(data);
+}
+async function renderTestReport(jobs){
+ const published=jobs.filter(j=>j.book_id);
+ const container=$('testCards');container.replaceChildren();
+ if(!published.length){$('testSummary').textContent='No synthetic test books published yet.';return}
+ const ids=published.map(j=>j.book_id);
+ const [booksRes,chaptersRes,questionsRes]=await Promise.all([
+   supabase.from('books').select('id,title,speciality,image,access_level').in('id',ids),
+   supabase.from('chapters').select('id,book_id').in('book_id',ids),
+   supabase.from('questions').select('book_id,chapter_id,imageUrl,explanationImageUrl').in('book_id',ids)
+ ]);
+ if(booksRes.error||chaptersRes.error||questionsRes.error){
+   $('testSummary').textContent='Could not verify published tables. '+(booksRes.error||chaptersRes.error||questionsRes.error).message;
+   return;
+ }
+ const books=booksRes.data||[],chapters=chaptersRes.data||[],qs=questionsRes.data||[];
+ const covers=books.filter(b=>b.image).length,qi=qs.filter(q=>q.imageUrl).length,ei=qs.filter(q=>q.explanationImageUrl).length;
+ const surg=books.filter(b=>b.speciality==='General Surgery').length;
+ const gyn=books.filter(b=>b.speciality==='Obstetrics & Gynecology - General').length;
+ $('testSummary').textContent=
+   'Books '+books.length+'/4 | Surgery '+surg+'/2 | Gynecology '+gyn+'/2 | Chapters '+chapters.length+'/4 | Questions '+qs.length+'/16 | Covers '+covers+'/4 | Question images '+qi+'/8 | Explanation images '+ei+'/8';
+ for(const book of books){
+   const job=published.find(j=>j.book_id===book.id);
+   const chapterCount=chapters.filter(ch=>ch.book_id===book.id).length;
+   const bookQs=qs.filter(q=>q.book_id===book.id);
+   const qImgs=bookQs.filter(q=>q.imageUrl).length;
+   const eImgs=bookQs.filter(q=>q.explanationImageUrl).length;
+   const card=document.createElement('article');card.className='border rounded-xl p-3 flex gap-3 items-start';
+   if(book.image){const img=document.createElement('img');img.src=book.image;img.alt='Book cover';img.width=95;img.className='rounded-md border';card.appendChild(img);}
+   const info=document.createElement('div');info.className='text-sm';
+   const title=document.createElement('div');title.className='font-bold';title.textContent=book.title;info.appendChild(title);
+   const details=document.createElement('p');
+   details.textContent=book.speciality+' | '+chapterCount+' chapters | '+bookQs.length+' questions | '+qImgs+' question images | '+eImgs+' explanation images';
+   info.appendChild(details);
+   if(job?.review_issues?.length){const warn=document.createElement('p');warn.className='text-orange-700';warn.textContent=job.review_issues.length+' source review issue(s) — test-only publication';info.appendChild(warn);}
+   const link=document.createElement('a');link.href='manage_chapters.html?bookId='+encodeURIComponent(book.id);link.className='text-indigo-700 underline';link.textContent='Open chapters in Quizard';info.appendChild(link);
+   card.appendChild(info);container.appendChild(card);
+ }
+}
+function showAssignments(){
+ const files=Array.from($('files').files||[]);
+ $('assignments').replaceChildren();
+ files.forEach((file,i)=>{
+   const row=document.createElement('label');row.className='border rounded-lg p-3 grid md:grid-cols-2 gap-2 items-center';
+   const name=document.createElement('span');name.textContent=file.name;name.className='font-semibold text-sm';row.appendChild(name);
+   const sel=$('specialty').cloneNode(true);sel.id='assignment-'+i;sel.className='field';
+   if(/surgery_test_book/i.test(file.name))sel.value='General Surgery';
+   else if(/gynecology_test_book/i.test(file.name))sel.value='Obstetrics & Gynecology - General';
+   else sel.value=$('specialty').value;
+   row.appendChild(sel);$('assignments').appendChild(row);
+ });
+}
+async function upload(){
+ const files=Array.from($('files').files||[]);
+ if(!files.length)return;
+ busy=true;$('upload').disabled=true;
+ let ok=0;
+ for(const [i,file] of files.entries()){
+  let job=null;
+  try{
+   const speciality=$('assignment-'+i)?.value||$('specialty').value;
+   if(!speciality)throw new Error('Select a specialty for this PDF');
+   $('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name;
+   const title=file.name.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').trim().slice(0,300);
+   // The normal Supabase session access token (JWT) is required by TUS.
+   // A createSignedUploadUrl token is for uploadToSignedUrl, NOT for TUS headers.
+   const {data:{session},error:sessionError}=await supabase.auth.getSession();
+   if(sessionError||!session?.access_token)throw new Error('Session expired. Please sign in again.');
+   job=await invoke('prepare-upload',{filename:file.name,size:file.size,title,speciality});
+   await new Promise((resolve,reject)=>{
+     const upload=new tus.Upload(file,{
+       endpoint:SUPABASE_URL.replace(/\/$/,'').replace('.supabase.co','.storage.supabase.co')+'/storage/v1/upload/resumable',
+       headers:{authorization:'Bearer '+session.access_token},
+       retryDelays:[0,3000,5000,10000,20000],
+       chunkSize:6*1024*1024,
+       uploadDataDuringCreation:true,
+       removeFingerprintOnSuccess:true,
+       metadata:{bucketName:'ai_import_sources',objectName:job.path,contentType:'application/pdf',cacheControl:'3600'},
+       onError:reject,
+       onSuccess:resolve,
+       onProgress:(done,total)=>{$('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name+' — '+Math.round(100*done/total)+'%';}
+     });
+     upload.start();
+   });
+   await invoke('finalize-upload',{id:job.id});ok++;
+  }catch(e){
+    if(job?.id){
+      try{await invoke('upload-failed',{id:job.id,reason:String(e?.message||e)});}
+      catch(recordError){console.warn('Could not mark failed PDF upload',recordError);}
+    }
+    notice('Failed to queue '+file.name+': '+e.message,true);
+  }
+ }
+ busy=false;$('upload').disabled=false;$('files').value='';$('assignments').replaceChildren();
+ $('uploadInfo').textContent=ok+' / '+files.length+' books queued.';
+ await refresh();
+}
+async function init(){
+ const {data:{user}}=await supabase.auth.getUser();
+ if(!user){location.href='index.html';return}
+ const {data:profile,error}=await supabase.from('users').select('role').eq('id',user.id).single();
+ if(error||profile?.role!=='admin'){document.querySelector('main').textContent='Super-admin access required.';return}
+ $('upload').disabled=false;
+ $('upload').addEventListener('click',upload);
+ $('files').addEventListener('change',showAssignments);
+ $('specialty').addEventListener('change',showAssignments);
+ $('refresh').addEventListener('click',refresh);
+ await refresh();
+ setInterval(()=>{if(!busy)refresh()},15000);
+}
+init();
+</script></body></html>+budget.toFixed(2)+(job.status==='published'?' — older import, usage not tracked':' — no recorded API calls');
+  prog.appendChild(cost);
   const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
   if(job.last_error){const err=document.createElement('p');err.className='text-xs text-red-700 mt-2';err.textContent=job.last_error;status.appendChild(err)}
   const issues=Array.isArray(job.review_issues)?job.review_issues:[];
