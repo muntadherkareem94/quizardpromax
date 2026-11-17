@@ -25,7 +25,7 @@ from supabase import create_client
 from cost_guard import (BudgetExceeded, assert_budget, reserve_cost_usd,
                         usage_cost_usd, safely_selectable_text)
 from free_router import FreeRouter, ProvidersUnavailable
-from local_mcq import extract_local_section, local_book_metadata
+from local_mcq import extract_local_section, local_book_metadata, layout_figures
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger("quizard-ai-import")
@@ -335,56 +335,8 @@ def upload_image(bucket,path,data,mime):
     return "staging://" + bucket + "/" + path
 
 def figure_layout(document, first, last):
-    """Assign embedded raster figures to preceding numbered MCQ anchors in reading order.
-    A source label near the image is required to classify question vs explanation.
-    This permits adjacent-page figures and multiple questions on one PDF page.
-    Returns image layout metadata only; no uploads or model calls.
-    """
-    anchors=[]
-    images=[]
-    qpat=re.compile(r"(?:^|\n)\s*(?:Question|Q)\s+(\d+)\s*[.):]",re.I)
-    for page_number in range(first,last+1):
-        page=document[page_number-1]
-        blocks=[(fitz.Rect(b[:4]),str(b[4]).strip())
-                for b in page.get_text("blocks") if len(b)>=5 and isinstance(b[4],str)]
-        for rect,txt in blocks:
-            m=qpat.search(txt)
-            if m:
-                anchors.append((page_number,rect.y0,int(m.group(1))))
-        for xref,rect in detect_raster_figures(document,page_number):
-            labels=[]
-            for lr,txt in blocks:
-                kind=None
-                if re.fullmatch(r"Question Image",txt,re.I): kind="question"
-                elif re.fullmatch(r"Explanation Image",txt,re.I): kind="explanation"
-                if kind is not None:
-                    gap=lr.y0-rect.y1
-                    if -35<=gap<=65:
-                        labels.append((abs(gap),kind))
-            labels.sort()
-            kind=None
-            if len(labels)==1 or (len(labels)>1 and labels[0][0]+10<labels[1][0]):
-                kind=labels[0][1]
-            images.append((page_number,rect.y0,kind,xref,rect))
-    mapped={}
-    issues=[]
-    ids=[a[2] for a in anchors]
-    if len(set(ids))!=len(ids):
-        issues.append({"type":"figure_anchor","detail":"Repeated MCQ number in PDF layout: cannot match images safely"})
-        return {},issues
-    for page_number,y0,kind,xref,rect in images:
-        preceding=[a for a in anchors if a[0]<page_number or (a[0]==page_number and a[1]<=y0)]
-        if not preceding:
-            issues.append({"type":"figure_unmatched","page":page_number,
-                           "detail":"Image appears before any question stem in this chapter"})
-            continue
-        owner=max(preceding,key=lambda a:(a[0],a[1]))[2]
-        if kind is None:
-            issues.append({"type":"figure_unclassified","page":page_number,"number":owner,
-                           "detail":"No unambiguous Question Image/Explanation Image source label"})
-            continue
-        mapped.setdefault(owner,[]).append((kind,page_number,xref,rect))
-    return mapped,issues
+    """Use the same source-caption matching for verification and figure uploads."""
+    return layout_figures(document, first, last, include_rects=True)
 
 
 def upload_image(bucket,path,data,mime):
@@ -540,6 +492,14 @@ def process_section(document,job,section,common_issues):
                      job_id,section["section_index"],len(candidate),len(issues),
                      local["elapsed_ms"])
             return record
+        # Missing linked critiques are absent from the source; no AI call can
+        # safely invent them. Stage all available MCQs for manual review now.
+        if (local["questions"] and local["issues"] and
+                all(x.get("type") == "linked_critique_not_provided"
+                    for x in local["issues"])):
+            return stage_local_review_section(
+                document, job, section,
+                "Printed linked-item critique is incomplete; source review required")
         LOG.info("LOCAL PDF fallback job=%s chapter=%s issues=%s anchors=%s",
                  job_id,section["section_index"],len(local["issues"]),
                  len(local["sourceQuestionNumbers"]))
@@ -740,11 +700,16 @@ def stage_local_review_section(document, job, section, reason):
     if existing and existing[0]["status"] == "verified":
         return existing[0]
 
-    # If a previous retry already staged candidates, preserve its result.
+    # Re-evaluate only local candidates. Never overwrite verified records.
     # A future retry with an available provider can replace this review record.
     local = extract_local_section(document, first, last)
     candidates = local["questions"]
     issues = list(local["issues"])
+    # Preserve figures in the same private staging bucket as verified extraction.
+    # Any unmatched image remains a review issue and cannot be auto-published.
+    if candidates:
+        issues.extend(attach_figures(
+            document, job, index, candidates, first, last))
     issues.append({
         "type": "local_review_required",
         "detail": str(reason)[:500],
@@ -903,6 +868,16 @@ def process_job(job):
             if metadata:
                 LOG.info("LOCAL PDF metadata recognized job=%s title=%s",
                          job_id,metadata["title"])
+            elif LOCAL_FIRST_ENABLED and job.get("provider_mode")=="free_only":
+                # Book-title certainty is independent of MCQ extraction.
+                # An unverified title is staged for review, never published.
+                title_lines=[clean(x) for x in
+                             document[0].get_text("text",sort=True).splitlines()
+                             if clean(x)]
+                candidate=title_lines[0][:180] if title_lines else ""
+                metadata={"title":candidate,"coverPage":1,
+                          "titleEvidence":candidate,"confidence":"low"}
+                LOG.info("LOCAL provisional cover metadata job=%s",job_id)
             else:
                 try:
                     metadata=inspect_book_metadata(document,job_id)
