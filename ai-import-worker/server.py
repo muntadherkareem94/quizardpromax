@@ -10,6 +10,7 @@ import json
 import logging
 import os
 import threading
+import time
 import traceback
 from datetime import datetime, timedelta, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -74,6 +75,46 @@ def execute_one(job):
     finally:
         stop.set()
         ACTIVE.release()
+
+
+def auto_resume_loop():
+    """Automatically continue free-only jobs after free provider cooldowns.
+
+    This is a private server-side scheduler: it never bypasses a provider's
+    Retry-After or account quota, and never dispatches paid legacy jobs.
+    A crashed processing claim is eligible only after its heartbeat has expired.
+    """
+    while True:
+        if ACTIVE.acquire(blocking=False):
+            started=False
+            try:
+                now=datetime.now(timezone.utc)
+                current=now.isoformat()
+                waiting=DB.table("ai_import_jobs").select("id").eq(
+                    "provider_mode","free_only").eq("status","waiting_provider").lte(
+                    "next_attempt_at",current).order("next_attempt_at").limit(1).execute().data or []
+                queued=DB.table("ai_import_jobs").select("id").eq(
+                    "provider_mode","free_only").eq("status","queued").order(
+                    "created_at").limit(1).execute().data or []
+                stale=DB.table("ai_import_jobs").select("id").eq(
+                    "provider_mode","free_only").eq("status","processing").lt(
+                    "worker_lock_at",(now-timedelta(minutes=3)).isoformat()
+                ).order("updated_at").limit(1).execute().data or []
+                candidate=(waiting or queued or stale)
+                if candidate:
+                    job_id=candidate[0]["id"]
+                    claimed=DB.rpc("ai_claim_import_job_by_id",{
+                        "p_job_id":job_id}).execute()
+                    job=normalize_claimed_job(claimed.data)
+                    if job:
+                        LOG.info("Auto-resuming eligible free-only book %s",job_id)
+                        threading.Thread(target=execute_one,args=(job,),daemon=True).start()
+                        started=True
+            except Exception:
+                LOG.exception("On-demand automatic resume check failed")
+            finally:
+                if not started:ACTIVE.release()
+        time.sleep(20)
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -143,4 +184,5 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "8080"))
     LOG.info("Quizard AI on-demand HTTP worker ready on port %s", port)
+    threading.Thread(target=auto_resume_loop,daemon=True).start()
     ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()
