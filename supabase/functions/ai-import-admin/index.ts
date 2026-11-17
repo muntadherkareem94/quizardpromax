@@ -40,6 +40,9 @@ Deno.serve(async (req) => {
       const speciality = String(input.speciality || '').trim();
       const titleHint = String(input.title || '').trim();
       const size = Number(input.size || 0);
+      const budget = Number(input.budget_usd ?? 0.75);
+      if (!Number.isFinite(budget) || budget < 0.20 || budget > 5 || Math.abs(budget * 100 - Math.round(budget * 100)) > 0.0001)
+        return respond({ error: 'Budget per book must be between $0.20 and $5.00 in cents' }, 400);
       if (!filename.toLowerCase().endsWith('.pdf') || size < 1 || size > 500 * 1024 * 1024)
         return respond({ error: 'A PDF smaller than 500 MB is required' }, 400);
       if (!speciality || speciality.length > 120 || !titleHint || titleHint.length > 300)
@@ -50,7 +53,8 @@ Deno.serve(async (req) => {
       // Storage RLS restricts INSERT to this exact prepared job path.
       const { error } = await db.from('ai_import_jobs').insert({
         id, uploaded_by: user.id, file_name: filename.slice(0, 300),
-        title_hint: titleHint, speciality, source_path: path, status: 'uploading'
+        title_hint: titleHint, speciality, source_path: path, status: 'uploading',
+        budget_usd: budget
       });
       if (error) throw error;
       return respond({ id, path });
@@ -60,7 +64,7 @@ Deno.serve(async (req) => {
     if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id))
       return respond({ error: 'Valid job id required' }, 400);
     const { data: job, error: fetchError } = await db.from('ai_import_jobs')
-      .select('id, status, source_path').eq('id', id).single();
+      .select('id, status, source_path, budget_usd, api_spend_estimate_usd').eq('id', id).single();
     if (fetchError || !job) return respond({ error: 'Job not found' }, 404);
 
     if (action === 'finalize-upload') {
@@ -95,9 +99,26 @@ Deno.serve(async (req) => {
       return respond({ ok: true });
     }
 
+    if (action === 'set-budget') {
+      if (!['uploading','queued','failed','paused_budget','needs_review','ready'].includes(job.status))
+        return respond({ error: 'Budget cannot be edited in this state' }, 409);
+      const amount = Number(input.budget_usd);
+      if (!Number.isFinite(amount) || amount < 0.20 || amount > 5.00 ||
+          Math.abs(amount * 100 - Math.round(amount * 100)) > 0.0001 ||
+          amount < Number(job.api_spend_estimate_usd) + 0.01)
+        return respond({ error: 'Enter a budget above tracked spending, between $0.20 and $5.00' }, 400);
+      const { error } = await db.from('ai_import_jobs').update({
+        budget_usd: amount, updated_at: new Date().toISOString()
+      }).eq('id', id).eq('status', job.status);
+      if (error) throw error;
+      return respond({ ok: true });
+    }
+
     if (action === 'retry') {
-      if (!['failed', 'needs_review'].includes(job.status))
-        return respond({ error: 'Only failed/review jobs can be retried' }, 409);
+      if (!['failed', 'needs_review', 'paused_budget'].includes(job.status))
+        return respond({ error: 'Only failed/review/budget-paused jobs can be retried' }, 409);
+      if (job.status === 'paused_budget' && Number(job.budget_usd) <= Number(job.api_spend_estimate_usd) + 0.02)
+        return respond({ error: 'Increase this book budget before retrying' }, 409);
       // Upload failures have no source PDF. Do not queue them for AI processing.
       const folder = job.source_path.substring(0, job.source_path.lastIndexOf('/'));
       const { data: files, error: storageError } = await db.storage
@@ -112,7 +133,7 @@ Deno.serve(async (req) => {
     }
 
     if (action === 'cancel') {
-      if (!['queued', 'failed', 'needs_review', 'ready'].includes(job.status))
+      if (!['queued', 'failed', 'needs_review', 'ready', 'paused_budget'].includes(job.status))
         return respond({ error: 'Only non-running jobs may be cancelled' }, 409);
       const { error } = await db.from('ai_import_jobs').update({
         status: 'cancelled', updated_at: new Date().toISOString()
