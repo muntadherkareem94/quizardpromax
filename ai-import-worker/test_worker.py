@@ -17,7 +17,7 @@ os.environ.setdefault("SUPABASE_URL", "https://example.supabase.co")
 os.environ.setdefault("SUPABASE_SERVICE_ROLE_KEY", "not-a-real-service-key")
 os.environ.setdefault("OPENAI_API_KEY", "not-a-real-api-key")
 
-from free_router import (configured, request_provider, FreeRouter, ProvidersUnavailable)
+from free_router import (configured, request_provider, FreeRouter, ProvidersUnavailable, retry_seconds)
 from server import valid_dispatch_identifiers
 from worker import (find_sections, validate_question, page_part, EXTRACTION_SCHEMA,
                     normalize_claimed_job, figure_layout, normalize_mcq_options,
@@ -220,6 +220,24 @@ class FreeRouterTests(unittest.TestCase):
         settings["GEMINI_VERIFY_FREE_CONFIRMED"]="false"
         with patch.dict(os.environ,settings,clear=True):
             self.assertEqual(len([p for p in configured() if p["name"]=="gemini"]),1)
+
+    def test_brief_503_retry_does_not_wait_twenty_minutes(self):
+        self.assertEqual(retry_seconds({},503),45)
+        self.assertEqual(retry_seconds({},429),180)
+        self.assertEqual(retry_seconds({"retry-after":"80"},429),80)
+
+    def test_backup_model_is_available_for_discrepancy_repair(self):
+        settings={
+            "GEMINI_API_KEY":"test-only",
+            "GEMINI_MODEL":"gemini-3.5-flash-lite",
+            "GEMINI_FREE_CONFIRMED":"true",
+            "GEMINI_DAILY_REQUEST_CAP":"30",
+            "GEMINI_VERIFY_MODEL":"gemini-3.1-flash-lite",
+            "GEMINI_VERIFY_FREE_CONFIRMED":"true",
+            "GEMINI_VERIFY_DAILY_REQUEST_CAP":"30",
+        }
+        with patch.dict(os.environ,settings,clear=True):
+            self.assertEqual(len([p for p in configured() if p["name"]=="gemini"]),2)
 
     def test_gemini_pdf_request_schema_validated_offline(self):
         pdf=fitz.open()
