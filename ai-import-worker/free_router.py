@@ -144,7 +144,10 @@ def request_provider(client,p,prompt,schema,pdf,stage):
 class FreeRouter:
     def __init__(self,db,client=None,now=None):
         self.db=db
-        self.client=client or httpx.Client(timeout=httpx.Timeout(180,connect=20))
+        # Never let an unreliable free verifier leave a book in "processing"
+        # indefinitely. A timed-out provider is cooled down, then another
+        # eligible free model is tried; the extracted page remains checkpointed.
+        self.client=client or httpx.Client(timeout=httpx.Timeout(65,connect=12))
         self.now=now or (lambda:datetime.now(timezone.utc))
         self.last_provider=None
 
