@@ -1,8 +1,8 @@
 """Quizard high-fidelity, fail-closed MCQ book importer.
 
-Run as a continuously scheduled worker, not in a browser/Edge Function.
-It never publishes a book unless extraction, independent review, source answers
-and image attribution all pass. Jobs can be resumed after interruption.
+Run as a scheduled Railway job, not in a browser/Edge Function.
+Only named synthetic test fixtures can publish to the hidden admin-only test tier.
+Real books are staged for review, not published. Jobs resume after interruption.
 """
 from __future__ import annotations
 import base64
@@ -34,9 +34,13 @@ PAGES_PER_BATCH = max(1, min(6, int(os.getenv("PAGES_PER_BATCH", "3"))))
 POLL_SECONDS = max(10, int(os.getenv("POLL_SECONDS", "60")))
 RUN_ONCE = os.getenv("RUN_ONCE", "false").lower() == "true"
 MAX_PAGES_PER_JOB = max(1, int(os.getenv("MAX_PAGES_PER_JOB", "30")))  # Pilot cost guard
+# Flex uses the same requested model at Batch-rate prices (slower and sometimes unavailable).
+OPENAI_SERVICE_TIER = os.getenv("OPENAI_SERVICE_TIER", "flex").lower()
+if OPENAI_SERVICE_TIER not in ("flex", "auto"):
+    raise ValueError("OPENAI_SERVICE_TIER must be flex or auto")
 AUTO_PUBLISH = False  # Safety interlock: this branch is staging-only
 DB = create_client(URL, SERVICE_KEY)
-AI = OpenAI(api_key=os.environ["OPENAI_API_KEY"], timeout=300, max_retries=3)
+AI = OpenAI(api_key=os.environ["OPENAI_API_KEY"], timeout=900, max_retries=2)
 
 EXTRACTION_SCHEMA = {
     "type": "object", "additionalProperties": False,
@@ -118,8 +122,17 @@ def run_structured(pdf_bytes, prompt, schema, name, model):
         ]}],
         text={"format":{"type":"json_schema","name":name,"strict":True,"schema":schema}},
         max_output_tokens=16000,
+        service_tier=OPENAI_SERVICE_TIER,
         store=False,
     )
+    # Track actual model usage per call in Railway logs; never log source text.
+    # The OpenAI platform, not local estimates, is the billing source of truth.
+    usage = getattr(response, "usage", None)
+    if usage:
+        LOG.info("OpenAI request model=%s tier=%s input_tokens=%s output_tokens=%s",
+                 model, getattr(response, "service_tier", OPENAI_SERVICE_TIER),
+                 getattr(usage, "input_tokens", "unknown"),
+                 getattr(usage, "output_tokens", "unknown"))
     raw = response.output_text
     if not raw: raise ValueError("AI returned empty response")
     return json.loads(raw)
