@@ -49,7 +49,7 @@ def configured():
 def render_pages(pdf):
     doc=fitz.open(stream=pdf,filetype="pdf")
     try:
-        if len(doc)>4:raise ValueError("Image adapter supports at most four PDF pages")
+        if len(doc)>3:raise ValueError("Groq vision supports at most three PDF images per request")
         return [base64.b64encode(p.get_pixmap(
             matrix=fitz.Matrix(1.2,1.2),alpha=False).tobytes("jpeg",jpg_quality=70)
         ).decode("ascii") for p in doc]
@@ -140,7 +140,7 @@ class FreeRouter:
             name=p["name"]
             if name==exclude_provider:continue
             if text_source is None and not p["vision"]:continue
-            if text_source is None and name=="groq" and page_count>4:continue
+            if text_source is None and name=="groq" and page_count>3:continue
             states=self.db.table("ai_import_provider_state").select("cooldown_until").eq(
                 "provider",name).limit(1).execute().data or []
             if states and states[0].get("cooldown_until"):
