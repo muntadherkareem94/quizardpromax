@@ -2,7 +2,7 @@
 import unittest
 import fitz
 
-from local_mcq import extract_local_section, local_book_metadata
+from local_mcq import extract_local_section, local_book_metadata, layout_figures
 
 
 def make_textbook(*, answer="Correct answer: B. Second choice",
@@ -136,6 +136,60 @@ class LocalMCQTests(unittest.TestCase):
             self.assertEqual(result["questions"][0]["sourcePage"],1)
         finally:d.close()
 
+
+    def test_sesap_style_critique_spanning_pages_and_captioned_figures(self):
+        """Synthetic SESAP-like pages (no copyrighted source PDF in repository)."""
+        d=fitz.open()
+        d.new_page().insert_text((60,60),"Sample Cover")
+        p=d.new_page()
+        entries=[
+            (70,"Question 1"),
+            (95,"Which of the following source options is correct?"),
+            (125,"Figure 1."),
+            (325,"A. The first option"),
+            (350,"B. The second option"),
+            (380,"Answer: B. The second option"),
+            (405,"Critique"),
+            (430,"This explanation continues on the next source page."),
+        ]
+        for y,line in entries:p.insert_text((60,y),line)
+        pix=fitz.Pixmap(fitz.csRGB,fitz.IRect(0,0,180,120),False)
+        p.insert_image(fitz.Rect(80,148,340,298),pixmap=pix)
+        p=d.new_page()
+        p.insert_text((60,70),"The second page supplies more of this critique.")
+        p.insert_text((60,110),"Figure 2.")
+        p.insert_image(fitz.Rect(80,135,340,285),pixmap=pix)
+        p.insert_text((60,330),"References")
+        p.insert_text((60,360),"1. Source reference must not appear in explanation.")
+        p=d.new_page()
+        for y,line in [
+            (70,"Question 2"),
+            (95,"What answer does the source print for this question?"),
+            (120,"A. No"),
+            (145,"B. Yes"),
+            (170,"Answer: B. Yes"),
+            (195,"Critique"),
+            (220,"Linked Item: The critique will display after all linked items in the series are answered."),
+        ]:p.insert_text((60,y),line)
+        try:
+            result=extract_local_section(d,2,4)
+            self.assertEqual([q["questionNumber"] for q in result["questions"]],[1,2])
+            q1,q2=result["questions"]
+            self.assertEqual(q1["correctAnswerIndex"],1)
+            self.assertTrue(q1["figureInQuestion"])
+            self.assertTrue(q1["figureInExplanation"])
+            self.assertIn("continues on the next",q1["explanation"])
+            self.assertNotIn("Source reference",q1["explanation"])
+            self.assertFalse(result["strict_pass"])
+            self.assertIn("linked_critique_not_provided",
+                          [i["type"] for i in result["issues"]])
+            figure_map,figure_issues=layout_figures(d,2,4,include_rects=True)
+            self.assertEqual(figure_issues,[])
+            self.assertEqual([f[0] for f in figure_map[1]],
+                             ["question","explanation"])
+            self.assertEqual(q2["correctAnswerIndex"],1)
+        finally:
+            d.close()
 
 if __name__=="__main__":
     unittest.main()
