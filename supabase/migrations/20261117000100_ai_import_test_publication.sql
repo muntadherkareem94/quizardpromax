@@ -58,8 +58,8 @@ begin
     raise exception 'Test import must be processed and no longer than 10 pages';
   end if;
   select count(*),coalesce(sum(jsonb_array_length(s.questions)),0) into n_chapters,n
-  from public.ai_import_sections s
-  where s.job_id=j.id and jsonb_array_length(s.questions)>0;
+  from public.ai_import_sections sec
+  where sec.job_id=j.id and jsonb_array_length(sec.questions)>0;
   if n<>4 or n_chapters<>1 then
     raise exception 'Expected exactly 1 nonempty chapter and 4 questions; got % chapters and % questions',n_chapters,n;
   end if;
