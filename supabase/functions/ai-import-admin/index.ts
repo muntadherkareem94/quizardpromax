@@ -54,7 +54,7 @@ Deno.serve(async (req) => {
       const { error } = await db.from('ai_import_jobs').insert({
         id, uploaded_by: user.id, file_name: filename.slice(0, 300),
         title_hint: titleHint, speciality, source_path: path, status: 'uploading',
-        budget_usd: budget
+        budget_usd: budget, provider_mode: 'free_only'
       });
       if (error) throw error;
       return respond({ id, path });
@@ -100,7 +100,7 @@ Deno.serve(async (req) => {
     }
 
     if (action === 'set-budget') {
-      if (!['uploading','queued','failed','paused_budget','needs_review','ready'].includes(job.status))
+      if (!['uploading','queued','failed','paused_budget','needs_review','ready','waiting_provider'].includes(job.status))
         return respond({ error: 'Budget cannot be edited in this state' }, 409);
       const amount = Number(input.budget_usd);
       if (!Number.isFinite(amount) || amount < 0.20 || amount > 5.00 ||
@@ -115,7 +115,7 @@ Deno.serve(async (req) => {
     }
 
     if (action === 'retry') {
-      if (!['failed', 'needs_review', 'paused_budget'].includes(job.status))
+      if (!['failed', 'needs_review', 'paused_budget', 'waiting_provider'].includes(job.status))
         return respond({ error: 'Only failed/review/budget-paused jobs can be retried' }, 409);
       if (job.status === 'paused_budget' && Number(job.budget_usd) <= Number(job.api_spend_estimate_usd) + 0.02)
         return respond({ error: 'Increase this book budget before retrying' }, 409);
@@ -126,14 +126,14 @@ Deno.serve(async (req) => {
       if (storageError || !files?.some((f) => f.name === 'book.pdf'))
         return respond({ error: 'The original PDF was not uploaded. Upload this book again.' }, 409);
       const { error } = await db.from('ai_import_jobs').update({
-        status: 'queued', last_error: null, updated_at: new Date().toISOString()
+        status: 'queued', last_error: null, next_attempt_at: null, updated_at: new Date().toISOString()
       }).eq('id', id).eq('status', job.status);
       if (error) throw error;
       return respond({ ok: true });
     }
 
     if (action === 'cancel') {
-      if (!['queued', 'failed', 'needs_review', 'ready', 'paused_budget'].includes(job.status))
+      if (!['queued', 'failed', 'needs_review', 'ready', 'paused_budget', 'waiting_provider'].includes(job.status))
         return respond({ error: 'Only non-running jobs may be cancelled' }, 409);
       const { error } = await db.from('ai_import_jobs').update({
         status: 'cancelled', updated_at: new Date().toISOString()
