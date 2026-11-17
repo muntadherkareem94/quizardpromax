@@ -38,8 +38,13 @@ td{font-size:14px}
 </select></label>
 <label><span class="block font-semibold mb-2">PDF textbooks</span><input id="files" type="file" accept="application/pdf,.pdf" multiple class="field"></label>
 </div>
+<div class="border rounded-xl p-3 mb-4 bg-slate-50 text-sm text-slate-700">
+<strong>New imports use free-only AI routing.</strong> Gemini, Groq, Mistral, OpenRouter and Cloudflare are supported when their Railway API keys, free-tier confirmations and daily quotas are configured.
+If a provider runs out of free capacity, Quizard switches to the next suitable provider or waits and retries automatically. <strong>No paid OpenAI fallback.</strong>
+Real textbooks remain in private staging until third-party sharing is approved.
+</div>
 <div class="grid md:grid-cols-2 gap-4 mb-4">
-<label><span class="block font-semibold mb-2">Estimated OpenAI budget per book (USD)</span>
+<label><span class="block font-semibold mb-2">Legacy paid-provider budget (unused for free-only jobs, USD)</span>
 <input id="budget" type="number" class="field" min="0.20" max="5.00" step="0.05" value="0.75"></label>
 <div class="text-sm text-slate-600 self-center">Safe pages use text-first extraction; complex pages use source PDF vision. The book pauses when estimated API budget is insufficient. Estimated costs are not a guaranteed billing cap.</div>
 </div>
@@ -129,20 +134,27 @@ async function refresh(){
   const spent=Number(job.api_spend_estimate_usd||0);
   const budget=Number(job.budget_usd??0.75);
   const cost=document.createElement('div');cost.className='text-xs text-slate-600 mt-2';
-  cost.textContent=Number(job.api_request_count)>0
-    ? 'Estimated API: $'+spent.toFixed(4)+' / $'+budget.toFixed(2)+' ('+job.api_request_count+' calls)'
-    : 'Budget $'+budget.toFixed(2)+(job.status==='published'?' — previous import, usage not tracked':' — no recorded API calls');
+  cost.textContent=job.provider_mode==='free_only'
+    ? 'FREE-ONLY ROUTER • no paid OpenAI fallback • provider-specific quotas apply'
+    : (Number(job.api_request_count)>0
+      ? 'Estimated API: $'+spent.toFixed(4)+' / $'+budget.toFixed(2)+' ('+job.api_request_count+' calls)'
+      : 'Legacy budget $'+budget.toFixed(2)+(job.status==='published'?' — previous import, usage not tracked':' — no recorded API calls'));
   prog.appendChild(cost);
   const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
+  if(job.status==='waiting_provider' && job.next_attempt_at){
+    const wait=document.createElement('p');wait.className='text-xs text-indigo-700 mt-2';
+    wait.textContent='Automatic retry after '+new Date(job.next_attempt_at).toLocaleString();
+    status.appendChild(wait);
+  }
   if(job.last_error){const err=document.createElement('p');err.className='text-xs text-red-700 mt-2';err.textContent=job.last_error;status.appendChild(err)}
   const issues=Array.isArray(job.review_issues)?job.review_issues:[];
   if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
   const act=make();
-  if(['queued','processing','needs_review','ready','published','paused_budget'].includes(job.status))
+  if(['queued','processing','needs_review','ready','published','paused_budget','waiting_provider'].includes(job.status))
     act.appendChild(button('Source PDF','source-link',job.id));
-  if(['failed','needs_review','paused_budget'].includes(job.status))act.appendChild(button('Retry','retry',job.id));
+  if(['failed','needs_review','paused_budget','waiting_provider'].includes(job.status))act.appendChild(button('Retry','retry',job.id));
   if(['uploading','queued','failed','paused_budget','needs_review','ready'].includes(job.status))act.appendChild(button('Edit budget','set-budget',job.id));
-  if(['queued','failed','needs_review','ready','paused_budget'].includes(job.status))act.appendChild(button('Cancel','cancel',job.id));
+  if(['queued','failed','needs_review','ready','paused_budget','waiting_provider'].includes(job.status))act.appendChild(button('Cancel','cancel',job.id));
   if(job.book_id){
     const a=document.createElement('a');a.href='manage_chapters.html?bookId='+encodeURIComponent(job.book_id);a.className='text-green-700 font-bold';a.textContent='Open book';act.appendChild(a);
     act.appendChild(button('Remove test book','remove-test',job.id));
