@@ -725,6 +725,61 @@ Only correct faults supported by visible text in these PDF pages."""
     DB.table("ai_import_sections").upsert(record,on_conflict="job_id,section_index").execute()
     return record
 
+def stage_local_review_section(document, job, section, reason):
+    """Stage uncertain local candidates without implying independent verification.
+
+    Never overwrite a completed verified chapter. Keep AI-audited checkpoints
+    separately for a later retry rather than deleting them on provider failure.
+    """
+    job_id = job["id"]
+    index = section["section_index"]
+    first = section["start_page"]
+    last = section["end_page"]
+    existing = DB.table("ai_import_sections").select("*").eq(
+        "job_id", job_id).eq("section_index", index).execute().data or []
+    if existing and existing[0]["status"] == "verified":
+        return existing[0]
+
+    # If a previous retry already staged candidates, preserve its result.
+    # A future retry with an available provider can replace this review record.
+    local = extract_local_section(document, first, last)
+    candidates = local["questions"]
+    issues = list(local["issues"])
+    issues.append({
+        "type": "local_review_required",
+        "detail": str(reason)[:500],
+        "pages": [first, last],
+    })
+    for q in candidates:
+        for detail in validate_question(q, first, last):
+            issues.append({
+                "type": "local_validation",
+                "number": q.get("questionNumber"),
+                "detail": detail,
+            })
+    if not candidates:
+        issues.append({
+            "type": "no_local_candidates",
+            "detail": "No questions identified locally; examine the source PDF.",
+        })
+    record = {
+        "job_id": job_id,
+        "section_index": index,
+        "title": section["title"],
+        "start_page": first,
+        "end_page": last,
+        "status": "needs_review",
+        "questions": [to_json_question(q) for q in candidates],
+        "issues": issues,
+    }
+    DB.table("ai_import_sections").upsert(
+        record, on_conflict="job_id,section_index").execute()
+    update_job(job_id, progress_note=(
+        f"Local review: {len(candidates)} candidate MCQs on pages "
+        f"{first}-{last}; AI unavailable; nothing auto-verified"))
+    return record
+
+
 TEST_SPECIALTIES = {
     "surgery_test_book_1.pdf": "General Surgery",
     "surgery_test_book_2.pdf": "General Surgery",
@@ -836,6 +891,7 @@ def process_job(job):
         meta_row=DB.table("ai_import_jobs").select("book_metadata").eq(
             "id",job_id).single().execute().data or {}
         metadata=meta_row.get("book_metadata")
+        provider_unavailable = False
         if not isinstance(metadata,dict) or not all(
             k in metadata for k in ("title","coverPage","titleEvidence","confidence")
         ):
@@ -848,7 +904,17 @@ def process_job(job):
                 LOG.info("LOCAL PDF metadata recognized job=%s title=%s",
                          job_id,metadata["title"])
             else:
-                metadata=inspect_book_metadata(document,job_id)
+                try:
+                    metadata=inspect_book_metadata(document,job_id)
+                except ProvidersUnavailable as exc:
+                    provider_unavailable = True
+                    metadata = {
+                        "title": "",
+                        "coverPage": 1,
+                        "titleEvidence": "",
+                        "confidence": "low",
+                    }
+                    LOG.warning("Metadata provider unavailable job=%s: %s", job_id, exc)
             update_job(job_id,book_metadata=metadata)
         else:
             LOG.info("Reused validated book title metadata checkpoint job=%s",job_id)
@@ -877,7 +943,18 @@ def process_job(job):
         pages_completed=0
         for section in sections:
             assert_job_active(job_id)
-            record=process_section(document,job,section,[])
+            if provider_unavailable:
+                record=stage_local_review_section(
+                    document,job,section,"AI provider unavailable; local review required")
+            else:
+                try:
+                    record=process_section(document,job,section,[])
+                except ProvidersUnavailable as exc:
+                    provider_unavailable=True
+                    LOG.warning("Provider unavailable job=%s section=%s: %s",
+                                job_id,section["section_index"],exc)
+                    record=stage_local_review_section(
+                        document,job,section,"AI provider unavailable; local review required")
             records.append(record)
             total+=len(record["questions"])
             pages_completed+=section["end_page"]-section["start_page"]+1
