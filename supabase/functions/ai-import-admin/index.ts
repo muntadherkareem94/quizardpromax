@@ -64,7 +64,7 @@ Deno.serve(async (req) => {
     if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id))
       return respond({ error: 'Valid job id required' }, 400);
     const { data: job, error: fetchError } = await db.from('ai_import_jobs')
-      .select('id, status, provider_mode, next_attempt_at, source_path, budget_usd, api_spend_estimate_usd').eq('id', id).single();
+      .select('id, status, provider_mode, next_attempt_at, worker_lock_at, source_path, budget_usd, api_spend_estimate_usd').eq('id', id).single();
     if (fetchError || !job) return respond({ error: 'Job not found' }, 404);
 
     if (action === 'finalize-upload') {
@@ -120,11 +120,13 @@ Deno.serve(async (req) => {
       // is transmitted to Railway or to the browser.
       if (job.provider_mode !== 'free_only')
         return respond({ error: 'Process Now is enabled only for free-only test imports' }, 409);
-      // Idempotent: clicking twice after a successful start is NOT an error.
-      if (job.status === 'processing')
+      // A live worker heartbeats every 15 seconds. Recover only an old claim.
+      const crashed = job.status === 'processing' &&
+        job.worker_lock_at && Date.parse(job.worker_lock_at) < Date.now()-180000;
+      if (job.status === 'processing' && !crashed)
         return respond({ ok: true, already_processing: true, started: false });
-      if (!['queued', 'waiting_provider'].includes(job.status))
-        return respond({ error: 'This book is not queued for processing (status: ' + job.status + ')' }, 409);
+      if (!['queued', 'waiting_provider'].includes(job.status) && !crashed)
+        return respond({ error: 'This book cannot start in state: ' + job.status }, 409);
       if (job.status === 'waiting_provider' && job.next_attempt_at &&
           Date.parse(job.next_attempt_at) > Date.now())
         return respond({
