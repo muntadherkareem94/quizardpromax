@@ -452,6 +452,11 @@ def process_section(document,job,section,common_issues):
         return existing[0]
     questions=[]; issues=[]
     first=section["start_page"]; end=section["end_page"]
+    # Reuse only batches previously processed AND independently source-audited.
+    # This prevents redundant AI calls after free-tier rate limit pauses.
+    saved_batches=DB.table("ai_import_batches").select("*").eq(
+        "job_id",job_id).eq("section_index",section["section_index"]).execute().data or []
+    batch_checkpoints={int(row["start_page"]):row for row in saved_batches}
     # Free vision models have stricter token-per-minute and per-image limits.
     # Process fewer original pages per request, retaining the overlap for MCQs.
     batch_pages = 1 if job.get("provider_mode") == "free_only" else PAGES_PER_BATCH
@@ -459,6 +464,15 @@ def process_section(document,job,section,common_issues):
         finish=min(end,start+batch_pages-1)
         # The overlap helps finish an MCQ spanning the page boundary.
         extended_end=min(end,finish+1)
+        old=batch_checkpoints.get(start)
+        if old and int(old["end_page"])==finish and old["status"] in ("verified","needs_review"):
+            cached=old.get("questions") or []
+            if not isinstance(cached,list):raise ValueError("Corrupted saved batch checkpoint")
+            questions.extend(cached)
+            issues.extend(old.get("issues") or [])
+            LOG.info("Reused saved MCQ audit checkpoint job=%s chapter=%s start_page=%s",
+                     job_id,section["section_index"],start)
+            continue
         mini=page_part(document,start,extended_end)
         prompt=f"""You are a forensic transcription expert. Extract every MCQ whose STEM STARTS
 on original PDF pages {start} through {finish} from the attached PDF, including
@@ -548,6 +562,17 @@ Only correct faults supported by visible text in these PDF pages."""
             batch_issues=audit_candidate(part)
             LOG.info("Re-audit %s pages %s-%s attempt %s: %s issues",
                      job_id,start,finish,attempt+1,len(batch_issues))
+        # Persist each audited page batch BEFORE moving to the next provider call.
+        # Failed chapters remain reviewable; retry does not silently discard text.
+        checkpoint={
+            "job_id":job_id,"section_index":section["section_index"],
+            "start_page":start,"end_page":finish,
+            "status":"needs_review" if batch_issues else "verified",
+            "questions":part,"issues":batch_issues,
+            "updated_at":datetime.now(timezone.utc).isoformat(),
+        }
+        DB.table("ai_import_batches").upsert(
+            checkpoint,on_conflict="job_id,section_index,start_page").execute()
         issues.extend(batch_issues)
         questions.extend(part)
         update_job(job_id,worker_lock_at=datetime.now(timezone.utc).isoformat())
@@ -661,7 +686,16 @@ def process_job(job):
         job["total_pages"]=pages
         sections,global_issues=find_sections(document)
         if len(sections)<1:raise ValueError("No sections detected")
-        metadata=inspect_book_metadata(document,job_id)
+        meta_row=DB.table("ai_import_jobs").select("book_metadata").eq(
+            "id",job_id).single().execute().data or {}
+        metadata=meta_row.get("book_metadata")
+        if not isinstance(metadata,dict) or not all(
+            k in metadata for k in ("title","coverPage","titleEvidence","confidence")
+        ):
+            metadata=inspect_book_metadata(document,job_id)
+            update_job(job_id,book_metadata=metadata)
+        else:
+            LOG.info("Reused validated book title metadata checkpoint job=%s",job_id)
         cover_page=metadata.get("coverPage",1)
         if not isinstance(cover_page,int) or not 1 <= cover_page <= min(5,pages):
             cover_page=1
@@ -671,11 +705,17 @@ def process_job(job):
         else:
             title=clean(metadata.get("title"))
             if title and len(title)<300: update_job(job_id,title_hint=title)
-        # Render the actual source cover/title page; never generate a fictional cover.
-        cover=document[cover_page-1].get_pixmap(matrix=fitz.Matrix(1.3,1.3),alpha=False)
-        cover_bytes=cover.tobytes("png")
-        cover_url=upload_image("ai_import_assets",f"ai-import/{job_id}/cover.png",cover_bytes,"image/png")
-        update_job(job_id,cover_url=cover_url)
+        # Reuse source-derived cover if already staged during a previous attempt.
+        # No artificial covers, and no repeated cover uploads after quota pause.
+        cover_row=DB.table("ai_import_jobs").select("cover_url").eq(
+            "id",job_id).single().execute().data or {}
+        cover_url=cover_row.get("cover_url")
+        if not cover_url:
+            cover=document[cover_page-1].get_pixmap(matrix=fitz.Matrix(1.3,1.3),alpha=False)
+            cover_bytes=cover.tobytes("png")
+            cover_url=upload_image(
+                "ai_import_assets",f"ai-import/{job_id}/cover.png",cover_bytes,"image/png")
+            update_job(job_id,cover_url=cover_url)
         records=[]
         total=0
         pages_completed=0
