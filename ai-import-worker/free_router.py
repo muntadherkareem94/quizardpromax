@@ -161,6 +161,9 @@ class FreeRouter:
         for p in providers:
             name=p["name"]
             bucket=p.get("bucket",name)
+            # Reserve the smaller Flash backup allowance for independent
+            # verification, rather than consuming it on ordinary extraction.
+            if bucket=="gemini_flash" and stage!="verification":continue
             if name==exclude_provider:continue
             if text_source is None and not p["vision"]:continue
             if text_source is None and name=="groq" and page_count>3:continue
