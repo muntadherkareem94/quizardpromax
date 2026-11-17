@@ -181,8 +181,7 @@ async function refresh(){
       loaded=true;
       content.replaceChildren();
       const candidates=(sections||[]).flatMap(section=>
-        (Array.isArray(section.questions)?section.questions:[])
-          .map(q=>({...q,sourceSection:section.section_index,reviewStatus:section.status})));
+        (Array.isArray(section.questions)?section.questions:[]));
       const count=document.createElement('p');count.className='font-semibold mb-2';
       count.textContent=candidates.length+' staged candidate question(s); these have not passed complete source verification.';
       content.appendChild(count);
