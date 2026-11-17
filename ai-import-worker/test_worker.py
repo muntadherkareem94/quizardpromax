@@ -1,6 +1,11 @@
 """Offline smoke tests: no real Supabase, OpenAI calls, or user data."""
 import os
 import unittest
+from unittest.mock import patch
+from types import SimpleNamespace
+from datetime import datetime,timezone
+import json
+import httpx
 import fitz
 from decimal import Decimal
 from cost_guard import (
@@ -12,6 +17,7 @@ os.environ.setdefault("SUPABASE_URL", "https://example.supabase.co")
 os.environ.setdefault("SUPABASE_SERVICE_ROLE_KEY", "not-a-real-service-key")
 os.environ.setdefault("OPENAI_API_KEY", "not-a-real-api-key")
 
+from free_router import (configured, request_provider, FreeRouter, ProvidersUnavailable)
 from worker import (find_sections, validate_question, page_part, EXTRACTION_SCHEMA,
                     normalize_claimed_job, figure_layout, normalize_mcq_options)
 
@@ -158,5 +164,102 @@ class ImportTests(unittest.TestCase):
     def test_strict_schema(self):
         self.assertFalse(EXTRACTION_SCHEMA["additionalProperties"])
         self.assertEqual(EXTRACTION_SCHEMA["properties"]["questions"]["items"]["properties"]["correctAnswerIndex"]["type"],"integer")
+
+
+class FreeRouterTests(unittest.TestCase):
+    SCHEMA={"type":"object","additionalProperties":False,
+            "properties":{"ok":{"type":"boolean"}},"required":["ok"]}
+    def test_configuration_requires_explicit_free_plan_and_cap(self):
+        with patch.dict(os.environ,{"GEMINI_API_KEY":"test-only","GEMINI_FREE_CONFIRMED":"false",
+                                    "GEMINI_DAILY_REQUEST_CAP":"10","GROQ_FREE_CONFIRMED":"false",
+                                    "OPENROUTER_FREE_CONFIRMED":"false"},clear=False):
+            self.assertNotIn("gemini",[p["name"] for p in configured()])
+        with patch.dict(os.environ,{"OPENROUTER_API_KEY":"test-only",
+                                    "OPENROUTER_MODEL":"openai/gpt-6",
+                                    "OPENROUTER_FREE_CONFIRMED":"true",
+                                    "OPENROUTER_DAILY_REQUEST_CAP":"20"},clear=False):
+            self.assertNotIn("openrouter",[p["name"] for p in configured()])
+
+    def test_gemini_pdf_request_schema_validated_offline(self):
+        pdf=fitz.open()
+        pdf.new_page()
+        data=pdf.tobytes()
+        pdf.close()
+        def respond(req):
+            body=json.loads(req.content)
+            self.assertEqual(req.headers["x-goog-api-key"],"test-only")
+            self.assertEqual(body["contents"][0]["parts"][1]["inline_data"]["mime_type"],"application/pdf")
+            return httpx.Response(200,json={"candidates":[{"content":{"parts":[{"text":"{\"ok\":true}"}]}}],
+                "usageMetadata":{"promptTokenCount":30,"candidatesTokenCount":12}})
+        client=httpx.Client(transport=httpx.MockTransport(respond))
+        model={"name":"gemini","model":"gemini-2.5-flash","key":"test-only"}
+        result,ins,outs=request_provider(client,model,"Return JSON",self.SCHEMA,data,"extraction")
+        self.assertEqual(result,{"ok":True})
+        self.assertEqual((ins,outs),(30,12))
+
+    def test_quota_exhaustion_switches_providers_without_paid_api(self):
+        class FakeDB:
+            def __init__(self):
+                self.name=None
+                self.cooldowns=[]
+                self.records=[]
+                self.reservations=0
+            def table(self,name):
+                self.name=name
+                return self
+            def select(self,*args):return self
+            def eq(self,*args):return self
+            def single(self):return self
+            def limit(self,*args):return self
+            def insert(self,obj):
+                self.records.append(obj)
+                return self
+            def upsert(self,obj,**kwargs):
+                self.cooldowns.append(obj)
+                return self
+            def execute(self):
+                if self.name=="ai_import_jobs":data={"file_name":"surgery_test_book_1.pdf"}
+                elif self.name=="ai_import_provider_state":data=[]
+                else:data=[]
+                return SimpleNamespace(data=data)
+            def rpc(self,*args,**kwargs):
+                self.name="ai_reserve_free_provider_request"
+                self.reservations+=1
+                return self
+        # Preserve the original request type and use one real internal fallback.
+        def handler(req):
+            if "generativelanguage.googleapis.com" in str(req.url):
+                return httpx.Response(429,headers={"retry-after":"180"},json={"error":"quota"})
+            self.assertIn("api.groq.com",str(req.url))
+            return httpx.Response(200,json={"choices":[{"message":{"content":"{\"ok\":true}"}}],
+                                             "usage":{"prompt_tokens":22,"completion_tokens":8}})
+        db=FakeDB()
+        client=httpx.Client(transport=httpx.MockTransport(handler))
+        specs=[{"name":"gemini","model":"gemini-2.5-flash","key":"fake","cap":2,"vision":True},
+               {"name":"groq","model":"qwen/qwen3.8-27b","key":"fake","cap":2,"vision":True}]
+        with patch("free_router.configured",return_value=specs):
+            router=FreeRouter(db,client=client,now=lambda:datetime(2026,11,17,tzinfo=timezone.utc))
+            result=router.call(pdf_bytes=b"unused",prompt="Test",schema=self.SCHEMA,
+                     job_id="sample",stage="extraction",page_count=1,text_source="Source question")
+        self.assertEqual(result,{"ok":True})
+        self.assertEqual(router.last_provider,"groq")
+        self.assertEqual(db.reservations,2)
+        self.assertEqual(len(db.records),1)
+        self.assertEqual(db.cooldowns[0]["provider"],"gemini")
+
+    def test_independent_audit_refuses_same_only_provider(self):
+        class FakeDB:
+            def table(self,name):return self
+            def select(self,*args):return self
+            def eq(self,*args):return self
+            def single(self):return self
+            def execute(self):return SimpleNamespace(data={"file_name":"surgery_test_book_1.pdf"})
+        p={"name":"gemini","model":"gemini-2.5-flash","key":"fake","cap":2,"vision":True}
+        with patch("free_router.configured",return_value=[p]):
+            router=FreeRouter(FakeDB())
+            with self.assertRaises(ProvidersUnavailable):
+                router.call(pdf_bytes=b"unused",prompt="Test",schema=self.SCHEMA,
+                            job_id="sample",stage="verification",page_count=1,
+                            text_source="Source",exclude_provider="gemini")
 
 if __name__ == "__main__":unittest.main()
