@@ -52,6 +52,7 @@ class ImportTests(unittest.TestCase):
         blank=doc.new_page()
         self.assertIsNone(safely_selectable_text(doc,1,2))
         doc.delete_page(1)
+        page=doc[0]  # Refresh page reference after the PDF page tree changes.
         pix=fitz.Pixmap(fitz.csRGB,fitz.IRect(0,0,200,100),False)
         page.insert_image(fitz.Rect(100,350,300,450),pixmap=pix)
         self.assertIsNone(safely_selectable_text(doc,1,1))
