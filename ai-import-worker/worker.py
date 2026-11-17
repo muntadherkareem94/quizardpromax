@@ -274,7 +274,7 @@ def finalize_sections(entries,pages):
     return result
 
 def inspect_book_metadata(document,job_id):
-    count=min(4,len(document))
+    count=min(3,len(document))  # Groq vision supports at most 3 images per request
     mini=page_part(document,1,count)
     prompt="""Examine these original PDF pages (first page corresponds to original page 1).
 Identify the real book title, preserving the exact printed title and edition, and
