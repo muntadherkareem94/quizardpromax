@@ -24,6 +24,7 @@ from openai import OpenAI, APIConnectionError, APITimeoutError, RateLimitError, 
 from supabase import create_client
 from cost_guard import (BudgetExceeded, assert_budget, reserve_cost_usd,
                         usage_cost_usd, safely_selectable_text)
+from free_router import FreeRouter, ProvidersUnavailable
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger("quizard-ai-import")
@@ -43,7 +44,10 @@ if OPENAI_SERVICE_TIER not in ("flex", "auto"):
     raise ValueError("OPENAI_SERVICE_TIER must be flex or auto")
 AUTO_PUBLISH = False  # Safety interlock: this branch is staging-only
 DB = create_client(URL, SERVICE_KEY)
-AI = OpenAI(api_key=os.environ["OPENAI_API_KEY"], timeout=900, max_retries=2)
+# The original paid path stays available in code but is OFF by default.
+ALLOW_PAID_OPENAI = os.getenv("ALLOW_PAID_OPENAI", "false").lower() == "true"
+AI = OpenAI(api_key=os.getenv("OPENAI_API_KEY","disabled"), timeout=900, max_retries=2)
+FREE_ROUTER = FreeRouter(DB)
 
 EXTRACTION_SCHEMA = {
     "type": "object", "additionalProperties": False,
@@ -115,8 +119,19 @@ def source_page_text(document, first, last):
     )
 
 def run_structured(pdf_bytes, prompt, schema, name, model, *,
-                   job_id, stage, page_count, text_source=None):
-    """Check per-book budget; use safe text-first or original PDF; account all usage."""
+                   job_id, stage, page_count, text_source=None, exclude_provider=None):
+    """Route explicit free-only jobs to confirmed free models, otherwise paid opt-in."""
+    mode=DB.table("ai_import_jobs").select("provider_mode").eq(
+        "id",job_id).single().execute().data
+    if not mode:
+        raise RuntimeError("Job not found")
+    if mode.get("provider_mode")=="free_only":
+        return FREE_ROUTER.call(
+            pdf_bytes=pdf_bytes,prompt=prompt,schema=schema,job_id=job_id,
+            stage=stage,page_count=page_count,text_source=text_source,
+            exclude_provider=exclude_provider)
+    if not ALLOW_PAID_OPENAI:
+        raise ProvidersUnavailable("Paid OpenAI requests are disabled; select free-only provider mode.",21600)
     max_output_tokens = {
         "metadata": 1500, "extraction": 12000,
         "verification": 4500, "repair": 12000,
@@ -259,7 +274,7 @@ def finalize_sections(entries,pages):
     return result
 
 def inspect_book_metadata(document,job_id):
-    count=min(5,len(document))
+    count=min(4,len(document))
     mini=page_part(document,1,count)
     prompt="""Examine these original PDF pages (first page corresponds to original page 1).
 Identify the real book title, preserving the exact printed title and edition, and
@@ -463,6 +478,7 @@ advertisements, table of contents, and standalone answer explanations without st
                               page_count=extended_end-start+1,text_source=text_source)
         part=[q for q in result.get("questions",[]) if
               isinstance(q.get("sourcePage"),int) and start <= q["sourcePage"] <= finish]
+        extraction_provider=FREE_ROUTER.last_provider if job.get("provider_mode")=="free_only" else None
         def audit_candidate(candidate):
             verifier_prompt=f"""Act as an independent source-audit reviewer. Read ALL original PDF
 pages {start}-{extended_end}, where attached PDF page 1 corresponds to original {start}.
@@ -479,7 +495,9 @@ CANDIDATE JSON:
             check=run_structured(mini,verifier_prompt,VERIFICATION_SCHEMA,
                                  "quizard_source_audit",VERIFY_MODEL,
                                  job_id=job_id,stage="verification",
-                                 page_count=extended_end-start+1)
+                                 page_count=extended_end-start+1,
+                                 text_source=text_source,
+                                 exclude_provider=extraction_provider)
             reported=[]
             original=[int(x) for x in check["questionNumbersInSource"]]
             captured=[q["questionNumber"] for q in candidate]
@@ -523,6 +541,7 @@ Only correct faults supported by visible text in these PDF pages."""
                                     page_count=extended_end-start+1,text_source=text_source)
             part=[q for q in repaired.get("questions",[]) if
                   isinstance(q.get("sourcePage"),int) and start <= q["sourcePage"] <= finish]
+            extraction_provider=FREE_ROUTER.last_provider if job.get("provider_mode")=="free_only" else None
             batch_issues=audit_candidate(part)
             LOG.info("Re-audit %s pages %s-%s attempt %s: %s issues",
                      job_id,start,finish,attempt+1,len(batch_issues))
@@ -715,6 +734,12 @@ def main():
                 LOG.error("Failed job %s: %s\n%s",job["id"],exc,traceback.format_exc())
                 if isinstance(exc,BudgetExceeded):
                     update_job(job["id"],status="paused_budget",last_error=str(exc)[:2000])
+                    continue
+                if isinstance(exc,ProvidersUnavailable):
+                    update_job(job["id"],status="waiting_provider",
+                        next_attempt_at=(datetime.now(timezone.utc)+
+                                         __import__("datetime").timedelta(seconds=exc.retry_seconds)).isoformat(),
+                        last_error=str(exc)[:500])
                     continue
                 quota_exhausted=(
                     isinstance(exc,RateLimitError)
