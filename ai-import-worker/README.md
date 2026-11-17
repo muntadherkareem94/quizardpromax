@@ -12,7 +12,7 @@ The production Supabase project has only the following *new* isolated resources:
 - `public.ai_claim_import_job()` service-role-only, invoker-security queue function.
 - `ai-import-admin` Edge Function, authorized full admins only, with JWT verification.
 
-**No publication RPC exists.** The AI worker *cannot* insert into the existing `books`, `chapters`, or `questions` tables. `AUTO_PUBLISH` is hard-disabled in code. Existing Quizard payments, subscribers, quiz access and books remain unchanged.
+**Production auto-publication is disabled.** A separate `ai_publish_test_import` RPC is now installed solely for the four synthetic PDFs named `surgery_test_book_1.pdf`, `surgery_test_book_2.pdf`, `gynecology_test_book_1.pdf`, and `gynecology_test_book_2.pdf`. For these, the worker creates real Quizard books/chapters/questions with `access_level='test'` (admin-only via restrictive RLS; excluded from store/plans and new-book notifications). It copies source-extracted covers and figures into the existing public image buckets and leaves source-review issues visible. Other PDFs remain in private staging and are not published.
 
 ## What the worker does
 
@@ -46,3 +46,15 @@ The production Supabase project has only the following *new* isolated resources:
 - Even without a paid Supabase development branch, storage, Railway compute and OpenAI API usage can generate charges.
 
 **Current safety policy:** no production merge or publication until licensed sample-PDF pilot and accuracy review. The hourly staging worker is deployed; no PDF jobs have yet been queued. Railway compute and model API processing may incur usage charges.
+
+## One-batch 4-PDF end-to-end smoke test
+
+1. Download the four synthetic PDFs generated in the ChatGPT conversation and select all four in `ai_book_import.html` on the Netlify feature preview.
+2. The per-file selectors must assign two PDFs to **General Surgery** and two to **Obstetrics & Gynecology - General**.
+3. The Railway worker runs hourly UTC and exits when the queue empties; `RUN_ONCE=true`, `MAX_PAGES_PER_JOB=10`.
+4. Each synthetic PDF is imported as one hidden TEST-tier book with an original-source cover, one nonempty chapter and four questions. The test report displays live database counts and image links. Expected across four: **4 books, 4 chapters, 16 MCQs, 4 covers, 8 question images and 8 explanation images**.
+5. Any image association or source-verification issues remain visible. The test tier is to verify operational plumbing, not a claim that extracted source content is automatically verified.
+6. Admins may remove a test book using `Remove test book`; the Edge Function invokes `ai_remove_test_import`, which only deletes test-tier books tagged with the matching job ID.
+7. **A database-only transaction dry-run** verified that four fixture rows create the correct four books, four chapters, sixteen questions, two Surgery specialties, two Gynecology specialties and four cover-link fields; the transaction was rolled back. Full browser-to-PDF processing of the four real files remains to be tested.
+
+**Warning:** OpenAI API and Railway processing are paid separately. The monthly project limit protects OpenAI usage, not Railway. Never merge this feature branch or make real textbooks visible to customers without further validation and a separate production release.
