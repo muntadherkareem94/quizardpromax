@@ -452,8 +452,11 @@ def process_section(document,job,section,common_issues):
         return existing[0]
     questions=[]; issues=[]
     first=section["start_page"]; end=section["end_page"]
-    for start in range(first,end+1,PAGES_PER_BATCH):
-        finish=min(end,start+PAGES_PER_BATCH-1)
+    # Free vision models have stricter token-per-minute and per-image limits.
+    # Process fewer original pages per request, retaining the overlap for MCQs.
+    batch_pages = 1 if job.get("provider_mode") == "free_only" else PAGES_PER_BATCH
+    for start in range(first,end+1,batch_pages):
+        finish=min(end,start+batch_pages-1)
         # The overlap helps finish an MCQ spanning the page boundary.
         extended_end=min(end,finish+1)
         mini=page_part(document,start,extended_end)
