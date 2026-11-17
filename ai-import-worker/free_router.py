@@ -15,7 +15,9 @@ SYNTHETIC={"surgery_test_book_1.pdf","surgery_test_book_2.pdf",
 class ProvidersUnavailable(RuntimeError):
     def __init__(self,reason,retry_seconds=3600):
         super().__init__(reason)
-        self.retry_seconds=max(300,min(86400,int(retry_seconds)))
+        # Retries are bounded by actual Retry-After/provider limits, not an
+        # arbitrary 5-minute floor after short temporary service outages.
+        self.retry_seconds=max(45,min(86400,int(retry_seconds)))
 
 class ProviderFault(RuntimeError):
     def __init__(self,name,status,retry_seconds=3600):
@@ -72,8 +74,14 @@ def render_pages(pdf):
     finally:doc.close()
 
 def retry_seconds(headers,status):
-    try:return min(86400,max(60,int(float(headers.get("retry-after","")))))
-    except (ValueError,TypeError):return 3600 if status==429 else 1200
+    try:
+        return min(86400,max(1,int(float(headers.get("retry-after","")))))
+    except (ValueError,TypeError):
+        # Temporary 503s are NOT exhausted daily credits. A 20-minute
+        # cooldown needlessly stranded the pilot; 429s remain rate-limited.
+        if status in (500,502,503,504):return 45
+        if status==429:return 180
+        return 21600
 
 def request_provider(client,p,prompt,schema,pdf,stage):
     name=p["name"]
@@ -173,8 +181,10 @@ class FreeRouter:
         for p in providers:
             name=p["name"]
             bucket=p.get("bucket",name)
-            # Only explicitly approved backup model, only for source-audit.
-            if bucket=="gemini_flash" and stage!="verification":continue
+            # Backup is restricted to verification and discrepancy repair.
+            # A repaired transcript MUST undergo a separate new audit with
+            # a different model; it cannot verify its own output.
+            if bucket=="gemini_flash" and stage not in ("verification","repair"):continue
             # Do not re-use the SAME MODEL as extraction for the audit.
             # The original excluded the whole Gemini company, inadvertently
             # disabling the independently configured Gemini Flash verifier.
