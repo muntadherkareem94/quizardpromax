@@ -160,14 +160,25 @@ class FreeRouter:
             os.getenv("FREE_API_REAL_BOOKS_APPROVED","").lower()!="true"):
             raise ProvidersUnavailable("Real textbooks need explicit third-party sharing approval",86400)
         providers=configured()
+        # Verification is a different MODEL from extraction, not necessarily
+        # a different vendor account. Prefer the independently configured
+        # Gemini Flash model for source-auditing, then the Lite model (when
+        # it did not extract the candidate), then Groq. This avoids Groq's
+        # particularly restrictive 8K tokens/minute vision verification cap.
+        if stage=="verification":
+            priority={"gemini_flash":0,"gemini":1,"groq":2}
+            providers.sort(key=lambda p:priority.get(
+                p.get("bucket",p["name"]),3))
         wait=[]
         for p in providers:
             name=p["name"]
             bucket=p.get("bucket",name)
-            # Reserve the smaller Flash backup allowance for independent
-            # verification, rather than consuming it on ordinary extraction.
+            # Only explicitly approved backup model, only for source-audit.
             if bucket=="gemini_flash" and stage!="verification":continue
-            if name==exclude_provider:continue
+            # Do not re-use the SAME MODEL as extraction for the audit.
+            # The original excluded the whole Gemini company, inadvertently
+            # disabling the independently configured Gemini Flash verifier.
+            if bucket==exclude_provider:continue
             if text_source is None and not p["vision"]:continue
             if text_source is None and name=="groq" and page_count>3:continue
             states=self.db.table("ai_import_provider_state").select("cooldown_until").eq(
@@ -191,7 +202,7 @@ class FreeRouter:
                 self.db.table("ai_import_provider_calls").insert({
                     "job_id":job_id,"provider":name,"model":p["model"],"stage":stage,
                     "input_tokens":ins,"output_tokens":outs}).execute()
-                self.last_provider=name
+                self.last_provider=bucket
                 LOG.info("Free provider completed %s model %s stage %s",
                          name,p["model"],stage)
                 return data
@@ -205,6 +216,6 @@ class FreeRouter:
                     "updated_at":self.now().isoformat()},on_conflict="provider").execute()
                 wait.append(exc.retry_seconds)
         reason="No eligible free provider currently available for "+stage
-        if exclude_provider:reason+="; independent verification requires another provider"
+        if exclude_provider:reason+="; independent verification requires a different model"
         if not providers:reason="No confirmed free providers configured; add keys and daily limits in Railway"
         raise ProvidersUnavailable(reason,min(wait,default=21600))
