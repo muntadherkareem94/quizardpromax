@@ -156,12 +156,34 @@ def find_sections(document):
             line = re.sub(r"\s+"," ",line.strip())
             if regex.fullmatch(line) and len(line) < 135 and p not in seen:
                 entries.append((line,p));seen.add(p);break
-    if len(entries) >= 2: return finalize_sections(entries,pages), []
+    if entries:
+        entries = refine_duplicate_chapter_headings(document, entries)
+        if entries: return finalize_sections(entries,pages), []
     # Never silently create fictitious chapter titles.
     return [dict(section_index=1,title="Unclassified questions",start_page=1,end_page=pages)], [
         {"type":"chapters_unverified","detail":
          "No reliable PDF bookmarks or chapter headings found. Chapter structure needs verification."}
     ]
+
+def refine_duplicate_chapter_headings(document, entries):
+    """A frontmatter chapter teaser is not a separate chapter when its number is
+    repeated immediately before the MCQs begin. Keep the *real* heading."""
+    result=[]
+    def chapter_id(title):
+        match=re.match(r"^\s*(?:chapter|ch\.|section)\s*(\d+)[a-z]?\b",title,re.I)
+        return int(match.group(1)) if match else None
+    for title, page in sorted(entries,key=lambda z:z[1]):
+        if result:
+            previous_title,previous_page=result[-1]
+            same=chapter_id(title) is not None and chapter_id(title)==chapter_id(previous_title)
+            near=0 < page-previous_page <= 2
+            has_mcq=re.search(r"(?:^|\n)\s*(?:Question|Q)\s+\d+\s*[.):]",
+                              document[previous_page-1].get_text(sort=True),re.I)
+            if same and near and not has_mcq:
+                result[-1]=(title,page)
+                continue
+        result.append((title,page))
+    return result
 
 def finalize_sections(entries,pages):
     result=[]
@@ -230,47 +252,117 @@ def upload_image(bucket,path,data,mime):
     DB.storage.from_(bucket).upload(path,data,{"content-type":mime,"upsert":"true"})
     return "staging://" + bucket + "/" + path
 
-def attach_figures(document,job,section_index,questions):
-    """Fail closed on ambiguous figure associations rather than attach wrong images."""
+def figure_layout(document, first, last):
+    """Assign embedded raster figures to preceding numbered MCQ anchors in reading order.
+    A source label near the image is required to classify question vs explanation.
+    This permits adjacent-page figures and multiple questions on one PDF page.
+    Returns image layout metadata only; no uploads or model calls.
+    """
+    anchors=[]
+    images=[]
+    qpat=re.compile(r"(?:^|\n)\s*(?:Question|Q)\s+(\d+)\s*[.):]",re.I)
+    for page_number in range(first,last+1):
+        page=document[page_number-1]
+        blocks=[(fitz.Rect(b[:4]),str(b[4]).strip())
+                for b in page.get_text("blocks") if len(b)>=5 and isinstance(b[4],str)]
+        for rect,txt in blocks:
+            m=qpat.search(txt)
+            if m:
+                anchors.append((page_number,rect.y0,int(m.group(1))))
+        for xref,rect in detect_raster_figures(document,page_number):
+            labels=[]
+            for lr,txt in blocks:
+                kind=None
+                if re.fullmatch(r"Question Image",txt,re.I): kind="question"
+                elif re.fullmatch(r"Explanation Image",txt,re.I): kind="explanation"
+                if kind is not None:
+                    gap=lr.y0-rect.y1
+                    if -35<=gap<=65:
+                        labels.append((abs(gap),kind))
+            labels.sort()
+            kind=None
+            if len(labels)==1 or (len(labels)>1 and labels[0][0]+10<labels[1][0]):
+                kind=labels[0][1]
+            images.append((page_number,rect.y0,kind,xref,rect))
+    mapped={}
     issues=[]
-    pages=Counter(q["sourcePage"] for q in questions if isinstance(q.get("sourcePage"),int))
-    used=set()
+    ids=[a[2] for a in anchors]
+    if len(set(ids))!=len(ids):
+        issues.append({"type":"figure_anchor","detail":"Repeated MCQ number in PDF layout: cannot match images safely"})
+        return {},issues
+    for page_number,y0,kind,xref,rect in images:
+        preceding=[a for a in anchors if a[0]<page_number or (a[0]==page_number and a[1]<=y0)]
+        if not preceding:
+            issues.append({"type":"figure_unmatched","page":page_number,
+                           "detail":"Image appears before any question stem in this chapter"})
+            continue
+        owner=max(preceding,key=lambda a:(a[0],a[1]))[2]
+        if kind is None:
+            issues.append({"type":"figure_unclassified","page":page_number,"number":owner,
+                           "detail":"No unambiguous Question Image/Explanation Image source label"})
+            continue
+        mapped.setdefault(owner,[]).append((kind,page_number,xref,rect))
+    return mapped,issues
+
+
+def upload_image(bucket,path,data,mime):
+    # Stage image bytes in PRIVATE bucket: never publish source figures before approval.
+    if bucket != "ai_import_assets":
+        raise ValueError("Only the private staging asset bucket is allowed")
+    DB.storage.from_(bucket).upload(path,data,{"content-type":mime,"upsert":"true"})
+    return "staging://" + bucket + "/" + path
+
+
+def attach_figures(document,job,section_index,questions,first,last):
+    """Fail closed unless source geometry and labels provide a unique match."""
+    mapped,issues=figure_layout(document,first,last)
+    expected_numbers={q.get("questionNumber") for q in questions}
+    for number in mapped:
+        if number not in expected_numbers:
+            issues.append({"type":"figure_unmatched","number":number,
+                           "detail":"Image belongs to a PDF question not found in extracted JSON"})
     for q in questions:
-        page=q.get("sourcePage")
-        if not isinstance(page,int) or not 1 <= page <= len(document):continue
-        need_q=bool(q.get("figureInQuestion"))
-        need_e=bool(q.get("figureInExplanation"))
-        if not need_q and not need_e: continue
-        figures=detect_raster_figures(document,page)
         number=q.get("questionNumber")
-        if len(figures)==0:
-            issues.append({"page":page,"number":number,"type":"figure",
-                           "detail":"Figure indicated but no embedded raster image. Possible vector figure or adjacent page."})
-            continue
-        if pages[page]!=1 or (need_q and need_e):
-            issues.append({"page":page,"number":number,"type":"figure",
-                           "detail":"Ambiguous figure ownership/type. Multiple questions or figure contexts on this page."})
-            continue
-        urls=[]
-        for idx,(xref,rect) in enumerate(figures,1):
-            key=(page,xref)
-            if key in used: continue
-            used.add(key)
-            # Crop rendered page to retain layered annotations and figure labels.
-            pix=document[page-1].get_pixmap(matrix=fitz.Matrix(2,2),clip=rect,alpha=False)
-            data=pix.tobytes("png")
-            path=f"ai-import/{job['id']}/ch{section_index}/{number}{'e' if need_e else 'q'}{idx}.png"
-            urls.append(upload_image("ai_import_assets",path,data,"image/png"))
-        if urls:
-            field="explanationImageUrls" if need_e else "imageUrls"
-            field_first="explanationImageUrl" if need_e else "imageUrl"
-            q[field]=urls;q[field_first]=urls[0]
+        assigned=mapped.get(number,[])
+        for kind,key,plural,single in (
+            ("question","figureInQuestion","imageUrls","imageUrl"),
+            ("explanation","figureInExplanation","explanationImageUrls","explanationImageUrl"),
+        ):
+            need=bool(q.get(key))
+            candidates=[(p,x,r) for k,p,x,r in assigned if k==kind]
+            if bool(candidates)!=need:
+                issues.append({"type":"figure_mismatch","number":number,
+                               "detail":f"PDF {kind} figure presence differs from AI extraction"})
+                continue
+            if not candidates:continue
+            urls=[]
+            for idx,(page_number,xref,rect) in enumerate(candidates,1):
+                pix=document[page_number-1].get_pixmap(
+                    matrix=fitz.Matrix(2,2),clip=rect,alpha=False)
+                path=f"ai-import/{job['id']}/ch{section_index}/{number}{'q' if kind=='question' else 'e'}{idx}.png"
+                urls.append(upload_image("ai_import_assets",path,pix.tobytes("png"),"image/png"))
+            q[plural]=urls
+            q[single]=urls[0]
     return issues
 
+
+def normalize_mcq_options(q):
+    """Quizard shows A/B/C itself. Remove only an entire sequential label set."""
+    opts=q.get("options")
+    if not isinstance(opts,list) or not (2<=len(opts)<=10):return
+    matches=[re.match(r"^\s*([A-J])[\).:]\s+(.+)$",s,re.S) if isinstance(s,str) else None
+             for s in opts]
+    if all(matches) and all(m.group(1)==chr(65+i) for i,m in enumerate(matches)):
+        q["options"]=[m.group(2).strip() for m in matches]
+
+
 def to_json_question(q):
+    normalize_mcq_options(q)
     return {k:q.get(k) for k in
             ("questionNumber","question","options","correctAnswerIndex","explanation",
-             "imageUrl","imageUrls","explanationImageUrl","explanationImageUrls")}
+             "imageUrl","imageUrls","explanationImageUrl","explanationImageUrls",
+             "sourcePage","answerEvidence","figureInQuestion","figureInExplanation")}
+
 
 def process_section(document,job,section,common_issues):
     job_id=job["id"]
@@ -376,7 +468,7 @@ Only correct faults supported by visible text in these PDF pages."""
             issues.append({"type":"duplicate_number","number":number,
                            "detail":"Duplicate original question number within the chapter"})
         seen_numbers.add(number)
-    issues.extend(attach_figures(document,job,section["section_index"],questions))
+    issues.extend(attach_figures(document,job,section["section_index"],questions,first,end))
     if common_issues:
         issues.extend(common_issues)
     state="needs_review" if issues else "verified"
