@@ -18,10 +18,21 @@ os.environ.setdefault("SUPABASE_SERVICE_ROLE_KEY", "not-a-real-service-key")
 os.environ.setdefault("OPENAI_API_KEY", "not-a-real-api-key")
 
 from free_router import (configured, request_provider, FreeRouter, ProvidersUnavailable)
+from server import valid_signature
+import hashlib, hmac
 from worker import (find_sections, validate_question, page_part, EXTRACTION_SCHEMA,
                     normalize_claimed_job, figure_layout, normalize_mcq_options)
 
 class ImportTests(unittest.TestCase):
+    def test_on_demand_signature_and_expiry(self):
+        job_id="25a9dcf4-be33-470b-9a94-0ca542aacbb2"
+        timestamp="1794916500"
+        sig=hmac.new(b"not-a-real-service-key",f"{job_id}:{timestamp}".encode(),hashlib.sha256).hexdigest()
+        self.assertTrue(valid_signature(job_id,timestamp,sig,now=1794916500))
+        self.assertFalse(valid_signature(job_id,timestamp,sig,now=1794916700))
+        self.assertFalse(valid_signature(job_id,timestamp,"a"*64,now=1794916500))
+        self.assertFalse(valid_signature("non-uuid",timestamp,sig,now=1794916500))
+
     def test_flex_costs_and_cached_input_tokens(self):
         self.assertEqual(rate("gpt-6.1-sol","flex")[:2],(Decimal("1"),Decimal("5")))
         self.assertEqual(rate("gpt-6-astra","flex")[:2],(Decimal("5"),Decimal("25")))
