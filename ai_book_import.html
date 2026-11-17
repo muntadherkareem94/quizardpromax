@@ -152,6 +152,12 @@ async function refresh(){
       ? 'Estimated API: $'+spent.toFixed(4)+' / $'+budget.toFixed(2)+' ('+job.api_request_count+' calls)'
       : 'Legacy budget $'+budget.toFixed(2)+(job.status==='published'?' — previous import, usage not tracked':' — no recorded API calls'));
   prog.appendChild(cost);
+  if(job.progress_note && ['processing','waiting_provider','queued'].includes(job.status)){
+    const stage=document.createElement('p');
+    stage.className='text-xs mt-2 text-indigo-700';
+    stage.textContent=job.progress_note;
+    prog.appendChild(stage);
+  }
   const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
   if(job.status==='waiting_provider' && job.next_attempt_at){
     const wait=document.createElement('p');wait.className='text-xs text-indigo-700 mt-2';
@@ -162,7 +168,9 @@ async function refresh(){
   const issues=Array.isArray(job.review_issues)?job.review_issues:[];
   if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
   const act=make();
-  if(job.provider_mode==='free_only' && ['queued','waiting_provider'].includes(job.status)){
+  const recoverable=job.status==='processing' && job.worker_lock_at &&
+    Date.parse(job.worker_lock_at)<Date.now()-180000;
+  if(job.provider_mode==='free_only' && (['queued','waiting_provider'].includes(job.status)||recoverable)){
     const cooldown=job.status==='waiting_provider' && job.next_attempt_at
       && Date.parse(job.next_attempt_at)>Date.now();
     if(cooldown){
@@ -172,7 +180,7 @@ async function refresh(){
         new Date(job.next_attempt_at).toLocaleTimeString();
       act.appendChild(message);
     }else{
-      const start=button('▶ Process Now','process-now',job.id);
+      const start=button(recoverable?'↻ Recover & Process Now':'▶ Process Now','process-now',job.id);
       start.className='inline-block bg-indigo-600 text-white text-sm rounded-md px-3 py-2 mr-2 mb-2 hover:bg-indigo-700 font-semibold';
       start.title='Start this single book immediately; free provider cooldowns are still respected.';
       act.appendChild(start);
