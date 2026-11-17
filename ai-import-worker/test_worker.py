@@ -316,7 +316,7 @@ class FreeRouterTests(unittest.TestCase):
         def handler(req):
             called_models.append(str(req.url))
             return httpx.Response(200,json={
-                "candidates":[{"content":{"parts":[{"text":"{\\"ok\\":true}"}]}}],
+                "candidates":[{"content":{"parts":[{"text":json.dumps({"ok":True})}]}}],
                 "usageMetadata":{"promptTokenCount":30,"candidatesTokenCount":8}
             })
         sources=[
