@@ -64,6 +64,12 @@ def request_provider(client,p,prompt,schema,pdf,stage):
     full_prompt=prompt+"\nReturn only source-faithful JSON satisfying this schema:\n"+json.dumps(schema)
     headers={"Accept":"application/json"}
     output_cap={"metadata":1500,"extraction":12000,"verification":4500,"repair":12000}[stage]
+    # Groq's free Qwen vision account can have an 8K TPM limit. Reserving
+    # 12K output tokens alone would trigger HTTP 429 before generation.
+    # A one-page batch (+one overlap page) keeps input image costs bounded.
+    if name=="groq":
+        output_cap=min(output_cap,{"metadata":1200,"extraction":2400,
+                                   "verification":1800,"repair":2400}[stage])
     if name=="gemini":
         url="https://generativelanguage.googleapis.com/v1beta/models/"+p["model"]+":generateContent"
         headers["x-goog-api-key"]=p["key"]
