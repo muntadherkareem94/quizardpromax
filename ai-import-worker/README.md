@@ -71,3 +71,53 @@ The production Supabase project has only the following *new* isolated resources:
 - `OPENAI_SERVICE_TIER=flex` requests the discounted tier. Responses may take longer and capacity can be unavailable; retries do not silently upgrade to standard processing.
 - This feature has offline unit tests and a rollback-only SQL ledger test; **it has not been verified against a newly purchased OpenAI PDF processing request**. The prior 4-PDF end-to-end test predates these cost optimizations.
 - Existing synthetic-test publisher remains restricted to the four fixture filenames, and real textbook auto-publication stays disabled.
+
+## Free-first multi-provider router (staging, 17 Nov 2026)
+
+**New PDF jobs have `provider_mode=free_only`** and paid OpenAI is disabled
+unless `ALLOW_PAID_OPENAI=true` is explicitly set for legacy jobs.
+This branch has no automatic paid fallback. Do **not** enable paid fallback during free-tier tests.
+
+5 configured adapters: Gemini (native inline PDF), Groq (page renders with a
+vision-capable model or plain selectable text), Mistral (text only), OpenRouter
+(text only with explicit model suffix `:free`), and Cloudflare Workers AI (text only).
+The router refuses visually complex source pages on text-only models.
+
+The router requires, *for each provider*: an API key, `X_FREE_CONFIRMED=true`
+after reviewing the provider's actual account/model free-tier and commercial
+terms, plus `X_DAILY_REQUEST_CAP` set below the actual published/account quota.
+Without those settings, that provider is SKIPPED. This does not work around
+provider rules through extra identities or keys. Quotas and models may change.
+
+The `ai_import_provider_daily` table atomically counts request reservations per
+provider per UTC day; `ai_import_provider_state` stores per-provider cooldowns
+on 429 or errors; `ai_import_provider_calls` records successfully completed
+requests and token quantities when reported. An independent verification stage
+CANNOT reuse the extraction provider. Schema-invalid output never counts as a
+verified question. The worker retains verified chapter checkpoints, and marks
+jobs `waiting_provider` with `next_attempt_at` for later automatic pickup.
+
+**Privacy:** Unpaid AI services may use your input/output for training or
+human review. `FREE_API_REAL_BOOKS_APPROVED=false` blocks real books from
+being sent to free services until you separately confirm rights and sharing
+terms. Only the four synthetic test PDF names are eligible by default.
+Never submit private patient data to a free tier.
+
+**Quality / limitations:** This implementation has mock-network tests for
+free-model JSON parsing and 429 failover. LIVE provider correctness and
+available quotas are NOT yet verified. The baseline 4-book successful test
+used OpenAI before these changes. The claim of processing 10 full textbooks
+a day for USD 10/month is NOT proven. No free API can promise uninterrupted
+work if all provider quotas are exhausted.
+
+**Connect keys in Railway staging (server-side only):**
+- Gemini: https://aistudio.google.com/apikey
+- Groq: https://console.groq.com/keys
+- Mistral: https://console.mistral.ai
+- OpenRouter: https://openrouter.ai/settings/keys
+- Cloudflare: https://dash.cloudflare.com (Workers AI account/token)
+
+Start by enabling Gemini + Groq for synthetic PDFs. Verify at least two
+independent vision-capable providers or the auditor will pause on illustrated
+pages. Introduce Mistral / OpenRouter / Cloudflare for text-only chapters
+after benchmark accuracy. Keep `MAX_PAGES_PER_JOB=10` until measured tests pass.
