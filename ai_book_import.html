@@ -77,7 +77,18 @@ function pct(job){return job.total_pages?Math.round(100*job.processed_pages/job.
 function button(text, action,id){const b=document.createElement('button');b.textContent=text;b.className='text-indigo-700 font-semibold mr-3 mb-1';b.addEventListener('click',()=>runAction(action,id));return b}
 async function invoke(action,payload={}){
  const {data,error}=await supabase.functions.invoke('ai-import-admin',{body:{action,...payload}});
- if(error)throw error;
+ if(error){
+   let message=error.message||'Import request failed';
+   // Supabase FunctionsHttpError includes the Edge Function's Response.
+   // Display its useful server error, not only "non-2xx status code".
+   try{
+     if(error.context && typeof error.context.json==='function'){
+       const details=await error.context.json();
+       if(typeof details?.error==='string')message=details.error;
+     }
+   }catch(parseError){console.warn('Could not parse import response',parseError)}
+   throw new Error(message);
+ }
  if(data?.error)throw new Error(data.error);
  return data;
 }
@@ -97,7 +108,7 @@ async function runAction(action,id){
      notice('Book budget updated. If paused, click Retry.');await refresh();
    }else{
      if(action==='cancel' && !confirm('Cancel this import job?'))return;
-     if(action==='remove-test' && !confirm('Delete this synthetic test book, chapters and questions from Quizard?'))return;
+     if(action==='remove-test' && !confirm('Remove this synthetic test book and clear its import record? Ordinary Quizard books will not be touched.'))return;
      await invoke(action,{id}); notice('Job updated.');await refresh();
    }
  }catch(e){notice(e.message,true)}
@@ -155,6 +166,13 @@ async function renderTestReport(jobs){
    return;
  }
  const books=booksRes.data||[],chapters=chaptersRes.data||[],qs=questionsRes.data||[];
+ const missing=published.filter(j=>!books.some(book=>book.id===j.book_id));
+ if(missing.length){
+   const warning=document.createElement('p');
+   warning.className='text-sm text-red-700 font-semibold mb-3';
+   warning.textContent=missing.length+' import record(s) are marked published, but their book records are already missing. Use Remove test book to clear each stale record.';
+   container.appendChild(warning);
+ }
  const covers=books.filter(b=>b.image).length,qi=qs.filter(q=>q.imageUrl).length,ei=qs.filter(q=>q.explanationImageUrl).length;
  const surg=books.filter(b=>b.speciality==='General Surgery').length;
  const gyn=books.filter(b=>b.speciality==='Obstetrics & Gynecology - General').length;
