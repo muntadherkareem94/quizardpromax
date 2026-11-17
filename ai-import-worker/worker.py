@@ -25,6 +25,7 @@ from supabase import create_client
 from cost_guard import (BudgetExceeded, assert_budget, reserve_cost_usd,
                         usage_cost_usd, safely_selectable_text)
 from free_router import FreeRouter, ProvidersUnavailable
+from local_mcq import extract_local_section, local_book_metadata
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger("quizard-ai-import")
@@ -40,6 +41,7 @@ MAX_PAGES_PER_JOB = max(1, int(os.getenv("MAX_PAGES_PER_JOB", "30")))  # Pilot c
 # Flex uses the same requested model at Batch-rate prices (slower and sometimes unavailable).
 OPENAI_SERVICE_TIER = os.getenv("OPENAI_SERVICE_TIER", "flex").lower()
 TEXT_FIRST_ENABLED = os.getenv("TEXT_FIRST_ENABLED", "true").lower() == "true"
+LOCAL_FIRST_ENABLED = os.getenv("LOCAL_FIRST_ENABLED", "true").lower() == "true"
 if OPENAI_SERVICE_TIER not in ("flex", "auto"):
     raise ValueError("OPENAI_SERVICE_TIER must be flex or auto")
 AUTO_PUBLISH = False  # Safety interlock: this branch is staging-only
@@ -486,6 +488,64 @@ def process_section(document,job,section,common_issues):
         "job_id",job_id).eq("section_index",section["section_index"]).execute().data
     if existing and existing[0]["status"] == "verified":
         return existing[0]
+
+    # First-choice zero-token path: directly transcribe original selectable PDF
+    # text, compare printed answer letters to option text and source figures,
+    # and reject any incomplete or ambiguous MCQ. No AI call is made.
+    if LOCAL_FIRST_ENABLED and job.get("provider_mode") == "free_only":
+        first_page,end_page=section["start_page"],section["end_page"]
+        update_job(job_id,progress_note=f"Local PDF extraction: pages {first_page}-{end_page}")
+        local=extract_local_section(document,first_page,end_page)
+        if local["strict_pass"] and local["questions"]:
+            candidate=local["questions"]
+            issues=[]
+            for q in candidate:
+                issues.extend({"type":"local_validation","number":q.get("questionNumber"),
+                               "detail":problem} for problem in validate_question(
+                                  q,first_page,end_page))
+            # Keep identical figure-upload semantics and naming as existing
+            # Quizard imports. A mismatch remains a review issue, never success.
+            issues.extend(attach_figures(document,job,section["section_index"],
+                                         candidate,first_page,end_page))
+            issues.extend(common_issues)
+            record={
+                "job_id":job_id,"section_index":section["section_index"],
+                "title":section["title"],"start_page":first_page,
+                "end_page":end_page,
+                "status":"needs_review" if issues else "verified",
+                "questions":[to_json_question(q) for q in candidate],
+                "issues":issues,
+            }
+            DB.table("ai_import_sections").upsert(
+                record,on_conflict="job_id,section_index").execute()
+            # A verified LOCAL chapter supersedes stale AI batch checkpoints
+            # from interrupted previous runs. Never count old/new twice.
+            DB.table("ai_import_batches").delete().eq("job_id",job_id).eq(
+                "section_index",section["section_index"]).execute()
+            DB.table("ai_import_batches").upsert({
+                "job_id":job_id,"section_index":section["section_index"],
+                "start_page":first_page,"end_page":end_page,
+                "status":"needs_review" if issues else "verified",
+                "questions":candidate,"issues":issues,
+                "extraction_provider":"local_pdf",
+                "updated_at":datetime.now(timezone.utc).isoformat(),
+            },on_conflict="job_id,section_index,start_page").execute()
+            update_job(job_id,processed_pages=end_page,
+                       verified_questions=(len(candidate) if not issues else 0),
+                       progress_note=(f"LOCAL source validation: "
+                         f"{len(candidate) if not issues else 0}/{len(candidate)} "
+                         f"verified MCQs in {local['elapsed_ms']} ms; "
+                         "no AI tokens used for this chapter"))
+            LOG.info("LOCAL PDF chapter job=%s chapter=%s questions=%s issues=%s duration_ms=%s",
+                     job_id,section["section_index"],len(candidate),len(issues),
+                     local["elapsed_ms"])
+            return record
+        LOG.info("LOCAL PDF fallback job=%s chapter=%s issues=%s anchors=%s",
+                 job_id,section["section_index"],len(local["issues"]),
+                 len(local["sourceQuestionNumbers"]))
+        update_job(job_id,progress_note=(
+            f"Source layout ambiguous ({len(local['issues'])} checks); "
+            "using free AI for this chapter"))
     questions=[]; issues=[]
     first=section["start_page"]; end=section["end_page"]
     # Reuse only batches previously processed AND independently source-audited.
@@ -779,7 +839,16 @@ def process_job(job):
         if not isinstance(metadata,dict) or not all(
             k in metadata for k in ("title","coverPage","titleEvidence","confidence")
         ):
-            metadata=inspect_book_metadata(document,job_id)
+            metadata = (
+                local_book_metadata(document)
+                if LOCAL_FIRST_ENABLED and job.get("provider_mode")=="free_only"
+                else None
+            )
+            if metadata:
+                LOG.info("LOCAL PDF metadata recognized job=%s title=%s",
+                         job_id,metadata["title"])
+            else:
+                metadata=inspect_book_metadata(document,job_id)
             update_job(job_id,book_metadata=metadata)
         else:
             LOG.info("Reused validated book title metadata checkpoint job=%s",job_id)
