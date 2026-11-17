@@ -481,6 +481,76 @@ Only correct faults supported by visible text in these PDF pages."""
     DB.table("ai_import_sections").upsert(record,on_conflict="job_id,section_index").execute()
     return record
 
+TEST_SPECIALTIES = {
+    "surgery_test_book_1.pdf": "General Surgery",
+    "surgery_test_book_2.pdf": "General Surgery",
+    "gynecology_test_book_1.pdf": "Obstetrics & Gynecology - General",
+    "gynecology_test_book_2.pdf": "Obstetrics & Gynecology - General",
+}
+
+def is_synthetic_test_job(job):
+    return TEST_SPECIALTIES.get(job.get("file_name")) == job.get("speciality")
+
+def copy_test_asset(job_id, staging_url, target_bucket, suffix):
+    """Copy private source-derived images to Quizard's normal public buckets.
+    Only called for the four synthetic book fixtures, never arbitrary user PDFs."""
+    if not staging_url:
+        return None
+    if not isinstance(staging_url, str) or not staging_url.startswith(
+        f"staging://ai_import_assets/ai-import/{job_id}/"
+    ):
+        raise ValueError("Unexpected private asset URL for test import")
+    source_path = staging_url[len("staging://ai_import_assets/"):]
+    content = DB.storage.from_("ai_import_assets").download(source_path)
+    target_path = f"ai-test/{job_id}/{suffix}"
+    DB.storage.from_(target_bucket).upload(
+        target_path, content, {"content-type":"image/png","upsert":"true"})
+    from urllib.parse import quote
+    return URL.rstrip("/") + "/storage/v1/object/public/" + target_bucket + "/" + quote(target_path,safe="/")
+
+def publish_synthetic_test_job(job,records,review,total,cover_staging_url):
+    """End-to-end smoke test: real books, chapters, questions, cover and images.
+    Database RPC enforces EXACTLY four pre-defined synthetic book names, one chapter
+    and four MCQs; access_level='test' hides them from student dashboards and plans."""
+    if not is_synthetic_test_job(job):
+        return False
+    job_id=job["id"]
+    if total != 4:
+        LOG.warning("Test publication blocked: %s extracted %s rather than 4 questions",job_id,total)
+        return False
+    nonempty=[r for r in records if r["questions"]]
+    if len(nonempty)!=1:
+        LOG.warning("Test publication blocked: %s has %s nonempty chapters",job_id,len(nonempty))
+        return False
+    cover_public=copy_test_asset(job_id,cover_staging_url,"book_covers","cover.png")
+    for record in nonempty:
+        changed=False
+        for q in record["questions"]:
+            for singular, plural, typ in (
+                ("imageUrl","imageUrls","question"),
+                ("explanationImageUrl","explanationImageUrls","explanation")
+            ):
+                originals=q.get(plural) or ([q[singular]] if q.get(singular) else [])
+                mapped=[]
+                for index,url in enumerate(originals,1):
+                    mapped.append(copy_test_asset(
+                        job_id,url,"question_images",
+                        f"ch{record['section_index']}/{q['questionNumber']}{typ}{index}.png"))
+                if mapped:
+                    q[singular]=mapped[0]
+                    q[plural]=mapped
+                    changed=True
+        if changed:
+            DB.table("ai_import_sections").update(
+                {"questions":record["questions"]}).eq("id",record["id"]).execute() if record.get("id") else DB.table("ai_import_sections").update(
+                {"questions":record["questions"]}).eq("job_id",job_id).eq(
+                "section_index",record["section_index"]).execute()
+    response=DB.rpc("ai_publish_test_import",{"p_job_id":job_id,
+                                                "p_cover_url":cover_public}).execute()
+    LOG.info("Test-published job %s to Quizard book %s; source review issues: %d",
+             job_id,response.data,len(review))
+    return True
+
 def process_job(job):
     job_id=job["id"]
     LOG.info("Processing %s (%s)",job["file_name"],job_id)
@@ -536,10 +606,13 @@ def process_job(job):
                    total_questions=total,verified_questions=sum(
                       len(r["questions"]) for r in records if r["status"]=="verified"),
                    processed_pages=pages)
-        # No publication RPC exists in phase 1. A later separately audited deployment
-        # will copy approved assets into public buckets and publish questions atomically.
-        LOG.info("Job %s staged: %s; %s questions; %d review issues",
-                 job_id, "needs_review" if review else "ready",total,len(review))
+        # The user explicitly requested an end-to-end multi-book test.
+        # Only the four named synthetic fixtures can enter the test-only publisher.
+        # Real books remain in private staging until a separately reviewed release.
+        test_published=publish_synthetic_test_job(job,records,review,total,cover_url)
+        LOG.info("Job %s: %s; %s questions; %d review issues",
+                 job_id, "test_published" if test_published else
+                 ("needs_review" if review else "ready"),total,len(review))
     finally:
         document.close()
 
