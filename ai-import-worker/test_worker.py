@@ -220,6 +220,7 @@ class FreeRouterTests(unittest.TestCase):
             def execute(self):
                 if self.name=="ai_import_jobs":data={"file_name":"surgery_test_book_1.pdf"}
                 elif self.name=="ai_import_provider_state":data=[]
+                elif self.name=="ai_reserve_free_provider_request":data=True
                 else:data=[]
                 return SimpleNamespace(data=data)
             def rpc(self,*args,**kwargs):
