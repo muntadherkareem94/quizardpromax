@@ -444,6 +444,42 @@ def to_json_question(q):
              "sourcePage","answerEvidence","figureInQuestion","figureInExplanation")}
 
 
+def plan_mcq_batches(first,end,checkpoints,batch_pages):
+    """Minimize model calls while preserving independently audited checkpoints.
+
+    Never overwrite a previously verified range. New free-only books use three
+    source pages per extraction/audit request, not one API round trip per page.
+    Previously extracted non-empty ranges are preserved for separate audit.
+    """
+    if batch_pages<1 or first<1 or end<first:
+        raise ValueError("Invalid MCQ batch range")
+    plan=[]
+    cursor=first
+    while cursor<=end:
+        saved=checkpoints.get(cursor)
+        if (saved and saved.get("status") in ("verified","needs_review")
+                and first<=int(saved["end_page"])<=end):
+            finish=int(saved["end_page"])
+        elif (saved and saved.get("status")=="extracted"
+              and saved.get("questions")):
+            finish=int(saved["end_page"])
+        else:
+            finish=min(end,cursor+batch_pages-1)
+            for next_start in range(cursor+1,finish+1):
+                upcoming=checkpoints.get(next_start)
+                if upcoming and (
+                    upcoming.get("status") in ("verified","needs_review")
+                    or (upcoming.get("status")=="extracted" and upcoming.get("questions"))
+                ):
+                    finish=next_start-1
+                    break
+        if finish<cursor or finish>end:
+            raise ValueError("Invalid checkpoint page range")
+        plan.append((cursor,finish))
+        cursor=finish+1
+    return plan
+
+
 def process_section(document,job,section,common_issues):
     job_id=job["id"]
     existing=DB.table("ai_import_sections").select("*").eq(
@@ -457,11 +493,11 @@ def process_section(document,job,section,common_issues):
     saved_batches=DB.table("ai_import_batches").select("*").eq(
         "job_id",job_id).eq("section_index",section["section_index"]).execute().data or []
     batch_checkpoints={int(row["start_page"]):row for row in saved_batches}
-    # Free vision models have stricter token-per-minute and per-image limits.
-    # Process fewer original pages per request, retaining the overlap for MCQs.
-    batch_pages = 1 if job.get("provider_mode") == "free_only" else PAGES_PER_BATCH
-    for start in range(first,end+1,batch_pages):
-        finish=min(end,start+batch_pages-1)
+    # Gemini free Flash-Lite has a large 250K TPM allowance; one-page batches
+    # created multiple sequential extraction + verification calls, causing
+    # avoidable rate limits. Three pages per batch is also Groq's image ceiling.
+    batch_pages = 3 if job.get("provider_mode") == "free_only" else PAGES_PER_BATCH
+    for start,finish in plan_mcq_batches(first,end,batch_checkpoints,batch_pages):
         # The overlap helps finish an MCQ spanning the page boundary.
         extended_end=min(end,finish+1)
         old=batch_checkpoints.get(start)
