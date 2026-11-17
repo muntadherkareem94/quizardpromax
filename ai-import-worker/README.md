@@ -60,3 +60,14 @@ The production Supabase project has only the following *new* isolated resources:
 7. **A database-only transaction dry-run** verified that four fixture rows create the correct four books, four chapters, sixteen questions, two Surgery specialties, two Gynecology specialties and four cover-link fields; the transaction was rolled back. Full browser-to-PDF processing of the four real files remains to be tested.
 
 **Warning:** OpenAI API and Railway processing are paid separately. The monthly project limit protects OpenAI usage, not Railway. Never merge this feature branch or make real textbooks visible to customers without further validation and a separate production release.
+
+## Cost controls and text-first routing (November 17, 2026)
+
+- New uploads default to **USD 0.75 estimated API budget per book**, editable by the super-admin from USD 0.20–5.00. The new budget also applies to existing jobs with the default amount, but their previous usage cannot be reconstructed; the UI labels past jobs as untracked.
+- The worker checks a conservative expected-token reserve before *each* API call; it changes the book status to `paused_budget` if the next call cannot fit. The admin can increase that book's budget (up to USD 5.00) and click Retry. **This is not a provider-enforced hard cap, and source PDF image tokenization can exceed the reservation estimate.** Keep the OpenAI project spending limit in place.
+- After each successful OpenAI response, it records the actual input, output, and cached token counts, model, response ID, and service tier in `ai_import_api_calls`. A DB trigger atomically updates per-book token and estimated-dollar totals. Retry does not reset totals. This accounting does *not* include historical model calls before these changes, additional regional surcharges, or Railway/Supabase charges. OpenAI's billing dashboard is authoritative.
+- Rates are defined in `cost_guard.py`, taken from published OpenAI token pricing on 2026-11-17. Recheck and update when prices change. An unknown model fails closed instead of reporting a made-up zero-dollar price.
+- `TEXT_FIRST_ENABLED=true`: simple pages with sufficient selectable text, no embedded images, no tables/complex vector drawings, and no obvious two-column layout are extracted from PyMuPDF text. Otherwise the original PDF is used. The independent source verifier *always* receives the original PDF for fidelity.
+- `OPENAI_SERVICE_TIER=flex` requests the discounted tier. Responses may take longer and capacity can be unavailable; retries do not silently upgrade to standard processing.
+- This feature has offline unit tests and a rollback-only SQL ledger test; **it has not been verified against a newly purchased OpenAI PDF processing request**. The prior 4-PDF end-to-end test predates these cost optimizations.
+- Existing synthetic-test publisher remains restricted to the four fixture filenames, and real textbook auto-publication stays disabled.
