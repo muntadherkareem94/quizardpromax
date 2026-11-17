@@ -9,11 +9,13 @@ import re
 import time
 from collections import Counter
 
-Q = re.compile(r'^\s*(?:Question|Q)\s*(\d+)\s*[.):]\s*(.*)$', re.I)
+Q = re.compile(r'^\s*(?:Question|Q)\s*(\d+)(?:\s*[.):]\s*|\s*$)(.*)$', re.I)
 OPT = re.compile(r'^\s*([A-J])\s*[.):]\s*(\S.*)$')
 KEY = re.compile(r'^\s*(?:Correct\s+Answer|Answer\s+Key|Answer)\s*:\s*([A-J])(?:[.)\s:-]+(.*))?$', re.I)
-EXPL = re.compile(r'^\s*(?:Explanation|Rationale)\s*:\s*(.*)$', re.I)
+EXPL = re.compile(r'^\s*(?:Explanation|Rationale|Critique)\s*:?\s*(.*)$', re.I)
 IMARK = re.compile(r'^\s*(Question|Explanation)\s+Image\s*$', re.I)
+FIGCAP = re.compile(r'^\s*Figure\s+\d+\s*[.):]?\s*$', re.I)
+REFS = re.compile(r'^\s*References\s*:?\s*$', re.I)
 
 
 def join_source(lines):
@@ -21,50 +23,84 @@ def join_source(lines):
     return ' '.join(s.strip() for s in lines if s.strip()).strip()
 
 
-def layout_figures(document, first, last):
-    """Map labeled raster figures using original page geometry, never AI."""
-    anchors, figures, issues = [], [], []
+import fitz
+
+def layout_figures(document, first, last, include_rects=False):
+    """Match source-labeled figures to MCQs across pages, ignoring cover artwork.
+
+    A nearby printed figure caption is required. A generic image inside an
+    MCQ that cannot be attributed remains a review issue. The shared geometry
+    is used by the validator and private-staging image uploader.
+    """
+    anchors, labels, images, issues = [], [], [], []
+    state = 'stem'
     for pno in range(first, last + 1):
         page = document[pno-1]
-        blocks = [(b[:4], b[4].strip()) for b in page.get_text('blocks')
-                  if len(b) > 4 and isinstance(b[4], str)]
+        blocks = sorted(
+            [(fitz.Rect(b[:4]), str(b[4]).strip()) for b in page.get_text('blocks')
+             if len(b) > 4 and isinstance(b[4], str)],
+            key=lambda item: (item[0].y0, item[0].x0)
+        )
         for box, txt in blocks:
             for line in txt.splitlines():
+                line = line.strip()
                 m = Q.match(line)
                 if m:
-                    anchors.append((pno, box[1], int(m.group(1))))
-                    break
+                    anchors.append((pno, box.y0, int(m.group(1))))
+                    state = 'stem'
+                elif KEY.match(line):
+                    state = 'answer'
+                elif EXPL.match(line):
+                    state = 'explanation'
+                elif REFS.fullmatch(line):
+                    state = 'references'
+                elif (m := IMARK.fullmatch(line)):
+                    labels.append((pno, box, m.group(1).lower(), 'marker'))
+                elif FIGCAP.fullmatch(line):
+                    kind = ('question' if state in ('stem', 'options') else
+                            'explanation' if state in ('answer', 'explanation') else None)
+                    labels.append((pno, box, kind, 'caption'))
+                elif OPT.match(line) and state == 'stem':
+                    state = 'options'
         seen = set()
         for spec in page.get_images(full=True):
             xref = spec[0]
             for rect in page.get_image_rects(xref):
                 if rect.width < 90 or rect.height < 70:
                     continue
-                k = (xref, round(rect.x0), round(rect.y0))
-                if k in seen:
+                key = (xref, round(rect.x0), round(rect.y0))
+                if key in seen:
                     continue
-                seen.add(k)
-                labels = []
-                for b, txt in blocks:
-                    marker = IMARK.fullmatch(txt.strip())
-                    gap = b[1]-rect.y1
-                    if marker and -35 <= gap <= 65:
-                        labels.append((abs(gap), marker.group(1).lower()))
-                labels.sort()
-                kind = (labels[0][1] if labels and
-                        (len(labels)==1 or labels[0][0]+10 < labels[1][0]) else None)
-                figures.append((pno, rect.y0, kind))
-    if len({q for _,_,q in anchors}) != len(anchors):
-        return {}, [{'type':'duplicate_anchor','detail':'Duplicate question anchors in original PDF'}]
+                seen.add(key)
+                images.append((pno, rect.y0, rect, xref))
+    if len({a[2] for a in anchors}) != len(anchors):
+        return {}, [{'type': 'duplicate_anchor',
+                     'detail': 'Duplicate question anchors in original PDF'}]
     result = {}
-    for pno, y, kind in figures:
-        before = [a for a in anchors if (a[0],a[1]) <= (pno,y)]
-        if not before or not kind:
-            issues.append({'type':'unclassified_image','page':pno,
-                           'detail':'Figure lacks uniquely attributable question and source image label'})
+    for pno, y, rect, xref in images:
+        preceding = [a for a in anchors if (a[0], a[1]) <= (pno, y)]
+        if not preceding:
+            continue  # Front matter and chapter cover artwork are not MCQ images.
+        candidates = []
+        for lpno, box, kind, style in labels:
+            if lpno != pno or not kind:
+                continue
+            gap = (rect.y0 - box.y1 if style == 'caption'
+                   else box.y0 - rect.y1)
+            if ((0 <= gap <= 65) if style == 'caption'
+                    else (-35 <= gap <= 65)):
+                candidates.append((abs(gap), kind))
+        candidates.sort()
+        if not candidates or (len(candidates) > 1 and
+                              candidates[0][0] + 10 >= candidates[1][0]):
+            issues.append({
+                'type': 'unclassified_image', 'page': pno,
+                'detail': 'MCQ image lacks a uniquely attributable source label'
+            })
             continue
-        qno = max(before)[2]
-        result.setdefault(qno, []).append(kind)
+        kind = candidates[0][1]
+        val = ((kind, pno, xref, rect) if include_rects else kind)
+        result.setdefault(max(preceding)[2], []).append(val)
     return result, issues
 
 
@@ -116,9 +152,18 @@ def extract_local_section(document, first, last):
         markers=[]
         state='stem'
         for page,line in raw[1:]:
+            if REFS.fullmatch(line):
+                state = 'references'
+                continue
+            if state == 'references':
+                continue
             mark = IMARK.fullmatch(line)
             if mark:
                 markers.append(mark.group(1).lower())
+                continue
+            if FIGCAP.fullmatch(line):
+                markers.append('explanation' if state in ('answer', 'explanation')
+                               else 'question')
                 continue
             m_opt = OPT.match(line)
             m_key = KEY.match(line)
@@ -167,6 +212,9 @@ def extract_local_section(document, first, last):
                            'detail':'Printed answer text does not match option at printed letter'})
         if not explanation_text:
             issues.append({'type':'no_printed_explanation','number':number})
+        if 'critique will display after all linked items' in explanation_text.casefold():
+            issues.append({'type':'linked_critique_not_provided','number':number,
+                           'detail':'Source PDF contains only a linked-item critique placeholder'})
         image_kinds=figures.get(number,[])
         if Counter(markers)!=Counter(image_kinds):
             issues.append({'type':'figure_label_mismatch','number':number,
