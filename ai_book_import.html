@@ -97,13 +97,20 @@ async function invoke(action,payload={}){
  if(data?.error)throw new Error(data.error);
  return data;
 }
+const startingJobs=new Set();
 async function runAction(action,id){
+ if(action==='process-now'){
+   if(startingJobs.has(id))return;
+   startingJobs.add(id);
+ }
  try{
    if(action==='source-link'){
      const data=await invoke(action,{id}); window.open(data.url,'_blank','noopener,noreferrer');
    }else if(action==='process-now'){
-     await invoke('process-now',{id});
-     notice('AI processing started for the selected book. Progress updates automatically.');
+     const outcome=await invoke('process-now',{id});
+     notice(outcome?.already_processing
+       ? 'This book is already processing. Progress updates automatically.'
+       : 'AI processing started for the selected book. Progress updates automatically.');
      await refresh();
    }else if(action==='set-budget'){
      const row=[...document.querySelectorAll('tr[data-job-id]')].find(el=>el.dataset.jobId===id);
@@ -121,6 +128,7 @@ async function runAction(action,id){
      await invoke(action,{id}); notice('Job updated.');await refresh();
    }
  }catch(e){notice(e.message,true)}
+ finally{if(action==='process-now')startingJobs.delete(id)}
 }
 async function refresh(){
  const {data,error}=await supabase.from('ai_import_jobs').select('*').order('created_at',{ascending:false}).limit(200);
@@ -155,10 +163,20 @@ async function refresh(){
   if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
   const act=make();
   if(job.provider_mode==='free_only' && ['queued','waiting_provider'].includes(job.status)){
-    const start=button('▶ Process Now','process-now',job.id);
-    start.className='inline-block bg-indigo-600 text-white text-sm rounded-md px-3 py-2 mr-2 mb-2 hover:bg-indigo-700 font-semibold';
-    start.title='Start this single book immediately; free provider cooldowns are still respected.';
-    act.appendChild(start);
+    const cooldown=job.status==='waiting_provider' && job.next_attempt_at
+      && Date.parse(job.next_attempt_at)>Date.now();
+    if(cooldown){
+      const message=document.createElement('span');
+      message.className='text-xs text-amber-700 font-medium block mb-2';
+      message.textContent='Provider cooldown — retry eligible after '+
+        new Date(job.next_attempt_at).toLocaleTimeString();
+      act.appendChild(message);
+    }else{
+      const start=button('▶ Process Now','process-now',job.id);
+      start.className='inline-block bg-indigo-600 text-white text-sm rounded-md px-3 py-2 mr-2 mb-2 hover:bg-indigo-700 font-semibold';
+      start.title='Start this single book immediately; free provider cooldowns are still respected.';
+      act.appendChild(start);
+    }
   }
   if(['queued','processing','needs_review','ready','published','paused_budget','waiting_provider'].includes(job.status))
     act.appendChild(button('Source PDF','source-link',job.id));
