@@ -21,7 +21,7 @@ from free_router import (configured, request_provider, FreeRouter, ProvidersUnav
 from server import valid_dispatch_identifiers
 from worker import (find_sections, validate_question, page_part, EXTRACTION_SCHEMA,
                     normalize_claimed_job, figure_layout, normalize_mcq_options,
-                    plan_mcq_batches)
+                    plan_mcq_batches, synthetic_test_passes_quality_gate)
 
 class ImportTests(unittest.TestCase):
     def test_secure_dispatch_uuid_validation(self):
@@ -31,6 +31,15 @@ class ImportTests(unittest.TestCase):
         self.assertFalse(valid_dispatch_identifiers(job_id,"not-a-token"))
         self.assertFalse(valid_dispatch_identifiers("non-uuid",token))
         self.assertFalse(valid_dispatch_identifiers(job_id,"00000000-0000-0000-0000-00000000000g"))
+
+    def test_synthetic_publisher_rejects_reviewed_or_incomplete_mcqs(self):
+        clean=[{"status":"verified","issues":[],"questions":[{} for _ in range(4)]}]
+        self.assertTrue(synthetic_test_passes_quality_gate(clean,[],4))
+        self.assertFalse(synthetic_test_passes_quality_gate(clean,[{"type":"figure_mismatch"}],4))
+        reviewed=[{"status":"needs_review","issues":[{"type":"duplicate_number"}],
+                   "questions":[{} for _ in range(4)]}]
+        self.assertFalse(synthetic_test_passes_quality_gate(reviewed,[],4))
+        self.assertFalse(synthetic_test_passes_quality_gate(clean,[],3))
 
     def test_multi_page_batches_preserve_prior_verified_work(self):
         checkpoints={
