@@ -33,8 +33,27 @@ def valid_dispatch_identifiers(job_id: str, token: str) -> bool:
         return False
 
 
+def heartbeat(job_id, stop):
+    """Maintain a live claim while the model is responding.
+
+    If Railway restarts or the process dies, this heartbeat stops. Only then
+    can the admin recover the same job after the stale-claim timeout.
+    """
+    while not stop.wait(15):
+        try:
+            moment=datetime.now(timezone.utc).isoformat()
+            DB.table("ai_import_jobs").update({
+                "worker_lock_at":moment,"updated_at":moment
+            }).eq("id",job_id).eq("status","processing").execute()
+        except Exception:
+            LOG.exception("Worker heartbeat failed job=%s",job_id)
+
+
 def execute_one(job):
     job_id = job["id"]
+    stop=threading.Event()
+    thread=threading.Thread(target=heartbeat,args=(job_id,stop),daemon=True)
+    thread.start()
     try:
         LOG.info("On-demand processing started job_id=%s", job_id)
         try:
@@ -53,6 +72,7 @@ def execute_one(job):
                       job_id, exc, traceback.format_exc())
             update_job(job_id, status="failed", last_error=str(exc)[:500])
     finally:
+        stop.set()
         ACTIVE.release()
 
 
