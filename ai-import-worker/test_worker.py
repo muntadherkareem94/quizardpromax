@@ -2,6 +2,11 @@
 import os
 import unittest
 import fitz
+from decimal import Decimal
+from cost_guard import (
+    BudgetExceeded, rate, usage_cost_usd, reserve_cost_usd,
+    assert_budget, safely_selectable_text,
+)
 
 os.environ.setdefault("SUPABASE_URL", "https://example.supabase.co")
 os.environ.setdefault("SUPABASE_SERVICE_ROLE_KEY", "not-a-real-service-key")
@@ -11,6 +16,47 @@ from worker import (find_sections, validate_question, page_part, EXTRACTION_SCHE
                     normalize_claimed_job, figure_layout, normalize_mcq_options)
 
 class ImportTests(unittest.TestCase):
+    def test_flex_costs_and_cached_input_tokens(self):
+        self.assertEqual(rate("gpt-6.1-sol","flex")[:2],(Decimal("1"),Decimal("5")))
+        self.assertEqual(rate("gpt-6-astra","flex")[:2],(Decimal("5"),Decimal("25")))
+        self.assertEqual(usage_cost_usd("gpt-6.1-sol","flex",1_000_000,0),Decimal("1.00000000"))
+        self.assertEqual(usage_cost_usd("gpt-6.1-sol","flex",1_000_000,0,100_000),
+                         Decimal("0.90500000"))
+        self.assertEqual(usage_cost_usd("gpt-6-astra","flex",0,100_000),
+                         Decimal("2.50000000"))
+        with self.assertRaises(ValueError):
+            rate("unpriced-model","flex")
+
+    def test_per_book_budget_guard(self):
+        reserve=reserve_cost_usd("gpt-6-astra","flex","Question text",3,True,4500)
+        self.assertGreater(reserve,Decimal("0.1"))
+        assert_budget(0.75,0.3,reserve)
+        with self.assertRaises(BudgetExceeded):
+            assert_budget(0.35,0.3,reserve)
+        with self.assertRaises(ValueError):
+            usage_cost_usd("gpt-6-astra","flex",100,200,300)
+
+    def test_text_first_accepts_selectable_text_and_rejects_scans_or_figures(self):
+        doc=fitz.open()
+        page=doc.new_page()
+        page.insert_text((72,90), "Question 1. A source MCQ with selectable text. "
+                         "Which answer is correct?\n"
+                         "A. This option contains several explanatory words and clinical detail.\n"
+                         "B. Another option contains meaningful supporting words.\n"
+                         "Correct answer: B. Explanation: present in the PDF.",
+                         fontsize=11)
+        sample=safely_selectable_text(doc,1,1)
+        self.assertIsNotNone(sample)
+        self.assertIn("ORIGINAL PDF PAGE 1",sample)
+        self.assertIn("Correct answer: B",sample)
+        blank=doc.new_page()
+        self.assertIsNone(safely_selectable_text(doc,1,2))
+        doc.delete_page(1)
+        pix=fitz.Pixmap(fitz.csRGB,fitz.IRect(0,0,200,100),False)
+        page.insert_image(fitz.Rect(100,350,300,450),pixmap=pix)
+        self.assertIsNone(safely_selectable_text(doc,1,1))
+        doc.close()
+
     def test_bookmarked_chapters(self):
         document=fitz.open()
         for _ in range(9): document.new_page()
