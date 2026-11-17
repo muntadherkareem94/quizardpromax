@@ -189,6 +189,26 @@ class FreeRouterTests(unittest.TestCase):
                                     "OPENROUTER_DAILY_REQUEST_CAP":"20"},clear=False):
             self.assertNotIn("openrouter",[p["name"] for p in configured()])
 
+    def test_secondary_gemini_model_requires_confirmation_and_separate_cap(self):
+        settings={
+            "GEMINI_API_KEY":"test-secret",
+            "GEMINI_MODEL":"gemini-3.5-flash-lite",
+            "GEMINI_FREE_CONFIRMED":"true",
+            "GEMINI_DAILY_REQUEST_CAP":"30",
+            "GEMINI_VERIFY_MODEL":"gemini-3.8-flash",
+            "GEMINI_VERIFY_FREE_CONFIRMED":"true",
+            "GEMINI_VERIFY_DAILY_REQUEST_CAP":"4",
+        }
+        with patch.dict(os.environ,settings,clear=True):
+            gemini=[p for p in configured() if p["name"]=="gemini"]
+            self.assertEqual({p["bucket"] for p in gemini},{"gemini","gemini_flash"})
+            self.assertEqual([p["model"] for p in gemini],
+                             ["gemini-3.5-flash-lite","gemini-3.8-flash"])
+            self.assertEqual(gemini[1]["cap"],4)
+        settings["GEMINI_VERIFY_FREE_CONFIRMED"]="false"
+        with patch.dict(os.environ,settings,clear=True):
+            self.assertEqual(len([p for p in configured() if p["name"]=="gemini"]),1)
+
     def test_gemini_pdf_request_schema_validated_offline(self):
         pdf=fitz.open()
         pdf.new_page()
