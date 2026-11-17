@@ -20,7 +20,8 @@ os.environ.setdefault("OPENAI_API_KEY", "not-a-real-api-key")
 from free_router import (configured, request_provider, FreeRouter, ProvidersUnavailable)
 from server import valid_dispatch_identifiers
 from worker import (find_sections, validate_question, page_part, EXTRACTION_SCHEMA,
-                    normalize_claimed_job, figure_layout, normalize_mcq_options)
+                    normalize_claimed_job, figure_layout, normalize_mcq_options,
+                    plan_mcq_batches)
 
 class ImportTests(unittest.TestCase):
     def test_secure_dispatch_uuid_validation(self):
@@ -30,6 +31,17 @@ class ImportTests(unittest.TestCase):
         self.assertFalse(valid_dispatch_identifiers(job_id,"not-a-token"))
         self.assertFalse(valid_dispatch_identifiers("non-uuid",token))
         self.assertFalse(valid_dispatch_identifiers(job_id,"00000000-0000-0000-0000-00000000000g"))
+
+    def test_multi_page_batches_preserve_prior_verified_work(self):
+        checkpoints={
+            3:{"start_page":3,"end_page":3,"status":"verified","questions":[{"questionNumber":1}]},
+            4:{"start_page":4,"end_page":4,"status":"extracted","questions":[]},
+        }
+        self.assertEqual(plan_mcq_batches(3,5,checkpoints,3),[(3,3),(4,5)])
+        self.assertEqual(plan_mcq_batches(3,5,{},3),[(3,5)])
+        self.assertEqual(plan_mcq_batches(3,8,{},3),[(3,5),(6,8)])
+        checkpoints[4]["questions"]=[{"questionNumber":3}]
+        self.assertEqual(plan_mcq_batches(3,5,checkpoints,3),[(3,3),(4,4),(5,5)])
 
     def test_flex_costs_and_cached_input_tokens(self):
         self.assertEqual(rate("gpt-6.1-sol","flex")[:2],(Decimal("1"),Decimal("5")))
@@ -276,6 +288,53 @@ class FreeRouterTests(unittest.TestCase):
         self.assertEqual(db.reservations,2)
         self.assertEqual(len(db.records),1)
         self.assertEqual(db.cooldowns[0]["provider"],"gemini")
+
+    def test_independent_gemini_model_allowed_when_lite_extracted(self):
+        class FakeDB:
+            def __init__(self):
+                self.table_name=None
+                self.bucket=None
+            def table(self,name):
+                self.table_name=name
+                return self
+            def select(self,*args):return self
+            def eq(self,*args):return self
+            def single(self):return self
+            def limit(self,*args):return self
+            def rpc(self,name,args):
+                self.table_name=name
+                self.bucket=args.get("p_provider")
+                return self
+            def insert(self,*args):return self
+            def execute(self):
+                if self.table_name=="ai_import_jobs":
+                    return SimpleNamespace(data={"file_name":"surgery_test_book_1.pdf"})
+                if self.table_name=="ai_reserve_free_provider_request":
+                    return SimpleNamespace(data=True)
+                return SimpleNamespace(data=[])
+        called_models=[]
+        def handler(req):
+            called_models.append(str(req.url))
+            return httpx.Response(200,json={
+                "candidates":[{"content":{"parts":[{"text":"{\\"ok\\":true}"}]}}],
+                "usageMetadata":{"promptTokenCount":30,"candidatesTokenCount":8}
+            })
+        sources=[
+            {"name":"gemini","model":"gemini-3.5-flash-lite","key":"fake",
+             "cap":30,"vision":True,"bucket":"gemini"},
+            {"name":"gemini","model":"gemini-3.1-flash-lite","key":"fake",
+             "cap":30,"vision":True,"bucket":"gemini_flash"},
+        ]
+        with patch("free_router.configured",return_value=sources):
+            router=FreeRouter(FakeDB(),client=httpx.Client(
+                transport=httpx.MockTransport(handler)))
+            result=router.call(pdf_bytes=b"source",prompt="Audit",schema=self.SCHEMA,
+                job_id="id",stage="verification",page_count=2,
+                text_source="Printed answer evidence",exclude_provider="gemini")
+        self.assertEqual(result,{"ok":True})
+        self.assertEqual(router.last_provider,"gemini_flash")
+        self.assertEqual(len(called_models),1)
+        self.assertIn("gemini-3.1-flash-lite",called_models[0])
 
     def test_independent_audit_refuses_same_only_provider(self):
         class FakeDB:
