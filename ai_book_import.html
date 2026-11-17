@@ -152,7 +152,7 @@ async function refresh(){
       ? 'Estimated API: $'+spent.toFixed(4)+' / $'+budget.toFixed(2)+' ('+job.api_request_count+' calls)'
       : 'Legacy budget $'+budget.toFixed(2)+(job.status==='published'?' — previous import, usage not tracked':' — no recorded API calls'));
   prog.appendChild(cost);
-  if(job.progress_note && ['processing','waiting_provider','queued'].includes(job.status)){
+  if(job.progress_note && ['processing','waiting_provider','queued','needs_review','ready','published'].includes(job.status)){
     const stage=document.createElement('p');
     stage.className='text-xs mt-2 text-indigo-700';
     stage.textContent=job.progress_note;
