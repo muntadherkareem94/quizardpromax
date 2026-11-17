@@ -692,6 +692,25 @@ def copy_test_asset(job_id, staging_url, target_bucket, suffix):
     from urllib.parse import quote
     return URL.rstrip("/") + "/storage/v1/object/public/" + target_bucket + "/" + quote(target_path,safe="/")
 
+def count_verified_questions(job_id):
+    """Count independently audited questions even in partly reviewed chapters."""
+    rows=DB.table("ai_import_batches").select("status,questions").eq(
+        "job_id",job_id).eq("status","verified").execute().data or []
+    return sum(len(row.get("questions") or []) for row in rows)
+
+
+def synthetic_test_passes_quality_gate(records,review,total):
+    """A four-MCQ smoke test is publishable only when fully source verified."""
+    return (
+        total==4
+        and not review
+        and len(records)==1
+        and records[0].get("status")=="verified"
+        and not records[0].get("issues")
+        and len(records[0].get("questions") or [])==4
+    )
+
+
 def publish_synthetic_test_job(job,records,review,total,cover_staging_url):
     """End-to-end smoke test: real books, chapters, questions, cover and images.
     Database RPC enforces EXACTLY four pre-defined synthetic book names, one chapter
@@ -699,13 +718,15 @@ def publish_synthetic_test_job(job,records,review,total,cover_staging_url):
     if not is_synthetic_test_job(job):
         return False
     job_id=job["id"]
-    if total != 4:
-        LOG.warning("Test publication blocked: %s extracted %s rather than 4 questions",job_id,total)
+    if not synthetic_test_passes_quality_gate(records,review,total):
+        LOG.warning(
+            "Test publication BLOCKED: job=%s extracted=%s review_issues=%s "
+            "verified_chapters=%s (must be exactly 4/4 independently verified)",
+            job_id,total,len(review),
+            sum(r.get("status")=="verified" for r in records),
+        )
         return False
-    nonempty=[r for r in records if r["questions"]]
-    if len(nonempty)!=1:
-        LOG.warning("Test publication blocked: %s has %s nonempty chapters",job_id,len(nonempty))
-        return False
+    nonempty=records
     cover_public=copy_test_asset(job_id,cover_staging_url,"book_covers","cover.png")
     for record in nonempty:
         changed=False
@@ -791,7 +812,7 @@ def process_job(job):
             records.append(record)
             total+=len(record["questions"])
             pages_completed+=section["end_page"]-section["start_page"]+1
-            verified=sum(len(r["questions"]) for r in records if r["status"]=="verified")
+            verified=count_verified_questions(job_id)
             update_job(job_id,total_questions=total,verified_questions=verified,
                        processed_pages=min(pages,pages_completed))
         review=list(global_issues)
@@ -803,8 +824,7 @@ def process_job(job):
             review.append({"type":"chapter_review","detail":"One or more chapters did not pass source audit"})
         # A precise completeness check needs verified page-by-page coverage, done by the verifier.
         update_job(job_id,review_issues=review,status="needs_review" if review else "ready",
-                   total_questions=total,verified_questions=sum(
-                      len(r["questions"]) for r in records if r["status"]=="verified"),
+                   total_questions=total,verified_questions=count_verified_questions(job_id),
                    processed_pages=pages)
         # The user explicitly requested an end-to-end multi-book test.
         # Only the four named synthetic fixtures can enter the test-only publisher.
