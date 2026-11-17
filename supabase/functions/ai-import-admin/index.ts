@@ -46,15 +46,14 @@ Deno.serve(async (req) => {
         return respond({ error: 'Book title and specialty are required' }, 400);
       const id = crypto.randomUUID();
       const path = user.id + '/' + id + '/book.pdf';
-      const { data: signed, error: uploadError } = await db.storage
-        .from('ai_import_sources').createSignedUploadUrl(path, { upsert: false });
-      if (uploadError || !signed) throw uploadError || new Error('Cannot sign upload');
+      // The browser uses TUS with its own authenticated Supabase session JWT.
+      // Storage RLS restricts INSERT to this exact prepared job path.
       const { error } = await db.from('ai_import_jobs').insert({
         id, uploaded_by: user.id, file_name: filename.slice(0, 300),
         title_hint: titleHint, speciality, source_path: path, status: 'uploading'
       });
       if (error) throw error;
-      return respond({ id, path, token: signed.token });
+      return respond({ id, path });
     }
 
     const id = String(input.id || '');
@@ -78,9 +77,26 @@ Deno.serve(async (req) => {
       return respond({ ok: true });
     }
 
+    if (action === 'upload-failed') {
+      // Preserve useful diagnostic state without ever starting an incomplete job.
+      if (job.status !== 'uploading') return respond({ error: 'Job is not uploading' }, 409);
+      const reason = String(input.reason || 'PDF upload failed').slice(0, 500);
+      const { error } = await db.from('ai_import_jobs').update({
+        status: 'failed', last_error: reason, updated_at: new Date().toISOString()
+      }).eq('id', id).eq('status', 'uploading');
+      if (error) throw error;
+      return respond({ ok: true });
+    }
+
     if (action === 'retry') {
       if (!['failed', 'needs_review'].includes(job.status))
         return respond({ error: 'Only failed/review jobs can be retried' }, 409);
+      // Upload failures have no source PDF. Do not queue them for AI processing.
+      const folder = job.source_path.substring(0, job.source_path.lastIndexOf('/'));
+      const { data: files, error: storageError } = await db.storage
+        .from('ai_import_sources').list(folder, { limit: 10, search: 'book.pdf' });
+      if (storageError || !files?.some((f) => f.name === 'book.pdf'))
+        return respond({ error: 'The original PDF was not uploaded. Upload this book again.' }, 409);
       const { error } = await db.from('ai_import_jobs').update({
         status: 'queued', last_error: null, updated_at: new Date().toISOString()
       }).eq('id', id).eq('status', job.status);
