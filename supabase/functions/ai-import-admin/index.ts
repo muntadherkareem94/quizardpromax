@@ -64,7 +64,7 @@ Deno.serve(async (req) => {
     if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id))
       return respond({ error: 'Valid job id required' }, 400);
     const { data: job, error: fetchError } = await db.from('ai_import_jobs')
-      .select('id, status, source_path, budget_usd, api_spend_estimate_usd').eq('id', id).single();
+      .select('id, status, provider_mode, next_attempt_at, source_path, budget_usd, api_spend_estimate_usd').eq('id', id).single();
     if (fetchError || !job) return respond({ error: 'Job not found' }, 404);
 
     if (action === 'finalize-upload') {
@@ -112,6 +112,52 @@ Deno.serve(async (req) => {
       }).eq('id', id).eq('status', job.status);
       if (error) throw error;
       return respond({ ok: true });
+    }
+
+    if (action === 'process-now') {
+      // Server-triggered processing: only real super-admin sessions reach here.
+      // This uses an HMAC request signature; it NEVER sends the service-role
+      // key to the worker, the user's browser, or any third-party AI.
+      if (job.provider_mode !== 'free_only')
+        return respond({ error: 'Process Now is enabled only for free-only test imports' }, 409);
+      if (!['queued', 'waiting_provider'].includes(job.status))
+        return respond({ error: 'Only queued or provider-waiting books can be started' }, 409);
+      if (job.status === 'waiting_provider' && job.next_attempt_at &&
+          Date.parse(job.next_attempt_at) > Date.now())
+        return respond({
+          error: 'Free provider cooldown is still active. Earliest eligible retry: ' +
+            new Date(job.next_attempt_at).toISOString()
+        }, 409);
+      const issuedAt = String(Math.floor(Date.now() / 1000));
+      const dataToSign = new TextEncoder().encode(id + ':' + issuedAt);
+      const hmacKey = await crypto.subtle.importKey(
+        'raw', new TextEncoder().encode(secret),
+        { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+      const signed = new Uint8Array(await crypto.subtle.sign('HMAC', hmacKey, dataToSign));
+      const signature = [...signed].map(b => b.toString(16).padStart(2, '0')).join('');
+      const workerUrl = 'https://quizard-ai-worker-staging.up.railway.app/run';
+      let workerResponse: Response;
+      try {
+        workerResponse = await fetch(workerUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Quizard-Timestamp': issuedAt,
+            'X-Quizard-Signature': signature
+          },
+          body: JSON.stringify({ job_id: id }),
+          signal: AbortSignal.timeout(15000)
+        });
+      } catch (dispatchError) {
+        console.error('AI worker dispatch unavailable', dispatchError);
+        return respond({ error: 'AI worker is unavailable. The book remains safely queued; try Process Now again.' }, 503);
+      }
+      const result = await workerResponse.json().catch(() => ({}));
+      if (workerResponse.status !== 202) {
+        const safeMessage = String((result as {error?: string}).error || 'Unable to dispatch this book');
+        return respond({ error: safeMessage }, workerResponse.status >= 500 ? 503 : 409);
+      }
+      return respond({ ok: true, started: true });
     }
 
     if (action === 'retry') {
