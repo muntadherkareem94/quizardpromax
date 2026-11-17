@@ -88,6 +88,13 @@ Deno.serve(async (req) => {
       return respond({ ok: true });
     }
 
+    if (action === 'remove-test') {
+      const { data, error } = await db.rpc('ai_remove_test_import', { p_job_id: id });
+      if (error) throw error;
+      if (!data) return respond({ error: 'No test book associated with this job' }, 409);
+      return respond({ ok: true });
+    }
+
     if (action === 'retry') {
       if (!['failed', 'needs_review'].includes(job.status))
         return respond({ error: 'Only failed/review jobs can be retried' }, 409);
