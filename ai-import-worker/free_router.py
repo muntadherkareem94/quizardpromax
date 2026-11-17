@@ -41,9 +41,25 @@ def configured():
         if not (key and model and confirmed and cap>0):continue
         if name=="openrouter" and not model.endswith(":free"):continue
         if name=="cloudflare" and not os.getenv("CLOUDFLARE_ACCOUNT_ID"):continue
-        result.append({"name":name,"key":key,"model":model,"cap":min(cap,100000),"vision":vision})
+        result.append({"name":name,"key":key,"model":model,"cap":min(cap,100000),
+                       "vision":vision,"bucket":name})
+    # A second, independently trained Gemini model can verify Groq output
+    # if Flash-Lite has a transient 503. The ACCOUNT and API key remain the
+    # same, while usage obeys the separate model limit visible in AI Studio.
+    # Never activate this backup without explicit free-tier confirmation.
+    try: backup_cap=int(os.getenv("GEMINI_VERIFY_DAILY_REQUEST_CAP","0"))
+    except ValueError:backup_cap=0
+    backup_model=os.getenv("GEMINI_VERIFY_MODEL","").strip()
+    backup_key=os.getenv("GEMINI_API_KEY","").strip()
+    if (backup_key and backup_model and backup_cap>0
+            and os.getenv("GEMINI_VERIFY_FREE_CONFIRMED","").lower()=="true"
+            and backup_model!=os.getenv("GEMINI_MODEL","gemini-2.5-flash").strip()):
+        result.append({"name":"gemini","key":backup_key,"model":backup_model,
+                       "cap":min(backup_cap,100000),"vision":True,
+                       "bucket":"gemini_flash"})
     order=os.getenv("FREE_PROVIDER_ORDER","gemini,groq,mistral,openrouter,cloudflare").split(",")
-    result.sort(key=lambda p:order.index(p["name"]) if p["name"] in order else len(order))
+    result.sort(key=lambda p:(order.index(p["name"]) if p["name"] in order else len(order),
+                              1 if p.get("bucket")=="gemini_flash" else 0))
     return result
 
 def render_pages(pdf):
@@ -144,18 +160,19 @@ class FreeRouter:
         wait=[]
         for p in providers:
             name=p["name"]
+            bucket=p.get("bucket",name)
             if name==exclude_provider:continue
             if text_source is None and not p["vision"]:continue
             if text_source is None and name=="groq" and page_count>3:continue
             states=self.db.table("ai_import_provider_state").select("cooldown_until").eq(
-                "provider",name).limit(1).execute().data or []
+                "provider",bucket).limit(1).execute().data or []
             if states and states[0].get("cooldown_until"):
                 until=datetime.fromisoformat(states[0]["cooldown_until"].replace("Z","+00:00"))
                 if until>self.now():
                     wait.append((until-self.now()).total_seconds())
                     continue
             reserved=self.db.rpc("ai_reserve_free_provider_request",{
-                "p_provider":name,"p_max_calls":p["cap"]}).execute().data
+                "p_provider":bucket,"p_max_calls":p["cap"]}).execute().data
             if not reserved:
                 next_day=datetime.combine(self.now().date()+timedelta(days=1),
                                           datetime.min.time(),timezone.utc)
@@ -169,13 +186,16 @@ class FreeRouter:
                     "job_id":job_id,"provider":name,"model":p["model"],"stage":stage,
                     "input_tokens":ins,"output_tokens":outs}).execute()
                 self.last_provider=name
-                LOG.info("Free provider completed %s stage %s",name,stage)
+                LOG.info("Free provider completed %s model %s stage %s",
+                         name,p["model"],stage)
                 return data
             except ProviderFault as exc:
-                LOG.warning("Free provider %s failed for stage %s status %s",name,stage,exc.status)
+                LOG.warning("Free provider %s model %s failed for stage %s status %s",
+                            name,p["model"],stage,exc.status)
                 until=(self.now()+timedelta(seconds=exc.retry_seconds)).isoformat()
                 self.db.table("ai_import_provider_state").upsert({
-                    "provider":name,"cooldown_until":until,"last_error":str(exc)[:190],
+                    "provider":bucket,"cooldown_until":until,
+                    "last_error":(p["model"]+" "+str(exc))[:190],
                     "updated_at":self.now().isoformat()},on_conflict="provider").execute()
                 wait.append(exc.retry_seconds)
         reason="No eligible free provider currently available for "+stage
