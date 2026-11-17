@@ -22,6 +22,8 @@ from pathlib import Path
 import fitz
 from openai import OpenAI, APIConnectionError, APITimeoutError, RateLimitError, InternalServerError
 from supabase import create_client
+from cost_guard import (BudgetExceeded, assert_budget, reserve_cost_usd,
+                        usage_cost_usd, safely_selectable_text)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger("quizard-ai-import")
@@ -36,6 +38,7 @@ RUN_ONCE = os.getenv("RUN_ONCE", "false").lower() == "true"
 MAX_PAGES_PER_JOB = max(1, int(os.getenv("MAX_PAGES_PER_JOB", "30")))  # Pilot cost guard
 # Flex uses the same requested model at Batch-rate prices (slower and sometimes unavailable).
 OPENAI_SERVICE_TIER = os.getenv("OPENAI_SERVICE_TIER", "flex").lower()
+TEXT_FIRST_ENABLED = os.getenv("TEXT_FIRST_ENABLED", "true").lower() == "true"
 if OPENAI_SERVICE_TIER not in ("flex", "auto"):
     raise ValueError("OPENAI_SERVICE_TIER must be flex or auto")
 AUTO_PUBLISH = False  # Safety interlock: this branch is staging-only
@@ -111,30 +114,78 @@ def source_page_text(document, first, last):
         for p in range(first, last+1)
     )
 
-def run_structured(pdf_bytes, prompt, schema, name, model):
-    encoded = base64.b64encode(pdf_bytes).decode("ascii")
+def run_structured(pdf_bytes, prompt, schema, name, model, *,
+                   job_id, stage, page_count, text_source=None):
+    """Check per-book budget; use safe text-first or original PDF; account all usage."""
+    max_output_tokens = {
+        "metadata": 1500, "extraction": 12000,
+        "verification": 4500, "repair": 12000,
+    }[stage]
+    has_pdf = text_source is None
+    content = [{"type":"input_text","text":prompt}]
+    if has_pdf:
+        encoded = base64.b64encode(pdf_bytes).decode("ascii")
+        content.append({"type":"input_file","filename":"source-pages.pdf",
+                        "file_data":"data:application/pdf;base64,"+encoded})
+    else:
+        content[0]["text"] += (
+            "\n\nORIGINAL PDF SOURCE TEXT, pages are numbered and not paraphrased:\n"
+            + text_source
+        )
+
+    effective_prompt = content[0]["text"]
+    reserve = reserve_cost_usd(
+        model,OPENAI_SERVICE_TIER,effective_prompt,page_count,has_pdf,
+        max_output_tokens)
+    balance = DB.table("ai_import_jobs").select(
+        "budget_usd,api_spend_estimate_usd"
+    ).eq("id",job_id).single().execute().data
+    if not balance:
+        raise RuntimeError("Job missing from cost ledger")
+    assert_budget(balance["budget_usd"],balance["api_spend_estimate_usd"],reserve)
+
+    LOG.info("AI request %s model=%s mode=%s expected_reserve_usd=%s",
+             stage,model,"source-pdf" if has_pdf else "text-first",reserve)
     response = AI.responses.create(
         model=model,
-        input=[{"role":"user","content":[
-            {"type":"input_text","text":prompt},
-            {"type":"input_file","filename":"source-pages.pdf",
-             "file_data":"data:application/pdf;base64,"+encoded},
-        ]}],
+        input=[{"role":"user","content":content}],
         text={"format":{"type":"json_schema","name":name,"strict":True,"schema":schema}},
-        max_output_tokens=16000,
+        max_output_tokens=max_output_tokens,
         service_tier=OPENAI_SERVICE_TIER,
         store=False,
     )
-    # Track actual model usage per call in Railway logs; never log source text.
-    # The OpenAI platform, not local estimates, is the billing source of truth.
-    usage = getattr(response, "usage", None)
-    if usage:
-        LOG.info("OpenAI request model=%s tier=%s input_tokens=%s output_tokens=%s",
-                 model, getattr(response, "service_tier", OPENAI_SERVICE_TIER),
-                 getattr(usage, "input_tokens", "unknown"),
-                 getattr(usage, "output_tokens", "unknown"))
+    usage = response.usage
+    if usage is None or response.id is None:
+        raise RuntimeError("OpenAI response missing usage or response id; cannot safely account cost")
+    cached = getattr(getattr(usage,"input_tokens_details",None),"cached_tokens",0) or 0
+    tier = getattr(response,"service_tier",None) or OPENAI_SERVICE_TIER
+    tier = "flex" if tier == "flex" else "standard"
+    charged = usage_cost_usd(model,tier,usage.input_tokens,usage.output_tokens,cached)
+
+    # Insert-once ledger (response_id unique) + database trigger updates job
+    # totals atomically. The recorded amount is estimated from public token rates.
+    DB.table("ai_import_api_calls").upsert({
+        "job_id":job_id,
+        "response_id":response.id,
+        "stage":stage,
+        "model":model,
+        "service_tier":tier,
+        "input_tokens":usage.input_tokens,
+        "output_tokens":usage.output_tokens,
+        "cached_input_tokens":cached,
+        "estimated_cost_usd":str(charged),
+    },on_conflict="response_id",ignore_duplicates=True).execute()
+    LOG.info("AI accounted stage=%s model=%s tier=%s tokens=%s/%s estimated_usd=%s",
+             stage,model,tier,usage.input_tokens,usage.output_tokens,charged)
+
+    balance = DB.table("ai_import_jobs").select(
+        "budget_usd,api_spend_estimate_usd"
+    ).eq("id",job_id).single().execute().data
+    if float(balance["api_spend_estimate_usd"]) >= float(balance["budget_usd"]):
+        raise BudgetExceeded("Tracked API usage reached this book's selected budget.")
     raw = response.output_text
-    if not raw: raise ValueError("AI returned empty response")
+    if not raw:
+        raise ValueError("AI returned empty response (usage already recorded)")
     return json.loads(raw)
 
 def find_sections(document):
@@ -207,7 +258,7 @@ def finalize_sections(entries,pages):
                            start_page=p,end_page=pages))
     return result
 
-def inspect_book_metadata(document):
+def inspect_book_metadata(document,job_id):
     count=min(5,len(document))
     mini=page_part(document,1,count)
     prompt="""Examine these original PDF pages (first page corresponds to original page 1).
@@ -217,7 +268,8 @@ from generic headers, ISBN-only or copyright-only pages. If no reliable title or
 cover is visible set confidence='low', title='', coverPage=1,
 titleEvidence=''. Only report 'high' when clearly printed on the selected page.
 Return structured JSON."""
-    return run_structured(mini,prompt,BOOK_SCHEMA,"quizard_book_metadata",MODEL)
+    return run_structured(mini,prompt,BOOK_SCHEMA,"quizard_book_metadata",MODEL,
+                          job_id=job_id,stage="metadata",page_count=count)
 
 def clean(s):
     return re.sub(r"\s+"," ",unicodedata.normalize("NFKC",str(s or "")).strip())
@@ -405,7 +457,10 @@ sourcePage is the original 1-based PDF page where the stem begins.
 Indicate whether the QUESTION or the EXPLANATION contains a figure needing extraction.
 Never generate text placeholders for images. Return all questions; omit headers,
 advertisements, table of contents, and standalone answer explanations without stems."""
-        result=run_structured(mini,prompt,EXTRACTION_SCHEMA,"quizard_extract",MODEL)
+        text_source = safely_selectable_text(document,start,extended_end) if TEXT_FIRST_ENABLED else None
+        result=run_structured(mini,prompt,EXTRACTION_SCHEMA,"quizard_extract",MODEL,
+                              job_id=job_id,stage="extraction",
+                              page_count=extended_end-start+1,text_source=text_source)
         part=[q for q in result.get("questions",[]) if
               isinstance(q.get("sourcePage"),int) and start <= q["sourcePage"] <= finish]
         def audit_candidate(candidate):
@@ -422,7 +477,9 @@ discrepancy using the numbered issue list. Return empty issues ONLY if fully sup
 CANDIDATE JSON:
 {json.dumps(candidate,ensure_ascii=False)}"""
             check=run_structured(mini,verifier_prompt,VERIFICATION_SCHEMA,
-                                 "quizard_source_audit",VERIFY_MODEL)
+                                 "quizard_source_audit",VERIFY_MODEL,
+                                 job_id=job_id,stage="verification",
+                                 page_count=extended_end-start+1)
             reported=[]
             original=[int(x) for x in check["questionNumbersInSource"]]
             captured=[q["questionNumber"] for q in candidate]
@@ -461,7 +518,9 @@ Independent auditor's specific findings:
 Return a complete corrected question array using the supplied JSON schema.
 Only correct faults supported by visible text in these PDF pages."""
             repaired=run_structured(mini,correction_prompt,EXTRACTION_SCHEMA,
-                                    "quizard_repair",MODEL)
+                                    "quizard_repair",MODEL,
+                                    job_id=job_id,stage="repair",
+                                    page_count=extended_end-start+1,text_source=text_source)
             part=[q for q in repaired.get("questions",[]) if
                   isinstance(q.get("sourcePage"),int) and start <= q["sourcePage"] <= finish]
             batch_issues=audit_candidate(part)
@@ -580,7 +639,7 @@ def process_job(job):
         job["total_pages"]=pages
         sections,global_issues=find_sections(document)
         if len(sections)<1:raise ValueError("No sections detected")
-        metadata=inspect_book_metadata(document)
+        metadata=inspect_book_metadata(document,job_id)
         cover_page=metadata.get("coverPage",1)
         if not isinstance(cover_page,int) or not 1 <= cover_page <= min(5,pages):
             cover_page=1
@@ -654,6 +713,9 @@ def main():
                 process_job(job)
             except Exception as exc:
                 LOG.error("Failed job %s: %s\n%s",job["id"],exc,traceback.format_exc())
+                if isinstance(exc,BudgetExceeded):
+                    update_job(job["id"],status="paused_budget",last_error=str(exc)[:2000])
+                    continue
                 quota_exhausted=(
                     isinstance(exc,RateLimitError)
                     and ('credit_balance_exhausted' in str(exc) or 'insufficient_quota' in str(exc))
