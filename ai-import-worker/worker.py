@@ -476,8 +476,12 @@ def main():
                 process_job(job)
             except Exception as exc:
                 LOG.error("Failed job %s: %s\n%s",job["id"],exc,traceback.format_exc())
-                transient=isinstance(exc,(APIConnectionError,APITimeoutError,
-                                           RateLimitError,InternalServerError))
+                quota_exhausted=(
+                    isinstance(exc,RateLimitError)
+                    and ('credit_balance_exhausted' in str(exc) or 'insufficient_quota' in str(exc))
+                )
+                transient=not quota_exhausted and isinstance(exc,(
+                    APIConnectionError,APITimeoutError,RateLimitError,InternalServerError))
                 if transient and int(job.get("attempts",0)) < 5:
                     # Leave already verified sections intact; recover autonomously.
                     update_job(job["id"],status="queued",last_error=str(exc)[:2000])
