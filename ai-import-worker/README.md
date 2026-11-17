@@ -121,3 +121,56 @@ Start by enabling Gemini + Groq for synthetic PDFs. Verify at least two
 independent vision-capable providers or the auditor will pause on illustrated
 pages. Introduce Mistral / OpenRouter / Cloudflare for text-only chapters
 after benchmark accuracy. Keep `MAX_PAGES_PER_JOB=10` until measured tests pass.
+
+## Local-first, zero-token MCQ extraction (pilot, 17 November 2026)
+
+The worker now tries `local_mcq.py` first on **free-only** jobs when
+`LOCAL_FIRST_ENABLED=true` (the default). This is a deterministic parser,
+not an LLM. It uses text positions, printed answer letters and source image
+geometry, preserves question text and explanations, and refuses to invent
+answers. It supports questions and explanations spanning page boundaries.
+
+A chapter is marked `verified` locally **only if** every numbered question
+has sequential options, a printed key consistent with the selected answer,
+a printed explanation and unambiguous labeled figures. If the chapter does
+not satisfy these conditions it falls back to the existing free AI extraction
+and independent source audit. Unknown tables, scans, multi-column layouts,
+unlabeled/vector figures and answer keys separated from questions require
+additional format-specific parsing and/or review; the local parser is not a
+general PDF understanding model.
+
+Existing verified AI chapters remain untouched. Successful local chapters
+clear stale per-page AI checkpoints, save one verified local checkpoint with
+`extraction_provider=local_pdf`, use the existing private image staging,
+and publish **only** the allowlisted synthetic test fixtures to the hidden
+admin-only TEST tier. Production real-book publication remains disabled.
+
+### Evidence from original synthetic PDFs
+
+The four actual 5-page Surgery/Gynecology PDFs were tested in the working
+environment on 2026-11-17: 16/16 MCQs parsed, all four correct answer indices
+per book, full explanations, correct Q1–Q4 figure flags (none, explanation,
+question, both). Extraction took 14–19ms per PDF, without AI API calls.
+A live repeat of Gynecology Test Book 1 published 4/4 verified MCQs with
+zero new AI requests and no source-review issues; the parser stage took
+11.57ms. The full live run included Supabase storage and was longer.
+
+### Offline benchmark (Windows, no internet or API keys)
+
+Install Python with `PyMuPDF>=1.26,<2`, then run:
+
+```powershell
+cd ai-import-worker
+python local_benchmark.py "C:\MyMedicalPDFs" --json-report "C:\MyMedicalPDFs\local_results.json"
+```
+
+A report shows local eligibility, question/image counts, suspicious source
+issues and parser duration. This command **does not upload or publish books**.
+It may be run on private or licensed source PDFs without sending those pages
+to external APIs. Treat its high-speed timing as parsing-only; verification
+of difficult source material, OCR, image uploads and hosting are separate.
+
+Synthetic 100-page, 500-MCQ textual stress test measured approximately
+0.45 seconds locally for parsing, not an estimate for arbitrary 100-page books.
+Do not promise 10 books/day until representative real-book formats have passed
+full end-to-end benchmarking.
