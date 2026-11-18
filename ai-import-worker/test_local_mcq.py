@@ -521,5 +521,20 @@ class LocalMCQTests(unittest.TestCase):
         finally:d.close()
 
 
+    def test_multiline_title_on_two_printed_pages(self):
+        d=fitz.open()
+        for page_number in range(3):
+            p=d.new_page()
+            if page_number in (0,2):
+                for y,line in [(65,"surgery"),(95,"250 SBAs for Finals"),
+                               (125,"Second edition")]:
+                    p.insert_text((60,y),line)
+        try:
+            result=local_book_metadata(d)
+            self.assertEqual(result['confidence'],'high')
+            self.assertIn('250 SBAs for Finals',result['title'])
+            self.assertIn('Second edition',result['title'])
+        finally:d.close()
+
 if __name__=="__main__":
     unittest.main()
