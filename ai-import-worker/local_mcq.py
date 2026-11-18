@@ -30,6 +30,7 @@ from separated_key_mcq import (
     is_separated_key_section, extract_separated_key_section,
     separated_key_figure_layout, has_separate_answer_marker
 )
+from paired_mcq import pair_ranges,extract_pairs,paired_figure_layout
 
 def _question_starts(lines):
     """Find named anchors plus conservative numbered MCQs, never bibliography lists.
@@ -78,6 +79,12 @@ def partition_long_sections(document, sections, max_pages=32):
     result=[]
     for section in sections:
         first,last=int(section['start_page']),int(section['end_page'])
+        if section.get('answer_start') and section.get('question_start'):
+            record=dict(section)
+            record['section_index']=len(result)+1
+            record['boundary_issues']=[]
+            result.append(record)
+            continue
         # A separate printed answer section belongs to the same chapter.
         # Never split its questions away from their answer key. For chapters
         # beyond 200 pages, retain conservative boundaries for manual review.
@@ -135,6 +142,15 @@ def layout_figures(document, first, last, include_rects=False):
     MCQ that cannot be attributed remains a review issue. The shared geometry
     is used by the validator and private-staging image uploader.
     """
+    paired=next((s for s in pair_ranges(document)
+                 if s['start_page']==first and s['end_page']==last),None)
+    if paired:
+        mapped,issues=paired_figure_layout(document,paired,[
+            {'questionNumber':num} for num in range(1,201)
+        ],True)
+        return (mapped,issues) if include_rects else (
+            {num:[kind for kind,_,_,_ in values]
+             for num,values in mapped.items()},issues)
     if is_separated_key_section(document,first,last):
         return separated_key_figure_layout(
             document,first,last,include_rects=include_rects)
@@ -236,6 +252,12 @@ def extract_local_section(document, first, last):
     start = time.monotonic()
     if not (1<=first<=last<=len(document)):
         raise ValueError('Invalid 1-based PDF page range')
+    paired=next((s for s in pair_ranges(document)
+                 if s['start_page']==first and s['end_page']==last),None)
+    if paired:
+        result=extract_pairs(document,paired)
+        if result is not None:
+            return result
     separated=extract_separated_key_section(document,first,last)
     if separated is not None:
         return separated
