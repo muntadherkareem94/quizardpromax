@@ -15,7 +15,7 @@ HEADING = re.compile(
     re.I)
 NUMBER = re.compile(r'^\s*(\d{1,4})\s*[.)]\s+(.+)$')
 OPTION = re.compile(r'^\s*(?:\(([A-J])\)|([A-J])\s*[.):])\s*(.+)$',re.I)
-KEY_LINE = re.compile(r'^\s*([A-J])\s*[–—\-:.]\s*(.+)$',re.I)
+KEY_LINE = re.compile(r'^\s*([A-J])\s*[–—\-:.·]\s*(.+)$',re.I)
 PRINTED_ANSWER = re.compile(r'^\s*(?:The\s+)?correct\s+answer\s+is\s*:\s*([A-J])\s*[.)]?\s*(.*)$',re.I)
 ONLY_PAGE_NUMBER = re.compile(r'^\d{1,4}$')
 CLEAN_HEADER = re.compile(r'^(?:Questions|Answers|Practice\s+Paper\s+\d+\s*:\s*(?:Questions|Answers))$',re.I)
