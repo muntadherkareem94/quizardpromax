@@ -232,6 +232,20 @@ def find_sections(document):
             entries = [(t,p) for t,p in entries if p >= 1]
             if len(entries) >= 2:
                 return finalize_sections(entries,pages), []
+    # Some board-review publishers print a numeric chapter banner,
+    # a specialty heading, and QUESTIONS on the same first page:
+    #       1 / CARDIOLOGY / QUESTIONS
+    # This is strong evidence of a real MCQ chapter, not the contents page.
+    numbered_headings=[]
+    for p in range(1,pages+1):
+        lines=[x.strip() for x in
+               document[p-1].get_text("text",sort=True).splitlines() if x.strip()]
+        if (len(lines)>=3 and re.fullmatch(r"\d{1,2}",lines[0])
+                and re.fullmatch(r"[A-Z][A-Z\s&/-]{3,90}",lines[1])
+                and "QUESTIONS" in [x.upper() for x in lines[2:9]]):
+            numbered_headings.append((lines[1].title(),p))
+    if len(numbered_headings)>=2:
+        return finalize_sections(numbered_headings,pages), []
     entries = []
     seen = set()
     # Restrict to first lines of each page; do not confuse ordinary MCQ mentions of chapter.
