@@ -37,6 +37,24 @@ label{display:block;font-weight:600;margin-bottom:6px}
 <div><h2 id="bookTitle" class="font-bold text-xl">Loading import...</h2><p id="bookSummary" class="text-slate-500"></p></div>
 <button id="reload" class="action secondary">Reload saved review</button>
 </div>
+<details class="panel mb-3" id="titleReview">
+<summary class="font-bold cursor-pointer">Verify book title from its PDF cover or title page</summary>
+<p id="titleConfidence" class="note mt-2 mb-3"></p>
+<p class="text-sm text-slate-600 mb-3">For books without a repeated printed title, the super-admin can supply the title and a source-page quotation. This is manual source verification, not automatic extraction.</p>
+<div class="grid md:grid-cols-2 gap-3">
+<div><label for="sourceBookTitle">Exact title printed in the original PDF</label>
+<input id="sourceBookTitle" class="control" maxlength="200"></div>
+<div><label for="sourceTitlePage">PDF page with printed title</label>
+<input id="sourceTitlePage" type="number" min="1" class="control" value="1"></div>
+</div>
+<label for="sourceTitleEvidence" class="mt-3">Verbatim title-page evidence</label>
+<textarea id="sourceTitleEvidence" class="control mb-3" rows="2" maxlength="400" placeholder="Quote the title or program name printed on that page"></textarea>
+<label class="flex gap-2 items-center mb-3 font-normal">
+<input id="sourceTitleConfirmed" type="checkbox">
+<span>I checked the title and quoted evidence directly against the original PDF.</span>
+</label>
+<button id="saveBookTitle" class="action secondary">Save manually verified title</button>
+</details>
 <div class="split">
 <section class="panel">
 <div class="flex flex-wrap justify-between items-center gap-2 mb-2">
@@ -55,7 +73,7 @@ label{display:block;font-weight:600;margin-bottom:6px}
 <div id="optionFields"></div>
 <label for="answer">Correct answer</label><select id="answer" class="control mb-3"></select>
 <label for="explanation">Explanation / Critique</label><textarea id="explanation" class="control mb-3" rows="10"></textarea>
-<p class="note mb-2">Missing source material must never be invented. Question 3 of the SESAP sample needs its original linked critique.</p>
+<p class="note mb-2">Missing source material must never be invented. Questions with absent or separate answer keys and critiques require source review.</p>
 <h4 class="font-bold mb-2">Question figures (private staging)</h4>
 <div id="questionImages" class="images mb-3"></div>
 <h4 class="font-bold mb-2">Explanation figures (private staging)</h4>
@@ -171,6 +189,11 @@ async function load(preserve=true){
   $('bookTitle').textContent=data.job.title;
   const approved=qs.filter(e=>e.q.reviewDecision?.status==='approved').length;
   $('bookSummary').textContent=data.job.speciality+' · '+qs.length+' extracted · '+approved+' manually approved · '+data.job.status;
+  $('titleConfidence').textContent='Title evidence: '+(data.job.title_confidence==='high' ? 'verified' : 'needs source confirmation')+
+    ' · Method: '+(data.job.title_verification==='manual_super_admin_source_check' ? 'manual source review' : 'local PDF checks');
+  $('sourceBookTitle').value=data.job.title||'';
+  $('sourceTitlePage').max=String(data.job.total_pages||1);
+  $('saveBookTitle').disabled=!!data.draft;
   $('sourceLink').href=data.source_url||'#';
   $('pdfFrame').src=data.source_url||'about:blank';
   const draft=data.draft;
@@ -214,6 +237,24 @@ $('approve').addEventListener('click',()=>update('decision','approved'));
 $('reject').addEventListener('click',()=>update('decision','rejected'));
 $('reset').addEventListener('click',()=>update('decision','pending'));
 $('reload').addEventListener('click',async()=>{try{await load()}catch(e){message(e.message,true)}});
+$('saveBookTitle').addEventListener('click',async()=>{
+  if(busy||!state||state.draft)return;
+  if(!$('sourceTitleConfirmed').checked){message('Confirm that you checked the printed source before saving its title.',true);return}
+  const title=$('sourceBookTitle').value.trim();
+  const evidence=$('sourceTitleEvidence').value.trim();
+  const page=Number($('sourceTitlePage').value);
+  if(!title||evidence.length<8||!Number.isInteger(page)||page<1||page>state.job.total_pages){
+    message('Enter an exact printed title, its PDF page, and at least 8 characters of verbatim evidence.',true);
+    return;
+  }
+  if(!confirm('Store the manually confirmed printed title for this draft import?'))return;
+  busy=true;
+  try{
+    await api('confirm-title',{title,evidence,page,source_confirmed:true});
+    message('Printed book title confirmed manually. The questions remain in private staging.');
+    await load();
+  }catch(e){message(e.message,true)}finally{busy=false}
+});
 $('importDraft').addEventListener('click',async()=>{
   if(busy)return;
   if(!$('rights').checked){message('Confirm reproduction rights before importing.',true);return}
