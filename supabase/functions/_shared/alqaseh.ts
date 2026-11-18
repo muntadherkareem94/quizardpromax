@@ -21,8 +21,22 @@ async function providerRequest(path: string, init: RequestInit = {}) {
   const res = await fetch(API + path, { ...init, headers });
   const payload = await res.json().catch(() => ({}));
   if (!res.ok) {
-    console.error('Al-Qaseh API HTTP status:', res.status);
-    throw new Error('Payment gateway temporarily unavailable');
+    // A 4xx response usually means the provider rejected a request field,
+    // not that Supabase itself failed. Log ONLY diagnostic fields.
+    // Never log authorization headers, keys, tokens or card information.
+    const diagnostic = payload && typeof payload === 'object' ? {
+      err: payload.err,
+      error_code: payload.error_code,
+      reference_code: payload.reference_code,
+      message: payload.message,
+      error: typeof payload.error === 'string' ? payload.error : undefined,
+      errors: payload.errors
+    } : null;
+    console.error('Al-Qaseh API rejected request', JSON.stringify({
+      http_status: res.status,
+      details: diagnostic
+    }).slice(0, 1600));
+    throw new Error('Payment gateway rejected the request (HTTP ' + res.status + ')');
   }
   return payload;
 }
