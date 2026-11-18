@@ -7,7 +7,7 @@
 body{font:16px system-ui,sans-serif;background:#f2f7fa;color:#20384a;display:grid;place-items:center;min-height:95vh;margin:0;padding:1rem}
 main{background:white;border:1px solid #dae8f0;border-radius:16px;padding:2rem;max-width:540px;width:100%;box-shadow:0 8px 30px #0e38551a}
 h1{font-size:1.5rem}p{line-height:1.6}button{font:inherit;border:0;border-radius:8px;padding:.85rem 1.1rem;background:#057b9d;color:#fff;cursor:pointer}
-button:disabled{opacity:.5;cursor:wait}#account{padding:1rem;background:#f4f9fc;border-radius:8px;margin:1rem 0}#loginLink{display:inline-block;margin-top:.4rem;font-weight:650}#result{white-space:pre-wrap;background:#eef5f8;padding:1rem;border-radius:8px;line-height:1.5}
+button:disabled{opacity:.5;cursor:wait}#account{padding:1rem;background:#f4f9fc;border-radius:8px;margin:1rem 0}#loginLink{display:inline-block;margin-top:.4rem;font-weight:650}#loginLink[hidden]{display:none}#result{white-space:pre-wrap;background:#eef5f8;padding:1rem;border-radius:8px;line-height:1.5}
 small{color:#5d7284}a{color:#057b9d}
 </style>
 </head>
@@ -37,7 +37,7 @@ async function checkSession(){
   try{
     const {data:{user},error}=await supabase.auth.getUser();
     if(error||!user)throw new Error('Not signed in on this preview');
-    account.textContent='Signed in on the test site. Ready to check your admin access.';
+    account.textContent='Signed in on the test site. Ready to open the payment test.';
     authorized=true;
     loginLink.hidden=true;
     btn.disabled=false;
