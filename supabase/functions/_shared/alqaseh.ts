@@ -14,15 +14,11 @@ function credentials() {
 }
 
 async function providerRequest(path: string, init: RequestInit = {}) {
-  const res = await fetch(API + path, {
-    ...init,
-    headers: {
-      'Authorization': credentials(),
-      'Accept': 'application/json',
-      ...(init.body ? { 'Content-Type': 'application/json' } : {}),
-      ...init.headers
-    }
-  });
+  const headers = new Headers(init.headers);
+  headers.set('Authorization', credentials());
+  headers.set('Accept', 'application/json');
+  if (init.body) headers.set('Content-Type', 'application/json');
+  const res = await fetch(API + path, { ...init, headers });
   const payload = await res.json().catch(() => ({}));
   if (!res.ok) {
     console.error('Al-Qaseh API HTTP status:', res.status);
@@ -80,9 +76,17 @@ export async function settleAlqasehPayment(
   }
   if (invoice.status === 'paid') return 'paid';
 
-  const actual = await providerRequest(
-    '/egw/payments/' + encodeURIComponent(invoice.provider_payment_id)
+  // The official payment history API supports an exact payment_id filter.
+  // Unlike /payments/{id}, this does not assume that payment_id is an
+  // internal numeric payment-context ID.
+  const history = await providerRequest(
+    '/egw/payments/history?payment_id=' +
+    encodeURIComponent(invoice.provider_payment_id) + '&limit=10'
   );
+  const actual = Array.isArray(history)
+    ? history.find(item => String(item?.payment_id) === invoice.provider_payment_id)
+    : null;
+  if (!actual) throw new Error('Payment not found in merchant history');
 
   if (String(actual.payment_id) !== invoice.provider_payment_id ||
       String(actual.order_id) !== invoice.request_id ||
