@@ -31,6 +31,99 @@ async function fingerprint(q: Candidate) {
   return Array.from(new Uint8Array(digest)).map(n => n.toString(16).padStart(2, '0')).join('');
 }
 
+type DraftDb = ReturnType<typeof createClient>;
+
+async function readPrivateDraftFigures(db: DraftDb, bookId: string) {
+  const {data: rows, error} = await db.from('ai_import_draft_figures')
+    .select('question_id,kind,sort_index,object_path')
+    .eq('book_id', bookId).order('sort_index');
+  if (error) throw error;
+  const figures: Record<string,{question: string[], explanation: string[]}> = {};
+  let missing = 0;
+  for (const row of rows || []) {
+    if (!figures[row.question_id])
+      figures[row.question_id] = {question: [], explanation: []};
+    const {data: signed, error: urlError} = await db.storage
+      .from('ai_import_draft_figures').createSignedUrl(row.object_path, 900);
+    if (urlError || !signed?.signedUrl) {
+      missing++;
+      continue;
+    }
+    figures[row.question_id][row.kind as 'question' | 'explanation']
+      .push(signed.signedUrl);
+  }
+  return {figures, count: rows?.length || 0, unavailable: missing};
+}
+
+async function syncPrivateDraftFigures(db: DraftDb, jobId: string, bookId: string) {
+  const {data: book, error: bookError} = await db.from('books')
+    .select('id,access_level').eq('id', bookId).single();
+  if (bookError || !book || book.access_level !== 'test')
+    throw new Error('Only an admin-only TEST book can receive private draft figures');
+
+  const [sectionsResult, chaptersResult, questionResult] = await Promise.all([
+    db.from('ai_import_sections').select('section_index,questions').eq('job_id', jobId),
+    db.from('chapters').select('id,chapterNumber').eq('book_id', bookId),
+    db.from('questions').select('id,chapter_id,questionNumber').eq('book_id', bookId),
+  ]);
+  if (sectionsResult.error) throw sectionsResult.error;
+  if (chaptersResult.error) throw chaptersResult.error;
+  if (questionResult.error) throw questionResult.error;
+  const chapterNumbers = new Map(
+    (chaptersResult.data || []).map(ch => [ch.id, Number(ch.chapterNumber)]));
+  const recordBySourceNumber = new Map<string,string>();
+  for (const q of questionResult.data || []) {
+    recordBySourceNumber.set(chapterNumbers.get(q.chapter_id) + ':' +
+      Number(q.questionNumber), q.id);
+  }
+  const sourcePrefix = 'staging://ai_import_assets/';
+  const copied: Array<{question_id:string,kind:string,index:number}> = [];
+  for (const section of sectionsResult.data || []) {
+    const chapterIndex = Number(section.section_index);
+    for (const q of section.questions || []) {
+      if (q?.reviewDecision?.status !== 'approved' ||
+          q.reviewDecision.sourceConfirmed !== true) continue;
+      const questionNumber = Number(q.questionNumber);
+      const questionId = recordBySourceNumber.get(chapterIndex + ':' + questionNumber);
+      if (!questionId) continue; // No imported question for this source candidate.
+      for (const [field,kind,letter] of [
+        ['imageUrls','question','q'],
+        ['explanationImageUrls','explanation','e'],
+      ] as const) {
+        const refs: unknown = q[field];
+        if (refs == null) continue;
+        if (!Array.isArray(refs) || refs.length > 20)
+          throw new Error('Invalid source image list at Q' + questionNumber);
+        for (let i=0; i<refs.length; i++) {
+          const expected = sourcePrefix + 'ai-import/' + jobId +
+            '/ch' + chapterIndex + '/' + questionNumber + letter + (i+1) + '.png';
+          if (refs[i] !== expected)
+            throw new Error('Image source does not match the audited question/figure position');
+          const sourcePath = expected.slice(sourcePrefix.length);
+          const objectPath = 'drafts/' + bookId + '/' + questionId +
+            '/' + kind + '/' + (i+1) + '.png';
+          const {data: original, error: downloadError} = await db.storage
+            .from('ai_import_assets').download(sourcePath);
+          if (downloadError || !original)
+            throw downloadError || new Error('Source image could not be downloaded');
+          const {error: uploadError} = await db.storage
+            .from('ai_import_draft_figures').upload(objectPath, original,
+              {contentType: 'image/png', upsert: true});
+          if (uploadError) throw uploadError;
+          const {error: mapError} = await db.from('ai_import_draft_figures')
+            .upsert({question_id: questionId, book_id: bookId,
+              job_id: jobId, kind, sort_index: i+1,
+              object_path: objectPath, source_path: sourcePath},
+              {onConflict: 'question_id,kind,sort_index'});
+          if (mapError) throw mapError;
+          copied.push({question_id: questionId,kind,index:i+1});
+        }
+      }
+    }
+  }
+  return {attached: copied.length, private: true};
+}
+
 Deno.serve(async req => {
   if (req.method === 'OPTIONS') return new Response(null, {status: 204, headers: cors});
   if (req.method !== 'POST') return respond({error: 'POST required'}, 405);
@@ -52,6 +145,16 @@ Deno.serve(async req => {
 
     const input = await req.json();
     const action = String(input?.action || '');
+    if (action === 'draft-figures') {
+      const bookId = String(input?.book_id || '');
+      if (!uuid.test(bookId)) return respond({error: 'Valid draft book ID required'}, 400);
+      const {data: link, error: linkError} = await db.from('ai_import_draft_links')
+        .select('book_id').eq('book_id', bookId).maybeSingle();
+      if (linkError) throw linkError;
+      if (!link) return respond({ok: true, linked: false, figures: {}, count: 0});
+      const signed = await readPrivateDraftFigures(db, bookId);
+      return respond({ok: true, linked: true, ...signed});
+    }
     const id = String(input?.id || '');
     if (!uuid.test(id)) return respond({error: 'Valid import job ID required'}, 400);
     const {data: job, error: jobError} = await db.from('ai_import_jobs')
@@ -66,6 +169,14 @@ Deno.serve(async req => {
       if (error) throw error;
       const {data: draft} = await db.from('ai_import_draft_links')
         .select('book_id,approved_count').eq('job_id', id).maybeSingle();
+      let draftFigureCount = 0;
+      if (draft) {
+        const {count, error: figureCountError} = await db.from('ai_import_draft_figures')
+          .select('question_id', {count: 'exact', head: true})
+          .eq('book_id', draft.book_id);
+        if (figureCountError) throw figureCountError;
+        draftFigureCount = count || 0;
+      }
       const staged = new Set<string>();
       const resultSections = await Promise.all((sections || []).map(async s => {
         const qs = await Promise.all((s.questions || []).map(async (q: Candidate) =>
@@ -94,7 +205,7 @@ Deno.serve(async req => {
         id: job.id, title: job.book_metadata?.title || job.title_hint,
         speciality: job.speciality, file_name: job.file_name, status: job.status
       }, sections: resultSections, source_url: source.data?.signedUrl || null,
-      images, draft});
+      images, draft: draft ? {...draft, figure_count: draftFigureCount} : null});
     }
 
     if (action === 'import-draft') {
@@ -107,7 +218,28 @@ Deno.serve(async req => {
         p_job_id: id, p_rights_confirmed: true
       });
       if (error) return respond({error: error.message}, 409);
-      return respond({ok: true, draft: data});
+      try {
+        const figureSync = await syncPrivateDraftFigures(db,id,data.book_id);
+        return respond({ok: true, draft: data, figure_sync: figureSync});
+      } catch (imageError) {
+        // The book transaction already succeeded. Let the admin retry figures
+        // separately; never misreport that the draft import itself failed.
+        console.error('Draft saved but private image sync failed', imageError);
+        return respond({ok: true, draft: data,
+          figure_warning: imageError instanceof Error ? imageError.message : 'Private figure sync failed'});
+      }
+    }
+
+    if (action === 'sync-draft-figures') {
+      const {data: draft, error: draftError} = await db.from('ai_import_draft_links')
+        .select('book_id,approved_count').eq('job_id', id).maybeSingle();
+      if (draftError) throw draftError;
+      if (!draft) return respond({error: 'Import the approved questions first'}, 409);
+      if (input?.rights_confirmed !== true ||
+          input?.confirm_title !== job.book_metadata?.title)
+        return respond({error: 'Reconfirm rights and printed book title to transfer private figures'}, 400);
+      const result = await syncPrivateDraftFigures(db, id, draft.book_id);
+      return respond({ok: true, ...result});
     }
 
     if (!['save', 'decision'].includes(action))
