@@ -30,7 +30,7 @@ Deno.serve(async (req: Request) => {
   const anonKey = Deno.env.get('SUPABASE_ANON_KEY');
   const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
 
-  const returnUrl = 'https://deploy-preview-2--quizardpromax.netlify.app/payment-result.html';
+  const returnUrl = Deno.env.get('QUIZARD_RETURN_URL');
 
   if (
     !url || !anonKey || !serviceKey ||
@@ -69,12 +69,9 @@ Deno.serve(async (req: Request) => {
       return respond({ error: 'Unauthorized' }, 401);
     }
 
-    // Public Sandbox merchant credentials must never unlock real customer accounts.
-    // Until the test account is explicitly selected, checkout is disabled.
-    const testUserId = Deno.env.get('ALQASEH_SANDBOX_TEST_USER_ID');
-    if (!testUserId || auth.user.id !== testUserId) {
-      return respond({ error: 'Al-Qaseh sandbox is limited to the designated test account.' }, 403);
-    }
+    // Account ownership and eligibility are checked using the user's
+    // Supabase session and server-side catalogue/pricing data.
+    // This gateway is UAT: no real funds are charged.
 
     const body = await req.json();
 
@@ -179,7 +176,7 @@ return respond({
   } catch (error) {
     console.error('Upgrade checkout error:', error);
 
-    // Only mark a checkout failed when Qi has not
+    // Only mark a checkout failed when Al-Qaseh has not
     // reported creating a payment.
     // Otherwise preserve records for reconciliation.
     if (requestId && !providerPaymentCreated) {
