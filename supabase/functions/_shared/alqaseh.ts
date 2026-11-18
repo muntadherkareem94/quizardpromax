@@ -75,7 +75,7 @@ export async function settleAlqasehPayment(
     .from('qz_card_checkouts').select('*')
     .eq('request_id', orderId).maybeSingle();
   if (fetchError) throw fetchError;
-  if (!invoice || !invoice.provider_payment_id) {
+  if (!invoice || invoice.provider !== 'alqaseh' || !invoice.provider_payment_id) {
     throw new Error('Unknown payment reference');
   }
   if (invoice.status === 'paid') return 'paid';
