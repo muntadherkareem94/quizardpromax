@@ -29,12 +29,12 @@ async function providerRequest(path: string, init: RequestInit = {}) {
 
 export async function createAlqasehPayment(input: {
   orderId: string; amountIQD: number; description: string;
-  redirectUrl: string; webhookUrl: string;
+  redirectUrl: string; webhookUrl?: string;
 }) {
   if (!UUID.test(input.orderId) ||
       !Number.isSafeInteger(input.amountIQD) || input.amountIQD <= 0 ||
       new URL(input.redirectUrl).protocol !== 'https:' ||
-      new URL(input.webhookUrl).protocol !== 'https:') {
+      (input.webhookUrl && new URL(input.webhookUrl).protocol !== 'https:')) {
     throw new Error('Invalid payment request');
   }
   const result = await providerRequest('/egw/payments/create', {
@@ -45,7 +45,7 @@ export async function createAlqasehPayment(input: {
       description: input.description.slice(0, 250),
       order_id: input.orderId,
       redirect_url: input.redirectUrl,
-      webhook_url: input.webhookUrl,
+      ...(input.webhookUrl ? { webhook_url: input.webhookUrl } : {}),
       transaction_type: 'Retail',
       token_expiry_in_hour: 1
     })
