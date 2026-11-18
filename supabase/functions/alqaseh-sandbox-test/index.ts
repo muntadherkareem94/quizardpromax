@@ -40,6 +40,33 @@ Deno.serve(async (req: Request) => {
     if (!profile) return json({error:'Quizard profile not found'},403);
 
     const input = await req.json().catch(()=>({}));
+    if (input.action === 'diagnose') {
+      // Read-only credential handshake: creates NO payment and
+      // does not return any merchant transactions or secrets.
+      const clientId = Deno.env.get('ALQASEH_CLIENT_ID');
+      const secret = Deno.env.get('ALQASEH_CLIENT_SECRET');
+      if (!clientId || !secret) {
+        return json({ gateway_auth_ok:false, error:'Sandbox API credentials are missing' });
+      }
+      const response = await fetch(
+        'https://api-test.alqaseh.com/v1/egw/payments/history?limit=1',
+        { method:'GET', headers:{
+          'Authorization':'Basic ' + btoa(clientId + ':' + secret),
+          'Accept':'application/json'
+        }}
+      );
+      // We intentionally discard the body; it could contain merchant data.
+      await response.body?.cancel();
+      return json({
+        gateway_auth_ok:response.ok,
+        gateway_http_status:response.status,
+        diagnosis: response.ok ? 'Sandbox API credentials accepted by Al-Qaseh.'
+          : response.status === 401 || response.status === 403
+            ? 'Al-Qaseh did not authorize the supplied sandbox credentials.'
+            : 'Al-Qaseh returned an unexpected result to the read-only connection test.'
+      });
+    }
+
     if (input.action === 'start') {
       const orderId = crypto.randomUUID();
       const payment = await createAlqasehPayment({
