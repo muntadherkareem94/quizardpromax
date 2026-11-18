@@ -233,6 +233,17 @@ async function refresh(){
     }
   }
   const issues=Array.isArray(job.review_issues)?job.review_issues:[];
+  if(job.status==='needs_review' && Number(job.total_pages)>0 &&
+     Number(job.processed_pages)>=Number(job.total_pages) &&
+     Number(job.total_questions)===0){
+    const issue=issues.find(i=>i.type==='no_selectable_mcq_text'||i.type==='no_supported_mcq_structure');
+    const warning=document.createElement('p');
+    warning.className='text-sm mt-2 rounded-lg p-3 border border-amber-300 bg-amber-50 text-amber-900';
+    warning.textContent=issue?.type==='no_selectable_mcq_text'
+      ? 'No MCQs detected. This PDF may be scanned or image-only; OCR is required before text extraction.'
+      : 'No extractable MCQs detected. Check whether this is a clinical reference rather than a question bank, or a book with a different question/answer layout. Retrying the unchanged file will not help.';
+    status.appendChild(warning);
+  }
   if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
   const act=make();
   const recoverable=job.status==='processing' && job.worker_lock_at &&
