@@ -12,6 +12,14 @@ from __future__ import annotations
 from decimal import Decimal, ROUND_HALF_UP
 
 PRICES = {
+    # Official API list prices (USD per million tokens), 2026-11-18.
+    # Standard tier is used for OpenAI-only import jobs to avoid occasional
+    # Flex-unavailability during pilot; Flex entries are provisional only
+    # if the operator enables it explicitly for a supported model.
+    "gpt-5.4-mini": {
+        "standard": (Decimal("0.75"), Decimal("4.50"), Decimal("0.075")),
+        "flex": (Decimal("0.375"), Decimal("2.25"), Decimal("0.0375")),
+    },
     "gpt-6.1-sol": {
         "flex": (Decimal("1"), Decimal("5"), Decimal("0.05")),
         "standard": (Decimal("2"), Decimal("10"), Decimal("0.10")),
