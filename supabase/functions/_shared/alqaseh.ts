@@ -74,6 +74,10 @@ export async function settleAlqasehPayment(
   if (!invoice || invoice.provider !== 'alqaseh' || !invoice.provider_payment_id) {
     throw new Error('Unknown payment reference');
   }
+  const sandboxTestId = Deno.env.get('ALQASEH_SANDBOX_TEST_USER_ID');
+  if (!sandboxTestId || invoice.user_id !== sandboxTestId) {
+    throw new Error('Sandbox payment is restricted to the designated test account');
+  }
   if (invoice.status === 'paid') return 'paid';
 
   // The official payment history API supports an exact payment_id filter.
