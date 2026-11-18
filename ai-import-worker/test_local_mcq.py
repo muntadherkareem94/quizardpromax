@@ -333,7 +333,7 @@ class LocalMCQTests(unittest.TestCase):
             result=diagnose_empty_mcq_source(document)
             self.assertEqual(result["type"],"no_supported_mcq_structure")
             self.assertEqual(result["selectable_text_pages"],12)
-            self.assertIn("rather than a question bank",result["detail"])
+            self.assertIn("does NOT mean the book lacks MCQs",result["detail"])
         finally:document.close()
 
     def test_image_only_source_requests_ocr_not_question_generation(self):
