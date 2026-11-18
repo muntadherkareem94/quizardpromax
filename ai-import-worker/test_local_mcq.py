@@ -2,7 +2,7 @@
 import unittest
 import fitz
 
-from local_mcq import extract_local_section, local_book_metadata, layout_figures
+from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions
 
 
 def make_textbook(*, answer="Correct answer: B. Second choice",
@@ -183,6 +183,12 @@ class LocalMCQTests(unittest.TestCase):
             self.assertFalse(result["strict_pass"])
             self.assertIn("linked_critique_not_provided",
                           [i["type"] for i in result["issues"]])
+            statuses=classify_local_questions(result["questions"],result["issues"])
+            self.assertEqual([a["status"] for a in statuses],
+                             ["verified_local","needs_review"])
+            self.assertEqual(statuses[0]["issues"],[])
+            self.assertEqual(statuses[1]["issues"][0]["type"],
+                             "linked_critique_not_provided")
             figure_map,figure_issues=layout_figures(d,2,4,include_rects=True)
             self.assertEqual(figure_issues,[])
             self.assertEqual([f[0] for f in figure_map[1]],
@@ -190,6 +196,46 @@ class LocalMCQTests(unittest.TestCase):
             self.assertEqual(q2["correctAnswerIndex"],1)
         finally:
             d.close()
+
+    def test_unnumbered_layout_issue_blocks_all_local_verification(self):
+        questions=[{"questionNumber":1},{"questionNumber":2}]
+        issues=[{"type":"unclassified_image","page":1,
+                 "detail":"Cannot attribute image to printed question"}]
+        audits=classify_local_questions(questions,issues)
+        self.assertEqual([a["status"] for a in audits],
+                         ["needs_review","needs_review"])
+
+    def test_question_specific_issue_does_not_block_other_questions(self):
+        questions=[{"questionNumber":1},{"questionNumber":2},{"questionNumber":3}]
+        issues=[{"type":"no_printed_explanation","number":3}]
+        audits=classify_local_questions(questions,issues)
+        self.assertEqual([a["status"] for a in audits],
+                         ["verified_local","verified_local","needs_review"])
+
+    def test_sesap_title_and_volume_are_confirmed_from_printed_cover(self):
+        d=fitz.open()
+        page=d.new_page()
+        for y,text in [(55,"SESAP 19"),(90,"SELF-ASSESSMENT PROGRAM"),
+                       (125,"FOR SURGICAL TRAINING"),(170,"VOLUME 19")]:
+            page.insert_text((70,y),text)
+        d.new_page().insert_text((60,60),"CHAPTER 1 BREAST")
+        try:
+            info=local_book_metadata(d)
+            self.assertEqual(info["title"],"SESAP 19")
+            self.assertEqual(info["confidence"],"high")
+            self.assertIn("VOLUME 19",info["titleEvidence"])
+        finally:d.close()
+
+    def test_mismatched_sesap_cover_does_not_verify_title(self):
+        d=fitz.open()
+        page=d.new_page()
+        for y,text in [(55,"SESAP 19"),(90,"SELF-ASSESSMENT PROGRAM"),
+                       (125,"VOLUME 18")]:
+            page.insert_text((70,y),text)
+        d.new_page().insert_text((60,60),"CHAPTER 1 BREAST")
+        try:self.assertIsNone(local_book_metadata(d))
+        finally:d.close()
+
 
 if __name__=="__main__":
     unittest.main()
