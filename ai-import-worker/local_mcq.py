@@ -12,7 +12,7 @@ from collections import Counter
 Q = re.compile(r'^\s*(?:Question|Q)\s*(\d+)(?:\s*[.):]\s*|\s*$)(.*)$', re.I)
 OPT = re.compile(r'^\s*([A-J])\s*[.):]\s*(\S.*)$')
 KEY = re.compile(r'^\s*(?:Correct\s+Answer|Answer\s+Key|Answer)\s*:\s*([A-J])(?:[.)\s:-]+(.*))?$', re.I)
-EXPL = re.compile(r'^\s*(?:Explanation|Rationale|Critique)\s*:?\s*(.*)$', re.I)
+EXPL = re.compile(r'^\s*(?:(?:Explanation|Rationale)\s*:\s*(.*)|Critique(?:\s*:\s*(.*))?)\s*$', re.I)
 IMARK = re.compile(r'^\s*(Question|Explanation)\s+Image\s*$', re.I)
 FIGCAP = re.compile(r'^\s*Figure\s+\d+\s*[.):]?\s*$', re.I)
 REFS = re.compile(r'^\s*References\s*:?\s*$', re.I)
@@ -50,12 +50,12 @@ def layout_figures(document, first, last, include_rects=False):
                     state = 'stem'
                 elif KEY.match(line):
                     state = 'answer'
+                elif (m := IMARK.fullmatch(line)):
+                    labels.append((pno, box, m.group(1).lower(), 'marker'))
                 elif EXPL.match(line):
                     state = 'explanation'
                 elif REFS.fullmatch(line):
                     state = 'references'
-                elif (m := IMARK.fullmatch(line)):
-                    labels.append((pno, box, m.group(1).lower(), 'marker'))
                 elif FIGCAP.fullmatch(line):
                     kind = ('question' if state in ('stem', 'options') else
                             'explanation' if state in ('answer', 'explanation') else None)
@@ -176,7 +176,7 @@ def extract_local_section(document, first, last):
                 answer_text=(m_key.group(2) or '').strip()
                 state='answer'
             elif m_expl:
-                explanation.append(m_expl.group(1))
+                explanation.append(next((g for g in m_expl.groups() if g is not None), ''))
                 state='explanation'
             elif m_opt and state in ('stem','options'):
                 opt_labels.append(m_opt.group(1))
@@ -265,7 +265,7 @@ def local_book_metadata(document):
              if x.strip()]
     if not first:
         return None
-    title = first[0].split(' — ', 1)[0].strip()
+    title = re.split(r'\s+[—–·]\s+', first[0], maxsplit=1)[0].strip()
     if not 8 <= len(title) < 180:
         return None
 
