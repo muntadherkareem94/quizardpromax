@@ -248,6 +248,13 @@ async function refresh(){
   }
   if(['queued','processing','needs_review','ready','published','paused_budget','waiting_provider'].includes(job.status))
     act.appendChild(button('Source PDF','source-link',job.id));
+  if(['needs_review','ready','published'].includes(job.status)){
+    const review=document.createElement('a');
+    review.href='ai_book_review.html?job='+encodeURIComponent(job.id);
+    review.className='inline-block bg-indigo-700 text-white font-semibold rounded-lg px-3 py-2 mr-2 mb-2';
+    review.textContent='Review & import';
+    act.appendChild(review);
+  }
   if(['failed','needs_review','paused_budget','waiting_provider'].includes(job.status))act.appendChild(button('Retry','retry',job.id));
   if(['uploading','queued','failed','paused_budget','needs_review','ready'].includes(job.status))act.appendChild(button('Edit budget','set-budget',job.id));
   if(['queued','failed','needs_review','ready','paused_budget','waiting_provider'].includes(job.status))act.appendChild(button('Cancel','cancel',job.id));
