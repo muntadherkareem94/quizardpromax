@@ -158,7 +158,7 @@ Deno.serve(async req => {
     const id = String(input?.id || '');
     if (!uuid.test(id)) return respond({error: 'Valid import job ID required'}, 400);
     const {data: job, error: jobError} = await db.from('ai_import_jobs')
-      .select('id,file_name,title_hint,speciality,source_path,status,book_metadata,book_id')
+      .select('id,file_name,title_hint,speciality,source_path,status,book_metadata,book_id,total_pages')
       .eq('id', id).single();
     if (jobError || !job) return respond({error: 'Import not found'}, 404);
 
@@ -203,9 +203,41 @@ Deno.serve(async req => {
         .createSignedUrl(job.source_path, 900);
       return respond({job: {
         id: job.id, title: job.book_metadata?.title || job.title_hint,
-        speciality: job.speciality, file_name: job.file_name, status: job.status
+        speciality: job.speciality, file_name: job.file_name, status: job.status,
+        total_pages: job.total_pages, title_confidence: job.book_metadata?.confidence || 'low',
+        title_verification: job.book_metadata?.verificationMethod || 'local_pdf'
       }, sections: resultSections, source_url: source.data?.signedUrl || null,
       images, draft: draft ? {...draft, figure_count: draftFigureCount} : null});
+    }
+
+    if (action === 'confirm-title') {
+      if (!['needs_review','ready'].includes(job.status))
+        return respond({error:'Complete extraction before confirming the title'},409);
+      const {data: draft, error: draftError} = await db.from('ai_import_draft_links')
+        .select('book_id').eq('job_id',id).maybeSingle();
+      if (draftError) throw draftError;
+      if (draft) return respond({error:'The draft book is already imported; its title cannot be changed here'},409);
+      if (input?.source_confirmed !== true)
+        return respond({error:'You must confirm reading the printed title in the PDF'},400);
+      const title = requiredText(input?.title,'Printed title',200).trim();
+      const evidence = requiredText(input?.evidence,'Printed title evidence',400).trim();
+      const page=Number(input?.page);
+      if (title.length < 5 || evidence.length < 8 || !Number.isInteger(page) ||
+          page < 1 || page > Number(job.total_pages||0))
+        return respond({error:'Provide a printed title, a verbatim source passage and its valid PDF page'},400);
+      const metadata = {
+        ...(job.book_metadata || {}),title,coverPage:page,
+        titleEvidence:evidence,confidence:'high',
+        verificationMethod:'manual_super_admin_source_check',
+        verifiedBy:user.id,verifiedAt:new Date().toISOString()
+      };
+      const {data: updated, error} = await db.from('ai_import_jobs')
+        .update({book_metadata:metadata,title_hint:title})
+        .eq('id',id).in('status',['needs_review','ready'])
+        .select('id');
+      if (error) throw error;
+      if (!updated?.length) return respond({error:'Import state changed; reload'},409);
+      return respond({ok:true,book_metadata:metadata});
     }
 
     if (action === 'import-draft') {
