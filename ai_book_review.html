@@ -78,6 +78,10 @@ label{display:block;font-weight:600;margin-bottom:6px}
 <h3 class="font-bold text-lg mb-2">Import approved questions to an admin-only TEST book</h3>
 <p class="text-sm text-slate-600 mb-3">This action creates real Quizard book, chapter, and question records, but retains <strong>test</strong> access. Only explicitly approved questions are included. Source PDF and all figures stay in private staging; figure URLs are intentionally not copied to public image buckets. The imported draft is not ready for student publication.</p>
 <div id="draftStatus" class="text-sm mb-3"></div>
+<div class="mb-4 flex flex-wrap items-center gap-2">
+<button id="syncFigures" class="action secondary" disabled>Attach approved figures privately</button>
+<span id="figureProgress" class="note">Figure transfer is available after the admin-only draft is created.</span>
+</div>
 <label class="flex gap-2 items-start mb-3 font-normal"><input id="rights" type="checkbox" class="mt-1"><span>I confirm that I have the rights or permission needed to reproduce this material in Quizard.</span></label>
 <label for="confirmTitle">Type the exact printed book title to confirm this admin-only draft import</label>
 <input id="confirmTitle" class="control mb-3" placeholder="Printed book title">
@@ -172,6 +176,10 @@ async function load(preserve=true){
   const draft=data.draft;
   $('draftStatus').textContent=draft?'Admin-only draft already imported: '+draft.approved_count+' approved questions.':'No admin-only draft has been imported.';
   $('importDraft').disabled=!!draft;
+  $('syncFigures').disabled=!draft;
+  $('figureProgress').textContent=draft
+    ? (draft.figure_count||0)+' private figure attachment(s) saved. Images remain hidden from students.'
+    : 'Import approved questions first to enable private figure transfer.';
   if(draft){
     const link=document.createElement('a');link.href='manage_chapters.html?bookId='+encodeURIComponent(draft.book_id);
     link.textContent=' Open draft chapters in Quizard';link.className='text-indigo-700 underline ml-3';
@@ -215,9 +223,29 @@ $('importDraft').addEventListener('click',async()=>{
   busy=true;
   try{
     const result=await api('import-draft',{rights_confirmed:true,confirm_title:title});
-    message('Created admin-only TEST book with '+result.draft.approved_count+' approved questions. No student publication occurred.');
+    message('Created admin-only TEST book with '+result.draft.approved_count+
+      ' approved questions. '+(result.figure_sync
+        ? result.figure_sync.attached+' private figure(s) attached.'
+        : 'Private images need another attempt: '+(result.figure_warning||'unknown issue'))+
+      ' No student publication occurred.',!!result.figure_warning);
     await load();
   }catch(e){message(e.message,true)}finally{busy=false}
+});
+$('syncFigures').addEventListener('click',async()=>{
+  if(busy||!state?.draft)return;
+  const title=state.job.title;
+  if(!$('rights').checked||$('confirmTitle').value.trim()!==title){
+    message('Confirm reproduction rights and enter the exact printed title before copying private figures.',true);
+    return;
+  }
+  if(!confirm('Attach only approved source figures to the admin-only draft? Images remain private; students cannot access them.'))return;
+  busy=true;$('syncFigures').disabled=true;
+  try{
+    const result=await api('sync-draft-figures',{rights_confirmed:true,confirm_title:title});
+    message(result.attached+' private question/explanation figure(s) linked to your imported draft. Nothing was published.');
+    await load();
+  }catch(e){message(e.message,true)}
+  finally{busy=false;$('syncFigures').disabled=!state?.draft}
 });
 async function init(){
   if(!id){message('Missing import job ID',true);return}
