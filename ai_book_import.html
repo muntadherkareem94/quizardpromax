@@ -241,7 +241,7 @@ async function refresh(){
     warning.className='text-sm mt-2 rounded-lg p-3 border border-amber-300 bg-amber-50 text-amber-900';
     warning.textContent=issue?.type==='no_selectable_mcq_text'
       ? 'No MCQs detected. This PDF may be scanned or image-only; OCR is required before text extraction.'
-      : 'No extractable MCQs detected. Check whether this is a clinical reference rather than a question bank, or a book with a different question/answer layout. Retrying the unchanged file will not help.';
+      : 'This PDF contains text, but its MCQ layout was not recognized. It may still be a valid MCQ book. Check the printed question/answer sections; a different parser or source-grounded AI may be needed. Retrying without changes will not help.';
     status.appendChild(warning);
   }
   if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
