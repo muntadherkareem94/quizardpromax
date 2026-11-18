@@ -25,7 +25,7 @@ from supabase import create_client
 from cost_guard import (BudgetExceeded, assert_budget, reserve_cost_usd,
                         usage_cost_usd, safely_selectable_text)
 from free_router import FreeRouter, ProvidersUnavailable
-from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions
+from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger("quizard-ai-import")
@@ -37,7 +37,12 @@ VERIFY_MODEL = os.getenv("OPENAI_VERIFICATION_MODEL", "gpt-6-astra")
 PAGES_PER_BATCH = max(1, min(6, int(os.getenv("PAGES_PER_BATCH", "3"))))
 POLL_SECONDS = max(10, int(os.getenv("POLL_SECONDS", "60")))
 RUN_ONCE = os.getenv("RUN_ONCE", "false").lower() == "true"
-MAX_PAGES_PER_JOB = max(1, int(os.getenv("MAX_PAGES_PER_JOB", "30")))  # Pilot cost guard
+# Full-book staging cap remains configurable and bounded to protect Railway memory.
+MAX_PAGES_PER_JOB = min(2000, max(1, int(os.getenv("MAX_PAGES_PER_JOB", "1200"))))
+MAX_PAGES_PER_SECTION = min(80, max(8, int(os.getenv("MAX_PAGES_PER_SECTION", "32"))))
+MAX_SECTIONS_PER_PASS = min(20, max(1, int(os.getenv("MAX_SECTIONS_PER_PASS", "6"))))
+# Full books use local source checks and human review before provider calls.
+LOCAL_REVIEW_ONLY_AT_PAGES = max(40, int(os.getenv("LOCAL_REVIEW_ONLY_AT_PAGES", "60")))
 # Flex uses the same requested model at Batch-rate prices (slower and sometimes unavailable).
 OPENAI_SERVICE_TIER = os.getenv("OPENAI_SERVICE_TIER", "flex").lower()
 TEXT_FIRST_ENABLED = os.getenv("TEXT_FIRST_ENABLED", "true").lower() == "true"
@@ -434,7 +439,7 @@ def plan_mcq_batches(first,end,checkpoints,batch_pages):
     return plan
 
 
-def process_section(document,job,section,common_issues):
+def process_section(document,job,section,common_issues,local_review_only=False):
     job_id=job["id"]
     existing=DB.table("ai_import_sections").select("*").eq(
         "job_id",job_id).eq("section_index",section["section_index"]).execute().data
@@ -506,6 +511,10 @@ def process_section(document,job,section,common_issues):
         LOG.info("LOCAL PDF fallback job=%s chapter=%s issues=%s anchors=%s",
                  job_id,section["section_index"],len(local["issues"]),
                  len(local["sourceQuestionNumbers"]))
+        if local_review_only:
+            return stage_local_review_section(
+                document,job,section,
+                "Long-book local source checks require review for ambiguous layouts")
         update_job(job_id,progress_note=(
             f"Source layout ambiguous ({len(local['issues'])} checks); "
             "using free AI for this chapter"))
@@ -707,7 +716,7 @@ def stage_local_review_section(document, job, section, reason):
     # A future retry with an available provider can replace this review record.
     local = extract_local_section(document, first, last)
     candidates = local["questions"]
-    issues = list(local["issues"])
+    issues = list(local["issues"]) + list(section.get("boundary_issues") or [])
     # Preserve images privately; any misattribution blocks that question,
     # while unnumbered source-layout faults block the entire section.
     if candidates:
@@ -884,6 +893,11 @@ def process_job(job):
         job["total_pages"]=pages
         sections,global_issues=find_sections(document)
         if len(sections)<1:raise ValueError("No sections detected")
+        sections=partition_long_sections(document,sections,MAX_PAGES_PER_SECTION)
+        if len(sections)>1000:
+            raise ValueError("Too many source chunks; review the source's chapter structure")
+        LOG.info("Full-book plan job=%s pages=%s parts=%s per_pass=%s",
+                 job_id,pages,len(sections),MAX_SECTIONS_PER_PASS)
         meta_row=DB.table("ai_import_jobs").select("book_metadata").eq(
             "id",job_id).single().execute().data or {}
         metadata=meta_row.get("book_metadata")
@@ -954,17 +968,42 @@ def process_job(job):
             cover_url=upload_image(
                 "ai_import_assets",f"ai-import/{job_id}/cover.png",cover_bytes,"image/png")
             update_job(job_id,cover_url=cover_url)
+        # Railway can restart between passes. The cursor moves forward ONLY
+        # after a complete section is durably stored in Supabase.
+        cursor=int(job.get("resume_section_index") or 1)
+        if not 1<=cursor<=len(sections)+1:
+            raise ValueError("Invalid resume cursor; aborting without rewriting checkpoints")
         records=[]
-        total=0
-        pages_completed=0
+        if cursor>1:
+            saved=DB.table("ai_import_sections").select("*").eq(
+                "job_id",job_id).lt("section_index",cursor).order(
+                "section_index").execute().data or []
+            for section in sections[:cursor-1]:
+                found=next((r for r in saved
+                            if r["section_index"]==section["section_index"]),None)
+                if (not found or found["start_page"]!=section["start_page"] or
+                        found["end_page"]!=section["end_page"]):
+                    raise ValueError("Resume checkpoint differs from current PDF sections")
+                records.append(found)
+        total=sum(len(r.get("questions") or []) for r in records)
+        pages_completed=sum(r["end_page"]-r["start_page"]+1 for r in records)
+        processed_in_pass=0
+        local_review_only=(
+            job.get("provider_mode")=="free_only"
+            and pages>=LOCAL_REVIEW_ONLY_AT_PAGES
+        )
         for section in sections:
+            if section["section_index"]<cursor:
+                continue
             assert_job_active(job_id)
             if provider_unavailable:
                 record=stage_local_review_section(
                     document,job,section,"AI provider unavailable; local review required")
             else:
                 try:
-                    record=process_section(document,job,section,[])
+                    record=process_section(document,job,section,
+                        section.get("boundary_issues") or [],
+                        local_review_only=local_review_only)
                 except ProvidersUnavailable as exc:
                     provider_unavailable=True
                     LOG.warning("Provider unavailable job=%s section=%s: %s",
@@ -972,11 +1011,24 @@ def process_job(job):
                     record=stage_local_review_section(
                         document,job,section,"AI provider unavailable; local review required")
             records.append(record)
-            total+=len(record["questions"])
+            total+=len(record.get("questions") or [])
             pages_completed+=section["end_page"]-section["start_page"]+1
             verified=count_verified_questions(job_id)
+            cursor=section["section_index"]+1
+            processed_in_pass+=1
             update_job(job_id,total_questions=total,verified_questions=verified,
-                       processed_pages=min(pages,pages_completed))
+                       processed_pages=min(pages,pages_completed),
+                       resume_section_index=cursor)
+            if processed_in_pass>=MAX_SECTIONS_PER_PASS and cursor<=len(sections):
+                # The existing Railway queue loop picks this job up again.
+                # No unreviewed textbook is automatically published.
+                update_job(job_id,status="queued",last_error=None,
+                           progress_note=(
+                               f"Book checkpoint {cursor-1}/{len(sections)} sections; "
+                               f"{pages_completed}/{pages} source pages scanned; auto-resuming"))
+                LOG.info("Saved resumable checkpoint job=%s next_section=%s",
+                         job_id,cursor)
+                return
         review=list(global_issues)
         for r in records:
             review.extend({"chapter":r["section_index"],**i} for i in r["issues"])
@@ -987,7 +1039,7 @@ def process_job(job):
         # A precise completeness check needs verified page-by-page coverage, done by the verifier.
         update_job(job_id,review_issues=review,status="needs_review" if review else "ready",
                    total_questions=total,verified_questions=count_verified_questions(job_id),
-                   processed_pages=pages)
+                   processed_pages=pages,resume_section_index=1)
         # The user explicitly requested an end-to-end multi-book test.
         # Only the four named synthetic fixtures can enter the test-only publisher.
         # Real books remain in private staging until a separately reviewed release.
