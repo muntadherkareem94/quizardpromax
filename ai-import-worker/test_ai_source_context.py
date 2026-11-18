@@ -115,7 +115,7 @@ class SourceContextTests(unittest.TestCase):
             calls.append(kwargs["stage"])
             if kwargs["stage"]=="extraction":
                 numbers=[int(s) for s in prompt.split("Target printed QUESTION NUMBERS: ")[1].split("\n")[0].split(", ")]
-                self.assertIn("matching answer",prompt.lower())
+                self.assertIn("answer and explanation pages",prompt.lower())
                 self.assertIn("original PDF page",prompt)
                 return {"questions":[originals[n] for n in numbers]}
             if kwargs["stage"]=="verification":
