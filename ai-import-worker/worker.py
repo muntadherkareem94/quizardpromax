@@ -223,7 +223,7 @@ def find_sections(document):
         # The first level with actual chapter-like entries is preferable.
         chapter_level = next(
             (level for level in levels if sum(l == level and
-              re.search(r"chapter|section",t,re.I) is not None
+              re.search(r"chapter|section|unit|module|part",t,re.I) is not None
               for l,t,_ in candidates) >= 2), None)
         if chapter_level is None:
             chapter_level = next((level for level in levels if counts[level] >= 2), None)
@@ -235,7 +235,9 @@ def find_sections(document):
     entries = []
     seen = set()
     # Restrict to first lines of each page; do not confuse ordinary MCQ mentions of chapter.
-    regex = re.compile(r"^(?:(?:chapter|section)\s+\d+[a-z]?\b[\s:.\-]*(.*)|(?:ch\.)\s*\d+\b[\s:.\-]*(.*))$",re.I)
+    printed_number=r"(?:\\d+[a-z]?|[ivxlcdm]{1,7}|one|two|three|four|five|six|seven|eight|nine|ten)"
+    regex = re.compile(
+        rf"^(?:(?:chapter|section|unit|module|part)\\s+{printed_number}\\b[\\s:.\\-]*(.*)|(?:ch\\.)\\s*\\d+\\b[\\s:.\\-]*(.*))$",re.I)
     for p in range(1,pages+1):
         text = document[p-1].get_text(sort=True)
         for line in text.splitlines()[:12]:
