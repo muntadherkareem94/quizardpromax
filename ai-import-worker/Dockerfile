@@ -9,7 +9,8 @@ COPY local_mcq.py .
 COPY separated_key_mcq.py .
 COPY paired_mcq.py .
 COPY test_local_mcq.py .
-RUN python -m unittest -v test_local_mcq
+COPY test_openai_budget.py .
+RUN python -m unittest -v test_local_mcq test_openai_budget
 COPY server.py .
 RUN python -m py_compile worker.py server.py local_mcq.py separated_key_mcq.py paired_mcq.py
 ENV PYTHONUNBUFFERED=1
