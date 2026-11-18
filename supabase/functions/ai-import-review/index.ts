@@ -33,10 +33,15 @@ async function fingerprint(q: Candidate) {
 
 type DraftDb = ReturnType<typeof createClient>;
 
-async function readPrivateDraftFigures(db: DraftDb, bookId: string) {
+async function readPrivateDraftFigures(db: DraftDb, bookId: string, chapterId: string) {
+  const {data: members, error: membershipError} = await db.from('questions')
+    .select('id').eq('book_id', bookId).eq('chapter_id', chapterId);
+  if (membershipError) throw membershipError;
+  const ids=(members||[]).map(x=>x.id);
+  if (!ids.length) return {figures: {}, count: 0, unavailable: 0};
   const {data: rows, error} = await db.from('ai_import_draft_figures')
     .select('question_id,kind,sort_index,object_path')
-    .eq('book_id', bookId).order('sort_index');
+    .eq('book_id', bookId).in('question_id',ids).order('sort_index');
   if (error) throw error;
   const figures: Record<string,{question: string[], explanation: string[]}> = {};
   let missing = 0;
@@ -147,12 +152,14 @@ Deno.serve(async req => {
     const action = String(input?.action || '');
     if (action === 'draft-figures') {
       const bookId = String(input?.book_id || '');
-      if (!uuid.test(bookId)) return respond({error: 'Valid draft book ID required'}, 400);
+      const chapterId = String(input?.chapter_id || '');
+      if (!uuid.test(bookId) || !uuid.test(chapterId))
+        return respond({error: 'Valid draft book and chapter IDs required'}, 400);
       const {data: link, error: linkError} = await db.from('ai_import_draft_links')
         .select('book_id').eq('book_id', bookId).maybeSingle();
       if (linkError) throw linkError;
       if (!link) return respond({ok: true, linked: false, figures: {}, count: 0});
-      const signed = await readPrivateDraftFigures(db, bookId);
+      const signed = await readPrivateDraftFigures(db, bookId, chapterId);
       return respond({ok: true, linked: true, ...signed});
     }
     const id = String(input?.id || '');
