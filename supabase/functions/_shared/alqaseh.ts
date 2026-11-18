@@ -68,6 +68,7 @@ export async function createAlqasehPayment(input: {
     method: 'POST',
     body: JSON.stringify({
       amount: input.amountIQD,
+      country: 'IQ',
       currency: 'IQD',
       description: input.description.slice(0, 250),
       order_id: input.orderId,
