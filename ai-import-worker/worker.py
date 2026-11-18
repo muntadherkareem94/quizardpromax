@@ -25,7 +25,7 @@ from supabase import create_client
 from cost_guard import (BudgetExceeded, assert_budget, reserve_cost_usd,
                         usage_cost_usd, safely_selectable_text)
 from free_router import FreeRouter, ProvidersUnavailable
-from local_mcq import extract_local_section, local_book_metadata, layout_figures
+from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger("quizard-ai-import")
@@ -495,11 +495,14 @@ def process_section(document,job,section,common_issues):
         # Missing linked critiques are absent from the source; no AI call can
         # safely invent them. Stage all available MCQs for manual review now.
         if (local["questions"] and local["issues"] and
-                all(x.get("type") == "linked_critique_not_provided"
-                    for x in local["issues"])):
+                all(isinstance(x.get("number"), int) for x in local["issues"]) and
+                any(all(i.get("number") != q["questionNumber"] for i in local["issues"])
+                    for q in local["questions"])):
+            # One incomplete MCQ must not block clean local source checks.
+            # The section remains under review and cannot be published.
             return stage_local_review_section(
                 document, job, section,
-                "Printed linked-item critique is incomplete; source review required")
+                "At least one MCQ needs source review; clean MCQs checked individually")
         LOG.info("LOCAL PDF fallback job=%s chapter=%s issues=%s anchors=%s",
                  job_id,section["section_index"],len(local["issues"]),
                  len(local["sourceQuestionNumbers"]))
@@ -705,16 +708,11 @@ def stage_local_review_section(document, job, section, reason):
     local = extract_local_section(document, first, last)
     candidates = local["questions"]
     issues = list(local["issues"])
-    # Preserve figures in the same private staging bucket as verified extraction.
-    # Any unmatched image remains a review issue and cannot be auto-published.
+    # Preserve images privately; any misattribution blocks that question,
+    # while unnumbered source-layout faults block the entire section.
     if candidates:
         issues.extend(attach_figures(
             document, job, index, candidates, first, last))
-    issues.append({
-        "type": "local_review_required",
-        "detail": str(reason)[:500],
-        "pages": [first, last],
-    })
     for q in candidates:
         for detail in validate_question(q, first, last):
             issues.append({
@@ -722,6 +720,20 @@ def stage_local_review_section(document, job, section, reason):
                 "number": q.get("questionNumber"),
                 "detail": detail,
             })
+
+    audits=classify_local_questions(candidates, issues)
+    saved_questions=[]
+    for q,audit in zip(candidates,audits):
+        saved=to_json_question(q)
+        saved["sourceVerification"]=audit
+        saved_questions.append(saved)
+    local_verified=sum(a["status"]=="verified_local" for a in audits)
+
+    issues.append({
+        "type": "local_review_required",
+        "detail": str(reason)[:500],
+        "pages": [first, last],
+    })
     if not candidates:
         issues.append({
             "type": "no_local_candidates",
@@ -734,14 +746,14 @@ def stage_local_review_section(document, job, section, reason):
         "start_page": first,
         "end_page": last,
         "status": "needs_review",
-        "questions": [to_json_question(q) for q in candidates],
+        "questions": saved_questions,
         "issues": issues,
     }
     DB.table("ai_import_sections").upsert(
         record, on_conflict="job_id,section_index").execute()
     update_job(job_id, progress_note=(
-        f"Local review: {len(candidates)} candidate MCQs on pages "
-        f"{first}-{last}; AI unavailable; nothing auto-verified"))
+        f"Local source checks: {local_verified}/{len(candidates)} MCQs verified "
+        f"on pages {first}-{last}; remaining questions need review"))
     return record
 
 
@@ -773,10 +785,29 @@ def copy_test_asset(job_id, staging_url, target_bucket, suffix):
     return URL.rstrip("/") + "/storage/v1/object/public/" + target_bucket + "/" + quote(target_path,safe="/")
 
 def count_verified_questions(job_id):
-    """Count independently audited questions even in partly reviewed chapters."""
-    rows=DB.table("ai_import_batches").select("status,questions").eq(
-        "job_id",job_id).eq("status","verified").execute().data or []
-    return sum(len(row.get("questions") or []) for row in rows)
+    """Count completed chapter audits plus individually source-checked MCQs.
+
+    Sections are the canonical source: do not double-count AI batches and
+    final section records. A needs-review chapter can contain verified_local
+    MCQs without becoming eligible for publication.
+    """
+    rows=DB.table("ai_import_sections").select("status,questions").eq(
+        "job_id",job_id).execute().data or []
+    total=0
+    for row in rows:
+        questions=row.get("questions") or []
+        if not isinstance(questions,list):
+            continue
+        if row.get("status")=="verified":
+            total+=len(questions)
+        else:
+            total+=sum(
+                1 for q in questions if isinstance(q,dict)
+                and isinstance(q.get("sourceVerification"),dict)
+                and q["sourceVerification"].get("status")=="verified_local"
+                and q["sourceVerification"].get("method")=="local_pdf_source_checks"
+            )
+    return total
 
 
 def synthetic_test_passes_quality_gate(records,review,total):
@@ -857,6 +888,16 @@ def process_job(job):
             "id",job_id).single().execute().data or {}
         metadata=meta_row.get("book_metadata")
         provider_unavailable = False
+        # Upgrade a provisional old title when later local cover checks establish
+        # matching printed title/volume evidence; no paid provider is required.
+        if (LOCAL_FIRST_ENABLED and job.get("provider_mode")=="free_only" and
+                isinstance(metadata,dict) and metadata.get("confidence")!="high"):
+            upgraded=local_book_metadata(document)
+            if upgraded:
+                metadata=upgraded
+                update_job(job_id,book_metadata=metadata)
+                LOG.info("Upgraded local cover evidence job=%s title=%s",
+                         job_id,metadata["title"])
         if not isinstance(metadata,dict) or not all(
             k in metadata for k in ("title","coverPage","titleEvidence","confidence")
         ):
