@@ -35,7 +35,7 @@
 
 ## Safety
 
-The backend checks the gateway transaction by authenticated `GET /egw/payments/{id}`, validates merchant `order_id`, payment ID, IQD amount and currency, and only then invokes existing trusted Supabase confirmation RPCs. Browser redirect parameters and unsigned webhook payloads are **never** accepted as proof of payment. Prices and purchase eligibility remain server-side.
+The backend checks the gateway transaction by authenticated `GET /egw/payments/history?payment_id=...`, validates merchant `order_id`, payment ID, IQD amount and currency, and only then invokes existing trusted Supabase confirmation RPCs. Browser redirect parameters and unsigned webhook payloads are **never** accepted as proof of payment. Prices and purchase eligibility remain server-side.
 
 ## Go-live prerequisites
 
