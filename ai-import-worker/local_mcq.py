@@ -14,7 +14,7 @@ Q = re.compile(r'^\s*(?:Question|Q(?:uestion)?\.?|MCQ)\s*#?\s*(\d+)(?:\s*[.):\-]
 NUMBERED_Q = re.compile(r'^\s*(\d{1,5})\s*[.)]\s+(\S.*)$')
 OPT = re.compile(r'^\s*(?:\(([A-J])\)|([A-J])\s*[.):])\s*(\S.*)$', re.I)
 KEY = re.compile(r'^\s*(?:Correct\s+(?:Answer|Option|Choice)(?:\s+is)?|Answer\s+Key|Answer|Ans\.?|Key)\s*(?::|is|-)\s*\(?([A-J])\)?(?:[.)\s:-]+(.*))?$', re.I)
-EXPL = re.compile(r'^\s*(?:(?:Explanation|Rationale|Discussion|Commentary|Teaching\s+Point)\s*:?\s*(.*)|Critique(?:\s*:\s*(.*))?)\s*$', re.I)
+EXPL = re.compile(r'^\s*(?:(?:Explanation|Rationale|Discussion|Commentary|Teaching\s+Point)(?::\s*(.*))?|Critique(?:\s*:\s*(.*))?)\s*$', re.I)
 IMARK = re.compile(r'^\s*(Question|Explanation)\s+Image\s*$', re.I)
 FIGCAP = re.compile(r'^\s*Figure\s+\d+\s*[.):]?\s*$', re.I)
 REFS = re.compile(r'^\s*References\s*:?\s*$', re.I)
@@ -122,6 +122,10 @@ def layout_figures(document, first, last, include_rects=False):
     is used by the validator and private-staging image uploader.
     """
     anchors, labels, images, issues = [], [], [], []
+    # Reuse the same conservative anchor scan used by question extraction,
+    # including numbered headings only when a printed answer key exists.
+    accepted_numeric = {(page,number) for idx,page,number,_ in
+                        _question_starts(_read_lines(document,first,last))}
     state = 'stem'
     for pno in range(first, last + 1):
         page = document[pno-1]
@@ -134,8 +138,9 @@ def layout_figures(document, first, last, include_rects=False):
             for line in txt.splitlines():
                 line = line.strip()
                 m = Q.match(line)
-                if m:
-                    anchors.append((pno, box.y0, int(m.group(1))))
+                bare = NUMBERED_Q.match(line) if not m else None
+                if m or (bare and (pno, int(bare.group(1))) in accepted_numeric):
+                    anchors.append((pno, box.y0, int((m or bare).group(1))))
                     state = 'stem'
                 elif KEY.match(line):
                     state = 'answer'
