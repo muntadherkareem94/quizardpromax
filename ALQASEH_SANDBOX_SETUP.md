@@ -1,46 +1,42 @@
-# Al-Qaseh Sandbox migration for Quizard
+# Quizard — Al-Qaseh UAT integration
 
-**Status: integration draft — Supabase sandbox functions are deployed but require `ALQASEH_SANDBOX_TEST_USER_ID`; do not merge or expose to real customer payment traffic.**
+Quizard's normal purchase buttons on the **main app** now use Al-Qaseh's hosted sandbox payment page. This is a real end-to-end integration using the gateway's UAT environment, **not a production-money integration**.
 
-## Gateway documentation
-- [Official API](https://docs.alqaseh.com/api)
-- [Hosted payment flow](https://docs.alqaseh.com/payment-integration-overview)
-- The sandbox API endpoint is `https://api-test.alqaseh.com/v1`.
-- Hosted test checkout is `https://pay-test.alqaseh.com/pay/{token}`.
+## Runtime requirements
 
-## Supabase setup (test only)
+The Supabase project must have these server-only secrets:
+- `ALQASEH_CLIENT_ID`
+- `ALQASEH_CLIENT_SECRET`
+- `QUIZARD_RETURN_URL` — the main Quizard HTTPS `/payment-result.html` URL, used by the existing Qi integration and reused by Al-Qaseh.
 
-1. Apply `supabase/alqaseh-provider.sql` in the Supabase SQL editor. All prior checkouts become `provider='qi'`; existing entitlements stay unchanged.
-2. Set **Supabase Edge Function secrets** `ALQASEH_CLIENT_ID` and `ALQASEH_CLIENT_SECRET` to the sandbox merchant credentials, plus `ALQASEH_SANDBOX_TEST_USER_ID` to the **UUID of a dedicated, disposable authenticated Quizard test account**. Until the third secret is configured, checkout returns 403 by design. The official docs contain public sandbox credentials. **Never paste live credentials into GitHub or frontend files.**
-3. For this PR's sandbox test only, the new Edge Functions return to the fixed Netlify preview URL `https://deploy-preview-2--quizardpromax.netlify.app/payment-result.html`. Existing `QUIZARD_RETURN_URL` remains untouched for Qi. Review and adjust this preview URL if Netlify changes the PR URL.
-4. Deploy these new functions (all of them use `../_shared/alqaseh.ts`):
-   - `alqaseh-start-checkout` — user JWT required *inside handler*
-   - `alqaseh-start-book-checkout` — user JWT required *inside handler*
-   - `alqaseh-start-plan-upgrade` — user JWT required *inside handler*
-   - `alqaseh-verify-payment` — user JWT + order ownership required
-   - `alqaseh-payment-webhook` — public webhook; independently checks the merchant API
-5. Because webhooks come from Al-Qaseh without a Supabase JWT, deploy the webhook with `verify_jwt=false`. The four browser-called functions currently authenticate in the handler; they may be deployed with `verify_jwt=false` to match the original Qi handlers, as they still reject unauthenticated users.
-6. Deploy the frontend **to a test/staging site first** (GitHub PR #2 has a successful Netlify deploy preview at `https://deploy-preview-2--quizardpromax.netlify.app`). Do not merge this branch onto the site used by paying users before testing.
+Do not add any API secrets to the website. **`ALQASEH_SANDBOX_TEST_USER_ID` is not needed** — UAT purchases are available to signed-in users because Quizard is currently a test deployment. Do not treat these as genuine paid subscriptions.
 
-## Test checklist
+## Purchase paths
 
-- [ ] Signed-out user cannot create a payment.
-- [ ] Sandbox test card opens hosted Al-Qaseh page; book/plan price exactly matches server-side Supabase price.
-- [ ] Successful payment changes `qz_card_checkouts.status` to `paid` and activates exactly one entitlement.
-- [ ] Refresh/repeated webhook does **not** grant a second subscription or duplicate a book license.
-- [ ] Failed/cancelled payment does **not** unlock access.
-- [ ] Change of plan applies the frozen quote and unused-credit calculation correctly.
-- [ ] Return page handles both `requestId` (old Qi) and `order_id` (Al-Qaseh).
-- [ ] Old Qi checkout records still render and remain unchanged.
+1. New Premium/Platinum subscription: `alqaseh-start-checkout`
+2. Standalone book purchase: `alqaseh-start-book-checkout`
+3. Upgrade/change plan with remaining balance credit: `alqaseh-start-plan-upgrade`
+4. Gateway notifications: `alqaseh-payment-webhook`
+5. Signed-in receipt retry/reconciliation: `alqaseh-verify-payment`
 
-## Safety
+All of these share `_shared/alqaseh.ts`.
 
-The backend checks the gateway transaction by authenticated `GET /egw/payments/history?payment_id=...`, validates merchant `order_id`, payment ID, IQD amount and currency, and only then invokes existing trusted Supabase confirmation RPCs. Browser redirect parameters and unsigned webhook payloads are **never** accepted as proof of payment. Prices and purchase eligibility remain server-side.
+## Verification
 
-## Go-live prerequisites
+- The backend reads current plan/book prices from Supabase, never from the browser.
+- Al-Qaseh's UAT API returns a 32-hex-character order ID; the app's internal payment UUID remains a normal 36-character UUID.
+- The provider payment ID and order ID, amount and IQD currency must match the invoice.
+- The backend verifies merchant payment history with Basic Auth before invoking the existing service-role-only `qz_confirm_card_payment` or `qz_confirm_plan_upgrade` RPC.
+- Webhooks are untrusted; the browser redirect is untrusted; duplicate successful notifications are safe.
+- Old Qi records retain `provider='qi'` and can still be displayed.
 
-Obtain **merchant-specific production** client ID/secret, approved production API/checkout domain names and provider confirmation of webhook setup. The code currently uses *sandbox only*. Do not change the hostnames or insert production credentials until the contract and production test plan are approved.
+## Deployment
 
-## Critical environment warning
+1. Apply the SQL in `supabase/alqaseh-provider.sql` (already applied to the active project).
+2. Deploy all five Edge Functions. User-facing functions require authenticated Supabase JWTs; the webhook cannot require a JWT.
+3. Merge GitHub PR #2 into `main`, allowing Netlify to deploy the main application.
+4. Test the actual site with a test Quizard account, purchasing a plan/book and checking `qz_card_checkouts` and related entitlement tables.
 
-This test currently shares the production Supabase database. All public sandbox merchant credentials are non-production credentials, **but an API-confirmed test payment can still grant real app access** through existing entitlement RPCs. Therefore checkout and settlement are hard-restricted to the single designated test user's UUID. Use a disposable test account, never a real paying user. For safer full QA, test on a separate isolated Supabase database before production rollout.
+## Important UAT limitation
+
+The provider's public UAT test card may produce `paid` records and unlock Quizard books/plans, **without transferring real funds**. Do not open paid products to real customers or accept genuine payment until merchant-specific production credentials and live API/checkout domains have been issued and independently tested. The isolated UAT smoke-test page and callback code have been removed from `main`.
