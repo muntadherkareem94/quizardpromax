@@ -18,7 +18,8 @@ PRICES = {
     # if the operator enables it explicitly for a supported model.
     "gpt-5.4-mini": {
         "standard": (Decimal("0.75"), Decimal("4.50"), Decimal("0.075")),
-        "flex": (Decimal("0.375"), Decimal("2.25"), Decimal("0.0375")),
+        # Conservative quote even if a discounted Flex request is used.
+        "flex": (Decimal("0.75"), Decimal("4.50"), Decimal("0.075")),
     },
     "gpt-6.1-sol": {
         "flex": (Decimal("1"), Decimal("5"), Decimal("0.05")),
