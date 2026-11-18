@@ -5,6 +5,15 @@ import { createClient } from 'npm:@supabase/supabase-js@2';
 const API = 'https://api-test.alqaseh.com/v1';
 const HOSTED_PAGE = 'https://pay-test.alqaseh.com/pay/';
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const COMPACT_UUID = /^[0-9a-f]{32}$/i;
+
+// Al-Qaseh UAT returns order_id as 32 hex chars; Quizard stores UUIDs with hyphens.
+function normalizeOrderId(value: string): string {
+  const compact = value.replaceAll('-', '').toLowerCase();
+  if (!COMPACT_UUID.test(compact)) throw new Error('Invalid merchant order reference');
+  return [compact.slice(0, 8), compact.slice(8, 12), compact.slice(12, 16),
+    compact.slice(16, 20), compact.slice(20)].join('-');
+}
 
 function credentials() {
   const clientId = Deno.env.get('ALQASEH_CLIENT_ID');
@@ -97,17 +106,13 @@ export async function createAlqasehPayment(input: {
 export async function settleAlqasehPayment(
   admin: ReturnType<typeof createClient>, orderId: string
 ): Promise<'paid'|'failed'|'pending'> {
-  if (!UUID.test(orderId)) throw new Error('Invalid order reference');
+  const requestId = normalizeOrderId(orderId);
   const { data: invoice, error: fetchError } = await admin
     .from('qz_card_checkouts').select('*')
-    .eq('request_id', orderId).maybeSingle();
+    .eq('request_id', requestId).maybeSingle();
   if (fetchError) throw fetchError;
   if (!invoice || invoice.provider !== 'alqaseh' || !invoice.provider_payment_id) {
     throw new Error('Unknown payment reference');
-  }
-  const sandboxTestId = Deno.env.get('ALQASEH_SANDBOX_TEST_USER_ID');
-  if (!sandboxTestId || invoice.user_id !== sandboxTestId) {
-    throw new Error('Sandbox payment is restricted to the designated test account');
   }
   if (invoice.status === 'paid') return 'paid';
 
@@ -124,7 +129,7 @@ export async function settleAlqasehPayment(
   if (!actual) throw new Error('Payment not found in merchant history');
 
   if (String(actual.payment_id) !== invoice.provider_payment_id ||
-      String(actual.order_id).replaceAll('-', '').toLowerCase() !== invoice.request_id.replaceAll('-', '').toLowerCase() ||
+      normalizeOrderId(String(actual.order_id)) !== invoice.request_id ||
       actual.currency !== 'IQD' ||
       Number(actual.amount) !== Number(invoice.amount_iqd)) {
     throw new Error('Verified gateway payment does not match order');
@@ -137,11 +142,11 @@ export async function settleAlqasehPayment(
 
     const { data: upgrade, error: upgradeError } = await admin
       .from('qz_plan_upgrade_orders').select('request_id')
-      .eq('request_id', orderId).maybeSingle();
+      .eq('request_id', requestId).maybeSingle();
     if (upgradeError) throw upgradeError;
     const fn = upgrade ? 'qz_confirm_plan_upgrade' : 'qz_confirm_card_payment';
     const { error: confirmationError } = await admin.rpc(fn, {
-      p_request_id: orderId,
+      p_request_id: requestId,
       p_payment_id: invoice.provider_payment_id,
       p_amount_iqd: invoice.amount_iqd,
       p_currency: 'IQD'
@@ -153,11 +158,11 @@ export async function settleAlqasehPayment(
   if (['failed', 'declined', 'expired', 'revoked', 'duplicated'].includes(status)) {
     const { error: markError } = await admin
       .from('qz_card_checkouts').update({ status: 'failed' })
-      .eq('request_id', orderId).in('status', ['created', 'pending']);
+      .eq('request_id', requestId).in('status', ['created', 'pending']);
     if (markError) throw markError;
     const { error: upgradeError } = await admin
       .from('qz_plan_upgrade_orders').update({ status: 'failed' })
-      .eq('request_id', orderId).in('status', ['created', 'pending']);
+      .eq('request_id', requestId).in('status', ['created', 'pending']);
     if (upgradeError) throw upgradeError;
     return 'failed';
   }
