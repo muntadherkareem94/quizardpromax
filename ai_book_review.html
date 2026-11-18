@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quizard — MCQ Source Review</title>
+<link rel="stylesheet" href="tailwind.css"><link rel="stylesheet" href="main-styles.css">
+<style>
+body{background:#f1f5f9;color:#0f172a;font:14px Inter,system-ui,sans-serif}
+main{max-width:1550px;margin:auto;padding:18px}
+.panel{border:1px solid #e2e8f0;border-radius:14px;background:white;padding:18px}
+.action{padding:9px 13px;border-radius:8px;background:#4f46e5;color:white;font-weight:650}
+.action.secondary{background:#334155}.action.danger{background:#b91c1c}
+.action:disabled{opacity:.45;cursor:not-allowed}
+.control{display:block;width:100%;border:1px solid #cbd5e1;border-radius:8px;background:white;padding:9px;font-size:14px}
+label{display:block;font-weight:600;margin-bottom:6px}
+.split{display:grid;grid-template-columns:minmax(360px,1fr) minmax(420px,1.15fr);gap:14px}
+#pdfFrame{width:100%;height:min(74vh,1000px);border:1px solid #cbd5e1;border-radius:8px}
+#editor{max-height:80vh;overflow-y:auto}
+#questionButtons{display:flex;flex-wrap:wrap;gap:8px}
+.qbtn{padding:7px 11px;background:#e2e8f0;border-radius:7px;font-size:13px}
+.qbtn.active{background:#312e81;color:white}
+.qbtn.approved{border:2px solid #059669}
+.qbtn.rejected{border:2px solid #b91c1c}
+.images{display:flex;gap:12px;flex-wrap:wrap}.images img{width:min(100%,280px);max-height:260px;object-fit:contain;border:1px solid #cbd5e1;border-radius:6px}
+.note{font-size:12px;color:#475569}.issue{color:#92400e;background:#fffbeb;border-radius:8px;padding:8px}
+#message{white-space:pre-wrap}
+@media(max-width:900px){.split{display:block}#pdfFrame{height:430px}#editor{max-height:none;margin-top:14px}}
+</style>
+</head>
+<body>
+<header class="bg-white border-b p-4"><div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+<div><h1 class="text-2xl font-bold">Source review &amp; draft import</h1><p class="text-slate-500">Edit, verify and approve each MCQ against the original PDF</p></div>
+<a class="text-indigo-700 font-semibold" href="ai_book_import.html">← Import queue</a></div></header>
+<main>
+<div id="message" role="alert" class="hidden panel mb-3"></div>
+<div class="panel mb-3 flex flex-wrap gap-4 justify-between items-center">
+<div><h2 id="bookTitle" class="font-bold text-xl">Loading import...</h2><p id="bookSummary" class="text-slate-500"></p></div>
+<button id="reload" class="action secondary">Reload saved review</button>
+</div>
+<div class="split">
+<section class="panel">
+<div class="flex flex-wrap justify-between items-center gap-2 mb-2">
+<h3 class="font-bold text-lg">Original PDF</h3><a id="sourceLink" href="#" target="_blank" rel="noopener noreferrer" class="text-indigo-700">Open PDF separately</a></div>
+<iframe id="pdfFrame" title="Original PDF (private signed link)" referrerpolicy="no-referrer"></iframe>
+<p class="note mt-2">Private signed PDF and figure links expire after 15 minutes. Reload to renew them.</p>
+</section>
+<section id="editor" class="panel">
+<h3 class="font-bold text-lg mb-2">Question review</h3>
+<div id="questionButtons" class="mb-4"></div>
+<div id="questionPanel" class="hidden">
+<p id="currentStatus" class="font-semibold mb-2"></p>
+<div id="sourceIssues" class="mb-3"></div>
+<label for="stem">Question stem</label><textarea id="stem" class="control mb-3" rows="6"></textarea>
+<h4 class="font-bold mb-2">Options (preserve the printed order)</h4>
+<div id="optionFields"></div>
+<label for="answer">Correct answer</label><select id="answer" class="control mb-3"></select>
+<label for="explanation">Explanation / Critique</label><textarea id="explanation" class="control mb-3" rows="10"></textarea>
+<p class="note mb-2">Missing source material must never be invented. Question 3 of the SESAP sample needs its original linked critique.</p>
+<h4 class="font-bold mb-2">Question figures (private staging)</h4>
+<div id="questionImages" class="images mb-3"></div>
+<h4 class="font-bold mb-2">Explanation figures (private staging)</h4>
+<div id="explanationImages" class="images mb-3"></div>
+<div class="border-t pt-3 mt-3">
+<label for="sourceNote">Source verification note (required for corrections to flagged questions)</label>
+<textarea id="sourceNote" class="control mb-3" rows="2" placeholder="Identify the original source page / linked critique used to check your correction"></textarea>
+<label class="flex gap-2 items-center mb-3 font-normal"><input id="sourceConfirmed" type="checkbox"><span>I checked this question, answer and explanation against the original source.</span></label>
+<div class="flex flex-wrap gap-2">
+<button id="save" class="action secondary">Save edits</button>
+<button id="approve" class="action">Approve question</button>
+<button id="reject" class="action danger">Reject question</button>
+<button id="reset" class="action secondary">Clear decision</button></div>
+<p id="saveHelp" class="note mt-2">Saving an edit clears any previous approval. Approve only after saving and checking the source.</p>
+</div>
+</div>
+</section>
+</div>
+<section class="panel mt-4">
+<h3 class="font-bold text-lg mb-2">Import approved questions to an admin-only TEST book</h3>
+<p class="text-sm text-slate-600 mb-3">This action creates real Quizard book, chapter, and question records, but retains <strong>test</strong> access. Only explicitly approved questions are included. Source PDF and all figures stay in private staging; figure URLs are intentionally not copied to public image buckets. The imported draft is not ready for student publication.</p>
+<div id="draftStatus" class="text-sm mb-3"></div>
+<label class="flex gap-2 items-start mb-3 font-normal"><input id="rights" type="checkbox" class="mt-1"><span>I confirm that I have the rights or permission needed to reproduce this material in Quizard.</span></label>
+<label for="confirmTitle">Type the exact printed book title to confirm this admin-only draft import</label>
+<input id="confirmTitle" class="control mb-3" placeholder="Printed book title">
+<button id="importDraft" class="action">Import approved questions as admin-only draft</button>
+</section>
+</main>
+<script type="module">
+import {supabase} from './supabaseClient.js';
+const $=id=>document.getElementById(id);
+const id=new URLSearchParams(location.search).get('job');
+let state=null, selection=null, busy=false;
+function message(text,bad=false){const el=$('message');el.className='panel mb-3 '+(bad?'text-red-800 bg-red-50':'text-green-800 bg-green-50');el.textContent=text;window.scrollTo({top:0,behavior:'smooth'});}
+async function api(action,extra={}){
+  const {data,error}=await supabase.functions.invoke('ai-import-review',{body:{action,id,...extra}});
+  if(error){let m=error.message;try{const e=await error.context?.json();if(e?.error)m=e.error}catch{}throw Error(m)}
+  if(data?.error)throw Error(data.error);
+  return data;
+}
+function allQuestions(){return (state?.sections||[]).flatMap(s=>(s.questions||[]).map(q=>({section:s,q})));}
+function current(){return allQuestions().find(e=>e.section.section_index===selection?.section&&e.q.questionNumber===selection?.number);}
+function decisionLabel(q){
+  const d=q.reviewDecision?.status;
+  return d==='approved'?'Manually approved':d==='rejected'?'Rejected':
+    q.sourceVerification?.status==='verified_local'?'Local source checks passed — awaiting manual approval':'Needs source review';
+}
+function showImages(id,images){
+  const container=$(id);container.replaceChildren();
+  if(!images?.length){container.textContent='No figures in this category';return}
+  for(const ref of images){
+    const url=state.images?.[ref];
+    if(!url){const p=document.createElement('p');p.className='issue';p.textContent='Private image unavailable: reload signed links';container.appendChild(p);continue}
+    const img=document.createElement('img');img.src=url;img.loading='lazy';img.alt='Figure from original PDF';container.appendChild(img);
+  }
+}
+function drawButtons(){
+  const buttons=$('questionButtons');buttons.replaceChildren();
+  for(const {section,q} of allQuestions()){
+    const btn=document.createElement('button');btn.type='button';
+    btn.className='qbtn'+(q.reviewDecision?.status==='approved'?' approved':'')+
+      (q.reviewDecision?.status==='rejected'?' rejected':'')+
+      (selection?.section===section.section_index&&selection?.number===q.questionNumber?' active':'');
+    btn.textContent='Chapter '+section.section_index+' · Q'+q.questionNumber;
+    btn.title=decisionLabel(q);
+    btn.addEventListener('click',()=>{if(hasEdits()&&!confirm('Discard unsaved changes?'))return;selection={section:section.section_index,number:q.questionNumber};draw();});
+    buttons.appendChild(btn);
+  }
+}
+function formValues(){
+  return {question:$('stem').value.trim(),
+    options:[...$('optionFields').querySelectorAll('textarea')].map(e=>e.value.trim()),
+    correctAnswerIndex:Number($('answer').value),
+    explanation:$('explanation').value.trim()};
+}
+function hasEdits(){
+  const e=current();if(!e||$('questionPanel').classList.contains('hidden'))return false;
+  const f=formValues(),q=e.q;
+  return f.question!==q.question || f.explanation!==q.explanation ||
+    f.correctAnswerIndex!==q.correctAnswerIndex || JSON.stringify(f.options)!==JSON.stringify(q.options);
+}
+function draw(){
+  const e=current();drawButtons();$('questionPanel').classList.toggle('hidden',!e);
+  if(!e)return;
+  const {q}=e;
+  $('currentStatus').textContent='Q'+q.questionNumber+' — PDF page '+q.sourcePage+' — '+decisionLabel(q);
+  $('sourceIssues').replaceChildren();
+  const issues=q.sourceVerification?.issues||[];
+  for(const issue of issues){const p=document.createElement('p');p.className='issue mb-1';p.textContent=issue.detail||issue.type;$('sourceIssues').appendChild(p)}
+  $('stem').value=q.question||'';$('explanation').value=q.explanation||'';
+  $('sourceNote').value=q.reviewDecision?.sourceNote||'';
+  $('sourceConfirmed').checked=q.reviewDecision?.sourceConfirmed===true;
+  const options=$('optionFields');options.replaceChildren();
+  const answer=$('answer');answer.replaceChildren();
+  for(let i=0;i<(q.options||[]).length;i++){
+    const label=document.createElement('label');label.textContent=String.fromCharCode(65+i);
+    const textarea=document.createElement('textarea');textarea.rows=2;textarea.className='control mb-2';textarea.value=q.options[i];
+    options.append(label,textarea);
+    const opt=document.createElement('option');opt.value=String(i);opt.textContent=String.fromCharCode(65+i);answer.appendChild(opt);
+  }
+  answer.value=String(q.correctAnswerIndex);
+  showImages('questionImages',q.imageUrls||[]);
+  showImages('explanationImages',q.explanationImageUrls||[]);
+}
+async function load(preserve=true){
+  const data=await api('get');
+  state=data;
+  const qs=allQuestions();
+  $('bookTitle').textContent=data.job.title;
+  const approved=qs.filter(e=>e.q.reviewDecision?.status==='approved').length;
+  $('bookSummary').textContent=data.job.speciality+' · '+qs.length+' extracted · '+approved+' manually approved · '+data.job.status;
+  $('sourceLink').href=data.source_url||'#';
+  $('pdfFrame').src=data.source_url||'about:blank';
+  const draft=data.draft;
+  $('draftStatus').textContent=draft?'Admin-only draft already imported: '+draft.approved_count+' approved questions.':'No admin-only draft has been imported.';
+  $('importDraft').disabled=!!draft;
+  if(draft){
+    const link=document.createElement('a');link.href='manage_chapters.html?bookId='+encodeURIComponent(draft.book_id);
+    link.textContent=' Open draft chapters in Quizard';link.className='text-indigo-700 underline ml-3';
+    $('draftStatus').appendChild(link);
+  }
+  if(!preserve || !qs.some(e=>e.section.section_index===selection?.section&&e.q.questionNumber===selection?.number))
+    selection=qs.length?{section:qs[0].section.section_index,number:qs[0].q.questionNumber}:null;
+  draw();
+}
+async function update(action,decision){
+  const e=current();if(!e||busy)return;
+  if(action!=='save'&&hasEdits()){message('Save or discard your changes before making a review decision.',true);return}
+  if(action==='decision'&&decision==='approved'&&!$('sourceConfirmed').checked){
+    message('Confirm the original PDF source before approving.',true);return;
+  }
+  busy=true;
+  try{
+    const payload={section_index:e.section.section_index,question_number:e.q.questionNumber,
+                   fingerprint:e.q._fingerprint};
+    if(action==='save')Object.assign(payload,formValues());
+    else Object.assign(payload,{decision,source_confirmed:$('sourceConfirmed').checked,
+                                 source_note:$('sourceNote').value.trim()});
+    const result=await api(action,payload);
+    Object.assign(e.q,result.question);
+    message(action==='save'?'Edits saved; manual approval reset.':'Review decision saved: '+decision);
+    await load();
+  }catch(err){message(err.message,true)}
+  finally{busy=false}
+}
+$('save').addEventListener('click',()=>update('save'));
+$('approve').addEventListener('click',()=>update('decision','approved'));
+$('reject').addEventListener('click',()=>update('decision','rejected'));
+$('reset').addEventListener('click',()=>update('decision','pending'));
+$('reload').addEventListener('click',async()=>{try{await load()}catch(e){message(e.message,true)}});
+$('importDraft').addEventListener('click',async()=>{
+  if(busy)return;
+  if(!$('rights').checked){message('Confirm reproduction rights before importing.',true);return}
+  const title=state?.job?.title;
+  if($('confirmTitle').value.trim()!==title){message('Type the exact printed book title: '+title,true);return}
+  if(!confirm('Import ONLY manually approved questions to an admin-only TEST book? Private source figures will NOT be copied to public image buckets.'))return;
+  busy=true;
+  try{
+    const result=await api('import-draft',{rights_confirmed:true,confirm_title:title});
+    message('Created admin-only TEST book with '+result.draft.approved_count+' approved questions. No student publication occurred.');
+    await load();
+  }catch(e){message(e.message,true)}finally{busy=false}
+});
+async function init(){
+  if(!id){message('Missing import job ID',true);return}
+  const {data:{user}}=await supabase.auth.getUser();
+  if(!user){location.href='index.html';return}
+  const {data:profile,error}=await supabase.from('users').select('role').eq('id',user.id).single();
+  if(error||profile?.role!=='admin'){document.querySelector('main').textContent='Super-admin access required';return}
+  try{await load(false)}catch(e){message(e.message,true)}
+}
+init();
+</script>
+</body></html>
