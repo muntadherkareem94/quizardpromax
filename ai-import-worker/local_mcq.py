@@ -396,11 +396,11 @@ def diagnose_empty_mcq_source(document):
     return {
         "type": "no_supported_mcq_structure",
         "detail": (
-            "No recognizable MCQ structure with printed question stems, "
-            "options and answers was extracted. This may be a reference "
-            "textbook rather than a question bank, or a question book with "
-            "an unsupported layout/separate answer keys. Examine the PDF. "
-            "Retrying the same PDF unchanged will not produce questions."
+            "The PDF has selectable text, but the local parser could not "
+            "recover questions and printed answers from its layout. This "
+            "does NOT mean the book lacks MCQs. It needs a different "
+            "layout-aware extraction strategy, source-grounded AI fallback, "
+            "or manual review. Retrying without code changes will not help."
         ),
         "selectable_text_pages": selectable_pages,
         "total_pages": pages,
