@@ -195,7 +195,7 @@ Deno.serve(async (req) => {
       if (storageError || !files?.some((f) => f.name === 'book.pdf'))
         return respond({ error: 'The original PDF was not uploaded. Upload this book again.' }, 409);
       const { error } = await db.from('ai_import_jobs').update({
-        status: 'queued', last_error: null, next_attempt_at: null, updated_at: new Date().toISOString()
+        status: 'queued', resume_section_index: 1, last_error: null, next_attempt_at: null, updated_at: new Date().toISOString()
       }).eq('id', id).eq('status', job.status);
       if (error) throw error;
       return respond({ ok: true });
