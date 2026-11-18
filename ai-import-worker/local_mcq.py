@@ -444,12 +444,11 @@ def local_book_metadata(document):
     if not first:
         return None
     title = re.split(r'\s+[—–·]\s+', first[0], maxsplit=1)[0].strip()
-    if not 8 <= len(title) < 180:
-        return None
+    plausible_standalone_title = 8 <= len(title) < 180
 
     second = ([x.strip() for x in document[1].get_text('text', sort=True).splitlines()
                if x.strip()] if len(document) > 1 else [])
-    if any(title.casefold() == line.casefold() for line in second[:8]):
+    if plausible_standalone_title and any(title.casefold() == line.casefold() for line in second[:8]):
         return {'title': title, 'coverPage': 1, 'titleEvidence': first[0],
                 'confidence': 'high'}
 
