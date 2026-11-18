@@ -30,7 +30,7 @@ Deno.serve(async (req: Request) => {
   const anonKey = Deno.env.get('SUPABASE_ANON_KEY');
   const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
 
-  const returnUrl = Deno.env.get('QUIZARD_RETURN_URL');
+  const returnUrl = 'https://deploy-preview-2--quizardpromax.netlify.app/payment-result.html';
 
   if (
     !url || !anonKey || !serviceKey ||
@@ -67,6 +67,13 @@ Deno.serve(async (req: Request) => {
 
     if (authError || !auth?.user) {
       return respond({ error: 'Unauthorized' }, 401);
+    }
+
+    // Public Sandbox merchant credentials must never unlock real customer accounts.
+    // Until the test account is explicitly selected, checkout is disabled.
+    const testUserId = Deno.env.get('ALQASEH_SANDBOX_TEST_USER_ID');
+    if (!testUserId || auth.user.id !== testUserId) {
+      return respond({ error: 'Al-Qaseh sandbox is limited to the designated test account.' }, 403);
     }
 
     const body = await req.json();
