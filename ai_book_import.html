@@ -39,14 +39,14 @@ td{font-size:14px}
 <label><span class="block font-semibold mb-2">PDF textbooks</span><input id="files" type="file" accept="application/pdf,.pdf" multiple class="field"></label>
 </div>
 <div class="border rounded-xl p-3 mb-4 bg-slate-50 text-sm text-slate-700">
-<strong>New imports use free-only AI routing.</strong> Gemini, Groq, Mistral, OpenRouter and Cloudflare are supported when their Railway API keys, free-tier confirmations and daily quotas are configured.
-If a provider runs out of free capacity, Quizard switches to the next suitable provider or waits and retries automatically. <strong>No paid OpenAI fallback.</strong>
-Real textbooks remain in private staging until third-party sharing is approved.
+<strong>General-format local MCQ import.</strong> Quizard recognizes multiple printed question/answer styles and PDF chapters. Long books are divided into resumable source-page sections and processed locally before review, without mandatory AI.
+Scanned/image-only PDFs, separate answer keys, unlabeled figures and unfamiliar layouts may need additional parser rules, OCR or manual review. <strong>Answers are never fabricated; real books are never automatically published.</strong>
+Free AI fallback remains available for ambiguous shorter books when a free provider is configured.
 </div>
 <div class="grid md:grid-cols-2 gap-4 mb-4">
 <label><span class="block font-semibold mb-2">Legacy paid-provider budget (unused for free-only jobs, USD)</span>
 <input id="budget" type="number" class="field" min="0.20" max="5.00" step="0.05" value="0.75"></label>
-<div class="text-sm text-slate-600 self-center">Safe pages use text-first extraction; complex pages use source PDF vision. The book pauses when estimated API budget is insufficient. Estimated costs are not a guaranteed billing cap.</div>
+<div class="text-sm text-slate-600 self-center">Long books (60+ pages) use local extraction and manual source review. Unambiguous questions are source-checked; uncertain pages remain flagged. No paid AI is used for free-only jobs.</div>
 </div>
 <div id="assignments" class="grid gap-2 mb-4" aria-live="polite"></div>
 <div class="flex gap-3 items-center flex-wrap">
