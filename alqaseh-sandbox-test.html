@@ -7,15 +7,18 @@
 body{font:16px system-ui,sans-serif;background:#f2f7fa;color:#20384a;display:grid;place-items:center;min-height:95vh;margin:0;padding:1rem}
 main{background:white;border:1px solid #dae8f0;border-radius:16px;padding:2rem;max-width:540px;width:100%;box-shadow:0 8px 30px #0e38551a}
 h1{font-size:1.5rem}p{line-height:1.6}button{font:inherit;border:0;border-radius:8px;padding:.85rem 1.1rem;background:#057b9d;color:#fff;cursor:pointer}
-button:disabled{opacity:.5;cursor:wait}#result{white-space:pre-wrap;background:#eef5f8;padding:1rem;border-radius:8px;line-height:1.5}
+button:disabled{opacity:.5;cursor:wait}#account{padding:1rem;background:#f4f9fc;border-radius:8px;margin:1rem 0}#loginLink{display:inline-block;margin-top:.4rem;font-weight:650}#result{white-space:pre-wrap;background:#eef5f8;padding:1rem;border-radius:8px;line-height:1.5}
 small{color:#5d7284}a{color:#057b9d}
 </style>
 </head>
 <body><main>
 <h1>Al-Qaseh Sandbox · Gateway test</h1>
 <p>This is an <strong>independent UAT test of 1,000 IQD</strong>. It will not purchase a book, change a plan, or unlock an account.</p>
-<p>Sign into Quizard using an <strong>admin account on this preview domain</strong>, then press the button below. Test-card details are entered only on Al-Qaseh's hosted page.</p>
-<button id="start">Open test payment page</button>
+<p>To use this test, log in to Quizard on this same Netlify preview, not the usual Quizard website. Your existing login on another domain does not transfer here.</p>
+<div id="account" aria-live="polite">Checking your Quizard sign-in...</div>
+<p><a id="loginLink" href="./index.html" hidden>Sign in to Quizard on this preview</a></p>
+<p>After signing in, reopen this test page. Card details are entered only on Al-Qaseh's hosted page.</p>
+<button id="start" disabled>Open test payment page</button>
 <p id="result" aria-live="polite">No payment started.</p>
 <p><small>The displayed payment status is independently checked against Al-Qaseh's merchant API. A browser redirect alone is not proof of payment.</small></p>
 <p><a href="./dashboard.html">Back to dashboard</a></p>
@@ -24,6 +27,26 @@ small{color:#5d7284}a{color:#057b9d}
 import {supabase} from './supabaseClient.js';
 const btn=document.getElementById('start');
 const result=document.getElementById('result');
+const account=document.getElementById('account');
+const loginLink=document.getElementById('loginLink');
+let authorized=false;
+async function checkSession(){
+  authorized=false;
+  btn.disabled=true;
+  account.textContent='Checking your Quizard sign-in...';
+  try{
+    const {data:{user},error}=await supabase.auth.getUser();
+    if(error||!user)throw new Error('Not signed in on this preview');
+    account.textContent='Signed in on the test site. Ready to check your admin access.';
+    authorized=true;
+    loginLink.hidden=true;
+    btn.disabled=false;
+  }catch(_){
+    account.textContent='You must sign in to Quizard on this Netlify preview first. The original website uses a different browser session.';
+    loginLink.hidden=false;
+    result.textContent='Sign in using the link above, then come back to this page.';
+  }
+}
 async function invoke(body){
  const {data,error}=await supabase.functions.invoke('alqaseh-sandbox-test',{body});
  if(error){
@@ -34,6 +57,7 @@ async function invoke(body){
  return data;
 }
 btn.addEventListener('click',async()=>{
+ if(!authorized){await checkSession();return;}
  btn.disabled=true;
  result.textContent='Creating sandbox payment...';
  try{
@@ -45,10 +69,14 @@ btn.addEventListener('click',async()=>{
   window.location.assign(link.href);
  }catch(e){result.textContent='Could not create payment: '+e.message;btn.disabled=false;}
 });
+await checkSession();
 const params=new URLSearchParams(location.search);
 const orderId=params.get('order_id'),paymentId=params.get('payment_id');
 if(orderId||paymentId){
  btn.hidden=true;
+ if(!authorized){
+   result.textContent='Sign in on this preview, then reopen this exact URL to check the test payment.';
+ } else {
  result.textContent='Checking returned payment against gateway API...';
  try{
   const data=await invoke({action:'status',order_id:orderId,payment_id:paymentId});
@@ -56,5 +84,6 @@ if(orderId||paymentId){
    '\nTest amount: '+Number(data.amount_iqd).toLocaleString()+' IQD'+
    '\nQuizard account or book access changed: NO';
  }catch(e){result.textContent='Could not verify returned payment: '+e.message;}
+ }
 }
 </script></body></html>
