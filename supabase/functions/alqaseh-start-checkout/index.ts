@@ -175,7 +175,7 @@ if (callback.protocol !== 'https:') {
 
 // Include our own payment reference in the return URL.
 // Never use this URL parameter as proof of successful payment.
-callback.searchParams.set('requestId', requestId);
+// Al-Qaseh adds order_id/payment_id/status to this clean return URL.
 
 
     // Record the intended transaction before contacting Qi.
