@@ -2,7 +2,7 @@
 import unittest
 import fitz
 
-from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions
+from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections
 
 
 def make_textbook(*, answer="Correct answer: B. Second choice",
@@ -234,6 +234,89 @@ class LocalMCQTests(unittest.TestCase):
             page.insert_text((70,y),text)
         d.new_page().insert_text((60,60),"CHAPTER 1 BREAST")
         try:self.assertIsNone(local_book_metadata(d))
+        finally:d.close()
+
+
+    def test_plain_numbered_question_with_parenthesized_options(self):
+        d=fitz.open()
+        page=d.new_page()
+        entries=[
+            (65,"1. Which option is printed as correct?"),
+            (95,"(A) First choice"),
+            (125,"(B) Second choice"),
+            (155,"Correct option: (B)"),
+            (185,"Discussion: The source states the second choice."),
+        ]
+        for y,line in entries:page.insert_text((60,y),line)
+        try:
+            result=extract_local_section(d,1,1)
+            self.assertTrue(result["strict_pass"],result["issues"])
+            self.assertEqual(result["questions"][0]["questionNumber"],1)
+            self.assertEqual(result["questions"][0]["correctAnswerIndex"],1)
+            self.assertEqual(result["questions"][0]["options"],["First choice","Second choice"])
+            self.assertIn("second choice",result["questions"][0]["explanation"])
+        finally:d.close()
+
+    def test_numbered_bibliography_without_choices_is_not_a_question(self):
+        d=fitz.open()
+        p=d.new_page()
+        for y,line in [(70,"References"),(90,"1. Smith 2024."),
+                       (110,"2. Jones 2025.")]:
+            p.insert_text((60,y),line)
+        try:
+            result=extract_local_section(d,1,1)
+            self.assertEqual(result["questions"],[])
+            self.assertFalse(result["strict_pass"])
+            self.assertEqual(result["issues"][0]["type"],"no_question_anchors")
+        finally:d.close()
+
+    def test_numbered_question_without_printed_key_never_autoverifies(self):
+        d=fitz.open()
+        p=d.new_page()
+        for y,line in [(70,"1. What is the correct source answer?"),
+                       (95,"A. Yes"),(120,"B. No"),(150,"Discussion: Not supplied")]:
+            p.insert_text((60,y),line)
+        try:
+            result=extract_local_section(d,1,1)
+            self.assertFalse(result["strict_pass"])
+            self.assertFalse(result["questions"])
+        finally:d.close()
+
+    def test_long_pdf_splits_at_question_start_pages(self):
+        d=fitz.open()
+        for i in range(1,66):
+            p=d.new_page()
+            if i % 7 == 1:
+                for y,line in [
+                    (60,f"Question {i}. Printed question for this page?"),
+                    (100,"A. First choice"),
+                    (125,"B. Second choice"),
+                    (150,"Answer: B. Second choice"),
+                    (175,"Explanation: Printed explanation."),
+                ]:p.insert_text((60,y),line)
+        try:
+            parts=partition_long_sections(d,[dict(section_index=1,title="Chapter 1",
+                           start_page=1,end_page=65)],max_pages=12)
+            self.assertGreater(len(parts),1)
+            self.assertEqual(parts[0]["start_page"],1)
+            self.assertEqual(parts[-1]["end_page"],65)
+            for left,right in zip(parts,parts[1:]):
+                self.assertEqual(left["end_page"]+1,right["start_page"])
+            self.assertTrue(all(part["end_page"]-part["start_page"]<12 for part in parts))
+            self.assertFalse(any(part["boundary_issues"] for part in parts))
+        finally:d.close()
+
+    def test_unavoidable_long_page_split_requires_review(self):
+        d=fitz.open()
+        for i in range(25):
+            p=d.new_page()
+            p.insert_text((50,60),"Continuation of an unknown question or scanned page")
+        try:
+            parts=partition_long_sections(d,[dict(section_index=1,title="Unknown",
+                           start_page=1,end_page=25)],max_pages=9)
+            self.assertGreater(len(parts),2)
+            self.assertTrue(any(p["boundary_issues"] for p in parts))
+            self.assertEqual(parts[-1]["end_page"],25)
         finally:d.close()
 
 
