@@ -168,7 +168,7 @@ async function refresh(){
   if(job.status==='needs_review' || job.status==='ready'){
     const preview=document.createElement('details');preview.className='text-xs mt-2';
     const summary=document.createElement('summary');summary.className='text-indigo-700 font-semibold cursor-pointer';
-    summary.textContent='Preview extracted candidate MCQs (not verified)';
+    summary.textContent='Preview MCQs and individual verification';
     preview.appendChild(summary);
     const content=document.createElement('div');content.className='mt-2';preview.appendChild(content);
     let loaded=false;
@@ -180,26 +180,41 @@ async function refresh(){
       if(readError){content.textContent='Could not read staged candidates: '+readError.message;return}
       loaded=true;
       content.replaceChildren();
-      const candidates=(sections||[]).flatMap(section=>
-        (Array.isArray(section.questions)?section.questions:[]));
+      const entries=(sections||[]).flatMap(section=>
+        (Array.isArray(section.questions)?section.questions:[])
+          .map(q=>({q,chapterStatus:section.status})));
+      const locallyVerified=entries.filter(e=>
+        e.q.sourceVerification?.status==='verified_local').length;
+      const chapterVerified=entries.filter(e=>e.chapterStatus==='verified').length;
+      const pending=entries.length-locallyVerified-chapterVerified;
       const count=document.createElement('p');count.className='font-semibold mb-2';
-      count.textContent=candidates.length+' staged candidate question(s); these have not passed complete source verification.';
+      count.textContent=entries.length+' extracted • '+
+        (locallyVerified+chapterVerified)+' verified ('+locallyVerified+
+        ' local source checks) • '+pending+' need review';
       content.appendChild(count);
-      if(candidates.length){
+      if(entries.length){
         const copy=document.createElement('button');copy.type='button';
         copy.className='bg-slate-700 text-white text-xs px-2 py-1 rounded mb-2';
         copy.textContent='Copy candidate JSON';
         copy.addEventListener('click',async()=>{
           try{
-            await navigator.clipboard.writeText(JSON.stringify({questions:candidates},null,2));
-            notice('Candidate JSON copied. Review before importing.');
+            const cleanQuestions=entries.map(({q})=>{
+              const {sourceVerification, ...question}=q;
+              return question;
+            });
+            await navigator.clipboard.writeText(JSON.stringify({questions:cleanQuestions},null,2));
+            notice('Question JSON copied (review statuses omitted). Review before importing.');
           }catch(e){notice('Clipboard blocked: '+e.message,true)}
         });
         content.appendChild(copy);
-        for(const q of candidates){
+        for(const {q,chapterStatus} of entries){
           const item=document.createElement('details');item.className='mb-2';
-          const heading=document.createElement('summary');heading.textContent=
-            'Q'+(q.questionNumber??'?')+' — PDF page '+(q.sourcePage??'?');
+          const heading=document.createElement('summary');
+          const label=chapterStatus==='verified' ? 'Verified chapter' :
+            q.sourceVerification?.status==='verified_local' ?
+              'Verified: local PDF source checks' : 'Needs review';
+          heading.textContent='Q'+(q.questionNumber??'?')+' — PDF page '+
+            (q.sourcePage??'?')+' — '+label;
           item.appendChild(heading);
           const source=document.createElement('pre');source.className='text-xs bg-slate-50 p-2 rounded overflow-auto';
           source.style.maxWidth='360px';source.style.whiteSpace='pre-wrap';
