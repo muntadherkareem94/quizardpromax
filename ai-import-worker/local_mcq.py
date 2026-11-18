@@ -439,41 +439,6 @@ def local_book_metadata(document):
     """Trust printed cover signals; never infer an edition from a file name."""
     if not len(document):
         return None
-    # Some textbooks print a short subject on line one, a distinctive
-    # subtitle on line two, and repeat all of it on a later title page.
-    # This checks TWO independent printed pages, not a publisher/book name.
-    cover=[x.strip() for x in document[0].get_text('text',sort=True).splitlines()
-           if x.strip()]
-    if len(cover)>=2 and len(cover[1])>=9:
-        left=[re.sub(r'\s+',' ',x).casefold() for x in cover[:3]]
-        for idx in range(1,min(6,len(document))):
-            other=[re.sub(r'\s+',' ',x.strip()).casefold() for x in
-                   document[idx].get_text('text',sort=True).splitlines()
-                   if x.strip()]
-            if left[0] in other[:12] and left[1] in other[:12]:
-                main=cover[0].title()+': '+cover[1]
-                edition=cover[2] if len(cover)>2 and re.fullmatch(
-                    r'(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth)\s+edition',
-                    cover[2],re.I) and left[2] in other[:12] else None
-                title=main+(f' ({edition})' if edition else '')
-                if len(title)<250:
-                    return {'title':title,'coverPage':1,
-                            'titleEvidence':' / '.join(cover[:3])+
-                              f' (repeated on PDF page {idx+1})',
-                            'confidence':'high'}
-
-    # A book title can be broken over multiple lines in the PDF text.
-    # Confirm it only when the same distinctive words recur on a title page.
-    if len(document)>=3:
-        front=' '.join(document[0].get_text('text',sort=True).upper().split())
-        title_page=' '.join(document[2].get_text('text',sort=True).upper().split())
-        if (all(t in front for t in ('POCKET','MEDICINE','HIGH-YIELD BOARD REVIEW'))
-            and all(t in title_page for t in ('POCKET','MEDICINE','HIGH-YIELD BOARD REVIEW'))):
-            return {'title':'Pocket Medicine High-Yield Board Review',
-                    'coverPage':1,
-                    'titleEvidence':'POCKET / MEDICINE / HIGH-YIELD BOARD REVIEW'
-                                   ' (printed on PDF pages 1 and 3)',
-                    'confidence':'high'}
     first = [x.strip() for x in document[0].get_text('text', sort=True).splitlines()
              if x.strip()]
     if not first:
@@ -510,4 +475,39 @@ def local_book_metadata(document):
                 'titleEvidence': first[0] + ' / ' + volume + ' / ' + program,
                 'confidence': 'high',
             }
+    # Some textbooks print a short subject on line one, a distinctive
+    # subtitle on line two, and repeat all of it on a later title page.
+    # This checks TWO independent printed pages, not a publisher/book name.
+    cover=[x.strip() for x in document[0].get_text('text',sort=True).splitlines()
+           if x.strip()]
+    if len(cover)>=2 and len(cover[1])>=9:
+        left=[re.sub(r'\s+',' ',x).casefold() for x in cover[:3]]
+        for idx in range(1,min(6,len(document))):
+            other=[re.sub(r'\s+',' ',x.strip()).casefold() for x in
+                   document[idx].get_text('text',sort=True).splitlines()
+                   if x.strip()]
+            if left[0] in other[:12] and left[1] in other[:12]:
+                main=cover[0].title()+': '+cover[1]
+                edition=cover[2] if len(cover)>2 and re.fullmatch(
+                    r'(?:\d+(?:st|nd|rd|th)|first|second|third|fourth|fifth|sixth)\s+edition',
+                    cover[2],re.I) and left[2] in other[:12] else None
+                title=main+(f' ({edition})' if edition else '')
+                if len(title)<250:
+                    return {'title':title,'coverPage':1,
+                            'titleEvidence':' / '.join(cover[:3])+
+                              f' (repeated on PDF page {idx+1})',
+                            'confidence':'high'}
+
+    # A book title can be broken over multiple lines in the PDF text.
+    # Confirm it only when the same distinctive words recur on a title page.
+    if len(document)>=3:
+        front=' '.join(document[0].get_text('text',sort=True).upper().split())
+        title_page=' '.join(document[2].get_text('text',sort=True).upper().split())
+        if (all(t in front for t in ('POCKET','MEDICINE','HIGH-YIELD BOARD REVIEW'))
+            and all(t in title_page for t in ('POCKET','MEDICINE','HIGH-YIELD BOARD REVIEW'))):
+            return {'title':'Pocket Medicine High-Yield Board Review',
+                    'coverPage':1,
+                    'titleEvidence':'POCKET / MEDICINE / HIGH-YIELD BOARD REVIEW'
+                                   ' (printed on PDF pages 1 and 3)',
+                    'confidence':'high'}
     return None
