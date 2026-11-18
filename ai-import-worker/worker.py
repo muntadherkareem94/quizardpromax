@@ -235,9 +235,9 @@ def find_sections(document):
     entries = []
     seen = set()
     # Restrict to first lines of each page; do not confuse ordinary MCQ mentions of chapter.
-    printed_number=r"(?:\\d+[a-z]?|[ivxlcdm]{1,7}|one|two|three|four|five|six|seven|eight|nine|ten)"
+    printed_number=r"(?:\d+[a-z]?|[ivxlcdm]{1,7}|one|two|three|four|five|six|seven|eight|nine|ten)"
     regex = re.compile(
-        rf"^(?:(?:chapter|section|unit|module|part)\\s+{printed_number}\\b[\\s:.\\-]*(.*)|(?:ch\\.)\\s*\\d+\\b[\\s:.\\-]*(.*))$",re.I)
+        rf"^(?:(?:chapter|section|unit|module|part)\s+{printed_number}\b[\s:.\-]*(.*)|(?:ch\.)\s*\d+\b[\s:.\-]*(.*))$",re.I)
     for p in range(1,pages+1):
         text = document[p-1].get_text(sort=True)
         for line in text.splitlines()[:12]:
