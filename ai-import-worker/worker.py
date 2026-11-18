@@ -1053,7 +1053,7 @@ def process_job(job):
             # for diagnosis instead of guessing that a question book has no MCQs.
             # Samples are logged for the import operator, never published.
             inspect_pages=sorted(set(
-                [1,2,3,4,5,6,7,8,9,10,11,12,15,20,25,30,35,40,45,50,pages]
+                [1,2,3,5,7,9,11,12,13,14,15,20,25,26,27,28,29,30,31,35,40,45,50,55,56,pages]
             ))
             for sample_page in inspect_pages:
                 if sample_page>pages: continue
