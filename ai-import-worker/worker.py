@@ -211,7 +211,11 @@ def run_structured(pdf_bytes, prompt, schema, name, model, *,
     return json.loads(raw)
 
 def find_sections(document):
-    """Use native PDF bookmarks first, then actual printed chapter headings."""
+    """Detect printed paired question/answer sets, bookmarks, or real chapters."""
+    from paired_mcq import pair_ranges
+    paired=pair_ranges(document)
+    if paired:
+        return paired,[]
     pages = len(document)
     toc = document.get_toc()
     candidates = [(level,str(title).strip(),int(start))
