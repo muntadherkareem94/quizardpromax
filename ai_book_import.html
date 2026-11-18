@@ -124,6 +124,13 @@ async function runAction(action,id){
      await invoke('set-budget',{id,budget_usd});
      notice('Book budget updated. If paused, click Retry.');await refresh();
    }else{
+     if(action==='retry'){
+       const row=[...document.querySelectorAll('tr[data-job-id]')].find(el=>el.dataset.jobId===id);
+       if(row?.dataset.providerMode==='openai_only'){
+         const already=Number(row.dataset.spent||0);
+         if(!confirm('Reprocessing this book can incur additional OpenAI API charges. Already recorded: $'+already.toFixed(4)+'. This resets processing checkpoints when the extraction strategy changes; existing estimated spending still counts toward the book budget. Continue?'))return;
+       }
+     }
      if(action==='cancel' && !confirm('Cancel this import job?'))return;
      if(action==='remove-test' && !confirm('Remove this synthetic test book and clear its import record? Ordinary Quizard books will not be touched.'))return;
      await invoke(action,{id}); notice('Job updated.');await refresh();
@@ -137,7 +144,10 @@ async function refresh(){
  $('jobs').replaceChildren();
  if(!data.length){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=5;td.textContent='No books uploaded yet.';tr.appendChild(td);$('jobs').appendChild(tr);return}
  for(const job of data){
-  const tr=document.createElement('tr');tr.dataset.jobId=job.id;tr.dataset.budget=String(job.budget_usd??0.75);
+  const tr=document.createElement('tr');tr.dataset.jobId=job.id;
+  tr.dataset.budget=String(job.budget_usd??10);
+  tr.dataset.providerMode=String(job.provider_mode||'');
+  tr.dataset.spent=String(job.api_spend_estimate_usd||0);
   const make=()=>{const td=document.createElement('td');tr.appendChild(td);return td};
   const name=make();name.textContent=job.title_hint;name.appendChild(document.createElement('br'));
   const file=document.createElement('small');file.className='text-slate-500';file.textContent=job.file_name;name.appendChild(file);
@@ -153,7 +163,7 @@ async function refresh(){
     : job.provider_mode==='openai_only'
     ? 'OpenAI metered estimate $'+spent.toFixed(4)+' / $'+budget.toFixed(2)+
       ' • '+(Number(job.api_request_count)||0)+' API calls'+
-      (perQuestion!==null?' • $'+perQuestion.toFixed(4)+' per extracted MCQ':'')+
+      (perQuestion!==null?' • $'+perQuestion.toFixed(4)+' per extracted candidate (not verification)':'')+
       ' (includes verification; not a hard billing cap)'
     : 'Previous import • legacy provider mode';
   prog.appendChild(cost);
@@ -164,6 +174,13 @@ async function refresh(){
     prog.appendChild(stage);
   }
   const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
+  if(job.provider_mode==='openai_only' && job.status==='needs_review' &&
+     Number(job.api_request_count)>0 && Number(job.verified_questions)===0){
+    const caution=document.createElement('p');
+    caution.className='text-xs mt-2 text-amber-900 bg-amber-50 rounded-lg p-2';
+    caution.textContent='AI generated candidates, but none passed source verification. Do not approve or retry blindly; review the source discrepancies first.';
+    status.appendChild(caution);
+  }
   if(job.status==='waiting_provider' && job.next_attempt_at){
     const wait=document.createElement('p');wait.className='text-xs text-indigo-700 mt-2';
     wait.textContent='Automatic retry after '+new Date(job.next_attempt_at).toLocaleString();
