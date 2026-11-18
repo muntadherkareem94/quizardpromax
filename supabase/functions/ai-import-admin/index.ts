@@ -40,9 +40,10 @@ Deno.serve(async (req) => {
       const speciality = String(input.speciality || '').trim();
       const titleHint = String(input.title || '').trim();
       const size = Number(input.size || 0);
-      const budget = Number(input.budget_usd ?? 0.75);
-      if (!Number.isFinite(budget) || budget < 0.20 || budget > 5 || Math.abs(budget * 100 - Math.round(budget * 100)) > 0.0001)
-        return respond({ error: 'Budget per book must be between $0.20 and $5.00 in cents' }, 400);
+      const budget = Number(input.budget_usd ?? 10);
+      if (input.authorize_openai !== true) return respond({error:'Authorize paid OpenAI PDF processing and its estimated per-book budget before uploading'},400);
+      if (!Number.isFinite(budget) || budget < 0.50 || budget > 25 || Math.abs(budget * 100 - Math.round(budget * 100)) > 0.0001)
+        return respond({ error: 'Estimated OpenAI budget per book must be between $0.50 and $25.00' }, 400);
       if (!filename.toLowerCase().endsWith('.pdf') || size < 1 || size > 500 * 1024 * 1024)
         return respond({ error: 'A PDF smaller than 500 MB is required' }, 400);
       if (!speciality || speciality.length > 120 || !titleHint || titleHint.length > 300)
@@ -54,7 +55,7 @@ Deno.serve(async (req) => {
       const { error } = await db.from('ai_import_jobs').insert({
         id, uploaded_by: user.id, file_name: filename.slice(0, 300),
         title_hint: titleHint, speciality, source_path: path, status: 'uploading',
-        budget_usd: budget, provider_mode: 'free_only'
+        budget_usd: budget, provider_mode: 'openai_only'
       });
       if (error) throw error;
       return respond({ id, path });
@@ -103,10 +104,10 @@ Deno.serve(async (req) => {
       if (!['uploading','queued','failed','paused_budget','needs_review','ready','waiting_provider'].includes(job.status))
         return respond({ error: 'Budget cannot be edited in this state' }, 409);
       const amount = Number(input.budget_usd);
-      if (!Number.isFinite(amount) || amount < 0.20 || amount > 5.00 ||
+      if (!Number.isFinite(amount) || amount < 0.50 || amount > 25.00 ||
           Math.abs(amount * 100 - Math.round(amount * 100)) > 0.0001 ||
           amount < Number(job.api_spend_estimate_usd) + 0.01)
-        return respond({ error: 'Enter a budget above tracked spending, between $0.20 and $5.00' }, 400);
+        return respond({ error: 'Enter an estimated budget above tracked spending, between $0.50 and $25.00' }, 400);
       const { error } = await db.from('ai_import_jobs').update({
         budget_usd: amount, updated_at: new Date().toISOString()
       }).eq('id', id).eq('status', job.status);
@@ -118,8 +119,8 @@ Deno.serve(async (req) => {
       // Server-triggered processing: only real super-admin sessions reach here.
       // One-time database token authorizes only this job; no service-role key
       // is transmitted to Railway or to the browser.
-      if (job.provider_mode !== 'free_only')
-        return respond({ error: 'Process Now is enabled only for free-only test imports' }, 409);
+      if (!['free_only','openai_only'].includes(job.provider_mode))
+        return respond({ error: 'This import mode is not eligible for processing' }, 409);
       // A live worker heartbeats every 15 seconds. Recover only an old claim.
       const crashed = job.status === 'processing' &&
         job.worker_lock_at && Date.parse(job.worker_lock_at) < Date.now()-180000;
@@ -127,7 +128,7 @@ Deno.serve(async (req) => {
         return respond({ ok: true, already_processing: true, started: false });
       if (!['queued', 'waiting_provider'].includes(job.status) && !crashed)
         return respond({ error: 'This book cannot start in state: ' + job.status }, 409);
-      if (job.status === 'waiting_provider' && job.next_attempt_at &&
+      if (job.provider_mode === 'free_only' && job.status === 'waiting_provider' && job.next_attempt_at &&
           Date.parse(job.next_attempt_at) > Date.now())
         return respond({
           error: 'Free provider cooldown is still active. Earliest eligible retry: ' +
