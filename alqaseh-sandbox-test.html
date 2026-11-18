@@ -18,6 +18,8 @@ small{color:#5d7284}a{color:#057b9d}
 <div id="account" aria-live="polite">Checking your Quizard sign-in...</div>
 <p><a id="loginLink" href="./index.html" hidden>Sign in to Quizard on this preview</a></p>
 <p>After signing in, reopen this test page. Card details are entered only on Al-Qaseh's hosted page.</p>
+<p><button id="diagnose" disabled>Check Al-Qaseh API connection (no payment)</button></p>
+<p id="diagnosticResult" aria-live="polite">Connection not checked yet.</p>
 <button id="start" disabled>Open test payment page</button>
 <p id="result" aria-live="polite">No payment started.</p>
 <p><small>The displayed payment status is independently checked against Al-Qaseh's merchant API. A browser redirect alone is not proof of payment.</small></p>
@@ -26,13 +28,17 @@ small{color:#5d7284}a{color:#057b9d}
 <script type="module">
 import {supabase} from './supabaseClient.js';
 const btn=document.getElementById('start');
+const diagnoseBtn=document.getElementById('diagnose');
+const diagnosticResult=document.getElementById('diagnosticResult');
 const result=document.getElementById('result');
 const account=document.getElementById('account');
 const loginLink=document.getElementById('loginLink');
 let authorized=false;
+let gatewayReady=false;
 async function checkSession(){
   authorized=false;
   btn.disabled=true;
+  diagnoseBtn.disabled=true;
   account.textContent='Checking your Quizard sign-in...';
   try{
     const {data:{user},error}=await supabase.auth.getUser();
@@ -40,7 +46,8 @@ async function checkSession(){
     account.textContent='Signed in on the test site. Ready to open the payment test.';
     authorized=true;
     loginLink.hidden=true;
-    btn.disabled=false;
+    diagnoseBtn.disabled=false;
+    btn.disabled=!gatewayReady;
   }catch(_){
     account.textContent='You must sign in to Quizard on this Netlify preview first. The original website uses a different browser session.';
     loginLink.hidden=false;
@@ -56,8 +63,30 @@ async function invoke(body){
  }
  return data;
 }
+diagnoseBtn.addEventListener('click',async()=>{
+ if(!authorized){await checkSession();return;}
+ diagnoseBtn.disabled=true;
+ btn.disabled=true;
+ diagnosticResult.textContent='Checking merchant API credentials without creating a payment...';
+ try{
+   const data=await invoke({action:'diagnose'});
+   gatewayReady=Boolean(data?.gateway_auth_ok);
+   diagnosticResult.textContent=(gatewayReady?'✓ ':'× ') +
+     (data?.diagnosis || 'No diagnostic result returned') +
+     (data?.gateway_http_status ? ' (HTTP '+data.gateway_http_status+')' : '');
+ }catch(e){
+   gatewayReady=false;
+   diagnosticResult.textContent='Connection check failed: '+e.message;
+ }
+ btn.disabled=!gatewayReady;
+ diagnoseBtn.disabled=false;
+});
 btn.addEventListener('click',async()=>{
  if(!authorized){await checkSession();return;}
+ if(!gatewayReady){
+   result.textContent='Check the merchant API connection before opening checkout.';
+   return;
+ }
  btn.disabled=true;
  result.textContent='Creating sandbox payment...';
  try{
