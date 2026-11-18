@@ -32,8 +32,8 @@ LOG = logging.getLogger("quizard-ai-import")
 
 URL = os.environ["SUPABASE_URL"]
 SERVICE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
-MODEL = os.getenv("OPENAI_EXTRACTION_MODEL", "gpt-6.1-sol")
-VERIFY_MODEL = os.getenv("OPENAI_VERIFICATION_MODEL", "gpt-6-astra")
+MODEL = os.getenv("OPENAI_EXTRACTION_MODEL", "gpt-5.4-mini")
+VERIFY_MODEL = os.getenv("OPENAI_VERIFICATION_MODEL", "gpt-5.4-mini")
 PAGES_PER_BATCH = max(1, min(6, int(os.getenv("PAGES_PER_BATCH", "3"))))
 POLL_SECONDS = max(10, int(os.getenv("POLL_SECONDS", "60")))
 RUN_ONCE = os.getenv("RUN_ONCE", "false").lower() == "true"
@@ -44,7 +44,7 @@ MAX_SECTIONS_PER_PASS = min(20, max(1, int(os.getenv("MAX_SECTIONS_PER_PASS", "6
 # Full books use local source checks and human review before provider calls.
 LOCAL_REVIEW_ONLY_AT_PAGES = max(40, int(os.getenv("LOCAL_REVIEW_ONLY_AT_PAGES", "60")))
 # Flex uses the same requested model at Batch-rate prices (slower and sometimes unavailable).
-OPENAI_SERVICE_TIER = os.getenv("OPENAI_SERVICE_TIER", "flex").lower()
+OPENAI_SERVICE_TIER = os.getenv("OPENAI_SERVICE_TIER", "auto").lower()
 TEXT_FIRST_ENABLED = os.getenv("TEXT_FIRST_ENABLED", "true").lower() == "true"
 LOCAL_FIRST_ENABLED = os.getenv("LOCAL_FIRST_ENABLED", "true").lower() == "true"
 if OPENAI_SERVICE_TIER not in ("flex", "auto"):
@@ -137,8 +137,10 @@ def run_structured(pdf_bytes, prompt, schema, name, model, *,
             pdf_bytes=pdf_bytes,prompt=prompt,schema=schema,job_id=job_id,
             stage=stage,page_count=page_count,text_source=text_source,
             exclude_provider=exclude_provider)
-    if not ALLOW_PAID_OPENAI:
-        raise ProvidersUnavailable("Paid OpenAI requests are disabled; select free-only provider mode.",21600)
+    if mode.get("provider_mode") != "openai_only":
+        raise RuntimeError("Only explicitly authorized OpenAI-only jobs may consume paid API tokens")
+    if not ALLOW_PAID_OPENAI or not os.getenv("OPENAI_API_KEY"):
+        raise ProvidersUnavailable("OpenAI-only imports are not yet enabled or lack an OpenAI API key.",21600)
     max_output_tokens = {
         "metadata": 1500, "extraction": 12000,
         "verification": 4500, "repair": 12000,
@@ -577,7 +579,12 @@ sourcePage is the original 1-based PDF page where the stem begins.
 Indicate whether the QUESTION or the EXPLANATION contains a figure needing extraction.
 Never generate text placeholders for images. Return all questions; omit headers,
 advertisements, table of contents, and standalone answer explanations without stems."""
-        text_source = safely_selectable_text(document,start,extended_end) if TEXT_FIRST_ENABLED else None
+        # OpenAI-only uses the original PDF file in EVERY request so figures,
+        # tables and unusual text layouts are visible to the model. Other
+        # jobs retain their existing text-first optimization.
+        text_source = (safely_selectable_text(document,start,extended_end)
+                       if TEXT_FIRST_ENABLED and job.get("provider_mode") != "openai_only"
+                       else None)
         if old and int(old["end_page"])==finish and old["status"]=="extracted":
             part=old.get("questions") or []
             if not isinstance(part,list):raise ValueError("Corrupted extraction checkpoint")
