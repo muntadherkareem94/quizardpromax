@@ -25,7 +25,7 @@ from supabase import create_client
 from cost_guard import (BudgetExceeded, assert_budget, reserve_cost_usd,
                         usage_cost_usd, safely_selectable_text)
 from free_router import FreeRouter, ProvidersUnavailable
-from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections
+from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections, diagnose_empty_mcq_source
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger("quizard-ai-import")
@@ -1035,7 +1035,14 @@ def process_job(job):
         for r in records:
             review.extend({"chapter":r["section_index"],**i} for i in r["issues"])
         if total==0:
-            review.append({"type":"empty","detail":"No MCQs could be extracted from this book"})
+            diagnosis=diagnose_empty_mcq_source(document)
+            review.append(diagnosis)
+            update_job(job_id,progress_note=(
+                f"0 recognized MCQs in {pages} pages; " +
+                ("most pages require OCR" if diagnosis["type"]=="no_selectable_mcq_text"
+                 else "review whether this PDF contains MCQs or uses unsupported formatting")))
+            LOG.info("No supported MCQs found job=%s diagnosis=%s text_pages=%s/%s",
+                     job_id,diagnosis["type"],diagnosis["selectable_text_pages"],pages)
         if any(r["status"]!="verified" for r in records):
             review.append({"type":"chapter_review","detail":"One or more chapters did not pass source audit"})
         # A precise completeness check needs verified page-by-page coverage, done by the verifier.
