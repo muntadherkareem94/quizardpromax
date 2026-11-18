@@ -118,7 +118,7 @@ const { data: quote, error: quoteError } =
       throw Error('Secure return URL required');
     }
 
-    callback.searchParams.set('requestId', requestId);
+    // Al-Qaseh adds order_id/payment_id/status to this clean return URL.
 
     const { paymentId, checkoutUrl } = await createAlqasehPayment({
       orderId: requestId,
