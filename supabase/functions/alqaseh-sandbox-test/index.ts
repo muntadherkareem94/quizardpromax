@@ -5,7 +5,8 @@ import { createAlqasehPayment } from '../_shared/alqaseh.ts';
 const PREVIEW = 'https://deploy-preview-2--quizardpromax.netlify.app';
 const CALLBACK = PREVIEW + '/alqaseh-sandbox-test.html';
 const TEST_AMOUNT_IQD = 1000;
-const VALID_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+// Quizard UUID (36 chars) or Al-Qaseh order ID (32 hex chars).
+const VALID_ID = /^(?:[0-9a-f]{32}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/i;
 const cors = {
   'Access-Control-Allow-Origin': PREVIEW,
   'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-client-info',
@@ -94,7 +95,7 @@ Deno.serve(async (req: Request) => {
       if (!response.ok) return json({error:'Gateway verification unavailable'},502);
       const history = await response.json();
       const row = Array.isArray(history) ? history.find(
-        (v: any)=>String(v.order_id)===orderId && String(v.payment_id)===paymentId
+        (v: any)=>String(v.order_id).replaceAll('-', '').toLowerCase() === orderId.replaceAll('-', '').toLowerCase() && String(v.payment_id)===paymentId
         && Number(v.amount)===TEST_AMOUNT_IQD && v.currency==='IQD'
       ):null;
       if (!row) return json({error:'Payment not found or verification mismatch'},404);
