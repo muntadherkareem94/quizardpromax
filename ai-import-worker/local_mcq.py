@@ -9,10 +9,12 @@ import re
 import time
 from collections import Counter
 
-Q = re.compile(r'^\s*(?:Question|Q)\s*(\d+)(?:\s*[.):]\s*|\s*$)(.*)$', re.I)
-OPT = re.compile(r'^\s*([A-J])\s*[.):]\s*(\S.*)$')
-KEY = re.compile(r'^\s*(?:Correct\s+Answer|Answer\s+Key|Answer)\s*:\s*([A-J])(?:[.)\s:-]+(.*))?$', re.I)
-EXPL = re.compile(r'^\s*(?:(?:Explanation|Rationale)\s*:\s*(.*)|Critique(?:\s*:\s*(.*))?)\s*$', re.I)
+# Named anchors are reliable; bare numeric anchors need nearby option labels.
+Q = re.compile(r'^\s*(?:Question|Q(?:uestion)?\.?|MCQ)\s*#?\s*(\d+)(?:\s*[.):\-]\s*|\s*$)(.*)$', re.I)
+NUMBERED_Q = re.compile(r'^\s*(\d{1,5})\s*[.)]\s+(\S.*)$')
+OPT = re.compile(r'^\s*(?:\(([A-J])\)|([A-J])\s*[.):])\s*(\S.*)$', re.I)
+KEY = re.compile(r'^\s*(?:Correct\s+(?:Answer|Option|Choice)(?:\s+is)?|Answer\s+Key|Answer|Ans\.?|Key)\s*(?::|is|-)\s*\(?([A-J])\)?(?:[.)\s:-]+(.*))?$', re.I)
+EXPL = re.compile(r'^\s*(?:(?:Explanation|Rationale|Discussion|Commentary|Teaching\s+Point)\s*:?\s*(.*)|Critique(?:\s*:\s*(.*))?)\s*$', re.I)
 IMARK = re.compile(r'^\s*(Question|Explanation)\s+Image\s*$', re.I)
 FIGCAP = re.compile(r'^\s*Figure\s+\d+\s*[.):]?\s*$', re.I)
 REFS = re.compile(r'^\s*References\s*:?\s*$', re.I)
@@ -24,6 +26,93 @@ def join_source(lines):
 
 
 import fitz
+
+def _question_starts(lines):
+    """Find named anchors plus conservative numbered MCQs, never bibliography lists.
+
+    An unlabeled number is an MCQ only if *two consecutive options* and a
+    printed answer marker occur before the next numbered/named anchor.
+    Without these, the source remains a manual-review case.
+    """
+    result=[]
+    for idx,(page,line) in enumerate(lines):
+        named=Q.match(line)
+        if named:
+            result.append((idx,page,int(named.group(1)),named.group(2)))
+            continue
+        numeric=NUMBERED_Q.match(line)
+        if not numeric:
+            continue
+        # Guard against citations, contents pages and numbered explanations.
+        # Looking ahead only to the next possible heading prevents borrowing
+        # the options/answer of the next actual question.
+        seen=[]
+        key=False
+        for _page,look in lines[idx+1:idx+65]:
+            if Q.match(look) or NUMBERED_Q.match(look):
+                break
+            opt=OPT.match(look)
+            if opt:
+                label=(opt.group(1) or opt.group(2)).upper()
+                seen.append(label)
+            if KEY.match(look):
+                key=True
+        if len(seen)>=2 and seen[:2]==['A','B'] and key:
+            result.append((idx,page,int(numeric.group(1)),numeric.group(2)))
+    return result
+
+
+def partition_long_sections(document, sections, max_pages=32):
+    """Create resumable page ranges from long chapters.
+
+    Prefer a new numbered/question anchor near the top of a PDF page.
+    When no clean boundary exists, force a page split but flag adjacent
+    fragments; never auto-verify a question spanning such a boundary.
+    """
+    if max_pages<4:
+        raise ValueError('max_pages must be at least 4')
+    result=[]
+    for section in sections:
+        first,last=int(section['start_page']),int(section['end_page'])
+        start=first
+        cuts=[]
+        for page in range(first+1,last+1):
+            lines=[x.strip() for x in document[page-1].get_text('text',sort=True).splitlines()
+                   if x.strip()]
+            if lines and (Q.match(lines[0]) or
+                          _question_starts([(page,x) for x in lines[:32]])[:1]
+                          and NUMBERED_Q.match(lines[0])):
+                cuts.append(page)
+        fragments=[]
+        while last-start+1>max_pages:
+            allowable=[p for p in cuts if start+4<=p<=start+max_pages]
+            if allowable:
+                boundary=max(allowable)
+                forced=False
+            else:
+                boundary=start+max_pages
+                forced=True
+            fragments.append((start,boundary-1,forced))
+            start=boundary
+        fragments.append((start,last,False))
+        for i,(a,b,forced) in enumerate(fragments):
+            record=dict(section)
+            record['start_page']=a
+            record['end_page']=b
+            if len(fragments)>1:
+                record['title']=section['title']+f' (part {i+1})'
+            flags=list(record.get('boundary_issues') or [])
+            if forced or (i>0 and fragments[i-1][2]):
+                flags.append({
+                    'type':'unverified_page_boundary',
+                    'detail':'Long chapter was split at a page without a clean question anchor; check adjacent pages',
+                    'pages':[max(first,a-1), min(last,b+1)]
+                })
+            record['boundary_issues']=flags
+            record['section_index']=len(result)+1
+            result.append(record)
+    return result
+
 
 def layout_figures(document, first, last, include_rects=False):
     """Match source-labeled figures to MCQs across pages, ignoring cover artwork.
@@ -127,14 +216,13 @@ def extract_local_section(document, first, last):
         raise ValueError('Invalid 1-based PDF page range')
     lines = _read_lines(document,first,last)
     issues = []
-    starts = [(i,p,int(m.group(1))) for i,(p,s) in enumerate(lines)
-              if (m:=Q.match(s))]
+    starts = [(idx,page,number,text) for idx,page,number,text in _question_starts(lines)]
     if not starts:
         return {'questions':[], 'issues':[{'type':'no_question_anchors',
                 'detail':'No explicit numbered MCQ anchors in selectable PDF text'}],
                 'sourceQuestionNumbers':[], 'strict_pass':False,
                 'elapsed_ms':round((time.monotonic()-start)*1000,2)}
-    ids = [q for _,_,q in starts]
+    ids = [q for _,_,q,_ in starts]
     if len(set(ids)) != len(ids):
         issues.append({'type':'duplicate_question_number', 'sourceNumbers':ids})
     if len(ids)>1 and any(b!=a+1 for a,b in zip(ids,ids[1:])):
@@ -142,10 +230,10 @@ def extract_local_section(document, first, last):
     figures, figure_issues = layout_figures(document,first,last)
     issues.extend(figure_issues)
     questions = []
-    for j,(idx,pno,number) in enumerate(starts):
+    for j,(idx,pno,number,first_line_text) in enumerate(starts):
         end = starts[j+1][0] if j+1 < len(starts) else len(lines)
         raw = lines[idx:end]
-        q_line = Q.match(raw[0][1]).group(2)
+        q_line = first_line_text
         stem = [q_line] if q_line else []
         options, opt_labels, explanation = [], [], []
         answer_index, answer_evidence, answer_text = -1, '', ''
@@ -179,8 +267,8 @@ def extract_local_section(document, first, last):
                 explanation.append(next((g for g in m_expl.groups() if g is not None), ''))
                 state='explanation'
             elif m_opt and state in ('stem','options'):
-                opt_labels.append(m_opt.group(1))
-                options.append([m_opt.group(2)])
+                opt_labels.append((m_opt.group(1) or m_opt.group(2)).upper())
+                options.append([m_opt.group(3)])
                 state='options'
             elif state=='stem':
                 stem.append(line)
