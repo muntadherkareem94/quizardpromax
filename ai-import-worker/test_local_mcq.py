@@ -2,7 +2,7 @@
 import unittest
 import fitz
 
-from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections
+from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections, diagnose_empty_mcq_source
 
 
 def make_textbook(*, answer="Correct answer: B. Second choice",
@@ -318,6 +318,32 @@ class LocalMCQTests(unittest.TestCase):
             self.assertTrue(any(p["boundary_issues"] for p in parts))
             self.assertEqual(parts[-1]["end_page"],25)
         finally:d.close()
+
+
+    def test_reference_textbook_is_not_misclassified_as_scanned(self):
+        document=fitz.open()
+        for i in range(12):
+            page=document.new_page()
+            page.insert_text((60,60),
+                "Clinical reference chapter: diagnosis treatment investigations "
+                "management and monitoring recommendations.")
+        try:
+            result=diagnose_empty_mcq_source(document)
+            self.assertEqual(result["type"],"no_supported_mcq_structure")
+            self.assertEqual(result["selectable_text_pages"],12)
+            self.assertIn("rather than a question bank",result["detail"])
+        finally:document.close()
+
+    def test_image_only_source_requests_ocr_not_question_generation(self):
+        document=fitz.open()
+        for _ in range(12):
+            document.new_page()
+        try:
+            result=diagnose_empty_mcq_source(document)
+            self.assertEqual(result["type"],"no_selectable_mcq_text")
+            self.assertEqual(result["selectable_text_pages"],0)
+            self.assertIn("OCR",result["detail"])
+        finally:document.close()
 
 
 if __name__=="__main__":
