@@ -163,10 +163,25 @@ Deno.serve(async req => {
     if (jobError || !job) return respond({error: 'Import not found'}, 404);
 
     if (action === 'get') {
-      const {data: sections, error} = await db.from('ai_import_sections')
-        .select('id,section_index,title,start_page,end_page,status,questions,issues')
-        .eq('job_id', id).order('section_index');
-      if (error) throw error;
+      // Large textbooks can contain thousands of MCQs. Only send one chapter
+      // or bounded source-page chunk per request (and sign only its figures).
+      const {data: chapterList, error: listError} = await db
+        .from('ai_import_sections')
+        .select('section_index,title,start_page,end_page,status')
+        .eq('job_id', id).order('section_index').limit(1000);
+      if (listError) throw listError;
+      const requested = Number(input?.section_index);
+      const selectedSection = Number.isInteger(requested) &&
+        (chapterList || []).some(ch => ch.section_index === requested)
+          ? requested : (chapterList?.[0]?.section_index ?? null);
+      let sections: any[] = [];
+      if (selectedSection !== null) {
+        const result = await db.from('ai_import_sections')
+          .select('id,section_index,title,start_page,end_page,status,questions,issues')
+          .eq('job_id', id).eq('section_index', selectedSection).limit(1);
+        if (result.error) throw result.error;
+        sections = result.data || [];
+      }
       const {data: draft} = await db.from('ai_import_draft_links')
         .select('book_id,approved_count').eq('job_id', id).maybeSingle();
       let draftFigureCount = 0;
@@ -207,7 +222,9 @@ Deno.serve(async req => {
         total_pages: job.total_pages, title_confidence: job.book_metadata?.confidence || 'low',
         title_verification: job.book_metadata?.verificationMethod || 'local_pdf'
       }, sections: resultSections, source_url: source.data?.signedUrl || null,
-      images, draft: draft ? {...draft, figure_count: draftFigureCount} : null});
+      images, chapter_list: chapterList || [],
+      selected_section_index: selectedSection,
+      draft: draft ? {...draft, figure_count: draftFigureCount} : null});
     }
 
     if (action === 'confirm-title') {
