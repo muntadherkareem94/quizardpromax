@@ -1717,6 +1717,29 @@ function sanitizeAdminPreviewHtml(rawHtml, fallback = '') {
         .replace(/&nbsp;/gi, ' ');
 }
 
+// Signed, short-lived, admin-only links. Never persist these URLs to
+// questions.imageUrl or its arrays; the student quiz uses public image fields.
+let privateDraftFigureLinks = {};
+async function refreshPrivateDraftFigureLinks() {
+    privateDraftFigureLinks = {};
+    if (!bookId) return;
+    try {
+        const {data: link, error: linkError} = await supabase
+            .from('ai_import_draft_links').select('job_id')
+            .eq('book_id', bookId).maybeSingle();
+        if (linkError) throw linkError;
+        if (!link) return;
+        const {data, error} = await supabase.functions.invoke('ai-import-review', {
+            body: {action:'draft-figures',book_id:bookId,chapter_id:chapterId}
+        });
+        if (error) throw error;
+        privateDraftFigureLinks = data?.figures || {};
+        if (data?.unavailable) console.warn(data.unavailable+' private draft figures unavailable; reload to refresh');
+    } catch (error) {
+        // Never fall back to public URLs if the admin-only signer is unavailable.
+        console.warn('Private draft figure preview failed', error);
+    }
+}
 function renderAdminPreviewImages(imageUrls = []) {
     const cleanImages = (imageUrls || [])
         .map(url => String(url || '').trim())
@@ -1742,6 +1765,15 @@ function renderAdminPreviewImages(imageUrls = []) {
 function renderAdminQuestionCard(q) {
     const questionImages = normalizeImageArray(q.imageUrl, q.imageUrls);
     const explanationImages = normalizeImageArray(q.explanationImageUrl, q.explanationImageUrls);
+    const privateImages = privateDraftFigureLinks[q.id] || {question:[], explanation:[]};
+    const privateQuestionPreview = privateImages.question?.length
+      ? '<div class="border border-indigo-200 p-3 rounded-lg mb-4 bg-indigo-50">'+
+        '<strong>Private draft question figures · admin preview only</strong>'+
+        renderAdminPreviewImages(privateImages.question)+'</div>' : '';
+    const privateExplanationPreview = privateImages.explanation?.length
+      ? '<div class="border border-indigo-200 p-3 rounded-lg mt-3 bg-indigo-50">'+
+        '<strong>Private draft explanation figures · admin preview only</strong>'+
+        renderAdminPreviewImages(privateImages.explanation)+'</div>' : '';
 
     const options = Array.isArray(q.options) ? q.options : [];
     const correctAnswerIndex = Number(q.correctAnswerIndex);
@@ -1784,6 +1816,7 @@ function renderAdminQuestionCard(q) {
             </div>
 
             ${renderAdminPreviewImages(questionImages)}
+            ${privateQuestionPreview}
 
             <div class="admin-options-preview">
                 ${optionsHtml}
@@ -1799,6 +1832,7 @@ function renderAdminQuestionCard(q) {
                 </div>
 
                 ${renderAdminPreviewImages(explanationImages)}
+                ${privateExplanationPreview}
             </div>
 
                        <div class="admin-navigation-mount"></div>
@@ -2010,6 +2044,9 @@ function showImageBulkReport({ importedCount, skippedFiles, updatedQuestions }) 
                 if (questionsError) throw questionsError;
 
                 adminQuestions = questions || [];
+                // Preview private imported figures without modifying Quizard's
+                // ordinary question records or exposing permanent image links.
+                await refreshPrivateDraftFigureLinks();
 
                 if (!adminQuestions.length) {
                     currentAdminQuestionIndex = 0;

@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quizard — Autonomous Book Import</title>
+<link rel="stylesheet" href="tailwind.css">
+<link rel="stylesheet" href="main-styles.css">
+<style>
+body{background:#f1f5f9;font-family:Inter,system-ui,sans-serif;color:#0f172a}
+.panel{background:white;border:1px solid #e2e8f0;border-radius:18px;padding:24px;margin-bottom:22px}
+.btn{border-radius:9px;padding:10px 18px;font-weight:650;background:#4f46e5;color:#fff;cursor:pointer}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-secondary{background:#334155}
+.field{border:1px solid #cbd5e1;border-radius:8px;padding:10px;width:100%;background:#fff}
+.pill{border-radius:99px;padding:4px 10px;background:#e2e8f0;font-size:12px;font-weight:bold;white-space:nowrap}
+table{width:100%;border-collapse:collapse}
+th,td{padding:11px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top}
+td{font-size:14px}
+.progress{height:8px;background:#e2e8f0;border-radius:8px;overflow:hidden}
+.progress>div{height:100%;background:#4f46e5}
+</style>
+</head>
+<body>
+<header class="bg-white border-b p-5"><div class="max-w-6xl mx-auto flex items-center justify-between">
+<div><h1 class="text-2xl font-bold">AI Book Import Center</h1><p class="text-slate-500 text-sm">Verified PDFs → Books → Chapters → Questions and images</p></div>
+<a href="admin_dashboard.html" class="text-indigo-700 font-bold">← Admin dashboard</a></div></header>
+<main class="max-w-6xl mx-auto p-5">
+<div id="notice" class="hidden panel" role="alert"></div>
+<section class="panel">
+<h2 class="font-bold text-xl mb-2">Upload books in batches</h2>
+<p class="text-slate-600 mb-4">Select all your PDF books at once, then assign a different specialty to each book if needed. The four named synthetic test books automatically test actual Quizard books, chapters, questions, covers and figures; they are hidden from students.</p>
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<label><span class="block font-semibold mb-2">Default specialty (editable per PDF)</span><select id="specialty" class="field" required>
+<option value="">Select specialty...</option>
+<optgroup label="Internal Medicine"><option>Internal Medicine - General</option><option>Cardiology</option><option>Endocrinology</option><option>Gastroenterology</option><option>Hematology</option><option>Infectious Disease</option><option>Nephrology</option><option>Oncology</option><option>Pulmonology</option><option>Rheumatology</option></optgroup>
+<optgroup label="Surgery"><option>General Surgery</option><option>Cardiothoracic Surgery</option><option>Neurosurgery</option><option>Orthopedic Surgery</option><option>Otolaryngology (ENT)</option><option>Pediatric Surgery</option><option>Plastic Surgery</option><option>Urology</option><option>Vascular Surgery</option></optgroup>
+<optgroup label="Other"><option>Pediatrics - General</option><option>Neonatology</option><option>Obstetrics &amp; Gynecology - General</option><option>anesthesiology and Intensive Care</option><option>Dermatology</option><option>Emergency Medicine</option><option>Family Medicine</option><option>Neurology</option><option>Ophthalmology</option><option>Pathology</option><option>Psychiatry</option><option>Radiology</option><option>Clinical Pharmacy</option></optgroup>
+</select></label>
+<label><span class="block font-semibold mb-2">PDF textbooks</span><input id="files" type="file" accept="application/pdf,.pdf" multiple class="field"></label>
+</div>
+<div class="border rounded-xl p-3 mb-4 bg-slate-50 text-sm text-slate-700">
+<strong>OpenAI-only MCQ extraction and verification.</strong> Every new PDF is sent securely to OpenAI for model-based source transcription and a separate AI source-audit pass. GPT-5.4 mini is used for the initial pilot; scanned pages and figures are processed from the original PDF. <strong>Results require medical/source review and are never automatically published.</strong> Complex books with separate answer keys can still need correction; AI is not guaranteed to transcribe every question perfectly.
+</div>
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<label><span class="block font-semibold mb-2">Estimated OpenAI spending budget PER BOOK (USD)</span>
+<input id="budget" type="number" class="field" min="0.50" max="25.00" step="0.50" value="10.00"></label>
+<div class="text-sm text-slate-600 self-center">OpenAI bills actual input/output tokens (including PDF images), not the number of MCQs. Quizard tracks API usage and pauses before the next call when its estimated budget is insufficient. <strong>This is not a provider-enforced hard billing cap.</strong></div>
+</div>
+<label class="flex items-start gap-2 rounded-lg border border-amber-200 bg-amber-50 p-3 mb-4 text-sm">
+<input id="openaiConsent" type="checkbox" class="mt-1" />
+<span>I authorize sending the selected PDF books to OpenAI for paid AI processing, confirm I have permission to process these materials, and accept metered API charges for each book subject to Quizard's estimated budget checks.</span></label>
+<div id="assignments" class="grid gap-2 mb-4" aria-live="polite"></div>
+<div class="flex gap-3 items-center flex-wrap">
+<button id="upload" class="btn" disabled>Upload and queue books</button>
+<span id="uploadInfo" class="text-slate-500 text-sm">Books will be added with private source storage.</span>
+</div>
+</section>
+<section class="panel">
+<div class="flex justify-between items-center mb-3"><div><h2 class="font-bold text-xl">Processing queue</h2><p class="text-sm text-slate-500">The four synthetic fixture books are inserted into a hidden TEST tier for end-to-end checks. Real books remain in private staging for review.</p></div>
+<button id="refresh" class="btn btn-secondary">Refresh</button></div>
+<div class="overflow-x-auto"><table><thead><tr><th>Book</th><th>Specialty</th><th>Progress / API estimate</th><th>Status</th><th>Actions</th></tr></thead>
+<tbody id="jobs"><tr><td colspan="5">Loading…</td></tr></tbody></table></div>
+</section>
+<section class="panel"><h2 class="font-bold mb-2">End-to-end TEST results</h2>
+<p class="text-sm text-slate-600 mb-3">Expected: 4 books (2 Surgery + 2 Gynecology), 4 chapters, 16 questions, 4 covers, 8 question images and 8 explanation images. Items below use Quizard's real book, chapter and question tables, hidden from students. Red/missing figures remain visible as test failures rather than silent success.</p>
+<div id="testSummary" class="text-sm text-slate-700 mb-3">No test books published yet.</div>
+<div id="testCards" class="grid md:grid-cols-2 gap-3"></div>
+</section>
+<section class="panel"><h2 class="font-bold mb-2">Publication rules</h2>
+<p class="text-sm text-slate-600">Only the four named synthetic fixture PDFs can be published automatically, with <strong>test</strong> access (admin-only), no entitlements, no new-content notifications and no changes to subscription plans. Any other books stay in private staging until a separate production release is approved. Only upload books you have rights to reproduce.</p>
+</section>
+</main>
+<script type="module">
+import { supabase, SUPABASE_URL } from './supabaseClient.js';
+import * as tus from 'https://cdn.jsdelivr.net/npm/tus-js-client@4.3.1/+esm';
+const $=(id)=>document.getElementById(id);
+let busy=false;
+function notice(message,error=false){
+ $('notice').className='panel '+(error?'text-red-700 bg-red-50':'text-green-800 bg-green-50');
+ $('notice').textContent=message;
+}
+function pct(job){return job.total_pages?Math.round(100*job.processed_pages/job.total_pages):0}
+function button(text, action,id){const b=document.createElement('button');b.textContent=text;b.className='text-indigo-700 font-semibold mr-3 mb-1';b.addEventListener('click',()=>runAction(action,id));return b}
+async function invoke(action,payload={}){
+ const {data,error}=await supabase.functions.invoke('ai-import-admin',{body:{action,...payload}});
+ if(error){
+   let message=error.message||'Import request failed';
+   // Supabase FunctionsHttpError includes the Edge Function's Response.
+   // Display its useful server error, not only "non-2xx status code".
+   try{
+     if(error.context && typeof error.context.json==='function'){
+       const details=await error.context.json();
+       if(typeof details?.error==='string')message=details.error;
+     }
+   }catch(parseError){console.warn('Could not parse import response',parseError)}
+   throw new Error(message);
+ }
+ if(data?.error)throw new Error(data.error);
+ return data;
+}
+const startingJobs=new Set();
+async function runAction(action,id){
+ if(action==='process-now'){
+   if(startingJobs.has(id))return;
+   startingJobs.add(id);
+ }
+ try{
+   if(action==='source-link'){
+     const data=await invoke(action,{id}); window.open(data.url,'_blank','noopener,noreferrer');
+   }else if(action==='process-now'){
+     const outcome=await invoke('process-now',{id});
+     notice(outcome?.already_processing
+       ? 'This book is already processing. Progress updates automatically.'
+       : 'AI processing started for the selected book. Progress updates automatically.');
+     await refresh();
+   }else if(action==='set-budget'){
+     const row=[...document.querySelectorAll('tr[data-job-id]')].find(el=>el.dataset.jobId===id);
+     const input=prompt('Set total estimated OpenAI spending budget for this book (USD $0.50 to $25.00). Recorded spending remains counted; this is not a hard provider billing cap.',row?.dataset.budget||'10.00');
+     if(input===null)return;
+     const budget_usd=Number(input);
+     if(!Number.isFinite(budget_usd)||budget_usd<0.50||budget_usd>25.00){
+       notice('Estimated budget must be between $0.50 and $25.00.',true);return;
+     }
+     await invoke('set-budget',{id,budget_usd});
+     notice('Book budget updated. If paused, click Retry.');await refresh();
+   }else{
+     if(action==='retry'){
+       const row=[...document.querySelectorAll('tr[data-job-id]')].find(el=>el.dataset.jobId===id);
+       if(row?.dataset.providerMode==='openai_only'){
+         const already=Number(row.dataset.spent||0);
+         if(!confirm('Reprocessing this book can incur additional OpenAI API charges. Already recorded: $'+already.toFixed(4)+'. This resets processing checkpoints when the extraction strategy changes; existing estimated spending still counts toward the book budget. Continue?'))return;
+       }
+     }
+     if(action==='cancel' && !confirm('Cancel this import job?'))return;
+     if(action==='remove-test' && !confirm('Remove this synthetic test book and clear its import record? Ordinary Quizard books will not be touched.'))return;
+     await invoke(action,{id}); notice('Job updated.');await refresh();
+   }
+ }catch(e){notice(e.message,true)}
+ finally{if(action==='process-now')startingJobs.delete(id)}
+}
+async function refresh(){
+ const {data,error}=await supabase.from('ai_import_jobs').select('*').order('created_at',{ascending:false}).limit(200);
+ if(error){notice(error.message,true);return}
+ $('jobs').replaceChildren();
+ if(!data.length){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=5;td.textContent='No books uploaded yet.';tr.appendChild(td);$('jobs').appendChild(tr);return}
+ for(const job of data){
+  const tr=document.createElement('tr');tr.dataset.jobId=job.id;
+  tr.dataset.budget=String(job.budget_usd??10);
+  tr.dataset.providerMode=String(job.provider_mode||'');
+  tr.dataset.spent=String(job.api_spend_estimate_usd||0);
+  const make=()=>{const td=document.createElement('td');tr.appendChild(td);return td};
+  const name=make();name.textContent=job.title_hint;name.appendChild(document.createElement('br'));
+  const file=document.createElement('small');file.className='text-slate-500';file.textContent=job.file_name;name.appendChild(file);
+  make().textContent=job.speciality;
+  const prog=make();prog.textContent=job.total_pages?job.processed_pages+' / '+job.total_pages+' pages; '+job.verified_questions+' verified questions':'Not started';
+  const bar=document.createElement('div');bar.className='progress mt-2';const fill=document.createElement('div');fill.style.width=pct(job)+'%';bar.appendChild(fill);prog.appendChild(bar);
+  const spent=Number(job.api_spend_estimate_usd||0);
+  const budget=Number(job.budget_usd??10);
+  const cost=document.createElement('div');cost.className='text-xs text-slate-600 mt-2';
+  const perQuestion=Number(job.total_questions)>0 ? spent/Number(job.total_questions) : null;
+  cost.textContent=job.provider_mode==='free_only'
+    ? 'Previous FREE-ONLY job • no paid OpenAI calls'
+    : job.provider_mode==='openai_only'
+    ? 'OpenAI metered estimate $'+spent.toFixed(4)+' / $'+budget.toFixed(2)+
+      ' • '+(Number(job.api_request_count)||0)+' API calls'+
+      (perQuestion!==null?' • $'+perQuestion.toFixed(4)+' per extracted candidate (not verification)':'')+
+      ' (includes verification; not a hard billing cap)'
+    : 'Previous import • legacy provider mode';
+  prog.appendChild(cost);
+  if(job.progress_note && ['processing','waiting_provider','queued','needs_review','ready','published'].includes(job.status)){
+    const stage=document.createElement('p');
+    stage.className='text-xs mt-2 text-indigo-700';
+    stage.textContent=job.progress_note;
+    prog.appendChild(stage);
+  }
+  const status=make();const pill=document.createElement('span');pill.className='pill';pill.textContent=job.status.replaceAll('_',' ');status.appendChild(pill);
+  if(job.provider_mode==='openai_only' && job.status==='needs_review' &&
+     Number(job.api_request_count)>0 && Number(job.verified_questions)===0){
+    const caution=document.createElement('p');
+    caution.className='text-xs mt-2 text-amber-900 bg-amber-50 rounded-lg p-2';
+    caution.textContent='AI generated candidates, but none passed source verification. Do not approve or retry blindly; review the source discrepancies first.';
+    status.appendChild(caution);
+  }
+  if(job.status==='waiting_provider' && job.next_attempt_at){
+    const wait=document.createElement('p');wait.className='text-xs text-indigo-700 mt-2';
+    wait.textContent='Automatic retry after '+new Date(job.next_attempt_at).toLocaleString();
+    status.appendChild(wait);
+  }
+  if(job.last_error){const err=document.createElement('p');err.className='text-xs text-red-700 mt-2';err.textContent=job.last_error;status.appendChild(err)}
+  if(job.status==='needs_review' || job.status==='ready'){
+    if(Number(job.total_pages)>60){
+      const hint=document.createElement('p');
+      hint.className='text-xs mt-2 text-indigo-700';
+      hint.textContent='Large book: open Review & import for chapter-by-chapter review.';
+      status.appendChild(hint);
+    }else{
+    const preview=document.createElement('details');preview.className='text-xs mt-2';
+    const summary=document.createElement('summary');summary.className='text-indigo-700 font-semibold cursor-pointer';
+    summary.textContent='Preview MCQs and individual verification';
+    preview.appendChild(summary);
+    const content=document.createElement('div');content.className='mt-2';preview.appendChild(content);
+    let loaded=false;
+    preview.addEventListener('toggle',async()=>{
+      if(!preview.open || loaded)return;
+      content.textContent='Loading saved section candidates...';
+      const {data:sections,error:readError}=await supabase.from('ai_import_sections')
+        .select('section_index,questions,status').eq('job_id',job.id).order('section_index');
+      if(readError){content.textContent='Could not read staged candidates: '+readError.message;return}
+      loaded=true;
+      content.replaceChildren();
+      const entries=(sections||[]).flatMap(section=>
+        (Array.isArray(section.questions)?section.questions:[])
+          .map(q=>({q,chapterStatus:section.status})));
+      const locallyVerified=entries.filter(e=>
+        e.q.sourceVerification?.status==='verified_local').length;
+      const chapterVerified=entries.filter(e=>e.chapterStatus==='verified').length;
+      const pending=entries.length-locallyVerified-chapterVerified;
+      const count=document.createElement('p');count.className='font-semibold mb-2';
+      count.textContent=entries.length+' extracted • '+
+        (locallyVerified+chapterVerified)+' verified ('+locallyVerified+
+        ' local source checks) • '+pending+' need review';
+      content.appendChild(count);
+      if(entries.length){
+        const copy=document.createElement('button');copy.type='button';
+        copy.className='bg-slate-700 text-white text-xs px-2 py-1 rounded mb-2';
+        copy.textContent='Copy candidate JSON';
+        copy.addEventListener('click',async()=>{
+          try{
+            const cleanQuestions=entries.map(({q})=>{
+              const {sourceVerification, ...question}=q;
+              return question;
+            });
+            await navigator.clipboard.writeText(JSON.stringify({questions:cleanQuestions},null,2));
+            notice('Question JSON copied (review statuses omitted). Review before importing.');
+          }catch(e){notice('Clipboard blocked: '+e.message,true)}
+        });
+        content.appendChild(copy);
+        for(const {q,chapterStatus} of entries){
+          const item=document.createElement('details');item.className='mb-2';
+          const heading=document.createElement('summary');
+          const label=chapterStatus==='verified' ? 'Verified chapter' :
+            q.sourceVerification?.status==='verified_local' ?
+              'Verified: local PDF source checks' : 'Needs review';
+          heading.textContent='Q'+(q.questionNumber??'?')+' — PDF page '+
+            (q.sourcePage??'?')+' — '+label;
+          item.appendChild(heading);
+          const source=document.createElement('pre');source.className='text-xs bg-slate-50 p-2 rounded overflow-auto';
+          source.style.maxWidth='360px';source.style.whiteSpace='pre-wrap';
+          source.textContent=JSON.stringify(q,null,2);item.appendChild(source);
+          content.appendChild(item);
+        }
+      }
+    });
+    status.appendChild(preview);
+    }
+  }
+  const issues=Array.isArray(job.review_issues)?job.review_issues:[];
+  if(job.status==='needs_review' && Number(job.total_pages)>0 &&
+     Number(job.processed_pages)>=Number(job.total_pages) &&
+     Number(job.total_questions)===0){
+    const issue=issues.find(i=>i.type==='no_selectable_mcq_text'||i.type==='no_supported_mcq_structure');
+    const warning=document.createElement('p');
+    warning.className='text-sm mt-2 rounded-lg p-3 border border-amber-300 bg-amber-50 text-amber-900';
+    warning.textContent=issue?.type==='no_selectable_mcq_text'
+      ? 'No MCQs detected. This PDF may be scanned or image-only; OCR is required before text extraction.'
+      : 'This PDF contains text, but its MCQ layout was not recognized. It may still be a valid MCQ book. Check the printed question/answer sections; a different parser or source-grounded AI may be needed. Retrying without changes will not help.';
+    status.appendChild(warning);
+  }
+  if(issues.length){const details=document.createElement('details');details.className='text-xs mt-2';const summary=document.createElement('summary');summary.textContent=issues.length+' review issue(s)';details.appendChild(summary);const pre=document.createElement('pre');pre.style.whiteSpace='pre-wrap';pre.textContent=JSON.stringify(issues,null,2);details.appendChild(pre);status.appendChild(details)}
+  const act=make();
+  const recoverable=job.status==='processing' && job.worker_lock_at &&
+    Date.parse(job.worker_lock_at)<Date.now()-180000;
+  if(['free_only','openai_only'].includes(job.provider_mode) && (['queued','waiting_provider'].includes(job.status)||recoverable)){
+    const cooldown=job.status==='waiting_provider' && job.next_attempt_at
+      && Date.parse(job.next_attempt_at)>Date.now();
+    if(cooldown){
+      const message=document.createElement('span');
+      message.className='text-xs text-amber-700 font-medium block mb-2';
+      message.textContent='Provider cooldown — retry eligible after '+
+        new Date(job.next_attempt_at).toLocaleTimeString();
+      act.appendChild(message);
+    }else{
+      const start=button(recoverable?'↻ Recover & Process Now':'▶ Process Now','process-now',job.id);
+      start.className='inline-block bg-indigo-600 text-white text-sm rounded-md px-3 py-2 mr-2 mb-2 hover:bg-indigo-700 font-semibold';
+      start.title=job.provider_mode==='openai_only'
+        ? 'Start or resume the OpenAI-only job using its confirmed estimated budget'
+        : 'Start free-only source processing';
+      act.appendChild(start);
+    }
+  }
+  if(['queued','processing','needs_review','ready','published','paused_budget','waiting_provider'].includes(job.status))
+    act.appendChild(button('Source PDF','source-link',job.id));
+  if(['needs_review','ready','published'].includes(job.status)){
+    const review=document.createElement('a');
+    review.href='ai_book_review.html?job='+encodeURIComponent(job.id);
+    review.className='inline-block bg-indigo-700 text-white font-semibold rounded-lg px-3 py-2 mr-2 mb-2';
+    review.textContent='Review & import';
+    act.appendChild(review);
+  }
+  if(['failed','needs_review','paused_budget','waiting_provider'].includes(job.status))act.appendChild(button('Retry','retry',job.id));
+  if(['uploading','queued','failed','paused_budget','needs_review','ready'].includes(job.status))act.appendChild(button('Edit budget','set-budget',job.id));
+  if(['queued','failed','needs_review','ready','paused_budget','waiting_provider'].includes(job.status))act.appendChild(button('Cancel','cancel',job.id));
+  if(job.book_id){
+    const a=document.createElement('a');a.href='manage_chapters.html?bookId='+encodeURIComponent(job.book_id);a.className='text-green-700 font-bold';a.textContent='Open book';act.appendChild(a);
+    act.appendChild(button('Remove test book','remove-test',job.id));
+  }
+  $('jobs').appendChild(tr);
+ }
+ await renderTestReport(data);
+}
+async function renderTestReport(jobs){
+ const published=jobs.filter(j=>j.book_id);
+ const container=$('testCards');container.replaceChildren();
+ if(!published.length){$('testSummary').textContent='No synthetic test books published yet.';return}
+ const ids=published.map(j=>j.book_id);
+ const [booksRes,chaptersRes,questionsRes]=await Promise.all([
+   supabase.from('books').select('id,title,speciality,image,access_level').in('id',ids),
+   supabase.from('chapters').select('id,book_id').in('book_id',ids),
+   supabase.from('questions').select('book_id,chapter_id,imageUrl,explanationImageUrl').in('book_id',ids)
+ ]);
+ if(booksRes.error||chaptersRes.error||questionsRes.error){
+   $('testSummary').textContent='Could not verify published tables. '+(booksRes.error||chaptersRes.error||questionsRes.error).message;
+   return;
+ }
+ const books=booksRes.data||[],chapters=chaptersRes.data||[],qs=questionsRes.data||[];
+ const missing=published.filter(j=>!books.some(book=>book.id===j.book_id));
+ if(missing.length){
+   const warning=document.createElement('p');
+   warning.className='text-sm text-red-700 font-semibold mb-3';
+   warning.textContent=missing.length+' import record(s) are marked published, but their book records are already missing. Use Remove test book to clear each stale record.';
+   container.appendChild(warning);
+ }
+ const covers=books.filter(b=>b.image).length,qi=qs.filter(q=>q.imageUrl).length,ei=qs.filter(q=>q.explanationImageUrl).length;
+ const surg=books.filter(b=>b.speciality==='General Surgery').length;
+ const gyn=books.filter(b=>b.speciality==='Obstetrics & Gynecology - General').length;
+ $('testSummary').textContent=
+   'Books '+books.length+'/4 | Surgery '+surg+'/2 | Gynecology '+gyn+'/2 | Chapters '+chapters.length+'/4 | Questions '+qs.length+'/16 | Covers '+covers+'/4 | Question images '+qi+'/8 | Explanation images '+ei+'/8';
+ for(const book of books){
+   const job=published.find(j=>j.book_id===book.id);
+   const chapterCount=chapters.filter(ch=>ch.book_id===book.id).length;
+   const bookQs=qs.filter(q=>q.book_id===book.id);
+   const qImgs=bookQs.filter(q=>q.imageUrl).length;
+   const eImgs=bookQs.filter(q=>q.explanationImageUrl).length;
+   const card=document.createElement('article');card.className='border rounded-xl p-3 flex gap-3 items-start';
+   if(book.image){const img=document.createElement('img');img.src=book.image;img.alt='Book cover';img.width=95;img.className='rounded-md border';card.appendChild(img);}
+   const info=document.createElement('div');info.className='text-sm';
+   const title=document.createElement('div');title.className='font-bold';title.textContent=book.title;info.appendChild(title);
+   const details=document.createElement('p');
+   details.textContent=book.speciality+' | '+chapterCount+' chapters | '+bookQs.length+' questions | '+qImgs+' question images | '+eImgs+' explanation images';
+   info.appendChild(details);
+   if(job?.review_issues?.length){const warn=document.createElement('p');warn.className='text-orange-700';warn.textContent=job.review_issues.length+' source review issue(s) — test-only publication';info.appendChild(warn);}
+   const link=document.createElement('a');link.href='manage_chapters.html?bookId='+encodeURIComponent(book.id);link.className='text-indigo-700 underline';link.textContent='Open chapters in Quizard';info.appendChild(link);
+   card.appendChild(info);container.appendChild(card);
+ }
+}
+function showAssignments(){
+ const files=Array.from($('files').files||[]);
+ $('assignments').replaceChildren();
+ files.forEach((file,i)=>{
+   const row=document.createElement('label');row.className='border rounded-lg p-3 grid md:grid-cols-2 gap-2 items-center';
+   const name=document.createElement('span');name.textContent=file.name;name.className='font-semibold text-sm';row.appendChild(name);
+   const sel=$('specialty').cloneNode(true);sel.id='assignment-'+i;sel.className='field';
+   if(/surgery_test_book/i.test(file.name))sel.value='General Surgery';
+   else if(/gynecology_test_book/i.test(file.name))sel.value='Obstetrics & Gynecology - General';
+   else sel.value=$('specialty').value;
+   row.appendChild(sel);$('assignments').appendChild(row);
+ });
+}
+async function upload(){
+ const files=Array.from($('files').files||[]);
+ if(!files.length)return;
+ const budgetEstimate=Number($('budget').value);
+ if(!$('openaiConsent').checked){
+   notice('Confirm permission to process the PDFs with OpenAI and accept metered API charges before uploading.',true);return;
+ }
+ if(!Number.isFinite(budgetEstimate)||budgetEstimate<0.50||budgetEstimate>25){
+   notice('Choose a per-book estimated budget of $0.50–$25.00.',true);return;
+ }
+ if(!confirm('Authorize OpenAI processing of '+files.length+' PDF book(s) at an estimated limit of $'+budgetEstimate.toFixed(2)+' per book? Actual OpenAI charges may differ and can slightly exceed Quizard estimates.'))return;
+ busy=true;$('upload').disabled=true;
+ let ok=0;
+ for(const [i,file] of files.entries()){
+  let job=null;
+  try{
+   const speciality=$('assignment-'+i)?.value||$('specialty').value;
+   if(!speciality)throw new Error('Select a specialty for this PDF');
+   const budget_usd=Number($('budget').value);
+   if(!Number.isFinite(budget_usd)||budget_usd<0.50||budget_usd>25.00)
+     throw new Error('Enter a valid API budget for this book.');
+   $('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name;
+   const title=file.name.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').trim().slice(0,300);
+   // The normal Supabase session access token (JWT) is required by TUS.
+   // A createSignedUploadUrl token is for uploadToSignedUrl, NOT for TUS headers.
+   const {data:{session},error:sessionError}=await supabase.auth.getSession();
+   if(sessionError||!session?.access_token)throw new Error('Session expired. Please sign in again.');
+   job=await invoke('prepare-upload',{filename:file.name,size:file.size,title,speciality,budget_usd,authorize_openai:true});
+   await new Promise((resolve,reject)=>{
+     const upload=new tus.Upload(file,{
+       endpoint:SUPABASE_URL.replace(/\/$/,'').replace('.supabase.co','.storage.supabase.co')+'/storage/v1/upload/resumable',
+       headers:{authorization:'Bearer '+session.access_token},
+       retryDelays:[0,3000,5000,10000,20000],
+       chunkSize:6*1024*1024,
+       uploadDataDuringCreation:true,
+       removeFingerprintOnSuccess:true,
+       metadata:{bucketName:'ai_import_sources',objectName:job.path,contentType:'application/pdf',cacheControl:'3600'},
+       onError:reject,
+       onSuccess:resolve,
+       onProgress:(done,total)=>{$('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name+' — '+Math.round(100*done/total)+'%';}
+     });
+     upload.start();
+   });
+   await invoke('finalize-upload',{id:job.id});ok++;
+   // A single-book test should start immediately, without a one-hour cron.
+   // Batch uploads remain queued; admin can launch each book individually.
+   if(files.length===1){
+     try{
+       await invoke('process-now',{id:job.id});
+       notice('PDF uploaded successfully. AI processing started now.');
+     }catch(startError){
+       notice('PDF uploaded and safely queued. Immediate start unavailable: '+startError.message,true);
+     }
+   }
+  }catch(e){
+    if(job?.id){
+      try{await invoke('upload-failed',{id:job.id,reason:String(e?.message||e)});}
+      catch(recordError){console.warn('Could not mark failed PDF upload',recordError);}
+    }
+    notice('Failed to queue '+file.name+': '+e.message,true);
+  }
+ }
+ busy=false;$('upload').disabled=false;$('files').value='';$('assignments').replaceChildren();
+ $('uploadInfo').textContent=ok+' / '+files.length+' books queued.';
+ await refresh();
+}
+async function init(){
+ const {data:{user}}=await supabase.auth.getUser();
+ if(!user){location.href='index.html';return}
+ const {data:profile,error}=await supabase.from('users').select('role').eq('id',user.id).single();
+ if(error||profile?.role!=='admin'){document.querySelector('main').textContent='Super-admin access required.';return}
+ $('upload').disabled=false;
+ $('upload').addEventListener('click',upload);
+ $('files').addEventListener('change',showAssignments);
+ $('specialty').addEventListener('change',showAssignments);
+ $('refresh').addEventListener('click',refresh);
+ await refresh();
+ setInterval(()=>{if(!busy)refresh()},5000);
+}
+init();
+</script></body></html>

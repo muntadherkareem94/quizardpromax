@@ -1,0 +1,25 @@
+name: AI Book Import CI
+on:
+  pull_request:
+    paths:
+      - "ai-import-worker/**"
+      - "ai_book_import.html"
+      - "supabase/functions/ai-import-admin/**"
+      - "supabase/migrations/*ai_book_import*"
+      - ".github/workflows/ai-import-ci.yml"
+  push:
+    branches: ["feature/ai-book-import-v1"]
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install worker requirements
+        run: pip install -r ai-import-worker/requirements.txt
+      - name: Compile worker
+        run: python -m py_compile ai-import-worker/worker.py ai-import-worker/test_worker.py
+      - name: Offline smoke tests
+        run: cd ai-import-worker && python test_worker.py
