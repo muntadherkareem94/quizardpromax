@@ -1730,7 +1730,7 @@ async function refreshPrivateDraftFigureLinks() {
         if (linkError) throw linkError;
         if (!link) return;
         const {data, error} = await supabase.functions.invoke('ai-import-review', {
-            body: {action:'draft-figures',book_id:bookId}
+            body: {action:'draft-figures',book_id:bookId,chapter_id:chapterId}
         });
         if (error) throw error;
         privateDraftFigureLinks = data?.figures || {};
