@@ -19,7 +19,10 @@ async function providerRequest(path: string, init: RequestInit = {}) {
   headers.set('Accept', 'application/json');
   if (init.body) headers.set('Content-Type', 'application/json');
   const res = await fetch(API + path, { ...init, headers });
-  const payload = await res.json().catch(() => ({}));
+  const raw = await res.text();
+  let payload: any = {};
+  try { payload = raw ? JSON.parse(raw) : {}; }
+  catch { payload = raw; }
   if (!res.ok) {
     // A 4xx response usually means the provider rejected a request field,
     // not that Supabase itself failed. Log ONLY diagnostic fields.
@@ -32,9 +35,19 @@ async function providerRequest(path: string, init: RequestInit = {}) {
       error: typeof payload.error === 'string' ? payload.error : undefined,
       errors: payload.errors
     } : null;
+    // Some 400 responses are strings or have a different JSON envelope.
+    // Record only a short, redacted diagnostic; never expose API credentials.
+    const redactedExcerpt = raw
+      .replace(/(authorization|password|client_secret|secret|api_key|cardnumber|cvv)\\?["'=:\s]+[^,}\s"]+/gi, '$1:[redacted]')
+      .replace(/[A-Za-z0-9_+\/=\-]{28,}/g, '[redacted]')
+      .slice(0, 350);
     console.error('Al-Qaseh API rejected request', JSON.stringify({
       http_status: res.status,
-      details: diagnostic
+      payload_type: Array.isArray(payload) ? 'array' : typeof payload,
+      response_keys: payload && typeof payload === 'object'
+        ? Object.keys(payload).slice(0, 15) : [],
+      details: diagnostic,
+      response_excerpt: redactedExcerpt
     }).slice(0, 1600));
     throw new Error('Payment gateway rejected the request (HTTP ' + res.status + ')');
   }
