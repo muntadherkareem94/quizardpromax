@@ -70,8 +70,11 @@ export async function createAlqasehPayment(input: {
       amount: input.amountIQD,
       country: 'IQ',
       currency: 'IQD',
-      description: input.description.slice(0, 250),
-      order_id: input.orderId,
+      // Provider UAT currently rejects a varchar(32) overflow.
+      // Keep Quizard's internal UUID unchanged; use its 32 hex digits
+      // as the provider order reference.
+      description: input.description.slice(0, 30),
+      order_id: input.orderId.replaceAll('-', ''),
       redirect_url: input.redirectUrl,
       ...(input.webhookUrl ? { webhook_url: input.webhookUrl } : {}),
       transaction_type: 'Retail',
@@ -121,7 +124,7 @@ export async function settleAlqasehPayment(
   if (!actual) throw new Error('Payment not found in merchant history');
 
   if (String(actual.payment_id) !== invoice.provider_payment_id ||
-      String(actual.order_id) !== invoice.request_id ||
+      String(actual.order_id).replaceAll('-', '').toLowerCase() !== invoice.request_id.replaceAll('-', '').toLowerCase() ||
       actual.currency !== 'IQD' ||
       Number(actual.amount) !== Number(invoice.amount_iqd)) {
     throw new Error('Verified gateway payment does not match order');
