@@ -26,6 +26,7 @@ from cost_guard import (BudgetExceeded, assert_budget, reserve_cost_usd,
                         usage_cost_usd, safely_selectable_text)
 from free_router import FreeRouter, ProvidersUnavailable
 from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections, diagnose_empty_mcq_source
+from ai_paired_worker import process_paired_openai_section
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 LOG = logging.getLogger("quizard-ai-import")
@@ -468,6 +469,20 @@ def process_section(document,job,section,common_issues,local_review_only=False):
     if existing and existing[0]["status"] == "verified":
         return existing[0]
 
+    # For separated printed question/answer sections, OpenAI must read BOTH
+    # original source ranges together. The old three-page question-only audit
+    # wasted paid calls and could never validate later answer keys.
+    if (job.get("provider_mode") == "openai_only"
+            and section.get("question_start") and section.get("answer_start")):
+        return process_paired_openai_section(
+            document,job,section,common_issues,
+            db=DB,run_structured=run_structured,update_job=update_job,
+            attach_figures=attach_figures,validate_question=validate_question,
+            to_json_question=to_json_question,model=MODEL,verify_model=VERIFY_MODEL,
+            extraction_schema=EXTRACTION_SCHEMA,
+            verification_schema=VERIFICATION_SCHEMA,
+            pages_per_batch=PAGES_PER_BATCH)
+
     # First-choice zero-token path: directly transcribe original selectable PDF
     # text, compare printed answer letters to option text and source figures,
     # and reject any incomplete or ambiguous MCQ. No AI call is made.
@@ -644,9 +659,18 @@ CANDIDATE JSON:
                                      "number":q.get("questionNumber"),"detail":issue})
             return reported
         batch_issues=audit_candidate(part)
-        # The agent tries to fix each source disagreement itself before involving an admin.
-        # Do not "repair" absent source answer keys by medical reasoning.
-        for attempt in range(2):
+        # Never repeat paid calls when the actual printed answer key is
+        # absent from the supplied PDF pages. A different source range must
+        # be provided instead; repair with the same incomplete PDF is futile.
+        answer_evidence_missing = any(
+            isinstance(q,dict) and (q.get("correctAnswerIndex",-1)<0 or
+              not q.get("answerEvidence") or not q.get("explanation"))
+            for q in part)
+        # For OpenAI-only jobs, leave unresolved batches for manual review.
+        # It is cheaper and safer to preserve the candidate and source audit
+        # than to automatically repeat the same extraction 2 more times.
+        max_repairs = 0 if job.get("provider_mode")=="openai_only" or answer_evidence_missing else 2
+        for attempt in range(max_repairs):
             if not batch_issues: break
             if all(i["type"]=="validation" and (
                 "answer key absent" in i["detail"] or
