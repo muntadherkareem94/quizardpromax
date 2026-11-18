@@ -184,8 +184,8 @@ p {
         Quizard Pro Max
     </div>
 
-    <span class="pill">
-        Al-Qaseh Sandbox · Test transaction
+    <span id="paymentGateway" class="pill">
+        Checking payment provider
     </span>
 
     <div id="indicator" class="indicator"
@@ -308,6 +308,10 @@ function state(kind, title, description) {
 
 function showReceipt(row) {
     $('receipt').hidden = false;
+    $('paymentGateway').textContent =
+        row.provider === 'alqaseh'
+            ? 'Al-Qaseh Sandbox · Test transaction'
+            : 'Qi · Historical payment';
 
     const isBook = row.kind === 'book';
 
