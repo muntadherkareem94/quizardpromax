@@ -198,7 +198,7 @@ if (!saleEnabled) {
       }, 500);
     }
 
-    callback.searchParams.set('requestId', requestId);
+    // Al-Qaseh adds order_id/payment_id/status to this clean return URL.
 
     const insert = await admin
       .from('qz_card_checkouts')
