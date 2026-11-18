@@ -39,15 +39,16 @@ td{font-size:14px}
 <label><span class="block font-semibold mb-2">PDF textbooks</span><input id="files" type="file" accept="application/pdf,.pdf" multiple class="field"></label>
 </div>
 <div class="border rounded-xl p-3 mb-4 bg-slate-50 text-sm text-slate-700">
-<strong>General-format local MCQ import.</strong> Quizard recognizes multiple printed question/answer styles and PDF chapters. Long books are divided into resumable source-page sections and processed locally before review, without mandatory AI.
-Scanned/image-only PDFs, separate answer keys, unlabeled figures and unfamiliar layouts may need additional parser rules, OCR or manual review. <strong>Answers are never fabricated; real books are never automatically published.</strong>
-Free AI fallback remains available for ambiguous shorter books when a free provider is configured.
+<strong>OpenAI-only MCQ extraction and verification.</strong> Every new PDF is sent securely to OpenAI for model-based source transcription and a separate AI source-audit pass. GPT-5.4 mini is used for the initial pilot; scanned pages and figures are processed from the original PDF. <strong>Results require medical/source review and are never automatically published.</strong> Complex books with separate answer keys can still need correction; AI is not guaranteed to transcribe every question perfectly.
 </div>
 <div class="grid md:grid-cols-2 gap-4 mb-4">
-<label><span class="block font-semibold mb-2">Legacy paid-provider budget (unused for free-only jobs, USD)</span>
-<input id="budget" type="number" class="field" min="0.20" max="5.00" step="0.05" value="0.75"></label>
-<div class="text-sm text-slate-600 self-center">Long books (60+ pages) use local extraction and manual source review. Unambiguous questions are source-checked; uncertain pages remain flagged. No paid AI is used for free-only jobs.</div>
+<label><span class="block font-semibold mb-2">Estimated OpenAI spending budget PER BOOK (USD)</span>
+<input id="budget" type="number" class="field" min="0.50" max="25.00" step="0.50" value="10.00"></label>
+<div class="text-sm text-slate-600 self-center">OpenAI bills actual input/output tokens (including PDF images), not the number of MCQs. Quizard tracks API usage and pauses before the next call when its estimated budget is insufficient. <strong>This is not a provider-enforced hard billing cap.</strong></div>
 </div>
+<label class="flex items-start gap-2 rounded-lg border border-amber-200 bg-amber-50 p-3 mb-4 text-sm">
+<input id="openaiConsent" type="checkbox" class="mt-1" />
+<span>I authorize sending the selected PDF books to OpenAI for paid AI processing, confirm I have permission to process these materials, and accept metered API charges for each book subject to Quizard's estimated budget checks.</span></label>
 <div id="assignments" class="grid gap-2 mb-4" aria-live="polite"></div>
 <div class="flex gap-3 items-center flex-wrap">
 <button id="upload" class="btn" disabled>Upload and queue books</button>
@@ -114,11 +115,11 @@ async function runAction(action,id){
      await refresh();
    }else if(action==='set-budget'){
      const row=[...document.querySelectorAll('tr[data-job-id]')].find(el=>el.dataset.jobId===id);
-     const input=prompt('Set a new total estimated API budget for this book (USD 0.20 to 5.00). Previously recorded spending stays counted.',row?.dataset.budget||'0.75');
+     const input=prompt('Set total estimated OpenAI spending budget for this book (USD $0.50 to $25.00). Recorded spending remains counted; this is not a hard provider billing cap.',row?.dataset.budget||'10.00');
      if(input===null)return;
      const budget_usd=Number(input);
-     if(!Number.isFinite(budget_usd)||budget_usd<0.20||budget_usd>5.00){
-       notice('Budget must be between $0.20 and $5.00.',true);return;
+     if(!Number.isFinite(budget_usd)||budget_usd<0.50||budget_usd>25.00){
+       notice('Estimated budget must be between $0.50 and $25.00.',true);return;
      }
      await invoke('set-budget',{id,budget_usd});
      notice('Book budget updated. If paused, click Retry.');await refresh();
@@ -144,13 +145,17 @@ async function refresh(){
   const prog=make();prog.textContent=job.total_pages?job.processed_pages+' / '+job.total_pages+' pages; '+job.verified_questions+' verified questions':'Not started';
   const bar=document.createElement('div');bar.className='progress mt-2';const fill=document.createElement('div');fill.style.width=pct(job)+'%';bar.appendChild(fill);prog.appendChild(bar);
   const spent=Number(job.api_spend_estimate_usd||0);
-  const budget=Number(job.budget_usd??0.75);
+  const budget=Number(job.budget_usd??10);
   const cost=document.createElement('div');cost.className='text-xs text-slate-600 mt-2';
+  const perQuestion=Number(job.total_questions)>0 ? spent/Number(job.total_questions) : null;
   cost.textContent=job.provider_mode==='free_only'
-    ? 'FREE-ONLY ROUTER • no paid OpenAI fallback • provider-specific quotas apply'
-    : (Number(job.api_request_count)>0
-      ? 'Estimated API: $'+spent.toFixed(4)+' / $'+budget.toFixed(2)+' ('+job.api_request_count+' calls)'
-      : 'Legacy budget $'+budget.toFixed(2)+(job.status==='published'?' — previous import, usage not tracked':' — no recorded API calls'));
+    ? 'Previous FREE-ONLY job • no paid OpenAI calls'
+    : job.provider_mode==='openai_only'
+    ? 'OpenAI metered estimate $'+spent.toFixed(4)+' / $'+budget.toFixed(2)+
+      ' • '+(Number(job.api_request_count)||0)+' API calls'+
+      (perQuestion!==null?' • $'+perQuestion.toFixed(4)+' per extracted MCQ':'')+
+      ' (includes verification; not a hard billing cap)'
+    : 'Previous import • legacy provider mode';
   prog.appendChild(cost);
   if(job.progress_note && ['processing','waiting_provider','queued','needs_review','ready','published'].includes(job.status)){
     const stage=document.createElement('p');
@@ -248,7 +253,7 @@ async function refresh(){
   const act=make();
   const recoverable=job.status==='processing' && job.worker_lock_at &&
     Date.parse(job.worker_lock_at)<Date.now()-180000;
-  if(job.provider_mode==='free_only' && (['queued','waiting_provider'].includes(job.status)||recoverable)){
+  if(['free_only','openai_only'].includes(job.provider_mode) && (['queued','waiting_provider'].includes(job.status)||recoverable)){
     const cooldown=job.status==='waiting_provider' && job.next_attempt_at
       && Date.parse(job.next_attempt_at)>Date.now();
     if(cooldown){
@@ -260,7 +265,9 @@ async function refresh(){
     }else{
       const start=button(recoverable?'↻ Recover & Process Now':'▶ Process Now','process-now',job.id);
       start.className='inline-block bg-indigo-600 text-white text-sm rounded-md px-3 py-2 mr-2 mb-2 hover:bg-indigo-700 font-semibold';
-      start.title='Start this single book immediately; free provider cooldowns are still respected.';
+      start.title=job.provider_mode==='openai_only'
+        ? 'Start or resume the OpenAI-only job using its confirmed estimated budget'
+        : 'Start free-only source processing';
       act.appendChild(start);
     }
   }
@@ -345,6 +352,14 @@ function showAssignments(){
 async function upload(){
  const files=Array.from($('files').files||[]);
  if(!files.length)return;
+ const budgetEstimate=Number($('budget').value);
+ if(!$('openaiConsent').checked){
+   notice('Confirm permission to process the PDFs with OpenAI and accept metered API charges before uploading.',true);return;
+ }
+ if(!Number.isFinite(budgetEstimate)||budgetEstimate<0.50||budgetEstimate>25){
+   notice('Choose a per-book estimated budget of $0.50–$25.00.',true);return;
+ }
+ if(!confirm('Authorize OpenAI processing of '+files.length+' PDF book(s) at an estimated limit of $'+budgetEstimate.toFixed(2)+' per book? Actual OpenAI charges may differ and can slightly exceed Quizard estimates.'))return;
  busy=true;$('upload').disabled=true;
  let ok=0;
  for(const [i,file] of files.entries()){
@@ -353,7 +368,7 @@ async function upload(){
    const speciality=$('assignment-'+i)?.value||$('specialty').value;
    if(!speciality)throw new Error('Select a specialty for this PDF');
    const budget_usd=Number($('budget').value);
-   if(!Number.isFinite(budget_usd)||budget_usd<0.20||budget_usd>5.00)
+   if(!Number.isFinite(budget_usd)||budget_usd<0.50||budget_usd>25.00)
      throw new Error('Enter a valid API budget for this book.');
    $('uploadInfo').textContent='Uploading '+(i+1)+' / '+files.length+': '+file.name;
    const title=file.name.replace(/\.pdf$/i,'').replace(/[_-]+/g,' ').trim().slice(0,300);
@@ -361,7 +376,7 @@ async function upload(){
    // A createSignedUploadUrl token is for uploadToSignedUrl, NOT for TUS headers.
    const {data:{session},error:sessionError}=await supabase.auth.getSession();
    if(sessionError||!session?.access_token)throw new Error('Session expired. Please sign in again.');
-   job=await invoke('prepare-upload',{filename:file.name,size:file.size,title,speciality,budget_usd});
+   job=await invoke('prepare-upload',{filename:file.name,size:file.size,title,speciality,budget_usd,authorize_openai:true});
    await new Promise((resolve,reject)=>{
      const upload=new tus.Upload(file,{
        endpoint:SUPABASE_URL.replace(/\/$/,'').replace('.supabase.co','.storage.supabase.co')+'/storage/v1/upload/resumable',
