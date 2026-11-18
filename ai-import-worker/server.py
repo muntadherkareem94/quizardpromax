@@ -90,13 +90,13 @@ def auto_resume_loop():
             try:
                 now=datetime.now(timezone.utc)
                 current=now.isoformat()
-                waiting=DB.table("ai_import_jobs").select("id").eq(
+                waiting=DB.table("ai_import_jobs").select("id").in_(
                     "provider_mode",["free_only","openai_only"]).eq("status","waiting_provider").lte(
                     "next_attempt_at",current).order("next_attempt_at").limit(1).execute().data or []
-                queued=DB.table("ai_import_jobs").select("id").eq(
+                queued=DB.table("ai_import_jobs").select("id").in_(
                     "provider_mode",["free_only","openai_only"]).eq("status","queued").order(
                     "created_at").limit(1).execute().data or []
-                stale=DB.table("ai_import_jobs").select("id").eq(
+                stale=DB.table("ai_import_jobs").select("id").in_(
                     "provider_mode",["free_only","openai_only"]).eq("status","processing").lt(
                     "worker_lock_at",(now-timedelta(minutes=3)).isoformat()
                 ).order("updated_at").limit(1).execute().data or []
