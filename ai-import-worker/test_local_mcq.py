@@ -4,6 +4,7 @@ import fitz
 
 from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections, diagnose_empty_mcq_source
 from separated_key_mcq import is_separated_key_section
+from paired_mcq import pair_ranges,extract_pairs
 
 
 def make_textbook(*, answer="Correct answer: B. Second choice",
@@ -433,6 +434,91 @@ class LocalMCQTests(unittest.TestCase):
             self.assertEqual(len(sections),1)
             self.assertEqual(sections[0]["end_page"],50)
         finally:document.close()
+
+
+    def test_printed_question_answer_sets_with_topic_headers(self):
+        d=fitz.open()
+        d.new_page().insert_text((45,50),"Synthetic medical SBA textbook")
+        d.new_page().insert_text((45,50),"Contents")
+        p=d.new_page()
+        for y,line in [
+           (50,"Practice Paper 1: Questions"),
+           (90,"1. ARTERIAL BLOOD GASES (1)"),
+           (115,"A patient presents with an abnormal test."),
+           (140,"Which printed option should be selected?"),
+           (165,"A. First option"),
+           (190,"B. Second option"),
+           (225,"2. SURGICAL MANAGEMENT (1)"),
+           (250,"Another clinical case with a treatment question."),
+           (275,"A. Observation"),(300,"B. Operation"),
+        ]:p.insert_text((60,y),line)
+        p=d.new_page()
+        for y,line in [(55,"Practice Paper 1: Answers"),
+                       (90,"1. ARTERIAL BLOOD GASES (1)"),
+                       (115,"B – Second option"),
+                       (140,"The printed rationale explains answer B."),
+                       (170,"2. SURGICAL MANAGEMENT (1)"),
+                       (195,"A – Observation"),
+                       (225,"The printed rationale supports observation.")]:
+            p.insert_text((60,y),line)
+        try:
+            pairs=pair_ranges(d)
+            self.assertEqual(len(pairs),1,pairs)
+            self.assertEqual(pairs[0]["question_start"],3)
+            self.assertEqual(pairs[0]["answer_start"],4)
+            result=extract_pairs(d,pairs[0])
+            self.assertIsNotNone(result)
+            self.assertTrue(result["strict_pass"],result["issues"])
+            self.assertEqual(len(result["questions"]),2)
+            self.assertEqual([q["correctAnswerIndex"] for q in result["questions"]],[1,0])
+            self.assertTrue(result["questions"][0]["explanation"].startswith("Second option"))
+            self.assertEqual(result["questions"][0]["sourcePage"],3)
+            self.assertEqual(result["questions"][1]["options"],["Observation","Operation"])
+        finally:d.close()
+
+    def test_printed_answer_missing_does_not_infer_correct_choice(self):
+        d=fitz.open()
+        p=d.new_page()
+        for y,line in [(50,"Practice Paper 3: Questions"),
+                       (90,"1. GENERAL SURGERY (1)"),
+                       (120,"An unresolved medical question?"),
+                       (145,"A. One"),(175,"B. Two"),
+                       (210,"2. SECOND QUESTION (1)"),
+                       (240,"Another patient case?"),
+                       (265,"A. One"),(290,"B. Two")]:
+            p.insert_text((60,y),line)
+        p=d.new_page()
+        for y,line in [(50,"Practice Paper 3: Answers"),
+                       (90,"1. GENERAL SURGERY (1)"),
+                       (120,"B – Printed rationale"),
+                       (145,"More rationale")]:p.insert_text((60,y),line)
+        try:
+            pairs=pair_ranges(d)
+            self.assertEqual(len(pairs),1)
+            result=extract_pairs(d,pairs[0])
+            self.assertFalse(result["strict_pass"])
+            self.assertEqual(len(result["questions"]),2)
+            self.assertEqual(result["questions"][1]["correctAnswerIndex"],-1)
+            self.assertTrue(any(i['type']=='no_printed_answer'
+                                and i.get('number')==2 for i in result["issues"]))
+        finally:d.close()
+
+    def test_two_printed_papers_make_two_distinct_sections(self):
+        d=fitz.open()
+        for i,(number,kind) in enumerate([(1,"Questions"),(1,"Answers"),
+                                           (2,"Questions"),(2,"Answers")]):
+            p=d.new_page()
+            for y,line in [(45,f"Practice Paper {number}: {kind}"),
+                           (80,"1. CLINICAL TOPIC"),
+                           (115,"A. Alpha" if kind=="Questions" else "B – Beta"),
+                           (145,"B. Beta" if kind=="Questions" else "Explanation text")]:
+                p.insert_text((60,y),line)
+        try:
+            pairs=pair_ranges(d)
+            self.assertEqual(len(pairs),2)
+            self.assertEqual([p["start_page"] for p in pairs],[1,3])
+            self.assertEqual([p["end_page"] for p in pairs],[2,4])
+        finally:d.close()
 
 
 if __name__=="__main__":
