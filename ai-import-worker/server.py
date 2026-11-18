@@ -78,11 +78,11 @@ def execute_one(job):
 
 
 def auto_resume_loop():
-    """Automatically continue free-only jobs after free provider cooldowns.
+    """Resume free jobs and explicitly authorized OpenAI-only book imports.
 
-    This is a private server-side scheduler: it never bypasses a provider's
-    Retry-After or account quota, and never dispatches paid legacy jobs.
-    A crashed processing claim is eligible only after its heartbeat has expired.
+    Paid jobs exist only after per-book super-admin consent and estimated
+    budget confirmation. Legacy paid jobs are excluded. Remaining budget is
+    checked again before EVERY OpenAI request by the worker.
     """
     while True:
         if ACTIVE.acquire(blocking=False):
@@ -91,13 +91,13 @@ def auto_resume_loop():
                 now=datetime.now(timezone.utc)
                 current=now.isoformat()
                 waiting=DB.table("ai_import_jobs").select("id").eq(
-                    "provider_mode","free_only").eq("status","waiting_provider").lte(
+                    "provider_mode",["free_only","openai_only"]).eq("status","waiting_provider").lte(
                     "next_attempt_at",current).order("next_attempt_at").limit(1).execute().data or []
                 queued=DB.table("ai_import_jobs").select("id").eq(
-                    "provider_mode","free_only").eq("status","queued").order(
+                    "provider_mode",["free_only","openai_only"]).eq("status","queued").order(
                     "created_at").limit(1).execute().data or []
                 stale=DB.table("ai_import_jobs").select("id").eq(
-                    "provider_mode","free_only").eq("status","processing").lt(
+                    "provider_mode",["free_only","openai_only"]).eq("status","processing").lt(
                     "worker_lock_at",(now-timedelta(minutes=3)).isoformat()
                 ).order("updated_at").limit(1).execute().data or []
                 candidate=(waiting or queued or stale)
@@ -107,7 +107,7 @@ def auto_resume_loop():
                         "p_job_id":job_id}).execute()
                     job=normalize_claimed_job(claimed.data)
                     if job:
-                        LOG.info("Auto-resuming eligible free-only book %s",job_id)
+                        LOG.info("Auto-resuming consented import job %s",job_id)
                         threading.Thread(target=execute_one,args=(job,),daemon=True).start()
                         started=True
             except Exception:
