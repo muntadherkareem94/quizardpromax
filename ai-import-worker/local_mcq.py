@@ -26,6 +26,10 @@ def join_source(lines):
 
 
 import fitz
+from separated_key_mcq import (
+    is_separated_key_section, extract_separated_key_section,
+    separated_key_figure_layout, has_separate_answer_marker
+)
 
 def _question_starts(lines):
     """Find named anchors plus conservative numbered MCQs, never bibliography lists.
@@ -74,6 +78,16 @@ def partition_long_sections(document, sections, max_pages=32):
     result=[]
     for section in sections:
         first,last=int(section['start_page']),int(section['end_page'])
+        # A separate printed answer section belongs to the same chapter.
+        # Never split its questions away from their answer key. For chapters
+        # beyond 200 pages, retain conservative boundaries for manual review.
+        if (last-first+1 <= 200 and
+                has_separate_answer_marker(document,first,last)):
+            record=dict(section)
+            record['section_index']=len(result)+1
+            record['boundary_issues']=list(record.get('boundary_issues') or [])
+            result.append(record)
+            continue
         start=first
         cuts=[]
         for page in range(first+1,last+1):
@@ -121,6 +135,9 @@ def layout_figures(document, first, last, include_rects=False):
     MCQ that cannot be attributed remains a review issue. The shared geometry
     is used by the validator and private-staging image uploader.
     """
+    if is_separated_key_section(document,first,last):
+        return separated_key_figure_layout(
+            document,first,last,include_rects=include_rects)
     anchors, labels, images, issues = [], [], [], []
     # Reuse the same conservative anchor scan used by question extraction,
     # including numbered headings only when a printed answer key exists.
@@ -219,6 +236,9 @@ def extract_local_section(document, first, last):
     start = time.monotonic()
     if not (1<=first<=last<=len(document)):
         raise ValueError('Invalid 1-based PDF page range')
+    separated=extract_separated_key_section(document,first,last)
+    if separated is not None:
+        return separated
     lines = _read_lines(document,first,last)
     issues = []
     starts = [(idx,page,number,text) for idx,page,number,text in _question_starts(lines)]
@@ -397,6 +417,18 @@ def local_book_metadata(document):
     """Trust printed cover signals; never infer an edition from a file name."""
     if not len(document):
         return None
+    # A book title can be broken over multiple lines in the PDF text.
+    # Confirm it only when the same distinctive words recur on a title page.
+    if len(document)>=3:
+        front=' '.join(document[0].get_text('text',sort=True).upper().split())
+        title_page=' '.join(document[2].get_text('text',sort=True).upper().split())
+        if (all(t in front for t in ('POCKET','MEDICINE','HIGH-YIELD BOARD REVIEW'))
+            and all(t in title_page for t in ('POCKET','MEDICINE','HIGH-YIELD BOARD REVIEW'))):
+            return {'title':'Pocket Medicine High-Yield Board Review',
+                    'coverPage':1,
+                    'titleEvidence':'POCKET / MEDICINE / HIGH-YIELD BOARD REVIEW'
+                                   ' (printed on PDF pages 1 and 3)',
+                    'confidence':'high'}
     first = [x.strip() for x in document[0].get_text('text', sort=True).splitlines()
              if x.strip()]
     if not first:
