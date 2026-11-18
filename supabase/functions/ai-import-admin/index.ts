@@ -175,6 +175,19 @@ Deno.serve(async (req) => {
         return respond({ error: 'Only failed/review/budget-paused jobs can be retried' }, 409);
       if (job.status === 'paused_budget' && Number(job.budget_usd) <= Number(job.api_spend_estimate_usd) + 0.02)
         return respond({ error: 'Increase this book budget before retrying' }, 409);
+      // Retrying an import rewrites source checkpoints. Preserve human reviews:
+      // they must never be silently erased by a worker rerun.
+      const { data: reviewSections, error: reviewError } = await db
+        .from('ai_import_sections').select('questions').eq('job_id', id);
+      if (reviewError) throw reviewError;
+      const hasHumanReviews = (reviewSections || []).some((section) =>
+        (Array.isArray(section.questions) ? section.questions : []).some(
+          (q) => q && q.reviewDecision && ['approved','rejected','pending'].includes(
+            q.reviewDecision.status)
+        )
+      );
+      if (hasHumanReviews)
+        return respond({error:'This book has saved manual review decisions. Retry is blocked to avoid overwriting edits and approvals.'},409);
       // Upload failures have no source PDF. Do not queue them for AI processing.
       const folder = job.source_path.substring(0, job.source_path.lastIndexOf('/'));
       const { data: files, error: storageError } = await db.storage
