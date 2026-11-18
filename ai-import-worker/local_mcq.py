@@ -323,6 +323,49 @@ def extract_local_section(document, first, last):
             'strict_pass':not issues,'elapsed_ms':round((time.monotonic()-start)*1000,2)}
 
 
+def diagnose_empty_mcq_source(document):
+    """Explain zero-MCQ results without claiming there are no questions in a book.
+
+    Text-based reference books, unsupported answer-key layouts, and scanned
+    images require different next steps. Diagnostics are non-publishing
+    metadata and do not fabricate candidate questions.
+    """
+    pages = len(document)
+    selectable_pages = 0
+    total_characters = 0
+    for page in document:
+        text = page.get_text("text").strip()
+        total_characters += len(text)
+        if len(text) >= 40:
+            selectable_pages += 1
+    scanned = (selectable_pages < max(2, pages // 10))
+    if scanned:
+        return {
+            "type": "no_selectable_mcq_text",
+            "detail": (
+                "No extractable MCQs were found, and most PDF pages lack "
+                "selectable text. The document may be scanned or image-only; "
+                "check the original pages and add OCR before reprocessing."
+            ),
+            "selectable_text_pages": selectable_pages,
+            "total_pages": pages,
+            "extracted_characters": total_characters,
+        }
+    return {
+        "type": "no_supported_mcq_structure",
+        "detail": (
+            "No recognizable MCQ structure with printed question stems, "
+            "options and answers was extracted. This may be a reference "
+            "textbook rather than a question bank, or a question book with "
+            "an unsupported layout/separate answer keys. Examine the PDF. "
+            "Retrying the same PDF unchanged will not produce questions."
+        ),
+        "selectable_text_pages": selectable_pages,
+        "total_pages": pages,
+        "extracted_characters": total_characters,
+    }
+
+
 def classify_local_questions(questions, issues):
     """Classify each source-transcribed question without an AI call.
 
