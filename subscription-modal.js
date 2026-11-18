@@ -1270,7 +1270,7 @@ function renderSubscriptionModal() {
         `;
 
         setMessage(
-            'This book is free. No Qi payment will be initiated.'
+            'This book is free. No card payment will be initiated.'
         );
 
         return;
@@ -1599,10 +1599,11 @@ const standaloneContainer =
 const bookPrices = {
     3: Number(selectedRule?.standalone_price_iqd || 0),
     6: Number(selectedRule?.standalone_price_6m_iqd || 0),
+    9: Number(selectedRule?.standalone_price_9m_iqd || 0),
     12: Number(selectedRule?.standalone_price_12m_iqd || 0)
 };
 
-const availableMonths = [3, 6, 12].filter(months =>
+const availableMonths = [3, 6, 9, 12].filter(months =>
     Number.isSafeInteger(bookPrices[months]) &&
     bookPrices[months] > 0
 );
@@ -1647,7 +1648,7 @@ if (standaloneAvailable) {
         `
         : '';
 
-    const durationButtons = [3, 6, 12].map(months => {
+    const durationButtons = [3, 6, 9, 12].map(months => {
         const enabled = availableMonths.includes(months);
 
         return `
@@ -1760,7 +1761,7 @@ if (standaloneAvailable) {
 }
 
 setMessage(
-    'Payments are processed through Qi Sandbox. ' +
+    'Payments are processed through Al-Qaseh Sandbox. ' +
     'Purchased access activates after verified payment.'
 );
 
@@ -1923,13 +1924,13 @@ async function startCardCheckout(planSlug, button) {
                 'AMOUNT TO PAY: ' +
                     formatPrice(quote.net_iqd) +
                 '\n\nThe new full subscription period starts ' +
-                'after successful Qi payment verification.' +
+                'after successful Al-Qaseh payment verification.' +
                 warning
             );
 
             if (!proceed) return;
 
-            functionName = 'qi-start-plan-upgrade';
+            functionName = 'alqaseh-start-plan-upgrade';
 
             requestBody = {
                 target_plan_slug: planSlug,
@@ -1947,7 +1948,7 @@ async function startCardCheckout(planSlug, button) {
 
             if (!proceed) return;
 
-            functionName = 'qi-start-checkout';
+            functionName = 'alqaseh-start-checkout';
 
             requestBody = {
                 plan_slug: planSlug,
@@ -2007,13 +2008,13 @@ async function startCardCheckout(planSlug, button) {
             }
         }
 
-        // Card details must only be entered at Qi.
+        // Card details must only be entered at Al-Qaseh.
         const checkout = new URL(data.checkout_url);
         const host = checkout.hostname.toLowerCase();
 
         if (
             checkout.protocol !== 'https:' ||
-            !(host === 'qi.iq' || host.endsWith('.qi.iq'))
+            host !== 'pay-test.alqaseh.com'
         ) {
             throw Error('Invalid payment gateway URL.');
         }
@@ -2206,7 +2207,7 @@ planOnlyMode
 .select(
     'book_id,access_mode,standalone_enabled,' +
     'standalone_price_iqd,standalone_price_6m_iqd,' +
-    'standalone_price_12m_iqd'
+    'standalone_price_9m_iqd,standalone_price_12m_iqd'
 ),
 
 
