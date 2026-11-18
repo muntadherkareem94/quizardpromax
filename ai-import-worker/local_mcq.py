@@ -230,14 +230,71 @@ def extract_local_section(document, first, last):
             'strict_pass':not issues,'elapsed_ms':round((time.monotonic()-start)*1000,2)}
 
 
+def classify_local_questions(questions, issues):
+    """Classify each source-transcribed question without an AI call.
+
+    A question passes only if all PDF validation checks passed for that number.
+    Unnumbered layout or completeness issues block ALL questions in the section.
+    The output is audit metadata, not a permission to publish a whole book.
+    """
+    global_blockers = [issue for issue in issues
+                       if not isinstance(issue.get('number'), int)]
+    results = []
+    for q in questions:
+        number = q.get('questionNumber')
+        blockers = global_blockers + [
+            issue for issue in issues if issue.get('number') == number
+        ]
+        results.append({
+            'status': 'needs_review' if blockers else 'verified_local',
+            'method': 'local_pdf_source_checks',
+            'issues': [
+                {'type': issue.get('type', 'source_issue'),
+                 'detail': issue.get('detail', issue.get('type', 'Source issue'))}
+                for issue in blockers
+            ],
+        })
+    return results
+
+
 def local_book_metadata(document):
-    """Only skip AI metadata when cover and title page independently agree."""
-    if len(document)<2: return None
-    first=[x.strip() for x in document[0].get_text('text',sort=True).splitlines() if x.strip()]
-    second=[x.strip() for x in document[1].get_text('text',sort=True).splitlines() if x.strip()]
-    if not first or not second:return None
-    title=first[0].split(' — ',1)[0].strip()
-    if not (8<=len(title)<180):return None
-    if not any(title.casefold()==line.casefold() for line in second[:8]):return None
-    return {'title':title,'coverPage':1,'titleEvidence':first[0],
-            'confidence':'high'}
+    """Trust printed cover signals; never infer an edition from a file name."""
+    if not len(document):
+        return None
+    first = [x.strip() for x in document[0].get_text('text', sort=True).splitlines()
+             if x.strip()]
+    if not first:
+        return None
+    title = first[0].split(' — ', 1)[0].strip()
+    if not 8 <= len(title) < 180:
+        return None
+
+    second = ([x.strip() for x in document[1].get_text('text', sort=True).splitlines()
+               if x.strip()] if len(document) > 1 else [])
+    if any(title.casefold() == line.casefold() for line in second[:8]):
+        return {'title': title, 'coverPage': 1, 'titleEvidence': first[0],
+                'confidence': 'high'}
+
+    # SESAP covers state the edition TWICE: "SESAP 19" and "VOLUME 19".
+    # Only this exact double-marker pattern, plus the printed program name,
+    # qualifies for high confidence without a repeated title page.
+    match = re.fullmatch(r'SESAP\s+(\d{1,3})', title, re.I)
+    if match:
+        number = match.group(1)
+        volume = next(
+            (line for line in first[1:40]
+             if re.fullmatch(r'VOLUME\s+' + re.escape(number), line, re.I)),
+            None
+        )
+        program = next(
+            (line for line in first[1:40]
+             if 'SELF-ASSESSMENT PROGRAM' in line.upper()),
+            None
+        )
+        if volume and program:
+            return {
+                'title': title, 'coverPage': 1,
+                'titleEvidence': first[0] + ' / ' + volume + ' / ' + program,
+                'confidence': 'high',
+            }
+    return None
