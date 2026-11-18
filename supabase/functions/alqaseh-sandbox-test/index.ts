@@ -46,7 +46,8 @@ Deno.serve(async (req: Request) => {
         orderId,
         amountIQD: TEST_AMOUNT_IQD,
         description: 'Quizard independent UAT gateway test - no subscription or books',
-        redirectUrl: CALLBACK
+        redirectUrl: CALLBACK,
+        webhookUrl: url + '/functions/v1/alqaseh-sandbox-notify'
       });
       return json({checkout_url:payment.checkoutUrl,order_id:orderId,amount_iqd:TEST_AMOUNT_IQD});
     }
