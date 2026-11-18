@@ -300,7 +300,7 @@ export function openPlanUpgradeModal() {
                 </div>
 
                 <div class="qzu-row">
-                    <strong>Amount to pay through Qi</strong>
+                    <strong>Amount to pay through Al-Qaseh</strong>
                     <strong class="qzu-pay">
                         ${formatIQD(data.net_iqd)}
                     </strong>
@@ -384,21 +384,22 @@ export function openPlanUpgradeModal() {
                 formatIQD(quote.credit_iqd) + '\n' +
             'Pay now: ' + formatIQD(quote.net_iqd) +
             '\n\nYour new Platinum period will start ' +
-            'after successful Qi payment verification.'
+            'after successful Al-Qaseh payment verification.'
         );
 
         if (!confirmed) return;
 
         busy = true;
         checkoutButton.disabled = true;
-        checkoutButton.textContent = 'Opening Qi checkout...';
+        checkoutButton.textContent = 'Opening Al-Qaseh checkout...';
 
         try {
             const { data, error } =
                 await supabase.functions.invoke(
-                    'qi-start-plan-upgrade',
+                    'alqaseh-start-plan-upgrade',
                     {
                         body: {
+                            target_plan_slug: 'platinum',
                             months: selectedMonths,
                             max_amount_iqd: quote.net_iqd
                         }
@@ -431,7 +432,7 @@ export function openPlanUpgradeModal() {
 
             if (
                 destination.protocol !== 'https:' ||
-                !(host === 'qi.iq' || host.endsWith('.qi.iq'))
+                host !== 'pay-test.alqaseh.com'
             ) {
                 throw Error('Invalid gateway destination');
             }

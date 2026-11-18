@@ -184,8 +184,8 @@ p {
         Quizard Pro Max
     </div>
 
-    <span class="pill">
-        Qi Sandbox · Test transaction
+    <span id="paymentGateway" class="pill">
+        Checking payment provider
     </span>
 
     <div id="indicator" class="indicator"
@@ -265,9 +265,23 @@ const $ = id => document.getElementById(id);
 
 const query = new URLSearchParams(window.location.search);
 
-const requestId =
+// Qi returns a 36-character UUID; Al-Qaseh UAT sends its 32-digit
+// compact form. The database stores the canonical Quizard UUID.
+function canonicalRequestId(value) {
+    const compact = String(value || '').replaceAll('-', '').toLowerCase();
+    if (!/^[0-9a-f]{32}$/.test(compact)) return null;
+    return [
+        compact.slice(0, 8), compact.slice(8, 12),
+        compact.slice(12, 16), compact.slice(16, 20),
+        compact.slice(20)
+    ].join('-');
+}
+
+const requestId = canonicalRequestId(
     query.get('requestId') ||
-    query.get('request_id');
+    query.get('request_id') ||
+    query.get('order_id')
+);
 
 const returnedPaymentId =
     query.get('paymentId') ||
@@ -294,6 +308,10 @@ function state(kind, title, description) {
 
 function showReceipt(row) {
     $('receipt').hidden = false;
+    $('paymentGateway').textContent =
+        row.provider === 'alqaseh'
+            ? 'Al-Qaseh Sandbox · Test transaction'
+            : 'Qi · Historical payment';
 
     const isBook = row.kind === 'book';
 
@@ -418,7 +436,7 @@ async function checkPayment() {
     'request_id,user_id,provider_payment_id,' +
 
 'kind,book_id,plan_slug,speciality,months,' +
-'book_duration_months,amount_iqd,currency,status'
+'book_duration_months,amount_iqd,currency,status,provider'
 
 )
 
@@ -465,8 +483,24 @@ if (row.kind === 'book' && row.book_id) {
 if (showPaymentStatus(row)) return;
 
 
+            // Reconcile Al-Qaseh purchases using authenticated server-to-server
+            // verification. Never trust the redirect query string as proof.
+            // Callback may arrive before the provider's notification or
+            // before our checkout has reached the pending state.
+            // Retry server-side verification a few times while polling.
+            if (row.provider === 'alqaseh' &&
+                [0, 3, 8, 15].includes(attempt)) {
+                const { error: verifyError } =
+                    await supabase.functions.invoke('alqaseh-verify-payment', {
+                        body: { request_id: requestId }
+                    });
+                if (verifyError) {
+                    console.warn('Al-Qaseh verification pending:', verifyError.message);
+                }
+            }
+
             // Give the backend time to receive and
-            // process the Qi payment notification.
+            // process the payment notification.
             if (attempt < 19) {
                 await new Promise(resolve =>
                     setTimeout(resolve, 3000)

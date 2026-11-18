@@ -364,7 +364,7 @@ supabase.from('books').select('*').in('access_level', ['premium', 'platinum', 'p
 supabase.from('qz_book_rules').select(
     'book_id,access_mode,standalone_enabled,' +
     'standalone_price_iqd,standalone_price_6m_iqd,' +
-    'standalone_price_12m_iqd'
+    'standalone_price_9m_iqd,standalone_price_12m_iqd'
 ),
 
 
@@ -408,6 +408,8 @@ standalone_price_iqd:
     rule?.standalone_price_iqd ?? null,
 standalone_price_6m_iqd:
     rule?.standalone_price_6m_iqd ?? null,
+standalone_price_9m_iqd:
+    rule?.standalone_price_9m_iqd ?? null,
 standalone_price_12m_iqd:
     rule?.standalone_price_12m_iqd ?? null
 
@@ -558,6 +560,10 @@ function renderStoreItems(itemsToRender, userData) {
                 {
                     months: 6,
                     price: Number(item.standalone_price_6m_iqd)
+                },
+                {
+                    months: 9,
+                    price: Number(item.standalone_price_9m_iqd)
                 },
                 {
                     months: 12,

@@ -3,7 +3,7 @@ import { supabase } from './supabaseClient.js';
 
 // Shared standalone purchase launcher.
 // Used by Store and the subscription popup.
-// Actual card details are entered only on Qi's hosted page.
+// Actual card details are entered only on Al-Qaseh's hosted page.
 
 let checkoutBusy = false;
 
@@ -33,7 +33,7 @@ export async function startStandaloneCheckout(bookId, button) {
 
     const months = Number(button?.dataset.qzBookMonths);
 
-    if (![3, 6, 12].includes(months)) {
+    if (![3, 6, 9, 12].includes(months)) {
         showCheckoutError('Choose a valid book duration.');
         return;
     }
@@ -51,7 +51,7 @@ const proceed = window.confirm(
     `Purchase this book for ${months} months?\n\n` +
     'Only this book will be unlocked. ' +
     'Premium and Platinum are not included.\n\n' +
-    'You will be redirected to Qi Sandbox checkout.'
+    'You will be redirected to Al-Qaseh Sandbox checkout.'
 );
 
 
@@ -68,7 +68,7 @@ const proceed = window.confirm(
 
     try {
         const { data, error } = await supabase.functions.invoke(
-            'qi-start-book-checkout',
+            'alqaseh-start-book-checkout',
             {
        
 body: {
@@ -110,7 +110,7 @@ body: {
 
         if (
             checkout.protocol !== 'https:' ||
-            !(host === 'qi.iq' || host.endsWith('.qi.iq'))
+            host !== 'pay-test.alqaseh.com'
         ) {
             throw Error('Invalid payment destination.');
         }
