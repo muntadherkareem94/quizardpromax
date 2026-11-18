@@ -1,4 +1,4 @@
-// Safe, admin-only Al-Qaseh UAT smoke test: no Quizard purchases or entitlements.
+// Safe, authenticated Al-Qaseh UAT smoke test: no Quizard purchases or entitlements.
 import { createClient } from 'npm:@supabase/supabase-js@2';
 import { createAlqasehPayment } from '../_shared/alqaseh.ts';
 
@@ -35,7 +35,9 @@ Deno.serve(async (req: Request) => {
     const {data:profile,error:profileError} = await admin.from('users')
       .select('role').eq('id',user.id).maybeSingle();
     if (profileError) throw profileError;
-    if (profile?.role !== 'admin') return json({error:'Admin-only sandbox test'},403);
+    // Sandbox checkout does not create Quizard orders, licences or subscriptions.
+    // Restrict to a valid signed-in Quizard profile instead of the 'admin' role.
+    if (!profile) return json({error:'Quizard profile not found'},403);
 
     const input = await req.json().catch(()=>({}));
     if (input.action === 'start') {
@@ -73,7 +75,7 @@ Deno.serve(async (req: Request) => {
     }
     return json({error:'Unknown action'},400);
   } catch (e) {
-    console.error('Admin-only Al-Qaseh smoke test error:',e);
+    console.error('Al-Qaseh smoke test error:',e);
     return json({error:'Gateway test failed; see Supabase function logs'},502);
   }
 });
