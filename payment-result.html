@@ -185,7 +185,7 @@ p {
     </div>
 
     <span class="pill">
-        Qi Sandbox · Test transaction
+        Al-Qaseh Sandbox · Test transaction
     </span>
 
     <div id="indicator" class="indicator"
@@ -267,7 +267,8 @@ const query = new URLSearchParams(window.location.search);
 
 const requestId =
     query.get('requestId') ||
-    query.get('request_id');
+    query.get('request_id') ||
+    query.get('order_id');
 
 const returnedPaymentId =
     query.get('paymentId') ||
@@ -418,7 +419,7 @@ async function checkPayment() {
     'request_id,user_id,provider_payment_id,' +
 
 'kind,book_id,plan_slug,speciality,months,' +
-'book_duration_months,amount_iqd,currency,status'
+'book_duration_months,amount_iqd,currency,status,provider'
 
 )
 
@@ -465,8 +466,20 @@ if (row.kind === 'book' && row.book_id) {
 if (showPaymentStatus(row)) return;
 
 
+            // Reconcile Al-Qaseh purchases using authenticated server-to-server
+            // verification. Never trust the redirect query string as proof.
+            if (row.provider === 'alqaseh' && attempt === 0) {
+                const { error: verifyError } =
+                    await supabase.functions.invoke('alqaseh-verify-payment', {
+                        body: { request_id: requestId }
+                    });
+                if (verifyError) {
+                    console.warn('Al-Qaseh verification pending:', verifyError.message);
+                }
+            }
+
             // Give the backend time to receive and
-            // process the Qi payment notification.
+            // process the payment notification.
             if (attempt < 19) {
                 await new Promise(resolve =>
                     setTimeout(resolve, 3000)
