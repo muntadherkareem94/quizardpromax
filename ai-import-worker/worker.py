@@ -1053,21 +1053,6 @@ def process_job(job):
         for r in records:
             review.extend({"chapter":r["section_index"],**i} for i in r["issues"])
         if total==0:
-            # On unfamiliar layouts, save a bounded, PRIVATE source fingerprint
-            # for diagnosis instead of guessing that a question book has no MCQs.
-            # Samples are logged for the import operator, never published.
-            inspect_pages=sorted(set(
-                [1,2,3,5,7,9,11,12,13,14,15,20,25,26,27,28,29,30,31,35,40,45,50,55,56,pages]
-            ))
-            for sample_page in inspect_pages:
-                if sample_page>pages: continue
-                lines=[clean(v) for v in
-                       document[sample_page-1].get_text("text",sort=True).splitlines()
-                       if clean(v)]
-                if len(lines)<2: continue
-                excerpt=" | ".join(t[:120] for t in lines[:16])[:1300]
-                LOG.warning("MCQ_LAYOUT_DIAGNOSTIC job=%s page=%s lines=%s sample=%r",
-                            job_id,sample_page,len(lines),excerpt)
             diagnosis=diagnose_empty_mcq_source(document)
             review.append(diagnosis)
             update_job(job_id,progress_note=(
