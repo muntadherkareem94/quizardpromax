@@ -3,6 +3,7 @@ import unittest
 import fitz
 
 from local_mcq import extract_local_section, local_book_metadata, layout_figures, classify_local_questions, partition_long_sections, diagnose_empty_mcq_source
+from separated_key_mcq import is_separated_key_section
 
 
 def make_textbook(*, answer="Correct answer: B. Second choice",
@@ -343,6 +344,94 @@ class LocalMCQTests(unittest.TestCase):
             self.assertEqual(result["type"],"no_selectable_mcq_text")
             self.assertEqual(result["selectable_text_pages"],0)
             self.assertIn("OCR",result["detail"])
+        finally:document.close()
+
+
+    def test_separate_numbered_answer_section_and_figure(self):
+        """A separate answer section is source evidence, not a reason to drop MCQs."""
+        document = fitz.open()
+        cover=document.new_page()
+        cover.insert_text((50,65),"Synthetic medical MCQ board review")
+        page=document.new_page()
+        for y,line in [
+            (55,"1"),(80,"CARDIOLOGY"),(105,"QUESTIONS"),
+            (140,"1. Case one: interpret the provided investigation."),
+            (450,"Which option is correct?"),
+            (475,"A. The first option"),
+            (500,"B. The second option"),
+            (525,"2. Case two: select the best management."),
+            (550,"A. Observation"),(575,"B. Intervention"),
+        ]:page.insert_text((60,y),line)
+        pix=fitz.Pixmap(fitz.csRGB,fitz.IRect(0,0,200,130),False)
+        page.insert_image(fitz.Rect(95,170,360,360),pixmap=pix)
+        answer=document.new_page()
+        answer.insert_text((60,65),"ANSWERS")
+        answer.insert_text((60,100),"1. The correct answer is: B. Second option. Explanation one.")
+        answer.insert_text((60,135),"2. The correct answer is: A. Observation. Explanation two.")
+        try:
+            self.assertTrue(is_separated_key_section(document,2,3))
+            result=extract_local_section(document,2,3)
+            self.assertEqual(len(result["questions"]),2,result["issues"])
+            self.assertTrue(result["strict_pass"],result["issues"])
+            self.assertEqual([q["correctAnswerIndex"] for q in result["questions"]],[1,0])
+            self.assertTrue(result["questions"][0]["figureInQuestion"])
+            self.assertFalse(result["questions"][1]["figureInQuestion"])
+            mapping,issues=layout_figures(document,2,3,include_rects=True)
+            self.assertFalse(issues,issues)
+            self.assertEqual(len(mapping[1]),1)
+            self.assertEqual(mapping.get(2,[]),[])
+        finally:
+            document.close()
+
+    def test_separated_answer_missing_key_remains_unverified(self):
+        document=fitz.open()
+        page=document.new_page()
+        for y,line in [(50,"QUESTIONS"),(80,"1. A clinical question?"),
+                       (105,"A. One"),(130,"B. Two"),
+                       (160,"2. Another clinical question?"),
+                       (190,"A. One"),(220,"B. Two")]:
+            page.insert_text((60,y),line)
+        second=document.new_page()
+        second.insert_text((60,50),"ANSWERS")
+        second.insert_text((60,80),"1. The correct answer is: B. Printed rationale.")
+        try:
+            result=extract_local_section(document,1,2)
+            self.assertEqual(len(result["questions"]),2)
+            self.assertFalse(result["strict_pass"])
+            self.assertTrue(any(i["type"]=="missing_printed_answer" and
+                                i.get("number")==2 for i in result["issues"]))
+            self.assertEqual(result["questions"][1]["correctAnswerIndex"],-1)
+        finally:document.close()
+
+    def test_source_title_repeated_across_cover_and_title_page(self):
+        document=fitz.open()
+        first=document.new_page()
+        for y,line in [(60,"POCKET"),(90,"MEDICINE"),
+                       (120,"HIGH-YIELD BOARD REVIEW")]:
+            first.insert_text((60,y),line)
+        document.new_page()
+        third=document.new_page()
+        for y,line in [(60,"Pocket"),(90,"Medicine"),
+                       (120,"High-Yield Board Review")]:
+            third.insert_text((60,y),line)
+        try:
+            title=local_book_metadata(document)
+            self.assertEqual(title["title"],"Pocket Medicine High-Yield Board Review")
+            self.assertEqual(title["confidence"],"high")
+        finally:document.close()
+
+    def test_separate_key_chapter_is_never_split_from_its_answer_pages(self):
+        document=fitz.open()
+        for i in range(50):
+            p=document.new_page()
+            if i==0:p.insert_text((50,60),"QUESTIONS")
+            if i==30:p.insert_text((50,60),"ANSWERS")
+        try:
+            sections=partition_long_sections(document,
+                [dict(section_index=1,title="Cardiology",start_page=1,end_page=50)],
+                max_pages=32)
+            self.assertEqual(len(sections),1)
+            self.assertEqual(sections[0]["end_page"],50)
         finally:document.close()
 
 
