@@ -481,7 +481,11 @@ if (showPaymentStatus(row)) return;
 
             // Reconcile Al-Qaseh purchases using authenticated server-to-server
             // verification. Never trust the redirect query string as proof.
-            if (row.provider === 'alqaseh' && attempt === 0) {
+            // Callback may arrive before the provider's notification or
+            // before our checkout has reached the pending state.
+            // Retry server-side verification a few times while polling.
+            if (row.provider === 'alqaseh' &&
+                [0, 3, 8, 15].includes(attempt)) {
                 const { error: verifyError } =
                     await supabase.functions.invoke('alqaseh-verify-payment', {
                         body: { request_id: requestId }
