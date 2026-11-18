@@ -64,6 +64,8 @@ label{display:block;font-weight:600;margin-bottom:6px}
 </section>
 <section id="editor" class="panel">
 <h3 class="font-bold text-lg mb-2">Question review</h3>
+<label for="chapterPicker">Chapter / source-page chunk</label>
+<select id="chapterPicker" class="control mb-4"></select>
 <div id="questionButtons" class="mb-4"></div>
 <div id="questionPanel" class="hidden">
 <p id="currentStatus" class="font-semibold mb-2"></p>
@@ -110,7 +112,7 @@ label{display:block;font-weight:600;margin-bottom:6px}
 import {supabase} from './supabaseClient.js';
 const $=id=>document.getElementById(id);
 const id=new URLSearchParams(location.search).get('job');
-let state=null, selection=null, busy=false;
+let state=null, selection=null, busy=false, currentChapterIndex=null;
 function message(text,bad=false){const el=$('message');el.className='panel mb-3 '+(bad?'text-red-800 bg-red-50':'text-green-800 bg-green-50');el.textContent=text;window.scrollTo({top:0,behavior:'smooth'});}
 async function api(action,extra={}){
   const {data,error}=await supabase.functions.invoke('ai-import-review',{body:{action,id,...extra}});
@@ -183,19 +185,33 @@ function draw(){
   showImages('explanationImages',q.explanationImageUrls||[]);
 }
 async function load(preserve=true){
-  const data=await api('get');
+  const data=await api('get',currentChapterIndex?{section_index:currentChapterIndex}:{});
   state=data;
+  currentChapterIndex=data.selected_section_index;
+  const picker=$('chapterPicker');picker.replaceChildren();
+  for(const chapter of data.chapter_list||[]){
+    const opt=document.createElement('option');
+    opt.value=String(chapter.section_index);
+    opt.textContent=chapter.title+' — PDF pages '+chapter.start_page+'–'+chapter.end_page+
+      ' ['+chapter.status.replaceAll('_',' ')+']';
+    picker.appendChild(opt);
+  }
+  if(currentChapterIndex!==null)picker.value=String(currentChapterIndex);
   const qs=allQuestions();
   $('bookTitle').textContent=data.job.title;
   const approved=qs.filter(e=>e.q.reviewDecision?.status==='approved').length;
-  $('bookSummary').textContent=data.job.speciality+' · '+qs.length+' extracted · '+approved+' manually approved · '+data.job.status;
+  $('bookSummary').textContent=data.job.speciality+' · '+
+    (data.chapter_list||[]).length+' source sections · '+qs.length+
+    ' questions in this section · '+approved+' manually approved here · '+data.job.status;
   $('titleConfidence').textContent='Title evidence: '+(data.job.title_confidence==='high' ? 'verified' : 'needs source confirmation')+
     ' · Method: '+(data.job.title_verification==='manual_super_admin_source_check' ? 'manual source review' : 'local PDF checks');
   $('sourceBookTitle').value=data.job.title||'';
   $('sourceTitlePage').max=String(data.job.total_pages||1);
   $('saveBookTitle').disabled=!!data.draft;
   $('sourceLink').href=data.source_url||'#';
-  $('pdfFrame').src=data.source_url||'about:blank';
+  const chosen=(data.chapter_list||[]).find(c=>c.section_index===currentChapterIndex);
+  $('pdfFrame').src=data.source_url
+    ? data.source_url+'#page='+(chosen?.start_page||1) : 'about:blank';
   const draft=data.draft;
   $('draftStatus').textContent=draft?'Admin-only draft already imported: '+draft.approved_count+' approved questions.':'No admin-only draft has been imported.';
   $('importDraft').disabled=!!draft;
@@ -237,6 +253,16 @@ $('approve').addEventListener('click',()=>update('decision','approved'));
 $('reject').addEventListener('click',()=>update('decision','rejected'));
 $('reset').addEventListener('click',()=>update('decision','pending'));
 $('reload').addEventListener('click',async()=>{try{await load()}catch(e){message(e.message,true)}});
+$('chapterPicker').addEventListener('change',async()=>{
+  const next=Number($('chapterPicker').value);
+  if(hasEdits()&&!confirm('Discard unsaved question edits before changing chapters?')){
+    $('chapterPicker').value=String(currentChapterIndex);
+    return;
+  }
+  currentChapterIndex=next;
+  selection=null;
+  try{await load(false)}catch(e){message(e.message,true)}
+});
 $('saveBookTitle').addEventListener('click',async()=>{
   if(busy||!state||state.draft)return;
   if(!$('sourceTitleConfirmed').checked){message('Confirm that you checked the printed source before saving its title.',true);return}
