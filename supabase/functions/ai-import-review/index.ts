@@ -143,6 +143,18 @@ Deno.serve(async req => {
       if (!Number.isInteger(answer) || answer < 0 || answer >= next.options.length)
         return respond({error: 'Correct-answer index must match an option'}, 400);
       next.correctAnswerIndex = answer;
+      const changedText = next.question !== current.question ||
+        next.explanation !== current.explanation ||
+        next.correctAnswerIndex !== current.correctAnswerIndex ||
+        JSON.stringify(next.options) !== JSON.stringify(current.options);
+      if (changedText) {
+        next.sourceVerification = {
+          status: 'needs_review',
+          method: 'manual_edit_pending_source_check',
+          issues: [{type: 'manual_edit', detail:
+            'Original local verification was invalidated by an edit. Manually check the revised text against the PDF.'}]
+        };
+      }
       next.reviewDecision = {status: 'pending', by: user.id, at: timestamp,
         note: 'Edited content requires new explicit review'};
     } else {
@@ -173,6 +185,18 @@ Deno.serve(async req => {
     if (updateError) throw updateError;
     if (!changed?.length)
       return respond({error: 'Review conflict: reload this book before changing the question'}, 409);
+    if (action === 'save') {
+      const {data: allSections, error: countError} = await db.from('ai_import_sections')
+        .select('status,questions').eq('job_id', id);
+      if (countError) throw countError;
+      const verifiedCount = (allSections || []).reduce((sum: number, sec: any) =>
+        sum + (sec.questions || []).filter((q: Candidate) => sec.status === 'verified' ||
+          (q.sourceVerification?.status === 'verified_local' &&
+           q.sourceVerification?.method === 'local_pdf_source_checks')).length, 0);
+      const {error: jobUpdateError} = await db.from('ai_import_jobs')
+        .update({verified_questions: verifiedCount}).eq('id', id);
+      if (jobUpdateError) throw jobUpdateError;
+    }
     return respond({ok: true, question: {...next, _fingerprint: await fingerprint(next)}});
   } catch (error) {
     console.error('AI import review failed', error);
