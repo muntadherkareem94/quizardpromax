@@ -1596,14 +1596,14 @@ const standaloneContainer =
 
 
 // Read all available duration prices.
+
 const bookPrices = {
     3: Number(selectedRule?.standalone_price_iqd || 0),
     6: Number(selectedRule?.standalone_price_6m_iqd || 0),
-    9: Number(selectedRule?.standalone_price_9m_iqd || 0),
     12: Number(selectedRule?.standalone_price_12m_iqd || 0)
 };
 
-const availableMonths = [3, 6, 9, 12].filter(months =>
+const availableMonths = [3, 6, 12].filter(months =>
     Number.isSafeInteger(bookPrices[months]) &&
     bookPrices[months] > 0
 );
@@ -1648,7 +1648,9 @@ if (standaloneAvailable) {
         `
         : '';
 
-    const durationButtons = [3, 6, 9, 12].map(months => {
+   
+const durationButtons = [3, 6, 12].map(months => {
+
         const enabled = availableMonths.includes(months);
 
         return `
