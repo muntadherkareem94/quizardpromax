@@ -110,7 +110,7 @@ body: {
 
         if (
             checkout.protocol !== 'https:' ||
-            (host !== 'pay-test.alqaseh.com' && !(/^pay\\.[a-z0-9-]*alqaseh\\.com$/i.test(host) && checkout.pathname.startsWith('/pay/')))
+            (host !== 'pay-test.alqaseh.com' && !(host.endsWith('.alqaseh.com') && host.startsWith('pay') && checkout.pathname.startsWith('/pay/')))
         ) {
             throw Error('Invalid payment destination.');
         }
