@@ -51,7 +51,7 @@ const proceed = window.confirm(
     `Purchase this book for ${months} months?\n\n` +
     'Only this book will be unlocked. ' +
     'Premium and Platinum are not included.\n\n' +
-    'You will be redirected to Al-Qaseh Sandbox checkout.'
+    'You will be redirected to Al-Qaseh secure checkout.'
 );
 
 
@@ -110,7 +110,7 @@ body: {
 
         if (
             checkout.protocol !== 'https:' ||
-            host !== 'pay-test.alqaseh.com'
+            (host !== 'pay-test.alqaseh.com' && !(host.endsWith('.alqaseh.com') && host.startsWith('pay') && checkout.pathname.startsWith('/pay/')))
         ) {
             throw Error('Invalid payment destination.');
         }

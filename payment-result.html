@@ -310,7 +310,7 @@ function showReceipt(row) {
     $('receipt').hidden = false;
     $('paymentGateway').textContent =
         row.provider === 'alqaseh'
-            ? 'Al-Qaseh Sandbox · Test transaction'
+            ? 'Al-Qaseh · Card payment'
             : 'Qi · Historical payment';
 
     const isBook = row.kind === 'book';

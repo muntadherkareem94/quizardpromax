@@ -1763,7 +1763,7 @@ const durationButtons = [3, 6, 12].map(months => {
 }
 
 setMessage(
-    'Payments are processed through Al-Qaseh Sandbox. ' +
+    'Payments are processed through Al-Qaseh secure checkout. ' +
     'Purchased access activates after verified payment.'
 );
 
@@ -2016,7 +2016,7 @@ async function startCardCheckout(planSlug, button) {
 
         if (
             checkout.protocol !== 'https:' ||
-            host !== 'pay-test.alqaseh.com'
+            (host !== 'pay-test.alqaseh.com' && !(host.endsWith('.alqaseh.com') && host.startsWith('pay') && checkout.pathname.startsWith('/pay/')))
         ) {
             throw Error('Invalid payment gateway URL.');
         }
