@@ -1,9 +1,40 @@
-// Al-Qaseh Sandbox payment adapter. Server-side only.
+// Al-Qaseh payment adapter (Sandbox or Production). Server-side only.
 // Official API: https://docs.alqaseh.com/api
 import { createClient } from 'npm:@supabase/supabase-js@2';
 
-const API = 'https://api-test.alqaseh.com/v1';
-const HOSTED_PAGE = 'https://pay-test.alqaseh.com/pay/';
+const SANDBOX_API = 'https://api-test.alqaseh.com/v1';
+const SANDBOX_PAYMENT_PAGE = 'https://pay-test.alqaseh.com/pay/';
+
+// Leave existing deployments in Sandbox unless production is explicitly configured.
+// Live endpoints must be confirmed by Al-Qaseh and supplied as server-side secrets.
+function gatewayConfig() {
+  const environment = (Deno.env.get('ALQASEH_ENVIRONMENT') || 'sandbox').toLowerCase();
+  if (environment === 'sandbox') {
+    return { api: SANDBOX_API, hostedPage: SANDBOX_PAYMENT_PAGE };
+  }
+  if (environment !== 'production') {
+    throw new Error('Invalid Al-Qaseh environment');
+  }
+  const api = Deno.env.get('ALQASEH_PRODUCTION_API_URL');
+  const hostedPage = Deno.env.get('ALQASEH_PRODUCTION_PAY_URL');
+  if (!api || !hostedPage) {
+    throw new Error('Production gateway URLs are not configured');
+  }
+  const apiUrl = new URL(api);
+  const pageUrl = new URL(hostedPage);
+  const isProviderHost = (hostname: string) =>
+    hostname === 'alqaseh.com' || hostname.endsWith('.alqaseh.com');
+  if (
+    apiUrl.protocol !== 'https:' || pageUrl.protocol !== 'https:' ||
+    !isProviderHost(apiUrl.hostname) || !isProviderHost(pageUrl.hostname) ||
+    apiUrl.hostname.includes('test') || pageUrl.hostname.includes('test') ||
+    !pageUrl.pathname.startsWith('/pay/')
+  ) {
+    throw new Error('Invalid Al-Qaseh production endpoint configuration');
+  }
+  if (!pageUrl.pathname.endsWith('/')) pageUrl.pathname += '/';
+  return { api: apiUrl.href.replace(/\/$/, ''), hostedPage: pageUrl.href };
+}
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const COMPACT_UUID = /^[0-9a-f]{32}$/i;
 
@@ -27,7 +58,7 @@ async function providerRequest(path: string, init: RequestInit = {}) {
   headers.set('Authorization', credentials());
   headers.set('Accept', 'application/json');
   if (init.body) headers.set('Content-Type', 'application/json');
-  const res = await fetch(API + path, { ...init, headers });
+  const res = await fetch(gatewayConfig().api + path, { ...init, headers });
   const raw = await res.text();
   let payload: any = {};
   try { payload = raw ? JSON.parse(raw) : {}; }
@@ -95,9 +126,10 @@ export async function createAlqasehPayment(input: {
       typeof result.token !== 'string' || !result.token) {
     throw new Error('Gateway did not return a valid payment reference');
   }
-  const checkout = new URL(encodeURIComponent(result.token), HOSTED_PAGE);
+  const { hostedPage } = gatewayConfig();
+  const checkout = new URL(encodeURIComponent(result.token), hostedPage);
   if (checkout.protocol !== 'https:' ||
-      checkout.hostname !== 'pay-test.alqaseh.com') {
+      checkout.hostname !== new URL(hostedPage).hostname) {
     throw new Error('Invalid Al-Qaseh checkout URL');
   }
   return { paymentId: result.payment_id, checkoutUrl: checkout.href };
